@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_nonomni_detr_resnet50_response400.dart';/// WorkersAiObjectDetectionApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_facebook_nonomni_detr_resnet50_error.dart';/// WorkersAiObjectDetectionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkersAiObjectDetectionApi with ApiExecutor {const WorkersAiObjectD
 /// Runs inference on the @cf/facebook/nonomni-detr-resnet-50 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/facebook/nonomni-detr-resnet-50`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400>> workersAiPostRunCfFacebookNonomniDetrResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookNonomniDetrResnet50Error>> workersAiPostRunCfFacebookNonomniDetrResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -40,9 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfFacebookNonomniDetrResnet50Error.fromResponse(response),
 );
  } 
  }

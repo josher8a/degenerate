@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_types_list_response.dart';import 'package:pub_cloudflare/models/get_indicator_types_list_response400.dart';/// IndicatorTypesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/get_indicator_types_list_error.dart';import 'package:pub_cloudflare/models/get_indicator_types_list_response.dart';/// IndicatorTypesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class IndicatorTypesApi with ApiExecutor {const IndicatorTypesApi(this.api
 /// Lists indicator types across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/indicator-types`
-Future<ApiResult<GetIndicatorTypesListResponse, GetIndicatorTypesListResponse400>> getIndicatorTypesList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIndicatorTypesListResponse, GetIndicatorTypesListError>> getIndicatorTypesList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -35,9 +35,7 @@ return execute(
   onSuccess: (response) {
     return GetIndicatorTypesListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return GetIndicatorTypesListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetIndicatorTypesListError.fromResponse(response),
 );
  } 
  }

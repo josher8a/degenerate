@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_all_recordings_sort_by.dart';import 'package:pub_cloudflare/models/get_all_recordings_sort_order.dart';import 'package:pub_cloudflare/models/get_all_recordings_status.dart';import 'package:pub_cloudflare/models/pause_resume_stop_recording_request.dart';import 'package:pub_cloudflare/models/realtimekit_account_identifier.dart';import 'package:pub_cloudflare/models/realtimekit_app_id.dart';import 'package:pub_cloudflare/models/realtimekit_generic_error_response.dart';import 'package:pub_cloudflare/models/realtimekit_generic_success_response.dart';import 'package:pub_cloudflare/models/realtimekit_paging_response.dart';import 'package:pub_cloudflare/models/start_recording_request.dart';import 'package:pub_cloudflare/models/start_track_recording_for_a_meeting_request.dart';/// RecordingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/get_active_session_error.dart';import 'package:pub_cloudflare/models/get_all_recordings_sort_by.dart';import 'package:pub_cloudflare/models/get_all_recordings_sort_order.dart';import 'package:pub_cloudflare/models/get_all_recordings_status.dart';import 'package:pub_cloudflare/models/pause_resume_stop_recording_request.dart';import 'package:pub_cloudflare/models/realtimekit_account_identifier.dart';import 'package:pub_cloudflare/models/realtimekit_app_id.dart';import 'package:pub_cloudflare/models/realtimekit_generic_success_response.dart';import 'package:pub_cloudflare/models/realtimekit_paging_response.dart';import 'package:pub_cloudflare/models/start_recording_request.dart';import 'package:pub_cloudflare/models/start_track_recording_for_a_meeting_request.dart';/// RecordingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -136,7 +136,7 @@ return execute(
 /// Returns the active recording details for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings/active-recording/{meeting_id}`
-Future<ApiResult<RealtimekitGenericSuccessResponse, RealtimekitGenericErrorResponse>> getActiveRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RealtimekitGenericSuccessResponse, GetActiveSessionError>> getActiveRecording({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -150,9 +150,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetActiveSessionError.fromResponse(response),
 );
  } 
 /// Start recording audio and video tracks

@@ -1,0 +1,110 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:convert';
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'package:pub_github_rest_3_1/models/basic_error.dart';
+import 'package:pub_github_rest_3_1/models/validation_error.dart';
+
+sealed class ActionsSetArtifactAndLogRetentionSettingsRepositoryError {
+  const ActionsSetArtifactAndLogRetentionSettingsRepositoryError();
+
+  int get statusCode;
+
+  factory ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(ApiResponse response) {
+    try {
+      return switch (response.statusCode) {
+        404 => ActionsSetArtifactAndLogRetentionSettingsRepositoryError$404(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
+        422 => ActionsSetArtifactAndLogRetentionSettingsRepositoryError$422(ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
+        _ => ActionsSetArtifactAndLogRetentionSettingsRepositoryError$Unknown(response.statusCode, response.body),
+      };
+    } on Object {
+      return ActionsSetArtifactAndLogRetentionSettingsRepositoryError$Unknown(response.statusCode, response.body);
+    }
+  }
+}
+
+final class ActionsSetArtifactAndLogRetentionSettingsRepositoryError$404 extends ActionsSetArtifactAndLogRetentionSettingsRepositoryError {
+  const ActionsSetArtifactAndLogRetentionSettingsRepositoryError$404(this.error);
+  final BasicError error;
+  @override
+  int get statusCode => 404;
+}
+
+final class ActionsSetArtifactAndLogRetentionSettingsRepositoryError$422 extends ActionsSetArtifactAndLogRetentionSettingsRepositoryError {
+  const ActionsSetArtifactAndLogRetentionSettingsRepositoryError$422(this.error);
+  final ValidationError error;
+  @override
+  int get statusCode => 422;
+}
+
+final class ActionsSetArtifactAndLogRetentionSettingsRepositoryError$Unknown extends ActionsSetArtifactAndLogRetentionSettingsRepositoryError {
+  const ActionsSetArtifactAndLogRetentionSettingsRepositoryError$Unknown(this.statusCode, this.rawBody);
+  @override
+  final int statusCode;
+  final String? rawBody;
+}
+
+typedef ActionsSetForkPrContributorApprovalPermissionsOrganizationError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef ActionsSetForkPrContributorApprovalPermissionsRepositoryError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef ActionsSetPrivateRepoForkPrWorkflowsSettingsRepositoryError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef AppsCheckTokenError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef CodespacesAddSelectedRepoToOrgSecretError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef CodespacesCreateOrUpdateOrgSecretError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef CodespacesCreateOrUpdateSecretForAuthenticatedUserError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef CodespacesRemoveSelectedRepoFromOrgSecretError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef GistsUpdateError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef IssuesCreateLabelError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef IssuesCreateMilestoneError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef IssuesListError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef IssuesListCommentsForRepoError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef IssuesListForRepoError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef MigrationsStartForOrgError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef OrgsCancelInvitationError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef OrgsCreateInvitationError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef OrgsCreateWebhookError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef OrgsGetOrgRoleError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef OrgsListOrgRolesError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef OrgsUpdateWebhookError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef PrivateRegistriesCreateOrgPrivateRegistryError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef PrivateRegistriesUpdateOrgPrivateRegistryError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef ReposCreateDispatchEventError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef ReposCreateReleaseError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef ReposGetReadmeError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef ReposGetReadmeInDirectoryError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef ReposRemoveStatusCheckContextsError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef ReposSetStatusCheckContextsError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef ReposUpdateStatusCheckProtectionError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef ReposUpdateWebhookError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;
+
+typedef UsersGetContextForUserError = ActionsSetArtifactAndLogRetentionSettingsRepositoryError;

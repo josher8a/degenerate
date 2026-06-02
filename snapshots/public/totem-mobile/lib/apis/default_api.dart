@@ -3,7 +3,9 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_totem_mobile/models/error_response.dart';
+import 'package:pub_totem_mobile/models/errors/auth_logout_error.dart';
+import 'package:pub_totem_mobile/models/errors/auth_refresh_token_error.dart';
+import 'package:pub_totem_mobile/models/errors/auth_request_pin_error.dart';
 import 'package:pub_totem_mobile/models/fcm_token_register_schema.dart';
 import 'package:pub_totem_mobile/models/fcm_token_response_schema.dart';
 import 'package:pub_totem_mobile/models/message_response.dart';
@@ -135,7 +137,8 @@ final class DefaultApi with ApiExecutor {
   /// This endpoint handles both new and existing users.
   ///
   /// `POST /api/mobile/auth/request-pin`
-  Future<ApiResult<MessageResponse, ErrorResponse>> totemApiAuthRequestPin({
+  Future<ApiResult<MessageResponse, AuthRequestPinError>>
+  totemApiAuthRequestPin({
     required PinRequestSchema body,
     RequestOptions? options,
   }) async {
@@ -157,11 +160,7 @@ final class DefaultApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) {
-        return ErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => AuthRequestPinError.fromResponse(response),
     );
   }
 
@@ -170,7 +169,8 @@ final class DefaultApi with ApiExecutor {
   /// Validate PIN and issue token pair.
   ///
   /// `POST /api/mobile/auth/validate-pin`
-  Future<ApiResult<TokenResponse, ErrorResponse>> totemApiAuthValidatePin({
+  Future<ApiResult<TokenResponse, AuthRefreshTokenError>>
+  totemApiAuthValidatePin({
     required ValidatePinSchema body,
     RequestOptions? options,
   }) async {
@@ -192,11 +192,7 @@ final class DefaultApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) {
-        return ErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => AuthRefreshTokenError.fromResponse(response),
     );
   }
 
@@ -205,7 +201,8 @@ final class DefaultApi with ApiExecutor {
   /// Refresh access token using a valid refresh token.
   ///
   /// `POST /api/mobile/auth/refresh`
-  Future<ApiResult<TokenResponse, ErrorResponse>> totemApiAuthRefreshToken({
+  Future<ApiResult<TokenResponse, AuthRefreshTokenError>>
+  totemApiAuthRefreshToken({
     required RefreshTokenSchema body,
     RequestOptions? options,
   }) async {
@@ -227,11 +224,7 @@ final class DefaultApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) {
-        return ErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => AuthRefreshTokenError.fromResponse(response),
     );
   }
 
@@ -240,7 +233,7 @@ final class DefaultApi with ApiExecutor {
   /// Logout by invalidating a refresh token.
   ///
   /// `POST /api/mobile/auth/logout`
-  Future<ApiResult<MessageResponse, ErrorResponse>> totemApiAuthLogout({
+  Future<ApiResult<MessageResponse, AuthLogoutError>> totemApiAuthLogout({
     required RefreshTokenSchema body,
     RequestOptions? options,
   }) async {
@@ -262,11 +255,7 @@ final class DefaultApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) {
-        return ErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => AuthLogoutError.fromResponse(response),
     );
   }
 }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_response.dart';import 'package:pub_openai/models/error_model.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/list_input_items_order.dart';import 'package:pub_openai/models/response.dart';import 'package:pub_openai/models/response_item_list.dart';import 'package:pub_openai/models/response_stream_event.dart';/// ResponsesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_response.dart';import 'package:pub_openai/models/errors/cancel_response_error.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/list_input_items_order.dart';import 'package:pub_openai/models/response.dart';import 'package:pub_openai/models/response_item_list.dart';import 'package:pub_openai/models/response_stream_event.dart';/// ResponsesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -79,7 +79,7 @@ return execute(
 /// 
 ///
 /// `DELETE /responses/{response_id}`
-Future<ApiResult<void, ErrorModel>> deleteResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CancelResponseError>> deleteResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -91,9 +91,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CancelResponseError.fromResponse(response),
 );
  } 
 /// Cancels a model response with the given ID. Only responses created with
@@ -102,7 +100,7 @@ return execute(
 /// 
 ///
 /// `POST /responses/{response_id}/cancel`
-Future<ApiResult<Response, ErrorModel>> cancelResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Response, CancelResponseError>> cancelResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -116,9 +114,7 @@ return execute(
   onSuccess: (response) {
     return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CancelResponseError.fromResponse(response),
 );
  } 
 /// Returns a list of input items for a given response.

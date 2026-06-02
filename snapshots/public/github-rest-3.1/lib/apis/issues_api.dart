@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/issue_comment.dart';import 'package:pub_github_rest_3_1/models/issue_event.dart';import 'package:pub_github_rest_3_1/models/issue_event_for_issue.dart';import 'package:pub_github_rest_3_1/models/issues_add_assignees_request.dart';import 'package:pub_github_rest_3_1/models/issues_add_blocked_by_dependency_request.dart';import 'package:pub_github_rest_3_1/models/issues_add_labels_request.dart';import 'package:pub_github_rest_3_1/models/issues_add_sub_issue_request.dart';import 'package:pub_github_rest_3_1/models/issues_create_comment_request.dart';import 'package:pub_github_rest_3_1/models/issues_create_label_request.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request.dart';import 'package:pub_github_rest_3_1/models/issues_create_request.dart';import 'package:pub_github_rest_3_1/models/issues_list_comments_for_repo_direction.dart';import 'package:pub_github_rest_3_1/models/issues_list_comments_for_repo_sort.dart';import 'package:pub_github_rest_3_1/models/issues_list_direction.dart';import 'package:pub_github_rest_3_1/models/issues_list_filter.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_authenticated_user_direction.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_authenticated_user_filter.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_authenticated_user_sort.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_authenticated_user_state.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_org_direction.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_org_filter.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_org_sort.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_org_state.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_repo_direction.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_repo_sort.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_repo_state.dart';import 'package:pub_github_rest_3_1/models/issues_list_milestones_direction.dart';import 'package:pub_github_rest_3_1/models/issues_list_milestones_sort.dart';import 'package:pub_github_rest_3_1/models/issues_list_milestones_state.dart';import 'package:pub_github_rest_3_1/models/issues_list_sort.dart';import 'package:pub_github_rest_3_1/models/issues_list_state.dart';import 'package:pub_github_rest_3_1/models/issues_lock_request.dart';import 'package:pub_github_rest_3_1/models/issues_remove_assignees_request.dart';import 'package:pub_github_rest_3_1/models/issues_remove_sub_issue_request.dart';import 'package:pub_github_rest_3_1/models/issues_reprioritize_sub_issue_request.dart';import 'package:pub_github_rest_3_1/models/issues_set_labels_request.dart';import 'package:pub_github_rest_3_1/models/issues_update_comment_request.dart';import 'package:pub_github_rest_3_1/models/issues_update_label_request.dart';import 'package:pub_github_rest_3_1/models/issues_update_milestone_request.dart';import 'package:pub_github_rest_3_1/models/issues_update_request.dart';import 'package:pub_github_rest_3_1/models/label.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/timeline_issue_events.dart';import 'package:pub_github_rest_3_1/models/validation_error.dart';/// IssuesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/errors/actions_approve_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_download_artifact_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_get_artifact_and_log_retention_settings_repository_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_get_custom_oidc_sub_claim_for_repo_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_set_artifact_and_log_retention_settings_repository_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_stargazers_for_repo_error.dart';import 'package:pub_github_rest_3_1/models/errors/issues_add_blocked_by_dependency_error.dart';import 'package:pub_github_rest_3_1/models/errors/issues_add_labels_error.dart';import 'package:pub_github_rest_3_1/models/errors/issues_create_error.dart';import 'package:pub_github_rest_3_1/models/errors/issues_get_error.dart';import 'package:pub_github_rest_3_1/models/errors/issues_get_event_error.dart';import 'package:pub_github_rest_3_1/models/errors/issues_pin_comment_error.dart';import 'package:pub_github_rest_3_1/models/errors/issues_remove_dependency_blocked_by_error.dart';import 'package:pub_github_rest_3_1/models/errors/issues_reprioritize_sub_issue_error.dart';import 'package:pub_github_rest_3_1/models/errors/issues_unpin_comment_error.dart';import 'package:pub_github_rest_3_1/models/errors/issues_update_error.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/issue_comment.dart';import 'package:pub_github_rest_3_1/models/issue_event.dart';import 'package:pub_github_rest_3_1/models/issue_event_for_issue.dart';import 'package:pub_github_rest_3_1/models/issues_add_assignees_request.dart';import 'package:pub_github_rest_3_1/models/issues_add_blocked_by_dependency_request.dart';import 'package:pub_github_rest_3_1/models/issues_add_labels_request.dart';import 'package:pub_github_rest_3_1/models/issues_add_sub_issue_request.dart';import 'package:pub_github_rest_3_1/models/issues_create_comment_request.dart';import 'package:pub_github_rest_3_1/models/issues_create_label_request.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request.dart';import 'package:pub_github_rest_3_1/models/issues_create_request.dart';import 'package:pub_github_rest_3_1/models/issues_list_comments_for_repo_direction.dart';import 'package:pub_github_rest_3_1/models/issues_list_comments_for_repo_sort.dart';import 'package:pub_github_rest_3_1/models/issues_list_direction.dart';import 'package:pub_github_rest_3_1/models/issues_list_filter.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_authenticated_user_direction.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_authenticated_user_filter.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_authenticated_user_sort.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_authenticated_user_state.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_org_direction.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_org_filter.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_org_sort.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_org_state.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_repo_direction.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_repo_sort.dart';import 'package:pub_github_rest_3_1/models/issues_list_for_repo_state.dart';import 'package:pub_github_rest_3_1/models/issues_list_milestones_direction.dart';import 'package:pub_github_rest_3_1/models/issues_list_milestones_sort.dart';import 'package:pub_github_rest_3_1/models/issues_list_milestones_state.dart';import 'package:pub_github_rest_3_1/models/issues_list_sort.dart';import 'package:pub_github_rest_3_1/models/issues_list_state.dart';import 'package:pub_github_rest_3_1/models/issues_lock_request.dart';import 'package:pub_github_rest_3_1/models/issues_remove_assignees_request.dart';import 'package:pub_github_rest_3_1/models/issues_remove_sub_issue_request.dart';import 'package:pub_github_rest_3_1/models/issues_reprioritize_sub_issue_request.dart';import 'package:pub_github_rest_3_1/models/issues_set_labels_request.dart';import 'package:pub_github_rest_3_1/models/issues_update_comment_request.dart';import 'package:pub_github_rest_3_1/models/issues_update_label_request.dart';import 'package:pub_github_rest_3_1/models/issues_update_milestone_request.dart';import 'package:pub_github_rest_3_1/models/issues_update_request.dart';import 'package:pub_github_rest_3_1/models/label.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/timeline_issue_events.dart';/// IssuesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -25,7 +25,7 @@ final class IssuesApi with ApiExecutor {const IssuesApi(this.apiConfig);
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /issues`
-Future<ApiResult<List<Issue>, ValidationError>> issuesList({IssuesListFilter? filter, IssuesListState? state, String? labels, IssuesListSort? sort, IssuesListDirection? direction, DateTime? since, bool? collab, bool? orgs, bool? owned, bool? pulls, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Issue>, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> issuesList({IssuesListFilter? filter, IssuesListState? state, String? labels, IssuesListSort? sort, IssuesListDirection? direction, DateTime? since, bool? collab, bool? orgs, bool? owned, bool? pulls, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) {
   queryParameters['filter'] = filter.toJson();
@@ -81,9 +81,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List organization issues assigned to the authenticated user
@@ -101,7 +99,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /orgs/{org}/issues`
-Future<ApiResult<List<Issue>, BasicError>> issuesListForOrg({required String org, IssuesListForOrgFilter? filter, IssuesListForOrgState? state, String? labels, String? type, IssuesListForOrgSort? sort, IssuesListForOrgDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Issue>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> issuesListForOrg({required String org, IssuesListForOrgFilter? filter, IssuesListForOrgState? state, String? labels, String? type, IssuesListForOrgSort? sort, IssuesListForOrgDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) {
   queryParameters['filter'] = filter.toJson();
@@ -148,9 +146,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List assignees
@@ -158,7 +154,7 @@ return execute(
 /// Lists the [available assignees](https://docs.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/) for issues in a repository.
 ///
 /// `GET /repos/{owner}/{repo}/assignees`
-Future<ApiResult<List<SimpleUser>, BasicError>> issuesListAssignees({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> issuesListAssignees({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -184,9 +180,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Check if a user can be assigned
@@ -198,7 +192,7 @@ return execute(
 /// Otherwise a `404` status code is returned.
 ///
 /// `GET /repos/{owner}/{repo}/assignees/{assignee}`
-Future<ApiResult<void, BasicError>> issuesCheckUserCanBeAssigned({required String owner, required String repo, required String assignee, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> issuesCheckUserCanBeAssigned({required String owner, required String repo, required String assignee, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -210,9 +204,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List repository issues
@@ -230,7 +222,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues`
-Future<ApiResult<List<Issue>, ValidationError>> issuesListForRepo({required String owner, required String repo, String? milestone, IssuesListForRepoState? state, String? assignee, String? type, String? creator, String? mentioned, String? labels, IssuesListForRepoSort? sort, IssuesListForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Issue>, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> issuesListForRepo({required String owner, required String repo, String? milestone, IssuesListForRepoState? state, String? assignee, String? type, String? creator, String? mentioned, String? labels, IssuesListForRepoSort? sort, IssuesListForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (milestone != null) {
   queryParameters['milestone'] = milestone;
@@ -286,9 +278,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Create an issue
@@ -306,7 +296,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues`
-Future<ApiResult<Issue, BasicError>> issuesCreate({required String owner, required String repo, required IssuesCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesCreateError>> issuesCreate({required String owner, required String repo, required IssuesCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -322,9 +312,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesCreateError.fromResponse(response),
 );
  } 
 /// List issue comments for a repository
@@ -341,7 +329,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/comments`
-Future<ApiResult<List<IssueComment>, ValidationError>> issuesListCommentsForRepo({required String owner, required String repo, IssuesListCommentsForRepoSort? sort, IssuesListCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IssueComment>, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> issuesListCommentsForRepo({required String owner, required String repo, IssuesListCommentsForRepoSort? sort, IssuesListCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) {
   queryParameters['sort'] = sort.toJson();
@@ -376,9 +364,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => IssueComment.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Get an issue comment
@@ -393,7 +379,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/comments/{comment_id}`
-Future<ApiResult<IssueComment, BasicError>> issuesGetComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueComment, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> issuesGetComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -407,9 +393,7 @@ return execute(
   onSuccess: (response) {
     return IssueComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Update an issue comment
@@ -424,7 +408,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}`
-Future<ApiResult<IssueComment, ValidationError>> issuesUpdateComment({required String owner, required String repo, required int commentId, required IssuesUpdateCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueComment, ActivityListStargazersForRepoError>> issuesUpdateComment({required String owner, required String repo, required int commentId, required IssuesUpdateCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -440,9 +424,7 @@ return execute(
   onSuccess: (response) {
     return IssueComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
 );
  } 
 /// Delete an issue comment
@@ -476,7 +458,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PUT /repos/{owner}/{repo}/issues/comments/{comment_id}/pin`
-Future<ApiResult<IssueComment, BasicError>> issuesPinComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueComment, IssuesPinCommentError>> issuesPinComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -490,9 +472,7 @@ return execute(
   onSuccess: (response) {
     return IssueComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesPinCommentError.fromResponse(response),
 );
  } 
 /// Unpin an issue comment
@@ -500,7 +480,7 @@ return execute(
 /// You can use the REST API to unpin comments on issues.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/pin`
-Future<ApiResult<void, BasicError>> issuesUnpinComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, IssuesUnpinCommentError>> issuesUnpinComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -512,9 +492,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesUnpinCommentError.fromResponse(response),
 );
  } 
 /// List issue events for a repository
@@ -522,7 +500,7 @@ return execute(
 /// Lists events for a repository.
 ///
 /// `GET /repos/{owner}/{repo}/issues/events`
-Future<ApiResult<List<IssueEvent>, ValidationError>> issuesListEventsForRepo({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IssueEvent>, ActivityListStargazersForRepoError>> issuesListEventsForRepo({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -548,9 +526,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => IssueEvent.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
 );
  } 
 /// Get an issue event
@@ -558,7 +534,7 @@ return execute(
 /// Gets a single event by the event id.
 ///
 /// `GET /repos/{owner}/{repo}/issues/events/{event_id}`
-Future<ApiResult<IssueEvent, BasicError>> issuesGetEvent({required String owner, required String repo, required int eventId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueEvent, IssuesGetEventError>> issuesGetEvent({required String owner, required String repo, required int eventId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -572,9 +548,7 @@ return execute(
   onSuccess: (response) {
     return IssueEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesGetEventError.fromResponse(response),
 );
  } 
 /// Get an issue
@@ -597,7 +571,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}`
-Future<ApiResult<Issue, BasicError>> issuesGet({required String owner, required String repo, required int issueNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesGetError>> issuesGet({required String owner, required String repo, required int issueNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -611,9 +585,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesGetError.fromResponse(response),
 );
  } 
 /// Update an issue
@@ -628,7 +600,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PATCH /repos/{owner}/{repo}/issues/{issue_number}`
-Future<ApiResult<Issue, ValidationError>> issuesUpdate({required String owner, required String repo, required int issueNumber, IssuesUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesUpdateError>> issuesUpdate({required String owner, required String repo, required int issueNumber, IssuesUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -644,9 +616,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesUpdateError.fromResponse(response),
 );
  } 
 /// Add assignees to an issue
@@ -704,7 +674,7 @@ return execute(
 /// Otherwise a `404` status code is returned.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}`
-Future<ApiResult<void, BasicError>> issuesCheckUserCanBeAssignedToIssue({required String owner, required String repo, required int issueNumber, required String assignee, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> issuesCheckUserCanBeAssignedToIssue({required String owner, required String repo, required int issueNumber, required String assignee, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -716,9 +686,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List issue comments
@@ -735,7 +703,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/comments`
-Future<ApiResult<List<IssueComment>, BasicError>> issuesListComments({required String owner, required String repo, required int issueNumber, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IssueComment>, IssuesGetError>> issuesListComments({required String owner, required String repo, required int issueNumber, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
   queryParameters['since'] = since.toString();
@@ -764,9 +732,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => IssueComment.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesGetError.fromResponse(response),
 );
  } 
 /// Create an issue comment
@@ -786,7 +752,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/comments`
-Future<ApiResult<IssueComment, BasicError>> issuesCreateComment({required String owner, required String repo, required int issueNumber, required IssuesCreateCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueComment, IssuesAddBlockedByDependencyError>> issuesCreateComment({required String owner, required String repo, required int issueNumber, required IssuesCreateCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -802,9 +768,7 @@ return execute(
   onSuccess: (response) {
     return IssueComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesAddBlockedByDependencyError.fromResponse(response),
 );
  } 
 /// List dependencies an issue is blocked by
@@ -819,7 +783,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by`
-Future<ApiResult<List<Issue>, BasicError>> issuesListDependenciesBlockedBy({required String owner, required String repo, required int issueNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Issue>, IssuesGetError>> issuesListDependenciesBlockedBy({required String owner, required String repo, required int issueNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -845,9 +809,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesGetError.fromResponse(response),
 );
  } 
 /// Add a dependency an issue is blocked by
@@ -866,7 +828,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by`
-Future<ApiResult<Issue, BasicError>> issuesAddBlockedByDependency({required String owner, required String repo, required int issueNumber, required IssuesAddBlockedByDependencyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesAddBlockedByDependencyError>> issuesAddBlockedByDependency({required String owner, required String repo, required int issueNumber, required IssuesAddBlockedByDependencyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -882,9 +844,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesAddBlockedByDependencyError.fromResponse(response),
 );
  } 
 /// Remove dependency an issue is blocked by
@@ -902,7 +862,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}`
-Future<ApiResult<Issue, BasicError>> issuesRemoveDependencyBlockedBy({required String owner, required String repo, required int issueNumber, required int issueId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesRemoveDependencyBlockedByError>> issuesRemoveDependencyBlockedBy({required String owner, required String repo, required int issueNumber, required int issueId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -916,9 +876,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesRemoveDependencyBlockedByError.fromResponse(response),
 );
  } 
 /// List dependencies an issue is blocking
@@ -933,7 +891,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocking`
-Future<ApiResult<List<Issue>, BasicError>> issuesListDependenciesBlocking({required String owner, required String repo, required int issueNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Issue>, IssuesGetError>> issuesListDependenciesBlocking({required String owner, required String repo, required int issueNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -959,9 +917,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesGetError.fromResponse(response),
 );
  } 
 /// List issue events
@@ -969,7 +925,7 @@ return execute(
 /// Lists all events for an issue.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/events`
-Future<ApiResult<List<IssueEventForIssue>, BasicError>> issuesListEvents({required String owner, required String repo, required int issueNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IssueEventForIssue>, ActionsDownloadArtifactError>> issuesListEvents({required String owner, required String repo, required int issueNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -995,9 +951,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => IssueEventForIssue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsDownloadArtifactError.fromResponse(response),
 );
  } 
 /// List labels for an issue
@@ -1005,7 +959,7 @@ return execute(
 /// Lists all labels for an issue.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/labels`
-Future<ApiResult<List<Label>, BasicError>> issuesListLabelsOnIssue({required String owner, required String repo, required int issueNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Label>, IssuesGetError>> issuesListLabelsOnIssue({required String owner, required String repo, required int issueNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1031,9 +985,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesGetError.fromResponse(response),
 );
  } 
 /// Add labels to an issue
@@ -1041,7 +993,7 @@ return execute(
 /// Adds labels to an issue.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/labels`
-Future<ApiResult<List<Label>, BasicError>> issuesAddLabels({required String owner, required String repo, required int issueNumber, IssuesAddLabelsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Label>, IssuesAddLabelsError>> issuesAddLabels({required String owner, required String repo, required int issueNumber, IssuesAddLabelsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1058,9 +1010,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesAddLabelsError.fromResponse(response),
 );
  } 
 /// Set labels for an issue
@@ -1068,7 +1018,7 @@ return execute(
 /// Removes any previous labels and sets the new labels for an issue.
 ///
 /// `PUT /repos/{owner}/{repo}/issues/{issue_number}/labels`
-Future<ApiResult<List<Label>, BasicError>> issuesSetLabels({required String owner, required String repo, required int issueNumber, IssuesSetLabelsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Label>, IssuesAddLabelsError>> issuesSetLabels({required String owner, required String repo, required int issueNumber, IssuesSetLabelsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1085,9 +1035,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesAddLabelsError.fromResponse(response),
 );
  } 
 /// Remove all labels from an issue
@@ -1095,7 +1043,7 @@ return execute(
 /// Removes all labels from an issue.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels`
-Future<ApiResult<void, BasicError>> issuesRemoveAllLabels({required String owner, required String repo, required int issueNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, IssuesGetError>> issuesRemoveAllLabels({required String owner, required String repo, required int issueNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1107,9 +1055,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesGetError.fromResponse(response),
 );
  } 
 /// Remove a label from an issue
@@ -1117,7 +1063,7 @@ return execute(
 /// Removes the specified label from the issue, and returns the remaining labels on the issue. This endpoint returns a `404 Not Found` status if the label does not exist.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}`
-Future<ApiResult<List<Label>, BasicError>> issuesRemoveLabel({required String owner, required String repo, required int issueNumber, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Label>, IssuesGetError>> issuesRemoveLabel({required String owner, required String repo, required int issueNumber, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1132,9 +1078,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesGetError.fromResponse(response),
 );
  } 
 /// Lock an issue
@@ -1144,7 +1088,7 @@ return execute(
 /// Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
 /// `PUT /repos/{owner}/{repo}/issues/{issue_number}/lock`
-Future<ApiResult<void, BasicError>> issuesLock({required String owner, required String repo, required int issueNumber, IssuesLockRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, IssuesAddBlockedByDependencyError>> issuesLock({required String owner, required String repo, required int issueNumber, IssuesLockRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1158,9 +1102,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesAddBlockedByDependencyError.fromResponse(response),
 );
  } 
 /// Unlock an issue
@@ -1168,7 +1110,7 @@ return execute(
 /// Users with push access can unlock an issue's conversation.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock`
-Future<ApiResult<void, BasicError>> issuesUnlock({required String owner, required String repo, required int issueNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsApproveWorkflowRunError>> issuesUnlock({required String owner, required String repo, required int issueNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1180,9 +1122,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Get parent issue
@@ -1197,7 +1137,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/parent`
-Future<ApiResult<Issue, BasicError>> issuesGetParent({required String owner, required String repo, required int issueNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesGetError>> issuesGetParent({required String owner, required String repo, required int issueNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1211,9 +1151,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesGetError.fromResponse(response),
 );
  } 
 /// Remove sub-issue
@@ -1229,7 +1167,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue`
-Future<ApiResult<Issue, BasicError>> issuesRemoveSubIssue({required String owner, required String repo, required int issueNumber, required IssuesRemoveSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, ActionsGetCustomOidcSubClaimForRepoError>> issuesRemoveSubIssue({required String owner, required String repo, required int issueNumber, required IssuesRemoveSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1245,9 +1183,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetCustomOidcSubClaimForRepoError.fromResponse(response),
 );
  } 
 /// List sub-issues
@@ -1262,7 +1198,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues`
-Future<ApiResult<List<Issue>, BasicError>> issuesListSubIssues({required String owner, required String repo, required int issueNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Issue>, IssuesGetError>> issuesListSubIssues({required String owner, required String repo, required int issueNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1288,9 +1224,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesGetError.fromResponse(response),
 );
  } 
 /// Add sub-issue
@@ -1309,7 +1243,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues`
-Future<ApiResult<Issue, BasicError>> issuesAddSubIssue({required String owner, required String repo, required int issueNumber, required IssuesAddSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesAddBlockedByDependencyError>> issuesAddSubIssue({required String owner, required String repo, required int issueNumber, required IssuesAddSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1325,9 +1259,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesAddBlockedByDependencyError.fromResponse(response),
 );
  } 
 /// Reprioritize sub-issue
@@ -1335,7 +1267,7 @@ return execute(
 /// You can use the REST API to reprioritize a sub-issue to a different position in the parent list.
 ///
 /// `PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority`
-Future<ApiResult<Issue, BasicError>> issuesReprioritizeSubIssue({required String owner, required String repo, required int issueNumber, required IssuesReprioritizeSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesReprioritizeSubIssueError>> issuesReprioritizeSubIssue({required String owner, required String repo, required int issueNumber, required IssuesReprioritizeSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1351,9 +1283,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesReprioritizeSubIssueError.fromResponse(response),
 );
  } 
 /// List timeline events for an issue
@@ -1361,7 +1291,7 @@ return execute(
 /// List all timeline events for an issue.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/timeline`
-Future<ApiResult<List<TimelineIssueEvents>, BasicError>> issuesListEventsForTimeline({required String owner, required String repo, required int issueNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TimelineIssueEvents>, IssuesGetError>> issuesListEventsForTimeline({required String owner, required String repo, required int issueNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1387,9 +1317,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => TimelineIssueEvents.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => IssuesGetError.fromResponse(response),
 );
  } 
 /// List labels for a repository
@@ -1397,7 +1325,7 @@ return execute(
 /// Lists all labels for a repository.
 ///
 /// `GET /repos/{owner}/{repo}/labels`
-Future<ApiResult<List<Label>, BasicError>> issuesListLabelsForRepo({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Label>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> issuesListLabelsForRepo({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1423,9 +1351,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Create a label
@@ -1433,7 +1359,7 @@ return execute(
 /// Creates a label for the specified repository with the given name and color. The name and color parameters are required. The color must be a valid [hexadecimal color code](http://www.color-hex.com/).
 ///
 /// `POST /repos/{owner}/{repo}/labels`
-Future<ApiResult<Label, ValidationError>> issuesCreateLabel({required String owner, required String repo, required IssuesCreateLabelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Label, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> issuesCreateLabel({required String owner, required String repo, required IssuesCreateLabelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1449,9 +1375,7 @@ return execute(
   onSuccess: (response) {
     return Label.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Get a label
@@ -1459,7 +1383,7 @@ return execute(
 /// Gets a label using the given name.
 ///
 /// `GET /repos/{owner}/{repo}/labels/{name}`
-Future<ApiResult<Label, BasicError>> issuesGetLabel({required String owner, required String repo, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Label, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> issuesGetLabel({required String owner, required String repo, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1473,9 +1397,7 @@ return execute(
   onSuccess: (response) {
     return Label.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Update a label
@@ -1525,7 +1447,7 @@ return execute(
 /// Lists milestones for a repository.
 ///
 /// `GET /repos/{owner}/{repo}/milestones`
-Future<ApiResult<List<Milestone>, BasicError>> issuesListMilestones({required String owner, required String repo, IssuesListMilestonesState? state, IssuesListMilestonesSort? sort, IssuesListMilestonesDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Milestone>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> issuesListMilestones({required String owner, required String repo, IssuesListMilestonesState? state, IssuesListMilestonesSort? sort, IssuesListMilestonesDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (state != null) {
   queryParameters['state'] = state.toJson();
@@ -1560,9 +1482,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Milestone.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Create a milestone
@@ -1570,7 +1490,7 @@ return execute(
 /// Creates a milestone.
 ///
 /// `POST /repos/{owner}/{repo}/milestones`
-Future<ApiResult<Milestone, BasicError>> issuesCreateMilestone({required String owner, required String repo, required IssuesCreateMilestoneRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Milestone, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> issuesCreateMilestone({required String owner, required String repo, required IssuesCreateMilestoneRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1586,9 +1506,7 @@ return execute(
   onSuccess: (response) {
     return Milestone.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Get a milestone
@@ -1596,7 +1514,7 @@ return execute(
 /// Gets a milestone using the given milestone number.
 ///
 /// `GET /repos/{owner}/{repo}/milestones/{milestone_number}`
-Future<ApiResult<Milestone, BasicError>> issuesGetMilestone({required String owner, required String repo, required int milestoneNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Milestone, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> issuesGetMilestone({required String owner, required String repo, required int milestoneNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1610,9 +1528,7 @@ return execute(
   onSuccess: (response) {
     return Milestone.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Update a milestone
@@ -1643,7 +1559,7 @@ return execute(
 /// Deletes a milestone using the given milestone number.
 ///
 /// `DELETE /repos/{owner}/{repo}/milestones/{milestone_number}`
-Future<ApiResult<void, BasicError>> issuesDeleteMilestone({required String owner, required String repo, required int milestoneNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> issuesDeleteMilestone({required String owner, required String repo, required int milestoneNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1655,9 +1571,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List labels for issues in a milestone
@@ -1708,7 +1622,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /user/issues`
-Future<ApiResult<List<Issue>, BasicError>> issuesListForAuthenticatedUser({IssuesListForAuthenticatedUserFilter? filter, IssuesListForAuthenticatedUserState? state, String? labels, IssuesListForAuthenticatedUserSort? sort, IssuesListForAuthenticatedUserDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Issue>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> issuesListForAuthenticatedUser({IssuesListForAuthenticatedUserFilter? filter, IssuesListForAuthenticatedUserState? state, String? labels, IssuesListForAuthenticatedUserSort? sort, IssuesListForAuthenticatedUserDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) {
   queryParameters['filter'] = filter.toJson();
@@ -1752,9 +1666,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
  }

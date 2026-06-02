@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_response/radar_get_bgp_hijacks_events_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_sort_by.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_sort_order.dart';import 'package:pub_cloudflare/models/radar_get_bgp_ips_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_ips_timeseries_ip_version.dart';import 'package:pub_cloudflare/models/radar_get_bgp_ips_timeseries_response/radar_get_bgp_ips_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_ips_timeseries_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_moas_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_moas_response/radar_get_bgp_pfx2as_moas_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_moas_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_response/radar_get_bgp_pfx2as_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_rpki_status.dart';import 'package:pub_cloudflare/models/radar_get_bgp_route_leak_events_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_route_leak_events_response/radar_get_bgp_route_leak_events_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_route_leak_events_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_route_leak_events_sort_by.dart';import 'package:pub_cloudflare/models/radar_get_bgp_route_leak_events_sort_order.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_asns_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_asns_response/radar_get_bgp_routes_asns_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_asns_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_asns_sort_by.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_asns_sort_order.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_realtime_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_realtime_response/radar_get_bgp_routes_realtime_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_realtime_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_stats_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_stats_response/radar_get_bgp_routes_stats_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_stats_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_changes_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_changes_response/radar_get_bgp_rpki_aspa_changes_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_changes_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_snapshot_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_snapshot_response/radar_get_bgp_rpki_aspa_snapshot_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_snapshot_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_timeseries_response/radar_get_bgp_rpki_aspa_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_timeseries_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_timeseries_rir.dart';import 'package:pub_cloudflare/models/radar_get_bgp_timeseries_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_bgp_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_timeseries_response/radar_get_bgp_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_timeseries_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_timeseries_update_type.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_ases_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_ases_response/radar_get_bgp_top_ases_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_ases_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_ases_update_type.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_asns_by_prefixes_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_asns_by_prefixes_response/radar_get_bgp_top_asns_by_prefixes_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_asns_by_prefixes_response404.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_prefixes_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_prefixes_response/radar_get_bgp_top_prefixes_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_prefixes_response400.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_prefixes_update_type.dart';/// RadarBgpApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_hijacks_events_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_ips_timeseries_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_pfx2as_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_pfx2as_moas_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_route_leak_events_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_routes_asns_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_routes_realtime_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_routes_stats_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_rpki_aspa_changes_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_rpki_aspa_snapshot_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_rpki_aspa_timeseries_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_timeseries_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_top_ases_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_top_asns_by_prefixes_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_bgp_top_prefixes_error.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_response/radar_get_bgp_hijacks_events_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_sort_by.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_sort_order.dart';import 'package:pub_cloudflare/models/radar_get_bgp_ips_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_ips_timeseries_ip_version.dart';import 'package:pub_cloudflare/models/radar_get_bgp_ips_timeseries_response/radar_get_bgp_ips_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_moas_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_moas_response/radar_get_bgp_pfx2as_moas_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_response/radar_get_bgp_pfx2as_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_rpki_status.dart';import 'package:pub_cloudflare/models/radar_get_bgp_route_leak_events_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_route_leak_events_response/radar_get_bgp_route_leak_events_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_route_leak_events_sort_by.dart';import 'package:pub_cloudflare/models/radar_get_bgp_route_leak_events_sort_order.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_asns_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_asns_response/radar_get_bgp_routes_asns_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_asns_sort_by.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_asns_sort_order.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_realtime_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_realtime_response/radar_get_bgp_routes_realtime_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_stats_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_stats_response/radar_get_bgp_routes_stats_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_changes_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_changes_response/radar_get_bgp_rpki_aspa_changes_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_snapshot_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_snapshot_response/radar_get_bgp_rpki_aspa_snapshot_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_timeseries_response/radar_get_bgp_rpki_aspa_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_timeseries_rir.dart';import 'package:pub_cloudflare/models/radar_get_bgp_timeseries_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_bgp_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_timeseries_response/radar_get_bgp_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_timeseries_update_type.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_ases_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_ases_response/radar_get_bgp_top_ases_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_ases_update_type.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_asns_by_prefixes_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_asns_by_prefixes_response/radar_get_bgp_top_asns_by_prefixes_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_prefixes_format.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_prefixes_response/radar_get_bgp_top_prefixes_response_result.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_prefixes_update_type.dart';/// RadarBgpApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarBgpApi with ApiExecutor {const RadarBgpApi(this.apiConfig);
 /// Retrieves the BGP hijack events.
 ///
 /// `GET /radar/bgp/hijacks/events`
-Future<ApiResult<RadarGetBgpHijacksEventsResponseResult, RadarGetBgpHijacksEventsResponse400>> radarGetBgpHijacksEvents({int? page, int? perPage, int? eventId, int? hijackerAsn, int? victimAsn, int? involvedAsn, String? involvedCountry, String? prefix, int? minConfidence, int? maxConfidence, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetBgpHijacksEventsSortBy? sortBy, RadarGetBgpHijacksEventsSortOrder? sortOrder, RadarGetBgpHijacksEventsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpHijacksEventsResponseResult, RadarGetBgpHijacksEventsError>> radarGetBgpHijacksEvents({int? page, int? perPage, int? eventId, int? hijackerAsn, int? victimAsn, int? involvedAsn, String? involvedCountry, String? prefix, int? minConfidence, int? maxConfidence, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetBgpHijacksEventsSortBy? sortBy, RadarGetBgpHijacksEventsSortOrder? sortOrder, RadarGetBgpHijacksEventsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -81,9 +81,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpHijacksEventsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpHijacksEventsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpHijacksEventsError.fromResponse(response),
 );
  } 
 /// Get announced IP address space time series
@@ -91,7 +89,7 @@ return execute(
 /// Retrieves time series data for the announced IP space count, represented as the number of IPv4 /24s and IPv6 /48s, for a given ASN.
 ///
 /// `GET /radar/bgp/ips/timeseries`
-Future<ApiResult<RadarGetBgpIpsTimeseriesResponseResult, RadarGetBgpIpsTimeseriesResponse400>> radarGetBgpIpsTimeseries({List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<RadarGetBgpIpsTimeseriesIpVersion>? ipVersion, bool? includeDelay, RadarGetBgpIpsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpIpsTimeseriesResponseResult, RadarGetBgpIpsTimeseriesError>> radarGetBgpIpsTimeseries({List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<RadarGetBgpIpsTimeseriesIpVersion>? ipVersion, bool? includeDelay, RadarGetBgpIpsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -152,9 +150,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpIpsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpIpsTimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpIpsTimeseriesError.fromResponse(response),
 );
  } 
 /// Get BGP route leak events
@@ -162,7 +158,7 @@ return execute(
 /// Retrieves the BGP route leak events.
 ///
 /// `GET /radar/bgp/leaks/events`
-Future<ApiResult<RadarGetBgpRouteLeakEventsResponseResult, RadarGetBgpRouteLeakEventsResponse400>> radarGetBgpRouteLeakEvents({int? page, int? perPage, int? eventId, int? leakAsn, int? involvedAsn, String? involvedCountry, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetBgpRouteLeakEventsSortBy? sortBy, RadarGetBgpRouteLeakEventsSortOrder? sortOrder, RadarGetBgpRouteLeakEventsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpRouteLeakEventsResponseResult, RadarGetBgpRouteLeakEventsError>> radarGetBgpRouteLeakEvents({int? page, int? perPage, int? eventId, int? leakAsn, int? involvedAsn, String? involvedCountry, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetBgpRouteLeakEventsSortBy? sortBy, RadarGetBgpRouteLeakEventsSortOrder? sortOrder, RadarGetBgpRouteLeakEventsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -218,9 +214,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRouteLeakEventsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpRouteLeakEventsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpRouteLeakEventsError.fromResponse(response),
 );
  } 
 /// List ASes from global routing tables
@@ -228,7 +222,7 @@ return execute(
 /// Retrieves all ASes in the current global routing tables with routing statistics.
 ///
 /// `GET /radar/bgp/routes/ases`
-Future<ApiResult<RadarGetBgpRoutesAsnsResponseResult, RadarGetBgpRoutesAsnsResponse400>> radarGetBgpRoutesAsns({String? location, int? limit, RadarGetBgpRoutesAsnsSortBy? sortBy, RadarGetBgpRoutesAsnsSortOrder? sortOrder, RadarGetBgpRoutesAsnsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpRoutesAsnsResponseResult, RadarGetBgpRoutesAsnsError>> radarGetBgpRoutesAsns({String? location, int? limit, RadarGetBgpRoutesAsnsSortBy? sortBy, RadarGetBgpRoutesAsnsSortOrder? sortOrder, RadarGetBgpRoutesAsnsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (location != null) {
   queryParameters['location'] = location;
@@ -263,9 +257,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRoutesAsnsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpRoutesAsnsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpRoutesAsnsError.fromResponse(response),
 );
  } 
 /// Get Multi-Origin AS (MOAS) prefixes
@@ -273,7 +265,7 @@ return execute(
 /// Retrieves all Multi-Origin AS (MOAS) prefixes in the global routing tables.
 ///
 /// `GET /radar/bgp/routes/moas`
-Future<ApiResult<RadarGetBgpPfx2asMoasResponseResult, RadarGetBgpPfx2asMoasResponse400>> radarGetBgpPfx2asMoas({int? origin, String? prefix, bool? invalidOnly, RadarGetBgpPfx2asMoasFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpPfx2asMoasResponseResult, RadarGetBgpPfx2asMoasError>> radarGetBgpPfx2asMoas({int? origin, String? prefix, bool? invalidOnly, RadarGetBgpPfx2asMoasFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (origin != null) {
   queryParameters['origin'] = origin.toString();
@@ -305,9 +297,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpPfx2asMoasResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpPfx2asMoasResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpPfx2asMoasError.fromResponse(response),
 );
  } 
 /// Get prefix-to-ASN mapping
@@ -315,7 +305,7 @@ return execute(
 /// Retrieves the prefix-to-ASN mapping from global routing tables.
 ///
 /// `GET /radar/bgp/routes/pfx2as`
-Future<ApiResult<RadarGetBgpPfx2asResponseResult, RadarGetBgpPfx2asResponse400>> radarGetBgpPfx2as({String? prefix, int? origin, RadarGetBgpPfx2asRpkiStatus? rpkiStatus, bool? longestPrefixMatch, RadarGetBgpPfx2asFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpPfx2asResponseResult, RadarGetBgpPfx2asError>> radarGetBgpPfx2as({String? prefix, int? origin, RadarGetBgpPfx2asRpkiStatus? rpkiStatus, bool? longestPrefixMatch, RadarGetBgpPfx2asFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (prefix != null) {
   queryParameters['prefix'] = prefix;
@@ -350,9 +340,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpPfx2asResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpPfx2asResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpPfx2asError.fromResponse(response),
 );
  } 
 /// Get real-time BGP routes for a prefix
@@ -360,7 +348,7 @@ return execute(
 /// Retrieves real-time BGP routes for a prefix, using public real-time data collectors (RouteViews and RIPE RIS).
 ///
 /// `GET /radar/bgp/routes/realtime`
-Future<ApiResult<RadarGetBgpRoutesRealtimeResponseResult, RadarGetBgpRoutesRealtimeResponse400>> radarGetBgpRoutesRealtime({String? prefix, RadarGetBgpRoutesRealtimeFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpRoutesRealtimeResponseResult, RadarGetBgpRoutesRealtimeError>> radarGetBgpRoutesRealtime({String? prefix, RadarGetBgpRoutesRealtimeFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (prefix != null) {
   queryParameters['prefix'] = prefix;
@@ -386,9 +374,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRoutesRealtimeResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpRoutesRealtimeResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpRoutesRealtimeError.fromResponse(response),
 );
  } 
 /// Get BGP routing table stats
@@ -396,7 +382,7 @@ return execute(
 /// Retrieves the BGP routing table stats.
 ///
 /// `GET /radar/bgp/routes/stats`
-Future<ApiResult<RadarGetBgpRoutesStatsResponseResult, RadarGetBgpRoutesStatsResponse400>> radarGetBgpRoutesStats({int? asn, String? location, RadarGetBgpRoutesStatsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpRoutesStatsResponseResult, RadarGetBgpRoutesStatsError>> radarGetBgpRoutesStats({int? asn, String? location, RadarGetBgpRoutesStatsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (asn != null) {
   queryParameters['asn'] = asn.toString();
@@ -425,9 +411,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRoutesStatsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpRoutesStatsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpRoutesStatsError.fromResponse(response),
 );
  } 
 /// Get ASPA changes over time
@@ -435,7 +419,7 @@ return execute(
 /// Retrieves ASPA (Autonomous System Provider Authorization) changes over time. Returns daily aggregated changes including additions, removals, and modifications of ASPA objects.
 ///
 /// `GET /radar/bgp/rpki/aspa/changes`
-Future<ApiResult<RadarGetBgpRpkiAspaChangesResponseResult, RadarGetBgpRpkiAspaChangesResponse400>> radarGetBgpRpkiAspaChanges({DateTime? dateStart, DateTime? dateEnd, int? asn, bool? includeAsnInfo, RadarGetBgpRpkiAspaChangesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpRpkiAspaChangesResponseResult, RadarGetBgpRpkiAspaChangesError>> radarGetBgpRpkiAspaChanges({DateTime? dateStart, DateTime? dateEnd, int? asn, bool? includeAsnInfo, RadarGetBgpRpkiAspaChangesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dateStart != null) {
   queryParameters['dateStart'] = dateStart.toString();
@@ -470,9 +454,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRpkiAspaChangesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpRpkiAspaChangesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpRpkiAspaChangesError.fromResponse(response),
 );
  } 
 /// Get ASPA objects snapshot
@@ -480,7 +462,7 @@ return execute(
 /// Retrieves current or historical ASPA (Autonomous System Provider Authorization) objects. ASPA objects define which ASNs are authorized upstream providers for a customer ASN.
 ///
 /// `GET /radar/bgp/rpki/aspa/snapshot`
-Future<ApiResult<RadarGetBgpRpkiAspaSnapshotResponseResult, RadarGetBgpRpkiAspaSnapshotResponse400>> radarGetBgpRpkiAspaSnapshot({int? customerAsn, int? providerAsn, DateTime? date, bool? includeAsnInfo, RadarGetBgpRpkiAspaSnapshotFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpRpkiAspaSnapshotResponseResult, RadarGetBgpRpkiAspaSnapshotError>> radarGetBgpRpkiAspaSnapshot({int? customerAsn, int? providerAsn, DateTime? date, bool? includeAsnInfo, RadarGetBgpRpkiAspaSnapshotFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (customerAsn != null) {
   queryParameters['customerAsn'] = customerAsn.toString();
@@ -515,9 +497,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRpkiAspaSnapshotResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpRpkiAspaSnapshotResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpRpkiAspaSnapshotError.fromResponse(response),
 );
  } 
 /// Get ASPA count time series
@@ -525,7 +505,7 @@ return execute(
 /// Retrieves ASPA (Autonomous System Provider Authorization) object count over time. Supports filtering by RIR or location (country code) to generate multiple named series. If no RIR or location filter is specified, returns total count.
 ///
 /// `GET /radar/bgp/rpki/aspa/timeseries`
-Future<ApiResult<RadarGetBgpRpkiAspaTimeseriesResponseResult, RadarGetBgpRpkiAspaTimeseriesResponse400>> radarGetBgpRpkiAspaTimeseries({DateTime? dateStart, DateTime? dateEnd, List<String>? name, List<RadarGetBgpRpkiAspaTimeseriesRir>? rir, List<String>? location, RadarGetBgpRpkiAspaTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpRpkiAspaTimeseriesResponseResult, RadarGetBgpRpkiAspaTimeseriesError>> radarGetBgpRpkiAspaTimeseries({DateTime? dateStart, DateTime? dateEnd, List<String>? name, List<RadarGetBgpRpkiAspaTimeseriesRir>? rir, List<String>? location, RadarGetBgpRpkiAspaTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dateStart != null) {
   queryParameters['dateStart'] = dateStart.toString();
@@ -569,9 +549,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRpkiAspaTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpRpkiAspaTimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpRpkiAspaTimeseriesError.fromResponse(response),
 );
  } 
 /// Get BGP time series
@@ -579,7 +557,7 @@ return execute(
 /// Retrieves BGP updates over time. When requesting updates for an autonomous system, only BGP updates of type announcement are returned.
 ///
 /// `GET /radar/bgp/timeseries`
-Future<ApiResult<RadarGetBgpTimeseriesResponseResult, RadarGetBgpTimeseriesResponse400>> radarGetBgpTimeseries({RadarGetBgpTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? prefix, List<RadarGetBgpTimeseriesUpdateType>? updateType, List<String>? asn, RadarGetBgpTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpTimeseriesResponseResult, RadarGetBgpTimeseriesError>> radarGetBgpTimeseries({RadarGetBgpTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? prefix, List<RadarGetBgpTimeseriesUpdateType>? updateType, List<String>? asn, RadarGetBgpTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -640,9 +618,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpTimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpTimeseriesError.fromResponse(response),
 );
  } 
 /// Get top ASes by BGP updates
@@ -650,7 +626,7 @@ return execute(
 /// Retrieves the top autonomous systems by BGP updates (announcements only).
 ///
 /// `GET /radar/bgp/top/ases`
-Future<ApiResult<RadarGetBgpTopAsesResponseResult, RadarGetBgpTopAsesResponse400>> radarGetBgpTopAses({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? prefix, List<RadarGetBgpTopAsesUpdateType>? updateType, RadarGetBgpTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpTopAsesResponseResult, RadarGetBgpTopAsesError>> radarGetBgpTopAses({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? prefix, List<RadarGetBgpTopAsesUpdateType>? updateType, RadarGetBgpTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -711,9 +687,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpTopAsesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpTopAsesError.fromResponse(response),
 );
  } 
 /// Get top ASes by prefix count
@@ -721,7 +695,7 @@ return execute(
 /// Retrieves the full list of autonomous systems on the global routing table ordered by announced prefixes count. The data comes from public BGP MRT data archives and updates every 2 hours.
 ///
 /// `GET /radar/bgp/top/ases/prefixes`
-Future<ApiResult<RadarGetBgpTopAsnsByPrefixesResponseResult, RadarGetBgpTopAsnsByPrefixesResponse404>> radarGetBgpTopAsnsByPrefixes({String? country, int? limit, RadarGetBgpTopAsnsByPrefixesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpTopAsnsByPrefixesResponseResult, RadarGetBgpTopAsnsByPrefixesError>> radarGetBgpTopAsnsByPrefixes({String? country, int? limit, RadarGetBgpTopAsnsByPrefixesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (country != null) {
   queryParameters['country'] = country;
@@ -750,9 +724,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpTopAsnsByPrefixesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpTopAsnsByPrefixesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpTopAsnsByPrefixesError.fromResponse(response),
 );
  } 
 /// Get top prefixes by BGP updates
@@ -760,7 +732,7 @@ return execute(
 /// Retrieves the top network prefixes by BGP updates.
 ///
 /// `GET /radar/bgp/top/prefixes`
-Future<ApiResult<RadarGetBgpTopPrefixesResponseResult, RadarGetBgpTopPrefixesResponse400>> radarGetBgpTopPrefixes({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<RadarGetBgpTopPrefixesUpdateType>? updateType, RadarGetBgpTopPrefixesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetBgpTopPrefixesResponseResult, RadarGetBgpTopPrefixesError>> radarGetBgpTopPrefixes({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<RadarGetBgpTopPrefixesUpdateType>? updateType, RadarGetBgpTopPrefixesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -816,9 +788,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpTopPrefixesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetBgpTopPrefixesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetBgpTopPrefixesError.fromResponse(response),
 );
  } 
  }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/load_balancing_identifier.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_references_response/load_balancing_monitor_group_references_response_result.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_single_response.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_identifier.dart';/// AccountLoadBalancerMonitorGroupsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_monitor_groups_create_monitor_group_error.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/load_balancing_identifier.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_references_response/load_balancing_monitor_group_references_response_result.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_identifier.dart';/// AccountLoadBalancerMonitorGroupsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -35,7 +35,7 @@ return execute(
 /// Create a new monitor group.
 ///
 /// `POST /accounts/{account_id}/load_balancers/monitor_groups`
-Future<ApiResult<LoadBalancingMonitorGroup, LoadBalancingMonitorGroupSingleResponse>> accountLoadBalancerMonitorGroupsCreateMonitorGroup({required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorGroup body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsCreateMonitorGroupError>> accountLoadBalancerMonitorGroupsCreateMonitorGroup({required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorGroup body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,9 +52,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return LoadBalancingMonitorGroupSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse(response),
 );
  } 
 /// Monitor Group Details
@@ -84,7 +82,7 @@ return execute(
 /// Modify a configured monitor group.
 ///
 /// `PUT /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}`
-Future<ApiResult<LoadBalancingMonitorGroup, LoadBalancingMonitorGroupSingleResponse>> accountLoadBalancerMonitorGroupsUpdateMonitorGroup({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorGroup body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsCreateMonitorGroupError>> accountLoadBalancerMonitorGroupsUpdateMonitorGroup({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorGroup body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -101,9 +99,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return LoadBalancingMonitorGroupSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse(response),
 );
  } 
 /// Patch Monitor Group
@@ -111,7 +107,7 @@ return execute(
 /// Apply changes to an existing monitor group, overwriting the supplied properties.
 ///
 /// `PATCH /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}`
-Future<ApiResult<LoadBalancingMonitorGroup, LoadBalancingMonitorGroupSingleResponse>> accountLoadBalancerMonitorGroupsPatchMonitorGroup({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorGroup body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsCreateMonitorGroupError>> accountLoadBalancerMonitorGroupsPatchMonitorGroup({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorGroup body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -128,9 +124,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return LoadBalancingMonitorGroupSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse(response),
 );
  } 
 /// Delete Monitor Group
@@ -138,7 +132,7 @@ return execute(
 /// Delete a configured monitor group.
 ///
 /// `DELETE /accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}`
-Future<ApiResult<LoadBalancingMonitorGroup, LoadBalancingMonitorGroupSingleResponse>> accountLoadBalancerMonitorGroupsDeleteMonitorGroup({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsCreateMonitorGroupError>> accountLoadBalancerMonitorGroupsDeleteMonitorGroup({required LoadBalancingSchemasIdentifier monitorGroupId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -153,9 +147,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return LoadBalancingMonitorGroupSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse(response),
 );
  } 
 /// List Monitor Group References

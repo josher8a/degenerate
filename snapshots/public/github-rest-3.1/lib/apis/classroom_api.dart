@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/classroom.dart';import 'package:pub_github_rest_3_1/models/classroom_accepted_assignment.dart';import 'package:pub_github_rest_3_1/models/classroom_assignment.dart';import 'package:pub_github_rest_3_1/models/classroom_assignment_grade.dart';import 'package:pub_github_rest_3_1/models/simple_classroom.dart';import 'package:pub_github_rest_3_1/models/simple_classroom_assignment.dart';/// ClassroomApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/classroom.dart';import 'package:pub_github_rest_3_1/models/classroom_accepted_assignment.dart';import 'package:pub_github_rest_3_1/models/classroom_assignment.dart';import 'package:pub_github_rest_3_1/models/classroom_assignment_grade.dart';import 'package:pub_github_rest_3_1/models/errors/actions_get_artifact_and_log_retention_settings_repository_error.dart';import 'package:pub_github_rest_3_1/models/simple_classroom.dart';import 'package:pub_github_rest_3_1/models/simple_classroom_assignment.dart';/// ClassroomApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ClassroomApi with ApiExecutor {const ClassroomApi(this.apiConfig);
 /// Gets a GitHub Classroom assignment. Assignment will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
 ///
 /// `GET /assignments/{assignment_id}`
-Future<ApiResult<ClassroomAssignment, BasicError>> classroomGetAnAssignment({required int assignmentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ClassroomAssignment, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> classroomGetAnAssignment({required int assignmentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,9 +27,7 @@ return execute(
   onSuccess: (response) {
     return ClassroomAssignment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List accepted assignments for an assignment
@@ -70,7 +68,7 @@ return execute(
 /// Gets grades for a GitHub Classroom assignment. Grades will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
 ///
 /// `GET /assignments/{assignment_id}/grades`
-Future<ApiResult<List<ClassroomAssignmentGrade>, BasicError>> classroomGetAssignmentGrades({required int assignmentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ClassroomAssignmentGrade>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> classroomGetAssignmentGrades({required int assignmentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -85,9 +83,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => ClassroomAssignmentGrade.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List classrooms
@@ -128,7 +124,7 @@ return execute(
 /// Gets a GitHub Classroom classroom for the current user. Classroom will only be returned if the current user is an administrator of the GitHub Classroom.
 ///
 /// `GET /classrooms/{classroom_id}`
-Future<ApiResult<Classroom, BasicError>> classroomGetAClassroom({required int classroomId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Classroom, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> classroomGetAClassroom({required int classroomId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -142,9 +138,7 @@ return execute(
   onSuccess: (response) {
     return Classroom.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List assignments for a classroom

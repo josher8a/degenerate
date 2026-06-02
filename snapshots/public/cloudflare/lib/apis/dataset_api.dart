@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_dataset_delete_response.dart';import 'package:pub_cloudflare/models/delete_dataset_delete_response400.dart';import 'package:pub_cloudflare/models/get_dataset_list_response.dart';import 'package:pub_cloudflare/models/get_dataset_list_response400.dart';import 'package:pub_cloudflare/models/get_dataset_read_response.dart';import 'package:pub_cloudflare/models/get_dataset_read_response400.dart';import 'package:pub_cloudflare/models/patch_dataset_update_request.dart';import 'package:pub_cloudflare/models/patch_dataset_update_response.dart';import 'package:pub_cloudflare/models/patch_dataset_update_response400.dart';import 'package:pub_cloudflare/models/post_dataset_create_request.dart';import 'package:pub_cloudflare/models/post_dataset_create_response.dart';import 'package:pub_cloudflare/models/post_dataset_create_response400.dart';import 'package:pub_cloudflare/models/post_dataset_update_request.dart';import 'package:pub_cloudflare/models/post_dataset_update_response.dart';import 'package:pub_cloudflare/models/post_dataset_update_response400.dart';/// DatasetApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_dataset_delete_response.dart';import 'package:pub_cloudflare/models/errors/delete_dataset_delete_error.dart';import 'package:pub_cloudflare/models/errors/get_dataset_list_error.dart';import 'package:pub_cloudflare/models/errors/get_dataset_read_error.dart';import 'package:pub_cloudflare/models/errors/patch_dataset_update_error.dart';import 'package:pub_cloudflare/models/errors/post_dataset_create_error.dart';import 'package:pub_cloudflare/models/errors/post_dataset_update_error.dart';import 'package:pub_cloudflare/models/get_dataset_list_response.dart';import 'package:pub_cloudflare/models/get_dataset_read_response.dart';import 'package:pub_cloudflare/models/patch_dataset_update_request.dart';import 'package:pub_cloudflare/models/patch_dataset_update_response.dart';import 'package:pub_cloudflare/models/post_dataset_create_request.dart';import 'package:pub_cloudflare/models/post_dataset_create_response.dart';import 'package:pub_cloudflare/models/post_dataset_update_request.dart';import 'package:pub_cloudflare/models/post_dataset_update_response.dart';/// DatasetApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class DatasetApi with ApiExecutor {const DatasetApi(this.apiConfig);
 /// Lists all datasets in an account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset`
-Future<ApiResult<List<GetDatasetListResponse>, GetDatasetListResponse400>> getDatasetList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetDatasetListResponse>, GetDatasetListError>> getDatasetList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,15 +26,13 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetDatasetListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return GetDatasetListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetDatasetListError.fromResponse(response),
 );
  } 
 /// Reads a dataset
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<GetDatasetReadResponse, GetDatasetReadResponse400>> getDatasetRead({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetDatasetReadResponse, GetDatasetReadError>> getDatasetRead({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -48,15 +46,13 @@ return execute(
   onSuccess: (response) {
     return GetDatasetReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return GetDatasetReadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetDatasetReadError.fromResponse(response),
 );
  } 
 /// Updates an existing dataset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<PostDatasetUpdateResponse, PostDatasetUpdateResponse400>> postDatasetUpdate({required String accountId, required String datasetId, PostDatasetUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostDatasetUpdateResponse, PostDatasetUpdateError>> postDatasetUpdate({required String accountId, required String datasetId, PostDatasetUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -72,15 +68,13 @@ return execute(
   onSuccess: (response) {
     return PostDatasetUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return PostDatasetUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => PostDatasetUpdateError.fromResponse(response),
 );
  } 
 /// Updates an existing dataset
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<PatchDatasetUpdateResponse, PatchDatasetUpdateResponse400>> patchDatasetUpdate({required String accountId, required String datasetId, PatchDatasetUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchDatasetUpdateResponse, PatchDatasetUpdateError>> patchDatasetUpdate({required String accountId, required String datasetId, PatchDatasetUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,9 +90,7 @@ return execute(
   onSuccess: (response) {
     return PatchDatasetUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return PatchDatasetUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => PatchDatasetUpdateError.fromResponse(response),
 );
  } 
 /// Delete a dataset
@@ -106,7 +98,7 @@ return execute(
 /// Deletes a dataset given a datasetId.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<DeleteDatasetDeleteResponse, DeleteDatasetDeleteResponse400>> deleteDatasetDelete({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteDatasetDeleteResponse, DeleteDatasetDeleteError>> deleteDatasetDelete({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -120,15 +112,13 @@ return execute(
   onSuccess: (response) {
     return DeleteDatasetDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return DeleteDatasetDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteDatasetDeleteError.fromResponse(response),
 );
  } 
 /// Creates a dataset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/create`
-Future<ApiResult<PostDatasetCreateResponse, PostDatasetCreateResponse400>> postDatasetCreate({required String accountId, PostDatasetCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostDatasetCreateResponse, PostDatasetCreateError>> postDatasetCreate({required String accountId, PostDatasetCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -144,9 +134,7 @@ return execute(
   onSuccess: (response) {
     return PostDatasetCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return PostDatasetCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => PostDatasetCreateError.fromResponse(response),
 );
  } 
  }

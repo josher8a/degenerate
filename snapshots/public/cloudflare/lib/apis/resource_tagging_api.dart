@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_access_application_id.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type.dart';import 'package:pub_cloudflare/models/resource_tagging_delete_tags_request_account_level.dart';import 'package:pub_cloudflare/models/resource_tagging_delete_tags_request_zone_level.dart';import 'package:pub_cloudflare/models/resource_tagging_identifier.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_type.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_account_level.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_zone_level.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object.dart';import 'package:pub_cloudflare/models/resource_tagging_worker_id.dart';import 'package:pub_cloudflare/models/resource_tagging_zone_resource_type.dart';import 'package:pub_cloudflare/models/response_common_failure59.dart';/// ResourceTaggingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/tags_delete_error.dart';import 'package:pub_cloudflare/models/resource_tagging_access_application_id.dart';import 'package:pub_cloudflare/models/resource_tagging_account_resource_type.dart';import 'package:pub_cloudflare/models/resource_tagging_delete_tags_request_account_level.dart';import 'package:pub_cloudflare/models/resource_tagging_delete_tags_request_zone_level.dart';import 'package:pub_cloudflare/models/resource_tagging_identifier.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_type.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_account_level.dart';import 'package:pub_cloudflare/models/resource_tagging_set_tags_request_zone_level.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object.dart';import 'package:pub_cloudflare/models/resource_tagging_worker_id.dart';import 'package:pub_cloudflare/models/resource_tagging_zone_resource_type.dart';/// ResourceTaggingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -45,7 +45,7 @@ return execute(
 /// Creates or updates tags for a specific account-level resource.
 ///
 /// `PUT /accounts/{account_id}/tags`
-Future<ApiResult<ResourceTaggingTaggedResourceObject?, ResponseCommonFailure59>> tagsSet({required ResourceTaggingIdentifier accountId, required ResourceTaggingSetTagsRequestAccountLevel body, String? ifMatch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceTaggingTaggedResourceObject?, TagsDeleteError>> tagsSet({required ResourceTaggingIdentifier accountId, required ResourceTaggingSetTagsRequestAccountLevel body, String? ifMatch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) {
   headers['If-Match'] = ifMatch;
@@ -65,9 +65,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) {
-    return ResponseCommonFailure59.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => TagsDeleteError.fromResponse(response),
 );
  } 
 /// Delete tags from an account-level resource
@@ -75,7 +73,7 @@ return execute(
 /// Removes all tags from a specific account-level resource.
 ///
 /// `DELETE /accounts/{account_id}/tags`
-Future<ApiResult<void, ResponseCommonFailure59>> tagsDelete({required ResourceTaggingIdentifier accountId, required ResourceTaggingDeleteTagsRequestAccountLevel body, String? ifMatch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, TagsDeleteError>> tagsDelete({required ResourceTaggingIdentifier accountId, required ResourceTaggingDeleteTagsRequestAccountLevel body, String? ifMatch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) {
   headers['If-Match'] = ifMatch;
@@ -92,9 +90,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ResponseCommonFailure59.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => TagsDeleteError.fromResponse(response),
 );
  } 
 /// List tag keys
@@ -237,7 +233,7 @@ return execute(
 /// Creates or updates tags for a specific zone-level resource. Replaces all existing tags for the resource.
 ///
 /// `PUT /zones/{zone_id}/tags`
-Future<ApiResult<ResourceTaggingTaggedResourceObject?, ResponseCommonFailure59>> tagsZoneSet({required ResourceTaggingIdentifier zoneId, required ResourceTaggingSetTagsRequestZoneLevel body, String? ifMatch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceTaggingTaggedResourceObject?, TagsDeleteError>> tagsZoneSet({required ResourceTaggingIdentifier zoneId, required ResourceTaggingSetTagsRequestZoneLevel body, String? ifMatch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) {
   headers['If-Match'] = ifMatch;
@@ -257,9 +253,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) {
-    return ResponseCommonFailure59.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => TagsDeleteError.fromResponse(response),
 );
  } 
 /// Delete tags from a zone-level resource
@@ -267,7 +261,7 @@ return execute(
 /// Removes all tags from a specific zone-level resource.
 ///
 /// `DELETE /zones/{zone_id}/tags`
-Future<ApiResult<void, ResponseCommonFailure59>> tagsZoneDelete({required ResourceTaggingIdentifier zoneId, required ResourceTaggingDeleteTagsRequestZoneLevel body, String? ifMatch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, TagsDeleteError>> tagsZoneDelete({required ResourceTaggingIdentifier zoneId, required ResourceTaggingDeleteTagsRequestZoneLevel body, String? ifMatch, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) {
   headers['If-Match'] = ifMatch;
@@ -284,9 +278,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ResponseCommonFailure59.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => TagsDeleteError.fromResponse(response),
 );
  } 
  }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_04_responses_links_callbacks/models/error_model.dart';import 'package:spec_04_responses_links_callbacks/models/job.dart';import 'package:spec_04_responses_links_callbacks/models/new_job.dart';/// DefaultApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_04_responses_links_callbacks/models/errors/create_job_error.dart';import 'package:spec_04_responses_links_callbacks/models/job.dart';import 'package:spec_04_responses_links_callbacks/models/new_job.dart';/// DefaultApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -10,7 +10,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 
 ///
 /// `POST /jobs`
-Future<ApiResult<Job, ErrorModel>> createJob({NewJob? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Job, CreateJobError>> createJob({NewJob? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -26,9 +26,7 @@ return execute(
   onSuccess: (response) {
     return Job.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CreateJobError.fromResponse(response),
 );
  } 
 ///

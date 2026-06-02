@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/interaction_limit.dart';import 'package:pub_github_rest_3_1/models/interaction_limit_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_authenticated_user_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_authenticated_user_response/interactions_get_restrictions_for_authenticated_user_response_variant2.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_org_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_repo_response.dart';import 'package:pub_github_rest_3_1/models/validation_error.dart';/// InteractionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_stargazers_for_repo_error.dart';import 'package:pub_github_rest_3_1/models/interaction_limit.dart';import 'package:pub_github_rest_3_1/models/interaction_limit_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_authenticated_user_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_authenticated_user_response/interactions_get_restrictions_for_authenticated_user_response_variant2.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_org_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_repo_response.dart';/// InteractionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -34,7 +34,7 @@ return execute(
 /// Temporarily restricts interactions to a certain type of GitHub user in any public repository in the given organization. You must be an organization owner to set these restrictions. Setting the interaction limit at the organization level will overwrite any interaction limits that are set for individual repositories owned by the organization.
 ///
 /// `PUT /orgs/{org}/interaction-limits`
-Future<ApiResult<InteractionLimitResponse, ValidationError>> interactionsSetRestrictionsForOrg({required String org, required InteractionLimit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InteractionLimitResponse, ActivityListStargazersForRepoError>> interactionsSetRestrictionsForOrg({required String org, required InteractionLimit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -50,9 +50,7 @@ return execute(
   onSuccess: (response) {
     return InteractionLimitResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
 );
  } 
 /// Remove interaction restrictions for an organization
@@ -163,7 +161,7 @@ return execute(
 /// Temporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.
 ///
 /// `PUT /user/interaction-limits`
-Future<ApiResult<InteractionLimitResponse, ValidationError>> interactionsSetRestrictionsForAuthenticatedUser({required InteractionLimit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InteractionLimitResponse, ActivityListStargazersForRepoError>> interactionsSetRestrictionsForAuthenticatedUser({required InteractionLimit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -179,9 +177,7 @@ return execute(
   onSuccess: (response) {
     return InteractionLimitResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
 );
  } 
 /// Remove interaction restrictions from your public repositories

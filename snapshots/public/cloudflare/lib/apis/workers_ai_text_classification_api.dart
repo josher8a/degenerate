@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_reranker_base_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_reranker_base_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_huggingface_distilbert_sst2_int8_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_huggingface_distilbert_sst2_int8_response400.dart';/// WorkersAiTextClassificationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_baai_bge_reranker_base_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_huggingface_distilbert_sst2_int8_error.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_reranker_base_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_huggingface_distilbert_sst2_int8_request.dart';/// WorkersAiTextClassificationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkersAiTextClassificationApi with ApiExecutor {const WorkersAiText
 /// Runs inference on the @cf/baai/bge-reranker-base model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-reranker-base`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400>> workersAiPostRunCfBaaiBgeRerankerBase({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeRerankerBaseRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiBgeRerankerBaseError>> workersAiPostRunCfBaaiBgeRerankerBase({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeRerankerBaseRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -40,9 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBaaiBgeRerankerBaseError.fromResponse(response),
 );
  } 
 /// Execute @cf/huggingface/distilbert-sst-2-int8 model.
@@ -50,7 +48,7 @@ return execute(
 /// Runs inference on the @cf/huggingface/distilbert-sst-2-int8 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/huggingface/distilbert-sst-2-int8`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400>> workersAiPostRunCfHuggingfaceDistilbertSst2Int8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error>> workersAiPostRunCfHuggingfaceDistilbertSst2Int8({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -77,9 +75,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error.fromResponse(response),
 );
  } 
  }

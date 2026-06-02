@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/code_scanning_ref.dart';import 'package:pub_github_rest_3_1/models/license.dart';import 'package:pub_github_rest_3_1/models/license_content.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';/// LicensesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_ref.dart';import 'package:pub_github_rest_3_1/models/errors/actions_approve_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_get_artifact_and_log_retention_settings_repository_error.dart';import 'package:pub_github_rest_3_1/models/license.dart';import 'package:pub_github_rest_3_1/models/license_content.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';/// LicensesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -49,7 +49,7 @@ return execute(
 /// Gets information about a specific license. For more information, see "[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)."
 ///
 /// `GET /licenses/{license}`
-Future<ApiResult<License, BasicError>> licensesGet({required String license, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<License, ActionsApproveWorkflowRunError>> licensesGet({required String license, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -63,9 +63,7 @@ return execute(
   onSuccess: (response) {
     return License.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Get the license for a repository
@@ -78,7 +76,7 @@ return execute(
 /// - **`application/vnd.github.html+json`**: Returns the license contents in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).
 ///
 /// `GET /repos/{owner}/{repo}/license`
-Future<ApiResult<LicenseContent, BasicError>> licensesGetForRepo({required String owner, required String repo, CodeScanningRef? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LicenseContent, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> licensesGetForRepo({required String owner, required String repo, CodeScanningRef? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) {
   queryParameters['ref'] = ref.toString();
@@ -100,9 +98,7 @@ return execute(
   onSuccess: (response) {
     return LicenseContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
  }

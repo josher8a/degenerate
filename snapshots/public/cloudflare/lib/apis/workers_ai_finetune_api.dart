@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_create_finetune_request.dart';import 'package:pub_cloudflare/models/workers_ai_create_finetune_response/workers_ai_create_finetune_response_result.dart';import 'package:pub_cloudflare/models/workers_ai_create_finetune_response400.dart';import 'package:pub_cloudflare/models/workers_ai_list_finetunes_response/workers_ai_list_finetunes_response_result.dart';import 'package:pub_cloudflare/models/workers_ai_list_finetunes_response400.dart';import 'package:pub_cloudflare/models/workers_ai_list_public_finetunes_response400.dart';import 'package:pub_cloudflare/models/workers_ai_upload_finetune_asset_request.dart';import 'package:pub_cloudflare/models/workers_ai_upload_finetune_asset_response.dart';import 'package:pub_cloudflare/models/workers_ai_upload_finetune_asset_response400.dart';/// WorkersAiFinetuneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_create_finetune_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_list_finetunes_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_list_public_finetunes_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_upload_finetune_asset_error.dart';import 'package:pub_cloudflare/models/workers_ai_create_finetune_request.dart';import 'package:pub_cloudflare/models/workers_ai_create_finetune_response/workers_ai_create_finetune_response_result.dart';import 'package:pub_cloudflare/models/workers_ai_list_finetunes_response/workers_ai_list_finetunes_response_result.dart';import 'package:pub_cloudflare/models/workers_ai_upload_finetune_asset_request.dart';import 'package:pub_cloudflare/models/workers_ai_upload_finetune_asset_response.dart';/// WorkersAiFinetuneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class WorkersAiFinetuneApi with ApiExecutor {const WorkersAiFinetuneApi(th
 /// List Finetunes
 ///
 /// `GET /accounts/{account_id}/ai/finetunes`
-Future<ApiResult<WorkersAiListFinetunesResponseResult, WorkersAiListFinetunesResponse400>> workersAiListFinetunes({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAiListFinetunesResponseResult, WorkersAiListFinetunesError>> workersAiListFinetunes({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,15 +26,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersAiListFinetunesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorkersAiListFinetunesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiListFinetunesError.fromResponse(response),
 );
  } 
 /// Create a new Finetune
 ///
 /// `POST /accounts/{account_id}/ai/finetunes`
-Future<ApiResult<WorkersAiCreateFinetuneResponseResult, WorkersAiCreateFinetuneResponse400>> workersAiCreateFinetune({required String accountId, WorkersAiCreateFinetuneRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAiCreateFinetuneResponseResult, WorkersAiCreateFinetuneError>> workersAiCreateFinetune({required String accountId, WorkersAiCreateFinetuneRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -51,15 +49,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersAiCreateFinetuneResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorkersAiCreateFinetuneResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiCreateFinetuneError.fromResponse(response),
 );
  } 
 /// Upload a Finetune Asset
 ///
 /// `POST /accounts/{account_id}/ai/finetunes/{finetune_id}/finetune-assets`
-Future<ApiResult<WorkersAiUploadFinetuneAssetResponse, WorkersAiUploadFinetuneAssetResponse400>> workersAiUploadFinetuneAsset({required String accountId, required String finetuneId, WorkersAiUploadFinetuneAssetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAiUploadFinetuneAssetResponse, WorkersAiUploadFinetuneAssetError>> workersAiUploadFinetuneAsset({required String accountId, required String finetuneId, WorkersAiUploadFinetuneAssetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -80,15 +76,13 @@ return execute(
   onSuccess: (response) {
     return WorkersAiUploadFinetuneAssetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorkersAiUploadFinetuneAssetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiUploadFinetuneAssetError.fromResponse(response),
 );
  } 
 /// List Public Finetunes
 ///
 /// `GET /accounts/{account_id}/ai/finetunes/public`
-Future<ApiResult<List<WorkersAiCreateFinetuneResponseResult>, WorkersAiListPublicFinetunesResponse400>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersAiCreateFinetuneResponseResult>, WorkersAiListPublicFinetunesError>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -117,9 +111,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorkersAiCreateFinetuneResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return WorkersAiListPublicFinetunesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiListPublicFinetunesError.fromResponse(response),
 );
  } 
  }

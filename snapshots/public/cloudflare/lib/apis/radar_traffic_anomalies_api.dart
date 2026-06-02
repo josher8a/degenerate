@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_format.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_response/radar_get_traffic_anomalies_response_result.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_response400.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_status.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_top_format.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_top_response/radar_get_traffic_anomalies_top_response_result.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_top_response400.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_top_status.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_type.dart';/// RadarTrafficAnomaliesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_traffic_anomalies_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_traffic_anomalies_top_error.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_format.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_response/radar_get_traffic_anomalies_response_result.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_status.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_top_format.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_top_response/radar_get_traffic_anomalies_top_response_result.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_top_status.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_type.dart';/// RadarTrafficAnomaliesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarTrafficAnomaliesApi with ApiExecutor {const RadarTrafficAnomali
 /// Retrieves the latest Internet traffic anomalies, which are signals that might indicate an outage. These alerts are automatically detected by Radar and manually verified by our team.
 ///
 /// `GET /radar/traffic_anomalies`
-Future<ApiResult<RadarGetTrafficAnomaliesResponseResult, RadarGetTrafficAnomaliesResponse400>> radarGetTrafficAnomalies({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesStatus? status, List<RadarGetTrafficAnomaliesType>? type, int? asn, String? location, String? origin, RadarGetTrafficAnomaliesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTrafficAnomaliesResponseResult, RadarGetTrafficAnomaliesError>> radarGetTrafficAnomalies({int? limit, int? offset, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesStatus? status, List<RadarGetTrafficAnomaliesType>? type, int? asn, String? location, String? origin, RadarGetTrafficAnomaliesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -68,9 +68,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetTrafficAnomaliesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetTrafficAnomaliesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetTrafficAnomaliesError.fromResponse(response),
 );
  } 
 /// Get top locations by total traffic anomalies
@@ -78,7 +76,7 @@ return execute(
 /// Retrieves the sum of Internet traffic anomalies, grouped by location. These anomalies are signals that might indicate an outage, automatically detected by Radar and manually verified by our team.
 ///
 /// `GET /radar/traffic_anomalies/locations`
-Future<ApiResult<RadarGetTrafficAnomaliesTopResponseResult, RadarGetTrafficAnomaliesTopResponse400>> radarGetTrafficAnomaliesTop({int? limit, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesTopStatus? status, RadarGetTrafficAnomaliesTopFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTrafficAnomaliesTopResponseResult, RadarGetTrafficAnomaliesTopError>> radarGetTrafficAnomaliesTop({int? limit, String? dateRange, DateTime? dateStart, DateTime? dateEnd, RadarGetTrafficAnomaliesTopStatus? status, RadarGetTrafficAnomaliesTopFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -116,9 +114,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetTrafficAnomaliesTopResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetTrafficAnomaliesTopResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetTrafficAnomaliesTopError.fromResponse(response),
 );
  } 
  }

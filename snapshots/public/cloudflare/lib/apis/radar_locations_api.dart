@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_entities_location_by_alpha2_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_location_by_alpha2_response/radar_get_entities_location_by_alpha2_response_result.dart';import 'package:pub_cloudflare/models/radar_get_entities_location_by_alpha2_response404.dart';import 'package:pub_cloudflare/models/radar_get_entities_locations_continent.dart';import 'package:pub_cloudflare/models/radar_get_entities_locations_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_locations_response/radar_get_entities_locations_response_result.dart';import 'package:pub_cloudflare/models/radar_get_entities_locations_response400.dart';/// RadarLocationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_entities_location_by_alpha2_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_entities_locations_error.dart';import 'package:pub_cloudflare/models/radar_get_entities_location_by_alpha2_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_location_by_alpha2_response/radar_get_entities_location_by_alpha2_response_result.dart';import 'package:pub_cloudflare/models/radar_get_entities_locations_continent.dart';import 'package:pub_cloudflare/models/radar_get_entities_locations_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_locations_response/radar_get_entities_locations_response_result.dart';/// RadarLocationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarLocationsApi with ApiExecutor {const RadarLocationsApi(this.api
 /// Retrieves a list of locations.
 ///
 /// `GET /radar/entities/locations`
-Future<ApiResult<RadarGetEntitiesLocationsResponseResult, RadarGetEntitiesLocationsResponse400>> radarGetEntitiesLocations({int? limit, int? offset, String? location, String? region, String? subregion, RadarGetEntitiesLocationsContinent? continent, RadarGetEntitiesLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesLocationsResponseResult, RadarGetEntitiesLocationsError>> radarGetEntitiesLocations({int? limit, int? offset, String? location, String? region, String? subregion, RadarGetEntitiesLocationsContinent? continent, RadarGetEntitiesLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -54,9 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEntitiesLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetEntitiesLocationsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetEntitiesLocationsError.fromResponse(response),
 );
  } 
 /// Get location details
@@ -64,7 +62,7 @@ return execute(
 /// Retrieves the requested location information. (A confidence level below `5` indicates a low level of confidence in the traffic data - normally this happens because Cloudflare has a small amount of traffic from/to this location).
 ///
 /// `GET /radar/entities/locations/{location}`
-Future<ApiResult<RadarGetEntitiesLocationByAlpha2ResponseResult, RadarGetEntitiesLocationByAlpha2Response404>> radarGetEntitiesLocationByAlpha2({required String location, RadarGetEntitiesLocationByAlpha2Format? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesLocationByAlpha2ResponseResult, RadarGetEntitiesLocationByAlpha2Error>> radarGetEntitiesLocationByAlpha2({required String location, RadarGetEntitiesLocationByAlpha2Format? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -87,9 +85,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEntitiesLocationByAlpha2ResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetEntitiesLocationByAlpha2Response404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetEntitiesLocationByAlpha2Error.fromResponse(response),
 );
  } 
  }

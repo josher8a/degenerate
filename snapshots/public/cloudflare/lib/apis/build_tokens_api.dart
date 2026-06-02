@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_build_token_uuid.dart';import 'package:pub_cloudflare/models/builds_create_build_token_request.dart';import 'package:pub_cloudflare/models/builds_error_response.dart';/// BuildTokensApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_build_token_uuid.dart';import 'package:pub_cloudflare/models/builds_create_build_token_request.dart';import 'package:pub_cloudflare/models/errors/cancel_build_by_uuid_error.dart';/// BuildTokensApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -70,7 +70,7 @@ return execute(
 /// Remove a build authentication token
 ///
 /// `DELETE /accounts/{account_id}/builds/tokens/{build_token_uuid}`
-Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> deleteBuildToken({required BuildsAccountId accountId, required BuildsBuildTokenUuid buildTokenUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> deleteBuildToken({required BuildsAccountId accountId, required BuildsBuildTokenUuid buildTokenUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -85,9 +85,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) {
-    return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CancelBuildByUuidError.fromResponse(response),
 );
  } 
  }

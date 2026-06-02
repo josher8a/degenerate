@@ -37,7 +37,7 @@ void main() {
       );
 
       final result = await api.listPets();
-      final success = result as ApiSuccess<List<Pet>, ErrorModel>;
+      final success = result as ApiSuccess<List<Pet>, CreatePetError>;
       expect(success.data, hasLength(2));
       expect(success.data[0].name, equals('Buddy'));
       expect(success.data[0].tag, equals('dog'));
@@ -118,7 +118,7 @@ void main() {
       );
 
       final result = await api.getPet(petId: '1');
-      final success = result as ApiSuccess<Pet, ErrorModel>;
+      final success = result as ApiSuccess<Pet, CreatePetError>;
       expect(success.data.name, equals('Buddy'));
       expect(success.data.owner?.name, equals('Alice'));
     });
@@ -134,8 +134,8 @@ void main() {
       );
 
       final result = await api.getPet(petId: '1');
-      expect(result, isA<ApiParseException<Pet, ErrorModel>>());
-      final parseError = result as ApiParseException<Pet, ErrorModel>;
+      expect(result, isA<ApiParseException<Pet, CreatePetError>>());
+      final parseError = result as ApiParseException<Pet, CreatePetError>;
       expect(parseError.response.statusCode, equals(200));
       expect(parseError.response.body, contains('"id":1'));
     });
@@ -147,8 +147,8 @@ void main() {
       );
 
       final result = await api.getPet(petId: '1');
-      expect(result, isA<ApiParseException<Pet, ErrorModel>>());
-      final parseError = result as ApiParseException<Pet, ErrorModel>;
+      expect(result, isA<ApiParseException<Pet, CreatePetError>>());
+      final parseError = result as ApiParseException<Pet, CreatePetError>;
       expect(parseError.response.statusCode, equals(500));
       expect(parseError.response.body, equals('internal server error'));
     });
@@ -160,10 +160,11 @@ void main() {
       );
 
       final result = await api.getPet(petId: '999');
-      final error = result as ApiError<Pet, ErrorModel>;
+      final error = result as ApiError<Pet, CreatePetError>;
       expect(error.statusCode, equals(404));
-      expect(error.error?.code, equals(404));
-      expect(error.error?.message, equals('Not found'));
+      final variant = error.error! as CreatePetError$ErrorModel;
+      expect(variant.error.code, equals(404));
+      expect(variant.error.message, equals('Not found'));
     });
   });
 
@@ -186,8 +187,8 @@ void main() {
         options: RequestOptions(cancelToken: token),
       );
 
-      expect(result, isA<ApiException<List<Pet>, ErrorModel>>());
-      final exception = result as ApiException<List<Pet>, ErrorModel>;
+      expect(result, isA<ApiException<List<Pet>, CreatePetError>>());
+      final exception = result as ApiException<List<Pet>, CreatePetError>;
       expect(exception.exception, isA<CancelledException>());
     });
   });

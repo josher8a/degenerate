@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_websocket_run_cf_pipecat_ai_smart_turn_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_websocket_run_cf_pipecat_ai_smart_turn_response4002.dart';import 'package:pub_cloudflare/models/workers_ai_post_websocket_run_cf_test_hello_world_cog_response400.dart';/// WorkersAiDumbPipeApi operations.
+import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_websocket_run_cf_pipecat_ai_smart_turn_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_websocket_run_cf_test_hello_world_cog_error.dart';/// WorkersAiDumbPipeApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkersAiDumbPipeApi with ApiExecutor {const WorkersAiDumbPipeApi(th
 /// Opens a WebSocket connection to stream inference results from the @cf/pipecat-ai/smart-turn-v2 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/pipecat-ai/smart-turn-v2`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400>> workersAiPostWebsocketRunCfPipecatAiSmartTurnV2({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError>> workersAiPostWebsocketRunCfPipecatAiSmartTurnV2({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,9 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError.fromResponse(response),
 );
  } 
 /// Open Websocket connection with @cf/pipecat-ai/smart-turn-v3 model.
@@ -35,7 +33,7 @@ return execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/pipecat-ai/smart-turn-v3 model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/pipecat-ai/smart-turn-v3`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002>> workersAiPostWebsocketRunCfPipecatAiSmartTurnV3({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError>> workersAiPostWebsocketRunCfPipecatAiSmartTurnV3({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -47,9 +45,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError.fromResponse(response),
 );
  } 
 /// Open Websocket connection with @cf/test/hello-world-cog model.
@@ -57,7 +53,7 @@ return execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/test/hello-world-cog model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/test/hello-world-cog`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400>> workersAiPostWebsocketRunCfTestHelloWorldCog({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfTestHelloWorldCogError>> workersAiPostWebsocketRunCfTestHelloWorldCog({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,9 +65,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostWebsocketRunCfTestHelloWorldCogError.fromResponse(response),
 );
  } 
  }

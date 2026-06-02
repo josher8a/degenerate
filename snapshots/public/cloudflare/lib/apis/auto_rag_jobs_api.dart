@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_list_job_logs_response/ai_search_instance_list_job_logs_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_get_job_response/autorag_config_get_job_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_get_job_response404.dart';import 'package:pub_cloudflare/models/autorag_config_list_job_logs_response404.dart';import 'package:pub_cloudflare/models/autorag_config_list_jobs_response404.dart';/// AutoRagJobsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_list_job_logs_response/ai_search_instance_list_job_logs_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_get_job_response/autorag_config_get_job_response_result.dart';import 'package:pub_cloudflare/models/errors/autorag_config_get_job_error.dart';import 'package:pub_cloudflare/models/errors/autorag_config_list_job_logs_error.dart';import 'package:pub_cloudflare/models/errors/autorag_config_list_jobs_error.dart';/// AutoRagJobsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class AutoRagJobsApi with ApiExecutor {const AutoRagJobsApi(this.apiConfig
 /// List Jobs
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs`
-Future<ApiResult<List<AutoragConfigGetJobResponseResult>, AutoragConfigListJobsResponse404>> autoragConfigListJobs({required String id, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AutoragConfigGetJobResponseResult>, AutoragConfigListJobsError>> autoragConfigListJobs({required String id, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -37,15 +37,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AutoragConfigGetJobResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return AutoragConfigListJobsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AutoragConfigListJobsError.fromResponse(response),
 );
  } 
 /// Get a Job Details
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}`
-Future<ApiResult<AutoragConfigGetJobResponseResult, AutoragConfigGetJobResponse404>> autoragConfigGetJob({required String id, required String jobId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AutoragConfigGetJobResponseResult, AutoragConfigGetJobError>> autoragConfigGetJob({required String id, required String jobId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -60,15 +58,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AutoragConfigGetJobResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return AutoragConfigGetJobResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AutoragConfigGetJobError.fromResponse(response),
 );
  } 
 /// List Job Logs
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}/logs`
-Future<ApiResult<List<AiSearchInstanceListJobLogsResponseResult>, AutoragConfigListJobLogsResponse404>> autoragConfigListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AiSearchInstanceListJobLogsResponseResult>, AutoragConfigListJobLogsError>> autoragConfigListJobLogs({required String id, required String jobId, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -94,9 +90,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AiSearchInstanceListJobLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return AutoragConfigListJobLogsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AutoragConfigListJobLogsError.fromResponse(response),
 );
  } 
  }

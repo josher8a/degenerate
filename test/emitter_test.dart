@@ -686,9 +686,7 @@ void main() {
     });
 
     test('operations pass error deserializer when error schema exists', () {
-      // Petstore has default error responses with Error schema.
-      // The generated code should try to parse errors as ErrorModel.
-      expect(source, contains('ErrorModel.fromJson'));
+      expect(source, contains('onError'));
     });
 
     test('is valid Dart (formats without error)', () {
@@ -800,9 +798,19 @@ void main() {
       expect(sdkFile, contains('late final PetsApi pets = '));
     });
 
-    test('operations return ApiResult with typed error', () {
+    test('operations return ApiResult with typed error union', () {
       final apiSource = files['apis/pets_api.dart']!;
-      expect(apiSource, contains('ApiResult<List<Pet>, ErrorModel>'));
+      expect(apiSource, contains('ApiResult<List<Pet>, CreatePetsError>'));
+    });
+
+    test('emits error union files', () {
+      expect(
+        files.keys,
+        contains('models/errors/create_pets_error.dart'),
+      );
+      final errorSource = files['models/errors/create_pets_error.dart']!;
+      expect(errorSource, contains('sealed class CreatePetsError'));
+      expect(errorSource, contains('fromResponse'));
     });
 
     test('API files import degenerate_runtime', () {

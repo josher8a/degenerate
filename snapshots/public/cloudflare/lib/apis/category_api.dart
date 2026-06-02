@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/alexandria_category.dart';import 'package:pub_cloudflare/models/delete_category_delete_response.dart';import 'package:pub_cloudflare/models/delete_category_delete_response400.dart';import 'package:pub_cloudflare/models/get_category_list_complete_response.dart';import 'package:pub_cloudflare/models/get_category_list_complete_response400.dart';import 'package:pub_cloudflare/models/get_category_list_response.dart';import 'package:pub_cloudflare/models/get_category_list_response400.dart';import 'package:pub_cloudflare/models/get_category_read_response.dart';import 'package:pub_cloudflare/models/get_category_read_response400.dart';import 'package:pub_cloudflare/models/patch_category_update_request.dart';import 'package:pub_cloudflare/models/patch_category_update_response.dart';import 'package:pub_cloudflare/models/patch_category_update_response400.dart';import 'package:pub_cloudflare/models/post_category_create_request.dart';import 'package:pub_cloudflare/models/post_category_create_response.dart';import 'package:pub_cloudflare/models/post_category_create_response400.dart';import 'package:pub_cloudflare/models/post_category_update_request.dart';import 'package:pub_cloudflare/models/post_category_update_response.dart';import 'package:pub_cloudflare/models/post_category_update_response400.dart';/// CategoryApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/alexandria_category.dart';import 'package:pub_cloudflare/models/delete_category_delete_response.dart';import 'package:pub_cloudflare/models/errors/delete_category_delete_error.dart';import 'package:pub_cloudflare/models/errors/get_category_list_complete_error.dart';import 'package:pub_cloudflare/models/errors/get_category_list_error.dart';import 'package:pub_cloudflare/models/errors/get_category_read_error.dart';import 'package:pub_cloudflare/models/errors/patch_category_update_error.dart';import 'package:pub_cloudflare/models/errors/post_category_create_error.dart';import 'package:pub_cloudflare/models/errors/post_category_update_error.dart';import 'package:pub_cloudflare/models/get_category_list_complete_response.dart';import 'package:pub_cloudflare/models/get_category_list_response.dart';import 'package:pub_cloudflare/models/get_category_read_response.dart';import 'package:pub_cloudflare/models/patch_category_update_request.dart';import 'package:pub_cloudflare/models/patch_category_update_response.dart';import 'package:pub_cloudflare/models/post_category_create_request.dart';import 'package:pub_cloudflare/models/post_category_create_response.dart';import 'package:pub_cloudflare/models/post_category_update_request.dart';import 'package:pub_cloudflare/models/post_category_update_response.dart';/// CategoryApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class CategoryApi with ApiExecutor {const CategoryApi(this.apiConfig);
 /// Lists categories across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/categories`
-Future<ApiResult<List<GetCategoryListResponse>, GetCategoryListResponse400>> getCategoryList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<GetCategoryListResponse>, GetCategoryListError>> getCategoryList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -36,15 +36,13 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetCategoryListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return GetCategoryListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetCategoryListError.fromResponse(response),
 );
  } 
 /// Reads a category
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/categories/{category_id}`
-Future<ApiResult<GetCategoryReadResponse, GetCategoryReadResponse400>> getCategoryRead({required String accountId, required String categoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetCategoryReadResponse, GetCategoryReadError>> getCategoryRead({required String accountId, required String categoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -58,15 +56,13 @@ return execute(
   onSuccess: (response) {
     return GetCategoryReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return GetCategoryReadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetCategoryReadError.fromResponse(response),
 );
  } 
 /// Updates a category
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/categories/{category_id}`
-Future<ApiResult<PostCategoryUpdateResponse, PostCategoryUpdateResponse400>> postCategoryUpdate({required String accountId, required String categoryId, PostCategoryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostCategoryUpdateResponse, PostCategoryUpdateError>> postCategoryUpdate({required String accountId, required String categoryId, PostCategoryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -82,15 +78,13 @@ return execute(
   onSuccess: (response) {
     return PostCategoryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return PostCategoryUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => PostCategoryUpdateError.fromResponse(response),
 );
  } 
 /// Updates a category
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/categories/{category_id}`
-Future<ApiResult<PatchCategoryUpdateResponse, PatchCategoryUpdateResponse400>> patchCategoryUpdate({required String accountId, required String categoryId, PatchCategoryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchCategoryUpdateResponse, PatchCategoryUpdateError>> patchCategoryUpdate({required String accountId, required String categoryId, PatchCategoryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,15 +100,13 @@ return execute(
   onSuccess: (response) {
     return PatchCategoryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return PatchCategoryUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => PatchCategoryUpdateError.fromResponse(response),
 );
  } 
 /// Deletes a category
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/categories/{category_id}`
-Future<ApiResult<DeleteCategoryDeleteResponse, DeleteCategoryDeleteResponse400>> deleteCategoryDelete({required String accountId, required String categoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteCategoryDeleteResponse, DeleteCategoryDeleteError>> deleteCategoryDelete({required String accountId, required String categoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -128,15 +120,13 @@ return execute(
   onSuccess: (response) {
     return DeleteCategoryDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return DeleteCategoryDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteCategoryDeleteError.fromResponse(response),
 );
  } 
 /// Lists categories
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/categories/catalog`
-Future<ApiResult<List<GetCategoryListCompleteResponse>, GetCategoryListCompleteResponse400>> getCategoryListComplete({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetCategoryListCompleteResponse>, GetCategoryListCompleteError>> getCategoryListComplete({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -151,15 +141,13 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetCategoryListCompleteResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return GetCategoryListCompleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetCategoryListCompleteError.fromResponse(response),
 );
  } 
 /// Creates a new category
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/categories/create`
-Future<ApiResult<PostCategoryCreateResponse, PostCategoryCreateResponse400>> postCategoryCreate({required String accountId, PostCategoryCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostCategoryCreateResponse, PostCategoryCreateError>> postCategoryCreate({required String accountId, PostCategoryCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -175,9 +163,7 @@ return execute(
   onSuccess: (response) {
     return PostCategoryCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return PostCategoryCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => PostCategoryCreateError.fromResponse(response),
 );
  } 
 /// Get all application categories

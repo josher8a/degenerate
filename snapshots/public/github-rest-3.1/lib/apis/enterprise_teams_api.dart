@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/enterprise_team.dart';import 'package:pub_github_rest_3_1/models/enterprise_teams_create_request.dart';import 'package:pub_github_rest_3_1/models/enterprise_teams_update_request.dart';/// EnterpriseTeamsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_team.dart';import 'package:pub_github_rest_3_1/models/enterprise_teams_create_request.dart';import 'package:pub_github_rest_3_1/models/enterprise_teams_update_request.dart';import 'package:pub_github_rest_3_1/models/errors/actions_re_run_job_for_workflow_run_error.dart';/// EnterpriseTeamsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class EnterpriseTeamsApi with ApiExecutor {const EnterpriseTeamsApi(this.a
 /// List all teams in the enterprise for the authenticated user
 ///
 /// `GET /enterprises/{enterprise}/teams`
-Future<ApiResult<List<EnterpriseTeam>, BasicError>> enterpriseTeamsList({required String enterprise, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<EnterpriseTeam>, ActionsReRunJobForWorkflowRunError>> enterpriseTeamsList({required String enterprise, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -39,9 +39,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => EnterpriseTeam.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
 );
  } 
 /// Create an enterprise team
@@ -72,7 +70,7 @@ return execute(
 /// Gets a team using the team's slug. To create the slug, GitHub replaces special characters in the name string, changes all words to lowercase, and replaces spaces with a `-` separator and adds the "ent:" prefix. For example, "My TEam Näme" would become `ent:my-team-name`.
 ///
 /// `GET /enterprises/{enterprise}/teams/{team_slug}`
-Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsGet({required String enterprise, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EnterpriseTeam, ActionsReRunJobForWorkflowRunError>> enterpriseTeamsGet({required String enterprise, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,9 +84,7 @@ return execute(
   onSuccess: (response) {
     return EnterpriseTeam.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
 );
  } 
 /// Update an enterprise team
@@ -96,7 +92,7 @@ return execute(
 /// To edit a team, the authenticated user must be an enterprise owner.
 ///
 /// `PATCH /enterprises/{enterprise}/teams/{team_slug}`
-Future<ApiResult<EnterpriseTeam, BasicError>> enterpriseTeamsUpdate({required String enterprise, required String teamSlug, required EnterpriseTeamsUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EnterpriseTeam, ActionsReRunJobForWorkflowRunError>> enterpriseTeamsUpdate({required String enterprise, required String teamSlug, required EnterpriseTeamsUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -112,9 +108,7 @@ return execute(
   onSuccess: (response) {
     return EnterpriseTeam.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
 );
  } 
 /// Delete an enterprise team
@@ -124,7 +118,7 @@ return execute(
 /// If you are an enterprise owner, deleting an enterprise team will delete all of its IdP mappings as well.
 ///
 /// `DELETE /enterprises/{enterprise}/teams/{team_slug}`
-Future<ApiResult<void, BasicError>> enterpriseTeamsDelete({required String enterprise, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsReRunJobForWorkflowRunError>> enterpriseTeamsDelete({required String enterprise, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -136,9 +130,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
 );
  } 
  }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_ip_profile_response/delete_ip_profile_response_result.dart';import 'package:pub_cloudflare/models/failure2.dart';import 'package:pub_cloudflare/models/r2_slurper_connectivity_response.dart';import 'package:pub_cloudflare/models/r2_slurper_create_job_request.dart';import 'package:pub_cloudflare/models/r2_slurper_job_log_response.dart';import 'package:pub_cloudflare/models/r2_slurper_job_progress_response.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response.dart';import 'package:pub_cloudflare/models/r2_slurper_r2_target_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_source_job_schema.dart';/// R2SuperSlurperApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_ip_profile_response/delete_ip_profile_response_result.dart';import 'package:pub_cloudflare/models/errors/slurper_create_job_error.dart';import 'package:pub_cloudflare/models/r2_slurper_connectivity_response.dart';import 'package:pub_cloudflare/models/r2_slurper_create_job_request.dart';import 'package:pub_cloudflare/models/r2_slurper_job_log_response.dart';import 'package:pub_cloudflare/models/r2_slurper_job_progress_response.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response.dart';import 'package:pub_cloudflare/models/r2_slurper_r2_target_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_source_job_schema.dart';/// R2SuperSlurperApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -42,7 +42,7 @@ return execute(
 /// Create a job
 ///
 /// `POST /accounts/{account_id}/slurper/jobs`
-Future<ApiResult<DeleteIpProfileResponseResult?, Failure2>> slurperCreateJob({required String accountId, required R2SlurperCreateJobRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteIpProfileResponseResult?, SlurperCreateJobError>> slurperCreateJob({required String accountId, required R2SlurperCreateJobRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -59,9 +59,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DeleteIpProfileResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) {
-    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => SlurperCreateJobError.fromResponse(response),
 );
  } 
 /// Get job details
@@ -138,7 +136,7 @@ return execute(
 /// Pause a job
 ///
 /// `PUT /accounts/{account_id}/slurper/jobs/{job_id}/pause`
-Future<ApiResult<String?, Failure2>> slurperPauseJob({required String accountId, required String jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, SlurperCreateJobError>> slurperPauseJob({required String accountId, required String jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -153,9 +151,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String?;
   },
-  onError: (response) {
-    return Failure2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => SlurperCreateJobError.fromResponse(response),
 );
  } 
 /// Get job progress

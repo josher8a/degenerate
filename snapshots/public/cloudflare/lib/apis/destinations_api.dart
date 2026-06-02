@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/destination_create_request.dart';import 'package:pub_cloudflare/models/destination_create_response/destination_create_response_result.dart';import 'package:pub_cloudflare/models/destination_create_response400.dart';import 'package:pub_cloudflare/models/destination_list_order.dart';import 'package:pub_cloudflare/models/destination_list_order_by.dart';import 'package:pub_cloudflare/models/destination_list_response/destination_list_response_result.dart';import 'package:pub_cloudflare/models/destination_list_response401.dart';import 'package:pub_cloudflare/models/destination_update_request.dart';import 'package:pub_cloudflare/models/destination_update_response400.dart';import 'package:pub_cloudflare/models/destinations_delete_response401.dart';/// DestinationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/destination_create_request.dart';import 'package:pub_cloudflare/models/destination_create_response/destination_create_response_result.dart';import 'package:pub_cloudflare/models/destination_list_order.dart';import 'package:pub_cloudflare/models/destination_list_order_by.dart';import 'package:pub_cloudflare/models/destination_list_response/destination_list_response_result.dart';import 'package:pub_cloudflare/models/destination_update_request.dart';import 'package:pub_cloudflare/models/errors/destination_create_error.dart';import 'package:pub_cloudflare/models/errors/destination_list_error.dart';import 'package:pub_cloudflare/models/errors/destination_update_error.dart';import 'package:pub_cloudflare/models/errors/destinations_delete_error.dart';/// DestinationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DestinationsApi with ApiExecutor {const DestinationsApi(this.apiConf
 /// List your Workers Observability Telemetry Destinations.
 ///
 /// `GET /accounts/{account_id}/workers/observability/destinations`
-Future<ApiResult<List<DestinationListResponseResult>, DestinationListResponse401>> destinationList({required String accountId, double? page, double? perPage, DestinationListOrder? order, DestinationListOrderBy? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DestinationListResponseResult>, DestinationListError>> destinationList({required String accountId, double? page, double? perPage, DestinationListOrder? order, DestinationListOrderBy? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -45,9 +45,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => DestinationListResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return DestinationListResponse401.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DestinationListError.fromResponse(response),
 );
  } 
 /// Create Destination
@@ -55,7 +53,7 @@ return execute(
 /// Create a new Workers Observability Telemetry Destination.
 ///
 /// `POST /accounts/{account_id}/workers/observability/destinations`
-Future<ApiResult<DestinationCreateResponseResult, DestinationCreateResponse400>> destinationCreate({required String accountId, DestinationCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DestinationCreateResponseResult, DestinationCreateError>> destinationCreate({required String accountId, DestinationCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -72,9 +70,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DestinationCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return DestinationCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DestinationCreateError.fromResponse(response),
 );
  } 
 /// Update Destination
@@ -82,7 +78,7 @@ return execute(
 /// Update an existing Workers Observability Telemetry Destination.
 ///
 /// `PATCH /accounts/{account_id}/workers/observability/destinations/{slug}`
-Future<ApiResult<DestinationCreateResponseResult, DestinationUpdateResponse400>> destinationUpdate({required String accountId, required String slug, DestinationUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DestinationCreateResponseResult, DestinationUpdateError>> destinationUpdate({required String accountId, required String slug, DestinationUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,9 +95,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DestinationCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return DestinationUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DestinationUpdateError.fromResponse(response),
 );
  } 
 /// Delete Destination
@@ -109,7 +103,7 @@ return execute(
 /// Delete a Workers Observability Telemetry Destination.
 ///
 /// `DELETE /accounts/{account_id}/workers/observability/destinations/{slug}`
-Future<ApiResult<DestinationCreateResponseResult?, DestinationsDeleteResponse401>> destinationsDelete({required String accountId, required String slug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DestinationCreateResponseResult?, DestinationsDeleteError>> destinationsDelete({required String accountId, required String slug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -124,9 +118,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DestinationCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) {
-    return DestinationsDeleteResponse401.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DestinationsDeleteError.fromResponse(response),
 );
  } 
  }

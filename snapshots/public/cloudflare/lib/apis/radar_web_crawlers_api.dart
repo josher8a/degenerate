@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_summary_client_type.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_summary_dimension.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_summary_response/radar_get_crawlers_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_summary_response400.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_timeseries_group_client_type.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_timeseries_group_dimension.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_timeseries_group_response/radar_get_crawlers_timeseries_group_response_result.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_timeseries_group_response400.dart';/// RadarWebCrawlersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_crawlers_summary_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_crawlers_timeseries_group_error.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_summary_client_type.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_summary_dimension.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_summary_response/radar_get_crawlers_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_timeseries_group_client_type.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_timeseries_group_dimension.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_crawlers_timeseries_group_response/radar_get_crawlers_timeseries_group_response_result.dart';/// RadarWebCrawlersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarWebCrawlersApi with ApiExecutor {const RadarWebCrawlersApi(this
 /// Retrieves an aggregated summary of HTTP requests from crawlers, grouped by the specified dimension.
 ///
 /// `GET /radar/bots/crawlers/summary/{dimension}`
-Future<ApiResult<RadarGetCrawlersSummaryResponseResult, RadarGetCrawlersSummaryResponse400>> radarGetCrawlersSummary({required RadarGetCrawlersSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersSummaryClientType>? clientType, RadarGetCrawlersSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetCrawlersSummaryResponseResult, RadarGetCrawlersSummaryError>> radarGetCrawlersSummary({required RadarGetCrawlersSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersSummaryClientType>? clientType, RadarGetCrawlersSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -79,9 +79,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCrawlersSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetCrawlersSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetCrawlersSummaryError.fromResponse(response),
 );
  } 
 /// Get time series of crawler HTTP request distribution by dimension
@@ -89,7 +87,7 @@ return execute(
 /// Retrieves the distribution of HTTP requests from crawlers, grouped by the specified dimension over time.
 ///
 /// `GET /radar/bots/crawlers/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetCrawlersTimeseriesGroupResponseResult, RadarGetCrawlersTimeseriesGroupResponse400>> radarGetCrawlersTimeseriesGroup({required RadarGetCrawlersTimeseriesGroupDimension dimension, RadarGetCrawlersTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersTimeseriesGroupClientType>? clientType, RadarGetCrawlersTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetCrawlersTimeseriesGroupResponseResult, RadarGetCrawlersTimeseriesGroupError>> radarGetCrawlersTimeseriesGroup({required RadarGetCrawlersTimeseriesGroupDimension dimension, RadarGetCrawlersTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? botOperator, List<String>? vertical, List<String>? industry, List<RadarGetCrawlersTimeseriesGroupClientType>? clientType, RadarGetCrawlersTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -158,9 +156,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCrawlersTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetCrawlersTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetCrawlersTimeseriesGroupError.fromResponse(response),
 );
  } 
  }

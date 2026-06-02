@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_response/radar_get_ai_bots_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_format.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/radar_get_certificate_authorities_response_result.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response400.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authority_details_format.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authority_details_response/radar_get_certificate_authority_details_response_result.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authority_details_response404.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_format.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/radar_get_certificate_log_details_response_result.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response404.dart';import 'package:pub_cloudflare/models/radar_get_certificate_logs_format.dart';import 'package:pub_cloudflare/models/radar_get_certificate_logs_response/radar_get_certificate_logs_response_result.dart';import 'package:pub_cloudflare/models/radar_get_certificate_logs_response400.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_dimension.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_duration.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_entry_type.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_expiration_status.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_log.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_normalization.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_public_key_algorithm.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_response/radar_get_ct_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_response400.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_signature_algorithm.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_unique_entries.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_validation_level.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_duration.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_entry_type.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_expiration_status.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_dimension.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_duration.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_entry_type.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_expiration_status.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_log.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_normalization.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_public_key_algorithm.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/radar_get_ct_timeseries_group_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response400.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_signature_algorithm.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_unique_entries.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_validation_level.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_log.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_public_key_algorithm.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_response400.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_signature_algorithm.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_unique_entries.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_validation_level.dart';/// RadarCertificateTransparencyApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_certificate_authorities_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_certificate_authority_details_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_certificate_log_details_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_certificate_logs_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_ct_summary_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_ct_timeseries_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_ct_timeseries_group_error.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_response/radar_get_ai_bots_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_format.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/radar_get_certificate_authorities_response_result.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authority_details_format.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authority_details_response/radar_get_certificate_authority_details_response_result.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_format.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/radar_get_certificate_log_details_response_result.dart';import 'package:pub_cloudflare/models/radar_get_certificate_logs_format.dart';import 'package:pub_cloudflare/models/radar_get_certificate_logs_response/radar_get_certificate_logs_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_dimension.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_duration.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_entry_type.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_expiration_status.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_log.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_normalization.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_public_key_algorithm.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_response/radar_get_ct_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_signature_algorithm.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_unique_entries.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_validation_level.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_duration.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_entry_type.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_expiration_status.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_dimension.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_duration.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_entry_type.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_expiration_status.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_log.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_normalization.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_public_key_algorithm.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/radar_get_ct_timeseries_group_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_signature_algorithm.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_unique_entries.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_validation_level.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_log.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_public_key_algorithm.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_signature_algorithm.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_unique_entries.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_validation_level.dart';/// RadarCertificateTransparencyApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarCertificateTransparencyApi with ApiExecutor {const RadarCertifi
 /// Retrieves a list of certificate authorities.
 ///
 /// `GET /radar/ct/authorities`
-Future<ApiResult<RadarGetCertificateAuthoritiesResponseResult, RadarGetCertificateAuthoritiesResponse400>> radarGetCertificateAuthorities({int? limit, int? offset, RadarGetCertificateAuthoritiesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetCertificateAuthoritiesResponseResult, RadarGetCertificateAuthoritiesError>> radarGetCertificateAuthorities({int? limit, int? offset, RadarGetCertificateAuthoritiesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -42,9 +42,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCertificateAuthoritiesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetCertificateAuthoritiesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetCertificateAuthoritiesError.fromResponse(response),
 );
  } 
 /// Get certificate authority details
@@ -52,7 +50,7 @@ return execute(
 /// Retrieves the requested CA information.
 ///
 /// `GET /radar/ct/authorities/{ca_slug}`
-Future<ApiResult<RadarGetCertificateAuthorityDetailsResponseResult, RadarGetCertificateAuthorityDetailsResponse404>> radarGetCertificateAuthorityDetails({required String caSlug, RadarGetCertificateAuthorityDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetCertificateAuthorityDetailsResponseResult, RadarGetCertificateAuthorityDetailsError>> radarGetCertificateAuthorityDetails({required String caSlug, RadarGetCertificateAuthorityDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -75,9 +73,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCertificateAuthorityDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetCertificateAuthorityDetailsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetCertificateAuthorityDetailsError.fromResponse(response),
 );
  } 
 /// List certificate logs
@@ -85,7 +81,7 @@ return execute(
 /// Retrieves a list of certificate logs.
 ///
 /// `GET /radar/ct/logs`
-Future<ApiResult<RadarGetCertificateLogsResponseResult, RadarGetCertificateLogsResponse400>> radarGetCertificateLogs({int? limit, int? offset, RadarGetCertificateLogsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetCertificateLogsResponseResult, RadarGetCertificateLogsError>> radarGetCertificateLogs({int? limit, int? offset, RadarGetCertificateLogsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -114,9 +110,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCertificateLogsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetCertificateLogsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetCertificateLogsError.fromResponse(response),
 );
  } 
 /// Get certificate log details
@@ -124,7 +118,7 @@ return execute(
 /// Retrieves the requested certificate log information.
 ///
 /// `GET /radar/ct/logs/{log_slug}`
-Future<ApiResult<RadarGetCertificateLogDetailsResponseResult, RadarGetCertificateLogDetailsResponse404>> radarGetCertificateLogDetails({required String logSlug, RadarGetCertificateLogDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetCertificateLogDetailsResponseResult, RadarGetCertificateLogDetailsError>> radarGetCertificateLogDetails({required String logSlug, RadarGetCertificateLogDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -147,9 +141,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCertificateLogDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetCertificateLogDetailsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetCertificateLogDetailsError.fromResponse(response),
 );
  } 
 /// Get certificate distribution by dimension
@@ -157,7 +149,7 @@ return execute(
 /// Retrieves an aggregated summary of certificates grouped by the specified dimension.
 ///
 /// `GET /radar/ct/summary/{dimension}`
-Future<ApiResult<RadarGetCtSummaryResponseResult, RadarGetCtSummaryResponse400>> radarGetCtSummary({required RadarGetCtSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? ca, List<String>? caOwner, List<RadarGetCtSummaryDuration>? duration, List<RadarGetCtSummaryEntryType>? entryType, List<RadarGetCtSummaryExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtSummaryLog>? logApi, List<String>? logOperator, List<RadarGetCtSummaryPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtSummarySignatureAlgorithm>? signatureAlgorithm, List<String>? tld, List<RadarGetCtSummaryValidationLevel>? validationLevel, List<RadarGetCtSummaryUniqueEntries>? uniqueEntries, RadarGetCtSummaryNormalization? normalization, RadarGetCtSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetCtSummaryResponseResult, RadarGetCtSummaryError>> radarGetCtSummary({required RadarGetCtSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? ca, List<String>? caOwner, List<RadarGetCtSummaryDuration>? duration, List<RadarGetCtSummaryEntryType>? entryType, List<RadarGetCtSummaryExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtSummaryLog>? logApi, List<String>? logOperator, List<RadarGetCtSummaryPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtSummarySignatureAlgorithm>? signatureAlgorithm, List<String>? tld, List<RadarGetCtSummaryValidationLevel>? validationLevel, List<RadarGetCtSummaryUniqueEntries>? uniqueEntries, RadarGetCtSummaryNormalization? normalization, RadarGetCtSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -281,9 +273,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCtSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetCtSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetCtSummaryError.fromResponse(response),
 );
  } 
 /// Get certificates time series
@@ -291,7 +281,7 @@ return execute(
 /// Retrieves certificate volume over time.
 ///
 /// `GET /radar/ct/timeseries`
-Future<ApiResult<RadarGetAiBotsTimeseriesResponseResult, RadarGetCtTimeseriesResponse400>> radarGetCtTimeseries({RadarGetCtTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? ca, List<String>? caOwner, List<RadarGetCtTimeseriesDuration>? duration, List<RadarGetCtTimeseriesEntryType>? entryType, List<RadarGetCtTimeseriesExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtTimeseriesLog>? logApi, List<String>? logOperator, List<RadarGetCtTimeseriesPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtTimeseriesSignatureAlgorithm>? signatureAlgorithm, List<String>? tld, List<RadarGetCtTimeseriesValidationLevel>? validationLevel, List<RadarGetCtTimeseriesUniqueEntries>? uniqueEntries, RadarGetCtTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesResponseResult, RadarGetCtTimeseriesError>> radarGetCtTimeseries({RadarGetCtTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? ca, List<String>? caOwner, List<RadarGetCtTimeseriesDuration>? duration, List<RadarGetCtTimeseriesEntryType>? entryType, List<RadarGetCtTimeseriesExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtTimeseriesLog>? logApi, List<String>? logOperator, List<RadarGetCtTimeseriesPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtTimeseriesSignatureAlgorithm>? signatureAlgorithm, List<String>? tld, List<RadarGetCtTimeseriesValidationLevel>? validationLevel, List<RadarGetCtTimeseriesUniqueEntries>? uniqueEntries, RadarGetCtTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -412,9 +402,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetCtTimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetCtTimeseriesError.fromResponse(response),
 );
  } 
 /// Get time series of certificate distribution by dimension
@@ -422,7 +410,7 @@ return execute(
 /// Retrieves the distribution of certificates grouped by the specified dimension over time.
 ///
 /// `GET /radar/ct/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetCtTimeseriesGroupResponseResult, RadarGetCtTimeseriesGroupResponse400>> radarGetCtTimeseriesGroup({required RadarGetCtTimeseriesGroupDimension dimension, RadarGetCtTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? ca, List<String>? caOwner, List<RadarGetCtTimeseriesGroupDuration>? duration, List<RadarGetCtTimeseriesGroupEntryType>? entryType, List<RadarGetCtTimeseriesGroupExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtTimeseriesGroupLog>? logApi, List<String>? logOperator, List<RadarGetCtTimeseriesGroupPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtTimeseriesGroupSignatureAlgorithm>? signatureAlgorithm, List<RadarGetCtTimeseriesGroupValidationLevel>? validationLevel, List<String>? tld, RadarGetCtTimeseriesGroupNormalization? normalization, List<RadarGetCtTimeseriesGroupUniqueEntries>? uniqueEntries, RadarGetCtTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetCtTimeseriesGroupResponseResult, RadarGetCtTimeseriesGroupError>> radarGetCtTimeseriesGroup({required RadarGetCtTimeseriesGroupDimension dimension, RadarGetCtTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? ca, List<String>? caOwner, List<RadarGetCtTimeseriesGroupDuration>? duration, List<RadarGetCtTimeseriesGroupEntryType>? entryType, List<RadarGetCtTimeseriesGroupExpirationStatus>? expirationStatus, List<bool>? hasIps, List<bool>? hasWildcards, List<String>? log, List<RadarGetCtTimeseriesGroupLog>? logApi, List<String>? logOperator, List<RadarGetCtTimeseriesGroupPublicKeyAlgorithm>? publicKeyAlgorithm, List<RadarGetCtTimeseriesGroupSignatureAlgorithm>? signatureAlgorithm, List<RadarGetCtTimeseriesGroupValidationLevel>? validationLevel, List<String>? tld, RadarGetCtTimeseriesGroupNormalization? normalization, List<RadarGetCtTimeseriesGroupUniqueEntries>? uniqueEntries, RadarGetCtTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -549,9 +537,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCtTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetCtTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetCtTimeseriesGroupError.fromResponse(response),
 );
  } 
  }

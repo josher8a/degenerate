@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_call_call_recording.dart';import 'package:pub_twilio_api_v2010/models/create_call_recording_request.dart';import 'package:pub_twilio_api_v2010/models/list_call_recording_response.dart';import 'package:pub_twilio_api_v2010/models/update_call_recording_request.dart';import 'package:pub_twilio_api_v2010/models/update_call_recording_response408.dart';/// Api20100401CallRecordingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_call_call_recording.dart';import 'package:pub_twilio_api_v2010/models/create_call_recording_request.dart';import 'package:pub_twilio_api_v2010/models/errors/update_call_recording_error.dart';import 'package:pub_twilio_api_v2010/models/list_call_recording_response.dart';import 'package:pub_twilio_api_v2010/models/update_call_recording_request.dart';/// Api20100401CallRecordingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -106,7 +106,7 @@ return execute(
 /// Changes the status of the recording to paused, stopped, or in-progress. Note: Pass `Twilio.CURRENT` instead of recording sid to reference current active recording.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json`
-Future<ApiResult<AccountCallCallRecording, UpdateCallRecordingResponse408>> updateCallRecording({required String accountSid, required String callSid, required String sid, UpdateCallRecordingRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountCallCallRecording, UpdateCallRecordingError>> updateCallRecording({required String accountSid, required String callSid, required String sid, UpdateCallRecordingRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -126,9 +126,7 @@ return execute(
   onSuccess: (response) {
     return AccountCallCallRecording.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return UpdateCallRecordingResponse408.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => UpdateCallRecordingError.fromResponse(response),
 );
  } 
 /// Delete a recording from your account

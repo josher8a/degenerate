@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_account_id.dart';import 'package:pub_cloudflare/models/r2_data_catalog_bucket_name.dart';import 'package:pub_cloudflare/models/r2_data_catalog_namespace_list_response.dart';import 'package:pub_cloudflare/models/response_common_failure55.dart';/// NamespaceManagementApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/disable_catalog_error.dart';import 'package:pub_cloudflare/models/r2_data_catalog_account_id.dart';import 'package:pub_cloudflare/models/r2_data_catalog_bucket_name.dart';import 'package:pub_cloudflare/models/r2_data_catalog_namespace_list_response.dart';/// NamespaceManagementApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -16,7 +16,7 @@ final class NamespaceManagementApi with ApiExecutor {const NamespaceManagementAp
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces`
-Future<ApiResult<R2DataCatalogNamespaceListResponse?, ResponseCommonFailure55>> listNamespaces({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, String? pageToken, int? pageSize, String? parent, bool? returnUuids, bool? returnDetails, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<R2DataCatalogNamespaceListResponse?, DisableCatalogError>> listNamespaces({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, String? pageToken, int? pageSize, String? parent, bool? returnUuids, bool? returnDetails, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pageToken != null) {
   queryParameters['page_token'] = pageToken;
@@ -51,9 +51,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2DataCatalogNamespaceListResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) {
-    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DisableCatalogError.fromResponse(response),
 );
  } 
  }

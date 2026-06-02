@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_create_build_request.dart';import 'package:pub_cloudflare/models/builds_create_trigger_request.dart';import 'package:pub_cloudflare/models/builds_error_response.dart';import 'package:pub_cloudflare/models/builds_trigger_uuid.dart';import 'package:pub_cloudflare/models/builds_update_trigger_request.dart';/// TriggersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_create_build_request.dart';import 'package:pub_cloudflare/models/builds_create_trigger_request.dart';import 'package:pub_cloudflare/models/builds_trigger_uuid.dart';import 'package:pub_cloudflare/models/builds_update_trigger_request.dart';import 'package:pub_cloudflare/models/errors/cancel_build_by_uuid_error.dart';/// TriggersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -37,7 +37,7 @@ return execute(
 /// Update an existing CI/CD trigger
 ///
 /// `PATCH /accounts/{account_id}/builds/triggers/{trigger_uuid}`
-Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> updateTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsUpdateTriggerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> updateTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsUpdateTriggerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,9 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) {
-    return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CancelBuildByUuidError.fromResponse(response),
 );
  } 
 /// Delete trigger
@@ -64,7 +62,7 @@ return execute(
 /// Remove a CI/CD trigger
 ///
 /// `DELETE /accounts/{account_id}/builds/triggers/{trigger_uuid}`
-Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> deleteTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> deleteTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -79,9 +77,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) {
-    return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CancelBuildByUuidError.fromResponse(response),
 );
  } 
 /// Create manual build
@@ -113,7 +109,7 @@ return execute(
 /// Clear the build cache for a specific trigger
 ///
 /// `POST /accounts/{account_id}/builds/triggers/{trigger_uuid}/purge_build_cache`
-Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> purgeBuildCache({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> purgeBuildCache({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -128,9 +124,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) {
-    return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CancelBuildByUuidError.fromResponse(response),
 );
  } 
  }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n5_img2img_request.dart';import 'package:pub_cloudflare/models/n5_img2img_response400.dart';import 'package:pub_cloudflare/models/n5_inpainting_request.dart';import 'package:pub_cloudflare/models/n5_inpainting_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux1_schnell_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux1_schnell_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux2_dev_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux2_dev_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux2_klein4b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux2_klein4b_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux2_klein9b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux2_klein9b_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_leonardo_lucid_origin_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_leonardo_lucid_origin_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_leonardo_phoenix10_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_leonardo_phoenix10_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_lykon_dreamshaper8_lcm_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_lykon_dreamshaper8_lcm_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_stabilityai_stable_diffusion_xl_base10_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_stabilityai_stable_diffusion_xl_base10_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_websocket_run_cf_sven_test_pipe_http_response400.dart';/// WorkersAiTextToImageApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/img2img_error.dart';import 'package:pub_cloudflare/models/errors/inpainting_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_black_forest_labs_flux1_schnell_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_black_forest_labs_flux2_dev_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_black_forest_labs_flux2_klein4b_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_black_forest_labs_flux2_klein9b_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_leonardo_lucid_origin_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_leonardo_phoenix10_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_lykon_dreamshaper8_lcm_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_stabilityai_stable_diffusion_xl_base10_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_websocket_run_cf_sven_test_pipe_http_error.dart';import 'package:pub_cloudflare/models/n5_img2img_request.dart';import 'package:pub_cloudflare/models/n5_inpainting_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux1_schnell_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux2_dev_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux2_klein4b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux2_klein9b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_leonardo_lucid_origin_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_leonardo_phoenix10_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_lykon_dreamshaper8_lcm_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_stabilityai_stable_diffusion_xl_base10_request.dart';/// WorkersAiTextToImageApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkersAiTextToImageApi with ApiExecutor {const WorkersAiTextToImage
 /// Runs inference on the @cf/black-forest-labs/flux-1-schnell model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/black-forest-labs/flux-1-schnell`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400>> workersAiPostRunCfBlackForestLabsFlux1Schnell({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux1SchnellError>> workersAiPostRunCfBlackForestLabsFlux1Schnell({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -40,9 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBlackForestLabsFlux1SchnellError.fromResponse(response),
 );
  } 
 /// Execute @cf/black-forest-labs/flux-2-dev model.
@@ -50,7 +48,7 @@ return execute(
 /// Runs inference on the @cf/black-forest-labs/flux-2-dev model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/black-forest-labs/flux-2-dev`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400>> workersAiPostRunCfBlackForestLabsFlux2Dev({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2DevRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux2DevError>> workersAiPostRunCfBlackForestLabsFlux2Dev({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2DevRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -77,9 +75,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBlackForestLabsFlux2DevError.fromResponse(response),
 );
  } 
 /// Execute @cf/black-forest-labs/flux-2-klein-4b model.
@@ -87,7 +83,7 @@ return execute(
 /// Runs inference on the @cf/black-forest-labs/flux-2-klein-4b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/black-forest-labs/flux-2-klein-4b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400>> workersAiPostRunCfBlackForestLabsFlux2Klein4b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux2Klein4bError>> workersAiPostRunCfBlackForestLabsFlux2Klein4b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2Klein4bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -114,9 +110,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBlackForestLabsFlux2Klein4bError.fromResponse(response),
 );
  } 
 /// Execute @cf/black-forest-labs/flux-2-klein-9b model.
@@ -124,7 +118,7 @@ return execute(
 /// Runs inference on the @cf/black-forest-labs/flux-2-klein-9b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/black-forest-labs/flux-2-klein-9b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux2Klein9bResponse400>> workersAiPostRunCfBlackForestLabsFlux2Klein9b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBlackForestLabsFlux2Klein9bError>> workersAiPostRunCfBlackForestLabsFlux2Klein9b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -151,9 +145,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfBlackForestLabsFlux2Klein9bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBlackForestLabsFlux2Klein9bError.fromResponse(response),
 );
  } 
 /// Execute @cf/bytedance/stable-diffusion-xl-lightning model.
@@ -161,7 +153,7 @@ return execute(
 /// Runs inference on the @cf/bytedance/stable-diffusion-xl-lightning model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/bytedance/stable-diffusion-xl-lightning`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBytedanceStableDiffusionXlLightningResponse400>> workersAiPostRunCfBytedanceStableDiffusionXlLightning({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError>> workersAiPostRunCfBytedanceStableDiffusionXlLightning({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -188,9 +180,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfBytedanceStableDiffusionXlLightningResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError.fromResponse(response),
 );
  } 
 /// Execute @cf/leonardo/lucid-origin model.
@@ -198,7 +188,7 @@ return execute(
 /// Runs inference on the @cf/leonardo/lucid-origin model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/leonardo/lucid-origin`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfLeonardoLucidOriginResponse400>> workersAiPostRunCfLeonardoLucidOrigin({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLeonardoLucidOriginRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfLeonardoLucidOriginError>> workersAiPostRunCfLeonardoLucidOrigin({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLeonardoLucidOriginRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -225,9 +215,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfLeonardoLucidOriginResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfLeonardoLucidOriginError.fromResponse(response),
 );
  } 
 /// Execute @cf/leonardo/phoenix-1.0 model.
@@ -235,7 +223,7 @@ return execute(
 /// Runs inference on the @cf/leonardo/phoenix-1.0 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/leonardo/phoenix-1.0`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfLeonardoPhoenix10Response400>> workersAiPostRunCfLeonardoPhoenix10({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLeonardoPhoenix10Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfLeonardoPhoenix10Error>> workersAiPostRunCfLeonardoPhoenix10({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLeonardoPhoenix10Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -262,9 +250,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfLeonardoPhoenix10Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfLeonardoPhoenix10Error.fromResponse(response),
 );
  } 
 /// Execute @cf/lykon/dreamshaper-8-lcm model.
@@ -272,7 +258,7 @@ return execute(
 /// Runs inference on the @cf/lykon/dreamshaper-8-lcm model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/lykon/dreamshaper-8-lcm`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfLykonDreamshaper8LcmResponse400>> workersAiPostRunCfLykonDreamshaper8Lcm({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLykonDreamshaper8LcmRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfLykonDreamshaper8LcmError>> workersAiPostRunCfLykonDreamshaper8Lcm({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfLykonDreamshaper8LcmRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -299,9 +285,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfLykonDreamshaper8LcmResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfLykonDreamshaper8LcmError.fromResponse(response),
 );
  } 
 /// Execute @cf/runwayml/stable-diffusion-v1-5-img2img model.
@@ -309,7 +293,7 @@ return execute(
 /// Runs inference on the @cf/runwayml/stable-diffusion-v1-5-img2img model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/runwayml/stable-diffusion-v1-5-img2img`
-Future<ApiResult<Map<String, dynamic>, $5Img2imgResponse400>> workersAiPostRunCfRunwaymlStableDiffusionV15Img2img({required String accountId, String? queueRequest, String? tags, $5Img2imgRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, Img2imgError>> workersAiPostRunCfRunwaymlStableDiffusionV15Img2img({required String accountId, String? queueRequest, String? tags, $5Img2imgRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -336,9 +320,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return $5Img2imgResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => Img2imgError.fromResponse(response),
 );
  } 
 /// Execute @cf/runwayml/stable-diffusion-v1-5-inpainting model.
@@ -346,7 +328,7 @@ return execute(
 /// Runs inference on the @cf/runwayml/stable-diffusion-v1-5-inpainting model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/runwayml/stable-diffusion-v1-5-inpainting`
-Future<ApiResult<Map<String, dynamic>, $5InpaintingResponse400>> workersAiPostRunCfRunwaymlStableDiffusionV15Inpainting({required String accountId, String? queueRequest, String? tags, $5InpaintingRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, InpaintingError>> workersAiPostRunCfRunwaymlStableDiffusionV15Inpainting({required String accountId, String? queueRequest, String? tags, $5InpaintingRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -373,9 +355,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return $5InpaintingResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => InpaintingError.fromResponse(response),
 );
  } 
 /// Execute @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
@@ -383,7 +363,7 @@ return execute(
 /// Runs inference on the @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/stabilityai/stable-diffusion-xl-base-1.0`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400>> workersAiPostRunCfStabilityaiStableDiffusionXlBase10({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error>> workersAiPostRunCfStabilityaiStableDiffusionXlBase10({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -410,9 +390,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error.fromResponse(response),
 );
  } 
 /// Open Websocket connection with @cf/sven/test-pipe-http model.
@@ -420,7 +398,7 @@ return execute(
 /// Opens a WebSocket connection to stream inference results from the @cf/sven/test-pipe-http model.
 ///
 /// `GET /accounts/{account_id}/ai/run/@cf/sven/test-pipe-http`
-Future<ApiResult<void, WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400>> workersAiPostWebsocketRunCfSvenTestPipeHttp({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfSvenTestPipeHttpError>> workersAiPostWebsocketRunCfSvenTestPipeHttp({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -432,9 +410,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostWebsocketRunCfSvenTestPipeHttpError.fromResponse(response),
 );
  } 
  }

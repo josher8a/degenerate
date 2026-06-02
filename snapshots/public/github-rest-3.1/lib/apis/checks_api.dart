@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/check_annotation.dart';import 'package:pub_github_rest_3_1/models/check_run.dart';import 'package:pub_github_rest_3_1/models/check_suite.dart';import 'package:pub_github_rest_3_1/models/check_suite_preference.dart';import 'package:pub_github_rest_3_1/models/checks_create_request.dart';import 'package:pub_github_rest_3_1/models/checks_create_suite_request.dart';import 'package:pub_github_rest_3_1/models/checks_list_for_ref_filter.dart';import 'package:pub_github_rest_3_1/models/checks_list_for_ref_response.dart';import 'package:pub_github_rest_3_1/models/checks_list_for_ref_status.dart';import 'package:pub_github_rest_3_1/models/checks_list_for_suite_filter.dart';import 'package:pub_github_rest_3_1/models/checks_list_for_suite_response.dart';import 'package:pub_github_rest_3_1/models/checks_list_for_suite_status.dart';import 'package:pub_github_rest_3_1/models/checks_list_suites_for_ref_response.dart';import 'package:pub_github_rest_3_1/models/checks_set_suites_preferences_request.dart';import 'package:pub_github_rest_3_1/models/checks_update_request.dart';import 'package:pub_github_rest_3_1/models/empty_object.dart';/// ChecksApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_annotation.dart';import 'package:pub_github_rest_3_1/models/check_run.dart';import 'package:pub_github_rest_3_1/models/check_suite.dart';import 'package:pub_github_rest_3_1/models/check_suite_preference.dart';import 'package:pub_github_rest_3_1/models/checks_create_request.dart';import 'package:pub_github_rest_3_1/models/checks_create_suite_request.dart';import 'package:pub_github_rest_3_1/models/checks_list_for_ref_filter.dart';import 'package:pub_github_rest_3_1/models/checks_list_for_ref_response.dart';import 'package:pub_github_rest_3_1/models/checks_list_for_ref_status.dart';import 'package:pub_github_rest_3_1/models/checks_list_for_suite_filter.dart';import 'package:pub_github_rest_3_1/models/checks_list_for_suite_response.dart';import 'package:pub_github_rest_3_1/models/checks_list_for_suite_status.dart';import 'package:pub_github_rest_3_1/models/checks_list_suites_for_ref_response.dart';import 'package:pub_github_rest_3_1/models/checks_set_suites_preferences_request.dart';import 'package:pub_github_rest_3_1/models/checks_update_request.dart';import 'package:pub_github_rest_3_1/models/empty_object.dart';import 'package:pub_github_rest_3_1/models/errors/checks_rerequest_run_error.dart';/// ChecksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -134,7 +134,7 @@ return execute(
 /// For more information about how to re-run GitHub Actions jobs, see "[Re-run a job from a workflow run](https://docs.github.com/rest/actions/workflow-runs#re-run-a-job-from-a-workflow-run)".
 ///
 /// `POST /repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest`
-Future<ApiResult<EmptyObject, BasicError>> checksRerequestRun({required String owner, required String repo, required int checkRunId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmptyObject, ChecksRerequestRunError>> checksRerequestRun({required String owner, required String repo, required int checkRunId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -148,9 +148,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ChecksRerequestRunError.fromResponse(response),
 );
  } 
 /// Create a check suite

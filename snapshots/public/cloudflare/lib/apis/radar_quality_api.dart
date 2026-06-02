@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_summary_metric.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_summary_response/radar_get_quality_index_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_summary_response400.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_timeseries_group_metric.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_timeseries_group_response/radar_get_quality_index_timeseries_group_response_result.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_timeseries_group_response400.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_histogram_format.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_histogram_metric_group.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_histogram_response/radar_get_quality_speed_histogram_response_result.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_histogram_response400.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_summary_response/radar_get_quality_speed_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_summary_response400.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_ases_format.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_ases_order_by.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_ases_response/radar_get_quality_speed_top_ases_response_result.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_ases_response404.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_locations_format.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_locations_order_by.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_locations_response/radar_get_quality_speed_top_locations_response_result.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_locations_response404.dart';/// RadarQualityApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_quality_index_summary_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_quality_index_timeseries_group_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_quality_speed_histogram_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_quality_speed_summary_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_quality_speed_top_ases_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_quality_speed_top_locations_error.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_summary_metric.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_summary_response/radar_get_quality_index_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_timeseries_group_metric.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_timeseries_group_response/radar_get_quality_index_timeseries_group_response_result.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_histogram_format.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_histogram_metric_group.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_histogram_response/radar_get_quality_speed_histogram_response_result.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_summary_response/radar_get_quality_speed_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_ases_format.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_ases_order_by.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_ases_response/radar_get_quality_speed_top_ases_response_result.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_locations_format.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_locations_order_by.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_locations_response/radar_get_quality_speed_top_locations_response_result.dart';/// RadarQualityApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarQualityApi with ApiExecutor {const RadarQualityApi(this.apiConf
 /// Retrieves a summary (percentiles) of bandwidth, latency, or DNS response time from the Radar Internet Quality Index (IQI).
 ///
 /// `GET /radar/quality/iqi/summary`
-Future<ApiResult<RadarGetQualityIndexSummaryResponseResult, RadarGetQualityIndexSummaryResponse400>> radarGetQualityIndexSummary({required RadarGetQualityIndexSummaryMetric metric, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualityIndexSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetQualityIndexSummaryResponseResult, RadarGetQualityIndexSummaryError>> radarGetQualityIndexSummary({required RadarGetQualityIndexSummaryMetric metric, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualityIndexSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -72,9 +72,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetQualityIndexSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetQualityIndexSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetQualityIndexSummaryError.fromResponse(response),
 );
  } 
 /// Get Internet Quality Index (IQI) time series
@@ -82,7 +80,7 @@ return execute(
 /// Retrieves a time series (percentiles) of bandwidth, latency, or DNS response time from the Radar Internet Quality Index (IQI).
 ///
 /// `GET /radar/quality/iqi/timeseries_groups`
-Future<ApiResult<RadarGetQualityIndexTimeseriesGroupResponseResult, RadarGetQualityIndexTimeseriesGroupResponse400>> radarGetQualityIndexTimeseriesGroup({required RadarGetQualityIndexTimeseriesGroupMetric metric, RadarGetQualityIndexTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, bool? interpolation, RadarGetQualityIndexTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetQualityIndexTimeseriesGroupResponseResult, RadarGetQualityIndexTimeseriesGroupError>> radarGetQualityIndexTimeseriesGroup({required RadarGetQualityIndexTimeseriesGroupMetric metric, RadarGetQualityIndexTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, bool? interpolation, RadarGetQualityIndexTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -147,9 +145,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetQualityIndexTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetQualityIndexTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetQualityIndexTimeseriesGroupError.fromResponse(response),
 );
  } 
 /// Get speed tests histogram
@@ -157,7 +153,7 @@ return execute(
 /// Retrieves a histogram from the previous 90 days of Cloudflare Speed Test data, split into fixed bandwidth (Mbps), latency (ms), or jitter (ms) buckets.
 ///
 /// `GET /radar/quality/speed/histogram`
-Future<ApiResult<RadarGetQualitySpeedHistogramResponseResult, RadarGetQualitySpeedHistogramResponse400>> radarGetQualitySpeedHistogram({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? bucketSize, RadarGetQualitySpeedHistogramMetricGroup? metricGroup, RadarGetQualitySpeedHistogramFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetQualitySpeedHistogramResponseResult, RadarGetQualitySpeedHistogramError>> radarGetQualitySpeedHistogram({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? bucketSize, RadarGetQualitySpeedHistogramMetricGroup? metricGroup, RadarGetQualitySpeedHistogramFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -211,9 +207,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetQualitySpeedHistogramResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetQualitySpeedHistogramResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetQualitySpeedHistogramError.fromResponse(response),
 );
  } 
 /// Get speed tests summary
@@ -221,7 +215,7 @@ return execute(
 /// Retrieves a summary of bandwidth, latency, jitter, and packet loss, from the previous 90 days of Cloudflare Speed Test data.
 ///
 /// `GET /radar/quality/speed/summary`
-Future<ApiResult<RadarGetQualitySpeedSummaryResponseResult, RadarGetQualitySpeedSummaryResponse400>> radarGetQualitySpeedSummary({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetQualitySpeedSummaryResponseResult, RadarGetQualitySpeedSummaryError>> radarGetQualitySpeedSummary({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -269,9 +263,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetQualitySpeedSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetQualitySpeedSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetQualitySpeedSummaryError.fromResponse(response),
 );
  } 
 /// Get top ASes by speed test results
@@ -279,7 +271,7 @@ return execute(
 /// Retrieves the top autonomous systems by bandwidth, latency, jitter, or packet loss, from the previous 90 days of Cloudflare Speed Test data.
 ///
 /// `GET /radar/quality/speed/top/ases`
-Future<ApiResult<RadarGetQualitySpeedTopAsesResponseResult, RadarGetQualitySpeedTopAsesResponse404>> radarGetQualitySpeedTopAses({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopAsesOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetQualitySpeedTopAsesResponseResult, RadarGetQualitySpeedTopAsesError>> radarGetQualitySpeedTopAses({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopAsesOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -336,9 +328,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetQualitySpeedTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetQualitySpeedTopAsesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetQualitySpeedTopAsesError.fromResponse(response),
 );
  } 
 /// Get top locations by speed test results
@@ -346,7 +336,7 @@ return execute(
 /// Retrieves the top locations by bandwidth, latency, jitter, or packet loss, from the previous 90 days of Cloudflare Speed Test data.
 ///
 /// `GET /radar/quality/speed/top/locations`
-Future<ApiResult<RadarGetQualitySpeedTopLocationsResponseResult, RadarGetQualitySpeedTopLocationsResponse404>> radarGetQualitySpeedTopLocations({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopLocationsOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetQualitySpeedTopLocationsResponseResult, RadarGetQualitySpeedTopLocationsError>> radarGetQualitySpeedTopLocations({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopLocationsOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -403,9 +393,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetQualitySpeedTopLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetQualitySpeedTopLocationsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetQualitySpeedTopLocationsError.fromResponse(response),
 );
  } 
  }

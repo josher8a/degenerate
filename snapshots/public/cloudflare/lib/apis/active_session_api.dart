@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_poll_request.dart';import 'package:pub_cloudflare/models/create_poll_response.dart';import 'package:pub_cloudflare/models/get_active_session_response.dart';import 'package:pub_cloudflare/models/kick_all_participants_response.dart';import 'package:pub_cloudflare/models/kick_partcipants_request.dart';import 'package:pub_cloudflare/models/kick_partcipants_response.dart';import 'package:pub_cloudflare/models/mute_all_participants_request.dart';import 'package:pub_cloudflare/models/mute_all_participants_response.dart';import 'package:pub_cloudflare/models/mute_participants_request.dart';import 'package:pub_cloudflare/models/mute_participants_response.dart';import 'package:pub_cloudflare/models/realtimekit_account_identifier.dart';import 'package:pub_cloudflare/models/realtimekit_app_id.dart';import 'package:pub_cloudflare/models/realtimekit_generic_error_response.dart';/// ActiveSessionApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_poll_request.dart';import 'package:pub_cloudflare/models/create_poll_response.dart';import 'package:pub_cloudflare/models/errors/get_active_session_error.dart';import 'package:pub_cloudflare/models/get_active_session_response.dart';import 'package:pub_cloudflare/models/kick_all_participants_response.dart';import 'package:pub_cloudflare/models/kick_partcipants_request.dart';import 'package:pub_cloudflare/models/kick_partcipants_response.dart';import 'package:pub_cloudflare/models/mute_all_participants_request.dart';import 'package:pub_cloudflare/models/mute_all_participants_response.dart';import 'package:pub_cloudflare/models/mute_participants_request.dart';import 'package:pub_cloudflare/models/mute_participants_response.dart';import 'package:pub_cloudflare/models/realtimekit_account_identifier.dart';import 'package:pub_cloudflare/models/realtimekit_app_id.dart';/// ActiveSessionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ActiveSessionApi with ApiExecutor {const ActiveSessionApi(this.apiCo
 /// Returns details of an ongoing active session for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session`
-Future<ApiResult<GetActiveSessionResponse, RealtimekitGenericErrorResponse>> getActiveSession({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetActiveSessionResponse, GetActiveSessionError>> getActiveSession({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,9 +27,7 @@ return execute(
   onSuccess: (response) {
     return GetActiveSessionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetActiveSessionError.fromResponse(response),
 );
  } 
 /// Kick participants from an active session
@@ -37,7 +35,7 @@ return execute(
 /// Kicks one or more participants from an active session using user ID or custom participant ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick`
-Future<ApiResult<KickPartcipantsResponse, RealtimekitGenericErrorResponse>> kickPartcipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required KickPartcipantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<KickPartcipantsResponse, GetActiveSessionError>> kickPartcipants({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, required KickPartcipantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,9 +51,7 @@ return execute(
   onSuccess: (response) {
     return KickPartcipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetActiveSessionError.fromResponse(response),
 );
  } 
 /// Kick all participants

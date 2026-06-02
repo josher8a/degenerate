@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/organization_invitation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';import 'package:pub_github_rest_3_1/models/team_full.dart';import 'package:pub_github_rest_3_1/models/team_membership.dart';import 'package:pub_github_rest_3_1/models/team_repository.dart';import 'package:pub_github_rest_3_1/models/teams_add_or_update_membership_for_user_in_org_request.dart';import 'package:pub_github_rest_3_1/models/teams_add_or_update_repo_permissions_in_org_request.dart';import 'package:pub_github_rest_3_1/models/teams_create_request.dart';import 'package:pub_github_rest_3_1/models/teams_list_members_in_org_role.dart';import 'package:pub_github_rest_3_1/models/teams_list_team_type.dart';import 'package:pub_github_rest_3_1/models/teams_update_in_org_request.dart';import 'package:pub_github_rest_3_1/models/validation_error.dart';/// TeamsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/errors/actions_approve_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_get_artifact_and_log_retention_settings_repository_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_re_run_job_for_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_set_private_repo_fork_pr_workflows_settings_organization_error.dart';import 'package:pub_github_rest_3_1/models/errors/gists_list_public_error.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/organization_invitation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';import 'package:pub_github_rest_3_1/models/team_full.dart';import 'package:pub_github_rest_3_1/models/team_membership.dart';import 'package:pub_github_rest_3_1/models/team_repository.dart';import 'package:pub_github_rest_3_1/models/teams_add_or_update_membership_for_user_in_org_request.dart';import 'package:pub_github_rest_3_1/models/teams_add_or_update_repo_permissions_in_org_request.dart';import 'package:pub_github_rest_3_1/models/teams_create_request.dart';import 'package:pub_github_rest_3_1/models/teams_list_members_in_org_role.dart';import 'package:pub_github_rest_3_1/models/teams_list_team_type.dart';import 'package:pub_github_rest_3_1/models/teams_update_in_org_request.dart';/// TeamsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class TeamsApi with ApiExecutor {const TeamsApi(this.apiConfig);
 /// Lists all teams in an organization that are visible to the authenticated user.
 ///
 /// `GET /orgs/{org}/teams`
-Future<ApiResult<List<Team>, BasicError>> teamsList({required String org, int? perPage, int? page, TeamsListTeamType? teamType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Team>, ActionsReRunJobForWorkflowRunError>> teamsList({required String org, int? perPage, int? page, TeamsListTeamType? teamType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -42,9 +42,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
 );
  } 
 /// Create a team
@@ -54,7 +52,7 @@ return execute(
 /// When you create a new team, you automatically become a team maintainer without explicitly adding yourself to the optional array of `maintainers`. For more information, see "[About teams](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/about-teams)".
 ///
 /// `POST /orgs/{org}/teams`
-Future<ApiResult<TeamFull, ValidationError>> teamsCreate({required String org, required TeamsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamFull, GistsListPublicError>> teamsCreate({required String org, required TeamsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -70,9 +68,7 @@ return execute(
   onSuccess: (response) {
     return TeamFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GistsListPublicError.fromResponse(response),
 );
  } 
 /// Get a team by name
@@ -83,7 +79,7 @@ return execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}`
-Future<ApiResult<TeamFull, BasicError>> teamsGetByName({required String org, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamFull, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> teamsGetByName({required String org, required String teamSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -97,9 +93,7 @@ return execute(
   onSuccess: (response) {
     return TeamFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Update a team
@@ -110,7 +104,7 @@ return execute(
 /// > You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.
 ///
 /// `PATCH /orgs/{org}/teams/{team_slug}`
-Future<ApiResult<TeamFull, BasicError>> teamsUpdateInOrg({required String org, required String teamSlug, TeamsUpdateInOrgRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamFull, ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError>> teamsUpdateInOrg({required String org, required String teamSlug, TeamsUpdateInOrgRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -126,9 +120,7 @@ return execute(
   onSuccess: (response) {
     return TeamFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
 );
  } 
 /// Delete a team
@@ -482,7 +474,7 @@ return execute(
 /// When using a fine-grained personal access token, the resource owner of the token must be a single organization, and the response will only include the teams from that organization.
 ///
 /// `GET /user/teams`
-Future<ApiResult<List<TeamFull>, BasicError>> teamsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TeamFull>, ActionsApproveWorkflowRunError>> teamsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -508,9 +500,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => TeamFull.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
  }

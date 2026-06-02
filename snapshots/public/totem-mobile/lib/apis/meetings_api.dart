@@ -3,7 +3,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_totem_mobile/models/error_response_schema.dart';
+import 'package:pub_totem_mobile/models/errors/accept_totem_endpoint_error.dart';
+import 'package:pub_totem_mobile/models/errors/get_livekit_token_error.dart';
 import 'package:pub_totem_mobile/models/livekit_order_schema.dart';
 import 'package:pub_totem_mobile/models/livekit_token_response_schema.dart';
 import 'package:pub_totem_mobile/models/session_state.dart';
@@ -21,7 +22,7 @@ final class MeetingsApi with ApiExecutor {
   /// Get Livekit Token
   ///
   /// `GET /api/mobile/protected/meetings/event/{event_slug}/token`
-  Future<ApiResult<LivekitTokenResponseSchema, ErrorResponseSchema>>
+  Future<ApiResult<LivekitTokenResponseSchema, GetLivekitTokenError>>
   totemMeetingsMobileApiGetLivekitToken({
     required String eventSlug,
     RequestOptions? options,
@@ -43,18 +44,14 @@ final class MeetingsApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => GetLivekitTokenError.fromResponse(response),
     );
   }
 
   /// Pass Totem Endpoint
   ///
   /// `POST /api/mobile/protected/meetings/event/{event_slug}/pass-totem`
-  Future<ApiResult<void, ErrorResponseSchema>>
+  Future<ApiResult<void, AcceptTotemEndpointError>>
   totemMeetingsMobileApiPassTotemEndpoint({
     required String eventSlug,
     RequestOptions? options,
@@ -72,18 +69,14 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
     );
   }
 
   /// Accept Totem Endpoint
   ///
   /// `POST /api/mobile/protected/meetings/event/{event_slug}/accept-totem`
-  Future<ApiResult<void, ErrorResponseSchema>>
+  Future<ApiResult<void, AcceptTotemEndpointError>>
   totemMeetingsMobileApiAcceptTotemEndpoint({
     required String eventSlug,
     RequestOptions? options,
@@ -101,18 +94,14 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
     );
   }
 
   /// Start Room Endpoint
   ///
   /// `POST /api/mobile/protected/meetings/event/{event_slug}/start`
-  Future<ApiResult<void, ErrorResponseSchema>>
+  Future<ApiResult<void, AcceptTotemEndpointError>>
   totemMeetingsMobileApiStartRoomEndpoint({
     required String eventSlug,
     RequestOptions? options,
@@ -130,18 +119,14 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
     );
   }
 
   /// End Room Endpoint
   ///
   /// `POST /api/mobile/protected/meetings/event/{event_slug}/end`
-  Future<ApiResult<void, ErrorResponseSchema>>
+  Future<ApiResult<void, AcceptTotemEndpointError>>
   totemMeetingsMobileApiEndRoomEndpoint({
     required String eventSlug,
     RequestOptions? options,
@@ -159,18 +144,14 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
     );
   }
 
   /// Mute Participant Endpoint
   ///
   /// `POST /api/mobile/protected/meetings/event/{event_slug}/mute/{participant_identity}`
-  Future<ApiResult<void, ErrorResponseSchema>>
+  Future<ApiResult<void, AcceptTotemEndpointError>>
   totemMeetingsMobileApiMuteParticipantEndpoint({
     required String eventSlug,
     required String participantIdentity,
@@ -189,18 +170,14 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
     );
   }
 
   /// Mute All Participants Endpoint
   ///
   /// `POST /api/mobile/protected/meetings/event/{event_slug}/mute-all`
-  Future<ApiResult<void, ErrorResponseSchema>>
+  Future<ApiResult<void, AcceptTotemEndpointError>>
   totemMeetingsMobileApiMuteAllParticipantsEndpoint({
     required String eventSlug,
     RequestOptions? options,
@@ -218,18 +195,14 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
     );
   }
 
   /// Remove Participant Endpoint
   ///
   /// `POST /api/mobile/protected/meetings/event/{event_slug}/remove/{participant_identity}`
-  Future<ApiResult<void, ErrorResponseSchema>>
+  Future<ApiResult<void, AcceptTotemEndpointError>>
   totemMeetingsMobileApiRemoveParticipantEndpoint({
     required String eventSlug,
     required String participantIdentity,
@@ -248,18 +221,14 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
     );
   }
 
   /// Reorder Participants Endpoint
   ///
   /// `POST /api/mobile/protected/meetings/event/{event_slug}/reorder`
-  Future<ApiResult<LivekitOrderSchema, ErrorResponseSchema>>
+  Future<ApiResult<LivekitOrderSchema, AcceptTotemEndpointError>>
   totemMeetingsMobileApiReorderParticipantsEndpoint({
     required String eventSlug,
     required LivekitOrderSchema body,
@@ -284,11 +253,7 @@ final class MeetingsApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
     );
   }
 
@@ -300,7 +265,7 @@ final class MeetingsApi with ApiExecutor {
   /// in the OpenAPI documentation for client-side usage.
   ///
   /// `GET /api/mobile/protected/meetings/event/{event_slug}/room-state`
-  Future<ApiResult<SessionState, ErrorResponseSchema>>
+  Future<ApiResult<SessionState, GetLivekitTokenError>>
   totemMeetingsMobileApiGetRoomStateEndpoint({
     required String eventSlug,
     RequestOptions? options,
@@ -322,11 +287,7 @@ final class MeetingsApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
-      },
+      onError: (response) => GetLivekitTokenError.fromResponse(response),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
@@ -13,6 +14,7 @@ class ApiEmitter {
     this.api, {
     this.typeRegistry = const {},
     this.unwrapFields = const [],
+    this.errorUnionMap = const {},
   });
 
   /// The API group to emit.
@@ -23,6 +25,9 @@ class ApiEmitter {
 
   /// Fields to unwrap from response envelopes.
   final List<String> unwrapFields;
+
+  /// Per-operation error union info (operationId -> ErrorUnionInfo).
+  final Map<String, ErrorUnionInfo> errorUnionMap;
 
   /// Wrapper around [buildFromJsonCode] that passes the type registry.
   String _fromJson(
@@ -366,8 +371,10 @@ class ApiEmitter {
     final unwrapResult = _maybeUnwrapResponseType(returnType);
     returnType = unwrapResult.type;
     final unwrappedFieldIsOptional = unwrapResult.fieldIsOptional;
-    final errorResponseContent = _errorResponseContent(op);
-    final errorType = errorResponseContent?.$2.schema;
+    final errorUnion = errorUnionMap[op.operationId];
+    final errorResponseContent = errorUnion == null
+        ? _errorResponseContent(op)
+        : null;
     final needsNullableSuffix =
         unwrapResult.unwrappedField != null &&
         returnType != null &&
@@ -377,7 +384,15 @@ class ApiEmitter {
     final returnTypeStr = returnType != null
         ? '${irTypeName(returnType)}${needsNullableSuffix ? '?' : ''}'
         : 'void';
-    final errorTypeStr = errorType != null ? irTypeName(errorType) : 'Never';
+    final String errorTypeStr;
+    if (errorUnion != null) {
+      errorTypeStr = errorUnion.isAlias
+          ? errorUnion.aliasTarget!
+          : errorUnion.className;
+    } else {
+      final errorType = errorResponseContent?.$2.schema;
+      errorTypeStr = errorType != null ? irTypeName(errorType) : 'Never';
+    }
     final futureType = 'Future<ApiResult<$returnTypeStr, $errorTypeStr>>';
 
     // Build method body
@@ -386,6 +401,7 @@ class ApiEmitter {
       returnType,
       successResponseContent: successResponseContent,
       errorResponseContent: errorResponseContent,
+      errorUnion: errorUnion,
       requestBodyContent: requestBodyContent,
       bodyType: bodyType,
       pathParams: parts.path,
@@ -439,6 +455,7 @@ class ApiEmitter {
     required List<IrParameter> cookieParams,
     (String, IrMediaType)? successResponseContent,
     (String, IrMediaType)? errorResponseContent,
+    ErrorUnionInfo? errorUnion,
     (String, IrMediaType)? requestBodyContent,
     IrType? bodyType,
     String? unwrappedField,
@@ -485,7 +502,14 @@ class ApiEmitter {
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (_) {},');
     }
-    if (errorResponseContent != null) {
+    if (errorUnion != null) {
+      final errorClass = errorUnion.isAlias
+          ? errorUnion.aliasTarget!
+          : errorUnion.className;
+      buf.writeln(
+        '  onError: (response) => $errorClass.fromResponse(response),',
+      );
+    } else if (errorResponseContent != null) {
       final errorDeserialize = _buildErrorDeserializeExpr(
         errorResponseContent.$1,
         errorResponseContent.$2.schema,

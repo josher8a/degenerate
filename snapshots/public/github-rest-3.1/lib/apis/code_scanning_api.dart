@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/alert_number.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_instance_list.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_items.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_severity.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_state_query.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_deletion.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_sarif_id.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_tool_guid.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_tool_name.dart';import 'package:pub_github_rest_3_1/models/code_scanning_autofix.dart';import 'package:pub_github_rest_3_1/models/code_scanning_autofix_commits.dart';import 'package:pub_github_rest_3_1/models/code_scanning_autofix_commits_response.dart';import 'package:pub_github_rest_3_1/models/code_scanning_codeql_database.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup_update.dart';import 'package:pub_github_rest_3_1/models/code_scanning_list_alerts_for_org_direction.dart';import 'package:pub_github_rest_3_1/models/code_scanning_list_alerts_for_org_sort.dart';import 'package:pub_github_rest_3_1/models/code_scanning_list_alerts_for_repo_direction.dart';import 'package:pub_github_rest_3_1/models/code_scanning_list_alerts_for_repo_sort.dart';import 'package:pub_github_rest_3_1/models/code_scanning_list_recent_analyses_direction.dart';import 'package:pub_github_rest_3_1/models/code_scanning_list_recent_analyses_sort.dart';import 'package:pub_github_rest_3_1/models/code_scanning_organization_alert_items.dart';import 'package:pub_github_rest_3_1/models/code_scanning_ref.dart';import 'package:pub_github_rest_3_1/models/code_scanning_sarifs_receipt.dart';import 'package:pub_github_rest_3_1/models/code_scanning_sarifs_status.dart';import 'package:pub_github_rest_3_1/models/code_scanning_upload_sarif_request.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis_repo_task.dart';import 'package:pub_github_rest_3_1/models/empty_object.dart';/// CodeScanningApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/alert_number.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_instance_list.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_items.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_severity.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_state_query.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_deletion.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_sarif_id.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_tool_guid.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_tool_name.dart';import 'package:pub_github_rest_3_1/models/code_scanning_autofix.dart';import 'package:pub_github_rest_3_1/models/code_scanning_autofix_commits.dart';import 'package:pub_github_rest_3_1/models/code_scanning_autofix_commits_response.dart';import 'package:pub_github_rest_3_1/models/code_scanning_codeql_database.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup_update.dart';import 'package:pub_github_rest_3_1/models/code_scanning_list_alerts_for_org_direction.dart';import 'package:pub_github_rest_3_1/models/code_scanning_list_alerts_for_org_sort.dart';import 'package:pub_github_rest_3_1/models/code_scanning_list_alerts_for_repo_direction.dart';import 'package:pub_github_rest_3_1/models/code_scanning_list_alerts_for_repo_sort.dart';import 'package:pub_github_rest_3_1/models/code_scanning_list_recent_analyses_direction.dart';import 'package:pub_github_rest_3_1/models/code_scanning_list_recent_analyses_sort.dart';import 'package:pub_github_rest_3_1/models/code_scanning_organization_alert_items.dart';import 'package:pub_github_rest_3_1/models/code_scanning_ref.dart';import 'package:pub_github_rest_3_1/models/code_scanning_sarifs_receipt.dart';import 'package:pub_github_rest_3_1/models/code_scanning_sarifs_status.dart';import 'package:pub_github_rest_3_1/models/code_scanning_upload_sarif_request.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis_repo_task.dart';import 'package:pub_github_rest_3_1/models/empty_object.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_commit_autofix_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_create_autofix_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_create_variant_analysis_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_delete_analysis_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_delete_codeql_database_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_get_alert_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_get_analysis_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_get_autofix_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_get_codeql_database_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_get_default_setup_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_get_sarif_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_get_variant_analysis_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_get_variant_analysis_repo_task_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_list_alert_instances_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_list_alerts_for_org_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_list_alerts_for_repo_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_list_codeql_databases_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_list_recent_analyses_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_update_alert_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_update_default_setup_error.dart';import 'package:pub_github_rest_3_1/models/errors/code_scanning_upload_sarif_error.dart';/// CodeScanningApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -17,7 +17,7 @@ final class CodeScanningApi with ApiExecutor {const CodeScanningApi(this.apiConf
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` or `repo`s cope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /orgs/{org}/code-scanning/alerts`
-Future<ApiResult<List<CodeScanningOrganizationAlertItems>, BasicError>> codeScanningListAlertsForOrg({required String org, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, String? before, String? after, int? page, int? perPage, CodeScanningListAlertsForOrgDirection? direction, CodeScanningAlertStateQuery? state, CodeScanningListAlertsForOrgSort? sort, CodeScanningAlertSeverity? severity, String? assignees, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CodeScanningOrganizationAlertItems>, CodeScanningListAlertsForOrgError>> codeScanningListAlertsForOrg({required String org, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, String? before, String? after, int? page, int? perPage, CodeScanningListAlertsForOrgDirection? direction, CodeScanningAlertStateQuery? state, CodeScanningListAlertsForOrgSort? sort, CodeScanningAlertSeverity? severity, String? assignees, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (toolName != null) {
   queryParameters['tool_name'] = toolName.toString();
@@ -70,9 +70,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeScanningOrganizationAlertItems.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningListAlertsForOrgError.fromResponse(response),
 );
  } 
 /// List code scanning alerts for a repository
@@ -86,7 +84,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/alerts`
-Future<ApiResult<List<CodeScanningAlertItems>, BasicError>> codeScanningListAlertsForRepo({required String owner, required String repo, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, int? page, int? perPage, CodeScanningRef? ref, int? pr, CodeScanningListAlertsForRepoDirection? direction, String? before, String? after, CodeScanningListAlertsForRepoSort? sort, CodeScanningAlertStateQuery? state, CodeScanningAlertSeverity? severity, String? assignees, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CodeScanningAlertItems>, CodeScanningListAlertsForRepoError>> codeScanningListAlertsForRepo({required String owner, required String repo, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, int? page, int? perPage, CodeScanningRef? ref, int? pr, CodeScanningListAlertsForRepoDirection? direction, String? before, String? after, CodeScanningListAlertsForRepoSort? sort, CodeScanningAlertStateQuery? state, CodeScanningAlertSeverity? severity, String? assignees, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (toolName != null) {
   queryParameters['tool_name'] = toolName.toString();
@@ -145,9 +143,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeScanningAlertItems.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningListAlertsForRepoError.fromResponse(response),
 );
  } 
 /// Get a code scanning alert
@@ -157,7 +153,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}`
-Future<ApiResult<CodeScanningAlert, BasicError>> codeScanningGetAlert({required String owner, required String repo, required AlertNumber alertNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningAlert, CodeScanningGetAlertError>> codeScanningGetAlert({required String owner, required String repo, required AlertNumber alertNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -171,9 +167,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningGetAlertError.fromResponse(response),
 );
  } 
 /// Update a code scanning alert
@@ -182,7 +176,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}`
-Future<ApiResult<CodeScanningAlert, BasicError>> codeScanningUpdateAlert({required String owner, required String repo, required AlertNumber alertNumber, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningAlert, CodeScanningUpdateAlertError>> codeScanningUpdateAlert({required String owner, required String repo, required AlertNumber alertNumber, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -198,9 +192,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningUpdateAlertError.fromResponse(response),
 );
  } 
 /// Get the status of an autofix for a code scanning alert
@@ -210,7 +202,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix`
-Future<ApiResult<CodeScanningAutofix, BasicError>> codeScanningGetAutofix({required String owner, required String repo, required AlertNumber alertNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningAutofix, CodeScanningGetAutofixError>> codeScanningGetAutofix({required String owner, required String repo, required AlertNumber alertNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -224,9 +216,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAutofix.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningGetAutofixError.fromResponse(response),
 );
  } 
 /// Create an autofix for a code scanning alert
@@ -240,7 +230,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix`
-Future<ApiResult<CodeScanningAutofix, BasicError>> codeScanningCreateAutofix({required String owner, required String repo, required AlertNumber alertNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningAutofix, CodeScanningCreateAutofixError>> codeScanningCreateAutofix({required String owner, required String repo, required AlertNumber alertNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -254,9 +244,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAutofix.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningCreateAutofixError.fromResponse(response),
 );
  } 
 /// Commit an autofix for a code scanning alert
@@ -268,7 +256,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix/commits`
-Future<ApiResult<CodeScanningAutofixCommitsResponse, BasicError>> codeScanningCommitAutofix({required String owner, required String repo, required AlertNumber alertNumber, CodeScanningAutofixCommits? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningAutofixCommitsResponse, CodeScanningCommitAutofixError>> codeScanningCommitAutofix({required String owner, required String repo, required AlertNumber alertNumber, CodeScanningAutofixCommits? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -284,9 +272,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAutofixCommitsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningCommitAutofixError.fromResponse(response),
 );
  } 
 /// List instances of a code scanning alert
@@ -296,7 +282,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances`
-Future<ApiResult<List<CodeScanningAlertInstanceList>, BasicError>> codeScanningListAlertInstances({required String owner, required String repo, required AlertNumber alertNumber, int? page, int? perPage, CodeScanningRef? ref, int? pr, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CodeScanningAlertInstanceList>, CodeScanningListAlertInstancesError>> codeScanningListAlertInstances({required String owner, required String repo, required AlertNumber alertNumber, int? page, int? perPage, CodeScanningRef? ref, int? pr, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -328,9 +314,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeScanningAlertInstanceList.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningListAlertInstancesError.fromResponse(response),
 );
  } 
 /// List code scanning analyses for a repository
@@ -352,7 +336,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/analyses`
-Future<ApiResult<List<CodeScanningAnalysis>, BasicError>> codeScanningListRecentAnalyses({required String owner, required String repo, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, int? page, int? perPage, int? pr, CodeScanningRef? ref, CodeScanningAnalysisSarifId? sarifId, CodeScanningListRecentAnalysesDirection? direction, CodeScanningListRecentAnalysesSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CodeScanningAnalysis>, CodeScanningListRecentAnalysesError>> codeScanningListRecentAnalyses({required String owner, required String repo, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, int? page, int? perPage, int? pr, CodeScanningRef? ref, CodeScanningAnalysisSarifId? sarifId, CodeScanningListRecentAnalysesDirection? direction, CodeScanningListRecentAnalysesSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (toolName != null) {
   queryParameters['tool_name'] = toolName.toString();
@@ -399,9 +383,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeScanningAnalysis.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningListRecentAnalysesError.fromResponse(response),
 );
  } 
 /// Get a code scanning analysis for a repository
@@ -425,7 +407,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}`
-Future<ApiResult<CodeScanningAnalysis, BasicError>> codeScanningGetAnalysis({required String owner, required String repo, required int analysisId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningAnalysis, CodeScanningGetAnalysisError>> codeScanningGetAnalysis({required String owner, required String repo, required int analysisId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -439,9 +421,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAnalysis.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningGetAnalysisError.fromResponse(response),
 );
  } 
 /// Delete a code scanning analysis from a repository
@@ -512,7 +492,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}`
-Future<ApiResult<CodeScanningAnalysisDeletion, BasicError>> codeScanningDeleteAnalysis({required String owner, required String repo, required int analysisId, String? confirmDelete, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CodeScanningAnalysisDeletion, CodeScanningDeleteAnalysisError>> codeScanningDeleteAnalysis({required String owner, required String repo, required int analysisId, String? confirmDelete, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (confirmDelete != null) {
   queryParameters['confirm_delete'] = confirmDelete;
@@ -534,9 +514,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAnalysisDeletion.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningDeleteAnalysisError.fromResponse(response),
 );
  } 
 /// List CodeQL databases for a repository
@@ -546,7 +524,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/codeql/databases`
-Future<ApiResult<List<CodeScanningCodeqlDatabase>, BasicError>> codeScanningListCodeqlDatabases({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CodeScanningCodeqlDatabase>, CodeScanningListCodeqlDatabasesError>> codeScanningListCodeqlDatabases({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -561,9 +539,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeScanningCodeqlDatabase.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningListCodeqlDatabasesError.fromResponse(response),
 );
  } 
 /// Get a CodeQL database for a repository
@@ -579,7 +555,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}`
-Future<ApiResult<CodeScanningCodeqlDatabase, BasicError>> codeScanningGetCodeqlDatabase({required String owner, required String repo, required String language, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningCodeqlDatabase, CodeScanningGetCodeqlDatabaseError>> codeScanningGetCodeqlDatabase({required String owner, required String repo, required String language, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -593,9 +569,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningCodeqlDatabase.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningGetCodeqlDatabaseError.fromResponse(response),
 );
  } 
 /// Delete a CodeQL database
@@ -605,7 +579,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `DELETE /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}`
-Future<ApiResult<void, BasicError>> codeScanningDeleteCodeqlDatabase({required String owner, required String repo, required String language, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CodeScanningDeleteCodeqlDatabaseError>> codeScanningDeleteCodeqlDatabase({required String owner, required String repo, required String language, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -617,9 +591,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningDeleteCodeqlDatabaseError.fromResponse(response),
 );
  } 
 /// Create a CodeQL variant analysis
@@ -634,7 +606,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses`
-Future<ApiResult<CodeScanningVariantAnalysis, BasicError>> codeScanningCreateVariantAnalysis({required String owner, required String repo, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningVariantAnalysis, CodeScanningCreateVariantAnalysisError>> codeScanningCreateVariantAnalysis({required String owner, required String repo, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -650,9 +622,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningVariantAnalysis.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningCreateVariantAnalysisError.fromResponse(response),
 );
  } 
 /// Get the summary of a CodeQL variant analysis
@@ -662,7 +632,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}`
-Future<ApiResult<CodeScanningVariantAnalysis, BasicError>> codeScanningGetVariantAnalysis({required String owner, required String repo, required int codeqlVariantAnalysisId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningVariantAnalysis, CodeScanningGetVariantAnalysisError>> codeScanningGetVariantAnalysis({required String owner, required String repo, required int codeqlVariantAnalysisId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -676,9 +646,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningVariantAnalysis.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningGetVariantAnalysisError.fromResponse(response),
 );
  } 
 /// Get the analysis status of a repository in a CodeQL variant analysis
@@ -688,7 +656,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}/repos/{repo_owner}/{repo_name}`
-Future<ApiResult<CodeScanningVariantAnalysisRepoTask, BasicError>> codeScanningGetVariantAnalysisRepoTask({required String owner, required String repo, required int codeqlVariantAnalysisId, required String repoOwner, required String repoName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningVariantAnalysisRepoTask, CodeScanningGetVariantAnalysisRepoTaskError>> codeScanningGetVariantAnalysisRepoTask({required String owner, required String repo, required int codeqlVariantAnalysisId, required String repoOwner, required String repoName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -702,9 +670,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningVariantAnalysisRepoTask.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningGetVariantAnalysisRepoTaskError.fromResponse(response),
 );
  } 
 /// Get a code scanning default setup configuration
@@ -714,7 +680,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/default-setup`
-Future<ApiResult<CodeScanningDefaultSetup, BasicError>> codeScanningGetDefaultSetup({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningDefaultSetup, CodeScanningGetDefaultSetupError>> codeScanningGetDefaultSetup({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -728,9 +694,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningDefaultSetup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningGetDefaultSetupError.fromResponse(response),
 );
  } 
 /// Update a code scanning default setup configuration
@@ -740,7 +704,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `PATCH /repos/{owner}/{repo}/code-scanning/default-setup`
-Future<ApiResult<EmptyObject, BasicError>> codeScanningUpdateDefaultSetup({required String owner, required String repo, required CodeScanningDefaultSetupUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmptyObject, CodeScanningUpdateDefaultSetupError>> codeScanningUpdateDefaultSetup({required String owner, required String repo, required CodeScanningDefaultSetupUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -756,9 +720,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningUpdateDefaultSetupError.fromResponse(response),
 );
  } 
 /// Upload an analysis as SARIF data
@@ -799,7 +761,7 @@ return execute(
 /// This endpoint is limited to 1,000 requests per hour for each user or app installation calling it.
 ///
 /// `POST /repos/{owner}/{repo}/code-scanning/sarifs`
-Future<ApiResult<CodeScanningSarifsReceipt, BasicError>> codeScanningUploadSarif({required String owner, required String repo, required CodeScanningUploadSarifRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningSarifsReceipt, CodeScanningUploadSarifError>> codeScanningUploadSarif({required String owner, required String repo, required CodeScanningUploadSarifRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -815,9 +777,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningSarifsReceipt.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningUploadSarifError.fromResponse(response),
 );
  } 
 /// Get information about a SARIF upload
@@ -826,7 +786,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 ///
 /// `GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}`
-Future<ApiResult<CodeScanningSarifsStatus, BasicError>> codeScanningGetSarif({required String owner, required String repo, required String sarifId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeScanningSarifsStatus, CodeScanningGetSarifError>> codeScanningGetSarif({required String owner, required String repo, required String sarifId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -840,9 +800,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningSarifsStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CodeScanningGetSarifError.fromResponse(response),
 );
  } 
  }

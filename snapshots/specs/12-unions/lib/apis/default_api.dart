@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_12_unions/models/bank_account.dart';import 'package:spec_12_unions/models/credit_card.dart';import 'package:spec_12_unions/models/error_model.dart';import 'package:spec_12_unions/models/extended_pet.dart';import 'package:spec_12_unions/models/notification.dart';import 'package:spec_12_unions/models/order.dart';import 'package:spec_12_unions/models/payment_method.dart';import 'package:spec_12_unions/models/pet_status.dart';import 'package:spec_12_unions/models/send_notification_response.dart';import 'package:spec_12_unions/models/shape.dart';import 'package:spec_12_unions/models/string_or_int.dart';/// DefaultApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_12_unions/models/bank_account.dart';import 'package:spec_12_unions/models/credit_card.dart';import 'package:spec_12_unions/models/errors/create_order_error.dart';import 'package:spec_12_unions/models/extended_pet.dart';import 'package:spec_12_unions/models/notification.dart';import 'package:spec_12_unions/models/order.dart';import 'package:spec_12_unions/models/payment_method.dart';import 'package:spec_12_unions/models/pet_status.dart';import 'package:spec_12_unions/models/send_notification_response.dart';import 'package:spec_12_unions/models/shape.dart';import 'package:spec_12_unions/models/string_or_int.dart';/// DefaultApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -31,7 +31,7 @@ return execute(
 /// Create a shape
 ///
 /// `POST /shapes`
-Future<ApiResult<Shape, ErrorModel>> createShape({required Shape body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Shape, CreateOrderError>> createShape({required Shape body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -47,15 +47,13 @@ return execute(
   onSuccess: (response) {
     return Shape.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CreateOrderError.fromResponse(response),
 );
  } 
 /// Create an order with nested items
 ///
 /// `POST /orders`
-Future<ApiResult<Order, ErrorModel>> createOrder({required Order body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Order, CreateOrderError>> createOrder({required Order body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,9 +69,7 @@ return execute(
   onSuccess: (response) {
     return Order.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CreateOrderError.fromResponse(response),
 );
  } 
 /// Set payment method for an order (untagged oneOf)

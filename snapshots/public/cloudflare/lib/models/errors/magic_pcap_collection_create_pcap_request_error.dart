@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:convert';
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'package:pub_cloudflare/models/magic_pcap_collection_create_pcap_request_responsedefault.dart';
+import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_single_response.dart';
+import 'package:pub_cloudflare/models/response_common_failure49.dart';
+
+sealed class MagicPcapCollectionCreatePcapRequestError {
+  const MagicPcapCollectionCreatePcapRequestError();
+
+  int get statusCode;
+
+  factory MagicPcapCollectionCreatePcapRequestError.fromResponse(ApiResponse response) {
+    try {
+      return switch (response.statusCode) {
+        _ => MagicPcapCollectionCreatePcapRequestError$MagicPcapCollectionCreatePcapRequestResponsedefault(OneOf2.parse(jsonDecode(response.body), fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),), response.statusCode),
+      };
+    } on Object {
+      rethrow;
+    }
+  }
+}
+
+final class MagicPcapCollectionCreatePcapRequestError$MagicPcapCollectionCreatePcapRequestResponsedefault extends MagicPcapCollectionCreatePcapRequestError {
+  const MagicPcapCollectionCreatePcapRequestError$MagicPcapCollectionCreatePcapRequestResponsedefault(this.error, this.statusCode);
+  final MagicPcapCollectionCreatePcapRequestResponsedefault error;
+  @override
+  final int statusCode;
+}
+

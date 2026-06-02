@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_images_list_images_sort_order.dart';import 'package:pub_cloudflare/models/images_account_identifier.dart';import 'package:pub_cloudflare/models/images_image.dart';import 'package:pub_cloudflare/models/images_image_basic_upload.dart';import 'package:pub_cloudflare/models/images_image_direct_upload_request.dart';import 'package:pub_cloudflare/models/images_image_direct_upload_response/images_image_direct_upload_response_result.dart';import 'package:pub_cloudflare/models/images_image_identifier.dart';import 'package:pub_cloudflare/models/images_image_patch_request.dart';import 'package:pub_cloudflare/models/images_images_list_continuation_token.dart';import 'package:pub_cloudflare/models/images_images_list_response2.dart';import 'package:pub_cloudflare/models/images_images_list_response2/images_images_list_response2_result.dart';import 'package:pub_cloudflare/models/images_images_stats.dart';/// CloudflareImagesApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_images_list_images_sort_order.dart';import 'package:pub_cloudflare/models/errors/cloudflare_images_list_images_error.dart';import 'package:pub_cloudflare/models/images_account_identifier.dart';import 'package:pub_cloudflare/models/images_image.dart';import 'package:pub_cloudflare/models/images_image_basic_upload.dart';import 'package:pub_cloudflare/models/images_image_direct_upload_request.dart';import 'package:pub_cloudflare/models/images_image_direct_upload_response/images_image_direct_upload_response_result.dart';import 'package:pub_cloudflare/models/images_image_identifier.dart';import 'package:pub_cloudflare/models/images_image_patch_request.dart';import 'package:pub_cloudflare/models/images_images_list_continuation_token.dart';import 'package:pub_cloudflare/models/images_images_list_response2/images_images_list_response2_result.dart';import 'package:pub_cloudflare/models/images_images_stats.dart';/// CloudflareImagesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -202,7 +202,7 @@ return execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/images/v2`
-Future<ApiResult<ImagesImagesListResponse2Result?, ImagesImagesListResponse2>> cloudflareImagesListImagesV2({required ImagesAccountIdentifier accountId, ImagesImagesListContinuationToken? continuationToken, double? perPage, CloudflareImagesListImagesSortOrder? sortOrder, String? creator, String? metafieldoperator, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ImagesImagesListResponse2Result?, CloudflareImagesListImagesError>> cloudflareImagesListImagesV2({required ImagesAccountIdentifier accountId, ImagesImagesListContinuationToken? continuationToken, double? perPage, CloudflareImagesListImagesSortOrder? sortOrder, String? creator, String? metafieldoperator, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (continuationToken != null) {
   queryParameters['continuation_token'] = continuationToken.toString();
@@ -237,9 +237,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ImagesImagesListResponse2Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) {
-    return ImagesImagesListResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CloudflareImagesListImagesError.fromResponse(response),
 );
  } 
 /// Create authenticated direct upload URL V2

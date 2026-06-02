@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_as_botnet_threat_feed_format.dart';import 'package:pub_cloudflare/models/radar_get_as_botnet_threat_feed_metric.dart';import 'package:pub_cloudflare/models/radar_get_as_botnet_threat_feed_response/radar_get_as_botnet_threat_feed_response_result.dart';import 'package:pub_cloudflare/models/radar_get_as_botnet_threat_feed_response400.dart';import 'package:pub_cloudflare/models/radar_get_as_botnet_threat_feed_sort_order.dart';import 'package:pub_cloudflare/models/radar_get_asns_as_set_format.dart';import 'package:pub_cloudflare/models/radar_get_asns_as_set_response/radar_get_asns_as_set_response_result.dart';import 'package:pub_cloudflare/models/radar_get_asns_as_set_response400.dart';import 'package:pub_cloudflare/models/radar_get_asns_rel_format.dart';import 'package:pub_cloudflare/models/radar_get_asns_rel_response/radar_get_asns_rel_response_result.dart';import 'package:pub_cloudflare/models/radar_get_asns_rel_response400.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_id_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_id_response/radar_get_entities_asn_by_id_response_result.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_id_response404.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_ip_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_ip_response/radar_get_entities_asn_by_ip_response_result.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_ip_response404.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_list_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_list_order_by.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_list_response/radar_get_entities_asn_list_response_result.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_list_response400.dart';/// RadarAutonomousSystemsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_as_botnet_threat_feed_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_asns_as_set_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_asns_rel_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_entities_asn_by_id_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_entities_asn_by_ip_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_entities_asn_list_error.dart';import 'package:pub_cloudflare/models/radar_get_as_botnet_threat_feed_format.dart';import 'package:pub_cloudflare/models/radar_get_as_botnet_threat_feed_metric.dart';import 'package:pub_cloudflare/models/radar_get_as_botnet_threat_feed_response/radar_get_as_botnet_threat_feed_response_result.dart';import 'package:pub_cloudflare/models/radar_get_as_botnet_threat_feed_sort_order.dart';import 'package:pub_cloudflare/models/radar_get_asns_as_set_format.dart';import 'package:pub_cloudflare/models/radar_get_asns_as_set_response/radar_get_asns_as_set_response_result.dart';import 'package:pub_cloudflare/models/radar_get_asns_rel_format.dart';import 'package:pub_cloudflare/models/radar_get_asns_rel_response/radar_get_asns_rel_response_result.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_id_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_id_response/radar_get_entities_asn_by_id_response_result.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_ip_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_ip_response/radar_get_entities_asn_by_ip_response_result.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_list_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_list_order_by.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_list_response/radar_get_entities_asn_list_response_result.dart';/// RadarAutonomousSystemsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarAutonomousSystemsApi with ApiExecutor {const RadarAutonomousSys
 /// Retrieves a list of autonomous systems.
 ///
 /// `GET /radar/entities/asns`
-Future<ApiResult<RadarGetEntitiesAsnListResponseResult, RadarGetEntitiesAsnListResponse400>> radarGetEntitiesAsnList({int? limit, int? offset, String? asn, String? location, RadarGetEntitiesAsnListOrderBy? orderBy, RadarGetEntitiesAsnListFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesAsnListResponseResult, RadarGetEntitiesAsnListError>> radarGetEntitiesAsnList({int? limit, int? offset, String? asn, String? location, RadarGetEntitiesAsnListOrderBy? orderBy, RadarGetEntitiesAsnListFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -51,9 +51,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEntitiesAsnListResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetEntitiesAsnListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetEntitiesAsnListError.fromResponse(response),
 );
  } 
 /// Get AS details by ASN
@@ -61,7 +59,7 @@ return execute(
 /// Retrieves the requested autonomous system information. (A confidence level below `5` indicates a low level of confidence in the traffic data - normally this happens because Cloudflare has a small amount of traffic from/to this AS). Population estimates come from APNIC (refer to https://labs.apnic.net/?p=526).
 ///
 /// `GET /radar/entities/asns/{asn}`
-Future<ApiResult<RadarGetEntitiesAsnByIdResponseResult, RadarGetEntitiesAsnByIdResponse404>> radarGetEntitiesAsnById({required int asn, RadarGetEntitiesAsnByIdFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesAsnByIdResponseResult, RadarGetEntitiesAsnByIdError>> radarGetEntitiesAsnById({required int asn, RadarGetEntitiesAsnByIdFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -84,9 +82,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEntitiesAsnByIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetEntitiesAsnByIdResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetEntitiesAsnByIdError.fromResponse(response),
 );
  } 
 /// Get IRR AS-SETs that an AS is a member of
@@ -94,7 +90,7 @@ return execute(
 /// Retrieves Internet Routing Registry AS-SETs that an AS is a member of.
 ///
 /// `GET /radar/entities/asns/{asn}/as_set`
-Future<ApiResult<RadarGetAsnsAsSetResponseResult, RadarGetAsnsAsSetResponse400>> radarGetAsnsAsSet({required int asn, RadarGetAsnsAsSetFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAsnsAsSetResponseResult, RadarGetAsnsAsSetError>> radarGetAsnsAsSet({required int asn, RadarGetAsnsAsSetFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -117,9 +113,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAsnsAsSetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetAsnsAsSetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetAsnsAsSetError.fromResponse(response),
 );
  } 
 /// Get AS-level relationships by ASN
@@ -127,7 +121,7 @@ return execute(
 /// Retrieves AS-level relationship for given networks.
 ///
 /// `GET /radar/entities/asns/{asn}/rel`
-Future<ApiResult<RadarGetAsnsRelResponseResult, RadarGetAsnsRelResponse400>> radarGetAsnsRel({required int asn, int? asn2, RadarGetAsnsRelFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAsnsRelResponseResult, RadarGetAsnsRelError>> radarGetAsnsRel({required int asn, int? asn2, RadarGetAsnsRelFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (asn2 != null) {
   queryParameters['asn2'] = asn2.toString();
@@ -153,9 +147,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAsnsRelResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetAsnsRelResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetAsnsRelError.fromResponse(response),
 );
  } 
 /// Get AS rankings by botnet threat feed activity
@@ -163,7 +155,7 @@ return execute(
 /// Retrieves a ranked list of Autonomous Systems based on their presence in the Cloudflare Botnet Threat Feed. Rankings can be sorted by offense count or number of bad IPs. Optionally compare to a previous date to see rank changes.
 ///
 /// `GET /radar/entities/asns/botnet_threat_feed`
-Future<ApiResult<RadarGetAsBotnetThreatFeedResponseResult, RadarGetAsBotnetThreatFeedResponse400>> radarGetAsBotnetThreatFeed({int? limit, int? offset, RadarGetAsBotnetThreatFeedMetric? metric, String? date, String? compareDateRange, String? location, List<String>? asn, RadarGetAsBotnetThreatFeedSortOrder? sortOrder, RadarGetAsBotnetThreatFeedFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAsBotnetThreatFeedResponseResult, RadarGetAsBotnetThreatFeedError>> radarGetAsBotnetThreatFeed({int? limit, int? offset, RadarGetAsBotnetThreatFeedMetric? metric, String? date, String? compareDateRange, String? location, List<String>? asn, RadarGetAsBotnetThreatFeedSortOrder? sortOrder, RadarGetAsBotnetThreatFeedFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -212,9 +204,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAsBotnetThreatFeedResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetAsBotnetThreatFeedResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetAsBotnetThreatFeedError.fromResponse(response),
 );
  } 
 /// Get AS details by IP address
@@ -222,7 +212,7 @@ return execute(
 /// Retrieves the requested autonomous system information based on IP address. Population estimates come from APNIC (refer to https://labs.apnic.net/?p=526).
 ///
 /// `GET /radar/entities/asns/ip`
-Future<ApiResult<RadarGetEntitiesAsnByIpResponseResult, RadarGetEntitiesAsnByIpResponse404>> radarGetEntitiesAsnByIp({required String ip, RadarGetEntitiesAsnByIpFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesAsnByIpResponseResult, RadarGetEntitiesAsnByIpError>> radarGetEntitiesAsnByIp({required String ip, RadarGetEntitiesAsnByIpFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['ip'] = ip;
 if (format != null) {
@@ -246,9 +236,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEntitiesAsnByIpResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetEntitiesAsnByIpResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetEntitiesAsnByIpError.fromResponse(response),
 );
  } 
  }

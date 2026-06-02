@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_country_read_response.dart';import 'package:pub_cloudflare/models/get_country_read_response400.dart';/// CountryApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/get_country_read_error.dart';import 'package:pub_cloudflare/models/get_country_read_response.dart';/// CountryApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class CountryApi with ApiExecutor {const CountryApi(this.apiConfig);
 /// Retrieves countries information for all countries
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/countries`
-Future<ApiResult<List<GetCountryReadResponse>, GetCountryReadResponse400>> getCountryRead({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetCountryReadResponse>, GetCountryReadError>> getCountryRead({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,9 +26,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetCountryReadResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return GetCountryReadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetCountryReadError.fromResponse(response),
 );
  } 
  }

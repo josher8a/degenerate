@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_request.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response400.dart';import 'package:pub_cloudflare/models/wor_batch_terminate_workflow_instances_response/wor_batch_terminate_workflow_instances_response_result.dart';import 'package:pub_cloudflare/models/wor_batch_terminate_workflow_instances_response400.dart';import 'package:pub_cloudflare/models/wor_change_status_workflow_instance_request.dart';import 'package:pub_cloudflare/models/wor_change_status_workflow_instance_response/wor_change_status_workflow_instance_response_result.dart';import 'package:pub_cloudflare/models/wor_change_status_workflow_instance_response400.dart';import 'package:pub_cloudflare/models/wor_create_new_workflow_instance_request.dart';import 'package:pub_cloudflare/models/wor_create_new_workflow_instance_response400.dart';import 'package:pub_cloudflare/models/wor_create_or_modify_workflow_request.dart';import 'package:pub_cloudflare/models/wor_create_or_modify_workflow_response/wor_create_or_modify_workflow_response_result.dart';import 'package:pub_cloudflare/models/wor_create_or_modify_workflow_response400.dart';import 'package:pub_cloudflare/models/wor_delete_workflow_response/wor_delete_workflow_response_result.dart';import 'package:pub_cloudflare/models/wor_delete_workflow_response400.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_order.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/wor_describe_workflow_instance_response_result.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response400.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_simple.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_versions_dag_response/wor_describe_workflow_versions_dag_response_result.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_versions_dag_response404.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_versions_graph_response404.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_versions_response/wor_describe_workflow_versions_response_result.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_versions_response400.dart';import 'package:pub_cloudflare/models/wor_get_workflow_details_response/wor_get_workflow_details_response_result.dart';import 'package:pub_cloudflare/models/wor_get_workflow_details_response400.dart';import 'package:pub_cloudflare/models/wor_list_workflow_instances_direction.dart';import 'package:pub_cloudflare/models/wor_list_workflow_instances_response/wor_list_workflow_instances_response_result.dart';import 'package:pub_cloudflare/models/wor_list_workflow_instances_response400.dart';import 'package:pub_cloudflare/models/wor_list_workflow_instances_status.dart';import 'package:pub_cloudflare/models/wor_list_workflow_versions_response400.dart';import 'package:pub_cloudflare/models/wor_list_workflows_response400.dart';import 'package:pub_cloudflare/models/wor_send_event_workflow_instance_response400.dart';import 'package:pub_cloudflare/models/wor_status_terminate_workflow_instances_response/wor_status_terminate_workflow_instances_response_result.dart';import 'package:pub_cloudflare/models/wor_status_terminate_workflow_instances_response400.dart';/// WorkflowsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/wor_batch_create_workflow_instance_error.dart';import 'package:pub_cloudflare/models/errors/wor_batch_terminate_workflow_instances_error.dart';import 'package:pub_cloudflare/models/errors/wor_change_status_workflow_instance_error.dart';import 'package:pub_cloudflare/models/errors/wor_create_new_workflow_instance_error.dart';import 'package:pub_cloudflare/models/errors/wor_create_or_modify_workflow_error.dart';import 'package:pub_cloudflare/models/errors/wor_delete_workflow_error.dart';import 'package:pub_cloudflare/models/errors/wor_describe_workflow_instance_error.dart';import 'package:pub_cloudflare/models/errors/wor_describe_workflow_versions_dag_error.dart';import 'package:pub_cloudflare/models/errors/wor_describe_workflow_versions_error.dart';import 'package:pub_cloudflare/models/errors/wor_describe_workflow_versions_graph_error.dart';import 'package:pub_cloudflare/models/errors/wor_get_workflow_details_error.dart';import 'package:pub_cloudflare/models/errors/wor_list_workflow_instances_error.dart';import 'package:pub_cloudflare/models/errors/wor_list_workflow_versions_error.dart';import 'package:pub_cloudflare/models/errors/wor_list_workflows_error.dart';import 'package:pub_cloudflare/models/errors/wor_send_event_workflow_instance_error.dart';import 'package:pub_cloudflare/models/errors/wor_status_terminate_workflow_instances_error.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_request.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result.dart';import 'package:pub_cloudflare/models/wor_batch_terminate_workflow_instances_response/wor_batch_terminate_workflow_instances_response_result.dart';import 'package:pub_cloudflare/models/wor_change_status_workflow_instance_request.dart';import 'package:pub_cloudflare/models/wor_change_status_workflow_instance_response/wor_change_status_workflow_instance_response_result.dart';import 'package:pub_cloudflare/models/wor_create_new_workflow_instance_request.dart';import 'package:pub_cloudflare/models/wor_create_or_modify_workflow_request.dart';import 'package:pub_cloudflare/models/wor_create_or_modify_workflow_response/wor_create_or_modify_workflow_response_result.dart';import 'package:pub_cloudflare/models/wor_delete_workflow_response/wor_delete_workflow_response_result.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_order.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/wor_describe_workflow_instance_response_result.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_simple.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_versions_dag_response/wor_describe_workflow_versions_dag_response_result.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_versions_response/wor_describe_workflow_versions_response_result.dart';import 'package:pub_cloudflare/models/wor_get_workflow_details_response/wor_get_workflow_details_response_result.dart';import 'package:pub_cloudflare/models/wor_list_workflow_instances_direction.dart';import 'package:pub_cloudflare/models/wor_list_workflow_instances_response/wor_list_workflow_instances_response_result.dart';import 'package:pub_cloudflare/models/wor_list_workflow_instances_status.dart';import 'package:pub_cloudflare/models/wor_status_terminate_workflow_instances_response/wor_status_terminate_workflow_instances_response_result.dart';/// WorkflowsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkflowsApi with ApiExecutor {const WorkflowsApi(this.apiConfig);
 /// Lists all workflows configured for the account.
 ///
 /// `GET /accounts/{account_id}/workflows`
-Future<ApiResult<List<WorGetWorkflowDetailsResponseResult>, WorListWorkflowsResponse400>> worListWorkflows({required String accountId, double? perPage, double? page, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorGetWorkflowDetailsResponseResult>, WorListWorkflowsError>> worListWorkflows({required String accountId, double? perPage, double? page, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -42,9 +42,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorGetWorkflowDetailsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return WorListWorkflowsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorListWorkflowsError.fromResponse(response),
 );
  } 
 /// Get Workflow details
@@ -52,7 +50,7 @@ return execute(
 /// Retrieves configuration and metadata for a specific workflow.
 ///
 /// `GET /accounts/{account_id}/workflows/{workflow_name}`
-Future<ApiResult<WorGetWorkflowDetailsResponseResult, WorGetWorkflowDetailsResponse400>> worGetWorkflowDetails({required String workflowName, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorGetWorkflowDetailsResponseResult, WorGetWorkflowDetailsError>> worGetWorkflowDetails({required String workflowName, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -67,9 +65,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorGetWorkflowDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorGetWorkflowDetailsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorGetWorkflowDetailsError.fromResponse(response),
 );
  } 
 /// Create/modify Workflow
@@ -77,7 +73,7 @@ return execute(
 /// Creates a new workflow or updates an existing workflow definition.
 ///
 /// `PUT /accounts/{account_id}/workflows/{workflow_name}`
-Future<ApiResult<WorCreateOrModifyWorkflowResponseResult, WorCreateOrModifyWorkflowResponse400>> worCreateOrModifyWorkflow({required String workflowName, required String accountId, required WorCreateOrModifyWorkflowRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorCreateOrModifyWorkflowResponseResult, WorCreateOrModifyWorkflowError>> worCreateOrModifyWorkflow({required String workflowName, required String accountId, required WorCreateOrModifyWorkflowRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -94,9 +90,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorCreateOrModifyWorkflowResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorCreateOrModifyWorkflowResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorCreateOrModifyWorkflowError.fromResponse(response),
 );
  } 
 /// Deletes a Workflow
@@ -104,7 +98,7 @@ return execute(
 /// Deletes a Workflow. This only deletes the Workflow and does not delete or modify any Worker associated to this Workflow or bounded to it.
 ///
 /// `DELETE /accounts/{account_id}/workflows/{workflow_name}`
-Future<ApiResult<WorDeleteWorkflowResponseResult, WorDeleteWorkflowResponse400>> worDeleteWorkflow({required String workflowName, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorDeleteWorkflowResponseResult, WorDeleteWorkflowError>> worDeleteWorkflow({required String workflowName, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -119,9 +113,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorDeleteWorkflowResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorDeleteWorkflowResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorDeleteWorkflowError.fromResponse(response),
 );
  } 
 /// List of workflow instances
@@ -129,7 +121,7 @@ return execute(
 /// Lists all instances of a workflow with their execution status.
 ///
 /// `GET /accounts/{account_id}/workflows/{workflow_name}/instances`
-Future<ApiResult<List<WorListWorkflowInstancesResponseResult>, WorListWorkflowInstancesResponse400>> worListWorkflowInstances({required String workflowName, required String accountId, double? page, double? perPage, String? cursor, WorListWorkflowInstancesDirection? direction, WorListWorkflowInstancesStatus? status, DateTime? dateStart, DateTime? dateEnd, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorListWorkflowInstancesResponseResult>, WorListWorkflowInstancesError>> worListWorkflowInstances({required String workflowName, required String accountId, double? page, double? perPage, String? cursor, WorListWorkflowInstancesDirection? direction, WorListWorkflowInstancesStatus? status, DateTime? dateStart, DateTime? dateEnd, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -170,9 +162,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorListWorkflowInstancesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return WorListWorkflowInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorListWorkflowInstancesError.fromResponse(response),
 );
  } 
 /// Create a new workflow instance
@@ -180,7 +170,7 @@ return execute(
 /// Creates a new instance of a workflow, starting its execution.
 ///
 /// `POST /accounts/{account_id}/workflows/{workflow_name}/instances`
-Future<ApiResult<WorBatchCreateWorkflowInstanceResponseResult, WorCreateNewWorkflowInstanceResponse400>> worCreateNewWorkflowInstance({required String workflowName, required String accountId, WorCreateNewWorkflowInstanceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorBatchCreateWorkflowInstanceResponseResult, WorCreateNewWorkflowInstanceError>> worCreateNewWorkflowInstance({required String workflowName, required String accountId, WorCreateNewWorkflowInstanceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -197,9 +187,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorBatchCreateWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorCreateNewWorkflowInstanceResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorCreateNewWorkflowInstanceError.fromResponse(response),
 );
  } 
 /// Get logs and status from instance
@@ -207,7 +195,7 @@ return execute(
 /// Retrieves logs and execution status for a specific workflow instance.
 ///
 /// `GET /accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}`
-Future<ApiResult<WorDescribeWorkflowInstanceResponseResult, WorDescribeWorkflowInstanceResponse400>> worDescribeWorkflowInstance({required String workflowName, required String instanceId, required String accountId, WorDescribeWorkflowInstanceSimple? simple, WorDescribeWorkflowInstanceOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorDescribeWorkflowInstanceResponseResult, WorDescribeWorkflowInstanceError>> worDescribeWorkflowInstance({required String workflowName, required String instanceId, required String accountId, WorDescribeWorkflowInstanceSimple? simple, WorDescribeWorkflowInstanceOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (simple != null) {
   queryParameters['simple'] = simple.toJson();
@@ -233,9 +221,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorDescribeWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorDescribeWorkflowInstanceResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorDescribeWorkflowInstanceError.fromResponse(response),
 );
  } 
 /// Send event to instance
@@ -243,7 +229,7 @@ return execute(
 /// Sends an event to a running workflow instance to trigger state transitions.
 ///
 /// `POST /accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/events/{event_type}`
-Future<ApiResult<Map<String, dynamic>?, WorSendEventWorkflowInstanceResponse400>> worSendEventWorkflowInstance({required String workflowName, required String instanceId, required String eventType, required String accountId, Map<String,dynamic>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, WorSendEventWorkflowInstanceError>> worSendEventWorkflowInstance({required String workflowName, required String instanceId, required String eventType, required String accountId, Map<String,dynamic>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -260,9 +246,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) {
-    return WorSendEventWorkflowInstanceResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorSendEventWorkflowInstanceError.fromResponse(response),
 );
  } 
 /// Change status of instance
@@ -270,7 +254,7 @@ return execute(
 /// Changes the execution status of a workflow instance (e.g., pause, resume, terminate).
 ///
 /// `PATCH /accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/status`
-Future<ApiResult<WorChangeStatusWorkflowInstanceResponseResult, WorChangeStatusWorkflowInstanceResponse400>> worChangeStatusWorkflowInstance({required String workflowName, required String instanceId, required String accountId, WorChangeStatusWorkflowInstanceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorChangeStatusWorkflowInstanceResponseResult, WorChangeStatusWorkflowInstanceError>> worChangeStatusWorkflowInstance({required String workflowName, required String instanceId, required String accountId, WorChangeStatusWorkflowInstanceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -287,9 +271,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorChangeStatusWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorChangeStatusWorkflowInstanceResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorChangeStatusWorkflowInstanceError.fromResponse(response),
 );
  } 
 /// Batch create new Workflow instances
@@ -297,7 +279,7 @@ return execute(
 /// Creates multiple workflow instances in a single batch operation.
 ///
 /// `POST /accounts/{account_id}/workflows/{workflow_name}/instances/batch`
-Future<ApiResult<List<WorBatchCreateWorkflowInstanceResponseResult>, WorBatchCreateWorkflowInstanceResponse400>> worBatchCreateWorkflowInstance({required String workflowName, required String accountId, List<WorBatchCreateWorkflowInstanceRequest>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WorBatchCreateWorkflowInstanceResponseResult>, WorBatchCreateWorkflowInstanceError>> worBatchCreateWorkflowInstance({required String workflowName, required String accountId, List<WorBatchCreateWorkflowInstanceRequest>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -314,9 +296,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorBatchCreateWorkflowInstanceResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return WorBatchCreateWorkflowInstanceResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorBatchCreateWorkflowInstanceError.fromResponse(response),
 );
  } 
 /// Batch terminate instances of a workflow
@@ -324,7 +304,7 @@ return execute(
 /// Terminates multiple workflow instances in a single batch operation.
 ///
 /// `POST /accounts/{account_id}/workflows/{workflow_name}/instances/batch/terminate`
-Future<ApiResult<WorBatchTerminateWorkflowInstancesResponseResult, WorBatchTerminateWorkflowInstancesResponse400>> worBatchTerminateWorkflowInstances({required String workflowName, required String accountId, List<String>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorBatchTerminateWorkflowInstancesResponseResult, WorBatchTerminateWorkflowInstancesError>> worBatchTerminateWorkflowInstances({required String workflowName, required String accountId, List<String>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -341,9 +321,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorBatchTerminateWorkflowInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorBatchTerminateWorkflowInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorBatchTerminateWorkflowInstancesError.fromResponse(response),
 );
  } 
 /// Get status of the job responsible for terminate all instances of a workflow
@@ -351,7 +329,7 @@ return execute(
 /// Gets the status of a bulk workflow instance termination job.
 ///
 /// `GET /accounts/{account_id}/workflows/{workflow_name}/instances/terminate`
-Future<ApiResult<WorStatusTerminateWorkflowInstancesResponseResult, WorStatusTerminateWorkflowInstancesResponse400>> worStatusTerminateWorkflowInstances({required String workflowName, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorStatusTerminateWorkflowInstancesResponseResult, WorStatusTerminateWorkflowInstancesError>> worStatusTerminateWorkflowInstances({required String workflowName, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -366,9 +344,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorStatusTerminateWorkflowInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorStatusTerminateWorkflowInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorStatusTerminateWorkflowInstancesError.fromResponse(response),
 );
  } 
 /// List deployed Workflow versions
@@ -376,7 +352,7 @@ return execute(
 /// Lists all deployed versions of a workflow.
 ///
 /// `GET /accounts/{account_id}/workflows/{workflow_name}/versions`
-Future<ApiResult<List<WorDescribeWorkflowVersionsResponseResult>, WorListWorkflowVersionsResponse400>> worListWorkflowVersions({required String workflowName, required String accountId, double? perPage, double? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorDescribeWorkflowVersionsResponseResult>, WorListWorkflowVersionsError>> worListWorkflowVersions({required String workflowName, required String accountId, double? perPage, double? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -402,9 +378,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorDescribeWorkflowVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return WorListWorkflowVersionsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorListWorkflowVersionsError.fromResponse(response),
 );
  } 
 /// Get Workflow version details
@@ -412,7 +386,7 @@ return execute(
 /// Retrieves details for a specific deployed workflow version.
 ///
 /// `GET /accounts/{account_id}/workflows/{workflow_name}/versions/{version_id}`
-Future<ApiResult<WorDescribeWorkflowVersionsResponseResult, WorDescribeWorkflowVersionsResponse400>> worDescribeWorkflowVersions({required String workflowName, required String versionId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorDescribeWorkflowVersionsResponseResult, WorDescribeWorkflowVersionsError>> worDescribeWorkflowVersions({required String workflowName, required String versionId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -427,9 +401,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorDescribeWorkflowVersionsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorDescribeWorkflowVersionsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorDescribeWorkflowVersionsError.fromResponse(response),
 );
  } 
 /// Get Workflow version dag
@@ -437,7 +409,7 @@ return execute(
 /// Retrieves the directed acyclic graph (DAG) representation of a workflow version.
 ///
 /// `GET /accounts/{account_id}/workflows/{workflow_name}/versions/{version_id}/dag`
-Future<ApiResult<WorDescribeWorkflowVersionsDagResponseResult, WorDescribeWorkflowVersionsDagResponse404>> worDescribeWorkflowVersionsDag({required String workflowName, required String versionId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorDescribeWorkflowVersionsDagResponseResult, WorDescribeWorkflowVersionsDagError>> worDescribeWorkflowVersionsDag({required String workflowName, required String versionId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -452,9 +424,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorDescribeWorkflowVersionsDagResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorDescribeWorkflowVersionsDagResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorDescribeWorkflowVersionsDagError.fromResponse(response),
 );
  } 
 /// Get Workflow version graph
@@ -462,7 +432,7 @@ return execute(
 /// Retrieves the graph visualization of a workflow version.
 ///
 /// `GET /accounts/{account_id}/workflows/{workflow_name}/versions/{version_id}/graph`
-Future<ApiResult<WorDescribeWorkflowVersionsDagResponseResult, WorDescribeWorkflowVersionsGraphResponse404>> worDescribeWorkflowVersionsGraph({required String workflowName, required String versionId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorDescribeWorkflowVersionsDagResponseResult, WorDescribeWorkflowVersionsGraphError>> worDescribeWorkflowVersionsGraph({required String workflowName, required String versionId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -477,9 +447,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorDescribeWorkflowVersionsDagResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return WorDescribeWorkflowVersionsGraphResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorDescribeWorkflowVersionsGraphError.fromResponse(response),
 );
  } 
  }

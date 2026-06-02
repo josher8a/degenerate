@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_account_id.dart';import 'package:pub_cloudflare/models/r2_data_catalog_bucket_name.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_activation_response.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_list.dart';import 'package:pub_cloudflare/models/response_common_failure55.dart';/// R2CatalogManagementApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/disable_catalog_error.dart';import 'package:pub_cloudflare/models/errors/enable_catalog_error.dart';import 'package:pub_cloudflare/models/errors/list_catalogs_error.dart';import 'package:pub_cloudflare/models/r2_data_catalog_account_id.dart';import 'package:pub_cloudflare/models/r2_data_catalog_bucket_name.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_activation_response.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_list.dart';/// R2CatalogManagementApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -16,7 +16,7 @@ final class R2CatalogManagementApi with ApiExecutor {const R2CatalogManagementAp
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog`
-Future<ApiResult<R2DataCatalogCatalogList?, ResponseCommonFailure55>> listCatalogs({required R2DataCatalogAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogCatalogList?, ListCatalogsError>> listCatalogs({required R2DataCatalogAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -31,9 +31,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2DataCatalogCatalogList.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) {
-    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ListCatalogsError.fromResponse(response),
 );
  } 
 /// Get R2 catalog details
@@ -43,7 +41,7 @@ return execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}`
-Future<ApiResult<R2DataCatalogCatalog?, ResponseCommonFailure55>> getCatalogDetails({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogCatalog?, DisableCatalogError>> getCatalogDetails({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -58,9 +56,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2DataCatalogCatalog.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) {
-    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DisableCatalogError.fromResponse(response),
 );
  } 
 /// Disable R2 catalog
@@ -71,7 +67,7 @@ return execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/disable`
-Future<ApiResult<void, ResponseCommonFailure55>> disableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DisableCatalogError>> disableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -83,9 +79,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DisableCatalogError.fromResponse(response),
 );
  } 
 /// Enable R2 bucket as a catalog
@@ -96,7 +90,7 @@ return execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/enable`
-Future<ApiResult<R2DataCatalogCatalogActivationResponse?, ResponseCommonFailure55>> enableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogCatalogActivationResponse?, EnableCatalogError>> enableCatalog({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -111,9 +105,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2DataCatalogCatalogActivationResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) {
-    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => EnableCatalogError.fromResponse(response),
 );
  } 
  }

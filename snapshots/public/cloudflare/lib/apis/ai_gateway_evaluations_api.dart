@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_evaluations_request.dart';import 'package:pub_cloudflare/models/aig_config_create_evaluations_response/aig_config_create_evaluations_response_result.dart';import 'package:pub_cloudflare/models/aig_config_create_evaluations_response400.dart';import 'package:pub_cloudflare/models/aig_config_delete_evaluations_response404.dart';import 'package:pub_cloudflare/models/aig_config_fetch_evaluations_response404.dart';import 'package:pub_cloudflare/models/aig_config_list_evaluations_response400.dart';import 'package:pub_cloudflare/models/aig_config_list_evaluators_order_by_direction.dart';import 'package:pub_cloudflare/models/aig_config_list_evaluators_response/aig_config_list_evaluators_response_result.dart';import 'package:pub_cloudflare/models/aig_config_list_evaluators_response400.dart';/// AiGatewayEvaluationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_evaluations_request.dart';import 'package:pub_cloudflare/models/aig_config_create_evaluations_response/aig_config_create_evaluations_response_result.dart';import 'package:pub_cloudflare/models/aig_config_list_evaluators_order_by_direction.dart';import 'package:pub_cloudflare/models/aig_config_list_evaluators_response/aig_config_list_evaluators_response_result.dart';import 'package:pub_cloudflare/models/errors/aig_config_create_evaluations_error.dart';import 'package:pub_cloudflare/models/errors/aig_config_delete_evaluations_error.dart';import 'package:pub_cloudflare/models/errors/aig_config_fetch_evaluations_error.dart';import 'package:pub_cloudflare/models/errors/aig_config_list_evaluations_error.dart';import 'package:pub_cloudflare/models/errors/aig_config_list_evaluators_error.dart';/// AiGatewayEvaluationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class AiGatewayEvaluationsApi with ApiExecutor {const AiGatewayEvaluations
 /// List Evaluators
 ///
 /// `GET /accounts/{account_id}/ai-gateway/evaluation-types`
-Future<ApiResult<List<AigConfigListEvaluatorsResponseResult>, AigConfigListEvaluatorsResponse400>> aigConfigListEvaluators({required String accountId, int? page, int? perPage, String? orderBy, AigConfigListEvaluatorsOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AigConfigListEvaluatorsResponseResult>, AigConfigListEvaluatorsError>> aigConfigListEvaluators({required String accountId, int? page, int? perPage, String? orderBy, AigConfigListEvaluatorsOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -43,9 +43,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AigConfigListEvaluatorsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return AigConfigListEvaluatorsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AigConfigListEvaluatorsError.fromResponse(response),
 );
  } 
 /// List Evaluations
@@ -53,7 +51,7 @@ return execute(
 /// Lists all AI Gateway evaluator types configured for the account.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations`
-Future<ApiResult<List<AigConfigCreateEvaluationsResponseResult>, AigConfigListEvaluationsResponse400>> aigConfigListEvaluations({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? processed, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AigConfigCreateEvaluationsResponseResult>, AigConfigListEvaluationsError>> aigConfigListEvaluations({required String accountId, required String gatewayId, int? page, int? perPage, String? name, bool? processed, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -88,9 +86,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AigConfigCreateEvaluationsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return AigConfigListEvaluationsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AigConfigListEvaluationsError.fromResponse(response),
 );
  } 
 /// Create a new Evaluation
@@ -98,7 +94,7 @@ return execute(
 /// Creates a new AI Gateway.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations`
-Future<ApiResult<AigConfigCreateEvaluationsResponseResult, AigConfigCreateEvaluationsResponse400>> aigConfigCreateEvaluations({required String gatewayId, required String accountId, AigConfigCreateEvaluationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateEvaluationsResponseResult, AigConfigCreateEvaluationsError>> aigConfigCreateEvaluations({required String gatewayId, required String accountId, AigConfigCreateEvaluationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,9 +111,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return AigConfigCreateEvaluationsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AigConfigCreateEvaluationsError.fromResponse(response),
 );
  } 
 /// Fetch a Evaluation
@@ -125,7 +119,7 @@ return execute(
 /// Retrieves details for a specific AI Gateway dataset.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations/{id}`
-Future<ApiResult<AigConfigCreateEvaluationsResponseResult, AigConfigFetchEvaluationsResponse404>> aigConfigFetchEvaluations({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateEvaluationsResponseResult, AigConfigFetchEvaluationsError>> aigConfigFetchEvaluations({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -140,9 +134,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return AigConfigFetchEvaluationsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AigConfigFetchEvaluationsError.fromResponse(response),
 );
  } 
 /// Delete a Evaluation
@@ -150,7 +142,7 @@ return execute(
 /// Deletes an AI Gateway dataset.
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations/{id}`
-Future<ApiResult<AigConfigCreateEvaluationsResponseResult, AigConfigDeleteEvaluationsResponse404>> aigConfigDeleteEvaluations({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigCreateEvaluationsResponseResult, AigConfigDeleteEvaluationsError>> aigConfigDeleteEvaluations({required String accountId, required String gatewayId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -165,9 +157,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return AigConfigDeleteEvaluationsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AigConfigDeleteEvaluationsError.fromResponse(response),
 );
  } 
  }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_response/radar_get_ai_bots_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_origin_details_format.dart';import 'package:pub_cloudflare/models/radar_get_origin_details_response/radar_get_origin_details_response_result.dart';import 'package:pub_cloudflare/models/radar_get_origin_details_response404.dart';import 'package:pub_cloudflare/models/radar_get_origin_details_slug.dart';import 'package:pub_cloudflare/models/radar_get_origins_format.dart';import 'package:pub_cloudflare/models/radar_get_origins_response/radar_get_origins_response_result.dart';import 'package:pub_cloudflare/models/radar_get_origins_response400.dart';import 'package:pub_cloudflare/models/radar_get_origins_summary_dimension.dart';import 'package:pub_cloudflare/models/radar_get_origins_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_origins_summary_metric.dart';import 'package:pub_cloudflare/models/radar_get_origins_summary_origin.dart';import 'package:pub_cloudflare/models/radar_get_origins_summary_response400.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_dimension.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_metric.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_normalization.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_origin.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_response400.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_metric.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_origin.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_response400.dart';/// RadarOriginsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_origin_details_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_origins_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_origins_summary_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_origins_timeseries_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_origins_timeseries_group_error.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_response/radar_get_ai_bots_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_origin_details_format.dart';import 'package:pub_cloudflare/models/radar_get_origin_details_response/radar_get_origin_details_response_result.dart';import 'package:pub_cloudflare/models/radar_get_origin_details_slug.dart';import 'package:pub_cloudflare/models/radar_get_origins_format.dart';import 'package:pub_cloudflare/models/radar_get_origins_response/radar_get_origins_response_result.dart';import 'package:pub_cloudflare/models/radar_get_origins_summary_dimension.dart';import 'package:pub_cloudflare/models/radar_get_origins_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_origins_summary_metric.dart';import 'package:pub_cloudflare/models/radar_get_origins_summary_origin.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_dimension.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_metric.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_normalization.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_group_origin.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_metric.dart';import 'package:pub_cloudflare/models/radar_get_origins_timeseries_origin.dart';/// RadarOriginsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarOriginsApi with ApiExecutor {const RadarOriginsApi(this.apiConf
 /// Retrieves a list of origins with their regions.
 ///
 /// `GET /radar/origins`
-Future<ApiResult<RadarGetOriginsResponseResult, RadarGetOriginsResponse400>> radarGetOrigins({int? limit, int? offset, RadarGetOriginsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginsResponseResult, RadarGetOriginsError>> radarGetOrigins({int? limit, int? offset, RadarGetOriginsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -42,9 +42,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetOriginsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetOriginsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetOriginsError.fromResponse(response),
 );
  } 
 /// Get Origin details
@@ -52,7 +50,7 @@ return execute(
 /// Retrieves the requested origin information with its regions.
 ///
 /// `GET /radar/origins/{slug}`
-Future<ApiResult<RadarGetOriginDetailsResponseResult, RadarGetOriginDetailsResponse404>> radarGetOriginDetails({required RadarGetOriginDetailsSlug slug, RadarGetOriginDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginDetailsResponseResult, RadarGetOriginDetailsError>> radarGetOriginDetails({required RadarGetOriginDetailsSlug slug, RadarGetOriginDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -75,9 +73,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetOriginDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetOriginDetailsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetOriginDetailsError.fromResponse(response),
 );
  } 
 /// Get origin metrics distribution by dimension
@@ -85,7 +81,7 @@ return execute(
 /// Retrieves an aggregated summary of origin metrics grouped by the specified dimension.
 ///
 /// `GET /radar/origins/summary/{dimension}`
-Future<ApiResult<RadarGetAiBotsSummaryByUserAgentResponseResult, RadarGetOriginsSummaryResponse400>> radarGetOriginsSummary({required RadarGetOriginsSummaryDimension dimension, required List<RadarGetOriginsSummaryOrigin> origin, required RadarGetOriginsSummaryMetric metric, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? region, RadarGetOriginsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsSummaryByUserAgentResponseResult, RadarGetOriginsSummaryError>> radarGetOriginsSummary({required RadarGetOriginsSummaryDimension dimension, required List<RadarGetOriginsSummaryOrigin> origin, required RadarGetOriginsSummaryMetric metric, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? region, RadarGetOriginsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -140,9 +136,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsSummaryByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetOriginsSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetOriginsSummaryError.fromResponse(response),
 );
  } 
 /// Get origin metrics time series
@@ -150,7 +144,7 @@ return execute(
 /// Retrieves the time series of origin metrics for the specified origin.
 ///
 /// `GET /radar/origins/timeseries`
-Future<ApiResult<RadarGetAiBotsTimeseriesResponseResult, RadarGetOriginsTimeseriesResponse400>> radarGetOriginsTimeseries({required List<RadarGetOriginsTimeseriesOrigin> origin, required RadarGetOriginsTimeseriesMetric metric, RadarGetOriginsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? region, RadarGetOriginsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesResponseResult, RadarGetOriginsTimeseriesError>> radarGetOriginsTimeseries({required List<RadarGetOriginsTimeseriesOrigin> origin, required RadarGetOriginsTimeseriesMetric metric, RadarGetOriginsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? region, RadarGetOriginsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -205,9 +199,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetOriginsTimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetOriginsTimeseriesError.fromResponse(response),
 );
  } 
 /// Get origin metrics time series grouped by dimension
@@ -215,7 +207,7 @@ return execute(
 /// Retrieves the distribution of origin metrics grouped by the specified dimension over time.
 ///
 /// `GET /radar/origins/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult, RadarGetOriginsTimeseriesGroupResponse400>> radarGetOriginsTimeseriesGroup({required RadarGetOriginsTimeseriesGroupDimension dimension, required List<RadarGetOriginsTimeseriesGroupOrigin> origin, required RadarGetOriginsTimeseriesGroupMetric metric, RadarGetOriginsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? region, RadarGetOriginsTimeseriesGroupNormalization? normalization, RadarGetOriginsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult, RadarGetOriginsTimeseriesGroupError>> radarGetOriginsTimeseriesGroup({required RadarGetOriginsTimeseriesGroupDimension dimension, required List<RadarGetOriginsTimeseriesGroupOrigin> origin, required RadarGetOriginsTimeseriesGroupMetric metric, RadarGetOriginsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? region, RadarGetOriginsTimeseriesGroupNormalization? normalization, RadarGetOriginsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -276,9 +268,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetOriginsTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetOriginsTimeseriesGroupError.fromResponse(response),
 );
  } 
  }

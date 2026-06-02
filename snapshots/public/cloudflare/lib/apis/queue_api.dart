@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/failure.dart';import 'package:pub_cloudflare/models/mq_consumer_request.dart';import 'package:pub_cloudflare/models/mq_consumer_response.dart';import 'package:pub_cloudflare/models/mq_event_subscription.dart';import 'package:pub_cloudflare/models/mq_identifier.dart';import 'package:pub_cloudflare/models/mq_queue.dart';import 'package:pub_cloudflare/models/mq_queue_batch.dart';import 'package:pub_cloudflare/models/mq_queue_message.dart';import 'package:pub_cloudflare/models/queues_ack_messages_request.dart';import 'package:pub_cloudflare/models/queues_ack_messages_response/queues_ack_messages_response_result.dart';import 'package:pub_cloudflare/models/queues_create_request.dart';import 'package:pub_cloudflare/models/queues_pull_messages_request.dart';import 'package:pub_cloudflare/models/queues_pull_messages_response/queues_pull_messages_response_result.dart';import 'package:pub_cloudflare/models/queues_purge_get_response/queues_purge_get_response_result.dart';import 'package:pub_cloudflare/models/queues_purge_request.dart';import 'package:pub_cloudflare/models/subscriptions_create_request.dart';import 'package:pub_cloudflare/models/subscriptions_list_direction.dart';import 'package:pub_cloudflare/models/subscriptions_list_order.dart';import 'package:pub_cloudflare/models/subscriptions_patch_request.dart';import 'package:pub_cloudflare/models/success.dart';/// QueueApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/subscriptions_create_error.dart';import 'package:pub_cloudflare/models/errors/subscriptions_get_error.dart';import 'package:pub_cloudflare/models/errors/subscriptions_patch_error.dart';import 'package:pub_cloudflare/models/mq_consumer_request.dart';import 'package:pub_cloudflare/models/mq_consumer_response.dart';import 'package:pub_cloudflare/models/mq_event_subscription.dart';import 'package:pub_cloudflare/models/mq_identifier.dart';import 'package:pub_cloudflare/models/mq_queue.dart';import 'package:pub_cloudflare/models/mq_queue_batch.dart';import 'package:pub_cloudflare/models/mq_queue_message.dart';import 'package:pub_cloudflare/models/queues_ack_messages_request.dart';import 'package:pub_cloudflare/models/queues_ack_messages_response/queues_ack_messages_response_result.dart';import 'package:pub_cloudflare/models/queues_create_request.dart';import 'package:pub_cloudflare/models/queues_pull_messages_request.dart';import 'package:pub_cloudflare/models/queues_pull_messages_response/queues_pull_messages_response_result.dart';import 'package:pub_cloudflare/models/queues_purge_get_response/queues_purge_get_response_result.dart';import 'package:pub_cloudflare/models/queues_purge_request.dart';import 'package:pub_cloudflare/models/subscriptions_create_request.dart';import 'package:pub_cloudflare/models/subscriptions_list_direction.dart';import 'package:pub_cloudflare/models/subscriptions_list_order.dart';import 'package:pub_cloudflare/models/subscriptions_patch_request.dart';import 'package:pub_cloudflare/models/success.dart';/// QueueApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -52,7 +52,7 @@ return execute(
 /// Create a new event subscription for a queue
 ///
 /// `POST /accounts/{account_id}/event_subscriptions/subscriptions`
-Future<ApiResult<MqEventSubscription?, Failure>> subscriptionsCreate({required MqIdentifier accountId, required SubscriptionsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MqEventSubscription?, SubscriptionsCreateError>> subscriptionsCreate({required MqIdentifier accountId, required SubscriptionsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,9 +69,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MqEventSubscription.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) {
-    return Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => SubscriptionsCreateError.fromResponse(response),
 );
  } 
 /// Get Event Subscription
@@ -79,7 +77,7 @@ return execute(
 /// Get details about an existing event subscription
 ///
 /// `GET /accounts/{account_id}/event_subscriptions/subscriptions/{subscription_id}`
-Future<ApiResult<MqEventSubscription?, Failure>> subscriptionsGet({required MqIdentifier accountId, required MqIdentifier subscriptionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MqEventSubscription?, SubscriptionsGetError>> subscriptionsGet({required MqIdentifier accountId, required MqIdentifier subscriptionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -94,9 +92,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MqEventSubscription.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) {
-    return Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => SubscriptionsGetError.fromResponse(response),
 );
  } 
 /// Update Event Subscription
@@ -104,7 +100,7 @@ return execute(
 /// Update an existing event subscription
 ///
 /// `PATCH /accounts/{account_id}/event_subscriptions/subscriptions/{subscription_id}`
-Future<ApiResult<MqEventSubscription?, Failure>> subscriptionsPatch({required MqIdentifier accountId, required MqIdentifier subscriptionId, required SubscriptionsPatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MqEventSubscription?, SubscriptionsPatchError>> subscriptionsPatch({required MqIdentifier accountId, required MqIdentifier subscriptionId, required SubscriptionsPatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -121,9 +117,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MqEventSubscription.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) {
-    return Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => SubscriptionsPatchError.fromResponse(response),
 );
  } 
 /// Delete Event Subscription

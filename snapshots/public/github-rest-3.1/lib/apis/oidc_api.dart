@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/empty_object.dart';import 'package:pub_github_rest_3_1/models/oidc_custom_sub.dart';/// OidcApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/empty_object.dart';import 'package:pub_github_rest_3_1/models/errors/actions_approve_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/oidc_custom_sub.dart';/// OidcApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -38,7 +38,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/oidc/customization/sub`
-Future<ApiResult<EmptyObject, BasicError>> oidcUpdateOidcCustomSubTemplateForOrg({required String org, required OidcCustomSub body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmptyObject, ActionsApproveWorkflowRunError>> oidcUpdateOidcCustomSubTemplateForOrg({required String org, required OidcCustomSub body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,9 +54,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
  }

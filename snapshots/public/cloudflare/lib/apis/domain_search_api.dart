@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model.dart';import 'package:pub_cloudflare/models/query.dart';import 'package:pub_cloudflare/models/query_bulk.dart';import 'package:pub_cloudflare/models/query_match.dart';/// DomainSearchApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/delete_accounts_brand_protection_brands_error.dart';import 'package:pub_cloudflare/models/errors/delete_accounts_brand_protection_queries_error.dart';import 'package:pub_cloudflare/models/query.dart';import 'package:pub_cloudflare/models/query_bulk.dart';import 'package:pub_cloudflare/models/query_match.dart';/// DomainSearchApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DomainSearchApi with ApiExecutor {const DomainSearchApi(this.apiConf
 /// Return matches for string queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/matches`
-Future<ApiResult<QueryMatch, ErrorModel>> getAccountsBrandProtectionMatches({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<QueryMatch, DeleteAccountsBrandProtectionQueriesError>> getAccountsBrandProtectionMatches({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -44,9 +44,7 @@ return execute(
   onSuccess: (response) {
     return QueryMatch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
 );
  } 
 /// Download matches for string queries by ID
@@ -54,7 +52,7 @@ return execute(
 /// Return matches as CSV for string queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/matches/download`
-Future<ApiResult<QueryMatch, ErrorModel>> getAccountsBrandProtectionMatchesDownload({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<QueryMatch, DeleteAccountsBrandProtectionQueriesError>> getAccountsBrandProtectionMatchesDownload({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -85,9 +83,7 @@ return execute(
   onSuccess: (response) {
     return QueryMatch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
 );
  } 
 /// Read string queries by ID
@@ -95,7 +91,7 @@ return execute(
 /// Return string queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionQueries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteAccountsBrandProtectionBrandsError>> getAccountsBrandProtectionQueries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -107,9 +103,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
 );
  } 
 /// Create new saved string queries
@@ -117,7 +111,7 @@ return execute(
 /// Return a success message after creating new saved string queries
 ///
 /// `POST /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueries({required String accountId, required Query body, String? id, String? tag, bool? scan, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, DeleteAccountsBrandProtectionQueriesError>> postAccountsBrandProtectionQueries({required String accountId, required Query body, String? id, String? tag, bool? scan, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -145,9 +139,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
 );
  } 
 /// Update saved string queries by ID
@@ -155,7 +147,7 @@ return execute(
 /// Return a success message after updating saved string queries by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionQueries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteAccountsBrandProtectionBrandsError>> patchAccountsBrandProtectionQueries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -167,9 +159,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
 );
  } 
 /// Delete saved string queries by ID
@@ -177,7 +167,7 @@ return execute(
 /// Return a success message after deleting saved string queries by ID
 ///
 /// `DELETE /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionQueries({required String accountId, String? id, String? tag, bool? scan, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, DeleteAccountsBrandProtectionQueriesError>> deleteAccountsBrandProtectionQueries({required String accountId, String? id, String? tag, bool? scan, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -203,9 +193,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
 );
  } 
 /// Create new saved string queries in bulk
@@ -213,7 +201,7 @@ return execute(
 /// Return a success message after creating new saved string queries in bulk
 ///
 /// `POST /accounts/{account_id}/brand-protection/queries/bulk`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueriesBulk({required String accountId, required QueryBulk body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteAccountsBrandProtectionQueriesError>> postAccountsBrandProtectionQueriesBulk({required String accountId, required QueryBulk body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -227,9 +215,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
 );
  } 
 /// Create new string queries
@@ -237,7 +223,7 @@ return execute(
 /// Return new string queries
 ///
 /// `POST /accounts/{account_id}/brand-protection/search`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionSearch({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteAccountsBrandProtectionBrandsError>> postAccountsBrandProtectionSearch({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -249,9 +235,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
 );
  } 
 /// Read the total number of saved string queries
@@ -259,7 +243,7 @@ return execute(
 /// Return the total number of saved string queries
 ///
 /// `GET /accounts/{account_id}/brand-protection/total-queries`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionTotalQueries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteAccountsBrandProtectionBrandsError>> getAccountsBrandProtectionTotalQueries({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -271,9 +255,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
 );
  } 
  }

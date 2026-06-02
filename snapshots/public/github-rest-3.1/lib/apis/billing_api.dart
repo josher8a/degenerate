@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/billing_get_all_budgets_org_scope.dart';import 'package:pub_github_rest_3_1/models/billing_premium_request_usage_report_org.dart';import 'package:pub_github_rest_3_1/models/billing_premium_request_usage_report_user.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_request.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_response.dart';import 'package:pub_github_rest_3_1/models/billing_usage_report.dart';import 'package:pub_github_rest_3_1/models/billing_usage_report_user.dart';import 'package:pub_github_rest_3_1/models/billing_usage_summary_report_org.dart';import 'package:pub_github_rest_3_1/models/billing_usage_summary_report_user.dart';import 'package:pub_github_rest_3_1/models/delete_budget.dart';import 'package:pub_github_rest_3_1/models/get_all_budgets.dart';import 'package:pub_github_rest_3_1/models/get_budget.dart';/// BillingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/billing_get_all_budgets_org_scope.dart';import 'package:pub_github_rest_3_1/models/billing_premium_request_usage_report_org.dart';import 'package:pub_github_rest_3_1/models/billing_premium_request_usage_report_user.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_request.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_response.dart';import 'package:pub_github_rest_3_1/models/billing_usage_report.dart';import 'package:pub_github_rest_3_1/models/billing_usage_report_user.dart';import 'package:pub_github_rest_3_1/models/billing_usage_summary_report_org.dart';import 'package:pub_github_rest_3_1/models/billing_usage_summary_report_user.dart';import 'package:pub_github_rest_3_1/models/delete_budget.dart';import 'package:pub_github_rest_3_1/models/errors/billing_delete_budget_org_error.dart';import 'package:pub_github_rest_3_1/models/errors/billing_get_all_budgets_org_error.dart';import 'package:pub_github_rest_3_1/models/errors/billing_get_budget_org_error.dart';import 'package:pub_github_rest_3_1/models/errors/billing_get_github_billing_premium_request_usage_report_org_error.dart';import 'package:pub_github_rest_3_1/models/errors/billing_get_github_billing_premium_request_usage_report_user_error.dart';import 'package:pub_github_rest_3_1/models/errors/billing_get_github_billing_usage_report_org_error.dart';import 'package:pub_github_rest_3_1/models/errors/billing_get_github_billing_usage_report_user_error.dart';import 'package:pub_github_rest_3_1/models/errors/billing_get_github_billing_usage_summary_report_org_error.dart';import 'package:pub_github_rest_3_1/models/errors/billing_get_github_billing_usage_summary_report_user_error.dart';import 'package:pub_github_rest_3_1/models/errors/billing_update_budget_org_error.dart';import 'package:pub_github_rest_3_1/models/get_all_budgets.dart';import 'package:pub_github_rest_3_1/models/get_budget.dart';/// BillingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -17,7 +17,7 @@ final class BillingApi with ApiExecutor {const BillingApi(this.apiConfig);
 /// Each page returns up to 10 budgets.
 ///
 /// `GET /organizations/{org}/settings/billing/budgets`
-Future<ApiResult<GetAllBudgets, BasicError>> billingGetAllBudgetsOrg({required String org, int? page, int? perPage, BillingGetAllBudgetsOrgScope? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAllBudgets, BillingGetAllBudgetsOrgError>> billingGetAllBudgetsOrg({required String org, int? page, int? perPage, BillingGetAllBudgetsOrgScope? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -45,9 +45,7 @@ return execute(
   onSuccess: (response) {
     return GetAllBudgets.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => BillingGetAllBudgetsOrgError.fromResponse(response),
 );
  } 
 /// Get a budget by ID for an organization
@@ -58,7 +56,7 @@ return execute(
 /// Gets a budget by ID. The authenticated user must be an organization admin or billing manager.
 ///
 /// `GET /organizations/{org}/settings/billing/budgets/{budget_id}`
-Future<ApiResult<GetBudget, BasicError>> billingGetBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetBudget, BillingGetBudgetOrgError>> billingGetBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -72,9 +70,7 @@ return execute(
   onSuccess: (response) {
     return GetBudget.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => BillingGetBudgetOrgError.fromResponse(response),
 );
  } 
 /// Update a budget for an organization
@@ -85,7 +81,7 @@ return execute(
 /// Updates an existing budget for an organization. The authenticated user must be an organization admin or billing manager.
 ///
 /// `PATCH /organizations/{org}/settings/billing/budgets/{budget_id}`
-Future<ApiResult<BillingUpdateBudgetOrgResponse, BasicError>> billingUpdateBudgetOrg({required String org, required String budgetId, required BillingUpdateBudgetOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingUpdateBudgetOrgResponse, BillingUpdateBudgetOrgError>> billingUpdateBudgetOrg({required String org, required String budgetId, required BillingUpdateBudgetOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -101,9 +97,7 @@ return execute(
   onSuccess: (response) {
     return BillingUpdateBudgetOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => BillingUpdateBudgetOrgError.fromResponse(response),
 );
  } 
 /// Delete a budget for an organization
@@ -114,7 +108,7 @@ return execute(
 /// Deletes a budget by ID for an organization. The authenticated user must be an organization admin or billing manager.
 ///
 /// `DELETE /organizations/{org}/settings/billing/budgets/{budget_id}`
-Future<ApiResult<DeleteBudget, BasicError>> billingDeleteBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteBudget, BillingDeleteBudgetOrgError>> billingDeleteBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -128,9 +122,7 @@ return execute(
   onSuccess: (response) {
     return DeleteBudget.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => BillingDeleteBudgetOrgError.fromResponse(response),
 );
  } 
 /// Get billing premium request usage report for an organization
@@ -140,7 +132,7 @@ return execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /organizations/{org}/settings/billing/premium_request/usage`
-Future<ApiResult<BillingPremiumRequestUsageReportOrg, BasicError>> billingGetGithubBillingPremiumRequestUsageReportOrg({required String org, int? year, int? month, int? day, String? user, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingPremiumRequestUsageReportOrg, BillingGetGithubBillingPremiumRequestUsageReportOrgError>> billingGetGithubBillingPremiumRequestUsageReportOrg({required String org, int? year, int? month, int? day, String? user, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) {
   queryParameters['year'] = year.toString();
@@ -177,9 +169,7 @@ return execute(
   onSuccess: (response) {
     return BillingPremiumRequestUsageReportOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => BillingGetGithubBillingPremiumRequestUsageReportOrgError.fromResponse(response),
 );
  } 
 /// Get billing usage report for an organization
@@ -189,7 +179,7 @@ return execute(
 /// **Note:** This endpoint is only available to organizations with access to the enhanced billing platform. For more information, see "[About the enhanced billing platform](https://docs.github.com/billing/using-the-new-billing-platform)."
 ///
 /// `GET /organizations/{org}/settings/billing/usage`
-Future<ApiResult<BillingUsageReport, BasicError>> billingGetGithubBillingUsageReportOrg({required String org, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingUsageReport, BillingGetGithubBillingUsageReportOrgError>> billingGetGithubBillingUsageReportOrg({required String org, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) {
   queryParameters['year'] = year.toString();
@@ -217,9 +207,7 @@ return execute(
   onSuccess: (response) {
     return BillingUsageReport.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => BillingGetGithubBillingUsageReportOrgError.fromResponse(response),
 );
  } 
 /// Get billing usage summary for an organization
@@ -232,7 +220,7 @@ return execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /organizations/{org}/settings/billing/usage/summary`
-Future<ApiResult<BillingUsageSummaryReportOrg, BasicError>> billingGetGithubBillingUsageSummaryReportOrg({required String org, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingUsageSummaryReportOrg, BillingGetGithubBillingUsageSummaryReportOrgError>> billingGetGithubBillingUsageSummaryReportOrg({required String org, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) {
   queryParameters['year'] = year.toString();
@@ -269,9 +257,7 @@ return execute(
   onSuccess: (response) {
     return BillingUsageSummaryReportOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => BillingGetGithubBillingUsageSummaryReportOrgError.fromResponse(response),
 );
  } 
 /// Get billing premium request usage report for a user
@@ -281,7 +267,7 @@ return execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /users/{username}/settings/billing/premium_request/usage`
-Future<ApiResult<BillingPremiumRequestUsageReportUser, BasicError>> billingGetGithubBillingPremiumRequestUsageReportUser({required String username, int? year, int? month, int? day, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingPremiumRequestUsageReportUser, BillingGetGithubBillingPremiumRequestUsageReportUserError>> billingGetGithubBillingPremiumRequestUsageReportUser({required String username, int? year, int? month, int? day, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) {
   queryParameters['year'] = year.toString();
@@ -315,9 +301,7 @@ return execute(
   onSuccess: (response) {
     return BillingPremiumRequestUsageReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => BillingGetGithubBillingPremiumRequestUsageReportUserError.fromResponse(response),
 );
  } 
 /// Get billing usage report for a user
@@ -327,7 +311,7 @@ return execute(
 /// **Note:** This endpoint is only available to users with access to the enhanced billing platform.
 ///
 /// `GET /users/{username}/settings/billing/usage`
-Future<ApiResult<BillingUsageReportUser, BasicError>> billingGetGithubBillingUsageReportUser({required String username, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingUsageReportUser, BillingGetGithubBillingUsageReportUserError>> billingGetGithubBillingUsageReportUser({required String username, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) {
   queryParameters['year'] = year.toString();
@@ -355,9 +339,7 @@ return execute(
   onSuccess: (response) {
     return BillingUsageReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => BillingGetGithubBillingUsageReportUserError.fromResponse(response),
 );
  } 
 /// Get billing usage summary for a user
@@ -370,7 +352,7 @@ return execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /users/{username}/settings/billing/usage/summary`
-Future<ApiResult<BillingUsageSummaryReportUser, BasicError>> billingGetGithubBillingUsageSummaryReportUser({required String username, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingUsageSummaryReportUser, BillingGetGithubBillingUsageSummaryReportUserError>> billingGetGithubBillingUsageSummaryReportUser({required String username, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) {
   queryParameters['year'] = year.toString();
@@ -407,9 +389,7 @@ return execute(
   onSuccess: (response) {
     return BillingUsageSummaryReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => BillingGetGithubBillingUsageSummaryReportUserError.fromResponse(response),
 );
  } 
  }

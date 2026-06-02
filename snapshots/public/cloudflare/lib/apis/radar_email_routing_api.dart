@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_summary_response/radar_get_attacks_layer3_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_arc.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_dimension.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_dkim.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_dmarc.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_encrypted.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_ip_version.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_response400.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_spf.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_arc.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_dimension.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_dkim.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_dmarc.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_encrypted.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_ip_version.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_response400.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_spf.dart';/// RadarEmailRoutingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_email_routing_summary_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_email_routing_timeseries_group_error.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_summary_response/radar_get_attacks_layer3_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_arc.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_dimension.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_dkim.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_dmarc.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_encrypted.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_ip_version.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_spf.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_arc.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_dimension.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_dkim.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_dmarc.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_encrypted.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_ip_version.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_spf.dart';/// RadarEmailRoutingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarEmailRoutingApi with ApiExecutor {const RadarEmailRoutingApi(th
 /// Retrieves the distribution of email routing metrics by the specified dimension.
 ///
 /// `GET /radar/email/routing/summary/{dimension}`
-Future<ApiResult<RadarGetAttacksLayer3SummaryResponseResult, RadarGetEmailRoutingSummaryResponse400>> radarGetEmailRoutingSummary({required RadarGetEmailRoutingSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingSummaryArc>? arc, List<RadarGetEmailRoutingSummaryDkim>? dkim, List<RadarGetEmailRoutingSummaryDmarc>? dmarc, List<RadarGetEmailRoutingSummarySpf>? spf, List<RadarGetEmailRoutingSummaryIpVersion>? ipVersion, List<RadarGetEmailRoutingSummaryEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer3SummaryResponseResult, RadarGetEmailRoutingSummaryError>> radarGetEmailRoutingSummary({required RadarGetEmailRoutingSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingSummaryArc>? arc, List<RadarGetEmailRoutingSummaryDkim>? dkim, List<RadarGetEmailRoutingSummaryDmarc>? dmarc, List<RadarGetEmailRoutingSummarySpf>? spf, List<RadarGetEmailRoutingSummaryIpVersion>? ipVersion, List<RadarGetEmailRoutingSummaryEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -89,9 +89,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer3SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetEmailRoutingSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetEmailRoutingSummaryError.fromResponse(response),
 );
  } 
 /// Get email routing time series grouped by dimension
@@ -99,7 +97,7 @@ return execute(
 /// Retrieves the distribution of email routing metrics grouped by dimension over time.
 ///
 /// `GET /radar/email/routing/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult, RadarGetEmailRoutingTimeseriesGroupResponse400>> radarGetEmailRoutingTimeseriesGroup({required RadarGetEmailRoutingTimeseriesGroupDimension dimension, RadarGetEmailRoutingTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingTimeseriesGroupArc>? arc, List<RadarGetEmailRoutingTimeseriesGroupDkim>? dkim, List<RadarGetEmailRoutingTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailRoutingTimeseriesGroupSpf>? spf, List<RadarGetEmailRoutingTimeseriesGroupIpVersion>? ipVersion, List<RadarGetEmailRoutingTimeseriesGroupEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult, RadarGetEmailRoutingTimeseriesGroupError>> radarGetEmailRoutingTimeseriesGroup({required RadarGetEmailRoutingTimeseriesGroupDimension dimension, RadarGetEmailRoutingTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingTimeseriesGroupArc>? arc, List<RadarGetEmailRoutingTimeseriesGroupDkim>? dkim, List<RadarGetEmailRoutingTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailRoutingTimeseriesGroupSpf>? spf, List<RadarGetEmailRoutingTimeseriesGroupIpVersion>? ipVersion, List<RadarGetEmailRoutingTimeseriesGroupEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -178,9 +176,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetEmailRoutingTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetEmailRoutingTimeseriesGroupError.fromResponse(response),
 );
  } 
  }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_group_delete_response.dart';import 'package:pub_cloudflare/models/delete_group_delete_response400.dart';import 'package:pub_cloudflare/models/delete_group_member_delete_response.dart';import 'package:pub_cloudflare/models/delete_group_member_delete_response400.dart';import 'package:pub_cloudflare/models/get_group_list_response.dart';import 'package:pub_cloudflare/models/get_group_list_response400.dart';import 'package:pub_cloudflare/models/get_group_member_list_response.dart';import 'package:pub_cloudflare/models/get_group_member_list_response400.dart';import 'package:pub_cloudflare/models/get_group_read_response.dart';import 'package:pub_cloudflare/models/get_group_read_response400.dart';import 'package:pub_cloudflare/models/post_group_create_request.dart';import 'package:pub_cloudflare/models/post_group_create_response.dart';import 'package:pub_cloudflare/models/post_group_create_response400.dart';import 'package:pub_cloudflare/models/post_group_member_create_request.dart';import 'package:pub_cloudflare/models/post_group_member_create_response.dart';import 'package:pub_cloudflare/models/post_group_member_create_response400.dart';import 'package:pub_cloudflare/models/put_group_update_request.dart';import 'package:pub_cloudflare/models/put_group_update_response.dart';import 'package:pub_cloudflare/models/put_group_update_response400.dart';/// GroupsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_group_delete_response.dart';import 'package:pub_cloudflare/models/delete_group_member_delete_response.dart';import 'package:pub_cloudflare/models/errors/delete_group_delete_error.dart';import 'package:pub_cloudflare/models/errors/delete_group_member_delete_error.dart';import 'package:pub_cloudflare/models/errors/get_group_list_error.dart';import 'package:pub_cloudflare/models/errors/get_group_member_list_error.dart';import 'package:pub_cloudflare/models/errors/get_group_read_error.dart';import 'package:pub_cloudflare/models/errors/post_group_create_error.dart';import 'package:pub_cloudflare/models/errors/post_group_member_create_error.dart';import 'package:pub_cloudflare/models/errors/put_group_update_error.dart';import 'package:pub_cloudflare/models/get_group_list_response.dart';import 'package:pub_cloudflare/models/get_group_member_list_response.dart';import 'package:pub_cloudflare/models/get_group_read_response.dart';import 'package:pub_cloudflare/models/post_group_create_request.dart';import 'package:pub_cloudflare/models/post_group_create_response.dart';import 'package:pub_cloudflare/models/post_group_member_create_request.dart';import 'package:pub_cloudflare/models/post_group_member_create_response.dart';import 'package:pub_cloudflare/models/put_group_update_request.dart';import 'package:pub_cloudflare/models/put_group_update_response.dart';/// GroupsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class GroupsApi with ApiExecutor {const GroupsApi(this.apiConfig);
 /// List groups for an account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups`
-Future<ApiResult<List<GetGroupListResponse>, GetGroupListResponse400>> getGroupList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetGroupListResponse>, GetGroupListError>> getGroupList({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,15 +26,13 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetGroupListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return GetGroupListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetGroupListError.fromResponse(response),
 );
  } 
 /// Create a group
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/-/groups`
-Future<ApiResult<PostGroupCreateResponse, PostGroupCreateResponse400>> postGroupCreate({required String accountId, PostGroupCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostGroupCreateResponse, PostGroupCreateError>> postGroupCreate({required String accountId, PostGroupCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -50,15 +48,13 @@ return execute(
   onSuccess: (response) {
     return PostGroupCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return PostGroupCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => PostGroupCreateError.fromResponse(response),
 );
  } 
 /// Read a group for an account
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}`
-Future<ApiResult<GetGroupReadResponse, GetGroupReadResponse400>> getGroupRead({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetGroupReadResponse, GetGroupReadError>> getGroupRead({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -72,15 +68,13 @@ return execute(
   onSuccess: (response) {
     return GetGroupReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return GetGroupReadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetGroupReadError.fromResponse(response),
 );
  } 
 /// Update a group
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}`
-Future<ApiResult<PutGroupUpdateResponse, PutGroupUpdateResponse400>> putGroupUpdate({required String accountId, required String groupId, PutGroupUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PutGroupUpdateResponse, PutGroupUpdateError>> putGroupUpdate({required String accountId, required String groupId, PutGroupUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,15 +90,13 @@ return execute(
   onSuccess: (response) {
     return PutGroupUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return PutGroupUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => PutGroupUpdateError.fromResponse(response),
 );
  } 
 /// Delete a group for an account
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}`
-Future<ApiResult<DeleteGroupDeleteResponse, DeleteGroupDeleteResponse400>> deleteGroupDelete({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteGroupDeleteResponse, DeleteGroupDeleteError>> deleteGroupDelete({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -118,15 +110,13 @@ return execute(
   onSuccess: (response) {
     return DeleteGroupDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return DeleteGroupDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteGroupDeleteError.fromResponse(response),
 );
  } 
 /// List group members
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members`
-Future<ApiResult<List<GetGroupMemberListResponse>, GetGroupMemberListResponse400>> getGroupMemberList({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<GetGroupMemberListResponse>, GetGroupMemberListError>> getGroupMemberList({required String accountId, required String groupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -141,15 +131,13 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetGroupMemberListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return GetGroupMemberListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetGroupMemberListError.fromResponse(response),
 );
  } 
 /// Create a group member
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members`
-Future<ApiResult<PostGroupMemberCreateResponse, PostGroupMemberCreateResponse400>> postGroupMemberCreate({required String accountId, required String groupId, PostGroupMemberCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostGroupMemberCreateResponse, PostGroupMemberCreateError>> postGroupMemberCreate({required String accountId, required String groupId, PostGroupMemberCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -165,15 +153,13 @@ return execute(
   onSuccess: (response) {
     return PostGroupMemberCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return PostGroupMemberCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => PostGroupMemberCreateError.fromResponse(response),
 );
  } 
 /// Delete a group member
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members/{member_id}`
-Future<ApiResult<DeleteGroupMemberDeleteResponse, DeleteGroupMemberDeleteResponse400>> deleteGroupMemberDelete({required String accountId, required String groupId, required String memberId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteGroupMemberDeleteResponse, DeleteGroupMemberDeleteError>> deleteGroupMemberDelete({required String accountId, required String groupId, required String memberId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -187,9 +173,7 @@ return execute(
   onSuccess: (response) {
     return DeleteGroupMemberDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return DeleteGroupMemberDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteGroupMemberDeleteError.fromResponse(response),
 );
  } 
  }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/enterprise_team_memberships_bulk_add_request.dart';import 'package:pub_github_rest_3_1/models/enterprise_team_memberships_bulk_remove_request.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// EnterpriseTeamMembershipsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_team_memberships_bulk_add_request.dart';import 'package:pub_github_rest_3_1/models/enterprise_team_memberships_bulk_remove_request.dart';import 'package:pub_github_rest_3_1/models/errors/actions_re_run_job_for_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// EnterpriseTeamMembershipsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -136,7 +136,7 @@ return execute(
 /// Remove membership of a specific user from a particular team in an enterprise.
 ///
 /// `DELETE /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}`
-Future<ApiResult<void, BasicError>> enterpriseTeamMembershipsRemove({required String enterprise, required String enterpriseTeam, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsReRunJobForWorkflowRunError>> enterpriseTeamMembershipsRemove({required String enterprise, required String enterpriseTeam, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -148,9 +148,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
 );
  } 
  }

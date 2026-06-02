@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/search_code_order.dart';import 'package:pub_github_rest_3_1/models/search_code_response.dart';import 'package:pub_github_rest_3_1/models/search_code_response503.dart';import 'package:pub_github_rest_3_1/models/search_code_sort.dart';import 'package:pub_github_rest_3_1/models/search_commits_order.dart';import 'package:pub_github_rest_3_1/models/search_commits_response.dart';import 'package:pub_github_rest_3_1/models/search_commits_sort.dart';import 'package:pub_github_rest_3_1/models/search_issues_and_pull_requests_order.dart';import 'package:pub_github_rest_3_1/models/search_issues_and_pull_requests_response.dart';import 'package:pub_github_rest_3_1/models/search_issues_and_pull_requests_response503.dart';import 'package:pub_github_rest_3_1/models/search_issues_and_pull_requests_sort.dart';import 'package:pub_github_rest_3_1/models/search_labels_order.dart';import 'package:pub_github_rest_3_1/models/search_labels_response.dart';import 'package:pub_github_rest_3_1/models/search_labels_sort.dart';import 'package:pub_github_rest_3_1/models/search_repos_order.dart';import 'package:pub_github_rest_3_1/models/search_repos_response.dart';import 'package:pub_github_rest_3_1/models/search_repos_response503.dart';import 'package:pub_github_rest_3_1/models/search_repos_sort.dart';import 'package:pub_github_rest_3_1/models/search_topics_response.dart';import 'package:pub_github_rest_3_1/models/search_users_order.dart';import 'package:pub_github_rest_3_1/models/search_users_response.dart';import 'package:pub_github_rest_3_1/models/search_users_response503.dart';import 'package:pub_github_rest_3_1/models/search_users_sort.dart';/// SearchApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/errors/actions_set_private_repo_fork_pr_workflows_settings_organization_error.dart';import 'package:pub_github_rest_3_1/models/errors/search_code_error.dart';import 'package:pub_github_rest_3_1/models/errors/search_issues_and_pull_requests_error.dart';import 'package:pub_github_rest_3_1/models/errors/search_repos_error.dart';import 'package:pub_github_rest_3_1/models/errors/search_users_error.dart';import 'package:pub_github_rest_3_1/models/search_code_order.dart';import 'package:pub_github_rest_3_1/models/search_code_response.dart';import 'package:pub_github_rest_3_1/models/search_code_sort.dart';import 'package:pub_github_rest_3_1/models/search_commits_order.dart';import 'package:pub_github_rest_3_1/models/search_commits_response.dart';import 'package:pub_github_rest_3_1/models/search_commits_sort.dart';import 'package:pub_github_rest_3_1/models/search_issues_and_pull_requests_order.dart';import 'package:pub_github_rest_3_1/models/search_issues_and_pull_requests_response.dart';import 'package:pub_github_rest_3_1/models/search_issues_and_pull_requests_sort.dart';import 'package:pub_github_rest_3_1/models/search_labels_order.dart';import 'package:pub_github_rest_3_1/models/search_labels_response.dart';import 'package:pub_github_rest_3_1/models/search_labels_sort.dart';import 'package:pub_github_rest_3_1/models/search_repos_order.dart';import 'package:pub_github_rest_3_1/models/search_repos_response.dart';import 'package:pub_github_rest_3_1/models/search_repos_sort.dart';import 'package:pub_github_rest_3_1/models/search_topics_response.dart';import 'package:pub_github_rest_3_1/models/search_users_order.dart';import 'package:pub_github_rest_3_1/models/search_users_response.dart';import 'package:pub_github_rest_3_1/models/search_users_sort.dart';/// SearchApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -32,7 +32,7 @@ final class SearchApi with ApiExecutor {const SearchApi(this.apiConfig);
 /// This endpoint requires you to authenticate and limits you to 10 requests per minute.
 ///
 /// `GET /search/code`
-Future<ApiResult<SearchCodeResponse, SearchCodeResponse503>> searchCode({required String q, SearchCodeSort? sort, SearchCodeOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchCodeResponse, SearchCodeError>> searchCode({required String q, SearchCodeSort? sort, SearchCodeOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -64,9 +64,7 @@ return execute(
   onSuccess: (response) {
     return SearchCodeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return SearchCodeResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => SearchCodeError.fromResponse(response),
 );
  } 
 /// Search commits
@@ -132,7 +130,7 @@ return execute(
 /// > For requests made by GitHub Apps with a user access token, you can't retrieve a combination of issues and pull requests in a single query. Requests that don't include the `is:issue` or `is:pull-request` qualifier will receive an HTTP `422 Unprocessable Entity` response. To get results for both issues and pull requests, you must send separate queries for issues and pull requests. For more information about the `is` qualifier, see "[Searching only issues or pull requests](https://docs.github.com/github/searching-for-information-on-github/searching-issues-and-pull-requests#search-only-issues-or-pull-requests)."
 ///
 /// `GET /search/issues`
-Future<ApiResult<SearchIssuesAndPullRequestsResponse, SearchIssuesAndPullRequestsResponse503>> searchIssuesAndPullRequests({required String q, SearchIssuesAndPullRequestsSort? sort, SearchIssuesAndPullRequestsOrder? order, int? perPage, int? page, String? advancedSearch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchIssuesAndPullRequestsResponse, SearchIssuesAndPullRequestsError>> searchIssuesAndPullRequests({required String q, SearchIssuesAndPullRequestsSort? sort, SearchIssuesAndPullRequestsOrder? order, int? perPage, int? page, String? advancedSearch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -167,9 +165,7 @@ return execute(
   onSuccess: (response) {
     return SearchIssuesAndPullRequestsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return SearchIssuesAndPullRequestsResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => SearchIssuesAndPullRequestsError.fromResponse(response),
 );
  } 
 /// Search labels
@@ -185,7 +181,7 @@ return execute(
 /// The labels that best match the query appear first in the search results.
 ///
 /// `GET /search/labels`
-Future<ApiResult<SearchLabelsResponse, BasicError>> searchLabels({required int repositoryId, required String q, SearchLabelsSort? sort, SearchLabelsOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchLabelsResponse, ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError>> searchLabels({required int repositoryId, required String q, SearchLabelsSort? sort, SearchLabelsOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['repository_id'] = repositoryId.toString();
 queryParameters['q'] = q;
@@ -218,9 +214,7 @@ return execute(
   onSuccess: (response) {
     return SearchLabelsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
 );
  } 
 /// Search repositories
@@ -236,7 +230,7 @@ return execute(
 /// This query searches for repositories with the word `tetris` in the name, the description, or the README. The results are limited to repositories where the primary language is assembly. The results are sorted by stars in descending order, so that the most popular repositories appear first in the search results.
 ///
 /// `GET /search/repositories`
-Future<ApiResult<SearchReposResponse, SearchReposResponse503>> searchRepos({required String q, SearchReposSort? sort, SearchReposOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchReposResponse, SearchReposError>> searchRepos({required String q, SearchReposSort? sort, SearchReposOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -268,9 +262,7 @@ return execute(
   onSuccess: (response) {
     return SearchReposResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return SearchReposResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => SearchReposError.fromResponse(response),
 );
  } 
 /// Search topics
@@ -329,7 +321,7 @@ return execute(
 /// This endpoint does not accept authentication and will only include publicly visible users. As an alternative, you can use the GraphQL API. The GraphQL API requires authentication and will return private users, including Enterprise Managed Users (EMUs), that you are authorized to view. For more information, see "[GraphQL Queries](https://docs.github.com/graphql/reference/queries#search)."
 ///
 /// `GET /search/users`
-Future<ApiResult<SearchUsersResponse, SearchUsersResponse503>> searchUsers({required String q, SearchUsersSort? sort, SearchUsersOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchUsersResponse, SearchUsersError>> searchUsers({required String q, SearchUsersSort? sort, SearchUsersOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -361,9 +353,7 @@ return execute(
   onSuccess: (response) {
     return SearchUsersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return SearchUsersResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => SearchUsersError.fromResponse(response),
 );
  } 
  }

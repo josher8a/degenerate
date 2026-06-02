@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/overview.dart';import 'package:pub_github_rest_3_1/models/root.dart';/// MetaApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/errors/actions_get_artifact_and_log_retention_settings_repository_error.dart';import 'package:pub_github_rest_3_1/models/overview.dart';import 'package:pub_github_rest_3_1/models/root.dart';/// MetaApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -91,7 +91,7 @@ return execute(
 /// Get all supported GitHub API versions.
 ///
 /// `GET /versions`
-Future<ApiResult<List<String>, BasicError>> metaGetAllVersions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<String>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> metaGetAllVersions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -106,9 +106,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => e as String).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Get the Zen of GitHub

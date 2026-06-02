@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/custom_property.dart';import 'package:pub_github_rest_3_1/models/custom_property_set_payload.dart';import 'package:pub_github_rest_3_1/models/hook_delivery.dart';import 'package:pub_github_rest_3_1/models/hook_delivery_item.dart';import 'package:pub_github_rest_3_1/models/immutable_releases_organization_settings.dart';import 'package:pub_github_rest_3_1/models/insights_get_route_stats_by_actor_actor_type.dart';import 'package:pub_github_rest_3_1/models/insights_get_route_stats_by_actor_direction.dart';import 'package:pub_github_rest_3_1/models/insights_get_route_stats_by_actor_sort.dart';import 'package:pub_github_rest_3_1/models/insights_get_subject_stats_direction.dart';import 'package:pub_github_rest_3_1/models/insights_get_subject_stats_sort.dart';import 'package:pub_github_rest_3_1/models/insights_get_summary_stats_by_actor_actor_type.dart';import 'package:pub_github_rest_3_1/models/insights_get_time_stats_by_actor_actor_type.dart';import 'package:pub_github_rest_3_1/models/insights_get_user_stats_direction.dart';import 'package:pub_github_rest_3_1/models/insights_get_user_stats_sort.dart';import 'package:pub_github_rest_3_1/models/insights_route_stats2.dart';import 'package:pub_github_rest_3_1/models/insights_subject_stats2.dart';import 'package:pub_github_rest_3_1/models/insights_summary_stats.dart';import 'package:pub_github_rest_3_1/models/insights_time_stats2.dart';import 'package:pub_github_rest_3_1/models/insights_user_stats2.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/org_hook.dart';import 'package:pub_github_rest_3_1/models/org_membership.dart';import 'package:pub_github_rest_3_1/models/org_repo_custom_property_values.dart';import 'package:pub_github_rest_3_1/models/organization_create_issue_type.dart';import 'package:pub_github_rest_3_1/models/organization_full.dart';import 'package:pub_github_rest_3_1/models/organization_invitation.dart';import 'package:pub_github_rest_3_1/models/organization_programmatic_access_grant.dart';import 'package:pub_github_rest_3_1/models/organization_programmatic_access_grant_request.dart';import 'package:pub_github_rest_3_1/models/organization_role.dart';import 'package:pub_github_rest_3_1/models/organization_simple.dart';import 'package:pub_github_rest_3_1/models/organization_update_issue_type.dart';import 'package:pub_github_rest_3_1/models/orgs_convert_member_to_outside_collaborator_request.dart';import 'package:pub_github_rest_3_1/models/orgs_convert_member_to_outside_collaborator_response202.dart';import 'package:pub_github_rest_3_1/models/orgs_create_artifact_deployment_record_request.dart';import 'package:pub_github_rest_3_1/models/orgs_create_artifact_deployment_record_response.dart';import 'package:pub_github_rest_3_1/models/orgs_create_artifact_storage_record_request.dart';import 'package:pub_github_rest_3_1/models/orgs_create_artifact_storage_record_response.dart';import 'package:pub_github_rest_3_1/models/orgs_create_invitation_request.dart';import 'package:pub_github_rest_3_1/models/orgs_create_webhook_request.dart';import 'package:pub_github_rest_3_1/models/orgs_custom_properties_for_repos_create_or_update_organization_definitions_request.dart';import 'package:pub_github_rest_3_1/models/orgs_custom_properties_for_repos_create_or_update_organization_values_request.dart';import 'package:pub_github_rest_3_1/models/orgs_delete_attestations_bulk_request.dart';import 'package:pub_github_rest_3_1/models/orgs_get_immutable_releases_settings_repositories_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_app_installations_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_artifact_deployment_records_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_artifact_storage_records_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestation_repositories_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestations_bulk_request.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestations_bulk_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestations_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_members_filter.dart';import 'package:pub_github_rest_3_1/models/orgs_list_members_role.dart';import 'package:pub_github_rest_3_1/models/orgs_list_memberships_for_authenticated_user_state.dart';import 'package:pub_github_rest_3_1/models/orgs_list_org_roles_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_outside_collaborators_filter.dart';import 'package:pub_github_rest_3_1/models/orgs_list_pat_grant_requests_direction.dart';import 'package:pub_github_rest_3_1/models/orgs_list_pat_grant_requests_sort.dart';import 'package:pub_github_rest_3_1/models/orgs_list_pat_grants_direction.dart';import 'package:pub_github_rest_3_1/models/orgs_list_pat_grants_sort.dart';import 'package:pub_github_rest_3_1/models/orgs_list_pending_invitations_invitation_source.dart';import 'package:pub_github_rest_3_1/models/orgs_list_pending_invitations_role.dart';import 'package:pub_github_rest_3_1/models/orgs_remove_outside_collaborator_response422.dart';import 'package:pub_github_rest_3_1/models/orgs_review_pat_grant_request_request.dart';import 'package:pub_github_rest_3_1/models/orgs_review_pat_grant_requests_in_bulk_request.dart';import 'package:pub_github_rest_3_1/models/orgs_set_cluster_deployment_records_request.dart';import 'package:pub_github_rest_3_1/models/orgs_set_cluster_deployment_records_response.dart';import 'package:pub_github_rest_3_1/models/orgs_set_immutable_releases_settings_repositories_request.dart';import 'package:pub_github_rest_3_1/models/orgs_set_immutable_releases_settings_request.dart';import 'package:pub_github_rest_3_1/models/orgs_set_membership_for_user_request.dart';import 'package:pub_github_rest_3_1/models/orgs_update_membership_for_authenticated_user_request.dart';import 'package:pub_github_rest_3_1/models/orgs_update_pat_access_request.dart';import 'package:pub_github_rest_3_1/models/orgs_update_pat_accesses_request.dart';import 'package:pub_github_rest_3_1/models/orgs_update_request.dart';import 'package:pub_github_rest_3_1/models/orgs_update_response422.dart';import 'package:pub_github_rest_3_1/models/orgs_update_webhook_config_for_org_request.dart';import 'package:pub_github_rest_3_1/models/orgs_update_webhook_request.dart';import 'package:pub_github_rest_3_1/models/ruleset_version.dart';import 'package:pub_github_rest_3_1/models/ruleset_version_with_state.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';import 'package:pub_github_rest_3_1/models/team_role_assignment.dart';import 'package:pub_github_rest_3_1/models/user_role_assignment.dart';import 'package:pub_github_rest_3_1/models/validation_error.dart';import 'package:pub_github_rest_3_1/models/validation_error_simple.dart';import 'package:pub_github_rest_3_1/models/webhook_config.dart';/// OrgsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property.dart';import 'package:pub_github_rest_3_1/models/custom_property_set_payload.dart';import 'package:pub_github_rest_3_1/models/errors/actions_add_custom_labels_to_self_hosted_runner_for_org_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_approve_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_get_artifact_and_log_retention_settings_repository_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_re_run_job_for_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_set_artifact_and_log_retention_settings_repository_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_set_private_repo_fork_pr_workflows_settings_organization_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_delete_thread_subscription_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_notifications_for_authenticated_user_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_stargazers_for_repo_error.dart';import 'package:pub_github_rest_3_1/models/errors/apps_get_webhook_delivery_error.dart';import 'package:pub_github_rest_3_1/models/errors/billing_get_all_budgets_org_error.dart';import 'package:pub_github_rest_3_1/models/errors/gists_list_public_error.dart';import 'package:pub_github_rest_3_1/models/errors/orgs_get_org_ruleset_history_error.dart';import 'package:pub_github_rest_3_1/models/errors/orgs_list_pat_grant_requests_error.dart';import 'package:pub_github_rest_3_1/models/errors/orgs_remove_outside_collaborator_error.dart';import 'package:pub_github_rest_3_1/models/errors/orgs_update_error.dart';import 'package:pub_github_rest_3_1/models/hook_delivery.dart';import 'package:pub_github_rest_3_1/models/hook_delivery_item.dart';import 'package:pub_github_rest_3_1/models/immutable_releases_organization_settings.dart';import 'package:pub_github_rest_3_1/models/insights_get_route_stats_by_actor_actor_type.dart';import 'package:pub_github_rest_3_1/models/insights_get_route_stats_by_actor_direction.dart';import 'package:pub_github_rest_3_1/models/insights_get_route_stats_by_actor_sort.dart';import 'package:pub_github_rest_3_1/models/insights_get_subject_stats_direction.dart';import 'package:pub_github_rest_3_1/models/insights_get_subject_stats_sort.dart';import 'package:pub_github_rest_3_1/models/insights_get_summary_stats_by_actor_actor_type.dart';import 'package:pub_github_rest_3_1/models/insights_get_time_stats_by_actor_actor_type.dart';import 'package:pub_github_rest_3_1/models/insights_get_user_stats_direction.dart';import 'package:pub_github_rest_3_1/models/insights_get_user_stats_sort.dart';import 'package:pub_github_rest_3_1/models/insights_route_stats2.dart';import 'package:pub_github_rest_3_1/models/insights_subject_stats2.dart';import 'package:pub_github_rest_3_1/models/insights_summary_stats.dart';import 'package:pub_github_rest_3_1/models/insights_time_stats2.dart';import 'package:pub_github_rest_3_1/models/insights_user_stats2.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/org_hook.dart';import 'package:pub_github_rest_3_1/models/org_membership.dart';import 'package:pub_github_rest_3_1/models/org_repo_custom_property_values.dart';import 'package:pub_github_rest_3_1/models/organization_create_issue_type.dart';import 'package:pub_github_rest_3_1/models/organization_full.dart';import 'package:pub_github_rest_3_1/models/organization_invitation.dart';import 'package:pub_github_rest_3_1/models/organization_programmatic_access_grant.dart';import 'package:pub_github_rest_3_1/models/organization_programmatic_access_grant_request.dart';import 'package:pub_github_rest_3_1/models/organization_role.dart';import 'package:pub_github_rest_3_1/models/organization_simple.dart';import 'package:pub_github_rest_3_1/models/organization_update_issue_type.dart';import 'package:pub_github_rest_3_1/models/orgs_convert_member_to_outside_collaborator_request.dart';import 'package:pub_github_rest_3_1/models/orgs_convert_member_to_outside_collaborator_response202.dart';import 'package:pub_github_rest_3_1/models/orgs_create_artifact_deployment_record_request.dart';import 'package:pub_github_rest_3_1/models/orgs_create_artifact_deployment_record_response.dart';import 'package:pub_github_rest_3_1/models/orgs_create_artifact_storage_record_request.dart';import 'package:pub_github_rest_3_1/models/orgs_create_artifact_storage_record_response.dart';import 'package:pub_github_rest_3_1/models/orgs_create_invitation_request.dart';import 'package:pub_github_rest_3_1/models/orgs_create_webhook_request.dart';import 'package:pub_github_rest_3_1/models/orgs_custom_properties_for_repos_create_or_update_organization_definitions_request.dart';import 'package:pub_github_rest_3_1/models/orgs_custom_properties_for_repos_create_or_update_organization_values_request.dart';import 'package:pub_github_rest_3_1/models/orgs_delete_attestations_bulk_request.dart';import 'package:pub_github_rest_3_1/models/orgs_get_immutable_releases_settings_repositories_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_app_installations_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_artifact_deployment_records_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_artifact_storage_records_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestation_repositories_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestations_bulk_request.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestations_bulk_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestations_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_members_filter.dart';import 'package:pub_github_rest_3_1/models/orgs_list_members_role.dart';import 'package:pub_github_rest_3_1/models/orgs_list_memberships_for_authenticated_user_state.dart';import 'package:pub_github_rest_3_1/models/orgs_list_org_roles_response.dart';import 'package:pub_github_rest_3_1/models/orgs_list_outside_collaborators_filter.dart';import 'package:pub_github_rest_3_1/models/orgs_list_pat_grant_requests_direction.dart';import 'package:pub_github_rest_3_1/models/orgs_list_pat_grant_requests_sort.dart';import 'package:pub_github_rest_3_1/models/orgs_list_pat_grants_direction.dart';import 'package:pub_github_rest_3_1/models/orgs_list_pat_grants_sort.dart';import 'package:pub_github_rest_3_1/models/orgs_list_pending_invitations_invitation_source.dart';import 'package:pub_github_rest_3_1/models/orgs_list_pending_invitations_role.dart';import 'package:pub_github_rest_3_1/models/orgs_review_pat_grant_request_request.dart';import 'package:pub_github_rest_3_1/models/orgs_review_pat_grant_requests_in_bulk_request.dart';import 'package:pub_github_rest_3_1/models/orgs_set_cluster_deployment_records_request.dart';import 'package:pub_github_rest_3_1/models/orgs_set_cluster_deployment_records_response.dart';import 'package:pub_github_rest_3_1/models/orgs_set_immutable_releases_settings_repositories_request.dart';import 'package:pub_github_rest_3_1/models/orgs_set_immutable_releases_settings_request.dart';import 'package:pub_github_rest_3_1/models/orgs_set_membership_for_user_request.dart';import 'package:pub_github_rest_3_1/models/orgs_update_membership_for_authenticated_user_request.dart';import 'package:pub_github_rest_3_1/models/orgs_update_pat_access_request.dart';import 'package:pub_github_rest_3_1/models/orgs_update_pat_accesses_request.dart';import 'package:pub_github_rest_3_1/models/orgs_update_request.dart';import 'package:pub_github_rest_3_1/models/orgs_update_webhook_config_for_org_request.dart';import 'package:pub_github_rest_3_1/models/orgs_update_webhook_request.dart';import 'package:pub_github_rest_3_1/models/ruleset_version.dart';import 'package:pub_github_rest_3_1/models/ruleset_version_with_state.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';import 'package:pub_github_rest_3_1/models/team_role_assignment.dart';import 'package:pub_github_rest_3_1/models/user_role_assignment.dart';import 'package:pub_github_rest_3_1/models/webhook_config.dart';/// OrgsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -57,7 +57,7 @@ return execute(
 /// To see information about an organization's GitHub plan, GitHub Apps need the `Organization plan` permission.
 ///
 /// `GET /orgs/{org}`
-Future<ApiResult<OrganizationFull, BasicError>> orgsGet({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrganizationFull, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsGet({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -71,9 +71,7 @@ return execute(
   onSuccess: (response) {
     return OrganizationFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Update an organization
@@ -91,7 +89,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}`
-Future<ApiResult<OrganizationFull, OrgsUpdateResponse422>> orgsUpdate({required String org, OrgsUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrganizationFull, OrgsUpdateError>> orgsUpdate({required String org, OrgsUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,9 +105,7 @@ return execute(
   onSuccess: (response) {
     return OrganizationFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ValidationError.fromJson(v as Map<String, dynamic>), fromB: (v) => ValidationErrorSimple.fromJson(v as Map<String, dynamic>),);
-  },
+  onError: (response) => OrgsUpdateError.fromResponse(response),
 );
  } 
 /// Delete an organization
@@ -123,7 +119,7 @@ return execute(
 /// https://docs.github.com/site-policy/github-terms/github-terms-of-service
 ///
 /// `DELETE /orgs/{org}`
-Future<ApiResult<Map<String, dynamic>, BasicError>> orgsDelete({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, ActionsApproveWorkflowRunError>> orgsDelete({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -137,9 +133,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Create an artifact deployment record
@@ -318,7 +312,7 @@ return execute(
 /// Delete artifact attestations in bulk by either subject digests or unique ID.
 ///
 /// `POST /orgs/{org}/attestations/delete-request`
-Future<ApiResult<void, BasicError>> orgsDeleteAttestationsBulk({required String org, required OrgsDeleteAttestationsBulkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsDeleteAttestationsBulk({required String org, required OrgsDeleteAttestationsBulkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -332,9 +326,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Delete attestations by subject digest
@@ -342,7 +334,7 @@ return execute(
 /// Delete an artifact attestation by subject digest.
 ///
 /// `DELETE /orgs/{org}/attestations/digest/{subject_digest}`
-Future<ApiResult<void, BasicError>> orgsDeleteAttestationsBySubjectDigest({required String org, required String subjectDigest, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsDeleteAttestationsBySubjectDigest({required String org, required String subjectDigest, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -354,9 +346,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List attestation repositories
@@ -404,7 +394,7 @@ return execute(
 /// Delete an artifact attestation by unique ID that is associated with a repository owned by an org.
 ///
 /// `DELETE /orgs/{org}/attestations/{attestation_id}`
-Future<ApiResult<void, BasicError>> orgsDeleteAttestationsById({required String org, required int attestationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsApproveWorkflowRunError>> orgsDeleteAttestationsById({required String org, required int attestationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -416,9 +406,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// List attestations
@@ -501,7 +489,7 @@ return execute(
 /// Returns a 204 if the given user is blocked by the given organization. Returns a 404 if the organization is not blocking the user, or if the user account has been identified as spam by GitHub.
 ///
 /// `GET /orgs/{org}/blocks/{username}`
-Future<ApiResult<void, BasicError>> orgsCheckBlockedUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsCheckBlockedUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -513,9 +501,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Block a user from an organization
@@ -523,7 +509,7 @@ return execute(
 /// Blocks the given user on behalf of the specified organization and returns a 204. If the organization cannot block the given user a 422 is returned.
 ///
 /// `PUT /orgs/{org}/blocks/{username}`
-Future<ApiResult<void, ValidationError>> orgsBlockUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityListStargazersForRepoError>> orgsBlockUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -535,9 +521,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
 );
  } 
 /// Unblock a user from an organization
@@ -564,7 +548,7 @@ return execute(
 /// The return hash contains `failed_at` and `failed_reason` fields which represent the time at which the invitation failed and the reason for the failure.
 ///
 /// `GET /orgs/{org}/failed_invitations`
-Future<ApiResult<List<OrganizationInvitation>, BasicError>> orgsListFailedInvitations({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrganizationInvitation>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsListFailedInvitations({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -590,9 +574,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List organization webhooks
@@ -605,7 +587,7 @@ return execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `GET /orgs/{org}/hooks`
-Future<ApiResult<List<OrgHook>, BasicError>> orgsListWebhooks({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrgHook>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsListWebhooks({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -631,9 +613,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrgHook.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Create an organization webhook
@@ -646,7 +626,7 @@ return execute(
 /// edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `POST /orgs/{org}/hooks`
-Future<ApiResult<OrgHook, ValidationError>> orgsCreateWebhook({required String org, required OrgsCreateWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgHook, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> orgsCreateWebhook({required String org, required OrgsCreateWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -662,9 +642,7 @@ return execute(
   onSuccess: (response) {
     return OrgHook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Get an organization webhook
@@ -678,7 +656,7 @@ return execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `GET /orgs/{org}/hooks/{hook_id}`
-Future<ApiResult<OrgHook, BasicError>> orgsGetWebhook({required String org, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgHook, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsGetWebhook({required String org, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -692,9 +670,7 @@ return execute(
   onSuccess: (response) {
     return OrgHook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Update an organization webhook
@@ -711,7 +687,7 @@ return execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `PATCH /orgs/{org}/hooks/{hook_id}`
-Future<ApiResult<OrgHook, ValidationError>> orgsUpdateWebhook({required String org, required int hookId, OrgsUpdateWebhookRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgHook, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> orgsUpdateWebhook({required String org, required int hookId, OrgsUpdateWebhookRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -727,9 +703,7 @@ return execute(
   onSuccess: (response) {
     return OrgHook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Delete an organization webhook
@@ -742,7 +716,7 @@ return execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `DELETE /orgs/{org}/hooks/{hook_id}`
-Future<ApiResult<void, BasicError>> orgsDeleteWebhook({required String org, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsDeleteWebhook({required String org, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -754,9 +728,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Get a webhook configuration for an organization
@@ -823,7 +795,7 @@ return execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `GET /orgs/{org}/hooks/{hook_id}/deliveries`
-Future<ApiResult<List<HookDeliveryItem>, BasicError>> orgsListWebhookDeliveries({required String org, required int hookId, int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<HookDeliveryItem>, AppsGetWebhookDeliveryError>> orgsListWebhookDeliveries({required String org, required int hookId, int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -849,9 +821,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
 );
  } 
 /// Get a webhook delivery for an organization webhook
@@ -864,7 +834,7 @@ return execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `GET /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}`
-Future<ApiResult<HookDelivery, BasicError>> orgsGetWebhookDelivery({required String org, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HookDelivery, AppsGetWebhookDeliveryError>> orgsGetWebhookDelivery({required String org, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -878,9 +848,7 @@ return execute(
   onSuccess: (response) {
     return HookDelivery.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
 );
  } 
 /// Redeliver a delivery for an organization webhook
@@ -893,7 +861,7 @@ return execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `POST /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts`
-Future<ApiResult<Map<String, dynamic>, BasicError>> orgsRedeliverWebhookDelivery({required String org, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, AppsGetWebhookDeliveryError>> orgsRedeliverWebhookDelivery({required String org, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -907,9 +875,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
 );
  } 
 /// Ping an organization webhook
@@ -923,7 +889,7 @@ return execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `POST /orgs/{org}/hooks/{hook_id}/pings`
-Future<ApiResult<void, BasicError>> orgsPingWebhook({required String org, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsPingWebhook({required String org, required int hookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -935,9 +901,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Get route stats by actor
@@ -1315,7 +1279,7 @@ return execute(
 /// member, the `login` field in the return hash will be `null`.
 ///
 /// `GET /orgs/{org}/invitations`
-Future<ApiResult<List<OrganizationInvitation>, BasicError>> orgsListPendingInvitations({required String org, int? perPage, int? page, OrgsListPendingInvitationsRole? role, OrgsListPendingInvitationsInvitationSource? invitationSource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrganizationInvitation>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsListPendingInvitations({required String org, int? perPage, int? page, OrgsListPendingInvitationsRole? role, OrgsListPendingInvitationsInvitationSource? invitationSource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1347,9 +1311,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Create an organization invitation
@@ -1360,7 +1322,7 @@ return execute(
 /// and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
 /// `POST /orgs/{org}/invitations`
-Future<ApiResult<OrganizationInvitation, ValidationError>> orgsCreateInvitation({required String org, OrgsCreateInvitationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrganizationInvitation, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> orgsCreateInvitation({required String org, OrgsCreateInvitationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1376,9 +1338,7 @@ return execute(
   onSuccess: (response) {
     return OrganizationInvitation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Cancel an organization invitation
@@ -1388,7 +1348,7 @@ return execute(
 /// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications).
 ///
 /// `DELETE /orgs/{org}/invitations/{invitation_id}`
-Future<ApiResult<void, ValidationError>> orgsCancelInvitation({required String org, required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> orgsCancelInvitation({required String org, required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1400,9 +1360,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List organization invitation teams
@@ -1410,7 +1368,7 @@ return execute(
 /// List all teams associated with an invitation. In order to see invitations in an organization, the authenticated user must be an organization owner.
 ///
 /// `GET /orgs/{org}/invitations/{invitation_id}/teams`
-Future<ApiResult<List<Team>, BasicError>> orgsListInvitationTeams({required String org, required int invitationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Team>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsListInvitationTeams({required String org, required int invitationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1436,9 +1394,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List issue types for an organization
@@ -1446,7 +1402,7 @@ return execute(
 /// Lists all issue types for an organization. OAuth app tokens and personal access tokens (classic) need the read:org scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/issue-types`
-Future<ApiResult<List<IssueType>, BasicError>> orgsListIssueTypes({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<IssueType>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsListIssueTypes({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1461,9 +1417,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => IssueType.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Create issue type for an organization
@@ -1476,7 +1430,7 @@ return execute(
 /// personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/issue-types`
-Future<ApiResult<IssueType, BasicError>> orgsCreateIssueType({required String org, required OrganizationCreateIssueType body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueType, ActionsAddCustomLabelsToSelfHostedRunnerForOrgError>> orgsCreateIssueType({required String org, required OrganizationCreateIssueType body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1492,9 +1446,7 @@ return execute(
   onSuccess: (response) {
     return IssueType.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
 );
  } 
 /// Update issue type for an organization
@@ -1507,7 +1459,7 @@ return execute(
 /// personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/issue-types/{issue_type_id}`
-Future<ApiResult<IssueType, BasicError>> orgsUpdateIssueType({required String org, required int issueTypeId, required OrganizationUpdateIssueType body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueType, ActionsAddCustomLabelsToSelfHostedRunnerForOrgError>> orgsUpdateIssueType({required String org, required int issueTypeId, required OrganizationUpdateIssueType body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1523,9 +1475,7 @@ return execute(
   onSuccess: (response) {
     return IssueType.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
 );
  } 
 /// Delete issue type for an organization
@@ -1538,7 +1488,7 @@ return execute(
 /// personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/issue-types/{issue_type_id}`
-Future<ApiResult<void, ValidationErrorSimple>> orgsDeleteIssueType({required String org, required int issueTypeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsAddCustomLabelsToSelfHostedRunnerForOrgError>> orgsDeleteIssueType({required String org, required int issueTypeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1550,9 +1500,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
 );
  } 
 /// List organization members
@@ -1560,7 +1508,7 @@ return execute(
 /// List all users who are members of an organization. If the authenticated user is also a member of this organization then both concealed and public members will be returned.
 ///
 /// `GET /orgs/{org}/members`
-Future<ApiResult<List<SimpleUser>, ValidationError>> orgsListMembers({required String org, OrgsListMembersFilter? filter, OrgsListMembersRole? role, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SimpleUser>, ActivityListStargazersForRepoError>> orgsListMembers({required String org, OrgsListMembersFilter? filter, OrgsListMembersRole? role, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) {
   queryParameters['filter'] = filter.toJson();
@@ -1592,9 +1540,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
 );
  } 
 /// Check organization membership for a user
@@ -1624,7 +1570,7 @@ return execute(
 /// > If a user has both direct membership in the organization as well as indirect membership via an enterprise team, only their direct membership will be removed. Their indirect membership via an enterprise team remains until the user is removed from the enterprise team.
 ///
 /// `DELETE /orgs/{org}/members/{username}`
-Future<ApiResult<void, BasicError>> orgsRemoveMember({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsReRunJobForWorkflowRunError>> orgsRemoveMember({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1636,9 +1582,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
 );
  } 
 /// Get organization membership for a user
@@ -1646,7 +1590,7 @@ return execute(
 /// In order to get a user's membership with an organization, the authenticated user must be an organization member. The `state` parameter in the response can be used to identify the user's membership status.
 ///
 /// `GET /orgs/{org}/memberships/{username}`
-Future<ApiResult<OrgMembership, BasicError>> orgsGetMembershipForUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgMembership, ActionsApproveWorkflowRunError>> orgsGetMembershipForUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1660,9 +1604,7 @@ return execute(
   onSuccess: (response) {
     return OrgMembership.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Set organization membership for a user
@@ -1678,7 +1620,7 @@ return execute(
 /// To prevent abuse, organization owners are limited to creating 50 organization invitations for an organization within a 24 hour period. If the organization is more than one month old or on a paid plan, the limit is 500 invitations per 24 hour period.
 ///
 /// `PUT /orgs/{org}/memberships/{username}`
-Future<ApiResult<OrgMembership, ValidationError>> orgsSetMembershipForUser({required String org, required String username, OrgsSetMembershipForUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgMembership, GistsListPublicError>> orgsSetMembershipForUser({required String org, required String username, OrgsSetMembershipForUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1694,9 +1636,7 @@ return execute(
   onSuccess: (response) {
     return OrgMembership.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GistsListPublicError.fromResponse(response),
 );
  } 
 /// Remove organization membership for a user
@@ -1709,7 +1649,7 @@ return execute(
 /// > If a user has both direct membership in the organization as well as indirect membership via an enterprise team, only their direct membership will be removed. Their indirect membership via an enterprise team remains until the user is removed from the enterprise team.
 ///
 /// `DELETE /orgs/{org}/memberships/{username}`
-Future<ApiResult<void, BasicError>> orgsRemoveMembershipForUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsApproveWorkflowRunError>> orgsRemoveMembershipForUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1721,9 +1661,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Get all organization roles for an organization
@@ -1738,7 +1676,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/organization-roles`
-Future<ApiResult<OrgsListOrgRolesResponse, BasicError>> orgsListOrgRoles({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgsListOrgRolesResponse, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> orgsListOrgRoles({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1752,9 +1690,7 @@ return execute(
   onSuccess: (response) {
     return OrgsListOrgRolesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Remove all organization roles for a team
@@ -1907,7 +1843,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/organization-roles/{role_id}`
-Future<ApiResult<OrganizationRole, BasicError>> orgsGetOrgRole({required String org, required int roleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrganizationRole, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> orgsGetOrgRole({required String org, required int roleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1921,9 +1857,7 @@ return execute(
   onSuccess: (response) {
     return OrganizationRole.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List teams that are assigned to an organization role
@@ -2041,7 +1975,7 @@ return execute(
 /// When an organization member is converted to an outside collaborator, they'll only have access to the repositories that their current team membership allows. The user will no longer be a member of the organization. For more information, see "[Converting an organization member to an outside collaborator](https://docs.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)". Converting an organization member to an outside collaborator may be restricted by enterprise administrators. For more information, see "[Enforcing repository management policies in your enterprise](https://docs.github.com/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-inviting-outside-collaborators-to-repositories)."
 ///
 /// `PUT /orgs/{org}/outside_collaborators/{username}`
-Future<ApiResult<OrgsConvertMemberToOutsideCollaboratorResponse202, BasicError>> orgsConvertMemberToOutsideCollaborator({required String org, required String username, OrgsConvertMemberToOutsideCollaboratorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgsConvertMemberToOutsideCollaboratorResponse202, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> orgsConvertMemberToOutsideCollaborator({required String org, required String username, OrgsConvertMemberToOutsideCollaboratorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2057,9 +1991,7 @@ return execute(
   onSuccess: (response) {
     return OrgsConvertMemberToOutsideCollaboratorResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Remove outside collaborator from an organization
@@ -2067,7 +1999,7 @@ return execute(
 /// Removing a user from this list will remove them from all the organization's repositories.
 ///
 /// `DELETE /orgs/{org}/outside_collaborators/{username}`
-Future<ApiResult<void, OrgsRemoveOutsideCollaboratorResponse422>> orgsRemoveOutsideCollaborator({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OrgsRemoveOutsideCollaboratorError>> orgsRemoveOutsideCollaborator({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2079,9 +2011,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return OrgsRemoveOutsideCollaboratorResponse422.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => OrgsRemoveOutsideCollaboratorError.fromResponse(response),
 );
  } 
 /// List requests to access organization resources with fine-grained personal access tokens
@@ -2091,7 +2021,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `GET /orgs/{org}/personal-access-token-requests`
-Future<ApiResult<List<OrganizationProgrammaticAccessGrantRequest>, BasicError>> orgsListPatGrantRequests({required String org, int? perPage, int? page, OrgsListPatGrantRequestsSort? sort, OrgsListPatGrantRequestsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrganizationProgrammaticAccessGrantRequest>, OrgsListPatGrantRequestsError>> orgsListPatGrantRequests({required String org, int? perPage, int? page, OrgsListPatGrantRequestsSort? sort, OrgsListPatGrantRequestsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -2145,9 +2075,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationProgrammaticAccessGrantRequest.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => OrgsListPatGrantRequestsError.fromResponse(response),
 );
  } 
 /// Review requests to access organization resources with fine-grained personal access tokens
@@ -2157,7 +2085,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `POST /orgs/{org}/personal-access-token-requests`
-Future<ApiResult<Map<String, dynamic>, BasicError>> orgsReviewPatGrantRequestsInBulk({required String org, required OrgsReviewPatGrantRequestsInBulkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, OrgsListPatGrantRequestsError>> orgsReviewPatGrantRequestsInBulk({required String org, required OrgsReviewPatGrantRequestsInBulkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2173,9 +2101,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => OrgsListPatGrantRequestsError.fromResponse(response),
 );
  } 
 /// Review a request to access organization resources with a fine-grained personal access token
@@ -2185,7 +2111,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `POST /orgs/{org}/personal-access-token-requests/{pat_request_id}`
-Future<ApiResult<void, BasicError>> orgsReviewPatGrantRequest({required String org, required int patRequestId, required OrgsReviewPatGrantRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OrgsListPatGrantRequestsError>> orgsReviewPatGrantRequest({required String org, required int patRequestId, required OrgsReviewPatGrantRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2199,9 +2125,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => OrgsListPatGrantRequestsError.fromResponse(response),
 );
  } 
 /// List repositories requested to be accessed by a fine-grained personal access token
@@ -2211,7 +2135,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `GET /orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories`
-Future<ApiResult<List<MinimalRepository>, BasicError>> orgsListPatGrantRequestRepositories({required String org, required int patRequestId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, BillingGetAllBudgetsOrgError>> orgsListPatGrantRequestRepositories({required String org, required int patRequestId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -2237,9 +2161,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => BillingGetAllBudgetsOrgError.fromResponse(response),
 );
  } 
 /// List fine-grained personal access tokens with access to organization resources
@@ -2249,7 +2171,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `GET /orgs/{org}/personal-access-tokens`
-Future<ApiResult<List<OrganizationProgrammaticAccessGrant>, BasicError>> orgsListPatGrants({required String org, int? perPage, int? page, OrgsListPatGrantsSort? sort, OrgsListPatGrantsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrganizationProgrammaticAccessGrant>, OrgsListPatGrantRequestsError>> orgsListPatGrants({required String org, int? perPage, int? page, OrgsListPatGrantsSort? sort, OrgsListPatGrantsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -2303,9 +2225,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationProgrammaticAccessGrant.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => OrgsListPatGrantRequestsError.fromResponse(response),
 );
  } 
 /// Update the access to organization resources via fine-grained personal access tokens
@@ -2315,7 +2235,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `POST /orgs/{org}/personal-access-tokens`
-Future<ApiResult<Map<String, dynamic>, BasicError>> orgsUpdatePatAccesses({required String org, required OrgsUpdatePatAccessesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, OrgsListPatGrantRequestsError>> orgsUpdatePatAccesses({required String org, required OrgsUpdatePatAccessesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2331,9 +2251,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => OrgsListPatGrantRequestsError.fromResponse(response),
 );
  } 
 /// Update the access a fine-grained personal access token has to organization resources
@@ -2343,7 +2261,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `POST /orgs/{org}/personal-access-tokens/{pat_id}`
-Future<ApiResult<void, BasicError>> orgsUpdatePatAccess({required String org, required int patId, required OrgsUpdatePatAccessRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OrgsListPatGrantRequestsError>> orgsUpdatePatAccess({required String org, required int patId, required OrgsUpdatePatAccessRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2357,9 +2275,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => OrgsListPatGrantRequestsError.fromResponse(response),
 );
  } 
 /// List repositories a fine-grained personal access token has access to
@@ -2369,7 +2285,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `GET /orgs/{org}/personal-access-tokens/{pat_id}/repositories`
-Future<ApiResult<List<MinimalRepository>, BasicError>> orgsListPatGrantRepositories({required String org, required int patId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, BillingGetAllBudgetsOrgError>> orgsListPatGrantRepositories({required String org, required int patId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -2395,9 +2311,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => BillingGetAllBudgetsOrgError.fromResponse(response),
 );
  } 
 /// Get all custom properties for an organization
@@ -2406,7 +2320,7 @@ return execute(
 /// Organization members can read these properties.
 ///
 /// `GET /orgs/{org}/properties/schema`
-Future<ApiResult<List<CustomProperty>, BasicError>> orgsCustomPropertiesForReposGetOrganizationDefinitions({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CustomProperty>, ActionsApproveWorkflowRunError>> orgsCustomPropertiesForReposGetOrganizationDefinitions({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2421,9 +2335,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Create or update custom properties for an organization
@@ -2439,7 +2351,7 @@ return execute(
 ///   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 ///
 /// `PATCH /orgs/{org}/properties/schema`
-Future<ApiResult<List<CustomProperty>, BasicError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitions({required String org, required OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CustomProperty>, ActionsApproveWorkflowRunError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitions({required String org, required OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2456,9 +2368,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Get a custom property for an organization
@@ -2467,7 +2377,7 @@ return execute(
 /// Organization members can read these properties.
 ///
 /// `GET /orgs/{org}/properties/schema/{custom_property_name}`
-Future<ApiResult<CustomProperty, BasicError>> orgsCustomPropertiesForReposGetOrganizationDefinition({required String org, required String customPropertyName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomProperty, ActionsApproveWorkflowRunError>> orgsCustomPropertiesForReposGetOrganizationDefinition({required String org, required String customPropertyName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2481,9 +2391,7 @@ return execute(
   onSuccess: (response) {
     return CustomProperty.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Create or update a custom property for an organization
@@ -2495,7 +2403,7 @@ return execute(
 /// - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 ///
 /// `PUT /orgs/{org}/properties/schema/{custom_property_name}`
-Future<ApiResult<CustomProperty, BasicError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinition({required String org, required String customPropertyName, required CustomPropertySetPayload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomProperty, ActionsApproveWorkflowRunError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinition({required String org, required String customPropertyName, required CustomPropertySetPayload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2511,9 +2419,7 @@ return execute(
   onSuccess: (response) {
     return CustomProperty.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Remove a custom property for an organization
@@ -2525,7 +2431,7 @@ return execute(
 ///   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
 ///
 /// `DELETE /orgs/{org}/properties/schema/{custom_property_name}`
-Future<ApiResult<void, BasicError>> orgsCustomPropertiesForReposDeleteOrganizationDefinition({required String org, required String customPropertyName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsApproveWorkflowRunError>> orgsCustomPropertiesForReposDeleteOrganizationDefinition({required String org, required String customPropertyName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -2537,9 +2443,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// List custom property values for organization repositories
@@ -2548,7 +2452,7 @@ return execute(
 /// Organization members can read these properties.
 ///
 /// `GET /orgs/{org}/properties/values`
-Future<ApiResult<List<OrgRepoCustomPropertyValues>, BasicError>> orgsCustomPropertiesForReposGetOrganizationValues({required String org, int? perPage, int? page, String? repositoryQuery, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrgRepoCustomPropertyValues>, ActionsApproveWorkflowRunError>> orgsCustomPropertiesForReposGetOrganizationValues({required String org, int? perPage, int? page, String? repositoryQuery, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -2577,9 +2481,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrgRepoCustomPropertyValues.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Create or update custom property values for organization repositories
@@ -2596,7 +2498,7 @@ return execute(
 ///   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.
 ///
 /// `PATCH /orgs/{org}/properties/values`
-Future<ApiResult<void, BasicError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationValues({required String org, required OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationValues({required String org, required OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2610,9 +2512,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
 );
  } 
 /// List public organization members
@@ -2674,7 +2574,7 @@ return execute(
 /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
 /// `PUT /orgs/{org}/public_members/{username}`
-Future<ApiResult<void, BasicError>> orgsSetPublicMembershipForAuthenticatedUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsReRunJobForWorkflowRunError>> orgsSetPublicMembershipForAuthenticatedUser({required String org, required String username, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -2686,9 +2586,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
 );
  } 
 /// Remove public organization membership for the authenticated user
@@ -2715,7 +2613,7 @@ return execute(
 /// Get the history of an organization ruleset.
 ///
 /// `GET /orgs/{org}/rulesets/{ruleset_id}/history`
-Future<ApiResult<List<RulesetVersion>, BasicError>> orgsGetOrgRulesetHistory({required String org, required int rulesetId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<RulesetVersion>, OrgsGetOrgRulesetHistoryError>> orgsGetOrgRulesetHistory({required String org, required int rulesetId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -2741,9 +2639,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => RulesetVersion.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
 );
  } 
 /// Get organization ruleset version
@@ -2751,7 +2647,7 @@ return execute(
 /// Get a version of an organization ruleset.
 ///
 /// `GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}`
-Future<ApiResult<RulesetVersionWithState, BasicError>> orgsGetOrgRulesetVersion({required String org, required int rulesetId, required int versionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetVersionWithState, OrgsGetOrgRulesetHistoryError>> orgsGetOrgRulesetVersion({required String org, required int rulesetId, required int versionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2765,9 +2661,7 @@ return execute(
   onSuccess: (response) {
     return RulesetVersionWithState.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
 );
  } 
 /// Get immutable releases settings for an organization
@@ -2920,7 +2814,7 @@ return execute(
 /// Lists all of the authenticated user's organization memberships.
 ///
 /// `GET /user/memberships/orgs`
-Future<ApiResult<List<OrgMembership>, BasicError>> orgsListMembershipsForAuthenticatedUser({OrgsListMembershipsForAuthenticatedUserState? state, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrgMembership>, ActivityListNotificationsForAuthenticatedUserError>> orgsListMembershipsForAuthenticatedUser({OrgsListMembershipsForAuthenticatedUserState? state, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (state != null) {
   queryParameters['state'] = state.toJson();
@@ -2949,9 +2843,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrgMembership.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityListNotificationsForAuthenticatedUserError.fromResponse(response),
 );
  } 
 /// Get an organization membership for the authenticated user
@@ -2959,7 +2851,7 @@ return execute(
 /// If the authenticated user is an active or pending member of the organization, this endpoint will return the user's membership. If the authenticated user is not affiliated with the organization, a `404` is returned. This endpoint will return a `403` if the request is made by a GitHub App that is blocked by the organization.
 ///
 /// `GET /user/memberships/orgs/{org}`
-Future<ApiResult<OrgMembership, BasicError>> orgsGetMembershipForAuthenticatedUser({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgMembership, ActionsApproveWorkflowRunError>> orgsGetMembershipForAuthenticatedUser({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2973,9 +2865,7 @@ return execute(
   onSuccess: (response) {
     return OrgMembership.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Update an organization membership for the authenticated user
@@ -2983,7 +2873,7 @@ return execute(
 /// Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.
 ///
 /// `PATCH /user/memberships/orgs/{org}`
-Future<ApiResult<OrgMembership, BasicError>> orgsUpdateMembershipForAuthenticatedUser({required String org, required OrgsUpdateMembershipForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgMembership, ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError>> orgsUpdateMembershipForAuthenticatedUser({required String org, required OrgsUpdateMembershipForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2999,9 +2889,7 @@ return execute(
   onSuccess: (response) {
     return OrgMembership.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
 );
  } 
 /// List organizations for the authenticated user
@@ -3014,7 +2902,7 @@ return execute(
 /// > Requests using a fine-grained access token will receive a `200 Success` response with an empty list.
 ///
 /// `GET /user/orgs`
-Future<ApiResult<List<OrganizationSimple>, BasicError>> orgsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrganizationSimple>, ActivityDeleteThreadSubscriptionError>> orgsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -3040,9 +2928,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
 );
  } 
 /// List organizations for a user

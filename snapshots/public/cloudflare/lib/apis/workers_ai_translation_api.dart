@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_omni_indictrans2_en_indic1b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_omni_indictrans2_en_indic1b_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_meta_m2m10012b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_meta_m2m10012b_response400.dart';/// WorkersAiTranslationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_ai4bharat_omni_indictrans2_en_indic1b_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_meta_m2m10012b_error.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_omni_indictrans2_en_indic1b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_meta_m2m10012b_request.dart';/// WorkersAiTranslationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkersAiTranslationApi with ApiExecutor {const WorkersAiTranslation
 /// Runs inference on the @cf/ai4bharat/indictrans2-en-indic-1B model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/ai4bharat/indictrans2-en-indic-1B`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400>> workersAiPostRunCfAi4bharatIndictrans2EnIndic1B({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BError>> workersAiPostRunCfAi4bharatIndictrans2EnIndic1B({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -40,9 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BError.fromResponse(response),
 );
  } 
 /// Execute @cf/ai4bharat/omni-indictrans2-en-indic-1b model.
@@ -50,7 +48,7 @@ return execute(
 /// Runs inference on the @cf/ai4bharat/omni-indictrans2-en-indic-1b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/ai4bharat/omni-indictrans2-en-indic-1b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400>> workersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bError>> workersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -77,9 +75,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bError.fromResponse(response),
 );
  } 
 /// Execute @cf/meta/m2m100-1.2b model.
@@ -87,7 +83,7 @@ return execute(
 /// Runs inference on the @cf/meta/m2m100-1.2b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/meta/m2m100-1.2b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaM2m10012bResponse400>> workersAiPostRunCfMetaM2m10012b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaM2m10012bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMetaM2m10012bError>> workersAiPostRunCfMetaM2m10012b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMetaM2m10012bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -114,9 +110,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfMetaM2m10012bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfMetaM2m10012bError.fromResponse(response),
 );
  } 
  }

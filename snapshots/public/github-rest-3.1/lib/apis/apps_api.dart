@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/apps_check_token_request.dart';import 'package:pub_github_rest_3_1/models/apps_create_from_manifest_response.dart';import 'package:pub_github_rest_3_1/models/apps_create_installation_access_token_request.dart';import 'package:pub_github_rest_3_1/models/apps_delete_authorization_request.dart';import 'package:pub_github_rest_3_1/models/apps_delete_token_request.dart';import 'package:pub_github_rest_3_1/models/apps_list_accounts_for_plan_direction.dart';import 'package:pub_github_rest_3_1/models/apps_list_accounts_for_plan_sort.dart';import 'package:pub_github_rest_3_1/models/apps_list_accounts_for_plan_stubbed_direction.dart';import 'package:pub_github_rest_3_1/models/apps_list_accounts_for_plan_stubbed_sort.dart';import 'package:pub_github_rest_3_1/models/apps_list_installation_repos_for_authenticated_user_response.dart';import 'package:pub_github_rest_3_1/models/apps_list_installations_for_authenticated_user_response.dart';import 'package:pub_github_rest_3_1/models/apps_list_repos_accessible_to_installation_response.dart';import 'package:pub_github_rest_3_1/models/apps_reset_token_request.dart';import 'package:pub_github_rest_3_1/models/apps_scope_token_request.dart';import 'package:pub_github_rest_3_1/models/apps_update_webhook_config_for_app_request.dart';import 'package:pub_github_rest_3_1/models/authorization.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/hook_delivery.dart';import 'package:pub_github_rest_3_1/models/hook_delivery_item.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/installation_token.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/integration_installation_request.dart';import 'package:pub_github_rest_3_1/models/marketplace_listing_plan.dart';import 'package:pub_github_rest_3_1/models/marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/user_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/validation_error.dart';import 'package:pub_github_rest_3_1/models/webhook_config.dart';/// AppsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/apps_check_token_request.dart';import 'package:pub_github_rest_3_1/models/apps_create_from_manifest_response.dart';import 'package:pub_github_rest_3_1/models/apps_create_installation_access_token_request.dart';import 'package:pub_github_rest_3_1/models/apps_delete_authorization_request.dart';import 'package:pub_github_rest_3_1/models/apps_delete_token_request.dart';import 'package:pub_github_rest_3_1/models/apps_list_accounts_for_plan_direction.dart';import 'package:pub_github_rest_3_1/models/apps_list_accounts_for_plan_sort.dart';import 'package:pub_github_rest_3_1/models/apps_list_accounts_for_plan_stubbed_direction.dart';import 'package:pub_github_rest_3_1/models/apps_list_accounts_for_plan_stubbed_sort.dart';import 'package:pub_github_rest_3_1/models/apps_list_installation_repos_for_authenticated_user_response.dart';import 'package:pub_github_rest_3_1/models/apps_list_installations_for_authenticated_user_response.dart';import 'package:pub_github_rest_3_1/models/apps_list_repos_accessible_to_installation_response.dart';import 'package:pub_github_rest_3_1/models/apps_reset_token_request.dart';import 'package:pub_github_rest_3_1/models/apps_scope_token_request.dart';import 'package:pub_github_rest_3_1/models/apps_update_webhook_config_for_app_request.dart';import 'package:pub_github_rest_3_1/models/authorization.dart';import 'package:pub_github_rest_3_1/models/errors/actions_add_custom_labels_to_self_hosted_runner_for_org_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_approve_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_get_artifact_and_log_retention_settings_repository_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_set_artifact_and_log_retention_settings_repository_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_delete_thread_subscription_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_stargazers_for_repo_error.dart';import 'package:pub_github_rest_3_1/models/errors/apps_create_installation_access_token_error.dart';import 'package:pub_github_rest_3_1/models/errors/apps_get_subscription_plan_for_account_error.dart';import 'package:pub_github_rest_3_1/models/errors/apps_get_subscription_plan_for_account_stubbed_error.dart';import 'package:pub_github_rest_3_1/models/errors/apps_get_webhook_delivery_error.dart';import 'package:pub_github_rest_3_1/models/errors/apps_list_accounts_for_plan_error.dart';import 'package:pub_github_rest_3_1/models/hook_delivery.dart';import 'package:pub_github_rest_3_1/models/hook_delivery_item.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/installation_token.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/integration_installation_request.dart';import 'package:pub_github_rest_3_1/models/marketplace_listing_plan.dart';import 'package:pub_github_rest_3_1/models/marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/user_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhook_config.dart';/// AppsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -36,7 +36,7 @@ return execute(
 /// Use this endpoint to complete the handshake necessary when implementing the [GitHub App Manifest flow](https://docs.github.com/apps/building-github-apps/creating-github-apps-from-a-manifest/). When you create a GitHub App with the manifest flow, you receive a temporary `code` used to retrieve the GitHub App's `id`, `pem` (private key), and `webhook_secret`.
 ///
 /// `POST /app-manifests/{code}/conversions`
-Future<ApiResult<AppsCreateFromManifestResponse, BasicError>> appsCreateFromManifest({required String code, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AppsCreateFromManifestResponse, ActionsAddCustomLabelsToSelfHostedRunnerForOrgError>> appsCreateFromManifest({required String code, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -50,9 +50,7 @@ return execute(
   onSuccess: (response) {
     return AppsCreateFromManifestResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
 );
  } 
 /// Get a webhook configuration for an app
@@ -110,7 +108,7 @@ return execute(
 /// You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
 /// `GET /app/hook/deliveries`
-Future<ApiResult<List<HookDeliveryItem>, BasicError>> appsListWebhookDeliveries({int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<HookDeliveryItem>, AppsGetWebhookDeliveryError>> appsListWebhookDeliveries({int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -136,9 +134,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
 );
  } 
 /// Get a delivery for an app webhook
@@ -148,7 +144,7 @@ return execute(
 /// You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
 /// `GET /app/hook/deliveries/{delivery_id}`
-Future<ApiResult<HookDelivery, BasicError>> appsGetWebhookDelivery({required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HookDelivery, AppsGetWebhookDeliveryError>> appsGetWebhookDelivery({required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -162,9 +158,7 @@ return execute(
   onSuccess: (response) {
     return HookDelivery.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
 );
  } 
 /// Redeliver a delivery for an app webhook
@@ -174,7 +168,7 @@ return execute(
 /// You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
 /// `POST /app/hook/deliveries/{delivery_id}/attempts`
-Future<ApiResult<Map<String, dynamic>, BasicError>> appsRedeliverWebhookDelivery({required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, AppsGetWebhookDeliveryError>> appsRedeliverWebhookDelivery({required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -188,9 +182,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
 );
  } 
 /// List installation requests for the authenticated app
@@ -198,7 +190,7 @@ return execute(
 /// Lists all the pending installation requests for the authenticated GitHub App.
 ///
 /// `GET /app/installation-requests`
-Future<ApiResult<List<IntegrationInstallationRequest>, BasicError>> appsListInstallationRequestsForAuthenticatedApp({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IntegrationInstallationRequest>, AppsGetSubscriptionPlanForAccountStubbedError>> appsListInstallationRequestsForAuthenticatedApp({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -224,9 +216,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => IntegrationInstallationRequest.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetSubscriptionPlanForAccountStubbedError.fromResponse(response),
 );
  } 
 /// List installations for the authenticated app
@@ -277,7 +267,7 @@ return execute(
 /// You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
 /// `GET /app/installations/{installation_id}`
-Future<ApiResult<Installation, BasicError>> appsGetInstallation({required int installationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Installation, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> appsGetInstallation({required int installationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -291,9 +281,7 @@ return execute(
   onSuccess: (response) {
     return Installation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Delete an installation for the authenticated app
@@ -303,7 +291,7 @@ return execute(
 /// You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
 /// `DELETE /app/installations/{installation_id}`
-Future<ApiResult<void, BasicError>> appsDeleteInstallation({required int installationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> appsDeleteInstallation({required int installationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -315,9 +303,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Create an installation access token for an app
@@ -331,7 +317,7 @@ return execute(
 /// You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
 /// `POST /app/installations/{installation_id}/access_tokens`
-Future<ApiResult<InstallationToken, BasicError>> appsCreateInstallationAccessToken({required int installationId, AppsCreateInstallationAccessTokenRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InstallationToken, AppsCreateInstallationAccessTokenError>> appsCreateInstallationAccessToken({required int installationId, AppsCreateInstallationAccessTokenRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -347,9 +333,7 @@ return execute(
   onSuccess: (response) {
     return InstallationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
 );
  } 
 /// Suspend an app installation
@@ -359,7 +343,7 @@ return execute(
 /// You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
 /// `PUT /app/installations/{installation_id}/suspended`
-Future<ApiResult<void, BasicError>> appsSuspendInstallation({required int installationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> appsSuspendInstallation({required int installationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -371,9 +355,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Unsuspend an app installation
@@ -383,7 +365,7 @@ return execute(
 /// You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
 /// `DELETE /app/installations/{installation_id}/suspended`
-Future<ApiResult<void, BasicError>> appsUnsuspendInstallation({required int installationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> appsUnsuspendInstallation({required int installationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -395,9 +377,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Delete an app authorization
@@ -406,7 +386,7 @@ return execute(
 /// Deleting an application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
 ///
 /// `DELETE /applications/{client_id}/grant`
-Future<ApiResult<void, ValidationError>> appsDeleteAuthorization({required String clientId, required AppsDeleteAuthorizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityListStargazersForRepoError>> appsDeleteAuthorization({required String clientId, required AppsDeleteAuthorizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -420,9 +400,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
 );
  } 
 /// Check a token
@@ -430,7 +408,7 @@ return execute(
 /// OAuth applications and GitHub applications with OAuth authorizations can use this API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. Invalid tokens will return `404 NOT FOUND`.
 ///
 /// `POST /applications/{client_id}/token`
-Future<ApiResult<Authorization, ValidationError>> appsCheckToken({required String clientId, required AppsCheckTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Authorization, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> appsCheckToken({required String clientId, required AppsCheckTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -446,9 +424,7 @@ return execute(
   onSuccess: (response) {
     return Authorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Reset a token
@@ -456,7 +432,7 @@ return execute(
 /// OAuth applications and GitHub applications with OAuth authorizations can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the "token" property in the response because changes take effect immediately. Invalid tokens will return `404 NOT FOUND`.
 ///
 /// `PATCH /applications/{client_id}/token`
-Future<ApiResult<Authorization, ValidationError>> appsResetToken({required String clientId, required AppsResetTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Authorization, ActivityListStargazersForRepoError>> appsResetToken({required String clientId, required AppsResetTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -472,9 +448,7 @@ return execute(
   onSuccess: (response) {
     return Authorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
 );
  } 
 /// Delete an app token
@@ -482,7 +456,7 @@ return execute(
 /// OAuth  or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization.
 ///
 /// `DELETE /applications/{client_id}/token`
-Future<ApiResult<void, ValidationError>> appsDeleteToken({required String clientId, required AppsDeleteTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityListStargazersForRepoError>> appsDeleteToken({required String clientId, required AppsDeleteTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -496,9 +470,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
 );
  } 
 /// Create a scoped access token
@@ -510,7 +482,7 @@ return execute(
 /// Invalid tokens will return `404 NOT FOUND`.
 ///
 /// `POST /applications/{client_id}/token/scoped`
-Future<ApiResult<Authorization, BasicError>> appsScopeToken({required String clientId, required AppsScopeTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Authorization, AppsCreateInstallationAccessTokenError>> appsScopeToken({required String clientId, required AppsScopeTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -526,9 +498,7 @@ return execute(
   onSuccess: (response) {
     return Authorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
 );
  } 
 /// Get an app
@@ -537,7 +507,7 @@ return execute(
 /// > The `:app_slug` is just the URL-friendly name of your GitHub App. You can find this on the settings page for your GitHub App (e.g., `https://github.com/settings/apps/:app_slug`).
 ///
 /// `GET /apps/{app_slug}`
-Future<ApiResult<Integration, BasicError>> appsGetBySlug({required String appSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Integration, ActionsApproveWorkflowRunError>> appsGetBySlug({required String appSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -551,9 +521,7 @@ return execute(
   onSuccess: (response) {
     return Integration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// List repositories accessible to the app installation
@@ -561,7 +529,7 @@ return execute(
 /// List repositories that an app installation can access.
 ///
 /// `GET /installation/repositories`
-Future<ApiResult<AppsListReposAccessibleToInstallationResponse, BasicError>> appsListReposAccessibleToInstallation({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AppsListReposAccessibleToInstallationResponse, ActivityDeleteThreadSubscriptionError>> appsListReposAccessibleToInstallation({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -586,9 +554,7 @@ return execute(
   onSuccess: (response) {
     return AppsListReposAccessibleToInstallationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
 );
  } 
 /// Revoke an installation access token
@@ -619,7 +585,7 @@ return execute(
 /// GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
 ///
 /// `GET /marketplace_listing/accounts/{account_id}`
-Future<ApiResult<MarketplacePurchase, BasicError>> appsGetSubscriptionPlanForAccount({required int accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MarketplacePurchase, AppsGetSubscriptionPlanForAccountError>> appsGetSubscriptionPlanForAccount({required int accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -633,9 +599,7 @@ return execute(
   onSuccess: (response) {
     return MarketplacePurchase.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetSubscriptionPlanForAccountError.fromResponse(response),
 );
  } 
 /// List plans
@@ -645,7 +609,7 @@ return execute(
 /// GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
 ///
 /// `GET /marketplace_listing/plans`
-Future<ApiResult<List<MarketplaceListingPlan>, BasicError>> appsListPlans({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MarketplaceListingPlan>, AppsGetSubscriptionPlanForAccountError>> appsListPlans({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -671,9 +635,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MarketplaceListingPlan.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetSubscriptionPlanForAccountError.fromResponse(response),
 );
  } 
 /// List accounts for a plan
@@ -683,7 +645,7 @@ return execute(
 /// GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
 ///
 /// `GET /marketplace_listing/plans/{plan_id}/accounts`
-Future<ApiResult<List<MarketplacePurchase>, BasicError>> appsListAccountsForPlan({required int planId, AppsListAccountsForPlanSort? sort, AppsListAccountsForPlanDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MarketplacePurchase>, AppsListAccountsForPlanError>> appsListAccountsForPlan({required int planId, AppsListAccountsForPlanSort? sort, AppsListAccountsForPlanDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) {
   queryParameters['sort'] = sort.toJson();
@@ -715,9 +677,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsListAccountsForPlanError.fromResponse(response),
 );
  } 
 /// Get a subscription plan for an account (stubbed)
@@ -727,7 +687,7 @@ return execute(
 /// GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
 ///
 /// `GET /marketplace_listing/stubbed/accounts/{account_id}`
-Future<ApiResult<MarketplacePurchase, BasicError>> appsGetSubscriptionPlanForAccountStubbed({required int accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MarketplacePurchase, AppsGetSubscriptionPlanForAccountStubbedError>> appsGetSubscriptionPlanForAccountStubbed({required int accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -741,9 +701,7 @@ return execute(
   onSuccess: (response) {
     return MarketplacePurchase.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetSubscriptionPlanForAccountStubbedError.fromResponse(response),
 );
  } 
 /// List plans (stubbed)
@@ -753,7 +711,7 @@ return execute(
 /// GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
 ///
 /// `GET /marketplace_listing/stubbed/plans`
-Future<ApiResult<List<MarketplaceListingPlan>, BasicError>> appsListPlansStubbed({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MarketplaceListingPlan>, AppsGetSubscriptionPlanForAccountStubbedError>> appsListPlansStubbed({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -779,9 +737,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MarketplaceListingPlan.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetSubscriptionPlanForAccountStubbedError.fromResponse(response),
 );
  } 
 /// List accounts for a plan (stubbed)
@@ -791,7 +747,7 @@ return execute(
 /// GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
 ///
 /// `GET /marketplace_listing/stubbed/plans/{plan_id}/accounts`
-Future<ApiResult<List<MarketplacePurchase>, BasicError>> appsListAccountsForPlanStubbed({required int planId, AppsListAccountsForPlanStubbedSort? sort, AppsListAccountsForPlanStubbedDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MarketplacePurchase>, AppsGetSubscriptionPlanForAccountStubbedError>> appsListAccountsForPlanStubbed({required int planId, AppsListAccountsForPlanStubbedSort? sort, AppsListAccountsForPlanStubbedDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) {
   queryParameters['sort'] = sort.toJson();
@@ -823,9 +779,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetSubscriptionPlanForAccountStubbedError.fromResponse(response),
 );
  } 
 /// Get an organization installation for the authenticated app
@@ -858,7 +812,7 @@ return execute(
 /// You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/installation`
-Future<ApiResult<Installation, BasicError>> appsGetRepoInstallation({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Installation, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> appsGetRepoInstallation({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -872,9 +826,7 @@ return execute(
   onSuccess: (response) {
     return Installation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List app installations accessible to the user access token
@@ -886,7 +838,7 @@ return execute(
 /// You can find the permissions for the installation under the `permissions` key.
 ///
 /// `GET /user/installations`
-Future<ApiResult<AppsListInstallationsForAuthenticatedUserResponse, BasicError>> appsListInstallationsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AppsListInstallationsForAuthenticatedUserResponse, ActivityDeleteThreadSubscriptionError>> appsListInstallationsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -911,9 +863,7 @@ return execute(
   onSuccess: (response) {
     return AppsListInstallationsForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
 );
  } 
 /// List repositories accessible to the user access token
@@ -925,7 +875,7 @@ return execute(
 /// The access the user has to each repository is included in the hash under the `permissions` key.
 ///
 /// `GET /user/installations/{installation_id}/repositories`
-Future<ApiResult<AppsListInstallationReposForAuthenticatedUserResponse, BasicError>> appsListInstallationReposForAuthenticatedUser({required int installationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AppsListInstallationReposForAuthenticatedUserResponse, ActionsApproveWorkflowRunError>> appsListInstallationReposForAuthenticatedUser({required int installationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -950,9 +900,7 @@ return execute(
   onSuccess: (response) {
     return AppsListInstallationReposForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Add a repository to an app installation
@@ -962,7 +910,7 @@ return execute(
 /// This endpoint only works for PATs (classic) with the `repo` scope.
 ///
 /// `PUT /user/installations/{installation_id}/repositories/{repository_id}`
-Future<ApiResult<void, BasicError>> appsAddRepoToInstallationForAuthenticatedUser({required int installationId, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsApproveWorkflowRunError>> appsAddRepoToInstallationForAuthenticatedUser({required int installationId, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -974,9 +922,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Remove a repository from an app installation
@@ -986,7 +932,7 @@ return execute(
 /// This endpoint only works for PATs (classic) with the `repo` scope.
 ///
 /// `DELETE /user/installations/{installation_id}/repositories/{repository_id}`
-Future<ApiResult<void, BasicError>> appsRemoveRepoFromInstallationForAuthenticatedUser({required int installationId, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsApproveWorkflowRunError>> appsRemoveRepoFromInstallationForAuthenticatedUser({required int installationId, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -998,9 +944,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// List subscriptions for the authenticated user
@@ -1008,7 +952,7 @@ return execute(
 /// Lists the active subscriptions for the authenticated user.
 ///
 /// `GET /user/marketplace_purchases`
-Future<ApiResult<List<UserMarketplacePurchase>, BasicError>> appsListSubscriptionsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<UserMarketplacePurchase>, AppsGetSubscriptionPlanForAccountError>> appsListSubscriptionsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1034,9 +978,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => UserMarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetSubscriptionPlanForAccountError.fromResponse(response),
 );
  } 
 /// List subscriptions for the authenticated user (stubbed)
@@ -1044,7 +986,7 @@ return execute(
 /// Lists the active subscriptions for the authenticated user.
 ///
 /// `GET /user/marketplace_purchases/stubbed`
-Future<ApiResult<List<UserMarketplacePurchase>, BasicError>> appsListSubscriptionsForAuthenticatedUserStubbed({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<UserMarketplacePurchase>, AppsGetSubscriptionPlanForAccountStubbedError>> appsListSubscriptionsForAuthenticatedUserStubbed({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1070,9 +1012,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => UserMarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => AppsGetSubscriptionPlanForAccountStubbedError.fromResponse(response),
 );
  } 
 /// Get a user installation for the authenticated app

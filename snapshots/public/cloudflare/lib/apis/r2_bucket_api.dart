@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_account_identifier.dart';import 'package:pub_cloudflare/models/r2_add_custom_domain_request.dart';import 'package:pub_cloudflare/models/r2_bucket_name.dart';import 'package:pub_cloudflare/models/r2_create_bucket_request.dart';import 'package:pub_cloudflare/models/r2_domain_name.dart';import 'package:pub_cloudflare/models/r2_edit_custom_domain_request.dart';import 'package:pub_cloudflare/models/r2_edit_managed_domain_request.dart';import 'package:pub_cloudflare/models/r2_event_notification_delete_config_request.dart';import 'package:pub_cloudflare/models/r2_get_event_notification_config_cf_r2_jurisdiction.dart';import 'package:pub_cloudflare/models/r2_jurisdiction.dart';import 'package:pub_cloudflare/models/r2_list_buckets_direction.dart';import 'package:pub_cloudflare/models/r2_list_buckets_order.dart';import 'package:pub_cloudflare/models/r2_list_buckets_response/r2_list_buckets_response_result.dart';import 'package:pub_cloudflare/models/r2_put_bucket_cors_policy_request.dart';import 'package:pub_cloudflare/models/r2_put_bucket_lifecycle_configuration_request.dart';import 'package:pub_cloudflare/models/r2_put_bucket_local_uploads_configuration_request.dart';import 'package:pub_cloudflare/models/r2_put_bucket_lock_configuration_request.dart';import 'package:pub_cloudflare/models/r2_put_bucket_sippy_config_request.dart';import 'package:pub_cloudflare/models/r2_put_event_notification_config_request.dart';import 'package:pub_cloudflare/models/r2_queue_identifier.dart';import 'package:pub_cloudflare/models/r2_storage_class.dart';import 'package:pub_cloudflare/models/r2_temp_access_creds_request.dart';import 'package:pub_cloudflare/models/response_failure.dart';/// R2BucketApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/r2_get_event_notification_config_error.dart';import 'package:pub_cloudflare/models/r2_account_identifier.dart';import 'package:pub_cloudflare/models/r2_add_custom_domain_request.dart';import 'package:pub_cloudflare/models/r2_bucket_name.dart';import 'package:pub_cloudflare/models/r2_create_bucket_request.dart';import 'package:pub_cloudflare/models/r2_domain_name.dart';import 'package:pub_cloudflare/models/r2_edit_custom_domain_request.dart';import 'package:pub_cloudflare/models/r2_edit_managed_domain_request.dart';import 'package:pub_cloudflare/models/r2_event_notification_delete_config_request.dart';import 'package:pub_cloudflare/models/r2_get_event_notification_config_cf_r2_jurisdiction.dart';import 'package:pub_cloudflare/models/r2_jurisdiction.dart';import 'package:pub_cloudflare/models/r2_list_buckets_direction.dart';import 'package:pub_cloudflare/models/r2_list_buckets_order.dart';import 'package:pub_cloudflare/models/r2_list_buckets_response/r2_list_buckets_response_result.dart';import 'package:pub_cloudflare/models/r2_put_bucket_cors_policy_request.dart';import 'package:pub_cloudflare/models/r2_put_bucket_lifecycle_configuration_request.dart';import 'package:pub_cloudflare/models/r2_put_bucket_local_uploads_configuration_request.dart';import 'package:pub_cloudflare/models/r2_put_bucket_lock_configuration_request.dart';import 'package:pub_cloudflare/models/r2_put_bucket_sippy_config_request.dart';import 'package:pub_cloudflare/models/r2_put_event_notification_config_request.dart';import 'package:pub_cloudflare/models/r2_queue_identifier.dart';import 'package:pub_cloudflare/models/r2_storage_class.dart';import 'package:pub_cloudflare/models/r2_temp_access_creds_request.dart';/// R2BucketApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class R2BucketApi with ApiExecutor {const R2BucketApi(this.apiConfig);
 /// List all event notification rules for a bucket.
 ///
 /// `GET /accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration`
-Future<ApiResult<Map<String, dynamic>, ResponseFailure>> r2GetEventNotificationConfigs({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, R2GetEventNotificationConfigError>> r2GetEventNotificationConfigs({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (cfR2Jurisdiction != null) {
   headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
 }
@@ -31,9 +31,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>;
   },
-  onError: (response) {
-    return ResponseFailure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => R2GetEventNotificationConfigError.fromResponse(response),
 );
  } 
 /// Get Event Notification Rule
@@ -41,7 +39,7 @@ return execute(
 /// Get a single event notification rule.
 ///
 /// `GET /accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration/queues/{queue_id}`
-Future<ApiResult<Map<String, dynamic>, ResponseFailure>> r2GetEventNotificationConfig({required R2QueueIdentifier queueId, required R2BucketName bucketName, required R2AccountIdentifier accountId, R2GetEventNotificationConfigCfR2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, R2GetEventNotificationConfigError>> r2GetEventNotificationConfig({required R2QueueIdentifier queueId, required R2BucketName bucketName, required R2AccountIdentifier accountId, R2GetEventNotificationConfigCfR2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (cfR2Jurisdiction != null) {
   headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
 }
@@ -59,9 +57,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>;
   },
-  onError: (response) {
-    return ResponseFailure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => R2GetEventNotificationConfigError.fromResponse(response),
 );
  } 
 /// Create Event Notification Rule

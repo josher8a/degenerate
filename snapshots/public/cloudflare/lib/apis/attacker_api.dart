@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_attacker_list_response.dart';import 'package:pub_cloudflare/models/get_attacker_list_response400.dart';/// AttackerApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/get_attacker_list_error.dart';import 'package:pub_cloudflare/models/get_attacker_list_response.dart';/// AttackerApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class AttackerApi with ApiExecutor {const AttackerApi(this.apiConfig);
 /// Lists attackers across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/attackers`
-Future<ApiResult<GetAttackerListResponse, GetAttackerListResponse400>> getAttackerList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAttackerListResponse, GetAttackerListError>> getAttackerList({required String accountId, List<String>? datasetIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -35,9 +35,7 @@ return execute(
   onSuccess: (response) {
     return GetAttackerListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return GetAttackerListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetAttackerListError.fromResponse(response),
 );
  } 
  }

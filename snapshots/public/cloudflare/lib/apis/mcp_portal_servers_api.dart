@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_servers_request.dart';import 'package:pub_cloudflare/models/create_servers_response/create_servers_response_result.dart';import 'package:pub_cloudflare/models/create_servers_response400.dart';import 'package:pub_cloudflare/models/delete_servers_response404.dart';import 'package:pub_cloudflare/models/fetch_servers_response404.dart';import 'package:pub_cloudflare/models/list_servers_response400.dart';import 'package:pub_cloudflare/models/sync_server_response404.dart';import 'package:pub_cloudflare/models/update_servers_request.dart';import 'package:pub_cloudflare/models/update_servers_response400.dart';/// McpPortalServersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_servers_request.dart';import 'package:pub_cloudflare/models/create_servers_response/create_servers_response_result.dart';import 'package:pub_cloudflare/models/errors/create_servers_error.dart';import 'package:pub_cloudflare/models/errors/delete_servers_error.dart';import 'package:pub_cloudflare/models/errors/fetch_servers_error.dart';import 'package:pub_cloudflare/models/errors/list_servers_error.dart';import 'package:pub_cloudflare/models/errors/sync_server_error.dart';import 'package:pub_cloudflare/models/errors/update_servers_error.dart';import 'package:pub_cloudflare/models/update_servers_request.dart';/// McpPortalServersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class McpPortalServersApi with ApiExecutor {const McpPortalServersApi(this
 /// List MCP Servers
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/servers`
-Future<ApiResult<List<CreateServersResponseResult>, ListServersResponse400>> mcpPortalsApiListServers({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CreateServersResponseResult>, ListServersError>> mcpPortalsApiListServers({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -40,15 +40,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => CreateServersResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return ListServersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ListServersError.fromResponse(response),
 );
  } 
 /// Create a new MCP Server
 ///
 /// `POST /accounts/{account_id}/access/ai-controls/mcp/servers`
-Future<ApiResult<CreateServersResponseResult, CreateServersResponse400>> mcpPortalsApiCreateServers({required String accountId, CreateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateServersResponseResult, CreateServersError>> mcpPortalsApiCreateServers({required String accountId, CreateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,15 +63,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return CreateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return CreateServersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CreateServersError.fromResponse(response),
 );
  } 
 /// Read the details of a MCP Server
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<CreateServersResponseResult, FetchServersResponse404>> mcpPortalsApiFetchServers({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateServersResponseResult, FetchServersError>> mcpPortalsApiFetchServers({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -88,15 +84,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return CreateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return FetchServersResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => FetchServersError.fromResponse(response),
 );
  } 
 /// Update a MCP Server
 ///
 /// `PUT /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<CreateServersResponseResult, UpdateServersResponse400>> mcpPortalsApiUpdateServers({required String id, required String accountId, UpdateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateServersResponseResult, UpdateServersError>> mcpPortalsApiUpdateServers({required String id, required String accountId, UpdateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -113,15 +107,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return CreateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return UpdateServersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => UpdateServersError.fromResponse(response),
 );
  } 
 /// Delete a MCP Server
 ///
 /// `DELETE /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<CreateServersResponseResult, DeleteServersResponse404>> mcpPortalsApiDeleteServers({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateServersResponseResult, DeleteServersError>> mcpPortalsApiDeleteServers({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -136,15 +128,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return CreateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return DeleteServersResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteServersError.fromResponse(response),
 );
  } 
 /// Sync MCP Server Capabilities
 ///
 /// `POST /accounts/{account_id}/access/ai-controls/mcp/servers/{id}/sync`
-Future<ApiResult<Map<String, dynamic>, SyncServerResponse404>> mcpPortalsApiSyncServer({required String id, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, SyncServerError>> mcpPortalsApiSyncServer({required String id, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -159,9 +149,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>;
   },
-  onError: (response) {
-    return SyncServerResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => SyncServerError.fromResponse(response),
 );
  } 
  }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/avatar_update.dart';import 'package:pub_totem_web/models/message.dart';import 'package:pub_totem_web/models/public_user_schema.dart';import 'package:pub_totem_web/models/user_upload_profile_image_request.dart';/// DefaultApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/avatar_update.dart';import 'package:pub_totem_web/models/errors/current_user_error.dart';import 'package:pub_totem_web/models/public_user_schema.dart';import 'package:pub_totem_web/models/user_upload_profile_image_request.dart';/// DefaultApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 /// Current User
 ///
 /// `GET /api/v1/auth/currentuser`
-Future<ApiResult<PublicUserSchema, Message>> totemApiCurrentUser({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PublicUserSchema, CurrentUserError>> totemApiCurrentUser({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,15 +25,13 @@ return execute(
   onSuccess: (response) {
     return PublicUserSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return Message.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CurrentUserError.fromResponse(response),
 );
  } 
 /// User Avatar Update
 ///
 /// `POST /api/v1/user/avatarupdate`
-Future<ApiResult<void, Message>> totemApiUserAvatarUpdate({required AvatarUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CurrentUserError>> totemApiUserAvatarUpdate({required AvatarUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -47,15 +45,13 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return Message.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CurrentUserError.fromResponse(response),
 );
  } 
 /// User Upload Profile Image
 ///
 /// `POST /api/v1/user/avatarimage`
-Future<ApiResult<void, Message>> totemApiUserUploadProfileImage({required UserUploadProfileImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CurrentUserError>> totemApiUserUploadProfileImage({required UserUploadProfileImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -71,9 +67,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return Message.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CurrentUserError.fromResponse(response),
 );
  } 
 /// Dev Version

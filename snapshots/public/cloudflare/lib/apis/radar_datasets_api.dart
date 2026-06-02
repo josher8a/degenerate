@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_reports_dataset_download_response400.dart';import 'package:pub_cloudflare/models/radar_get_reports_datasets_dataset_type.dart';import 'package:pub_cloudflare/models/radar_get_reports_datasets_format.dart';import 'package:pub_cloudflare/models/radar_get_reports_datasets_response/radar_get_reports_datasets_response_result.dart';import 'package:pub_cloudflare/models/radar_get_reports_datasets_response400.dart';import 'package:pub_cloudflare/models/radar_post_reports_dataset_download_url_format.dart';import 'package:pub_cloudflare/models/radar_post_reports_dataset_download_url_request.dart';import 'package:pub_cloudflare/models/radar_post_reports_dataset_download_url_response/radar_post_reports_dataset_download_url_response_result.dart';import 'package:pub_cloudflare/models/radar_post_reports_dataset_download_url_response400.dart';/// RadarDatasetsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_reports_dataset_download_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_reports_datasets_error.dart';import 'package:pub_cloudflare/models/errors/radar_post_reports_dataset_download_url_error.dart';import 'package:pub_cloudflare/models/radar_get_reports_datasets_dataset_type.dart';import 'package:pub_cloudflare/models/radar_get_reports_datasets_format.dart';import 'package:pub_cloudflare/models/radar_get_reports_datasets_response/radar_get_reports_datasets_response_result.dart';import 'package:pub_cloudflare/models/radar_post_reports_dataset_download_url_format.dart';import 'package:pub_cloudflare/models/radar_post_reports_dataset_download_url_request.dart';import 'package:pub_cloudflare/models/radar_post_reports_dataset_download_url_response/radar_post_reports_dataset_download_url_response_result.dart';/// RadarDatasetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarDatasetsApi with ApiExecutor {const RadarDatasetsApi(this.apiCo
 /// Retrieves a list of datasets.
 ///
 /// `GET /radar/datasets`
-Future<ApiResult<RadarGetReportsDatasetsResponseResult, RadarGetReportsDatasetsResponse400>> radarGetReportsDatasets({int? limit, int? offset, RadarGetReportsDatasetsDatasetType? datasetType, String? date, RadarGetReportsDatasetsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetReportsDatasetsResponseResult, RadarGetReportsDatasetsError>> radarGetReportsDatasets({int? limit, int? offset, RadarGetReportsDatasetsDatasetType? datasetType, String? date, RadarGetReportsDatasetsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -48,9 +48,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetReportsDatasetsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetReportsDatasetsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetReportsDatasetsError.fromResponse(response),
 );
  } 
 /// Get dataset CSV stream
@@ -58,7 +56,7 @@ return execute(
 /// Retrieves the CSV content of a given dataset by alias or ID. When getting the content by alias the latest dataset is returned, optionally filtered by the latest available at a given date.
 ///
 /// `GET /radar/datasets/{alias}`
-Future<ApiResult<String, RadarGetReportsDatasetDownloadResponse400>> radarGetReportsDatasetDownload({required String alias, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, RadarGetReportsDatasetDownloadError>> radarGetReportsDatasetDownload({required String alias, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -72,9 +70,7 @@ return execute(
   onSuccess: (response) {
     return response.body;
   },
-  onError: (response) {
-    return RadarGetReportsDatasetDownloadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetReportsDatasetDownloadError.fromResponse(response),
 );
  } 
 /// Get dataset download URL
@@ -82,7 +78,7 @@ return execute(
 /// Retrieves an URL to download a single dataset.
 ///
 /// `POST /radar/datasets/download`
-Future<ApiResult<RadarPostReportsDatasetDownloadUrlResponseResult, RadarPostReportsDatasetDownloadUrlResponse400>> radarPostReportsDatasetDownloadUrl({RadarPostReportsDatasetDownloadUrlFormat? format, RadarPostReportsDatasetDownloadUrlRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarPostReportsDatasetDownloadUrlResponseResult, RadarPostReportsDatasetDownloadUrlError>> radarPostReportsDatasetDownloadUrl({RadarPostReportsDatasetDownloadUrlFormat? format, RadarPostReportsDatasetDownloadUrlRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -107,9 +103,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarPostReportsDatasetDownloadUrlResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarPostReportsDatasetDownloadUrlResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarPostReportsDatasetDownloadUrlError.fromResponse(response),
 );
  } 
  }

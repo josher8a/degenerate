@@ -2,6 +2,7 @@ import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/api_emitter.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/enum_emitter.dart';
+import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/extension_type_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
@@ -186,6 +187,35 @@ class FileEmitter {
       files['models/$fileName.dart'] = emitRaw(library);
     }
 
+    // Build per-operation error unions (deduped across all APIs).
+    final errorUnionMap = buildErrorUnionMap(apis, typeRegistry);
+    final errorUnionFiles = <String, String>{};
+    final aliasesPerClass = <String, List<String>>{};
+    for (final info in errorUnionMap.values) {
+      if (info.isAlias) {
+        (aliasesPerClass[info.aliasTarget!] ??= []).add(info.className);
+        typeToFile[info.className] = typeToFile[info.aliasTarget!] ??
+            'errors/${toSnakeCase(info.aliasTarget!)}';
+      }
+    }
+    final emittedErrorClasses = <String>{};
+    for (final info in errorUnionMap.values) {
+      if (info.isAlias || !emittedErrorClasses.add(info.className)) continue;
+      final fileStem = 'errors/${toSnakeCase(info.className)}';
+      typeToFile[info.className] = fileStem;
+      errorUnionFiles[fileStem] = emitErrorUnion(
+        className: info.className,
+        statusErrors: info.statusErrors,
+        typeRegistry: typeRegistry,
+        packageName: packageName,
+        typeToFile: typeToFile,
+        aliases: aliasesPerClass[info.className] ?? const [],
+      );
+    }
+    for (final entry in errorUnionFiles.entries) {
+      files['models/${entry.key}.dart'] = entry.value;
+    }
+
     // Emit API files
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
@@ -194,11 +224,14 @@ class FileEmitter {
         api,
         typeRegistry: typeRegistry,
         unwrapFields: unwrapFields,
+        errorUnionMap: errorUnionMap,
       );
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
 
-      final analysis = _analyzeApi(api, typeRegistry, unwrapFields);
+      final analysis = _analyzeApi(
+        api, typeRegistry, unwrapFields, errorUnionMap,
+      );
 
       // Derive imports directly from referenced types using pre-built lookup
       final modelImports = _modelImports(
@@ -263,6 +296,7 @@ class FileEmitter {
       typeToFile: typeToFile,
       inlinedTypes: inlinedInto.keys.toSet(),
       hasSecurityFile: securitySchemes.isNotEmpty || globalSecurity != null,
+      errorUnionFiles: errorUnionFiles.keys.toSet(),
     );
 
     // Emit the round-trip fixtures registry (test scaffolding, opt-in).
@@ -371,6 +405,7 @@ class FileEmitter {
     IrApi api, [
     Map<String, IrType>? typeRegistry,
     List<String> unwrapFields = const [],
+    Map<String, ErrorUnionInfo> errorUnionMap = const {},
   ]) {
     final names = <String>{};
     var needsConvert = false;
@@ -439,10 +474,14 @@ class FileEmitter {
         final eventType = streaming.$2.itemSchema ?? streaming.$2.schema;
         _collectTopLevelTypeName(eventType, names, typeRegistry);
       }
-      // Collect error response type (matching ApiEmitter._errorResponseContent
-      // logic: prefer default, then first 4xx+, only one error type per
-      // operation).
-      {
+      // Collect error type references.
+      final errorUnion = errorUnionMap[op.operationId];
+      if (errorUnion != null) {
+        final errorClassName = errorUnion.isAlias
+            ? errorUnion.aliasTarget!
+            : errorUnion.className;
+        names.add(errorClassName);
+      } else {
         (String, IrMediaType)? errorContent;
         if (op.defaultResponse != null) {
           errorContent = preferredContent(op.defaultResponse!.content);
@@ -805,8 +844,8 @@ class FileEmitter {
     Map<String, String> typeToFile = const {},
     Set<String> inlinedTypes = const {},
     bool hasSecurityFile = false,
+    Set<String> errorUnionFiles = const {},
   }) {
-    // Collect all relative exports and sort them alphabetically.
     final relativeExports = <String>[
       if (apis.isNotEmpty) 'client/${packageName}_api.dart',
       if (hasSecurityFile) 'client/${packageName}_security.dart',
@@ -819,6 +858,8 @@ class FileEmitter {
               .toList()
             ..sort())
         'models/${typeToFile[name] ?? toSnakeCase(name)}.dart',
+      for (final fileStem in errorUnionFiles.toList()..sort())
+        'models/$fileStem.dart',
       for (final name in apis.map((a) => a.name).toSet().toList()..sort())
         'apis/${toSnakeCase(name)}.dart',
     ]..sort();

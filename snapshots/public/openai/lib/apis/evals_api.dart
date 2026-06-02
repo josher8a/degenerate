@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_request.dart';import 'package:pub_openai/models/create_eval_run_request.dart';import 'package:pub_openai/models/delete_eval_response.dart';import 'package:pub_openai/models/delete_eval_run_response.dart';import 'package:pub_openai/models/error_model.dart';import 'package:pub_openai/models/eval.dart';import 'package:pub_openai/models/eval_list.dart';import 'package:pub_openai/models/eval_run.dart';import 'package:pub_openai/models/eval_run_list.dart';import 'package:pub_openai/models/eval_run_output_item.dart';import 'package:pub_openai/models/eval_run_output_item_list.dart';import 'package:pub_openai/models/get_eval_run_output_items_order.dart';import 'package:pub_openai/models/get_eval_run_output_items_status.dart';import 'package:pub_openai/models/get_eval_runs_order.dart';import 'package:pub_openai/models/get_eval_runs_status.dart';import 'package:pub_openai/models/list_evals_order.dart';import 'package:pub_openai/models/list_evals_order_by.dart';import 'package:pub_openai/models/update_eval_request.dart';/// EvalsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_request.dart';import 'package:pub_openai/models/create_eval_run_request.dart';import 'package:pub_openai/models/delete_eval_response.dart';import 'package:pub_openai/models/delete_eval_run_response.dart';import 'package:pub_openai/models/errors/cancel_response_error.dart';import 'package:pub_openai/models/errors/create_eval_run_error.dart';import 'package:pub_openai/models/eval.dart';import 'package:pub_openai/models/eval_list.dart';import 'package:pub_openai/models/eval_run.dart';import 'package:pub_openai/models/eval_run_list.dart';import 'package:pub_openai/models/eval_run_output_item.dart';import 'package:pub_openai/models/eval_run_output_item_list.dart';import 'package:pub_openai/models/get_eval_run_output_items_order.dart';import 'package:pub_openai/models/get_eval_run_output_items_status.dart';import 'package:pub_openai/models/get_eval_runs_order.dart';import 'package:pub_openai/models/get_eval_runs_status.dart';import 'package:pub_openai/models/list_evals_order.dart';import 'package:pub_openai/models/list_evals_order_by.dart';import 'package:pub_openai/models/update_eval_request.dart';/// EvalsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -115,7 +115,7 @@ return execute(
 /// 
 ///
 /// `DELETE /evals/{eval_id}`
-Future<ApiResult<DeleteEvalResponse, ErrorModel>> deleteEval({required String evalId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteEvalResponse, CancelResponseError>> deleteEval({required String evalId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -129,9 +129,7 @@ return execute(
   onSuccess: (response) {
     return DeleteEvalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CancelResponseError.fromResponse(response),
 );
  } 
 /// Get a list of runs for an evaluation.
@@ -175,7 +173,7 @@ return execute(
 /// 
 ///
 /// `POST /evals/{eval_id}/runs`
-Future<ApiResult<EvalRun, ErrorModel>> createEvalRun({required String evalId, required CreateEvalRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EvalRun, CreateEvalRunError>> createEvalRun({required String evalId, required CreateEvalRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -191,9 +189,7 @@ return execute(
   onSuccess: (response) {
     return EvalRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CreateEvalRunError.fromResponse(response),
 );
  } 
 /// Get an evaluation run by ID.
@@ -240,7 +236,7 @@ return execute(
 /// 
 ///
 /// `DELETE /evals/{eval_id}/runs/{run_id}`
-Future<ApiResult<DeleteEvalRunResponse, ErrorModel>> deleteEvalRun({required String evalId, required String runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteEvalRunResponse, CancelResponseError>> deleteEvalRun({required String evalId, required String runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -254,9 +250,7 @@ return execute(
   onSuccess: (response) {
     return DeleteEvalRunResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CancelResponseError.fromResponse(response),
 );
  } 
 /// Get a list of output items for an evaluation run.

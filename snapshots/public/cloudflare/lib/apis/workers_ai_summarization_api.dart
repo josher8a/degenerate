@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_bart_large_cnn_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_bart_large_cnn_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_nonomni_bart_large_cnn_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_nonomni_bart_large_cnn_response400.dart';/// WorkersAiSummarizationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_facebook_bart_large_cnn_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_facebook_nonomni_bart_large_cnn_error.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_bart_large_cnn_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_nonomni_bart_large_cnn_request.dart';/// WorkersAiSummarizationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkersAiSummarizationApi with ApiExecutor {const WorkersAiSummariza
 /// Runs inference on the @cf/facebook/bart-large-cnn model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/facebook/bart-large-cnn`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookBartLargeCnnResponse400>> workersAiPostRunCfFacebookBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookBartLargeCnnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookBartLargeCnnError>> workersAiPostRunCfFacebookBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookBartLargeCnnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -40,9 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfFacebookBartLargeCnnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfFacebookBartLargeCnnError.fromResponse(response),
 );
  } 
 /// Execute @cf/facebook/nonomni-bart-large-cnn model.
@@ -50,7 +48,7 @@ return execute(
 /// Runs inference on the @cf/facebook/nonomni-bart-large-cnn model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/facebook/nonomni-bart-large-cnn`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400>> workersAiPostRunCfFacebookNonomniBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookNonomniBartLargeCnnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookNonomniBartLargeCnnError>> workersAiPostRunCfFacebookNonomniBartLargeCnn({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfFacebookNonomniBartLargeCnnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -77,9 +75,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfFacebookNonomniBartLargeCnnError.fromResponse(response),
 );
  } 
  }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_domain_categories_by_files_parsed_format.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_domain_categories_by_files_parsed_response/radar_get_robots_txt_top_domain_categories_by_files_parsed_response_result.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_domain_categories_by_files_parsed_response404.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_domain_categories_by_files_parsed_user_agent_category.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_user_agents_by_directive_directive.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_user_agents_by_directive_format.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_user_agents_by_directive_response/radar_get_robots_txt_top_user_agents_by_directive_response_result.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_user_agents_by_directive_response404.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_user_agents_by_directive_user_agent_category.dart';/// RadarRobotsTxtApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_robots_txt_top_domain_categories_by_files_parsed_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_robots_txt_top_user_agents_by_directive_error.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_domain_categories_by_files_parsed_format.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_domain_categories_by_files_parsed_response/radar_get_robots_txt_top_domain_categories_by_files_parsed_response_result.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_domain_categories_by_files_parsed_user_agent_category.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_user_agents_by_directive_directive.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_user_agents_by_directive_format.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_user_agents_by_directive_response/radar_get_robots_txt_top_user_agents_by_directive_response_result.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_user_agents_by_directive_user_agent_category.dart';/// RadarRobotsTxtApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarRobotsTxtApi with ApiExecutor {const RadarRobotsTxtApi(this.api
 /// Retrieves the top domain categories by the number of robots.txt files parsed.
 ///
 /// `GET /radar/robots_txt/top/domain_categories`
-Future<ApiResult<RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResult, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404>> radarGetRobotsTxtTopDomainCategoriesByFilesParsed({int? limit, List<String>? name, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedUserAgentCategory? userAgentCategory, List<String>? date, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResult, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedError>> radarGetRobotsTxtTopDomainCategoriesByFilesParsed({int? limit, List<String>? name, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedUserAgentCategory? userAgentCategory, List<String>? date, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -52,9 +52,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetRobotsTxtTopDomainCategoriesByFilesParsedError.fromResponse(response),
 );
  } 
 /// Get top user agents on robots.txt files
@@ -62,7 +60,7 @@ return execute(
 /// Retrieves the top user agents on robots.txt files.
 ///
 /// `GET /radar/robots_txt/top/user_agents/directive`
-Future<ApiResult<RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult, RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404>> radarGetRobotsTxtTopUserAgentsByDirective({int? limit, List<String>? name, RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory? userAgentCategory, List<String>? date, List<String>? domainCategory, RadarGetRobotsTxtTopUserAgentsByDirectiveDirective? directive, RadarGetRobotsTxtTopUserAgentsByDirectiveFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult, RadarGetRobotsTxtTopUserAgentsByDirectiveError>> radarGetRobotsTxtTopUserAgentsByDirective({int? limit, List<String>? name, RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory? userAgentCategory, List<String>? date, List<String>? domainCategory, RadarGetRobotsTxtTopUserAgentsByDirectiveDirective? directive, RadarGetRobotsTxtTopUserAgentsByDirectiveFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -109,9 +107,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetRobotsTxtTopUserAgentsByDirectiveError.fromResponse(response),
 );
  } 
  }

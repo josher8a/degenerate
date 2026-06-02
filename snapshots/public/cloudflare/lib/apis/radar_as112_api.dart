@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_response/radar_get_ai_bots_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_summary_response/radar_get_attacks_layer3_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_summary_dimension.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_summary_protocol.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_summary_query_type.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_summary_response400.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_summary_response_code.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_dimension.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_protocol.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_query_type.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_response400.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_response_code.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_protocol.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_query_type.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_response400.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_response_code.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_dnssec_dnssec.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_dnssec_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_dnssec_response/radar_get_dns_as112_top_locations_by_dnssec_response_result.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_dnssec_response404.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_edns_edns.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_edns_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_edns_response404.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_ip_version_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_ip_version_ip_version.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_ip_version_response404.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_response404.dart';/// RadarAs112Api operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_dns_as112_summary_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_dns_as112_timeseries_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_dns_as112_timeseries_group_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_dns_as112_top_locations_by_dnssec_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_dns_as112_top_locations_by_edns_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_dns_as112_top_locations_by_ip_version_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_dns_as112_top_locations_error.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_response/radar_get_ai_bots_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_summary_response/radar_get_attacks_layer3_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_summary_dimension.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_summary_protocol.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_summary_query_type.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_summary_response_code.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_dimension.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_protocol.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_query_type.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_response_code.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_protocol.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_query_type.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_response_code.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_dnssec_dnssec.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_dnssec_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_dnssec_response/radar_get_dns_as112_top_locations_by_dnssec_response_result.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_edns_edns.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_edns_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_ip_version_format.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_ip_version_ip_version.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_format.dart';/// RadarAs112Api operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarAs112Api with ApiExecutor {const RadarAs112Api(this.apiConfig);
 /// Retrieves the distribution of AS112 queries by the specified dimension.
 ///
 /// `GET /radar/as112/summary/{dimension}`
-Future<ApiResult<RadarGetAttacksLayer3SummaryResponseResult, RadarGetDnsAs112SummaryResponse400>> radarGetDnsAs112Summary({required RadarGetDnsAs112SummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112SummaryQueryType?>? queryType, List<RadarGetDnsAs112SummaryProtocol>? protocol, List<RadarGetDnsAs112SummaryResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112SummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAttacksLayer3SummaryResponseResult, RadarGetDnsAs112SummaryError>> radarGetDnsAs112Summary({required RadarGetDnsAs112SummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112SummaryQueryType?>? queryType, List<RadarGetDnsAs112SummaryProtocol>? protocol, List<RadarGetDnsAs112SummaryResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112SummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -85,9 +85,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer3SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetDnsAs112SummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetDnsAs112SummaryError.fromResponse(response),
 );
  } 
 /// Get AS112 DNS queries time series
@@ -95,7 +93,7 @@ return execute(
 /// Retrieves the AS112 DNS queries over time.
 ///
 /// `GET /radar/as112/timeseries`
-Future<ApiResult<RadarGetAiBotsTimeseriesResponseResult, RadarGetDnsAs112TimeseriesResponse400>> radarGetDnsAs112Timeseries({RadarGetDnsAs112TimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesProtocol>? protocol, List<RadarGetDnsAs112TimeseriesResponseCode>? responseCode, RadarGetDnsAs112TimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesResponseResult, RadarGetDnsAs112TimeseriesError>> radarGetDnsAs112Timeseries({RadarGetDnsAs112TimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesProtocol>? protocol, List<RadarGetDnsAs112TimeseriesResponseCode>? responseCode, RadarGetDnsAs112TimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -167,9 +165,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetDnsAs112TimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetDnsAs112TimeseriesError.fromResponse(response),
 );
  } 
 /// Get AS112 time series grouped by dimension
@@ -177,7 +173,7 @@ return execute(
 /// Retrieves the distribution of AS112 queries grouped by dimension over time.
 ///
 /// `GET /radar/as112/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult, RadarGetDnsAs112TimeseriesGroupResponse400>> radarGetDnsAs112TimeseriesGroup({required RadarGetDnsAs112TimeseriesGroupDimension dimension, RadarGetDnsAs112TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesGroupQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesGroupProtocol>? protocol, List<RadarGetDnsAs112TimeseriesGroupResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112TimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult, RadarGetDnsAs112TimeseriesGroupError>> radarGetDnsAs112TimeseriesGroup({required RadarGetDnsAs112TimeseriesGroupDimension dimension, RadarGetDnsAs112TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetDnsAs112TimeseriesGroupQueryType?>? queryType, List<RadarGetDnsAs112TimeseriesGroupProtocol>? protocol, List<RadarGetDnsAs112TimeseriesGroupResponseCode>? responseCode, int? limitPerGroup, RadarGetDnsAs112TimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -252,9 +248,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetDnsAs112TimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetDnsAs112TimeseriesGroupError.fromResponse(response),
 );
  } 
 /// Get top locations by AS112 DNS queries
@@ -262,7 +256,7 @@ return execute(
 /// Retrieves the top locations by AS112 DNS queries.
 ///
 /// `GET /radar/as112/top/locations`
-Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponseResult, RadarGetDnsAs112TopLocationsResponse404>> radarGetDnsAs112TopLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponseResult, RadarGetDnsAs112TopLocationsError>> radarGetDnsAs112TopLocations({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -318,9 +312,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetDnsAs112TopLocationsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetDnsAs112TopLocationsError.fromResponse(response),
 );
  } 
 /// Get top locations by AS112 DNS queries with DNSSEC support
@@ -328,7 +320,7 @@ return execute(
 /// Retrieves the top locations of DNS queries to AS112 with DNSSEC (DNS Security Extensions) support.
 ///
 /// `GET /radar/as112/top/locations/dnssec/{dnssec}`
-Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponseResult, RadarGetDnsAs112TopLocationsByDnssecResponse404>> radarGetDnsAs112TopLocationsByDnssec({required RadarGetDnsAs112TopLocationsByDnssecDnssec dnssec, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByDnssecFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponseResult, RadarGetDnsAs112TopLocationsByDnssecError>> radarGetDnsAs112TopLocationsByDnssec({required RadarGetDnsAs112TopLocationsByDnssecDnssec dnssec, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByDnssecFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -384,9 +376,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetDnsAs112TopLocationsByDnssecResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetDnsAs112TopLocationsByDnssecError.fromResponse(response),
 );
  } 
 /// Get top locations by AS112 DNS queries with EDNS support
@@ -394,7 +384,7 @@ return execute(
 /// Retrieves the top locations of DNS queries to AS112 with EDNS (Extension Mechanisms for DNS) support.
 ///
 /// `GET /radar/as112/top/locations/edns/{edns}`
-Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponseResult, RadarGetDnsAs112TopLocationsByEdnsResponse404>> radarGetDnsAs112TopLocationsByEdns({required RadarGetDnsAs112TopLocationsByEdnsEdns edns, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByEdnsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponseResult, RadarGetDnsAs112TopLocationsByEdnsError>> radarGetDnsAs112TopLocationsByEdns({required RadarGetDnsAs112TopLocationsByEdnsEdns edns, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByEdnsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -450,9 +440,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetDnsAs112TopLocationsByEdnsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetDnsAs112TopLocationsByEdnsError.fromResponse(response),
 );
  } 
 /// Get top locations by AS112 DNS queries for an IP version
@@ -460,7 +448,7 @@ return execute(
 /// Retrieves the top locations of DNS queries to AS112 for an IP version.
 ///
 /// `GET /radar/as112/top/locations/ip_version/{ip_version}`
-Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponseResult, RadarGetDnsAs112TopLocationsByIpVersionResponse404>> radarGetDnsAs112TopLocationsByIpVersion({required RadarGetDnsAs112TopLocationsByIpVersionIpVersion ipVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByIpVersionFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetDnsAs112TopLocationsByDnssecResponseResult, RadarGetDnsAs112TopLocationsByIpVersionError>> radarGetDnsAs112TopLocationsByIpVersion({required RadarGetDnsAs112TopLocationsByIpVersionIpVersion ipVersion, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, RadarGetDnsAs112TopLocationsByIpVersionFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -516,9 +504,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetDnsAs112TopLocationsByIpVersionResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetDnsAs112TopLocationsByIpVersionError.fromResponse(response),
 );
  } 
  }

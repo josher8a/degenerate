@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_create_repository_snapshot_response.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_diff2.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom.dart';import 'package:pub_github_rest_3_1/models/snapshot.dart';/// DependencyGraphApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_create_repository_snapshot_response.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_diff2.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom.dart';import 'package:pub_github_rest_3_1/models/errors/actions_approve_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/snapshot.dart';/// DependencyGraphApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DependencyGraphApi with ApiExecutor {const DependencyGraphApi(this.a
 /// Gets the diff of the dependency changes between two commits of a repository, based on the changes to the dependency manifests made in those commits.
 ///
 /// `GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}`
-Future<ApiResult<List<DependencyGraphDiff2>, BasicError>> dependencyGraphDiffRange({required String owner, required String repo, required String basehead, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DependencyGraphDiff2>, ActionsApproveWorkflowRunError>> dependencyGraphDiffRange({required String owner, required String repo, required String basehead, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -36,9 +36,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => DependencyGraphDiff2.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Export a software bill of materials (SBOM) for a repository.
@@ -46,7 +44,7 @@ return execute(
 /// Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.
 ///
 /// `GET /repos/{owner}/{repo}/dependency-graph/sbom`
-Future<ApiResult<DependencyGraphSpdxSbom, BasicError>> dependencyGraphExportSbom({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DependencyGraphSpdxSbom, ActionsApproveWorkflowRunError>> dependencyGraphExportSbom({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -60,9 +58,7 @@ return execute(
   onSuccess: (response) {
     return DependencyGraphSpdxSbom.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
 );
  } 
 /// Create a snapshot of dependencies for a repository

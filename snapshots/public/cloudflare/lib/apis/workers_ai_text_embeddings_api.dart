@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n5_request.dart';import 'package:pub_cloudflare/models/n5_request2.dart';import 'package:pub_cloudflare/models/n5_request3.dart';import 'package:pub_cloudflare/models/n5_request4.dart';import 'package:pub_cloudflare/models/n5_request5.dart';import 'package:pub_cloudflare/models/n5_request6.dart';import 'package:pub_cloudflare/models/n5_request7.dart';import 'package:pub_cloudflare/models/n5_response400.dart';import 'package:pub_cloudflare/models/n5_response4002.dart';import 'package:pub_cloudflare/models/n5_response4003.dart';import 'package:pub_cloudflare/models/n5_response4004.dart';import 'package:pub_cloudflare/models/n5_response4005.dart';import 'package:pub_cloudflare/models/n5_response4006.dart';import 'package:pub_cloudflare/models/n5_response4007.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_m3_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_m3_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_omni_bge_m3_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_omni_bge_m3_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_google_embeddinggemma300m_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_google_embeddinggemma300m_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_google_omni_embeddinggemma300m_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_google_omni_embeddinggemma300m_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_pfnet_plamo_embedding1b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_pfnet_plamo_embedding1b_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_qwen_qwen3_embedding06b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_qwen_qwen3_embedding06b_response400.dart';/// WorkersAiTextEmbeddingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_baai_bge_base_en_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_baai_bge_large_en_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_baai_bge_m3_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_baai_bge_small_en_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_baai_omni_bge_base_en_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_baai_omni_bge_large_en_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_baai_omni_bge_m3_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_baai_omni_bge_small_en_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_baai_ray_bge_large_en_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_google_embeddinggemma300m_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_google_omni_embeddinggemma300m_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_pfnet_plamo_embedding1b_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_qwen_qwen3_embedding06b_error.dart';import 'package:pub_cloudflare/models/n5_request.dart';import 'package:pub_cloudflare/models/n5_request2.dart';import 'package:pub_cloudflare/models/n5_request3.dart';import 'package:pub_cloudflare/models/n5_request4.dart';import 'package:pub_cloudflare/models/n5_request5.dart';import 'package:pub_cloudflare/models/n5_request6.dart';import 'package:pub_cloudflare/models/n5_request7.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_m3_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_omni_bge_m3_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_google_embeddinggemma300m_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_google_omni_embeddinggemma300m_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_pfnet_plamo_embedding1b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_qwen_qwen3_embedding06b_request.dart';/// WorkersAiTextEmbeddingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkersAiTextEmbeddingsApi with ApiExecutor {const WorkersAiTextEmbe
 /// Runs inference on the @cf/baai/bge-base-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-base-en-v1.5`
-Future<ApiResult<Map<String, dynamic>, $5Response400>> workersAiPostRunCfBaaiBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiBgeBaseEnError>> workersAiPostRunCfBaaiBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -40,9 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return $5Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBaaiBgeBaseEnError.fromResponse(response),
 );
  } 
 /// Execute @cf/baai/bge-large-en-v1.5 model.
@@ -50,7 +48,7 @@ return execute(
 /// Runs inference on the @cf/baai/bge-large-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-large-en-v1.5`
-Future<ApiResult<Map<String, dynamic>, $5Response4002>> workersAiPostRunCfBaaiBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request2? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiBgeLargeEnError>> workersAiPostRunCfBaaiBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request2? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -77,9 +75,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return $5Response4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBaaiBgeLargeEnError.fromResponse(response),
 );
  } 
 /// Execute @cf/baai/bge-m3 model.
@@ -87,7 +83,7 @@ return execute(
 /// Runs inference on the @cf/baai/bge-m3 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-m3`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiBgeM3Response400>> workersAiPostRunCfBaaiBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeM3Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiBgeM3Error>> workersAiPostRunCfBaaiBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeM3Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -114,9 +110,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfBaaiBgeM3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBaaiBgeM3Error.fromResponse(response),
 );
  } 
 /// Execute @cf/baai/bge-small-en-v1.5 model.
@@ -124,7 +118,7 @@ return execute(
 /// Runs inference on the @cf/baai/bge-small-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-small-en-v1.5`
-Future<ApiResult<Map<String, dynamic>, $5Response4003>> workersAiPostRunCfBaaiBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request3? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiBgeSmallEnError>> workersAiPostRunCfBaaiBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request3? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -151,9 +145,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return $5Response4003.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBaaiBgeSmallEnError.fromResponse(response),
 );
  } 
 /// Execute @cf/baai/omni-bge-base-en-v1.5 model.
@@ -161,7 +153,7 @@ return execute(
 /// Runs inference on the @cf/baai/omni-bge-base-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-base-en-v1.5`
-Future<ApiResult<Map<String, dynamic>, $5Response4004>> workersAiPostRunCfBaaiOmniBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request4? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiOmniBgeBaseEnError>> workersAiPostRunCfBaaiOmniBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request4? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -188,9 +180,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return $5Response4004.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBaaiOmniBgeBaseEnError.fromResponse(response),
 );
  } 
 /// Execute @cf/baai/omni-bge-large-en-v1.5 model.
@@ -198,7 +188,7 @@ return execute(
 /// Runs inference on the @cf/baai/omni-bge-large-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-large-en-v1.5`
-Future<ApiResult<Map<String, dynamic>, $5Response4005>> workersAiPostRunCfBaaiOmniBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request5? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiOmniBgeLargeEnError>> workersAiPostRunCfBaaiOmniBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request5? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -225,9 +215,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return $5Response4005.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBaaiOmniBgeLargeEnError.fromResponse(response),
 );
  } 
 /// Execute @cf/baai/omni-bge-m3 model.
@@ -235,7 +223,7 @@ return execute(
 /// Runs inference on the @cf/baai/omni-bge-m3 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-m3`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiOmniBgeM3Response400>> workersAiPostRunCfBaaiOmniBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiOmniBgeM3Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiOmniBgeM3Error>> workersAiPostRunCfBaaiOmniBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiOmniBgeM3Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -262,9 +250,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfBaaiOmniBgeM3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBaaiOmniBgeM3Error.fromResponse(response),
 );
  } 
 /// Execute @cf/baai/omni-bge-small-en-v1.5 model.
@@ -272,7 +258,7 @@ return execute(
 /// Runs inference on the @cf/baai/omni-bge-small-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-small-en-v1.5`
-Future<ApiResult<Map<String, dynamic>, $5Response4006>> workersAiPostRunCfBaaiOmniBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request6? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiOmniBgeSmallEnError>> workersAiPostRunCfBaaiOmniBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request6? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -299,9 +285,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return $5Response4006.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBaaiOmniBgeSmallEnError.fromResponse(response),
 );
  } 
 /// Execute @cf/baai/ray-bge-large-en-v1.5 model.
@@ -309,7 +293,7 @@ return execute(
 /// Runs inference on the @cf/baai/ray-bge-large-en-v1.5 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/baai/ray-bge-large-en-v1.5`
-Future<ApiResult<Map<String, dynamic>, $5Response4007>> workersAiPostRunCfBaaiRayBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request7? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiRayBgeLargeEnError>> workersAiPostRunCfBaaiRayBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request7? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -336,9 +320,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return $5Response4007.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfBaaiRayBgeLargeEnError.fromResponse(response),
 );
  } 
 /// Execute @cf/google/embeddinggemma-300m model.
@@ -346,7 +328,7 @@ return execute(
 /// Runs inference on the @cf/google/embeddinggemma-300m model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/embeddinggemma-300m`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleEmbeddinggemma300mRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleEmbeddinggemma300mError>> workersAiPostRunCfGoogleEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleEmbeddinggemma300mRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -373,9 +355,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfGoogleEmbeddinggemma300mResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfGoogleEmbeddinggemma300mError.fromResponse(response),
 );
  } 
 /// Execute @cf/google/omni-embeddinggemma-300m model.
@@ -383,7 +363,7 @@ return execute(
 /// Runs inference on the @cf/google/omni-embeddinggemma-300m model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/google/omni-embeddinggemma-300m`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleOmniEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mError>> workersAiPostRunCfGoogleOmniEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -410,9 +390,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mError.fromResponse(response),
 );
  } 
 /// Execute @cf/pfnet/plamo-embedding-1b model.
@@ -420,7 +398,7 @@ return execute(
 /// Runs inference on the @cf/pfnet/plamo-embedding-1b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/pfnet/plamo-embedding-1b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400>> workersAiPostRunCfPfnetPlamoEmbedding1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfPfnetPlamoEmbedding1bError>> workersAiPostRunCfPfnetPlamoEmbedding1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -447,9 +425,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfPfnetPlamoEmbedding1bError.fromResponse(response),
 );
  } 
 /// Execute @cf/qwen/qwen3-embedding-0.6b model.
@@ -457,7 +433,7 @@ return execute(
 /// Runs inference on the @cf/qwen/qwen3-embedding-0.6b model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen3-embedding-0.6b`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen3Embedding06bResponse400>> workersAiPostRunCfQwenQwen3Embedding06b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen3Embedding06bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen3Embedding06bError>> workersAiPostRunCfQwenQwen3Embedding06b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen3Embedding06bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -484,9 +460,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) {
-    return WorkersAiPostRunCfQwenQwen3Embedding06bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => WorkersAiPostRunCfQwenQwen3Embedding06bError.fromResponse(response),
 );
  } 
  }

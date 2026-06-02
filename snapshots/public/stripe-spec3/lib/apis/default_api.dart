@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/account_link.dart';import 'package:pub_stripe_spec3/models/account_session.dart';import 'package:pub_stripe_spec3/models/apple_pay_domain.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/apps_secret.dart';import 'package:pub_stripe_spec3/models/balance.dart';import 'package:pub_stripe_spec3/models/balance_settings.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/billing_alert.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_summary.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant.dart';import 'package:pub_stripe_spec3/models/billing_meter.dart';import 'package:pub_stripe_spec3/models/billing_meter_event.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration.dart';import 'package:pub_stripe_spec3/models/billing_portal_session.dart';import 'package:pub_stripe_spec3/models/capability.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/cash_balance.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';import 'package:pub_stripe_spec3/models/climate_order.dart';import 'package:pub_stripe_spec3/models/climate_product.dart';import 'package:pub_stripe_spec3/models/climate_supplier.dart';import 'package:pub_stripe_spec3/models/confirmation_token.dart';import 'package:pub_stripe_spec3/models/country_spec.dart';import 'package:pub_stripe_spec3/models/coupon.dart';import 'package:pub_stripe_spec3/models/credit_note.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_cash_balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_session.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_people_person_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_persons_person_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/delete_apple_pay_domains_domain_request.dart';import 'package:pub_stripe_spec3/models/delete_coupons_coupon_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_bank_accounts_id_response.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_cards_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_cards_id_response.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_discount_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_sources_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_sources_id_response.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_subscriptions_subscription_exposed_id_discount_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/delete_ephemeral_keys_key_request.dart';import 'package:pub_stripe_spec3/models/delete_invoiceitems_invoiceitem_request.dart';import 'package:pub_stripe_spec3/models/delete_invoices_invoice_request.dart';import 'package:pub_stripe_spec3/models/delete_plans_plan_request.dart';import 'package:pub_stripe_spec3/models/delete_products_id_request.dart';import 'package:pub_stripe_spec3/models/delete_products_product_features_id_request.dart';import 'package:pub_stripe_spec3/models/delete_radar_value_list_items_item_request.dart';import 'package:pub_stripe_spec3/models/delete_radar_value_lists_value_list_request.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request.dart';import 'package:pub_stripe_spec3/models/delete_subscriptions_subscription_exposed_id_discount_request.dart';import 'package:pub_stripe_spec3/models/delete_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/delete_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/delete_terminal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/delete_terminal_locations_location_request.dart';import 'package:pub_stripe_spec3/models/delete_terminal_readers_reader_request.dart';import 'package:pub_stripe_spec3/models/delete_test_helpers_test_clocks_test_clock_request.dart';import 'package:pub_stripe_spec3/models/delete_webhook_endpoints_webhook_endpoint_request.dart';import 'package:pub_stripe_spec3/models/deleted_account.dart';import 'package:pub_stripe_spec3/models/deleted_apple_pay_domain.dart';import 'package:pub_stripe_spec3/models/deleted_bank_account.dart';import 'package:pub_stripe_spec3/models/deleted_card.dart';import 'package:pub_stripe_spec3/models/deleted_coupon.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount.dart';import 'package:pub_stripe_spec3/models/deleted_external_account.dart';import 'package:pub_stripe_spec3/models/deleted_invoice.dart';import 'package:pub_stripe_spec3/models/deleted_invoiceitem.dart';import 'package:pub_stripe_spec3/models/deleted_person.dart';import 'package:pub_stripe_spec3/models/deleted_plan.dart';import 'package:pub_stripe_spec3/models/deleted_product.dart';import 'package:pub_stripe_spec3/models/deleted_product_feature.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list_item.dart';import 'package:pub_stripe_spec3/models/deleted_subscription_item.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_configuration.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_location.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader.dart';import 'package:pub_stripe_spec3/models/deleted_test_helpers_test_clock.dart';import 'package:pub_stripe_spec3/models/deleted_webhook_endpoint.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/dispute.dart';import 'package:pub_stripe_spec3/models/entitlements_active_entitlement.dart';import 'package:pub_stripe_spec3/models/entitlements_feature.dart';import 'package:pub_stripe_spec3/models/ephemeral_key.dart';import 'package:pub_stripe_spec3/models/error_model.dart';import 'package:pub_stripe_spec3/models/event.dart';import 'package:pub_stripe_spec3/models/exchange_rate.dart';import 'package:pub_stripe_spec3/models/external_account.dart';import 'package:pub_stripe_spec3/models/fee_refund.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/file_link.dart';import 'package:pub_stripe_spec3/models/financial_connections_account.dart';import 'package:pub_stripe_spec3/models/financial_connections_session.dart';import 'package:pub_stripe_spec3/models/financial_connections_transaction.dart';import 'package:pub_stripe_spec3/models/forwarding_request.dart';import 'package:pub_stripe_spec3/models/funding_instructions.dart';import 'package:pub_stripe_spec3/models/get_account_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_capability_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_object.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_person_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_relationship.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_person_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_relationship.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_created.dart';import 'package:pub_stripe_spec3/models/get_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_apple_pay_domains_domain_request.dart';import 'package:pub_stripe_spec3/models/get_apple_pay_domains_request.dart';import 'package:pub_stripe_spec3/models/get_apple_pay_domains_response.dart';import 'package:pub_stripe_spec3/models/get_application_fees_created.dart';import 'package:pub_stripe_spec3/models/get_application_fees_fee_refunds_id_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_id_refunds_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_id_refunds_response.dart';import 'package:pub_stripe_spec3/models/get_application_fees_id_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_response.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_find_request.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_find_scope.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_request.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_response.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_scope.dart';import 'package:pub_stripe_spec3/models/get_balance_history_created.dart';import 'package:pub_stripe_spec3/models/get_balance_history_id_request.dart';import 'package:pub_stripe_spec3/models/get_balance_history_request.dart';import 'package:pub_stripe_spec3/models/get_balance_history_response.dart';import 'package:pub_stripe_spec3/models/get_balance_request.dart';import 'package:pub_stripe_spec3/models/get_balance_settings_request.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_id_request.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_alert_type.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_request.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_response.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_filter.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_transactions_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_grants_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_grants_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_grants_response.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_event_summaries_request.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_event_summaries_response.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_event_summaries_value_grouping_window.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_request.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_response.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_status.dart';import 'package:pub_stripe_spec3/models/get_billing_portal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/get_billing_portal_configurations_request.dart';import 'package:pub_stripe_spec3/models/get_billing_portal_configurations_response.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_dispute_request.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_refunds_request.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_refunds_response.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_request.dart';import 'package:pub_stripe_spec3/models/get_charges_created.dart';import 'package:pub_stripe_spec3/models/get_charges_request.dart';import 'package:pub_stripe_spec3/models/get_charges_response.dart';import 'package:pub_stripe_spec3/models/get_charges_search_request.dart';import 'package:pub_stripe_spec3/models/get_charges_search_response.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_created.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_customer_details.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_request.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_response.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_session_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_session_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_status.dart';import 'package:pub_stripe_spec3/models/get_climate_orders_order_request.dart';import 'package:pub_stripe_spec3/models/get_climate_orders_request.dart';import 'package:pub_stripe_spec3/models/get_climate_orders_response.dart';import 'package:pub_stripe_spec3/models/get_climate_products_product_request.dart';import 'package:pub_stripe_spec3/models/get_climate_products_request.dart';import 'package:pub_stripe_spec3/models/get_climate_products_response.dart';import 'package:pub_stripe_spec3/models/get_climate_suppliers_request.dart';import 'package:pub_stripe_spec3/models/get_climate_suppliers_response.dart';import 'package:pub_stripe_spec3/models/get_climate_suppliers_supplier_request.dart';import 'package:pub_stripe_spec3/models/get_confirmation_tokens_confirmation_token_request.dart';import 'package:pub_stripe_spec3/models/get_country_specs_country_request.dart';import 'package:pub_stripe_spec3/models/get_country_specs_request.dart';import 'package:pub_stripe_spec3/models/get_country_specs_response.dart';import 'package:pub_stripe_spec3/models/get_coupons_coupon_request.dart';import 'package:pub_stripe_spec3/models/get_coupons_created.dart';import 'package:pub_stripe_spec3/models/get_coupons_request.dart';import 'package:pub_stripe_spec3/models/get_coupons_response.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_created.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_credit_note_lines_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_credit_note_lines_response.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_id_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_email_type.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_email_type.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_reason.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_refunds.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_response.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_shipping_cost.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_reason.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_refunds.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_shipping_cost.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_response.dart';import 'package:pub_stripe_spec3/models/get_customers_created.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_discount_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_payment_method_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_type.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_id_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_subscription_exposed_id_discount_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_tax_ids_response.dart';import 'package:pub_stripe_spec3/models/get_customers_request.dart';import 'package:pub_stripe_spec3/models/get_customers_response.dart';import 'package:pub_stripe_spec3/models/get_customers_search_request.dart';import 'package:pub_stripe_spec3/models/get_customers_search_response.dart';import 'package:pub_stripe_spec3/models/get_disputes_created.dart';import 'package:pub_stripe_spec3/models/get_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/get_disputes_request.dart';import 'package:pub_stripe_spec3/models/get_disputes_response.dart';import 'package:pub_stripe_spec3/models/get_entitlements_active_entitlements_id_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_active_entitlements_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_active_entitlements_response.dart';import 'package:pub_stripe_spec3/models/get_entitlements_features_id_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_features_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_features_response.dart';import 'package:pub_stripe_spec3/models/get_events_created.dart';import 'package:pub_stripe_spec3/models/get_events_id_request.dart';import 'package:pub_stripe_spec3/models/get_events_request.dart';import 'package:pub_stripe_spec3/models/get_events_response.dart';import 'package:pub_stripe_spec3/models/get_exchange_rates_rate_id_request.dart';import 'package:pub_stripe_spec3/models/get_exchange_rates_request.dart';import 'package:pub_stripe_spec3/models/get_exchange_rates_response.dart';import 'package:pub_stripe_spec3/models/get_file_links_created.dart';import 'package:pub_stripe_spec3/models/get_file_links_link_request.dart';import 'package:pub_stripe_spec3/models/get_file_links_request.dart';import 'package:pub_stripe_spec3/models/get_file_links_response.dart';import 'package:pub_stripe_spec3/models/get_files_created.dart';import 'package:pub_stripe_spec3/models/get_files_file_request.dart';import 'package:pub_stripe_spec3/models/get_files_purpose.dart';import 'package:pub_stripe_spec3/models/get_files_request.dart';import 'package:pub_stripe_spec3/models/get_files_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_holder.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_owners_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_owners_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_transacted_at.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_transaction_refresh.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_created.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_id_request.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_request.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_response.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_created.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_report_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_response.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_type.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_created.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_response.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_status.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_created.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_invoice_payment_request.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_payment.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_request.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_response.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_status.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_request.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_response.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_status.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_template_request.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_created.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_invoiceitem_request.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_request.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_collection_method.dart';import 'package:pub_stripe_spec3/models/get_invoices_created.dart';import 'package:pub_stripe_spec3/models/get_invoices_due_date.dart';import 'package:pub_stripe_spec3/models/get_invoices_invoice_lines_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_invoice_lines_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_invoice_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_search_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_search_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_authorization_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_cardholder_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_type.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_card_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_type.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_personalization_design_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_preferences.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_physical_bundle_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_type.dart';import 'package:pub_stripe_spec3/models/get_issuing_settlements_settlement_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_token_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_type.dart';import 'package:pub_stripe_spec3/models/get_link_account_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_holder.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_owners_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_owners_response.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_mandates_mandate_request.dart';import 'package:pub_stripe_spec3/models/get_payment_attempt_records_id_request.dart';import 'package:pub_stripe_spec3/models/get_payment_attempt_records_request.dart';import 'package:pub_stripe_spec3/models/get_payment_attempt_records_response.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_created.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_intent_amount_details_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_intent_amount_details_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_response.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_search_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_search_response.dart';import 'package:pub_stripe_spec3/models/get_payment_links_payment_link_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_payment_links_payment_link_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_payment_links_payment_link_request.dart';import 'package:pub_stripe_spec3/models/get_payment_links_request.dart';import 'package:pub_stripe_spec3/models/get_payment_links_response.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_response.dart';import 'package:pub_stripe_spec3/models/get_payment_method_domains_payment_method_domain_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_domains_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_domains_response.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_payment_method_request.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_request.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_response.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_type.dart';import 'package:pub_stripe_spec3/models/get_payment_records_id_request.dart';import 'package:pub_stripe_spec3/models/get_payouts_arrival_date.dart';import 'package:pub_stripe_spec3/models/get_payouts_created.dart';import 'package:pub_stripe_spec3/models/get_payouts_payout_request.dart';import 'package:pub_stripe_spec3/models/get_payouts_request.dart';import 'package:pub_stripe_spec3/models/get_payouts_response.dart';import 'package:pub_stripe_spec3/models/get_plans_created.dart';import 'package:pub_stripe_spec3/models/get_plans_plan_request.dart';import 'package:pub_stripe_spec3/models/get_plans_request.dart';import 'package:pub_stripe_spec3/models/get_plans_response.dart';import 'package:pub_stripe_spec3/models/get_prices_created.dart';import 'package:pub_stripe_spec3/models/get_prices_price_request.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring.dart';import 'package:pub_stripe_spec3/models/get_prices_request.dart';import 'package:pub_stripe_spec3/models/get_prices_response.dart';import 'package:pub_stripe_spec3/models/get_prices_search_request.dart';import 'package:pub_stripe_spec3/models/get_prices_search_response.dart';import 'package:pub_stripe_spec3/models/get_prices_type.dart';import 'package:pub_stripe_spec3/models/get_products_created.dart';import 'package:pub_stripe_spec3/models/get_products_id_request.dart';import 'package:pub_stripe_spec3/models/get_products_product_features_id_request.dart';import 'package:pub_stripe_spec3/models/get_products_product_features_request.dart';import 'package:pub_stripe_spec3/models/get_products_product_features_response.dart';import 'package:pub_stripe_spec3/models/get_products_request.dart';import 'package:pub_stripe_spec3/models/get_products_response.dart';import 'package:pub_stripe_spec3/models/get_products_search_request.dart';import 'package:pub_stripe_spec3/models/get_products_search_response.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_created.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_promotion_code_request.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_request.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_computed_upfront_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_computed_upfront_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_pdf_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_status.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_created.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_early_fraud_warning_request.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_request.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_response.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_created.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_item_request.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_request.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_response.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_created.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_request.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_response.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_value_list_request.dart';import 'package:pub_stripe_spec3/models/get_refunds_created.dart';import 'package:pub_stripe_spec3/models/get_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/get_refunds_request.dart';import 'package:pub_stripe_spec3/models/get_refunds_response.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_created.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_report_run_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_response.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_types_report_type_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_types_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_types_response.dart';import 'package:pub_stripe_spec3/models/get_reviews_created.dart';import 'package:pub_stripe_spec3/models/get_reviews_request.dart';import 'package:pub_stripe_spec3/models/get_reviews_response.dart';import 'package:pub_stripe_spec3/models/get_reviews_review_request.dart';import 'package:pub_stripe_spec3/models/get_setup_attempts_created.dart';import 'package:pub_stripe_spec3/models/get_setup_attempts_request.dart';import 'package:pub_stripe_spec3/models/get_setup_attempts_response.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_created.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_request.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_response.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_created.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_request.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_response.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_shipping_rate_token_request.dart';import 'package:pub_stripe_spec3/models/get_sigma_scheduled_query_runs_request.dart';import 'package:pub_stripe_spec3/models/get_sigma_scheduled_query_runs_response.dart';import 'package:pub_stripe_spec3/models/get_sigma_scheduled_query_runs_scheduled_query_run_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_mandate_notifications_mandate_notification_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_source_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_source_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_sources_source_source_transactions_source_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_items_item_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_items_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_items_response.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_canceled_at.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_completed_at.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_created.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_released_at.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_response.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_schedule_request.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_automatic_tax.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_collection_method.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_created.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_current_period_end.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_current_period_start.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_response.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_search_request.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_search_response.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_status.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_associations_find_request.dart';import 'package:pub_stripe_spec3/models/get_tax_calculations_calculation_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_tax_calculations_calculation_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_tax_calculations_calculation_request.dart';import 'package:pub_stripe_spec3/models/get_tax_codes_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_codes_request.dart';import 'package:pub_stripe_spec3/models/get_tax_codes_response.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_owner.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_response.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_created.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_request.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_response.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_tax_rate_request.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_request.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_response.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_status.dart';import 'package:pub_stripe_spec3/models/get_tax_settings_request.dart';import 'package:pub_stripe_spec3/models/get_tax_transactions_transaction_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_tax_transactions_transaction_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_tax_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_configuration_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_location_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_location_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_device_type.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_reader_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_reader_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_status.dart';import 'package:pub_stripe_spec3/models/get_test_helpers_test_clocks_request.dart';import 'package:pub_stripe_spec3/models/get_test_helpers_test_clocks_response.dart';import 'package:pub_stripe_spec3/models/get_test_helpers_test_clocks_test_clock_request.dart';import 'package:pub_stripe_spec3/models/get_tokens_token_request.dart';import 'package:pub_stripe_spec3/models/get_topups_amount.dart';import 'package:pub_stripe_spec3/models/get_topups_created.dart';import 'package:pub_stripe_spec3/models/get_topups_request.dart';import 'package:pub_stripe_spec3/models/get_topups_response.dart';import 'package:pub_stripe_spec3/models/get_topups_status.dart';import 'package:pub_stripe_spec3/models/get_topups_topup_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_created.dart';import 'package:pub_stripe_spec3/models/get_transfers_id_reversals_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_id_reversals_response.dart';import 'package:pub_stripe_spec3/models/get_transfers_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_response.dart';import 'package:pub_stripe_spec3/models/get_transfers_transfer_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_transfer_reversals_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_credit_reversal_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_debit_reversal_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_resolution.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_financial_account_features_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_financial_account_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_outbound_transfer_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_linked_flows.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_effective_at.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_order_by.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_order_by.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_status_transitions.dart';import 'package:pub_stripe_spec3/models/get_webhook_endpoints_request.dart';import 'package:pub_stripe_spec3/models/get_webhook_endpoints_response.dart';import 'package:pub_stripe_spec3/models/get_webhook_endpoints_webhook_endpoint_request.dart';import 'package:pub_stripe_spec3/models/identity_verification_report.dart';import 'package:pub_stripe_spec3/models/identity_verification_session.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoice_payment.dart';import 'package:pub_stripe_spec3/models/invoice_rendering_template.dart';import 'package:pub_stripe_spec3/models/invoiceitem.dart';import 'package:pub_stripe_spec3/models/issuing_authorization.dart';import 'package:pub_stripe_spec3/models/issuing_card.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_dispute.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design.dart';import 'package:pub_stripe_spec3/models/issuing_physical_bundle.dart';import 'package:pub_stripe_spec3/models/issuing_settlement.dart';import 'package:pub_stripe_spec3/models/issuing_token.dart';import 'package:pub_stripe_spec3/models/issuing_transaction.dart';import 'package:pub_stripe_spec3/models/line_item.dart';import 'package:pub_stripe_spec3/models/login_link.dart';import 'package:pub_stripe_spec3/models/mandate.dart';import 'package:pub_stripe_spec3/models/payment_attempt_record.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_link.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method_configuration.dart';import 'package:pub_stripe_spec3/models/payment_method_domain.dart';import 'package:pub_stripe_spec3/models/payment_record.dart';import 'package:pub_stripe_spec3/models/payment_source.dart';import 'package:pub_stripe_spec3/models/payout.dart';import 'package:pub_stripe_spec3/models/person.dart';import 'package:pub_stripe_spec3/models/plan.dart';import 'package:pub_stripe_spec3/models/post_account_links_request.dart';import 'package:pub_stripe_spec3/models/post_account_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_capabilities_capability_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_external_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_login_links_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_persons_person_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_persons_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_reject_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_apple_pay_domains_request.dart';import 'package:pub_stripe_spec3/models/post_application_fees_fee_refunds_id_request.dart';import 'package:pub_stripe_spec3/models/post_application_fees_id_refund_request.dart';import 'package:pub_stripe_spec3/models/post_application_fees_id_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_apps_secrets_delete_request.dart';import 'package:pub_stripe_spec3/models/post_apps_secrets_request.dart';import 'package:pub_stripe_spec3/models/post_balance_settings_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_id_activate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_id_archive_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_id_deactivate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_id_expire_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_id_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_id_void_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meter_event_adjustments_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meter_events_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_id_deactivate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_id_reactivate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_id_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_request.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_capture_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_close_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request.dart';import 'package:pub_stripe_spec3/models/post_charges_request.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_expire_request.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_order_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_order_request.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_request.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request.dart';import 'package:pub_stripe_spec3/models/post_coupons_request.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_id_request.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_id_void_request.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_balance_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_response.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_verify_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cards_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cards_id_response.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cards_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cash_balance_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_funding_instructions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_id_response.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_id_verify_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/post_customers_request.dart';import 'package:pub_stripe_spec3/models/post_disputes_dispute_close_request.dart';import 'package:pub_stripe_spec3/models/post_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/post_entitlements_features_id_request.dart';import 'package:pub_stripe_spec3/models/post_entitlements_features_request.dart';import 'package:pub_stripe_spec3/models/post_ephemeral_keys_request.dart';import 'package:pub_stripe_spec3/models/post_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_file_links_link_request.dart';import 'package:pub_stripe_spec3/models/post_file_links_request.dart';import 'package:pub_stripe_spec3/models/post_files_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_disconnect_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_refresh_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_subscribe_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_unsubscribe_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_forwarding_requests_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_session_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_session_redact_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/post_invoice_rendering_templates_template_archive_request.dart';import 'package:pub_stripe_spec3/models/post_invoice_rendering_templates_template_unarchive_request.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_attach_payment_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_finalize_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_lines_line_item_id_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_mark_uncollectible_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_pay_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_remove_lines_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_send_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_update_lines_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_void_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_authorizations_authorization_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_dispute_submit_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_settlements_settlement_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_tokens_token_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/post_link_account_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_linked_accounts_account_disconnect_request.dart';import 'package:pub_stripe_spec3/models/post_linked_accounts_account_refresh_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_apply_customer_balance_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_increment_authorization_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_verify_microdeposits_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request.dart';import 'package:pub_stripe_spec3/models/post_payment_links_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_domains_payment_method_domain_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_domains_payment_method_domain_validate_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_domains_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_attach_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_detach_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_canceled_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_failed_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_guaranteed_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_report_payment_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_payout_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_payout_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_payout_reverse_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_request.dart';import 'package:pub_stripe_spec3/models/post_plans_plan_request.dart';import 'package:pub_stripe_spec3/models/post_plans_request.dart';import 'package:pub_stripe_spec3/models/post_prices_price_request.dart';import 'package:pub_stripe_spec3/models/post_prices_request.dart';import 'package:pub_stripe_spec3/models/post_products_id_request.dart';import 'package:pub_stripe_spec3/models/post_products_product_features_request.dart';import 'package:pub_stripe_spec3/models/post_products_request.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_promotion_code_request.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_accept_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_finalize_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_request.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request.dart';import 'package:pub_stripe_spec3/models/post_radar_value_list_items_request.dart';import 'package:pub_stripe_spec3/models/post_radar_value_lists_request.dart';import 'package:pub_stripe_spec3/models/post_radar_value_lists_value_list_request.dart';import 'package:pub_stripe_spec3/models/post_refunds_refund_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/post_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_reporting_report_runs_request.dart';import 'package:pub_stripe_spec3/models/post_reviews_review_approve_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_confirm_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_verify_microdeposits_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_request.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_shipping_rate_token_request.dart';import 'package:pub_stripe_spec3/models/post_sigma_saved_queries_id_request.dart';import 'package:pub_stripe_spec3/models/post_sources_request.dart';import 'package:pub_stripe_spec3/models/post_sources_source_request.dart';import 'package:pub_stripe_spec3/models/post_sources_source_verify_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_items_item_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_items_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_release_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_migrate_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_resume_request.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request.dart';import 'package:pub_stripe_spec3/models/post_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_request.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_tax_rate_request.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_id_request.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_request.dart';import 'package:pub_stripe_spec3/models/post_tax_settings_request.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_from_calculation_request.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_reversal_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_response.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_connection_tokens_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_response.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_cancel_action_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_inputs_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_payment_method_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_confirm_payment_intent_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_process_payment_intent_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_process_setup_intent_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_refund_payment_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_response.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_set_reader_display_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_confirmation_tokens_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_customers_customer_fund_cash_balance_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_capture_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_expire_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_fraud_challenges_respond_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_increment_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_reverse_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_deliver_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_ship_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_submit_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_activate_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_deactivate_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_reject_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_settlements_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_settlements_settlement_complete_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_transactions_create_force_capture_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_transactions_create_unlinked_refund_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_transactions_transaction_refund_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_refunds_refund_expire_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_present_payment_method_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_succeed_input_collection_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_timeout_input_collection_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_test_clocks_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_test_clocks_test_clock_advance_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_succeed_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_post_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_post_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_received_credits_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_received_debits_request.dart';import 'package:pub_stripe_spec3/models/post_tokens_request.dart';import 'package:pub_stripe_spec3/models/post_topups_request.dart';import 'package:pub_stripe_spec3/models/post_topups_topup_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_topups_topup_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_id_reversals_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_transfer_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_transfer_reversals_id_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_credit_reversals_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_debit_reversals_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_close_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_features_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_inbound_transfers_inbound_transfer_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_inbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_id_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_transfers_outbound_transfer_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_request.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_webhook_endpoint_request.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/product.dart';import 'package:pub_stripe_spec3/models/product_feature.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';import 'package:pub_stripe_spec3/models/query.dart';import 'package:pub_stripe_spec3/models/quote.dart';import 'package:pub_stripe_spec3/models/radar_early_fraud_warning.dart';import 'package:pub_stripe_spec3/models/radar_payment_evaluation.dart';import 'package:pub_stripe_spec3/models/radar_value_list.dart';import 'package:pub_stripe_spec3/models/radar_value_list_item.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/reporting_report_run.dart';import 'package:pub_stripe_spec3/models/reporting_report_type.dart';import 'package:pub_stripe_spec3/models/review.dart';import 'package:pub_stripe_spec3/models/scheduled_query_run.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/shipping_rate.dart';import 'package:pub_stripe_spec3/models/source.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification.dart';import 'package:pub_stripe_spec3/models/source_transaction.dart';import 'package:pub_stripe_spec3/models/subscription.dart';import 'package:pub_stripe_spec3/models/subscription_item.dart';import 'package:pub_stripe_spec3/models/subscription_schedule.dart';import 'package:pub_stripe_spec3/models/tax_association.dart';import 'package:pub_stripe_spec3/models/tax_calculation.dart';import 'package:pub_stripe_spec3/models/tax_code.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';import 'package:pub_stripe_spec3/models/tax_registration.dart';import 'package:pub_stripe_spec3/models/tax_settings.dart';import 'package:pub_stripe_spec3/models/tax_transaction.dart';import 'package:pub_stripe_spec3/models/terminal_configuration.dart';import 'package:pub_stripe_spec3/models/terminal_connection_token.dart';import 'package:pub_stripe_spec3/models/terminal_location.dart';import 'package:pub_stripe_spec3/models/terminal_onboarding_link.dart';import 'package:pub_stripe_spec3/models/terminal_reader.dart';import 'package:pub_stripe_spec3/models/terminal_refund.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';import 'package:pub_stripe_spec3/models/token.dart';import 'package:pub_stripe_spec3/models/topup.dart';import 'package:pub_stripe_spec3/models/transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_debit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account_features.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfer.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfer.dart';import 'package:pub_stripe_spec3/models/treasury_received_credit.dart';import 'package:pub_stripe_spec3/models/treasury_received_debit.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_transaction_entry.dart';import 'package:pub_stripe_spec3/models/webhook_endpoint.dart';/// DefaultApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/account_link.dart';import 'package:pub_stripe_spec3/models/account_session.dart';import 'package:pub_stripe_spec3/models/apple_pay_domain.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/apps_secret.dart';import 'package:pub_stripe_spec3/models/balance.dart';import 'package:pub_stripe_spec3/models/balance_settings.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/billing_alert.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_summary.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant.dart';import 'package:pub_stripe_spec3/models/billing_meter.dart';import 'package:pub_stripe_spec3/models/billing_meter_event.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration.dart';import 'package:pub_stripe_spec3/models/billing_portal_session.dart';import 'package:pub_stripe_spec3/models/capability.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/cash_balance.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';import 'package:pub_stripe_spec3/models/climate_order.dart';import 'package:pub_stripe_spec3/models/climate_product.dart';import 'package:pub_stripe_spec3/models/climate_supplier.dart';import 'package:pub_stripe_spec3/models/confirmation_token.dart';import 'package:pub_stripe_spec3/models/country_spec.dart';import 'package:pub_stripe_spec3/models/coupon.dart';import 'package:pub_stripe_spec3/models/credit_note.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_cash_balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_session.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_people_person_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_persons_person_request.dart';import 'package:pub_stripe_spec3/models/delete_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/delete_apple_pay_domains_domain_request.dart';import 'package:pub_stripe_spec3/models/delete_coupons_coupon_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_bank_accounts_id_response.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_cards_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_cards_id_response.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_discount_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_sources_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_sources_id_response.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_subscriptions_subscription_exposed_id_discount_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/delete_customers_customer_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/delete_ephemeral_keys_key_request.dart';import 'package:pub_stripe_spec3/models/delete_invoiceitems_invoiceitem_request.dart';import 'package:pub_stripe_spec3/models/delete_invoices_invoice_request.dart';import 'package:pub_stripe_spec3/models/delete_plans_plan_request.dart';import 'package:pub_stripe_spec3/models/delete_products_id_request.dart';import 'package:pub_stripe_spec3/models/delete_products_product_features_id_request.dart';import 'package:pub_stripe_spec3/models/delete_radar_value_list_items_item_request.dart';import 'package:pub_stripe_spec3/models/delete_radar_value_lists_value_list_request.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request.dart';import 'package:pub_stripe_spec3/models/delete_subscriptions_subscription_exposed_id_discount_request.dart';import 'package:pub_stripe_spec3/models/delete_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/delete_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/delete_terminal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/delete_terminal_locations_location_request.dart';import 'package:pub_stripe_spec3/models/delete_terminal_readers_reader_request.dart';import 'package:pub_stripe_spec3/models/delete_test_helpers_test_clocks_test_clock_request.dart';import 'package:pub_stripe_spec3/models/delete_webhook_endpoints_webhook_endpoint_request.dart';import 'package:pub_stripe_spec3/models/deleted_account.dart';import 'package:pub_stripe_spec3/models/deleted_apple_pay_domain.dart';import 'package:pub_stripe_spec3/models/deleted_bank_account.dart';import 'package:pub_stripe_spec3/models/deleted_card.dart';import 'package:pub_stripe_spec3/models/deleted_coupon.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount.dart';import 'package:pub_stripe_spec3/models/deleted_external_account.dart';import 'package:pub_stripe_spec3/models/deleted_invoice.dart';import 'package:pub_stripe_spec3/models/deleted_invoiceitem.dart';import 'package:pub_stripe_spec3/models/deleted_person.dart';import 'package:pub_stripe_spec3/models/deleted_plan.dart';import 'package:pub_stripe_spec3/models/deleted_product.dart';import 'package:pub_stripe_spec3/models/deleted_product_feature.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list_item.dart';import 'package:pub_stripe_spec3/models/deleted_subscription_item.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_configuration.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_location.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader.dart';import 'package:pub_stripe_spec3/models/deleted_test_helpers_test_clock.dart';import 'package:pub_stripe_spec3/models/deleted_webhook_endpoint.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/dispute.dart';import 'package:pub_stripe_spec3/models/entitlements_active_entitlement.dart';import 'package:pub_stripe_spec3/models/entitlements_feature.dart';import 'package:pub_stripe_spec3/models/ephemeral_key.dart';import 'package:pub_stripe_spec3/models/errors/delete_accounts_account_error.dart';import 'package:pub_stripe_spec3/models/event.dart';import 'package:pub_stripe_spec3/models/exchange_rate.dart';import 'package:pub_stripe_spec3/models/external_account.dart';import 'package:pub_stripe_spec3/models/fee_refund.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/file_link.dart';import 'package:pub_stripe_spec3/models/financial_connections_account.dart';import 'package:pub_stripe_spec3/models/financial_connections_session.dart';import 'package:pub_stripe_spec3/models/financial_connections_transaction.dart';import 'package:pub_stripe_spec3/models/forwarding_request.dart';import 'package:pub_stripe_spec3/models/funding_instructions.dart';import 'package:pub_stripe_spec3/models/get_account_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_capability_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_object.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_person_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_relationship.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_people_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_person_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_relationship.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_persons_response.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_created.dart';import 'package:pub_stripe_spec3/models/get_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_apple_pay_domains_domain_request.dart';import 'package:pub_stripe_spec3/models/get_apple_pay_domains_request.dart';import 'package:pub_stripe_spec3/models/get_apple_pay_domains_response.dart';import 'package:pub_stripe_spec3/models/get_application_fees_created.dart';import 'package:pub_stripe_spec3/models/get_application_fees_fee_refunds_id_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_id_refunds_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_id_refunds_response.dart';import 'package:pub_stripe_spec3/models/get_application_fees_id_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_request.dart';import 'package:pub_stripe_spec3/models/get_application_fees_response.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_find_request.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_find_scope.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_request.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_response.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_scope.dart';import 'package:pub_stripe_spec3/models/get_balance_history_created.dart';import 'package:pub_stripe_spec3/models/get_balance_history_id_request.dart';import 'package:pub_stripe_spec3/models/get_balance_history_request.dart';import 'package:pub_stripe_spec3/models/get_balance_history_response.dart';import 'package:pub_stripe_spec3/models/get_balance_request.dart';import 'package:pub_stripe_spec3/models/get_balance_settings_request.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_id_request.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_alert_type.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_request.dart';import 'package:pub_stripe_spec3/models/get_billing_alerts_response.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_filter.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_transactions_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_grants_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_grants_request.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_grants_response.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_event_summaries_request.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_event_summaries_response.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_event_summaries_value_grouping_window.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_id_request.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_request.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_response.dart';import 'package:pub_stripe_spec3/models/get_billing_meters_status.dart';import 'package:pub_stripe_spec3/models/get_billing_portal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/get_billing_portal_configurations_request.dart';import 'package:pub_stripe_spec3/models/get_billing_portal_configurations_response.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_dispute_request.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_refunds_request.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_refunds_response.dart';import 'package:pub_stripe_spec3/models/get_charges_charge_request.dart';import 'package:pub_stripe_spec3/models/get_charges_created.dart';import 'package:pub_stripe_spec3/models/get_charges_request.dart';import 'package:pub_stripe_spec3/models/get_charges_response.dart';import 'package:pub_stripe_spec3/models/get_charges_search_request.dart';import 'package:pub_stripe_spec3/models/get_charges_search_response.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_created.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_customer_details.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_request.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_response.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_session_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_session_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_checkout_sessions_status.dart';import 'package:pub_stripe_spec3/models/get_climate_orders_order_request.dart';import 'package:pub_stripe_spec3/models/get_climate_orders_request.dart';import 'package:pub_stripe_spec3/models/get_climate_orders_response.dart';import 'package:pub_stripe_spec3/models/get_climate_products_product_request.dart';import 'package:pub_stripe_spec3/models/get_climate_products_request.dart';import 'package:pub_stripe_spec3/models/get_climate_products_response.dart';import 'package:pub_stripe_spec3/models/get_climate_suppliers_request.dart';import 'package:pub_stripe_spec3/models/get_climate_suppliers_response.dart';import 'package:pub_stripe_spec3/models/get_climate_suppliers_supplier_request.dart';import 'package:pub_stripe_spec3/models/get_confirmation_tokens_confirmation_token_request.dart';import 'package:pub_stripe_spec3/models/get_country_specs_country_request.dart';import 'package:pub_stripe_spec3/models/get_country_specs_request.dart';import 'package:pub_stripe_spec3/models/get_country_specs_response.dart';import 'package:pub_stripe_spec3/models/get_coupons_coupon_request.dart';import 'package:pub_stripe_spec3/models/get_coupons_created.dart';import 'package:pub_stripe_spec3/models/get_coupons_request.dart';import 'package:pub_stripe_spec3/models/get_coupons_response.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_created.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_credit_note_lines_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_credit_note_lines_response.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_id_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_email_type.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_email_type.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_reason.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_refunds.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_response.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_shipping_cost.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_reason.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_refunds.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_shipping_cost.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_request.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_response.dart';import 'package:pub_stripe_spec3/models/get_customers_created.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_balance_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_cash_balance_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_discount_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_payment_method_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_payment_methods_type.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_id_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_response.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_subscription_exposed_id_discount_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_tax_ids_response.dart';import 'package:pub_stripe_spec3/models/get_customers_request.dart';import 'package:pub_stripe_spec3/models/get_customers_response.dart';import 'package:pub_stripe_spec3/models/get_customers_search_request.dart';import 'package:pub_stripe_spec3/models/get_customers_search_response.dart';import 'package:pub_stripe_spec3/models/get_disputes_created.dart';import 'package:pub_stripe_spec3/models/get_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/get_disputes_request.dart';import 'package:pub_stripe_spec3/models/get_disputes_response.dart';import 'package:pub_stripe_spec3/models/get_entitlements_active_entitlements_id_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_active_entitlements_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_active_entitlements_response.dart';import 'package:pub_stripe_spec3/models/get_entitlements_features_id_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_features_request.dart';import 'package:pub_stripe_spec3/models/get_entitlements_features_response.dart';import 'package:pub_stripe_spec3/models/get_events_created.dart';import 'package:pub_stripe_spec3/models/get_events_id_request.dart';import 'package:pub_stripe_spec3/models/get_events_request.dart';import 'package:pub_stripe_spec3/models/get_events_response.dart';import 'package:pub_stripe_spec3/models/get_exchange_rates_rate_id_request.dart';import 'package:pub_stripe_spec3/models/get_exchange_rates_request.dart';import 'package:pub_stripe_spec3/models/get_exchange_rates_response.dart';import 'package:pub_stripe_spec3/models/get_file_links_created.dart';import 'package:pub_stripe_spec3/models/get_file_links_link_request.dart';import 'package:pub_stripe_spec3/models/get_file_links_request.dart';import 'package:pub_stripe_spec3/models/get_file_links_response.dart';import 'package:pub_stripe_spec3/models/get_files_created.dart';import 'package:pub_stripe_spec3/models/get_files_file_request.dart';import 'package:pub_stripe_spec3/models/get_files_purpose.dart';import 'package:pub_stripe_spec3/models/get_files_request.dart';import 'package:pub_stripe_spec3/models/get_files_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_holder.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_owners_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_owners_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_transacted_at.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_transaction_refresh.dart';import 'package:pub_stripe_spec3/models/get_financial_connections_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_created.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_id_request.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_request.dart';import 'package:pub_stripe_spec3/models/get_forwarding_requests_response.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_created.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_report_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_response.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_reports_type.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_created.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_response.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_identity_verification_sessions_status.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_created.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_invoice_payment_request.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_payment.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_request.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_response.dart';import 'package:pub_stripe_spec3/models/get_invoice_payments_status.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_request.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_response.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_status.dart';import 'package:pub_stripe_spec3/models/get_invoice_rendering_templates_template_request.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_created.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_invoiceitem_request.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_request.dart';import 'package:pub_stripe_spec3/models/get_invoiceitems_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_collection_method.dart';import 'package:pub_stripe_spec3/models/get_invoices_created.dart';import 'package:pub_stripe_spec3/models/get_invoices_due_date.dart';import 'package:pub_stripe_spec3/models/get_invoices_invoice_lines_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_invoice_lines_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_invoice_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_search_request.dart';import 'package:pub_stripe_spec3/models/get_invoices_search_response.dart';import 'package:pub_stripe_spec3/models/get_invoices_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_authorization_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_authorizations_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_cardholder_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_cardholders_type.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_card_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_cards_type.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_disputes_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_personalization_design_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_preferences.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_personalization_designs_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_physical_bundle_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_physical_bundles_type.dart';import 'package:pub_stripe_spec3/models/get_issuing_settlements_settlement_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_status.dart';import 'package:pub_stripe_spec3/models/get_issuing_tokens_token_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_issuing_transactions_type.dart';import 'package:pub_stripe_spec3/models/get_link_account_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_holder.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_owners_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_owners_response.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_linked_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_mandates_mandate_request.dart';import 'package:pub_stripe_spec3/models/get_payment_attempt_records_id_request.dart';import 'package:pub_stripe_spec3/models/get_payment_attempt_records_request.dart';import 'package:pub_stripe_spec3/models/get_payment_attempt_records_response.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_created.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_intent_amount_details_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_intent_amount_details_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_response.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_search_request.dart';import 'package:pub_stripe_spec3/models/get_payment_intents_search_response.dart';import 'package:pub_stripe_spec3/models/get_payment_links_payment_link_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_payment_links_payment_link_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_payment_links_payment_link_request.dart';import 'package:pub_stripe_spec3/models/get_payment_links_request.dart';import 'package:pub_stripe_spec3/models/get_payment_links_response.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_response.dart';import 'package:pub_stripe_spec3/models/get_payment_method_domains_payment_method_domain_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_domains_request.dart';import 'package:pub_stripe_spec3/models/get_payment_method_domains_response.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_payment_method_request.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_request.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_response.dart';import 'package:pub_stripe_spec3/models/get_payment_methods_type.dart';import 'package:pub_stripe_spec3/models/get_payment_records_id_request.dart';import 'package:pub_stripe_spec3/models/get_payouts_arrival_date.dart';import 'package:pub_stripe_spec3/models/get_payouts_created.dart';import 'package:pub_stripe_spec3/models/get_payouts_payout_request.dart';import 'package:pub_stripe_spec3/models/get_payouts_request.dart';import 'package:pub_stripe_spec3/models/get_payouts_response.dart';import 'package:pub_stripe_spec3/models/get_plans_created.dart';import 'package:pub_stripe_spec3/models/get_plans_plan_request.dart';import 'package:pub_stripe_spec3/models/get_plans_request.dart';import 'package:pub_stripe_spec3/models/get_plans_response.dart';import 'package:pub_stripe_spec3/models/get_prices_created.dart';import 'package:pub_stripe_spec3/models/get_prices_price_request.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring.dart';import 'package:pub_stripe_spec3/models/get_prices_request.dart';import 'package:pub_stripe_spec3/models/get_prices_response.dart';import 'package:pub_stripe_spec3/models/get_prices_search_request.dart';import 'package:pub_stripe_spec3/models/get_prices_search_response.dart';import 'package:pub_stripe_spec3/models/get_prices_type.dart';import 'package:pub_stripe_spec3/models/get_products_created.dart';import 'package:pub_stripe_spec3/models/get_products_id_request.dart';import 'package:pub_stripe_spec3/models/get_products_product_features_id_request.dart';import 'package:pub_stripe_spec3/models/get_products_product_features_request.dart';import 'package:pub_stripe_spec3/models/get_products_product_features_response.dart';import 'package:pub_stripe_spec3/models/get_products_request.dart';import 'package:pub_stripe_spec3/models/get_products_response.dart';import 'package:pub_stripe_spec3/models/get_products_search_request.dart';import 'package:pub_stripe_spec3/models/get_products_search_response.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_created.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_promotion_code_request.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_request.dart';import 'package:pub_stripe_spec3/models/get_promotion_codes_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_computed_upfront_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_computed_upfront_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_pdf_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_quote_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_request.dart';import 'package:pub_stripe_spec3/models/get_quotes_response.dart';import 'package:pub_stripe_spec3/models/get_quotes_status.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_created.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_early_fraud_warning_request.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_request.dart';import 'package:pub_stripe_spec3/models/get_radar_early_fraud_warnings_response.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_created.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_item_request.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_request.dart';import 'package:pub_stripe_spec3/models/get_radar_value_list_items_response.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_created.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_request.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_response.dart';import 'package:pub_stripe_spec3/models/get_radar_value_lists_value_list_request.dart';import 'package:pub_stripe_spec3/models/get_refunds_created.dart';import 'package:pub_stripe_spec3/models/get_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/get_refunds_request.dart';import 'package:pub_stripe_spec3/models/get_refunds_response.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_created.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_report_run_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_runs_response.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_types_report_type_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_types_request.dart';import 'package:pub_stripe_spec3/models/get_reporting_report_types_response.dart';import 'package:pub_stripe_spec3/models/get_reviews_created.dart';import 'package:pub_stripe_spec3/models/get_reviews_request.dart';import 'package:pub_stripe_spec3/models/get_reviews_response.dart';import 'package:pub_stripe_spec3/models/get_reviews_review_request.dart';import 'package:pub_stripe_spec3/models/get_setup_attempts_created.dart';import 'package:pub_stripe_spec3/models/get_setup_attempts_request.dart';import 'package:pub_stripe_spec3/models/get_setup_attempts_response.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_created.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_request.dart';import 'package:pub_stripe_spec3/models/get_setup_intents_response.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_created.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_request.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_response.dart';import 'package:pub_stripe_spec3/models/get_shipping_rates_shipping_rate_token_request.dart';import 'package:pub_stripe_spec3/models/get_sigma_scheduled_query_runs_request.dart';import 'package:pub_stripe_spec3/models/get_sigma_scheduled_query_runs_response.dart';import 'package:pub_stripe_spec3/models/get_sigma_scheduled_query_runs_scheduled_query_run_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_mandate_notifications_mandate_notification_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_source_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_sources_source_source_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_sources_source_source_transactions_source_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_items_item_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_items_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_items_response.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_canceled_at.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_completed_at.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_created.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_released_at.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_request.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_response.dart';import 'package:pub_stripe_spec3/models/get_subscription_schedules_schedule_request.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_automatic_tax.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_collection_method.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_created.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_current_period_end.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_current_period_start.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_response.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_search_request.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_search_response.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_status.dart';import 'package:pub_stripe_spec3/models/get_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_associations_find_request.dart';import 'package:pub_stripe_spec3/models/get_tax_calculations_calculation_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_tax_calculations_calculation_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_tax_calculations_calculation_request.dart';import 'package:pub_stripe_spec3/models/get_tax_codes_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_codes_request.dart';import 'package:pub_stripe_spec3/models/get_tax_codes_response.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_owner.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_response.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_created.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_request.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_response.dart';import 'package:pub_stripe_spec3/models/get_tax_rates_tax_rate_request.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_id_request.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_request.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_response.dart';import 'package:pub_stripe_spec3/models/get_tax_registrations_status.dart';import 'package:pub_stripe_spec3/models/get_tax_settings_request.dart';import 'package:pub_stripe_spec3/models/get_tax_transactions_transaction_line_items_request.dart';import 'package:pub_stripe_spec3/models/get_tax_transactions_transaction_line_items_response.dart';import 'package:pub_stripe_spec3/models/get_tax_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_configuration_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_configurations_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_location_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_location_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_locations_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_device_type.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_reader_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_reader_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_request.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_response.dart';import 'package:pub_stripe_spec3/models/get_terminal_readers_status.dart';import 'package:pub_stripe_spec3/models/get_test_helpers_test_clocks_request.dart';import 'package:pub_stripe_spec3/models/get_test_helpers_test_clocks_response.dart';import 'package:pub_stripe_spec3/models/get_test_helpers_test_clocks_test_clock_request.dart';import 'package:pub_stripe_spec3/models/get_tokens_token_request.dart';import 'package:pub_stripe_spec3/models/get_topups_amount.dart';import 'package:pub_stripe_spec3/models/get_topups_created.dart';import 'package:pub_stripe_spec3/models/get_topups_request.dart';import 'package:pub_stripe_spec3/models/get_topups_response.dart';import 'package:pub_stripe_spec3/models/get_topups_status.dart';import 'package:pub_stripe_spec3/models/get_topups_topup_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_created.dart';import 'package:pub_stripe_spec3/models/get_transfers_id_reversals_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_id_reversals_response.dart';import 'package:pub_stripe_spec3/models/get_transfers_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_response.dart';import 'package:pub_stripe_spec3/models/get_transfers_transfer_request.dart';import 'package:pub_stripe_spec3/models/get_transfers_transfer_reversals_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_credit_reversal_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_credit_reversals_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_debit_reversal_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_resolution.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_debit_reversals_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_financial_account_features_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_financial_account_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_financial_accounts_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_inbound_transfers_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_payments_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_outbound_transfer_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_outbound_transfers_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_linked_flows.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_credits_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_received_debits_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_effective_at.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_order_by.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transaction_entries_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_created.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_id_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_order_by.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_request.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_response.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_status.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_status_transitions.dart';import 'package:pub_stripe_spec3/models/get_webhook_endpoints_request.dart';import 'package:pub_stripe_spec3/models/get_webhook_endpoints_response.dart';import 'package:pub_stripe_spec3/models/get_webhook_endpoints_webhook_endpoint_request.dart';import 'package:pub_stripe_spec3/models/identity_verification_report.dart';import 'package:pub_stripe_spec3/models/identity_verification_session.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoice_payment.dart';import 'package:pub_stripe_spec3/models/invoice_rendering_template.dart';import 'package:pub_stripe_spec3/models/invoiceitem.dart';import 'package:pub_stripe_spec3/models/issuing_authorization.dart';import 'package:pub_stripe_spec3/models/issuing_card.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_dispute.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design.dart';import 'package:pub_stripe_spec3/models/issuing_physical_bundle.dart';import 'package:pub_stripe_spec3/models/issuing_settlement.dart';import 'package:pub_stripe_spec3/models/issuing_token.dart';import 'package:pub_stripe_spec3/models/issuing_transaction.dart';import 'package:pub_stripe_spec3/models/line_item.dart';import 'package:pub_stripe_spec3/models/login_link.dart';import 'package:pub_stripe_spec3/models/mandate.dart';import 'package:pub_stripe_spec3/models/payment_attempt_record.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_link.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method_configuration.dart';import 'package:pub_stripe_spec3/models/payment_method_domain.dart';import 'package:pub_stripe_spec3/models/payment_record.dart';import 'package:pub_stripe_spec3/models/payment_source.dart';import 'package:pub_stripe_spec3/models/payout.dart';import 'package:pub_stripe_spec3/models/person.dart';import 'package:pub_stripe_spec3/models/plan.dart';import 'package:pub_stripe_spec3/models/post_account_links_request.dart';import 'package:pub_stripe_spec3/models/post_account_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_capabilities_capability_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_external_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_login_links_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_persons_person_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_persons_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_reject_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request.dart';import 'package:pub_stripe_spec3/models/post_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_apple_pay_domains_request.dart';import 'package:pub_stripe_spec3/models/post_application_fees_fee_refunds_id_request.dart';import 'package:pub_stripe_spec3/models/post_application_fees_id_refund_request.dart';import 'package:pub_stripe_spec3/models/post_application_fees_id_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_apps_secrets_delete_request.dart';import 'package:pub_stripe_spec3/models/post_apps_secrets_request.dart';import 'package:pub_stripe_spec3/models/post_balance_settings_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_id_activate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_id_archive_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_id_deactivate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_id_expire_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_id_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_id_void_request.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meter_event_adjustments_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meter_events_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_id_deactivate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_id_reactivate_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_id_request.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_request.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_capture_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_close_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request.dart';import 'package:pub_stripe_spec3/models/post_charges_request.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_expire_request.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_order_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_order_request.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_request.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request.dart';import 'package:pub_stripe_spec3/models/post_coupons_request.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_id_request.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_id_void_request.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_balance_transactions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_balance_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_response.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_verify_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cards_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cards_id_response.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cards_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cash_balance_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_funding_instructions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_id_response.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_id_verify_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_sources_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/post_customers_request.dart';import 'package:pub_stripe_spec3/models/post_disputes_dispute_close_request.dart';import 'package:pub_stripe_spec3/models/post_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/post_entitlements_features_id_request.dart';import 'package:pub_stripe_spec3/models/post_entitlements_features_request.dart';import 'package:pub_stripe_spec3/models/post_ephemeral_keys_request.dart';import 'package:pub_stripe_spec3/models/post_external_accounts_id_request.dart';import 'package:pub_stripe_spec3/models/post_file_links_link_request.dart';import 'package:pub_stripe_spec3/models/post_file_links_request.dart';import 'package:pub_stripe_spec3/models/post_files_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_disconnect_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_refresh_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_subscribe_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_unsubscribe_request.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_forwarding_requests_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_session_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_session_redact_request.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_session_request.dart';import 'package:pub_stripe_spec3/models/post_invoice_rendering_templates_template_archive_request.dart';import 'package:pub_stripe_spec3/models/post_invoice_rendering_templates_template_unarchive_request.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_attach_payment_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_finalize_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_lines_line_item_id_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_mark_uncollectible_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_pay_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_remove_lines_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_send_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_update_lines_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_void_request.dart';import 'package:pub_stripe_spec3/models/post_invoices_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_authorizations_authorization_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_dispute_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_dispute_submit_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_settlements_settlement_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_tokens_token_request.dart';import 'package:pub_stripe_spec3/models/post_issuing_transactions_transaction_request.dart';import 'package:pub_stripe_spec3/models/post_link_account_sessions_request.dart';import 'package:pub_stripe_spec3/models/post_linked_accounts_account_disconnect_request.dart';import 'package:pub_stripe_spec3/models/post_linked_accounts_account_refresh_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_apply_customer_balance_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_increment_authorization_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_verify_microdeposits_request.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request.dart';import 'package:pub_stripe_spec3/models/post_payment_links_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_domains_payment_method_domain_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_domains_payment_method_domain_validate_request.dart';import 'package:pub_stripe_spec3/models/post_payment_method_domains_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_attach_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_detach_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_canceled_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_failed_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_guaranteed_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request.dart';import 'package:pub_stripe_spec3/models/post_payment_records_report_payment_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_payout_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_payout_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_payout_reverse_request.dart';import 'package:pub_stripe_spec3/models/post_payouts_request.dart';import 'package:pub_stripe_spec3/models/post_plans_plan_request.dart';import 'package:pub_stripe_spec3/models/post_plans_request.dart';import 'package:pub_stripe_spec3/models/post_prices_price_request.dart';import 'package:pub_stripe_spec3/models/post_prices_request.dart';import 'package:pub_stripe_spec3/models/post_products_id_request.dart';import 'package:pub_stripe_spec3/models/post_products_product_features_request.dart';import 'package:pub_stripe_spec3/models/post_products_request.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_promotion_code_request.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_accept_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_finalize_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request.dart';import 'package:pub_stripe_spec3/models/post_quotes_request.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request.dart';import 'package:pub_stripe_spec3/models/post_radar_value_list_items_request.dart';import 'package:pub_stripe_spec3/models/post_radar_value_lists_request.dart';import 'package:pub_stripe_spec3/models/post_radar_value_lists_value_list_request.dart';import 'package:pub_stripe_spec3/models/post_refunds_refund_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_refunds_refund_request.dart';import 'package:pub_stripe_spec3/models/post_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_reporting_report_runs_request.dart';import 'package:pub_stripe_spec3/models/post_reviews_review_approve_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_confirm_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_verify_microdeposits_request.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_request.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_shipping_rate_token_request.dart';import 'package:pub_stripe_spec3/models/post_sigma_saved_queries_id_request.dart';import 'package:pub_stripe_spec3/models/post_sources_request.dart';import 'package:pub_stripe_spec3/models/post_sources_source_request.dart';import 'package:pub_stripe_spec3/models/post_sources_source_verify_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_items_item_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_items_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_release_request.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_exposed_id_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_migrate_request.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_resume_request.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request.dart';import 'package:pub_stripe_spec3/models/post_tax_ids_request.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_request.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_tax_rate_request.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_id_request.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_request.dart';import 'package:pub_stripe_spec3/models/post_tax_settings_request.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_from_calculation_request.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_reversal_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_configuration_response.dart';import 'package:pub_stripe_spec3/models/post_terminal_configurations_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_connection_tokens_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_response.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_cancel_action_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_inputs_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_payment_method_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_confirm_payment_intent_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_process_payment_intent_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_process_setup_intent_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_refund_payment_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_response.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_set_reader_display_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_request.dart';import 'package:pub_stripe_spec3/models/post_terminal_refunds_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_confirmation_tokens_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_customers_customer_fund_cash_balance_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_capture_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_expire_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_fraud_challenges_respond_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_increment_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_reverse_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_deliver_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_ship_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_cards_card_shipping_submit_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_activate_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_deactivate_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_reject_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_settlements_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_settlements_settlement_complete_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_transactions_create_force_capture_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_transactions_create_unlinked_refund_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_transactions_transaction_refund_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_refunds_refund_expire_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_present_payment_method_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_succeed_input_collection_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_timeout_input_collection_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_test_clocks_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_test_clocks_test_clock_advance_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_succeed_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_post_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_fail_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_post_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_transfers_outbound_transfer_return_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_received_credits_request.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_received_debits_request.dart';import 'package:pub_stripe_spec3/models/post_tokens_request.dart';import 'package:pub_stripe_spec3/models/post_topups_request.dart';import 'package:pub_stripe_spec3/models/post_topups_topup_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_topups_topup_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_id_reversals_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_transfer_request.dart';import 'package:pub_stripe_spec3/models/post_transfers_transfer_reversals_id_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_credit_reversals_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_debit_reversals_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_close_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_features_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_inbound_transfers_inbound_transfer_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_inbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_id_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_transfers_outbound_transfer_cancel_request.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_transfers_request.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_request.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_webhook_endpoint_request.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/product.dart';import 'package:pub_stripe_spec3/models/product_feature.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';import 'package:pub_stripe_spec3/models/query.dart';import 'package:pub_stripe_spec3/models/quote.dart';import 'package:pub_stripe_spec3/models/radar_early_fraud_warning.dart';import 'package:pub_stripe_spec3/models/radar_payment_evaluation.dart';import 'package:pub_stripe_spec3/models/radar_value_list.dart';import 'package:pub_stripe_spec3/models/radar_value_list_item.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/reporting_report_run.dart';import 'package:pub_stripe_spec3/models/reporting_report_type.dart';import 'package:pub_stripe_spec3/models/review.dart';import 'package:pub_stripe_spec3/models/scheduled_query_run.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/shipping_rate.dart';import 'package:pub_stripe_spec3/models/source.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification.dart';import 'package:pub_stripe_spec3/models/source_transaction.dart';import 'package:pub_stripe_spec3/models/subscription.dart';import 'package:pub_stripe_spec3/models/subscription_item.dart';import 'package:pub_stripe_spec3/models/subscription_schedule.dart';import 'package:pub_stripe_spec3/models/tax_association.dart';import 'package:pub_stripe_spec3/models/tax_calculation.dart';import 'package:pub_stripe_spec3/models/tax_code.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';import 'package:pub_stripe_spec3/models/tax_registration.dart';import 'package:pub_stripe_spec3/models/tax_settings.dart';import 'package:pub_stripe_spec3/models/tax_transaction.dart';import 'package:pub_stripe_spec3/models/terminal_configuration.dart';import 'package:pub_stripe_spec3/models/terminal_connection_token.dart';import 'package:pub_stripe_spec3/models/terminal_location.dart';import 'package:pub_stripe_spec3/models/terminal_onboarding_link.dart';import 'package:pub_stripe_spec3/models/terminal_reader.dart';import 'package:pub_stripe_spec3/models/terminal_refund.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';import 'package:pub_stripe_spec3/models/token.dart';import 'package:pub_stripe_spec3/models/topup.dart';import 'package:pub_stripe_spec3/models/transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_debit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account_features.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfer.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfer.dart';import 'package:pub_stripe_spec3/models/treasury_received_credit.dart';import 'package:pub_stripe_spec3/models/treasury_received_debit.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_transaction_entry.dart';import 'package:pub_stripe_spec3/models/webhook_endpoint.dart';/// DefaultApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 /// `<p>`Retrieves the details of an account.`</p>`
 ///
 /// `GET /v1/account`
-Future<ApiResult<Account, ErrorModel>> getAccount({List<String>? expand, GetAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Account, DeleteAccountsAccountError>> getAccount({List<String>? expand, GetAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -38,9 +38,7 @@ return execute(
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an account link
@@ -48,7 +46,7 @@ return execute(
 /// `<p>`Creates an AccountLink object that includes a single-use Stripe URL that the platform can redirect their user to in order to take them through the Connect Onboarding flow.`</p>`
 ///
 /// `POST /v1/account_links`
-Future<ApiResult<AccountLink, ErrorModel>> postAccountLinks({required PostAccountLinksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountLink, DeleteAccountsAccountError>> postAccountLinks({required PostAccountLinksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -77,9 +75,7 @@ return execute(
   onSuccess: (response) {
     return AccountLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an Account Session
@@ -87,7 +83,7 @@ return execute(
 /// `<p>`Creates a AccountSession object that includes a single-use token that the platform can use on their front-end to grant client-side API access.`</p>`
 ///
 /// `POST /v1/account_sessions`
-Future<ApiResult<AccountSession, ErrorModel>> postAccountSessions({required PostAccountSessionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountSession, DeleteAccountsAccountError>> postAccountSessions({required PostAccountSessionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -108,9 +104,7 @@ return execute(
   onSuccess: (response) {
     return AccountSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all connected accounts
@@ -118,7 +112,7 @@ return execute(
 /// `<p>`Returns a list of accounts connected to your platform via `<a href="/docs/connect">`Connect`</a>`. If you’re not a platform, the list is empty.`</p>`
 ///
 /// `GET /v1/accounts`
-Future<ApiResult<GetAccountsResponse, ErrorModel>> getAccounts({GetAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAccountsResponse, DeleteAccountsAccountError>> getAccounts({GetAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -155,9 +149,7 @@ return execute(
   onSuccess: (response) {
     return GetAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
@@ -169,7 +161,7 @@ return execute(
 /// You can prefill any information on the account.`</p>`
 ///
 /// `POST /v1/accounts`
-Future<ApiResult<Account, ErrorModel>> postAccounts({PostAccountsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Account, DeleteAccountsAccountError>> postAccounts({PostAccountsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -224,9 +216,7 @@ return execute(
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve account
@@ -234,7 +224,7 @@ return execute(
 /// `<p>`Retrieves the details of an account.`</p>`
 ///
 /// `GET /v1/accounts/{account}`
-Future<ApiResult<Account, ErrorModel>> getAccountsAccount({required String account, List<String>? expand, GetAccountsAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Account, DeleteAccountsAccountError>> getAccountsAccount({required String account, List<String>? expand, GetAccountsAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -259,9 +249,7 @@ return execute(
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update an account
@@ -281,7 +269,7 @@ return execute(
 /// `<a href="/docs/connect/updating-accounts">`Connect`</a>` documentation to learn more about updating accounts.`</p>`
 ///
 /// `POST /v1/accounts/{account}`
-Future<ApiResult<Account, ErrorModel>> postAccountsAccount({required String account, PostAccountsAccountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Account, DeleteAccountsAccountError>> postAccountsAccount({required String account, PostAccountsAccountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -328,9 +316,7 @@ return execute(
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete an account
@@ -344,7 +330,7 @@ return execute(
 /// `<p>`If you want to delete your own account, use the `<a href="https://dashboard.stripe.com/settings/account">`account information tab in your account settings`</a>` instead.`</p>`
 ///
 /// `DELETE /v1/accounts/{account}`
-Future<ApiResult<DeletedAccount, ErrorModel>> deleteAccountsAccount({required String account, DeleteAccountsAccountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedAccount, DeleteAccountsAccountError>> deleteAccountsAccount({required String account, DeleteAccountsAccountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -361,9 +347,7 @@ return execute(
   onSuccess: (response) {
     return DeletedAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an external account
@@ -371,7 +355,7 @@ return execute(
 /// `<p>`Create an external account for a given account.`</p>`
 ///
 /// `POST /v1/accounts/{account}/bank_accounts`
-Future<ApiResult<ExternalAccount, ErrorModel>> postAccountsAccountBankAccounts({required String account, PostAccountsAccountBankAccountsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postAccountsAccountBankAccounts({required String account, PostAccountsAccountBankAccountsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -398,9 +382,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an external account
@@ -408,7 +390,7 @@ return execute(
 /// `<p>`Retrieve a specified external account for a given account.`</p>`
 ///
 /// `GET /v1/accounts/{account}/bank_accounts/{id}`
-Future<ApiResult<ExternalAccount, ErrorModel>> getAccountsAccountBankAccountsId({required String account, required String id, List<String>? expand, GetAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> getAccountsAccountBankAccountsId({required String account, required String id, List<String>? expand, GetAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -433,9 +415,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
@@ -449,7 +429,7 @@ return execute(
 /// arguments or changes.`</p>`
 ///
 /// `POST /v1/accounts/{account}/bank_accounts/{id}`
-Future<ApiResult<ExternalAccount, ErrorModel>> postAccountsAccountBankAccountsId({required String account, required String id, PostAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postAccountsAccountBankAccountsId({required String account, required String id, PostAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -498,9 +478,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete an external account
@@ -508,7 +486,7 @@ return execute(
 /// `<p>`Delete a specified external account for a given account.`</p>`
 ///
 /// `DELETE /v1/accounts/{account}/bank_accounts/{id}`
-Future<ApiResult<DeletedExternalAccount, ErrorModel>> deleteAccountsAccountBankAccountsId({required String account, required String id, DeleteAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedExternalAccount, DeleteAccountsAccountError>> deleteAccountsAccountBankAccountsId({required String account, required String id, DeleteAccountsAccountBankAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -525,9 +503,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all account capabilities
@@ -535,7 +511,7 @@ return execute(
 /// `<p>`Returns a list of capabilities associated with the account. The capabilities are returned sorted by creation date, with the most recent capability appearing first.`</p>`
 ///
 /// `GET /v1/accounts/{account}/capabilities`
-Future<ApiResult<GetAccountsAccountCapabilitiesResponse, ErrorModel>> getAccountsAccountCapabilities({required String account, List<String>? expand, GetAccountsAccountCapabilitiesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAccountsAccountCapabilitiesResponse, DeleteAccountsAccountError>> getAccountsAccountCapabilities({required String account, List<String>? expand, GetAccountsAccountCapabilitiesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -560,9 +536,7 @@ return execute(
   onSuccess: (response) {
     return GetAccountsAccountCapabilitiesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an Account Capability
@@ -570,7 +544,7 @@ return execute(
 /// `<p>`Retrieves information about the specified Account Capability.`</p>`
 ///
 /// `GET /v1/accounts/{account}/capabilities/{capability}`
-Future<ApiResult<Capability, ErrorModel>> getAccountsAccountCapabilitiesCapability({required String account, required String capability, List<String>? expand, GetAccountsAccountCapabilitiesCapabilityRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Capability, DeleteAccountsAccountError>> getAccountsAccountCapabilitiesCapability({required String account, required String capability, List<String>? expand, GetAccountsAccountCapabilitiesCapabilityRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -595,9 +569,7 @@ return execute(
   onSuccess: (response) {
     return Capability.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update an Account Capability
@@ -605,7 +577,7 @@ return execute(
 /// `<p>`Updates an existing Account Capability. Request or remove a capability by updating its `<code>`requested`</code>` parameter.`</p>`
 ///
 /// `POST /v1/accounts/{account}/capabilities/{capability}`
-Future<ApiResult<Capability, ErrorModel>> postAccountsAccountCapabilitiesCapability({required String account, required String capability, PostAccountsAccountCapabilitiesCapabilityRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Capability, DeleteAccountsAccountError>> postAccountsAccountCapabilitiesCapability({required String account, required String capability, PostAccountsAccountCapabilitiesCapabilityRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -626,9 +598,7 @@ return execute(
   onSuccess: (response) {
     return Capability.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all external accounts
@@ -636,7 +606,7 @@ return execute(
 /// `<p>`List external accounts for an account.`</p>`
 ///
 /// `GET /v1/accounts/{account}/external_accounts`
-Future<ApiResult<GetAccountsAccountExternalAccountsResponse, ErrorModel>> getAccountsAccountExternalAccounts({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountExternalAccountsObject? object, String? startingAfter, GetAccountsAccountExternalAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAccountsAccountExternalAccountsResponse, DeleteAccountsAccountError>> getAccountsAccountExternalAccounts({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountExternalAccountsObject? object, String? startingAfter, GetAccountsAccountExternalAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -673,9 +643,7 @@ return execute(
   onSuccess: (response) {
     return GetAccountsAccountExternalAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an external account
@@ -683,7 +651,7 @@ return execute(
 /// `<p>`Create an external account for a given account.`</p>`
 ///
 /// `POST /v1/accounts/{account}/external_accounts`
-Future<ApiResult<ExternalAccount, ErrorModel>> postAccountsAccountExternalAccounts({required String account, PostAccountsAccountExternalAccountsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postAccountsAccountExternalAccounts({required String account, PostAccountsAccountExternalAccountsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -710,9 +678,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an external account
@@ -720,7 +686,7 @@ return execute(
 /// `<p>`Retrieve a specified external account for a given account.`</p>`
 ///
 /// `GET /v1/accounts/{account}/external_accounts/{id}`
-Future<ApiResult<ExternalAccount, ErrorModel>> getAccountsAccountExternalAccountsId({required String account, required String id, List<String>? expand, GetAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> getAccountsAccountExternalAccountsId({required String account, required String id, List<String>? expand, GetAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -745,9 +711,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
@@ -761,7 +725,7 @@ return execute(
 /// arguments or changes.`</p>`
 ///
 /// `POST /v1/accounts/{account}/external_accounts/{id}`
-Future<ApiResult<ExternalAccount, ErrorModel>> postAccountsAccountExternalAccountsId({required String account, required String id, PostAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postAccountsAccountExternalAccountsId({required String account, required String id, PostAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -810,9 +774,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete an external account
@@ -820,7 +782,7 @@ return execute(
 /// `<p>`Delete a specified external account for a given account.`</p>`
 ///
 /// `DELETE /v1/accounts/{account}/external_accounts/{id}`
-Future<ApiResult<DeletedExternalAccount, ErrorModel>> deleteAccountsAccountExternalAccountsId({required String account, required String id, DeleteAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedExternalAccount, DeleteAccountsAccountError>> deleteAccountsAccountExternalAccountsId({required String account, required String id, DeleteAccountsAccountExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -837,9 +799,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a login link
@@ -849,7 +809,7 @@ return execute(
 /// `<p>``<strong>`You can only create login links for accounts that use the `<a href="/connect/express-dashboard">`Express Dashboard`</a>` and are connected to your platform`</strong>`.`</p>`
 ///
 /// `POST /v1/accounts/{account}/login_links`
-Future<ApiResult<LoginLink, ErrorModel>> postAccountsAccountLoginLinks({required String account, PostAccountsAccountLoginLinksRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoginLink, DeleteAccountsAccountError>> postAccountsAccountLoginLinks({required String account, PostAccountsAccountLoginLinksRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -868,9 +828,7 @@ return execute(
   onSuccess: (response) {
     return LoginLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all persons
@@ -878,7 +836,7 @@ return execute(
 /// `<p>`Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.`</p>`
 ///
 /// `GET /v1/accounts/{account}/people`
-Future<ApiResult<GetAccountsAccountPeopleResponse, ErrorModel>> getAccountsAccountPeople({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPeopleRelationship? relationship, String? startingAfter, GetAccountsAccountPeopleRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAccountsAccountPeopleResponse, DeleteAccountsAccountError>> getAccountsAccountPeople({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPeopleRelationship? relationship, String? startingAfter, GetAccountsAccountPeopleRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -920,9 +878,7 @@ return execute(
   onSuccess: (response) {
     return GetAccountsAccountPeopleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a person
@@ -930,7 +886,7 @@ return execute(
 /// `<p>`Creates a new person.`</p>`
 ///
 /// `POST /v1/accounts/{account}/people`
-Future<ApiResult<Person, ErrorModel>> postAccountsAccountPeople({required String account, PostAccountsAccountPeopleRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Person, DeleteAccountsAccountError>> postAccountsAccountPeople({required String account, PostAccountsAccountPeopleRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1005,9 +961,7 @@ return execute(
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a person
@@ -1015,7 +969,7 @@ return execute(
 /// `<p>`Retrieves an existing person.`</p>`
 ///
 /// `GET /v1/accounts/{account}/people/{person}`
-Future<ApiResult<Person, ErrorModel>> getAccountsAccountPeoplePerson({required String account, required String person, List<String>? expand, GetAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Person, DeleteAccountsAccountError>> getAccountsAccountPeoplePerson({required String account, required String person, List<String>? expand, GetAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -1040,9 +994,7 @@ return execute(
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a person
@@ -1050,7 +1002,7 @@ return execute(
 /// `<p>`Updates an existing person.`</p>`
 ///
 /// `POST /v1/accounts/{account}/people/{person}`
-Future<ApiResult<Person, ErrorModel>> postAccountsAccountPeoplePerson({required String account, required String person, PostAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Person, DeleteAccountsAccountError>> postAccountsAccountPeoplePerson({required String account, required String person, PostAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1125,9 +1077,7 @@ return execute(
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a person
@@ -1135,7 +1085,7 @@ return execute(
 /// `<p>`Deletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the `<code>`account_opener`</code>`. If your integration is using the `<code>`executive`</code>` parameter, you cannot delete the only verified `<code>`executive`</code>` on file.`</p>`
 ///
 /// `DELETE /v1/accounts/{account}/people/{person}`
-Future<ApiResult<DeletedPerson, ErrorModel>> deleteAccountsAccountPeoplePerson({required String account, required String person, DeleteAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedPerson, DeleteAccountsAccountError>> deleteAccountsAccountPeoplePerson({required String account, required String person, DeleteAccountsAccountPeoplePersonRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1152,9 +1102,7 @@ return execute(
   onSuccess: (response) {
     return DeletedPerson.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all persons
@@ -1162,7 +1110,7 @@ return execute(
 /// `<p>`Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.`</p>`
 ///
 /// `GET /v1/accounts/{account}/persons`
-Future<ApiResult<GetAccountsAccountPersonsResponse, ErrorModel>> getAccountsAccountPersons({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPersonsRelationship? relationship, String? startingAfter, GetAccountsAccountPersonsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAccountsAccountPersonsResponse, DeleteAccountsAccountError>> getAccountsAccountPersons({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPersonsRelationship? relationship, String? startingAfter, GetAccountsAccountPersonsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -1204,9 +1152,7 @@ return execute(
   onSuccess: (response) {
     return GetAccountsAccountPersonsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a person
@@ -1214,7 +1160,7 @@ return execute(
 /// `<p>`Creates a new person.`</p>`
 ///
 /// `POST /v1/accounts/{account}/persons`
-Future<ApiResult<Person, ErrorModel>> postAccountsAccountPersons({required String account, PostAccountsAccountPersonsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Person, DeleteAccountsAccountError>> postAccountsAccountPersons({required String account, PostAccountsAccountPersonsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1289,9 +1235,7 @@ return execute(
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a person
@@ -1299,7 +1243,7 @@ return execute(
 /// `<p>`Retrieves an existing person.`</p>`
 ///
 /// `GET /v1/accounts/{account}/persons/{person}`
-Future<ApiResult<Person, ErrorModel>> getAccountsAccountPersonsPerson({required String account, required String person, List<String>? expand, GetAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Person, DeleteAccountsAccountError>> getAccountsAccountPersonsPerson({required String account, required String person, List<String>? expand, GetAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -1324,9 +1268,7 @@ return execute(
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a person
@@ -1334,7 +1276,7 @@ return execute(
 /// `<p>`Updates an existing person.`</p>`
 ///
 /// `POST /v1/accounts/{account}/persons/{person}`
-Future<ApiResult<Person, ErrorModel>> postAccountsAccountPersonsPerson({required String account, required String person, PostAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Person, DeleteAccountsAccountError>> postAccountsAccountPersonsPerson({required String account, required String person, PostAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1409,9 +1351,7 @@ return execute(
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a person
@@ -1419,7 +1359,7 @@ return execute(
 /// `<p>`Deletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the `<code>`account_opener`</code>`. If your integration is using the `<code>`executive`</code>` parameter, you cannot delete the only verified `<code>`executive`</code>` on file.`</p>`
 ///
 /// `DELETE /v1/accounts/{account}/persons/{person}`
-Future<ApiResult<DeletedPerson, ErrorModel>> deleteAccountsAccountPersonsPerson({required String account, required String person, DeleteAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedPerson, DeleteAccountsAccountError>> deleteAccountsAccountPersonsPerson({required String account, required String person, DeleteAccountsAccountPersonsPersonRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1436,9 +1376,7 @@ return execute(
   onSuccess: (response) {
     return DeletedPerson.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Reject an account
@@ -1448,7 +1386,7 @@ return execute(
 /// `<p>`Only accounts where your platform is liable for negative account balances, which includes Custom and Express accounts, can be rejected. Test-mode accounts can be rejected at any time. Live-mode accounts can only be rejected after all balances are zero.`</p>`
 ///
 /// `POST /v1/accounts/{account}/reject`
-Future<ApiResult<Account, ErrorModel>> postAccountsAccountReject({required String account, required PostAccountsAccountRejectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Account, DeleteAccountsAccountError>> postAccountsAccountReject({required String account, required PostAccountsAccountRejectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1468,16 +1406,14 @@ return execute(
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`List apple pay domains.`</p>`
 ///
 /// `GET /v1/apple_pay/domains`
-Future<ApiResult<GetApplePayDomainsResponse, ErrorModel>> getApplePayDomains({String? domainName, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplePayDomainsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetApplePayDomainsResponse, DeleteAccountsAccountError>> getApplePayDomains({String? domainName, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplePayDomainsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domainName != null) {
   queryParameters['domain_name'] = domainName;
@@ -1514,16 +1450,14 @@ return execute(
   onSuccess: (response) {
     return GetApplePayDomainsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`Create an apple pay domain.`</p>`
 ///
 /// `POST /v1/apple_pay/domains`
-Future<ApiResult<ApplePayDomain, ErrorModel>> postApplePayDomains({required PostApplePayDomainsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ApplePayDomain, DeleteAccountsAccountError>> postApplePayDomains({required PostApplePayDomainsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1543,16 +1477,14 @@ return execute(
   onSuccess: (response) {
     return ApplePayDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`Retrieve an apple pay domain.`</p>`
 ///
 /// `GET /v1/apple_pay/domains/{domain}`
-Future<ApiResult<ApplePayDomain, ErrorModel>> getApplePayDomainsDomain({required String domain, List<String>? expand, GetApplePayDomainsDomainRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ApplePayDomain, DeleteAccountsAccountError>> getApplePayDomainsDomain({required String domain, List<String>? expand, GetApplePayDomainsDomainRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -1577,16 +1509,14 @@ return execute(
   onSuccess: (response) {
     return ApplePayDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`Delete an apple pay domain.`</p>`
 ///
 /// `DELETE /v1/apple_pay/domains/{domain}`
-Future<ApiResult<DeletedApplePayDomain, ErrorModel>> deleteApplePayDomainsDomain({required String domain, DeleteApplePayDomainsDomainRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedApplePayDomain, DeleteAccountsAccountError>> deleteApplePayDomainsDomain({required String domain, DeleteApplePayDomainsDomainRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1603,9 +1533,7 @@ return execute(
   onSuccess: (response) {
     return DeletedApplePayDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all application fees
@@ -1613,7 +1541,7 @@ return execute(
 /// `<p>`Returns a list of application fees you’ve previously collected. The application fees are returned in sorted order, with the most recent fees appearing first.`</p>`
 ///
 /// `GET /v1/application_fees`
-Future<ApiResult<GetApplicationFeesResponse, ErrorModel>> getApplicationFees({String? charge, GetApplicationFeesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplicationFeesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetApplicationFeesResponse, DeleteAccountsAccountError>> getApplicationFees({String? charge, GetApplicationFeesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplicationFeesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (charge != null) {
   queryParameters['charge'] = charge;
@@ -1653,9 +1581,7 @@ return execute(
   onSuccess: (response) {
     return GetApplicationFeesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an application fee refund
@@ -1663,7 +1589,7 @@ return execute(
 /// `<p>`By default, you can see the 10 most recent refunds stored directly on the application fee object, but you can also retrieve details about a specific refund stored on the application fee.`</p>`
 ///
 /// `GET /v1/application_fees/{fee}/refunds/{id}`
-Future<ApiResult<FeeRefund, ErrorModel>> getApplicationFeesFeeRefundsId({required String fee, required String id, List<String>? expand, GetApplicationFeesFeeRefundsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FeeRefund, DeleteAccountsAccountError>> getApplicationFeesFeeRefundsId({required String fee, required String id, List<String>? expand, GetApplicationFeesFeeRefundsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -1688,9 +1614,7 @@ return execute(
   onSuccess: (response) {
     return FeeRefund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update an application fee refund
@@ -1700,7 +1624,7 @@ return execute(
 /// `<p>`This request only accepts metadata as an argument.`</p>`
 ///
 /// `POST /v1/application_fees/{fee}/refunds/{id}`
-Future<ApiResult<FeeRefund, ErrorModel>> postApplicationFeesFeeRefundsId({required String fee, required String id, PostApplicationFeesFeeRefundsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FeeRefund, DeleteAccountsAccountError>> postApplicationFeesFeeRefundsId({required String fee, required String id, PostApplicationFeesFeeRefundsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1721,9 +1645,7 @@ return execute(
   onSuccess: (response) {
     return FeeRefund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an application fee
@@ -1731,7 +1653,7 @@ return execute(
 /// `<p>`Retrieves the details of an application fee that your account has collected. The same information is returned when refunding the application fee.`</p>`
 ///
 /// `GET /v1/application_fees/{id}`
-Future<ApiResult<ApplicationFee, ErrorModel>> getApplicationFeesId({required String id, List<String>? expand, GetApplicationFeesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ApplicationFee, DeleteAccountsAccountError>> getApplicationFeesId({required String id, List<String>? expand, GetApplicationFeesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -1756,16 +1678,14 @@ return execute(
   onSuccess: (response) {
     return ApplicationFee.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// 
 ///
 /// `POST /v1/application_fees/{id}/refund`
-Future<ApiResult<ApplicationFee, ErrorModel>> postApplicationFeesIdRefund({required String id, PostApplicationFeesIdRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ApplicationFee, DeleteAccountsAccountError>> postApplicationFeesIdRefund({required String id, PostApplicationFeesIdRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1788,9 +1708,7 @@ return execute(
   onSuccess: (response) {
     return ApplicationFee.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all application fee refunds
@@ -1798,7 +1716,7 @@ return execute(
 /// `<p>`You can see a list of the refunds belonging to a specific application fee. Note that the 10 most recent refunds are always available by default on the application fee object. If you need more than those 10, you can use this API method and the `<code>`limit`</code>` and `<code>`starting_after`</code>` parameters to page through additional refunds.`</p>`
 ///
 /// `GET /v1/application_fees/{id}/refunds`
-Future<ApiResult<GetApplicationFeesIdRefundsResponse, ErrorModel>> getApplicationFeesIdRefunds({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplicationFeesIdRefundsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetApplicationFeesIdRefundsResponse, DeleteAccountsAccountError>> getApplicationFeesIdRefunds({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplicationFeesIdRefundsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -1832,9 +1750,7 @@ return execute(
   onSuccess: (response) {
     return GetApplicationFeesIdRefundsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an application fee refund
@@ -1850,7 +1766,7 @@ return execute(
 /// or when trying to refund more money than is left on an application fee.`</p>`
 ///
 /// `POST /v1/application_fees/{id}/refunds`
-Future<ApiResult<FeeRefund, ErrorModel>> postApplicationFeesIdRefunds({required String id, PostApplicationFeesIdRefundsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FeeRefund, DeleteAccountsAccountError>> postApplicationFeesIdRefunds({required String id, PostApplicationFeesIdRefundsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1873,9 +1789,7 @@ return execute(
   onSuccess: (response) {
     return FeeRefund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List secrets
@@ -1883,7 +1797,7 @@ return execute(
 /// `<p>`List all secrets stored on the given scope.`</p>`
 ///
 /// `GET /v1/apps/secrets`
-Future<ApiResult<GetAppsSecretsResponse, ErrorModel>> getAppsSecrets({required GetAppsSecretsScope scope, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetAppsSecretsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAppsSecretsResponse, DeleteAccountsAccountError>> getAppsSecrets({required GetAppsSecretsScope scope, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetAppsSecretsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -1919,9 +1833,7 @@ return execute(
   onSuccess: (response) {
     return GetAppsSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Set a Secret
@@ -1929,7 +1841,7 @@ return execute(
 /// `<p>`Create or replace a secret in the secret store.`</p>`
 ///
 /// `POST /v1/apps/secrets`
-Future<ApiResult<AppsSecret, ErrorModel>> postAppsSecrets({required PostAppsSecretsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AppsSecret, DeleteAccountsAccountError>> postAppsSecrets({required PostAppsSecretsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1953,9 +1865,7 @@ return execute(
   onSuccess: (response) {
     return AppsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a Secret
@@ -1963,7 +1873,7 @@ return execute(
 /// `<p>`Deletes a secret from the secret store by name and scope.`</p>`
 ///
 /// `POST /v1/apps/secrets/delete`
-Future<ApiResult<AppsSecret, ErrorModel>> postAppsSecretsDelete({required PostAppsSecretsDeleteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AppsSecret, DeleteAccountsAccountError>> postAppsSecretsDelete({required PostAppsSecretsDeleteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -1984,9 +1894,7 @@ return execute(
   onSuccess: (response) {
     return AppsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Find a Secret
@@ -1994,7 +1902,7 @@ return execute(
 /// `<p>`Finds a secret in the secret store by name and scope.`</p>`
 ///
 /// `GET /v1/apps/secrets/find`
-Future<ApiResult<AppsSecret, ErrorModel>> getAppsSecretsFind({required String name, required GetAppsSecretsFindScope scope, List<String>? expand, GetAppsSecretsFindRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AppsSecret, DeleteAccountsAccountError>> getAppsSecretsFind({required String name, required GetAppsSecretsFindScope scope, List<String>? expand, GetAppsSecretsFindRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -2022,9 +1930,7 @@ return execute(
   onSuccess: (response) {
     return AppsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve balance
@@ -2033,7 +1939,7 @@ return execute(
 ///  For a sample request, see `<a href="/docs/connect/account-balances#accounting-for-negative-balances">`Accounting for negative balances`</a>`.`</p>`
 ///
 /// `GET /v1/balance`
-Future<ApiResult<Balance, ErrorModel>> getBalance({List<String>? expand, GetBalanceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Balance, DeleteAccountsAccountError>> getBalance({List<String>? expand, GetBalanceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -2058,9 +1964,7 @@ return execute(
   onSuccess: (response) {
     return Balance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all balance transactions
@@ -2070,7 +1974,7 @@ return execute(
 /// `<p>`Note that this endpoint was previously called “Balance history” and used the path `<code>`/v1/balance/history`</code>`.`</p>`
 ///
 /// `GET /v1/balance/history`
-Future<ApiResult<GetBalanceHistoryResponse, ErrorModel>> getBalanceHistory({GetBalanceHistoryCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, GetBalanceHistoryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBalanceHistoryResponse, DeleteAccountsAccountError>> getBalanceHistory({GetBalanceHistoryCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, GetBalanceHistoryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -2119,9 +2023,7 @@ return execute(
   onSuccess: (response) {
     return GetBalanceHistoryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a balance transaction
@@ -2131,7 +2033,7 @@ return execute(
 /// `<p>`Note that this endpoint previously used the path `<code>`/v1/balance/history/:id`</code>`.`</p>`
 ///
 /// `GET /v1/balance/history/{id}`
-Future<ApiResult<BalanceTransaction, ErrorModel>> getBalanceHistoryId({required String id, List<String>? expand, GetBalanceHistoryIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BalanceTransaction, DeleteAccountsAccountError>> getBalanceHistoryId({required String id, List<String>? expand, GetBalanceHistoryIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -2156,9 +2058,7 @@ return execute(
   onSuccess: (response) {
     return BalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve balance settings
@@ -2167,7 +2067,7 @@ return execute(
 ///  Related guide: `<a href="/connect/authentication">`Making API calls for connected accounts`</a>``</p>`
 ///
 /// `GET /v1/balance_settings`
-Future<ApiResult<BalanceSettings, ErrorModel>> getBalanceSettings({List<String>? expand, GetBalanceSettingsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BalanceSettings, DeleteAccountsAccountError>> getBalanceSettings({List<String>? expand, GetBalanceSettingsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -2192,9 +2092,7 @@ return execute(
   onSuccess: (response) {
     return BalanceSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update balance settings
@@ -2203,7 +2101,7 @@ return execute(
 ///  Related guide: `<a href="/connect/authentication">`Making API calls for connected accounts`</a>``</p>`
 ///
 /// `POST /v1/balance_settings`
-Future<ApiResult<BalanceSettings, ErrorModel>> postBalanceSettings({PostBalanceSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BalanceSettings, DeleteAccountsAccountError>> postBalanceSettings({PostBalanceSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2224,9 +2122,7 @@ return execute(
   onSuccess: (response) {
     return BalanceSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all balance transactions
@@ -2236,7 +2132,7 @@ return execute(
 /// `<p>`Note that this endpoint was previously called “Balance history” and used the path `<code>`/v1/balance/history`</code>`.`</p>`
 ///
 /// `GET /v1/balance_transactions`
-Future<ApiResult<GetBalanceTransactionsResponse, ErrorModel>> getBalanceTransactions({GetBalanceTransactionsCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, GetBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBalanceTransactionsResponse, DeleteAccountsAccountError>> getBalanceTransactions({GetBalanceTransactionsCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, GetBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -2285,9 +2181,7 @@ return execute(
   onSuccess: (response) {
     return GetBalanceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a balance transaction
@@ -2297,7 +2191,7 @@ return execute(
 /// `<p>`Note that this endpoint previously used the path `<code>`/v1/balance/history/:id`</code>`.`</p>`
 ///
 /// `GET /v1/balance_transactions/{id}`
-Future<ApiResult<BalanceTransaction, ErrorModel>> getBalanceTransactionsId({required String id, List<String>? expand, GetBalanceTransactionsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BalanceTransaction, DeleteAccountsAccountError>> getBalanceTransactionsId({required String id, List<String>? expand, GetBalanceTransactionsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -2322,9 +2216,7 @@ return execute(
   onSuccess: (response) {
     return BalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List billing alerts
@@ -2332,7 +2224,7 @@ return execute(
 /// `<p>`Lists billing active and inactive alerts`</p>`
 ///
 /// `GET /v1/billing/alerts`
-Future<ApiResult<GetBillingAlertsResponse, ErrorModel>> getBillingAlerts({GetBillingAlertsAlertType? alertType, String? endingBefore, List<String>? expand, int? limit, String? meter, String? startingAfter, GetBillingAlertsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingAlertsResponse, DeleteAccountsAccountError>> getBillingAlerts({GetBillingAlertsAlertType? alertType, String? endingBefore, List<String>? expand, int? limit, String? meter, String? startingAfter, GetBillingAlertsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (alertType != null) {
   queryParameters['alert_type'] = alertType.toJson();
@@ -2372,9 +2264,7 @@ return execute(
   onSuccess: (response) {
     return GetBillingAlertsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a billing alert
@@ -2382,7 +2272,7 @@ return execute(
 /// `<p>`Creates a billing alert`</p>`
 ///
 /// `POST /v1/billing/alerts`
-Future<ApiResult<BillingAlert, ErrorModel>> postBillingAlerts({required PostBillingAlertsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> postBillingAlerts({required PostBillingAlertsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2405,9 +2295,7 @@ return execute(
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a billing alert
@@ -2415,7 +2303,7 @@ return execute(
 /// `<p>`Retrieves a billing alert given an ID`</p>`
 ///
 /// `GET /v1/billing/alerts/{id}`
-Future<ApiResult<BillingAlert, ErrorModel>> getBillingAlertsId({required String id, List<String>? expand, GetBillingAlertsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> getBillingAlertsId({required String id, List<String>? expand, GetBillingAlertsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -2440,9 +2328,7 @@ return execute(
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Activate a billing alert
@@ -2450,7 +2336,7 @@ return execute(
 /// `<p>`Reactivates this alert, allowing it to trigger again.`</p>`
 ///
 /// `POST /v1/billing/alerts/{id}/activate`
-Future<ApiResult<BillingAlert, ErrorModel>> postBillingAlertsIdActivate({required String id, PostBillingAlertsIdActivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> postBillingAlertsIdActivate({required String id, PostBillingAlertsIdActivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2469,9 +2355,7 @@ return execute(
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Archive a billing alert
@@ -2479,7 +2363,7 @@ return execute(
 /// `<p>`Archives this alert, removing it from the list view and APIs. This is non-reversible.`</p>`
 ///
 /// `POST /v1/billing/alerts/{id}/archive`
-Future<ApiResult<BillingAlert, ErrorModel>> postBillingAlertsIdArchive({required String id, PostBillingAlertsIdArchiveRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> postBillingAlertsIdArchive({required String id, PostBillingAlertsIdArchiveRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2498,9 +2382,7 @@ return execute(
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Deactivate a billing alert
@@ -2508,7 +2390,7 @@ return execute(
 /// `<p>`Deactivates this alert, preventing it from triggering.`</p>`
 ///
 /// `POST /v1/billing/alerts/{id}/deactivate`
-Future<ApiResult<BillingAlert, ErrorModel>> postBillingAlertsIdDeactivate({required String id, PostBillingAlertsIdDeactivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingAlert, DeleteAccountsAccountError>> postBillingAlertsIdDeactivate({required String id, PostBillingAlertsIdDeactivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2527,9 +2409,7 @@ return execute(
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve the credit balance summary for a customer
@@ -2537,7 +2417,7 @@ return execute(
 /// `<p>`Retrieves the credit balance summary for a customer.`</p>`
 ///
 /// `GET /v1/billing/credit_balance_summary`
-Future<ApiResult<BillingCreditBalanceSummary, ErrorModel>> getBillingCreditBalanceSummary({required GetBillingCreditBalanceSummaryFilter filter, String? customer, String? customerAccount, List<String>? expand, GetBillingCreditBalanceSummaryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingCreditBalanceSummary, DeleteAccountsAccountError>> getBillingCreditBalanceSummary({required GetBillingCreditBalanceSummaryFilter filter, String? customer, String? customerAccount, List<String>? expand, GetBillingCreditBalanceSummaryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -2571,9 +2451,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditBalanceSummary.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List credit balance transactions
@@ -2581,7 +2459,7 @@ return execute(
 /// `<p>`Retrieve a list of credit balance transactions.`</p>`
 ///
 /// `GET /v1/billing/credit_balance_transactions`
-Future<ApiResult<GetBillingCreditBalanceTransactionsResponse, ErrorModel>> getBillingCreditBalanceTransactions({String? creditGrant, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingCreditBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingCreditBalanceTransactionsResponse, DeleteAccountsAccountError>> getBillingCreditBalanceTransactions({String? creditGrant, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingCreditBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (creditGrant != null) {
   queryParameters['credit_grant'] = creditGrant;
@@ -2624,9 +2502,7 @@ return execute(
   onSuccess: (response) {
     return GetBillingCreditBalanceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a credit balance transaction
@@ -2634,7 +2510,7 @@ return execute(
 /// `<p>`Retrieves a credit balance transaction.`</p>`
 ///
 /// `GET /v1/billing/credit_balance_transactions/{id}`
-Future<ApiResult<BillingCreditBalanceTransaction, ErrorModel>> getBillingCreditBalanceTransactionsId({required String id, List<String>? expand, GetBillingCreditBalanceTransactionsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingCreditBalanceTransaction, DeleteAccountsAccountError>> getBillingCreditBalanceTransactionsId({required String id, List<String>? expand, GetBillingCreditBalanceTransactionsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -2659,9 +2535,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List credit grants
@@ -2669,7 +2543,7 @@ return execute(
 /// `<p>`Retrieve a list of credit grants.`</p>`
 ///
 /// `GET /v1/billing/credit_grants`
-Future<ApiResult<GetBillingCreditGrantsResponse, ErrorModel>> getBillingCreditGrants({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingCreditGrantsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingCreditGrantsResponse, DeleteAccountsAccountError>> getBillingCreditGrants({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingCreditGrantsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -2709,9 +2583,7 @@ return execute(
   onSuccess: (response) {
     return GetBillingCreditGrantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a credit grant
@@ -2719,7 +2591,7 @@ return execute(
 /// `<p>`Creates a credit grant.`</p>`
 ///
 /// `POST /v1/billing/credit_grants`
-Future<ApiResult<BillingCreditGrant, ErrorModel>> postBillingCreditGrants({required PostBillingCreditGrantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> postBillingCreditGrants({required PostBillingCreditGrantsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2756,9 +2628,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a credit grant
@@ -2766,7 +2636,7 @@ return execute(
 /// `<p>`Retrieves a credit grant.`</p>`
 ///
 /// `GET /v1/billing/credit_grants/{id}`
-Future<ApiResult<BillingCreditGrant, ErrorModel>> getBillingCreditGrantsId({required String id, List<String>? expand, GetBillingCreditGrantsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> getBillingCreditGrantsId({required String id, List<String>? expand, GetBillingCreditGrantsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -2791,9 +2661,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a credit grant
@@ -2801,7 +2669,7 @@ return execute(
 /// `<p>`Updates a credit grant.`</p>`
 ///
 /// `POST /v1/billing/credit_grants/{id}`
-Future<ApiResult<BillingCreditGrant, ErrorModel>> postBillingCreditGrantsId({required String id, PostBillingCreditGrantsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> postBillingCreditGrantsId({required String id, PostBillingCreditGrantsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2824,9 +2692,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Expire a credit grant
@@ -2834,7 +2700,7 @@ return execute(
 /// `<p>`Expires a credit grant.`</p>`
 ///
 /// `POST /v1/billing/credit_grants/{id}/expire`
-Future<ApiResult<BillingCreditGrant, ErrorModel>> postBillingCreditGrantsIdExpire({required String id, PostBillingCreditGrantsIdExpireRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> postBillingCreditGrantsIdExpire({required String id, PostBillingCreditGrantsIdExpireRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2853,9 +2719,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Void a credit grant
@@ -2863,7 +2727,7 @@ return execute(
 /// `<p>`Voids a credit grant.`</p>`
 ///
 /// `POST /v1/billing/credit_grants/{id}/void`
-Future<ApiResult<BillingCreditGrant, ErrorModel>> postBillingCreditGrantsIdVoid({required String id, PostBillingCreditGrantsIdVoidRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingCreditGrant, DeleteAccountsAccountError>> postBillingCreditGrantsIdVoid({required String id, PostBillingCreditGrantsIdVoidRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2882,9 +2746,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a billing meter event adjustment
@@ -2892,7 +2754,7 @@ return execute(
 /// `<p>`Creates a billing meter event adjustment.`</p>`
 ///
 /// `POST /v1/billing/meter_event_adjustments`
-Future<ApiResult<BillingMeterEventAdjustment, ErrorModel>> postBillingMeterEventAdjustments({required PostBillingMeterEventAdjustmentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingMeterEventAdjustment, DeleteAccountsAccountError>> postBillingMeterEventAdjustments({required PostBillingMeterEventAdjustmentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2915,9 +2777,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeterEventAdjustment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a billing meter event
@@ -2925,7 +2785,7 @@ return execute(
 /// `<p>`Creates a billing meter event.`</p>`
 ///
 /// `POST /v1/billing/meter_events`
-Future<ApiResult<BillingMeterEvent, ErrorModel>> postBillingMeterEvents({required PostBillingMeterEventsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingMeterEvent, DeleteAccountsAccountError>> postBillingMeterEvents({required PostBillingMeterEventsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -2950,9 +2810,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeterEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List billing meters
@@ -2960,7 +2818,7 @@ return execute(
 /// `<p>`Retrieve a list of billing meters.`</p>`
 ///
 /// `GET /v1/billing/meters`
-Future<ApiResult<GetBillingMetersResponse, ErrorModel>> getBillingMeters({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingMetersStatus? status, GetBillingMetersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingMetersResponse, DeleteAccountsAccountError>> getBillingMeters({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingMetersStatus? status, GetBillingMetersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -2997,9 +2855,7 @@ return execute(
   onSuccess: (response) {
     return GetBillingMetersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a billing meter
@@ -3007,7 +2863,7 @@ return execute(
 /// `<p>`Creates a billing meter.`</p>`
 ///
 /// `POST /v1/billing/meters`
-Future<ApiResult<BillingMeter, ErrorModel>> postBillingMeters({required PostBillingMetersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> postBillingMeters({required PostBillingMetersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3035,9 +2891,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a billing meter
@@ -3045,7 +2899,7 @@ return execute(
 /// `<p>`Retrieves a billing meter given an ID.`</p>`
 ///
 /// `GET /v1/billing/meters/{id}`
-Future<ApiResult<BillingMeter, ErrorModel>> getBillingMetersId({required String id, List<String>? expand, GetBillingMetersIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> getBillingMetersId({required String id, List<String>? expand, GetBillingMetersIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -3070,9 +2924,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a billing meter
@@ -3080,7 +2932,7 @@ return execute(
 /// `<p>`Updates a billing meter.`</p>`
 ///
 /// `POST /v1/billing/meters/{id}`
-Future<ApiResult<BillingMeter, ErrorModel>> postBillingMetersId({required String id, PostBillingMetersIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> postBillingMetersId({required String id, PostBillingMetersIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3101,9 +2953,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Deactivate a billing meter
@@ -3111,7 +2961,7 @@ return execute(
 /// `<p>`When a meter is deactivated, no more meter events will be accepted for this meter. You can’t attach a deactivated meter to a price.`</p>`
 ///
 /// `POST /v1/billing/meters/{id}/deactivate`
-Future<ApiResult<BillingMeter, ErrorModel>> postBillingMetersIdDeactivate({required String id, PostBillingMetersIdDeactivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> postBillingMetersIdDeactivate({required String id, PostBillingMetersIdDeactivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3130,9 +2980,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List billing meter event summaries
@@ -3140,7 +2988,7 @@ return execute(
 /// `<p>`Retrieve a list of billing meter event summaries.`</p>`
 ///
 /// `GET /v1/billing/meters/{id}/event_summaries`
-Future<ApiResult<GetBillingMetersIdEventSummariesResponse, ErrorModel>> getBillingMetersIdEventSummaries({required String id, required String customer, required int endTime, required int startTime, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingMetersIdEventSummariesValueGroupingWindow? valueGroupingWindow, GetBillingMetersIdEventSummariesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingMetersIdEventSummariesResponse, DeleteAccountsAccountError>> getBillingMetersIdEventSummaries({required String id, required String customer, required int endTime, required int startTime, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingMetersIdEventSummariesValueGroupingWindow? valueGroupingWindow, GetBillingMetersIdEventSummariesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['customer'] = customer;
 queryParameters['end_time'] = endTime.toString();
@@ -3180,9 +3028,7 @@ return execute(
   onSuccess: (response) {
     return GetBillingMetersIdEventSummariesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Reactivate a billing meter
@@ -3190,7 +3036,7 @@ return execute(
 /// `<p>`When a meter is reactivated, events for this meter can be accepted and you can attach the meter to a price.`</p>`
 ///
 /// `POST /v1/billing/meters/{id}/reactivate`
-Future<ApiResult<BillingMeter, ErrorModel>> postBillingMetersIdReactivate({required String id, PostBillingMetersIdReactivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingMeter, DeleteAccountsAccountError>> postBillingMetersIdReactivate({required String id, PostBillingMetersIdReactivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3209,9 +3055,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List portal configurations
@@ -3219,7 +3063,7 @@ return execute(
 /// `<p>`Returns a list of configurations that describe the functionality of the customer portal.`</p>`
 ///
 /// `GET /v1/billing_portal/configurations`
-Future<ApiResult<GetBillingPortalConfigurationsResponse, ErrorModel>> getBillingPortalConfigurations({bool? active, String? endingBefore, List<String>? expand, bool? isDefault, int? limit, String? startingAfter, GetBillingPortalConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingPortalConfigurationsResponse, DeleteAccountsAccountError>> getBillingPortalConfigurations({bool? active, String? endingBefore, List<String>? expand, bool? isDefault, int? limit, String? startingAfter, GetBillingPortalConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -3259,9 +3103,7 @@ return execute(
   onSuccess: (response) {
     return GetBillingPortalConfigurationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a portal configuration
@@ -3269,7 +3111,7 @@ return execute(
 /// `<p>`Creates a configuration that describes the functionality and behavior of a PortalSession`</p>`
 ///
 /// `POST /v1/billing_portal/configurations`
-Future<ApiResult<BillingPortalConfiguration, ErrorModel>> postBillingPortalConfigurations({required PostBillingPortalConfigurationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingPortalConfiguration, DeleteAccountsAccountError>> postBillingPortalConfigurations({required PostBillingPortalConfigurationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3299,9 +3141,7 @@ return execute(
   onSuccess: (response) {
     return BillingPortalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a portal configuration
@@ -3309,7 +3149,7 @@ return execute(
 /// `<p>`Retrieves a configuration that describes the functionality of the customer portal.`</p>`
 ///
 /// `GET /v1/billing_portal/configurations/{configuration}`
-Future<ApiResult<BillingPortalConfiguration, ErrorModel>> getBillingPortalConfigurationsConfiguration({required String configuration, List<String>? expand, GetBillingPortalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingPortalConfiguration, DeleteAccountsAccountError>> getBillingPortalConfigurationsConfiguration({required String configuration, List<String>? expand, GetBillingPortalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -3334,9 +3174,7 @@ return execute(
   onSuccess: (response) {
     return BillingPortalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a portal configuration
@@ -3344,7 +3182,7 @@ return execute(
 /// `<p>`Updates a configuration that describes the functionality of the customer portal.`</p>`
 ///
 /// `POST /v1/billing_portal/configurations/{configuration}`
-Future<ApiResult<BillingPortalConfiguration, ErrorModel>> postBillingPortalConfigurationsConfiguration({required String configuration, PostBillingPortalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingPortalConfiguration, DeleteAccountsAccountError>> postBillingPortalConfigurationsConfiguration({required String configuration, PostBillingPortalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3377,9 +3215,7 @@ return execute(
   onSuccess: (response) {
     return BillingPortalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a portal session
@@ -3387,7 +3223,7 @@ return execute(
 /// `<p>`Creates a session of the customer portal.`</p>`
 ///
 /// `POST /v1/billing_portal/sessions`
-Future<ApiResult<BillingPortalSession, ErrorModel>> postBillingPortalSessions({PostBillingPortalSessionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingPortalSession, DeleteAccountsAccountError>> postBillingPortalSessions({PostBillingPortalSessionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3420,9 +3256,7 @@ return execute(
   onSuccess: (response) {
     return BillingPortalSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all charges
@@ -3430,7 +3264,7 @@ return execute(
 /// `<p>`Returns a list of charges you’ve previously created. The charges are returned in sorted order, with the most recent charges appearing first.`</p>`
 ///
 /// `GET /v1/charges`
-Future<ApiResult<GetChargesResponse, ErrorModel>> getCharges({GetChargesCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, String? transferGroup, GetChargesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetChargesResponse, DeleteAccountsAccountError>> getCharges({GetChargesCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, String? transferGroup, GetChargesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -3476,9 +3310,7 @@ return execute(
   onSuccess: (response) {
     return GetChargesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
@@ -3487,7 +3319,7 @@ return execute(
 /// object used to request payment.`</p>`
 ///
 /// `POST /v1/charges`
-Future<ApiResult<Charge, ErrorModel>> postCharges({PostChargesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Charge, DeleteAccountsAccountError>> postCharges({PostChargesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3544,9 +3376,7 @@ return execute(
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Search charges
@@ -3557,7 +3387,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/charges/search`
-Future<ApiResult<GetChargesSearchResponse, ErrorModel>> getChargesSearch({required String query, List<String>? expand, int? limit, String? page, GetChargesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetChargesSearchResponse, DeleteAccountsAccountError>> getChargesSearch({required String query, List<String>? expand, int? limit, String? page, GetChargesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -3589,9 +3419,7 @@ return execute(
   onSuccess: (response) {
     return GetChargesSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a charge
@@ -3599,7 +3427,7 @@ return execute(
 /// `<p>`Retrieves the details of a charge that has previously been created. Supply the unique charge ID that was returned from your previous request, and Stripe will return the corresponding charge information. The same information is returned when creating or refunding the charge.`</p>`
 ///
 /// `GET /v1/charges/{charge}`
-Future<ApiResult<Charge, ErrorModel>> getChargesCharge({required String charge, List<String>? expand, GetChargesChargeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Charge, DeleteAccountsAccountError>> getChargesCharge({required String charge, List<String>? expand, GetChargesChargeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -3624,9 +3452,7 @@ return execute(
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a charge
@@ -3634,7 +3460,7 @@ return execute(
 /// `<p>`Updates the specified charge by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/charges/{charge}`
-Future<ApiResult<Charge, ErrorModel>> postChargesCharge({required String charge, PostChargesChargeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Charge, DeleteAccountsAccountError>> postChargesCharge({required String charge, PostChargesChargeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3667,9 +3493,7 @@ return execute(
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Capture a payment
@@ -3681,7 +3505,7 @@ return execute(
 /// `<p>`Don’t use this method to capture a PaymentIntent-initiated charge. Use `<a href="/docs/api/payment_intents/capture">`Capture a PaymentIntent`</a>`.`</p>`
 ///
 /// `POST /v1/charges/{charge}/capture`
-Future<ApiResult<Charge, ErrorModel>> postChargesChargeCapture({required String charge, PostChargesChargeCaptureRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Charge, DeleteAccountsAccountError>> postChargesChargeCapture({required String charge, PostChargesChargeCaptureRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3716,16 +3540,14 @@ return execute(
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`Retrieve a dispute for a specified charge.`</p>`
 ///
 /// `GET /v1/charges/{charge}/dispute`
-Future<ApiResult<Dispute, ErrorModel>> getChargesChargeDispute({required String charge, List<String>? expand, GetChargesChargeDisputeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Dispute, DeleteAccountsAccountError>> getChargesChargeDispute({required String charge, List<String>? expand, GetChargesChargeDisputeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -3750,16 +3572,14 @@ return execute(
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// 
 ///
 /// `POST /v1/charges/{charge}/dispute`
-Future<ApiResult<Dispute, ErrorModel>> postChargesChargeDispute({required String charge, PostChargesChargeDisputeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Dispute, DeleteAccountsAccountError>> postChargesChargeDispute({required String charge, PostChargesChargeDisputeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3784,16 +3604,14 @@ return execute(
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// 
 ///
 /// `POST /v1/charges/{charge}/dispute/close`
-Future<ApiResult<Dispute, ErrorModel>> postChargesChargeDisputeClose({required String charge, PostChargesChargeDisputeCloseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Dispute, DeleteAccountsAccountError>> postChargesChargeDisputeClose({required String charge, PostChargesChargeDisputeCloseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3812,9 +3630,7 @@ return execute(
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a refund
@@ -3832,7 +3648,7 @@ return execute(
 /// or when you attempt to refund more money than is left on a charge.`</p>`
 ///
 /// `POST /v1/charges/{charge}/refund`
-Future<ApiResult<Charge, ErrorModel>> postChargesChargeRefund({required String charge, PostChargesChargeRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Charge, DeleteAccountsAccountError>> postChargesChargeRefund({required String charge, PostChargesChargeRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3865,9 +3681,7 @@ return execute(
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all refunds
@@ -3875,7 +3689,7 @@ return execute(
 /// `<p>`You can see a list of the refunds belonging to a specific charge. Note that the 10 most recent refunds are always available by default on the charge object. If you need more than those 10, you can use this API method and the `<code>`limit`</code>` and `<code>`starting_after`</code>` parameters to page through additional refunds.`</p>`
 ///
 /// `GET /v1/charges/{charge}/refunds`
-Future<ApiResult<GetChargesChargeRefundsResponse, ErrorModel>> getChargesChargeRefunds({required String charge, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetChargesChargeRefundsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetChargesChargeRefundsResponse, DeleteAccountsAccountError>> getChargesChargeRefunds({required String charge, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetChargesChargeRefundsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -3909,9 +3723,7 @@ return execute(
   onSuccess: (response) {
     return GetChargesChargeRefundsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create customer balance refund
@@ -3929,7 +3741,7 @@ return execute(
 /// or when trying to refund more money than is left on a charge.`</p>`
 ///
 /// `POST /v1/charges/{charge}/refunds`
-Future<ApiResult<Refund, ErrorModel>> postChargesChargeRefunds({required String charge, PostChargesChargeRefundsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> postChargesChargeRefunds({required String charge, PostChargesChargeRefundsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -3968,16 +3780,14 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`Retrieves the details of an existing refund.`</p>`
 ///
 /// `GET /v1/charges/{charge}/refunds/{refund}`
-Future<ApiResult<Refund, ErrorModel>> getChargesChargeRefundsRefund({required String charge, required String refund, List<String>? expand, GetChargesChargeRefundsRefundRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> getChargesChargeRefundsRefund({required String charge, required String refund, List<String>? expand, GetChargesChargeRefundsRefundRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -4002,16 +3812,14 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`Update a specified refund.`</p>`
 ///
 /// `POST /v1/charges/{charge}/refunds/{refund}`
-Future<ApiResult<Refund, ErrorModel>> postChargesChargeRefundsRefund({required String charge, required String refund, PostChargesChargeRefundsRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> postChargesChargeRefundsRefund({required String charge, required String refund, PostChargesChargeRefundsRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4032,9 +3840,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all Checkout Sessions
@@ -4042,7 +3848,7 @@ return execute(
 /// `<p>`Returns a list of Checkout Sessions.`</p>`
 ///
 /// `GET /v1/checkout/sessions`
-Future<ApiResult<GetCheckoutSessionsResponse, ErrorModel>> getCheckoutSessions({GetCheckoutSessionsCreated? created, String? customer, String? customerAccount, GetCheckoutSessionsCustomerDetails? customerDetails, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? paymentLink, String? startingAfter, GetCheckoutSessionsStatus? status, String? subscription, GetCheckoutSessionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCheckoutSessionsResponse, DeleteAccountsAccountError>> getCheckoutSessions({GetCheckoutSessionsCreated? created, String? customer, String? customerAccount, GetCheckoutSessionsCustomerDetails? customerDetails, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? paymentLink, String? startingAfter, GetCheckoutSessionsStatus? status, String? subscription, GetCheckoutSessionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -4100,9 +3906,7 @@ return execute(
   onSuccess: (response) {
     return GetCheckoutSessionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a Checkout Session
@@ -4110,7 +3914,7 @@ return execute(
 /// `<p>`Creates a Checkout Session object.`</p>`
 ///
 /// `POST /v1/checkout/sessions`
-Future<ApiResult<CheckoutSession, ErrorModel>> postCheckoutSessions({PostCheckoutSessionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CheckoutSession, DeleteAccountsAccountError>> postCheckoutSessions({PostCheckoutSessionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4225,9 +4029,7 @@ return execute(
   onSuccess: (response) {
     return CheckoutSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Checkout Session
@@ -4235,7 +4037,7 @@ return execute(
 /// `<p>`Retrieves a Checkout Session object.`</p>`
 ///
 /// `GET /v1/checkout/sessions/{session}`
-Future<ApiResult<CheckoutSession, ErrorModel>> getCheckoutSessionsSession({required String session, List<String>? expand, GetCheckoutSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CheckoutSession, DeleteAccountsAccountError>> getCheckoutSessionsSession({required String session, List<String>? expand, GetCheckoutSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -4260,9 +4062,7 @@ return execute(
   onSuccess: (response) {
     return CheckoutSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a Checkout Session
@@ -4272,7 +4072,7 @@ return execute(
 /// `<p>`Related guide: `<a href="/payments/advanced/dynamic-updates">`Dynamically update a Checkout Session`</a>``</p>`
 ///
 /// `POST /v1/checkout/sessions/{session}`
-Future<ApiResult<CheckoutSession, ErrorModel>> postCheckoutSessionsSession({required String session, PostCheckoutSessionsSessionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CheckoutSession, DeleteAccountsAccountError>> postCheckoutSessionsSession({required String session, PostCheckoutSessionsSessionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4299,9 +4099,7 @@ return execute(
   onSuccess: (response) {
     return CheckoutSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Expire a Checkout Session
@@ -4311,7 +4109,7 @@ return execute(
 /// `<p>`After it expires, a customer can’t complete a Checkout Session and customers loading the Checkout Session see a message saying the Checkout Session is expired.`</p>`
 ///
 /// `POST /v1/checkout/sessions/{session}/expire`
-Future<ApiResult<CheckoutSession, ErrorModel>> postCheckoutSessionsSessionExpire({required String session, PostCheckoutSessionsSessionExpireRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CheckoutSession, DeleteAccountsAccountError>> postCheckoutSessionsSessionExpire({required String session, PostCheckoutSessionsSessionExpireRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4330,9 +4128,7 @@ return execute(
   onSuccess: (response) {
     return CheckoutSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Checkout Session's line items
@@ -4340,7 +4136,7 @@ return execute(
 /// `<p>`When retrieving a Checkout Session, there is an includable `<strong>`line_items`</strong>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/checkout/sessions/{session}/line_items`
-Future<ApiResult<GetCheckoutSessionsSessionLineItemsResponse, ErrorModel>> getCheckoutSessionsSessionLineItems({required String session, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCheckoutSessionsSessionLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCheckoutSessionsSessionLineItemsResponse, DeleteAccountsAccountError>> getCheckoutSessionsSessionLineItems({required String session, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCheckoutSessionsSessionLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -4374,9 +4170,7 @@ return execute(
   onSuccess: (response) {
     return GetCheckoutSessionsSessionLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List orders
@@ -4385,7 +4179,7 @@ return execute(
 /// most recently created orders appearing first.`</p>`
 ///
 /// `GET /v1/climate/orders`
-Future<ApiResult<GetClimateOrdersResponse, ErrorModel>> getClimateOrders({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateOrdersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetClimateOrdersResponse, DeleteAccountsAccountError>> getClimateOrders({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateOrdersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -4419,9 +4213,7 @@ return execute(
   onSuccess: (response) {
     return GetClimateOrdersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an order
@@ -4430,7 +4222,7 @@ return execute(
 /// after creation and payment will be deducted your Stripe balance.`</p>`
 ///
 /// `POST /v1/climate/orders`
-Future<ApiResult<ClimateOrder, ErrorModel>> postClimateOrders({required PostClimateOrdersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ClimateOrder, DeleteAccountsAccountError>> postClimateOrders({required PostClimateOrdersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4460,9 +4252,7 @@ return execute(
   onSuccess: (response) {
     return ClimateOrder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an order
@@ -4470,7 +4260,7 @@ return execute(
 /// `<p>`Retrieves the details of a Climate order object with the given ID.`</p>`
 ///
 /// `GET /v1/climate/orders/{order}`
-Future<ApiResult<ClimateOrder, ErrorModel>> getClimateOrdersOrder({required String order, List<String>? expand, GetClimateOrdersOrderRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ClimateOrder, DeleteAccountsAccountError>> getClimateOrdersOrder({required String order, List<String>? expand, GetClimateOrdersOrderRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -4495,9 +4285,7 @@ return execute(
   onSuccess: (response) {
     return ClimateOrder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update an order
@@ -4505,7 +4293,7 @@ return execute(
 /// `<p>`Updates the specified order by setting the values of the parameters passed.`</p>`
 ///
 /// `POST /v1/climate/orders/{order}`
-Future<ApiResult<ClimateOrder, ErrorModel>> postClimateOrdersOrder({required String order, PostClimateOrdersOrderRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ClimateOrder, DeleteAccountsAccountError>> postClimateOrdersOrder({required String order, PostClimateOrdersOrderRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4528,9 +4316,7 @@ return execute(
   onSuccess: (response) {
     return ClimateOrder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel an order
@@ -4541,7 +4327,7 @@ return execute(
 /// provides 90 days advance notice and refunds the `<code>`amount_total`</code>`.`</p>`
 ///
 /// `POST /v1/climate/orders/{order}/cancel`
-Future<ApiResult<ClimateOrder, ErrorModel>> postClimateOrdersOrderCancel({required String order, PostClimateOrdersOrderCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ClimateOrder, DeleteAccountsAccountError>> postClimateOrdersOrderCancel({required String order, PostClimateOrdersOrderCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4560,9 +4346,7 @@ return execute(
   onSuccess: (response) {
     return ClimateOrder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List products
@@ -4570,7 +4354,7 @@ return execute(
 /// `<p>`Lists all available Climate product objects.`</p>`
 ///
 /// `GET /v1/climate/products`
-Future<ApiResult<GetClimateProductsResponse, ErrorModel>> getClimateProducts({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateProductsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetClimateProductsResponse, DeleteAccountsAccountError>> getClimateProducts({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateProductsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -4604,9 +4388,7 @@ return execute(
   onSuccess: (response) {
     return GetClimateProductsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a product
@@ -4614,7 +4396,7 @@ return execute(
 /// `<p>`Retrieves the details of a Climate product with the given ID.`</p>`
 ///
 /// `GET /v1/climate/products/{product}`
-Future<ApiResult<ClimateProduct, ErrorModel>> getClimateProductsProduct({required String product, List<String>? expand, GetClimateProductsProductRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ClimateProduct, DeleteAccountsAccountError>> getClimateProductsProduct({required String product, List<String>? expand, GetClimateProductsProductRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -4639,9 +4421,7 @@ return execute(
   onSuccess: (response) {
     return ClimateProduct.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List suppliers
@@ -4649,7 +4429,7 @@ return execute(
 /// `<p>`Lists all available Climate supplier objects.`</p>`
 ///
 /// `GET /v1/climate/suppliers`
-Future<ApiResult<GetClimateSuppliersResponse, ErrorModel>> getClimateSuppliers({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateSuppliersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetClimateSuppliersResponse, DeleteAccountsAccountError>> getClimateSuppliers({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateSuppliersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -4683,9 +4463,7 @@ return execute(
   onSuccess: (response) {
     return GetClimateSuppliersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a supplier
@@ -4693,7 +4471,7 @@ return execute(
 /// `<p>`Retrieves a Climate supplier object.`</p>`
 ///
 /// `GET /v1/climate/suppliers/{supplier}`
-Future<ApiResult<ClimateSupplier, ErrorModel>> getClimateSuppliersSupplier({required String supplier, List<String>? expand, GetClimateSuppliersSupplierRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ClimateSupplier, DeleteAccountsAccountError>> getClimateSuppliersSupplier({required String supplier, List<String>? expand, GetClimateSuppliersSupplierRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -4718,9 +4496,7 @@ return execute(
   onSuccess: (response) {
     return ClimateSupplier.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a ConfirmationToken
@@ -4728,7 +4504,7 @@ return execute(
 /// `<p>`Retrieves an existing ConfirmationToken object`</p>`
 ///
 /// `GET /v1/confirmation_tokens/{confirmation_token}`
-Future<ApiResult<ConfirmationToken, ErrorModel>> getConfirmationTokensConfirmationToken({required String confirmationToken, List<String>? expand, GetConfirmationTokensConfirmationTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConfirmationToken, DeleteAccountsAccountError>> getConfirmationTokensConfirmationToken({required String confirmationToken, List<String>? expand, GetConfirmationTokensConfirmationTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -4753,9 +4529,7 @@ return execute(
   onSuccess: (response) {
     return ConfirmationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List Country Specs
@@ -4763,7 +4537,7 @@ return execute(
 /// `<p>`Lists all Country Spec objects available in the API.`</p>`
 ///
 /// `GET /v1/country_specs`
-Future<ApiResult<GetCountrySpecsResponse, ErrorModel>> getCountrySpecs({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCountrySpecsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCountrySpecsResponse, DeleteAccountsAccountError>> getCountrySpecs({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCountrySpecsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -4797,9 +4571,7 @@ return execute(
   onSuccess: (response) {
     return GetCountrySpecsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Country Spec
@@ -4807,7 +4579,7 @@ return execute(
 /// `<p>`Returns a Country Spec for a given Country code.`</p>`
 ///
 /// `GET /v1/country_specs/{country}`
-Future<ApiResult<CountrySpec, ErrorModel>> getCountrySpecsCountry({required String country, List<String>? expand, GetCountrySpecsCountryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CountrySpec, DeleteAccountsAccountError>> getCountrySpecsCountry({required String country, List<String>? expand, GetCountrySpecsCountryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -4832,9 +4604,7 @@ return execute(
   onSuccess: (response) {
     return CountrySpec.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all coupons
@@ -4842,7 +4612,7 @@ return execute(
 /// `<p>`Returns a list of your coupons.`</p>`
 ///
 /// `GET /v1/coupons`
-Future<ApiResult<GetCouponsResponse, ErrorModel>> getCoupons({GetCouponsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCouponsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCouponsResponse, DeleteAccountsAccountError>> getCoupons({GetCouponsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCouponsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -4879,9 +4649,7 @@ return execute(
   onSuccess: (response) {
     return GetCouponsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a coupon
@@ -4891,7 +4659,7 @@ return execute(
 /// `<p>`A coupon has either a `<code>`percent_off`</code>` or an `<code>`amount_off`</code>` and `<code>`currency`</code>`. If you set an `<code>`amount_off`</code>`, that amount will be subtracted from any invoice’s subtotal. For example, an invoice with a subtotal of `<currency>`100`</currency>` will have a final total of `<currency>`0`</currency>` if a coupon with an `<code>`amount_off`</code>` of `<amount>`200`</amount>` is applied to it and an invoice with a subtotal of `<currency>`300`</currency>` will have a final total of `<currency>`100`</currency>` if a coupon with an `<code>`amount_off`</code>` of `<amount>`200`</amount>` is applied to it.`</p>`
 ///
 /// `POST /v1/coupons`
-Future<ApiResult<Coupon, ErrorModel>> postCoupons({PostCouponsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Coupon, DeleteAccountsAccountError>> postCoupons({PostCouponsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -4934,9 +4702,7 @@ return execute(
   onSuccess: (response) {
     return Coupon.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a coupon
@@ -4944,7 +4710,7 @@ return execute(
 /// `<p>`Retrieves the coupon with the given ID.`</p>`
 ///
 /// `GET /v1/coupons/{coupon}`
-Future<ApiResult<Coupon, ErrorModel>> getCouponsCoupon({required String coupon, List<String>? expand, GetCouponsCouponRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Coupon, DeleteAccountsAccountError>> getCouponsCoupon({required String coupon, List<String>? expand, GetCouponsCouponRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -4969,9 +4735,7 @@ return execute(
   onSuccess: (response) {
     return Coupon.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a coupon
@@ -4979,7 +4743,7 @@ return execute(
 /// `<p>`Updates the metadata of a coupon. Other coupon details (currency, duration, amount_off) are, by design, not editable.`</p>`
 ///
 /// `POST /v1/coupons/{coupon}`
-Future<ApiResult<Coupon, ErrorModel>> postCouponsCoupon({required String coupon, PostCouponsCouponRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Coupon, DeleteAccountsAccountError>> postCouponsCoupon({required String coupon, PostCouponsCouponRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5004,9 +4768,7 @@ return execute(
   onSuccess: (response) {
     return Coupon.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a coupon
@@ -5014,7 +4776,7 @@ return execute(
 /// `<p>`You can delete coupons via the `<a href="https://dashboard.stripe.com/coupons">`coupon management`</a>` page of the Stripe dashboard. However, deleting a coupon does not affect any customers who have already applied the coupon; it means that new customers can’t redeem the coupon. You can also delete coupons via the API.`</p>`
 ///
 /// `DELETE /v1/coupons/{coupon}`
-Future<ApiResult<DeletedCoupon, ErrorModel>> deleteCouponsCoupon({required String coupon, DeleteCouponsCouponRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedCoupon, DeleteAccountsAccountError>> deleteCouponsCoupon({required String coupon, DeleteCouponsCouponRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5031,9 +4793,7 @@ return execute(
   onSuccess: (response) {
     return DeletedCoupon.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all credit notes
@@ -5041,7 +4801,7 @@ return execute(
 /// `<p>`Returns a list of credit notes.`</p>`
 ///
 /// `GET /v1/credit_notes`
-Future<ApiResult<GetCreditNotesResponse, ErrorModel>> getCreditNotes({GetCreditNotesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, GetCreditNotesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCreditNotesResponse, DeleteAccountsAccountError>> getCreditNotes({GetCreditNotesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, GetCreditNotesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -5087,9 +4847,7 @@ return execute(
   onSuccess: (response) {
     return GetCreditNotesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a credit note
@@ -5109,7 +4867,7 @@ return execute(
 /// `<code>`post_payment_credit_notes_amount`</code>`, or both, depending on the invoice’s `<code>`amount_remaining`</code>` at the time of credit note creation.`</p>`
 ///
 /// `POST /v1/credit_notes`
-Future<ApiResult<CreditNote, ErrorModel>> postCreditNotes({required PostCreditNotesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreditNote, DeleteAccountsAccountError>> postCreditNotes({required PostCreditNotesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5153,9 +4911,7 @@ return execute(
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Preview a credit note
@@ -5163,7 +4919,7 @@ return execute(
 /// `<p>`Get a preview of a credit note without creating it.`</p>`
 ///
 /// `GET /v1/credit_notes/preview`
-Future<ApiResult<CreditNote, ErrorModel>> getCreditNotesPreview({required String invoice, int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewEmailType? emailType, List<String>? expand, List<GetCreditNotesPreviewLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewReason? reason, int? refundAmount, List<GetCreditNotesPreviewRefunds>? refunds, GetCreditNotesPreviewShippingCost? shippingCost, GetCreditNotesPreviewRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CreditNote, DeleteAccountsAccountError>> getCreditNotesPreview({required String invoice, int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewEmailType? emailType, List<String>? expand, List<GetCreditNotesPreviewLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewReason? reason, int? refundAmount, List<GetCreditNotesPreviewRefunds>? refunds, GetCreditNotesPreviewShippingCost? shippingCost, GetCreditNotesPreviewRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amount != null) {
   queryParameters['amount'] = amount.toString();
@@ -5227,9 +4983,7 @@ return execute(
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a credit note preview's line items
@@ -5237,7 +4991,7 @@ return execute(
 /// `<p>`When retrieving a credit note preview, you’ll get a `<strong>`lines`</strong>` property containing the first handful of those items. This URL you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/credit_notes/preview/lines`
-Future<ApiResult<GetCreditNotesPreviewLinesResponse, ErrorModel>> getCreditNotesPreviewLines({required String invoice, int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewLinesEmailType? emailType, String? endingBefore, List<String>? expand, int? limit, List<GetCreditNotesPreviewLinesLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewLinesReason? reason, int? refundAmount, List<GetCreditNotesPreviewLinesRefunds>? refunds, GetCreditNotesPreviewLinesShippingCost? shippingCost, String? startingAfter, GetCreditNotesPreviewLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCreditNotesPreviewLinesResponse, DeleteAccountsAccountError>> getCreditNotesPreviewLines({required String invoice, int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewLinesEmailType? emailType, String? endingBefore, List<String>? expand, int? limit, List<GetCreditNotesPreviewLinesLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewLinesReason? reason, int? refundAmount, List<GetCreditNotesPreviewLinesRefunds>? refunds, GetCreditNotesPreviewLinesShippingCost? shippingCost, String? startingAfter, GetCreditNotesPreviewLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amount != null) {
   queryParameters['amount'] = amount.toString();
@@ -5310,9 +5064,7 @@ return execute(
   onSuccess: (response) {
     return GetCreditNotesPreviewLinesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a credit note's line items
@@ -5320,7 +5072,7 @@ return execute(
 /// `<p>`When retrieving a credit note, you’ll get a `<strong>`lines`</strong>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/credit_notes/{credit_note}/lines`
-Future<ApiResult<GetCreditNotesCreditNoteLinesResponse, ErrorModel>> getCreditNotesCreditNoteLines({required String creditNote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCreditNotesCreditNoteLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCreditNotesCreditNoteLinesResponse, DeleteAccountsAccountError>> getCreditNotesCreditNoteLines({required String creditNote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCreditNotesCreditNoteLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -5354,9 +5106,7 @@ return execute(
   onSuccess: (response) {
     return GetCreditNotesCreditNoteLinesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a credit note
@@ -5364,7 +5114,7 @@ return execute(
 /// `<p>`Retrieves the credit note object with the given identifier.`</p>`
 ///
 /// `GET /v1/credit_notes/{id}`
-Future<ApiResult<CreditNote, ErrorModel>> getCreditNotesId({required String id, List<String>? expand, GetCreditNotesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CreditNote, DeleteAccountsAccountError>> getCreditNotesId({required String id, List<String>? expand, GetCreditNotesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -5389,9 +5139,7 @@ return execute(
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a credit note
@@ -5399,7 +5147,7 @@ return execute(
 /// `<p>`Updates an existing credit note.`</p>`
 ///
 /// `POST /v1/credit_notes/{id}`
-Future<ApiResult<CreditNote, ErrorModel>> postCreditNotesId({required String id, PostCreditNotesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreditNote, DeleteAccountsAccountError>> postCreditNotesId({required String id, PostCreditNotesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5422,9 +5170,7 @@ return execute(
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Void a credit note
@@ -5432,7 +5178,7 @@ return execute(
 /// `<p>`Marks a credit note as void. Learn more about `<a href="/docs/billing/invoices/credit-notes#voiding">`voiding credit notes`</a>`.`</p>`
 ///
 /// `POST /v1/credit_notes/{id}/void`
-Future<ApiResult<CreditNote, ErrorModel>> postCreditNotesIdVoid({required String id, PostCreditNotesIdVoidRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreditNote, DeleteAccountsAccountError>> postCreditNotesIdVoid({required String id, PostCreditNotesIdVoidRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5451,9 +5197,7 @@ return execute(
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a Customer Session
@@ -5461,7 +5205,7 @@ return execute(
 /// `<p>`Creates a Customer Session object that includes a single-use client secret that you can use on your front-end to grant client-side API access for certain customer resources.`</p>`
 ///
 /// `POST /v1/customer_sessions`
-Future<ApiResult<CustomerSession, ErrorModel>> postCustomerSessions({required PostCustomerSessionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomerSession, DeleteAccountsAccountError>> postCustomerSessions({required PostCustomerSessionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5485,9 +5229,7 @@ return execute(
   onSuccess: (response) {
     return CustomerSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all customers
@@ -5495,7 +5237,7 @@ return execute(
 /// `<p>`Returns a list of your customers. The customers are returned sorted by creation date, with the most recent customers appearing first.`</p>`
 ///
 /// `GET /v1/customers`
-Future<ApiResult<GetCustomersResponse, ErrorModel>> getCustomers({GetCustomersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? testClock, GetCustomersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersResponse, DeleteAccountsAccountError>> getCustomers({GetCustomersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? testClock, GetCustomersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -5538,9 +5280,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a customer
@@ -5548,7 +5288,7 @@ return execute(
 /// `<p>`Creates a new customer object.`</p>`
 ///
 /// `POST /v1/customers`
-Future<ApiResult<Customer, ErrorModel>> postCustomers({PostCustomersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Customer, DeleteAccountsAccountError>> postCustomers({PostCustomersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5609,9 +5349,7 @@ return execute(
   onSuccess: (response) {
     return Customer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Search customers
@@ -5622,7 +5360,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/customers/search`
-Future<ApiResult<GetCustomersSearchResponse, ErrorModel>> getCustomersSearch({required String query, List<String>? expand, int? limit, String? page, GetCustomersSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersSearchResponse, DeleteAccountsAccountError>> getCustomersSearch({required String query, List<String>? expand, int? limit, String? page, GetCustomersSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -5654,9 +5392,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a customer
@@ -5664,7 +5400,7 @@ return execute(
 /// `<p>`Retrieves a Customer object.`</p>`
 ///
 /// `GET /v1/customers/{customer}`
-Future<ApiResult<GetCustomersCustomerResponse, ErrorModel>> getCustomersCustomer({required String customer, List<String>? expand, GetCustomersCustomerRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerResponse, DeleteAccountsAccountError>> getCustomersCustomer({required String customer, List<String>? expand, GetCustomersCustomerRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -5689,9 +5425,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => Customer.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a customer
@@ -5701,7 +5435,7 @@ return execute(
 /// `<p>`This request accepts mostly the same arguments as the customer creation call.`</p>`
 ///
 /// `POST /v1/customers/{customer}`
-Future<ApiResult<Customer, ErrorModel>> postCustomersCustomer({required String customer, PostCustomersCustomerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Customer, DeleteAccountsAccountError>> postCustomersCustomer({required String customer, PostCustomersCustomerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5768,9 +5502,7 @@ return execute(
   onSuccess: (response) {
     return Customer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a customer
@@ -5778,7 +5510,7 @@ return execute(
 /// `<p>`Permanently deletes a customer. It cannot be undone. Also immediately cancels any active subscriptions on the customer.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}`
-Future<ApiResult<DeletedCustomer, ErrorModel>> deleteCustomersCustomer({required String customer, DeleteCustomersCustomerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedCustomer, DeleteAccountsAccountError>> deleteCustomersCustomer({required String customer, DeleteCustomersCustomerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5795,9 +5527,7 @@ return execute(
   onSuccess: (response) {
     return DeletedCustomer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List customer balance transactions
@@ -5805,7 +5535,7 @@ return execute(
 /// `<p>`Returns a list of transactions that updated the customer’s `<a href="/docs/billing/customer/balance">`balances`</a>`.`</p>`
 ///
 /// `GET /v1/customers/{customer}/balance_transactions`
-Future<ApiResult<GetCustomersCustomerBalanceTransactionsResponse, ErrorModel>> getCustomersCustomerBalanceTransactions({required String customer, GetCustomersCustomerBalanceTransactionsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, GetCustomersCustomerBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerBalanceTransactionsResponse, DeleteAccountsAccountError>> getCustomersCustomerBalanceTransactions({required String customer, GetCustomersCustomerBalanceTransactionsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, GetCustomersCustomerBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -5845,9 +5575,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersCustomerBalanceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a customer balance transaction
@@ -5855,7 +5583,7 @@ return execute(
 /// `<p>`Creates an immutable transaction that updates the customer’s credit `<a href="/docs/billing/customer/balance">`balance`</a>`.`</p>`
 ///
 /// `POST /v1/customers/{customer}/balance_transactions`
-Future<ApiResult<CustomerBalanceTransaction, ErrorModel>> postCustomersCustomerBalanceTransactions({required String customer, required PostCustomersCustomerBalanceTransactionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomerBalanceTransaction, DeleteAccountsAccountError>> postCustomersCustomerBalanceTransactions({required String customer, required PostCustomersCustomerBalanceTransactionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5880,9 +5608,7 @@ return execute(
   onSuccess: (response) {
     return CustomerBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a customer balance transaction
@@ -5890,7 +5616,7 @@ return execute(
 /// `<p>`Retrieves a specific customer balance transaction that updated the customer’s `<a href="/docs/billing/customer/balance">`balances`</a>`.`</p>`
 ///
 /// `GET /v1/customers/{customer}/balance_transactions/{transaction}`
-Future<ApiResult<CustomerBalanceTransaction, ErrorModel>> getCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, GetCustomersCustomerBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CustomerBalanceTransaction, DeleteAccountsAccountError>> getCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, GetCustomersCustomerBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -5915,9 +5641,7 @@ return execute(
   onSuccess: (response) {
     return CustomerBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a customer credit balance transaction
@@ -5925,7 +5649,7 @@ return execute(
 /// `<p>`Most credit balance transaction fields are immutable, but you may update its `<code>`description`</code>` and `<code>`metadata`</code>`.`</p>`
 ///
 /// `POST /v1/customers/{customer}/balance_transactions/{transaction}`
-Future<ApiResult<CustomerBalanceTransaction, ErrorModel>> postCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, PostCustomersCustomerBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomerBalanceTransaction, DeleteAccountsAccountError>> postCustomersCustomerBalanceTransactionsTransaction({required String customer, required String transaction, PostCustomersCustomerBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5948,9 +5672,7 @@ return execute(
   onSuccess: (response) {
     return CustomerBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a card
@@ -5962,7 +5684,7 @@ return execute(
 /// To change the default, you should `<a href="/docs/api#update_customer">`update the customer`</a>` to have a new `<code>`default_source`</code>`.`</p>`
 ///
 /// `POST /v1/customers/{customer}/bank_accounts`
-Future<ApiResult<PaymentSource, ErrorModel>> postCustomersCustomerBankAccounts({required String customer, PostCustomersCustomerBankAccountsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentSource, DeleteAccountsAccountError>> postCustomersCustomerBankAccounts({required String customer, PostCustomersCustomerBankAccountsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -5991,16 +5713,14 @@ return execute(
   onSuccess: (response) {
     return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`Update a specified source for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/bank_accounts/{id}`
-Future<ApiResult<PostCustomersCustomerBankAccountsIdResponse, ErrorModel>> postCustomersCustomerBankAccountsId({required String customer, required String id, PostCustomersCustomerBankAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostCustomersCustomerBankAccountsIdResponse, DeleteAccountsAccountError>> postCustomersCustomerBankAccountsId({required String customer, required String id, PostCustomersCustomerBankAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6045,9 +5765,7 @@ return execute(
   onSuccess: (response) {
     return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a customer source
@@ -6055,7 +5773,7 @@ return execute(
 /// `<p>`Delete a specified source for a given customer.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/bank_accounts/{id}`
-Future<ApiResult<DeleteCustomersCustomerBankAccountsIdResponse, ErrorModel>> deleteCustomersCustomerBankAccountsId({required String customer, required String id, DeleteCustomersCustomerBankAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteCustomersCustomerBankAccountsIdResponse, DeleteAccountsAccountError>> deleteCustomersCustomerBankAccountsId({required String customer, required String id, DeleteCustomersCustomerBankAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6074,9 +5792,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Verify a bank account
@@ -6084,7 +5800,7 @@ return execute(
 /// `<p>`Verify a specified bank account for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/bank_accounts/{id}/verify`
-Future<ApiResult<BankAccount, ErrorModel>> postCustomersCustomerBankAccountsIdVerify({required String customer, required String id, PostCustomersCustomerBankAccountsIdVerifyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BankAccount, DeleteAccountsAccountError>> postCustomersCustomerBankAccountsIdVerify({required String customer, required String id, PostCustomersCustomerBankAccountsIdVerifyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6105,9 +5821,7 @@ return execute(
   onSuccess: (response) {
     return BankAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a card
@@ -6119,7 +5833,7 @@ return execute(
 /// To change the default, you should `<a href="/docs/api#update_customer">`update the customer`</a>` to have a new `<code>`default_source`</code>`.`</p>`
 ///
 /// `POST /v1/customers/{customer}/cards`
-Future<ApiResult<PaymentSource, ErrorModel>> postCustomersCustomerCards({required String customer, PostCustomersCustomerCardsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentSource, DeleteAccountsAccountError>> postCustomersCustomerCards({required String customer, PostCustomersCustomerCardsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6148,16 +5862,14 @@ return execute(
   onSuccess: (response) {
     return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`Update a specified source for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/cards/{id}`
-Future<ApiResult<PostCustomersCustomerCardsIdResponse, ErrorModel>> postCustomersCustomerCardsId({required String customer, required String id, PostCustomersCustomerCardsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostCustomersCustomerCardsIdResponse, DeleteAccountsAccountError>> postCustomersCustomerCardsId({required String customer, required String id, PostCustomersCustomerCardsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6202,9 +5914,7 @@ return execute(
   onSuccess: (response) {
     return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a customer source
@@ -6212,7 +5922,7 @@ return execute(
 /// `<p>`Delete a specified source for a given customer.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/cards/{id}`
-Future<ApiResult<DeleteCustomersCustomerCardsIdResponse, ErrorModel>> deleteCustomersCustomerCardsId({required String customer, required String id, DeleteCustomersCustomerCardsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteCustomersCustomerCardsIdResponse, DeleteAccountsAccountError>> deleteCustomersCustomerCardsId({required String customer, required String id, DeleteCustomersCustomerCardsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6231,9 +5941,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a cash balance
@@ -6241,7 +5949,7 @@ return execute(
 /// `<p>`Retrieves a customer’s cash balance.`</p>`
 ///
 /// `GET /v1/customers/{customer}/cash_balance`
-Future<ApiResult<CashBalance, ErrorModel>> getCustomersCustomerCashBalance({required String customer, List<String>? expand, GetCustomersCustomerCashBalanceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CashBalance, DeleteAccountsAccountError>> getCustomersCustomerCashBalance({required String customer, List<String>? expand, GetCustomersCustomerCashBalanceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -6266,9 +5974,7 @@ return execute(
   onSuccess: (response) {
     return CashBalance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a cash balance's settings
@@ -6276,7 +5982,7 @@ return execute(
 /// `<p>`Changes the settings on a customer’s cash balance.`</p>`
 ///
 /// `POST /v1/customers/{customer}/cash_balance`
-Future<ApiResult<CashBalance, ErrorModel>> postCustomersCustomerCashBalance({required String customer, PostCustomersCustomerCashBalanceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CashBalance, DeleteAccountsAccountError>> postCustomersCustomerCashBalance({required String customer, PostCustomersCustomerCashBalanceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6297,9 +6003,7 @@ return execute(
   onSuccess: (response) {
     return CashBalance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List cash balance transactions
@@ -6307,7 +6011,7 @@ return execute(
 /// `<p>`Returns a list of transactions that modified the customer’s `<a href="/docs/payments/customer-balance">`cash balance`</a>`.`</p>`
 ///
 /// `GET /v1/customers/{customer}/cash_balance_transactions`
-Future<ApiResult<GetCustomersCustomerCashBalanceTransactionsResponse, ErrorModel>> getCustomersCustomerCashBalanceTransactions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerCashBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerCashBalanceTransactionsResponse, DeleteAccountsAccountError>> getCustomersCustomerCashBalanceTransactions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerCashBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -6341,9 +6045,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersCustomerCashBalanceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a cash balance transaction
@@ -6351,7 +6053,7 @@ return execute(
 /// `<p>`Retrieves a specific cash balance transaction, which updated the customer’s `<a href="/docs/payments/customer-balance">`cash balance`</a>`.`</p>`
 ///
 /// `GET /v1/customers/{customer}/cash_balance_transactions/{transaction}`
-Future<ApiResult<CustomerCashBalanceTransaction, ErrorModel>> getCustomersCustomerCashBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, GetCustomersCustomerCashBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CustomerCashBalanceTransaction, DeleteAccountsAccountError>> getCustomersCustomerCashBalanceTransactionsTransaction({required String customer, required String transaction, List<String>? expand, GetCustomersCustomerCashBalanceTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -6376,16 +6078,14 @@ return execute(
   onSuccess: (response) {
     return CustomerCashBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// 
 ///
 /// `GET /v1/customers/{customer}/discount`
-Future<ApiResult<Discount, ErrorModel>> getCustomersCustomerDiscount({required String customer, List<String>? expand, GetCustomersCustomerDiscountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Discount, DeleteAccountsAccountError>> getCustomersCustomerDiscount({required String customer, List<String>? expand, GetCustomersCustomerDiscountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -6410,9 +6110,7 @@ return execute(
   onSuccess: (response) {
     return Discount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a customer discount
@@ -6420,7 +6118,7 @@ return execute(
 /// `<p>`Removes the currently applied discount on a customer.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/discount`
-Future<ApiResult<DeletedDiscount, ErrorModel>> deleteCustomersCustomerDiscount({required String customer, DeleteCustomersCustomerDiscountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedDiscount, DeleteAccountsAccountError>> deleteCustomersCustomerDiscount({required String customer, DeleteCustomersCustomerDiscountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6437,9 +6135,7 @@ return execute(
   onSuccess: (response) {
     return DeletedDiscount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create or retrieve funding instructions for a customer cash balance
@@ -6449,7 +6145,7 @@ return execute(
 /// funding instructions will be retrieved. In other words, we will return the same funding instructions each time.`</p>`
 ///
 /// `POST /v1/customers/{customer}/funding_instructions`
-Future<ApiResult<FundingInstructions, ErrorModel>> postCustomersCustomerFundingInstructions({required String customer, required PostCustomersCustomerFundingInstructionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FundingInstructions, DeleteAccountsAccountError>> postCustomersCustomerFundingInstructions({required String customer, required PostCustomersCustomerFundingInstructionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6471,9 +6167,7 @@ return execute(
   onSuccess: (response) {
     return FundingInstructions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List a Customer's PaymentMethods
@@ -6481,7 +6175,7 @@ return execute(
 /// `<p>`Returns a list of PaymentMethods for a given Customer`</p>`
 ///
 /// `GET /v1/customers/{customer}/payment_methods`
-Future<ApiResult<GetCustomersCustomerPaymentMethodsResponse, ErrorModel>> getCustomersCustomerPaymentMethods({required String customer, GetCustomersCustomerPaymentMethodsAllowRedisplay? allowRedisplay, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerPaymentMethodsType? type, GetCustomersCustomerPaymentMethodsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerPaymentMethodsResponse, DeleteAccountsAccountError>> getCustomersCustomerPaymentMethods({required String customer, GetCustomersCustomerPaymentMethodsAllowRedisplay? allowRedisplay, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerPaymentMethodsType? type, GetCustomersCustomerPaymentMethodsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowRedisplay != null) {
   queryParameters['allow_redisplay'] = allowRedisplay.toJson();
@@ -6521,9 +6215,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersCustomerPaymentMethodsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Customer's PaymentMethod
@@ -6531,7 +6223,7 @@ return execute(
 /// `<p>`Retrieves a PaymentMethod object for a given Customer.`</p>`
 ///
 /// `GET /v1/customers/{customer}/payment_methods/{payment_method}`
-Future<ApiResult<PaymentMethod, ErrorModel>> getCustomersCustomerPaymentMethodsPaymentMethod({required String customer, required String paymentMethod, List<String>? expand, GetCustomersCustomerPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> getCustomersCustomerPaymentMethodsPaymentMethod({required String customer, required String paymentMethod, List<String>? expand, GetCustomersCustomerPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -6556,16 +6248,14 @@ return execute(
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`List sources for a specified customer.`</p>`
 ///
 /// `GET /v1/customers/{customer}/sources`
-Future<ApiResult<GetCustomersCustomerSourcesResponse, ErrorModel>> getCustomersCustomerSources({required String customer, String? endingBefore, List<String>? expand, int? limit, String? object, String? startingAfter, GetCustomersCustomerSourcesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerSourcesResponse, DeleteAccountsAccountError>> getCustomersCustomerSources({required String customer, String? endingBefore, List<String>? expand, int? limit, String? object, String? startingAfter, GetCustomersCustomerSourcesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -6602,9 +6292,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersCustomerSourcesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a card
@@ -6616,7 +6304,7 @@ return execute(
 /// To change the default, you should `<a href="/docs/api#update_customer">`update the customer`</a>` to have a new `<code>`default_source`</code>`.`</p>`
 ///
 /// `POST /v1/customers/{customer}/sources`
-Future<ApiResult<PaymentSource, ErrorModel>> postCustomersCustomerSources({required String customer, PostCustomersCustomerSourcesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentSource, DeleteAccountsAccountError>> postCustomersCustomerSources({required String customer, PostCustomersCustomerSourcesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6645,16 +6333,14 @@ return execute(
   onSuccess: (response) {
     return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`Retrieve a specified source for a given customer.`</p>`
 ///
 /// `GET /v1/customers/{customer}/sources/{id}`
-Future<ApiResult<PaymentSource, ErrorModel>> getCustomersCustomerSourcesId({required String customer, required String id, List<String>? expand, GetCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentSource, DeleteAccountsAccountError>> getCustomersCustomerSourcesId({required String customer, required String id, List<String>? expand, GetCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -6679,16 +6365,14 @@ return execute(
   onSuccess: (response) {
     return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`Update a specified source for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/sources/{id}`
-Future<ApiResult<PostCustomersCustomerSourcesIdResponse, ErrorModel>> postCustomersCustomerSourcesId({required String customer, required String id, PostCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostCustomersCustomerSourcesIdResponse, DeleteAccountsAccountError>> postCustomersCustomerSourcesId({required String customer, required String id, PostCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6733,9 +6417,7 @@ return execute(
   onSuccess: (response) {
     return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a customer source
@@ -6743,7 +6425,7 @@ return execute(
 /// `<p>`Delete a specified source for a given customer.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/sources/{id}`
-Future<ApiResult<DeleteCustomersCustomerSourcesIdResponse, ErrorModel>> deleteCustomersCustomerSourcesId({required String customer, required String id, DeleteCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteCustomersCustomerSourcesIdResponse, DeleteAccountsAccountError>> deleteCustomersCustomerSourcesId({required String customer, required String id, DeleteCustomersCustomerSourcesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6762,9 +6444,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Verify a bank account
@@ -6772,7 +6452,7 @@ return execute(
 /// `<p>`Verify a specified bank account for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/sources/{id}/verify`
-Future<ApiResult<BankAccount, ErrorModel>> postCustomersCustomerSourcesIdVerify({required String customer, required String id, PostCustomersCustomerSourcesIdVerifyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BankAccount, DeleteAccountsAccountError>> postCustomersCustomerSourcesIdVerify({required String customer, required String id, PostCustomersCustomerSourcesIdVerifyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6793,9 +6473,7 @@ return execute(
   onSuccess: (response) {
     return BankAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List active subscriptions
@@ -6803,7 +6481,7 @@ return execute(
 /// `<p>`You can see a list of the customer’s active subscriptions. Note that the 10 most recent active subscriptions are always available by default on the customer object. If you need more than those 10, you can use the limit and starting_after parameters to page through additional subscriptions.`</p>`
 ///
 /// `GET /v1/customers/{customer}/subscriptions`
-Future<ApiResult<GetCustomersCustomerSubscriptionsResponse, ErrorModel>> getCustomersCustomerSubscriptions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerSubscriptionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerSubscriptionsResponse, DeleteAccountsAccountError>> getCustomersCustomerSubscriptions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerSubscriptionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -6837,9 +6515,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersCustomerSubscriptionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a subscription
@@ -6847,7 +6523,7 @@ return execute(
 /// `<p>`Creates a new subscription on an existing customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/subscriptions`
-Future<ApiResult<Subscription, ErrorModel>> postCustomersCustomerSubscriptions({required String customer, PostCustomersCustomerSubscriptionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> postCustomersCustomerSubscriptions({required String customer, PostCustomersCustomerSubscriptionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -6922,9 +6598,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a subscription
@@ -6932,7 +6606,7 @@ return execute(
 /// `<p>`Retrieves the subscription with the given ID.`</p>`
 ///
 /// `GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, ErrorModel>> getCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, List<String>? expand, GetCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> getCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, List<String>? expand, GetCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -6957,9 +6631,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a subscription on a customer
@@ -6967,7 +6639,7 @@ return execute(
 /// `<p>`Updates an existing subscription on a customer to match the specified parameters. When changing plans or quantities, we will optionally prorate the price we charge next month to make up for any price changes. To preview how the proration will be calculated, use the `<a href="#upcoming_invoice">`upcoming invoice`</a>` endpoint.`</p>`
 ///
 /// `POST /v1/customers/{customer}/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, ErrorModel>> postCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> postCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7042,9 +6714,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel a subscription
@@ -7056,7 +6726,7 @@ return execute(
 /// `<p>`By default, upon subscription cancellation, Stripe will stop automatic collection of all finalized invoices for the customer. This is intended to prevent unexpected payment attempts after the customer has canceled a subscription. However, you can resume automatic collection of the invoices manually after subscription cancellation to have us proceed. Or, you could check for unpaid invoices before allowing the customer to cancel the subscription at all.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, ErrorModel>> deleteCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> deleteCustomersCustomerSubscriptionsSubscriptionExposedId({required String customer, required String subscriptionExposedId, DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7079,16 +6749,14 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// 
 ///
 /// `GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount`
-Future<ApiResult<Discount, ErrorModel>> getCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, List<String>? expand, GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Discount, DeleteAccountsAccountError>> getCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, List<String>? expand, GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -7113,9 +6781,7 @@ return execute(
   onSuccess: (response) {
     return Discount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a customer discount
@@ -7123,7 +6789,7 @@ return execute(
 /// `<p>`Removes the currently applied discount on a customer.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount`
-Future<ApiResult<DeletedDiscount, ErrorModel>> deleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedDiscount, DeleteAccountsAccountError>> deleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount({required String customer, required String subscriptionExposedId, DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7140,9 +6806,7 @@ return execute(
   onSuccess: (response) {
     return DeletedDiscount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all Customer tax IDs
@@ -7150,7 +6814,7 @@ return execute(
 /// `<p>`Returns a list of tax IDs for a customer.`</p>`
 ///
 /// `GET /v1/customers/{customer}/tax_ids`
-Future<ApiResult<GetCustomersCustomerTaxIdsResponse, ErrorModel>> getCustomersCustomerTaxIds({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerTaxIdsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersCustomerTaxIdsResponse, DeleteAccountsAccountError>> getCustomersCustomerTaxIds({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerTaxIdsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -7184,9 +6848,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersCustomerTaxIdsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a Customer tax ID
@@ -7194,7 +6856,7 @@ return execute(
 /// `<p>`Creates a new `<code>`tax_id`</code>` object for a customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/tax_ids`
-Future<ApiResult<TaxId, ErrorModel>> postCustomersCustomerTaxIds({required String customer, required PostCustomersCustomerTaxIdsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxId, DeleteAccountsAccountError>> postCustomersCustomerTaxIds({required String customer, required PostCustomersCustomerTaxIdsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7215,9 +6877,7 @@ return execute(
   onSuccess: (response) {
     return TaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Customer tax ID
@@ -7225,7 +6885,7 @@ return execute(
 /// `<p>`Retrieves the `<code>`tax_id`</code>` object with the given identifier.`</p>`
 ///
 /// `GET /v1/customers/{customer}/tax_ids/{id}`
-Future<ApiResult<TaxId, ErrorModel>> getCustomersCustomerTaxIdsId({required String customer, required String id, List<String>? expand, GetCustomersCustomerTaxIdsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxId, DeleteAccountsAccountError>> getCustomersCustomerTaxIdsId({required String customer, required String id, List<String>? expand, GetCustomersCustomerTaxIdsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -7250,9 +6910,7 @@ return execute(
   onSuccess: (response) {
     return TaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a Customer tax ID
@@ -7260,7 +6918,7 @@ return execute(
 /// `<p>`Deletes an existing `<code>`tax_id`</code>` object.`</p>`
 ///
 /// `DELETE /v1/customers/{customer}/tax_ids/{id}`
-Future<ApiResult<DeletedTaxId, ErrorModel>> deleteCustomersCustomerTaxIdsId({required String customer, required String id, DeleteCustomersCustomerTaxIdsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedTaxId, DeleteAccountsAccountError>> deleteCustomersCustomerTaxIdsId({required String customer, required String id, DeleteCustomersCustomerTaxIdsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7277,9 +6935,7 @@ return execute(
   onSuccess: (response) {
     return DeletedTaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all disputes
@@ -7287,7 +6943,7 @@ return execute(
 /// `<p>`Returns a list of your disputes.`</p>`
 ///
 /// `GET /v1/disputes`
-Future<ApiResult<GetDisputesResponse, ErrorModel>> getDisputes({String? charge, GetDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetDisputesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetDisputesResponse, DeleteAccountsAccountError>> getDisputes({String? charge, GetDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetDisputesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (charge != null) {
   queryParameters['charge'] = charge;
@@ -7330,9 +6986,7 @@ return execute(
   onSuccess: (response) {
     return GetDisputesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a dispute
@@ -7340,7 +6994,7 @@ return execute(
 /// `<p>`Retrieves the dispute with the given ID.`</p>`
 ///
 /// `GET /v1/disputes/{dispute}`
-Future<ApiResult<Dispute, ErrorModel>> getDisputesDispute({required String dispute, List<String>? expand, GetDisputesDisputeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Dispute, DeleteAccountsAccountError>> getDisputesDispute({required String dispute, List<String>? expand, GetDisputesDisputeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -7365,9 +7019,7 @@ return execute(
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a dispute
@@ -7377,7 +7029,7 @@ return execute(
 /// `<p>`Depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our `<a href="/docs/disputes/categories">`guide to dispute types`</a>`.`</p>`
 ///
 /// `POST /v1/disputes/{dispute}`
-Future<ApiResult<Dispute, ErrorModel>> postDisputesDispute({required String dispute, PostDisputesDisputeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Dispute, DeleteAccountsAccountError>> postDisputesDispute({required String dispute, PostDisputesDisputeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7402,9 +7054,7 @@ return execute(
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Close a dispute
@@ -7414,7 +7064,7 @@ return execute(
 /// `<p>`The status of the dispute will change from `<code>`needs_response`</code>` to `<code>`lost`</code>`. `<em>`Closing a dispute is irreversible`</em>`.`</p>`
 ///
 /// `POST /v1/disputes/{dispute}/close`
-Future<ApiResult<Dispute, ErrorModel>> postDisputesDisputeClose({required String dispute, PostDisputesDisputeCloseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Dispute, DeleteAccountsAccountError>> postDisputesDisputeClose({required String dispute, PostDisputesDisputeCloseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7433,9 +7083,7 @@ return execute(
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all active entitlements
@@ -7443,7 +7091,7 @@ return execute(
 /// `<p>`Retrieve a list of active entitlements for a customer`</p>`
 ///
 /// `GET /v1/entitlements/active_entitlements`
-Future<ApiResult<GetEntitlementsActiveEntitlementsResponse, ErrorModel>> getEntitlementsActiveEntitlements({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetEntitlementsActiveEntitlementsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetEntitlementsActiveEntitlementsResponse, DeleteAccountsAccountError>> getEntitlementsActiveEntitlements({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetEntitlementsActiveEntitlementsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['customer'] = customer;
 if (endingBefore != null) {
@@ -7478,9 +7126,7 @@ return execute(
   onSuccess: (response) {
     return GetEntitlementsActiveEntitlementsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an active entitlement
@@ -7488,7 +7134,7 @@ return execute(
 /// `<p>`Retrieve an active entitlement`</p>`
 ///
 /// `GET /v1/entitlements/active_entitlements/{id}`
-Future<ApiResult<EntitlementsActiveEntitlement, ErrorModel>> getEntitlementsActiveEntitlementsId({required String id, List<String>? expand, GetEntitlementsActiveEntitlementsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EntitlementsActiveEntitlement, DeleteAccountsAccountError>> getEntitlementsActiveEntitlementsId({required String id, List<String>? expand, GetEntitlementsActiveEntitlementsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -7513,9 +7159,7 @@ return execute(
   onSuccess: (response) {
     return EntitlementsActiveEntitlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all features
@@ -7523,7 +7167,7 @@ return execute(
 /// `<p>`Retrieve a list of features`</p>`
 ///
 /// `GET /v1/entitlements/features`
-Future<ApiResult<GetEntitlementsFeaturesResponse, ErrorModel>> getEntitlementsFeatures({bool? archived, String? endingBefore, List<String>? expand, int? limit, String? lookupKey, String? startingAfter, GetEntitlementsFeaturesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetEntitlementsFeaturesResponse, DeleteAccountsAccountError>> getEntitlementsFeatures({bool? archived, String? endingBefore, List<String>? expand, int? limit, String? lookupKey, String? startingAfter, GetEntitlementsFeaturesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (archived != null) {
   queryParameters['archived'] = archived.toString();
@@ -7563,9 +7207,7 @@ return execute(
   onSuccess: (response) {
     return GetEntitlementsFeaturesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a feature
@@ -7573,7 +7215,7 @@ return execute(
 /// `<p>`Creates a feature`</p>`
 ///
 /// `POST /v1/entitlements/features`
-Future<ApiResult<EntitlementsFeature, ErrorModel>> postEntitlementsFeatures({required PostEntitlementsFeaturesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EntitlementsFeature, DeleteAccountsAccountError>> postEntitlementsFeatures({required PostEntitlementsFeaturesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7596,9 +7238,7 @@ return execute(
   onSuccess: (response) {
     return EntitlementsFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a feature
@@ -7606,7 +7246,7 @@ return execute(
 /// `<p>`Retrieves a feature`</p>`
 ///
 /// `GET /v1/entitlements/features/{id}`
-Future<ApiResult<EntitlementsFeature, ErrorModel>> getEntitlementsFeaturesId({required String id, List<String>? expand, GetEntitlementsFeaturesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EntitlementsFeature, DeleteAccountsAccountError>> getEntitlementsFeaturesId({required String id, List<String>? expand, GetEntitlementsFeaturesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -7631,9 +7271,7 @@ return execute(
   onSuccess: (response) {
     return EntitlementsFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Updates a feature
@@ -7641,7 +7279,7 @@ return execute(
 /// `<p>`Update a feature’s metadata or permanently deactivate it.`</p>`
 ///
 /// `POST /v1/entitlements/features/{id}`
-Future<ApiResult<EntitlementsFeature, ErrorModel>> postEntitlementsFeaturesId({required String id, PostEntitlementsFeaturesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EntitlementsFeature, DeleteAccountsAccountError>> postEntitlementsFeaturesId({required String id, PostEntitlementsFeaturesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7666,9 +7304,7 @@ return execute(
   onSuccess: (response) {
     return EntitlementsFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an ephemeral key
@@ -7676,7 +7312,7 @@ return execute(
 /// `<p>`Creates a short-lived API key for a given resource.`</p>`
 ///
 /// `POST /v1/ephemeral_keys`
-Future<ApiResult<EphemeralKey, ErrorModel>> postEphemeralKeys({PostEphemeralKeysRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EphemeralKey, DeleteAccountsAccountError>> postEphemeralKeys({PostEphemeralKeysRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7703,9 +7339,7 @@ return execute(
   onSuccess: (response) {
     return EphemeralKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Immediately invalidate an ephemeral key
@@ -7713,7 +7347,7 @@ return execute(
 /// `<p>`Invalidates a short-lived API key for a given resource.`</p>`
 ///
 /// `DELETE /v1/ephemeral_keys/{key}`
-Future<ApiResult<EphemeralKey, ErrorModel>> deleteEphemeralKeysKey({required String key, DeleteEphemeralKeysKeyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EphemeralKey, DeleteAccountsAccountError>> deleteEphemeralKeysKey({required String key, DeleteEphemeralKeysKeyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7732,9 +7366,7 @@ return execute(
   onSuccess: (response) {
     return EphemeralKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all events
@@ -7742,7 +7374,7 @@ return execute(
 /// `<p>`List events, going back up to 30 days. Each event data is rendered according to Stripe API version at its creation time, specified in `<a href="https://docs.stripe.com/api/events/object">`event object`</a>` `<code>`api_version`</code>` attribute (not according to your current Stripe API version or `<code>`Stripe-Version`</code>` header).`</p>`
 ///
 /// `GET /v1/events`
-Future<ApiResult<GetEventsResponse, ErrorModel>> getEvents({GetEventsCreated? created, bool? deliverySuccess, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? type, List<String>? types, GetEventsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetEventsResponse, DeleteAccountsAccountError>> getEvents({GetEventsCreated? created, bool? deliverySuccess, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? type, List<String>? types, GetEventsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -7788,9 +7420,7 @@ return execute(
   onSuccess: (response) {
     return GetEventsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an event
@@ -7798,7 +7428,7 @@ return execute(
 /// `<p>`Retrieves the details of an event if it was created in the last 30 days. Supply the unique identifier of the event, which you might have received in a webhook.`</p>`
 ///
 /// `GET /v1/events/{id}`
-Future<ApiResult<Event, ErrorModel>> getEventsId({required String id, List<String>? expand, GetEventsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Event, DeleteAccountsAccountError>> getEventsId({required String id, List<String>? expand, GetEventsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -7823,9 +7453,7 @@ return execute(
   onSuccess: (response) {
     return Event.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all exchange rates
@@ -7835,7 +7463,7 @@ return execute(
 /// `<p>`Returns a list of objects that contain the rates at which foreign currencies are converted to one another. Only shows the currencies for which Stripe supports.`</p>`
 ///
 /// `GET /v1/exchange_rates`
-Future<ApiResult<GetExchangeRatesResponse, ErrorModel>> getExchangeRates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetExchangeRatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetExchangeRatesResponse, DeleteAccountsAccountError>> getExchangeRates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetExchangeRatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -7869,9 +7497,7 @@ return execute(
   onSuccess: (response) {
     return GetExchangeRatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an exchange rate
@@ -7881,7 +7507,7 @@ return execute(
 /// `<p>`Retrieves the exchange rates from the given currency to every supported currency.`</p>`
 ///
 /// `GET /v1/exchange_rates/{rate_id}`
-Future<ApiResult<ExchangeRate, ErrorModel>> getExchangeRatesRateId({required String rateId, List<String>? expand, GetExchangeRatesRateIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ExchangeRate, DeleteAccountsAccountError>> getExchangeRatesRateId({required String rateId, List<String>? expand, GetExchangeRatesRateIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -7906,9 +7532,7 @@ return execute(
   onSuccess: (response) {
     return ExchangeRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
@@ -7922,7 +7546,7 @@ return execute(
 /// arguments or changes.`</p>`
 ///
 /// `POST /v1/external_accounts/{id}`
-Future<ApiResult<ExternalAccount, ErrorModel>> postExternalAccountsId({required String id, PostExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ExternalAccount, DeleteAccountsAccountError>> postExternalAccountsId({required String id, PostExternalAccountsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -7971,9 +7595,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all file links
@@ -7981,7 +7603,7 @@ return execute(
 /// `<p>`Returns a list of file links.`</p>`
 ///
 /// `GET /v1/file_links`
-Future<ApiResult<GetFileLinksResponse, ErrorModel>> getFileLinks({GetFileLinksCreated? created, String? endingBefore, List<String>? expand, bool? expired, String? file, int? limit, String? startingAfter, GetFileLinksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetFileLinksResponse, DeleteAccountsAccountError>> getFileLinks({GetFileLinksCreated? created, String? endingBefore, List<String>? expand, bool? expired, String? file, int? limit, String? startingAfter, GetFileLinksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -8024,9 +7646,7 @@ return execute(
   onSuccess: (response) {
     return GetFileLinksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a file link
@@ -8034,7 +7654,7 @@ return execute(
 /// `<p>`Creates a new file link object.`</p>`
 ///
 /// `POST /v1/file_links`
-Future<ApiResult<FileLink, ErrorModel>> postFileLinks({required PostFileLinksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FileLink, DeleteAccountsAccountError>> postFileLinks({required PostFileLinksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8058,9 +7678,7 @@ return execute(
   onSuccess: (response) {
     return FileLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a file link
@@ -8068,7 +7686,7 @@ return execute(
 /// `<p>`Retrieves the file link with the given ID.`</p>`
 ///
 /// `GET /v1/file_links/{link}`
-Future<ApiResult<FileLink, ErrorModel>> getFileLinksLink({required String link, List<String>? expand, GetFileLinksLinkRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FileLink, DeleteAccountsAccountError>> getFileLinksLink({required String link, List<String>? expand, GetFileLinksLinkRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -8093,9 +7711,7 @@ return execute(
   onSuccess: (response) {
     return FileLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a file link
@@ -8103,7 +7719,7 @@ return execute(
 /// `<p>`Updates an existing file link object. Expired links can no longer be updated.`</p>`
 ///
 /// `POST /v1/file_links/{link}`
-Future<ApiResult<FileLink, ErrorModel>> postFileLinksLink({required String link, PostFileLinksLinkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FileLink, DeleteAccountsAccountError>> postFileLinksLink({required String link, PostFileLinksLinkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8126,9 +7742,7 @@ return execute(
   onSuccess: (response) {
     return FileLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all files
@@ -8136,7 +7750,7 @@ return execute(
 /// `<p>`Returns a list of the files that your account has access to. Stripe sorts and returns the files by their creation dates, placing the most recently created files at the top.`</p>`
 ///
 /// `GET /v1/files`
-Future<ApiResult<GetFilesResponse, ErrorModel>> getFiles({GetFilesCreated? created, String? endingBefore, List<String>? expand, int? limit, GetFilesPurpose? purpose, String? startingAfter, GetFilesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetFilesResponse, DeleteAccountsAccountError>> getFiles({GetFilesCreated? created, String? endingBefore, List<String>? expand, int? limit, GetFilesPurpose? purpose, String? startingAfter, GetFilesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -8176,9 +7790,7 @@ return execute(
   onSuccess: (response) {
     return GetFilesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a file
@@ -8188,7 +7800,7 @@ return execute(
 /// `<p>`All of Stripe’s officially supported Client libraries support sending `<code>`multipart/form-data`</code>`.`</p>`
 ///
 /// `POST /v1/files`
-Future<ApiResult<File, ErrorModel>> postFiles({required PostFilesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<File, DeleteAccountsAccountError>> postFiles({required PostFilesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -8211,9 +7823,7 @@ return execute(
   onSuccess: (response) {
     return File.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a file
@@ -8221,7 +7831,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing file object. After you supply a unique file ID, Stripe returns the corresponding file object. Learn how to `<a href="/docs/file-upload#download-file-contents">`access file contents`</a>`.`</p>`
 ///
 /// `GET /v1/files/{file}`
-Future<ApiResult<File, ErrorModel>> getFilesFile({required String file, List<String>? expand, GetFilesFileRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<File, DeleteAccountsAccountError>> getFilesFile({required String file, List<String>? expand, GetFilesFileRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -8246,9 +7856,7 @@ return execute(
   onSuccess: (response) {
     return File.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List Accounts
@@ -8256,7 +7864,7 @@ return execute(
 /// `<p>`Returns a list of Financial Connections `<code>`Account`</code>` objects.`</p>`
 ///
 /// `GET /v1/financial_connections/accounts`
-Future<ApiResult<GetFinancialConnectionsAccountsResponse, ErrorModel>> getFinancialConnectionsAccounts({GetFinancialConnectionsAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, GetFinancialConnectionsAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetFinancialConnectionsAccountsResponse, DeleteAccountsAccountError>> getFinancialConnectionsAccounts({GetFinancialConnectionsAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, GetFinancialConnectionsAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountHolder != null) {
 if (accountHolder.account case final account$?) { queryParameters['account_holder[account]'] = account$; }
@@ -8298,9 +7906,7 @@ return execute(
   onSuccess: (response) {
     return GetFinancialConnectionsAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an Account
@@ -8308,7 +7914,7 @@ return execute(
 /// `<p>`Retrieves the details of an Financial Connections `<code>`Account`</code>`.`</p>`
 ///
 /// `GET /v1/financial_connections/accounts/{account}`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> getFinancialConnectionsAccountsAccount({required String account, List<String>? expand, GetFinancialConnectionsAccountsAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> getFinancialConnectionsAccountsAccount({required String account, List<String>? expand, GetFinancialConnectionsAccountsAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -8333,9 +7939,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Disconnect an Account
@@ -8343,7 +7947,7 @@ return execute(
 /// `<p>`Disables your access to a Financial Connections `<code>`Account`</code>`. You will no longer be able to access data associated with the account (e.g. balances, transactions).`</p>`
 ///
 /// `POST /v1/financial_connections/accounts/{account}/disconnect`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postFinancialConnectionsAccountsAccountDisconnect({required String account, PostFinancialConnectionsAccountsAccountDisconnectRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postFinancialConnectionsAccountsAccountDisconnect({required String account, PostFinancialConnectionsAccountsAccountDisconnectRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8362,9 +7966,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List Account Owners
@@ -8372,7 +7974,7 @@ return execute(
 /// `<p>`Lists all owners for a given `<code>`Account`</code>``</p>`
 ///
 /// `GET /v1/financial_connections/accounts/{account}/owners`
-Future<ApiResult<GetFinancialConnectionsAccountsAccountOwnersResponse, ErrorModel>> getFinancialConnectionsAccountsAccountOwners({required String account, required String ownership, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetFinancialConnectionsAccountsAccountOwnersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetFinancialConnectionsAccountsAccountOwnersResponse, DeleteAccountsAccountError>> getFinancialConnectionsAccountsAccountOwners({required String account, required String ownership, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetFinancialConnectionsAccountsAccountOwnersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -8407,9 +8009,7 @@ return execute(
   onSuccess: (response) {
     return GetFinancialConnectionsAccountsAccountOwnersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Refresh Account data
@@ -8417,7 +8017,7 @@ return execute(
 /// `<p>`Refreshes the data associated with a Financial Connections `<code>`Account`</code>`.`</p>`
 ///
 /// `POST /v1/financial_connections/accounts/{account}/refresh`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postFinancialConnectionsAccountsAccountRefresh({required String account, required PostFinancialConnectionsAccountsAccountRefreshRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postFinancialConnectionsAccountsAccountRefresh({required String account, required PostFinancialConnectionsAccountsAccountRefreshRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8437,9 +8037,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Subscribe to data refreshes for an Account
@@ -8447,7 +8045,7 @@ return execute(
 /// `<p>`Subscribes to periodic refreshes of data associated with a Financial Connections `<code>`Account`</code>`. When the account status is active, data is typically refreshed once a day.`</p>`
 ///
 /// `POST /v1/financial_connections/accounts/{account}/subscribe`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postFinancialConnectionsAccountsAccountSubscribe({required String account, required PostFinancialConnectionsAccountsAccountSubscribeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postFinancialConnectionsAccountsAccountSubscribe({required String account, required PostFinancialConnectionsAccountsAccountSubscribeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8467,9 +8065,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Unsubscribe from data refreshes for an Account
@@ -8477,7 +8073,7 @@ return execute(
 /// `<p>`Unsubscribes from periodic refreshes of data associated with a Financial Connections `<code>`Account`</code>`.`</p>`
 ///
 /// `POST /v1/financial_connections/accounts/{account}/unsubscribe`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postFinancialConnectionsAccountsAccountUnsubscribe({required String account, required PostFinancialConnectionsAccountsAccountUnsubscribeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postFinancialConnectionsAccountsAccountUnsubscribe({required String account, required PostFinancialConnectionsAccountsAccountUnsubscribeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8497,9 +8093,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a Session
@@ -8507,7 +8101,7 @@ return execute(
 /// `<p>`To launch the Financial Connections authorization flow, create a `<code>`Session`</code>`. The session’s `<code>`client_secret`</code>` can be used to launch the flow using Stripe.js.`</p>`
 ///
 /// `POST /v1/financial_connections/sessions`
-Future<ApiResult<FinancialConnectionsSession, ErrorModel>> postFinancialConnectionsSessions({required PostFinancialConnectionsSessionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsSession, DeleteAccountsAccountError>> postFinancialConnectionsSessions({required PostFinancialConnectionsSessionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8534,9 +8128,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Session
@@ -8544,7 +8136,7 @@ return execute(
 /// `<p>`Retrieves the details of a Financial Connections `<code>`Session`</code>``</p>`
 ///
 /// `GET /v1/financial_connections/sessions/{session}`
-Future<ApiResult<FinancialConnectionsSession, ErrorModel>> getFinancialConnectionsSessionsSession({required String session, List<String>? expand, GetFinancialConnectionsSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FinancialConnectionsSession, DeleteAccountsAccountError>> getFinancialConnectionsSessionsSession({required String session, List<String>? expand, GetFinancialConnectionsSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -8569,9 +8161,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List Transactions
@@ -8579,7 +8169,7 @@ return execute(
 /// `<p>`Returns a list of Financial Connections `<code>`Transaction`</code>` objects.`</p>`
 ///
 /// `GET /v1/financial_connections/transactions`
-Future<ApiResult<GetFinancialConnectionsTransactionsResponse, ErrorModel>> getFinancialConnectionsTransactions({required String account, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetFinancialConnectionsTransactionsTransactedAt? transactedAt, GetFinancialConnectionsTransactionsTransactionRefresh? transactionRefresh, GetFinancialConnectionsTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetFinancialConnectionsTransactionsResponse, DeleteAccountsAccountError>> getFinancialConnectionsTransactions({required String account, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetFinancialConnectionsTransactionsTransactedAt? transactedAt, GetFinancialConnectionsTransactionsTransactionRefresh? transactionRefresh, GetFinancialConnectionsTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['account'] = account;
 if (endingBefore != null) {
@@ -8620,9 +8210,7 @@ return execute(
   onSuccess: (response) {
     return GetFinancialConnectionsTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Transaction
@@ -8630,7 +8218,7 @@ return execute(
 /// `<p>`Retrieves the details of a Financial Connections `<code>`Transaction`</code>``</p>`
 ///
 /// `GET /v1/financial_connections/transactions/{transaction}`
-Future<ApiResult<FinancialConnectionsTransaction, ErrorModel>> getFinancialConnectionsTransactionsTransaction({required String transaction, List<String>? expand, GetFinancialConnectionsTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FinancialConnectionsTransaction, DeleteAccountsAccountError>> getFinancialConnectionsTransactionsTransaction({required String transaction, List<String>? expand, GetFinancialConnectionsTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -8655,9 +8243,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all ForwardingRequests
@@ -8665,7 +8251,7 @@ return execute(
 /// `<p>`Lists all ForwardingRequest objects.`</p>`
 ///
 /// `GET /v1/forwarding/requests`
-Future<ApiResult<GetForwardingRequestsResponse, ErrorModel>> getForwardingRequests({GetForwardingRequestsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetForwardingRequestsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetForwardingRequestsResponse, DeleteAccountsAccountError>> getForwardingRequests({GetForwardingRequestsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetForwardingRequestsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 if (created.gt case final gt$?) { queryParameters['created[gt]'] = gt$.toString(); }
@@ -8705,9 +8291,7 @@ return execute(
   onSuccess: (response) {
     return GetForwardingRequestsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a ForwardingRequest
@@ -8715,7 +8299,7 @@ return execute(
 /// `<p>`Creates a ForwardingRequest object.`</p>`
 ///
 /// `POST /v1/forwarding/requests`
-Future<ApiResult<ForwardingRequest, ErrorModel>> postForwardingRequests({required PostForwardingRequestsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ForwardingRequest, DeleteAccountsAccountError>> postForwardingRequests({required PostForwardingRequestsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8741,9 +8325,7 @@ return execute(
   onSuccess: (response) {
     return ForwardingRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a ForwardingRequest
@@ -8751,7 +8333,7 @@ return execute(
 /// `<p>`Retrieves a ForwardingRequest object.`</p>`
 ///
 /// `GET /v1/forwarding/requests/{id}`
-Future<ApiResult<ForwardingRequest, ErrorModel>> getForwardingRequestsId({required String id, List<String>? expand, GetForwardingRequestsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ForwardingRequest, DeleteAccountsAccountError>> getForwardingRequestsId({required String id, List<String>? expand, GetForwardingRequestsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -8776,9 +8358,7 @@ return execute(
   onSuccess: (response) {
     return ForwardingRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List VerificationReports
@@ -8786,7 +8366,7 @@ return execute(
 /// `<p>`List all verification reports.`</p>`
 ///
 /// `GET /v1/identity/verification_reports`
-Future<ApiResult<GetIdentityVerificationReportsResponse, ErrorModel>> getIdentityVerificationReports({String? clientReferenceId, GetIdentityVerificationReportsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIdentityVerificationReportsType? type, String? verificationSession, GetIdentityVerificationReportsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIdentityVerificationReportsResponse, DeleteAccountsAccountError>> getIdentityVerificationReports({String? clientReferenceId, GetIdentityVerificationReportsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIdentityVerificationReportsType? type, String? verificationSession, GetIdentityVerificationReportsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientReferenceId != null) {
   queryParameters['client_reference_id'] = clientReferenceId;
@@ -8832,9 +8412,7 @@ return execute(
   onSuccess: (response) {
     return GetIdentityVerificationReportsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a VerificationReport
@@ -8842,7 +8420,7 @@ return execute(
 /// `<p>`Retrieves an existing VerificationReport`</p>`
 ///
 /// `GET /v1/identity/verification_reports/{report}`
-Future<ApiResult<IdentityVerificationReport, ErrorModel>> getIdentityVerificationReportsReport({required String report, List<String>? expand, GetIdentityVerificationReportsReportRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IdentityVerificationReport, DeleteAccountsAccountError>> getIdentityVerificationReportsReport({required String report, List<String>? expand, GetIdentityVerificationReportsReportRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -8867,9 +8445,7 @@ return execute(
   onSuccess: (response) {
     return IdentityVerificationReport.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List VerificationSessions
@@ -8877,7 +8453,7 @@ return execute(
 /// `<p>`Returns a list of VerificationSessions`</p>`
 ///
 /// `GET /v1/identity/verification_sessions`
-Future<ApiResult<GetIdentityVerificationSessionsResponse, ErrorModel>> getIdentityVerificationSessions({String? clientReferenceId, GetIdentityVerificationSessionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? relatedCustomer, String? relatedCustomerAccount, String? startingAfter, GetIdentityVerificationSessionsStatus? status, GetIdentityVerificationSessionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIdentityVerificationSessionsResponse, DeleteAccountsAccountError>> getIdentityVerificationSessions({String? clientReferenceId, GetIdentityVerificationSessionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? relatedCustomer, String? relatedCustomerAccount, String? startingAfter, GetIdentityVerificationSessionsStatus? status, GetIdentityVerificationSessionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientReferenceId != null) {
   queryParameters['client_reference_id'] = clientReferenceId;
@@ -8926,9 +8502,7 @@ return execute(
   onSuccess: (response) {
     return GetIdentityVerificationSessionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a VerificationSession
@@ -8942,7 +8516,7 @@ return execute(
 /// `<p>`Related guide: `<a href="/docs/identity/verify-identity-documents">`Verify your users’ identity documents`</a>``</p>`
 ///
 /// `POST /v1/identity/verification_sessions`
-Future<ApiResult<IdentityVerificationSession, ErrorModel>> postIdentityVerificationSessions({PostIdentityVerificationSessionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> postIdentityVerificationSessions({PostIdentityVerificationSessionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -8981,9 +8555,7 @@ return execute(
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a VerificationSession
@@ -8994,7 +8566,7 @@ return execute(
 /// `<code>`client_secret`</code>` or `<code>`url`</code>` to allow re-submission.`</p>`
 ///
 /// `GET /v1/identity/verification_sessions/{session}`
-Future<ApiResult<IdentityVerificationSession, ErrorModel>> getIdentityVerificationSessionsSession({required String session, List<String>? expand, GetIdentityVerificationSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> getIdentityVerificationSessionsSession({required String session, List<String>? expand, GetIdentityVerificationSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -9019,9 +8591,7 @@ return execute(
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a VerificationSession
@@ -9032,7 +8602,7 @@ return execute(
 /// verification check and options.`</p>`
 ///
 /// `POST /v1/identity/verification_sessions/{session}`
-Future<ApiResult<IdentityVerificationSession, ErrorModel>> postIdentityVerificationSessionsSession({required String session, PostIdentityVerificationSessionsSessionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> postIdentityVerificationSessionsSession({required String session, PostIdentityVerificationSessionsSessionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9059,9 +8629,7 @@ return execute(
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel a VerificationSession
@@ -9071,7 +8639,7 @@ return execute(
 /// `<p>`Once canceled, future submission attempts are disabled. This cannot be undone. `<a href="/docs/identity/verification-sessions#cancel">`Learn more`</a>`.`</p>`
 ///
 /// `POST /v1/identity/verification_sessions/{session}/cancel`
-Future<ApiResult<IdentityVerificationSession, ErrorModel>> postIdentityVerificationSessionsSessionCancel({required String session, PostIdentityVerificationSessionsSessionCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> postIdentityVerificationSessionsSessionCancel({required String session, PostIdentityVerificationSessionsSessionCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9090,9 +8658,7 @@ return execute(
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Redact a VerificationSession
@@ -9118,7 +8684,7 @@ return execute(
 /// `<p>``<a href="/docs/identity/verification-sessions#redact">`Learn more`</a>`.`</p>`
 ///
 /// `POST /v1/identity/verification_sessions/{session}/redact`
-Future<ApiResult<IdentityVerificationSession, ErrorModel>> postIdentityVerificationSessionsSessionRedact({required String session, PostIdentityVerificationSessionsSessionRedactRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IdentityVerificationSession, DeleteAccountsAccountError>> postIdentityVerificationSessionsSessionRedact({required String session, PostIdentityVerificationSessionsSessionRedactRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9137,9 +8703,7 @@ return execute(
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all payments for an invoice
@@ -9147,7 +8711,7 @@ return execute(
 /// `<p>`When retrieving an invoice, there is an includable payments property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of payments.`</p>`
 ///
 /// `GET /v1/invoice_payments`
-Future<ApiResult<GetInvoicePaymentsResponse, ErrorModel>> getInvoicePayments({GetInvoicePaymentsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, GetInvoicePaymentsPayment? payment, String? startingAfter, GetInvoicePaymentsStatus? status, GetInvoicePaymentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoicePaymentsResponse, DeleteAccountsAccountError>> getInvoicePayments({GetInvoicePaymentsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, GetInvoicePaymentsPayment? payment, String? startingAfter, GetInvoicePaymentsStatus? status, GetInvoicePaymentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -9195,9 +8759,7 @@ return execute(
   onSuccess: (response) {
     return GetInvoicePaymentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an InvoicePayment
@@ -9205,7 +8767,7 @@ return execute(
 /// `<p>`Retrieves the invoice payment with the given ID.`</p>`
 ///
 /// `GET /v1/invoice_payments/{invoice_payment}`
-Future<ApiResult<InvoicePayment, ErrorModel>> getInvoicePaymentsInvoicePayment({required String invoicePayment, List<String>? expand, GetInvoicePaymentsInvoicePaymentRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<InvoicePayment, DeleteAccountsAccountError>> getInvoicePaymentsInvoicePayment({required String invoicePayment, List<String>? expand, GetInvoicePaymentsInvoicePaymentRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -9230,9 +8792,7 @@ return execute(
   onSuccess: (response) {
     return InvoicePayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all invoice rendering templates
@@ -9240,7 +8800,7 @@ return execute(
 /// `<p>`List all templates, ordered by creation date, with the most recently created template appearing first.`</p>`
 ///
 /// `GET /v1/invoice_rendering_templates`
-Future<ApiResult<GetInvoiceRenderingTemplatesResponse, ErrorModel>> getInvoiceRenderingTemplates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoiceRenderingTemplatesStatus? status, GetInvoiceRenderingTemplatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoiceRenderingTemplatesResponse, DeleteAccountsAccountError>> getInvoiceRenderingTemplates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoiceRenderingTemplatesStatus? status, GetInvoiceRenderingTemplatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -9277,9 +8837,7 @@ return execute(
   onSuccess: (response) {
     return GetInvoiceRenderingTemplatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an invoice rendering template
@@ -9287,7 +8845,7 @@ return execute(
 /// `<p>`Retrieves an invoice rendering template with the given ID. It by default returns the latest version of the template. Optionally, specify a version to see previous versions.`</p>`
 ///
 /// `GET /v1/invoice_rendering_templates/{template}`
-Future<ApiResult<InvoiceRenderingTemplate, ErrorModel>> getInvoiceRenderingTemplatesTemplate({required String template, List<String>? expand, int? version, GetInvoiceRenderingTemplatesTemplateRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<InvoiceRenderingTemplate, DeleteAccountsAccountError>> getInvoiceRenderingTemplatesTemplate({required String template, List<String>? expand, int? version, GetInvoiceRenderingTemplatesTemplateRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -9315,9 +8873,7 @@ return execute(
   onSuccess: (response) {
     return InvoiceRenderingTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Archive an invoice rendering template
@@ -9325,7 +8881,7 @@ return execute(
 /// `<p>`Updates the status of an invoice rendering template to ‘archived’ so no new Stripe objects (customers, invoices, etc.) can reference it. The template can also no longer be updated. However, if the template is already set on a Stripe object, it will continue to be applied on invoices generated by it.`</p>`
 ///
 /// `POST /v1/invoice_rendering_templates/{template}/archive`
-Future<ApiResult<InvoiceRenderingTemplate, ErrorModel>> postInvoiceRenderingTemplatesTemplateArchive({required String template, PostInvoiceRenderingTemplatesTemplateArchiveRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InvoiceRenderingTemplate, DeleteAccountsAccountError>> postInvoiceRenderingTemplatesTemplateArchive({required String template, PostInvoiceRenderingTemplatesTemplateArchiveRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9344,9 +8900,7 @@ return execute(
   onSuccess: (response) {
     return InvoiceRenderingTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Unarchive an invoice rendering template
@@ -9354,7 +8908,7 @@ return execute(
 /// `<p>`Unarchive an invoice rendering template so it can be used on new Stripe objects again.`</p>`
 ///
 /// `POST /v1/invoice_rendering_templates/{template}/unarchive`
-Future<ApiResult<InvoiceRenderingTemplate, ErrorModel>> postInvoiceRenderingTemplatesTemplateUnarchive({required String template, PostInvoiceRenderingTemplatesTemplateUnarchiveRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InvoiceRenderingTemplate, DeleteAccountsAccountError>> postInvoiceRenderingTemplatesTemplateUnarchive({required String template, PostInvoiceRenderingTemplatesTemplateUnarchiveRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9373,9 +8927,7 @@ return execute(
   onSuccess: (response) {
     return InvoiceRenderingTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all invoice items
@@ -9383,7 +8935,7 @@ return execute(
 /// `<p>`Returns a list of your invoice items. Invoice items are returned sorted by creation date, with the most recently created invoice items appearing first.`</p>`
 ///
 /// `GET /v1/invoiceitems`
-Future<ApiResult<GetInvoiceitemsResponse, ErrorModel>> getInvoiceitems({GetInvoiceitemsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, bool? pending, String? startingAfter, GetInvoiceitemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoiceitemsResponse, DeleteAccountsAccountError>> getInvoiceitems({GetInvoiceitemsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, bool? pending, String? startingAfter, GetInvoiceitemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -9432,9 +8984,7 @@ return execute(
   onSuccess: (response) {
     return GetInvoiceitemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an invoice item
@@ -9442,7 +8992,7 @@ return execute(
 /// `<p>`Creates an item to be added to a draft invoice (up to 250 items per invoice). If no invoice is specified, the item will be on the next invoice created for the customer specified.`</p>`
 ///
 /// `POST /v1/invoiceitems`
-Future<ApiResult<Invoiceitem, ErrorModel>> postInvoiceitems({PostInvoiceitemsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoiceitem, DeleteAccountsAccountError>> postInvoiceitems({PostInvoiceitemsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9497,9 +9047,7 @@ return execute(
   onSuccess: (response) {
     return Invoiceitem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an invoice item
@@ -9507,7 +9055,7 @@ return execute(
 /// `<p>`Retrieves the invoice item with the given ID.`</p>`
 ///
 /// `GET /v1/invoiceitems/{invoiceitem}`
-Future<ApiResult<Invoiceitem, ErrorModel>> getInvoiceitemsInvoiceitem({required String invoiceitem, List<String>? expand, GetInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Invoiceitem, DeleteAccountsAccountError>> getInvoiceitemsInvoiceitem({required String invoiceitem, List<String>? expand, GetInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -9532,9 +9080,7 @@ return execute(
   onSuccess: (response) {
     return Invoiceitem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update an invoice item
@@ -9542,7 +9088,7 @@ return execute(
 /// `<p>`Updates the amount or description of an invoice item on an upcoming invoice. Updating an invoice item is only possible before the invoice it’s attached to is closed.`</p>`
 ///
 /// `POST /v1/invoiceitems/{invoiceitem}`
-Future<ApiResult<Invoiceitem, ErrorModel>> postInvoiceitemsInvoiceitem({required String invoiceitem, PostInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoiceitem, DeleteAccountsAccountError>> postInvoiceitemsInvoiceitem({required String invoiceitem, PostInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9587,9 +9133,7 @@ return execute(
   onSuccess: (response) {
     return Invoiceitem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete an invoice item
@@ -9597,7 +9141,7 @@ return execute(
 /// `<p>`Deletes an invoice item, removing it from an invoice. Deleting invoice items is only possible when they’re not attached to invoices, or if it’s attached to a draft invoice.`</p>`
 ///
 /// `DELETE /v1/invoiceitems/{invoiceitem}`
-Future<ApiResult<DeletedInvoiceitem, ErrorModel>> deleteInvoiceitemsInvoiceitem({required String invoiceitem, DeleteInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedInvoiceitem, DeleteAccountsAccountError>> deleteInvoiceitemsInvoiceitem({required String invoiceitem, DeleteInvoiceitemsInvoiceitemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9614,9 +9158,7 @@ return execute(
   onSuccess: (response) {
     return DeletedInvoiceitem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all invoices
@@ -9624,7 +9166,7 @@ return execute(
 /// `<p>`You can list all invoices, or list the invoices for a specific customer. The invoices are returned sorted by creation date, with the most recently created invoices appearing first.`</p>`
 ///
 /// `GET /v1/invoices`
-Future<ApiResult<GetInvoicesResponse, ErrorModel>> getInvoices({GetInvoicesCollectionMethod? collectionMethod, GetInvoicesCreated? created, String? customer, String? customerAccount, GetInvoicesDueDate? dueDate, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoicesStatus? status, String? subscription, GetInvoicesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoicesResponse, DeleteAccountsAccountError>> getInvoices({GetInvoicesCollectionMethod? collectionMethod, GetInvoicesCreated? created, String? customer, String? customerAccount, GetInvoicesDueDate? dueDate, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoicesStatus? status, String? subscription, GetInvoicesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (collectionMethod != null) {
   queryParameters['collection_method'] = collectionMethod.toJson();
@@ -9679,9 +9221,7 @@ return execute(
   onSuccess: (response) {
     return GetInvoicesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an invoice
@@ -9689,7 +9229,7 @@ return execute(
 /// `<p>`This endpoint creates a draft invoice for a given customer. The invoice remains a draft until you `<a href="#finalize_invoice">`finalize`</a>` the invoice, which allows you to `<a href="/api/invoices/pay">`pay`</a>` or `<a href="/api/invoices/send">`send`</a>` the invoice to your customers.`</p>`
 ///
 /// `POST /v1/invoices`
-Future<ApiResult<Invoice, ErrorModel>> postInvoices({PostInvoicesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoices({PostInvoicesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9772,9 +9312,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a preview invoice
@@ -9790,7 +9328,7 @@ return execute(
 /// `<p>`Note: Currency conversion calculations use the latest exchange rates. Exchange rates may vary between the time of the preview and the time of the actual invoice creation. `<a href="https://docs.stripe.com/currencies/conversions">`Learn more`</a>``</p>`
 ///
 /// `POST /v1/invoices/create_preview`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesCreatePreview({PostInvoicesCreatePreviewRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesCreatePreview({PostInvoicesCreatePreviewRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -9837,9 +9375,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Search invoices
@@ -9850,7 +9386,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/invoices/search`
-Future<ApiResult<GetInvoicesSearchResponse, ErrorModel>> getInvoicesSearch({required String query, List<String>? expand, int? limit, String? page, GetInvoicesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoicesSearchResponse, DeleteAccountsAccountError>> getInvoicesSearch({required String query, List<String>? expand, int? limit, String? page, GetInvoicesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -9882,9 +9418,7 @@ return execute(
   onSuccess: (response) {
     return GetInvoicesSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an invoice
@@ -9892,7 +9426,7 @@ return execute(
 /// `<p>`Retrieves the invoice with the given ID.`</p>`
 ///
 /// `GET /v1/invoices/{invoice}`
-Future<ApiResult<Invoice, ErrorModel>> getInvoicesInvoice({required String invoice, List<String>? expand, GetInvoicesInvoiceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> getInvoicesInvoice({required String invoice, List<String>? expand, GetInvoicesInvoiceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -9917,9 +9451,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update an invoice
@@ -9932,7 +9464,7 @@ return execute(
 /// `<code>`auto_advance=false`</code>`.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoice({required String invoice, PostInvoicesInvoiceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoice({required String invoice, PostInvoicesInvoiceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10003,9 +9535,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a draft invoice
@@ -10013,7 +9543,7 @@ return execute(
 /// `<p>`Permanently deletes a one-off invoice draft. This cannot be undone. Attempts to delete invoices that are no longer in a draft state will fail; once an invoice has been finalized or if an invoice is for a subscription, it must be `<a href="#void_invoice">`voided`</a>`.`</p>`
 ///
 /// `DELETE /v1/invoices/{invoice}`
-Future<ApiResult<DeletedInvoice, ErrorModel>> deleteInvoicesInvoice({required String invoice, DeleteInvoicesInvoiceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedInvoice, DeleteAccountsAccountError>> deleteInvoicesInvoice({required String invoice, DeleteInvoicesInvoiceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10030,9 +9560,7 @@ return execute(
   onSuccess: (response) {
     return DeletedInvoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Bulk add invoice line items
@@ -10040,7 +9568,7 @@ return execute(
 /// `<p>`Adds multiple line items to an invoice. This is only possible when an invoice is still a draft.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/add_lines`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceAddLines({required String invoice, required PostInvoicesInvoiceAddLinesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceAddLines({required String invoice, required PostInvoicesInvoiceAddLinesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10062,9 +9590,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Attach a payment to an Invoice
@@ -10081,7 +9607,7 @@ return execute(
 /// `<p>`See: `<a href="/docs/invoicing/partial-payments">`Partial payments`</a>` to learn more.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/attach_payment`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceAttachPayment({required String invoice, PostInvoicesInvoiceAttachPaymentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceAttachPayment({required String invoice, PostInvoicesInvoiceAttachPaymentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10104,9 +9630,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Finalize an invoice
@@ -10114,7 +9638,7 @@ return execute(
 /// `<p>`Stripe automatically finalizes drafts before sending and attempting payment on invoices. However, if you’d like to finalize a draft invoice manually, you can do so using this method.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/finalize`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceFinalize({required String invoice, PostInvoicesInvoiceFinalizeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceFinalize({required String invoice, PostInvoicesInvoiceFinalizeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10135,9 +9659,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an invoice's line items
@@ -10145,7 +9667,7 @@ return execute(
 /// `<p>`When retrieving an invoice, you’ll get a `<strong>`lines`</strong>` property containing the total count of line items and the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/invoices/{invoice}/lines`
-Future<ApiResult<GetInvoicesInvoiceLinesResponse, ErrorModel>> getInvoicesInvoiceLines({required String invoice, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoicesInvoiceLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoicesInvoiceLinesResponse, DeleteAccountsAccountError>> getInvoicesInvoiceLines({required String invoice, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoicesInvoiceLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -10179,9 +9701,7 @@ return execute(
   onSuccess: (response) {
     return GetInvoicesInvoiceLinesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update an invoice's line item
@@ -10192,7 +9712,7 @@ return execute(
 /// Updating an invoice’s line item is only possible before the invoice is finalized.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/lines/{line_item_id}`
-Future<ApiResult<LineItem, ErrorModel>> postInvoicesInvoiceLinesLineItemId({required String invoice, required String lineItemId, PostInvoicesInvoiceLinesLineItemIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LineItem, DeleteAccountsAccountError>> postInvoicesInvoiceLinesLineItemId({required String invoice, required String lineItemId, PostInvoicesInvoiceLinesLineItemIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10233,9 +9753,7 @@ return execute(
   onSuccess: (response) {
     return LineItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Mark an invoice as uncollectible
@@ -10243,7 +9761,7 @@ return execute(
 /// `<p>`Marking an invoice as uncollectible is useful for keeping track of bad debts that can be written off for accounting purposes.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/mark_uncollectible`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceMarkUncollectible({required String invoice, PostInvoicesInvoiceMarkUncollectibleRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceMarkUncollectible({required String invoice, PostInvoicesInvoiceMarkUncollectibleRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10262,9 +9780,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Pay an invoice
@@ -10272,7 +9788,7 @@ return execute(
 /// `<p>`Stripe automatically creates and then attempts to collect payment on invoices for customers on subscriptions according to your `<a href="https://dashboard.stripe.com/account/billing/automatic">`subscriptions settings`</a>`. However, if you’d like to attempt payment on an invoice out of the normal collection schedule or for some other reason, you can do so.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/pay`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoicePay({required String invoice, PostInvoicesInvoicePayRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoicePay({required String invoice, PostInvoicesInvoicePayRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10303,9 +9819,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Bulk remove invoice line items
@@ -10313,7 +9827,7 @@ return execute(
 /// `<p>`Removes multiple line items from an invoice. This is only possible when an invoice is still a draft.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/remove_lines`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceRemoveLines({required String invoice, required PostInvoicesInvoiceRemoveLinesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceRemoveLines({required String invoice, required PostInvoicesInvoiceRemoveLinesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10335,9 +9849,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Send an invoice for manual payment
@@ -10347,7 +9859,7 @@ return execute(
 /// `<p>`Requests made in test-mode result in no emails being sent, despite sending an `<code>`invoice.sent`</code>` event.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/send`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceSend({required String invoice, PostInvoicesInvoiceSendRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceSend({required String invoice, PostInvoicesInvoiceSendRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10366,9 +9878,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Bulk update invoice line items
@@ -10376,7 +9886,7 @@ return execute(
 /// `<p>`Updates multiple line items on an invoice. This is only possible when an invoice is still a draft.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/update_lines`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceUpdateLines({required String invoice, required PostInvoicesInvoiceUpdateLinesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceUpdateLines({required String invoice, required PostInvoicesInvoiceUpdateLinesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10398,9 +9908,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Void an invoice
@@ -10410,7 +9918,7 @@ return execute(
 /// `<p>`Consult with local regulations to determine whether and how an invoice might be amended, canceled, or voided in the jurisdiction you’re doing business in. You might need to `<a href="#create_invoice">`issue another invoice`</a>` or `<a href="#create_credit_note">`credit note`</a>` instead. Stripe recommends that you consult with your legal counsel for advice specific to your business.`</p>`
 ///
 /// `POST /v1/invoices/{invoice}/void`
-Future<ApiResult<Invoice, ErrorModel>> postInvoicesInvoiceVoid({required String invoice, PostInvoicesInvoiceVoidRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Invoice, DeleteAccountsAccountError>> postInvoicesInvoiceVoid({required String invoice, PostInvoicesInvoiceVoidRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10429,9 +9937,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all authorizations
@@ -10439,7 +9945,7 @@ return execute(
 /// `<p>`Returns a list of Issuing `<code>`Authorization`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/authorizations`
-Future<ApiResult<GetIssuingAuthorizationsResponse, ErrorModel>> getIssuingAuthorizations({String? card, String? cardholder, GetIssuingAuthorizationsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingAuthorizationsStatus? status, GetIssuingAuthorizationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingAuthorizationsResponse, DeleteAccountsAccountError>> getIssuingAuthorizations({String? card, String? cardholder, GetIssuingAuthorizationsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingAuthorizationsStatus? status, GetIssuingAuthorizationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (card != null) {
   queryParameters['card'] = card;
@@ -10485,9 +9991,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingAuthorizationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an authorization
@@ -10495,7 +9999,7 @@ return execute(
 /// `<p>`Retrieves an Issuing `<code>`Authorization`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/authorizations/{authorization}`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> getIssuingAuthorizationsAuthorization({required String authorization, List<String>? expand, GetIssuingAuthorizationsAuthorizationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> getIssuingAuthorizationsAuthorization({required String authorization, List<String>? expand, GetIssuingAuthorizationsAuthorizationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -10520,9 +10024,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update an authorization
@@ -10530,7 +10032,7 @@ return execute(
 /// `<p>`Updates the specified Issuing `<code>`Authorization`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/issuing/authorizations/{authorization}`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postIssuingAuthorizationsAuthorization({required String authorization, PostIssuingAuthorizationsAuthorizationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postIssuingAuthorizationsAuthorization({required String authorization, PostIssuingAuthorizationsAuthorizationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10551,9 +10053,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all cardholders
@@ -10561,7 +10061,7 @@ return execute(
 /// `<p>`Returns a list of Issuing `<code>`Cardholder`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/cardholders`
-Future<ApiResult<GetIssuingCardholdersResponse, ErrorModel>> getIssuingCardholders({GetIssuingCardholdersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? phoneNumber, String? startingAfter, GetIssuingCardholdersStatus? status, GetIssuingCardholdersType? type, GetIssuingCardholdersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingCardholdersResponse, DeleteAccountsAccountError>> getIssuingCardholders({GetIssuingCardholdersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? phoneNumber, String? startingAfter, GetIssuingCardholdersStatus? status, GetIssuingCardholdersType? type, GetIssuingCardholdersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -10610,9 +10110,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingCardholdersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a cardholder
@@ -10620,7 +10118,7 @@ return execute(
 /// `<p>`Creates a new Issuing `<code>`Cardholder`</code>` object that can be issued cards.`</p>`
 ///
 /// `POST /v1/issuing/cardholders`
-Future<ApiResult<IssuingCardholder, ErrorModel>> postIssuingCardholders({required PostIssuingCardholdersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCardholder, DeleteAccountsAccountError>> postIssuingCardholders({required PostIssuingCardholdersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10659,9 +10157,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCardholder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a cardholder
@@ -10669,7 +10165,7 @@ return execute(
 /// `<p>`Retrieves an Issuing `<code>`Cardholder`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/cardholders/{cardholder}`
-Future<ApiResult<IssuingCardholder, ErrorModel>> getIssuingCardholdersCardholder({required String cardholder, List<String>? expand, GetIssuingCardholdersCardholderRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingCardholder, DeleteAccountsAccountError>> getIssuingCardholdersCardholder({required String cardholder, List<String>? expand, GetIssuingCardholdersCardholderRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -10694,9 +10190,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCardholder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a cardholder
@@ -10704,7 +10198,7 @@ return execute(
 /// `<p>`Updates the specified Issuing `<code>`Cardholder`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/issuing/cardholders/{cardholder}`
-Future<ApiResult<IssuingCardholder, ErrorModel>> postIssuingCardholdersCardholder({required String cardholder, PostIssuingCardholdersCardholderRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCardholder, DeleteAccountsAccountError>> postIssuingCardholdersCardholder({required String cardholder, PostIssuingCardholdersCardholderRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10741,9 +10235,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCardholder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all cards
@@ -10751,7 +10243,7 @@ return execute(
 /// `<p>`Returns a list of Issuing `<code>`Card`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/cards`
-Future<ApiResult<GetIssuingCardsResponse, ErrorModel>> getIssuingCards({String? cardholder, GetIssuingCardsCreated? created, String? endingBefore, int? expMonth, int? expYear, List<String>? expand, String? last4, int? limit, String? personalizationDesign, String? startingAfter, GetIssuingCardsStatus? status, GetIssuingCardsType? type, GetIssuingCardsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingCardsResponse, DeleteAccountsAccountError>> getIssuingCards({String? cardholder, GetIssuingCardsCreated? created, String? endingBefore, int? expMonth, int? expYear, List<String>? expand, String? last4, int? limit, String? personalizationDesign, String? startingAfter, GetIssuingCardsStatus? status, GetIssuingCardsType? type, GetIssuingCardsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cardholder != null) {
   queryParameters['cardholder'] = cardholder;
@@ -10809,9 +10301,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingCardsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a card
@@ -10819,7 +10309,7 @@ return execute(
 /// `<p>`Creates an Issuing `<code>`Card`</code>` object.`</p>`
 ///
 /// `POST /v1/issuing/cards`
-Future<ApiResult<IssuingCard, ErrorModel>> postIssuingCards({required PostIssuingCardsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postIssuingCards({required PostIssuingCardsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10866,9 +10356,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a card
@@ -10876,7 +10364,7 @@ return execute(
 /// `<p>`Retrieves an Issuing `<code>`Card`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/cards/{card}`
-Future<ApiResult<IssuingCard, ErrorModel>> getIssuingCardsCard({required String card, List<String>? expand, GetIssuingCardsCardRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> getIssuingCardsCard({required String card, List<String>? expand, GetIssuingCardsCardRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -10901,9 +10389,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a card
@@ -10911,7 +10397,7 @@ return execute(
 /// `<p>`Updates the specified Issuing `<code>`Card`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/issuing/cards/{card}`
-Future<ApiResult<IssuingCard, ErrorModel>> postIssuingCardsCard({required String card, PostIssuingCardsCardRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postIssuingCardsCard({required String card, PostIssuingCardsCardRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -10944,9 +10430,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all disputes
@@ -10954,7 +10438,7 @@ return execute(
 /// `<p>`Returns a list of Issuing `<code>`Dispute`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/disputes`
-Future<ApiResult<GetIssuingDisputesResponse, ErrorModel>> getIssuingDisputes({GetIssuingDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingDisputesStatus? status, String? transaction, GetIssuingDisputesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingDisputesResponse, DeleteAccountsAccountError>> getIssuingDisputes({GetIssuingDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingDisputesStatus? status, String? transaction, GetIssuingDisputesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -10997,9 +10481,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingDisputesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a dispute
@@ -11007,7 +10489,7 @@ return execute(
 /// `<p>`Creates an Issuing `<code>`Dispute`</code>` object. Individual pieces of evidence within the `<code>`evidence`</code>` object are optional at this point. Stripe only validates that required evidence is present during submission. Refer to `<a href="/docs/issuing/purchases/disputes#dispute-reasons-and-evidence">`Dispute reasons and evidence`</a>` for more details about evidence requirements.`</p>`
 ///
 /// `POST /v1/issuing/disputes`
-Future<ApiResult<IssuingDispute, ErrorModel>> postIssuingDisputes({PostIssuingDisputesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingDispute, DeleteAccountsAccountError>> postIssuingDisputes({PostIssuingDisputesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11036,9 +10518,7 @@ return execute(
   onSuccess: (response) {
     return IssuingDispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a dispute
@@ -11046,7 +10526,7 @@ return execute(
 /// `<p>`Retrieves an Issuing `<code>`Dispute`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/disputes/{dispute}`
-Future<ApiResult<IssuingDispute, ErrorModel>> getIssuingDisputesDispute({required String dispute, List<String>? expand, GetIssuingDisputesDisputeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingDispute, DeleteAccountsAccountError>> getIssuingDisputesDispute({required String dispute, List<String>? expand, GetIssuingDisputesDisputeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -11071,9 +10551,7 @@ return execute(
   onSuccess: (response) {
     return IssuingDispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a dispute
@@ -11081,7 +10559,7 @@ return execute(
 /// `<p>`Updates the specified Issuing `<code>`Dispute`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged. Properties on the `<code>`evidence`</code>` object can be unset by passing in an empty string.`</p>`
 ///
 /// `POST /v1/issuing/disputes/{dispute}`
-Future<ApiResult<IssuingDispute, ErrorModel>> postIssuingDisputesDispute({required String dispute, PostIssuingDisputesDisputeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingDispute, DeleteAccountsAccountError>> postIssuingDisputesDispute({required String dispute, PostIssuingDisputesDisputeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11106,9 +10584,7 @@ return execute(
   onSuccess: (response) {
     return IssuingDispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Submit a dispute
@@ -11116,7 +10592,7 @@ return execute(
 /// `<p>`Submits an Issuing `<code>`Dispute`</code>` to the card network. Stripe validates that all evidence fields required for the dispute’s reason are present. For more details, see `<a href="/docs/issuing/purchases/disputes#dispute-reasons-and-evidence">`Dispute reasons and evidence`</a>`.`</p>`
 ///
 /// `POST /v1/issuing/disputes/{dispute}/submit`
-Future<ApiResult<IssuingDispute, ErrorModel>> postIssuingDisputesDisputeSubmit({required String dispute, PostIssuingDisputesDisputeSubmitRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingDispute, DeleteAccountsAccountError>> postIssuingDisputesDisputeSubmit({required String dispute, PostIssuingDisputesDisputeSubmitRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11137,9 +10613,7 @@ return execute(
   onSuccess: (response) {
     return IssuingDispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all personalization designs
@@ -11147,7 +10621,7 @@ return execute(
 /// `<p>`Returns a list of personalization design objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/personalization_designs`
-Future<ApiResult<GetIssuingPersonalizationDesignsResponse, ErrorModel>> getIssuingPersonalizationDesigns({String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, GetIssuingPersonalizationDesignsPreferences? preferences, String? startingAfter, GetIssuingPersonalizationDesignsStatus? status, GetIssuingPersonalizationDesignsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingPersonalizationDesignsResponse, DeleteAccountsAccountError>> getIssuingPersonalizationDesigns({String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, GetIssuingPersonalizationDesignsPreferences? preferences, String? startingAfter, GetIssuingPersonalizationDesignsStatus? status, GetIssuingPersonalizationDesignsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -11191,9 +10665,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingPersonalizationDesignsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a personalization design
@@ -11201,7 +10673,7 @@ return execute(
 /// `<p>`Creates a personalization design object.`</p>`
 ///
 /// `POST /v1/issuing/personalization_designs`
-Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postIssuingPersonalizationDesigns({required PostIssuingPersonalizationDesignsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postIssuingPersonalizationDesigns({required PostIssuingPersonalizationDesignsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11235,9 +10707,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a personalization design
@@ -11245,7 +10715,7 @@ return execute(
 /// `<p>`Retrieves a personalization design object.`</p>`
 ///
 /// `GET /v1/issuing/personalization_designs/{personalization_design}`
-Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> getIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, List<String>? expand, GetIssuingPersonalizationDesignsPersonalizationDesignRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> getIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, List<String>? expand, GetIssuingPersonalizationDesignsPersonalizationDesignRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -11270,9 +10740,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a personalization design
@@ -11280,7 +10748,7 @@ return execute(
 /// `<p>`Updates a card personalization object.`</p>`
 ///
 /// `POST /v1/issuing/personalization_designs/{personalization_design}`
-Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, PostIssuingPersonalizationDesignsPersonalizationDesignRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postIssuingPersonalizationDesignsPersonalizationDesign({required String personalizationDesign, PostIssuingPersonalizationDesignsPersonalizationDesignRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11315,9 +10783,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all physical bundles
@@ -11325,7 +10791,7 @@ return execute(
 /// `<p>`Returns a list of physical bundle objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/physical_bundles`
-Future<ApiResult<GetIssuingPhysicalBundlesResponse, ErrorModel>> getIssuingPhysicalBundles({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingPhysicalBundlesStatus? status, GetIssuingPhysicalBundlesType? type, GetIssuingPhysicalBundlesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingPhysicalBundlesResponse, DeleteAccountsAccountError>> getIssuingPhysicalBundles({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingPhysicalBundlesStatus? status, GetIssuingPhysicalBundlesType? type, GetIssuingPhysicalBundlesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -11365,9 +10831,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingPhysicalBundlesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a physical bundle
@@ -11375,7 +10839,7 @@ return execute(
 /// `<p>`Retrieves a physical bundle object.`</p>`
 ///
 /// `GET /v1/issuing/physical_bundles/{physical_bundle}`
-Future<ApiResult<IssuingPhysicalBundle, ErrorModel>> getIssuingPhysicalBundlesPhysicalBundle({required String physicalBundle, List<String>? expand, GetIssuingPhysicalBundlesPhysicalBundleRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingPhysicalBundle, DeleteAccountsAccountError>> getIssuingPhysicalBundlesPhysicalBundle({required String physicalBundle, List<String>? expand, GetIssuingPhysicalBundlesPhysicalBundleRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -11400,9 +10864,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPhysicalBundle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a settlement
@@ -11410,7 +10872,7 @@ return execute(
 /// `<p>`Retrieves an Issuing `<code>`Settlement`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/settlements/{settlement}`
-Future<ApiResult<IssuingSettlement, ErrorModel>> getIssuingSettlementsSettlement({required String settlement, List<String>? expand, GetIssuingSettlementsSettlementRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingSettlement, DeleteAccountsAccountError>> getIssuingSettlementsSettlement({required String settlement, List<String>? expand, GetIssuingSettlementsSettlementRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -11435,9 +10897,7 @@ return execute(
   onSuccess: (response) {
     return IssuingSettlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a settlement
@@ -11445,7 +10905,7 @@ return execute(
 /// `<p>`Updates the specified Issuing `<code>`Settlement`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/issuing/settlements/{settlement}`
-Future<ApiResult<IssuingSettlement, ErrorModel>> postIssuingSettlementsSettlement({required String settlement, PostIssuingSettlementsSettlementRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingSettlement, DeleteAccountsAccountError>> postIssuingSettlementsSettlement({required String settlement, PostIssuingSettlementsSettlementRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11466,9 +10926,7 @@ return execute(
   onSuccess: (response) {
     return IssuingSettlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all issuing tokens for card
@@ -11476,7 +10934,7 @@ return execute(
 /// `<p>`Lists all Issuing `<code>`Token`</code>` objects for a given card.`</p>`
 ///
 /// `GET /v1/issuing/tokens`
-Future<ApiResult<GetIssuingTokensResponse, ErrorModel>> getIssuingTokens({required String card, GetIssuingTokensCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTokensStatus? status, GetIssuingTokensRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingTokensResponse, DeleteAccountsAccountError>> getIssuingTokens({required String card, GetIssuingTokensCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTokensStatus? status, GetIssuingTokensRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['card'] = card;
 if (created != null) {
@@ -11517,9 +10975,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingTokensResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an issuing token
@@ -11527,7 +10983,7 @@ return execute(
 /// `<p>`Retrieves an Issuing `<code>`Token`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/tokens/{token}`
-Future<ApiResult<IssuingToken, ErrorModel>> getIssuingTokensToken({required String token, List<String>? expand, GetIssuingTokensTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingToken, DeleteAccountsAccountError>> getIssuingTokensToken({required String token, List<String>? expand, GetIssuingTokensTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -11552,9 +11008,7 @@ return execute(
   onSuccess: (response) {
     return IssuingToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a token status
@@ -11562,7 +11016,7 @@ return execute(
 /// `<p>`Attempts to update the specified Issuing `<code>`Token`</code>` object to the status specified.`</p>`
 ///
 /// `POST /v1/issuing/tokens/{token}`
-Future<ApiResult<IssuingToken, ErrorModel>> postIssuingTokensToken({required String token, required PostIssuingTokensTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingToken, DeleteAccountsAccountError>> postIssuingTokensToken({required String token, required PostIssuingTokensTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11582,9 +11036,7 @@ return execute(
   onSuccess: (response) {
     return IssuingToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all transactions
@@ -11592,7 +11044,7 @@ return execute(
 /// `<p>`Returns a list of Issuing `<code>`Transaction`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/issuing/transactions`
-Future<ApiResult<GetIssuingTransactionsResponse, ErrorModel>> getIssuingTransactions({String? card, String? cardholder, GetIssuingTransactionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTransactionsType? type, GetIssuingTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIssuingTransactionsResponse, DeleteAccountsAccountError>> getIssuingTransactions({String? card, String? cardholder, GetIssuingTransactionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTransactionsType? type, GetIssuingTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (card != null) {
   queryParameters['card'] = card;
@@ -11638,9 +11090,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a transaction
@@ -11648,7 +11098,7 @@ return execute(
 /// `<p>`Retrieves an Issuing `<code>`Transaction`</code>` object.`</p>`
 ///
 /// `GET /v1/issuing/transactions/{transaction}`
-Future<ApiResult<IssuingTransaction, ErrorModel>> getIssuingTransactionsTransaction({required String transaction, List<String>? expand, GetIssuingTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> getIssuingTransactionsTransaction({required String transaction, List<String>? expand, GetIssuingTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -11673,9 +11123,7 @@ return execute(
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a transaction
@@ -11683,7 +11131,7 @@ return execute(
 /// `<p>`Updates the specified Issuing `<code>`Transaction`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/issuing/transactions/{transaction}`
-Future<ApiResult<IssuingTransaction, ErrorModel>> postIssuingTransactionsTransaction({required String transaction, PostIssuingTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> postIssuingTransactionsTransaction({required String transaction, PostIssuingTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11704,9 +11152,7 @@ return execute(
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a Session
@@ -11714,7 +11160,7 @@ return execute(
 /// `<p>`To launch the Financial Connections authorization flow, create a `<code>`Session`</code>`. The session’s `<code>`client_secret`</code>` can be used to launch the flow using Stripe.js.`</p>`
 ///
 /// `POST /v1/link_account_sessions`
-Future<ApiResult<FinancialConnectionsSession, ErrorModel>> postLinkAccountSessions({required PostLinkAccountSessionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsSession, DeleteAccountsAccountError>> postLinkAccountSessions({required PostLinkAccountSessionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11741,9 +11187,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Session
@@ -11751,7 +11195,7 @@ return execute(
 /// `<p>`Retrieves the details of a Financial Connections `<code>`Session`</code>``</p>`
 ///
 /// `GET /v1/link_account_sessions/{session}`
-Future<ApiResult<FinancialConnectionsSession, ErrorModel>> getLinkAccountSessionsSession({required String session, List<String>? expand, GetLinkAccountSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FinancialConnectionsSession, DeleteAccountsAccountError>> getLinkAccountSessionsSession({required String session, List<String>? expand, GetLinkAccountSessionsSessionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -11776,9 +11220,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List Accounts
@@ -11786,7 +11228,7 @@ return execute(
 /// `<p>`Returns a list of Financial Connections `<code>`Account`</code>` objects.`</p>`
 ///
 /// `GET /v1/linked_accounts`
-Future<ApiResult<GetLinkedAccountsResponse, ErrorModel>> getLinkedAccounts({GetLinkedAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, GetLinkedAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetLinkedAccountsResponse, DeleteAccountsAccountError>> getLinkedAccounts({GetLinkedAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, GetLinkedAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountHolder != null) {
 if (accountHolder.account case final account$?) { queryParameters['account_holder[account]'] = account$; }
@@ -11828,9 +11270,7 @@ return execute(
   onSuccess: (response) {
     return GetLinkedAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an Account
@@ -11838,7 +11278,7 @@ return execute(
 /// `<p>`Retrieves the details of an Financial Connections `<code>`Account`</code>`.`</p>`
 ///
 /// `GET /v1/linked_accounts/{account}`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> getLinkedAccountsAccount({required String account, List<String>? expand, GetLinkedAccountsAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> getLinkedAccountsAccount({required String account, List<String>? expand, GetLinkedAccountsAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -11863,9 +11303,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Disconnect an Account
@@ -11873,7 +11311,7 @@ return execute(
 /// `<p>`Disables your access to a Financial Connections `<code>`Account`</code>`. You will no longer be able to access data associated with the account (e.g. balances, transactions).`</p>`
 ///
 /// `POST /v1/linked_accounts/{account}/disconnect`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postLinkedAccountsAccountDisconnect({required String account, PostLinkedAccountsAccountDisconnectRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postLinkedAccountsAccountDisconnect({required String account, PostLinkedAccountsAccountDisconnectRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11892,9 +11330,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List Account Owners
@@ -11902,7 +11338,7 @@ return execute(
 /// `<p>`Lists all owners for a given `<code>`Account`</code>``</p>`
 ///
 /// `GET /v1/linked_accounts/{account}/owners`
-Future<ApiResult<GetLinkedAccountsAccountOwnersResponse, ErrorModel>> getLinkedAccountsAccountOwners({required String account, required String ownership, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetLinkedAccountsAccountOwnersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetLinkedAccountsAccountOwnersResponse, DeleteAccountsAccountError>> getLinkedAccountsAccountOwners({required String account, required String ownership, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetLinkedAccountsAccountOwnersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -11937,9 +11373,7 @@ return execute(
   onSuccess: (response) {
     return GetLinkedAccountsAccountOwnersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Refresh Account data
@@ -11947,7 +11381,7 @@ return execute(
 /// `<p>`Refreshes the data associated with a Financial Connections `<code>`Account`</code>`.`</p>`
 ///
 /// `POST /v1/linked_accounts/{account}/refresh`
-Future<ApiResult<FinancialConnectionsAccount, ErrorModel>> postLinkedAccountsAccountRefresh({required String account, required PostLinkedAccountsAccountRefreshRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FinancialConnectionsAccount, DeleteAccountsAccountError>> postLinkedAccountsAccountRefresh({required String account, required PostLinkedAccountsAccountRefreshRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -11967,9 +11401,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Mandate
@@ -11977,7 +11409,7 @@ return execute(
 /// `<p>`Retrieves a Mandate object.`</p>`
 ///
 /// `GET /v1/mandates/{mandate}`
-Future<ApiResult<Mandate, ErrorModel>> getMandatesMandate({required String mandate, List<String>? expand, GetMandatesMandateRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Mandate, DeleteAccountsAccountError>> getMandatesMandate({required String mandate, List<String>? expand, GetMandatesMandateRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -12002,9 +11434,7 @@ return execute(
   onSuccess: (response) {
     return Mandate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List Payment Attempt Records
@@ -12012,7 +11442,7 @@ return execute(
 /// `<p>`List all the Payment Attempt Records attached to the specified Payment Record.`</p>`
 ///
 /// `GET /v1/payment_attempt_records`
-Future<ApiResult<GetPaymentAttemptRecordsResponse, ErrorModel>> getPaymentAttemptRecords({required String paymentRecord, List<String>? expand, int? limit, String? startingAfter, GetPaymentAttemptRecordsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentAttemptRecordsResponse, DeleteAccountsAccountError>> getPaymentAttemptRecords({required String paymentRecord, List<String>? expand, int? limit, String? startingAfter, GetPaymentAttemptRecordsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -12044,9 +11474,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentAttemptRecordsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Payment Attempt Record
@@ -12054,7 +11482,7 @@ return execute(
 /// `<p>`Retrieves a Payment Attempt Record with the given ID`</p>`
 ///
 /// `GET /v1/payment_attempt_records/{id}`
-Future<ApiResult<PaymentAttemptRecord, ErrorModel>> getPaymentAttemptRecordsId({required String id, List<String>? expand, GetPaymentAttemptRecordsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentAttemptRecord, DeleteAccountsAccountError>> getPaymentAttemptRecordsId({required String id, List<String>? expand, GetPaymentAttemptRecordsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -12079,9 +11507,7 @@ return execute(
   onSuccess: (response) {
     return PaymentAttemptRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all PaymentIntents
@@ -12089,7 +11515,7 @@ return execute(
 /// `<p>`Returns a list of PaymentIntents.`</p>`
 ///
 /// `GET /v1/payment_intents`
-Future<ApiResult<GetPaymentIntentsResponse, ErrorModel>> getPaymentIntents({GetPaymentIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentIntentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentIntentsResponse, DeleteAccountsAccountError>> getPaymentIntents({GetPaymentIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentIntentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -12132,9 +11558,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentIntentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a PaymentIntent
@@ -12151,7 +11575,7 @@ return execute(
 /// `<code>`confirm=true`</code>`.`</p>`
 ///
 /// `POST /v1/payment_intents`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntents({required PostPaymentIntentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntents({required PostPaymentIntentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12240,9 +11664,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Search PaymentIntents
@@ -12253,7 +11675,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/payment_intents/search`
-Future<ApiResult<GetPaymentIntentsSearchResponse, ErrorModel>> getPaymentIntentsSearch({required String query, List<String>? expand, int? limit, String? page, GetPaymentIntentsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentIntentsSearchResponse, DeleteAccountsAccountError>> getPaymentIntentsSearch({required String query, List<String>? expand, int? limit, String? page, GetPaymentIntentsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -12285,9 +11707,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentIntentsSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a PaymentIntent
@@ -12299,7 +11719,7 @@ return execute(
 /// `<p>`If you retrieve a PaymentIntent with a publishable key, it only returns a subset of properties. Refer to the `<a href="#payment_intent_object">`payment intent`</a>` object reference for more details.`</p>`
 ///
 /// `GET /v1/payment_intents/{intent}`
-Future<ApiResult<PaymentIntent, ErrorModel>> getPaymentIntentsIntent({required String intent, String? clientSecret, List<String>? expand, GetPaymentIntentsIntentRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> getPaymentIntentsIntent({required String intent, String? clientSecret, List<String>? expand, GetPaymentIntentsIntentRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientSecret != null) {
   queryParameters['client_secret'] = clientSecret;
@@ -12327,9 +11747,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a PaymentIntent
@@ -12343,7 +11761,7 @@ return execute(
 /// the `<a href="/docs/api/payment_intents/confirm">`confirm API`</a>` instead.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntent({required String intent, PostPaymentIntentsIntentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntent({required String intent, PostPaymentIntentsIntentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12410,9 +11828,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all PaymentIntent LineItems
@@ -12420,7 +11836,7 @@ return execute(
 /// `<p>`Lists all LineItems of a given PaymentIntent.`</p>`
 ///
 /// `GET /v1/payment_intents/{intent}/amount_details_line_items`
-Future<ApiResult<GetPaymentIntentsIntentAmountDetailsLineItemsResponse, ErrorModel>> getPaymentIntentsIntentAmountDetailsLineItems({required String intent, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentIntentsIntentAmountDetailsLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentIntentsIntentAmountDetailsLineItemsResponse, DeleteAccountsAccountError>> getPaymentIntentsIntentAmountDetailsLineItems({required String intent, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentIntentsIntentAmountDetailsLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -12454,9 +11870,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentIntentsIntentAmountDetailsLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Reconcile a customer_balance PaymentIntent
@@ -12464,7 +11878,7 @@ return execute(
 /// `<p>`Manually reconcile the remaining amount for a `<code>`customer_balance`</code>` PaymentIntent.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}/apply_customer_balance`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentApplyCustomerBalance({required String intent, PostPaymentIntentsIntentApplyCustomerBalanceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentApplyCustomerBalance({required String intent, PostPaymentIntentsIntentApplyCustomerBalanceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12487,9 +11901,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel a PaymentIntent
@@ -12501,7 +11913,7 @@ return execute(
 /// `<p>`You can’t cancel the PaymentIntent for a Checkout Session. `<a href="/docs/api/checkout/sessions/expire">`Expire the Checkout Session`</a>` instead.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}/cancel`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentCancel({required String intent, PostPaymentIntentsIntentCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentCancel({required String intent, PostPaymentIntentsIntentCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12522,9 +11934,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Capture a PaymentIntent
@@ -12536,7 +11946,7 @@ return execute(
 /// `<p>`Learn more about `<a href="/docs/payments/capture-later">`separate authorization and capture`</a>`.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}/capture`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentCapture({required String intent, PostPaymentIntentsIntentCaptureRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentCapture({required String intent, PostPaymentIntentsIntentCaptureRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12575,9 +11985,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Confirm a PaymentIntent
@@ -12614,7 +12022,7 @@ return execute(
 /// transition the PaymentIntent to the `<code>`canceled`</code>` state.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}/confirm`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentConfirm({required String intent, PostPaymentIntentsIntentConfirmRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentConfirm({required String intent, PostPaymentIntentsIntentConfirmRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12675,9 +12083,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Increment an authorization
@@ -12708,7 +12114,7 @@ return execute(
 /// `<p>`Learn more about `<a href="/docs/terminal/features/incremental-authorizations">`incremental authorizations`</a>`.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}/increment_authorization`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentIncrementAuthorization({required String intent, required PostPaymentIntentsIntentIncrementAuthorizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentIncrementAuthorization({required String intent, required PostPaymentIntentsIntentIncrementAuthorizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12744,9 +12150,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Verify microdeposits on a PaymentIntent
@@ -12754,7 +12158,7 @@ return execute(
 /// `<p>`Verifies microdeposits on a PaymentIntent object.`</p>`
 ///
 /// `POST /v1/payment_intents/{intent}/verify_microdeposits`
-Future<ApiResult<PaymentIntent, ErrorModel>> postPaymentIntentsIntentVerifyMicrodeposits({required String intent, PostPaymentIntentsIntentVerifyMicrodepositsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentIntent, DeleteAccountsAccountError>> postPaymentIntentsIntentVerifyMicrodeposits({required String intent, PostPaymentIntentsIntentVerifyMicrodepositsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12779,9 +12183,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all payment links
@@ -12789,7 +12191,7 @@ return execute(
 /// `<p>`Returns a list of your payment links.`</p>`
 ///
 /// `GET /v1/payment_links`
-Future<ApiResult<GetPaymentLinksResponse, ErrorModel>> getPaymentLinks({bool? active, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentLinksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentLinksResponse, DeleteAccountsAccountError>> getPaymentLinks({bool? active, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentLinksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -12826,9 +12228,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentLinksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a payment link
@@ -12836,7 +12236,7 @@ return execute(
 /// `<p>`Creates a payment link.`</p>`
 ///
 /// `POST /v1/payment_links`
-Future<ApiResult<PaymentLink, ErrorModel>> postPaymentLinks({required PostPaymentLinksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentLink, DeleteAccountsAccountError>> postPaymentLinks({required PostPaymentLinksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -12912,9 +12312,7 @@ return execute(
   onSuccess: (response) {
     return PaymentLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve payment link
@@ -12922,7 +12320,7 @@ return execute(
 /// `<p>`Retrieve a payment link.`</p>`
 ///
 /// `GET /v1/payment_links/{payment_link}`
-Future<ApiResult<PaymentLink, ErrorModel>> getPaymentLinksPaymentLink({required String paymentLink, List<String>? expand, GetPaymentLinksPaymentLinkRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentLink, DeleteAccountsAccountError>> getPaymentLinksPaymentLink({required String paymentLink, List<String>? expand, GetPaymentLinksPaymentLinkRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -12947,9 +12345,7 @@ return execute(
   onSuccess: (response) {
     return PaymentLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a payment link
@@ -12957,7 +12353,7 @@ return execute(
 /// `<p>`Updates a payment link.`</p>`
 ///
 /// `POST /v1/payment_links/{payment_link}`
-Future<ApiResult<PaymentLink, ErrorModel>> postPaymentLinksPaymentLink({required String paymentLink, PostPaymentLinksPaymentLinkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentLink, DeleteAccountsAccountError>> postPaymentLinksPaymentLink({required String paymentLink, PostPaymentLinksPaymentLinkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13022,9 +12418,7 @@ return execute(
   onSuccess: (response) {
     return PaymentLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a payment link's line items
@@ -13032,7 +12426,7 @@ return execute(
 /// `<p>`When retrieving a payment link, there is an includable `<strong>`line_items`</strong>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/payment_links/{payment_link}/line_items`
-Future<ApiResult<GetPaymentLinksPaymentLinkLineItemsResponse, ErrorModel>> getPaymentLinksPaymentLinkLineItems({required String paymentLink, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentLinksPaymentLinkLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentLinksPaymentLinkLineItemsResponse, DeleteAccountsAccountError>> getPaymentLinksPaymentLinkLineItems({required String paymentLink, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentLinksPaymentLinkLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -13066,9 +12460,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentLinksPaymentLinkLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List payment method configurations
@@ -13076,7 +12468,7 @@ return execute(
 /// `<p>`List payment method configurations`</p>`
 ///
 /// `GET /v1/payment_method_configurations`
-Future<ApiResult<GetPaymentMethodConfigurationsResponse, ErrorModel>> getPaymentMethodConfigurations({GetPaymentMethodConfigurationsApplication? application, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentMethodConfigurationsResponse, DeleteAccountsAccountError>> getPaymentMethodConfigurations({GetPaymentMethodConfigurationsApplication? application, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (application != null) {
 queryParametersList.add(ApiQueryParameter(name: 'application', value: application.toString()));
@@ -13113,9 +12505,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentMethodConfigurationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a payment method configuration
@@ -13123,7 +12513,7 @@ return execute(
 /// `<p>`Creates a payment method configuration`</p>`
 ///
 /// `POST /v1/payment_method_configurations`
-Future<ApiResult<PaymentMethodConfiguration, ErrorModel>> postPaymentMethodConfigurations({PostPaymentMethodConfigurationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethodConfiguration, DeleteAccountsAccountError>> postPaymentMethodConfigurations({PostPaymentMethodConfigurationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13258,9 +12648,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve payment method configuration
@@ -13268,7 +12656,7 @@ return execute(
 /// `<p>`Retrieve payment method configuration`</p>`
 ///
 /// `GET /v1/payment_method_configurations/{configuration}`
-Future<ApiResult<PaymentMethodConfiguration, ErrorModel>> getPaymentMethodConfigurationsConfiguration({required String configuration, List<String>? expand, GetPaymentMethodConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentMethodConfiguration, DeleteAccountsAccountError>> getPaymentMethodConfigurationsConfiguration({required String configuration, List<String>? expand, GetPaymentMethodConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -13293,9 +12681,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update payment method configuration
@@ -13303,7 +12689,7 @@ return execute(
 /// `<p>`Update payment method configuration`</p>`
 ///
 /// `POST /v1/payment_method_configurations/{configuration}`
-Future<ApiResult<PaymentMethodConfiguration, ErrorModel>> postPaymentMethodConfigurationsConfiguration({required String configuration, PostPaymentMethodConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethodConfiguration, DeleteAccountsAccountError>> postPaymentMethodConfigurationsConfiguration({required String configuration, PostPaymentMethodConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13438,9 +12824,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List payment method domains
@@ -13448,7 +12832,7 @@ return execute(
 /// `<p>`Lists the details of existing payment method domains.`</p>`
 ///
 /// `GET /v1/payment_method_domains`
-Future<ApiResult<GetPaymentMethodDomainsResponse, ErrorModel>> getPaymentMethodDomains({String? domainName, bool? enabled, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodDomainsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentMethodDomainsResponse, DeleteAccountsAccountError>> getPaymentMethodDomains({String? domainName, bool? enabled, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodDomainsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domainName != null) {
   queryParameters['domain_name'] = domainName;
@@ -13488,9 +12872,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentMethodDomainsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a payment method domain
@@ -13498,7 +12880,7 @@ return execute(
 /// `<p>`Creates a payment method domain.`</p>`
 ///
 /// `POST /v1/payment_method_domains`
-Future<ApiResult<PaymentMethodDomain, ErrorModel>> postPaymentMethodDomains({required PostPaymentMethodDomainsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethodDomain, DeleteAccountsAccountError>> postPaymentMethodDomains({required PostPaymentMethodDomainsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13520,9 +12902,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a payment method domain
@@ -13530,7 +12910,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing payment method domain.`</p>`
 ///
 /// `GET /v1/payment_method_domains/{payment_method_domain}`
-Future<ApiResult<PaymentMethodDomain, ErrorModel>> getPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, List<String>? expand, GetPaymentMethodDomainsPaymentMethodDomainRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentMethodDomain, DeleteAccountsAccountError>> getPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, List<String>? expand, GetPaymentMethodDomainsPaymentMethodDomainRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -13555,9 +12935,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a payment method domain
@@ -13565,7 +12943,7 @@ return execute(
 /// `<p>`Updates an existing payment method domain.`</p>`
 ///
 /// `POST /v1/payment_method_domains/{payment_method_domain}`
-Future<ApiResult<PaymentMethodDomain, ErrorModel>> postPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, PostPaymentMethodDomainsPaymentMethodDomainRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethodDomain, DeleteAccountsAccountError>> postPaymentMethodDomainsPaymentMethodDomain({required String paymentMethodDomain, PostPaymentMethodDomainsPaymentMethodDomainRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13586,9 +12964,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Validate an existing payment method domain
@@ -13601,7 +12977,7 @@ return execute(
 /// `<p>`Related guides: `<a href="/docs/payments/payment-methods/pmd-registration">`Payment method domains`</a>`.`</p>`
 ///
 /// `POST /v1/payment_method_domains/{payment_method_domain}/validate`
-Future<ApiResult<PaymentMethodDomain, ErrorModel>> postPaymentMethodDomainsPaymentMethodDomainValidate({required String paymentMethodDomain, PostPaymentMethodDomainsPaymentMethodDomainValidateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethodDomain, DeleteAccountsAccountError>> postPaymentMethodDomainsPaymentMethodDomainValidate({required String paymentMethodDomain, PostPaymentMethodDomainsPaymentMethodDomainValidateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13620,9 +12996,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List PaymentMethods
@@ -13630,7 +13004,7 @@ return execute(
 /// `<p>`Returns a list of all PaymentMethods.`</p>`
 ///
 /// `GET /v1/payment_methods`
-Future<ApiResult<GetPaymentMethodsResponse, ErrorModel>> getPaymentMethods({GetPaymentMethodsAllowRedisplay? allowRedisplay, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodsType? type, GetPaymentMethodsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentMethodsResponse, DeleteAccountsAccountError>> getPaymentMethods({GetPaymentMethodsAllowRedisplay? allowRedisplay, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodsType? type, GetPaymentMethodsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (allowRedisplay != null) {
   queryParameters['allow_redisplay'] = allowRedisplay.toJson();
@@ -13676,9 +13050,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentMethodsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Shares a PaymentMethod
@@ -13688,7 +13060,7 @@ return execute(
 /// `<p>`Instead of creating a PaymentMethod directly, we recommend using the `<a href="/docs/payments/accept-a-payment">`PaymentIntents`</a>` API to accept a payment immediately or the `<a href="/docs/payments/save-and-reuse">`SetupIntent`</a>` API to collect payment method details ahead of a future payment.`</p>`
 ///
 /// `POST /v1/payment_methods`
-Future<ApiResult<PaymentMethod, ErrorModel>> postPaymentMethods({PostPaymentMethodsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> postPaymentMethods({PostPaymentMethodsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13825,9 +13197,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a PaymentMethod
@@ -13835,7 +13205,7 @@ return execute(
 /// `<p>`Retrieves a PaymentMethod object attached to the StripeAccount. To retrieve a payment method attached to a Customer, you should use `<a href="/docs/api/payment_methods/customer">`Retrieve a Customer’s PaymentMethods`</a>``</p>`
 ///
 /// `GET /v1/payment_methods/{payment_method}`
-Future<ApiResult<PaymentMethod, ErrorModel>> getPaymentMethodsPaymentMethod({required String paymentMethod, List<String>? expand, GetPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> getPaymentMethodsPaymentMethod({required String paymentMethod, List<String>? expand, GetPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -13860,9 +13230,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a PaymentMethod
@@ -13870,7 +13238,7 @@ return execute(
 /// `<p>`Updates a PaymentMethod object. A PaymentMethod must be attached to a customer to be updated.`</p>`
 ///
 /// `POST /v1/payment_methods/{payment_method}`
-Future<ApiResult<PaymentMethod, ErrorModel>> postPaymentMethodsPaymentMethod({required String paymentMethod, PostPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> postPaymentMethodsPaymentMethod({required String paymentMethod, PostPaymentMethodsPaymentMethodRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13901,9 +13269,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Attach a PaymentMethod to a Customer
@@ -13923,7 +13289,7 @@ return execute(
 /// on the Customer to the PaymentMethod’s ID.`</p>`
 ///
 /// `POST /v1/payment_methods/{payment_method}/attach`
-Future<ApiResult<PaymentMethod, ErrorModel>> postPaymentMethodsPaymentMethodAttach({required String paymentMethod, PostPaymentMethodsPaymentMethodAttachRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> postPaymentMethodsPaymentMethodAttach({required String paymentMethod, PostPaymentMethodsPaymentMethodAttachRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13946,9 +13312,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Detach a PaymentMethod from a Customer
@@ -13956,7 +13320,7 @@ return execute(
 /// `<p>`Detaches a PaymentMethod object from a Customer. After a PaymentMethod is detached, it can no longer be used for a payment or re-attached to a Customer.`</p>`
 ///
 /// `POST /v1/payment_methods/{payment_method}/detach`
-Future<ApiResult<PaymentMethod, ErrorModel>> postPaymentMethodsPaymentMethodDetach({required String paymentMethod, PostPaymentMethodsPaymentMethodDetachRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentMethod, DeleteAccountsAccountError>> postPaymentMethodsPaymentMethodDetach({required String paymentMethod, PostPaymentMethodsPaymentMethodDetachRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -13975,9 +13339,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Report a payment
@@ -13987,7 +13349,7 @@ return execute(
 ///  Records in a terminal state directly, through this method.`</p>`
 ///
 /// `POST /v1/payment_records/report_payment`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsReportPayment({required PostPaymentRecordsReportPaymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsReportPayment({required PostPaymentRecordsReportPaymentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14027,9 +13389,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Payment Record
@@ -14037,7 +13397,7 @@ return execute(
 /// `<p>`Retrieves a Payment Record with the given ID`</p>`
 ///
 /// `GET /v1/payment_records/{id}`
-Future<ApiResult<PaymentRecord, ErrorModel>> getPaymentRecordsId({required String id, List<String>? expand, GetPaymentRecordsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> getPaymentRecordsId({required String id, List<String>? expand, GetPaymentRecordsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -14062,9 +13422,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Report a payment attempt
@@ -14073,7 +13431,7 @@ return execute(
 ///  attempt can only be specified if all other payment attempts are canceled or failed.`</p>`
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttempt({required String id, required PostPaymentRecordsIdReportPaymentAttemptRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttempt({required String id, required PostPaymentRecordsIdReportPaymentAttemptRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14107,9 +13465,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Report payment attempt canceled
@@ -14118,7 +13474,7 @@ return execute(
 ///  was canceled.`</p>`
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt_canceled`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttemptCanceled({required String id, required PostPaymentRecordsIdReportPaymentAttemptCanceledRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttemptCanceled({required String id, required PostPaymentRecordsIdReportPaymentAttemptCanceledRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14140,9 +13496,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Report payment attempt failed
@@ -14151,7 +13505,7 @@ return execute(
 ///  failed or errored.`</p>`
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt_failed`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttemptFailed({required String id, required PostPaymentRecordsIdReportPaymentAttemptFailedRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttemptFailed({required String id, required PostPaymentRecordsIdReportPaymentAttemptFailedRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14173,9 +13527,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Report payment attempt guaranteed
@@ -14184,7 +13536,7 @@ return execute(
 ///  was guaranteed.`</p>`
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt_guaranteed`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttemptGuaranteed({required String id, required PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttemptGuaranteed({required String id, required PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14206,9 +13558,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Report payment attempt informational
@@ -14216,7 +13566,7 @@ return execute(
 /// `<p>`Report informational updates on the specified Payment Record.`</p>`
 ///
 /// `POST /v1/payment_records/{id}/report_payment_attempt_informational`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportPaymentAttemptInformational({required String id, PostPaymentRecordsIdReportPaymentAttemptInformationalRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportPaymentAttemptInformational({required String id, PostPaymentRecordsIdReportPaymentAttemptInformationalRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14243,9 +13593,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Report a refund
@@ -14254,7 +13602,7 @@ return execute(
 ///  was refunded.`</p>`
 ///
 /// `POST /v1/payment_records/{id}/report_refund`
-Future<ApiResult<PaymentRecord, ErrorModel>> postPaymentRecordsIdReportRefund({required String id, required PostPaymentRecordsIdReportRefundRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PaymentRecord, DeleteAccountsAccountError>> postPaymentRecordsIdReportRefund({required String id, required PostPaymentRecordsIdReportRefundRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14282,9 +13630,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all payouts
@@ -14292,7 +13638,7 @@ return execute(
 /// `<p>`Returns a list of existing payouts sent to third-party bank accounts or payouts that Stripe sent to you. The payouts return in sorted order, with the most recently created payouts appearing first.`</p>`
 ///
 /// `GET /v1/payouts`
-Future<ApiResult<GetPayoutsResponse, ErrorModel>> getPayouts({GetPayoutsArrivalDate? arrivalDate, GetPayoutsCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? status, GetPayoutsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPayoutsResponse, DeleteAccountsAccountError>> getPayouts({GetPayoutsArrivalDate? arrivalDate, GetPayoutsCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? status, GetPayoutsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (arrivalDate != null) {
 queryParametersList.add(ApiQueryParameter(name: 'arrival_date', value: arrivalDate.toString()));
@@ -14338,9 +13684,7 @@ return execute(
   onSuccess: (response) {
     return GetPayoutsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a payout
@@ -14352,7 +13696,7 @@ return execute(
 /// `<p>`If you create a manual payout on a Stripe account that uses multiple payment source types, you need to specify the source type balance that the payout draws from. The `<a href="#balance_object">`balance object`</a>` details available and pending amounts by source type.`</p>`
 ///
 /// `POST /v1/payouts`
-Future<ApiResult<Payout, ErrorModel>> postPayouts({required PostPayoutsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Payout, DeleteAccountsAccountError>> postPayouts({required PostPayoutsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14387,9 +13731,7 @@ return execute(
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a payout
@@ -14397,7 +13739,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing payout. Supply the unique payout ID from either a payout creation request or the payout list. Stripe returns the corresponding payout information.`</p>`
 ///
 /// `GET /v1/payouts/{payout}`
-Future<ApiResult<Payout, ErrorModel>> getPayoutsPayout({required String payout, List<String>? expand, GetPayoutsPayoutRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Payout, DeleteAccountsAccountError>> getPayoutsPayout({required String payout, List<String>? expand, GetPayoutsPayoutRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -14422,9 +13764,7 @@ return execute(
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a payout
@@ -14432,7 +13772,7 @@ return execute(
 /// `<p>`Updates the specified payout by setting the values of the parameters you pass. We don’t change parameters that you don’t provide. This request only accepts the metadata as arguments.`</p>`
 ///
 /// `POST /v1/payouts/{payout}`
-Future<ApiResult<Payout, ErrorModel>> postPayoutsPayout({required String payout, PostPayoutsPayoutRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Payout, DeleteAccountsAccountError>> postPayoutsPayout({required String payout, PostPayoutsPayoutRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14453,9 +13793,7 @@ return execute(
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel a payout
@@ -14463,7 +13801,7 @@ return execute(
 /// `<p>`You can cancel a previously created payout if its status is `<code>`pending`</code>`. Stripe refunds the funds to your available balance. You can’t cancel automatic Stripe payouts.`</p>`
 ///
 /// `POST /v1/payouts/{payout}/cancel`
-Future<ApiResult<Payout, ErrorModel>> postPayoutsPayoutCancel({required String payout, PostPayoutsPayoutCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Payout, DeleteAccountsAccountError>> postPayoutsPayoutCancel({required String payout, PostPayoutsPayoutCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14482,9 +13820,7 @@ return execute(
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Reverse a payout
@@ -14494,7 +13830,7 @@ return execute(
 /// `<p>`By requesting a reversal through `<code>`/v1/payouts/:id/reverse`</code>`, you confirm that the authorized signatory of the selected bank account authorizes the debit on the bank account and that no other authorization is required.`</p>`
 ///
 /// `POST /v1/payouts/{payout}/reverse`
-Future<ApiResult<Payout, ErrorModel>> postPayoutsPayoutReverse({required String payout, PostPayoutsPayoutReverseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Payout, DeleteAccountsAccountError>> postPayoutsPayoutReverse({required String payout, PostPayoutsPayoutReverseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14515,9 +13851,7 @@ return execute(
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all plans
@@ -14525,7 +13859,7 @@ return execute(
 /// `<p>`Returns a list of your plans.`</p>`
 ///
 /// `GET /v1/plans`
-Future<ApiResult<GetPlansResponse, ErrorModel>> getPlans({bool? active, GetPlansCreated? created, String? endingBefore, List<String>? expand, int? limit, String? product, String? startingAfter, GetPlansRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPlansResponse, DeleteAccountsAccountError>> getPlans({bool? active, GetPlansCreated? created, String? endingBefore, List<String>? expand, int? limit, String? product, String? startingAfter, GetPlansRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -14568,9 +13902,7 @@ return execute(
   onSuccess: (response) {
     return GetPlansResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a plan
@@ -14578,7 +13910,7 @@ return execute(
 /// `<p>`You can now model subscriptions more flexibly using the `<a href="#prices">`Prices API`</a>`. It replaces the Plans API and is backwards compatible to simplify your migration.`</p>`
 ///
 /// `POST /v1/plans`
-Future<ApiResult<Plan, ErrorModel>> postPlans({required PostPlansRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Plan, DeleteAccountsAccountError>> postPlans({required PostPlansRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14629,9 +13961,7 @@ return execute(
   onSuccess: (response) {
     return Plan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a plan
@@ -14639,7 +13969,7 @@ return execute(
 /// `<p>`Retrieves the plan with the given ID.`</p>`
 ///
 /// `GET /v1/plans/{plan}`
-Future<ApiResult<Plan, ErrorModel>> getPlansPlan({required String plan, List<String>? expand, GetPlansPlanRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Plan, DeleteAccountsAccountError>> getPlansPlan({required String plan, List<String>? expand, GetPlansPlanRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -14664,9 +13994,7 @@ return execute(
   onSuccess: (response) {
     return Plan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a plan
@@ -14674,7 +14002,7 @@ return execute(
 /// `<p>`Updates the specified plan by setting the values of the parameters passed. Any parameters not provided are left unchanged. By design, you cannot change a plan’s ID, amount, currency, or billing cycle.`</p>`
 ///
 /// `POST /v1/plans/{plan}`
-Future<ApiResult<Plan, ErrorModel>> postPlansPlan({required String plan, PostPlansPlanRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Plan, DeleteAccountsAccountError>> postPlansPlan({required String plan, PostPlansPlanRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14703,9 +14031,7 @@ return execute(
   onSuccess: (response) {
     return Plan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a plan
@@ -14713,7 +14039,7 @@ return execute(
 /// `<p>`Deleting plans means new subscribers can’t be added. Existing subscribers aren’t affected.`</p>`
 ///
 /// `DELETE /v1/plans/{plan}`
-Future<ApiResult<DeletedPlan, ErrorModel>> deletePlansPlan({required String plan, DeletePlansPlanRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedPlan, DeleteAccountsAccountError>> deletePlansPlan({required String plan, DeletePlansPlanRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14730,9 +14056,7 @@ return execute(
   onSuccess: (response) {
     return DeletedPlan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all prices
@@ -14740,7 +14064,7 @@ return execute(
 /// `<p>`Returns a list of your active prices, excluding `<a href="/docs/products-prices/pricing-models#inline-pricing">`inline prices`</a>`. For the list of inactive prices, set `<code>`active`</code>` to false.`</p>`
 ///
 /// `GET /v1/prices`
-Future<ApiResult<GetPricesResponse, ErrorModel>> getPrices({bool? active, GetPricesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, String? product, GetPricesRecurring? recurring, String? startingAfter, GetPricesType? type, GetPricesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPricesResponse, DeleteAccountsAccountError>> getPrices({bool? active, GetPricesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, String? product, GetPricesRecurring? recurring, String? startingAfter, GetPricesType? type, GetPricesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -14797,9 +14121,7 @@ return execute(
   onSuccess: (response) {
     return GetPricesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a price
@@ -14807,7 +14129,7 @@ return execute(
 /// `<p>`Creates a new `<a href="https://docs.stripe.com/api/prices">`Price`</a>` for an existing `<a href="https://docs.stripe.com/api/products">`Product`</a>`. The Price can be recurring or one-time.`</p>`
 ///
 /// `POST /v1/prices`
-Future<ApiResult<Price, ErrorModel>> postPrices({required PostPricesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Price, DeleteAccountsAccountError>> postPrices({required PostPricesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14861,9 +14183,7 @@ return execute(
   onSuccess: (response) {
     return Price.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Search prices
@@ -14874,7 +14194,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/prices/search`
-Future<ApiResult<GetPricesSearchResponse, ErrorModel>> getPricesSearch({required String query, List<String>? expand, int? limit, String? page, GetPricesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPricesSearchResponse, DeleteAccountsAccountError>> getPricesSearch({required String query, List<String>? expand, int? limit, String? page, GetPricesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -14906,9 +14226,7 @@ return execute(
   onSuccess: (response) {
     return GetPricesSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a price
@@ -14916,7 +14234,7 @@ return execute(
 /// `<p>`Retrieves the price with the given ID.`</p>`
 ///
 /// `GET /v1/prices/{price}`
-Future<ApiResult<Price, ErrorModel>> getPricesPrice({required String price, List<String>? expand, GetPricesPriceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Price, DeleteAccountsAccountError>> getPricesPrice({required String price, List<String>? expand, GetPricesPriceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -14941,9 +14259,7 @@ return execute(
   onSuccess: (response) {
     return Price.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a price
@@ -14951,7 +14267,7 @@ return execute(
 /// `<p>`Updates the specified price by setting the values of the parameters passed. Any parameters not provided are left unchanged.`</p>`
 ///
 /// `POST /v1/prices/{price}`
-Future<ApiResult<Price, ErrorModel>> postPricesPrice({required String price, PostPricesPriceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Price, DeleteAccountsAccountError>> postPricesPrice({required String price, PostPricesPriceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -14984,9 +14300,7 @@ return execute(
   onSuccess: (response) {
     return Price.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all products
@@ -14994,7 +14308,7 @@ return execute(
 /// `<p>`Returns a list of your products. The products are returned sorted by creation date, with the most recently created products appearing first.`</p>`
 ///
 /// `GET /v1/products`
-Future<ApiResult<GetProductsResponse, ErrorModel>> getProducts({bool? active, GetProductsCreated? created, String? endingBefore, List<String>? expand, List<String>? ids, int? limit, bool? shippable, String? startingAfter, String? url, GetProductsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetProductsResponse, DeleteAccountsAccountError>> getProducts({bool? active, GetProductsCreated? created, String? endingBefore, List<String>? expand, List<String>? ids, int? limit, bool? shippable, String? startingAfter, String? url, GetProductsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -15043,9 +14357,7 @@ return execute(
   onSuccess: (response) {
     return GetProductsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a product
@@ -15053,7 +14365,7 @@ return execute(
 /// `<p>`Creates a new product object.`</p>`
 ///
 /// `POST /v1/products`
-Future<ApiResult<Product, ErrorModel>> postProducts({required PostProductsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Product, DeleteAccountsAccountError>> postProducts({required PostProductsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15099,9 +14411,7 @@ return execute(
   onSuccess: (response) {
     return Product.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Search products
@@ -15112,7 +14422,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/products/search`
-Future<ApiResult<GetProductsSearchResponse, ErrorModel>> getProductsSearch({required String query, List<String>? expand, int? limit, String? page, GetProductsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetProductsSearchResponse, DeleteAccountsAccountError>> getProductsSearch({required String query, List<String>? expand, int? limit, String? page, GetProductsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -15144,9 +14454,7 @@ return execute(
   onSuccess: (response) {
     return GetProductsSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a product
@@ -15154,7 +14462,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing product. Supply the unique product ID from either a product creation request or the product list, and Stripe will return the corresponding product information.`</p>`
 ///
 /// `GET /v1/products/{id}`
-Future<ApiResult<Product, ErrorModel>> getProductsId({required String id, List<String>? expand, GetProductsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Product, DeleteAccountsAccountError>> getProductsId({required String id, List<String>? expand, GetProductsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -15179,9 +14487,7 @@ return execute(
   onSuccess: (response) {
     return Product.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a product
@@ -15189,7 +14495,7 @@ return execute(
 /// `<p>`Updates the specific product by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/products/{id}`
-Future<ApiResult<Product, ErrorModel>> postProductsId({required String id, PostProductsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Product, DeleteAccountsAccountError>> postProductsId({required String id, PostProductsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15234,9 +14540,7 @@ return execute(
   onSuccess: (response) {
     return Product.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a product
@@ -15244,7 +14548,7 @@ return execute(
 /// `<p>`Delete a product. Deleting a product is only possible if it has no prices associated with it. Additionally, deleting a product with `<code>`type=good`</code>` is only possible if it has no SKUs associated with it.`</p>`
 ///
 /// `DELETE /v1/products/{id}`
-Future<ApiResult<DeletedProduct, ErrorModel>> deleteProductsId({required String id, DeleteProductsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedProduct, DeleteAccountsAccountError>> deleteProductsId({required String id, DeleteProductsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15261,9 +14565,7 @@ return execute(
   onSuccess: (response) {
     return DeletedProduct.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all features attached to a product
@@ -15271,7 +14573,7 @@ return execute(
 /// `<p>`Retrieve a list of features for a product`</p>`
 ///
 /// `GET /v1/products/{product}/features`
-Future<ApiResult<GetProductsProductFeaturesResponse, ErrorModel>> getProductsProductFeatures({required String product, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetProductsProductFeaturesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetProductsProductFeaturesResponse, DeleteAccountsAccountError>> getProductsProductFeatures({required String product, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetProductsProductFeaturesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -15305,9 +14607,7 @@ return execute(
   onSuccess: (response) {
     return GetProductsProductFeaturesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Attach a feature to a product
@@ -15315,7 +14615,7 @@ return execute(
 /// `<p>`Creates a product_feature, which represents a feature attachment to a product`</p>`
 ///
 /// `POST /v1/products/{product}/features`
-Future<ApiResult<ProductFeature, ErrorModel>> postProductsProductFeatures({required String product, required PostProductsProductFeaturesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ProductFeature, DeleteAccountsAccountError>> postProductsProductFeatures({required String product, required PostProductsProductFeaturesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15335,9 +14635,7 @@ return execute(
   onSuccess: (response) {
     return ProductFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a product_feature
@@ -15345,7 +14643,7 @@ return execute(
 /// `<p>`Retrieves a product_feature, which represents a feature attachment to a product`</p>`
 ///
 /// `GET /v1/products/{product}/features/{id}`
-Future<ApiResult<ProductFeature, ErrorModel>> getProductsProductFeaturesId({required String id, required String product, List<String>? expand, GetProductsProductFeaturesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ProductFeature, DeleteAccountsAccountError>> getProductsProductFeaturesId({required String id, required String product, List<String>? expand, GetProductsProductFeaturesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -15370,9 +14668,7 @@ return execute(
   onSuccess: (response) {
     return ProductFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Remove a feature from a product
@@ -15380,7 +14676,7 @@ return execute(
 /// `<p>`Deletes the feature attachment to a product`</p>`
 ///
 /// `DELETE /v1/products/{product}/features/{id}`
-Future<ApiResult<DeletedProductFeature, ErrorModel>> deleteProductsProductFeaturesId({required String id, required String product, DeleteProductsProductFeaturesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedProductFeature, DeleteAccountsAccountError>> deleteProductsProductFeaturesId({required String id, required String product, DeleteProductsProductFeaturesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15397,9 +14693,7 @@ return execute(
   onSuccess: (response) {
     return DeletedProductFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all promotion codes
@@ -15407,7 +14701,7 @@ return execute(
 /// `<p>`Returns a list of your promotion codes.`</p>`
 ///
 /// `GET /v1/promotion_codes`
-Future<ApiResult<GetPromotionCodesResponse, ErrorModel>> getPromotionCodes({bool? active, String? code, String? coupon, GetPromotionCodesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPromotionCodesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPromotionCodesResponse, DeleteAccountsAccountError>> getPromotionCodes({bool? active, String? code, String? coupon, GetPromotionCodesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPromotionCodesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -15459,9 +14753,7 @@ return execute(
   onSuccess: (response) {
     return GetPromotionCodesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a promotion code
@@ -15469,7 +14761,7 @@ return execute(
 /// `<p>`A promotion code points to an underlying promotion. You can optionally restrict the code to a specific customer, redemption limit, and expiration date.`</p>`
 ///
 /// `POST /v1/promotion_codes`
-Future<ApiResult<PromotionCode, ErrorModel>> postPromotionCodes({required PostPromotionCodesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PromotionCode, DeleteAccountsAccountError>> postPromotionCodes({required PostPromotionCodesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15505,9 +14797,7 @@ return execute(
   onSuccess: (response) {
     return PromotionCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a promotion code
@@ -15515,7 +14805,7 @@ return execute(
 /// `<p>`Retrieves the promotion code with the given ID. In order to retrieve a promotion code by the customer-facing `<code>`code`</code>` use `<a href="/docs/api/promotion_codes/list">`list`</a>` with the desired `<code>`code`</code>`.`</p>`
 ///
 /// `GET /v1/promotion_codes/{promotion_code}`
-Future<ApiResult<PromotionCode, ErrorModel>> getPromotionCodesPromotionCode({required String promotionCode, List<String>? expand, GetPromotionCodesPromotionCodeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PromotionCode, DeleteAccountsAccountError>> getPromotionCodesPromotionCode({required String promotionCode, List<String>? expand, GetPromotionCodesPromotionCodeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -15540,9 +14830,7 @@ return execute(
   onSuccess: (response) {
     return PromotionCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a promotion code
@@ -15550,7 +14838,7 @@ return execute(
 /// `<p>`Updates the specified promotion code by setting the values of the parameters passed. Most fields are, by design, not editable.`</p>`
 ///
 /// `POST /v1/promotion_codes/{promotion_code}`
-Future<ApiResult<PromotionCode, ErrorModel>> postPromotionCodesPromotionCode({required String promotionCode, PostPromotionCodesPromotionCodeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PromotionCode, DeleteAccountsAccountError>> postPromotionCodesPromotionCode({required String promotionCode, PostPromotionCodesPromotionCodeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15575,9 +14863,7 @@ return execute(
   onSuccess: (response) {
     return PromotionCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all quotes
@@ -15585,7 +14871,7 @@ return execute(
 /// `<p>`Returns a list of your quotes.`</p>`
 ///
 /// `GET /v1/quotes`
-Future<ApiResult<GetQuotesResponse, ErrorModel>> getQuotes({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesStatus? status, String? testClock, GetQuotesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetQuotesResponse, DeleteAccountsAccountError>> getQuotes({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesStatus? status, String? testClock, GetQuotesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -15631,9 +14917,7 @@ return execute(
   onSuccess: (response) {
     return GetQuotesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a quote
@@ -15641,7 +14925,7 @@ return execute(
 /// `<p>`A quote models prices and services for a customer. Default options for `<code>`header`</code>`, `<code>`description`</code>`, `<code>`footer`</code>`, and `<code>`expires_at`</code>` can be set in the dashboard via the `<a href="https://dashboard.stripe.com/settings/billing/quote">`quote template`</a>`.`</p>`
 ///
 /// `POST /v1/quotes`
-Future<ApiResult<Quote, ErrorModel>> postQuotes({PostQuotesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotes({PostQuotesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15700,9 +14984,7 @@ return execute(
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a quote
@@ -15710,7 +14992,7 @@ return execute(
 /// `<p>`Retrieves the quote with the given ID.`</p>`
 ///
 /// `GET /v1/quotes/{quote}`
-Future<ApiResult<Quote, ErrorModel>> getQuotesQuote({required String quote, List<String>? expand, GetQuotesQuoteRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Quote, DeleteAccountsAccountError>> getQuotesQuote({required String quote, List<String>? expand, GetQuotesQuoteRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -15735,9 +15017,7 @@ return execute(
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a quote
@@ -15745,7 +15025,7 @@ return execute(
 /// `<p>`A quote models prices and services for a customer.`</p>`
 ///
 /// `POST /v1/quotes/{quote}`
-Future<ApiResult<Quote, ErrorModel>> postQuotesQuote({required String quote, PostQuotesQuoteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotesQuote({required String quote, PostQuotesQuoteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15800,9 +15080,7 @@ return execute(
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Accept a quote
@@ -15810,7 +15088,7 @@ return execute(
 /// `<p>`Accepts the specified quote.`</p>`
 ///
 /// `POST /v1/quotes/{quote}/accept`
-Future<ApiResult<Quote, ErrorModel>> postQuotesQuoteAccept({required String quote, PostQuotesQuoteAcceptRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotesQuoteAccept({required String quote, PostQuotesQuoteAcceptRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15829,9 +15107,7 @@ return execute(
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel a quote
@@ -15839,7 +15115,7 @@ return execute(
 /// `<p>`Cancels the quote.`</p>`
 ///
 /// `POST /v1/quotes/{quote}/cancel`
-Future<ApiResult<Quote, ErrorModel>> postQuotesQuoteCancel({required String quote, PostQuotesQuoteCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotesQuoteCancel({required String quote, PostQuotesQuoteCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15858,9 +15134,7 @@ return execute(
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a quote's upfront line items
@@ -15868,7 +15142,7 @@ return execute(
 /// `<p>`When retrieving a quote, there is an includable `<a href="https://stripe.com/docs/api/quotes/object#quote_object-computed-upfront-line_items">``<strong>`computed.upfront.line_items`</strong>``</a>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of upfront line items.`</p>`
 ///
 /// `GET /v1/quotes/{quote}/computed_upfront_line_items`
-Future<ApiResult<GetQuotesQuoteComputedUpfrontLineItemsResponse, ErrorModel>> getQuotesQuoteComputedUpfrontLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesQuoteComputedUpfrontLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetQuotesQuoteComputedUpfrontLineItemsResponse, DeleteAccountsAccountError>> getQuotesQuoteComputedUpfrontLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesQuoteComputedUpfrontLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -15902,9 +15176,7 @@ return execute(
   onSuccess: (response) {
     return GetQuotesQuoteComputedUpfrontLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Finalize a quote
@@ -15912,7 +15184,7 @@ return execute(
 /// `<p>`Finalizes the quote.`</p>`
 ///
 /// `POST /v1/quotes/{quote}/finalize`
-Future<ApiResult<Quote, ErrorModel>> postQuotesQuoteFinalize({required String quote, PostQuotesQuoteFinalizeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Quote, DeleteAccountsAccountError>> postQuotesQuoteFinalize({required String quote, PostQuotesQuoteFinalizeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -15933,9 +15205,7 @@ return execute(
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a quote's line items
@@ -15943,7 +15213,7 @@ return execute(
 /// `<p>`When retrieving a quote, there is an includable `<strong>`line_items`</strong>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/quotes/{quote}/line_items`
-Future<ApiResult<GetQuotesQuoteLineItemsResponse, ErrorModel>> getQuotesQuoteLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesQuoteLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetQuotesQuoteLineItemsResponse, DeleteAccountsAccountError>> getQuotesQuoteLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesQuoteLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -15977,9 +15247,7 @@ return execute(
   onSuccess: (response) {
     return GetQuotesQuoteLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Download quote PDF
@@ -15987,7 +15255,7 @@ return execute(
 /// `<p>`Download the PDF for a finalized quote. Explanation for special handling can be found `<a href="https://docs.stripe.com/quotes/overview#quote_pdf">`here`</a>``</p>`
 ///
 /// `GET /v1/quotes/{quote}/pdf`
-Future<ApiResult<Uint8List, ErrorModel>> getQuotesQuotePdf({required String quote, List<String>? expand, GetQuotesQuotePdfRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Uint8List, DeleteAccountsAccountError>> getQuotesQuotePdf({required String quote, List<String>? expand, GetQuotesQuotePdfRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -16012,9 +15280,7 @@ return execute(
   onSuccess: (response) {
     return Uint8List.fromList(response.bodyBytes);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all early fraud warnings
@@ -16022,7 +15288,7 @@ return execute(
 /// `<p>`Returns a list of early fraud warnings.`</p>`
 ///
 /// `GET /v1/radar/early_fraud_warnings`
-Future<ApiResult<GetRadarEarlyFraudWarningsResponse, ErrorModel>> getRadarEarlyFraudWarnings({String? charge, GetRadarEarlyFraudWarningsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetRadarEarlyFraudWarningsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetRadarEarlyFraudWarningsResponse, DeleteAccountsAccountError>> getRadarEarlyFraudWarnings({String? charge, GetRadarEarlyFraudWarningsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetRadarEarlyFraudWarningsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (charge != null) {
   queryParameters['charge'] = charge;
@@ -16065,9 +15331,7 @@ return execute(
   onSuccess: (response) {
     return GetRadarEarlyFraudWarningsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an early fraud warning
@@ -16077,7 +15341,7 @@ return execute(
 /// `<p>`Please refer to the `<a href="#early_fraud_warning_object">`early fraud warning`</a>` object reference for more details.`</p>`
 ///
 /// `GET /v1/radar/early_fraud_warnings/{early_fraud_warning}`
-Future<ApiResult<RadarEarlyFraudWarning, ErrorModel>> getRadarEarlyFraudWarningsEarlyFraudWarning({required String earlyFraudWarning, List<String>? expand, GetRadarEarlyFraudWarningsEarlyFraudWarningRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarEarlyFraudWarning, DeleteAccountsAccountError>> getRadarEarlyFraudWarningsEarlyFraudWarning({required String earlyFraudWarning, List<String>? expand, GetRadarEarlyFraudWarningsEarlyFraudWarningRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -16102,9 +15366,7 @@ return execute(
   onSuccess: (response) {
     return RadarEarlyFraudWarning.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a Payment Evaluation
@@ -16112,7 +15374,7 @@ return execute(
 /// `<p>`Request a Radar API fraud risk score from Stripe for a payment before sending it for external processor authorization.`</p>`
 ///
 /// `POST /v1/radar/payment_evaluations`
-Future<ApiResult<RadarPaymentEvaluation, ErrorModel>> postRadarPaymentEvaluations({required PostRadarPaymentEvaluationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RadarPaymentEvaluation, DeleteAccountsAccountError>> postRadarPaymentEvaluations({required PostRadarPaymentEvaluationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16137,9 +15399,7 @@ return execute(
   onSuccess: (response) {
     return RadarPaymentEvaluation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all value list items
@@ -16147,7 +15407,7 @@ return execute(
 /// `<p>`Returns a list of `<code>`ValueListItem`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/radar/value_list_items`
-Future<ApiResult<GetRadarValueListItemsResponse, ErrorModel>> getRadarValueListItems({required String valueList, GetRadarValueListItemsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? value, GetRadarValueListItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetRadarValueListItemsResponse, DeleteAccountsAccountError>> getRadarValueListItems({required String valueList, GetRadarValueListItemsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? value, GetRadarValueListItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -16188,9 +15448,7 @@ return execute(
   onSuccess: (response) {
     return GetRadarValueListItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a value list item
@@ -16198,7 +15456,7 @@ return execute(
 /// `<p>`Creates a new `<code>`ValueListItem`</code>` object, which is added to the specified parent value list.`</p>`
 ///
 /// `POST /v1/radar/value_list_items`
-Future<ApiResult<RadarValueListItem, ErrorModel>> postRadarValueListItems({required PostRadarValueListItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RadarValueListItem, DeleteAccountsAccountError>> postRadarValueListItems({required PostRadarValueListItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16219,9 +15477,7 @@ return execute(
   onSuccess: (response) {
     return RadarValueListItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a value list item
@@ -16229,7 +15485,7 @@ return execute(
 /// `<p>`Retrieves a `<code>`ValueListItem`</code>` object.`</p>`
 ///
 /// `GET /v1/radar/value_list_items/{item}`
-Future<ApiResult<RadarValueListItem, ErrorModel>> getRadarValueListItemsItem({required String item, List<String>? expand, GetRadarValueListItemsItemRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarValueListItem, DeleteAccountsAccountError>> getRadarValueListItemsItem({required String item, List<String>? expand, GetRadarValueListItemsItemRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -16254,9 +15510,7 @@ return execute(
   onSuccess: (response) {
     return RadarValueListItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a value list item
@@ -16264,7 +15518,7 @@ return execute(
 /// `<p>`Deletes a `<code>`ValueListItem`</code>` object, removing it from its parent value list.`</p>`
 ///
 /// `DELETE /v1/radar/value_list_items/{item}`
-Future<ApiResult<DeletedRadarValueListItem, ErrorModel>> deleteRadarValueListItemsItem({required String item, DeleteRadarValueListItemsItemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedRadarValueListItem, DeleteAccountsAccountError>> deleteRadarValueListItemsItem({required String item, DeleteRadarValueListItemsItemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16281,9 +15535,7 @@ return execute(
   onSuccess: (response) {
     return DeletedRadarValueListItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all value lists
@@ -16291,7 +15543,7 @@ return execute(
 /// `<p>`Returns a list of `<code>`ValueList`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/radar/value_lists`
-Future<ApiResult<GetRadarValueListsResponse, ErrorModel>> getRadarValueLists({String? alias, String? contains, GetRadarValueListsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetRadarValueListsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetRadarValueListsResponse, DeleteAccountsAccountError>> getRadarValueLists({String? alias, String? contains, GetRadarValueListsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetRadarValueListsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (alias != null) {
   queryParameters['alias'] = alias;
@@ -16334,9 +15586,7 @@ return execute(
   onSuccess: (response) {
     return GetRadarValueListsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a value list
@@ -16344,7 +15594,7 @@ return execute(
 /// `<p>`Creates a new `<code>`ValueList`</code>` object, which can then be referenced in rules.`</p>`
 ///
 /// `POST /v1/radar/value_lists`
-Future<ApiResult<RadarValueList, ErrorModel>> postRadarValueLists({required PostRadarValueListsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RadarValueList, DeleteAccountsAccountError>> postRadarValueLists({required PostRadarValueListsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16369,9 +15619,7 @@ return execute(
   onSuccess: (response) {
     return RadarValueList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a value list
@@ -16379,7 +15627,7 @@ return execute(
 /// `<p>`Retrieves a `<code>`ValueList`</code>` object.`</p>`
 ///
 /// `GET /v1/radar/value_lists/{value_list}`
-Future<ApiResult<RadarValueList, ErrorModel>> getRadarValueListsValueList({required String valueList, List<String>? expand, GetRadarValueListsValueListRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarValueList, DeleteAccountsAccountError>> getRadarValueListsValueList({required String valueList, List<String>? expand, GetRadarValueListsValueListRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -16404,9 +15652,7 @@ return execute(
   onSuccess: (response) {
     return RadarValueList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a value list
@@ -16414,7 +15660,7 @@ return execute(
 /// `<p>`Updates a `<code>`ValueList`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged. Note that `<code>`item_type`</code>` is immutable.`</p>`
 ///
 /// `POST /v1/radar/value_lists/{value_list}`
-Future<ApiResult<RadarValueList, ErrorModel>> postRadarValueListsValueList({required String valueList, PostRadarValueListsValueListRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RadarValueList, DeleteAccountsAccountError>> postRadarValueListsValueList({required String valueList, PostRadarValueListsValueListRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16439,9 +15685,7 @@ return execute(
   onSuccess: (response) {
     return RadarValueList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a value list
@@ -16449,7 +15693,7 @@ return execute(
 /// `<p>`Deletes a `<code>`ValueList`</code>` object, also deleting any items contained within the value list. To be deleted, a value list must not be referenced in any rules.`</p>`
 ///
 /// `DELETE /v1/radar/value_lists/{value_list}`
-Future<ApiResult<DeletedRadarValueList, ErrorModel>> deleteRadarValueListsValueList({required String valueList, DeleteRadarValueListsValueListRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedRadarValueList, DeleteAccountsAccountError>> deleteRadarValueListsValueList({required String valueList, DeleteRadarValueListsValueListRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16466,9 +15710,7 @@ return execute(
   onSuccess: (response) {
     return DeletedRadarValueList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all refunds
@@ -16476,7 +15718,7 @@ return execute(
 /// `<p>`Returns a list of all refunds you created. We return the refunds in sorted order, with the most recent refunds appearing first. The 10 most recent refunds are always available by default on the Charge object.`</p>`
 ///
 /// `GET /v1/refunds`
-Future<ApiResult<GetRefundsResponse, ErrorModel>> getRefunds({String? charge, GetRefundsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetRefundsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetRefundsResponse, DeleteAccountsAccountError>> getRefunds({String? charge, GetRefundsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetRefundsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (charge != null) {
   queryParameters['charge'] = charge;
@@ -16519,9 +15761,7 @@ return execute(
   onSuccess: (response) {
     return GetRefundsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create customer balance refund
@@ -16539,7 +15779,7 @@ return execute(
 /// or when trying to refund more money than is left on a charge.`</p>`
 ///
 /// `POST /v1/refunds`
-Future<ApiResult<Refund, ErrorModel>> postRefunds({PostRefundsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> postRefunds({PostRefundsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16580,9 +15820,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a refund
@@ -16590,7 +15828,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing refund.`</p>`
 ///
 /// `GET /v1/refunds/{refund}`
-Future<ApiResult<Refund, ErrorModel>> getRefundsRefund({required String refund, List<String>? expand, GetRefundsRefundRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> getRefundsRefund({required String refund, List<String>? expand, GetRefundsRefundRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -16615,9 +15853,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a refund
@@ -16627,7 +15863,7 @@ return execute(
 /// `<p>`This request only accepts `<code>`metadata`</code>` as an argument.`</p>`
 ///
 /// `POST /v1/refunds/{refund}`
-Future<ApiResult<Refund, ErrorModel>> postRefundsRefund({required String refund, PostRefundsRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> postRefundsRefund({required String refund, PostRefundsRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16648,9 +15884,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel a refund
@@ -16660,7 +15894,7 @@ return execute(
 /// `<p>`You can’t cancel refunds in other states. Only refunds for payment methods that require customer action can enter the `<code>`requires_action`</code>` state.`</p>`
 ///
 /// `POST /v1/refunds/{refund}/cancel`
-Future<ApiResult<Refund, ErrorModel>> postRefundsRefundCancel({required String refund, PostRefundsRefundCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> postRefundsRefundCancel({required String refund, PostRefundsRefundCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16679,9 +15913,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all Report Runs
@@ -16689,7 +15921,7 @@ return execute(
 /// `<p>`Returns a list of Report Runs, with the most recent appearing first.`</p>`
 ///
 /// `GET /v1/reporting/report_runs`
-Future<ApiResult<GetReportingReportRunsResponse, ErrorModel>> getReportingReportRuns({GetReportingReportRunsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetReportingReportRunsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetReportingReportRunsResponse, DeleteAccountsAccountError>> getReportingReportRuns({GetReportingReportRunsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetReportingReportRunsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -16726,9 +15958,7 @@ return execute(
   onSuccess: (response) {
     return GetReportingReportRunsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a Report Run
@@ -16736,7 +15966,7 @@ return execute(
 /// `<p>`Creates a new object and begin running the report. (Certain report types require a `<a href="https://stripe.com/docs/keys#test-live-modes">`live-mode API key`</a>`.)`</p>`
 ///
 /// `POST /v1/reporting/report_runs`
-Future<ApiResult<ReportingReportRun, ErrorModel>> postReportingReportRuns({required PostReportingReportRunsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ReportingReportRun, DeleteAccountsAccountError>> postReportingReportRuns({required PostReportingReportRunsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16758,9 +15988,7 @@ return execute(
   onSuccess: (response) {
     return ReportingReportRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Report Run
@@ -16768,7 +15996,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing Report Run.`</p>`
 ///
 /// `GET /v1/reporting/report_runs/{report_run}`
-Future<ApiResult<ReportingReportRun, ErrorModel>> getReportingReportRunsReportRun({required String reportRun, List<String>? expand, GetReportingReportRunsReportRunRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReportingReportRun, DeleteAccountsAccountError>> getReportingReportRunsReportRun({required String reportRun, List<String>? expand, GetReportingReportRunsReportRunRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -16793,9 +16021,7 @@ return execute(
   onSuccess: (response) {
     return ReportingReportRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all Report Types
@@ -16803,7 +16029,7 @@ return execute(
 /// `<p>`Returns a full list of Report Types.`</p>`
 ///
 /// `GET /v1/reporting/report_types`
-Future<ApiResult<GetReportingReportTypesResponse, ErrorModel>> getReportingReportTypes({List<String>? expand, GetReportingReportTypesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetReportingReportTypesResponse, DeleteAccountsAccountError>> getReportingReportTypes({List<String>? expand, GetReportingReportTypesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -16828,9 +16054,7 @@ return execute(
   onSuccess: (response) {
     return GetReportingReportTypesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Report Type
@@ -16838,7 +16062,7 @@ return execute(
 /// `<p>`Retrieves the details of a Report Type. (Certain report types require a `<a href="https://stripe.com/docs/keys#test-live-modes">`live-mode API key`</a>`.)`</p>`
 ///
 /// `GET /v1/reporting/report_types/{report_type}`
-Future<ApiResult<ReportingReportType, ErrorModel>> getReportingReportTypesReportType({required String reportType, List<String>? expand, GetReportingReportTypesReportTypeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ReportingReportType, DeleteAccountsAccountError>> getReportingReportTypesReportType({required String reportType, List<String>? expand, GetReportingReportTypesReportTypeRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -16863,9 +16087,7 @@ return execute(
   onSuccess: (response) {
     return ReportingReportType.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all open reviews
@@ -16873,7 +16095,7 @@ return execute(
 /// `<p>`Returns a list of `<code>`Review`</code>` objects that have `<code>`open`</code>` set to `<code>`true`</code>`. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/reviews`
-Future<ApiResult<GetReviewsResponse, ErrorModel>> getReviews({GetReviewsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetReviewsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetReviewsResponse, DeleteAccountsAccountError>> getReviews({GetReviewsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetReviewsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -16910,9 +16132,7 @@ return execute(
   onSuccess: (response) {
     return GetReviewsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a review
@@ -16920,7 +16140,7 @@ return execute(
 /// `<p>`Retrieves a `<code>`Review`</code>` object.`</p>`
 ///
 /// `GET /v1/reviews/{review}`
-Future<ApiResult<Review, ErrorModel>> getReviewsReview({required String review, List<String>? expand, GetReviewsReviewRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Review, DeleteAccountsAccountError>> getReviewsReview({required String review, List<String>? expand, GetReviewsReviewRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -16945,9 +16165,7 @@ return execute(
   onSuccess: (response) {
     return Review.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Approve a review
@@ -16955,7 +16173,7 @@ return execute(
 /// `<p>`Approves a `<code>`Review`</code>` object, closing it and removing it from the list of reviews.`</p>`
 ///
 /// `POST /v1/reviews/{review}/approve`
-Future<ApiResult<Review, ErrorModel>> postReviewsReviewApprove({required String review, PostReviewsReviewApproveRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Review, DeleteAccountsAccountError>> postReviewsReviewApprove({required String review, PostReviewsReviewApproveRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -16974,9 +16192,7 @@ return execute(
   onSuccess: (response) {
     return Review.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all SetupAttempts
@@ -16984,7 +16200,7 @@ return execute(
 /// `<p>`Returns a list of SetupAttempts that associate with a provided SetupIntent.`</p>`
 ///
 /// `GET /v1/setup_attempts`
-Future<ApiResult<GetSetupAttemptsResponse, ErrorModel>> getSetupAttempts({required String setupIntent, GetSetupAttemptsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSetupAttemptsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSetupAttemptsResponse, DeleteAccountsAccountError>> getSetupAttempts({required String setupIntent, GetSetupAttemptsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSetupAttemptsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -17022,9 +16238,7 @@ return execute(
   onSuccess: (response) {
     return GetSetupAttemptsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all SetupIntents
@@ -17032,7 +16246,7 @@ return execute(
 /// `<p>`Returns a list of SetupIntents.`</p>`
 ///
 /// `GET /v1/setup_intents`
-Future<ApiResult<GetSetupIntentsResponse, ErrorModel>> getSetupIntents({bool? attachToSelf, GetSetupIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? paymentMethod, String? startingAfter, GetSetupIntentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSetupIntentsResponse, DeleteAccountsAccountError>> getSetupIntents({bool? attachToSelf, GetSetupIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? paymentMethod, String? startingAfter, GetSetupIntentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (attachToSelf != null) {
   queryParameters['attach_to_self'] = attachToSelf.toString();
@@ -17081,9 +16295,7 @@ return execute(
   onSuccess: (response) {
     return GetSetupIntentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a SetupIntent
@@ -17094,7 +16306,7 @@ return execute(
 /// it to collect any required permissions to charge the payment method later.`</p>`
 ///
 /// `POST /v1/setup_intents`
-Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntents({PostSetupIntentsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntents({PostSetupIntentsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17155,9 +16367,7 @@ return execute(
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a SetupIntent
@@ -17169,7 +16379,7 @@ return execute(
 /// `<p>`When retrieved with a publishable key, only a subset of properties will be returned. Please refer to the `<a href="#setup_intent_object">`SetupIntent`</a>` object reference for more details.`</p>`
 ///
 /// `GET /v1/setup_intents/{intent}`
-Future<ApiResult<SetupIntent, ErrorModel>> getSetupIntentsIntent({required String intent, String? clientSecret, List<String>? expand, GetSetupIntentsIntentRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> getSetupIntentsIntent({required String intent, String? clientSecret, List<String>? expand, GetSetupIntentsIntentRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientSecret != null) {
   queryParameters['client_secret'] = clientSecret;
@@ -17197,9 +16407,7 @@ return execute(
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a SetupIntent
@@ -17207,7 +16415,7 @@ return execute(
 /// `<p>`Updates a SetupIntent object.`</p>`
 ///
 /// `POST /v1/setup_intents/{intent}`
-Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntentsIntent({required String intent, PostSetupIntentsIntentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntentsIntent({required String intent, PostSetupIntentsIntentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17250,9 +16458,7 @@ return execute(
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel a SetupIntent
@@ -17262,7 +16468,7 @@ return execute(
 /// `<p>`After you cancel it, setup is abandoned and any operations on the SetupIntent fail with an error. You can’t cancel the SetupIntent for a Checkout Session. `<a href="/docs/api/checkout/sessions/expire">`Expire the Checkout Session`</a>` instead.`</p>`
 ///
 /// `POST /v1/setup_intents/{intent}/cancel`
-Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntentsIntentCancel({required String intent, PostSetupIntentsIntentCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntentsIntentCancel({required String intent, PostSetupIntentsIntentCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17283,9 +16489,7 @@ return execute(
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Confirm a SetupIntent
@@ -17306,7 +16510,7 @@ return execute(
 /// confirmation limit is reached.`</p>`
 ///
 /// `POST /v1/setup_intents/{intent}/confirm`
-Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntentsIntentConfirm({required String intent, PostSetupIntentsIntentConfirmRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntentsIntentConfirm({required String intent, PostSetupIntentsIntentConfirmRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17341,9 +16545,7 @@ return execute(
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Verify microdeposits on a SetupIntent
@@ -17351,7 +16553,7 @@ return execute(
 /// `<p>`Verifies microdeposits on a SetupIntent object.`</p>`
 ///
 /// `POST /v1/setup_intents/{intent}/verify_microdeposits`
-Future<ApiResult<SetupIntent, ErrorModel>> postSetupIntentsIntentVerifyMicrodeposits({required String intent, PostSetupIntentsIntentVerifyMicrodepositsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SetupIntent, DeleteAccountsAccountError>> postSetupIntentsIntentVerifyMicrodeposits({required String intent, PostSetupIntentsIntentVerifyMicrodepositsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17376,9 +16578,7 @@ return execute(
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all shipping rates
@@ -17386,7 +16586,7 @@ return execute(
 /// `<p>`Returns a list of your shipping rates.`</p>`
 ///
 /// `GET /v1/shipping_rates`
-Future<ApiResult<GetShippingRatesResponse, ErrorModel>> getShippingRates({bool? active, GetShippingRatesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetShippingRatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetShippingRatesResponse, DeleteAccountsAccountError>> getShippingRates({bool? active, GetShippingRatesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetShippingRatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -17429,9 +16629,7 @@ return execute(
   onSuccess: (response) {
     return GetShippingRatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a shipping rate
@@ -17439,7 +16637,7 @@ return execute(
 /// `<p>`Creates a new shipping rate object.`</p>`
 ///
 /// `POST /v1/shipping_rates`
-Future<ApiResult<ShippingRate, ErrorModel>> postShippingRates({required PostShippingRatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShippingRate, DeleteAccountsAccountError>> postShippingRates({required PostShippingRatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17471,9 +16669,7 @@ return execute(
   onSuccess: (response) {
     return ShippingRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a shipping rate
@@ -17481,7 +16677,7 @@ return execute(
 /// `<p>`Returns the shipping rate object with the given ID.`</p>`
 ///
 /// `GET /v1/shipping_rates/{shipping_rate_token}`
-Future<ApiResult<ShippingRate, ErrorModel>> getShippingRatesShippingRateToken({required String shippingRateToken, List<String>? expand, GetShippingRatesShippingRateTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ShippingRate, DeleteAccountsAccountError>> getShippingRatesShippingRateToken({required String shippingRateToken, List<String>? expand, GetShippingRatesShippingRateTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -17506,9 +16702,7 @@ return execute(
   onSuccess: (response) {
     return ShippingRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a shipping rate
@@ -17516,7 +16710,7 @@ return execute(
 /// `<p>`Updates an existing shipping rate object.`</p>`
 ///
 /// `POST /v1/shipping_rates/{shipping_rate_token}`
-Future<ApiResult<ShippingRate, ErrorModel>> postShippingRatesShippingRateToken({required String shippingRateToken, PostShippingRatesShippingRateTokenRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShippingRate, DeleteAccountsAccountError>> postShippingRatesShippingRateToken({required String shippingRateToken, PostShippingRatesShippingRateTokenRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17543,9 +16737,7 @@ return execute(
   onSuccess: (response) {
     return ShippingRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update an existing Sigma Query
@@ -17553,7 +16745,7 @@ return execute(
 /// `<p>`Update an existing Sigma query that previously exists`</p>`
 ///
 /// `POST /v1/sigma/saved_queries/{id}`
-Future<ApiResult<Query, ErrorModel>> postSigmaSavedQueriesId({required String id, PostSigmaSavedQueriesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Query, DeleteAccountsAccountError>> postSigmaSavedQueriesId({required String id, PostSigmaSavedQueriesIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17576,9 +16768,7 @@ return execute(
   onSuccess: (response) {
     return Query.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all scheduled query runs
@@ -17586,7 +16776,7 @@ return execute(
 /// `<p>`Returns a list of scheduled query runs.`</p>`
 ///
 /// `GET /v1/sigma/scheduled_query_runs`
-Future<ApiResult<GetSigmaScheduledQueryRunsResponse, ErrorModel>> getSigmaScheduledQueryRuns({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSigmaScheduledQueryRunsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSigmaScheduledQueryRunsResponse, DeleteAccountsAccountError>> getSigmaScheduledQueryRuns({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSigmaScheduledQueryRunsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -17620,9 +16810,7 @@ return execute(
   onSuccess: (response) {
     return GetSigmaScheduledQueryRunsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a scheduled query run
@@ -17630,7 +16818,7 @@ return execute(
 /// `<p>`Retrieves the details of an scheduled query run.`</p>`
 ///
 /// `GET /v1/sigma/scheduled_query_runs/{scheduled_query_run}`
-Future<ApiResult<ScheduledQueryRun, ErrorModel>> getSigmaScheduledQueryRunsScheduledQueryRun({required String scheduledQueryRun, List<String>? expand, GetSigmaScheduledQueryRunsScheduledQueryRunRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ScheduledQueryRun, DeleteAccountsAccountError>> getSigmaScheduledQueryRunsScheduledQueryRun({required String scheduledQueryRun, List<String>? expand, GetSigmaScheduledQueryRunsScheduledQueryRunRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -17655,9 +16843,7 @@ return execute(
   onSuccess: (response) {
     return ScheduledQueryRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Shares a source
@@ -17665,7 +16851,7 @@ return execute(
 /// `<p>`Creates a new source object.`</p>`
 ///
 /// `POST /v1/sources`
-Future<ApiResult<Source, ErrorModel>> postSources({PostSourcesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Source, DeleteAccountsAccountError>> postSources({PostSourcesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17714,9 +16900,7 @@ return execute(
   onSuccess: (response) {
     return Source.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a source
@@ -17724,7 +16908,7 @@ return execute(
 /// `<p>`Retrieves an existing source object. Supply the unique source ID from a source creation request and Stripe will return the corresponding up-to-date source object information.`</p>`
 ///
 /// `GET /v1/sources/{source}`
-Future<ApiResult<Source, ErrorModel>> getSourcesSource({required String source, String? clientSecret, List<String>? expand, GetSourcesSourceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Source, DeleteAccountsAccountError>> getSourcesSource({required String source, String? clientSecret, List<String>? expand, GetSourcesSourceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientSecret != null) {
   queryParameters['client_secret'] = clientSecret;
@@ -17752,9 +16936,7 @@ return execute(
   onSuccess: (response) {
     return Source.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a source
@@ -17764,7 +16946,7 @@ return execute(
 /// `<p>`This request accepts the `<code>`metadata`</code>` and `<code>`owner`</code>` as arguments. It is also possible to update type specific information for selected payment methods. Please refer to our `<a href="/docs/sources">`payment method guides`</a>` for more detail.`</p>`
 ///
 /// `POST /v1/sources/{source}`
-Future<ApiResult<Source, ErrorModel>> postSourcesSource({required String source, PostSourcesSourceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Source, DeleteAccountsAccountError>> postSourcesSource({required String source, PostSourcesSourceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17793,9 +16975,7 @@ return execute(
   onSuccess: (response) {
     return Source.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Source MandateNotification
@@ -17803,7 +16983,7 @@ return execute(
 /// `<p>`Retrieves a new Source MandateNotification.`</p>`
 ///
 /// `GET /v1/sources/{source}/mandate_notifications/{mandate_notification}`
-Future<ApiResult<SourceMandateNotification, ErrorModel>> getSourcesSourceMandateNotificationsMandateNotification({required String mandateNotification, required String source, List<String>? expand, GetSourcesSourceMandateNotificationsMandateNotificationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SourceMandateNotification, DeleteAccountsAccountError>> getSourcesSourceMandateNotificationsMandateNotification({required String mandateNotification, required String source, List<String>? expand, GetSourcesSourceMandateNotificationsMandateNotificationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -17828,16 +17008,14 @@ return execute(
   onSuccess: (response) {
     return SourceMandateNotification.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`List source transactions for a given source.`</p>`
 ///
 /// `GET /v1/sources/{source}/source_transactions`
-Future<ApiResult<GetSourcesSourceSourceTransactionsResponse, ErrorModel>> getSourcesSourceSourceTransactions({required String source, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSourcesSourceSourceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSourcesSourceSourceTransactionsResponse, DeleteAccountsAccountError>> getSourcesSourceSourceTransactions({required String source, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSourcesSourceSourceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -17871,9 +17049,7 @@ return execute(
   onSuccess: (response) {
     return GetSourcesSourceSourceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a source transaction
@@ -17881,7 +17057,7 @@ return execute(
 /// `<p>`Retrieve an existing source transaction object. Supply the unique source ID from a source creation request and the source transaction ID and Stripe will return the corresponding up-to-date source object information.`</p>`
 ///
 /// `GET /v1/sources/{source}/source_transactions/{source_transaction}`
-Future<ApiResult<SourceTransaction, ErrorModel>> getSourcesSourceSourceTransactionsSourceTransaction({required String source, required String sourceTransaction, List<String>? expand, GetSourcesSourceSourceTransactionsSourceTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SourceTransaction, DeleteAccountsAccountError>> getSourcesSourceSourceTransactionsSourceTransaction({required String source, required String sourceTransaction, List<String>? expand, GetSourcesSourceSourceTransactionsSourceTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -17906,16 +17082,14 @@ return execute(
   onSuccess: (response) {
     return SourceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 ///
 /// `<p>`Verify a given source.`</p>`
 ///
 /// `POST /v1/sources/{source}/verify`
-Future<ApiResult<Source, ErrorModel>> postSourcesSourceVerify({required String source, required PostSourcesSourceVerifyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Source, DeleteAccountsAccountError>> postSourcesSourceVerify({required String source, required PostSourcesSourceVerifyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -17935,9 +17109,7 @@ return execute(
   onSuccess: (response) {
     return Source.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all subscription items
@@ -17945,7 +17117,7 @@ return execute(
 /// `<p>`Returns a list of your subscription items for a given subscription.`</p>`
 ///
 /// `GET /v1/subscription_items`
-Future<ApiResult<GetSubscriptionItemsResponse, ErrorModel>> getSubscriptionItems({required String subscription, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSubscriptionItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSubscriptionItemsResponse, DeleteAccountsAccountError>> getSubscriptionItems({required String subscription, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSubscriptionItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -17980,9 +17152,7 @@ return execute(
   onSuccess: (response) {
     return GetSubscriptionItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a subscription item
@@ -17990,7 +17160,7 @@ return execute(
 /// `<p>`Adds a new item to an existing subscription. No existing items will be changed or replaced.`</p>`
 ///
 /// `POST /v1/subscription_items`
-Future<ApiResult<SubscriptionItem, ErrorModel>> postSubscriptionItems({required PostSubscriptionItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionItem, DeleteAccountsAccountError>> postSubscriptionItems({required PostSubscriptionItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18030,9 +17200,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a subscription item
@@ -18040,7 +17208,7 @@ return execute(
 /// `<p>`Retrieves the subscription item with the given ID.`</p>`
 ///
 /// `GET /v1/subscription_items/{item}`
-Future<ApiResult<SubscriptionItem, ErrorModel>> getSubscriptionItemsItem({required String item, List<String>? expand, GetSubscriptionItemsItemRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SubscriptionItem, DeleteAccountsAccountError>> getSubscriptionItemsItem({required String item, List<String>? expand, GetSubscriptionItemsItemRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -18065,9 +17233,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a subscription item
@@ -18075,7 +17241,7 @@ return execute(
 /// `<p>`Updates the plan or quantity of an item on a current subscription.`</p>`
 ///
 /// `POST /v1/subscription_items/{item}`
-Future<ApiResult<SubscriptionItem, ErrorModel>> postSubscriptionItemsItem({required String item, PostSubscriptionItemsItemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionItem, DeleteAccountsAccountError>> postSubscriptionItemsItem({required String item, PostSubscriptionItemsItemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18116,9 +17282,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a subscription item
@@ -18126,7 +17290,7 @@ return execute(
 /// `<p>`Deletes an item from the subscription. Removing a subscription item from a subscription will not cancel the subscription.`</p>`
 ///
 /// `DELETE /v1/subscription_items/{item}`
-Future<ApiResult<DeletedSubscriptionItem, ErrorModel>> deleteSubscriptionItemsItem({required String item, DeleteSubscriptionItemsItemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedSubscriptionItem, DeleteAccountsAccountError>> deleteSubscriptionItemsItem({required String item, DeleteSubscriptionItemsItemRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18151,9 +17315,7 @@ return execute(
   onSuccess: (response) {
     return DeletedSubscriptionItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all schedules
@@ -18161,7 +17323,7 @@ return execute(
 /// `<p>`Retrieves the list of your subscription schedules.`</p>`
 ///
 /// `GET /v1/subscription_schedules`
-Future<ApiResult<GetSubscriptionSchedulesResponse, ErrorModel>> getSubscriptionSchedules({GetSubscriptionSchedulesCanceledAt? canceledAt, GetSubscriptionSchedulesCompletedAt? completedAt, GetSubscriptionSchedulesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, GetSubscriptionSchedulesReleasedAt? releasedAt, bool? scheduled, String? startingAfter, GetSubscriptionSchedulesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSubscriptionSchedulesResponse, DeleteAccountsAccountError>> getSubscriptionSchedules({GetSubscriptionSchedulesCanceledAt? canceledAt, GetSubscriptionSchedulesCompletedAt? completedAt, GetSubscriptionSchedulesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, GetSubscriptionSchedulesReleasedAt? releasedAt, bool? scheduled, String? startingAfter, GetSubscriptionSchedulesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (canceledAt != null) {
 queryParametersList.add(ApiQueryParameter(name: 'canceled_at', value: canceledAt.toString()));
@@ -18216,9 +17378,7 @@ return execute(
   onSuccess: (response) {
     return GetSubscriptionSchedulesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a schedule
@@ -18226,7 +17386,7 @@ return execute(
 /// `<p>`Creates a new subscription schedule object. Each customer can have up to 500 active or scheduled subscriptions.`</p>`
 ///
 /// `POST /v1/subscription_schedules`
-Future<ApiResult<SubscriptionSchedule, ErrorModel>> postSubscriptionSchedules({PostSubscriptionSchedulesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> postSubscriptionSchedules({PostSubscriptionSchedulesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18263,9 +17423,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a schedule
@@ -18273,7 +17431,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing subscription schedule. You only need to supply the unique subscription schedule identifier that was returned upon subscription schedule creation.`</p>`
 ///
 /// `GET /v1/subscription_schedules/{schedule}`
-Future<ApiResult<SubscriptionSchedule, ErrorModel>> getSubscriptionSchedulesSchedule({required String schedule, List<String>? expand, GetSubscriptionSchedulesScheduleRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> getSubscriptionSchedulesSchedule({required String schedule, List<String>? expand, GetSubscriptionSchedulesScheduleRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -18298,9 +17456,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a schedule
@@ -18308,7 +17464,7 @@ return execute(
 /// `<p>`Updates an existing subscription schedule.`</p>`
 ///
 /// `POST /v1/subscription_schedules/{schedule}`
-Future<ApiResult<SubscriptionSchedule, ErrorModel>> postSubscriptionSchedulesSchedule({required String schedule, PostSubscriptionSchedulesScheduleRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> postSubscriptionSchedulesSchedule({required String schedule, PostSubscriptionSchedulesScheduleRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18337,9 +17493,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel a schedule
@@ -18347,7 +17501,7 @@ return execute(
 /// `<p>`Cancels a subscription schedule and its associated subscription immediately (if the subscription schedule has an active subscription). A subscription schedule can only be canceled if its status is `<code>`not_started`</code>` or `<code>`active`</code>`.`</p>`
 ///
 /// `POST /v1/subscription_schedules/{schedule}/cancel`
-Future<ApiResult<SubscriptionSchedule, ErrorModel>> postSubscriptionSchedulesScheduleCancel({required String schedule, PostSubscriptionSchedulesScheduleCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> postSubscriptionSchedulesScheduleCancel({required String schedule, PostSubscriptionSchedulesScheduleCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18370,9 +17524,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Release a schedule
@@ -18380,7 +17532,7 @@ return execute(
 /// `<p>`Releases the subscription schedule immediately, which will stop scheduling of its phases, but leave any existing subscription in place. A schedule can only be released if its status is `<code>`not_started`</code>` or `<code>`active`</code>`. If the subscription schedule is currently associated with a subscription, releasing it will remove its `<code>`subscription`</code>` property and set the subscription’s ID to the `<code>`released_subscription`</code>` property.`</p>`
 ///
 /// `POST /v1/subscription_schedules/{schedule}/release`
-Future<ApiResult<SubscriptionSchedule, ErrorModel>> postSubscriptionSchedulesScheduleRelease({required String schedule, PostSubscriptionSchedulesScheduleReleaseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionSchedule, DeleteAccountsAccountError>> postSubscriptionSchedulesScheduleRelease({required String schedule, PostSubscriptionSchedulesScheduleReleaseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18401,9 +17553,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List subscriptions
@@ -18411,7 +17561,7 @@ return execute(
 /// `<p>`By default, returns a list of subscriptions that have not been canceled. In order to list canceled subscriptions, specify `<code>`status=canceled`</code>`.`</p>`
 ///
 /// `GET /v1/subscriptions`
-Future<ApiResult<GetSubscriptionsResponse, ErrorModel>> getSubscriptions({GetSubscriptionsAutomaticTax? automaticTax, GetSubscriptionsCollectionMethod? collectionMethod, GetSubscriptionsCreated? created, GetSubscriptionsCurrentPeriodEnd? currentPeriodEnd, GetSubscriptionsCurrentPeriodStart? currentPeriodStart, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? price, String? startingAfter, GetSubscriptionsStatus? status, String? testClock, GetSubscriptionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSubscriptionsResponse, DeleteAccountsAccountError>> getSubscriptions({GetSubscriptionsAutomaticTax? automaticTax, GetSubscriptionsCollectionMethod? collectionMethod, GetSubscriptionsCreated? created, GetSubscriptionsCurrentPeriodEnd? currentPeriodEnd, GetSubscriptionsCurrentPeriodStart? currentPeriodStart, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? price, String? startingAfter, GetSubscriptionsStatus? status, String? testClock, GetSubscriptionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (automaticTax != null) {
 queryParameters['automatic_tax[enabled]'] = automaticTax.enabled.toString();
@@ -18475,9 +17625,7 @@ return execute(
   onSuccess: (response) {
     return GetSubscriptionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a subscription
@@ -18491,7 +17639,7 @@ return execute(
 /// Schedules provide the flexibility to model more complex billing configurations that change over time.`</p>`
 ///
 /// `POST /v1/subscriptions`
-Future<ApiResult<Subscription, ErrorModel>> postSubscriptions({PostSubscriptionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> postSubscriptions({PostSubscriptionsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18578,9 +17726,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Search subscriptions
@@ -18591,7 +17737,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/subscriptions/search`
-Future<ApiResult<GetSubscriptionsSearchResponse, ErrorModel>> getSubscriptionsSearch({required String query, List<String>? expand, int? limit, String? page, GetSubscriptionsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSubscriptionsSearchResponse, DeleteAccountsAccountError>> getSubscriptionsSearch({required String query, List<String>? expand, int? limit, String? page, GetSubscriptionsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -18623,9 +17769,7 @@ return execute(
   onSuccess: (response) {
     return GetSubscriptionsSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a subscription
@@ -18633,7 +17777,7 @@ return execute(
 /// `<p>`Retrieves the subscription with the given ID.`</p>`
 ///
 /// `GET /v1/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, ErrorModel>> getSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, List<String>? expand, GetSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> getSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, List<String>? expand, GetSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -18658,9 +17802,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a subscription
@@ -18688,7 +17830,7 @@ return execute(
 /// `<p>`Updating the quantity on a subscription many times in an hour may result in `<a href="/docs/rate-limits">`rate limiting`</a>`. If you need to bill for a frequently changing quantity, consider integrating `<a href="/docs/billing/subscriptions/usage-based">`usage-based billing`</a>` instead.`</p>`
 ///
 /// `POST /v1/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, ErrorModel>> postSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, PostSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> postSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, PostSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18767,9 +17909,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel a subscription
@@ -18781,7 +17921,7 @@ return execute(
 /// `<p>`By default, upon subscription cancellation, Stripe stops automatic collection of all finalized invoices for the customer. This is intended to prevent unexpected payment attempts after the customer has canceled a subscription. However, you can resume automatic collection of the invoices manually after subscription cancellation to have us proceed. Or, you could check for unpaid invoices before allowing the customer to cancel the subscription at all.`</p>`
 ///
 /// `DELETE /v1/subscriptions/{subscription_exposed_id}`
-Future<ApiResult<Subscription, ErrorModel>> deleteSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, DeleteSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> deleteSubscriptionsSubscriptionExposedId({required String subscriptionExposedId, DeleteSubscriptionsSubscriptionExposedIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18806,9 +17946,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a subscription discount
@@ -18816,7 +17954,7 @@ return execute(
 /// `<p>`Removes the currently applied discount on a subscription.`</p>`
 ///
 /// `DELETE /v1/subscriptions/{subscription_exposed_id}/discount`
-Future<ApiResult<DeletedDiscount, ErrorModel>> deleteSubscriptionsSubscriptionExposedIdDiscount({required String subscriptionExposedId, DeleteSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedDiscount, DeleteAccountsAccountError>> deleteSubscriptionsSubscriptionExposedIdDiscount({required String subscriptionExposedId, DeleteSubscriptionsSubscriptionExposedIdDiscountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18833,9 +17971,7 @@ return execute(
   onSuccess: (response) {
     return DeletedDiscount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Migrate a subscription
@@ -18843,7 +17979,7 @@ return execute(
 /// `<p>`Upgrade the billing_mode of an existing subscription.`</p>`
 ///
 /// `POST /v1/subscriptions/{subscription}/migrate`
-Future<ApiResult<Subscription, ErrorModel>> postSubscriptionsSubscriptionMigrate({required String subscription, required PostSubscriptionsSubscriptionMigrateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> postSubscriptionsSubscriptionMigrate({required String subscription, required PostSubscriptionsSubscriptionMigrateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18863,9 +17999,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Resume a subscription
@@ -18873,7 +18007,7 @@ return execute(
 /// `<p>`Initiates resumption of a paused subscription, optionally resetting the billing cycle anchor and creating prorations. If no resumption invoice is generated, the subscription becomes `<code>`active`</code>` immediately. If a resumption invoice is generated, the subscription remains `<code>`paused`</code>` until the invoice is paid or marked uncollectible. If the invoice is not paid by the expiration date, it is voided and the subscription remains `<code>`paused`</code>`.`</p>`
 ///
 /// `POST /v1/subscriptions/{subscription}/resume`
-Future<ApiResult<Subscription, ErrorModel>> postSubscriptionsSubscriptionResume({required String subscription, PostSubscriptionsSubscriptionResumeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription, DeleteAccountsAccountError>> postSubscriptionsSubscriptionResume({required String subscription, PostSubscriptionsSubscriptionResumeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18898,9 +18032,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Find a Tax Association
@@ -18908,7 +18040,7 @@ return execute(
 /// `<p>`Finds a tax association object by PaymentIntent id.`</p>`
 ///
 /// `GET /v1/tax/associations/find`
-Future<ApiResult<TaxAssociation, ErrorModel>> getTaxAssociationsFind({required String paymentIntent, List<String>? expand, GetTaxAssociationsFindRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxAssociation, DeleteAccountsAccountError>> getTaxAssociationsFind({required String paymentIntent, List<String>? expand, GetTaxAssociationsFindRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -18934,9 +18066,7 @@ return execute(
   onSuccess: (response) {
     return TaxAssociation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a Tax Calculation
@@ -18944,7 +18074,7 @@ return execute(
 /// `<p>`Calculates tax based on the input and returns a Tax `<code>`Calculation`</code>` object.`</p>`
 ///
 /// `POST /v1/tax/calculations`
-Future<ApiResult<TaxCalculation, ErrorModel>> postTaxCalculations({required PostTaxCalculationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxCalculation, DeleteAccountsAccountError>> postTaxCalculations({required PostTaxCalculationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -18975,9 +18105,7 @@ return execute(
   onSuccess: (response) {
     return TaxCalculation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Tax Calculation
@@ -18985,7 +18113,7 @@ return execute(
 /// `<p>`Retrieves a Tax `<code>`Calculation`</code>` object, if the calculation hasn’t expired.`</p>`
 ///
 /// `GET /v1/tax/calculations/{calculation}`
-Future<ApiResult<TaxCalculation, ErrorModel>> getTaxCalculationsCalculation({required String calculation, List<String>? expand, GetTaxCalculationsCalculationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxCalculation, DeleteAccountsAccountError>> getTaxCalculationsCalculation({required String calculation, List<String>? expand, GetTaxCalculationsCalculationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -19010,9 +18138,7 @@ return execute(
   onSuccess: (response) {
     return TaxCalculation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a calculation's line items
@@ -19020,7 +18146,7 @@ return execute(
 /// `<p>`Retrieves the line items of a tax calculation as a collection, if the calculation hasn’t expired.`</p>`
 ///
 /// `GET /v1/tax/calculations/{calculation}/line_items`
-Future<ApiResult<GetTaxCalculationsCalculationLineItemsResponse, ErrorModel>> getTaxCalculationsCalculationLineItems({required String calculation, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxCalculationsCalculationLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTaxCalculationsCalculationLineItemsResponse, DeleteAccountsAccountError>> getTaxCalculationsCalculationLineItems({required String calculation, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxCalculationsCalculationLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -19054,9 +18180,7 @@ return execute(
   onSuccess: (response) {
     return GetTaxCalculationsCalculationLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List registrations
@@ -19064,7 +18188,7 @@ return execute(
 /// `<p>`Returns a list of Tax `<code>`Registration`</code>` objects.`</p>`
 ///
 /// `GET /v1/tax/registrations`
-Future<ApiResult<GetTaxRegistrationsResponse, ErrorModel>> getTaxRegistrations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxRegistrationsStatus? status, GetTaxRegistrationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTaxRegistrationsResponse, DeleteAccountsAccountError>> getTaxRegistrations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxRegistrationsStatus? status, GetTaxRegistrationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -19101,9 +18225,7 @@ return execute(
   onSuccess: (response) {
     return GetTaxRegistrationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a registration
@@ -19111,7 +18233,7 @@ return execute(
 /// `<p>`Creates a new Tax `<code>`Registration`</code>` object.`</p>`
 ///
 /// `POST /v1/tax/registrations`
-Future<ApiResult<TaxRegistration, ErrorModel>> postTaxRegistrations({required PostTaxRegistrationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxRegistration, DeleteAccountsAccountError>> postTaxRegistrations({required PostTaxRegistrationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19135,9 +18257,7 @@ return execute(
   onSuccess: (response) {
     return TaxRegistration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a registration
@@ -19145,7 +18265,7 @@ return execute(
 /// `<p>`Returns a Tax `<code>`Registration`</code>` object.`</p>`
 ///
 /// `GET /v1/tax/registrations/{id}`
-Future<ApiResult<TaxRegistration, ErrorModel>> getTaxRegistrationsId({required String id, List<String>? expand, GetTaxRegistrationsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxRegistration, DeleteAccountsAccountError>> getTaxRegistrationsId({required String id, List<String>? expand, GetTaxRegistrationsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -19170,9 +18290,7 @@ return execute(
   onSuccess: (response) {
     return TaxRegistration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a registration
@@ -19182,7 +18300,7 @@ return execute(
 /// `<p>`A registration cannot be deleted after it has been created. If you wish to end a registration you may do so by setting `<code>`expires_at`</code>`.`</p>`
 ///
 /// `POST /v1/tax/registrations/{id}`
-Future<ApiResult<TaxRegistration, ErrorModel>> postTaxRegistrationsId({required String id, PostTaxRegistrationsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxRegistration, DeleteAccountsAccountError>> postTaxRegistrationsId({required String id, PostTaxRegistrationsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19205,9 +18323,7 @@ return execute(
   onSuccess: (response) {
     return TaxRegistration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve settings
@@ -19215,7 +18331,7 @@ return execute(
 /// `<p>`Retrieves Tax `<code>`Settings`</code>` for a merchant.`</p>`
 ///
 /// `GET /v1/tax/settings`
-Future<ApiResult<TaxSettings, ErrorModel>> getTaxSettings({List<String>? expand, GetTaxSettingsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxSettings, DeleteAccountsAccountError>> getTaxSettings({List<String>? expand, GetTaxSettingsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -19240,9 +18356,7 @@ return execute(
   onSuccess: (response) {
     return TaxSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update settings
@@ -19250,7 +18364,7 @@ return execute(
 /// `<p>`Updates Tax `<code>`Settings`</code>` parameters used in tax calculations. All parameters are editable but none can be removed once set.`</p>`
 ///
 /// `POST /v1/tax/settings`
-Future<ApiResult<TaxSettings, ErrorModel>> postTaxSettings({PostTaxSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxSettings, DeleteAccountsAccountError>> postTaxSettings({PostTaxSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19273,9 +18387,7 @@ return execute(
   onSuccess: (response) {
     return TaxSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a transaction from a calculation
@@ -19283,7 +18395,7 @@ return execute(
 /// `<p>`Creates a Tax Transaction from a calculation, if that calculation hasn’t expired. Calculations expire after 90 days.`</p>`
 ///
 /// `POST /v1/tax/transactions/create_from_calculation`
-Future<ApiResult<TaxTransaction, ErrorModel>> postTaxTransactionsCreateFromCalculation({required PostTaxTransactionsCreateFromCalculationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxTransaction, DeleteAccountsAccountError>> postTaxTransactionsCreateFromCalculation({required PostTaxTransactionsCreateFromCalculationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19308,9 +18420,7 @@ return execute(
   onSuccess: (response) {
     return TaxTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a reversal transaction
@@ -19318,7 +18428,7 @@ return execute(
 /// `<p>`Partially or fully reverses a previously created `<code>`Transaction`</code>`.`</p>`
 ///
 /// `POST /v1/tax/transactions/create_reversal`
-Future<ApiResult<TaxTransaction, ErrorModel>> postTaxTransactionsCreateReversal({required PostTaxTransactionsCreateReversalRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxTransaction, DeleteAccountsAccountError>> postTaxTransactionsCreateReversal({required PostTaxTransactionsCreateReversalRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19348,9 +18458,7 @@ return execute(
   onSuccess: (response) {
     return TaxTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a transaction
@@ -19358,7 +18466,7 @@ return execute(
 /// `<p>`Retrieves a Tax `<code>`Transaction`</code>` object.`</p>`
 ///
 /// `GET /v1/tax/transactions/{transaction}`
-Future<ApiResult<TaxTransaction, ErrorModel>> getTaxTransactionsTransaction({required String transaction, List<String>? expand, GetTaxTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxTransaction, DeleteAccountsAccountError>> getTaxTransactionsTransaction({required String transaction, List<String>? expand, GetTaxTransactionsTransactionRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -19383,9 +18491,7 @@ return execute(
   onSuccess: (response) {
     return TaxTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a transaction's line items
@@ -19393,7 +18499,7 @@ return execute(
 /// `<p>`Retrieves the line items of a committed standalone transaction as a collection.`</p>`
 ///
 /// `GET /v1/tax/transactions/{transaction}/line_items`
-Future<ApiResult<GetTaxTransactionsTransactionLineItemsResponse, ErrorModel>> getTaxTransactionsTransactionLineItems({required String transaction, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxTransactionsTransactionLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTaxTransactionsTransactionLineItemsResponse, DeleteAccountsAccountError>> getTaxTransactionsTransactionLineItems({required String transaction, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxTransactionsTransactionLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -19427,9 +18533,7 @@ return execute(
   onSuccess: (response) {
     return GetTaxTransactionsTransactionLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all tax codes
@@ -19437,7 +18541,7 @@ return execute(
 /// `<p>`A list of `<a href="https://stripe.com/docs/tax/tax-categories">`all tax codes available`</a>` to add to Products in order to allow specific tax calculations.`</p>`
 ///
 /// `GET /v1/tax_codes`
-Future<ApiResult<GetTaxCodesResponse, ErrorModel>> getTaxCodes({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxCodesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTaxCodesResponse, DeleteAccountsAccountError>> getTaxCodes({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxCodesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -19471,9 +18575,7 @@ return execute(
   onSuccess: (response) {
     return GetTaxCodesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a tax code
@@ -19481,7 +18583,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing tax code. Supply the unique tax code ID and Stripe will return the corresponding tax code information.`</p>`
 ///
 /// `GET /v1/tax_codes/{id}`
-Future<ApiResult<TaxCode, ErrorModel>> getTaxCodesId({required String id, List<String>? expand, GetTaxCodesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxCode, DeleteAccountsAccountError>> getTaxCodesId({required String id, List<String>? expand, GetTaxCodesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -19506,9 +18608,7 @@ return execute(
   onSuccess: (response) {
     return TaxCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all tax IDs
@@ -19516,7 +18616,7 @@ return execute(
 /// `<p>`Returns a list of tax IDs.`</p>`
 ///
 /// `GET /v1/tax_ids`
-Future<ApiResult<GetTaxIdsResponse, ErrorModel>> getTaxIds({String? endingBefore, List<String>? expand, int? limit, GetTaxIdsOwner? owner, String? startingAfter, GetTaxIdsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTaxIdsResponse, DeleteAccountsAccountError>> getTaxIds({String? endingBefore, List<String>? expand, int? limit, GetTaxIdsOwner? owner, String? startingAfter, GetTaxIdsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -19556,9 +18656,7 @@ return execute(
   onSuccess: (response) {
     return GetTaxIdsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a tax ID
@@ -19566,7 +18664,7 @@ return execute(
 /// `<p>`Creates a new account or customer `<code>`tax_id`</code>` object.`</p>`
 ///
 /// `POST /v1/tax_ids`
-Future<ApiResult<TaxId, ErrorModel>> postTaxIds({required PostTaxIdsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxId, DeleteAccountsAccountError>> postTaxIds({required PostTaxIdsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19589,9 +18687,7 @@ return execute(
   onSuccess: (response) {
     return TaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a tax ID
@@ -19599,7 +18695,7 @@ return execute(
 /// `<p>`Retrieves an account or customer `<code>`tax_id`</code>` object.`</p>`
 ///
 /// `GET /v1/tax_ids/{id}`
-Future<ApiResult<TaxId, ErrorModel>> getTaxIdsId({required String id, List<String>? expand, GetTaxIdsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxId, DeleteAccountsAccountError>> getTaxIdsId({required String id, List<String>? expand, GetTaxIdsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -19624,9 +18720,7 @@ return execute(
   onSuccess: (response) {
     return TaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a tax ID
@@ -19634,7 +18728,7 @@ return execute(
 /// `<p>`Deletes an existing account or customer `<code>`tax_id`</code>` object.`</p>`
 ///
 /// `DELETE /v1/tax_ids/{id}`
-Future<ApiResult<DeletedTaxId, ErrorModel>> deleteTaxIdsId({required String id, DeleteTaxIdsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedTaxId, DeleteAccountsAccountError>> deleteTaxIdsId({required String id, DeleteTaxIdsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19651,9 +18745,7 @@ return execute(
   onSuccess: (response) {
     return DeletedTaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all tax rates
@@ -19661,7 +18753,7 @@ return execute(
 /// `<p>`Returns a list of your tax rates. Tax rates are returned sorted by creation date, with the most recently created tax rates appearing first.`</p>`
 ///
 /// `GET /v1/tax_rates`
-Future<ApiResult<GetTaxRatesResponse, ErrorModel>> getTaxRates({bool? active, GetTaxRatesCreated? created, String? endingBefore, List<String>? expand, bool? inclusive, int? limit, String? startingAfter, GetTaxRatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTaxRatesResponse, DeleteAccountsAccountError>> getTaxRates({bool? active, GetTaxRatesCreated? created, String? endingBefore, List<String>? expand, bool? inclusive, int? limit, String? startingAfter, GetTaxRatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (active != null) {
   queryParameters['active'] = active.toString();
@@ -19704,9 +18796,7 @@ return execute(
   onSuccess: (response) {
     return GetTaxRatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a tax rate
@@ -19714,7 +18804,7 @@ return execute(
 /// `<p>`Creates a new tax rate.`</p>`
 ///
 /// `POST /v1/tax_rates`
-Future<ApiResult<TaxRate, ErrorModel>> postTaxRates({required PostTaxRatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxRate, DeleteAccountsAccountError>> postTaxRates({required PostTaxRatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19750,9 +18840,7 @@ return execute(
   onSuccess: (response) {
     return TaxRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a tax rate
@@ -19760,7 +18848,7 @@ return execute(
 /// `<p>`Retrieves a tax rate with the given ID`</p>`
 ///
 /// `GET /v1/tax_rates/{tax_rate}`
-Future<ApiResult<TaxRate, ErrorModel>> getTaxRatesTaxRate({required String taxRate, List<String>? expand, GetTaxRatesTaxRateRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxRate, DeleteAccountsAccountError>> getTaxRatesTaxRate({required String taxRate, List<String>? expand, GetTaxRatesTaxRateRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -19785,9 +18873,7 @@ return execute(
   onSuccess: (response) {
     return TaxRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a tax rate
@@ -19795,7 +18881,7 @@ return execute(
 /// `<p>`Updates an existing tax rate.`</p>`
 ///
 /// `POST /v1/tax_rates/{tax_rate}`
-Future<ApiResult<TaxRate, ErrorModel>> postTaxRatesTaxRate({required String taxRate, PostTaxRatesTaxRateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TaxRate, DeleteAccountsAccountError>> postTaxRatesTaxRate({required String taxRate, PostTaxRatesTaxRateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19830,9 +18916,7 @@ return execute(
   onSuccess: (response) {
     return TaxRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all Configurations
@@ -19840,7 +18924,7 @@ return execute(
 /// `<p>`Returns a list of `<code>`Configuration`</code>` objects.`</p>`
 ///
 /// `GET /v1/terminal/configurations`
-Future<ApiResult<GetTerminalConfigurationsResponse, ErrorModel>> getTerminalConfigurations({String? endingBefore, List<String>? expand, bool? isAccountDefault, int? limit, String? startingAfter, GetTerminalConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTerminalConfigurationsResponse, DeleteAccountsAccountError>> getTerminalConfigurations({String? endingBefore, List<String>? expand, bool? isAccountDefault, int? limit, String? startingAfter, GetTerminalConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -19877,9 +18961,7 @@ return execute(
   onSuccess: (response) {
     return GetTerminalConfigurationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a Configuration
@@ -19887,7 +18969,7 @@ return execute(
 /// `<p>`Creates a new `<code>`Configuration`</code>` object.`</p>`
 ///
 /// `POST /v1/terminal/configurations`
-Future<ApiResult<TerminalConfiguration, ErrorModel>> postTerminalConfigurations({PostTerminalConfigurationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalConfiguration, DeleteAccountsAccountError>> postTerminalConfigurations({PostTerminalConfigurationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -19928,9 +19010,7 @@ return execute(
   onSuccess: (response) {
     return TerminalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Configuration
@@ -19938,7 +19018,7 @@ return execute(
 /// `<p>`Retrieves a `<code>`Configuration`</code>` object.`</p>`
 ///
 /// `GET /v1/terminal/configurations/{configuration}`
-Future<ApiResult<GetTerminalConfigurationsConfigurationResponse, ErrorModel>> getTerminalConfigurationsConfiguration({required String configuration, List<String>? expand, GetTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTerminalConfigurationsConfigurationResponse, DeleteAccountsAccountError>> getTerminalConfigurationsConfiguration({required String configuration, List<String>? expand, GetTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -19963,9 +19043,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalConfiguration.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a Configuration
@@ -19973,7 +19051,7 @@ return execute(
 /// `<p>`Updates a new `<code>`Configuration`</code>` object.`</p>`
 ///
 /// `POST /v1/terminal/configurations/{configuration}`
-Future<ApiResult<PostTerminalConfigurationsConfigurationResponse, ErrorModel>> postTerminalConfigurationsConfiguration({required String configuration, PostTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostTerminalConfigurationsConfigurationResponse, DeleteAccountsAccountError>> postTerminalConfigurationsConfiguration({required String configuration, PostTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20014,9 +19092,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalConfiguration.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a Configuration
@@ -20024,7 +19100,7 @@ return execute(
 /// `<p>`Deletes a `<code>`Configuration`</code>` object.`</p>`
 ///
 /// `DELETE /v1/terminal/configurations/{configuration}`
-Future<ApiResult<DeletedTerminalConfiguration, ErrorModel>> deleteTerminalConfigurationsConfiguration({required String configuration, DeleteTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedTerminalConfiguration, DeleteAccountsAccountError>> deleteTerminalConfigurationsConfiguration({required String configuration, DeleteTerminalConfigurationsConfigurationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20041,9 +19117,7 @@ return execute(
   onSuccess: (response) {
     return DeletedTerminalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a Connection Token
@@ -20051,7 +19125,7 @@ return execute(
 /// `<p>`To connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived connection token from Stripe, proxied through your server. On your backend, add an endpoint that creates and returns a connection token.`</p>`
 ///
 /// `POST /v1/terminal/connection_tokens`
-Future<ApiResult<TerminalConnectionToken, ErrorModel>> postTerminalConnectionTokens({PostTerminalConnectionTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalConnectionToken, DeleteAccountsAccountError>> postTerminalConnectionTokens({PostTerminalConnectionTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20072,9 +19146,7 @@ return execute(
   onSuccess: (response) {
     return TerminalConnectionToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all Locations
@@ -20082,7 +19154,7 @@ return execute(
 /// `<p>`Returns a list of `<code>`Location`</code>` objects.`</p>`
 ///
 /// `GET /v1/terminal/locations`
-Future<ApiResult<GetTerminalLocationsResponse, ErrorModel>> getTerminalLocations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTerminalLocationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTerminalLocationsResponse, DeleteAccountsAccountError>> getTerminalLocations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTerminalLocationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -20116,9 +19188,7 @@ return execute(
   onSuccess: (response) {
     return GetTerminalLocationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a Location
@@ -20127,7 +19197,7 @@ return execute(
 /// For further details, including which address fields are required in each country, see the `<a href="/docs/terminal/fleet/locations">`Manage locations`</a>` guide.`</p>`
 ///
 /// `POST /v1/terminal/locations`
-Future<ApiResult<TerminalLocation, ErrorModel>> postTerminalLocations({PostTerminalLocationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalLocation, DeleteAccountsAccountError>> postTerminalLocations({PostTerminalLocationsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20164,9 +19234,7 @@ return execute(
   onSuccess: (response) {
     return TerminalLocation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Location
@@ -20174,7 +19242,7 @@ return execute(
 /// `<p>`Retrieves a `<code>`Location`</code>` object.`</p>`
 ///
 /// `GET /v1/terminal/locations/{location}`
-Future<ApiResult<GetTerminalLocationsLocationResponse, ErrorModel>> getTerminalLocationsLocation({required String location, List<String>? expand, GetTerminalLocationsLocationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTerminalLocationsLocationResponse, DeleteAccountsAccountError>> getTerminalLocationsLocation({required String location, List<String>? expand, GetTerminalLocationsLocationRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -20199,9 +19267,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalLocation.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalLocation.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a Location
@@ -20209,7 +19275,7 @@ return execute(
 /// `<p>`Updates a `<code>`Location`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/terminal/locations/{location}`
-Future<ApiResult<PostTerminalLocationsLocationResponse, ErrorModel>> postTerminalLocationsLocation({required String location, PostTerminalLocationsLocationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostTerminalLocationsLocationResponse, DeleteAccountsAccountError>> postTerminalLocationsLocation({required String location, PostTerminalLocationsLocationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20246,9 +19312,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalLocation.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalLocation.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a Location
@@ -20256,7 +19320,7 @@ return execute(
 /// `<p>`Deletes a `<code>`Location`</code>` object.`</p>`
 ///
 /// `DELETE /v1/terminal/locations/{location}`
-Future<ApiResult<DeletedTerminalLocation, ErrorModel>> deleteTerminalLocationsLocation({required String location, DeleteTerminalLocationsLocationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedTerminalLocation, DeleteAccountsAccountError>> deleteTerminalLocationsLocation({required String location, DeleteTerminalLocationsLocationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20273,9 +19337,7 @@ return execute(
   onSuccess: (response) {
     return DeletedTerminalLocation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an Onboarding Link
@@ -20283,7 +19345,7 @@ return execute(
 /// `<p>`Creates a new `<code>`OnboardingLink`</code>` object that contains a redirect_url used for onboarding onto Tap to Pay on iPhone.`</p>`
 ///
 /// `POST /v1/terminal/onboarding_links`
-Future<ApiResult<TerminalOnboardingLink, ErrorModel>> postTerminalOnboardingLinks({required PostTerminalOnboardingLinksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalOnboardingLink, DeleteAccountsAccountError>> postTerminalOnboardingLinks({required PostTerminalOnboardingLinksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20306,9 +19368,7 @@ return execute(
   onSuccess: (response) {
     return TerminalOnboardingLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all Readers
@@ -20316,7 +19376,7 @@ return execute(
 /// `<p>`Returns a list of `<code>`Reader`</code>` objects.`</p>`
 ///
 /// `GET /v1/terminal/readers`
-Future<ApiResult<GetTerminalReadersResponse, ErrorModel>> getTerminalReaders({GetTerminalReadersDeviceType? deviceType, String? endingBefore, List<String>? expand, int? limit, String? location, String? serialNumber, String? startingAfter, GetTerminalReadersStatus? status, GetTerminalReadersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTerminalReadersResponse, DeleteAccountsAccountError>> getTerminalReaders({GetTerminalReadersDeviceType? deviceType, String? endingBefore, List<String>? expand, int? limit, String? location, String? serialNumber, String? startingAfter, GetTerminalReadersStatus? status, GetTerminalReadersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deviceType != null) {
   queryParameters['device_type'] = deviceType.toJson();
@@ -20362,9 +19422,7 @@ return execute(
   onSuccess: (response) {
     return GetTerminalReadersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a Reader
@@ -20372,7 +19430,7 @@ return execute(
 /// `<p>`Creates a new `<code>`Reader`</code>` object.`</p>`
 ///
 /// `POST /v1/terminal/readers`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReaders({required PostTerminalReadersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReaders({required PostTerminalReadersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20398,9 +19456,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Reader
@@ -20408,7 +19464,7 @@ return execute(
 /// `<p>`Retrieves a `<code>`Reader`</code>` object.`</p>`
 ///
 /// `GET /v1/terminal/readers/{reader}`
-Future<ApiResult<GetTerminalReadersReaderResponse, ErrorModel>> getTerminalReadersReader({required String reader, List<String>? expand, GetTerminalReadersReaderRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTerminalReadersReaderResponse, DeleteAccountsAccountError>> getTerminalReadersReader({required String reader, List<String>? expand, GetTerminalReadersReaderRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -20433,9 +19489,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalReader.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalReader.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a Reader
@@ -20443,7 +19497,7 @@ return execute(
 /// `<p>`Updates a `<code>`Reader`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}`
-Future<ApiResult<PostTerminalReadersReaderResponse, ErrorModel>> postTerminalReadersReader({required String reader, PostTerminalReadersReaderRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostTerminalReadersReaderResponse, DeleteAccountsAccountError>> postTerminalReadersReader({required String reader, PostTerminalReadersReaderRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20466,9 +19520,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalReader.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalReader.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a Reader
@@ -20476,7 +19528,7 @@ return execute(
 /// `<p>`Deletes a `<code>`Reader`</code>` object.`</p>`
 ///
 /// `DELETE /v1/terminal/readers/{reader}`
-Future<ApiResult<DeletedTerminalReader, ErrorModel>> deleteTerminalReadersReader({required String reader, DeleteTerminalReadersReaderRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedTerminalReader, DeleteAccountsAccountError>> deleteTerminalReadersReader({required String reader, DeleteTerminalReadersReaderRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20493,9 +19545,7 @@ return execute(
   onSuccess: (response) {
     return DeletedTerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel the current reader action
@@ -20503,7 +19553,7 @@ return execute(
 /// `<p>`Cancels the current reader action. See `<a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven#programmatic-cancellation">`Programmatic Cancellation`</a>` for more details.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/cancel_action`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderCancelAction({required String reader, PostTerminalReadersReaderCancelActionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderCancelAction({required String reader, PostTerminalReadersReaderCancelActionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20522,9 +19572,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Collect inputs using a Reader
@@ -20532,7 +19580,7 @@ return execute(
 /// `<p>`Initiates an `<a href="/docs/terminal/features/collect-inputs">`input collection flow`</a>` on a Reader to display input forms and collect information from your customers.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/collect_inputs`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderCollectInputs({required String reader, required PostTerminalReadersReaderCollectInputsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderCollectInputs({required String reader, required PostTerminalReadersReaderCollectInputsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20554,9 +19602,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Hand off a PaymentIntent to a Reader and collect card details
@@ -20564,7 +19610,7 @@ return execute(
 /// `<p>`Initiates a payment flow on a Reader and updates the PaymentIntent with card details before manual confirmation. See `<a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=inspect#collect-a-paymentmethod">`Collecting a Payment method`</a>` for more details.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/collect_payment_method`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderCollectPaymentMethod({required String reader, required PostTerminalReadersReaderCollectPaymentMethodRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderCollectPaymentMethod({required String reader, required PostTerminalReadersReaderCollectPaymentMethodRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20586,9 +19632,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Confirm a PaymentIntent on the Reader
@@ -20596,7 +19640,7 @@ return execute(
 /// `<p>`Finalizes a payment on a Reader. See `<a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=inspect#confirm-the-paymentintent">`Confirming a Payment`</a>` for more details.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/confirm_payment_intent`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderConfirmPaymentIntent({required String reader, required PostTerminalReadersReaderConfirmPaymentIntentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderConfirmPaymentIntent({required String reader, required PostTerminalReadersReaderConfirmPaymentIntentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20618,9 +19662,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Hand-off a PaymentIntent to a Reader
@@ -20628,7 +19670,7 @@ return execute(
 /// `<p>`Initiates a payment flow on a Reader. See `<a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=immediately#process-payment">`process the payment`</a>` for more details.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/process_payment_intent`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderProcessPaymentIntent({required String reader, required PostTerminalReadersReaderProcessPaymentIntentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderProcessPaymentIntent({required String reader, required PostTerminalReadersReaderProcessPaymentIntentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20650,9 +19692,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Hand-off a SetupIntent to a Reader
@@ -20660,7 +19700,7 @@ return execute(
 /// `<p>`Initiates a SetupIntent flow on a Reader. See `<a href="/docs/terminal/features/saving-payment-details/save-directly">`Save directly without charging`</a>` for more details.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/process_setup_intent`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderProcessSetupIntent({required String reader, required PostTerminalReadersReaderProcessSetupIntentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderProcessSetupIntent({required String reader, required PostTerminalReadersReaderProcessSetupIntentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20683,9 +19723,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Refund a Charge or a PaymentIntent in-person
@@ -20693,7 +19731,7 @@ return execute(
 /// `<p>`Initiates an in-person refund on a Reader. See `<a href="/docs/terminal/payments/regional?integration-country=CA#refund-an-interac-payment">`Refund an Interac Payment`</a>` for more details.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/refund_payment`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderRefundPayment({required String reader, PostTerminalReadersReaderRefundPaymentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderRefundPayment({required String reader, PostTerminalReadersReaderRefundPaymentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20726,9 +19764,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Set reader display
@@ -20736,7 +19772,7 @@ return execute(
 /// `<p>`Sets the reader display to show `<a href="/docs/terminal/features/display">`cart details`</a>`.`</p>`
 ///
 /// `POST /v1/terminal/readers/{reader}/set_reader_display`
-Future<ApiResult<TerminalReader, ErrorModel>> postTerminalReadersReaderSetReaderDisplay({required String reader, required PostTerminalReadersReaderSetReaderDisplayRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTerminalReadersReaderSetReaderDisplay({required String reader, required PostTerminalReadersReaderSetReaderDisplayRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20758,9 +19794,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a refund using a Terminal-supported device.
@@ -20771,7 +19805,7 @@ return execute(
 /// `<p>`You can optionally refund only part of a charge.`</p>`
 ///
 /// `POST /v1/terminal/refunds`
-Future<ApiResult<TerminalRefund, ErrorModel>> postTerminalRefunds({PostTerminalRefundsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalRefund, DeleteAccountsAccountError>> postTerminalRefunds({PostTerminalRefundsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20804,9 +19838,7 @@ return execute(
   onSuccess: (response) {
     return TerminalRefund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a test Confirmation Token
@@ -20814,7 +19846,7 @@ return execute(
 /// `<p>`Creates a test mode Confirmation Token server side for your integration tests.`</p>`
 ///
 /// `POST /v1/test_helpers/confirmation_tokens`
-Future<ApiResult<ConfirmationToken, ErrorModel>> postTestHelpersConfirmationTokens({PostTestHelpersConfirmationTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ConfirmationToken, DeleteAccountsAccountError>> postTestHelpersConfirmationTokens({PostTestHelpersConfirmationTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20845,9 +19877,7 @@ return execute(
   onSuccess: (response) {
     return ConfirmationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Fund a test mode cash balance
@@ -20855,7 +19885,7 @@ return execute(
 /// `<p>`Create an incoming testmode bank transfer`</p>`
 ///
 /// `POST /v1/test_helpers/customers/{customer}/fund_cash_balance`
-Future<ApiResult<CustomerCashBalanceTransaction, ErrorModel>> postTestHelpersCustomersCustomerFundCashBalance({required String customer, required PostTestHelpersCustomersCustomerFundCashBalanceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomerCashBalanceTransaction, DeleteAccountsAccountError>> postTestHelpersCustomersCustomerFundCashBalance({required String customer, required PostTestHelpersCustomersCustomerFundCashBalanceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20878,9 +19908,7 @@ return execute(
   onSuccess: (response) {
     return CustomerCashBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a test-mode authorization
@@ -20888,7 +19916,7 @@ return execute(
 /// `<p>`Create a test-mode authorization.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizations({required PostTestHelpersIssuingAuthorizationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizations({required PostTestHelpersIssuingAuthorizationsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20938,9 +19966,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Capture a test-mode authorization
@@ -20948,7 +19974,7 @@ return execute(
 /// `<p>`Capture a test-mode authorization.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/capture`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationCapture({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationCapture({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -20973,9 +19999,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Expire a test-mode authorization
@@ -20983,7 +20007,7 @@ return execute(
 /// `<p>`Expire a test-mode Authorization.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/expire`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationExpire({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationExpire({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationExpireRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21002,9 +20026,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Finalize a test-mode authorization's amount
@@ -21012,7 +20034,7 @@ return execute(
 /// `<p>`Finalize the amount on an Authorization prior to capture, when the initial authorization was for an estimated amount.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/finalize_amount`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmount({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmount({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21036,9 +20058,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Respond to fraud challenge
@@ -21046,7 +20066,7 @@ return execute(
 /// `<p>`Respond to a fraud challenge on a testmode Issuing authorization, simulating either a confirmation of fraud or a correction of legitimacy.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/fraud_challenges/respond`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespond({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespond({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21066,9 +20086,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Increment a test-mode authorization
@@ -21076,7 +20094,7 @@ return execute(
 /// `<p>`Increment a test-mode Authorization.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/increment`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationIncrement({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationIncrement({required String authorization, required PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21098,9 +20116,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Reverse a test-mode authorization
@@ -21108,7 +20124,7 @@ return execute(
 /// `<p>`Reverse a test-mode Authorization.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/authorizations/{authorization}/reverse`
-Future<ApiResult<IssuingAuthorization, ErrorModel>> postTestHelpersIssuingAuthorizationsAuthorizationReverse({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingAuthorization, DeleteAccountsAccountError>> postTestHelpersIssuingAuthorizationsAuthorizationReverse({required String authorization, PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21129,9 +20145,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Deliver a testmode card
@@ -21139,7 +20153,7 @@ return execute(
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`delivered`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/deliver`
-Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingDeliver({required String card, PostTestHelpersIssuingCardsCardShippingDeliverRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingDeliver({required String card, PostTestHelpersIssuingCardsCardShippingDeliverRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21158,9 +20172,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Fail a testmode card
@@ -21168,7 +20180,7 @@ return execute(
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`failure`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/fail`
-Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingFail({required String card, PostTestHelpersIssuingCardsCardShippingFailRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingFail({required String card, PostTestHelpersIssuingCardsCardShippingFailRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21187,9 +20199,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Return a testmode card
@@ -21197,7 +20207,7 @@ return execute(
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`returned`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/return`
-Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingReturn({required String card, PostTestHelpersIssuingCardsCardShippingReturnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingReturn({required String card, PostTestHelpersIssuingCardsCardShippingReturnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21216,9 +20226,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Ship a testmode card
@@ -21226,7 +20234,7 @@ return execute(
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`shipped`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/ship`
-Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingShip({required String card, PostTestHelpersIssuingCardsCardShippingShipRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingShip({required String card, PostTestHelpersIssuingCardsCardShippingShipRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21245,9 +20253,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Submit a testmode card
@@ -21255,7 +20261,7 @@ return execute(
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`submitted`</code>`. This method requires Stripe Version ‘2024-09-30.acacia’ or later.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/cards/{card}/shipping/submit`
-Future<ApiResult<IssuingCard, ErrorModel>> postTestHelpersIssuingCardsCardShippingSubmit({required String card, PostTestHelpersIssuingCardsCardShippingSubmitRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingCard, DeleteAccountsAccountError>> postTestHelpersIssuingCardsCardShippingSubmit({required String card, PostTestHelpersIssuingCardsCardShippingSubmitRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21274,9 +20280,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Activate a testmode personalization design
@@ -21284,7 +20288,7 @@ return execute(
 /// `<p>`Updates the `<code>`status`</code>` of the specified testmode personalization design object to `<code>`active`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/activate`
-Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivate({required String personalizationDesign, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivate({required String personalizationDesign, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21303,9 +20307,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Deactivate a testmode personalization design
@@ -21313,7 +20315,7 @@ return execute(
 /// `<p>`Updates the `<code>`status`</code>` of the specified testmode personalization design object to `<code>`inactive`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/deactivate`
-Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivate({required String personalizationDesign, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivate({required String personalizationDesign, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21332,9 +20334,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Reject a testmode personalization design
@@ -21342,7 +20342,7 @@ return execute(
 /// `<p>`Updates the `<code>`status`</code>` of the specified testmode personalization design object to `<code>`rejected`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/reject`
-Future<ApiResult<IssuingPersonalizationDesign, ErrorModel>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignReject({required String personalizationDesign, required PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingPersonalizationDesign, DeleteAccountsAccountError>> postTestHelpersIssuingPersonalizationDesignsPersonalizationDesignReject({required String personalizationDesign, required PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21362,9 +20362,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a test-mode settlement
@@ -21372,7 +20370,7 @@ return execute(
 /// `<p>`Allows the user to create an Issuing settlement.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/settlements`
-Future<ApiResult<IssuingSettlement, ErrorModel>> postTestHelpersIssuingSettlements({required PostTestHelpersIssuingSettlementsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingSettlement, DeleteAccountsAccountError>> postTestHelpersIssuingSettlements({required PostTestHelpersIssuingSettlementsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21405,9 +20403,7 @@ return execute(
   onSuccess: (response) {
     return IssuingSettlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Complete a test-mode settlement
@@ -21415,7 +20411,7 @@ return execute(
 /// `<p>`Allows the user to mark an Issuing settlement as complete.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/settlements/{settlement}/complete`
-Future<ApiResult<IssuingSettlement, ErrorModel>> postTestHelpersIssuingSettlementsSettlementComplete({required String settlement, PostTestHelpersIssuingSettlementsSettlementCompleteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingSettlement, DeleteAccountsAccountError>> postTestHelpersIssuingSettlementsSettlementComplete({required String settlement, PostTestHelpersIssuingSettlementsSettlementCompleteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21434,9 +20430,7 @@ return execute(
   onSuccess: (response) {
     return IssuingSettlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a test-mode force capture
@@ -21444,7 +20438,7 @@ return execute(
 /// `<p>`Allows the user to capture an arbitrary amount, also known as a forced capture.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/transactions/create_force_capture`
-Future<ApiResult<IssuingTransaction, ErrorModel>> postTestHelpersIssuingTransactionsCreateForceCapture({required PostTestHelpersIssuingTransactionsCreateForceCaptureRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> postTestHelpersIssuingTransactionsCreateForceCapture({required PostTestHelpersIssuingTransactionsCreateForceCaptureRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21471,9 +20465,7 @@ return execute(
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a test-mode unlinked refund
@@ -21481,7 +20473,7 @@ return execute(
 /// `<p>`Allows the user to refund an arbitrary amount, also known as a unlinked refund.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/transactions/create_unlinked_refund`
-Future<ApiResult<IssuingTransaction, ErrorModel>> postTestHelpersIssuingTransactionsCreateUnlinkedRefund({required PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> postTestHelpersIssuingTransactionsCreateUnlinkedRefund({required PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21508,9 +20500,7 @@ return execute(
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Refund a test-mode transaction
@@ -21518,7 +20508,7 @@ return execute(
 /// `<p>`Refund a test-mode Transaction.`</p>`
 ///
 /// `POST /v1/test_helpers/issuing/transactions/{transaction}/refund`
-Future<ApiResult<IssuingTransaction, ErrorModel>> postTestHelpersIssuingTransactionsTransactionRefund({required String transaction, PostTestHelpersIssuingTransactionsTransactionRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssuingTransaction, DeleteAccountsAccountError>> postTestHelpersIssuingTransactionsTransactionRefund({required String transaction, PostTestHelpersIssuingTransactionsTransactionRefundRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21539,9 +20529,7 @@ return execute(
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Expire a pending refund.
@@ -21549,7 +20537,7 @@ return execute(
 /// `<p>`Expire a refund with a status of `<code>`requires_action`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/refunds/{refund}/expire`
-Future<ApiResult<Refund, ErrorModel>> postTestHelpersRefundsRefundExpire({required String refund, PostTestHelpersRefundsRefundExpireRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Refund, DeleteAccountsAccountError>> postTestHelpersRefundsRefundExpire({required String refund, PostTestHelpersRefundsRefundExpireRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21568,9 +20556,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Simulate presenting a payment method
@@ -21578,7 +20564,7 @@ return execute(
 /// `<p>`Presents a payment method on a simulated reader. Can be used to simulate accepting a payment, saving a card or refunding a transaction.`</p>`
 ///
 /// `POST /v1/test_helpers/terminal/readers/{reader}/present_payment_method`
-Future<ApiResult<TerminalReader, ErrorModel>> postTestHelpersTerminalReadersReaderPresentPaymentMethod({required String reader, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTestHelpersTerminalReadersReaderPresentPaymentMethod({required String reader, PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21607,9 +20593,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Simulate a successful input collection
@@ -21617,7 +20601,7 @@ return execute(
 /// `<p>`Use this endpoint to trigger a successful input collection on a simulated reader.`</p>`
 ///
 /// `POST /v1/test_helpers/terminal/readers/{reader}/succeed_input_collection`
-Future<ApiResult<TerminalReader, ErrorModel>> postTestHelpersTerminalReadersReaderSucceedInputCollection({required String reader, PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTestHelpersTerminalReadersReaderSucceedInputCollection({required String reader, PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21638,9 +20622,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Simulate an input collection timeout
@@ -21648,7 +20630,7 @@ return execute(
 /// `<p>`Use this endpoint to complete an input collection with a timeout error on a simulated reader.`</p>`
 ///
 /// `POST /v1/test_helpers/terminal/readers/{reader}/timeout_input_collection`
-Future<ApiResult<TerminalReader, ErrorModel>> postTestHelpersTerminalReadersReaderTimeoutInputCollection({required String reader, PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TerminalReader, DeleteAccountsAccountError>> postTestHelpersTerminalReadersReaderTimeoutInputCollection({required String reader, PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21667,9 +20649,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all test clocks
@@ -21677,7 +20657,7 @@ return execute(
 /// `<p>`Returns a list of your test clocks.`</p>`
 ///
 /// `GET /v1/test_helpers/test_clocks`
-Future<ApiResult<GetTestHelpersTestClocksResponse, ErrorModel>> getTestHelpersTestClocks({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTestHelpersTestClocksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTestHelpersTestClocksResponse, DeleteAccountsAccountError>> getTestHelpersTestClocks({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTestHelpersTestClocksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -21711,9 +20691,7 @@ return execute(
   onSuccess: (response) {
     return GetTestHelpersTestClocksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a test clock
@@ -21721,7 +20699,7 @@ return execute(
 /// `<p>`Creates a new test clock that can be attached to new customers and quotes.`</p>`
 ///
 /// `POST /v1/test_helpers/test_clocks`
-Future<ApiResult<TestHelpersTestClock, ErrorModel>> postTestHelpersTestClocks({required PostTestHelpersTestClocksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TestHelpersTestClock, DeleteAccountsAccountError>> postTestHelpersTestClocks({required PostTestHelpersTestClocksRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21743,9 +20721,7 @@ return execute(
   onSuccess: (response) {
     return TestHelpersTestClock.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a test clock
@@ -21753,7 +20729,7 @@ return execute(
 /// `<p>`Retrieves a test clock.`</p>`
 ///
 /// `GET /v1/test_helpers/test_clocks/{test_clock}`
-Future<ApiResult<TestHelpersTestClock, ErrorModel>> getTestHelpersTestClocksTestClock({required String testClock, List<String>? expand, GetTestHelpersTestClocksTestClockRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TestHelpersTestClock, DeleteAccountsAccountError>> getTestHelpersTestClocksTestClock({required String testClock, List<String>? expand, GetTestHelpersTestClocksTestClockRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -21778,9 +20754,7 @@ return execute(
   onSuccess: (response) {
     return TestHelpersTestClock.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a test clock
@@ -21788,7 +20762,7 @@ return execute(
 /// `<p>`Deletes a test clock.`</p>`
 ///
 /// `DELETE /v1/test_helpers/test_clocks/{test_clock}`
-Future<ApiResult<DeletedTestHelpersTestClock, ErrorModel>> deleteTestHelpersTestClocksTestClock({required String testClock, DeleteTestHelpersTestClocksTestClockRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedTestHelpersTestClock, DeleteAccountsAccountError>> deleteTestHelpersTestClocksTestClock({required String testClock, DeleteTestHelpersTestClocksTestClockRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21805,9 +20779,7 @@ return execute(
   onSuccess: (response) {
     return DeletedTestHelpersTestClock.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Advance a test clock
@@ -21815,7 +20787,7 @@ return execute(
 /// `<p>`Starts advancing a test clock to a specified time in the future. Advancement is done when status changes to `<code>`Ready`</code>`.`</p>`
 ///
 /// `POST /v1/test_helpers/test_clocks/{test_clock}/advance`
-Future<ApiResult<TestHelpersTestClock, ErrorModel>> postTestHelpersTestClocksTestClockAdvance({required String testClock, required PostTestHelpersTestClocksTestClockAdvanceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TestHelpersTestClock, DeleteAccountsAccountError>> postTestHelpersTestClocksTestClockAdvance({required String testClock, required PostTestHelpersTestClocksTestClockAdvanceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21835,9 +20807,7 @@ return execute(
   onSuccess: (response) {
     return TestHelpersTestClock.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Fail an InboundTransfer
@@ -21845,7 +20815,7 @@ return execute(
 /// `<p>`Transitions a test mode created InboundTransfer to the `<code>`failed`</code>` status. The InboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/inbound_transfers/{id}/fail`
-Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTestHelpersTreasuryInboundTransfersIdFail({required String id, PostTestHelpersTreasuryInboundTransfersIdFailRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryInboundTransfersIdFail({required String id, PostTestHelpersTreasuryInboundTransfersIdFailRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21866,9 +20836,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Return an InboundTransfer
@@ -21876,7 +20844,7 @@ return execute(
 /// `<p>`Marks the test mode InboundTransfer object as returned and links the InboundTransfer to a ReceivedDebit. The InboundTransfer must already be in the `<code>`succeeded`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/inbound_transfers/{id}/return`
-Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTestHelpersTreasuryInboundTransfersIdReturn({required String id, PostTestHelpersTreasuryInboundTransfersIdReturnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryInboundTransfersIdReturn({required String id, PostTestHelpersTreasuryInboundTransfersIdReturnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21895,9 +20863,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Succeed an InboundTransfer
@@ -21905,7 +20871,7 @@ return execute(
 /// `<p>`Transitions a test mode created InboundTransfer to the `<code>`succeeded`</code>` status. The InboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/inbound_transfers/{id}/succeed`
-Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTestHelpersTreasuryInboundTransfersIdSucceed({required String id, PostTestHelpersTreasuryInboundTransfersIdSucceedRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryInboundTransfersIdSucceed({required String id, PostTestHelpersTreasuryInboundTransfersIdSucceedRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21924,9 +20890,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Update an OutboundPayment
@@ -21934,7 +20898,7 @@ return execute(
 /// `<p>`Updates a test mode created OutboundPayment with tracking details. The OutboundPayment must not be cancelable, and cannot be in the `<code>`canceled`</code>` or `<code>`failed`</code>` states.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_payments/{id}`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTestHelpersTreasuryOutboundPaymentsId({required String id, required PostTestHelpersTreasuryOutboundPaymentsIdRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundPaymentsId({required String id, required PostTestHelpersTreasuryOutboundPaymentsIdRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21954,9 +20918,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Fail an OutboundPayment
@@ -21964,7 +20926,7 @@ return execute(
 /// `<p>`Transitions a test mode created OutboundPayment to the `<code>`failed`</code>` status. The OutboundPayment must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_payments/{id}/fail`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTestHelpersTreasuryOutboundPaymentsIdFail({required String id, PostTestHelpersTreasuryOutboundPaymentsIdFailRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundPaymentsIdFail({required String id, PostTestHelpersTreasuryOutboundPaymentsIdFailRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -21983,9 +20945,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Post an OutboundPayment
@@ -21993,7 +20953,7 @@ return execute(
 /// `<p>`Transitions a test mode created OutboundPayment to the `<code>`posted`</code>` status. The OutboundPayment must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_payments/{id}/post`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTestHelpersTreasuryOutboundPaymentsIdPost({required String id, PostTestHelpersTreasuryOutboundPaymentsIdPostRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundPaymentsIdPost({required String id, PostTestHelpersTreasuryOutboundPaymentsIdPostRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22012,9 +20972,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Return an OutboundPayment
@@ -22022,7 +20980,7 @@ return execute(
 /// `<p>`Transitions a test mode created OutboundPayment to the `<code>`returned`</code>` status. The OutboundPayment must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_payments/{id}/return`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTestHelpersTreasuryOutboundPaymentsIdReturn({required String id, PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundPaymentsIdReturn({required String id, PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22043,9 +21001,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Update an OutboundTransfer
@@ -22053,7 +21009,7 @@ return execute(
 /// `<p>`Updates a test mode created OutboundTransfer with tracking details. The OutboundTransfer must not be cancelable, and cannot be in the `<code>`canceled`</code>` or `<code>`failed`</code>` states.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTestHelpersTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, required PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, required PostTestHelpersTreasuryOutboundTransfersOutboundTransferRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22073,9 +21029,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Fail an OutboundTransfer
@@ -22083,7 +21037,7 @@ return execute(
 /// `<p>`Transitions a test mode created OutboundTransfer to the `<code>`failed`</code>` status. The OutboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTestHelpersTreasuryOutboundTransfersOutboundTransferFail({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferFailRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundTransfersOutboundTransferFail({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferFailRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22102,9 +21056,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Post an OutboundTransfer
@@ -22112,7 +21064,7 @@ return execute(
 /// `<p>`Transitions a test mode created OutboundTransfer to the `<code>`posted`</code>` status. The OutboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTestHelpersTreasuryOutboundTransfersOutboundTransferPost({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferPostRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundTransfersOutboundTransferPost({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferPostRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22131,9 +21083,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Return an OutboundTransfer
@@ -22141,7 +21091,7 @@ return execute(
 /// `<p>`Transitions a test mode created OutboundTransfer to the `<code>`returned`</code>` status. The OutboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTestHelpersTreasuryOutboundTransfersOutboundTransferReturn({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTestHelpersTreasuryOutboundTransfersOutboundTransferReturn({required String outboundTransfer, PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22162,9 +21112,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Create a ReceivedCredit
@@ -22172,7 +21120,7 @@ return execute(
 /// `<p>`Use this endpoint to simulate a test mode ReceivedCredit initiated by a third party. In live mode, you can’t directly create ReceivedCredits initiated by third parties.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/received_credits`
-Future<ApiResult<TreasuryReceivedCredit, ErrorModel>> postTestHelpersTreasuryReceivedCredits({required PostTestHelpersTreasuryReceivedCreditsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryReceivedCredit, DeleteAccountsAccountError>> postTestHelpersTreasuryReceivedCredits({required PostTestHelpersTreasuryReceivedCreditsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22199,9 +21147,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryReceivedCredit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Test mode: Create a ReceivedDebit
@@ -22209,7 +21155,7 @@ return execute(
 /// `<p>`Use this endpoint to simulate a test mode ReceivedDebit initiated by a third party. In live mode, you can’t directly create ReceivedDebits initiated by third parties.`</p>`
 ///
 /// `POST /v1/test_helpers/treasury/received_debits`
-Future<ApiResult<TreasuryReceivedDebit, ErrorModel>> postTestHelpersTreasuryReceivedDebits({required PostTestHelpersTreasuryReceivedDebitsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryReceivedDebit, DeleteAccountsAccountError>> postTestHelpersTreasuryReceivedDebits({required PostTestHelpersTreasuryReceivedDebitsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22236,9 +21182,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryReceivedDebit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a CVC update token
@@ -22247,7 +21191,7 @@ return execute(
 /// You can use this token with any v1 API method in place of a bank account dictionary. You can only use this token once. To do so, attach it to a `<a href="#accounts">`connected account`</a>` where `<a href="/api/accounts/object#account_object-controller-requirement_collection">`controller.requirement_collection`</a>` is `<code>`application`</code>`, which includes Custom accounts.`</p>`
 ///
 /// `POST /v1/tokens`
-Future<ApiResult<Token, ErrorModel>> postTokens({PostTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Token, DeleteAccountsAccountError>> postTokens({PostTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22280,9 +21224,7 @@ return execute(
   onSuccess: (response) {
     return Token.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a token
@@ -22290,7 +21232,7 @@ return execute(
 /// `<p>`Retrieves the token with the given ID.`</p>`
 ///
 /// `GET /v1/tokens/{token}`
-Future<ApiResult<Token, ErrorModel>> getTokensToken({required String token, List<String>? expand, GetTokensTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Token, DeleteAccountsAccountError>> getTokensToken({required String token, List<String>? expand, GetTokensTokenRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -22315,9 +21257,7 @@ return execute(
   onSuccess: (response) {
     return Token.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all top-ups
@@ -22325,7 +21265,7 @@ return execute(
 /// `<p>`Returns a list of top-ups.`</p>`
 ///
 /// `GET /v1/topups`
-Future<ApiResult<GetTopupsResponse, ErrorModel>> getTopups({GetTopupsAmount? amount, GetTopupsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTopupsStatus? status, GetTopupsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTopupsResponse, DeleteAccountsAccountError>> getTopups({GetTopupsAmount? amount, GetTopupsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTopupsStatus? status, GetTopupsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amount != null) {
 queryParametersList.add(ApiQueryParameter(name: 'amount', value: amount.toString()));
@@ -22368,9 +21308,7 @@ return execute(
   onSuccess: (response) {
     return GetTopupsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a top-up
@@ -22378,7 +21316,7 @@ return execute(
 /// `<p>`Top up the balance of an account`</p>`
 ///
 /// `POST /v1/topups`
-Future<ApiResult<Topup, ErrorModel>> postTopups({required PostTopupsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Topup, DeleteAccountsAccountError>> postTopups({required PostTopupsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22409,9 +21347,7 @@ return execute(
   onSuccess: (response) {
     return Topup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a top-up
@@ -22419,7 +21355,7 @@ return execute(
 /// `<p>`Retrieves the details of a top-up that has previously been created. Supply the unique top-up ID that was returned from your previous request, and Stripe will return the corresponding top-up information.`</p>`
 ///
 /// `GET /v1/topups/{topup}`
-Future<ApiResult<Topup, ErrorModel>> getTopupsTopup({required String topup, List<String>? expand, GetTopupsTopupRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Topup, DeleteAccountsAccountError>> getTopupsTopup({required String topup, List<String>? expand, GetTopupsTopupRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -22444,9 +21380,7 @@ return execute(
   onSuccess: (response) {
     return Topup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a top-up
@@ -22454,7 +21388,7 @@ return execute(
 /// `<p>`Updates the metadata of a top-up. Other top-up details are not editable by design.`</p>`
 ///
 /// `POST /v1/topups/{topup}`
-Future<ApiResult<Topup, ErrorModel>> postTopupsTopup({required String topup, PostTopupsTopupRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Topup, DeleteAccountsAccountError>> postTopupsTopup({required String topup, PostTopupsTopupRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22477,9 +21411,7 @@ return execute(
   onSuccess: (response) {
     return Topup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel a top-up
@@ -22487,7 +21419,7 @@ return execute(
 /// `<p>`Cancels a top-up. Only pending top-ups can be canceled.`</p>`
 ///
 /// `POST /v1/topups/{topup}/cancel`
-Future<ApiResult<Topup, ErrorModel>> postTopupsTopupCancel({required String topup, PostTopupsTopupCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Topup, DeleteAccountsAccountError>> postTopupsTopupCancel({required String topup, PostTopupsTopupCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22506,9 +21438,7 @@ return execute(
   onSuccess: (response) {
     return Topup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all transfers
@@ -22516,7 +21446,7 @@ return execute(
 /// `<p>`Returns a list of existing transfers sent to connected accounts. The transfers are returned in sorted order, with the most recently created transfers appearing first.`</p>`
 ///
 /// `GET /v1/transfers`
-Future<ApiResult<GetTransfersResponse, ErrorModel>> getTransfers({GetTransfersCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? transferGroup, GetTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTransfersResponse, DeleteAccountsAccountError>> getTransfers({GetTransfersCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? transferGroup, GetTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -22559,9 +21489,7 @@ return execute(
   onSuccess: (response) {
     return GetTransfersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a transfer
@@ -22569,7 +21497,7 @@ return execute(
 /// `<p>`To send funds from your Stripe account to a connected account, you create a new transfer object. Your `<a href="#balance">`Stripe balance`</a>` must be able to cover the transfer amount, or you’ll receive an “Insufficient Funds” error.`</p>`
 ///
 /// `POST /v1/transfers`
-Future<ApiResult<Transfer, ErrorModel>> postTransfers({required PostTransfersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Transfer, DeleteAccountsAccountError>> postTransfers({required PostTransfersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22602,9 +21530,7 @@ return execute(
   onSuccess: (response) {
     return Transfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all reversals
@@ -22612,7 +21538,7 @@ return execute(
 /// `<p>`You can see a list of the reversals belonging to a specific transfer. Note that the 10 most recent reversals are always available by default on the transfer object. If you need more than those 10, you can use this API method and the `<code>`limit`</code>` and `<code>`starting_after`</code>` parameters to page through additional reversals.`</p>`
 ///
 /// `GET /v1/transfers/{id}/reversals`
-Future<ApiResult<GetTransfersIdReversalsResponse, ErrorModel>> getTransfersIdReversals({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTransfersIdReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTransfersIdReversalsResponse, DeleteAccountsAccountError>> getTransfersIdReversals({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTransfersIdReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -22646,9 +21572,7 @@ return execute(
   onSuccess: (response) {
     return GetTransfersIdReversalsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a transfer reversal
@@ -22660,7 +21584,7 @@ return execute(
 /// `<p>`Once entirely reversed, a transfer can’t be reversed again. This method will return an error when called on an already-reversed transfer, or when trying to reverse more money than is left on a transfer.`</p>`
 ///
 /// `POST /v1/transfers/{id}/reversals`
-Future<ApiResult<TransferReversal, ErrorModel>> postTransfersIdReversals({required String id, PostTransfersIdReversalsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TransferReversal, DeleteAccountsAccountError>> postTransfersIdReversals({required String id, PostTransfersIdReversalsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22687,9 +21611,7 @@ return execute(
   onSuccess: (response) {
     return TransferReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a transfer
@@ -22697,7 +21619,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing transfer. Supply the unique transfer ID from either a transfer creation request or the transfer list, and Stripe will return the corresponding transfer information.`</p>`
 ///
 /// `GET /v1/transfers/{transfer}`
-Future<ApiResult<Transfer, ErrorModel>> getTransfersTransfer({required String transfer, List<String>? expand, GetTransfersTransferRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Transfer, DeleteAccountsAccountError>> getTransfersTransfer({required String transfer, List<String>? expand, GetTransfersTransferRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -22722,9 +21644,7 @@ return execute(
   onSuccess: (response) {
     return Transfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a transfer
@@ -22734,7 +21654,7 @@ return execute(
 /// `<p>`This request accepts only metadata as an argument.`</p>`
 ///
 /// `POST /v1/transfers/{transfer}`
-Future<ApiResult<Transfer, ErrorModel>> postTransfersTransfer({required String transfer, PostTransfersTransferRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Transfer, DeleteAccountsAccountError>> postTransfersTransfer({required String transfer, PostTransfersTransferRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22757,9 +21677,7 @@ return execute(
   onSuccess: (response) {
     return Transfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a reversal
@@ -22767,7 +21685,7 @@ return execute(
 /// `<p>`By default, you can see the 10 most recent reversals stored directly on the transfer object, but you can also retrieve details about a specific reversal stored on the transfer.`</p>`
 ///
 /// `GET /v1/transfers/{transfer}/reversals/{id}`
-Future<ApiResult<TransferReversal, ErrorModel>> getTransfersTransferReversalsId({required String id, required String transfer, List<String>? expand, GetTransfersTransferReversalsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TransferReversal, DeleteAccountsAccountError>> getTransfersTransferReversalsId({required String id, required String transfer, List<String>? expand, GetTransfersTransferReversalsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -22792,9 +21710,7 @@ return execute(
   onSuccess: (response) {
     return TransferReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a reversal
@@ -22804,7 +21720,7 @@ return execute(
 /// `<p>`This request only accepts metadata and description as arguments.`</p>`
 ///
 /// `POST /v1/transfers/{transfer}/reversals/{id}`
-Future<ApiResult<TransferReversal, ErrorModel>> postTransfersTransferReversalsId({required String id, required String transfer, PostTransfersTransferReversalsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TransferReversal, DeleteAccountsAccountError>> postTransfersTransferReversalsId({required String id, required String transfer, PostTransfersTransferReversalsIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22825,9 +21741,7 @@ return execute(
   onSuccess: (response) {
     return TransferReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all CreditReversals
@@ -22835,7 +21749,7 @@ return execute(
 /// `<p>`Returns a list of CreditReversals.`</p>`
 ///
 /// `GET /v1/treasury/credit_reversals`
-Future<ApiResult<GetTreasuryCreditReversalsResponse, ErrorModel>> getTreasuryCreditReversals({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? receivedCredit, String? startingAfter, GetTreasuryCreditReversalsStatus? status, GetTreasuryCreditReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryCreditReversalsResponse, DeleteAccountsAccountError>> getTreasuryCreditReversals({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? receivedCredit, String? startingAfter, GetTreasuryCreditReversalsStatus? status, GetTreasuryCreditReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -22876,9 +21790,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryCreditReversalsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a CreditReversal
@@ -22886,7 +21798,7 @@ return execute(
 /// `<p>`Reverses a ReceivedCredit and creates a CreditReversal object.`</p>`
 ///
 /// `POST /v1/treasury/credit_reversals`
-Future<ApiResult<TreasuryCreditReversal, ErrorModel>> postTreasuryCreditReversals({required PostTreasuryCreditReversalsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryCreditReversal, DeleteAccountsAccountError>> postTreasuryCreditReversals({required PostTreasuryCreditReversalsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -22908,9 +21820,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryCreditReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a CreditReversal
@@ -22918,7 +21828,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing CreditReversal by passing the unique CreditReversal ID from either the CreditReversal creation request or CreditReversal list`</p>`
 ///
 /// `GET /v1/treasury/credit_reversals/{credit_reversal}`
-Future<ApiResult<TreasuryCreditReversal, ErrorModel>> getTreasuryCreditReversalsCreditReversal({required String creditReversal, List<String>? expand, GetTreasuryCreditReversalsCreditReversalRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryCreditReversal, DeleteAccountsAccountError>> getTreasuryCreditReversalsCreditReversal({required String creditReversal, List<String>? expand, GetTreasuryCreditReversalsCreditReversalRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -22943,9 +21853,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryCreditReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all DebitReversals
@@ -22953,7 +21861,7 @@ return execute(
 /// `<p>`Returns a list of DebitReversals.`</p>`
 ///
 /// `GET /v1/treasury/debit_reversals`
-Future<ApiResult<GetTreasuryDebitReversalsResponse, ErrorModel>> getTreasuryDebitReversals({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? receivedDebit, GetTreasuryDebitReversalsResolution? resolution, String? startingAfter, GetTreasuryDebitReversalsStatus? status, GetTreasuryDebitReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryDebitReversalsResponse, DeleteAccountsAccountError>> getTreasuryDebitReversals({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? receivedDebit, GetTreasuryDebitReversalsResolution? resolution, String? startingAfter, GetTreasuryDebitReversalsStatus? status, GetTreasuryDebitReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -22997,9 +21905,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryDebitReversalsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a DebitReversal
@@ -23007,7 +21913,7 @@ return execute(
 /// `<p>`Reverses a ReceivedDebit and creates a DebitReversal object.`</p>`
 ///
 /// `POST /v1/treasury/debit_reversals`
-Future<ApiResult<TreasuryDebitReversal, ErrorModel>> postTreasuryDebitReversals({required PostTreasuryDebitReversalsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryDebitReversal, DeleteAccountsAccountError>> postTreasuryDebitReversals({required PostTreasuryDebitReversalsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23029,9 +21935,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryDebitReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a DebitReversal
@@ -23039,7 +21943,7 @@ return execute(
 /// `<p>`Retrieves a DebitReversal object.`</p>`
 ///
 /// `GET /v1/treasury/debit_reversals/{debit_reversal}`
-Future<ApiResult<TreasuryDebitReversal, ErrorModel>> getTreasuryDebitReversalsDebitReversal({required String debitReversal, List<String>? expand, GetTreasuryDebitReversalsDebitReversalRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryDebitReversal, DeleteAccountsAccountError>> getTreasuryDebitReversalsDebitReversal({required String debitReversal, List<String>? expand, GetTreasuryDebitReversalsDebitReversalRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -23064,9 +21968,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryDebitReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all FinancialAccounts
@@ -23074,7 +21976,7 @@ return execute(
 /// `<p>`Returns a list of FinancialAccounts.`</p>`
 ///
 /// `GET /v1/treasury/financial_accounts`
-Future<ApiResult<GetTreasuryFinancialAccountsResponse, ErrorModel>> getTreasuryFinancialAccounts({GetTreasuryFinancialAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryFinancialAccountsStatus? status, GetTreasuryFinancialAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryFinancialAccountsResponse, DeleteAccountsAccountError>> getTreasuryFinancialAccounts({GetTreasuryFinancialAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryFinancialAccountsStatus? status, GetTreasuryFinancialAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -23114,9 +22016,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryFinancialAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a FinancialAccount
@@ -23124,7 +22024,7 @@ return execute(
 /// `<p>`Creates a new FinancialAccount. Each connected account can have up to three FinancialAccounts by default.`</p>`
 ///
 /// `POST /v1/treasury/financial_accounts`
-Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> postTreasuryFinancialAccounts({required PostTreasuryFinancialAccountsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryFinancialAccount, DeleteAccountsAccountError>> postTreasuryFinancialAccounts({required PostTreasuryFinancialAccountsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23152,9 +22052,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryFinancialAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a FinancialAccount
@@ -23162,7 +22060,7 @@ return execute(
 /// `<p>`Retrieves the details of a FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/financial_accounts/{financial_account}`
-Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> getTreasuryFinancialAccountsFinancialAccount({required String financialAccount, List<String>? expand, GetTreasuryFinancialAccountsFinancialAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryFinancialAccount, DeleteAccountsAccountError>> getTreasuryFinancialAccountsFinancialAccount({required String financialAccount, List<String>? expand, GetTreasuryFinancialAccountsFinancialAccountRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -23187,9 +22085,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryFinancialAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a FinancialAccount
@@ -23197,7 +22093,7 @@ return execute(
 /// `<p>`Updates the details of a FinancialAccount.`</p>`
 ///
 /// `POST /v1/treasury/financial_accounts/{financial_account}`
-Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> postTreasuryFinancialAccountsFinancialAccount({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryFinancialAccount, DeleteAccountsAccountError>> postTreasuryFinancialAccountsFinancialAccount({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23226,9 +22122,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryFinancialAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Close a FinancialAccount
@@ -23236,7 +22130,7 @@ return execute(
 /// `<p>`Closes a FinancialAccount. A FinancialAccount can only be closed if it has a zero balance, has no pending InboundTransfers, and has canceled all attached Issuing cards.`</p>`
 ///
 /// `POST /v1/treasury/financial_accounts/{financial_account}/close`
-Future<ApiResult<TreasuryFinancialAccount, ErrorModel>> postTreasuryFinancialAccountsFinancialAccountClose({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountCloseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryFinancialAccount, DeleteAccountsAccountError>> postTreasuryFinancialAccountsFinancialAccountClose({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountCloseRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23257,9 +22151,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryFinancialAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve FinancialAccount Features
@@ -23267,7 +22159,7 @@ return execute(
 /// `<p>`Retrieves Features information associated with the FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/financial_accounts/{financial_account}/features`
-Future<ApiResult<TreasuryFinancialAccountFeatures, ErrorModel>> getTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, List<String>? expand, GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryFinancialAccountFeatures, DeleteAccountsAccountError>> getTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, List<String>? expand, GetTreasuryFinancialAccountsFinancialAccountFeaturesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -23292,9 +22184,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryFinancialAccountFeatures.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update FinancialAccount Features
@@ -23302,7 +22192,7 @@ return execute(
 /// `<p>`Updates the Features associated with a FinancialAccount.`</p>`
 ///
 /// `POST /v1/treasury/financial_accounts/{financial_account}/features`
-Future<ApiResult<TreasuryFinancialAccountFeatures, ErrorModel>> postTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryFinancialAccountFeatures, DeleteAccountsAccountError>> postTreasuryFinancialAccountsFinancialAccountFeatures({required String financialAccount, PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23335,9 +22225,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryFinancialAccountFeatures.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all InboundTransfers
@@ -23345,7 +22233,7 @@ return execute(
 /// `<p>`Returns a list of InboundTransfers sent from the specified FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/inbound_transfers`
-Future<ApiResult<GetTreasuryInboundTransfersResponse, ErrorModel>> getTreasuryInboundTransfers({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryInboundTransfersStatus? status, GetTreasuryInboundTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryInboundTransfersResponse, DeleteAccountsAccountError>> getTreasuryInboundTransfers({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryInboundTransfersStatus? status, GetTreasuryInboundTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23383,9 +22271,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryInboundTransfersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an InboundTransfer
@@ -23393,7 +22279,7 @@ return execute(
 /// `<p>`Creates an InboundTransfer.`</p>`
 ///
 /// `POST /v1/treasury/inbound_transfers`
-Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTreasuryInboundTransfers({required PostTreasuryInboundTransfersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTreasuryInboundTransfers({required PostTreasuryInboundTransfersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23422,9 +22308,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an InboundTransfer
@@ -23432,7 +22316,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing InboundTransfer.`</p>`
 ///
 /// `GET /v1/treasury/inbound_transfers/{id}`
-Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> getTreasuryInboundTransfersId({required String id, List<String>? expand, GetTreasuryInboundTransfersIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> getTreasuryInboundTransfersId({required String id, List<String>? expand, GetTreasuryInboundTransfersIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -23457,9 +22341,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel an InboundTransfer
@@ -23467,7 +22349,7 @@ return execute(
 /// `<p>`Cancels an InboundTransfer.`</p>`
 ///
 /// `POST /v1/treasury/inbound_transfers/{inbound_transfer}/cancel`
-Future<ApiResult<TreasuryInboundTransfer, ErrorModel>> postTreasuryInboundTransfersInboundTransferCancel({required String inboundTransfer, PostTreasuryInboundTransfersInboundTransferCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryInboundTransfer, DeleteAccountsAccountError>> postTreasuryInboundTransfersInboundTransferCancel({required String inboundTransfer, PostTreasuryInboundTransfersInboundTransferCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23486,9 +22368,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all OutboundPayments
@@ -23496,7 +22376,7 @@ return execute(
 /// `<p>`Returns a list of OutboundPayments sent from the specified FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/outbound_payments`
-Future<ApiResult<GetTreasuryOutboundPaymentsResponse, ErrorModel>> getTreasuryOutboundPayments({required String financialAccount, GetTreasuryOutboundPaymentsCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryOutboundPaymentsStatus? status, GetTreasuryOutboundPaymentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryOutboundPaymentsResponse, DeleteAccountsAccountError>> getTreasuryOutboundPayments({required String financialAccount, GetTreasuryOutboundPaymentsCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryOutboundPaymentsStatus? status, GetTreasuryOutboundPaymentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -23540,9 +22420,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryOutboundPaymentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an OutboundPayment
@@ -23550,7 +22428,7 @@ return execute(
 /// `<p>`Creates an OutboundPayment.`</p>`
 ///
 /// `POST /v1/treasury/outbound_payments`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTreasuryOutboundPayments({required PostTreasuryOutboundPaymentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTreasuryOutboundPayments({required PostTreasuryOutboundPaymentsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23588,9 +22466,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an OutboundPayment
@@ -23598,7 +22474,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing OutboundPayment by passing the unique OutboundPayment ID from either the OutboundPayment creation request or OutboundPayment list.`</p>`
 ///
 /// `GET /v1/treasury/outbound_payments/{id}`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> getTreasuryOutboundPaymentsId({required String id, List<String>? expand, GetTreasuryOutboundPaymentsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> getTreasuryOutboundPaymentsId({required String id, List<String>? expand, GetTreasuryOutboundPaymentsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -23623,9 +22499,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel an OutboundPayment
@@ -23633,7 +22507,7 @@ return execute(
 /// `<p>`Cancel an OutboundPayment.`</p>`
 ///
 /// `POST /v1/treasury/outbound_payments/{id}/cancel`
-Future<ApiResult<TreasuryOutboundPayment, ErrorModel>> postTreasuryOutboundPaymentsIdCancel({required String id, PostTreasuryOutboundPaymentsIdCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundPayment, DeleteAccountsAccountError>> postTreasuryOutboundPaymentsIdCancel({required String id, PostTreasuryOutboundPaymentsIdCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23652,9 +22526,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all OutboundTransfers
@@ -23662,7 +22534,7 @@ return execute(
 /// `<p>`Returns a list of OutboundTransfers sent from the specified FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/outbound_transfers`
-Future<ApiResult<GetTreasuryOutboundTransfersResponse, ErrorModel>> getTreasuryOutboundTransfers({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryOutboundTransfersStatus? status, GetTreasuryOutboundTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryOutboundTransfersResponse, DeleteAccountsAccountError>> getTreasuryOutboundTransfers({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryOutboundTransfersStatus? status, GetTreasuryOutboundTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23700,9 +22572,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryOutboundTransfersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create an OutboundTransfer
@@ -23710,7 +22580,7 @@ return execute(
 /// `<p>`Creates an OutboundTransfer.`</p>`
 ///
 /// `POST /v1/treasury/outbound_transfers`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTreasuryOutboundTransfers({required PostTreasuryOutboundTransfersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTreasuryOutboundTransfers({required PostTreasuryOutboundTransfersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23744,9 +22614,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve an OutboundTransfer
@@ -23754,7 +22622,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing OutboundTransfer by passing the unique OutboundTransfer ID from either the OutboundTransfer creation request or OutboundTransfer list.`</p>`
 ///
 /// `GET /v1/treasury/outbound_transfers/{outbound_transfer}`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> getTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, List<String>? expand, GetTreasuryOutboundTransfersOutboundTransferRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> getTreasuryOutboundTransfersOutboundTransfer({required String outboundTransfer, List<String>? expand, GetTreasuryOutboundTransfersOutboundTransferRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -23779,9 +22647,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Cancel an OutboundTransfer
@@ -23789,7 +22655,7 @@ return execute(
 /// `<p>`An OutboundTransfer can be canceled if the funds have not yet been paid out.`</p>`
 ///
 /// `POST /v1/treasury/outbound_transfers/{outbound_transfer}/cancel`
-Future<ApiResult<TreasuryOutboundTransfer, ErrorModel>> postTreasuryOutboundTransfersOutboundTransferCancel({required String outboundTransfer, PostTreasuryOutboundTransfersOutboundTransferCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TreasuryOutboundTransfer, DeleteAccountsAccountError>> postTreasuryOutboundTransfersOutboundTransferCancel({required String outboundTransfer, PostTreasuryOutboundTransfersOutboundTransferCancelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -23808,9 +22674,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all ReceivedCredits
@@ -23818,7 +22682,7 @@ return execute(
 /// `<p>`Returns a list of ReceivedCredits.`</p>`
 ///
 /// `GET /v1/treasury/received_credits`
-Future<ApiResult<GetTreasuryReceivedCreditsResponse, ErrorModel>> getTreasuryReceivedCredits({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, GetTreasuryReceivedCreditsLinkedFlows? linkedFlows, String? startingAfter, GetTreasuryReceivedCreditsStatus? status, GetTreasuryReceivedCreditsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryReceivedCreditsResponse, DeleteAccountsAccountError>> getTreasuryReceivedCredits({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, GetTreasuryReceivedCreditsLinkedFlows? linkedFlows, String? startingAfter, GetTreasuryReceivedCreditsStatus? status, GetTreasuryReceivedCreditsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23859,9 +22723,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryReceivedCreditsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a ReceivedCredit
@@ -23869,7 +22731,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing ReceivedCredit by passing the unique ReceivedCredit ID from the ReceivedCredit list.`</p>`
 ///
 /// `GET /v1/treasury/received_credits/{id}`
-Future<ApiResult<TreasuryReceivedCredit, ErrorModel>> getTreasuryReceivedCreditsId({required String id, List<String>? expand, GetTreasuryReceivedCreditsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryReceivedCredit, DeleteAccountsAccountError>> getTreasuryReceivedCreditsId({required String id, List<String>? expand, GetTreasuryReceivedCreditsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -23894,9 +22756,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryReceivedCredit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all ReceivedDebits
@@ -23904,7 +22764,7 @@ return execute(
 /// `<p>`Returns a list of ReceivedDebits.`</p>`
 ///
 /// `GET /v1/treasury/received_debits`
-Future<ApiResult<GetTreasuryReceivedDebitsResponse, ErrorModel>> getTreasuryReceivedDebits({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryReceivedDebitsStatus? status, GetTreasuryReceivedDebitsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryReceivedDebitsResponse, DeleteAccountsAccountError>> getTreasuryReceivedDebits({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryReceivedDebitsStatus? status, GetTreasuryReceivedDebitsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23942,9 +22802,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryReceivedDebitsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a ReceivedDebit
@@ -23952,7 +22810,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing ReceivedDebit by passing the unique ReceivedDebit ID from the ReceivedDebit list`</p>`
 ///
 /// `GET /v1/treasury/received_debits/{id}`
-Future<ApiResult<TreasuryReceivedDebit, ErrorModel>> getTreasuryReceivedDebitsId({required String id, List<String>? expand, GetTreasuryReceivedDebitsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryReceivedDebit, DeleteAccountsAccountError>> getTreasuryReceivedDebitsId({required String id, List<String>? expand, GetTreasuryReceivedDebitsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -23977,9 +22835,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryReceivedDebit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all TransactionEntries
@@ -23987,7 +22843,7 @@ return execute(
 /// `<p>`Retrieves a list of TransactionEntry objects.`</p>`
 ///
 /// `GET /v1/treasury/transaction_entries`
-Future<ApiResult<GetTreasuryTransactionEntriesResponse, ErrorModel>> getTreasuryTransactionEntries({required String financialAccount, GetTreasuryTransactionEntriesCreated? created, GetTreasuryTransactionEntriesEffectiveAt? effectiveAt, String? endingBefore, List<String>? expand, int? limit, GetTreasuryTransactionEntriesOrderBy? orderBy, String? startingAfter, String? transaction, GetTreasuryTransactionEntriesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryTransactionEntriesResponse, DeleteAccountsAccountError>> getTreasuryTransactionEntries({required String financialAccount, GetTreasuryTransactionEntriesCreated? created, GetTreasuryTransactionEntriesEffectiveAt? effectiveAt, String? endingBefore, List<String>? expand, int? limit, GetTreasuryTransactionEntriesOrderBy? orderBy, String? startingAfter, String? transaction, GetTreasuryTransactionEntriesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -24034,9 +22890,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryTransactionEntriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a TransactionEntry
@@ -24044,7 +22898,7 @@ return execute(
 /// `<p>`Retrieves a TransactionEntry object.`</p>`
 ///
 /// `GET /v1/treasury/transaction_entries/{id}`
-Future<ApiResult<TreasuryTransactionEntry, ErrorModel>> getTreasuryTransactionEntriesId({required String id, List<String>? expand, GetTreasuryTransactionEntriesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryTransactionEntry, DeleteAccountsAccountError>> getTreasuryTransactionEntriesId({required String id, List<String>? expand, GetTreasuryTransactionEntriesIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -24069,9 +22923,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryTransactionEntry.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all Transactions
@@ -24079,7 +22931,7 @@ return execute(
 /// `<p>`Retrieves a list of Transaction objects.`</p>`
 ///
 /// `GET /v1/treasury/transactions`
-Future<ApiResult<GetTreasuryTransactionsResponse, ErrorModel>> getTreasuryTransactions({required String financialAccount, GetTreasuryTransactionsCreated? created, String? endingBefore, List<String>? expand, int? limit, GetTreasuryTransactionsOrderBy? orderBy, String? startingAfter, GetTreasuryTransactionsStatus? status, GetTreasuryTransactionsStatusTransitions? statusTransitions, GetTreasuryTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryTransactionsResponse, DeleteAccountsAccountError>> getTreasuryTransactions({required String financialAccount, GetTreasuryTransactionsCreated? created, String? endingBefore, List<String>? expand, int? limit, GetTreasuryTransactionsOrderBy? orderBy, String? startingAfter, GetTreasuryTransactionsStatus? status, GetTreasuryTransactionsStatusTransitions? statusTransitions, GetTreasuryTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
@@ -24126,9 +22978,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a Transaction
@@ -24136,7 +22986,7 @@ return execute(
 /// `<p>`Retrieves the details of an existing Transaction.`</p>`
 ///
 /// `GET /v1/treasury/transactions/{id}`
-Future<ApiResult<TreasuryTransaction, ErrorModel>> getTreasuryTransactionsId({required String id, List<String>? expand, GetTreasuryTransactionsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TreasuryTransaction, DeleteAccountsAccountError>> getTreasuryTransactionsId({required String id, List<String>? expand, GetTreasuryTransactionsIdRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -24161,9 +23011,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// List all webhook endpoints
@@ -24171,7 +23019,7 @@ return execute(
 /// `<p>`Returns a list of your webhook endpoints.`</p>`
 ///
 /// `GET /v1/webhook_endpoints`
-Future<ApiResult<GetWebhookEndpointsResponse, ErrorModel>> getWebhookEndpoints({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetWebhookEndpointsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetWebhookEndpointsResponse, DeleteAccountsAccountError>> getWebhookEndpoints({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetWebhookEndpointsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -24205,9 +23053,7 @@ return execute(
   onSuccess: (response) {
     return GetWebhookEndpointsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Create a webhook endpoint
@@ -24215,7 +23061,7 @@ return execute(
 /// `<p>`A webhook endpoint must have a `<code>`url`</code>` and a list of `<code>`enabled_events`</code>`. You may optionally specify the Boolean `<code>`connect`</code>` parameter. If set to true, then a Connect webhook endpoint that notifies the specified `<code>`url`</code>` about events from all connected accounts is created; otherwise an account webhook endpoint that notifies the specified `<code>`url`</code>` only about events from your account is created. You can also create webhook endpoints in the `<a href="https://dashboard.stripe.com/account/webhooks">`webhooks settings`</a>` section of the Dashboard.`</p>`
 ///
 /// `POST /v1/webhook_endpoints`
-Future<ApiResult<WebhookEndpoint, ErrorModel>> postWebhookEndpoints({required PostWebhookEndpointsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WebhookEndpoint, DeleteAccountsAccountError>> postWebhookEndpoints({required PostWebhookEndpointsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -24244,9 +23090,7 @@ return execute(
   onSuccess: (response) {
     return WebhookEndpoint.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Retrieve a webhook endpoint
@@ -24254,7 +23098,7 @@ return execute(
 /// `<p>`Retrieves the webhook endpoint with the given ID.`</p>`
 ///
 /// `GET /v1/webhook_endpoints/{webhook_endpoint}`
-Future<ApiResult<WebhookEndpoint, ErrorModel>> getWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, List<String>? expand, GetWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WebhookEndpoint, DeleteAccountsAccountError>> getWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, List<String>? expand, GetWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -24279,9 +23123,7 @@ return execute(
   onSuccess: (response) {
     return WebhookEndpoint.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Update a webhook endpoint
@@ -24289,7 +23131,7 @@ return execute(
 /// `<p>`Updates the webhook endpoint. You may edit the `<code>`url`</code>`, the list of `<code>`enabled_events`</code>`, and the status of your endpoint.`</p>`
 ///
 /// `POST /v1/webhook_endpoints/{webhook_endpoint}`
-Future<ApiResult<WebhookEndpoint, ErrorModel>> postWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, PostWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WebhookEndpoint, DeleteAccountsAccountError>> postWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, PostWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -24318,9 +23160,7 @@ return execute(
   onSuccess: (response) {
     return WebhookEndpoint.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
 /// Delete a webhook endpoint
@@ -24328,7 +23168,7 @@ return execute(
 /// `<p>`You can also delete webhook endpoints via the `<a href="https://dashboard.stripe.com/account/webhooks">`webhook endpoint management`</a>` page of the Stripe dashboard.`</p>`
 ///
 /// `DELETE /v1/webhook_endpoints/{webhook_endpoint}`
-Future<ApiResult<DeletedWebhookEndpoint, ErrorModel>> deleteWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, DeleteWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeletedWebhookEndpoint, DeleteAccountsAccountError>> deleteWebhookEndpointsWebhookEndpoint({required String webhookEndpoint, DeleteWebhookEndpointsWebhookEndpointRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
 final request = ApiRequest(
@@ -24345,9 +23185,7 @@ return execute(
   onSuccess: (response) {
     return DeletedWebhookEndpoint.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
 );
  } 
  }

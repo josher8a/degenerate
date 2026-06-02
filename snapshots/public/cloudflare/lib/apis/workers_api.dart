@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_external_script_id.dart';import 'package:pub_cloudflare/models/list_workers_order.dart';import 'package:pub_cloudflare/models/list_workers_order_by.dart';import 'package:pub_cloudflare/models/response_common80.dart';import 'package:pub_cloudflare/models/response_common_failure82.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_worker.dart';/// WorkersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_external_script_id.dart';import 'package:pub_cloudflare/models/errors/create_worker_error.dart';import 'package:pub_cloudflare/models/errors/delete_worker_error.dart';import 'package:pub_cloudflare/models/errors/edit_worker_error.dart';import 'package:pub_cloudflare/models/errors/get_worker_error.dart';import 'package:pub_cloudflare/models/errors/list_workers_error.dart';import 'package:pub_cloudflare/models/list_workers_order.dart';import 'package:pub_cloudflare/models/list_workers_order_by.dart';import 'package:pub_cloudflare/models/response_common80.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_worker.dart';/// WorkersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -68,7 +68,7 @@ return execute(
 /// List all Workers for an account.
 ///
 /// `GET /accounts/{account_id}/workers/workers`
-Future<ApiResult<List<WorkersWorker>, ResponseCommonFailure82>> listWorkers({required WorkersIdentifier accountId, int? page, int? perPage, ListWorkersOrderBy? orderBy, ListWorkersOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersWorker>, ListWorkersError>> listWorkers({required WorkersIdentifier accountId, int? page, int? perPage, ListWorkersOrderBy? orderBy, ListWorkersOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -100,9 +100,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorkersWorker.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ListWorkersError.fromResponse(response),
 );
  } 
 /// Create Worker
@@ -110,7 +108,7 @@ return execute(
 /// Create a new Worker.
 ///
 /// `POST /accounts/{account_id}/workers/workers`
-Future<ApiResult<WorkersWorker, ResponseCommonFailure82>> createWorker({required WorkersIdentifier accountId, required WorkersWorker body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersWorker, CreateWorkerError>> createWorker({required WorkersIdentifier accountId, required WorkersWorker body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -127,9 +125,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => CreateWorkerError.fromResponse(response),
 );
  } 
 /// Get Worker
@@ -137,7 +133,7 @@ return execute(
 /// Get details about a specific Worker.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<WorkersWorker, ResponseCommonFailure82>> getWorker({required WorkersIdentifier accountId, required String workerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersWorker, GetWorkerError>> getWorker({required WorkersIdentifier accountId, required String workerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -152,9 +148,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetWorkerError.fromResponse(response),
 );
  } 
 /// Update Worker
@@ -162,7 +156,7 @@ return execute(
 /// Perform a complete replacement of a Worker, where omitted properties are set to their default values. This is the exact same as the Create Worker endpoint, but operates on an existing Worker. To perform a partial update instead, use the Edit Worker endpoint.
 ///
 /// `PUT /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<WorkersWorker, ResponseCommonFailure82>> updateWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorker body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersWorker, EditWorkerError>> updateWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorker body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -179,9 +173,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => EditWorkerError.fromResponse(response),
 );
  } 
 /// Edit Worker
@@ -189,7 +181,7 @@ return execute(
 /// Perform a partial update on a Worker, where omitted properties are left unchanged from their current values.
 ///
 /// `PATCH /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<WorkersWorker, ResponseCommonFailure82>> editWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorker body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersWorker, EditWorkerError>> editWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorker body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -206,9 +198,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => EditWorkerError.fromResponse(response),
 );
  } 
 /// Delete Worker
@@ -216,7 +206,7 @@ return execute(
 /// Delete a Worker and all its associated resources (versions, deployments, etc.).
 ///
 /// `DELETE /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<ResponseCommon80, ResponseCommonFailure82>> deleteWorker({required WorkersIdentifier accountId, required String workerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon80, DeleteWorkerError>> deleteWorker({required WorkersIdentifier accountId, required String workerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -230,9 +220,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteWorkerError.fromResponse(response),
 );
  } 
  }

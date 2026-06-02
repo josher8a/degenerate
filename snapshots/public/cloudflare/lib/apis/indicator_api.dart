@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_indicator_delete_response.dart';import 'package:pub_cloudflare/models/delete_indicator_delete_response404.dart';import 'package:pub_cloudflare/models/get_indicator_list_format.dart';import 'package:pub_cloudflare/models/get_indicator_list_legacy_response.dart';import 'package:pub_cloudflare/models/get_indicator_list_response.dart';import 'package:pub_cloudflare/models/get_indicator_list_response400.dart';import 'package:pub_cloudflare/models/get_indicator_read_response.dart';import 'package:pub_cloudflare/models/get_indicator_read_response404.dart';import 'package:pub_cloudflare/models/get_indicator_tags_list_response400.dart';import 'package:pub_cloudflare/models/patch_indicator_update_request.dart';import 'package:pub_cloudflare/models/patch_indicator_update_response.dart';import 'package:pub_cloudflare/models/patch_indicator_update_response400.dart';import 'package:pub_cloudflare/models/post_indicator_create_bulk_request.dart';import 'package:pub_cloudflare/models/post_indicator_create_bulk_response400.dart';import 'package:pub_cloudflare/models/post_indicator_create_request.dart';import 'package:pub_cloudflare/models/post_indicator_create_response.dart';import 'package:pub_cloudflare/models/post_indicator_create_response400.dart';/// IndicatorApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_indicator_delete_response.dart';import 'package:pub_cloudflare/models/errors/delete_indicator_delete_error.dart';import 'package:pub_cloudflare/models/errors/get_indicator_list_error.dart';import 'package:pub_cloudflare/models/errors/get_indicator_read_error.dart';import 'package:pub_cloudflare/models/errors/get_indicator_tags_list_error.dart';import 'package:pub_cloudflare/models/errors/patch_indicator_update_error.dart';import 'package:pub_cloudflare/models/errors/post_indicator_create_bulk_error.dart';import 'package:pub_cloudflare/models/errors/post_indicator_create_error.dart';import 'package:pub_cloudflare/models/get_indicator_list_format.dart';import 'package:pub_cloudflare/models/get_indicator_list_legacy_response.dart';import 'package:pub_cloudflare/models/get_indicator_list_response.dart';import 'package:pub_cloudflare/models/get_indicator_read_response.dart';import 'package:pub_cloudflare/models/patch_indicator_update_request.dart';import 'package:pub_cloudflare/models/patch_indicator_update_response.dart';import 'package:pub_cloudflare/models/post_indicator_create_bulk_request.dart';import 'package:pub_cloudflare/models/post_indicator_create_request.dart';import 'package:pub_cloudflare/models/post_indicator_create_response.dart';/// IndicatorApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -56,7 +56,7 @@ return execute(
 /// Retrieves a specific indicator by its UUID.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<GetIndicatorReadResponse, GetIndicatorReadResponse404>> getIndicatorRead({required String accountId, required String datasetId, required String indicatorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetIndicatorReadResponse, GetIndicatorReadError>> getIndicatorRead({required String accountId, required String datasetId, required String indicatorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -70,9 +70,7 @@ return execute(
   onSuccess: (response) {
     return GetIndicatorReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return GetIndicatorReadResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetIndicatorReadError.fromResponse(response),
 );
  } 
 /// Updates an indicator
@@ -80,7 +78,7 @@ return execute(
 /// Updates an existing indicator's properties.
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<PatchIndicatorUpdateResponse, PatchIndicatorUpdateResponse400>> patchIndicatorUpdate({required String accountId, required String datasetId, required String indicatorId, PatchIndicatorUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchIndicatorUpdateResponse, PatchIndicatorUpdateError>> patchIndicatorUpdate({required String accountId, required String datasetId, required String indicatorId, PatchIndicatorUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,9 +94,7 @@ return execute(
   onSuccess: (response) {
     return PatchIndicatorUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return PatchIndicatorUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => PatchIndicatorUpdateError.fromResponse(response),
 );
  } 
 /// Deletes an indicator
@@ -106,7 +102,7 @@ return execute(
 /// Deletes a specific indicator by its UUID.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<DeleteIndicatorDeleteResponse, DeleteIndicatorDeleteResponse404>> deleteIndicatorDelete({required String accountId, required String datasetId, required String indicatorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteIndicatorDeleteResponse, DeleteIndicatorDeleteError>> deleteIndicatorDelete({required String accountId, required String datasetId, required String indicatorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -120,9 +116,7 @@ return execute(
   onSuccess: (response) {
     return DeleteIndicatorDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return DeleteIndicatorDeleteResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => DeleteIndicatorDeleteError.fromResponse(response),
 );
  } 
 /// Creates multiple indicators in bulk
@@ -130,7 +124,7 @@ return execute(
 /// Creates multiple indicators at once with their respective types and related datasets.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/bulk`
-Future<ApiResult<double, PostIndicatorCreateBulkResponse400>> postIndicatorCreateBulk({required String accountId, required String datasetId, PostIndicatorCreateBulkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<double, PostIndicatorCreateBulkError>> postIndicatorCreateBulk({required String accountId, required String datasetId, PostIndicatorCreateBulkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -146,9 +140,7 @@ return execute(
   onSuccess: (response) {
     return double.parse(response.body);
   },
-  onError: (response) {
-    return PostIndicatorCreateBulkResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => PostIndicatorCreateBulkError.fromResponse(response),
 );
  } 
 /// Creates a new indicator
@@ -156,7 +148,7 @@ return execute(
 /// Creates a new indicator with the specified type and related datasets.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/create`
-Future<ApiResult<PostIndicatorCreateResponse, PostIndicatorCreateResponse400>> postIndicatorCreate({required String accountId, required String datasetId, PostIndicatorCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostIndicatorCreateResponse, PostIndicatorCreateError>> postIndicatorCreate({required String accountId, required String datasetId, PostIndicatorCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -172,9 +164,7 @@ return execute(
   onSuccess: (response) {
     return PostIndicatorCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return PostIndicatorCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => PostIndicatorCreateError.fromResponse(response),
 );
  } 
 /// List mirrored tags for an indicator dataset
@@ -182,7 +172,7 @@ return execute(
 /// Returns all mirrored tags from the indicator dataset (DO mirror table). No pagination.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags`
-Future<ApiResult<List<Map<String, dynamic>>, GetIndicatorTagsListResponse400>> getIndicatorTagsList({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Map<String, dynamic>>, GetIndicatorTagsListError>> getIndicatorTagsList({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -197,9 +187,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => e as Map<String, dynamic>).toList();
   },
-  onError: (response) {
-    return GetIndicatorTagsListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetIndicatorTagsListError.fromResponse(response),
 );
  } 
 /// Lists indicators across multiple datasets
@@ -207,7 +195,7 @@ return execute(
 /// Retrieves a paginated list of indicators across specified datasets. Use datasetIds=all or datasetIds=* to query all datasets for the account. If no datasetIds provided, uses the default dataset.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/indicators`
-Future<ApiResult<GetIndicatorListResponse, GetIndicatorListResponse400>> getIndicatorList({required String accountId, List<String>? datasetIds, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvents, List<String>? tags, DateTime? createdAfter, DateTime? createdBefore, double? relatedEventsLimit, bool? includeTags, bool? includeTotalCount, GetIndicatorListFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetIndicatorListResponse, GetIndicatorListError>> getIndicatorList({required String accountId, List<String>? datasetIds, double? page, double? pageSize, String? search, String? indicatorType, List<String>? relatedEvents, List<String>? tags, DateTime? createdAfter, DateTime? createdBefore, double? relatedEventsLimit, bool? includeTags, bool? includeTotalCount, GetIndicatorListFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
@@ -271,9 +259,7 @@ return execute(
   onSuccess: (response) {
     return GetIndicatorListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return GetIndicatorListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => GetIndicatorListError.fromResponse(response),
 );
  } 
  }

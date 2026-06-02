@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/migration.dart';import 'package:pub_github_rest_3_1/models/migrations_get_status_for_org_exclude.dart';import 'package:pub_github_rest_3_1/models/migrations_list_for_org_exclude.dart';import 'package:pub_github_rest_3_1/models/migrations_start_for_authenticated_user_request.dart';import 'package:pub_github_rest_3_1/models/migrations_start_for_org_request.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/validation_error.dart';/// MigrationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/errors/actions_get_artifact_and_log_retention_settings_repository_error.dart';import 'package:pub_github_rest_3_1/models/errors/actions_set_artifact_and_log_retention_settings_repository_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_check_repo_is_starred_by_authenticated_user_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_delete_thread_subscription_error.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_notifications_for_authenticated_user_error.dart';import 'package:pub_github_rest_3_1/models/migration.dart';import 'package:pub_github_rest_3_1/models/migrations_get_status_for_org_exclude.dart';import 'package:pub_github_rest_3_1/models/migrations_list_for_org_exclude.dart';import 'package:pub_github_rest_3_1/models/migrations_start_for_authenticated_user_request.dart';import 'package:pub_github_rest_3_1/models/migrations_start_for_org_request.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';/// MigrationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -53,7 +53,7 @@ return execute(
 /// Initiates the generation of a migration archive.
 ///
 /// `POST /orgs/{org}/migrations`
-Future<ApiResult<Migration, BasicError>> migrationsStartForOrg({required String org, required MigrationsStartForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Migration, ActionsSetArtifactAndLogRetentionSettingsRepositoryError>> migrationsStartForOrg({required String org, required MigrationsStartForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,9 +69,7 @@ return execute(
   onSuccess: (response) {
     return Migration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Get an organization migration status
@@ -86,7 +84,7 @@ return execute(
 /// *   `failed`, which means the migration failed.
 ///
 /// `GET /orgs/{org}/migrations/{migration_id}`
-Future<ApiResult<Migration, BasicError>> migrationsGetStatusForOrg({required String org, required int migrationId, List<MigrationsGetStatusForOrgExclude>? exclude, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Migration, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> migrationsGetStatusForOrg({required String org, required int migrationId, List<MigrationsGetStatusForOrgExclude>? exclude, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (exclude != null) {
 for (final item in exclude) {
@@ -110,9 +108,7 @@ return execute(
   onSuccess: (response) {
     return Migration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Download an organization migration archive
@@ -120,7 +116,7 @@ return execute(
 /// Fetches the URL to a migration archive.
 ///
 /// `GET /orgs/{org}/migrations/{migration_id}/archive`
-Future<ApiResult<void, BasicError>> migrationsDownloadArchiveForOrg({required String org, required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> migrationsDownloadArchiveForOrg({required String org, required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -132,9 +128,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Delete an organization migration archive
@@ -142,7 +136,7 @@ return execute(
 /// Deletes a previous migration archive. Migration archives are automatically deleted after seven days.
 ///
 /// `DELETE /orgs/{org}/migrations/{migration_id}/archive`
-Future<ApiResult<void, BasicError>> migrationsDeleteArchiveForOrg({required String org, required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> migrationsDeleteArchiveForOrg({required String org, required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -154,9 +148,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// Unlock an organization repository
@@ -164,7 +156,7 @@ return execute(
 /// Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://docs.github.com/rest/repos/repos#delete-a-repository) when the migration is complete and you no longer need the source data.
 ///
 /// `DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock`
-Future<ApiResult<void, BasicError>> migrationsUnlockRepoForOrg({required String org, required int migrationId, required String repoName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> migrationsUnlockRepoForOrg({required String org, required int migrationId, required String repoName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -176,9 +168,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List repositories in an organization migration
@@ -186,7 +176,7 @@ return execute(
 /// List all the repositories for this organization migration.
 ///
 /// `GET /orgs/{org}/migrations/{migration_id}/repositories`
-Future<ApiResult<List<MinimalRepository>, BasicError>> migrationsListReposForOrg({required String org, required int migrationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> migrationsListReposForOrg({required String org, required int migrationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -212,9 +202,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
 /// List user migrations
@@ -222,7 +210,7 @@ return execute(
 /// Lists all migrations a user has started.
 ///
 /// `GET /user/migrations`
-Future<ApiResult<List<Migration>, BasicError>> migrationsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Migration>, ActivityDeleteThreadSubscriptionError>> migrationsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -248,9 +236,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Migration.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
 );
  } 
 /// Start a user migration
@@ -258,7 +244,7 @@ return execute(
 /// Initiates the generation of a user migration archive.
 ///
 /// `POST /user/migrations`
-Future<ApiResult<Migration, ValidationError>> migrationsStartForAuthenticatedUser({required MigrationsStartForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Migration, ActivityListNotificationsForAuthenticatedUserError>> migrationsStartForAuthenticatedUser({required MigrationsStartForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -274,9 +260,7 @@ return execute(
   onSuccess: (response) {
     return Migration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityListNotificationsForAuthenticatedUserError.fromResponse(response),
 );
  } 
 /// Get a user migration status
@@ -291,7 +275,7 @@ return execute(
 /// Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/migrations/users#download-a-user-migration-archive).
 ///
 /// `GET /user/migrations/{migration_id}`
-Future<ApiResult<Migration, BasicError>> migrationsGetStatusForAuthenticatedUser({required int migrationId, List<String>? exclude, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Migration, ActivityCheckRepoIsStarredByAuthenticatedUserError>> migrationsGetStatusForAuthenticatedUser({required int migrationId, List<String>? exclude, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (exclude != null) {
 for (final item in exclude) {
@@ -315,9 +299,7 @@ return execute(
   onSuccess: (response) {
     return Migration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
 );
  } 
 /// Download a user migration archive
@@ -345,7 +327,7 @@ return execute(
 /// The archive will also contain an `attachments` directory that includes all attachment files uploaded to GitHub.com and a `repositories` directory that contains the repository's Git data.
 ///
 /// `GET /user/migrations/{migration_id}/archive`
-Future<ApiResult<void, BasicError>> migrationsGetArchiveForAuthenticatedUser({required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityDeleteThreadSubscriptionError>> migrationsGetArchiveForAuthenticatedUser({required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -357,9 +339,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
 );
  } 
 /// Delete a user migration archive
@@ -367,7 +347,7 @@ return execute(
 /// Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://docs.github.com/rest/migrations/users#list-user-migrations) and [Get a user migration status](https://docs.github.com/rest/migrations/users#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.
 ///
 /// `DELETE /user/migrations/{migration_id}/archive`
-Future<ApiResult<void, BasicError>> migrationsDeleteArchiveForAuthenticatedUser({required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityCheckRepoIsStarredByAuthenticatedUserError>> migrationsDeleteArchiveForAuthenticatedUser({required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -379,9 +359,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
 );
  } 
 /// Unlock a user repository
@@ -389,7 +367,7 @@ return execute(
 /// Unlocks a repository. You can lock repositories when you [start a user migration](https://docs.github.com/rest/migrations/users#start-a-user-migration). Once the migration is complete you can unlock each repository to begin using it again or [delete the repository](https://docs.github.com/rest/repos/repos#delete-a-repository) if you no longer need the source data. Returns a status of `404 Not Found` if the repository is not locked.
 ///
 /// `DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock`
-Future<ApiResult<void, BasicError>> migrationsUnlockRepoForAuthenticatedUser({required int migrationId, required String repoName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ActivityCheckRepoIsStarredByAuthenticatedUserError>> migrationsUnlockRepoForAuthenticatedUser({required int migrationId, required String repoName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -401,9 +379,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
 );
  } 
 /// List repositories for a user migration
@@ -411,7 +387,7 @@ return execute(
 /// Lists all the repositories for this user migration.
 ///
 /// `GET /user/migrations/{migration_id}/repositories`
-Future<ApiResult<List<MinimalRepository>, BasicError>> migrationsListReposForAuthenticatedUser({required int migrationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<MinimalRepository>, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> migrationsListReposForAuthenticatedUser({required int migrationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -437,9 +413,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
 );
  } 
  }

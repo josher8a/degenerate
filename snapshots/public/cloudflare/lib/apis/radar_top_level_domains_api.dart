@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_tld_details_format.dart';import 'package:pub_cloudflare/models/radar_get_tld_details_response/radar_get_tld_details_response_result.dart';import 'package:pub_cloudflare/models/radar_get_tld_details_response404.dart';import 'package:pub_cloudflare/models/radar_get_tlds_format.dart';import 'package:pub_cloudflare/models/radar_get_tlds_response/radar_get_tlds_response_result.dart';import 'package:pub_cloudflare/models/radar_get_tlds_response400.dart';import 'package:pub_cloudflare/models/radar_get_tlds_tld_type.dart';/// RadarTopLevelDomainsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_tld_details_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_tlds_error.dart';import 'package:pub_cloudflare/models/radar_get_tld_details_format.dart';import 'package:pub_cloudflare/models/radar_get_tld_details_response/radar_get_tld_details_response_result.dart';import 'package:pub_cloudflare/models/radar_get_tlds_format.dart';import 'package:pub_cloudflare/models/radar_get_tlds_response/radar_get_tlds_response_result.dart';import 'package:pub_cloudflare/models/radar_get_tlds_tld_type.dart';/// RadarTopLevelDomainsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarTopLevelDomainsApi with ApiExecutor {const RadarTopLevelDomains
 /// Retrieves a list of TLDs.
 ///
 /// `GET /radar/tlds`
-Future<ApiResult<RadarGetTldsResponseResult, RadarGetTldsResponse400>> radarGetTlds({int? limit, int? offset, String? tldManager, RadarGetTldsTldType? tldType, String? tld, RadarGetTldsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTldsResponseResult, RadarGetTldsError>> radarGetTlds({int? limit, int? offset, String? tldManager, RadarGetTldsTldType? tldType, String? tld, RadarGetTldsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -51,9 +51,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetTldsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetTldsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetTldsError.fromResponse(response),
 );
  } 
 /// Get TLD details
@@ -61,7 +59,7 @@ return execute(
 /// Retrieves the requested TLD information.
 ///
 /// `GET /radar/tlds/{tld}`
-Future<ApiResult<RadarGetTldDetailsResponseResult, RadarGetTldDetailsResponse404>> radarGetTldDetails({required String tld, RadarGetTldDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetTldDetailsResponseResult, RadarGetTldDetailsError>> radarGetTldDetails({required String tld, RadarGetTldDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (format != null) {
   queryParameters['format'] = format.toJson();
@@ -84,9 +82,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetTldDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-    return RadarGetTldDetailsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
+  onError: (response) => RadarGetTldDetailsError.fromResponse(response),
 );
  } 
  }
