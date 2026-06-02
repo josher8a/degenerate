@@ -117,6 +117,7 @@ class OperationLowerer {
               uniqueName,
               op.method,
               op.path,
+              customMethod: op.customMethod,
               summary: op.summary,
               description: op.description,
               parameters: op.parameters,
