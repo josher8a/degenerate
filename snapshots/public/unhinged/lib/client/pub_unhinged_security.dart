@@ -51,23 +51,26 @@ final class PubUnhingedSecurity {
     }),
   ];
 
-  static ApiConfig applyEctoplasmToken(ApiConfig config, String token) =>
-      config.copyWith(
-        defaultHeaders: {
-          ...config.defaultHeaders,
-          'Authorization': 'Bearer $token',
-        },
-      );
+  static ApiConfig applyEctoplasmToken(ApiConfig config, String token) {
+    return config.copyWith(
+      defaultHeaders: {
+        ...config.defaultHeaders,
+        'Authorization': 'Bearer $token',
+      },
+    );
+  }
 
   static ApiConfig applyEctoplasmTokenLegacy(
     ApiConfig config, {
     required String username,
     required String password,
-  }) => config.copyWith(
-    defaultHeaders: {
-      ...config.defaultHeaders,
-      'Authorization':
-          'Basic ${base64Encode(utf8.encode('$username:$password'))}',
-    },
-  );
+  }) {
+    return config.copyWith(
+      defaultHeaders: {
+        ...config.defaultHeaders,
+        'Authorization':
+            'Basic ${base64Encode(utf8.encode('$username:$password'))}',
+      },
+    );
+  }
 }

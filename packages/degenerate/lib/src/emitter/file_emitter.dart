@@ -802,15 +802,6 @@ class FileEmitter {
   /// Note: code_builder prepends '// ' to each line.
   static const _header = ['GENERATED CODE - DO NOT MODIFY BY HAND'];
 
-  /// Wrap raw Dart source in a Library with the standard header.
-  String _emitWithHeader(String body) {
-    final library = Library((b) {
-      b.comments.addAll(_header);
-      b.body.add(Code(body));
-    });
-    return emitRaw(library);
-  }
-
   String _emitBarrelFile({
     required List<IrType> types,
     required List<IrApi> apis,
@@ -958,53 +949,81 @@ class FileEmitter {
     required String packageName,
   }) {
     final className = '${toTypeName(packageName)}Security';
-    final buf = StringBuffer();
-    if (securitySchemes.any(
+    final needsConvert = securitySchemes.any(
       (scheme) => scheme.type == 'http' && scheme.scheme == 'basic',
-    )) {
-      buf.writeln("import 'dart:convert';");
-    }
-    buf.writeln("import 'package:degenerate_runtime/degenerate_runtime.dart';");
-    buf.writeln();
-    buf.writeln('final class $className {');
-    buf.writeln('  const $className._();');
-    buf.writeln();
-    buf.writeln(
-      '  static final securitySchemes = <String, ApiSecurityScheme>{',
     );
-    for (final scheme in securitySchemes) {
-      buf.writeln("    '${scheme.name}': ${_securitySchemeLiteral(scheme)},");
-    }
-    buf.writeln('  };');
-    buf.writeln();
-    if (globalSecurity != null) {
-      buf.writeln(
-        '  static final globalRequirements = ${_securityRequirementsLiteral(globalSecurity)};',
+
+    final library = Library((lib) {
+      lib.comments.addAll(_header);
+      if (needsConvert) lib.directives.add(Directive.import('dart:convert'));
+      lib.directives.add(
+        Directive.import('package:degenerate_runtime/degenerate_runtime.dart'),
       );
-      buf.writeln();
-    }
-    for (final api in apis) {
-      for (final op in api.operations) {
-        if (op.securityRequirements == null) continue;
-        buf.writeln(
-          '  static final ${op.dartMethodName}Requirements = ${_securityRequirementsLiteral(op.securityRequirements!)};',
-        );
-      }
-    }
-    if (apis.any(
-      (a) => a.operations.any((o) => o.securityRequirements != null),
-    )) {
-      buf.writeln();
-    }
-    for (final scheme in securitySchemes) {
-      final helper = _securityApplyMethod(scheme);
-      if (helper != null) {
-        buf.writeln(helper);
-        buf.writeln();
-      }
-    }
-    buf.writeln('}');
-    return _emitWithHeader(buf.toString());
+
+      lib.body.add(Class((b) {
+        b
+          ..name = className
+          ..modifier = ClassModifier.final$
+          ..constructors.add(Constructor((c) => c
+            ..constant = true
+            ..name = '_'));
+
+        // securitySchemes static field
+        final schemesEntries = securitySchemes
+            .map((s) => "'${escapeDartString(s.name)}': ${_securitySchemeLiteral(s)}")
+            .join(', ');
+        b.fields.add(Field((f) => f
+          ..name = 'securitySchemes'
+          ..static = true
+          ..modifier = FieldModifier.final$
+          ..assignment = Code('<String, ApiSecurityScheme>{$schemesEntries}')));
+
+        if (globalSecurity != null) {
+          b.fields.add(Field((f) => f
+            ..name = 'globalRequirements'
+            ..static = true
+            ..modifier = FieldModifier.final$
+            ..assignment =
+                Code(_securityRequirementsLiteral(globalSecurity))));
+        }
+
+        for (final api in apis) {
+          for (final op in api.operations) {
+            if (op.securityRequirements == null) continue;
+            b.fields.add(Field((f) => f
+              ..name = '${op.dartMethodName}Requirements'
+              ..static = true
+              ..modifier = FieldModifier.final$
+              ..assignment = Code(
+                  _securityRequirementsLiteral(op.securityRequirements!))));
+          }
+        }
+
+        for (final scheme in securitySchemes) {
+          final apply = _securityApplyMethod(scheme);
+          if (apply != null) {
+            final positional = apply.params.where((p) => !p.named);
+            final named = apply.params.where((p) => p.named);
+            b.methods.add(Method((m) => m
+              ..name = apply.name
+              ..static = true
+              ..returns = refer('ApiConfig')
+              ..requiredParameters.addAll(positional.map((p) =>
+                  Parameter((pb) => pb
+                    ..name = p.name
+                    ..type = refer(p.type))))
+              ..optionalParameters.addAll(named.map((p) =>
+                  Parameter((pb) => pb
+                    ..name = p.name
+                    ..type = refer(p.type)
+                    ..named = true
+                    ..required = p.required)))
+              ..body = Code(apply.body)));
+          }
+        }
+      }));
+    });
+    return emitRaw(library);
   }
 
   String _securitySchemeLiteral(IrSecurityScheme scheme) {
@@ -1115,27 +1134,40 @@ class FileEmitter {
     return '{$entries}';
   }
 
-  String? _securityApplyMethod(IrSecurityScheme scheme) {
+  _HelperMethodInfo? _securityApplyMethod(IrSecurityScheme scheme) {
     final methodName = 'apply${_securityMethodSuffix(scheme.name)}';
+    final configParam = _HelperParam('config', 'ApiConfig');
+    _HelperMethodInfo apiKey(String collection, String? paramName) {
+      final key = _stringOrNull(paramName);
+      return _HelperMethodInfo(
+        methodName,
+        [configParam, _HelperParam('value', 'String')],
+        'return config.copyWith($collection: {...config.$collection, $key: value});',
+      );
+    }
+
     return switch (scheme.type) {
       'apiKey' => switch (scheme.location) {
-        'header' =>
-          '  static ApiConfig $methodName(ApiConfig config, String value) => config.copyWith(defaultHeaders: {...config.defaultHeaders, ${_stringOrNull(scheme.parameterName)}: value});',
-        'query' =>
-          '  static ApiConfig $methodName(ApiConfig config, String value) => config.copyWith(defaultQueryParameters: {...config.defaultQueryParameters, ${_stringOrNull(scheme.parameterName)}: value});',
-        'cookie' =>
-          '  static ApiConfig $methodName(ApiConfig config, String value) => config.copyWith(defaultCookies: {...config.defaultCookies, ${_stringOrNull(scheme.parameterName)}: value});',
-        // OpenAPI requires `in` for apiKey, but some specs omit it. Default to
-        // a request header so the always-emitted with<Name>() helper has a
-        // matching apply method instead of calling a method that's never built.
-        _ =>
-          '  static ApiConfig $methodName(ApiConfig config, String value) => config.copyWith(defaultHeaders: {...config.defaultHeaders, ${_stringOrNull(scheme.parameterName ?? scheme.name)}: value});',
+        'header' => apiKey('defaultHeaders', scheme.parameterName),
+        'query' => apiKey('defaultQueryParameters', scheme.parameterName),
+        'cookie' => apiKey('defaultCookies', scheme.parameterName),
+        _ => apiKey('defaultHeaders', scheme.parameterName ?? scheme.name),
       },
       'http' => switch (scheme.scheme) {
-        'bearer' =>
-          "  static ApiConfig $methodName(ApiConfig config, String token) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer \$token'});",
-        'basic' =>
-          "  static ApiConfig $methodName(ApiConfig config, {required String username, required String password}) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic \${base64Encode(utf8.encode('\$username:\$password'))}'});",
+        'bearer' => _HelperMethodInfo(
+            methodName,
+            [configParam, _HelperParam('token', 'String')],
+            "return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer \$token'});",
+          ),
+        'basic' => _HelperMethodInfo(
+            methodName,
+            [
+              configParam,
+              _HelperParam('username', 'String', named: true, required: true),
+              _HelperParam('password', 'String', named: true, required: true),
+            ],
+            "return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic \${base64Encode(utf8.encode('\$username:\$password'))}'});",
+          ),
         _ => null,
       },
       _ => null,

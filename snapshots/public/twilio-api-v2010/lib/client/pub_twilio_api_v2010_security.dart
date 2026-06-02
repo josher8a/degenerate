@@ -1,215 +1,404 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
-import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';final class PubTwilioSecurity {const PubTwilioSecurity._();
 
-final class PubTwilioSecurity {
-  const PubTwilioSecurity._();
+static final securitySchemes = <String, ApiSecurityScheme>{'accountSid_authToken': const ApiSecurityScheme(name: 'accountSid_authToken', type: ApiSecuritySchemeType.http, scheme: 'basic')};
 
-  static final securitySchemes = <String, ApiSecurityScheme>{
-    'accountSid_authToken': const ApiSecurityScheme(name: 'accountSid_authToken', type: ApiSecuritySchemeType.http, scheme: 'basic'),
-  };
+static final globalRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
 
-  static final globalRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+static final listAccountRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
 
-  static final listAccountRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createAccountRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchAccountRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateAccountRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listApplicationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createApplicationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchApplicationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateApplicationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteApplicationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchAuthorizedConnectAppRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listAuthorizedConnectAppRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listAvailablePhoneNumberCountryRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchAvailablePhoneNumberCountryRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listAvailablePhoneNumberLocalRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listAvailablePhoneNumberMachineToMachineRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listAvailablePhoneNumberMobileRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listAvailablePhoneNumberNationalRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listAvailablePhoneNumberSharedCostRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listAvailablePhoneNumberTollFreeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listAvailablePhoneNumberVoipRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchBalanceRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listCallRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createCallRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchCallRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateCallRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteCallRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listCallEventRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchCallNotificationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listCallNotificationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listCallRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createCallRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchCallRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateCallRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteCallRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchConferenceRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateConferenceRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listConferenceRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listConferenceRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchConferenceRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateConferenceRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteConferenceRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchConnectAppRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateConnectAppRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteConnectAppRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listConnectAppRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listDependentPhoneNumberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchIncomingPhoneNumberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateIncomingPhoneNumberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteIncomingPhoneNumberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listIncomingPhoneNumberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createIncomingPhoneNumberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchIncomingPhoneNumberAssignedAddOnRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteIncomingPhoneNumberAssignedAddOnRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listIncomingPhoneNumberAssignedAddOnRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createIncomingPhoneNumberAssignedAddOnRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchIncomingPhoneNumberAssignedAddOnExtensionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listIncomingPhoneNumberAssignedAddOnExtensionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listIncomingPhoneNumberLocalRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createIncomingPhoneNumberLocalRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listIncomingPhoneNumberMobileRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createIncomingPhoneNumberMobileRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listIncomingPhoneNumberTollFreeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createIncomingPhoneNumberTollFreeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createNewKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchMediaRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteMediaRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listMediaRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchMemberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateMemberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listMemberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listMessageRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createMessageRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchMessageRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateMessageRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteMessageRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createMessageFeedbackRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listSigningKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchSigningKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateSigningKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteSigningKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createNewSigningKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchNotificationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listNotificationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchOutgoingCallerIdRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateOutgoingCallerIdRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteOutgoingCallerIdRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listOutgoingCallerIdRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createValidationRequestRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchParticipantRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateParticipantRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteParticipantRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listParticipantRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createParticipantRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createPaymentsRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updatePaymentsRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchQueueRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateQueueRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteQueueRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listQueueRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createQueueRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createRealtimeTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateRealtimeTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchRecordingAddOnResultRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteRecordingAddOnResultRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listRecordingAddOnResultRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchRecordingAddOnResultPayloadRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteRecordingAddOnResultPayloadRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listRecordingAddOnResultPayloadRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchRecordingAddOnResultPayloadDataRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchRecordingTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteRecordingTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listRecordingTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchShortCodeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateShortCodeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listShortCodeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listSipAuthCallsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createSipAuthCallsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchSipAuthCallsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteSipAuthCallsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listSipAuthCallsIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createSipAuthCallsIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchSipAuthCallsIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteSipAuthCallsIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listSipAuthRegistrationsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createSipAuthRegistrationsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchSipAuthRegistrationsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteSipAuthRegistrationsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listSipCredentialRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createSipCredentialRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchSipCredentialRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateSipCredentialRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteSipCredentialRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listSipCredentialListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createSipCredentialListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchSipCredentialListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateSipCredentialListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteSipCredentialListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listSipCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createSipCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchSipCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteSipCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listSipDomainRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createSipDomainRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchSipDomainRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateSipDomainRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteSipDomainRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listSipIpAccessControlListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createSipIpAccessControlListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchSipIpAccessControlListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateSipIpAccessControlListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteSipIpAccessControlListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchSipIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteSipIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listSipIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createSipIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listSipIpAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createSipIpAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchSipIpAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateSipIpAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteSipIpAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createSiprecRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateSiprecRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createStreamRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateStreamRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createTokenRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listUsageRecordRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listUsageRecordAllTimeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listUsageRecordDailyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listUsageRecordLastMonthRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listUsageRecordMonthlyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listUsageRecordThisMonthRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listUsageRecordTodayRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listUsageRecordYearlyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listUsageRecordYesterdayRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final fetchUsageTriggerRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final updateUsageTriggerRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteUsageTriggerRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final listUsageTriggerRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createUsageTriggerRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createUserDefinedMessageRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final createUserDefinedMessageSubscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
-  static final deleteUserDefinedMessageSubscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+static final createAccountRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
 
-  static ApiConfig applyAccountSidAuthToken(ApiConfig config, {required String username, required String password}) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'});
+static final fetchAccountRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
 
-}
+static final updateAccountRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listApplicationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createApplicationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchApplicationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateApplicationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteApplicationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchAuthorizedConnectAppRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listAuthorizedConnectAppRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listAvailablePhoneNumberCountryRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchAvailablePhoneNumberCountryRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listAvailablePhoneNumberLocalRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listAvailablePhoneNumberMachineToMachineRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listAvailablePhoneNumberMobileRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listAvailablePhoneNumberNationalRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listAvailablePhoneNumberSharedCostRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listAvailablePhoneNumberTollFreeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listAvailablePhoneNumberVoipRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchBalanceRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listCallRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createCallRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchCallRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateCallRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteCallRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listCallEventRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchCallNotificationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listCallNotificationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listCallRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createCallRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchCallRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateCallRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteCallRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchConferenceRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateConferenceRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listConferenceRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listConferenceRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchConferenceRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateConferenceRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteConferenceRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchConnectAppRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateConnectAppRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteConnectAppRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listConnectAppRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listDependentPhoneNumberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchIncomingPhoneNumberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateIncomingPhoneNumberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteIncomingPhoneNumberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listIncomingPhoneNumberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createIncomingPhoneNumberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchIncomingPhoneNumberAssignedAddOnRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteIncomingPhoneNumberAssignedAddOnRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listIncomingPhoneNumberAssignedAddOnRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createIncomingPhoneNumberAssignedAddOnRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchIncomingPhoneNumberAssignedAddOnExtensionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listIncomingPhoneNumberAssignedAddOnExtensionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listIncomingPhoneNumberLocalRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createIncomingPhoneNumberLocalRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listIncomingPhoneNumberMobileRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createIncomingPhoneNumberMobileRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listIncomingPhoneNumberTollFreeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createIncomingPhoneNumberTollFreeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createNewKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchMediaRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteMediaRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listMediaRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchMemberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateMemberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listMemberRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listMessageRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createMessageRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchMessageRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateMessageRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteMessageRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createMessageFeedbackRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listSigningKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchSigningKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateSigningKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteSigningKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createNewSigningKeyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchNotificationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listNotificationRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchOutgoingCallerIdRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateOutgoingCallerIdRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteOutgoingCallerIdRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listOutgoingCallerIdRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createValidationRequestRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchParticipantRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateParticipantRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteParticipantRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listParticipantRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createParticipantRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createPaymentsRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updatePaymentsRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchQueueRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateQueueRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteQueueRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listQueueRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createQueueRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createRealtimeTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateRealtimeTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listRecordingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchRecordingAddOnResultRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteRecordingAddOnResultRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listRecordingAddOnResultRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchRecordingAddOnResultPayloadRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteRecordingAddOnResultPayloadRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listRecordingAddOnResultPayloadRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchRecordingAddOnResultPayloadDataRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchRecordingTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteRecordingTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listRecordingTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchShortCodeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateShortCodeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listShortCodeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listSipAuthCallsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createSipAuthCallsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchSipAuthCallsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteSipAuthCallsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listSipAuthCallsIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createSipAuthCallsIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchSipAuthCallsIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteSipAuthCallsIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listSipAuthRegistrationsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createSipAuthRegistrationsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchSipAuthRegistrationsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteSipAuthRegistrationsCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listSipCredentialRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createSipCredentialRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchSipCredentialRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateSipCredentialRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteSipCredentialRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listSipCredentialListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createSipCredentialListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchSipCredentialListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateSipCredentialListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteSipCredentialListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listSipCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createSipCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchSipCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteSipCredentialListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listSipDomainRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createSipDomainRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchSipDomainRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateSipDomainRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteSipDomainRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listSipIpAccessControlListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createSipIpAccessControlListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchSipIpAccessControlListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateSipIpAccessControlListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteSipIpAccessControlListRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchSipIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteSipIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listSipIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createSipIpAccessControlListMappingRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listSipIpAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createSipIpAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchSipIpAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateSipIpAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteSipIpAddressRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createSiprecRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateSiprecRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createStreamRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateStreamRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createTokenRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listTranscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listUsageRecordRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listUsageRecordAllTimeRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listUsageRecordDailyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listUsageRecordLastMonthRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listUsageRecordMonthlyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listUsageRecordThisMonthRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listUsageRecordTodayRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listUsageRecordYearlyRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listUsageRecordYesterdayRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final fetchUsageTriggerRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final updateUsageTriggerRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteUsageTriggerRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final listUsageTriggerRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createUsageTriggerRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createUserDefinedMessageRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final createUserDefinedMessageSubscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static final deleteUserDefinedMessageSubscriptionRequirements = [const ApiSecurityRequirement({'accountSid_authToken': []})];
+
+static ApiConfig applyAccountSidAuthToken(ApiConfig config, {required String username, required String password, }) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'}); } 
+ }

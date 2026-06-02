@@ -2062,19 +2062,19 @@ void main() {
       expect(
         securityFile,
         contains(
-          'static ApiConfig applyApiKeyAuth(ApiConfig config, String value)',
+          'static ApiConfig applyApiKeyAuth(ApiConfig config, String value, )',
         ),
       );
       expect(
         securityFile,
         contains(
-          'static ApiConfig applyHttpBearer(ApiConfig config, String token)',
+          'static ApiConfig applyHttpBearer(ApiConfig config, String token, )',
         ),
       );
       expect(
         securityFile,
         contains(
-          'static ApiConfig applyHttpBasic(ApiConfig config, {required String username, required String password})',
+          'static ApiConfig applyHttpBasic(ApiConfig config, {required String username, required String password, })',
         ),
       );
       expect(sdkFile, contains("import 'test_client_security.dart';"));

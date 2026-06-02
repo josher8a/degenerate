@@ -1,2412 +1,4785 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PubCloudflareSecurity {const PubCloudflareSecurity._();
 
-final class PubCloudflareSecurity {
-  const PubCloudflareSecurity._();
+static final securitySchemes = <String, ApiSecurityScheme>{'api_email': const ApiSecurityScheme(name: 'api_email', type: ApiSecuritySchemeType.apiKey, parameterName: 'X-Auth-Email', location: ApiKeyLocation.header), 'api_key': const ApiSecurityScheme(name: 'api_key', type: ApiSecuritySchemeType.apiKey, parameterName: 'X-Auth-Key', location: ApiKeyLocation.header), 'api_token': const ApiSecurityScheme(name: 'api_token', type: ApiSecuritySchemeType.http, scheme: 'bearer'), 'user_service_key': const ApiSecurityScheme(name: 'user_service_key', type: ApiSecuritySchemeType.apiKey, parameterName: 'X-Auth-User-Service-Key', location: ApiKeyLocation.header)};
 
-  static final securitySchemes = <String, ApiSecurityScheme>{
-    'api_email': const ApiSecurityScheme(name: 'api_email', type: ApiSecuritySchemeType.apiKey, parameterName: 'X-Auth-Email', location: ApiKeyLocation.header),
-    'api_key': const ApiSecurityScheme(name: 'api_key', type: ApiSecuritySchemeType.apiKey, parameterName: 'X-Auth-Key', location: ApiKeyLocation.header),
-    'api_token': const ApiSecurityScheme(name: 'api_token', type: ApiSecuritySchemeType.http, scheme: 'bearer'),
-    'user_service_key': const ApiSecurityScheme(name: 'user_service_key', type: ApiSecuritySchemeType.apiKey, parameterName: 'X-Auth-User-Service-Key', location: ApiKeyLocation.header),
-  };
+static final globalRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
 
-  static final globalRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+static final accountsListAccountsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
 
-  static final accountsListAccountsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountCreationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountsAccountDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountsUpdateAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountDeletionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountsMoveAccountsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountsListAccountOrganizationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountsGetAccountProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountsModifyAccountProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountsBatchMoveAccountsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listAbuseReportsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final listEmailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final listMitigationsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final requestReviewRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAbuseReportRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final submitAbuseReportRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final mcpPortalsApiListPortalsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final mcpPortalsApiCreatePortalsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final mcpPortalsApiFetchGatewaysRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final mcpPortalsApiUpdatePortalsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final mcpPortalsApiDeletePortalsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final mcpPortalsApiListServersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final mcpPortalsApiCreateServersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final mcpPortalsApiFetchServersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final mcpPortalsApiUpdateServersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final mcpPortalsApiDeleteServersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final mcpPortalsApiSyncServerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accessApplicationsListAccessApplicationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessApplicationsAddAnApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessApplicationsGetAnAccessApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessApplicationsUpdateAnAccessApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessApplicationsDeleteAnAccessApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessApplicationsRevokeServiceTokensRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessApplicationsPutUpdateAccessApplicationSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessApplicationsPatchUpdateAccessApplicationSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessApplicationsTestAccessPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessShortLivedCertificateCAsGetAShortLivedCertificateCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessShortLivedCertificateCAsCreateAShortLivedCertificateCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessShortLivedCertificateCAsDeleteAShortLivedCertificateCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessShortLivedCertificateCAsListShortLivedCertificateCAsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPoliciesListAccessAppPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPoliciesCreateAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPoliciesGetAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accessPoliciesUpdateAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPoliciesDeleteAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPoliciesConvertReusableRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessMtlsAuthenticationListMtlsCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessMtlsAuthenticationAddAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessMtlsAuthenticationGetAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessMtlsAuthenticationUpdateAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessMtlsAuthenticationDeleteAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessMtlsAuthenticationListMtlsCertificatesHostnameSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessCustomPagesListCustomPagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessCustomPagesCreateACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessCustomPagesGetACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessCustomPagesUpdateACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessCustomPagesDeleteACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessGatewayCaListSshCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessGatewayCaAddAnSshCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessGatewayCaDeleteAnSshCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessGroupsListAccessGroupsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessGroupsCreateAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessGroupsGetAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessGroupsUpdateAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessGroupsDeleteAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessIdentityProvidersListAccessIdentityProvidersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessIdentityProvidersAddAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessIdentityProvidersGetAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessIdentityProvidersUpdateAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessIdentityProvidersDeleteAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessIdentityProvidersListScimGroupResourcesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessIdentityProvidersListScimUserResourcesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessKeyConfigurationGetTheAccessKeyConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessKeyConfigurationUpdateTheAccessKeyConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessKeyConfigurationRotateAccessKeysRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessAuthenticationLogsGetAccessAuthenticationLogsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accessScimUpdateLogsListAccessScimUpdateLogsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zeroTrustOrganizationGetYourZeroTrustOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustOrganizationCreateYourZeroTrustOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustOrganizationUpdateYourZeroTrustOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustOrganizationRevokeAllAccessTokensForAUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPoliciesListAccessReusablePoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPoliciesCreateAnAccessReusablePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPoliciesGetAnAccessReusablePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPoliciesUpdateAnAccessReusablePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPoliciesDeleteAnAccessReusablePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPolicyTestsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPolicyTestsGetAnUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessPolicyTestsGetAUserPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustSeatsUpdateAUserSeatRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessServiceTokensListServiceTokensRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessServiceTokensCreateAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessServiceTokensGetAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessServiceTokensUpdateAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessServiceTokensDeleteAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessServiceTokensRefreshAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessServiceTokensRotateAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessTagsListTagsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessTagsCreateTagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessTagsGetATagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessTagsUpdateATagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accessTagsDeleteATagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustUsersGetUsersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustUsersCreateUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustUsersGetUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustUsersUpdateUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustUsersDeleteUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustUsersGetActiveSessionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustUsersGetActiveSessionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustUsersGetFailedLoginsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustUsersGetLastSeenIdentityRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustUsersDeleteMfaAuthenticatorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final ipAddressManagementAddressMapsListAddressMapsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementAddressMapsCreateAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementAddressMapsAddressMapDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementAddressMapsUpdateAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementAddressMapsDeleteAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementAddressMapsAddAnAccountMembershipToAnAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementAddressMapsRemoveAnAccountMembershipFromAnAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementAddressMapsAddAnIpToAnAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementAddressMapsRemoveAnIpFromAnAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementAddressMapsAddAZoneMembershipToAnAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementAddressMapsRemoveAZoneMembershipFromAnAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementListLeasesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesUploadLoaDocumentRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesDownloadLoaDocumentRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesListPrefixesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesAddPrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesPrefixDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesUpdatePrefixDescriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesDeletePrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesValidatePrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesListBgpPrefixesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesCreateBgpPrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesFetchBgpPrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesUpdateBgpPrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixesDeleteBgpPrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementServiceBindingsListServiceBindingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementServiceBindingsCreateServiceBindingRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementServiceBindingsGetServiceBindingRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementServiceBindingsDeleteServiceBindingRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementServiceBindingsListServicesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixDelegationListPrefixDelegationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixDelegationCreatePrefixDelegationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAddressManagementPrefixDelegationDeletePrefixDelegationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dlsAccountRegionalHostnamesAccountListRegionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final dlsAccountRegionalHostnamesAccountListHostnamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final dlsAccountRegionalHostnamesAccountCreateHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final dlsAccountRegionalHostnamesAccountFetchHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final dlsAccountRegionalHostnamesAccountPatchHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final dlsAccountRegionalHostnamesAccountDeleteHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final aigConfigListEvaluatorsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigListEvaluationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigCreateEvaluationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigFetchEvaluationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigDeleteEvaluationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigListGatewayRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigCreateGatewayRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigGetGatewayUrlRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigFetchGatewayRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigUpdateGatewayRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigDeleteGatewayRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigListDatasetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigCreateDatasetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigFetchDatasetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigUpdateDatasetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigDeleteDatasetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigListGatewayLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigDeleteGatewayLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigGetGatewayLogDetailRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigPatchGatewayLogRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigGetGatewayLogRequestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigGetGatewayLogResponseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigListProvidersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigCreateProvidersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigUpdateProvidersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigDeleteProvidersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigListGatewayDynamicRoutesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigPostGatewayDynamicRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigGetGatewayDynamicRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigUpdateGatewayDynamicRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigDeleteGatewayDynamicRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigListGatewayDynamicRouteDeploymentsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigPostGatewayDynamicRouteDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigListGatewayDynamicRouteVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigPostGatewayDynamicRouteVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aigConfigGetGatewayDynamicRouteVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchListInstancesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchCreateInstancesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchFetchInstancesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchUpdateInstancesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchDeleteInstancesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchInstanceChatCompletionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchInstanceSearchRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchStatsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchInstanceListJobsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchInstanceCreateJobRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchInstanceGetJobRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchInstanceChangeJobStatusRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchInstanceListJobLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchListTokensRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchCreateTokensRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchFetchTokensRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchUpdateTokensRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final aiSearchDeleteTokensRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiSearchAuthorRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiGetModelSchemaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiSearchModelRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunModelRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiSearchTaskRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostToMarkdownRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiGetToMarkdownSupportedRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiListFinetunesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiCreateFinetuneRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiUploadFinetuneAssetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiListPublicFinetunesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaM2m10012bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfAisingaporeGemmaSeaLionV427bItRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfDeepseekAiDeepseekMath7bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfDefogSqlcoder7b2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfFblgitUnaCybertron7bV2Bf16Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfGoogleGemma2bItLoraRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfGoogleGemma312bItRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfGoogleGemma7bItLoraRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfIbmGranite40HMicroRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama27bChatHfLoraRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama27bChatFp16Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama27bChatInt8Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama38bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama38bInstructAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama318bInstructAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama318bInstructFp8Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama318bInstructFp8FastRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama3170bInstructFp8FastRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama321bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama323bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama3211bVisionInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama370bInstructFp8FastRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlama4Scout17b16eInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMetaLlamaGuard38bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMicrosoftPhi2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMistral7bInstructV01Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMistral7bInstructV02LoraRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMistralaiMistralSmall3124bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfOpenaiGptOss20bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfOpenaiGptOss120bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfOpenchat350106Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfQwenQwen1505bChatRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfQwenQwen1518bChatRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfQwenQwen157bChatAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfQwenQwen1514bChatAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfQwenQwen25Coder32bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfQwenQwen330bA3bFp8Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfQwenQwq32bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfTheblokeDiscolmGerman7bV1AwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfTiiuaeFalcon7bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfTinyllama11bChatV10Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfZaiOrgGlm47FlashRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunHfGoogleGemma7bItRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunHfMistral7bInstructV02Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunHfNexusflowStarlingLm7bBetaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunHfNousresearchHermes2ProMistral7bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunHfTheblokeLlama213bChatAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunHfTheblokeMistral7bInstructV01AwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunHfTheblokeNeuralChat7bV31AwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunHfTheblokeZephyr7bBetaAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBaaiBgeBaseEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBaaiBgeLargeEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBaaiBgeM3Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBaaiBgeSmallEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBaaiOmniBgeBaseEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBaaiOmniBgeLargeEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBaaiOmniBgeM3Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBaaiOmniBgeSmallEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBaaiRayBgeLargeEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfGoogleEmbeddinggemma300mRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfGoogleOmniEmbeddinggemma300mRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfPfnetPlamoEmbedding1bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfQwenQwen3Embedding06bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBaaiBgeRerankerBaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfHuggingfaceDistilbertSst2Int8Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBlackForestLabsFlux1SchnellRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBlackForestLabsFlux2DevRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBlackForestLabsFlux2Klein4bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBlackForestLabsFlux2Klein9bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfBytedanceStableDiffusionXlLightningRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfLeonardoLucidOriginRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfLeonardoPhoenix10Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfLykonDreamshaper8LcmRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfRunwaymlStableDiffusionV15Img2imgRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfRunwaymlStableDiffusionV15InpaintingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfStabilityaiStableDiffusionXlBase10Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfSvenTestPipeHttpRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfDeepgramAuraRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfDeepgramAura1Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfDeepgramAura1Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfDeepgramAura1InternalRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfDeepgramAura2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfDeepgramAura2EnRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfDeepgramAura2EnRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfDeepgramAura2EsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfDeepgramAura2EsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMyshellAiMelottsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfDeepgramFluxRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfDeepgramFluxRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfDeepgramNova3Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfDeepgramNova3Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfDeepgramNova3InternalRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfOpenaiWhisperRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfOpenaiWhisperLargeV3TurboRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfOpenaiWhisperTinyEnRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfFacebookBartLargeCnnRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfFacebookNonomniBartLargeCnnRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfFacebookNonomniDetrResnet50Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMicrosoftNonomniResnet50Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostRunCfMicrosoftResnet50Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfPipecatAiSmartTurnV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfPipecatAiSmartTurnV3Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersAiPostWebsocketRunCfTestHelloWorldCogRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationAlertTypesGetAlertTypesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationMechanismEligibilityGetDeliveryMechanismEligibilityRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationDestinationsWithPagerDutyListPagerDutyServicesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationDestinationsWithPagerDutyDeletePagerDutyServicesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationDestinationsWithPagerDutyConnectPagerDutyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationDestinationsWithPagerDutyConnectPagerDutyTokenRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationWebhooksListWebhooksRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationWebhooksCreateAWebhookRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationWebhooksGetAWebhookRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationWebhooksUpdateAWebhookRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationWebhooksDeleteAWebhookRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationHistoryListHistoryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationPoliciesListNotificationPoliciesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationPoliciesCreateANotificationPolicyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationPoliciesGetANotificationPolicyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationPoliciesUpdateANotificationPolicyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationPoliciesDeleteANotificationPolicyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationSilencesListSilencesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationSilencesCreateSilencesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationSilencesUpdateSilencesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationSilencesGetSilenceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final notificationSilencesDeleteSilencesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final auditLogsGetAccountAuditLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final auditLogsV2GetAccountAuditLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final auditLogsGetUserAuditLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final autoragConfigAiSearchRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final autoragConfigSearchRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final autoragConfigFilesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final autoragConfigSyncRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final autoragConfigListJobsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final autoragConfigGetJobRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final autoragConfigListJobLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final billableUsageGetPaygoAccountUsageRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final botnetThreatFeedGetDayReportRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final botnetThreatFeedGetFullReportRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final botnetThreatFeedListAsnRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final botnetThreatFeedDeleteAsnRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getAccountsBrandProtectionAlertsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchAccountsBrandProtectionAlertsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchAccountsBrandProtectionAlertsClearRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchAccountsBrandProtectionAlertsRefuteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchAccountsBrandProtectionAlertsVerifyRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionBrandsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postAccountsBrandProtectionBrandsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteAccountsBrandProtectionBrandsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionBrandsPatternsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postAccountsBrandProtectionBrandsPatternsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteAccountsBrandProtectionBrandsPatternsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchAccountsBrandProtectionClearRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionDomainInfoRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionRecentSubmissionsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchAccountsBrandProtectionRefuteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionSubmissionInfoRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postAccountsBrandProtectionSubmitRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionTrackedDomainsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionUrlInfoRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchAccountsBrandProtectionVerifyRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postInternalSubmitRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getLiveRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getReadyRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionLogoMatchesRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionLogoMatchesDownloadRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionLogosRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postAccountsBrandProtectionLogosRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionLogos2Requirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteAccountsBrandProtectionLogosRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postAccountsBrandProtectionScanLogoRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postAccountsBrandProtectionScanPageRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getSignedUrlRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionMatchesRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionMatchesDownloadRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionQueriesRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postAccountsBrandProtectionQueriesRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchAccountsBrandProtectionQueriesRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteAccountsBrandProtectionQueriesRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postAccountsBrandProtectionQueriesBulkRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postAccountsBrandProtectionSearchRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAccountsBrandProtectionTotalQueriesRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final brapiPostContentRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final brapiPostJsonRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final brapiPostLinksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final brapiPostMarkdownRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final brapiPostPdfRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final brapiPostScrapeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final brapiPostScreenshotRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final brapiPostSnapshotRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getAccountLimitsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getBuildsByVersionIdsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getBuildByUuidRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cancelBuildByUuidRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getBuildLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getLatestBuildsByScriptsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getWorkerConfigAutofillRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final upsertRepoConnectionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteRepoConnectionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listBuildTokensRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createBuildTokenRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteBuildTokenRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createTriggerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateTriggerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteTriggerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createManualBuildRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final purgeBuildCacheRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listEnvironmentVariablesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final upsertEnvironmentVariablesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteEnvironmentVariableRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listBuildsByScriptRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listTriggersByScriptRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listWorkersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final editWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final callsAppsListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final callsAppsCreateANewAppRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final callsAppsRetrieveAppDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final callsAppsUpdateAppDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final callsAppsDeleteAppRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final callsTurnKeyListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final callsTurnKeyCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final callsRetrieveTurnKeyDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final callsUpdateTurnKeyRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final callsDeleteTurnKeyRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final cloudflareTunnelListCloudflareTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelCreateACloudflareTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelGetACloudflareTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelUpdateACloudflareTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelDeleteACloudflareTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelListCloudflareTunnelConnectionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelCleanUpCloudflareTunnelConnectionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelGetCloudflareTunnelConnectorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelGetACloudflareTunnelManagementTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelGetACloudflareTunnelTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelListAllTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelListWarpConnectorTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelCreateAWarpConnectorTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelGetAWarpConnectorTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelUpdateAWarpConnectorTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelDeleteAWarpConnectorTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelGetAWarpConnectorTunnelTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelConfigurationGetConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final cloudflareTunnelConfigurationPutConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final accountsTurnstileWidgetsListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountsTurnstileWidgetCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountsTurnstileWidgetGetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountsTurnstileWidgetUpdateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountsTurnstileWidgetDeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountsTurnstileWidgetRotateSecretRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final postBinDbPostRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getBinDbGetBinaryRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getEventListGetRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteEventDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventDoRevertRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchEventUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getEventRawReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventRawUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchEventRawUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getEventRelationshipsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getEventAggregateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventCreateBulkRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getEventReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventMoveToNewDsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteEventTagDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventTagCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getEventQueryListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getEventQueryReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventQueryUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchEventQueryUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteEventQueryDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getEventQueryAlertListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getEventQueryAlertReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventQueryAlertUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchEventQueryAlertUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteEventQueryAlertDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventQueryAlertCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventQueryCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getEventRawReadDsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteEventReferenceDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventReferenceCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postCreateEventRelationshipRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postEventGraphQlRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAttackerListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getCategoryListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getCategoryReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postCategoryUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchCategoryUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteCategoryDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getCategoryListCompleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postCategoryCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getCategoriesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getCategoryByIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getCountryReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getDatasetListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getDatasetReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postDatasetUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchDatasetUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteDatasetDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postDatasetCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getGroupListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postGroupCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getGroupReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final putGroupUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteGroupDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getGroupMemberListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postGroupMemberCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteGroupMemberDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postIndicatorTypeCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getIndicatorListLegacyRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getIndicatorReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchIndicatorUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteIndicatorDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postIndicatorCreateBulkRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postIndicatorCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getIndicatorTagsListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getIndicatorListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getPermissionListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postPermissionCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final putPermissionUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deletePermissionDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getTagIndicatorsListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getTagListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchTagUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteTagDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postTagCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getTargetIndustryListByDatasetRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getTargetIndustryListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getTargetIndustryListCompleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postDatasetPopulateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getIndicatorTypesListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getTagCategoryListRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchTagCategoryUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteTagCategoryDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postTagCategoryCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final cloudforceOneRequestListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestAssetListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestAssetGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestAssetUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestAssetDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestAssetNewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestMessageListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestMessageUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestMessageDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestMessageNewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestConstantsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestNewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestQuotaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOneRequestTypesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOnePriorityListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOnePriorityGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOnePriorityUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOnePriorityDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOnePriorityNewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudforceOnePriorityQuotaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getConfigFetchRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final postConfigCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final postConfigUpdateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteDeleteScansRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getGetOpenPortsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listCnisRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final createCniRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getCniRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final updateCniRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final deleteCniRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listInterconnectsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final createInterconnectRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getInterconnectRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final deleteInterconnectRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getInterconnectLoaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getInterconnectStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final updateSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listSlotsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getSlotRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final connectivityServicesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final connectivityServicesPostRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final connectivityServicesGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final connectivityServicesPutRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final connectivityServicesDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final publicListApplicationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final generateImageRegistryCredentialsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountLevelCustomNameserversListAccountCustomNameserversRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountLevelCustomNameserversAddAccountCustomNameserverRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountLevelCustomNameserversDeleteAccountCustomNameserverRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final d1ListDatabasesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final d1CreateDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final d1GetDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final d1UpdateDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final d1UpdatePartialDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final d1DeleteDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final d1ExportDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final d1ImportDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final d1QueryDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final d1RawDatabaseQueryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final d1TimeTravelGetBookmarkRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final d1TimeTravelRestoreRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final devicesListDeviceSettingsPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesGetDefaultDeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesCreateDeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesUpdateDefaultDeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesGetDeviceSettingsPolicyByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesUpdateDeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesDeleteDeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesGetSplitTunnelExcludeListForADeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesSetSplitTunnelExcludeListForADeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesGetLocalDomainFallbackListForADeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesSetLocalDomainFallbackListForADeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesGetSplitTunnelIncludeListForADeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesSetSplitTunnelIncludeListForADeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesGetSplitTunnelExcludeListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesSetSplitTunnelExcludeListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesGetLocalDomainFallbackListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesSetLocalDomainFallbackListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesGetSplitTunnelIncludeListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesSetSplitTunnelIncludeListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesGetPolicyCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesUpdatePolicyCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listIpProfilesRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final createIpProfileRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getIpProfileRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final updateIpProfileRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteIpProfileRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getRegistrationOverrideCodesRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deviceManagedNetworksListDeviceManagedNetworksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final deviceManagedNetworksCreateDeviceManagedNetworkRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final deviceManagedNetworksDeviceManagedNetworkDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final deviceManagedNetworksUpdateDeviceManagedNetworkRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final deviceManagedNetworksDeleteDeviceManagedNetworkRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listDevicesRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getDeviceRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteDeviceRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final revokeDeviceRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteRegistrationsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final devicePostureRulesListDevicePostureRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicePostureRulesCreateDevicePostureRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicePostureRulesDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicePostureRulesUpdateDevicePostureRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicePostureRulesDeleteDevicePostureRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicePostureIntegrationsListDevicePostureIntegrationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicePostureIntegrationsCreateDevicePostureIntegrationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicePostureIntegrationsDevicePostureIntegrationDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicePostureIntegrationsUpdateDevicePostureIntegrationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicePostureIntegrationsDeleteDevicePostureIntegrationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listRegistrationsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getRegistrationRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteRegistrationRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final revokeRegistrationsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final unrevokeRegistrationsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final devicesResilienceRetrieveGlobalWarpOverrideRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final devicesResilienceSetGlobalWarpOverrideRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustAccountsGetDeviceSettingsForZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustAccountsGetZeroTrustAccountInformationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustAccountsCreateZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustAccountsGetZeroTrustAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustAccountsUpdateZeroTrustAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustAccountsPatchZeroTrustAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustAccountsGetLoggingSettingsForTheZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustAccountsUpdateLoggingSettingsForTheZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dexEndpointsListColosRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final devicesLiveStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final dexFleetStatusDevicesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final dexFleetStatusLiveRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final dexFleetStatusOverTimeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final dexEndpointsHttpTestDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final dexEndpointsHttpTestPercentilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final dexEndpointsListTestsOverviewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final dexEndpointsTestsUniqueDevicesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final dexEndpointsTracerouteTestResultNetworkPathRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final dexEndpointsTracerouteTestDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final dexEndpointsTracerouteTestNetworkPathRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final dexEndpointsTracerouteTestPercentilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final getCommandsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final postCommandsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final getCommandsCommandIdDownloadsFilenameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final getCommandsEligibleDevicesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final getCommandsQuotaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final deviceDexTestDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deviceDexTestCreateDeviceDexTestRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deviceDexTestGetDeviceDexTestRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deviceDexTestUpdateDeviceDexTestRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deviceDexTestDeleteDeviceDexTestRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listDexRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final createDexRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final getDexRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final updateDexRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final deleteDexRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final listWarpChangeEventsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final diagnosticsEndpointHealthcheckListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final diagnosticsEndpointHealthcheckCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final diagnosticsEndpointHealthcheckGetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final diagnosticsEndpointHealthcheckUpdateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final diagnosticsEndpointHealthcheckDeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final diagnosticsTracerouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dlpDatasetsReadAllRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDatasetsCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDatasetsReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDatasetsUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDatasetsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDatasetsCreateVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDatasetsUploadVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDatasetsDefineColumnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDatasetsUploadDatasetColumnRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDocumentFingerprintsReadAllRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDocumentFingerprintsCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDocumentFingerprintsReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDocumentFingerprintsUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDocumentFingerprintsUploadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpDocumentFingerprintsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEmailScannerGetAccountMappingRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEmailScannerCreateAccountMappingRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEmailScannerListAllRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEmailScannerCreateRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEmailScannerUpdateRulePrioritiesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEmailScannerGetRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEmailScannerUpdateRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEmailScannerDeleteRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEntriesListAllEntriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEntriesCreateEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEntriesGetDlpEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEntriesUpdateEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEntriesDeleteEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEntriesUpdateCustomEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEntriesUpdatePredefinedEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEntriesCreateIntegrationEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEntriesUpdateIntegrationEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEntriesDeleteIntegrationEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEntriesCreatePredefinedEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpEntriesDeletePredefinedEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpLimitsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpPatternValidateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpPayloadLogGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpPayloadLogPutRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpSettingsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpSettingsUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpSettingsEditRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpSettingsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesListAllProfilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesGetDlpProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesListAllCustomProfilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesCreateCustomProfilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesGetCustomProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesUpdateCustomProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesDeleteCustomProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesCreatePredefinedProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesGetPredefinedProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesUpdatePredefinedProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesDeletePredefinedProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesGetPredefinedProfileConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesCreatePredefinedProfileConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpProfilesUpdatePredefinedProfileConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dnsFirewallListDnsFirewallClustersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsFirewallCreateDnsFirewallClusterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsFirewallClusterDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsFirewallUpdateDnsFirewallClusterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsFirewallDeleteDnsFirewallClusterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsFirewallShowDnsFirewallClusterReverseDnsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsFirewallUpdateDnsFirewallClusterReverseDnsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsFirewallAnalyticsTableRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsFirewallAnalyticsByTimeRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAnAccountGetUsageRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsSettingsForAnAccountListDnsSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsSettingsForAnAccountUpdateDnsSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsViewsForAnAccountListInternalDnsViewsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsViewsForAnAccountCreateInternalDnsViewsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsViewsForAnAccountGetInternalDnsViewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsViewsForAnAccountUpdateInternalDnsViewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsViewsForAnAccountDeleteInternalDnsViewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityInvestigateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityGetMessageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityGetMessageDetectionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityPostMessageMoveRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityGetMessagePreviewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityGetMessageRawRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityPostReclassifyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityGetMessageTraceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityPostBulkMessageMoveRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityPostPreviewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityPostReleaseRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityGetPhishguardReportsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecuritySubmissionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityListAllowPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityCreateAllowPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityGetAllowPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityUpdateAllowPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityDeleteAllowPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityBatchAllowPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityListBlockedSendersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityCreateBlockedSenderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityGetBlockedSenderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityUpdateBlockedSenderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityDeleteBlockedSenderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityBatchBlockedSendersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityListDomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityDeleteDomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityGetDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityUpdateDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityDeleteDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityListDisplayNamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityCreateDisplayNameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityGetDisplayNameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityUpdateDisplayNameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityDeleteDisplayNameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityBatchSendingDomainRestrictionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityListTrustedDomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityCreateTrustedDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityGetTrustedDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityUpdateTrustedDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityDeleteTrustedDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSecurityBatchTrustedDomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingDestinationAddressesListDestinationAddressesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingDestinationAddressesCreateADestinationAddressRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingDestinationAddressesGetADestinationAddressRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingDestinationAddressesDeleteDestinationAddressRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final r2GetEventNotificationConfigsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2GetEventNotificationConfigRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2PutEventNotificationConfigRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2EventNotificationDeleteConfigRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2ListBucketsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2CreateBucketRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2GetBucketRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2PatchBucketRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2DeleteBucketRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2GetBucketCorsPolicyRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2PutBucketCorsPolicyRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2DeleteBucketCorsPolicyRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2ListCustomDomainsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2AddCustomDomainRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2GetCustomDomainSettingsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2EditCustomDomainSettingsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2DeleteCustomDomainRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2GetBucketPublicPolicyRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2PutBucketPublicPolicyRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2GetBucketLifecycleConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2PutBucketLifecycleConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2GetBucketLocalUploadsConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2PutBucketLocalUploadsConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2GetBucketLockConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2PutBucketLockConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2GetBucketSippyConfigRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2PutBucketSippyConfigRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2DeleteBucketSippyConfigRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final r2CreateTempAccessCredentialsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final subscriptionsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final subscriptionsCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final subscriptionsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final subscriptionsPatchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final subscriptionsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesUpdatePartialRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesListConsumersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesCreateConsumerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesGetConsumerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesUpdateConsumerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesDeleteConsumerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesPushMessageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesAckMessagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesPushMessagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesPullMessagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesPurgeGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final queuesPurgeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final ipAccessRulesForAnAccountListIpAccessRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final ipAccessRulesForAnAccountCreateAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final ipAccessRulesForAnAccountGetAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final ipAccessRulesForAnAccountUpdateAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final ipAccessRulesForAnAccountDeleteAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustApplicationsReviewStatusListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustApplicationsReviewStatusUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGetAuditSshSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustUpdateAuditSshSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustRotateSshAccountSeedRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayCategoriesListCategoriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustCertificatesListZeroTrustCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustCertificatesCreateZeroTrustCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustCertificatesZeroTrustCertificateDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustCertificatesDeleteZeroTrustCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustCertificatesActivateZeroTrustCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustCertificatesDeactivateZeroTrustCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustListsListZeroTrustListsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustListsCreateZeroTrustListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustListsZeroTrustListDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustListsUpdateZeroTrustListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustListsPatchZeroTrustListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustListsDeleteZeroTrustListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustListsZeroTrustListItemsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayLocationsListZeroTrustGatewayLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayLocationsZeroTrustGatewayLocationDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayLocationsDeleteZeroTrustGatewayLocationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayPacfilesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayPacfilesCreatePacfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayPacfilesDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayPacfilesUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayPacfilesDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayProxyEndpointsListProxyEndpointsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayProxyEndpointsCreateProxyEndpointRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayProxyEndpointsProxyEndpointDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayProxyEndpointsDeleteProxyEndpointRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayRulesListZeroTrustGatewayRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayRulesZeroTrustGatewayRuleDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayRulesDeleteZeroTrustGatewayRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayRulesResetExpirationZeroTrustGatewayRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustGatewayRulesListZeroTrustGatewayRulesTenantRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listHyperdriveRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createHyperdriveRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getHyperdriveRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateHyperdriveRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final patchHyperdriveRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteHyperdriveRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountPermissionGroupListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountPermissionGroupDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountResourceGroupListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountResourceGroupCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountResourceGroupDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountResourceGroupUpdateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountResourceGroupDeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountUserGroupListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountUserGroupCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountUserGroupDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountUserGroupUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountUserGroupDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountUserGroupMemberListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountUserGroupMemberCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountUserGroupMembersUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountUserGroupMemberDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesUploadAnImageViaUrlRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesImageDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesUpdateImageRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesDeleteImageRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesBaseImageRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesUsageStatisticsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesListImagesV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesCreateAuthenticatedDirectUploadUrlV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesKeysListSigningKeysRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesKeysAddSigningKeyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesKeysDeleteSigningKeyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesVariantsListVariantsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesVariantsCreateAVariantRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesVariantsVariantDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesVariantsUpdateAVariantRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final cloudflareImagesVariantsDeleteAVariantRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final infraTargetsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final infraTargetsPostRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final infraTargetsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final infraTargetsPutRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final infraTargetsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final infraTargetsPutBatchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final infraTargetsDeleteBatchPostRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final asnIntelligenceGetAsnOverviewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final asnIntelligenceGetAsnSubnetsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getSecurityCenterIssueTypesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final getSecurityCenterInsightsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final getSecurityCenterInsightContextRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final archiveSecurityCenterInsightRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final getSecurityCenterInsightCountsByClassRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final getSecurityCenterInsightCountsBySeverityRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final getSecurityCenterInsightCountsByTypeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final getZoneSecurityCenterInsightsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final archiveZoneSecurityCenterInsightRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final getZoneSecurityCenterInsightCountsByClassRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final getZoneSecurityCenterInsightCountsBySeverityRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final getZoneSecurityCenterInsightCountsByTypeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final passiveDnsByIpGetPassiveDnsByIpRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final domainIntelligenceGetDomainDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final domainIntelligenceGetMultipleDomainDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final domainHistoryGetDomainHistoryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customIndicatorFeedsGetIndicatorFeedsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customIndicatorFeedsCreateIndicatorFeedsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customIndicatorFeedsGetIndicatorFeedMetadataRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customIndicatorFeedsUpdateIndicatorFeedMetadataRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customIndicatorFeedsGetIndicatorFeedDataRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customIndicatorFeedsDownloadIndicatorFeedDataRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customIndicatorFeedsUpdateIndicatorFeedDataRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customIndicatorFeedsAddPermissionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customIndicatorFeedsRemovePermissionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customIndicatorFeedsViewPermissionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipIntelligenceGetIpOverviewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipListGetIpListsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final miscategorizationCreateMiscategorizationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final sinkholeConfigGetSinkholesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final whoisRecordGetWhoisRecordRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountLoadBalancerMonitorGroupsListMonitorGroupsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorGroupsCreateMonitorGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorGroupsMonitorGroupDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorGroupsUpdateMonitorGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorGroupsPatchMonitorGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorGroupsDeleteMonitorGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorGroupsListMonitorGroupReferencesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorsListMonitorsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorsCreateMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorsMonitorDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorsUpdateMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorsPatchMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorsDeleteMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorsPreviewMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorsListMonitorReferencesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerMonitorsPreviewResultRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerPoolsListPoolsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerPoolsCreatePoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerPoolsPatchPoolsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerPoolsPoolDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerPoolsUpdatePoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerPoolsPatchPoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerPoolsDeletePoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerPoolsPoolHealthDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerPoolsPreviewPoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerPoolsListPoolReferencesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerRegionsListRegionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerRegionsGetRegionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountLoadBalancerSearchResourcesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getAccountsAccountIdLogpushDatasetsDatasetIdFieldsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getAccountsAccountIdLogpushDatasetsDatasetIdJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getAccountsAccountIdLogpushJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postAccountsAccountIdLogpushJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getAccountsAccountIdLogpushJobsJobIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final putAccountsAccountIdLogpushJobsJobIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final deleteAccountsAccountIdLogpushJobsJobIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postAccountsAccountIdLogpushOwnershipRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postAccountsAccountIdLogpushOwnershipValidateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final deleteAccountsAccountIdLogpushValidateDestinationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final deleteAccountsAccountIdLogpushValidateDestinationExistsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postAccountsAccountIdLogpushValidateOriginRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getAccountsAccountIdLogsControlCmbConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postAccountsAccountIdLogsControlCmbConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final deleteAccountsAccountIdLogsControlCmbConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listDnsProtectionRulesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createDnsProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteDnsProtectionRulesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getDnsProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateDnsProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteDnsProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listAllowlistPrefixesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createAllowlistedPrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteAllowlistPrefixesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getAllowlistPrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateAllowlistPrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteAllowlistPrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listPrefixesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createPrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deletePrefixesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getPrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updatePrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deletePrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final bulkCreatePrefixesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listSynProtectionFiltersForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createSynProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteSynProtectionFiltersForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getSynProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateSynProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteSynProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listSynProtectionRulesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createSynProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteSynProtectionRulesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getSynProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateSynProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteSynProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listTcpFlowProtectionFiltersForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createTcpFlowProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteTcpFlowProtectionFiltersForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getTcpFlowProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateTcpFlowProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteTcpFlowProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listTcpFlowProtectionRulesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createTcpFlowProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteTcpFlowProtectionRulesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getTcpFlowProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateTcpFlowProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteTcpFlowProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getProtectionStatusRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateProtectionStatusRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicAccountAppsListAppsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicAccountAppsAddAppRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicAccountAppsUpdateAppRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicAccountAppsPatchAppRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicAccountAppsDeleteAppRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicInterconnectsListInterconnectsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicInterconnectsUpdateMultipleInterconnectsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicInterconnectsListInterconnectDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicInterconnectsUpdateInterconnectRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final catalogSyncsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final catalogSyncsCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final catalogSyncsReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final catalogSyncsUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final catalogSyncsPatchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final catalogSyncsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final catalogSyncsRefreshRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final catalogSyncsPrebuiltPoliciesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final onrampsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final onrampsCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final onrampsReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final onrampsUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final onrampsPatchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final onrampsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final onrampsApplyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final onrampsExportRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final onrampsPlanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final onrampsMwanAddrSpaceReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final onrampsMwanAddrSpaceUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final onrampsMwanAddrSpacePatchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final providersListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final providersCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final providersReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final providersUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final providersPatchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final providersDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final providersDiscoverRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final providersInitialSetupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final providersDiscoverAllRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final resourcesCatalogListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final resourcesCatalogReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final resourcesCatalogExportRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final resourcesCatalogPolicyPreviewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final mconnConnectorListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final mconnConnectorCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final mconnConnectorFetchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final mconnConnectorReplaceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final mconnConnectorUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final mconnConnectorDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final mconnConnectorTelemetryEventsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final mconnConnectorTelemetryEventsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final mconnConnectorTelemetryEventsListLatestRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final mconnConnectorTelemetrySnapshotsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final mconnConnectorTelemetrySnapshotsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final mconnConnectorTelemetrySnapshotsListLatestRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicGreTunnelsListGreTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicGreTunnelsCreateGreTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicGreTunnelsUpdateMultipleGreTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicGreTunnelsListGreTunnelDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicGreTunnelsUpdateGreTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicGreTunnelsDeleteGreTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicIpsecTunnelsListIpsecTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicIpsecTunnelsCreateIpsecTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicIpsecTunnelsUpdateMultipleIpsecTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicIpsecTunnelsListIpsecTunnelDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicIpsecTunnelsUpdateIpsecTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicIpsecTunnelsDeleteIpsecTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicStaticRoutesListRoutesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicStaticRoutesCreateRoutesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicStaticRoutesUpdateManyRoutesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicStaticRoutesDeleteManyRoutesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicStaticRoutesRouteDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicStaticRoutesUpdateRouteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicStaticRoutesDeleteRouteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSitesListSitesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSitesCreateSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSitesSiteDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSitesUpdateSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSitesPatchSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSitesDeleteSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteAclsListAclsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteAclsCreateAclRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteAclsAclDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteAclsUpdateAclRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteAclsPatchAclRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteAclsDeleteAclRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteAppConfigsListAppConfigsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteAppConfigsAddAppConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteAppConfigsUpdateAppConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteAppConfigsPatchAppConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteAppConfigsDeleteAppConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteLansListLansRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteLansCreateLanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteLansLanDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteLansUpdateLanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteLansPatchLanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteLansDeleteLanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteNetflowConfigDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteNetflowConfigCreateNetflowConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteNetflowConfigUpdateNetflowConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteNetflowConfigPatchNetflowConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteNetflowConfigDeleteNetflowConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteWansListWansRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteWansCreateWanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteWansWanDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteWansUpdateWanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteWansPatchWanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final magicSiteWansDeleteWanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountMembersListMembersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountMembersAddMemberRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountMembersMemberDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountMembersUpdateMemberRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountMembersRemoveMemberRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringConfigurationListAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringConfigurationCreateAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringConfigurationDeleteAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringConfigurationListRulesAndAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringRulesListRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringRulesCreateRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringRulesUpdateRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringRulesGetRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringRulesUpdateRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringRulesDeleteRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringRulesUpdateAdvertisementForRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicNetworkMonitoringVpcFlowsGenerateAuthenticationTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final mTlsCertificateManagementListMTlsCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final mTlsCertificateManagementUploadMTlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final mTlsCertificateManagementGetMTlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final mTlsCertificateManagementDeleteMTlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final mTlsCertificateManagementListMTlsCertificateAssociationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final pagesProjectGetProjectsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesProjectCreateProjectRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesProjectGetProjectRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesProjectUpdateProjectRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesProjectDeleteProjectRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesDeploymentGetDeploymentsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesDeploymentCreateDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesDeploymentGetDeploymentInfoRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesDeploymentDeleteDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesDeploymentGetDeploymentLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesDeploymentRetryDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesDeploymentRollbackDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesDomainsGetDomainsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesDomainsAddDomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesDomainsGetDomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesDomainsPatchDomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesDomainsDeleteDomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pagesPurgeBuildCacheRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final payPerCrawlCrawlerGetStripeConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final payPerCrawlCrawlerCreateStripeConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final payPerCrawlCrawlerDeleteStripeConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final payPerCrawlPublisherGetStripeConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final payPerCrawlPublisherCreateStripeConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final payPerCrawlPublisherDeleteStripeConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final payPerCrawlSetZonesCanBeEnabledRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final payPerCrawlQueryZonesCanBeEnabledRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final payPerCrawlGetConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final payPerCrawlCreateConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final payPerCrawlPatchConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicPcapCollectionListPacketCaptureRequestsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicPcapCollectionCreatePcapRequestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicPcapCollectionGetPcapRequestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicPcapCollectionDownloadSimplePcapRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicPcapCollectionStopFullPcapRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicPcapCollectionListPcaPsBucketOwnershipRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicPcapCollectionAddBucketsForFullPacketCapturesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicPcapCollectionDeleteBucketsForFullPacketCapturesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final magicPcapCollectionValidateBucketsForFullPacketCapturesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getV4AccountsByAccountIdPipelinesV1PipelinesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final postV4AccountsByAccountIdPipelinesV1PipelinesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getV4AccountsByAccountIdPipelinesV1PipelinesByPipelineIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteV4AccountsByAccountIdPipelinesV1PipelinesByPipelineIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getV4AccountsByAccountIdPipelinesV1SinksRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final postV4AccountsByAccountIdPipelinesV1SinksRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getV4AccountsByAccountIdPipelinesV1SinksBySinkIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteV4AccountsByAccountIdPipelinesV1SinksBySinkIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getV4AccountsByAccountIdPipelinesV1StreamsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final postV4AccountsByAccountIdPipelinesV1StreamsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final patchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final postV4AccountsByAccountIdPipelinesV1ValidateSqlRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listCatalogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getCatalogDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final disableCatalogRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final enableCatalogRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final storeCredentialsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getMaintenanceConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateMaintenanceConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listNamespacesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listTablesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getTableMaintenanceConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateTableMaintenanceConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final r2GetAccountLevelMetricsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getOrgAnalyticsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getLivestreamAnalyticsCompleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final fetchAllLivestreamsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postAccountsRealtimeKitLivestreamsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getV2LivestreamSessionLivestreamIdRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getV2ActiveLivestreamSessionDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getV2LivestreamsLivestreamSessionIdRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getV2MeetingsMeetingIdActiveLivestreamRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final stopLivestreamingRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final livestreamSessionDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final startLivestreamingRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getV2LivestreamsessionSessionMeetingIdActiveLivestreamRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAllMeetingsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final createMeetingRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getMeetingRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final replaceMeetingRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final updateMeetingRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getMeetingParticipantsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final addParticipantRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getMeetingParticipantRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final editParticipantRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteMeetingParticipantRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final regenerateTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getActiveSessionRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final kickPartcipantsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final kickAllParticipantsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final muteParticipantsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final muteAllParticipantsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final createPollRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getPresetsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postPresetsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getPresetsPresetIdRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final patchPresetsPresetIdRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deletePresetsPresetIdRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAllRecordingsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final startRecordingRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getOneRecordingRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final pauseResumeStopRecordingRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getActiveRecordingRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final startTrackRecordingForAMeetingRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getSessionsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getSessionDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getSessionChatRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getSessionParticipantsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getParticipantDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getSessionSummaryRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final postSessionsSessionIdSummaryRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getSessionTranscriptRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getParticipantDataFromPeerIdRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAllWebhooksRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final addWebhookRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getWebhookRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final replaceWebhookRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final editWebhookRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteWebhookRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getAppsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final createAppRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final registrarDomainsListDomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final registrarDomainsGetDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final registrarDomainsUpdateDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountRequestTracerRequestTraceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountRolesListRolesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final accountRolesRoleDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listsGetListsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listsCreateAListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listsGetAListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listsUpdateAListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listsDeleteAListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listsGetListItemsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listsCreateListItemsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listsUpdateAllListItemsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listsDeleteListItemsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listsGetAListItemRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listsGetBulkOperationStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listAccountRulesetsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createAccountRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getAccountRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateAccountRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteAccountRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createAccountRulesetRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateAccountRulesetRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteAccountRulesetRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listAccountRulesetVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getAccountRulesetVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteAccountRulesetVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listAccountRulesetVersionRulesByTagRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getAccountEntrypointRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateAccountEntrypointRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listAccountEntrypointRulesetVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getAccountEntrypointRulesetVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final webAnalyticsCreateSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final webAnalyticsGetSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final webAnalyticsUpdateSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final webAnalyticsDeleteSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final webAnalyticsListSitesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final webAnalyticsCreateRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final webAnalyticsUpdateRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final webAnalyticsDeleteRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final webAnalyticsListRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final webAnalyticsModifyRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final webAnalyticsGetRumStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final webAnalyticsToggleRumRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final secondaryDnsAclListAcLsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsAclCreateAclRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsAclAclDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsAclUpdateAclRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsAclDeleteAclRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPeerListPeersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPeerCreatePeerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPeerPeerDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPeerUpdatePeerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPeerDeletePeerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsTsigListTsiGsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsTsigCreateTsigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsTsigTsigDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsTsigUpdateTsigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsTsigDeleteTsigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreQuotaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreGetStoreByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreDeleteByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSecretsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSecretCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreDeleteBulkRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreGetByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStorePatchByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSecretDeleteByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreDuplicateByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSystemListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSystemCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSystemGetStoreByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSystemDeleteByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSystemSecretsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSystemSecretCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSystemDeleteBulkRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSystemGetByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSystemPatchByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSystemSecretDeleteByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secretsStoreSystemDuplicateByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final sharesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final sharesGetByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareRecipientsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareRecipientCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareRecipientsUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareRecipientsGetByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareRecipientDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareResourcesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareResourceCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareResourcesGetByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareResourceUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final shareResourceDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final organizationSharesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final slurperListJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final slurperCreateJobRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final slurperGetJobRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final slurperAbortJobRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final slurperGetJobLogsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final slurperPauseJobRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final slurperGetJobProgressRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final slurperResumeJobRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final slurperAbortAllJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final slurperCheckSourceConnectivityRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final slurperCheckTargetConnectivityRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getAllSsoConnectorsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final initNewSsoConnectorRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final getSsoConnectorRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final updateSsoConnectorStateRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final deleteSsoConnectorRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final beginSsoConnectorVerificationRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final workersKvNamespaceListNamespacesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersKvNamespaceCreateANamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersKvNamespaceGetANamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersKvNamespaceRenameANamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersKvNamespaceRemoveANamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersKvNamespaceWriteMultipleKeyValuePairsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersKvNamespaceDeleteMultipleKeyValuePairsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersKvNamespaceGetMultipleKeyValuePairsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersKvNamespaceListANamespaceSKeysRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersKvNamespaceReadTheMetadataForAKeyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersKvNamespaceReadKeyValuePairRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersKvNamespaceWriteKeyValuePairWithMetadataRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workersKvNamespaceDeleteKeyValuePairRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final streamVideosListVideosRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamVideosInitiateVideoUploadsUsingTusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamVideosRetrieveVideoDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamVideosUpdateVideoDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamVideosDeleteVideoRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamVideosRetreieveEmbedCodeHtmlRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamVideosCreateSignedUrlTokensForVideosRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamVideosUploadVideosFromAUrlRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamVideosUploadVideosViaDirectUploadUrLsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamVideosStorageUsageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listAudioTracksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final editAudioTracksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final deleteAudioTracksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final addAudioTrackRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamSubtitlesCaptionsListCaptionsOrSubtitlesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamSubtitlesCaptionsGetCaptionOrSubtitleForLanguageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamSubtitlesCaptionsUploadCaptionsOrSubtitlesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamSubtitlesCaptionsDeleteCaptionsOrSubtitlesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamSubtitlesCaptionsGenerateCaptionOrSubtitleForLanguageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamSubtitlesCaptionsGetVttCaptionOrSubtitleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamMP4DownloadsListDownloadsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamMP4DownloadsCreateDownloadsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamMP4DownloadsDeleteDownloadsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamDownloadsCreateTypeSpecificDownloadsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamDownloadsDeleteTypeSpecificDownloadsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamVideoClippingClipVideosGivenAStartAndEndTimeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamSigningKeysListSigningKeysRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamSigningKeysCreateSigningKeysRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamSigningKeysDeleteSigningKeysRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamLiveInputsListLiveInputsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamLiveInputsCreateALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamLiveInputsRetrieveALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamLiveInputsUpdateALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamLiveInputsDeleteALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamLiveInputsDisableALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamLiveInputsEnableALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamLiveInputsListAllOutputsAssociatedWithASpecifiedLiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamLiveInputsCreateANewOutputConnectedToALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamLiveInputsUpdateAnOutputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamLiveInputsDeleteAnOutputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamWatermarkProfileListWatermarkProfilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamWatermarkProfileCreateWatermarkProfilesViaBasicUploadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamWatermarkProfileDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamWatermarkProfileDeleteWatermarkProfilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamWebhookViewWebhooksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamWebhookCreateWebhooksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final streamWebhookDeleteWebhooksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountSubscriptionsListSubscriptionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountSubscriptionsCreateSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountSubscriptionsUpdateSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final accountSubscriptionsDeleteSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final tagsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tagsSetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tagsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tagsListKeysRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tagsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tagsListValuesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tagsZoneGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tagsZoneSetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tagsZoneDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tunnelRouteListTunnelRoutesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final tunnelRouteCreateATunnelRouteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final tunnelRouteGetTunnelRouteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final tunnelRouteUpdateATunnelRouteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final tunnelRouteDeleteATunnelRouteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final tunnelRouteGetTunnelRouteByIpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final tunnelVirtualNetworkListVirtualNetworksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final tunnelVirtualNetworkCreateAVirtualNetworkRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final tunnelVirtualNetworkGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final tunnelVirtualNetworkUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final tunnelVirtualNetworkDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final accountApiTokensListTokensRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final accountApiTokensCreateTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final accountApiTokensTokenDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final accountApiTokensUpdateTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final accountApiTokensDeleteTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final accountApiTokensRollTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final accountApiTokensListPermissionGroupsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final accountApiTokensVerifyTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final urlscannerCreateScanBulkV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final urlscannerGetScanDomV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final urlscannerGetScanHarV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final urlscannerGetResponseV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final urlscannerGetScanV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final urlscannerCreateScanV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final urlscannerGetScanScreenshotV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final urlscannerSearchScansV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeListVectorizeIndexesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeCreateVectorizeIndexRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeGetVectorizeIndexRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeDeleteVectorizeIndexRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeDeleteVectorsByIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeGetVectorsByIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeIndexInfoRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeInsertVectorRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeListVectorsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeCreateMetadataIndexRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeDeleteMetadataIndexRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeListMetadataIndexesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeQueryVectorRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final vectorizeUpsertVectorRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomListWaitingRoomsAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomListWaitingRoomsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomCreateWaitingRoomRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomUpdateWaitingRoomRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomPatchWaitingRoomRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomDeleteWaitingRoomRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomListEventsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomCreateEventRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomEventDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomUpdateEventRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomPatchEventRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomDeleteEventRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomPreviewActiveEventDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomListWaitingRoomRulesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomCreateWaitingRoomRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomReplaceWaitingRoomRulesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomPatchWaitingRoomRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomDeleteWaitingRoomRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomGetWaitingRoomStatusRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomCreateACustomWaitingRoomPagePreviewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomGetZoneSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomUpdateZoneSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final waitingRoomPatchZoneSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerAccountSettingsFetchWorkerAccountSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerAccountSettingsCreateWorkerAccountSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerAssetsUploadRequirements = [const ApiSecurityRequirement({'assets_jwt': []})];
-  static final workerScriptListWorkersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptSearchWorkersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptDownloadWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptUploadWorkerModuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptDeleteWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptUpdateCreateAssetsUploadSessionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptPutContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptGetContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptSettingsGetSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptSettingsPatchSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerListScriptSecretsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerPutScriptSecretRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerGetScriptSecretRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerDeleteScriptSecretRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptGetSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptPatchSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptGetSubdomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptPostSubdomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptDeleteSubdomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptFetchUsageModelRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptUpdateUsageModelRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerGetNamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerPutNamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerPatchNamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerDeleteNamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerListScriptsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerDeleteScriptsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerScriptWorkerDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerScriptUploadWorkerModuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerScriptDeleteWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerScriptUpdateCreateAssetsUploadSessionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerGetScriptBindingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerGetScriptContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerPutScriptContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerListScriptSecretsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerPutScriptSecretsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerGetScriptSecretsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerDeleteScriptSecretRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerGetScriptSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerPatchScriptSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerGetScriptTagsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerPutScriptTagsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerPutScriptTagRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final namespaceWorkerDeleteScriptTagRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerDomainListDomainsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerDomainAttachToDomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerDomainGetADomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerDomainDetachFromDomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final durableObjectsNamespaceListNamespacesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final durableObjectsNamespaceListObjectsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerPlacementListRegionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerDeploymentsListDeploymentsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerDeploymentsCreateDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerDeploymentsGetDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerDeploymentsDeleteDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerCronTriggerGetCronTriggersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerCronTriggerUpdateCronTriggersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getAccountsWorkersScriptsTailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerTailLogsStartTailRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerTailLogsDeleteTailRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerVersionsListVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerVersionsUploadVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerVersionsGetVersionDetailRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerEnvironmentGetScriptContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerEnvironmentPutScriptContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptEnvironmentGetSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerScriptEnvironmentPatchSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerSubdomainGetSubdomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerSubdomainCreateSubdomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerSubdomainDeleteSubdomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listWorkerVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createWorkerVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getWorkerVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteWorkerVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final worListWorkflowsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worGetWorkflowDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worCreateOrModifyWorkflowRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worDeleteWorkflowRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worListWorkflowInstancesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worCreateNewWorkflowInstanceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worDescribeWorkflowInstanceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worSendEventWorkflowInstanceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worChangeStatusWorkflowInstanceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worBatchCreateWorkflowInstanceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worBatchTerminateWorkflowInstancesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worStatusTerminateWorkflowInstancesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worListWorkflowVersionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worDescribeWorkflowVersionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worDescribeWorkflowVersionsDagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final worDescribeWorkflowVersionsGraphRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zeroTrustAccountsGetConnectivitySettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final zeroTrustAccountsPatchConnectivitySettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final zeroTrustNetworksRouteHostnameListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final zeroTrustNetworksRouteHostnameCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final zeroTrustNetworksRouteHostnameGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final zeroTrustNetworksRouteHostnameUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final zeroTrustNetworksRouteHostnameDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final zeroTrustNetworksSubnetsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final zeroTrustNetworksSubnetUpdateCloudflareSourceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final zeroTrustNetworksSubnetCreateWarpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final zeroTrustNetworksSubnetGetWarpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final zeroTrustNetworksSubnetUpdateWarpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final zeroTrustNetworksSubnetDeleteWarpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
-  static final dlpRiskScoreSummaryGetForUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpRiskScoreResetPostRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpRiskScoreBehaviorsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpRiskScoreBehaviorsPutRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpRiskScoreSummaryGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpZtRiskScoreIntegrationListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpZtRiskScoreIntegrationCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpZtRiskScoreIntegrationGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpZtRiskScoreIntegrationUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpZtRiskScoreIntegrationDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final dlpZtRiskScoreIntegrationGetByReferenceIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final customPagesForAnAccountListCustomPagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customPagesForAnAccountGetACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customPagesForAnAccountUpdateACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getApplicationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createApplicationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getApplicationByIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateApplicationVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final originCaListCertificatesRequirements = [const ApiSecurityRequirement({'user_service_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final originCaCreateCertificateRequirements = [const ApiSecurityRequirement({'user_service_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final originCaGetCertificateRequirements = [const ApiSecurityRequirement({'user_service_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final originCaRevokeCertificateRequirements = [const ApiSecurityRequirement({'user_service_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final cloudflareIpsCloudflareIpDetailsRequirements = [const ApiSecurityRequirement({})];
-  static final userSAccountMembershipsListMembershipsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final userSAccountMembershipsMembershipDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final userSAccountMembershipsUpdateMembershipRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final userSAccountMembershipsDeleteMembershipRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final organizationListOrganizationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final organizationsCreateUserOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final organizationsRetrieveRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final organizationsModifyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final organizationsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final organizationsGetAccountsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final organizationsGetProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final organizationsModifyProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final membersListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final membersCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final membersRetrieveRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final membersDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final membersBatchCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final radarGetAiBotsSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAiBotsTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAiBotsTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAiInferenceSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAiInferenceTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAnnotationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAnnotationsOutagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAnnotationsOutagesTopRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetDnsAs112SummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetDnsAs112TimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetDnsAs112TimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetDnsAs112TopLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetDnsAs112TopLocationsByDnssecRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetDnsAs112TopLocationsByEdnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetDnsAs112TopLocationsByIpVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer3SummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer3TimeseriesByBytesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer3TimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer3TopAttacksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer3TopOriginLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer3TopTargetLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer7SummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer7TimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer7TimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer7TopOriginAsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer7TopAttacksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer7TopOriginLocationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAttacksLayer7TopTargetLocationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpHijacksEventsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpIpsTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpRouteLeakEventsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpRoutesAsnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpPfx2asMoasRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpPfx2asRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpRoutesRealtimeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpRoutesStatsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpRpkiAspaChangesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpRpkiAspaSnapshotRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpRpkiAspaTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpTopAsesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpTopAsnsByPrefixesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBgpTopPrefixesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBotsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBotDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBotsSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBotsTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetBotsTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetCrawlersSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetCrawlersTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetCertificateAuthoritiesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetCertificateAuthorityDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetCertificateLogsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetCertificateLogDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetCtSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetCtTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetCtTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetReportsDatasetsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetReportsDatasetDownloadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarPostReportsDatasetDownloadUrlRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetDnsSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetDnsTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetDnsTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetDnsTopAsesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetDnsTopLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEmailRoutingSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEmailRoutingTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEmailSecuritySummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEmailSecurityTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEmailSecurityTopTldsByMessagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEmailSecurityTopTldsByMaliciousRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEmailSecurityTopTldsBySpamRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEmailSecurityTopTldsBySpoofRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEntitiesAsnListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEntitiesAsnByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAsnsAsSetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAsnsRelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetAsBotnetThreatFeedRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEntitiesAsnByIpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEntitiesIpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEntitiesLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetEntitiesLocationByAlpha2Requirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetGeolocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetGeolocationDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopAsesByHttpRequestsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopAsesByBotClassRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopAsesByBrowserFamilyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopAsesByDeviceTypeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopAsesByHttpProtocolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopAsesByHttpVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopAsesByIpVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopAsesByOperatingSystemRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopAsesByTlsVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopLocationsByHttpRequestsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopLocationsByBotClassRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopLocationsByBrowserFamilyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopLocationsByDeviceTypeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopLocationsByHttpProtocolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopLocationsByHttpVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopLocationsByIpVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopLocationsByOperatingSystemRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetHttpTopLocationsByTlsVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetLeakedCredentialChecksSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetLeakedCredentialChecksTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetNetflowsSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetNetflowsTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetNetflowsTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetNetflowsTopAsesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetNetflowsTopLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetOriginsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetOriginDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetOriginsSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetOriginsTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetOriginsTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetOriginPostQuantumSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetOriginPostQuantumTimeseriesGroupsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetPostQuantumTlsSupportRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetQualityIndexSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetQualityIndexTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetQualitySpeedHistogramRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetQualitySpeedSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetQualitySpeedTopAsesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetQualitySpeedTopLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetRankingDomainDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetRankingDomainTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetRankingTopDomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetRankingInternetServicesCategoriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetRankingInternetServicesTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetRankingTopInternetServicesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetRobotsTxtTopDomainCategoriesByFilesParsedRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetRobotsTxtTopUserAgentsByDirectiveRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetSearchGlobalRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetTcpResetsTimeoutsSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetTcpResetsTimeoutsTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetTldsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetTldDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetTrafficAnomaliesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final radarGetTrafficAnomaliesTopRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final tenantsRetrieveTenantRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tenantsValidAccountTypesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tenantsListAccountsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tenantsListEntitlementsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tenantsListMembershipsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final userDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final userEditUserRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final userListUserTenantsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAccessRulesForAUserListIpAccessRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final ipAccessRulesForAUserCreateAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final ipAccessRulesForAUserUpdateAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final ipAccessRulesForAUserDeleteAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final userSInvitesListInvitationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final userSInvitesInvitationDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final userSInvitesRespondToInvitationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final loadBalancerMonitorsListMonitorsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerMonitorsCreateMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerMonitorsMonitorDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerMonitorsUpdateMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerMonitorsPatchMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerMonitorsDeleteMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerMonitorsPreviewMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerMonitorsListMonitorReferencesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerMonitorsPreviewResultRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerPoolsListPoolsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerPoolsCreatePoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerPoolsPatchPoolsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerPoolsPoolDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerPoolsUpdatePoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerPoolsPatchPoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerPoolsDeletePoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerPoolsPoolHealthDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerPoolsPreviewPoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerPoolsListPoolReferencesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancerHealthcheckEventsListHealthcheckEventsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final userSubscriptionGetUserSubscriptionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final userSubscriptionUpdateUserSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final userSubscriptionDeleteUserSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final userApiTokensListTokensRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final userApiTokensCreateTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final userApiTokensTokenDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final userApiTokensUpdateTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final userApiTokensDeleteTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final userApiTokensRollTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final permissionGroupsListPermissionGroupsRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final userApiTokensVerifyTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
-  static final zonesGetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zonesPostRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zones0GetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zones0PatchRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zones0DeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final putZonesZoneIdActivationCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zonePurgeRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessApplicationsListAccessApplicationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessApplicationsAddABookmarkApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessApplicationsGetAnAccessApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessApplicationsUpdateABookmarkApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessApplicationsDeleteAnAccessApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessApplicationsRevokeServiceTokensRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessApplicationsPutUpdateAccessApplicationSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessApplicationsPatchUpdateAccessApplicationSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessApplicationsTestAccessPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessShortLivedCertificateCAsGetAShortLivedCertificateCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessShortLivedCertificateCAsCreateAShortLivedCertificateCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessShortLivedCertificateCAsDeleteAShortLivedCertificateCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessShortLivedCertificateCAsListShortLivedCertificateCAsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessPoliciesListAccessPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessPoliciesCreateAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessPoliciesGetAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessPoliciesUpdateAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessPoliciesDeleteAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessMtlsAuthenticationListMtlsCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessMtlsAuthenticationGetAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessMtlsAuthenticationDeleteAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessMtlsAuthenticationListMtlsCertificatesHostnameSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessGroupsListAccessGroupsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessGroupsCreateAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessGroupsGetAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessGroupsUpdateAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessGroupsDeleteAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessIdentityProvidersListAccessIdentityProvidersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessIdentityProvidersAddAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessIdentityProvidersGetAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessIdentityProvidersUpdateAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessIdentityProvidersDeleteAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelZeroTrustOrganizationGetYourZeroTrustOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessServiceTokensListServiceTokensRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessServiceTokensCreateAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessServiceTokensGetAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessServiceTokensUpdateAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAccessServiceTokensDeleteAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customOriginTrustStoreListDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customOriginTrustStoreCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customOriginTrustStoreDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customOriginTrustStoreDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final totalTlsSettingsDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final totalTlsEnableOrDisableTotalTlsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final argoAnalyticsForZoneArgoAnalyticsForAZoneRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final argoAnalyticsForGeolocationArgoAnalyticsForAZoneAtDifferentPoPsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final apiShieldSettingsRetrieveInformationAboutSpecificConfigurationPropertiesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final apiShieldSettingsSetConfigurationPropertiesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapiRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final apiShieldApiPatchDiscoveredOperationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final apiShieldApiPatchDiscoveredOperationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final apiShieldExpressionTemplatesFallthroughRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final apiShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final apiShieldEndpointManagementAddOperationsToAZoneRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final apiShieldEndpointManagementDeleteMultipleOperationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final apiShieldEndpointManagementRetrieveInformationAboutAnOperationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final apiShieldEndpointManagementDeleteAnOperationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final apiShieldEndpointManagementAddOperationToAZoneRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final apiShieldEndpointManagementRetrieveOperationsAndFeaturesAsOpenApiSchemasRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final argoSmartRoutingGetArgoSmartRoutingSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final argoSmartRoutingPatchArgoSmartRoutingSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tieredCachingGetTieredCachingSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tieredCachingPatchTieredCachingSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneRatePlanListAvailablePlansRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zoneRatePlanAvailablePlanDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zoneRatePlanListAvailableRatePlansRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final botManagementForAZoneGetConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final botManagementForAZoneUpdateConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final botManagementZoneFeedbackListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final botManagementZoneFeedbackCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsGetCacheReserveSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsChangeCacheReserveSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsGetCacheReserveClearRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsStartCacheReserveClearRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsGetRegionalTieredCacheSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsChangeRegionalTieredCacheSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsGetVariantsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsChangeVariantsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsDeleteVariantsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsGetOriginPostQuantumEncryptionSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartTieredCacheGetSmartTieredCacheSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartTieredCachePatchSmartTieredCacheSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartTieredCacheDeleteSmartTieredCacheSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final clientCertificateForAZoneListHostnameAssociationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final clientCertificateForAZonePutHostnameAssociationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final clientCertificateForAZoneListClientCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final clientCertificateForAZoneCreateClientCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final clientCertificateForAZoneClientCertificateDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final clientCertificateForAZoneEditClientCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final clientCertificateForAZoneDeleteClientCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final zoneCloudConnectorRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCloudConenctorRulesPutRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final wafContentScanningDisableRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final wafContentScanningEnableRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final wafContentScanningListCustomScanExpressionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final wafContentScanningAddCustomScanExpressionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final wafContentScanningDeleteCustomScanExpressionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final wafContentScanningGetStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final wafContentScanningUpdateSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final customSslForAZoneListSslConfigurationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customSslForAZoneCreateSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customSslForAZoneSslConfigurationDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customSslForAZoneEditSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customSslForAZoneDeleteSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customSslForAZoneRePrioritizeSslCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customHostnameForAZoneListCustomHostnamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customHostnameForAZoneCreateCustomHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customHostnameForAZoneCustomHostnameDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customHostnameForAZoneEditCustomHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customHostnameForAZoneEditCustomCertificateCustomHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customHostnameFallbackOriginForAZoneGetFallbackOriginForCustomHostnamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final customHostnameFallbackOriginForAZoneDeleteFallbackOriginForCustomHostnamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final dcvDelegationUuidGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final dnsAnalyticsTableRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsAnalyticsByTimeRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZoneListDnsRecordsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZoneCreateDnsRecordRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZoneDnsRecordDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZoneUpdateDnsRecordRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZonePatchDnsRecordRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZoneDeleteDnsRecordRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZoneBatchDnsRecordsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZoneExportDnsRecordsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZoneImportDnsRecordsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZoneReviewDnsScanRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZoneApplyDnsScanResultsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZoneTriggerDnsScanRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsRecordsForAZoneGetUsageRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsSettingsForAZoneListDnsSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnsSettingsForAZoneUpdateDnsSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnssecDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnssecEditDnssecStatusRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final dnssecDeleteDnssecRecordsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingSettingsGetEmailRoutingSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingSettingsEmailRoutingDnsSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingSettingsEnableEmailRoutingDnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingSettingsUnlockEmailRoutingDnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingSettingsDisableEmailRoutingDnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingRulesListRoutingRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingRulesCreateRoutingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingRulesGetRoutingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingRulesUpdateRoutingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingRulesDeleteRoutingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingRulesGetCatchAllRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailRoutingRulesUpdateCatchAllRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSendingSubdomainsListSendingSubdomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSendingSubdomainsCreateSendingSubdomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSendingSubdomainsGetSendingSubdomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSendingSubdomainsDeleteSendingSubdomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final emailSendingSubdomainsGetSendingSubdomainDnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final ipAccessRulesForAZoneListIpAccessRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final ipAccessRulesForAZoneCreateAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final ipAccessRulesForAZoneUpdateAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final ipAccessRulesForAZoneDeleteAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zoneLockdownListZoneLockdownRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zoneLockdownCreateAZoneLockdownRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zoneLockdownGetAZoneLockdownRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zoneLockdownUpdateAZoneLockdownRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zoneLockdownDeleteAZoneLockdownRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final userAgentBlockingRulesListUserAgentBlockingRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final userAgentBlockingRulesCreateAUserAgentBlockingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final userAgentBlockingRulesGetAUserAgentBlockingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final userAgentBlockingRulesUpdateAUserAgentBlockingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final userAgentBlockingRulesDeleteAUserAgentBlockingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final fraudDetectionZoneGetSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final fraudDetectionZoneUpdateSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final healthChecksListHealthChecksRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final healthChecksCreateHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final healthChecksHealthCheckDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final healthChecksUpdateHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final healthChecksPatchHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final healthChecksDeleteHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final healthChecksCreatePreviewHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final healthChecksHealthCheckPreviewDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final healthChecksDeletePreviewHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartShieldListHealthChecksRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartShieldCreateHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartShieldHealthCheckDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartShieldUpdateHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartShieldPatchHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartShieldDeleteHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zones0HoldGetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zones0HoldPostRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zones0HoldPatchRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zones0HoldDeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final perHostnameTlsSettingsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final perHostnameTlsSettingsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final perHostnameTlsSettingsPutRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final perHostnameTlsSettingsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final keylessSslForAZoneListKeylessSslConfigurationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final keylessSslForAZoneCreateKeylessSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final keylessSslForAZoneGetKeylessSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final keylessSslForAZoneEditKeylessSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final keylessSslForAZoneDeleteKeylessSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final wafProductApiLeakedCredentialsGetStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final wafProductApiLeakedCredentialsSetStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final wafProductApiLeakedCredentialsListDetectionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final wafProductApiLeakedCredentialsCreateDetectionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final wafProductApiLeakedCredentialsGetDetectionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final wafProductApiLeakedCredentialsUpdateDetectionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final wafProductApiLeakedCredentialsDeleteDetectionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancersListLoadBalancersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancersCreateLoadBalancerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancersLoadBalancerDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancersUpdateLoadBalancerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancersPatchLoadBalancerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final loadBalancersDeleteLoadBalancerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getZonesZoneIdLogpushDatasetsDatasetIdFieldsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getZonesZoneIdLogpushDatasetsDatasetIdJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getZonesZoneIdLogpushJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postZonesZoneIdLogpushJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getZonesZoneIdLogpushJobsJobIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final putZonesZoneIdLogpushJobsJobIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final deleteZonesZoneIdLogpushJobsJobIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postZonesZoneIdLogpushOwnershipRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postZonesZoneIdLogpushOwnershipValidateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postZonesZoneIdLogpushValidateDestinationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postZonesZoneIdLogpushValidateDestinationExistsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postZonesZoneIdLogpushValidateOriginRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getZonesZoneIdLogpushEdgeJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postZonesZoneIdLogpushEdgeJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getZonesZoneIdLogsControlRetentionFlagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final postZonesZoneIdLogsControlRetentionFlagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getZonesZoneIdLogsRayidsRayIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getZonesZoneIdLogsReceivedRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final getZonesZoneIdLogsReceivedFieldsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final listManagedTransformsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateManagedTransformsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteManagedTransformsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneLevelAuthenticatedOriginPullsListCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final zoneLevelAuthenticatedOriginPullsUploadCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final zoneLevelAuthenticatedOriginPullsGetCertificateDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final zoneLevelAuthenticatedOriginPullsDeleteCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final zoneLevelAuthenticatedOriginPullsGetEnablementSettingForZoneRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final zoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final perHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final perHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthenticationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final perHostnameAuthenticatedOriginPullListCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final perHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final perHostnameAuthenticatedOriginPullGetTheHostnameClientCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final perHostnameAuthenticatedOriginPullDeleteHostnameClientCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final pageShieldGetSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageShieldUpdateSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageShieldListConnectionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageShieldGetConnectionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageShieldListCookiesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageShieldGetCookieRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageShieldListPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageShieldCreatePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageShieldGetPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageShieldUpdatePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageShieldDeletePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageShieldListScriptsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageShieldGetScriptRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageRulesListPageRulesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageRulesCreateAPageRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageRulesGetAPageRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageRulesUpdateAPageRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageRulesEditAPageRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final pageRulesDeleteAPageRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listZoneRulesetsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createZoneRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getZoneRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateZoneRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteZoneRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final createZoneRulesetRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateZoneRulesetRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteZoneRulesetRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listZoneRulesetVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getZoneRulesetVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteZoneRulesetVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listZoneRulesetVersionRulesByTagRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getZoneEntrypointRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateZoneEntrypointRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listZoneEntrypointRulesetVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getZoneEntrypointRulesetVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationListSchemasPaginatedRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationCreateSchemaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationGetSchemaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationEditSchemaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationDeleteSchemaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationExtractOperationsFromSchemaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationListSchemaHostsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationGetSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationUpdateSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationEditSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationListPerOperationSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationBulkEditPerOperationSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationGetPerOperationSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationUpdatePerOperationSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final schemaValidationDeletePerOperationSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsSecondaryZoneForceAxfrRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsSecondaryZoneSecondaryZoneConfigurationDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsSecondaryZoneCreateSecondaryZoneConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsSecondaryZoneUpdateSecondaryZoneConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsSecondaryZoneDeleteSecondaryZoneConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPrimaryZonePrimaryZoneConfigurationDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPrimaryZoneCreatePrimaryZoneConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPrimaryZoneUpdatePrimaryZoneConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPrimaryZoneDeletePrimaryZoneConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPrimaryZoneDisableOutgoingZoneTransfersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPrimaryZoneEnableOutgoingZoneTransfersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPrimaryZoneForceDnsNotifyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final secondaryDnsPrimaryZoneGetOutgoingZoneTransferStatusRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getSecurityTxtRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final updateSecurityTxtRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final deleteSecurityTxtRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final zoneSettingsGetSingleSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneSettingsEditSingleSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsGetAegisSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsChangeAegisSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneSettingsGetFontsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneSettingsChangeFontsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsGetOriginH2MaxStreamsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsChangeOriginH2MaxStreamsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsGetOriginMaxHttpVersionSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneCacheSettingsChangeOriginMaxHttpVersionSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneSettingsGetSpeedBrainSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final zoneSettingsChangeSpeedBrainSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final sslDetectorAutomaticModeGetEnrollmentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final sslDetectorAutomaticModePatchEnrollmentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getZonesZoneIdentifierZarazConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final putZonesZoneIdentifierZarazConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getZonesZoneIdentifierZarazDefaultRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getZonesZoneIdentifierZarazExportRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getZonesZoneIdentifierZarazHistoryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final putZonesZoneIdentifierZarazHistoryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getZonesZoneIdentifierZarazConfigHistoryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final postZonesZoneIdentifierZarazPublishRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getZonesZoneIdentifierZarazWorkflowRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final putZonesZoneIdentifierZarazWorkflowRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartShieldGetSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartShieldPatchSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartShieldSettingsGetCacheReserveClearRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final smartShieldSettingsStartCacheReserveClearRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listZoneSnippetsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getZoneSnippetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateZoneSnippetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteZoneSnippetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getZoneSnippetContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final listZoneSnippetRulesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateZoneSnippetRulesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteZoneSnippetRulesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final spectrumAggregateAnalyticsGetCurrentAggregatedAnalyticsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final spectrumAnalyticsByTimeGetAnalyticsByTimeRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final spectrumAnalyticsSummaryGetAnalyticsSummaryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final spectrumApplicationsListSpectrumApplicationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final spectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final spectrumApplicationsGetSpectrumApplicationConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final spectrumApplicationsUpdateSpectrumApplicationConfigurationUsingANameForTheOriginRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final spectrumApplicationsDeleteSpectrumApplicationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final speedGetAvailabilitiesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final speedListPagesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final speedListTestHistoryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final speedCreateTestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final speedDeleteTestsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final speedGetTestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final speedListPageTrendRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final speedGetScheduledTestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final speedCreateScheduledTestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final speedDeleteTestScheduleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final analyzeCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final certificatePacksListCertificatePacksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final certificatePacksGetCertificatePackRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final certificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final certificatePacksDeleteAdvancedCertificateManagerCertificatePackRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final certificatePacksOrderAdvancedCertificateManagerCertificatePackRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final certificatePacksGetCertificatePackQuotasRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final universalSslSettingsForAZoneUniversalSslSettingsDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final universalSslSettingsForAZoneEditUniversalSslSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final sslVerificationDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final sslVerificationEditSslCertificatePackValidationMethodRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
-  static final zoneSubscriptionDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zoneSubscriptionCreateZoneSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final zoneSubscriptionUpdateZoneSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final tokenValidationConfigListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationConfigCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationConfigGetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationConfigEditRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationConfigDeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationConfigCredentialsUpdateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationRulesListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationRulesCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationRulesGetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationRulesEditRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationRulesDeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationRulesBulkCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationRulesBulkEditRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final tokenValidationRulesPreviewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final getUrlNormalizationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final updateUrlNormalizationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final deleteUrlNormalizationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final web3HostnameListWeb3HostnamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final web3HostnameCreateWeb3HostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final web3HostnameDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final web3HostnameEditWeb3HostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final web3HostnameDeleteWeb3HostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final web3HostnameIpfsUniversalPathGatewayContentListDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final web3HostnameUpdateIpfsUniversalPathGatewayContentListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final web3HostnameListIpfsUniversalPathGatewayContentListEntriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final web3HostnameCreateIpfsUniversalPathGatewayContentListEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final web3HostnameIpfsUniversalPathGatewayContentListEntryDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final web3HostnameEditIpfsUniversalPathGatewayContentListEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
-  static final workerRoutesListRoutesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerRoutesCreateRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerRoutesGetRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerRoutesUpdateRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final workerRoutesDeleteRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customPagesForAZoneListCustomPagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customPagesForAZoneGetACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
-  static final customPagesForAZoneUpdateACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+static final accountCreationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
 
-  static ApiConfig applyApiEmail(ApiConfig config, String value) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'X-Auth-Email': value});
+static final accountsAccountDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
 
-  static ApiConfig applyApiKey(ApiConfig config, String value) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'X-Auth-Key': value});
+static final accountsUpdateAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
 
-  static ApiConfig applyApiToken(ApiConfig config, String token) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});
+static final accountDeletionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
 
-  static ApiConfig applyUserServiceKey(ApiConfig config, String value) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'X-Auth-User-Service-Key': value});
+static final accountsMoveAccountsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
 
-}
+static final accountsListAccountOrganizationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountsGetAccountProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountsModifyAccountProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountsBatchMoveAccountsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listAbuseReportsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final listEmailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final listMitigationsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final requestReviewRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAbuseReportRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final submitAbuseReportRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final mcpPortalsApiListPortalsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final mcpPortalsApiCreatePortalsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final mcpPortalsApiFetchGatewaysRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final mcpPortalsApiUpdatePortalsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final mcpPortalsApiDeletePortalsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final mcpPortalsApiListServersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final mcpPortalsApiCreateServersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final mcpPortalsApiFetchServersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final mcpPortalsApiUpdateServersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final mcpPortalsApiDeleteServersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final mcpPortalsApiSyncServerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accessApplicationsListAccessApplicationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessApplicationsAddAnApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessApplicationsGetAnAccessApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessApplicationsUpdateAnAccessApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessApplicationsDeleteAnAccessApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessApplicationsRevokeServiceTokensRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessApplicationsPutUpdateAccessApplicationSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessApplicationsPatchUpdateAccessApplicationSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessApplicationsTestAccessPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessShortLivedCertificateCAsGetAShortLivedCertificateCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessShortLivedCertificateCAsCreateAShortLivedCertificateCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessShortLivedCertificateCAsDeleteAShortLivedCertificateCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessShortLivedCertificateCAsListShortLivedCertificateCAsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPoliciesListAccessAppPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPoliciesCreateAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPoliciesGetAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accessPoliciesUpdateAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPoliciesDeleteAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPoliciesConvertReusableRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessMtlsAuthenticationListMtlsCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessMtlsAuthenticationAddAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessMtlsAuthenticationGetAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessMtlsAuthenticationUpdateAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessMtlsAuthenticationDeleteAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessMtlsAuthenticationListMtlsCertificatesHostnameSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessCustomPagesListCustomPagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessCustomPagesCreateACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessCustomPagesGetACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessCustomPagesUpdateACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessCustomPagesDeleteACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessGatewayCaListSshCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessGatewayCaAddAnSshCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessGatewayCaDeleteAnSshCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessGroupsListAccessGroupsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessGroupsCreateAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessGroupsGetAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessGroupsUpdateAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessGroupsDeleteAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessIdentityProvidersListAccessIdentityProvidersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessIdentityProvidersAddAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessIdentityProvidersGetAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessIdentityProvidersUpdateAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessIdentityProvidersDeleteAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessIdentityProvidersListScimGroupResourcesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessIdentityProvidersListScimUserResourcesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessKeyConfigurationGetTheAccessKeyConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessKeyConfigurationUpdateTheAccessKeyConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessKeyConfigurationRotateAccessKeysRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessAuthenticationLogsGetAccessAuthenticationLogsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accessScimUpdateLogsListAccessScimUpdateLogsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zeroTrustOrganizationGetYourZeroTrustOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustOrganizationCreateYourZeroTrustOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustOrganizationUpdateYourZeroTrustOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustOrganizationRevokeAllAccessTokensForAUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPoliciesListAccessReusablePoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPoliciesCreateAnAccessReusablePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPoliciesGetAnAccessReusablePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPoliciesUpdateAnAccessReusablePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPoliciesDeleteAnAccessReusablePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPolicyTestsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPolicyTestsGetAnUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessPolicyTestsGetAUserPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustSeatsUpdateAUserSeatRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessServiceTokensListServiceTokensRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessServiceTokensCreateAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessServiceTokensGetAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessServiceTokensUpdateAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessServiceTokensDeleteAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessServiceTokensRefreshAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessServiceTokensRotateAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessTagsListTagsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessTagsCreateTagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessTagsGetATagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessTagsUpdateATagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accessTagsDeleteATagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustUsersGetUsersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustUsersCreateUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustUsersGetUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustUsersUpdateUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustUsersDeleteUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustUsersGetActiveSessionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustUsersGetActiveSessionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustUsersGetFailedLoginsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustUsersGetLastSeenIdentityRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustUsersDeleteMfaAuthenticatorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final ipAddressManagementAddressMapsListAddressMapsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementAddressMapsCreateAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementAddressMapsAddressMapDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementAddressMapsUpdateAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementAddressMapsDeleteAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementAddressMapsAddAnAccountMembershipToAnAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementAddressMapsRemoveAnAccountMembershipFromAnAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementAddressMapsAddAnIpToAnAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementAddressMapsRemoveAnIpFromAnAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementAddressMapsAddAZoneMembershipToAnAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementAddressMapsRemoveAZoneMembershipFromAnAddressMapRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementListLeasesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesUploadLoaDocumentRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesDownloadLoaDocumentRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesListPrefixesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesAddPrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesPrefixDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesUpdatePrefixDescriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesDeletePrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesValidatePrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesListBgpPrefixesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesCreateBgpPrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesFetchBgpPrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesUpdateBgpPrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixesDeleteBgpPrefixRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementServiceBindingsListServiceBindingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementServiceBindingsCreateServiceBindingRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementServiceBindingsGetServiceBindingRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementServiceBindingsDeleteServiceBindingRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementServiceBindingsListServicesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixDelegationListPrefixDelegationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixDelegationCreatePrefixDelegationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAddressManagementPrefixDelegationDeletePrefixDelegationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dlsAccountRegionalHostnamesAccountListRegionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final dlsAccountRegionalHostnamesAccountListHostnamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final dlsAccountRegionalHostnamesAccountCreateHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final dlsAccountRegionalHostnamesAccountFetchHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final dlsAccountRegionalHostnamesAccountPatchHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final dlsAccountRegionalHostnamesAccountDeleteHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final aigConfigListEvaluatorsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigListEvaluationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigCreateEvaluationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigFetchEvaluationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigDeleteEvaluationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigListGatewayRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigCreateGatewayRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigGetGatewayUrlRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigFetchGatewayRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigUpdateGatewayRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigDeleteGatewayRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigListDatasetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigCreateDatasetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigFetchDatasetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigUpdateDatasetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigDeleteDatasetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigListGatewayLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigDeleteGatewayLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigGetGatewayLogDetailRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigPatchGatewayLogRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigGetGatewayLogRequestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigGetGatewayLogResponseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigListProvidersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigCreateProvidersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigUpdateProvidersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigDeleteProvidersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigListGatewayDynamicRoutesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigPostGatewayDynamicRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigGetGatewayDynamicRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigUpdateGatewayDynamicRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigDeleteGatewayDynamicRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigListGatewayDynamicRouteDeploymentsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigPostGatewayDynamicRouteDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigListGatewayDynamicRouteVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigPostGatewayDynamicRouteVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aigConfigGetGatewayDynamicRouteVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchListInstancesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchCreateInstancesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchFetchInstancesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchUpdateInstancesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchDeleteInstancesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchInstanceChatCompletionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchInstanceSearchRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchStatsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchInstanceListJobsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchInstanceCreateJobRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchInstanceGetJobRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchInstanceChangeJobStatusRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchInstanceListJobLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchListTokensRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchCreateTokensRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchFetchTokensRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchUpdateTokensRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final aiSearchDeleteTokensRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiSearchAuthorRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiGetModelSchemaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiSearchModelRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunModelRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiSearchTaskRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostToMarkdownRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiGetToMarkdownSupportedRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiListFinetunesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiCreateFinetuneRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiUploadFinetuneAssetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiListPublicFinetunesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaM2m10012bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfAisingaporeGemmaSeaLionV427bItRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfDeepseekAiDeepseekMath7bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfDefogSqlcoder7b2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfFblgitUnaCybertron7bV2Bf16Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfGoogleGemma2bItLoraRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfGoogleGemma312bItRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfGoogleGemma7bItLoraRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfIbmGranite40HMicroRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama27bChatHfLoraRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama27bChatFp16Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama27bChatInt8Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama38bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama38bInstructAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama318bInstructAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama318bInstructFp8Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama318bInstructFp8FastRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama3170bInstructFp8FastRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama321bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama323bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama3211bVisionInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama370bInstructFp8FastRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlama4Scout17b16eInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMetaLlamaGuard38bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMicrosoftPhi2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMistral7bInstructV01Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMistral7bInstructV02LoraRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMistralaiMistralSmall3124bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfOpenaiGptOss20bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfOpenaiGptOss120bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfOpenchat350106Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfQwenQwen1505bChatRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfQwenQwen1518bChatRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfQwenQwen157bChatAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfQwenQwen1514bChatAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfQwenQwen25Coder32bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfQwenQwen330bA3bFp8Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfQwenQwq32bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfTheblokeDiscolmGerman7bV1AwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfTiiuaeFalcon7bInstructRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfTinyllama11bChatV10Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfZaiOrgGlm47FlashRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunHfGoogleGemma7bItRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunHfMistral7bInstructV02Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunHfNexusflowStarlingLm7bBetaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunHfNousresearchHermes2ProMistral7bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunHfTheblokeLlama213bChatAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunHfTheblokeMistral7bInstructV01AwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunHfTheblokeNeuralChat7bV31AwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunHfTheblokeZephyr7bBetaAwqRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBaaiBgeBaseEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBaaiBgeLargeEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBaaiBgeM3Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBaaiBgeSmallEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBaaiOmniBgeBaseEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBaaiOmniBgeLargeEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBaaiOmniBgeM3Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBaaiOmniBgeSmallEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBaaiRayBgeLargeEnV15Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfGoogleEmbeddinggemma300mRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfGoogleOmniEmbeddinggemma300mRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfPfnetPlamoEmbedding1bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfQwenQwen3Embedding06bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBaaiBgeRerankerBaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfHuggingfaceDistilbertSst2Int8Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBlackForestLabsFlux1SchnellRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBlackForestLabsFlux2DevRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBlackForestLabsFlux2Klein4bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBlackForestLabsFlux2Klein9bRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfBytedanceStableDiffusionXlLightningRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfLeonardoLucidOriginRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfLeonardoPhoenix10Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfLykonDreamshaper8LcmRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfRunwaymlStableDiffusionV15Img2imgRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfRunwaymlStableDiffusionV15InpaintingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfStabilityaiStableDiffusionXlBase10Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfSvenTestPipeHttpRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfDeepgramAuraRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfDeepgramAura1Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfDeepgramAura1Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfDeepgramAura1InternalRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfDeepgramAura2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfDeepgramAura2EnRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfDeepgramAura2EnRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfDeepgramAura2EsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfDeepgramAura2EsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMyshellAiMelottsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfDeepgramFluxRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfDeepgramFluxRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfDeepgramNova3Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfDeepgramNova3Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfDeepgramNova3InternalRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfOpenaiWhisperRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfOpenaiWhisperLargeV3TurboRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfOpenaiWhisperTinyEnRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfFacebookBartLargeCnnRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfFacebookNonomniBartLargeCnnRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfFacebookNonomniDetrResnet50Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMicrosoftNonomniResnet50Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostRunCfMicrosoftResnet50Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfPipecatAiSmartTurnV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfPipecatAiSmartTurnV3Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersAiPostWebsocketRunCfTestHelloWorldCogRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationAlertTypesGetAlertTypesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationMechanismEligibilityGetDeliveryMechanismEligibilityRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationDestinationsWithPagerDutyListPagerDutyServicesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationDestinationsWithPagerDutyDeletePagerDutyServicesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationDestinationsWithPagerDutyConnectPagerDutyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationDestinationsWithPagerDutyConnectPagerDutyTokenRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationWebhooksListWebhooksRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationWebhooksCreateAWebhookRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationWebhooksGetAWebhookRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationWebhooksUpdateAWebhookRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationWebhooksDeleteAWebhookRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationHistoryListHistoryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationPoliciesListNotificationPoliciesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationPoliciesCreateANotificationPolicyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationPoliciesGetANotificationPolicyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationPoliciesUpdateANotificationPolicyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationPoliciesDeleteANotificationPolicyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationSilencesListSilencesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationSilencesCreateSilencesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationSilencesUpdateSilencesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationSilencesGetSilenceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final notificationSilencesDeleteSilencesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final auditLogsGetAccountAuditLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final auditLogsV2GetAccountAuditLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final auditLogsGetUserAuditLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final autoragConfigAiSearchRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final autoragConfigSearchRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final autoragConfigFilesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final autoragConfigSyncRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final autoragConfigListJobsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final autoragConfigGetJobRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final autoragConfigListJobLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final billableUsageGetPaygoAccountUsageRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final botnetThreatFeedGetDayReportRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final botnetThreatFeedGetFullReportRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final botnetThreatFeedListAsnRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final botnetThreatFeedDeleteAsnRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getAccountsBrandProtectionAlertsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchAccountsBrandProtectionAlertsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchAccountsBrandProtectionAlertsClearRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchAccountsBrandProtectionAlertsRefuteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchAccountsBrandProtectionAlertsVerifyRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionBrandsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postAccountsBrandProtectionBrandsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteAccountsBrandProtectionBrandsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionBrandsPatternsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postAccountsBrandProtectionBrandsPatternsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteAccountsBrandProtectionBrandsPatternsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchAccountsBrandProtectionClearRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionDomainInfoRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionRecentSubmissionsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchAccountsBrandProtectionRefuteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionSubmissionInfoRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postAccountsBrandProtectionSubmitRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionTrackedDomainsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionUrlInfoRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchAccountsBrandProtectionVerifyRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postInternalSubmitRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getLiveRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getReadyRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionLogoMatchesRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionLogoMatchesDownloadRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionLogosRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postAccountsBrandProtectionLogosRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionLogos2Requirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteAccountsBrandProtectionLogosRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postAccountsBrandProtectionScanLogoRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postAccountsBrandProtectionScanPageRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getSignedUrlRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionMatchesRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionMatchesDownloadRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionQueriesRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postAccountsBrandProtectionQueriesRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchAccountsBrandProtectionQueriesRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteAccountsBrandProtectionQueriesRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postAccountsBrandProtectionQueriesBulkRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postAccountsBrandProtectionSearchRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAccountsBrandProtectionTotalQueriesRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final brapiPostContentRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final brapiPostJsonRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final brapiPostLinksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final brapiPostMarkdownRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final brapiPostPdfRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final brapiPostScrapeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final brapiPostScreenshotRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final brapiPostSnapshotRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getAccountLimitsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getBuildsByVersionIdsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getBuildByUuidRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cancelBuildByUuidRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getBuildLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getLatestBuildsByScriptsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getWorkerConfigAutofillRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final upsertRepoConnectionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteRepoConnectionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listBuildTokensRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createBuildTokenRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteBuildTokenRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createTriggerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateTriggerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteTriggerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createManualBuildRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final purgeBuildCacheRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listEnvironmentVariablesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final upsertEnvironmentVariablesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteEnvironmentVariableRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listBuildsByScriptRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listTriggersByScriptRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listWorkersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final editWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final callsAppsListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final callsAppsCreateANewAppRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final callsAppsRetrieveAppDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final callsAppsUpdateAppDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final callsAppsDeleteAppRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final callsTurnKeyListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final callsTurnKeyCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final callsRetrieveTurnKeyDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final callsUpdateTurnKeyRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final callsDeleteTurnKeyRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final cloudflareTunnelListCloudflareTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelCreateACloudflareTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelGetACloudflareTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelUpdateACloudflareTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelDeleteACloudflareTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelListCloudflareTunnelConnectionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelCleanUpCloudflareTunnelConnectionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelGetCloudflareTunnelConnectorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelGetACloudflareTunnelManagementTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelGetACloudflareTunnelTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelListAllTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelListWarpConnectorTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelCreateAWarpConnectorTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelGetAWarpConnectorTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelUpdateAWarpConnectorTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelDeleteAWarpConnectorTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelGetAWarpConnectorTunnelTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelConfigurationGetConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final cloudflareTunnelConfigurationPutConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final accountsTurnstileWidgetsListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountsTurnstileWidgetCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountsTurnstileWidgetGetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountsTurnstileWidgetUpdateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountsTurnstileWidgetDeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountsTurnstileWidgetRotateSecretRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final postBinDbPostRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getBinDbGetBinaryRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getEventListGetRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteEventDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventDoRevertRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchEventUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getEventRawReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventRawUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchEventRawUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getEventRelationshipsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getEventAggregateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventCreateBulkRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getEventReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventMoveToNewDsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteEventTagDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventTagCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getEventQueryListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getEventQueryReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventQueryUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchEventQueryUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteEventQueryDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getEventQueryAlertListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getEventQueryAlertReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventQueryAlertUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchEventQueryAlertUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteEventQueryAlertDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventQueryAlertCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventQueryCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getEventRawReadDsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteEventReferenceDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventReferenceCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postCreateEventRelationshipRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postEventGraphQlRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAttackerListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getCategoryListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getCategoryReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postCategoryUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchCategoryUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteCategoryDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getCategoryListCompleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postCategoryCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getCategoriesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getCategoryByIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getCountryReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getDatasetListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getDatasetReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postDatasetUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchDatasetUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteDatasetDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postDatasetCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getGroupListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postGroupCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getGroupReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final putGroupUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteGroupDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getGroupMemberListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postGroupMemberCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteGroupMemberDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postIndicatorTypeCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getIndicatorListLegacyRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getIndicatorReadRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchIndicatorUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteIndicatorDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postIndicatorCreateBulkRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postIndicatorCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getIndicatorTagsListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getIndicatorListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getPermissionListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postPermissionCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final putPermissionUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deletePermissionDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getTagIndicatorsListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getTagListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchTagUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteTagDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postTagCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getTargetIndustryListByDatasetRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getTargetIndustryListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getTargetIndustryListCompleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postDatasetPopulateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getIndicatorTypesListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getTagCategoryListRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchTagCategoryUpdateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteTagCategoryDeleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postTagCategoryCreateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final cloudforceOneRequestListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestAssetListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestAssetGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestAssetUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestAssetDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestAssetNewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestMessageListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestMessageUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestMessageDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestMessageNewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestConstantsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestNewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestQuotaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOneRequestTypesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOnePriorityListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOnePriorityGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOnePriorityUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOnePriorityDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOnePriorityNewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudforceOnePriorityQuotaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getConfigFetchRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final postConfigCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final postConfigUpdateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteDeleteScansRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getGetOpenPortsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listCnisRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final createCniRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getCniRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final updateCniRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final deleteCniRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listInterconnectsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final createInterconnectRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getInterconnectRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final deleteInterconnectRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getInterconnectLoaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getInterconnectStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final updateSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listSlotsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getSlotRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final connectivityServicesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final connectivityServicesPostRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final connectivityServicesGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final connectivityServicesPutRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final connectivityServicesDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final publicListApplicationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final generateImageRegistryCredentialsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountLevelCustomNameserversListAccountCustomNameserversRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountLevelCustomNameserversAddAccountCustomNameserverRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountLevelCustomNameserversDeleteAccountCustomNameserverRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final d1ListDatabasesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final d1CreateDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final d1GetDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final d1UpdateDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final d1UpdatePartialDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final d1DeleteDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final d1ExportDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final d1ImportDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final d1QueryDatabaseRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final d1RawDatabaseQueryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final d1TimeTravelGetBookmarkRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final d1TimeTravelRestoreRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final devicesListDeviceSettingsPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesGetDefaultDeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesCreateDeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesUpdateDefaultDeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesGetDeviceSettingsPolicyByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesUpdateDeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesDeleteDeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesGetSplitTunnelExcludeListForADeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesSetSplitTunnelExcludeListForADeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesGetLocalDomainFallbackListForADeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesSetLocalDomainFallbackListForADeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesGetSplitTunnelIncludeListForADeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesSetSplitTunnelIncludeListForADeviceSettingsPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesGetSplitTunnelExcludeListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesSetSplitTunnelExcludeListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesGetLocalDomainFallbackListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesSetLocalDomainFallbackListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesGetSplitTunnelIncludeListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesSetSplitTunnelIncludeListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesGetPolicyCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesUpdatePolicyCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listIpProfilesRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final createIpProfileRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getIpProfileRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final updateIpProfileRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteIpProfileRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getRegistrationOverrideCodesRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deviceManagedNetworksListDeviceManagedNetworksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final deviceManagedNetworksCreateDeviceManagedNetworkRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final deviceManagedNetworksDeviceManagedNetworkDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final deviceManagedNetworksUpdateDeviceManagedNetworkRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final deviceManagedNetworksDeleteDeviceManagedNetworkRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listDevicesRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getDeviceRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteDeviceRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final revokeDeviceRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteRegistrationsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final devicePostureRulesListDevicePostureRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicePostureRulesCreateDevicePostureRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicePostureRulesDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicePostureRulesUpdateDevicePostureRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicePostureRulesDeleteDevicePostureRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicePostureIntegrationsListDevicePostureIntegrationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicePostureIntegrationsCreateDevicePostureIntegrationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicePostureIntegrationsDevicePostureIntegrationDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicePostureIntegrationsUpdateDevicePostureIntegrationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicePostureIntegrationsDeleteDevicePostureIntegrationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listRegistrationsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getRegistrationRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteRegistrationRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final revokeRegistrationsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final unrevokeRegistrationsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final devicesResilienceRetrieveGlobalWarpOverrideRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final devicesResilienceSetGlobalWarpOverrideRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustAccountsGetDeviceSettingsForZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustAccountsGetZeroTrustAccountInformationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustAccountsCreateZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustAccountsGetZeroTrustAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustAccountsUpdateZeroTrustAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustAccountsPatchZeroTrustAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustAccountsGetLoggingSettingsForTheZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustAccountsUpdateLoggingSettingsForTheZeroTrustAccountRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dexEndpointsListColosRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final devicesLiveStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final dexFleetStatusDevicesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final dexFleetStatusLiveRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final dexFleetStatusOverTimeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final dexEndpointsHttpTestDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final dexEndpointsHttpTestPercentilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final dexEndpointsListTestsOverviewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final dexEndpointsTestsUniqueDevicesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final dexEndpointsTracerouteTestResultNetworkPathRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final dexEndpointsTracerouteTestDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final dexEndpointsTracerouteTestNetworkPathRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final dexEndpointsTracerouteTestPercentilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final getCommandsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final postCommandsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final getCommandsCommandIdDownloadsFilenameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final getCommandsEligibleDevicesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final getCommandsQuotaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final deviceDexTestDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deviceDexTestCreateDeviceDexTestRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deviceDexTestGetDeviceDexTestRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deviceDexTestUpdateDeviceDexTestRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deviceDexTestDeleteDeviceDexTestRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listDexRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final createDexRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final getDexRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final updateDexRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final deleteDexRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final listWarpChangeEventsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final diagnosticsEndpointHealthcheckListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final diagnosticsEndpointHealthcheckCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final diagnosticsEndpointHealthcheckGetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final diagnosticsEndpointHealthcheckUpdateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final diagnosticsEndpointHealthcheckDeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final diagnosticsTracerouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dlpDatasetsReadAllRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDatasetsCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDatasetsReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDatasetsUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDatasetsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDatasetsCreateVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDatasetsUploadVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDatasetsDefineColumnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDatasetsUploadDatasetColumnRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDocumentFingerprintsReadAllRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDocumentFingerprintsCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDocumentFingerprintsReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDocumentFingerprintsUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDocumentFingerprintsUploadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpDocumentFingerprintsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEmailScannerGetAccountMappingRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEmailScannerCreateAccountMappingRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEmailScannerListAllRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEmailScannerCreateRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEmailScannerUpdateRulePrioritiesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEmailScannerGetRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEmailScannerUpdateRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEmailScannerDeleteRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEntriesListAllEntriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEntriesCreateEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEntriesGetDlpEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEntriesUpdateEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEntriesDeleteEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEntriesUpdateCustomEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEntriesUpdatePredefinedEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEntriesCreateIntegrationEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEntriesUpdateIntegrationEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEntriesDeleteIntegrationEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEntriesCreatePredefinedEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpEntriesDeletePredefinedEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpLimitsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpPatternValidateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpPayloadLogGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpPayloadLogPutRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpSettingsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpSettingsUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpSettingsEditRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpSettingsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesListAllProfilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesGetDlpProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesListAllCustomProfilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesCreateCustomProfilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesGetCustomProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesUpdateCustomProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesDeleteCustomProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesCreatePredefinedProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesGetPredefinedProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesUpdatePredefinedProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesDeletePredefinedProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesGetPredefinedProfileConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesCreatePredefinedProfileConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpProfilesUpdatePredefinedProfileConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dnsFirewallListDnsFirewallClustersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsFirewallCreateDnsFirewallClusterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsFirewallClusterDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsFirewallUpdateDnsFirewallClusterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsFirewallDeleteDnsFirewallClusterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsFirewallShowDnsFirewallClusterReverseDnsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsFirewallUpdateDnsFirewallClusterReverseDnsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsFirewallAnalyticsTableRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsFirewallAnalyticsByTimeRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAnAccountGetUsageRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsSettingsForAnAccountListDnsSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsSettingsForAnAccountUpdateDnsSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsViewsForAnAccountListInternalDnsViewsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsViewsForAnAccountCreateInternalDnsViewsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsViewsForAnAccountGetInternalDnsViewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsViewsForAnAccountUpdateInternalDnsViewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsViewsForAnAccountDeleteInternalDnsViewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityInvestigateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityGetMessageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityGetMessageDetectionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityPostMessageMoveRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityGetMessagePreviewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityGetMessageRawRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityPostReclassifyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityGetMessageTraceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityPostBulkMessageMoveRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityPostPreviewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityPostReleaseRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityGetPhishguardReportsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecuritySubmissionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityListAllowPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityCreateAllowPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityGetAllowPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityUpdateAllowPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityDeleteAllowPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityBatchAllowPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityListBlockedSendersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityCreateBlockedSenderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityGetBlockedSenderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityUpdateBlockedSenderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityDeleteBlockedSenderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityBatchBlockedSendersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityListDomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityDeleteDomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityGetDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityUpdateDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityDeleteDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityListDisplayNamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityCreateDisplayNameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityGetDisplayNameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityUpdateDisplayNameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityDeleteDisplayNameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityBatchSendingDomainRestrictionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityListTrustedDomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityCreateTrustedDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityGetTrustedDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityUpdateTrustedDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityDeleteTrustedDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSecurityBatchTrustedDomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingDestinationAddressesListDestinationAddressesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingDestinationAddressesCreateADestinationAddressRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingDestinationAddressesGetADestinationAddressRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingDestinationAddressesDeleteDestinationAddressRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final r2GetEventNotificationConfigsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2GetEventNotificationConfigRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2PutEventNotificationConfigRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2EventNotificationDeleteConfigRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2ListBucketsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2CreateBucketRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2GetBucketRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2PatchBucketRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2DeleteBucketRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2GetBucketCorsPolicyRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2PutBucketCorsPolicyRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2DeleteBucketCorsPolicyRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2ListCustomDomainsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2AddCustomDomainRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2GetCustomDomainSettingsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2EditCustomDomainSettingsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2DeleteCustomDomainRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2GetBucketPublicPolicyRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2PutBucketPublicPolicyRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2GetBucketLifecycleConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2PutBucketLifecycleConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2GetBucketLocalUploadsConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2PutBucketLocalUploadsConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2GetBucketLockConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2PutBucketLockConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2GetBucketSippyConfigRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2PutBucketSippyConfigRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2DeleteBucketSippyConfigRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final r2CreateTempAccessCredentialsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final subscriptionsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final subscriptionsCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final subscriptionsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final subscriptionsPatchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final subscriptionsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesUpdatePartialRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesListConsumersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesCreateConsumerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesGetConsumerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesUpdateConsumerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesDeleteConsumerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesPushMessageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesAckMessagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesPushMessagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesPullMessagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesPurgeGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final queuesPurgeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final ipAccessRulesForAnAccountListIpAccessRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final ipAccessRulesForAnAccountCreateAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final ipAccessRulesForAnAccountGetAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final ipAccessRulesForAnAccountUpdateAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final ipAccessRulesForAnAccountDeleteAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustApplicationsReviewStatusListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustApplicationsReviewStatusUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGetAuditSshSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustUpdateAuditSshSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustRotateSshAccountSeedRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayCategoriesListCategoriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustCertificatesListZeroTrustCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustCertificatesCreateZeroTrustCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustCertificatesZeroTrustCertificateDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustCertificatesDeleteZeroTrustCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustCertificatesActivateZeroTrustCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustCertificatesDeactivateZeroTrustCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustListsListZeroTrustListsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustListsCreateZeroTrustListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustListsZeroTrustListDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustListsUpdateZeroTrustListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustListsPatchZeroTrustListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustListsDeleteZeroTrustListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustListsZeroTrustListItemsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayLocationsListZeroTrustGatewayLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayLocationsZeroTrustGatewayLocationDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayLocationsDeleteZeroTrustGatewayLocationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayPacfilesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayPacfilesCreatePacfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayPacfilesDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayPacfilesUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayPacfilesDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayProxyEndpointsListProxyEndpointsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayProxyEndpointsCreateProxyEndpointRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayProxyEndpointsProxyEndpointDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayProxyEndpointsDeleteProxyEndpointRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayRulesListZeroTrustGatewayRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayRulesZeroTrustGatewayRuleDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayRulesDeleteZeroTrustGatewayRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayRulesResetExpirationZeroTrustGatewayRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustGatewayRulesListZeroTrustGatewayRulesTenantRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listHyperdriveRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createHyperdriveRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getHyperdriveRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateHyperdriveRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final patchHyperdriveRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteHyperdriveRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountPermissionGroupListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountPermissionGroupDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountResourceGroupListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountResourceGroupCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountResourceGroupDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountResourceGroupUpdateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountResourceGroupDeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountUserGroupListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountUserGroupCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountUserGroupDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountUserGroupUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountUserGroupDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountUserGroupMemberListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountUserGroupMemberCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountUserGroupMembersUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountUserGroupMemberDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesUploadAnImageViaUrlRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesImageDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesUpdateImageRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesDeleteImageRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesBaseImageRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesUsageStatisticsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesListImagesV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesCreateAuthenticatedDirectUploadUrlV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesKeysListSigningKeysRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesKeysAddSigningKeyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesKeysDeleteSigningKeyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesVariantsListVariantsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesVariantsCreateAVariantRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesVariantsVariantDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesVariantsUpdateAVariantRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final cloudflareImagesVariantsDeleteAVariantRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final infraTargetsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final infraTargetsPostRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final infraTargetsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final infraTargetsPutRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final infraTargetsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final infraTargetsPutBatchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final infraTargetsDeleteBatchPostRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final asnIntelligenceGetAsnOverviewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final asnIntelligenceGetAsnSubnetsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getSecurityCenterIssueTypesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final getSecurityCenterInsightsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final getSecurityCenterInsightContextRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final archiveSecurityCenterInsightRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final getSecurityCenterInsightCountsByClassRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final getSecurityCenterInsightCountsBySeverityRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final getSecurityCenterInsightCountsByTypeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final getZoneSecurityCenterInsightsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final archiveZoneSecurityCenterInsightRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final getZoneSecurityCenterInsightCountsByClassRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final getZoneSecurityCenterInsightCountsBySeverityRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final getZoneSecurityCenterInsightCountsByTypeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final passiveDnsByIpGetPassiveDnsByIpRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final domainIntelligenceGetDomainDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final domainIntelligenceGetMultipleDomainDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final domainHistoryGetDomainHistoryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customIndicatorFeedsGetIndicatorFeedsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customIndicatorFeedsCreateIndicatorFeedsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customIndicatorFeedsGetIndicatorFeedMetadataRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customIndicatorFeedsUpdateIndicatorFeedMetadataRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customIndicatorFeedsGetIndicatorFeedDataRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customIndicatorFeedsDownloadIndicatorFeedDataRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customIndicatorFeedsUpdateIndicatorFeedDataRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customIndicatorFeedsAddPermissionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customIndicatorFeedsRemovePermissionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customIndicatorFeedsViewPermissionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipIntelligenceGetIpOverviewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipListGetIpListsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final miscategorizationCreateMiscategorizationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final sinkholeConfigGetSinkholesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final whoisRecordGetWhoisRecordRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountLoadBalancerMonitorGroupsListMonitorGroupsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorGroupsCreateMonitorGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorGroupsMonitorGroupDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorGroupsUpdateMonitorGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorGroupsPatchMonitorGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorGroupsDeleteMonitorGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorGroupsListMonitorGroupReferencesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorsListMonitorsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorsCreateMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorsMonitorDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorsUpdateMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorsPatchMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorsDeleteMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorsPreviewMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorsListMonitorReferencesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerMonitorsPreviewResultRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerPoolsListPoolsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerPoolsCreatePoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerPoolsPatchPoolsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerPoolsPoolDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerPoolsUpdatePoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerPoolsPatchPoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerPoolsDeletePoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerPoolsPoolHealthDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerPoolsPreviewPoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerPoolsListPoolReferencesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerRegionsListRegionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerRegionsGetRegionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountLoadBalancerSearchResourcesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getAccountsAccountIdLogpushDatasetsDatasetIdFieldsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getAccountsAccountIdLogpushDatasetsDatasetIdJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getAccountsAccountIdLogpushJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postAccountsAccountIdLogpushJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getAccountsAccountIdLogpushJobsJobIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final putAccountsAccountIdLogpushJobsJobIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final deleteAccountsAccountIdLogpushJobsJobIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postAccountsAccountIdLogpushOwnershipRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postAccountsAccountIdLogpushOwnershipValidateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final deleteAccountsAccountIdLogpushValidateDestinationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final deleteAccountsAccountIdLogpushValidateDestinationExistsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postAccountsAccountIdLogpushValidateOriginRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getAccountsAccountIdLogsControlCmbConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postAccountsAccountIdLogsControlCmbConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final deleteAccountsAccountIdLogsControlCmbConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listDnsProtectionRulesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createDnsProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteDnsProtectionRulesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getDnsProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateDnsProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteDnsProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listAllowlistPrefixesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createAllowlistedPrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteAllowlistPrefixesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getAllowlistPrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateAllowlistPrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteAllowlistPrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listPrefixesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createPrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deletePrefixesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getPrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updatePrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deletePrefixRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final bulkCreatePrefixesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listSynProtectionFiltersForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createSynProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteSynProtectionFiltersForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getSynProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateSynProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteSynProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listSynProtectionRulesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createSynProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteSynProtectionRulesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getSynProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateSynProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteSynProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listTcpFlowProtectionFiltersForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createTcpFlowProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteTcpFlowProtectionFiltersForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getTcpFlowProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateTcpFlowProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteTcpFlowProtectionFilterRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listTcpFlowProtectionRulesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createTcpFlowProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteTcpFlowProtectionRulesForAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getTcpFlowProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateTcpFlowProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteTcpFlowProtectionRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getProtectionStatusRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateProtectionStatusRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicAccountAppsListAppsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicAccountAppsAddAppRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicAccountAppsUpdateAppRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicAccountAppsPatchAppRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicAccountAppsDeleteAppRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicInterconnectsListInterconnectsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicInterconnectsUpdateMultipleInterconnectsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicInterconnectsListInterconnectDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicInterconnectsUpdateInterconnectRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final catalogSyncsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final catalogSyncsCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final catalogSyncsReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final catalogSyncsUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final catalogSyncsPatchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final catalogSyncsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final catalogSyncsRefreshRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final catalogSyncsPrebuiltPoliciesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final onrampsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final onrampsCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final onrampsReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final onrampsUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final onrampsPatchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final onrampsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final onrampsApplyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final onrampsExportRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final onrampsPlanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final onrampsMwanAddrSpaceReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final onrampsMwanAddrSpaceUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final onrampsMwanAddrSpacePatchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final providersListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final providersCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final providersReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final providersUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final providersPatchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final providersDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final providersDiscoverRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final providersInitialSetupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final providersDiscoverAllRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final resourcesCatalogListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final resourcesCatalogReadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final resourcesCatalogExportRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final resourcesCatalogPolicyPreviewRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final mconnConnectorListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final mconnConnectorCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final mconnConnectorFetchRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final mconnConnectorReplaceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final mconnConnectorUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final mconnConnectorDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final mconnConnectorTelemetryEventsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final mconnConnectorTelemetryEventsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final mconnConnectorTelemetryEventsListLatestRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final mconnConnectorTelemetrySnapshotsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final mconnConnectorTelemetrySnapshotsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final mconnConnectorTelemetrySnapshotsListLatestRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicGreTunnelsListGreTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicGreTunnelsCreateGreTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicGreTunnelsUpdateMultipleGreTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicGreTunnelsListGreTunnelDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicGreTunnelsUpdateGreTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicGreTunnelsDeleteGreTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicIpsecTunnelsListIpsecTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicIpsecTunnelsCreateIpsecTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicIpsecTunnelsUpdateMultipleIpsecTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicIpsecTunnelsListIpsecTunnelDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicIpsecTunnelsUpdateIpsecTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicIpsecTunnelsDeleteIpsecTunnelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnelsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicStaticRoutesListRoutesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicStaticRoutesCreateRoutesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicStaticRoutesUpdateManyRoutesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicStaticRoutesDeleteManyRoutesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicStaticRoutesRouteDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicStaticRoutesUpdateRouteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicStaticRoutesDeleteRouteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSitesListSitesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSitesCreateSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSitesSiteDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSitesUpdateSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSitesPatchSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSitesDeleteSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteAclsListAclsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteAclsCreateAclRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteAclsAclDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteAclsUpdateAclRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteAclsPatchAclRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteAclsDeleteAclRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteAppConfigsListAppConfigsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteAppConfigsAddAppConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteAppConfigsUpdateAppConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteAppConfigsPatchAppConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteAppConfigsDeleteAppConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteLansListLansRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteLansCreateLanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteLansLanDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteLansUpdateLanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteLansPatchLanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteLansDeleteLanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteNetflowConfigDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteNetflowConfigCreateNetflowConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteNetflowConfigUpdateNetflowConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteNetflowConfigPatchNetflowConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteNetflowConfigDeleteNetflowConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteWansListWansRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteWansCreateWanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteWansWanDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteWansUpdateWanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteWansPatchWanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final magicSiteWansDeleteWanRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountMembersListMembersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountMembersAddMemberRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountMembersMemberDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountMembersUpdateMemberRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountMembersRemoveMemberRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringConfigurationListAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringConfigurationCreateAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringConfigurationDeleteAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringConfigurationListRulesAndAccountConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringRulesListRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringRulesCreateRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringRulesUpdateRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringRulesGetRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringRulesUpdateRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringRulesDeleteRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringRulesUpdateAdvertisementForRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicNetworkMonitoringVpcFlowsGenerateAuthenticationTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final mTlsCertificateManagementListMTlsCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final mTlsCertificateManagementUploadMTlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final mTlsCertificateManagementGetMTlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final mTlsCertificateManagementDeleteMTlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final mTlsCertificateManagementListMTlsCertificateAssociationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final pagesProjectGetProjectsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesProjectCreateProjectRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesProjectGetProjectRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesProjectUpdateProjectRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesProjectDeleteProjectRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesDeploymentGetDeploymentsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesDeploymentCreateDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesDeploymentGetDeploymentInfoRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesDeploymentDeleteDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesDeploymentGetDeploymentLogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesDeploymentRetryDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesDeploymentRollbackDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesDomainsGetDomainsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesDomainsAddDomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesDomainsGetDomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesDomainsPatchDomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesDomainsDeleteDomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pagesPurgeBuildCacheRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final payPerCrawlCrawlerGetStripeConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final payPerCrawlCrawlerCreateStripeConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final payPerCrawlCrawlerDeleteStripeConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final payPerCrawlPublisherGetStripeConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final payPerCrawlPublisherCreateStripeConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final payPerCrawlPublisherDeleteStripeConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final payPerCrawlSetZonesCanBeEnabledRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final payPerCrawlQueryZonesCanBeEnabledRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final payPerCrawlGetConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final payPerCrawlCreateConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final payPerCrawlPatchConfigRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicPcapCollectionListPacketCaptureRequestsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicPcapCollectionCreatePcapRequestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicPcapCollectionGetPcapRequestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicPcapCollectionDownloadSimplePcapRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicPcapCollectionStopFullPcapRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicPcapCollectionListPcaPsBucketOwnershipRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicPcapCollectionAddBucketsForFullPacketCapturesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicPcapCollectionDeleteBucketsForFullPacketCapturesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final magicPcapCollectionValidateBucketsForFullPacketCapturesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getV4AccountsByAccountIdPipelinesV1PipelinesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final postV4AccountsByAccountIdPipelinesV1PipelinesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getV4AccountsByAccountIdPipelinesV1PipelinesByPipelineIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteV4AccountsByAccountIdPipelinesV1PipelinesByPipelineIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getV4AccountsByAccountIdPipelinesV1SinksRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final postV4AccountsByAccountIdPipelinesV1SinksRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getV4AccountsByAccountIdPipelinesV1SinksBySinkIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteV4AccountsByAccountIdPipelinesV1SinksBySinkIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getV4AccountsByAccountIdPipelinesV1StreamsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final postV4AccountsByAccountIdPipelinesV1StreamsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final patchV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteV4AccountsByAccountIdPipelinesV1StreamsByStreamIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final postV4AccountsByAccountIdPipelinesV1ValidateSqlRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listCatalogsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getCatalogDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final disableCatalogRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final enableCatalogRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final storeCredentialsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getMaintenanceConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateMaintenanceConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listNamespacesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listTablesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getTableMaintenanceConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateTableMaintenanceConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final r2GetAccountLevelMetricsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getOrgAnalyticsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getLivestreamAnalyticsCompleteRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final fetchAllLivestreamsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postAccountsRealtimeKitLivestreamsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getV2LivestreamSessionLivestreamIdRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getV2ActiveLivestreamSessionDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getV2LivestreamsLivestreamSessionIdRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getV2MeetingsMeetingIdActiveLivestreamRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final stopLivestreamingRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final livestreamSessionDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final startLivestreamingRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getV2LivestreamsessionSessionMeetingIdActiveLivestreamRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAllMeetingsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final createMeetingRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getMeetingRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final replaceMeetingRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final updateMeetingRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getMeetingParticipantsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final addParticipantRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getMeetingParticipantRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final editParticipantRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteMeetingParticipantRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final regenerateTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getActiveSessionRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final kickPartcipantsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final kickAllParticipantsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final muteParticipantsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final muteAllParticipantsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final createPollRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getPresetsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postPresetsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getPresetsPresetIdRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final patchPresetsPresetIdRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deletePresetsPresetIdRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAllRecordingsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final startRecordingRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getOneRecordingRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final pauseResumeStopRecordingRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getActiveRecordingRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final startTrackRecordingForAMeetingRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getSessionsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getSessionDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getSessionChatRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getSessionParticipantsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getParticipantDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getSessionSummaryRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final postSessionsSessionIdSummaryRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getSessionTranscriptRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getParticipantDataFromPeerIdRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAllWebhooksRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final addWebhookRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getWebhookRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final replaceWebhookRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final editWebhookRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteWebhookRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getAppsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final createAppRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final registrarDomainsListDomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final registrarDomainsGetDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final registrarDomainsUpdateDomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountRequestTracerRequestTraceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountRolesListRolesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final accountRolesRoleDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listsGetListsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listsCreateAListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listsGetAListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listsUpdateAListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listsDeleteAListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listsGetListItemsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listsCreateListItemsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listsUpdateAllListItemsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listsDeleteListItemsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listsGetAListItemRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listsGetBulkOperationStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listAccountRulesetsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createAccountRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getAccountRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateAccountRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteAccountRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createAccountRulesetRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateAccountRulesetRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteAccountRulesetRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listAccountRulesetVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getAccountRulesetVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteAccountRulesetVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listAccountRulesetVersionRulesByTagRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getAccountEntrypointRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateAccountEntrypointRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listAccountEntrypointRulesetVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getAccountEntrypointRulesetVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final webAnalyticsCreateSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final webAnalyticsGetSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final webAnalyticsUpdateSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final webAnalyticsDeleteSiteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final webAnalyticsListSitesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final webAnalyticsCreateRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final webAnalyticsUpdateRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final webAnalyticsDeleteRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final webAnalyticsListRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final webAnalyticsModifyRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final webAnalyticsGetRumStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final webAnalyticsToggleRumRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final secondaryDnsAclListAcLsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsAclCreateAclRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsAclAclDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsAclUpdateAclRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsAclDeleteAclRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPeerListPeersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPeerCreatePeerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPeerPeerDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPeerUpdatePeerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPeerDeletePeerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsTsigListTsiGsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsTsigCreateTsigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsTsigTsigDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsTsigUpdateTsigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsTsigDeleteTsigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreQuotaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreGetStoreByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreDeleteByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSecretsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSecretCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreDeleteBulkRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreGetByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStorePatchByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSecretDeleteByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreDuplicateByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSystemListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSystemCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSystemGetStoreByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSystemDeleteByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSystemSecretsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSystemSecretCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSystemDeleteBulkRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSystemGetByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSystemPatchByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSystemSecretDeleteByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secretsStoreSystemDuplicateByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final sharesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final sharesGetByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareRecipientsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareRecipientCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareRecipientsUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareRecipientsGetByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareRecipientDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareResourcesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareResourceCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareResourcesGetByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareResourceUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final shareResourceDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final organizationSharesListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final slurperListJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final slurperCreateJobRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final slurperGetJobRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final slurperAbortJobRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final slurperGetJobLogsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final slurperPauseJobRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final slurperGetJobProgressRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final slurperResumeJobRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final slurperAbortAllJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final slurperCheckSourceConnectivityRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final slurperCheckTargetConnectivityRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getAllSsoConnectorsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final initNewSsoConnectorRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final getSsoConnectorRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final updateSsoConnectorStateRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteSsoConnectorRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final beginSsoConnectorVerificationRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final workersKvNamespaceListNamespacesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersKvNamespaceCreateANamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersKvNamespaceGetANamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersKvNamespaceRenameANamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersKvNamespaceRemoveANamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersKvNamespaceWriteMultipleKeyValuePairsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersKvNamespaceDeleteMultipleKeyValuePairsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersKvNamespaceGetMultipleKeyValuePairsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersKvNamespaceListANamespaceSKeysRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersKvNamespaceReadTheMetadataForAKeyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersKvNamespaceReadKeyValuePairRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersKvNamespaceWriteKeyValuePairWithMetadataRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workersKvNamespaceDeleteKeyValuePairRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final streamVideosListVideosRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamVideosInitiateVideoUploadsUsingTusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamVideosRetrieveVideoDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamVideosUpdateVideoDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamVideosDeleteVideoRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamVideosRetreieveEmbedCodeHtmlRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamVideosCreateSignedUrlTokensForVideosRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamVideosUploadVideosFromAUrlRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamVideosUploadVideosViaDirectUploadUrLsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamVideosStorageUsageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listAudioTracksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final editAudioTracksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final deleteAudioTracksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final addAudioTrackRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamSubtitlesCaptionsListCaptionsOrSubtitlesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamSubtitlesCaptionsGetCaptionOrSubtitleForLanguageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamSubtitlesCaptionsUploadCaptionsOrSubtitlesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamSubtitlesCaptionsDeleteCaptionsOrSubtitlesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamSubtitlesCaptionsGenerateCaptionOrSubtitleForLanguageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamSubtitlesCaptionsGetVttCaptionOrSubtitleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamMP4DownloadsListDownloadsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamMP4DownloadsCreateDownloadsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamMP4DownloadsDeleteDownloadsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamDownloadsCreateTypeSpecificDownloadsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamDownloadsDeleteTypeSpecificDownloadsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamVideoClippingClipVideosGivenAStartAndEndTimeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamSigningKeysListSigningKeysRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamSigningKeysCreateSigningKeysRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamSigningKeysDeleteSigningKeysRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamLiveInputsListLiveInputsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamLiveInputsCreateALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamLiveInputsRetrieveALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamLiveInputsUpdateALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamLiveInputsDeleteALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamLiveInputsDisableALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamLiveInputsEnableALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamLiveInputsListAllOutputsAssociatedWithASpecifiedLiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamLiveInputsCreateANewOutputConnectedToALiveInputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamLiveInputsUpdateAnOutputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamLiveInputsDeleteAnOutputRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamWatermarkProfileListWatermarkProfilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamWatermarkProfileCreateWatermarkProfilesViaBasicUploadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamWatermarkProfileDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamWatermarkProfileDeleteWatermarkProfilesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamWebhookViewWebhooksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamWebhookCreateWebhooksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final streamWebhookDeleteWebhooksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountSubscriptionsListSubscriptionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountSubscriptionsCreateSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountSubscriptionsUpdateSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final accountSubscriptionsDeleteSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final tagsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tagsSetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tagsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tagsListKeysRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tagsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tagsListValuesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tagsZoneGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tagsZoneSetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tagsZoneDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tunnelRouteListTunnelRoutesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final tunnelRouteCreateATunnelRouteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final tunnelRouteGetTunnelRouteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final tunnelRouteUpdateATunnelRouteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final tunnelRouteDeleteATunnelRouteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final tunnelRouteGetTunnelRouteByIpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final tunnelVirtualNetworkListVirtualNetworksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final tunnelVirtualNetworkCreateAVirtualNetworkRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final tunnelVirtualNetworkGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final tunnelVirtualNetworkUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final tunnelVirtualNetworkDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final accountApiTokensListTokensRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final accountApiTokensCreateTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final accountApiTokensTokenDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final accountApiTokensUpdateTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final accountApiTokensDeleteTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final accountApiTokensRollTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final accountApiTokensListPermissionGroupsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final accountApiTokensVerifyTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final urlscannerCreateScanBulkV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final urlscannerGetScanDomV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final urlscannerGetScanHarV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final urlscannerGetResponseV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final urlscannerGetScanV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final urlscannerCreateScanV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final urlscannerGetScanScreenshotV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final urlscannerSearchScansV2Requirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeListVectorizeIndexesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeCreateVectorizeIndexRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeGetVectorizeIndexRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeDeleteVectorizeIndexRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeDeleteVectorsByIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeGetVectorsByIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeIndexInfoRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeInsertVectorRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeListVectorsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeCreateMetadataIndexRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeDeleteMetadataIndexRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeListMetadataIndexesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeQueryVectorRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final vectorizeUpsertVectorRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomListWaitingRoomsAccountRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomListWaitingRoomsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomCreateWaitingRoomRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomUpdateWaitingRoomRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomPatchWaitingRoomRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomDeleteWaitingRoomRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomListEventsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomCreateEventRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomEventDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomUpdateEventRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomPatchEventRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomDeleteEventRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomPreviewActiveEventDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomListWaitingRoomRulesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomCreateWaitingRoomRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomReplaceWaitingRoomRulesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomPatchWaitingRoomRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomDeleteWaitingRoomRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomGetWaitingRoomStatusRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomCreateACustomWaitingRoomPagePreviewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomGetZoneSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomUpdateZoneSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final waitingRoomPatchZoneSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerAccountSettingsFetchWorkerAccountSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerAccountSettingsCreateWorkerAccountSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerAssetsUploadRequirements = [const ApiSecurityRequirement({'assets_jwt': []})];
+
+static final workerScriptListWorkersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptSearchWorkersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptDownloadWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptUploadWorkerModuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptDeleteWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptUpdateCreateAssetsUploadSessionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptPutContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptGetContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptSettingsGetSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptSettingsPatchSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerListScriptSecretsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerPutScriptSecretRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerGetScriptSecretRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerDeleteScriptSecretRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptGetSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptPatchSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptGetSubdomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptPostSubdomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptDeleteSubdomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptFetchUsageModelRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptUpdateUsageModelRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerGetNamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerPutNamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerPatchNamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerDeleteNamespaceRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerListScriptsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerDeleteScriptsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerScriptWorkerDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerScriptUploadWorkerModuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerScriptDeleteWorkerRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerScriptUpdateCreateAssetsUploadSessionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerGetScriptBindingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerGetScriptContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerPutScriptContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerListScriptSecretsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerPutScriptSecretsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerGetScriptSecretsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerDeleteScriptSecretRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerGetScriptSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerPatchScriptSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerGetScriptTagsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerPutScriptTagsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerPutScriptTagRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final namespaceWorkerDeleteScriptTagRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerDomainListDomainsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerDomainAttachToDomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerDomainGetADomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerDomainDetachFromDomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final durableObjectsNamespaceListNamespacesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final durableObjectsNamespaceListObjectsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerPlacementListRegionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerDeploymentsListDeploymentsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerDeploymentsCreateDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerDeploymentsGetDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerDeploymentsDeleteDeploymentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerCronTriggerGetCronTriggersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerCronTriggerUpdateCronTriggersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getAccountsWorkersScriptsTailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerTailLogsStartTailRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerTailLogsDeleteTailRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerVersionsListVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerVersionsUploadVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerVersionsGetVersionDetailRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerEnvironmentGetScriptContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerEnvironmentPutScriptContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptEnvironmentGetSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerScriptEnvironmentPatchSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerSubdomainGetSubdomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerSubdomainCreateSubdomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerSubdomainDeleteSubdomainRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listWorkerVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createWorkerVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getWorkerVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteWorkerVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final worListWorkflowsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worGetWorkflowDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worCreateOrModifyWorkflowRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worDeleteWorkflowRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worListWorkflowInstancesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worCreateNewWorkflowInstanceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worDescribeWorkflowInstanceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worSendEventWorkflowInstanceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worChangeStatusWorkflowInstanceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worBatchCreateWorkflowInstanceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worBatchTerminateWorkflowInstancesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worStatusTerminateWorkflowInstancesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worListWorkflowVersionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worDescribeWorkflowVersionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worDescribeWorkflowVersionsDagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final worDescribeWorkflowVersionsGraphRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zeroTrustAccountsGetConnectivitySettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final zeroTrustAccountsPatchConnectivitySettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final zeroTrustNetworksRouteHostnameListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final zeroTrustNetworksRouteHostnameCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final zeroTrustNetworksRouteHostnameGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final zeroTrustNetworksRouteHostnameUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final zeroTrustNetworksRouteHostnameDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final zeroTrustNetworksSubnetsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final zeroTrustNetworksSubnetUpdateCloudflareSourceRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final zeroTrustNetworksSubnetCreateWarpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final zeroTrustNetworksSubnetGetWarpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final zeroTrustNetworksSubnetUpdateWarpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final zeroTrustNetworksSubnetDeleteWarpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'user_service_key': []})];
+
+static final dlpRiskScoreSummaryGetForUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpRiskScoreResetPostRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpRiskScoreBehaviorsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpRiskScoreBehaviorsPutRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpRiskScoreSummaryGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpZtRiskScoreIntegrationListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpZtRiskScoreIntegrationCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpZtRiskScoreIntegrationGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpZtRiskScoreIntegrationUpdateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpZtRiskScoreIntegrationDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final dlpZtRiskScoreIntegrationGetByReferenceIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final customPagesForAnAccountListCustomPagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customPagesForAnAccountGetACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customPagesForAnAccountUpdateACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getApplicationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createApplicationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getApplicationByIdRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateApplicationVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final originCaListCertificatesRequirements = [const ApiSecurityRequirement({'user_service_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final originCaCreateCertificateRequirements = [const ApiSecurityRequirement({'user_service_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final originCaGetCertificateRequirements = [const ApiSecurityRequirement({'user_service_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final originCaRevokeCertificateRequirements = [const ApiSecurityRequirement({'user_service_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final cloudflareIpsCloudflareIpDetailsRequirements = [const ApiSecurityRequirement({})];
+
+static final userSAccountMembershipsListMembershipsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final userSAccountMembershipsMembershipDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final userSAccountMembershipsUpdateMembershipRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final userSAccountMembershipsDeleteMembershipRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final organizationListOrganizationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final organizationsCreateUserOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final organizationsRetrieveRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final organizationsModifyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final organizationsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final organizationsGetAccountsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final organizationsGetProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final organizationsModifyProfileRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final membersListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final membersCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final membersRetrieveRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final membersDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final membersBatchCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final radarGetAiBotsSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAiBotsTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAiBotsTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAiInferenceSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAiInferenceTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAnnotationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAnnotationsOutagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAnnotationsOutagesTopRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetDnsAs112SummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetDnsAs112TimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetDnsAs112TimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetDnsAs112TopLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetDnsAs112TopLocationsByDnssecRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetDnsAs112TopLocationsByEdnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetDnsAs112TopLocationsByIpVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer3SummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer3TimeseriesByBytesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer3TimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer3TopAttacksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer3TopOriginLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer3TopTargetLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer7SummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer7TimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer7TimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer7TopOriginAsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer7TopAttacksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer7TopOriginLocationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAttacksLayer7TopTargetLocationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpHijacksEventsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpIpsTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpRouteLeakEventsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpRoutesAsnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpPfx2asMoasRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpPfx2asRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpRoutesRealtimeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpRoutesStatsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpRpkiAspaChangesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpRpkiAspaSnapshotRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpRpkiAspaTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpTopAsesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpTopAsnsByPrefixesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBgpTopPrefixesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBotsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBotDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBotsSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBotsTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetBotsTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetCrawlersSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetCrawlersTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetCertificateAuthoritiesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetCertificateAuthorityDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetCertificateLogsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetCertificateLogDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetCtSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetCtTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetCtTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetReportsDatasetsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetReportsDatasetDownloadRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarPostReportsDatasetDownloadUrlRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetDnsSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetDnsTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetDnsTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetDnsTopAsesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetDnsTopLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEmailRoutingSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEmailRoutingTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEmailSecuritySummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEmailSecurityTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEmailSecurityTopTldsByMessagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEmailSecurityTopTldsByMaliciousRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEmailSecurityTopTldsBySpamRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEmailSecurityTopTldsBySpoofRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEntitiesAsnListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEntitiesAsnByIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAsnsAsSetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAsnsRelRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetAsBotnetThreatFeedRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEntitiesAsnByIpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEntitiesIpRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEntitiesLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetEntitiesLocationByAlpha2Requirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetGeolocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetGeolocationDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopAsesByHttpRequestsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopAsesByBotClassRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopAsesByBrowserFamilyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopAsesByDeviceTypeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopAsesByHttpProtocolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopAsesByHttpVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopAsesByIpVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopAsesByOperatingSystemRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopAsesByTlsVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopLocationsByHttpRequestsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopLocationsByBotClassRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopLocationsByBrowserFamilyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopLocationsByDeviceTypeRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopLocationsByHttpProtocolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopLocationsByHttpVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopLocationsByIpVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopLocationsByOperatingSystemRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetHttpTopLocationsByTlsVersionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetLeakedCredentialChecksSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetLeakedCredentialChecksTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetNetflowsSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetNetflowsTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetNetflowsTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetNetflowsTopAsesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetNetflowsTopLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetOriginsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetOriginDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetOriginsSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetOriginsTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetOriginsTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetOriginPostQuantumSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetOriginPostQuantumTimeseriesGroupsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetPostQuantumTlsSupportRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetQualityIndexSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetQualityIndexTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetQualitySpeedHistogramRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetQualitySpeedSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetQualitySpeedTopAsesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetQualitySpeedTopLocationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetRankingDomainDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetRankingDomainTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetRankingTopDomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetRankingInternetServicesCategoriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetRankingInternetServicesTimeseriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetRankingTopInternetServicesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetRobotsTxtTopDomainCategoriesByFilesParsedRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetRobotsTxtTopUserAgentsByDirectiveRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetSearchGlobalRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetTcpResetsTimeoutsSummaryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetTcpResetsTimeoutsTimeseriesGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetTldsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetTldDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetTrafficAnomaliesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final radarGetTrafficAnomaliesTopRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final tenantsRetrieveTenantRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tenantsValidAccountTypesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tenantsListAccountsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tenantsListEntitlementsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tenantsListMembershipsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final userDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final userEditUserRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final userListUserTenantsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAccessRulesForAUserListIpAccessRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final ipAccessRulesForAUserCreateAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final ipAccessRulesForAUserUpdateAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final ipAccessRulesForAUserDeleteAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final userSInvitesListInvitationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final userSInvitesInvitationDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final userSInvitesRespondToInvitationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final loadBalancerMonitorsListMonitorsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerMonitorsCreateMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerMonitorsMonitorDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerMonitorsUpdateMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerMonitorsPatchMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerMonitorsDeleteMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerMonitorsPreviewMonitorRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerMonitorsListMonitorReferencesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerMonitorsPreviewResultRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerPoolsListPoolsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerPoolsCreatePoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerPoolsPatchPoolsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerPoolsPoolDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerPoolsUpdatePoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerPoolsPatchPoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerPoolsDeletePoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerPoolsPoolHealthDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerPoolsPreviewPoolRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerPoolsListPoolReferencesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancerHealthcheckEventsListHealthcheckEventsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final userSubscriptionGetUserSubscriptionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final userSubscriptionUpdateUserSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final userSubscriptionDeleteUserSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final userApiTokensListTokensRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final userApiTokensCreateTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final userApiTokensTokenDetailsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final userApiTokensUpdateTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final userApiTokensDeleteTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final userApiTokensRollTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final permissionGroupsListPermissionGroupsRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final userApiTokensVerifyTokenRequirements = [const ApiSecurityRequirement({'api_token': []})];
+
+static final zonesGetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zonesPostRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zones0GetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zones0PatchRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zones0DeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final putZonesZoneIdActivationCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zonePurgeRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessApplicationsListAccessApplicationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessApplicationsAddABookmarkApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessApplicationsGetAnAccessApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessApplicationsUpdateABookmarkApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessApplicationsDeleteAnAccessApplicationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessApplicationsRevokeServiceTokensRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessApplicationsPutUpdateAccessApplicationSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessApplicationsPatchUpdateAccessApplicationSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessApplicationsTestAccessPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessShortLivedCertificateCAsGetAShortLivedCertificateCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessShortLivedCertificateCAsCreateAShortLivedCertificateCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessShortLivedCertificateCAsDeleteAShortLivedCertificateCaRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessShortLivedCertificateCAsListShortLivedCertificateCAsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessPoliciesListAccessPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessPoliciesCreateAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessPoliciesGetAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessPoliciesUpdateAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessPoliciesDeleteAnAccessPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessMtlsAuthenticationListMtlsCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessMtlsAuthenticationGetAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessMtlsAuthenticationDeleteAnMtlsCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessMtlsAuthenticationListMtlsCertificatesHostnameSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessGroupsListAccessGroupsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessGroupsCreateAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessGroupsGetAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessGroupsUpdateAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessGroupsDeleteAnAccessGroupRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessIdentityProvidersListAccessIdentityProvidersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessIdentityProvidersAddAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessIdentityProvidersGetAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessIdentityProvidersUpdateAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessIdentityProvidersDeleteAnAccessIdentityProviderRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelZeroTrustOrganizationGetYourZeroTrustOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessServiceTokensListServiceTokensRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessServiceTokensCreateAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessServiceTokensGetAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessServiceTokensUpdateAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAccessServiceTokensDeleteAServiceTokenRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customOriginTrustStoreListDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customOriginTrustStoreCreateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customOriginTrustStoreDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customOriginTrustStoreDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final totalTlsSettingsDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final totalTlsEnableOrDisableTotalTlsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final argoAnalyticsForZoneArgoAnalyticsForAZoneRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final argoAnalyticsForGeolocationArgoAnalyticsForAZoneAtDifferentPoPsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final apiShieldSettingsRetrieveInformationAboutSpecificConfigurationPropertiesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final apiShieldSettingsSetConfigurationPropertiesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapiRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final apiShieldApiPatchDiscoveredOperationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final apiShieldApiPatchDiscoveredOperationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final apiShieldExpressionTemplatesFallthroughRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final apiShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final apiShieldEndpointManagementAddOperationsToAZoneRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final apiShieldEndpointManagementDeleteMultipleOperationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final apiShieldEndpointManagementRetrieveInformationAboutAnOperationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final apiShieldEndpointManagementDeleteAnOperationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final apiShieldEndpointManagementAddOperationToAZoneRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final apiShieldEndpointManagementRetrieveOperationsAndFeaturesAsOpenApiSchemasRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final argoSmartRoutingGetArgoSmartRoutingSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final argoSmartRoutingPatchArgoSmartRoutingSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tieredCachingGetTieredCachingSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tieredCachingPatchTieredCachingSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneRatePlanListAvailablePlansRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zoneRatePlanAvailablePlanDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zoneRatePlanListAvailableRatePlansRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final botManagementForAZoneGetConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final botManagementForAZoneUpdateConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final botManagementZoneFeedbackListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final botManagementZoneFeedbackCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsGetCacheReserveSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsChangeCacheReserveSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsGetCacheReserveClearRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsStartCacheReserveClearRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsGetRegionalTieredCacheSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsChangeRegionalTieredCacheSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsGetVariantsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsChangeVariantsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsDeleteVariantsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsGetOriginPostQuantumEncryptionSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartTieredCacheGetSmartTieredCacheSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartTieredCachePatchSmartTieredCacheSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartTieredCacheDeleteSmartTieredCacheSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final clientCertificateForAZoneListHostnameAssociationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final clientCertificateForAZonePutHostnameAssociationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final clientCertificateForAZoneListClientCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final clientCertificateForAZoneCreateClientCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final clientCertificateForAZoneClientCertificateDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final clientCertificateForAZoneEditClientCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final clientCertificateForAZoneDeleteClientCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final zoneCloudConnectorRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCloudConenctorRulesPutRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final wafContentScanningDisableRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final wafContentScanningEnableRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final wafContentScanningListCustomScanExpressionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final wafContentScanningAddCustomScanExpressionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final wafContentScanningDeleteCustomScanExpressionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final wafContentScanningGetStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final wafContentScanningUpdateSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final customSslForAZoneListSslConfigurationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customSslForAZoneCreateSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customSslForAZoneSslConfigurationDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customSslForAZoneEditSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customSslForAZoneDeleteSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customSslForAZoneRePrioritizeSslCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customHostnameForAZoneListCustomHostnamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customHostnameForAZoneCreateCustomHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customHostnameForAZoneCustomHostnameDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customHostnameForAZoneEditCustomHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customHostnameForAZoneEditCustomCertificateCustomHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customHostnameFallbackOriginForAZoneGetFallbackOriginForCustomHostnamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final customHostnameFallbackOriginForAZoneDeleteFallbackOriginForCustomHostnamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final dcvDelegationUuidGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final dnsAnalyticsTableRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsAnalyticsByTimeRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZoneListDnsRecordsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZoneCreateDnsRecordRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZoneDnsRecordDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZoneUpdateDnsRecordRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZonePatchDnsRecordRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZoneDeleteDnsRecordRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZoneBatchDnsRecordsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZoneExportDnsRecordsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZoneImportDnsRecordsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZoneReviewDnsScanRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZoneApplyDnsScanResultsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZoneTriggerDnsScanRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsRecordsForAZoneGetUsageRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsSettingsForAZoneListDnsSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnsSettingsForAZoneUpdateDnsSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnssecDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnssecEditDnssecStatusRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final dnssecDeleteDnssecRecordsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingSettingsGetEmailRoutingSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingSettingsEmailRoutingDnsSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingSettingsEnableEmailRoutingDnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingSettingsUnlockEmailRoutingDnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingSettingsDisableEmailRoutingDnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingRulesListRoutingRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingRulesCreateRoutingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingRulesGetRoutingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingRulesUpdateRoutingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingRulesDeleteRoutingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingRulesGetCatchAllRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailRoutingRulesUpdateCatchAllRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSendingSubdomainsListSendingSubdomainsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSendingSubdomainsCreateSendingSubdomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSendingSubdomainsGetSendingSubdomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSendingSubdomainsDeleteSendingSubdomainRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final emailSendingSubdomainsGetSendingSubdomainDnsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final ipAccessRulesForAZoneListIpAccessRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final ipAccessRulesForAZoneCreateAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final ipAccessRulesForAZoneUpdateAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final ipAccessRulesForAZoneDeleteAnIpAccessRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zoneLockdownListZoneLockdownRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zoneLockdownCreateAZoneLockdownRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zoneLockdownGetAZoneLockdownRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zoneLockdownUpdateAZoneLockdownRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zoneLockdownDeleteAZoneLockdownRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final userAgentBlockingRulesListUserAgentBlockingRulesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final userAgentBlockingRulesCreateAUserAgentBlockingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final userAgentBlockingRulesGetAUserAgentBlockingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final userAgentBlockingRulesUpdateAUserAgentBlockingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final userAgentBlockingRulesDeleteAUserAgentBlockingRuleRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final fraudDetectionZoneGetSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final fraudDetectionZoneUpdateSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final healthChecksListHealthChecksRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final healthChecksCreateHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final healthChecksHealthCheckDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final healthChecksUpdateHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final healthChecksPatchHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final healthChecksDeleteHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final healthChecksCreatePreviewHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final healthChecksHealthCheckPreviewDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final healthChecksDeletePreviewHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartShieldListHealthChecksRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartShieldCreateHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartShieldHealthCheckDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartShieldUpdateHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartShieldPatchHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartShieldDeleteHealthCheckRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zones0HoldGetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zones0HoldPostRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zones0HoldPatchRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zones0HoldDeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final perHostnameTlsSettingsListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final perHostnameTlsSettingsGetRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final perHostnameTlsSettingsPutRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final perHostnameTlsSettingsDeleteRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final keylessSslForAZoneListKeylessSslConfigurationsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final keylessSslForAZoneCreateKeylessSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final keylessSslForAZoneGetKeylessSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final keylessSslForAZoneEditKeylessSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final keylessSslForAZoneDeleteKeylessSslConfigurationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final wafProductApiLeakedCredentialsGetStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final wafProductApiLeakedCredentialsSetStatusRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final wafProductApiLeakedCredentialsListDetectionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final wafProductApiLeakedCredentialsCreateDetectionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final wafProductApiLeakedCredentialsGetDetectionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final wafProductApiLeakedCredentialsUpdateDetectionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final wafProductApiLeakedCredentialsDeleteDetectionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancersListLoadBalancersRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancersCreateLoadBalancerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancersLoadBalancerDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancersUpdateLoadBalancerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancersPatchLoadBalancerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final loadBalancersDeleteLoadBalancerRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getZonesZoneIdLogpushDatasetsDatasetIdFieldsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getZonesZoneIdLogpushDatasetsDatasetIdJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getZonesZoneIdLogpushJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postZonesZoneIdLogpushJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getZonesZoneIdLogpushJobsJobIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final putZonesZoneIdLogpushJobsJobIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final deleteZonesZoneIdLogpushJobsJobIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postZonesZoneIdLogpushOwnershipRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postZonesZoneIdLogpushOwnershipValidateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postZonesZoneIdLogpushValidateDestinationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postZonesZoneIdLogpushValidateDestinationExistsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postZonesZoneIdLogpushValidateOriginRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getZonesZoneIdLogpushEdgeJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postZonesZoneIdLogpushEdgeJobsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getZonesZoneIdLogsControlRetentionFlagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final postZonesZoneIdLogsControlRetentionFlagRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getZonesZoneIdLogsRayidsRayIdRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getZonesZoneIdLogsReceivedRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final getZonesZoneIdLogsReceivedFieldsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final listManagedTransformsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateManagedTransformsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteManagedTransformsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneLevelAuthenticatedOriginPullsListCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final zoneLevelAuthenticatedOriginPullsUploadCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final zoneLevelAuthenticatedOriginPullsGetCertificateDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final zoneLevelAuthenticatedOriginPullsDeleteCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final zoneLevelAuthenticatedOriginPullsGetEnablementSettingForZoneRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final zoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final perHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final perHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthenticationRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final perHostnameAuthenticatedOriginPullListCertificatesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final perHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final perHostnameAuthenticatedOriginPullGetTheHostnameClientCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final perHostnameAuthenticatedOriginPullDeleteHostnameClientCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final pageShieldGetSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageShieldUpdateSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageShieldListConnectionsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageShieldGetConnectionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageShieldListCookiesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageShieldGetCookieRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageShieldListPoliciesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageShieldCreatePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageShieldGetPolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageShieldUpdatePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageShieldDeletePolicyRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageShieldListScriptsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageShieldGetScriptRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageRulesListPageRulesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageRulesCreateAPageRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageRulesGetAPageRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageRulesUpdateAPageRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageRulesEditAPageRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final pageRulesDeleteAPageRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listZoneRulesetsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createZoneRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getZoneRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateZoneRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteZoneRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final createZoneRulesetRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateZoneRulesetRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteZoneRulesetRuleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listZoneRulesetVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getZoneRulesetVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteZoneRulesetVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listZoneRulesetVersionRulesByTagRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getZoneEntrypointRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateZoneEntrypointRulesetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listZoneEntrypointRulesetVersionsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getZoneEntrypointRulesetVersionRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationListSchemasPaginatedRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationCreateSchemaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationGetSchemaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationEditSchemaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationDeleteSchemaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationExtractOperationsFromSchemaRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationListSchemaHostsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationGetSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationUpdateSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationEditSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationListPerOperationSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationBulkEditPerOperationSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationGetPerOperationSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationUpdatePerOperationSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final schemaValidationDeletePerOperationSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsSecondaryZoneForceAxfrRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsSecondaryZoneSecondaryZoneConfigurationDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsSecondaryZoneCreateSecondaryZoneConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsSecondaryZoneUpdateSecondaryZoneConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsSecondaryZoneDeleteSecondaryZoneConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPrimaryZonePrimaryZoneConfigurationDetailsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPrimaryZoneCreatePrimaryZoneConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPrimaryZoneUpdatePrimaryZoneConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPrimaryZoneDeletePrimaryZoneConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPrimaryZoneDisableOutgoingZoneTransfersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPrimaryZoneEnableOutgoingZoneTransfersRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPrimaryZoneForceDnsNotifyRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final secondaryDnsPrimaryZoneGetOutgoingZoneTransferStatusRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getSecurityTxtRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final updateSecurityTxtRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final deleteSecurityTxtRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final zoneSettingsGetSingleSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneSettingsEditSingleSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsGetAegisSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsChangeAegisSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneSettingsGetFontsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneSettingsChangeFontsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsGetOriginH2MaxStreamsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsChangeOriginH2MaxStreamsSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsGetOriginMaxHttpVersionSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneCacheSettingsChangeOriginMaxHttpVersionSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneSettingsGetSpeedBrainSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final zoneSettingsChangeSpeedBrainSettingRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final sslDetectorAutomaticModeGetEnrollmentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final sslDetectorAutomaticModePatchEnrollmentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getZonesZoneIdentifierZarazConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final putZonesZoneIdentifierZarazConfigRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getZonesZoneIdentifierZarazDefaultRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getZonesZoneIdentifierZarazExportRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getZonesZoneIdentifierZarazHistoryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final putZonesZoneIdentifierZarazHistoryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getZonesZoneIdentifierZarazConfigHistoryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final postZonesZoneIdentifierZarazPublishRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getZonesZoneIdentifierZarazWorkflowRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final putZonesZoneIdentifierZarazWorkflowRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartShieldGetSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartShieldPatchSettingsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartShieldSettingsGetCacheReserveClearRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final smartShieldSettingsStartCacheReserveClearRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listZoneSnippetsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getZoneSnippetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateZoneSnippetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteZoneSnippetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getZoneSnippetContentRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final listZoneSnippetRulesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateZoneSnippetRulesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteZoneSnippetRulesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final spectrumAggregateAnalyticsGetCurrentAggregatedAnalyticsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final spectrumAnalyticsByTimeGetAnalyticsByTimeRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final spectrumAnalyticsSummaryGetAnalyticsSummaryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final spectrumApplicationsListSpectrumApplicationsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final spectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final spectrumApplicationsGetSpectrumApplicationConfigurationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final spectrumApplicationsUpdateSpectrumApplicationConfigurationUsingANameForTheOriginRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final spectrumApplicationsDeleteSpectrumApplicationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final speedGetAvailabilitiesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final speedListPagesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final speedListTestHistoryRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final speedCreateTestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final speedDeleteTestsRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final speedGetTestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final speedListPageTrendRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final speedGetScheduledTestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final speedCreateScheduledTestRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final speedDeleteTestScheduleRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final analyzeCertificateRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final certificatePacksListCertificatePacksRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final certificatePacksGetCertificatePackRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final certificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final certificatePacksDeleteAdvancedCertificateManagerCertificatePackRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final certificatePacksOrderAdvancedCertificateManagerCertificatePackRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final certificatePacksGetCertificatePackQuotasRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final universalSslSettingsForAZoneUniversalSslSettingsDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final universalSslSettingsForAZoneEditUniversalSslSettingsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final sslVerificationDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final sslVerificationEditSslCertificatePackValidationMethodRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_token': []})];
+
+static final zoneSubscriptionDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zoneSubscriptionCreateZoneSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final zoneSubscriptionUpdateZoneSubscriptionRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final tokenValidationConfigListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationConfigCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationConfigGetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationConfigEditRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationConfigDeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationConfigCredentialsUpdateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationRulesListRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationRulesCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationRulesGetRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationRulesEditRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationRulesDeleteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationRulesBulkCreateRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationRulesBulkEditRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final tokenValidationRulesPreviewRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final getUrlNormalizationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final updateUrlNormalizationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final deleteUrlNormalizationRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final web3HostnameListWeb3HostnamesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final web3HostnameCreateWeb3HostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final web3HostnameDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final web3HostnameEditWeb3HostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final web3HostnameDeleteWeb3HostnameRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final web3HostnameIpfsUniversalPathGatewayContentListDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final web3HostnameUpdateIpfsUniversalPathGatewayContentListRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final web3HostnameListIpfsUniversalPathGatewayContentListEntriesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final web3HostnameCreateIpfsUniversalPathGatewayContentListEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final web3HostnameIpfsUniversalPathGatewayContentListEntryDetailsRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final web3HostnameEditIpfsUniversalPathGatewayContentListEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': [], 'api_token': []})];
+
+static final workerRoutesListRoutesRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerRoutesCreateRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerRoutesGetRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerRoutesUpdateRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final workerRoutesDeleteRouteRequirements = [const ApiSecurityRequirement({'api_token': []}), const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customPagesForAZoneListCustomPagesRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customPagesForAZoneGetACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static final customPagesForAZoneUpdateACustomPageRequirements = [const ApiSecurityRequirement({'api_email': [], 'api_key': []})];
+
+static ApiConfig applyApiEmail(ApiConfig config, String value, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'X-Auth-Email': value}); } 
+static ApiConfig applyApiKey(ApiConfig config, String value, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'X-Auth-Key': value}); } 
+static ApiConfig applyApiToken(ApiConfig config, String token, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'}); } 
+static ApiConfig applyUserServiceKey(ApiConfig config, String value, ) { return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'X-Auth-User-Service-Key': value}); } 
+ }
