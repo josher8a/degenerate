@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_dns_protection/configs/dns_protection/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_dns_protection/configs/dns_protection/rules',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_dns_protection/configs/dns_protection/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_dns_protection/configs/dns_protection/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -80,7 +80,7 @@ Future<ApiResult<ResponseCommon28, Never>> deleteDnsProtectionRulesForAccount({r
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_dns_protection/configs/dns_protection/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_dns_protection/configs/dns_protection/rules',
   headers: headers,
   options: options,
 );
@@ -101,7 +101,7 @@ Future<ApiResult<DosDnsProtectionRule?, Never>> getDnsProtectionRule({required D
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_dns_protection/configs/dns_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_dns_protection/configs/dns_protection/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -124,7 +124,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_dns_protection/configs/dns_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_dns_protection/configs/dns_protection/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -147,7 +147,7 @@ Future<ApiResult<ResponseCommon28, Never>> deleteDnsProtectionRule({required Dos
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_dns_protection/configs/dns_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_dns_protection/configs/dns_protection/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -183,7 +183,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/allowlist',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/allowlist',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -208,7 +208,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/allowlist',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/allowlist',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -231,7 +231,7 @@ Future<ApiResult<ResponseCommon28, Never>> deleteAllowlistPrefixesForAccount({re
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/allowlist',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/allowlist',
   headers: headers,
   options: options,
 );
@@ -252,7 +252,7 @@ Future<ApiResult<DosInfraPrefix?, Never>> getAllowlistPrefix({required DosIdenti
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/allowlist/${Uri.encodeComponent(prefixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/allowlist/${Uri.encodeComponent(prefixId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -275,7 +275,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/allowlist/${Uri.encodeComponent(prefixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/allowlist/${Uri.encodeComponent(prefixId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -298,7 +298,7 @@ Future<ApiResult<ResponseCommon28, Never>> deleteAllowlistPrefix({required DosId
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/allowlist/${Uri.encodeComponent(prefixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/allowlist/${Uri.encodeComponent(prefixId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -334,7 +334,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/prefixes',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -359,7 +359,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/prefixes',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -382,7 +382,7 @@ Future<ApiResult<ResponseCommon28, Never>> deletePrefixesForAccount({required Do
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/prefixes',
   headers: headers,
   options: options,
 );
@@ -403,7 +403,7 @@ Future<ApiResult<DosPrefix?, Never>> getPrefix({required DosIdentifier accountId
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes/${Uri.encodeComponent(prefixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/prefixes/${Uri.encodeComponent(prefixId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -426,7 +426,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes/${Uri.encodeComponent(prefixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/prefixes/${Uri.encodeComponent(prefixId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -449,7 +449,7 @@ Future<ApiResult<ResponseCommon28, Never>> deletePrefix({required DosIdentifier 
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes/${Uri.encodeComponent(prefixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/prefixes/${Uri.encodeComponent(prefixId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -471,7 +471,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/prefixes/bulk',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/prefixes/bulk',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -512,7 +512,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/filters',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/syn_protection/filters',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -537,7 +537,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/filters',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/syn_protection/filters',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -560,7 +560,7 @@ Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionFiltersForAccount(
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/filters',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/syn_protection/filters',
   headers: headers,
   options: options,
 );
@@ -581,7 +581,7 @@ Future<ApiResult<DosExpressionFilter?, Never>> getSynProtectionFilter({required 
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/filters/${Uri.encodeComponent(filterId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/syn_protection/filters/${Uri.encodeComponent(filterId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -604,7 +604,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/filters/${Uri.encodeComponent(filterId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/syn_protection/filters/${Uri.encodeComponent(filterId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -627,7 +627,7 @@ Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionFilter({required D
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/filters/${Uri.encodeComponent(filterId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/syn_protection/filters/${Uri.encodeComponent(filterId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -663,7 +663,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/syn_protection/rules',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -688,7 +688,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/syn_protection/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -711,7 +711,7 @@ Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionRulesForAccount({r
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/syn_protection/rules',
   headers: headers,
   options: options,
 );
@@ -732,7 +732,7 @@ Future<ApiResult<DosSynProtectionRule?, Never>> getSynProtectionRule({required D
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/syn_protection/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -755,7 +755,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/syn_protection/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -778,7 +778,7 @@ Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionRule({required Dos
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/syn_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/syn_protection/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -817,7 +817,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -842,7 +842,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -865,7 +865,7 @@ Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionFiltersForAcco
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters',
   headers: headers,
   options: options,
 );
@@ -886,7 +886,7 @@ Future<ApiResult<DosExpressionFilter?, Never>> getTcpFlowProtectionFilter({requi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/${Uri.encodeComponent(filterId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/${Uri.encodeComponent(filterId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -909,7 +909,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/${Uri.encodeComponent(filterId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/${Uri.encodeComponent(filterId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -932,7 +932,7 @@ Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionFilter({requir
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/${Uri.encodeComponent(filterId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/${Uri.encodeComponent(filterId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -968,7 +968,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -993,7 +993,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -1016,7 +1016,7 @@ Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionRulesForAccoun
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules',
   headers: headers,
   options: options,
 );
@@ -1037,7 +1037,7 @@ Future<ApiResult<DosTcpFlowProtectionRule?, Never>> getTcpFlowProtectionRule({re
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -1060,7 +1060,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -1083,7 +1083,7 @@ Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionRule({required
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -1104,7 +1104,7 @@ Future<ApiResult<DosProtectionStatus?, Never>> getProtectionStatus({required Dos
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_protection_status',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_protection_status',
   headers: headers,
   options: options,
 );
@@ -1127,7 +1127,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/advanced_tcp_protection/configs/tcp_protection_status',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/advanced_tcp_protection/configs/tcp_protection_status',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

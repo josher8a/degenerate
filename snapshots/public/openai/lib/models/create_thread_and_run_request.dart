@@ -160,6 +160,6 @@ CreateThreadAndRunRequest copyWith({String? assistantId, CreateThreadRequest? Fu
 
 @override int get hashCode => Object.hash(assistantId, thread, model, instructions, Object.hashAll(tools ?? const []), toolResources, metadata, temperature, topP, stream, maxPromptTokens, maxCompletionTokens, truncationStrategy, toolChoice, parallelToolCalls, responseFormat);
 
-@override String toString() => 'CreateThreadAndRunRequest(assistantId: $assistantId, thread: $thread, model: $model, instructions: $instructions, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, stream: $stream, maxPromptTokens: $maxPromptTokens, maxCompletionTokens: $maxCompletionTokens, truncationStrategy: $truncationStrategy, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, responseFormat: $responseFormat)';
+@override String toString() => 'CreateThreadAndRunRequest(\n  assistantId: $assistantId,\n  thread: $thread,\n  model: $model,\n  instructions: $instructions,\n  tools: $tools,\n  toolResources: $toolResources,\n  metadata: $metadata,\n  temperature: $temperature,\n  topP: $topP,\n  stream: $stream,\n  maxPromptTokens: $maxPromptTokens,\n  maxCompletionTokens: $maxCompletionTokens,\n  truncationStrategy: $truncationStrategy,\n  toolChoice: $toolChoice,\n  parallelToolCalls: $parallelToolCalls,\n  responseFormat: $responseFormat,\n)';
 
  }

@@ -52,9 +52,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('desti
       json.containsKey('version') && json['version'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.isEmpty) errors.add('name: length must be >= 1');
 if (name.length > 128) errors.add('name: length must be <= 128');
-if (source.length < 1) errors.add('source: must have >= 1 items');
+if (source.isEmpty) errors.add('source: must have >= 1 items');
 return errors; } 
 CloudflarePipelinesWorkersPipelinesPipeline copyWith({CloudflarePipelinesWorkersPipelinesPipelineDestination? destination, String? endpoint, String? id, String? name, List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource>? source, double? version, }) { return CloudflarePipelinesWorkersPipelinesPipeline(
   destination: destination ?? this.destination,

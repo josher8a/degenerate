@@ -18,8 +18,8 @@ final DateTime start;
 final bool? success;
 
 Map<String, dynamic> toJson() { return {
-  'end': end != null ? end?.toIso8601String() : null,
-  'error': error != null ? error?.toJson() : null,
+  'end': end?.toIso8601String(),
+  'error': error?.toJson(),
   'start': start.toIso8601String(),
   'success': success,
 }; } 

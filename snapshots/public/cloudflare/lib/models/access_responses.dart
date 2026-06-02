@@ -111,6 +111,6 @@ AccessResponses copyWith({String? Function()? cfResourceId, String? Function()? 
 
 @override int get hashCode => Object.hash(cfResourceId, errorDescription, idpId, idpResourceId, loggedAt, requestBody, requestMethod, resourceGroupName, resourceType, resourceUserEmail, status);
 
-@override String toString() => 'AccessResponses(cfResourceId: $cfResourceId, errorDescription: $errorDescription, idpId: $idpId, idpResourceId: $idpResourceId, loggedAt: $loggedAt, requestBody: $requestBody, requestMethod: $requestMethod, resourceGroupName: $resourceGroupName, resourceType: $resourceType, resourceUserEmail: $resourceUserEmail, status: $status)';
+@override String toString() => 'AccessResponses(\n  cfResourceId: $cfResourceId,\n  errorDescription: $errorDescription,\n  idpId: $idpId,\n  idpResourceId: $idpResourceId,\n  loggedAt: $loggedAt,\n  requestBody: $requestBody,\n  requestMethod: $requestMethod,\n  resourceGroupName: $resourceGroupName,\n  resourceType: $resourceType,\n  resourceUserEmail: $resourceUserEmail,\n  status: $status,\n)';
 
  }

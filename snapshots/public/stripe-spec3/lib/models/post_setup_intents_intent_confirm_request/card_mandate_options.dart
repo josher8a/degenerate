@@ -88,6 +88,6 @@ CardMandateOptions copyWith({int? amount, MandatePaytoAmountType? amountType, St
 
 @override int get hashCode => Object.hash(amount, amountType, currency, description, endDate, interval, intervalCount, reference, startDate, Object.hashAll(supportedTypes ?? const []));
 
-@override String toString() => 'CardMandateOptions(amount: $amount, amountType: $amountType, currency: $currency, description: $description, endDate: $endDate, interval: $interval, intervalCount: $intervalCount, reference: $reference, startDate: $startDate, supportedTypes: $supportedTypes)';
+@override String toString() => 'CardMandateOptions(\n  amount: $amount,\n  amountType: $amountType,\n  currency: $currency,\n  description: $description,\n  endDate: $endDate,\n  interval: $interval,\n  intervalCount: $intervalCount,\n  reference: $reference,\n  startDate: $startDate,\n  supportedTypes: $supportedTypes,\n)';
 
  }

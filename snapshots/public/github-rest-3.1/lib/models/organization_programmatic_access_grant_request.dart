@@ -110,6 +110,6 @@ OrganizationProgrammaticAccessGrantRequest copyWith({int? id, String? Function()
 
 @override int get hashCode => Object.hash(id, reason, owner, repositorySelection, repositoriesUrl, permissions, createdAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt);
 
-@override String toString() => 'OrganizationProgrammaticAccessGrantRequest(id: $id, reason: $reason, owner: $owner, repositorySelection: $repositorySelection, repositoriesUrl: $repositoriesUrl, permissions: $permissions, createdAt: $createdAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)';
+@override String toString() => 'OrganizationProgrammaticAccessGrantRequest(\n  id: $id,\n  reason: $reason,\n  owner: $owner,\n  repositorySelection: $repositorySelection,\n  repositoriesUrl: $repositoriesUrl,\n  permissions: $permissions,\n  createdAt: $createdAt,\n  tokenId: $tokenId,\n  tokenName: $tokenName,\n  tokenExpired: $tokenExpired,\n  tokenExpiresAt: $tokenExpiresAt,\n  tokenLastUsedAt: $tokenLastUsedAt,\n)';
 
  }

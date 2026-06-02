@@ -36,7 +36,7 @@ return execute(
   onSuccess: (response) {
     return CopilotOrganizationDetails.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// List all Copilot seat assignments for an organization
@@ -78,7 +78,7 @@ return execute(
   onSuccess: (response) {
     return CopilotListCopilotSeatsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Add teams to the Copilot subscription for an organization
@@ -114,7 +114,7 @@ return execute(
   onSuccess: (response) {
     return CopilotAddCopilotSeatsForTeamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Remove teams from the Copilot subscription for an organization
@@ -149,7 +149,7 @@ return execute(
   onSuccess: (response) {
     return CopilotCancelCopilotSeatAssignmentForTeamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Add users to the Copilot subscription for an organization
@@ -185,7 +185,7 @@ return execute(
   onSuccess: (response) {
     return CopilotAddCopilotSeatsForUsersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Remove users from the Copilot subscription for an organization
@@ -220,7 +220,7 @@ return execute(
   onSuccess: (response) {
     return CopilotCancelCopilotSeatAssignmentForUsersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get Copilot content exclusion rules for an organization
@@ -255,7 +255,7 @@ return execute(
   onSuccess: (response) {
     return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList()));
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Set Copilot content exclusion rules for an organization
@@ -292,7 +292,7 @@ return execute(
   onSuccess: (response) {
     return CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CopilotSetCopilotContentExclusionForOrganizationError.fromResponse(response),
+  onError: CopilotSetCopilotContentExclusionForOrganizationError.fromResponse,
 );
  } 
 /// Get Copilot metrics for an organization
@@ -344,7 +344,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CopilotUsageMetricsDay.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CopilotMetricsForOrganizationError.fromResponse(response),
+  onError: CopilotMetricsForOrganizationError.fromResponse,
 );
  } 
 /// Get Copilot seat assignment details for a user
@@ -376,7 +376,7 @@ return execute(
   onSuccess: (response) {
     return CopilotSeatDetails.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get Copilot metrics for a team
@@ -428,7 +428,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CopilotUsageMetricsDay.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CopilotMetricsForOrganizationError.fromResponse(response),
+  onError: CopilotMetricsForOrganizationError.fromResponse,
 );
  } 
  }

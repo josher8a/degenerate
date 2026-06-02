@@ -17,7 +17,7 @@ Future<ApiResult<String, Never>> workerEnvironmentGetScriptContent({required Wor
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/content',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/services/${Uri.encodeComponent(serviceName.toJson())}/environments/${Uri.encodeComponent(environmentName.toJson())}/content',
   headers: headers,
   options: options,
 );
@@ -44,7 +44,7 @@ if (cfWorkerMainModulePart != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/content',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/services/${Uri.encodeComponent(serviceName.toJson())}/environments/${Uri.encodeComponent(environmentName.toJson())}/content',
   headers: headers,
   body: [
     if (body.files case final files$?)
@@ -72,7 +72,7 @@ Future<ApiResult<WorkersScriptSettingsItem, Never>> workerScriptEnvironmentGetSe
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/services/${Uri.encodeComponent(serviceName.toJson())}/environments/${Uri.encodeComponent(environmentName.toJson())}/settings',
   headers: headers,
   options: options,
 );
@@ -95,7 +95,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/services/${Uri.encodeComponent(serviceName.toJson())}/environments/${Uri.encodeComponent(environmentName.toJson())}/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

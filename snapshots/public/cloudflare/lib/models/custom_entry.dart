@@ -75,6 +75,6 @@ CustomEntry copyWith({DateTime? createdAt, String? Function()? description, bool
 
 @override int get hashCode => Object.hash(createdAt, description, enabled, id, name, pattern, profileId, updatedAt, type);
 
-@override String toString() => 'CustomEntry(createdAt: $createdAt, description: $description, enabled: $enabled, id: $id, name: $name, pattern: $pattern, profileId: $profileId, updatedAt: $updatedAt, type: $type)';
+@override String toString() => 'CustomEntry(\n  createdAt: $createdAt,\n  description: $description,\n  enabled: $enabled,\n  id: $id,\n  name: $name,\n  pattern: $pattern,\n  profileId: $profileId,\n  updatedAt: $updatedAt,\n  type: $type,\n)';
 
  }

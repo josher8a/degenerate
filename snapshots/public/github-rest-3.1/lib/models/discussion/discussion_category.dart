@@ -83,6 +83,6 @@ DiscussionCategory copyWith({DateTime? createdAt, String? description, String? e
 
 @override int get hashCode => Object.hash(createdAt, description, emoji, id, isAnswerable, name, nodeId, repositoryId, slug, updatedAt);
 
-@override String toString() => 'DiscussionCategory(createdAt: $createdAt, description: $description, emoji: $emoji, id: $id, isAnswerable: $isAnswerable, name: $name, nodeId: $nodeId, repositoryId: $repositoryId, slug: $slug, updatedAt: $updatedAt)';
+@override String toString() => 'DiscussionCategory(\n  createdAt: $createdAt,\n  description: $description,\n  emoji: $emoji,\n  id: $id,\n  isAnswerable: $isAnswerable,\n  name: $name,\n  nodeId: $nodeId,\n  repositoryId: $repositoryId,\n  slug: $slug,\n  updatedAt: $updatedAt,\n)';
 
  }

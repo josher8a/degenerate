@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/user/subscriptions/${Uri.encodeComponent(identifier.toString())}',
+  path: '/user/subscriptions/${Uri.encodeComponent(identifier.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<UserSubscriptionDeleteUserSubscriptionResponse, Never>> userSub
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/user/subscriptions/${Uri.encodeComponent(identifier.toString())}',
+  path: '/user/subscriptions/${Uri.encodeComponent(identifier.toJson())}',
   headers: headers,
   options: options,
 );

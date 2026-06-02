@@ -17,7 +17,7 @@ Future<ApiResult<List<LoadBalancingLoadBalancer>?, Never>> loadBalancersListLoad
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/load_balancers',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/load_balancers',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/load_balancers',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/load_balancers',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<LoadBalancingLoadBalancer?, Never>> loadBalancersLoadBalancerDe
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/load_balancers/${Uri.encodeComponent(loadBalancerId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/load_balancers/${Uri.encodeComponent(loadBalancerId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/load_balancers/${Uri.encodeComponent(loadBalancerId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/load_balancers/${Uri.encodeComponent(loadBalancerId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -110,7 +110,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/load_balancers/${Uri.encodeComponent(loadBalancerId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/load_balancers/${Uri.encodeComponent(loadBalancerId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -133,7 +133,7 @@ Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> loadBa
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/load_balancers/${Uri.encodeComponent(loadBalancerId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/load_balancers/${Uri.encodeComponent(loadBalancerId.toJson())}',
   headers: headers,
   options: options,
 );

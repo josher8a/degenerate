@@ -40,7 +40,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/commands',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/commands',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -65,7 +65,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/commands',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/commands',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -88,7 +88,7 @@ Future<ApiResult<Uint8List, Never>> getCommandsCommandIdDownloadsFilename({requi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/commands/${Uri.encodeComponent(commandId.toString())}/downloads/${Uri.encodeComponent(filename)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/commands/${Uri.encodeComponent(commandId.toJson())}/downloads/${Uri.encodeComponent(filename)}',
   headers: headers,
   options: options,
 );
@@ -117,7 +117,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/commands/devices',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/commands/devices',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -141,7 +141,7 @@ Future<ApiResult<DigitalExperienceMonitoringGetCommandsQuotaResponse?, Never>> g
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/commands/quota',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/commands/quota',
   headers: headers,
   options: options,
 );

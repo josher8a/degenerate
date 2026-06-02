@@ -50,7 +50,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/operations',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/api_gateway/operations',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -75,7 +75,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/operations',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/api_gateway/operations',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -99,7 +99,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/operations',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/api_gateway/operations',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -129,7 +129,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/operations/${Uri.encodeComponent(operationId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/api_gateway/operations/${Uri.encodeComponent(operationId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -153,7 +153,7 @@ Future<ApiResult<ResponseCommon6, Never>> apiShieldEndpointManagementDeleteAnOpe
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/operations/${Uri.encodeComponent(operationId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/api_gateway/operations/${Uri.encodeComponent(operationId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -175,7 +175,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/operations/item',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/api_gateway/operations/item',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -209,7 +209,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/schemas',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/api_gateway/schemas',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

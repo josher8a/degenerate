@@ -54,7 +54,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
  }

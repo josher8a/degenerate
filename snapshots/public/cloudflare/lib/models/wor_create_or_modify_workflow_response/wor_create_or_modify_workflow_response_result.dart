@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'script_name': scriptName,
   'terminator_running': terminatorRunning,
-  'triggered_on': triggeredOn != null ? triggeredOn?.toIso8601String() : null,
+  'triggered_on': triggeredOn?.toIso8601String(),
   'version_id': versionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('class_name') && json['class_name'] is String &&
@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('class
       json.containsKey('version_id') && json['version_id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.isEmpty) errors.add('name: length must be >= 1');
 if (name.length > 64) errors.add('name: length must be <= 64');
 if (!RegExp(r'^[a-zA-Z0-9_][a-zA-Z0-9-_]*$').hasMatch(name)) errors.add(r'name: must match pattern ^[a-zA-Z0-9_][a-zA-Z0-9-_]*$');
 return errors; } 
@@ -90,6 +90,6 @@ WorCreateOrModifyWorkflowResponseResult copyWith({String? className, DateTime? c
 
 @override int get hashCode => Object.hash(className, createdOn, id, isDeleted, modifiedOn, name, scriptName, terminatorRunning, triggeredOn, versionId);
 
-@override String toString() => 'WorCreateOrModifyWorkflowResponseResult(className: $className, createdOn: $createdOn, id: $id, isDeleted: $isDeleted, modifiedOn: $modifiedOn, name: $name, scriptName: $scriptName, terminatorRunning: $terminatorRunning, triggeredOn: $triggeredOn, versionId: $versionId)';
+@override String toString() => 'WorCreateOrModifyWorkflowResponseResult(\n  className: $className,\n  createdOn: $createdOn,\n  id: $id,\n  isDeleted: $isDeleted,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  scriptName: $scriptName,\n  terminatorRunning: $terminatorRunning,\n  triggeredOn: $triggeredOn,\n  versionId: $versionId,\n)';
 
  }

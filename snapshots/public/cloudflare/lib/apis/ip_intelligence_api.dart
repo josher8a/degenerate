@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/ip',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/ip',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

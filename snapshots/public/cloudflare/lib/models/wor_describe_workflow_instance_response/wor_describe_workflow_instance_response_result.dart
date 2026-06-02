@@ -43,12 +43,12 @@ final ResultTrigger trigger;
 final String versionId;
 
 Map<String, dynamic> toJson() { return {
-  'end': end != null ? end?.toIso8601String() : null,
-  'error': error != null ? error?.toJson() : null,
+  'end': end?.toIso8601String(),
+  'error': error?.toJson(),
   'output': output,
   'params': params,
   'queued': queued.toIso8601String(),
-  'start': start != null ? start?.toIso8601String() : null,
+  'start': start?.toIso8601String(),
   'status': status.toJson(),
   'step_count': stepCount,
   'steps': steps.map((e) => e.toJson()).toList(),
@@ -99,6 +99,6 @@ WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, R
 
 @override int get hashCode => Object.hash(end, error, output, params, queued, start, status, stepCount, Object.hashAll(steps), success, trigger, versionId);
 
-@override String toString() => 'WorDescribeWorkflowInstanceResponseResult(end: $end, error: $error, output: $output, params: $params, queued: $queued, start: $start, status: $status, stepCount: $stepCount, steps: $steps, success: $success, trigger: $trigger, versionId: $versionId)';
+@override String toString() => 'WorDescribeWorkflowInstanceResponseResult(\n  end: $end,\n  error: $error,\n  output: $output,\n  params: $params,\n  queued: $queued,\n  start: $start,\n  status: $status,\n  stepCount: $stepCount,\n  steps: $steps,\n  success: $success,\n  trigger: $trigger,\n  versionId: $versionId,\n)';
 
  }

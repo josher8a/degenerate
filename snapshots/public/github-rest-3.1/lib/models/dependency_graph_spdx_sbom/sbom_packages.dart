@@ -88,6 +88,6 @@ SbomPackages copyWith({String? Function()? spdxid, String? Function()? name, Str
 
 @override int get hashCode => Object.hash(spdxid, name, versionInfo, downloadLocation, filesAnalyzed, licenseConcluded, licenseDeclared, supplier, copyrightText, Object.hashAll(externalRefs ?? const []));
 
-@override String toString() => 'SbomPackages(spdxid: $spdxid, name: $name, versionInfo: $versionInfo, downloadLocation: $downloadLocation, filesAnalyzed: $filesAnalyzed, licenseConcluded: $licenseConcluded, licenseDeclared: $licenseDeclared, supplier: $supplier, copyrightText: $copyrightText, externalRefs: $externalRefs)';
+@override String toString() => 'SbomPackages(\n  spdxid: $spdxid,\n  name: $name,\n  versionInfo: $versionInfo,\n  downloadLocation: $downloadLocation,\n  filesAnalyzed: $filesAnalyzed,\n  licenseConcluded: $licenseConcluded,\n  licenseDeclared: $licenseDeclared,\n  supplier: $supplier,\n  copyrightText: $copyrightText,\n  externalRefs: $externalRefs,\n)';
 
  }

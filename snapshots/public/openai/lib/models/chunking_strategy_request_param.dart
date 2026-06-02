@@ -19,6 +19,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ChunkingStrategyRequestParam$Unknown;
 
+R when<R>({required R Function(ChunkingStrategyRequestParamAuto) auto, required R Function(ChunkingStrategyRequestParamStatic) $static, required R Function(ChunkingStrategyRequestParam$Unknown) unknown, }) { return switch (this) {
+  final ChunkingStrategyRequestParamAuto v => auto(v),
+  final ChunkingStrategyRequestParamStatic v => $static(v),
+  final ChunkingStrategyRequestParam$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ChunkingStrategyRequestParamAuto extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParamAuto(this.autoChunkingStrategyRequestParam);
 

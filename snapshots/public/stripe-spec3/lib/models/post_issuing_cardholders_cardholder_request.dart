@@ -86,6 +86,6 @@ PostIssuingCardholdersCardholderRequest copyWith({Billing? Function()? billing, 
 
 @override int get hashCode => Object.hash(billing, company, email, Object.hashAll(expand ?? const []), individual, metadata, phoneNumber, Object.hashAll(preferredLocales ?? const []), spendingControls, status);
 
-@override String toString() => 'PostIssuingCardholdersCardholderRequest(billing: $billing, company: $company, email: $email, expand: $expand, individual: $individual, metadata: $metadata, phoneNumber: $phoneNumber, preferredLocales: $preferredLocales, spendingControls: $spendingControls, status: $status)';
+@override String toString() => 'PostIssuingCardholdersCardholderRequest(\n  billing: $billing,\n  company: $company,\n  email: $email,\n  expand: $expand,\n  individual: $individual,\n  metadata: $metadata,\n  phoneNumber: $phoneNumber,\n  preferredLocales: $preferredLocales,\n  spendingControls: $spendingControls,\n  status: $status,\n)';
 
  }

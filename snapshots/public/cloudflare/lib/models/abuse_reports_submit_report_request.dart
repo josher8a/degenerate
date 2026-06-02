@@ -16,28 +16,28 @@ factory AbuseReportsSubmitReportRequest.fromJson(Map<String, dynamic> json) { re
 }; }
 
 /// Build the `abuse_children` variant.
-factory AbuseReportsSubmitReportRequest.abuseChildren({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseChildren(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_children'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+factory AbuseReportsSubmitReportRequest.abuseChildren({required String email, required String email2, required String name, required String urls, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbuseChildren(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_children'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
 
 /// Build the `abuse_dmca` variant.
-factory AbuseReportsSubmitReportRequest.abuseDmca({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseDmca(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_dmca'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+factory AbuseReportsSubmitReportRequest.abuseDmca({required String email, required String email2, required String name, required String urls, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbuseDmca(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_dmca'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
 
 /// Build the `abuse_general` variant.
-factory AbuseReportsSubmitReportRequest.abuseGeneral({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseGeneral(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_general'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+factory AbuseReportsSubmitReportRequest.abuseGeneral({required String email, required String email2, required String name, required String urls, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbuseGeneral(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_general'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
 
 /// Build the `abuse_ncsei` variant.
-factory AbuseReportsSubmitReportRequest.abuseNcsei({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseNcsei(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_ncsei'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+factory AbuseReportsSubmitReportRequest.abuseNcsei({required String email, required String email2, required String name, required String urls, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbuseNcsei(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_ncsei'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
 
 /// Build the `abuse_phishing` variant.
-factory AbuseReportsSubmitReportRequest.abusePhishing({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbusePhishing(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_phishing'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+factory AbuseReportsSubmitReportRequest.abusePhishing({required String email, required String email2, required String name, required String urls, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbusePhishing(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_phishing'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
 
 /// Build the `abuse_registrar_whois` variant.
-factory AbuseReportsSubmitReportRequest.abuseRegistrarWhois({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_registrar_whois'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+factory AbuseReportsSubmitReportRequest.abuseRegistrarWhois({required String email, required String email2, required String name, required String urls, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_registrar_whois'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
 
 /// Build the `abuse_threat` variant.
-factory AbuseReportsSubmitReportRequest.abuseThreat({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseThreat(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_threat'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+factory AbuseReportsSubmitReportRequest.abuseThreat({required String email, required String email2, required String name, required String urls, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbuseThreat(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_threat'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
 
 /// Build the `abuse_trademark` variant.
-factory AbuseReportsSubmitReportRequest.abuseTrademark({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseTrademark(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_trademark'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+factory AbuseReportsSubmitReportRequest.abuseTrademark({required String email, required String email2, required String name, required String urls, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbuseTrademark(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_trademark'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
 
 /// The discriminator value identifying this variant.
 String get act;
@@ -65,6 +65,17 @@ String? get tele;
 String? get title;
 /// Shared by all variants of this union.
 String get urls;
+R when<R>({required R Function(AbuseReportsSubmitReportRequestAbuseChildren) abuseChildren, required R Function(AbuseReportsSubmitReportRequestAbuseDmca) abuseDmca, required R Function(AbuseReportsSubmitReportRequestAbuseGeneral) abuseGeneral, required R Function(AbuseReportsSubmitReportRequestAbuseNcsei) abuseNcsei, required R Function(AbuseReportsSubmitReportRequestAbusePhishing) abusePhishing, required R Function(AbuseReportsSubmitReportRequestAbuseRegistrarWhois) abuseRegistrarWhois, required R Function(AbuseReportsSubmitReportRequestAbuseThreat) abuseThreat, required R Function(AbuseReportsSubmitReportRequestAbuseTrademark) abuseTrademark, required R Function(AbuseReportsSubmitReportRequest$Unknown) unknown, }) { return switch (this) {
+  final AbuseReportsSubmitReportRequestAbuseChildren v => abuseChildren(v),
+  final AbuseReportsSubmitReportRequestAbuseDmca v => abuseDmca(v),
+  final AbuseReportsSubmitReportRequestAbuseGeneral v => abuseGeneral(v),
+  final AbuseReportsSubmitReportRequestAbuseNcsei v => abuseNcsei(v),
+  final AbuseReportsSubmitReportRequestAbusePhishing v => abusePhishing(v),
+  final AbuseReportsSubmitReportRequestAbuseRegistrarWhois v => abuseRegistrarWhois(v),
+  final AbuseReportsSubmitReportRequestAbuseThreat v => abuseThreat(v),
+  final AbuseReportsSubmitReportRequestAbuseTrademark v => abuseTrademark(v),
+  final AbuseReportsSubmitReportRequest$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class AbuseReportsSubmitReportRequestAbuseChildren extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequestAbuseChildren(this.abuseReportsBaseReportFields);
 
@@ -468,9 +479,29 @@ AbuseReportsSubmitReportRequestAbuseTrademark copyWith({String? Function()? comm
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class AbuseReportsSubmitReportRequest$Unknown extends AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequest$Unknown(this.json);
+@immutable final class AbuseReportsSubmitReportRequest$Unknown extends AbuseReportsSubmitReportRequest {AbuseReportsSubmitReportRequest$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String? _comments = json['comments'] as String?;
+
+late final String? _company = json['company'] as String?;
+
+late final String _email = json['email'] as String;
+
+late final String _email2 = json['email2'] as String;
+
+late final String _name = json['name'] as String;
+
+late final String? _reportedCountry = json['reported_country'] as String?;
+
+late final String? _reportedUserAgent = json['reported_user_agent'] as String?;
+
+late final String? _tele = json['tele'] as String?;
+
+late final String? _title = json['title'] as String?;
+
+late final String _urls = json['urls'] as String;
 
 @override String get act => json['act'] as String? ?? '';
 
@@ -483,24 +514,24 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'AbuseReportsSubmitReportRequest.unknown($json)';
 
-@override String? get comments => json['comments'] as String?;
+@override String? get comments => _comments;
 
-@override String? get company => json['company'] as String?;
+@override String? get company => _company;
 
-@override String get email => json['email'] as String;
+@override String get email => _email;
 
-@override String get email2 => json['email2'] as String;
+@override String get email2 => _email2;
 
-@override String get name => json['name'] as String;
+@override String get name => _name;
 
-@override String? get reportedCountry => json['reported_country'] as String?;
+@override String? get reportedCountry => _reportedCountry;
 
-@override String? get reportedUserAgent => json['reported_user_agent'] as String?;
+@override String? get reportedUserAgent => _reportedUserAgent;
 
-@override String? get tele => json['tele'] as String?;
+@override String? get tele => _tele;
 
-@override String? get title => json['title'] as String?;
+@override String? get title => _title;
 
-@override String get urls => json['urls'] as String;
+@override String get urls => _urls;
 
  }

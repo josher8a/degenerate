@@ -17,7 +17,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, Nev
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/acm/total_tls',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/acm/total_tls',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/acm/total_tls',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/acm/total_tls',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

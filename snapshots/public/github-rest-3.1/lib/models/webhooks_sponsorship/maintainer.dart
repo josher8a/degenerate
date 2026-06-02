@@ -129,6 +129,6 @@ Maintainer copyWith({String? Function()? avatarUrl, String? Function()? eventsUr
 
 @override int get hashCode => Object.hash(avatarUrl, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url, userViewType);
 
-@override String toString() => 'Maintainer(avatarUrl: $avatarUrl, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url, userViewType: $userViewType)';
+@override String toString() => 'Maintainer(\n  avatarUrl: $avatarUrl,\n  eventsUrl: $eventsUrl,\n  followersUrl: $followersUrl,\n  followingUrl: $followingUrl,\n  gistsUrl: $gistsUrl,\n  gravatarId: $gravatarId,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  login: $login,\n  nodeId: $nodeId,\n  organizationsUrl: $organizationsUrl,\n  receivedEventsUrl: $receivedEventsUrl,\n  reposUrl: $reposUrl,\n  siteAdmin: $siteAdmin,\n  starredUrl: $starredUrl,\n  subscriptionsUrl: $subscriptionsUrl,\n  type: $type,\n  url: $url,\n  userViewType: $userViewType,\n)';
 
  }

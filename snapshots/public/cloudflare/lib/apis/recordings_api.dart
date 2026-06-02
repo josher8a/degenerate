@@ -50,7 +50,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/recordings',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -74,7 +74,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/recordings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -96,7 +96,7 @@ Future<ApiResult<RealtimekitGenericSuccessResponse, Never>> getOneRecording({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings/${Uri.encodeComponent(recordingId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/recordings/${Uri.encodeComponent(recordingId)}',
   headers: headers,
   options: options,
 );
@@ -118,7 +118,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId)}/recordings/${Uri.encodeComponent(recordingId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId)}/recordings/${Uri.encodeComponent(recordingId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -140,7 +140,7 @@ Future<ApiResult<RealtimekitGenericSuccessResponse, GetActiveSessionError>> getA
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings/active-recording/${Uri.encodeComponent(meetingId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/recordings/active-recording/${Uri.encodeComponent(meetingId)}',
   headers: headers,
   options: options,
 );
@@ -150,7 +150,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetActiveSessionError.fromResponse(response),
+  onError: GetActiveSessionError.fromResponse,
 );
  } 
 /// Start recording audio and video tracks
@@ -163,7 +163,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/recordings/track',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/recordings/track',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

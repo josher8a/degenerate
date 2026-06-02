@@ -120,6 +120,6 @@ PostInvoiceitemsInvoiceitemRequest copyWith({int? Function()? amount, String? Fu
 
 @override int get hashCode => Object.hash(amount, description, discountable, discounts, Object.hashAll(expand ?? const []), metadata, period, priceData, pricing, quantity, taxBehavior, taxCode, taxRates, unitAmountDecimal);
 
-@override String toString() => 'PostInvoiceitemsInvoiceitemRequest(amount: $amount, description: $description, discountable: $discountable, discounts: $discounts, expand: $expand, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, taxBehavior: $taxBehavior, taxCode: $taxCode, taxRates: $taxRates, unitAmountDecimal: $unitAmountDecimal)';
+@override String toString() => 'PostInvoiceitemsInvoiceitemRequest(\n  amount: $amount,\n  description: $description,\n  discountable: $discountable,\n  discounts: $discounts,\n  expand: $expand,\n  metadata: $metadata,\n  period: $period,\n  priceData: $priceData,\n  pricing: $pricing,\n  quantity: $quantity,\n  taxBehavior: $taxBehavior,\n  taxCode: $taxCode,\n  taxRates: $taxRates,\n  unitAmountDecimal: $unitAmountDecimal,\n)';
 
  }

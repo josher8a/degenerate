@@ -19,6 +19,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CustomToolParamFormat$Unknown;
 
+R when<R>({required R Function(CustomToolParamFormatText) text, required R Function(CustomToolParamFormatGrammar) grammar, required R Function(CustomToolParamFormat$Unknown) unknown, }) { return switch (this) {
+  final CustomToolParamFormatText v => text(v),
+  final CustomToolParamFormatGrammar v => grammar(v),
+  final CustomToolParamFormat$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class CustomToolParamFormatText extends CustomToolParamFormat {const CustomToolParamFormatText(this.customTextFormatParam);
 

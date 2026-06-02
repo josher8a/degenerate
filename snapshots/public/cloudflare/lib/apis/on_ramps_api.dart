@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/onramps',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -45,7 +45,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => McnOnramp.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CatalogSyncsPrebuiltPoliciesListError.fromResponse(response),
+  onError: CatalogSyncsPrebuiltPoliciesListError.fromResponse,
 );
  } 
 /// Create On-ramp
@@ -61,7 +61,7 @@ if (forwarded != null) {
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/onramps',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -73,7 +73,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnOnramp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsCreateError.fromResponse(response),
+  onError: CatalogSyncsCreateError.fromResponse,
 );
  } 
 /// Read On-ramp
@@ -100,7 +100,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -113,7 +113,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnOnramp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsListError.fromResponse(response),
+  onError: CatalogSyncsListError.fromResponse,
 );
  } 
 /// Update On-ramp
@@ -126,7 +126,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -138,7 +138,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnOnramp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsPatchError.fromResponse(response),
+  onError: CatalogSyncsPatchError.fromResponse,
 );
  } 
 /// Patch On-ramp
@@ -151,7 +151,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -163,7 +163,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnOnramp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsPatchError.fromResponse(response),
+  onError: CatalogSyncsPatchError.fromResponse,
 );
  } 
 /// Delete On-ramp
@@ -184,7 +184,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -197,7 +197,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnDeletedOnramp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsDeleteError.fromResponse(response),
+  onError: CatalogSyncsDeleteError.fromResponse,
 );
  } 
 /// Apply On-ramp
@@ -209,7 +209,7 @@ Future<ApiResult<McnGoodResponse, CatalogSyncsDeleteError>> onrampsApply({requir
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}/apply',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toJson())}/apply',
   headers: headers,
   options: options,
 );
@@ -219,7 +219,7 @@ return execute(
   onSuccess: (response) {
     return McnGoodResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CatalogSyncsDeleteError.fromResponse(response),
+  onError: CatalogSyncsDeleteError.fromResponse,
 );
  } 
 /// Export as Terraform
@@ -231,7 +231,7 @@ Future<ApiResult<Uint8List, CatalogSyncsDeleteError>> onrampsExport({required Mc
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}/export',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toJson())}/export',
   headers: headers,
   options: options,
 );
@@ -241,7 +241,7 @@ return execute(
   onSuccess: (response) {
     return Uint8List.fromList(response.bodyBytes);
   },
-  onError: (response) => CatalogSyncsDeleteError.fromResponse(response),
+  onError: CatalogSyncsDeleteError.fromResponse,
 );
  } 
 /// Plan On-ramp
@@ -253,7 +253,7 @@ Future<ApiResult<McnGoodResponse, CatalogSyncsDeleteError>> onrampsPlan({require
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toString())}/plan',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/onramps/${Uri.encodeComponent(onrampId.toJson())}/plan',
   headers: headers,
   options: options,
 );
@@ -263,7 +263,7 @@ return execute(
   onSuccess: (response) {
     return McnGoodResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CatalogSyncsDeleteError.fromResponse(response),
+  onError: CatalogSyncsDeleteError.fromResponse,
 );
  } 
 /// Read Magic WAN Address Space
@@ -275,7 +275,7 @@ Future<ApiResult<McnMagicWanAddressSpace?, CatalogSyncsListError>> onrampsMwanAd
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/magic_wan_address_space',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/onramps/magic_wan_address_space',
   headers: headers,
   options: options,
 );
@@ -286,7 +286,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsListError.fromResponse(response),
+  onError: CatalogSyncsListError.fromResponse,
 );
  } 
 /// Update Magic WAN Address Space
@@ -299,7 +299,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/magic_wan_address_space',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/onramps/magic_wan_address_space',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -311,7 +311,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => OnrampsMwanAddrSpacePatchError.fromResponse(response),
+  onError: OnrampsMwanAddrSpacePatchError.fromResponse,
 );
  } 
 /// Patch Magic WAN Address Space
@@ -324,7 +324,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/onramps/magic_wan_address_space',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/onramps/magic_wan_address_space',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -336,7 +336,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => OnrampsMwanAddrSpacePatchError.fromResponse(response),
+  onError: OnrampsMwanAddrSpacePatchError.fromResponse,
 );
  } 
  }

@@ -136,6 +136,6 @@ Event copyWith({String? Function()? action, String? Function()? apiVersion, int?
 
 @override int get hashCode => Object.hash(action, apiVersion, count, eventTime, firstTimestamp, involvedObject, kind, lastTimestamp, message, metadata, reason, related, reportingComponent, reportingInstance, series, source, type);
 
-@override String toString() => 'Event(action: $action, apiVersion: $apiVersion, count: $count, eventTime: $eventTime, firstTimestamp: $firstTimestamp, involvedObject: $involvedObject, kind: $kind, lastTimestamp: $lastTimestamp, message: $message, metadata: $metadata, reason: $reason, related: $related, reportingComponent: $reportingComponent, reportingInstance: $reportingInstance, series: $series, source: $source, type: $type)';
+@override String toString() => 'Event(\n  action: $action,\n  apiVersion: $apiVersion,\n  count: $count,\n  eventTime: $eventTime,\n  firstTimestamp: $firstTimestamp,\n  involvedObject: $involvedObject,\n  kind: $kind,\n  lastTimestamp: $lastTimestamp,\n  message: $message,\n  metadata: $metadata,\n  reason: $reason,\n  related: $related,\n  reportingComponent: $reportingComponent,\n  reportingInstance: $reportingInstance,\n  series: $series,\n  source: $source,\n  type: $type,\n)';
 
  }

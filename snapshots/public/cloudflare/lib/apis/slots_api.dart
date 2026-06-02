@@ -36,7 +36,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/slots',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cni/slots',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ Future<ApiResult<NscSlotInfo, Never>> getSlot({required String slot, required Ns
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/slots/${Uri.encodeComponent(slot)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cni/slots/${Uri.encodeComponent(slot)}',
   headers: headers,
   options: options,
 );

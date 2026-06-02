@@ -43,7 +43,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members',
+  path: '/organizations/${Uri.encodeComponent(organizationId.toJson())}/members',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -68,7 +68,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members',
+  path: '/organizations/${Uri.encodeComponent(organizationId.toJson())}/members',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -91,7 +91,7 @@ Future<ApiResult<Member, Never>> membersRetrieve({required OrganizationId organi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members/${Uri.encodeComponent(memberId.toString())}',
+  path: '/organizations/${Uri.encodeComponent(organizationId.toJson())}/members/${Uri.encodeComponent(memberId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -114,7 +114,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members/${Uri.encodeComponent(memberId.toString())}',
+  path: '/organizations/${Uri.encodeComponent(organizationId.toJson())}/members/${Uri.encodeComponent(memberId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -135,7 +135,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/members:batchCreate',
+  path: '/organizations/${Uri.encodeComponent(organizationId.toJson())}/members:batchCreate',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

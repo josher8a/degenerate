@@ -118,6 +118,6 @@ PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String
 
 @override int get hashCode => Object.hash(body, commitId, path, position, side, line, startLine, startSide, inReplyTo, subjectType);
 
-@override String toString() => 'PullsCreateReviewCommentRequest(body: $body, commitId: $commitId, path: $path, position: $position, side: $side, line: $line, startLine: $startLine, startSide: $startSide, inReplyTo: $inReplyTo, subjectType: $subjectType)';
+@override String toString() => 'PullsCreateReviewCommentRequest(\n  body: $body,\n  commitId: $commitId,\n  path: $path,\n  position: $position,\n  side: $side,\n  line: $line,\n  startLine: $startLine,\n  startSide: $startSide,\n  inReplyTo: $inReplyTo,\n  subjectType: $subjectType,\n)';
 
  }

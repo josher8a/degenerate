@@ -72,6 +72,6 @@ WebhookMarketplacePurchaseCancelled copyWith({WebhookMarketplacePurchaseCancelle
 
 @override int get hashCode => Object.hash(action, effectiveDate, enterprise, installation, marketplacePurchase, organization, previousMarketplacePurchase, repository, sender);
 
-@override String toString() => 'WebhookMarketplacePurchaseCancelled(action: $action, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, marketplacePurchase: $marketplacePurchase, organization: $organization, previousMarketplacePurchase: $previousMarketplacePurchase, repository: $repository, sender: $sender)';
+@override String toString() => 'WebhookMarketplacePurchaseCancelled(\n  action: $action,\n  effectiveDate: $effectiveDate,\n  enterprise: $enterprise,\n  installation: $installation,\n  marketplacePurchase: $marketplacePurchase,\n  organization: $organization,\n  previousMarketplacePurchase: $previousMarketplacePurchase,\n  repository: $repository,\n  sender: $sender,\n)';
 
  }

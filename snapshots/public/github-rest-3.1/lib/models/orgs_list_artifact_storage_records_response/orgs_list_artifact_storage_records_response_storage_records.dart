@@ -69,6 +69,6 @@ OrgsListArtifactStorageRecordsResponseStorageRecords copyWith({int? Function()? 
 
 @override int get hashCode => Object.hash(id, name, digest, artifactUrl, registryUrl, repository, status, createdAt, updatedAt);
 
-@override String toString() => 'OrgsListArtifactStorageRecordsResponseStorageRecords(id: $id, name: $name, digest: $digest, artifactUrl: $artifactUrl, registryUrl: $registryUrl, repository: $repository, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
+@override String toString() => 'OrgsListArtifactStorageRecordsResponseStorageRecords(\n  id: $id,\n  name: $name,\n  digest: $digest,\n  artifactUrl: $artifactUrl,\n  registryUrl: $registryUrl,\n  repository: $repository,\n  status: $status,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
  }

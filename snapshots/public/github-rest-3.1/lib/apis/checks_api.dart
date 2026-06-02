@@ -148,7 +148,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ChecksRerequestRunError.fromResponse(response),
+  onError: ChecksRerequestRunError.fromResponse,
 );
  } 
 /// Create a check suite

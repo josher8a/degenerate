@@ -137,6 +137,6 @@ D1QueryMeta copyWith({bool? Function()? changedDb, double? Function()? changes, 
 
 @override int get hashCode => Object.hash(changedDb, changes, duration, lastRowId, rowsRead, rowsWritten, servedByColo, servedByPrimary, servedByRegion, sizeAfter, timings);
 
-@override String toString() => 'D1QueryMeta(changedDb: $changedDb, changes: $changes, duration: $duration, lastRowId: $lastRowId, rowsRead: $rowsRead, rowsWritten: $rowsWritten, servedByColo: $servedByColo, servedByPrimary: $servedByPrimary, servedByRegion: $servedByRegion, sizeAfter: $sizeAfter, timings: $timings)';
+@override String toString() => 'D1QueryMeta(\n  changedDb: $changedDb,\n  changes: $changes,\n  duration: $duration,\n  lastRowId: $lastRowId,\n  rowsRead: $rowsRead,\n  rowsWritten: $rowsWritten,\n  servedByColo: $servedByColo,\n  servedByPrimary: $servedByPrimary,\n  servedByRegion: $servedByRegion,\n  sizeAfter: $sizeAfter,\n  timings: $timings,\n)';
 
  }

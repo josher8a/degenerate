@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   'position': position,
   'line': line,
   'commit_id': commitId,
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'author_association': authorAssociation.toJson(),
@@ -113,6 +113,6 @@ CommitComment copyWith({Uri? htmlUrl, Uri? url, int? id, String? nodeId, String?
 
 @override int get hashCode => Object.hash(htmlUrl, url, id, nodeId, body, path, position, line, commitId, user, createdAt, updatedAt, authorAssociation, reactions);
 
-@override String toString() => 'CommitComment(htmlUrl: $htmlUrl, url: $url, id: $id, nodeId: $nodeId, body: $body, path: $path, position: $position, line: $line, commitId: $commitId, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, authorAssociation: $authorAssociation, reactions: $reactions)';
+@override String toString() => 'CommitComment(\n  htmlUrl: $htmlUrl,\n  url: $url,\n  id: $id,\n  nodeId: $nodeId,\n  body: $body,\n  path: $path,\n  position: $position,\n  line: $line,\n  commitId: $commitId,\n  user: $user,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  authorAssociation: $authorAssociation,\n  reactions: $reactions,\n)';
 
  }

@@ -88,6 +88,6 @@ ScaleIoVolumeSource copyWith({String Function()? fsType, String? gateway, String
 
 @override int get hashCode => Object.hash(fsType, gateway, protectionDomain, readOnly, secretRef, sslEnabled, storageMode, storagePool, system, volumeName);
 
-@override String toString() => 'ScaleIoVolumeSource(fsType: $fsType, gateway: $gateway, protectionDomain: $protectionDomain, readOnly: $readOnly, secretRef: $secretRef, sslEnabled: $sslEnabled, storageMode: $storageMode, storagePool: $storagePool, system: $system, volumeName: $volumeName)';
+@override String toString() => 'ScaleIoVolumeSource(\n  fsType: $fsType,\n  gateway: $gateway,\n  protectionDomain: $protectionDomain,\n  readOnly: $readOnly,\n  secretRef: $secretRef,\n  sslEnabled: $sslEnabled,\n  storageMode: $storageMode,\n  storagePool: $storagePool,\n  system: $system,\n  volumeName: $volumeName,\n)';
 
  }

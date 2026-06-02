@@ -71,6 +71,6 @@ IssuingDisputeEvidence copyWith({IssuingDisputeCanceledEvidence? Function()? can
 
 @override int get hashCode => Object.hash(canceled, duplicate, fraudulent, merchandiseNotAsDescribed, noValidAuthorization, notReceived, other, reason, serviceNotAsDescribed);
 
-@override String toString() => 'IssuingDisputeEvidence(canceled: $canceled, duplicate: $duplicate, fraudulent: $fraudulent, merchandiseNotAsDescribed: $merchandiseNotAsDescribed, noValidAuthorization: $noValidAuthorization, notReceived: $notReceived, other: $other, reason: $reason, serviceNotAsDescribed: $serviceNotAsDescribed)';
+@override String toString() => 'IssuingDisputeEvidence(\n  canceled: $canceled,\n  duplicate: $duplicate,\n  fraudulent: $fraudulent,\n  merchandiseNotAsDescribed: $merchandiseNotAsDescribed,\n  noValidAuthorization: $noValidAuthorization,\n  notReceived: $notReceived,\n  other: $other,\n  reason: $reason,\n  serviceNotAsDescribed: $serviceNotAsDescribed,\n)';
 
  }

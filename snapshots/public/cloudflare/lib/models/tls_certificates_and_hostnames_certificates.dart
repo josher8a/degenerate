@@ -55,7 +55,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('csr')
       json.containsKey('requested_validity'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (hostnames.length < 1) errors.add('hostnames: must have >= 1 items');
+if (hostnames.isEmpty) errors.add('hostnames: must have >= 1 items');
 if (hostnames.length > 100) errors.add('hostnames: must have <= 100 items');
 return errors; } 
 TlsCertificatesAndHostnamesCertificates copyWith({TlsCertificatesAndHostnamesCertificatesComponentsSchemasCertificate? Function()? certificate, TlsCertificatesAndHostnamesCsr? csr, TlsCertificatesAndHostnamesComponentsSchemasExpiresOn? Function()? expiresOn, List<String>? hostnames, TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesRequestType? requestType, TlsCertificatesAndHostnamesRequestedValidity? requestedValidity, }) { return TlsCertificatesAndHostnamesCertificates(

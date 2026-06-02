@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
-  'parent': parent != null ? parent?.toJson() : null,
+  'parent': parent?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -132,6 +132,6 @@ Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Func
 
 @override int get hashCode => Object.hash(id, nodeId, name, slug, description, privacy, notificationSetting, permission, permissions, url, htmlUrl, membersUrl, repositoriesUrl, type, organizationId, enterpriseId, parent);
 
-@override String toString() => 'Team(id: $id, nodeId: $nodeId, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, permissions: $permissions, url: $url, htmlUrl: $htmlUrl, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId, parent: $parent)';
+@override String toString() => 'Team(\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  slug: $slug,\n  description: $description,\n  privacy: $privacy,\n  notificationSetting: $notificationSetting,\n  permission: $permission,\n  permissions: $permissions,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  membersUrl: $membersUrl,\n  repositoriesUrl: $repositoriesUrl,\n  type: $type,\n  organizationId: $organizationId,\n  enterpriseId: $enterpriseId,\n  parent: $parent,\n)';
 
  }

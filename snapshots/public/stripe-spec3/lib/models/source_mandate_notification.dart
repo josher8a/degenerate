@@ -137,6 +137,6 @@ SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Func
 
 @override int get hashCode => Object.hash(acssDebit, amount, bacsDebit, created, id, livemode, object, reason, sepaDebit, source, status, type);
 
-@override String toString() => 'SourceMandateNotification(acssDebit: $acssDebit, amount: $amount, bacsDebit: $bacsDebit, created: $created, id: $id, livemode: $livemode, object: $object, reason: $reason, sepaDebit: $sepaDebit, source: $source, status: $status, type: $type)';
+@override String toString() => 'SourceMandateNotification(\n  acssDebit: $acssDebit,\n  amount: $amount,\n  bacsDebit: $bacsDebit,\n  created: $created,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  reason: $reason,\n  sepaDebit: $sepaDebit,\n  source: $source,\n  status: $status,\n  type: $type,\n)';
 
  }

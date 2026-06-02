@@ -132,6 +132,6 @@ TimelineCommentEvent copyWith({String? event, SimpleUser? actor, int? id, String
 
 @override int get hashCode => Object.hash(event, actor, id, nodeId, url, body, bodyText, bodyHtml, htmlUrl, user, createdAt, updatedAt, issueUrl, authorAssociation, performedViaGithubApp, reactions, pin);
 
-@override String toString() => 'TimelineCommentEvent(event: $event, actor: $actor, id: $id, nodeId: $nodeId, url: $url, body: $body, bodyText: $bodyText, bodyHtml: $bodyHtml, htmlUrl: $htmlUrl, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, issueUrl: $issueUrl, authorAssociation: $authorAssociation, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, pin: $pin)';
+@override String toString() => 'TimelineCommentEvent(\n  event: $event,\n  actor: $actor,\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  body: $body,\n  bodyText: $bodyText,\n  bodyHtml: $bodyHtml,\n  htmlUrl: $htmlUrl,\n  user: $user,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  issueUrl: $issueUrl,\n  authorAssociation: $authorAssociation,\n  performedViaGithubApp: $performedViaGithubApp,\n  reactions: $reactions,\n  pin: $pin,\n)';
 
  }

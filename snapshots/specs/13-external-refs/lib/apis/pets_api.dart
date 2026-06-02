@@ -33,7 +33,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CreatePetError.fromResponse(response),
+  onError: CreatePetError.fromResponse,
 );
  } 
 ///
@@ -52,7 +52,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CreatePetError.fromResponse(response),
+  onError: CreatePetError.fromResponse,
 );
  } 
 ///
@@ -71,7 +71,7 @@ return execute(
   onSuccess: (response) {
     return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreatePetError.fromResponse(response),
+  onError: CreatePetError.fromResponse,
 );
  } 
  }

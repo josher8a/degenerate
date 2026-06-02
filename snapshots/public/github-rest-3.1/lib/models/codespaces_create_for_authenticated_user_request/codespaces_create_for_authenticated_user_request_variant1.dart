@@ -99,6 +99,6 @@ CodespacesCreateForAuthenticatedUserRequestVariant1 copyWith({int? repositoryId,
 
 @override int get hashCode => Object.hash(repositoryId, ref, location, geo, clientIp, machine, devcontainerPath, multiRepoPermissionsOptOut, workingDirectory, idleTimeoutMinutes, displayName, retentionPeriodMinutes);
 
-@override String toString() => 'CodespacesCreateForAuthenticatedUserRequestVariant1(repositoryId: $repositoryId, ref: $ref, location: $location, geo: $geo, clientIp: $clientIp, machine: $machine, devcontainerPath: $devcontainerPath, multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes, displayName: $displayName, retentionPeriodMinutes: $retentionPeriodMinutes)';
+@override String toString() => 'CodespacesCreateForAuthenticatedUserRequestVariant1(\n  repositoryId: $repositoryId,\n  ref: $ref,\n  location: $location,\n  geo: $geo,\n  clientIp: $clientIp,\n  machine: $machine,\n  devcontainerPath: $devcontainerPath,\n  multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut,\n  workingDirectory: $workingDirectory,\n  idleTimeoutMinutes: $idleTimeoutMinutes,\n  displayName: $displayName,\n  retentionPeriodMinutes: $retentionPeriodMinutes,\n)';
 
  }

@@ -183,6 +183,6 @@ TeamsDevicesPhysicalDevice copyWith({int? activeRegistrations, String? Function(
 
 @override int get hashCode => Object.hash(activeRegistrations, clientVersion, createdAt, deletedAt, deviceType, hardwareId, id, lastSeenAt, lastSeenRegistration, lastSeenUser, macAddress, manufacturer, model, name, osVersion, osVersionExtra, publicIp, serialNumber, updatedAt);
 
-@override String toString() => 'TeamsDevicesPhysicalDevice(activeRegistrations: $activeRegistrations, clientVersion: $clientVersion, createdAt: $createdAt, deletedAt: $deletedAt, deviceType: $deviceType, hardwareId: $hardwareId, id: $id, lastSeenAt: $lastSeenAt, lastSeenRegistration: $lastSeenRegistration, lastSeenUser: $lastSeenUser, macAddress: $macAddress, manufacturer: $manufacturer, model: $model, name: $name, osVersion: $osVersion, osVersionExtra: $osVersionExtra, publicIp: $publicIp, serialNumber: $serialNumber, updatedAt: $updatedAt)';
+@override String toString() => 'TeamsDevicesPhysicalDevice(\n  activeRegistrations: $activeRegistrations,\n  clientVersion: $clientVersion,\n  createdAt: $createdAt,\n  deletedAt: $deletedAt,\n  deviceType: $deviceType,\n  hardwareId: $hardwareId,\n  id: $id,\n  lastSeenAt: $lastSeenAt,\n  lastSeenRegistration: $lastSeenRegistration,\n  lastSeenUser: $lastSeenUser,\n  macAddress: $macAddress,\n  manufacturer: $manufacturer,\n  model: $model,\n  name: $name,\n  osVersion: $osVersion,\n  osVersionExtra: $osVersionExtra,\n  publicIp: $publicIp,\n  serialNumber: $serialNumber,\n  updatedAt: $updatedAt,\n)';
 
  }

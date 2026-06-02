@@ -113,7 +113,7 @@ Map<String, dynamic> toJson() { return {
   'commit_id': commitId,
   'original_commit_id': originalCommitId,
   'in_reply_to_id': ?inReplyToId,
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
   'body': body,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
@@ -215,6 +215,6 @@ ReviewComment copyWith({Uri? url, int? Function()? pullRequestReviewId, int? id,
 
 @override int get hashCode => Object.hashAll([url, pullRequestReviewId, id, nodeId, diffHunk, path, position, originalPosition, commitId, originalCommitId, inReplyToId, user, body, createdAt, updatedAt, htmlUrl, pullRequestUrl, authorAssociation, links, bodyText, bodyHtml, reactions, side, startSide, line, originalLine, startLine, originalStartLine, subjectType]);
 
-@override String toString() => 'ReviewComment(url: $url, pullRequestReviewId: $pullRequestReviewId, id: $id, nodeId: $nodeId, diffHunk: $diffHunk, path: $path, position: $position, originalPosition: $originalPosition, commitId: $commitId, originalCommitId: $originalCommitId, inReplyToId: $inReplyToId, user: $user, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, authorAssociation: $authorAssociation, links: $links, bodyText: $bodyText, bodyHtml: $bodyHtml, reactions: $reactions, side: $side, startSide: $startSide, line: $line, originalLine: $originalLine, startLine: $startLine, originalStartLine: $originalStartLine, subjectType: $subjectType)';
+@override String toString() => 'ReviewComment(\n  url: $url,\n  pullRequestReviewId: $pullRequestReviewId,\n  id: $id,\n  nodeId: $nodeId,\n  diffHunk: $diffHunk,\n  path: $path,\n  position: $position,\n  originalPosition: $originalPosition,\n  commitId: $commitId,\n  originalCommitId: $originalCommitId,\n  inReplyToId: $inReplyToId,\n  user: $user,\n  body: $body,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  htmlUrl: $htmlUrl,\n  pullRequestUrl: $pullRequestUrl,\n  authorAssociation: $authorAssociation,\n  links: $links,\n  bodyText: $bodyText,\n  bodyHtml: $bodyHtml,\n  reactions: $reactions,\n  side: $side,\n  startSide: $startSide,\n  line: $line,\n  originalLine: $originalLine,\n  startLine: $startLine,\n  originalStartLine: $originalStartLine,\n  subjectType: $subjectType,\n)';
 
  }

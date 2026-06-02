@@ -90,6 +90,6 @@ Resource copyWith({List<String>? Function()? categories, String? Function()? gro
 
 @override int get hashCode => Object.hash(Object.hashAll(categories ?? const []), group, kind, name, namespaced, Object.hashAll(shortNames ?? const []), singularName, storageVersionHash, Object.hashAll(verbs), version);
 
-@override String toString() => 'Resource(categories: $categories, group: $group, kind: $kind, name: $name, namespaced: $namespaced, shortNames: $shortNames, singularName: $singularName, storageVersionHash: $storageVersionHash, verbs: $verbs, version: $version)';
+@override String toString() => 'Resource(\n  categories: $categories,\n  group: $group,\n  kind: $kind,\n  name: $name,\n  namespaced: $namespaced,\n  shortNames: $shortNames,\n  singularName: $singularName,\n  storageVersionHash: $storageVersionHash,\n  verbs: $verbs,\n  version: $version,\n)';
 
  }

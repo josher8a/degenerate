@@ -29,7 +29,7 @@ return execute(
   onSuccess: (response) {
     return ShortBlob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GitCreateBlobError.fromResponse(response),
+  onError: GitCreateBlobError.fromResponse,
 );
  } 
 /// Get a blob
@@ -58,7 +58,7 @@ return execute(
   onSuccess: (response) {
     return Blob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse(response),
+  onError: ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse,
 );
  } 
 /// Create a commit
@@ -112,7 +112,7 @@ return execute(
   onSuccess: (response) {
     return GitCommit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GitCreateCommitError.fromResponse(response),
+  onError: GitCreateCommitError.fromResponse,
 );
  } 
 /// Get a commit object
@@ -166,7 +166,7 @@ return execute(
   onSuccess: (response) {
     return GitCommit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GitGetCommitError.fromResponse(response),
+  onError: GitGetCommitError.fromResponse,
 );
  } 
 /// List matching references
@@ -196,7 +196,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GitRef.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsCancelWorkflowRunError.fromResponse(response),
+  onError: ActionsCancelWorkflowRunError.fromResponse,
 );
  } 
 /// Get a reference
@@ -221,7 +221,7 @@ return execute(
   onSuccess: (response) {
     return GitRef.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GitGetCommitError.fromResponse(response),
+  onError: GitGetCommitError.fromResponse,
 );
  } 
 /// Create a reference
@@ -245,7 +245,7 @@ return execute(
   onSuccess: (response) {
     return GitRef.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GitCreateRefError.fromResponse(response),
+  onError: GitCreateRefError.fromResponse,
 );
  } 
 /// Update a reference
@@ -269,7 +269,7 @@ return execute(
   onSuccess: (response) {
     return GitRef.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GitCreateRefError.fromResponse(response),
+  onError: GitCreateRefError.fromResponse,
 );
  } 
 /// Delete a reference
@@ -289,7 +289,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsCancelWorkflowRunError.fromResponse(response),
+  onError: ActionsCancelWorkflowRunError.fromResponse,
 );
  } 
 /// Create a tag object
@@ -343,7 +343,7 @@ return execute(
   onSuccess: (response) {
     return GitTag.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GitCreateRefError.fromResponse(response),
+  onError: GitCreateRefError.fromResponse,
 );
  } 
 /// Get a tag
@@ -393,7 +393,7 @@ return execute(
   onSuccess: (response) {
     return GitTag.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GitGetCommitError.fromResponse(response),
+  onError: GitGetCommitError.fromResponse,
 );
  } 
 /// Create a tree
@@ -421,7 +421,7 @@ return execute(
   onSuccess: (response) {
     return GitTree.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse(response),
+  onError: ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse,
 );
  } 
 /// Get a tree
@@ -456,7 +456,7 @@ return execute(
   onSuccess: (response) {
     return GitTree.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GitCreateCommitError.fromResponse(response),
+  onError: GitCreateCommitError.fromResponse,
 );
  } 
  }

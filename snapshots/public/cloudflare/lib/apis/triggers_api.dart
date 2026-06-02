@@ -18,7 +18,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/triggers',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -42,7 +42,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -54,7 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) => CancelBuildByUuidError.fromResponse(response),
+  onError: CancelBuildByUuidError.fromResponse,
 );
  } 
 /// Delete trigger
@@ -66,7 +66,7 @@ Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> deleteTrigger({
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toJson())}',
   headers: headers,
   options: options,
 );
@@ -77,7 +77,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) => CancelBuildByUuidError.fromResponse(response),
+  onError: CancelBuildByUuidError.fromResponse,
 );
  } 
 /// Create manual build
@@ -90,7 +90,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}/builds',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toJson())}/builds',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -113,7 +113,7 @@ Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> purgeBuildCache
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}/purge_build_cache',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toJson())}/purge_build_cache',
   headers: headers,
   options: options,
 );
@@ -124,7 +124,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) => CancelBuildByUuidError.fromResponse(response),
+  onError: CancelBuildByUuidError.fromResponse,
 );
  } 
  }

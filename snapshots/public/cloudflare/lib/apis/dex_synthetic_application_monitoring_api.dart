@@ -25,7 +25,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/colos',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/colos',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -59,7 +59,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/devices/${Uri.encodeComponent(deviceId.toString())}/fleet-status/live',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/devices/${Uri.encodeComponent(deviceId.toJson())}/fleet-status/live',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -113,7 +113,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/fleet-status/devices',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/fleet-status/devices',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -141,7 +141,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/fleet-status/live',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/fleet-status/live',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -176,7 +176,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/fleet-status/over-time',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/fleet-status/over-time',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -214,7 +214,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/http-tests/${Uri.encodeComponent(testId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/http-tests/${Uri.encodeComponent(testId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -251,7 +251,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/http-tests/${Uri.encodeComponent(testId.toString())}/percentiles',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/http-tests/${Uri.encodeComponent(testId.toJson())}/percentiles',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -298,7 +298,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/tests/overview',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/tests/overview',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -333,7 +333,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/tests/unique-devices',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/tests/unique-devices',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -357,7 +357,7 @@ Future<ApiResult<DigitalExperienceMonitoringTracerouteTestResultNetworkPathRespo
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/traceroute-test-results/${Uri.encodeComponent(testResultId.toString())}/network-path',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/traceroute-test-results/${Uri.encodeComponent(testResultId.toJson())}/network-path',
   headers: headers,
   options: options,
 );
@@ -393,7 +393,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/traceroute-tests/${Uri.encodeComponent(testId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/traceroute-tests/${Uri.encodeComponent(testId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -424,7 +424,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/traceroute-tests/${Uri.encodeComponent(testId.toString())}/network-path',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/traceroute-tests/${Uri.encodeComponent(testId.toJson())}/network-path',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -461,7 +461,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/traceroute-tests/${Uri.encodeComponent(testId.toString())}/percentiles',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/traceroute-tests/${Uri.encodeComponent(testId.toJson())}/percentiles',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

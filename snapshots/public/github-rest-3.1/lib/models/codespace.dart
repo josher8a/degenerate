@@ -133,7 +133,7 @@ Map<String, dynamic> toJson() { return {
   'owner': owner.toJson(),
   'billable_owner': billableOwner.toJson(),
   'repository': repository.toJson(),
-  'machine': machine != null ? machine?.toJson() : null,
+  'machine': machine?.toJson(),
   'devcontainer_path': ?devcontainerPath,
   'prebuild': prebuild,
   'created_at': createdAt.toIso8601String(),
@@ -149,7 +149,7 @@ Map<String, dynamic> toJson() { return {
   'start_url': startUrl.toString(),
   'stop_url': stopUrl.toString(),
   if (publishUrl != null) 'publish_url': publishUrl?.toString(),
-  'pulls_url': pullsUrl != null ? pullsUrl?.toString() : null,
+  'pulls_url': pullsUrl?.toString(),
   'recent_folders': recentFolders,
   if (runtimeConstraints != null) 'runtime_constraints': runtimeConstraints?.toJson(),
   'pending_operation': ?pendingOperation,
@@ -252,6 +252,6 @@ Codespace copyWith({int? id, String? name, String? Function()? displayName, Stri
 
 @override int get hashCode => Object.hashAll([id, name, displayName, environmentId, owner, billableOwner, repository, machine, devcontainerPath, prebuild, createdAt, updatedAt, lastUsedAt, state, url, gitStatus, location, idleTimeoutMinutes, webUrl, machinesUrl, startUrl, stopUrl, publishUrl, pullsUrl, Object.hashAll(recentFolders), runtimeConstraints, pendingOperation, pendingOperationDisabledReason, idleTimeoutNotice, retentionPeriodMinutes, retentionExpiresAt, lastKnownStopNotice]);
 
-@override String toString() => 'Codespace(id: $id, name: $name, displayName: $displayName, environmentId: $environmentId, owner: $owner, billableOwner: $billableOwner, repository: $repository, machine: $machine, devcontainerPath: $devcontainerPath, prebuild: $prebuild, createdAt: $createdAt, updatedAt: $updatedAt, lastUsedAt: $lastUsedAt, state: $state, url: $url, gitStatus: $gitStatus, location: $location, idleTimeoutMinutes: $idleTimeoutMinutes, webUrl: $webUrl, machinesUrl: $machinesUrl, startUrl: $startUrl, stopUrl: $stopUrl, publishUrl: $publishUrl, pullsUrl: $pullsUrl, recentFolders: $recentFolders, runtimeConstraints: $runtimeConstraints, pendingOperation: $pendingOperation, pendingOperationDisabledReason: $pendingOperationDisabledReason, idleTimeoutNotice: $idleTimeoutNotice, retentionPeriodMinutes: $retentionPeriodMinutes, retentionExpiresAt: $retentionExpiresAt, lastKnownStopNotice: $lastKnownStopNotice)';
+@override String toString() => 'Codespace(\n  id: $id,\n  name: $name,\n  displayName: $displayName,\n  environmentId: $environmentId,\n  owner: $owner,\n  billableOwner: $billableOwner,\n  repository: $repository,\n  machine: $machine,\n  devcontainerPath: $devcontainerPath,\n  prebuild: $prebuild,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  lastUsedAt: $lastUsedAt,\n  state: $state,\n  url: $url,\n  gitStatus: $gitStatus,\n  location: $location,\n  idleTimeoutMinutes: $idleTimeoutMinutes,\n  webUrl: $webUrl,\n  machinesUrl: $machinesUrl,\n  startUrl: $startUrl,\n  stopUrl: $stopUrl,\n  publishUrl: $publishUrl,\n  pullsUrl: $pullsUrl,\n  recentFolders: $recentFolders,\n  runtimeConstraints: $runtimeConstraints,\n  pendingOperation: $pendingOperation,\n  pendingOperationDisabledReason: $pendingOperationDisabledReason,\n  idleTimeoutNotice: $idleTimeoutNotice,\n  retentionPeriodMinutes: $retentionPeriodMinutes,\n  retentionExpiresAt: $retentionExpiresAt,\n  lastKnownStopNotice: $lastKnownStopNotice,\n)';
 
  }

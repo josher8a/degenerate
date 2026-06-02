@@ -129,6 +129,6 @@ AccessSchemasUsers copyWith({AccessSchemasAccessSeat? Function()? accessSeat, Ac
 
 @override int get hashCode => Object.hash(accessSeat, activeDeviceCount, createdAt, email, gatewaySeat, id, lastSuccessfulLogin, name, seatUid, uid, updatedAt);
 
-@override String toString() => 'AccessSchemasUsers(accessSeat: $accessSeat, activeDeviceCount: $activeDeviceCount, createdAt: $createdAt, email: $email, gatewaySeat: $gatewaySeat, id: $id, lastSuccessfulLogin: $lastSuccessfulLogin, name: $name, seatUid: $seatUid, uid: $uid, updatedAt: $updatedAt)';
+@override String toString() => 'AccessSchemasUsers(\n  accessSeat: $accessSeat,\n  activeDeviceCount: $activeDeviceCount,\n  createdAt: $createdAt,\n  email: $email,\n  gatewaySeat: $gatewaySeat,\n  id: $id,\n  lastSuccessfulLogin: $lastSuccessfulLogin,\n  name: $name,\n  seatUid: $seatUid,\n  uid: $uid,\n  updatedAt: $updatedAt,\n)';
 
  }

@@ -83,6 +83,6 @@ LivestreamSessionLivestreamIdResponseDataSession copyWith({DateTime? Function()?
 
 @override int get hashCode => Object.hash(createdAt, errMessage, id, ingestSeconds, invokedTime, livestreamId, startedTime, stoppedTime, updatedAt, viewerSeconds);
 
-@override String toString() => 'LivestreamSessionLivestreamIdResponseDataSession(createdAt: $createdAt, errMessage: $errMessage, id: $id, ingestSeconds: $ingestSeconds, invokedTime: $invokedTime, livestreamId: $livestreamId, startedTime: $startedTime, stoppedTime: $stoppedTime, updatedAt: $updatedAt, viewerSeconds: $viewerSeconds)';
+@override String toString() => 'LivestreamSessionLivestreamIdResponseDataSession(\n  createdAt: $createdAt,\n  errMessage: $errMessage,\n  id: $id,\n  ingestSeconds: $ingestSeconds,\n  invokedTime: $invokedTime,\n  livestreamId: $livestreamId,\n  startedTime: $startedTime,\n  stoppedTime: $stoppedTime,\n  updatedAt: $updatedAt,\n  viewerSeconds: $viewerSeconds,\n)';
 
  }

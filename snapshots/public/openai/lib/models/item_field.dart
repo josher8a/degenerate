@@ -37,7 +37,7 @@ factory ItemField.fromJson(Map<String, dynamic> json) { return switch (json['typ
 factory ItemField.message({required String id, required MessageStatus status, required MessageRole role, required List<MessageContent> content, }) { return ItemFieldMessage(Message(type: 'message', id: id, status: status, role: role, content: content)); }
 
 /// Build the `function_call` variant.
-factory ItemField.functionCall({String? id, required String callId, String? namespace, required String name, required String arguments, ComputerToolCallOutputStatus? status, }) { return ItemFieldFunctionCall(FunctionToolCall(type: 'function_call', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
+factory ItemField.functionCall({required String callId, required String name, required String arguments, String? id, String? namespace, ComputerToolCallOutputStatus? status, }) { return ItemFieldFunctionCall(FunctionToolCall(type: 'function_call', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
 
 /// Build the `tool_search_call` variant.
 factory ItemField.toolSearchCall({required String id, required String? callId, required ToolSearchExecutionType execution, required dynamic arguments, required FunctionCallStatus status, String? createdBy, }) { return ItemFieldToolSearchCall(ToolSearchCall(type: 'tool_search_call', id: id, callId: callId, execution: execution, arguments: arguments, status: status, createdBy: createdBy)); }
@@ -46,7 +46,7 @@ factory ItemField.toolSearchCall({required String id, required String? callId, r
 factory ItemField.toolSearchOutput({required String id, required String? callId, required ToolSearchExecutionType execution, required List<Tool> tools, required FunctionCallOutputStatusEnum status, String? createdBy, }) { return ItemFieldToolSearchOutput(ToolSearchOutput(type: 'tool_search_output', id: id, callId: callId, execution: execution, tools: tools, status: status, createdBy: createdBy)); }
 
 /// Build the `function_call_output` variant.
-factory ItemField.functionCallOutput({String? id, required String callId, required CustomToolCallOutputOutput output, ComputerToolCallOutputStatus? status, }) { return ItemFieldFunctionCallOutput(FunctionToolCallOutput(type: 'function_call_output', id: id, callId: callId, output: output, status: status)); }
+factory ItemField.functionCallOutput({required String callId, required CustomToolCallOutputOutput output, String? id, ComputerToolCallOutputStatus? status, }) { return ItemFieldFunctionCallOutput(FunctionToolCallOutput(type: 'function_call_output', id: id, callId: callId, output: output, status: status)); }
 
 /// Build the `file_search_call` variant.
 factory ItemField.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, List<FileSearchToolCallResults>? results, }) { return ItemFieldFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
@@ -58,13 +58,13 @@ factory ItemField.webSearchCall({required String id, required WebSearchToolCallS
 factory ItemField.imageGenerationCall({required String id, required ImageGenToolCallStatus status, required String? result, }) { return ItemFieldImageGenerationCall(ImageGenToolCall(type: 'image_generation_call', id: id, status: status, result: result)); }
 
 /// Build the `computer_call` variant.
-factory ItemField.computerCall({required String id, required String callId, ComputerAction? action, List<ComputerAction>? actions, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputStatus status, }) { return ItemFieldComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
+factory ItemField.computerCall({required String id, required String callId, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputStatus status, ComputerAction? action, List<ComputerAction>? actions, }) { return ItemFieldComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
 
 /// Build the `ComputerToolCallOutputResource` variant.
-factory ItemField.computerToolCallOutputResource({String? id, required String callId, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, required ComputerScreenshotImage output, ComputerToolCallOutputStatus? status, }) { return ItemFieldComputerToolCallOutputResource(ComputerToolCallOutput(type: ComputerToolCallOutputType.fromJson('ComputerToolCallOutputResource'), id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status)); }
+factory ItemField.computerToolCallOutputResource({required String callId, required ComputerScreenshotImage output, String? id, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ItemFieldComputerToolCallOutputResource(ComputerToolCallOutput(type: ComputerToolCallOutputType.fromJson('ComputerToolCallOutputResource'), id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status)); }
 
 /// Build the `reasoning` variant.
-factory ItemField.reasoning({required String id, String? encryptedContent, required List<SummaryTextContent> summary, List<ReasoningTextContent>? content, ComputerToolCallOutputStatus? status, }) { return ItemFieldReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
+factory ItemField.reasoning({required String id, required List<SummaryTextContent> summary, String? encryptedContent, List<ReasoningTextContent>? content, ComputerToolCallOutputStatus? status, }) { return ItemFieldReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
 
 /// Build the `compaction` variant.
 factory ItemField.compaction({required String id, required String encryptedContent, String? createdBy, }) { return ItemFieldCompaction(CompactionBody(type: 'compaction', id: id, encryptedContent: encryptedContent, createdBy: createdBy)); }
@@ -103,10 +103,10 @@ factory ItemField.mcpApprovalResponse({required String id, required String appro
 factory ItemField.mcpCall({required String id, required String serverLabel, required String name, required String arguments, String? output, String? error, McpToolCallStatus? status, String? approvalRequestId, }) { return ItemFieldMcpCall(McpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, output: output, error: error, status: status, approvalRequestId: approvalRequestId)); }
 
 /// Build the `custom_tool_call` variant.
-factory ItemField.customToolCall({String? id, required String callId, String? namespace, required String name, required String input, }) { return ItemFieldCustomToolCall(CustomToolCall(type: 'custom_tool_call', id: id, callId: callId, namespace: namespace, name: name, input: input)); }
+factory ItemField.customToolCall({required String callId, required String name, required String input, String? id, String? namespace, }) { return ItemFieldCustomToolCall(CustomToolCall(type: 'custom_tool_call', id: id, callId: callId, namespace: namespace, name: name, input: input)); }
 
 /// Build the `custom_tool_call_output` variant.
-factory ItemField.customToolCallOutput({String? id, required String callId, required CustomToolCallOutputOutput output, }) { return ItemFieldCustomToolCallOutput(CustomToolCallOutput(type: 'custom_tool_call_output', id: id, callId: callId, output: output)); }
+factory ItemField.customToolCallOutput({required String callId, required CustomToolCallOutputOutput output, String? id, }) { return ItemFieldCustomToolCallOutput(CustomToolCallOutput(type: 'custom_tool_call_output', id: id, callId: callId, output: output)); }
 
 /// The discriminator value identifying this variant.
 String get type;
@@ -116,6 +116,34 @@ bool get isUnknown => this is ItemField$Unknown;
 
 /// Shared by all variants of this union.
 String? get id;
+R when<R>({required R Function(ItemFieldMessage) message, required R Function(ItemFieldFunctionCall) functionCall, required R Function(ItemFieldToolSearchCall) toolSearchCall, required R Function(ItemFieldToolSearchOutput) toolSearchOutput, required R Function(ItemFieldFunctionCallOutput) functionCallOutput, required R Function(ItemFieldFileSearchCall) fileSearchCall, required R Function(ItemFieldWebSearchCall) webSearchCall, required R Function(ItemFieldImageGenerationCall) imageGenerationCall, required R Function(ItemFieldComputerCall) computerCall, required R Function(ItemFieldComputerToolCallOutputResource) computerToolCallOutputResource, required R Function(ItemFieldReasoning) reasoning, required R Function(ItemFieldCompaction) compaction, required R Function(ItemFieldCodeInterpreterCall) codeInterpreterCall, required R Function(ItemFieldLocalShellCall) localShellCall, required R Function(ItemFieldLocalShellCallOutput) localShellCallOutput, required R Function(ItemFieldShellCall) shellCall, required R Function(ItemFieldShellCallOutput) shellCallOutput, required R Function(ItemFieldApplyPatchCall) applyPatchCall, required R Function(ItemFieldApplyPatchCallOutput) applyPatchCallOutput, required R Function(ItemFieldMcpListTools) mcpListTools, required R Function(ItemFieldMcpApprovalRequest) mcpApprovalRequest, required R Function(ItemFieldMcpApprovalResponse) mcpApprovalResponse, required R Function(ItemFieldMcpCall) mcpCall, required R Function(ItemFieldCustomToolCall) customToolCall, required R Function(ItemFieldCustomToolCallOutput) customToolCallOutput, required R Function(ItemField$Unknown) unknown, }) { return switch (this) {
+  final ItemFieldMessage v => message(v),
+  final ItemFieldFunctionCall v => functionCall(v),
+  final ItemFieldToolSearchCall v => toolSearchCall(v),
+  final ItemFieldToolSearchOutput v => toolSearchOutput(v),
+  final ItemFieldFunctionCallOutput v => functionCallOutput(v),
+  final ItemFieldFileSearchCall v => fileSearchCall(v),
+  final ItemFieldWebSearchCall v => webSearchCall(v),
+  final ItemFieldImageGenerationCall v => imageGenerationCall(v),
+  final ItemFieldComputerCall v => computerCall(v),
+  final ItemFieldComputerToolCallOutputResource v => computerToolCallOutputResource(v),
+  final ItemFieldReasoning v => reasoning(v),
+  final ItemFieldCompaction v => compaction(v),
+  final ItemFieldCodeInterpreterCall v => codeInterpreterCall(v),
+  final ItemFieldLocalShellCall v => localShellCall(v),
+  final ItemFieldLocalShellCallOutput v => localShellCallOutput(v),
+  final ItemFieldShellCall v => shellCall(v),
+  final ItemFieldShellCallOutput v => shellCallOutput(v),
+  final ItemFieldApplyPatchCall v => applyPatchCall(v),
+  final ItemFieldApplyPatchCallOutput v => applyPatchCallOutput(v),
+  final ItemFieldMcpListTools v => mcpListTools(v),
+  final ItemFieldMcpApprovalRequest v => mcpApprovalRequest(v),
+  final ItemFieldMcpApprovalResponse v => mcpApprovalResponse(v),
+  final ItemFieldMcpCall v => mcpCall(v),
+  final ItemFieldCustomToolCall v => customToolCall(v),
+  final ItemFieldCustomToolCallOutput v => customToolCallOutput(v),
+  final ItemField$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ItemFieldMessage extends ItemField {const ItemFieldMessage(this.message);
 
@@ -786,9 +814,11 @@ ItemFieldCustomToolCallOutput copyWith({String? Function()? id, String? callId, 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class ItemField$Unknown extends ItemField {const ItemField$Unknown(this.json);
+@immutable final class ItemField$Unknown extends ItemField {ItemField$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String? _id = json['id'] as String?;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -801,6 +831,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ItemField.unknown($json)';
 
-@override String? get id => json['id'] as String?;
+@override String? get id => _id;
 
  }

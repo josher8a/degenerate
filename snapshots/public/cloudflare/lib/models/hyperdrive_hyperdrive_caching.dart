@@ -18,6 +18,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is HyperdriveHyperdriveCaching$Unknown;
 
+R when<R>({required R Function(HyperdriveHyperdriveCachingFalse) $false, required R Function(HyperdriveHyperdriveCachingTrue) $true, required R Function(HyperdriveHyperdriveCaching$Unknown) unknown, }) { return switch (this) {
+  final HyperdriveHyperdriveCachingFalse v => $false(v),
+  final HyperdriveHyperdriveCachingTrue v => $true(v),
+  final HyperdriveHyperdriveCaching$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class HyperdriveHyperdriveCachingFalse extends HyperdriveHyperdriveCaching {const HyperdriveHyperdriveCachingFalse(this.hyperdriveHyperdriveCachingEnabled);
 

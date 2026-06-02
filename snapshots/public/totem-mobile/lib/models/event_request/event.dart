@@ -67,6 +67,30 @@ sealed class Event {
 
   /// Whether this variant is unknown (not defined in the OpenAPI spec).
   bool get isUnknown => this is Event$Unknown;
+
+  R when<R>({
+    required R Function(EventAcceptStick) acceptStick,
+    required R Function(EventBanParticipant) banParticipant,
+    required R Function(EventEndRoom) endRoom,
+    required R Function(EventForcePassStick) forcePassStick,
+    required R Function(EventPassStick) passStick,
+    required R Function(EventReorder) reorder,
+    required R Function(EventStartRoom) startRoom,
+    required R Function(EventUnbanParticipant) unbanParticipant,
+    required R Function(Event$Unknown) unknown,
+  }) {
+    return switch (this) {
+      final EventAcceptStick v => acceptStick(v),
+      final EventBanParticipant v => banParticipant(v),
+      final EventEndRoom v => endRoom(v),
+      final EventForcePassStick v => forcePassStick(v),
+      final EventPassStick v => passStick(v),
+      final EventReorder v => reorder(v),
+      final EventStartRoom v => startRoom(v),
+      final EventUnbanParticipant v => unbanParticipant(v),
+      final Event$Unknown v => unknown(v),
+    };
+  }
 }
 
 @immutable

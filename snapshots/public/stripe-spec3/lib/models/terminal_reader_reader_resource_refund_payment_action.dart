@@ -78,6 +78,6 @@ TerminalReaderReaderResourceRefundPaymentAction copyWith({int? Function()? amoun
 
 @override int get hashCode => Object.hash(amount, charge, metadata, paymentIntent, reason, refund, refundApplicationFee, refundPaymentConfig, reverseTransfer);
 
-@override String toString() => 'TerminalReaderReaderResourceRefundPaymentAction(amount: $amount, charge: $charge, metadata: $metadata, paymentIntent: $paymentIntent, reason: $reason, refund: $refund, refundApplicationFee: $refundApplicationFee, refundPaymentConfig: $refundPaymentConfig, reverseTransfer: $reverseTransfer)';
+@override String toString() => 'TerminalReaderReaderResourceRefundPaymentAction(\n  amount: $amount,\n  charge: $charge,\n  metadata: $metadata,\n  paymentIntent: $paymentIntent,\n  reason: $reason,\n  refund: $refund,\n  refundApplicationFee: $refundApplicationFee,\n  refundPaymentConfig: $refundPaymentConfig,\n  reverseTransfer: $reverseTransfer,\n)';
 
  }

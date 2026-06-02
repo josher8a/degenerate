@@ -17,7 +17,7 @@ Future<ApiResult<CacheResult, Never>> sslDetectorAutomaticModeGetEnrollment({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/ssl_automatic_mode',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/ssl_automatic_mode',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/ssl_automatic_mode',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/ssl_automatic_mode',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

@@ -274,6 +274,6 @@ IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? 
 
 @override int get hashCode => Object.hash(accountId, accountTrustScore, cardNumberSource, cardholderAddress, cardholderName, deviceTrustScore, hashedAccountEmailAddress, Object.hashAll(reasonCodes ?? const []), suggestedDecision, suggestedDecisionVersion);
 
-@override String toString() => 'IssuingNetworkTokenWalletProvider(accountId: $accountId, accountTrustScore: $accountTrustScore, cardNumberSource: $cardNumberSource, cardholderAddress: $cardholderAddress, cardholderName: $cardholderName, deviceTrustScore: $deviceTrustScore, hashedAccountEmailAddress: $hashedAccountEmailAddress, reasonCodes: $reasonCodes, suggestedDecision: $suggestedDecision, suggestedDecisionVersion: $suggestedDecisionVersion)';
+@override String toString() => 'IssuingNetworkTokenWalletProvider(\n  accountId: $accountId,\n  accountTrustScore: $accountTrustScore,\n  cardNumberSource: $cardNumberSource,\n  cardholderAddress: $cardholderAddress,\n  cardholderName: $cardholderName,\n  deviceTrustScore: $deviceTrustScore,\n  hashedAccountEmailAddress: $hashedAccountEmailAddress,\n  reasonCodes: $reasonCodes,\n  suggestedDecision: $suggestedDecision,\n  suggestedDecisionVersion: $suggestedDecisionVersion,\n)';
 
  }

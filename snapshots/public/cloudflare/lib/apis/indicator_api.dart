@@ -70,7 +70,7 @@ return execute(
   onSuccess: (response) {
     return GetIndicatorReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetIndicatorReadError.fromResponse(response),
+  onError: GetIndicatorReadError.fromResponse,
 );
  } 
 /// Updates an indicator
@@ -94,7 +94,7 @@ return execute(
   onSuccess: (response) {
     return PatchIndicatorUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PatchIndicatorUpdateError.fromResponse(response),
+  onError: PatchIndicatorUpdateError.fromResponse,
 );
  } 
 /// Deletes an indicator
@@ -116,7 +116,7 @@ return execute(
   onSuccess: (response) {
     return DeleteIndicatorDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteIndicatorDeleteError.fromResponse(response),
+  onError: DeleteIndicatorDeleteError.fromResponse,
 );
  } 
 /// Creates multiple indicators in bulk
@@ -140,7 +140,7 @@ return execute(
   onSuccess: (response) {
     return double.parse(response.body);
   },
-  onError: (response) => PostIndicatorCreateBulkError.fromResponse(response),
+  onError: PostIndicatorCreateBulkError.fromResponse,
 );
  } 
 /// Creates a new indicator
@@ -164,7 +164,7 @@ return execute(
   onSuccess: (response) {
     return PostIndicatorCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostIndicatorCreateError.fromResponse(response),
+  onError: PostIndicatorCreateError.fromResponse,
 );
  } 
 /// List mirrored tags for an indicator dataset
@@ -187,7 +187,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => e as Map<String, dynamic>).toList();
   },
-  onError: (response) => GetIndicatorTagsListError.fromResponse(response),
+  onError: GetIndicatorTagsListError.fromResponse,
 );
  } 
 /// Lists indicators across multiple datasets
@@ -259,7 +259,7 @@ return execute(
   onSuccess: (response) {
     return GetIndicatorListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetIndicatorListError.fromResponse(response),
+  onError: GetIndicatorListError.fromResponse,
 );
  } 
  }

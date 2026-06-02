@@ -9,7 +9,7 @@ factory InfraServiceConfig.fromJson(Map<String, dynamic> json) { return switch (
 }; }
 
 /// Build the `http` variant.
-factory InfraServiceConfig.http({DateTime? createdAt, required InfraServiceHost host, required String name, String? serviceId, DateTime? updatedAt, }) { return InfraServiceConfigHttp(InfraServiceCommon(type: InfraServiceType.fromJson('http'), createdAt: createdAt, host: host, name: name, serviceId: serviceId, updatedAt: updatedAt)); }
+factory InfraServiceConfig.http({required InfraServiceHost host, required String name, DateTime? createdAt, String? serviceId, DateTime? updatedAt, }) { return InfraServiceConfigHttp(InfraServiceCommon(type: InfraServiceType.fromJson('http'), createdAt: createdAt, host: host, name: name, serviceId: serviceId, updatedAt: updatedAt)); }
 
 /// The discriminator value identifying this variant.
 String get type;
@@ -17,6 +17,10 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is InfraServiceConfig$Unknown;
 
+R when<R>({required R Function(InfraServiceConfigHttp) http, required R Function(InfraServiceConfig$Unknown) unknown, }) { return switch (this) {
+  final InfraServiceConfigHttp v => http(v),
+  final InfraServiceConfig$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class InfraServiceConfigHttp extends InfraServiceConfig {const InfraServiceConfigHttp(this.infraServiceCommon);
 

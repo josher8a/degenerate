@@ -106,6 +106,6 @@ WebhookPullRequestSynchronize copyWith({WebhookPullRequestSynchronizeAction? act
 
 @override int get hashCode => Object.hash(action, after, before, enterprise, installation, number, organization, pullRequest, repository, sender);
 
-@override String toString() => 'WebhookPullRequestSynchronize(action: $action, after: $after, before: $before, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)';
+@override String toString() => 'WebhookPullRequestSynchronize(\n  action: $action,\n  after: $after,\n  before: $before,\n  enterprise: $enterprise,\n  installation: $installation,\n  number: $number,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  repository: $repository,\n  sender: $sender,\n)';
 
  }

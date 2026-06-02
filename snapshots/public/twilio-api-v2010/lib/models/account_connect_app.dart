@@ -135,6 +135,6 @@ AccountConnectApp copyWith({String? Function()? accountSid, Uri? Function()? aut
 
 @override int get hashCode => Object.hash(accountSid, authorizeRedirectUrl, companyName, deauthorizeCallbackMethod, deauthorizeCallbackUrl, description, friendlyName, homepageUrl, Object.hashAll(permissions ?? const []), sid, uri);
 
-@override String toString() => 'AccountConnectApp(accountSid: $accountSid, authorizeRedirectUrl: $authorizeRedirectUrl, companyName: $companyName, deauthorizeCallbackMethod: $deauthorizeCallbackMethod, deauthorizeCallbackUrl: $deauthorizeCallbackUrl, description: $description, friendlyName: $friendlyName, homepageUrl: $homepageUrl, permissions: $permissions, sid: $sid, uri: $uri)';
+@override String toString() => 'AccountConnectApp(\n  accountSid: $accountSid,\n  authorizeRedirectUrl: $authorizeRedirectUrl,\n  companyName: $companyName,\n  deauthorizeCallbackMethod: $deauthorizeCallbackMethod,\n  deauthorizeCallbackUrl: $deauthorizeCallbackUrl,\n  description: $description,\n  friendlyName: $friendlyName,\n  homepageUrl: $homepageUrl,\n  permissions: $permissions,\n  sid: $sid,\n  uri: $uri,\n)';
 
  }

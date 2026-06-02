@@ -63,7 +63,7 @@ return execute(
   onSuccess: (response) {
     return License.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Get the license for a repository
@@ -98,7 +98,7 @@ return execute(
   onSuccess: (response) {
     return LicenseContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
  }

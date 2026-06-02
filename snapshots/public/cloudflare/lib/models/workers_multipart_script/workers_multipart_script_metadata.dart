@@ -128,6 +128,6 @@ WorkersMultipartScriptMetadata copyWith({WorkersAssets? Function()? assets, List
 
 @override int get hashCode => Object.hash(assets, Object.hashAll(bindings ?? const []), bodyPart, compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), keepAssets, Object.hashAll(keepBindings ?? const []), limits, logpush, mainModule, migrations, observability, placement, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers ?? const []), usageModel);
 
-@override String toString() => 'WorkersMultipartScriptMetadata(assets: $assets, bindings: $bindings, bodyPart: $bodyPart, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, keepAssets: $keepAssets, keepBindings: $keepBindings, limits: $limits, logpush: $logpush, mainModule: $mainModule, migrations: $migrations, observability: $observability, placement: $placement, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)';
+@override String toString() => 'WorkersMultipartScriptMetadata(\n  assets: $assets,\n  bindings: $bindings,\n  bodyPart: $bodyPart,\n  compatibilityDate: $compatibilityDate,\n  compatibilityFlags: $compatibilityFlags,\n  keepAssets: $keepAssets,\n  keepBindings: $keepBindings,\n  limits: $limits,\n  logpush: $logpush,\n  mainModule: $mainModule,\n  migrations: $migrations,\n  observability: $observability,\n  placement: $placement,\n  tags: $tags,\n  tailConsumers: $tailConsumers,\n  usageModel: $usageModel,\n)';
 
  }

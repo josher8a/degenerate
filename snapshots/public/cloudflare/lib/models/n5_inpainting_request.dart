@@ -71,7 +71,7 @@ if (height$ != null) {
   if (height$ > 2048) errors.add('height: must be <= 2048');
 }
 if (numSteps > 20) errors.add('numSteps: must be <= 20');
-if (prompt.length < 1) errors.add('prompt: length must be >= 1');
+if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
 final width$ = width;
 if (width$ != null) {
   if (width$ < 256) errors.add('width: must be >= 256');
@@ -107,6 +107,6 @@ $5InpaintingRequest copyWith({double Function()? guidance, int? Function()? heig
 
 @override int get hashCode => Object.hash(guidance, height, Object.hashAll(image ?? const []), imageB64, Object.hashAll(mask ?? const []), negativePrompt, numSteps, prompt, seed, strength, width);
 
-@override String toString() => '\$5InpaintingRequest(guidance: $guidance, height: $height, image: $image, imageB64: $imageB64, mask: $mask, negativePrompt: $negativePrompt, numSteps: $numSteps, prompt: $prompt, seed: $seed, strength: $strength, width: $width)';
+@override String toString() => '\$5InpaintingRequest(\n  guidance: $guidance,\n  height: $height,\n  image: $image,\n  imageB64: $imageB64,\n  mask: $mask,\n  negativePrompt: $negativePrompt,\n  numSteps: $numSteps,\n  prompt: $prompt,\n  seed: $seed,\n  strength: $strength,\n  width: $width,\n)';
 
  }

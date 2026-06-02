@@ -21,7 +21,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('pat_ids'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (patIds.length < 1) errors.add('patIds: must have >= 1 items');
+if (patIds.isEmpty) errors.add('patIds: must have >= 1 items');
 if (patIds.length > 100) errors.add('patIds: must have <= 100 items');
 return errors; } 
 OrgsUpdatePatAccessesRequest copyWith({OrgsUpdatePatAccessRequestAction? action, List<int>? patIds, }) { return OrgsUpdatePatAccessesRequest(

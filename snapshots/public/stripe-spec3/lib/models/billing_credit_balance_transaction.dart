@@ -148,6 +148,6 @@ BillingCreditBalanceTransaction copyWith({int? created, BillingCreditGrantsResou
 
 @override int get hashCode => Object.hash(created, credit, creditGrant, debit, effectiveAt, id, livemode, object, testClock, type);
 
-@override String toString() => 'BillingCreditBalanceTransaction(created: $created, credit: $credit, creditGrant: $creditGrant, debit: $debit, effectiveAt: $effectiveAt, id: $id, livemode: $livemode, object: $object, testClock: $testClock, type: $type)';
+@override String toString() => 'BillingCreditBalanceTransaction(\n  created: $created,\n  credit: $credit,\n  creditGrant: $creditGrant,\n  debit: $debit,\n  effectiveAt: $effectiveAt,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  testClock: $testClock,\n  type: $type,\n)';
 
  }

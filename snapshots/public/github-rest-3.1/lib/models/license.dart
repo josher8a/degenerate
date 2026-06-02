@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'key': key,
   'name': name,
   'spdx_id': spdxId,
-  'url': url != null ? url?.toString() : null,
+  'url': url?.toString(),
   'node_id': nodeId,
   'html_url': htmlUrl.toString(),
   'description': description,
@@ -106,6 +106,6 @@ License copyWith({String? key, String? name, String? Function()? spdxId, Uri? Fu
 
 @override int get hashCode => Object.hash(key, name, spdxId, url, nodeId, htmlUrl, description, implementation, Object.hashAll(permissions), Object.hashAll(conditions), Object.hashAll(limitations), body, featured);
 
-@override String toString() => 'License(key: $key, name: $name, spdxId: $spdxId, url: $url, nodeId: $nodeId, htmlUrl: $htmlUrl, description: $description, implementation: $implementation, permissions: $permissions, conditions: $conditions, limitations: $limitations, body: $body, featured: $featured)';
+@override String toString() => 'License(\n  key: $key,\n  name: $name,\n  spdxId: $spdxId,\n  url: $url,\n  nodeId: $nodeId,\n  htmlUrl: $htmlUrl,\n  description: $description,\n  implementation: $implementation,\n  permissions: $permissions,\n  conditions: $conditions,\n  limitations: $limitations,\n  body: $body,\n  featured: $featured,\n)';
 
  }

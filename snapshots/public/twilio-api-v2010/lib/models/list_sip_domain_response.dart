@@ -69,6 +69,6 @@ ListSipDomainResponse copyWith({List<AccountSipSipDomain>? Function()? domains, 
 
 @override int get hashCode => Object.hash(Object.hashAll(domains ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
 
-@override String toString() => 'ListSipDomainResponse(domains: $domains, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+@override String toString() => 'ListSipDomainResponse(\n  domains: $domains,\n  end: $end,\n  firstPageUri: $firstPageUri,\n  nextPageUri: $nextPageUri,\n  page: $page,\n  pageSize: $pageSize,\n  previousPageUri: $previousPageUri,\n  start: $start,\n  uri: $uri,\n)';
 
  }

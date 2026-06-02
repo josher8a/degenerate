@@ -81,6 +81,6 @@ IamTokenBase copyWith({IamCondition? Function()? condition, IamExpiresOn? Functi
 
 @override int get hashCode => Object.hash(condition, expiresOn, id, issuedOn, lastUsedOn, modifiedOn, name, notBefore, Object.hashAll(policies ?? const []), status);
 
-@override String toString() => 'IamTokenBase(condition: $condition, expiresOn: $expiresOn, id: $id, issuedOn: $issuedOn, lastUsedOn: $lastUsedOn, modifiedOn: $modifiedOn, name: $name, notBefore: $notBefore, policies: $policies, status: $status)';
+@override String toString() => 'IamTokenBase(\n  condition: $condition,\n  expiresOn: $expiresOn,\n  id: $id,\n  issuedOn: $issuedOn,\n  lastUsedOn: $lastUsedOn,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  notBefore: $notBefore,\n  policies: $policies,\n  status: $status,\n)';
 
  }

@@ -139,6 +139,6 @@ ShippingRate copyWith({bool? active, int? created, ShippingRateDeliveryEstimate?
 
 @override int get hashCode => Object.hash(active, created, deliveryEstimate, displayName, fixedAmount, id, livemode, metadata, object, taxBehavior, taxCode, type);
 
-@override String toString() => 'ShippingRate(active: $active, created: $created, deliveryEstimate: $deliveryEstimate, displayName: $displayName, fixedAmount: $fixedAmount, id: $id, livemode: $livemode, metadata: $metadata, object: $object, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)';
+@override String toString() => 'ShippingRate(\n  active: $active,\n  created: $created,\n  deliveryEstimate: $deliveryEstimate,\n  displayName: $displayName,\n  fixedAmount: $fixedAmount,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  taxBehavior: $taxBehavior,\n  taxCode: $taxCode,\n  type: $type,\n)';
 
  }

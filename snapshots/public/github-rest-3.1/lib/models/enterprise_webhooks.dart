@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'name': name,
   'slug': slug,
-  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
-  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
+  'created_at': createdAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
   'avatar_url': avatarUrl.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('html_url') && json['html_url'] is String &&
@@ -90,6 +90,6 @@ EnterpriseWebhooks copyWith({String? Function()? description, Uri? htmlUrl, Uri?
 
 @override int get hashCode => Object.hash(description, htmlUrl, websiteUrl, id, nodeId, name, slug, createdAt, updatedAt, avatarUrl);
 
-@override String toString() => 'EnterpriseWebhooks(description: $description, htmlUrl: $htmlUrl, websiteUrl: $websiteUrl, id: $id, nodeId: $nodeId, name: $name, slug: $slug, createdAt: $createdAt, updatedAt: $updatedAt, avatarUrl: $avatarUrl)';
+@override String toString() => 'EnterpriseWebhooks(\n  description: $description,\n  htmlUrl: $htmlUrl,\n  websiteUrl: $websiteUrl,\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  slug: $slug,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  avatarUrl: $avatarUrl,\n)';
 
  }

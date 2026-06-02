@@ -105,6 +105,6 @@ UrlscannerGetScanResponse2Task copyWith({String? apexDomain, String? domUrl, Str
 
 @override int get hashCode => Object.hash(apexDomain, domUrl, domain, method, options, reportUrl, screenshotUrl, source, success, time, url, uuid, visibility);
 
-@override String toString() => 'UrlscannerGetScanResponse2Task(apexDomain: $apexDomain, domUrl: $domUrl, domain: $domain, method: $method, options: $options, reportUrl: $reportUrl, screenshotUrl: $screenshotUrl, source: $source, success: $success, time: $time, url: $url, uuid: $uuid, visibility: $visibility)';
+@override String toString() => 'UrlscannerGetScanResponse2Task(\n  apexDomain: $apexDomain,\n  domUrl: $domUrl,\n  domain: $domain,\n  method: $method,\n  options: $options,\n  reportUrl: $reportUrl,\n  screenshotUrl: $screenshotUrl,\n  source: $source,\n  success: $success,\n  time: $time,\n  url: $url,\n  uuid: $uuid,\n  visibility: $visibility,\n)';
 
  }

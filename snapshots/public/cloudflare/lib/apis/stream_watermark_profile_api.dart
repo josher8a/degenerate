@@ -17,7 +17,7 @@ Future<ApiResult<List<StreamWatermarks>?, Never>> streamWatermarkProfileListWate
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/watermarks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/watermarks',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<StreamWatermarks?, Never>> streamWatermarkProfileCreateWatermar
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/watermarks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/watermarks',
   headers: headers,
   body: [
     ApiMultipartField.text('file', body.file),
@@ -75,7 +75,7 @@ Future<ApiResult<StreamWatermarks?, Never>> streamWatermarkProfileDetails({requi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/watermarks/${Uri.encodeComponent(identifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/watermarks/${Uri.encodeComponent(identifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -97,7 +97,7 @@ Future<ApiResult<String?, Never>> streamWatermarkProfileDeleteWatermarkProfiles(
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/watermarks/${Uri.encodeComponent(identifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/watermarks/${Uri.encodeComponent(identifier.toJson())}',
   headers: headers,
   options: options,
 );

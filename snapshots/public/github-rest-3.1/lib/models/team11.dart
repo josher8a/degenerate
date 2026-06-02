@@ -100,6 +100,6 @@ Team11 copyWith({bool? Function()? deleted, String? Function()? description, Uri
 
 @override int get hashCode => Object.hash(deleted, description, htmlUrl, id, membersUrl, name, nodeId, parent, permission, privacy, repositoriesUrl, slug, url);
 
-@override String toString() => 'Team11(deleted: $deleted, description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, parent: $parent, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)';
+@override String toString() => 'Team11(\n  deleted: $deleted,\n  description: $description,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  membersUrl: $membersUrl,\n  name: $name,\n  nodeId: $nodeId,\n  parent: $parent,\n  permission: $permission,\n  privacy: $privacy,\n  repositoriesUrl: $repositoriesUrl,\n  slug: $slug,\n  url: $url,\n)';
 
  }

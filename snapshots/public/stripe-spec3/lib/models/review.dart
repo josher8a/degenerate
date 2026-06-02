@@ -235,6 +235,6 @@ Review copyWith({String? Function()? billingZip, ApplicationFeeCharge? Function(
 
 @override int get hashCode => Object.hash(billingZip, charge, closedReason, created, id, ipAddress, ipAddressLocation, livemode, object, open, openedReason, paymentIntent, reason, session);
 
-@override String toString() => 'Review(billingZip: $billingZip, charge: $charge, closedReason: $closedReason, created: $created, id: $id, ipAddress: $ipAddress, ipAddressLocation: $ipAddressLocation, livemode: $livemode, object: $object, open: $open, openedReason: $openedReason, paymentIntent: $paymentIntent, reason: $reason, session: $session)';
+@override String toString() => 'Review(\n  billingZip: $billingZip,\n  charge: $charge,\n  closedReason: $closedReason,\n  created: $created,\n  id: $id,\n  ipAddress: $ipAddress,\n  ipAddressLocation: $ipAddressLocation,\n  livemode: $livemode,\n  object: $object,\n  open: $open,\n  openedReason: $openedReason,\n  paymentIntent: $paymentIntent,\n  reason: $reason,\n  session: $session,\n)';
 
  }

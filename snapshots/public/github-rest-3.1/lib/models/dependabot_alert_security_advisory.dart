@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'references': references.map((e) => e.toJson()).toList(),
   'published_at': publishedAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  'withdrawn_at': withdrawnAt != null ? withdrawnAt?.toIso8601String() : null,
+  'withdrawn_at': withdrawnAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
       json.containsKey('cve_id') && json['cve_id'] is String &&
@@ -135,6 +135,6 @@ DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cv
 
 @override int get hashCode => Object.hash(ghsaId, cveId, summary, description, Object.hashAll(vulnerabilities), severity, cvss, cvssSeverities, epss, Object.hashAll(cwes), Object.hashAll(identifiers), Object.hashAll(references), publishedAt, updatedAt, withdrawnAt);
 
-@override String toString() => 'DependabotAlertSecurityAdvisory(ghsaId: $ghsaId, cveId: $cveId, summary: $summary, description: $description, vulnerabilities: $vulnerabilities, severity: $severity, cvss: $cvss, cvssSeverities: $cvssSeverities, epss: $epss, cwes: $cwes, identifiers: $identifiers, references: $references, publishedAt: $publishedAt, updatedAt: $updatedAt, withdrawnAt: $withdrawnAt)';
+@override String toString() => 'DependabotAlertSecurityAdvisory(\n  ghsaId: $ghsaId,\n  cveId: $cveId,\n  summary: $summary,\n  description: $description,\n  vulnerabilities: $vulnerabilities,\n  severity: $severity,\n  cvss: $cvss,\n  cvssSeverities: $cvssSeverities,\n  epss: $epss,\n  cwes: $cwes,\n  identifiers: $identifiers,\n  references: $references,\n  publishedAt: $publishedAt,\n  updatedAt: $updatedAt,\n  withdrawnAt: $withdrawnAt,\n)';
 
  }

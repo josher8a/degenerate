@@ -87,6 +87,6 @@ RealtimekitParticipantPeerStatsPeerStatsDeviceInfo copyWith({String? Function()?
 
 @override int get hashCode => Object.hash(browser, browserVersion, cpus, engine, isMobile, memory, os, osVersion, sdkName, sdkVersion, userAgent, webglSupport);
 
-@override String toString() => 'RealtimekitParticipantPeerStatsPeerStatsDeviceInfo(browser: $browser, browserVersion: $browserVersion, cpus: $cpus, engine: $engine, isMobile: $isMobile, memory: $memory, os: $os, osVersion: $osVersion, sdkName: $sdkName, sdkVersion: $sdkVersion, userAgent: $userAgent, webglSupport: $webglSupport)';
+@override String toString() => 'RealtimekitParticipantPeerStatsPeerStatsDeviceInfo(\n  browser: $browser,\n  browserVersion: $browserVersion,\n  cpus: $cpus,\n  engine: $engine,\n  isMobile: $isMobile,\n  memory: $memory,\n  os: $os,\n  osVersion: $osVersion,\n  sdkName: $sdkName,\n  sdkVersion: $sdkVersion,\n  userAgent: $userAgent,\n  webglSupport: $webglSupport,\n)';
 
  }

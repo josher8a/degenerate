@@ -94,6 +94,6 @@ TeamsDevicesZeroTrustAccountDeviceSettings copyWith({double? Function()? disable
 
 @override int get hashCode => Object.hash(disableForTime, externalEmergencySignalEnabled, externalEmergencySignalFingerprint, externalEmergencySignalInterval, externalEmergencySignalUrl, gatewayProxyEnabled, gatewayUdpProxyEnabled, rootCertificateInstallationEnabled, useZtVirtualIp);
 
-@override String toString() => 'TeamsDevicesZeroTrustAccountDeviceSettings(disableForTime: $disableForTime, externalEmergencySignalEnabled: $externalEmergencySignalEnabled, externalEmergencySignalFingerprint: $externalEmergencySignalFingerprint, externalEmergencySignalInterval: $externalEmergencySignalInterval, externalEmergencySignalUrl: $externalEmergencySignalUrl, gatewayProxyEnabled: $gatewayProxyEnabled, gatewayUdpProxyEnabled: $gatewayUdpProxyEnabled, rootCertificateInstallationEnabled: $rootCertificateInstallationEnabled, useZtVirtualIp: $useZtVirtualIp)';
+@override String toString() => 'TeamsDevicesZeroTrustAccountDeviceSettings(\n  disableForTime: $disableForTime,\n  externalEmergencySignalEnabled: $externalEmergencySignalEnabled,\n  externalEmergencySignalFingerprint: $externalEmergencySignalFingerprint,\n  externalEmergencySignalInterval: $externalEmergencySignalInterval,\n  externalEmergencySignalUrl: $externalEmergencySignalUrl,\n  gatewayProxyEnabled: $gatewayProxyEnabled,\n  gatewayUdpProxyEnabled: $gatewayUdpProxyEnabled,\n  rootCertificateInstallationEnabled: $rootCertificateInstallationEnabled,\n  useZtVirtualIp: $useZtVirtualIp,\n)';
 
  }

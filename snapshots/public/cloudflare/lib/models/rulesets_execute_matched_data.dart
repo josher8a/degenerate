@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('public_key') && json['public_key'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (publicKey.length < 1) errors.add('publicKey: length must be >= 1');
+if (publicKey.isEmpty) errors.add('publicKey: length must be >= 1');
 return errors; } 
 RulesetsExecuteMatchedData copyWith({String? publicKey}) { return RulesetsExecuteMatchedData(
   publicKey: publicKey ?? this.publicKey,

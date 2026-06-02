@@ -112,7 +112,7 @@ final actionTimeout$ = actionTimeout;
 if (actionTimeout$ != null) {
   if (actionTimeout$ > 120000) errors.add('actionTimeout: must be <= 120000');
 }
-if (elements.length < 1) errors.add('elements: must have >= 1 items');
+if (elements.isEmpty) errors.add('elements: must have >= 1 items');
 final waitForTimeout$ = waitForTimeout;
 if (waitForTimeout$ != null) {
   if (waitForTimeout$ > 120000) errors.add('waitForTimeout: must be <= 120000');
@@ -165,6 +165,6 @@ BrapiPostScrapeRequestVariant2 copyWith({double? Function()? actionTimeout, List
 
 @override int get hashCode => Object.hash(actionTimeout, Object.hashAll(addScriptTag ?? const []), Object.hashAll(addStyleTag ?? const []), Object.hashAll(allowRequestPattern ?? const []), Object.hashAll(allowResourceTypes ?? const []), authenticate, bestAttempt, Object.hashAll(cookies ?? const []), Object.hashAll(elements), emulateMediaType, gotoOptions, Object.hashAll(rejectRequestPattern ?? const []), Object.hashAll(rejectResourceTypes ?? const []), setExtraHttpHeaders, setJavaScriptEnabled, url, userAgent, viewport, waitForSelector, waitForTimeout);
 
-@override String toString() => 'BrapiPostScrapeRequestVariant2(actionTimeout: $actionTimeout, addScriptTag: $addScriptTag, addStyleTag: $addStyleTag, allowRequestPattern: $allowRequestPattern, allowResourceTypes: $allowResourceTypes, authenticate: $authenticate, bestAttempt: $bestAttempt, cookies: $cookies, elements: $elements, emulateMediaType: $emulateMediaType, gotoOptions: $gotoOptions, rejectRequestPattern: $rejectRequestPattern, rejectResourceTypes: $rejectResourceTypes, setExtraHttpHeaders: $setExtraHttpHeaders, setJavaScriptEnabled: $setJavaScriptEnabled, url: $url, userAgent: $userAgent, viewport: $viewport, waitForSelector: $waitForSelector, waitForTimeout: $waitForTimeout)';
+@override String toString() => 'BrapiPostScrapeRequestVariant2(\n  actionTimeout: $actionTimeout,\n  addScriptTag: $addScriptTag,\n  addStyleTag: $addStyleTag,\n  allowRequestPattern: $allowRequestPattern,\n  allowResourceTypes: $allowResourceTypes,\n  authenticate: $authenticate,\n  bestAttempt: $bestAttempt,\n  cookies: $cookies,\n  elements: $elements,\n  emulateMediaType: $emulateMediaType,\n  gotoOptions: $gotoOptions,\n  rejectRequestPattern: $rejectRequestPattern,\n  rejectResourceTypes: $rejectResourceTypes,\n  setExtraHttpHeaders: $setExtraHttpHeaders,\n  setJavaScriptEnabled: $setJavaScriptEnabled,\n  url: $url,\n  userAgent: $userAgent,\n  viewport: $viewport,\n  waitForSelector: $waitForSelector,\n  waitForTimeout: $waitForTimeout,\n)';
 
  }

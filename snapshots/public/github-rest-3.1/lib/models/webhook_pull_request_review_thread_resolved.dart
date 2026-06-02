@@ -72,6 +72,6 @@ WebhookPullRequestReviewThreadResolved copyWith({WebhookPullRequestReviewThreadR
 
 @override int get hashCode => Object.hash(action, enterprise, installation, organization, pullRequest, repository, sender, thread, updatedAt);
 
-@override String toString() => 'WebhookPullRequestReviewThreadResolved(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender, thread: $thread, updatedAt: $updatedAt)';
+@override String toString() => 'WebhookPullRequestReviewThreadResolved(\n  action: $action,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  repository: $repository,\n  sender: $sender,\n  thread: $thread,\n  updatedAt: $updatedAt,\n)';
 
  }

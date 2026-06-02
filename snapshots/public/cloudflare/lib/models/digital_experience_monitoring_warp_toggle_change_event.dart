@@ -106,6 +106,6 @@ DigitalExperienceMonitoringWarpToggleChangeEvent copyWith({String? Function()? a
 
 @override int get hashCode => Object.hash(accountName, accountTag, deviceId, deviceRegistration, hostname, serialNumber, timestamp, toggle, userEmail);
 
-@override String toString() => 'DigitalExperienceMonitoringWarpToggleChangeEvent(accountName: $accountName, accountTag: $accountTag, deviceId: $deviceId, deviceRegistration: $deviceRegistration, hostname: $hostname, serialNumber: $serialNumber, timestamp: $timestamp, toggle: $toggle, userEmail: $userEmail)';
+@override String toString() => 'DigitalExperienceMonitoringWarpToggleChangeEvent(\n  accountName: $accountName,\n  accountTag: $accountTag,\n  deviceId: $deviceId,\n  deviceRegistration: $deviceRegistration,\n  hostname: $hostname,\n  serialNumber: $serialNumber,\n  timestamp: $timestamp,\n  toggle: $toggle,\n  userEmail: $userEmail,\n)';
 
  }

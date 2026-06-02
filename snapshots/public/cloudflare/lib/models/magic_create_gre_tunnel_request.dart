@@ -86,6 +86,6 @@ MagicCreateGreTunnelRequest copyWith({MagicAutomaticReturnRouting? Function()? a
 
 @override int get hashCode => Object.hash(automaticReturnRouting, bgp, cloudflareGreEndpoint, customerGreEndpoint, description, healthCheck, interfaceAddress, interfaceAddress6, mtu, name, ttl);
 
-@override String toString() => 'MagicCreateGreTunnelRequest(automaticReturnRouting: $automaticReturnRouting, bgp: $bgp, cloudflareGreEndpoint: $cloudflareGreEndpoint, customerGreEndpoint: $customerGreEndpoint, description: $description, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, mtu: $mtu, name: $name, ttl: $ttl)';
+@override String toString() => 'MagicCreateGreTunnelRequest(\n  automaticReturnRouting: $automaticReturnRouting,\n  bgp: $bgp,\n  cloudflareGreEndpoint: $cloudflareGreEndpoint,\n  customerGreEndpoint: $customerGreEndpoint,\n  description: $description,\n  healthCheck: $healthCheck,\n  interfaceAddress: $interfaceAddress,\n  interfaceAddress6: $interfaceAddress6,\n  mtu: $mtu,\n  name: $name,\n  ttl: $ttl,\n)';
 
  }

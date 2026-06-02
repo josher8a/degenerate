@@ -17,7 +17,7 @@ Future<ApiResult<SecretsStoreSecretsUsageObject?, Never>> secretsStoreQuota({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secrets_store/quota',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secrets_store/quota',
   headers: headers,
   options: options,
 );
@@ -54,7 +54,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secrets_store/stores',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secrets_store/stores',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -79,7 +79,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secrets_store/stores',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secrets_store/stores',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -102,7 +102,7 @@ Future<ApiResult<SecretsStoreStoreObject?, Never>> secretsStoreGetStoreById({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secrets_store/stores/${Uri.encodeComponent(storeId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secrets_store/stores/${Uri.encodeComponent(storeId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -124,7 +124,7 @@ Future<ApiResult<SecretsStoreStoreObject?, Never>> secretsStoreDeleteById({requi
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secrets_store/stores/${Uri.encodeComponent(storeId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secrets_store/stores/${Uri.encodeComponent(storeId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -167,7 +167,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secrets_store/stores/${Uri.encodeComponent(storeId.toString())}/secrets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secrets_store/stores/${Uri.encodeComponent(storeId.toJson())}/secrets',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -192,7 +192,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secrets_store/stores/${Uri.encodeComponent(storeId.toString())}/secrets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secrets_store/stores/${Uri.encodeComponent(storeId.toJson())}/secrets',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -216,7 +216,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secrets_store/stores/${Uri.encodeComponent(storeId.toString())}/secrets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secrets_store/stores/${Uri.encodeComponent(storeId.toJson())}/secrets',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -239,7 +239,7 @@ Future<ApiResult<SecretsStoreSecretObject?, Never>> secretsStoreGetById({require
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secrets_store/stores/${Uri.encodeComponent(storeId.toString())}/secrets/${Uri.encodeComponent(secretId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secrets_store/stores/${Uri.encodeComponent(storeId.toJson())}/secrets/${Uri.encodeComponent(secretId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -262,7 +262,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secrets_store/stores/${Uri.encodeComponent(storeId.toString())}/secrets/${Uri.encodeComponent(secretId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secrets_store/stores/${Uri.encodeComponent(storeId.toJson())}/secrets/${Uri.encodeComponent(secretId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -285,7 +285,7 @@ Future<ApiResult<SecretsStoreSecretObject?, Never>> secretsStoreSecretDeleteById
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secrets_store/stores/${Uri.encodeComponent(storeId.toString())}/secrets/${Uri.encodeComponent(secretId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secrets_store/stores/${Uri.encodeComponent(storeId.toJson())}/secrets/${Uri.encodeComponent(secretId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -308,7 +308,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secrets_store/stores/${Uri.encodeComponent(storeId.toString())}/secrets/${Uri.encodeComponent(secretId.toString())}/duplicate',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secrets_store/stores/${Uri.encodeComponent(storeId.toJson())}/secrets/${Uri.encodeComponent(secretId.toJson())}/duplicate',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -348,7 +348,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/system/accounts/${Uri.encodeComponent(accountTag.toString())}/stores',
+  path: '/system/accounts/${Uri.encodeComponent(accountTag.toJson())}/stores',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -376,7 +376,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/system/accounts/${Uri.encodeComponent(accountTag.toString())}/stores',
+  path: '/system/accounts/${Uri.encodeComponent(accountTag.toJson())}/stores',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -401,7 +401,7 @@ Future<ApiResult<SecretsStoreStoreObject?, Never>> secretsStoreSystemGetStoreByI
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/system/accounts/${Uri.encodeComponent(accountTag.toString())}/stores/${Uri.encodeComponent(storeId.toString())}',
+  path: '/system/accounts/${Uri.encodeComponent(accountTag.toJson())}/stores/${Uri.encodeComponent(storeId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -425,7 +425,7 @@ Future<ApiResult<SecretsStoreStoreObject?, Never>> secretsStoreSystemDeleteById(
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/system/accounts/${Uri.encodeComponent(accountTag.toString())}/stores/${Uri.encodeComponent(storeId.toString())}',
+  path: '/system/accounts/${Uri.encodeComponent(accountTag.toJson())}/stores/${Uri.encodeComponent(storeId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -470,7 +470,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/system/accounts/${Uri.encodeComponent(accountTag.toString())}/stores/${Uri.encodeComponent(storeId.toString())}/secrets',
+  path: '/system/accounts/${Uri.encodeComponent(accountTag.toJson())}/stores/${Uri.encodeComponent(storeId.toJson())}/secrets',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -497,7 +497,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/system/accounts/${Uri.encodeComponent(accountTag.toString())}/stores/${Uri.encodeComponent(storeId.toString())}/secrets',
+  path: '/system/accounts/${Uri.encodeComponent(accountTag.toJson())}/stores/${Uri.encodeComponent(storeId.toJson())}/secrets',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -523,7 +523,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/system/accounts/${Uri.encodeComponent(accountTag.toString())}/stores/${Uri.encodeComponent(storeId.toString())}/secrets',
+  path: '/system/accounts/${Uri.encodeComponent(accountTag.toJson())}/stores/${Uri.encodeComponent(storeId.toJson())}/secrets',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -548,7 +548,7 @@ Future<ApiResult<SecretsStoreSecretObject?, Never>> secretsStoreSystemGetById({r
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/system/accounts/${Uri.encodeComponent(accountTag.toString())}/stores/${Uri.encodeComponent(storeId.toString())}/secrets/${Uri.encodeComponent(secretId.toString())}',
+  path: '/system/accounts/${Uri.encodeComponent(accountTag.toJson())}/stores/${Uri.encodeComponent(storeId.toJson())}/secrets/${Uri.encodeComponent(secretId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -573,7 +573,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/system/accounts/${Uri.encodeComponent(accountTag.toString())}/stores/${Uri.encodeComponent(storeId.toString())}/secrets/${Uri.encodeComponent(secretId.toString())}',
+  path: '/system/accounts/${Uri.encodeComponent(accountTag.toJson())}/stores/${Uri.encodeComponent(storeId.toJson())}/secrets/${Uri.encodeComponent(secretId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -598,7 +598,7 @@ Future<ApiResult<SecretsStoreSecretObject?, Never>> secretsStoreSystemSecretDele
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/system/accounts/${Uri.encodeComponent(accountTag.toString())}/stores/${Uri.encodeComponent(storeId.toString())}/secrets/${Uri.encodeComponent(secretId.toString())}',
+  path: '/system/accounts/${Uri.encodeComponent(accountTag.toJson())}/stores/${Uri.encodeComponent(storeId.toJson())}/secrets/${Uri.encodeComponent(secretId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -623,7 +623,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/system/accounts/${Uri.encodeComponent(accountTag.toString())}/stores/${Uri.encodeComponent(storeId.toString())}/secrets/${Uri.encodeComponent(secretId.toString())}/duplicate',
+  path: '/system/accounts/${Uri.encodeComponent(accountTag.toJson())}/stores/${Uri.encodeComponent(storeId.toJson())}/secrets/${Uri.encodeComponent(secretId.toJson())}/duplicate',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

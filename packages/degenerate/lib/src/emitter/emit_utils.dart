@@ -851,8 +851,7 @@ String toJsonEntry(IrField f, String key, {required bool isNullable}) {
     final value = buildToJsonCode(f.type, f.name, nullable: true);
     // Required-but-nullable: always emit the key (value may be null).
     if (f.isRequired && f.type.isNullable) {
-      if (value == f.name) return '  $key: ${f.name},';
-      return '  $key: ${f.name} != null ? $value : null,';
+      return '  $key: $value,';
     }
     // Optional: omit when null.
     if (value == f.name) return '  $key: ?${f.name},';

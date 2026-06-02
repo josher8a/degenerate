@@ -17,7 +17,7 @@ Future<ApiResult<MagicVisibilityMnmMnmConfig?, Never>> magicNetworkMonitoringCon
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/config',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/config',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/config',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/config',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -64,7 +64,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/config',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/config',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -88,7 +88,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/config',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/config',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -111,7 +111,7 @@ Future<ApiResult<MagicVisibilityMnmMnmConfig?, Never>> magicNetworkMonitoringCon
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/config',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/config',
   headers: headers,
   options: options,
 );
@@ -133,7 +133,7 @@ Future<ApiResult<MagicVisibilityMnmMnmConfig?, Never>> magicNetworkMonitoringCon
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/config/full',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/config/full',
   headers: headers,
   options: options,
 );

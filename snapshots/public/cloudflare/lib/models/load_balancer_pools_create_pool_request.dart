@@ -118,6 +118,6 @@ LoadBalancerPoolsCreatePoolRequest copyWith({List<LoadBalancingCheckRegions2>? F
 
 @override int get hashCode => Object.hash(Object.hashAll(checkRegions ?? const []), description, enabled, latitude, loadShedding, longitude, minimumOrigins, monitor, monitorGroup, name, Object.hashAll(networks ?? const []), notificationEmail, notificationFilter, originSteering, Object.hashAll(origins));
 
-@override String toString() => 'LoadBalancerPoolsCreatePoolRequest(checkRegions: $checkRegions, description: $description, enabled: $enabled, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, networks: $networks, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)';
+@override String toString() => 'LoadBalancerPoolsCreatePoolRequest(\n  checkRegions: $checkRegions,\n  description: $description,\n  enabled: $enabled,\n  latitude: $latitude,\n  loadShedding: $loadShedding,\n  longitude: $longitude,\n  minimumOrigins: $minimumOrigins,\n  monitor: $monitor,\n  monitorGroup: $monitorGroup,\n  name: $name,\n  networks: $networks,\n  notificationEmail: $notificationEmail,\n  notificationFilter: $notificationFilter,\n  originSteering: $originSteering,\n  origins: $origins,\n)';
 
  }

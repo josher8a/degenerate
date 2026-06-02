@@ -125,6 +125,6 @@ AccessSamlSaasApp copyWith({AccessOidcSaasAppAuthType? Function()? authType, Str
 
 @override int get hashCode => Object.hash(authType, consumerServiceUrl, createdAt, Object.hashAll(customAttributes ?? const []), defaultRelayState, idpEntityId, nameIdFormat, nameIdTransformJsonata, publicKey, samlAttributeTransformJsonata, spEntityId, ssoEndpoint, updatedAt);
 
-@override String toString() => 'AccessSamlSaasApp(authType: $authType, consumerServiceUrl: $consumerServiceUrl, createdAt: $createdAt, customAttributes: $customAttributes, defaultRelayState: $defaultRelayState, idpEntityId: $idpEntityId, nameIdFormat: $nameIdFormat, nameIdTransformJsonata: $nameIdTransformJsonata, publicKey: $publicKey, samlAttributeTransformJsonata: $samlAttributeTransformJsonata, spEntityId: $spEntityId, ssoEndpoint: $ssoEndpoint, updatedAt: $updatedAt)';
+@override String toString() => 'AccessSamlSaasApp(\n  authType: $authType,\n  consumerServiceUrl: $consumerServiceUrl,\n  createdAt: $createdAt,\n  customAttributes: $customAttributes,\n  defaultRelayState: $defaultRelayState,\n  idpEntityId: $idpEntityId,\n  nameIdFormat: $nameIdFormat,\n  nameIdTransformJsonata: $nameIdTransformJsonata,\n  publicKey: $publicKey,\n  samlAttributeTransformJsonata: $samlAttributeTransformJsonata,\n  spEntityId: $spEntityId,\n  ssoEndpoint: $ssoEndpoint,\n  updatedAt: $updatedAt,\n)';
 
  }

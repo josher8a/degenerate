@@ -25,6 +25,11 @@ bool get isUnknown => this is RealtimeCreateClientSecretResponseSession$Unknown;
 
 /// Shared by all variants of this union.
 List<Include>? get include;
+R when<R>({required R Function(RealtimeCreateClientSecretResponseSessionRealtime) realtime, required R Function(RealtimeCreateClientSecretResponseSessionTranscription) transcription, required R Function(RealtimeCreateClientSecretResponseSession$Unknown) unknown, }) { return switch (this) {
+  final RealtimeCreateClientSecretResponseSessionRealtime v => realtime(v),
+  final RealtimeCreateClientSecretResponseSessionTranscription v => transcription(v),
+  final RealtimeCreateClientSecretResponseSession$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class RealtimeCreateClientSecretResponseSessionRealtime extends RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSessionRealtime(this.realtimeSessionCreateResponseGa);
 
@@ -89,9 +94,11 @@ RealtimeCreateClientSecretResponseSessionTranscription copyWith({String? id, Str
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class RealtimeCreateClientSecretResponseSession$Unknown extends RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSession$Unknown(this.json);
+@immutable final class RealtimeCreateClientSecretResponseSession$Unknown extends RealtimeCreateClientSecretResponseSession {RealtimeCreateClientSecretResponseSession$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final List<Include>? _include = (json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList();
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -104,6 +111,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'RealtimeCreateClientSecretResponseSession.unknown($json)';
 
-@override List<Include>? get include => (json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList();
+@override List<Include>? get include => _include;
 
  }

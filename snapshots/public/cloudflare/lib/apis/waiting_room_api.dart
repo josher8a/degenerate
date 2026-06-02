@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/waiting_rooms',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/waiting_rooms',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -59,7 +59,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -84,7 +84,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -107,7 +107,7 @@ Future<ApiResult<WaitingroomWaitingroom?, Never>> waitingRoomDetails({required W
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -130,7 +130,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -154,7 +154,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -177,7 +177,7 @@ Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> waitin
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -208,7 +208,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/events',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -233,7 +233,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/events',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -256,7 +256,7 @@ Future<ApiResult<WaitingroomEventResult?, Never>> waitingRoomEventDetails({requi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events/${Uri.encodeComponent(eventId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/events/${Uri.encodeComponent(eventId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -279,7 +279,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events/${Uri.encodeComponent(eventId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/events/${Uri.encodeComponent(eventId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -303,7 +303,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events/${Uri.encodeComponent(eventId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/events/${Uri.encodeComponent(eventId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -326,7 +326,7 @@ Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> waitin
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events/${Uri.encodeComponent(eventId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/events/${Uri.encodeComponent(eventId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -348,7 +348,7 @@ Future<ApiResult<WaitingroomEventDetailsResult?, Never>> waitingRoomPreviewActiv
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/events/${Uri.encodeComponent(eventId.toString())}/details',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/events/${Uri.encodeComponent(eventId.toJson())}/details',
   headers: headers,
   options: options,
 );
@@ -370,7 +370,7 @@ Future<ApiResult<List<WaitingroomRuleResult>?, Never>> waitingRoomListWaitingRoo
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/rules',
   headers: headers,
   options: options,
 );
@@ -393,7 +393,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -417,7 +417,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/rules',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -441,7 +441,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -464,7 +464,7 @@ Future<ApiResult<List<WaitingroomRuleResult>?, Never>> waitingRoomDeleteWaitingR
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -495,7 +495,7 @@ Future<ApiResult<WaitingroomStatusResponseResult?, Never>> waitingRoomGetWaiting
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toString())}/status',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/${Uri.encodeComponent(waitingRoomId.toJson())}/status',
   headers: headers,
   options: options,
 );
@@ -535,7 +535,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/preview',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/preview',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -556,7 +556,7 @@ Future<ApiResult<WaitingroomZoneSettingsResponseResult, Never>> waitingRoomGetZo
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/settings',
   headers: headers,
   options: options,
 );
@@ -577,7 +577,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -599,7 +599,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/waiting_rooms/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/waiting_rooms/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

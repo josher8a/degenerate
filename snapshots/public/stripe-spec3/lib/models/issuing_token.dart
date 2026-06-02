@@ -236,6 +236,6 @@ IssuingToken copyWith({IssuingTokenCard? card, int? created, String? Function()?
 
 @override int get hashCode => Object.hash(card, created, deviceFingerprint, id, last4, livemode, network, networkData, networkUpdatedAt, object, status, walletProvider);
 
-@override String toString() => 'IssuingToken(card: $card, created: $created, deviceFingerprint: $deviceFingerprint, id: $id, last4: $last4, livemode: $livemode, network: $network, networkData: $networkData, networkUpdatedAt: $networkUpdatedAt, object: $object, status: $status, walletProvider: $walletProvider)';
+@override String toString() => 'IssuingToken(\n  card: $card,\n  created: $created,\n  deviceFingerprint: $deviceFingerprint,\n  id: $id,\n  last4: $last4,\n  livemode: $livemode,\n  network: $network,\n  networkData: $networkData,\n  networkUpdatedAt: $networkUpdatedAt,\n  object: $object,\n  status: $status,\n  walletProvider: $walletProvider,\n)';
 
  }

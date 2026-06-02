@@ -30,6 +30,12 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CreateChatCompletionRequestResponseFormat$Unknown;
 
+R when<R>({required R Function(CreateChatCompletionRequestResponseFormatText) text, required R Function(CreateChatCompletionRequestResponseFormatJsonSchema) jsonSchema, required R Function(CreateChatCompletionRequestResponseFormatJsonObject) jsonObject, required R Function(CreateChatCompletionRequestResponseFormat$Unknown) unknown, }) { return switch (this) {
+  final CreateChatCompletionRequestResponseFormatText v => text(v),
+  final CreateChatCompletionRequestResponseFormatJsonSchema v => jsonSchema(v),
+  final CreateChatCompletionRequestResponseFormatJsonObject v => jsonObject(v),
+  final CreateChatCompletionRequestResponseFormat$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class CreateChatCompletionRequestResponseFormatText extends CreateChatCompletionRequestResponseFormat {const CreateChatCompletionRequestResponseFormatText(this.responseFormatText);
 

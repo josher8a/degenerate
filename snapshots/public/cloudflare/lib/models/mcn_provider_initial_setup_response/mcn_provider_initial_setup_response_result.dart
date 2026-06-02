@@ -25,6 +25,12 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is McnProviderInitialSetupResponseResult$Unknown;
 
+R when<R>({required R Function(McnProviderInitialSetupResponseResultMcnAwsTrustPolicy) mcnAwsTrustPolicy, required R Function(McnProviderInitialSetupResponseResultMcnAzureSetup) mcnAzureSetup, required R Function(McnProviderInitialSetupResponseResultMcnGcpSetup) mcnGcpSetup, required R Function(McnProviderInitialSetupResponseResult$Unknown) unknown, }) { return switch (this) {
+  final McnProviderInitialSetupResponseResultMcnAwsTrustPolicy v => mcnAwsTrustPolicy(v),
+  final McnProviderInitialSetupResponseResultMcnAzureSetup v => mcnAzureSetup(v),
+  final McnProviderInitialSetupResponseResultMcnGcpSetup v => mcnGcpSetup(v),
+  final McnProviderInitialSetupResponseResult$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class McnProviderInitialSetupResponseResultMcnAwsTrustPolicy extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(this.mcnAwsTrustPolicy);
 

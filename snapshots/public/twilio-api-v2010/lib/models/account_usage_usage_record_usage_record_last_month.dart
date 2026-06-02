@@ -129,6 +129,6 @@ AccountUsageUsageRecordUsageRecordLastMonth copyWith({String? Function()? accoun
 
 @override int get hashCode => Object.hash(accountSid, apiVersion, asOf, category, count, countUnit, description, endDate, price, priceUnit, startDate, subresourceUris, uri, usage, usageUnit);
 
-@override String toString() => 'AccountUsageUsageRecordUsageRecordLastMonth(accountSid: $accountSid, apiVersion: $apiVersion, asOf: $asOf, category: $category, count: $count, countUnit: $countUnit, description: $description, endDate: $endDate, price: $price, priceUnit: $priceUnit, startDate: $startDate, subresourceUris: $subresourceUris, uri: $uri, usage: $usage, usageUnit: $usageUnit)';
+@override String toString() => 'AccountUsageUsageRecordUsageRecordLastMonth(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  asOf: $asOf,\n  category: $category,\n  count: $count,\n  countUnit: $countUnit,\n  description: $description,\n  endDate: $endDate,\n  price: $price,\n  priceUnit: $priceUnit,\n  startDate: $startDate,\n  subresourceUris: $subresourceUris,\n  uri: $uri,\n  usage: $usage,\n  usageUnit: $usageUnit,\n)';
 
  }

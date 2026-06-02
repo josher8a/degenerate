@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   'container_id': containerId,
   'code': code,
-  'outputs': outputs != null ? outputs?.map((e) => e.toJson()).toList() : null,
+  'outputs': outputs?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&

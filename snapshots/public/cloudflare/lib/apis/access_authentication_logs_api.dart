@@ -47,7 +47,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/logs/access_requests',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/logs/access_requests',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

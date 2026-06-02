@@ -25,7 +25,7 @@ return execute(
   onSuccess: (response) {
     return GetTargetIndustryListByDatasetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetTargetIndustryListByDatasetError.fromResponse(response),
+  onError: GetTargetIndustryListByDatasetError.fromResponse,
 );
  } 
 /// Lists target industries across multiple datasets
@@ -55,7 +55,7 @@ return execute(
   onSuccess: (response) {
     return GetTargetIndustryListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetTargetIndustryListError.fromResponse(response),
+  onError: GetTargetIndustryListError.fromResponse,
 );
  } 
 /// Lists all target industries from industry map catalog
@@ -75,7 +75,7 @@ return execute(
   onSuccess: (response) {
     return GetTargetIndustryListCompleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetTargetIndustryListCompleteError.fromResponse(response),
+  onError: GetTargetIndustryListCompleteError.fromResponse,
 );
  } 
  }

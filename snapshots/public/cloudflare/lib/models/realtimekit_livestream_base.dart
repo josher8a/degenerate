@@ -91,6 +91,6 @@ RealtimekitLivestreamBase copyWith({DateTime? Function()? createdAt, bool? Funct
 
 @override int get hashCode => Object.hash(createdAt, disabled, id, ingestServer, meetingId, name, orgId, playbackUrl, status, streamKey, updatedAt);
 
-@override String toString() => 'RealtimekitLivestreamBase(createdAt: $createdAt, disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, orgId: $orgId, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey, updatedAt: $updatedAt)';
+@override String toString() => 'RealtimekitLivestreamBase(\n  createdAt: $createdAt,\n  disabled: $disabled,\n  id: $id,\n  ingestServer: $ingestServer,\n  meetingId: $meetingId,\n  name: $name,\n  orgId: $orgId,\n  playbackUrl: $playbackUrl,\n  status: $status,\n  streamKey: $streamKey,\n  updatedAt: $updatedAt,\n)';
 
  }

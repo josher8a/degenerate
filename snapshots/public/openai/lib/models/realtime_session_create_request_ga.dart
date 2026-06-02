@@ -121,6 +121,6 @@ RealtimeSessionCreateRequestGa copyWith({RealtimeSessionCreateRequestGaType? typ
 
 @override int get hashCode => Object.hash(type, Object.hashAll(outputModalities ?? const []), model, instructions, audio, Object.hashAll(include ?? const []), tracing, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens, truncation, prompt);
 
-@override String toString() => 'RealtimeSessionCreateRequestGa(type: $type, outputModalities: $outputModalities, model: $model, instructions: $instructions, audio: $audio, include: $include, tracing: $tracing, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens, truncation: $truncation, prompt: $prompt)';
+@override String toString() => 'RealtimeSessionCreateRequestGa(\n  type: $type,\n  outputModalities: $outputModalities,\n  model: $model,\n  instructions: $instructions,\n  audio: $audio,\n  include: $include,\n  tracing: $tracing,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  maxOutputTokens: $maxOutputTokens,\n  truncation: $truncation,\n  prompt: $prompt,\n)';
 
  }

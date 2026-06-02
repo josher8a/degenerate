@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfDeepgramAuraError.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfDeepgramAuraError.fromResponse,
 );
  } 
 /// Open Websocket connection with @cf/deepgram/aura-1 model.
@@ -45,7 +45,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfDeepgramAura1Error.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfDeepgramAura1Error.fromResponse,
 );
  } 
 /// Execute @cf/deepgram/aura-1 model.
@@ -80,7 +80,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfDeepgramAura1Error.fromResponse(response),
+  onError: WorkersAiPostRunCfDeepgramAura1Error.fromResponse,
 );
  } 
 /// Open Websocket connection with @cf/deepgram/aura-1-internal model.
@@ -100,7 +100,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfDeepgramAura1InternalError.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfDeepgramAura1InternalError.fromResponse,
 );
  } 
 /// Open Websocket connection with @cf/deepgram/aura-2 model.
@@ -120,7 +120,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfDeepgramAura2Error.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfDeepgramAura2Error.fromResponse,
 );
  } 
 /// Open Websocket connection with @cf/deepgram/aura-2-en model.
@@ -140,7 +140,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfDeepgramAura2EnError.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfDeepgramAura2EnError.fromResponse,
 );
  } 
 /// Execute @cf/deepgram/aura-2-en model.
@@ -175,7 +175,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfDeepgramAura2EnError.fromResponse(response),
+  onError: WorkersAiPostRunCfDeepgramAura2EnError.fromResponse,
 );
  } 
 /// Open Websocket connection with @cf/deepgram/aura-2-es model.
@@ -195,7 +195,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfDeepgramAura2EsError.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfDeepgramAura2EsError.fromResponse,
 );
  } 
 /// Execute @cf/deepgram/aura-2-es model.
@@ -230,7 +230,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfDeepgramAura2EsError.fromResponse(response),
+  onError: WorkersAiPostRunCfDeepgramAura2EsError.fromResponse,
 );
  } 
 /// Execute @cf/myshell-ai/melotts model.
@@ -265,7 +265,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMyshellAiMelottsError.fromResponse(response),
+  onError: WorkersAiPostRunCfMyshellAiMelottsError.fromResponse,
 );
  } 
  }

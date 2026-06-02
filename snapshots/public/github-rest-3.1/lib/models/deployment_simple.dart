@@ -114,6 +114,6 @@ DeploymentSimple copyWith({Uri? url, int? id, String? nodeId, String? task, Stri
 
 @override int get hashCode => Object.hash(url, id, nodeId, task, originalEnvironment, environment, description, createdAt, updatedAt, statusesUrl, repositoryUrl, transientEnvironment, productionEnvironment, performedViaGithubApp);
 
-@override String toString() => 'DeploymentSimple(url: $url, id: $id, nodeId: $nodeId, task: $task, originalEnvironment: $originalEnvironment, environment: $environment, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, statusesUrl: $statusesUrl, repositoryUrl: $repositoryUrl, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment, performedViaGithubApp: $performedViaGithubApp)';
+@override String toString() => 'DeploymentSimple(\n  url: $url,\n  id: $id,\n  nodeId: $nodeId,\n  task: $task,\n  originalEnvironment: $originalEnvironment,\n  environment: $environment,\n  description: $description,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  statusesUrl: $statusesUrl,\n  repositoryUrl: $repositoryUrl,\n  transientEnvironment: $transientEnvironment,\n  productionEnvironment: $productionEnvironment,\n  performedViaGithubApp: $performedViaGithubApp,\n)';
 
  }

@@ -44,7 +44,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/routes/hostname',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -69,7 +69,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/routes/hostname',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -92,7 +92,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> zeroTrustNetworksRouteHostnameG
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname/${Uri.encodeComponent(hostnameRouteId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/routes/hostname/${Uri.encodeComponent(hostnameRouteId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -115,7 +115,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname/${Uri.encodeComponent(hostnameRouteId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/routes/hostname/${Uri.encodeComponent(hostnameRouteId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -138,7 +138,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> zeroTrustNetworksRouteHostnameD
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/routes/hostname/${Uri.encodeComponent(hostnameRouteId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/routes/hostname/${Uri.encodeComponent(hostnameRouteId.toJson())}',
   headers: headers,
   options: options,
 );

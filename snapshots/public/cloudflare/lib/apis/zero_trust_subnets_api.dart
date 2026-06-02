@@ -53,7 +53,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/subnets',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -78,7 +78,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets/cloudflare_source/${Uri.encodeComponent('${addressFamily.toJson()}')}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/subnets/cloudflare_source/${Uri.encodeComponent(addressFamily.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -111,7 +111,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets/warp',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/subnets/warp',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -134,7 +134,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> zeroTrustNetworksSubnetGetWarp(
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets/warp/${Uri.encodeComponent(subnetId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/subnets/warp/${Uri.encodeComponent(subnetId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -162,7 +162,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets/warp/${Uri.encodeComponent(subnetId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/subnets/warp/${Uri.encodeComponent(subnetId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -185,7 +185,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> zeroTrustNetworksSubnetDeleteWa
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/subnets/warp/${Uri.encodeComponent(subnetId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/subnets/warp/${Uri.encodeComponent(subnetId.toJson())}',
   headers: headers,
   options: options,
 );

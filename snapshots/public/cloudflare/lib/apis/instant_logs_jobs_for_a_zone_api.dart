@@ -17,7 +17,7 @@ Future<ApiResult<List<LogpushInstantLogsJob>?, Never>> getZonesZoneIdLogpushEdge
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/edge/jobs',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/edge/jobs',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/edge/jobs',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/edge/jobs',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

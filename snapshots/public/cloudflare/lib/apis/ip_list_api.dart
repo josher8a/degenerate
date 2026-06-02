@@ -17,7 +17,7 @@ Future<ApiResult<List<IntelIpList>?, Never>> ipListGetIpLists({required IntelIde
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/ip-lists',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/ip-lists',
   headers: headers,
   options: options,
 );

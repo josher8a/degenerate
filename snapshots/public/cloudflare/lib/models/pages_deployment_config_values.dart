@@ -162,7 +162,7 @@ Map<String, dynamic> toJson() { return {
   'compatibility_flags': compatibilityFlags,
   if (d1Databases != null) 'd1_databases': d1Databases?.map((k, v) => MapEntry(k, v.toJson())),
   if (durableObjectNamespaces != null) 'durable_object_namespaces': durableObjectNamespaces?.map((k, v) => MapEntry(k, v.toJson())),
-  'env_vars': envVars != null ? envVars?.map((k, v) => MapEntry(k, v?.toJson())) : null,
+  'env_vars': envVars?.map((k, v) => MapEntry(k, v?.toJson())),
   'fail_open': failOpen,
   if (hyperdriveBindings != null) 'hyperdrive_bindings': hyperdriveBindings?.map((k, v) => MapEntry(k, v.toJson())),
   if (kvNamespaces != null) 'kv_namespaces': kvNamespaces?.map((k, v) => MapEntry(k, v.toJson())),
@@ -234,6 +234,6 @@ PagesDeploymentConfigValues copyWith({Map<String, PagesDeploymentConfigValuesAiB
 
 @override int get hashCode => Object.hashAll([aiBindings, alwaysUseLatestCompatibilityDate, analyticsEngineDatasets, browsers, buildImageMajorVersion, compatibilityDate, Object.hashAll(compatibilityFlags), d1Databases, durableObjectNamespaces, envVars, failOpen, hyperdriveBindings, kvNamespaces, limits, mtlsCertificates, placement, queueProducers, r2Buckets, services, usageModel, vectorizeBindings, wranglerConfigHash]);
 
-@override String toString() => 'PagesDeploymentConfigValues(aiBindings: $aiBindings, alwaysUseLatestCompatibilityDate: $alwaysUseLatestCompatibilityDate, analyticsEngineDatasets: $analyticsEngineDatasets, browsers: $browsers, buildImageMajorVersion: $buildImageMajorVersion, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, d1Databases: $d1Databases, durableObjectNamespaces: $durableObjectNamespaces, envVars: $envVars, failOpen: $failOpen, hyperdriveBindings: $hyperdriveBindings, kvNamespaces: $kvNamespaces, limits: $limits, mtlsCertificates: $mtlsCertificates, placement: $placement, queueProducers: $queueProducers, r2Buckets: $r2Buckets, services: $services, usageModel: $usageModel, vectorizeBindings: $vectorizeBindings, wranglerConfigHash: $wranglerConfigHash)';
+@override String toString() => 'PagesDeploymentConfigValues(\n  aiBindings: $aiBindings,\n  alwaysUseLatestCompatibilityDate: $alwaysUseLatestCompatibilityDate,\n  analyticsEngineDatasets: $analyticsEngineDatasets,\n  browsers: $browsers,\n  buildImageMajorVersion: $buildImageMajorVersion,\n  compatibilityDate: $compatibilityDate,\n  compatibilityFlags: $compatibilityFlags,\n  d1Databases: $d1Databases,\n  durableObjectNamespaces: $durableObjectNamespaces,\n  envVars: $envVars,\n  failOpen: $failOpen,\n  hyperdriveBindings: $hyperdriveBindings,\n  kvNamespaces: $kvNamespaces,\n  limits: $limits,\n  mtlsCertificates: $mtlsCertificates,\n  placement: $placement,\n  queueProducers: $queueProducers,\n  r2Buckets: $r2Buckets,\n  services: $services,\n  usageModel: $usageModel,\n  vectorizeBindings: $vectorizeBindings,\n  wranglerConfigHash: $wranglerConfigHash,\n)';
 
  }

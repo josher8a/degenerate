@@ -98,6 +98,6 @@ Bot copyWith({String? category, String? description, String? kind, String? name,
 
 @override int get hashCode => Object.hash(category, description, kind, name, $operator, operatorUrl, slug, Object.hashAll(userAgentPatterns), Object.hashAll(userAgents));
 
-@override String toString() => 'Bot(category: $category, description: $description, kind: $kind, name: $name, \$operator: ${$operator}, operatorUrl: $operatorUrl, slug: $slug, userAgentPatterns: $userAgentPatterns, userAgents: $userAgents)';
+@override String toString() => 'Bot(\n  category: $category,\n  description: $description,\n  kind: $kind,\n  name: $name,\n  \$operator: ${$operator},\n  operatorUrl: $operatorUrl,\n  slug: $slug,\n  userAgentPatterns: $userAgentPatterns,\n  userAgents: $userAgents,\n)';
 
  }

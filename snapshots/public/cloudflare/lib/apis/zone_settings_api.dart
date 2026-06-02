@@ -17,7 +17,7 @@ Future<ApiResult<ZonesSetting?, Never>> zoneSettingsGetSingleSetting({required Z
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/${Uri.encodeComponent(settingId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/${Uri.encodeComponent(settingId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/${Uri.encodeComponent(settingId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/${Uri.encodeComponent(settingId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsGetAegisSetti
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/aegis',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/aegis',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/aegis',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/aegis',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -111,7 +111,7 @@ Future<ApiResult<SpeedBase?, Never>> zoneSettingsGetFontsSetting({required Speed
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/fonts',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/fonts',
   headers: headers,
   options: options,
 );
@@ -136,7 +136,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/fonts',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/fonts',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -159,7 +159,7 @@ Future<ApiResult<CacheRulesOriginH2MaxStreams?, Never>> zoneCacheSettingsGetOrig
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/origin_h2_max_streams',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/origin_h2_max_streams',
   headers: headers,
   options: options,
 );
@@ -182,7 +182,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/origin_h2_max_streams',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/origin_h2_max_streams',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -205,7 +205,7 @@ Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsGetOriginMaxH
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/origin_max_http_version',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/origin_max_http_version',
   headers: headers,
   options: options,
 );
@@ -228,7 +228,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/origin_max_http_version',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/origin_max_http_version',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -253,7 +253,7 @@ Future<ApiResult<SpeedBase?, Never>> zoneSettingsGetSpeedBrainSetting({required 
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/speed_brain',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/speed_brain',
   headers: headers,
   options: options,
 );
@@ -278,7 +278,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/speed_brain',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/speed_brain',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

@@ -149,5 +149,5 @@ final class BlogPostListSchema {
 
   @override
   String toString() =>
-      'BlogPostListSchema(author: $author, headerImageUrl: $headerImageUrl, title: $title, subtitle: $subtitle, datePublished: $datePublished, slug: $slug, publish: $publish, readTime: $readTime, summary: $summary)';
+      'BlogPostListSchema(\n  author: $author,\n  headerImageUrl: $headerImageUrl,\n  title: $title,\n  subtitle: $subtitle,\n  datePublished: $datePublished,\n  slug: $slug,\n  publish: $publish,\n  readTime: $readTime,\n  summary: $summary,\n)';
 }

@@ -118,6 +118,6 @@ EmailSecuritySubmission copyWith({CustomerStatus? Function()? customerStatus, Em
 
 @override int get hashCode => Object.hash(customerStatus, originalDisposition, originalEdfHash, outcome, outcomeDisposition, requestedBy, requestedDisposition, requestedTs, status, subject, submissionId, type);
 
-@override String toString() => 'EmailSecuritySubmission(customerStatus: $customerStatus, originalDisposition: $originalDisposition, originalEdfHash: $originalEdfHash, outcome: $outcome, outcomeDisposition: $outcomeDisposition, requestedBy: $requestedBy, requestedDisposition: $requestedDisposition, requestedTs: $requestedTs, status: $status, subject: $subject, submissionId: $submissionId, type: $type)';
+@override String toString() => 'EmailSecuritySubmission(\n  customerStatus: $customerStatus,\n  originalDisposition: $originalDisposition,\n  originalEdfHash: $originalEdfHash,\n  outcome: $outcome,\n  outcomeDisposition: $outcomeDisposition,\n  requestedBy: $requestedBy,\n  requestedDisposition: $requestedDisposition,\n  requestedTs: $requestedTs,\n  status: $status,\n  subject: $subject,\n  submissionId: $submissionId,\n  type: $type,\n)';
 
  }

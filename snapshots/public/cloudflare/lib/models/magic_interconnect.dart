@@ -97,6 +97,6 @@ MagicInterconnect copyWith({MagicAutomaticReturnRouting? Function()? automaticRe
 
 @override int get hashCode => Object.hash(automaticReturnRouting, coloName, createdOn, description, gre, healthCheck, id, interfaceAddress, interfaceAddress6, modifiedOn, mtu, name);
 
-@override String toString() => 'MagicInterconnect(automaticReturnRouting: $automaticReturnRouting, coloName: $coloName, createdOn: $createdOn, description: $description, gre: $gre, healthCheck: $healthCheck, id: $id, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, modifiedOn: $modifiedOn, mtu: $mtu, name: $name)';
+@override String toString() => 'MagicInterconnect(\n  automaticReturnRouting: $automaticReturnRouting,\n  coloName: $coloName,\n  createdOn: $createdOn,\n  description: $description,\n  gre: $gre,\n  healthCheck: $healthCheck,\n  id: $id,\n  interfaceAddress: $interfaceAddress,\n  interfaceAddress6: $interfaceAddress6,\n  modifiedOn: $modifiedOn,\n  mtu: $mtu,\n  name: $name,\n)';
 
  }

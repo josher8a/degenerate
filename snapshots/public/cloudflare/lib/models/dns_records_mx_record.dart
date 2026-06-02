@@ -100,6 +100,6 @@ DnsRecordsMxRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsN
 
 @override int get hashCode => Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, priority, type);
 
-@override String toString() => 'DnsRecordsMxRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, priority: $priority, type: $type)';
+@override String toString() => 'DnsRecordsMxRecord(\n  comment: $comment,\n  name: $name,\n  proxied: $proxied,\n  settings: $settings,\n  tags: $tags,\n  ttl: $ttl,\n  content: $content,\n  priority: $priority,\n  type: $type,\n)';
 
  }

@@ -135,6 +135,6 @@ WebhookEndpoint copyWith({String? Function()? apiVersion, String? Function()? ap
 
 @override int get hashCode => Object.hash(apiVersion, application, created, description, Object.hashAll(enabledEvents), id, livemode, metadata, object, secret, status, url);
 
-@override String toString() => 'WebhookEndpoint(apiVersion: $apiVersion, application: $application, created: $created, description: $description, enabledEvents: $enabledEvents, id: $id, livemode: $livemode, metadata: $metadata, object: $object, secret: $secret, status: $status, url: $url)';
+@override String toString() => 'WebhookEndpoint(\n  apiVersion: $apiVersion,\n  application: $application,\n  created: $created,\n  description: $description,\n  enabledEvents: $enabledEvents,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  secret: $secret,\n  status: $status,\n  url: $url,\n)';
 
  }

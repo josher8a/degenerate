@@ -107,7 +107,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customCertBundle$ = customCertBundle;
 if (customCertBundle$ != null) {
-  if (customCertBundle$.length < 1) errors.add('customCertBundle: must have >= 1 items');
+  if (customCertBundle$.isEmpty) errors.add('customCertBundle: must have >= 1 items');
   if (customCertBundle$.length > 2) errors.add('customCertBundle: must have <= 2 items');
 }
 return errors; } 
@@ -138,6 +138,6 @@ TlsCertificatesAndHostnamesSslpostDv copyWith({BundleMethod Function()? bundleMe
 
 @override int get hashCode => Object.hash(bundleMethod, certificateAuthority, cloudflareBranding, Object.hashAll(customCertBundle ?? const []), customCertificate, customKey, method, settings, type, wildcard);
 
-@override String toString() => 'TlsCertificatesAndHostnamesSslpostDv(bundleMethod: $bundleMethod, certificateAuthority: $certificateAuthority, cloudflareBranding: $cloudflareBranding, customCertBundle: $customCertBundle, customCertificate: $customCertificate, customKey: $customKey, method: $method, settings: $settings, type: $type, wildcard: $wildcard)';
+@override String toString() => 'TlsCertificatesAndHostnamesSslpostDv(\n  bundleMethod: $bundleMethod,\n  certificateAuthority: $certificateAuthority,\n  cloudflareBranding: $cloudflareBranding,\n  customCertBundle: $customCertBundle,\n  customCertificate: $customCertificate,\n  customKey: $customKey,\n  method: $method,\n  settings: $settings,\n  type: $type,\n  wildcard: $wildcard,\n)';
 
  }

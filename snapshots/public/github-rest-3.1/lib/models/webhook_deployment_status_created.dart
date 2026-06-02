@@ -87,6 +87,6 @@ WebhookDeploymentStatusCreated copyWith({ItemCreatedAction? action, WebhookDeplo
 
 @override int get hashCode => Object.hash(action, checkRun, deployment, deploymentStatus, enterprise, installation, organization, repository, sender, workflow, workflowRun);
 
-@override String toString() => 'WebhookDeploymentStatusCreated(action: $action, checkRun: $checkRun, deployment: $deployment, deploymentStatus: $deploymentStatus, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflow: $workflow, workflowRun: $workflowRun)';
+@override String toString() => 'WebhookDeploymentStatusCreated(\n  action: $action,\n  checkRun: $checkRun,\n  deployment: $deployment,\n  deploymentStatus: $deploymentStatus,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  sender: $sender,\n  workflow: $workflow,\n  workflowRun: $workflowRun,\n)';
 
  }

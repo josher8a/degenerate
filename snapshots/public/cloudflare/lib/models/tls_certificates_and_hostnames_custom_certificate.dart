@@ -166,6 +166,6 @@ TlsCertificatesAndHostnamesCustomCertificate copyWith({TlsCertificatesAndHostnam
 
 @override int get hashCode => Object.hash(bundleMethod, expiresOn, geoRestrictions, Object.hashAll(hosts ?? const []), id, issuer, keylessServer, modifiedOn, policyRestrictions, priority, signature, status, uploadedOn, zoneId);
 
-@override String toString() => 'TlsCertificatesAndHostnamesCustomCertificate(bundleMethod: $bundleMethod, expiresOn: $expiresOn, geoRestrictions: $geoRestrictions, hosts: $hosts, id: $id, issuer: $issuer, keylessServer: $keylessServer, modifiedOn: $modifiedOn, policyRestrictions: $policyRestrictions, priority: $priority, signature: $signature, status: $status, uploadedOn: $uploadedOn, zoneId: $zoneId)';
+@override String toString() => 'TlsCertificatesAndHostnamesCustomCertificate(\n  bundleMethod: $bundleMethod,\n  expiresOn: $expiresOn,\n  geoRestrictions: $geoRestrictions,\n  hosts: $hosts,\n  id: $id,\n  issuer: $issuer,\n  keylessServer: $keylessServer,\n  modifiedOn: $modifiedOn,\n  policyRestrictions: $policyRestrictions,\n  priority: $priority,\n  signature: $signature,\n  status: $status,\n  uploadedOn: $uploadedOn,\n  zoneId: $zoneId,\n)';
 
  }

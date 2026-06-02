@@ -15,7 +15,7 @@ Future<ApiResult<List<CloudConnectorRule>?, Never>> zoneCloudConnectorRules({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cloud_connector/rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cloud_connector/rules',
   headers: headers,
   options: options,
 );

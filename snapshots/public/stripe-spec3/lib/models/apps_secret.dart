@@ -125,6 +125,6 @@ AppsSecret copyWith({int? created, bool? Function()? deleted, int? Function()? e
 
 @override int get hashCode => Object.hash(created, deleted, expiresAt, id, livemode, name, object, payload, scope);
 
-@override String toString() => 'AppsSecret(created: $created, deleted: $deleted, expiresAt: $expiresAt, id: $id, livemode: $livemode, name: $name, object: $object, payload: $payload, scope: $scope)';
+@override String toString() => 'AppsSecret(\n  created: $created,\n  deleted: $deleted,\n  expiresAt: $expiresAt,\n  id: $id,\n  livemode: $livemode,\n  name: $name,\n  object: $object,\n  payload: $payload,\n  scope: $scope,\n)';
 
  }

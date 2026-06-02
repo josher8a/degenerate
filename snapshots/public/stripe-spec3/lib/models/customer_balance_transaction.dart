@@ -229,6 +229,6 @@ CustomerBalanceTransaction copyWith({int? amount, CustomerBalanceTransactionChec
 
 @override int get hashCode => Object.hash(amount, checkoutSession, created, creditNote, currency, customer, customerAccount, description, endingBalance, id, invoice, livemode, metadata, object, type);
 
-@override String toString() => 'CustomerBalanceTransaction(amount: $amount, checkoutSession: $checkoutSession, created: $created, creditNote: $creditNote, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, endingBalance: $endingBalance, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, object: $object, type: $type)';
+@override String toString() => 'CustomerBalanceTransaction(\n  amount: $amount,\n  checkoutSession: $checkoutSession,\n  created: $created,\n  creditNote: $creditNote,\n  currency: $currency,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  description: $description,\n  endingBalance: $endingBalance,\n  id: $id,\n  invoice: $invoice,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  type: $type,\n)';
 
  }

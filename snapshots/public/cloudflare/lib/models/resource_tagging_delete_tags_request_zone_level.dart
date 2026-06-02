@@ -44,6 +44,16 @@ bool get isUnknown => this is ResourceTaggingDeleteTagsRequestZoneLevel$Unknown;
 
 /// Shared by all variants of this union.
 ResourceTaggingResourceId get resourceId;
+R when<R>({required R Function(ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy) accessApplicationPolicy, required R Function(ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation) apiGatewayOperation, required R Function(ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate) customCertificate, required R Function(ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname) customHostname, required R Function(ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord) dnsRecord, required R Function(ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate) managedClientCertificate, required R Function(ResourceTaggingDeleteTagsRequestZoneLevelZone) zone, required R Function(ResourceTaggingDeleteTagsRequestZoneLevel$Unknown) unknown, }) { return switch (this) {
+  final ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy v => accessApplicationPolicy(v),
+  final ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation v => apiGatewayOperation(v),
+  final ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate v => customCertificate(v),
+  final ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname v => customHostname(v),
+  final ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord v => dnsRecord(v),
+  final ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate v => managedClientCertificate(v),
+  final ResourceTaggingDeleteTagsRequestZoneLevelZone v => zone(v),
+  final ResourceTaggingDeleteTagsRequestZoneLevel$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
@@ -208,9 +218,11 @@ ResourceTaggingDeleteTagsRequestZoneLevelZone copyWith({ResourceTaggingResourceI
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class ResourceTaggingDeleteTagsRequestZoneLevel$Unknown extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevel$Unknown(this.json);
+@immutable final class ResourceTaggingDeleteTagsRequestZoneLevel$Unknown extends ResourceTaggingDeleteTagsRequestZoneLevel {ResourceTaggingDeleteTagsRequestZoneLevel$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final ResourceTaggingResourceId _resourceId = ResourceTaggingResourceId.fromJson(json['resource_id'] as String);
 
 @override String get resourceType => json['resource_type'] as String? ?? '';
 
@@ -223,6 +235,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ResourceTaggingDeleteTagsRequestZoneLevel.unknown($json)';
 
-@override ResourceTaggingResourceId get resourceId => ResourceTaggingResourceId.fromJson(json['resource_id'] as String);
+@override ResourceTaggingResourceId get resourceId => _resourceId;
 
  }

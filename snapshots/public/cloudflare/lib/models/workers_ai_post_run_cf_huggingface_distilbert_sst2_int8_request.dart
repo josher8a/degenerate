@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (text.length < 1) errors.add('text: length must be >= 1');
+if (text.isEmpty) errors.add('text: length must be >= 1');
 return errors; } 
 WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request copyWith({String? text}) { return WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request(
   text: text ?? this.text,

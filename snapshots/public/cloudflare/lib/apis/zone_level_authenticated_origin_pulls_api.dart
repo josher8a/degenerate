@@ -17,7 +17,7 @@ Future<ApiResult<List<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull>?, 
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/origin_tls_client_auth',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/origin_tls_client_auth',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull?, Never>
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/origin_tls_client_auth/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -85,7 +85,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull?, Never>
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/origin_tls_client_auth/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -107,7 +107,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesEnabledResponseResult?, Never>> zone
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/origin_tls_client_auth/settings',
   headers: headers,
   options: options,
 );
@@ -130,7 +130,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/origin_tls_client_auth/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

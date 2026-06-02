@@ -18,7 +18,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/miscategorization',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/miscategorization',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

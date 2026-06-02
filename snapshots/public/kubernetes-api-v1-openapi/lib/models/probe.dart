@@ -86,6 +86,6 @@ Probe copyWith({ExecAction? Function()? exec, int? Function()? failureThreshold,
 
 @override int get hashCode => Object.hash(exec, failureThreshold, grpc, httpGet, initialDelaySeconds, periodSeconds, successThreshold, tcpSocket, terminationGracePeriodSeconds, timeoutSeconds);
 
-@override String toString() => 'Probe(exec: $exec, failureThreshold: $failureThreshold, grpc: $grpc, httpGet: $httpGet, initialDelaySeconds: $initialDelaySeconds, periodSeconds: $periodSeconds, successThreshold: $successThreshold, tcpSocket: $tcpSocket, terminationGracePeriodSeconds: $terminationGracePeriodSeconds, timeoutSeconds: $timeoutSeconds)';
+@override String toString() => 'Probe(\n  exec: $exec,\n  failureThreshold: $failureThreshold,\n  grpc: $grpc,\n  httpGet: $httpGet,\n  initialDelaySeconds: $initialDelaySeconds,\n  periodSeconds: $periodSeconds,\n  successThreshold: $successThreshold,\n  tcpSocket: $tcpSocket,\n  terminationGracePeriodSeconds: $terminationGracePeriodSeconds,\n  timeoutSeconds: $timeoutSeconds,\n)';
 
  }

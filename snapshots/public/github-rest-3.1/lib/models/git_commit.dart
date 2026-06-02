@@ -89,6 +89,6 @@ GitCommit copyWith({String? sha, String? nodeId, Uri? url, GitCommitAuthor? auth
 
 @override int get hashCode => Object.hash(sha, nodeId, url, author, committer, message, tree, Object.hashAll(parents), verification, htmlUrl);
 
-@override String toString() => 'GitCommit(sha: $sha, nodeId: $nodeId, url: $url, author: $author, committer: $committer, message: $message, tree: $tree, parents: $parents, verification: $verification, htmlUrl: $htmlUrl)';
+@override String toString() => 'GitCommit(\n  sha: $sha,\n  nodeId: $nodeId,\n  url: $url,\n  author: $author,\n  committer: $committer,\n  message: $message,\n  tree: $tree,\n  parents: $parents,\n  verification: $verification,\n  htmlUrl: $htmlUrl,\n)';
 
  }

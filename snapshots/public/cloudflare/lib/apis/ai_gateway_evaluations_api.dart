@@ -43,7 +43,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AigConfigListEvaluatorsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AigConfigListEvaluatorsError.fromResponse(response),
+  onError: AigConfigListEvaluatorsError.fromResponse,
 );
  } 
 /// List Evaluations
@@ -86,7 +86,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AigConfigCreateEvaluationsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AigConfigListEvaluationsError.fromResponse(response),
+  onError: AigConfigListEvaluationsError.fromResponse,
 );
  } 
 /// Create a new Evaluation
@@ -111,7 +111,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigCreateEvaluationsError.fromResponse(response),
+  onError: AigConfigCreateEvaluationsError.fromResponse,
 );
  } 
 /// Fetch a Evaluation
@@ -134,7 +134,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigFetchEvaluationsError.fromResponse(response),
+  onError: AigConfigFetchEvaluationsError.fromResponse,
 );
  } 
 /// Delete a Evaluation
@@ -157,7 +157,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigDeleteEvaluationsError.fromResponse(response),
+  onError: AigConfigDeleteEvaluationsError.fromResponse,
 );
  } 
  }

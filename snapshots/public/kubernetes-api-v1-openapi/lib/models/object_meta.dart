@@ -135,6 +135,6 @@ ObjectMeta copyWith({Map<String, String>? Function()? annotations, Time? Functio
 
 @override int get hashCode => Object.hash(annotations, creationTimestamp, deletionGracePeriodSeconds, deletionTimestamp, Object.hashAll(finalizers ?? const []), generateName, generation, labels, Object.hashAll(managedFields ?? const []), name, namespace, Object.hashAll(ownerReferences ?? const []), resourceVersion, selfLink, uid);
 
-@override String toString() => 'ObjectMeta(annotations: $annotations, creationTimestamp: $creationTimestamp, deletionGracePeriodSeconds: $deletionGracePeriodSeconds, deletionTimestamp: $deletionTimestamp, finalizers: $finalizers, generateName: $generateName, generation: $generation, labels: $labels, managedFields: $managedFields, name: $name, namespace: $namespace, ownerReferences: $ownerReferences, resourceVersion: $resourceVersion, selfLink: $selfLink, uid: $uid)';
+@override String toString() => 'ObjectMeta(\n  annotations: $annotations,\n  creationTimestamp: $creationTimestamp,\n  deletionGracePeriodSeconds: $deletionGracePeriodSeconds,\n  deletionTimestamp: $deletionTimestamp,\n  finalizers: $finalizers,\n  generateName: $generateName,\n  generation: $generation,\n  labels: $labels,\n  managedFields: $managedFields,\n  name: $name,\n  namespace: $namespace,\n  ownerReferences: $ownerReferences,\n  resourceVersion: $resourceVersion,\n  selfLink: $selfLink,\n  uid: $uid,\n)';
 
  }

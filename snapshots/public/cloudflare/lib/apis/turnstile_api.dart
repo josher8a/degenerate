@@ -35,7 +35,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/challenges/widgets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/challenges/widgets',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -78,7 +78,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/challenges/widgets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/challenges/widgets',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -103,7 +103,7 @@ Future<ApiResult<TurnstileWidgetDetail?, Never>> accountsTurnstileWidgetGet({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/challenges/widgets/${Uri.encodeComponent(sitekey.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/challenges/widgets/${Uri.encodeComponent(sitekey.toJson())}',
   headers: headers,
   options: options,
 );
@@ -126,7 +126,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/challenges/widgets/${Uri.encodeComponent(sitekey.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/challenges/widgets/${Uri.encodeComponent(sitekey.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -149,7 +149,7 @@ Future<ApiResult<TurnstileWidgetDetail?, Never>> accountsTurnstileWidgetDelete({
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/challenges/widgets/${Uri.encodeComponent(sitekey.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/challenges/widgets/${Uri.encodeComponent(sitekey.toJson())}',
   headers: headers,
   options: options,
 );
@@ -176,7 +176,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/challenges/widgets/${Uri.encodeComponent(sitekey.toString())}/rotate_secret',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/challenges/widgets/${Uri.encodeComponent(sitekey.toJson())}/rotate_secret',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

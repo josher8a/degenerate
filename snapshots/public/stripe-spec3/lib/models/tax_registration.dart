@@ -150,6 +150,6 @@ TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrati
 
 @override int get hashCode => Object.hash(activeFrom, country, countryOptions, created, expiresAt, id, livemode, object, status);
 
-@override String toString() => 'TaxRegistration(activeFrom: $activeFrom, country: $country, countryOptions: $countryOptions, created: $created, expiresAt: $expiresAt, id: $id, livemode: $livemode, object: $object, status: $status)';
+@override String toString() => 'TaxRegistration(\n  activeFrom: $activeFrom,\n  country: $country,\n  countryOptions: $countryOptions,\n  created: $created,\n  expiresAt: $expiresAt,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  status: $status,\n)';
 
  }

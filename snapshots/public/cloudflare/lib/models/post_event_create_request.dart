@@ -129,6 +129,6 @@ PostEventCreateRequest copyWith({double? Function()? accountId, String? Function
 
 @override int get hashCode => Object.hash(accountId, attacker, attackerCountry, category, datasetId, date, event, indicator, indicatorType, Object.hashAll(indicators ?? const []), insight, raw, Object.hashAll(tags ?? const []), targetCountry, targetIndustry, tlp);
 
-@override String toString() => 'PostEventCreateRequest(accountId: $accountId, attacker: $attacker, attackerCountry: $attackerCountry, category: $category, datasetId: $datasetId, date: $date, event: $event, indicator: $indicator, indicatorType: $indicatorType, indicators: $indicators, insight: $insight, raw: $raw, tags: $tags, targetCountry: $targetCountry, targetIndustry: $targetIndustry, tlp: $tlp)';
+@override String toString() => 'PostEventCreateRequest(\n  accountId: $accountId,\n  attacker: $attacker,\n  attackerCountry: $attackerCountry,\n  category: $category,\n  datasetId: $datasetId,\n  date: $date,\n  event: $event,\n  indicator: $indicator,\n  indicatorType: $indicatorType,\n  indicators: $indicators,\n  insight: $insight,\n  raw: $raw,\n  tags: $tags,\n  targetCountry: $targetCountry,\n  targetIndustry: $targetIndustry,\n  tlp: $tlp,\n)';
 
  }

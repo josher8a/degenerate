@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('pointer') && json['pointer'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (pointer.length < 1) errors.add('pointer: length must be >= 1');
+if (pointer.isEmpty) errors.add('pointer: length must be >= 1');
 return errors; } 
 RulesetsMessageSource copyWith({String? pointer}) { return RulesetsMessageSource(
   pointer: pointer ?? this.pointer,

@@ -154,6 +154,6 @@ CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime? Function()? create
 
 @override int get hashCode => Object.hash(createdOn, description, id, isAttributable, isDownloadable, isPublic, latestUploadStatus, modifiedOn, name, providerId, providerName);
 
-@override String toString() => 'CustomIndicatorFeedsIndicatorFeedMetadata(createdOn: $createdOn, description: $description, id: $id, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, latestUploadStatus: $latestUploadStatus, modifiedOn: $modifiedOn, name: $name, providerId: $providerId, providerName: $providerName)';
+@override String toString() => 'CustomIndicatorFeedsIndicatorFeedMetadata(\n  createdOn: $createdOn,\n  description: $description,\n  id: $id,\n  isAttributable: $isAttributable,\n  isDownloadable: $isDownloadable,\n  isPublic: $isPublic,\n  latestUploadStatus: $latestUploadStatus,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  providerId: $providerId,\n  providerName: $providerName,\n)';
 
  }

@@ -52,7 +52,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CampaignSummary.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CampaignsListOrgCampaignsError.fromResponse(response),
+  onError: CampaignsListOrgCampaignsError.fromResponse,
 );
  } 
 /// Create a campaign for an organization
@@ -83,7 +83,7 @@ return execute(
   onSuccess: (response) {
     return CampaignSummary.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CampaignsCreateCampaignError.fromResponse(response),
+  onError: CampaignsCreateCampaignError.fromResponse,
 );
  } 
 /// Get a campaign for an organization
@@ -109,7 +109,7 @@ return execute(
   onSuccess: (response) {
     return CampaignSummary.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CampaignsGetCampaignSummaryError.fromResponse(response),
+  onError: CampaignsGetCampaignSummaryError.fromResponse,
 );
  } 
 /// Update a campaign
@@ -137,7 +137,7 @@ return execute(
   onSuccess: (response) {
     return CampaignSummary.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CampaignsUpdateCampaignError.fromResponse(response),
+  onError: CampaignsUpdateCampaignError.fromResponse,
 );
  } 
 /// Delete a campaign for an organization
@@ -161,7 +161,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CampaignsDeleteCampaignError.fromResponse(response),
+  onError: CampaignsDeleteCampaignError.fromResponse,
 );
  } 
  }

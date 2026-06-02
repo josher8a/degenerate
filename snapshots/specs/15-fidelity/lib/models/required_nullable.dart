@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'alwaysPresent': alwaysPresent,
   'nullableString': nullableString,
   'nullableList': nullableList,
-  'nullableObject': nullableObject != null ? nullableObject?.toJson() : null,
+  'nullableObject': nullableObject?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('alwaysPresent') && json['alwaysPresent'] is String &&
       json.containsKey('nullableString') && json['nullableString'] is String &&

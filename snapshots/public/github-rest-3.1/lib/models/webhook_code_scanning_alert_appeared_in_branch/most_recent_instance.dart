@@ -108,6 +108,6 @@ MostRecentInstance copyWith({String? analysisKey, String? Function()? category, 
 
 @override int get hashCode => Object.hash(analysisKey, category, Object.hashAll(classifications ?? const []), commitSha, environment, location, message, ref, state);
 
-@override String toString() => 'MostRecentInstance(analysisKey: $analysisKey, category: $category, classifications: $classifications, commitSha: $commitSha, environment: $environment, location: $location, message: $message, ref: $ref, state: $state)';
+@override String toString() => 'MostRecentInstance(\n  analysisKey: $analysisKey,\n  category: $category,\n  classifications: $classifications,\n  commitSha: $commitSha,\n  environment: $environment,\n  location: $location,\n  message: $message,\n  ref: $ref,\n  state: $state,\n)';
 
  }

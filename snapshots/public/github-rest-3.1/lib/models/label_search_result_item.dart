@@ -77,6 +77,6 @@ LabelSearchResultItem copyWith({int? id, String? nodeId, Uri? url, String? name,
 
 @override int get hashCode => Object.hash(id, nodeId, url, name, color, $default, description, score, Object.hashAll(textMatches ?? const []));
 
-@override String toString() => 'LabelSearchResultItem(id: $id, nodeId: $nodeId, url: $url, name: $name, color: $color, \$default: ${$default}, description: $description, score: $score, textMatches: $textMatches)';
+@override String toString() => 'LabelSearchResultItem(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  name: $name,\n  color: $color,\n  \$default: ${$default},\n  description: $description,\n  score: $score,\n  textMatches: $textMatches,\n)';
 
  }

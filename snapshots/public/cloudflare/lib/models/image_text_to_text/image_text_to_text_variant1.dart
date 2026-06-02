@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('image
       json.containsKey('prompt') && json['prompt'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (prompt.length < 1) errors.add('prompt: length must be >= 1');
+if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
 return errors; } 
 ImageTextToTextVariant1 copyWith({double? Function()? frequencyPenalty, bool? Function()? ignoreEos, String? image, int Function()? maxTokens, double? Function()? presencePenalty, String? prompt, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageTextToTextVariant1(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
@@ -97,6 +97,6 @@ ImageTextToTextVariant1 copyWith({double? Function()? frequencyPenalty, bool? Fu
 
 @override int get hashCode => Object.hash(frequencyPenalty, ignoreEos, image, maxTokens, presencePenalty, prompt, repetitionPenalty, seed, temperature, topK, topP);
 
-@override String toString() => 'ImageTextToTextVariant1(frequencyPenalty: $frequencyPenalty, ignoreEos: $ignoreEos, image: $image, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, repetitionPenalty: $repetitionPenalty, seed: $seed, temperature: $temperature, topK: $topK, topP: $topP)';
+@override String toString() => 'ImageTextToTextVariant1(\n  frequencyPenalty: $frequencyPenalty,\n  ignoreEos: $ignoreEos,\n  image: $image,\n  maxTokens: $maxTokens,\n  presencePenalty: $presencePenalty,\n  prompt: $prompt,\n  repetitionPenalty: $repetitionPenalty,\n  seed: $seed,\n  temperature: $temperature,\n  topK: $topK,\n  topP: $topP,\n)';
 
  }

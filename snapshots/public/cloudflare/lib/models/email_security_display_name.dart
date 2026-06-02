@@ -91,6 +91,6 @@ EmailSecurityDisplayName copyWith({String? email, bool? isEmailRegex, String? na
 
 @override int get hashCode => Object.hash(email, isEmailRegex, name, comments, createdAt, directoryId, directoryNodeId, externalDirectoryNodeId, id, lastModified, provenance);
 
-@override String toString() => 'EmailSecurityDisplayName(email: $email, isEmailRegex: $isEmailRegex, name: $name, comments: $comments, createdAt: $createdAt, directoryId: $directoryId, directoryNodeId: $directoryNodeId, externalDirectoryNodeId: $externalDirectoryNodeId, id: $id, lastModified: $lastModified, provenance: $provenance)';
+@override String toString() => 'EmailSecurityDisplayName(\n  email: $email,\n  isEmailRegex: $isEmailRegex,\n  name: $name,\n  comments: $comments,\n  createdAt: $createdAt,\n  directoryId: $directoryId,\n  directoryNodeId: $directoryNodeId,\n  externalDirectoryNodeId: $externalDirectoryNodeId,\n  id: $id,\n  lastModified: $lastModified,\n  provenance: $provenance,\n)';
 
  }

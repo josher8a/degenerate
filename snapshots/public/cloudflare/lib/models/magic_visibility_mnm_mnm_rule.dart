@@ -160,7 +160,7 @@ final MagicVisibilityMnmMnmRuleZscoreSensitivity? zscoreSensitivity;
 final MagicVisibilityMnmMnmRuleZscoreTarget? zscoreTarget;
 
 Map<String, dynamic> toJson() { return {
-  'automatic_advertisement': automaticAdvertisement != null ? automaticAdvertisement?.toJson() : null,
+  'automatic_advertisement': automaticAdvertisement?.toJson(),
   if (bandwidthThreshold != null) 'bandwidth_threshold': bandwidthThreshold?.toJson(),
   if (duration != null) 'duration': duration?.toJson(),
   if (id != null) 'id': id?.toJson(),
@@ -205,6 +205,6 @@ MagicVisibilityMnmMnmRule copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisem
 
 @override int get hashCode => Object.hash(automaticAdvertisement, bandwidthThreshold, duration, id, name, packetThreshold, prefixMatch, Object.hashAll(prefixes), type, zscoreSensitivity, zscoreTarget);
 
-@override String toString() => 'MagicVisibilityMnmMnmRule(automaticAdvertisement: $automaticAdvertisement, bandwidthThreshold: $bandwidthThreshold, duration: $duration, id: $id, name: $name, packetThreshold: $packetThreshold, prefixMatch: $prefixMatch, prefixes: $prefixes, type: $type, zscoreSensitivity: $zscoreSensitivity, zscoreTarget: $zscoreTarget)';
+@override String toString() => 'MagicVisibilityMnmMnmRule(\n  automaticAdvertisement: $automaticAdvertisement,\n  bandwidthThreshold: $bandwidthThreshold,\n  duration: $duration,\n  id: $id,\n  name: $name,\n  packetThreshold: $packetThreshold,\n  prefixMatch: $prefixMatch,\n  prefixes: $prefixes,\n  type: $type,\n  zscoreSensitivity: $zscoreSensitivity,\n  zscoreTarget: $zscoreTarget,\n)';
 
  }

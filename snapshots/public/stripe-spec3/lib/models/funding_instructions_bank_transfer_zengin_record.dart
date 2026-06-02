@@ -109,6 +109,6 @@ FundingInstructionsBankTransferZenginRecord copyWith({Address? accountHolderAddr
 
 @override int get hashCode => Object.hash(accountHolderAddress, accountHolderName, accountNumber, accountType, bankAddress, bankCode, bankName, branchCode, branchName);
 
-@override String toString() => 'FundingInstructionsBankTransferZenginRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, accountNumber: $accountNumber, accountType: $accountType, bankAddress: $bankAddress, bankCode: $bankCode, bankName: $bankName, branchCode: $branchCode, branchName: $branchName)';
+@override String toString() => 'FundingInstructionsBankTransferZenginRecord(\n  accountHolderAddress: $accountHolderAddress,\n  accountHolderName: $accountHolderName,\n  accountNumber: $accountNumber,\n  accountType: $accountType,\n  bankAddress: $bankAddress,\n  bankCode: $bankCode,\n  bankName: $bankName,\n  branchCode: $branchCode,\n  branchName: $branchName,\n)';
 
  }

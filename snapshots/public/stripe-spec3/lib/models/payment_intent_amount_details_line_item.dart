@@ -132,6 +132,6 @@ PaymentIntentAmountDetailsLineItem copyWith({int? Function()? discountAmount, St
 
 @override int get hashCode => Object.hash(discountAmount, id, object, paymentMethodOptions, productCode, productName, quantity, tax, unitCost, unitOfMeasure);
 
-@override String toString() => 'PaymentIntentAmountDetailsLineItem(discountAmount: $discountAmount, id: $id, object: $object, paymentMethodOptions: $paymentMethodOptions, productCode: $productCode, productName: $productName, quantity: $quantity, tax: $tax, unitCost: $unitCost, unitOfMeasure: $unitOfMeasure)';
+@override String toString() => 'PaymentIntentAmountDetailsLineItem(\n  discountAmount: $discountAmount,\n  id: $id,\n  object: $object,\n  paymentMethodOptions: $paymentMethodOptions,\n  productCode: $productCode,\n  productName: $productName,\n  quantity: $quantity,\n  tax: $tax,\n  unitCost: $unitCost,\n  unitOfMeasure: $unitOfMeasure,\n)';
 
  }

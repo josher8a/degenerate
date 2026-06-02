@@ -138,6 +138,6 @@ PostAccountsAccountRequest copyWith({String? Function()? accountToken, PostAccou
 
 @override int get hashCode => Object.hash(accountToken, businessProfile, businessType, capabilities, company, defaultCurrency, documents, email, Object.hashAll(expand ?? const []), externalAccount, groups, individual, metadata, settings, tosAcceptance);
 
-@override String toString() => 'PostAccountsAccountRequest(accountToken: $accountToken, businessProfile: $businessProfile, businessType: $businessType, capabilities: $capabilities, company: $company, defaultCurrency: $defaultCurrency, documents: $documents, email: $email, expand: $expand, externalAccount: $externalAccount, groups: $groups, individual: $individual, metadata: $metadata, settings: $settings, tosAcceptance: $tosAcceptance)';
+@override String toString() => 'PostAccountsAccountRequest(\n  accountToken: $accountToken,\n  businessProfile: $businessProfile,\n  businessType: $businessType,\n  capabilities: $capabilities,\n  company: $company,\n  defaultCurrency: $defaultCurrency,\n  documents: $documents,\n  email: $email,\n  expand: $expand,\n  externalAccount: $externalAccount,\n  groups: $groups,\n  individual: $individual,\n  metadata: $metadata,\n  settings: $settings,\n  tosAcceptance: $tosAcceptance,\n)';
 
  }

@@ -117,6 +117,6 @@ AccountLoadBalancerPoolsPatchPoolRequest copyWith({List<LoadBalancingCheckRegion
 
 @override int get hashCode => Object.hash(Object.hashAll(checkRegions ?? const []), description, disabledAt, enabled, latitude, loadShedding, longitude, minimumOrigins, monitor, monitorGroup, name, notificationEmail, notificationFilter, originSteering, Object.hashAll(origins ?? const []));
 
-@override String toString() => 'AccountLoadBalancerPoolsPatchPoolRequest(checkRegions: $checkRegions, description: $description, disabledAt: $disabledAt, enabled: $enabled, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)';
+@override String toString() => 'AccountLoadBalancerPoolsPatchPoolRequest(\n  checkRegions: $checkRegions,\n  description: $description,\n  disabledAt: $disabledAt,\n  enabled: $enabled,\n  latitude: $latitude,\n  loadShedding: $loadShedding,\n  longitude: $longitude,\n  minimumOrigins: $minimumOrigins,\n  monitor: $monitor,\n  monitorGroup: $monitorGroup,\n  name: $name,\n  notificationEmail: $notificationEmail,\n  notificationFilter: $notificationFilter,\n  originSteering: $originSteering,\n  origins: $origins,\n)';
 
  }

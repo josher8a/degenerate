@@ -29,7 +29,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/identity_providers',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -54,7 +54,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/identity_providers',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -77,7 +77,7 @@ Future<ApiResult<AccessIdentityProviders?, Never>> accessIdentityProvidersGetAnA
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -100,7 +100,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -123,7 +123,7 @@ Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, Never>> ac
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -163,7 +163,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}/scim/groups',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toJson())}/scim/groups',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -211,7 +211,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toString())}/scim/users',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/identity_providers/${Uri.encodeComponent(identityProviderId.toJson())}/scim/users',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

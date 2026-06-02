@@ -17,7 +17,7 @@ Future<ApiResult<AccessCa?, Never>> accessShortLivedCertificateCAsGetAShortLived
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/ca',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/apps/${Uri.encodeComponent(appId.toJson())}/ca',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<AccessCa?, Never>> accessShortLivedCertificateCAsCreateAShortLi
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/ca',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/apps/${Uri.encodeComponent(appId.toJson())}/ca',
   headers: headers,
   options: options,
 );
@@ -61,7 +61,7 @@ Future<ApiResult<AccessCaComponentsSchemasIdResponseResult?, Never>> accessShort
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/ca',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/apps/${Uri.encodeComponent(appId.toJson())}/ca',
   headers: headers,
   options: options,
 );
@@ -92,7 +92,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/apps/ca',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/apps/ca',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

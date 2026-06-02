@@ -184,6 +184,6 @@ Plan copyWith({bool? active, int? Function()? amount, String? Function()? amount
 
 @override int get hashCode => Object.hash(active, amount, amountDecimal, billingScheme, created, currency, id, interval, intervalCount, livemode, metadata, meter, nickname, object, product, Object.hashAll(tiers ?? const []), tiersMode, transformUsage, trialPeriodDays, usageType);
 
-@override String toString() => 'Plan(active: $active, amount: $amount, amountDecimal: $amountDecimal, billingScheme: $billingScheme, created: $created, currency: $currency, id: $id, interval: $interval, intervalCount: $intervalCount, livemode: $livemode, metadata: $metadata, meter: $meter, nickname: $nickname, object: $object, product: $product, tiers: $tiers, tiersMode: $tiersMode, transformUsage: $transformUsage, trialPeriodDays: $trialPeriodDays, usageType: $usageType)';
+@override String toString() => 'Plan(\n  active: $active,\n  amount: $amount,\n  amountDecimal: $amountDecimal,\n  billingScheme: $billingScheme,\n  created: $created,\n  currency: $currency,\n  id: $id,\n  interval: $interval,\n  intervalCount: $intervalCount,\n  livemode: $livemode,\n  metadata: $metadata,\n  meter: $meter,\n  nickname: $nickname,\n  object: $object,\n  product: $product,\n  tiers: $tiers,\n  tiersMode: $tiersMode,\n  transformUsage: $transformUsage,\n  trialPeriodDays: $trialPeriodDays,\n  usageType: $usageType,\n)';
 
  }

@@ -226,6 +226,6 @@ Topup copyWith({int? amount, ApplicationFeeBalanceTransaction? Function()? balan
 
 @override int get hashCode => Object.hash(amount, balanceTransaction, created, currency, description, expectedAvailabilityDate, failureCode, failureMessage, id, livemode, metadata, object, source, statementDescriptor, status, transferGroup);
 
-@override String toString() => 'Topup(amount: $amount, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, description: $description, expectedAvailabilityDate: $expectedAvailabilityDate, failureCode: $failureCode, failureMessage: $failureMessage, id: $id, livemode: $livemode, metadata: $metadata, object: $object, source: $source, statementDescriptor: $statementDescriptor, status: $status, transferGroup: $transferGroup)';
+@override String toString() => 'Topup(\n  amount: $amount,\n  balanceTransaction: $balanceTransaction,\n  created: $created,\n  currency: $currency,\n  description: $description,\n  expectedAvailabilityDate: $expectedAvailabilityDate,\n  failureCode: $failureCode,\n  failureMessage: $failureMessage,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  source: $source,\n  statementDescriptor: $statementDescriptor,\n  status: $status,\n  transferGroup: $transferGroup,\n)';
 
  }

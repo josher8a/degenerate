@@ -29,7 +29,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/rules',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -52,7 +52,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -75,7 +75,7 @@ Future<ApiResult<DigitalExperienceMonitoringDexRule?, Never>> getDexRule({requir
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -96,7 +96,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -117,7 +117,7 @@ Future<ApiResult<bool?, Never>> deleteDexRule({required DigitalExperienceMonitor
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );

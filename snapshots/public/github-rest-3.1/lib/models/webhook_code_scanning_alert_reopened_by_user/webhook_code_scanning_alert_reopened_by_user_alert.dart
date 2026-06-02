@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   if (mostRecentInstance != null) 'most_recent_instance': mostRecentInstance?.toJson(),
   'number': number,
   'rule': rule.toJson(),
-  'state': state != null ? state?.toJson() : null,
+  'state': state?.toJson(),
   'tool': tool.toJson(),
   'url': url.toString(),
 }; } 
@@ -148,6 +148,6 @@ WebhookCodeScanningAlertReopenedByUserAlert copyWith({List<SimpleUser>? Function
 
 @override int get hashCode => Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, mostRecentInstance, number, rule, state, tool, url);
 
-@override String toString() => 'WebhookCodeScanningAlertReopenedByUserAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url)';
+@override String toString() => 'WebhookCodeScanningAlertReopenedByUserAlert(\n  assignees: $assignees,\n  createdAt: $createdAt,\n  dismissedAt: $dismissedAt,\n  dismissedBy: $dismissedBy,\n  dismissedComment: $dismissedComment,\n  dismissedReason: $dismissedReason,\n  fixedAt: $fixedAt,\n  htmlUrl: $htmlUrl,\n  mostRecentInstance: $mostRecentInstance,\n  number: $number,\n  rule: $rule,\n  state: $state,\n  tool: $tool,\n  url: $url,\n)';
 
  }

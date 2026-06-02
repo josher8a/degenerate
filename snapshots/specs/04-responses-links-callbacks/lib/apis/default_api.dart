@@ -26,7 +26,7 @@ return execute(
   onSuccess: (response) {
     return Job.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateJobError.fromResponse(response),
+  onError: CreateJobError.fromResponse,
 );
  } 
 ///

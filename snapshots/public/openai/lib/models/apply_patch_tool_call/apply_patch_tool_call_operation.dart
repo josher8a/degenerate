@@ -28,6 +28,12 @@ bool get isUnknown => this is ApplyPatchToolCallOperation$Unknown;
 
 /// Shared by all variants of this union.
 String get path;
+R when<R>({required R Function(ApplyPatchToolCallOperationCreateFile) createFile, required R Function(ApplyPatchToolCallOperationDeleteFile) deleteFile, required R Function(ApplyPatchToolCallOperationUpdateFile) updateFile, required R Function(ApplyPatchToolCallOperation$Unknown) unknown, }) { return switch (this) {
+  final ApplyPatchToolCallOperationCreateFile v => createFile(v),
+  final ApplyPatchToolCallOperationDeleteFile v => deleteFile(v),
+  final ApplyPatchToolCallOperationUpdateFile v => updateFile(v),
+  final ApplyPatchToolCallOperation$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ApplyPatchToolCallOperationCreateFile extends ApplyPatchToolCallOperation {const ApplyPatchToolCallOperationCreateFile(this.applyPatchCreateFileOperation);
 
@@ -102,9 +108,11 @@ ApplyPatchToolCallOperationUpdateFile copyWith({String? path, String? diff, }) {
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class ApplyPatchToolCallOperation$Unknown extends ApplyPatchToolCallOperation {const ApplyPatchToolCallOperation$Unknown(this.json);
+@immutable final class ApplyPatchToolCallOperation$Unknown extends ApplyPatchToolCallOperation {ApplyPatchToolCallOperation$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String _path = json['path'] as String;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -117,6 +125,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ApplyPatchToolCallOperation.unknown($json)';
 
-@override String get path => json['path'] as String;
+@override String get path => _path;
 
  }

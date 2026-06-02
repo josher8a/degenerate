@@ -91,6 +91,6 @@ PostChargesChargeCaptureRequest copyWith({int? Function()? amount, int? Function
 
 @override int get hashCode => Object.hash(amount, applicationFee, applicationFeeAmount, Object.hashAll(expand ?? const []), receiptEmail, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup);
 
-@override String toString() => 'PostChargesChargeCaptureRequest(amount: $amount, applicationFee: $applicationFee, applicationFeeAmount: $applicationFeeAmount, expand: $expand, receiptEmail: $receiptEmail, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)';
+@override String toString() => 'PostChargesChargeCaptureRequest(\n  amount: $amount,\n  applicationFee: $applicationFee,\n  applicationFeeAmount: $applicationFeeAmount,\n  expand: $expand,\n  receiptEmail: $receiptEmail,\n  statementDescriptor: $statementDescriptor,\n  statementDescriptorSuffix: $statementDescriptorSuffix,\n  transferData: $transferData,\n  transferGroup: $transferGroup,\n)';
 
  }

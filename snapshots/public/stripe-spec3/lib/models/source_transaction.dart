@@ -221,6 +221,6 @@ SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? 
 
 @override int get hashCode => Object.hash(achCreditTransfer, amount, chfCreditTransfer, created, currency, gbpCreditTransfer, id, livemode, object, paperCheck, sepaCreditTransfer, source, status, type);
 
-@override String toString() => 'SourceTransaction(achCreditTransfer: $achCreditTransfer, amount: $amount, chfCreditTransfer: $chfCreditTransfer, created: $created, currency: $currency, gbpCreditTransfer: $gbpCreditTransfer, id: $id, livemode: $livemode, object: $object, paperCheck: $paperCheck, sepaCreditTransfer: $sepaCreditTransfer, source: $source, status: $status, type: $type)';
+@override String toString() => 'SourceTransaction(\n  achCreditTransfer: $achCreditTransfer,\n  amount: $amount,\n  chfCreditTransfer: $chfCreditTransfer,\n  created: $created,\n  currency: $currency,\n  gbpCreditTransfer: $gbpCreditTransfer,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  paperCheck: $paperCheck,\n  sepaCreditTransfer: $sepaCreditTransfer,\n  source: $source,\n  status: $status,\n  type: $type,\n)';
 
  }

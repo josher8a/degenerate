@@ -127,6 +127,6 @@ ContainerStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedRe
 
 @override int get hashCode => Object.hash(allocatedResources, Object.hashAll(allocatedResourcesStatus ?? const []), containerId, image, imageId, lastState, name, ready, resources, restartCount, started, state, stopSignal, user, Object.hashAll(volumeMounts ?? const []));
 
-@override String toString() => 'ContainerStatus(allocatedResources: $allocatedResources, allocatedResourcesStatus: $allocatedResourcesStatus, containerId: $containerId, image: $image, imageId: $imageId, lastState: $lastState, name: $name, ready: $ready, resources: $resources, restartCount: $restartCount, started: $started, state: $state, stopSignal: $stopSignal, user: $user, volumeMounts: $volumeMounts)';
+@override String toString() => 'ContainerStatus(\n  allocatedResources: $allocatedResources,\n  allocatedResourcesStatus: $allocatedResourcesStatus,\n  containerId: $containerId,\n  image: $image,\n  imageId: $imageId,\n  lastState: $lastState,\n  name: $name,\n  ready: $ready,\n  resources: $resources,\n  restartCount: $restartCount,\n  started: $started,\n  state: $state,\n  stopSignal: $stopSignal,\n  user: $user,\n  volumeMounts: $volumeMounts,\n)';
 
  }

@@ -38,7 +38,7 @@ final DateTime updatedAt;
 Map<String, dynamic> toJson() { return {
   'content': content,
   'created_at': createdAt.toIso8601String(),
-  'disposition': disposition != null ? disposition?.toJson() : null,
+  'disposition': disposition?.toJson(),
   'fields': fields.toJson(),
   'id': id,
   'priority': priority,
@@ -83,6 +83,6 @@ EmailSecurityPhishGuardReport copyWith({String? content, DateTime? createdAt, Em
 
 @override int get hashCode => Object.hash(content, createdAt, disposition, fields, id, priority, Object.hashAll(tags ?? const []), title, ts, updatedAt);
 
-@override String toString() => 'EmailSecurityPhishGuardReport(content: $content, createdAt: $createdAt, disposition: $disposition, fields: $fields, id: $id, priority: $priority, tags: $tags, title: $title, ts: $ts, updatedAt: $updatedAt)';
+@override String toString() => 'EmailSecurityPhishGuardReport(\n  content: $content,\n  createdAt: $createdAt,\n  disposition: $disposition,\n  fields: $fields,\n  id: $id,\n  priority: $priority,\n  tags: $tags,\n  title: $title,\n  ts: $ts,\n  updatedAt: $updatedAt,\n)';
 
  }

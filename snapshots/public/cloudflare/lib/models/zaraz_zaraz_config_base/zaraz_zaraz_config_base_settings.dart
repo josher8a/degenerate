@@ -114,6 +114,6 @@ ZarazZarazConfigBaseSettings copyWith({bool? autoInjectScript, ContextEnricher? 
 
 @override int get hashCode => Object.hash(autoInjectScript, contextEnricher, cookieDomain, ecommerce, eventsApiPath, hideExternalReferer, hideIpAddress, hideQueryParams, hideUserAgent, initPath, injectIframes, mcRootPath, scriptPath, trackPath);
 
-@override String toString() => 'ZarazZarazConfigBaseSettings(autoInjectScript: $autoInjectScript, contextEnricher: $contextEnricher, cookieDomain: $cookieDomain, ecommerce: $ecommerce, eventsApiPath: $eventsApiPath, hideExternalReferer: $hideExternalReferer, hideIpAddress: $hideIpAddress, hideQueryParams: $hideQueryParams, hideUserAgent: $hideUserAgent, initPath: $initPath, injectIframes: $injectIframes, mcRootPath: $mcRootPath, scriptPath: $scriptPath, trackPath: $trackPath)';
+@override String toString() => 'ZarazZarazConfigBaseSettings(\n  autoInjectScript: $autoInjectScript,\n  contextEnricher: $contextEnricher,\n  cookieDomain: $cookieDomain,\n  ecommerce: $ecommerce,\n  eventsApiPath: $eventsApiPath,\n  hideExternalReferer: $hideExternalReferer,\n  hideIpAddress: $hideIpAddress,\n  hideQueryParams: $hideQueryParams,\n  hideUserAgent: $hideUserAgent,\n  initPath: $initPath,\n  injectIframes: $injectIframes,\n  mcRootPath: $mcRootPath,\n  scriptPath: $scriptPath,\n  trackPath: $trackPath,\n)';
 
  }

@@ -21,7 +21,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/builds',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/builds',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -45,7 +45,7 @@ Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> getBuildByUuid(
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/builds/${Uri.encodeComponent(buildUuid.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/builds/${Uri.encodeComponent(buildUuid.toJson())}',
   headers: headers,
   options: options,
 );
@@ -56,7 +56,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) => CancelBuildByUuidError.fromResponse(response),
+  onError: CancelBuildByUuidError.fromResponse,
 );
  } 
 /// Cancel build
@@ -68,7 +68,7 @@ Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> cancelBuildByUu
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/builds/${Uri.encodeComponent(buildUuid.toString())}/cancel',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/builds/${Uri.encodeComponent(buildUuid.toJson())}/cancel',
   headers: headers,
   options: options,
 );
@@ -79,7 +79,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) => CancelBuildByUuidError.fromResponse(response),
+  onError: CancelBuildByUuidError.fromResponse,
 );
  } 
 /// Get build logs
@@ -97,7 +97,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/builds/${Uri.encodeComponent(buildUuid.toString())}/logs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/builds/${Uri.encodeComponent(buildUuid.toJson())}/logs',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -110,7 +110,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) => CancelBuildByUuidError.fromResponse(response),
+  onError: CancelBuildByUuidError.fromResponse,
 );
  } 
 /// Get latest builds by script IDs
@@ -126,7 +126,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/builds/latest',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/builds/latest',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

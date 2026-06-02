@@ -94,6 +94,6 @@ DlpCustomProfileUpdate copyWith({bool Function()? aiContextEnabled, int? Functio
 
 @override int get hashCode => Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(dataClasses ?? const []), Object.hashAll(dataTags ?? const []), description, Object.hashAll(entries ?? const []), name, ocrEnabled, Object.hashAll(sensitivityLevels ?? const []), Object.hashAll(sharedEntries ?? const []));
 
-@override String toString() => 'DlpCustomProfileUpdate(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, dataClasses: $dataClasses, dataTags: $dataTags, description: $description, entries: $entries, name: $name, ocrEnabled: $ocrEnabled, sensitivityLevels: $sensitivityLevels, sharedEntries: $sharedEntries)';
+@override String toString() => 'DlpCustomProfileUpdate(\n  aiContextEnabled: $aiContextEnabled,\n  allowedMatchCount: $allowedMatchCount,\n  confidenceThreshold: $confidenceThreshold,\n  contextAwareness: $contextAwareness,\n  dataClasses: $dataClasses,\n  dataTags: $dataTags,\n  description: $description,\n  entries: $entries,\n  name: $name,\n  ocrEnabled: $ocrEnabled,\n  sensitivityLevels: $sensitivityLevels,\n  sharedEntries: $sharedEntries,\n)';
 
  }

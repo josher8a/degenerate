@@ -25,6 +25,12 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is OutputContent$Unknown;
 
+R when<R>({required R Function(OutputContentOutputText) outputText, required R Function(OutputContentRefusal) refusal, required R Function(OutputContentReasoningText) reasoningText, required R Function(OutputContent$Unknown) unknown, }) { return switch (this) {
+  final OutputContentOutputText v => outputText(v),
+  final OutputContentRefusal v => refusal(v),
+  final OutputContentReasoningText v => reasoningText(v),
+  final OutputContent$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class OutputContentOutputText extends OutputContent {const OutputContentOutputText(this.outputTextContent);
 

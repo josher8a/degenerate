@@ -23,6 +23,13 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is NscStatusInfo$Unknown;
 
+R when<R>({required R Function(NscStatusInfoPending) pending, required R Function(NscStatusInfoDown) down, required R Function(NscStatusInfoUnhealthy) unhealthy, required R Function(NscStatusInfoHealthy) healthy, required R Function(NscStatusInfo$Unknown) unknown, }) { return switch (this) {
+  final NscStatusInfoPending v => pending(v),
+  final NscStatusInfoDown v => down(v),
+  final NscStatusInfoUnhealthy v => unhealthy(v),
+  final NscStatusInfoHealthy v => healthy(v),
+  final NscStatusInfo$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class NscStatusInfoPending extends NscStatusInfo {const NscStatusInfoPending(this.pending);
 

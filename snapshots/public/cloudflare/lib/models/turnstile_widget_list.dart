@@ -111,6 +111,6 @@ TurnstileWidgetList copyWith({TurnstileBotFightMode? botFightMode, TurnstileClea
 
 @override int get hashCode => Object.hash(botFightMode, clearanceLevel, createdOn, Object.hashAll(domains), ephemeralId, mode, modifiedOn, name, offlabel, region, sitekey);
 
-@override String toString() => 'TurnstileWidgetList(botFightMode: $botFightMode, clearanceLevel: $clearanceLevel, createdOn: $createdOn, domains: $domains, ephemeralId: $ephemeralId, mode: $mode, modifiedOn: $modifiedOn, name: $name, offlabel: $offlabel, region: $region, sitekey: $sitekey)';
+@override String toString() => 'TurnstileWidgetList(\n  botFightMode: $botFightMode,\n  clearanceLevel: $clearanceLevel,\n  createdOn: $createdOn,\n  domains: $domains,\n  ephemeralId: $ephemeralId,\n  mode: $mode,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  offlabel: $offlabel,\n  region: $region,\n  sitekey: $sitekey,\n)';
 
  }

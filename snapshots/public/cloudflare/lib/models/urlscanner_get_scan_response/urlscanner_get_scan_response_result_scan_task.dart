@@ -113,6 +113,6 @@ UrlscannerGetScanResponseResultScanTask copyWith({String? clientLocation, TasksC
 
 @override int get hashCode => Object.hash(clientLocation, clientType, effectiveUrl, Object.hashAll(errors), scannedFrom, status, success, time, timeEnd, url, uuid, visibility);
 
-@override String toString() => 'UrlscannerGetScanResponseResultScanTask(clientLocation: $clientLocation, clientType: $clientType, effectiveUrl: $effectiveUrl, errors: $errors, scannedFrom: $scannedFrom, status: $status, success: $success, time: $time, timeEnd: $timeEnd, url: $url, uuid: $uuid, visibility: $visibility)';
+@override String toString() => 'UrlscannerGetScanResponseResultScanTask(\n  clientLocation: $clientLocation,\n  clientType: $clientType,\n  effectiveUrl: $effectiveUrl,\n  errors: $errors,\n  scannedFrom: $scannedFrom,\n  status: $status,\n  success: $success,\n  time: $time,\n  timeEnd: $timeEnd,\n  url: $url,\n  uuid: $uuid,\n  visibility: $visibility,\n)';
 
  }

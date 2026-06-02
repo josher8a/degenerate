@@ -93,6 +93,6 @@ MagicRoute copyWith({MagicCreatedOn? Function()? createdOn, MagicDescription? Fu
 
 @override int get hashCode => Object.hash(createdOn, description, id, modifiedOn, nexthop, prefix, priority, scope, weight);
 
-@override String toString() => 'MagicRoute(createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, nexthop: $nexthop, prefix: $prefix, priority: $priority, scope: $scope, weight: $weight)';
+@override String toString() => 'MagicRoute(\n  createdOn: $createdOn,\n  description: $description,\n  id: $id,\n  modifiedOn: $modifiedOn,\n  nexthop: $nexthop,\n  prefix: $prefix,\n  priority: $priority,\n  scope: $scope,\n  weight: $weight,\n)';
 
  }

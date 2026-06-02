@@ -50,10 +50,10 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'name': name,
   'namespace': namespace,
-  'owner': owner != null ? owner?.toJson() : null,
+  'owner': owner?.toJson(),
   'package_type': packageType,
   'package_version': packageVersion.toJson(),
-  'registry': registry != null ? registry?.toJson() : null,
+  'registry': registry?.toJson(),
   'updated_at': updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
@@ -99,6 +99,6 @@ WebhookPackageUpdatedPackage copyWith({String? createdAt, String? Function()? de
 
 @override int get hashCode => Object.hash(createdAt, description, ecosystem, htmlUrl, id, name, namespace, owner, packageType, packageVersion, registry, updatedAt);
 
-@override String toString() => 'WebhookPackageUpdatedPackage(createdAt: $createdAt, description: $description, ecosystem: $ecosystem, htmlUrl: $htmlUrl, id: $id, name: $name, namespace: $namespace, owner: $owner, packageType: $packageType, packageVersion: $packageVersion, registry: $registry, updatedAt: $updatedAt)';
+@override String toString() => 'WebhookPackageUpdatedPackage(\n  createdAt: $createdAt,\n  description: $description,\n  ecosystem: $ecosystem,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  namespace: $namespace,\n  owner: $owner,\n  packageType: $packageType,\n  packageVersion: $packageVersion,\n  registry: $registry,\n  updatedAt: $updatedAt,\n)';
 
  }

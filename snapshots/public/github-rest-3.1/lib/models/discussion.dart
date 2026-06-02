@@ -159,7 +159,7 @@ final List<Label>? labels;
 Map<String, dynamic> toJson() { return {
   'active_lock_reason': activeLockReason,
   'answer_chosen_at': answerChosenAt,
-  'answer_chosen_by': answerChosenBy != null ? answerChosenBy?.toJson() : null,
+  'answer_chosen_by': answerChosenBy?.toJson(),
   'answer_html_url': answerHtmlUrl,
   if (authorAssociation != null) 'author_association': authorAssociation?.toJson(),
   'body': body,
@@ -174,11 +174,11 @@ Map<String, dynamic> toJson() { return {
   if (reactions != null) 'reactions': reactions?.toJson(),
   'repository_url': repositoryUrl,
   'state': state.toJson(),
-  'state_reason': stateReason != null ? stateReason?.toJson() : null,
+  'state_reason': stateReason?.toJson(),
   'timeline_url': ?timelineUrl,
   'title': title,
   'updated_at': updatedAt.toIso8601String(),
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') && json['active_lock_reason'] is String &&
@@ -253,6 +253,6 @@ Discussion copyWith({String? Function()? activeLockReason, String? Function()? a
 
 @override int get hashCode => Object.hashAll([activeLockReason, answerChosenAt, answerChosenBy, answerHtmlUrl, authorAssociation, body, category, comments, createdAt, htmlUrl, id, locked, nodeId, number, reactions, repositoryUrl, state, stateReason, timelineUrl, title, updatedAt, user, Object.hashAll(labels ?? const [])]);
 
-@override String toString() => 'Discussion(activeLockReason: $activeLockReason, answerChosenAt: $answerChosenAt, answerChosenBy: $answerChosenBy, answerHtmlUrl: $answerHtmlUrl, authorAssociation: $authorAssociation, body: $body, category: $category, comments: $comments, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, locked: $locked, nodeId: $nodeId, number: $number, reactions: $reactions, repositoryUrl: $repositoryUrl, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, title: $title, updatedAt: $updatedAt, user: $user, labels: $labels)';
+@override String toString() => 'Discussion(\n  activeLockReason: $activeLockReason,\n  answerChosenAt: $answerChosenAt,\n  answerChosenBy: $answerChosenBy,\n  answerHtmlUrl: $answerHtmlUrl,\n  authorAssociation: $authorAssociation,\n  body: $body,\n  category: $category,\n  comments: $comments,\n  createdAt: $createdAt,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  locked: $locked,\n  nodeId: $nodeId,\n  number: $number,\n  reactions: $reactions,\n  repositoryUrl: $repositoryUrl,\n  state: $state,\n  stateReason: $stateReason,\n  timelineUrl: $timelineUrl,\n  title: $title,\n  updatedAt: $updatedAt,\n  user: $user,\n  labels: $labels,\n)';
 
  }

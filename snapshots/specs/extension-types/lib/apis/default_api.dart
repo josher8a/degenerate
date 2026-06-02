@@ -14,7 +14,7 @@ Future<ApiResult<User, Never>> getUser({required UserId userId, RequestOptions? 
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/users/${Uri.encodeComponent(userId.toString())}',
+  path: '/users/${Uri.encodeComponent(userId.toJson())}',
   headers: headers,
   options: options,
 );

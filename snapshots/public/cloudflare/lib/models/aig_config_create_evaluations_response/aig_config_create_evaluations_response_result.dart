@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('total_logs') && json['total_logs'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (gatewayId.length < 1) errors.add('gatewayId: length must be >= 1');
+if (gatewayId.isEmpty) errors.add('gatewayId: length must be >= 1');
 if (gatewayId.length > 64) errors.add('gatewayId: length must be <= 64');
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(gatewayId)) errors.add(r'gatewayId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
 return errors; } 
@@ -86,6 +86,6 @@ AigConfigCreateEvaluationsResponseResult copyWith({DateTime? createdAt, List<Aig
 
 @override int get hashCode => Object.hash(createdAt, Object.hashAll(datasets), gatewayId, id, modifiedAt, name, processed, Object.hashAll(results), totalLogs);
 
-@override String toString() => 'AigConfigCreateEvaluationsResponseResult(createdAt: $createdAt, datasets: $datasets, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, processed: $processed, results: $results, totalLogs: $totalLogs)';
+@override String toString() => 'AigConfigCreateEvaluationsResponseResult(\n  createdAt: $createdAt,\n  datasets: $datasets,\n  gatewayId: $gatewayId,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  name: $name,\n  processed: $processed,\n  results: $results,\n  totalLogs: $totalLogs,\n)';
 
  }

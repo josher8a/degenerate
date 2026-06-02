@@ -29,7 +29,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/d1/database',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -54,7 +54,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/d1/database',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -77,7 +77,7 @@ Future<ApiResult<Map<String, dynamic>, Never>> d1GetDatabase({required D1Account
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/d1/database/${Uri.encodeComponent(databaseId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -100,7 +100,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/d1/database/${Uri.encodeComponent(databaseId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -124,7 +124,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/d1/database/${Uri.encodeComponent(databaseId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -147,7 +147,7 @@ Future<ApiResult<Map<String, dynamic>, Never>> d1DeleteDatabase({required D1Acco
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/d1/database/${Uri.encodeComponent(databaseId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -173,7 +173,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}/export',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/d1/database/${Uri.encodeComponent(databaseId.toJson())}/export',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -199,7 +199,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}/import',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/d1/database/${Uri.encodeComponent(databaseId.toJson())}/import',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -223,7 +223,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}/query',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/d1/database/${Uri.encodeComponent(databaseId.toJson())}/query',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -247,7 +247,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}/raw',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/d1/database/${Uri.encodeComponent(databaseId.toJson())}/raw',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -278,7 +278,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}/time_travel/bookmark',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/d1/database/${Uri.encodeComponent(databaseId.toJson())}/time_travel/bookmark',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -312,7 +312,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}/time_travel/restore',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/d1/database/${Uri.encodeComponent(databaseId.toJson())}/time_travel/restore',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

@@ -17,7 +17,7 @@ Future<ApiResult<DnssecDnssec?, Never>> dnssecDetails({required DnssecIdentifier
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dnssec',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dnssec',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dnssec',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dnssec',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<String?, Never>> dnssecDeleteDnssecRecords({required DnssecIden
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dnssec',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dnssec',
   headers: headers,
   options: options,
 );

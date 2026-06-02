@@ -28,7 +28,7 @@ final bool success;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
-  'messages': messages != null ? messages?.map((e) => e.toJson()).toList() : null,
+  'messages': messages?.map((e) => e.toJson()).toList(),
   'result': result,
   'success': success,
 }; } 
@@ -38,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('success') && json['success'] is bool; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors$ = <String>[];
-if (errors.length < 1) errors$.add('errors: must have >= 1 items');
+if (errors.isEmpty) errors$.add('errors: must have >= 1 items');
 return errors$; } 
 ResponseCommonFailure11 copyWith({List<Message>? errors, List<Message>? Function()? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return ResponseCommonFailure11(
   errors: errors ?? this.errors,

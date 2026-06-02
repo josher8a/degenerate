@@ -21,6 +21,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is McnListItemList$Unknown;
 
+R when<R>({required R Function(McnListItemListMcnStringItem) mcnStringItem, required R Function(McnListItemListMcnResourcePreviewItem) mcnResourcePreviewItem, required R Function(McnListItemList$Unknown) unknown, }) { return switch (this) {
+  final McnListItemListMcnStringItem v => mcnStringItem(v),
+  final McnListItemListMcnResourcePreviewItem v => mcnResourcePreviewItem(v),
+  final McnListItemList$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class McnListItemListMcnStringItem extends McnListItemList {const McnListItemListMcnStringItem(this.mcnStringItem);
 

@@ -101,6 +101,6 @@ McnCatalogSync copyWith({String? description, McnCatalogSyncDestinationId? desti
 
 @override int get hashCode => Object.hash(description, destinationId, destinationType, errors, id, includesDiscoveriesUntil, lastAttemptedUpdateAt, lastSuccessfulUpdateAt, lastUserUpdateAt, name, policy, updateMode);
 
-@override String toString() => 'McnCatalogSync(description: $description, destinationId: $destinationId, destinationType: $destinationType, errors: $errors, id: $id, includesDiscoveriesUntil: $includesDiscoveriesUntil, lastAttemptedUpdateAt: $lastAttemptedUpdateAt, lastSuccessfulUpdateAt: $lastSuccessfulUpdateAt, lastUserUpdateAt: $lastUserUpdateAt, name: $name, policy: $policy, updateMode: $updateMode)';
+@override String toString() => 'McnCatalogSync(\n  description: $description,\n  destinationId: $destinationId,\n  destinationType: $destinationType,\n  errors: $errors,\n  id: $id,\n  includesDiscoveriesUntil: $includesDiscoveriesUntil,\n  lastAttemptedUpdateAt: $lastAttemptedUpdateAt,\n  lastSuccessfulUpdateAt: $lastSuccessfulUpdateAt,\n  lastUserUpdateAt: $lastUserUpdateAt,\n  name: $name,\n  policy: $policy,\n  updateMode: $updateMode,\n)';
 
  }

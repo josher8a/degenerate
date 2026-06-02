@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/analytics/livestreams/overall',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/analytics/livestreams/overall',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -73,7 +73,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/livestreams',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/livestreams',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -97,7 +97,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/livestreams',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/livestreams',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -128,7 +128,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/livestreams/${Uri.encodeComponent(livestreamId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/livestreams/${Uri.encodeComponent(livestreamId)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -151,7 +151,7 @@ Future<ApiResult<ActiveLivestreamSessionDetailsResponse, Never>> getV2ActiveLive
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/livestreams/${Uri.encodeComponent(livestreamId)}/active-livestream-session',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/livestreams/${Uri.encodeComponent(livestreamId)}/active-livestream-session',
   headers: headers,
   options: options,
 );
@@ -172,7 +172,7 @@ Future<ApiResult<LivestreamsLivestreamSessionIdResponse, Never>> getV2Livestream
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/livestreams/sessions/${Uri.encodeComponent(livestreamSessionId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/livestreams/sessions/${Uri.encodeComponent(livestreamSessionId)}',
   headers: headers,
   options: options,
 );
@@ -193,7 +193,7 @@ Future<ApiResult<MeetingsMeetingIdActiveLivestreamResponse, Never>> getV2Meeting
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/active-livestream',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/active-livestream',
   headers: headers,
   options: options,
 );
@@ -214,7 +214,7 @@ Future<ApiResult<StopLivestreamingResponse, Never>> stopLivestreaming({required 
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/active-livestream/stop',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/active-livestream/stop',
   headers: headers,
   options: options,
 );
@@ -244,7 +244,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/livestream',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/livestream',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -268,7 +268,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/livestreams',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/livestreams',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -299,7 +299,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/sessions/${Uri.encodeComponent(sessionId)}/livestream-sessions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/sessions/${Uri.encodeComponent(sessionId)}/livestream-sessions',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

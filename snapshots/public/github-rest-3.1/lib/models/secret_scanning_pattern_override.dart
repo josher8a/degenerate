@@ -192,6 +192,6 @@ SecretScanningPatternOverride copyWith({String? Function()? tokenType, String? F
 
 @override int get hashCode => Object.hash(tokenType, customPatternVersion, slug, displayName, alertTotal, alertTotalPercentage, falsePositives, falsePositiveRate, bypassRate, defaultSetting, enterpriseSetting, setting);
 
-@override String toString() => 'SecretScanningPatternOverride(tokenType: $tokenType, customPatternVersion: $customPatternVersion, slug: $slug, displayName: $displayName, alertTotal: $alertTotal, alertTotalPercentage: $alertTotalPercentage, falsePositives: $falsePositives, falsePositiveRate: $falsePositiveRate, bypassRate: $bypassRate, defaultSetting: $defaultSetting, enterpriseSetting: $enterpriseSetting, setting: $setting)';
+@override String toString() => 'SecretScanningPatternOverride(\n  tokenType: $tokenType,\n  customPatternVersion: $customPatternVersion,\n  slug: $slug,\n  displayName: $displayName,\n  alertTotal: $alertTotal,\n  alertTotalPercentage: $alertTotalPercentage,\n  falsePositives: $falsePositives,\n  falsePositiveRate: $falsePositiveRate,\n  bypassRate: $bypassRate,\n  defaultSetting: $defaultSetting,\n  enterpriseSetting: $enterpriseSetting,\n  setting: $setting,\n)';
 
  }

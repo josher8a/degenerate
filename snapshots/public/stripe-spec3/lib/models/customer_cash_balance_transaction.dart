@@ -216,6 +216,6 @@ CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTrans
 
 @override int get hashCode => Object.hash(adjustedForOverdraft, appliedToPayment, created, currency, customer, customerAccount, endingBalance, funded, id, livemode, netAmount, object, refundedFromPayment, transferredToBalance, type, unappliedFromPayment);
 
-@override String toString() => 'CustomerCashBalanceTransaction(adjustedForOverdraft: $adjustedForOverdraft, appliedToPayment: $appliedToPayment, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, endingBalance: $endingBalance, funded: $funded, id: $id, livemode: $livemode, netAmount: $netAmount, object: $object, refundedFromPayment: $refundedFromPayment, transferredToBalance: $transferredToBalance, type: $type, unappliedFromPayment: $unappliedFromPayment)';
+@override String toString() => 'CustomerCashBalanceTransaction(\n  adjustedForOverdraft: $adjustedForOverdraft,\n  appliedToPayment: $appliedToPayment,\n  created: $created,\n  currency: $currency,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  endingBalance: $endingBalance,\n  funded: $funded,\n  id: $id,\n  livemode: $livemode,\n  netAmount: $netAmount,\n  object: $object,\n  refundedFromPayment: $refundedFromPayment,\n  transferredToBalance: $transferredToBalance,\n  type: $type,\n  unappliedFromPayment: $unappliedFromPayment,\n)';
 
  }

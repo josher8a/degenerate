@@ -77,6 +77,6 @@ WebhookCodeScanningAlertCreated copyWith({ItemCreatedAction? action, WebhookCode
 
 @override int get hashCode => Object.hash(action, alert, commitOid, enterprise, installation, organization, ref, repository, sender);
 
-@override String toString() => 'WebhookCodeScanningAlertCreated(action: $action, alert: $alert, commitOid: $commitOid, enterprise: $enterprise, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender)';
+@override String toString() => 'WebhookCodeScanningAlertCreated(\n  action: $action,\n  alert: $alert,\n  commitOid: $commitOid,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  ref: $ref,\n  repository: $repository,\n  sender: $sender,\n)';
 
  }

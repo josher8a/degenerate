@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toString(),
   'members_url': membersUrl,
   'repositories_url': repositoriesUrl.toString(),
-  'parent': parent != null ? parent?.toJson() : null,
+  'parent': parent?.toJson(),
   'type': type.toJson(),
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
@@ -139,6 +139,6 @@ TeamRoleAssignment copyWith({Assignment? Function()? assignment, int? id, String
 
 @override int get hashCode => Object.hash(assignment, id, nodeId, name, slug, description, privacy, notificationSetting, permission, permissions, url, htmlUrl, membersUrl, repositoriesUrl, parent, type, organizationId, enterpriseId);
 
-@override String toString() => 'TeamRoleAssignment(assignment: $assignment, id: $id, nodeId: $nodeId, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, permissions: $permissions, url: $url, htmlUrl: $htmlUrl, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, parent: $parent, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)';
+@override String toString() => 'TeamRoleAssignment(\n  assignment: $assignment,\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  slug: $slug,\n  description: $description,\n  privacy: $privacy,\n  notificationSetting: $notificationSetting,\n  permission: $permission,\n  permissions: $permissions,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  membersUrl: $membersUrl,\n  repositoriesUrl: $repositoriesUrl,\n  parent: $parent,\n  type: $type,\n  organizationId: $organizationId,\n  enterpriseId: $enterpriseId,\n)';
 
  }

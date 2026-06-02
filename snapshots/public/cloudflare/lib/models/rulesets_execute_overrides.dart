@@ -37,12 +37,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final categories$ = categories;
 if (categories$ != null) {
-  if (categories$.length < 1) errors.add('categories: must have >= 1 items');
+  if (categories$.isEmpty) errors.add('categories: must have >= 1 items');
   if (categories$.toSet().length != categories$.length) errors.add('categories: items must be unique');
 }
 final rules$ = rules;
 if (rules$ != null) {
-  if (rules$.length < 1) errors.add('rules: must have >= 1 items');
+  if (rules$.isEmpty) errors.add('rules: must have >= 1 items');
   if (rules$.toSet().length != rules$.length) errors.add('rules: items must be unique');
 }
 return errors; } 

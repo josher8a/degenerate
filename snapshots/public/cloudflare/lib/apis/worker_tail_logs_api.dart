@@ -17,7 +17,7 @@ Future<ApiResult<WorkersTail, Never>> getAccountsWorkersScriptsTails({required W
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/tails',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/scripts/${Uri.encodeComponent(scriptName.toJson())}/tails',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<WorkersTail, Never>> workerTailLogsStartTail({required WorkersI
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/tails',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/scripts/${Uri.encodeComponent(scriptName.toJson())}/tails',
   headers: headers,
   options: options,
 );
@@ -61,7 +61,7 @@ Future<ApiResult<ResponseCommon80, Never>> workerTailLogsDeleteTail({required Wo
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/tails/${Uri.encodeComponent(id.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/scripts/${Uri.encodeComponent(scriptName.toJson())}/tails/${Uri.encodeComponent(id.toJson())}',
   headers: headers,
   options: options,
 );

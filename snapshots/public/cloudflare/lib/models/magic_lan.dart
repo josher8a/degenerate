@@ -92,6 +92,6 @@ MagicLan copyWith({MagicBondId? Function()? bondId, bool? Function()? haLink, Ma
 
 @override int get hashCode => Object.hash(bondId, haLink, id, isBreakout, isPrioritized, name, nat, physport, Object.hashAll(routedSubnets ?? const []), siteId, staticAddressing, vlanTag);
 
-@override String toString() => 'MagicLan(bondId: $bondId, haLink: $haLink, id: $id, isBreakout: $isBreakout, isPrioritized: $isPrioritized, name: $name, nat: $nat, physport: $physport, routedSubnets: $routedSubnets, siteId: $siteId, staticAddressing: $staticAddressing, vlanTag: $vlanTag)';
+@override String toString() => 'MagicLan(\n  bondId: $bondId,\n  haLink: $haLink,\n  id: $id,\n  isBreakout: $isBreakout,\n  isPrioritized: $isPrioritized,\n  name: $name,\n  nat: $nat,\n  physport: $physport,\n  routedSubnets: $routedSubnets,\n  siteId: $siteId,\n  staticAddressing: $staticAddressing,\n  vlanTag: $vlanTag,\n)';
 
  }

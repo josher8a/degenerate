@@ -17,7 +17,7 @@ Future<ApiResult<dynamic, Never>> getUrlNormalization({required RulesetsZoneId z
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/url_normalization',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/url_normalization',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/url_normalization',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/url_normalization',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<void, Never>> deleteUrlNormalization({required RulesetsZoneId z
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/url_normalization',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/url_normalization',
   headers: headers,
   options: options,
 );

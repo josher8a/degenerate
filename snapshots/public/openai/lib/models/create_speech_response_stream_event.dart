@@ -21,6 +21,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CreateSpeechResponseStreamEvent$Unknown;
 
+R when<R>({required R Function(CreateSpeechResponseStreamEventSpeechAudioDelta) speechAudioDelta, required R Function(CreateSpeechResponseStreamEventSpeechAudioDone) speechAudioDone, required R Function(CreateSpeechResponseStreamEvent$Unknown) unknown, }) { return switch (this) {
+  final CreateSpeechResponseStreamEventSpeechAudioDelta v => speechAudioDelta(v),
+  final CreateSpeechResponseStreamEventSpeechAudioDone v => speechAudioDone(v),
+  final CreateSpeechResponseStreamEvent$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class CreateSpeechResponseStreamEventSpeechAudioDelta extends CreateSpeechResponseStreamEvent {const CreateSpeechResponseStreamEventSpeechAudioDelta(this.speechAudioDeltaEvent);
 

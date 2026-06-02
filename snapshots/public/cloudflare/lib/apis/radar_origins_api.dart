@@ -42,7 +42,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetOriginsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetOriginsError.fromResponse(response),
+  onError: RadarGetOriginsError.fromResponse,
 );
  } 
 /// Get Origin details
@@ -60,7 +60,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/origins/${Uri.encodeComponent('${slug.toJson()}')}',
+  path: '/radar/origins/${Uri.encodeComponent(slug.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -73,7 +73,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetOriginDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetOriginDetailsError.fromResponse(response),
+  onError: RadarGetOriginDetailsError.fromResponse,
 );
  } 
 /// Get origin metrics distribution by dimension
@@ -123,7 +123,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/origins/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/origins/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -136,7 +136,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsSummaryByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetOriginsSummaryError.fromResponse(response),
+  onError: RadarGetOriginsSummaryError.fromResponse,
 );
  } 
 /// Get origin metrics time series
@@ -199,7 +199,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetOriginsTimeseriesError.fromResponse(response),
+  onError: RadarGetOriginsTimeseriesError.fromResponse,
 );
  } 
 /// Get origin metrics time series grouped by dimension
@@ -255,7 +255,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/origins/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/origins/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -268,7 +268,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetOriginsTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetOriginsTimeseriesGroupError.fromResponse,
 );
  } 
  }

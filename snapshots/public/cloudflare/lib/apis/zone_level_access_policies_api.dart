@@ -17,7 +17,7 @@ Future<ApiResult<List<AccessPolicies>?, Never>> zoneLevelAccessPoliciesListAcces
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toJson())}/policies',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toJson())}/policies',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<AccessPolicies?, Never>> zoneLevelAccessPoliciesGetAnAccessPoli
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toJson())}/policies/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toJson())}/policies/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, Never>> zo
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toJson())}/policies/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   options: options,
 );

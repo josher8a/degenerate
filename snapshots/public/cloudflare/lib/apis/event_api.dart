@@ -64,7 +64,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetEventListGetResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GetEventListGetError.fromResponse(response),
+  onError: GetEventListGetError.fromResponse,
 );
  } 
 /// Deletes one or more events
@@ -92,7 +92,7 @@ return execute(
   onSuccess: (response) {
     return double.parse(response.body);
   },
-  onError: (response) => DeleteEventDeleteError.fromResponse(response),
+  onError: DeleteEventDeleteError.fromResponse,
 );
  } 
 /// Revert an Events Durable Object to a point in time
@@ -114,7 +114,7 @@ return execute(
   onSuccess: (response) {
     return PostEventDoRevertResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostEventDoRevertError.fromResponse(response),
+  onError: PostEventDoRevertError.fromResponse,
 );
  } 
 /// Updates an event
@@ -136,7 +136,7 @@ return execute(
   onSuccess: (response) {
     return PostEventUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostEventUpdateError.fromResponse(response),
+  onError: PostEventUpdateError.fromResponse,
 );
  } 
 /// Updates an event
@@ -158,7 +158,7 @@ return execute(
   onSuccess: (response) {
     return PatchEventUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PatchEventUpdateError.fromResponse(response),
+  onError: PatchEventUpdateError.fromResponse,
 );
  } 
 /// Reads data for a raw event
@@ -178,7 +178,7 @@ return execute(
   onSuccess: (response) {
     return GetEventRawReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetEventRawReadError.fromResponse(response),
+  onError: GetEventRawReadError.fromResponse,
 );
  } 
 /// Updates a raw event
@@ -200,7 +200,7 @@ return execute(
   onSuccess: (response) {
     return PostEventRawUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostEventRawUpdateError.fromResponse(response),
+  onError: PostEventRawUpdateError.fromResponse,
 );
  } 
 /// Updates a raw event
@@ -222,7 +222,7 @@ return execute(
   onSuccess: (response) {
     return PatchEventRawUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PatchEventRawUpdateError.fromResponse(response),
+  onError: PatchEventRawUpdateError.fromResponse,
 );
  } 
 /// Filter and list events related to specific event
@@ -274,7 +274,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetEventRelationshipsResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GetEventRelationshipsError.fromResponse(response),
+  onError: GetEventRelationshipsError.fromResponse,
 );
  } 
 /// Aggregate events by single or multiple columns with optional date filtering
@@ -317,7 +317,7 @@ return execute(
   onSuccess: (response) {
     return GetEventAggregateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetEventAggregateError.fromResponse(response),
+  onError: GetEventAggregateError.fromResponse,
 );
  } 
 /// Creates a new event
@@ -341,7 +341,7 @@ return execute(
   onSuccess: (response) {
     return PostEventCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostEventCreateError.fromResponse(response),
+  onError: PostEventCreateError.fromResponse,
 );
  } 
 /// Creates bulk events
@@ -365,7 +365,7 @@ return execute(
   onSuccess: (response) {
     return PostEventCreateBulkResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostEventCreateBulkError.fromResponse(response),
+  onError: PostEventCreateBulkError.fromResponse,
 );
  } 
 /// Reads an event
@@ -387,7 +387,7 @@ return execute(
   onSuccess: (response) {
     return GetEventReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetEventReadError.fromResponse(response),
+  onError: GetEventReadError.fromResponse,
 );
  } 
 /// Moves specified events from one dataset to another dataset
@@ -417,7 +417,7 @@ return execute(
   onSuccess: (response) {
     return double.parse(response.body);
   },
-  onError: (response) => PostEventMoveToNewDsError.fromResponse(response),
+  onError: PostEventMoveToNewDsError.fromResponse,
 );
  } 
 /// Removes a tag from an event
@@ -440,7 +440,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DeleteEventReferenceDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => DeleteEventTagDeleteError.fromResponse(response),
+  onError: DeleteEventTagDeleteError.fromResponse,
 );
  } 
 /// Adds a tag to an event
@@ -463,7 +463,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DeleteEventReferenceDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => PostEventTagCreateError.fromResponse(response),
+  onError: PostEventTagCreateError.fromResponse,
 );
  } 
 /// List all saved event queries
@@ -486,7 +486,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetEventQueryListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GetEventQueryListError.fromResponse(response),
+  onError: GetEventQueryListError.fromResponse,
 );
  } 
 /// Read a saved event query
@@ -508,7 +508,7 @@ return execute(
   onSuccess: (response) {
     return GetEventQueryReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetEventQueryReadError.fromResponse(response),
+  onError: GetEventQueryReadError.fromResponse,
 );
  } 
 /// Update a saved event query
@@ -532,7 +532,7 @@ return execute(
   onSuccess: (response) {
     return PostEventQueryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostEventQueryUpdateError.fromResponse(response),
+  onError: PostEventQueryUpdateError.fromResponse,
 );
  } 
 /// Update a saved event query
@@ -556,7 +556,7 @@ return execute(
   onSuccess: (response) {
     return PatchEventQueryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PatchEventQueryUpdateError.fromResponse(response),
+  onError: PatchEventQueryUpdateError.fromResponse,
 );
  } 
 /// Delete a saved event query
@@ -576,7 +576,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteEventQueryDeleteError.fromResponse(response),
+  onError: DeleteEventQueryDeleteError.fromResponse,
 );
  } 
 /// List all event query alerts
@@ -599,7 +599,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetEventQueryAlertListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GetEventQueryAlertListError.fromResponse(response),
+  onError: GetEventQueryAlertListError.fromResponse,
 );
  } 
 /// Read an event query alert
@@ -621,7 +621,7 @@ return execute(
   onSuccess: (response) {
     return GetEventQueryAlertReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetEventQueryAlertReadError.fromResponse(response),
+  onError: GetEventQueryAlertReadError.fromResponse,
 );
  } 
 /// Update an event query alert
@@ -645,7 +645,7 @@ return execute(
   onSuccess: (response) {
     return PostEventQueryAlertUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostEventQueryAlertUpdateError.fromResponse(response),
+  onError: PostEventQueryAlertUpdateError.fromResponse,
 );
  } 
 /// Update an event query alert
@@ -669,7 +669,7 @@ return execute(
   onSuccess: (response) {
     return PatchEventQueryAlertUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PatchEventQueryAlertUpdateError.fromResponse(response),
+  onError: PatchEventQueryAlertUpdateError.fromResponse,
 );
  } 
 /// Delete an event query alert
@@ -689,7 +689,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteEventQueryAlertDeleteError.fromResponse(response),
+  onError: DeleteEventQueryAlertDeleteError.fromResponse,
 );
  } 
 /// Create an event query alert
@@ -713,7 +713,7 @@ return execute(
   onSuccess: (response) {
     return PostEventQueryAlertCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostEventQueryAlertCreateError.fromResponse(response),
+  onError: PostEventQueryAlertCreateError.fromResponse,
 );
  } 
 /// Create a saved event query
@@ -737,7 +737,7 @@ return execute(
   onSuccess: (response) {
     return PostEventQueryCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostEventQueryCreateError.fromResponse(response),
+  onError: PostEventQueryCreateError.fromResponse,
 );
  } 
 /// Reads raw data for an event by UUID
@@ -759,7 +759,7 @@ return execute(
   onSuccess: (response) {
     return GetEventRawReadDsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetEventRawReadDsError.fromResponse(response),
+  onError: GetEventRawReadDsError.fromResponse,
 );
  } 
 /// Removes an event reference
@@ -782,7 +782,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DeleteEventReferenceDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => DeleteEventReferenceDeleteError.fromResponse(response),
+  onError: DeleteEventReferenceDeleteError.fromResponse,
 );
  } 
 /// Creates event references for a event
@@ -805,7 +805,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DeleteEventReferenceDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => PostEventReferenceCreateError.fromResponse(response),
+  onError: PostEventReferenceCreateError.fromResponse,
 );
  } 
 /// Create a relationship between two events
@@ -829,7 +829,7 @@ return execute(
   onSuccess: (response) {
     return PostCreateEventRelationshipResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostCreateEventRelationshipError.fromResponse(response),
+  onError: PostCreateEventRelationshipError.fromResponse,
 );
  } 
 /// GraphQL endpoint for event aggregation
@@ -851,7 +851,7 @@ return execute(
   onSuccess: (response) {
     return PostEventGraphQlResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostEventGraphQlError.fromResponse(response),
+  onError: PostEventGraphQlError.fromResponse,
 );
  } 
  }

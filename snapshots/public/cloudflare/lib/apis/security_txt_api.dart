@@ -15,7 +15,7 @@ Future<ApiResult<SecurityCenterSecurityTxt?, Never>> getSecurityTxt({required Se
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/security-center/securitytxt',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/security-center/securitytxt',
   headers: headers,
   options: options,
 );
@@ -36,7 +36,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/security-center/securitytxt',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/security-center/securitytxt',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -56,7 +56,7 @@ Future<ApiResult<ResponseCommon61, Never>> deleteSecurityTxt({required SecurityC
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/security-center/securitytxt',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/security-center/securitytxt',
   headers: headers,
   options: options,
 );

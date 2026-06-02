@@ -17,7 +17,7 @@ Future<ApiResult<List<AddressingIpamBgpPrefixes>?, Never>> ipAddressManagementPr
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bgp/prefixes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/bgp/prefixes',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bgp/prefixes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/bgp/prefixes',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<AddressingIpamBgpPrefixes?, Never>> ipAddressManagementPrefixes
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bgp/prefixes/${Uri.encodeComponent(bgpPrefixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/bgp/prefixes/${Uri.encodeComponent(bgpPrefixId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bgp/prefixes/${Uri.encodeComponent(bgpPrefixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/bgp/prefixes/${Uri.encodeComponent(bgpPrefixId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesDeleteBgpPr
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bgp/prefixes/${Uri.encodeComponent(bgpPrefixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/bgp/prefixes/${Uri.encodeComponent(bgpPrefixId.toJson())}',
   headers: headers,
   options: options,
 );

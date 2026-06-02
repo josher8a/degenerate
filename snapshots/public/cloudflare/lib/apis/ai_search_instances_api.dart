@@ -46,7 +46,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AiSearchCreateInstancesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AiSearchListInstancesError.fromResponse(response),
+  onError: AiSearchListInstancesError.fromResponse,
 );
  } 
 /// Create new instances.
@@ -71,7 +71,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchCreateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchCreateInstancesError.fromResponse(response),
+  onError: AiSearchCreateInstancesError.fromResponse,
 );
  } 
 /// Read instances.
@@ -92,7 +92,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchCreateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchFetchInstancesError.fromResponse(response),
+  onError: AiSearchFetchInstancesError.fromResponse,
 );
  } 
 /// Update instances.
@@ -115,7 +115,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchCreateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchUpdateInstancesError.fromResponse(response),
+  onError: AiSearchUpdateInstancesError.fromResponse,
 );
  } 
 /// Delete instances.
@@ -136,7 +136,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchCreateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchDeleteInstancesError.fromResponse(response),
+  onError: AiSearchDeleteInstancesError.fromResponse,
 );
  } 
 /// Chat Completions
@@ -160,7 +160,7 @@ return execute(
   onSuccess: (response) {
     return AiSearchInstanceChatCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchInstanceChatCompletionError.fromResponse(response),
+  onError: AiSearchInstanceChatCompletionError.fromResponse,
 );
  } 
 /// Search
@@ -185,7 +185,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchInstanceSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchInstanceSearchError.fromResponse(response),
+  onError: AiSearchInstanceSearchError.fromResponse,
 );
  } 
 /// Stats
@@ -208,7 +208,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchStatsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchStatsError.fromResponse(response),
+  onError: AiSearchStatsError.fromResponse,
 );
  } 
  }

@@ -138,6 +138,6 @@ PostSetupIntentsIntentRequest copyWith({bool? Function()? attachToSelf, String? 
 
 @override int get hashCode => Object.hash(attachToSelf, customer, customerAccount, description, excludedPaymentMethodTypes, Object.hashAll(expand ?? const []), Object.hashAll(flowDirections ?? const []), metadata, paymentMethod, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []));
 
-@override String toString() => 'PostSetupIntentsIntentRequest(attachToSelf: $attachToSelf, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, flowDirections: $flowDirections, metadata: $metadata, paymentMethod: $paymentMethod, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes)';
+@override String toString() => 'PostSetupIntentsIntentRequest(\n  attachToSelf: $attachToSelf,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  description: $description,\n  excludedPaymentMethodTypes: $excludedPaymentMethodTypes,\n  expand: $expand,\n  flowDirections: $flowDirections,\n  metadata: $metadata,\n  paymentMethod: $paymentMethod,\n  paymentMethodConfiguration: $paymentMethodConfiguration,\n  paymentMethodData: $paymentMethodData,\n  paymentMethodOptions: $paymentMethodOptions,\n  paymentMethodTypes: $paymentMethodTypes,\n)';
 
  }

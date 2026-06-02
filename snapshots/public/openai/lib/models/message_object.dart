@@ -92,14 +92,14 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'thread_id': threadId,
   'status': status.toJson(),
-  'incomplete_details': incompleteDetails != null ? incompleteDetails?.toJson() : null,
+  'incomplete_details': incompleteDetails?.toJson(),
   'completed_at': completedAt,
   'incomplete_at': incompleteAt,
   'role': role.toJson(),
   'content': content.map((e) => e.toJson()).toList(),
   'assistant_id': assistantId,
   'run_id': runId,
-  'attachments': attachments != null ? attachments?.map((e) => e.toJson()).toList() : null,
+  'attachments': attachments?.map((e) => e.toJson()).toList(),
   'metadata': metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
@@ -151,6 +151,6 @@ MessageObject copyWith({String? id, MessageObjectObject? object, int? createdAt,
 
 @override int get hashCode => Object.hash(id, object, createdAt, threadId, status, incompleteDetails, completedAt, incompleteAt, role, Object.hashAll(content), assistantId, runId, Object.hashAll(attachments ?? const []), metadata);
 
-@override String toString() => 'MessageObject(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, status: $status, incompleteDetails: $incompleteDetails, completedAt: $completedAt, incompleteAt: $incompleteAt, role: $role, content: $content, assistantId: $assistantId, runId: $runId, attachments: $attachments, metadata: $metadata)';
+@override String toString() => 'MessageObject(\n  id: $id,\n  object: $object,\n  createdAt: $createdAt,\n  threadId: $threadId,\n  status: $status,\n  incompleteDetails: $incompleteDetails,\n  completedAt: $completedAt,\n  incompleteAt: $incompleteAt,\n  role: $role,\n  content: $content,\n  assistantId: $assistantId,\n  runId: $runId,\n  attachments: $attachments,\n  metadata: $metadata,\n)';
 
  }

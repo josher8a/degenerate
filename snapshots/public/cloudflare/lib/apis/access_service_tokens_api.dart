@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/service_tokens',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/service_tokens',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -80,7 +80,7 @@ Future<ApiResult<AccessServiceTokens?, Never>> accessServiceTokensGetAServiceTok
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -103,7 +103,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -126,7 +126,7 @@ Future<ApiResult<AccessServiceTokens?, Never>> accessServiceTokensDeleteAService
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -148,7 +148,7 @@ Future<ApiResult<AccessServiceTokens?, Never>> accessServiceTokensRefreshAServic
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}/refresh',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toJson())}/refresh',
   headers: headers,
   options: options,
 );
@@ -171,7 +171,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toString())}/rotate',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/service_tokens/${Uri.encodeComponent(serviceTokenId.toJson())}/rotate',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,

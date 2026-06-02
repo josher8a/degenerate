@@ -34,7 +34,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CreatePetsError.fromResponse(response),
+  onError: CreatePetsError.fromResponse,
 );
  } 
 /// Create a pet
@@ -54,7 +54,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CreatePetsError.fromResponse(response),
+  onError: CreatePetsError.fromResponse,
 );
  } 
 /// Info for a specific pet
@@ -74,7 +74,7 @@ return execute(
   onSuccess: (response) {
     return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreatePetsError.fromResponse(response),
+  onError: CreatePetsError.fromResponse,
 );
  } 
  }

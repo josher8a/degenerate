@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -51,7 +51,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -74,7 +74,7 @@ Future<ApiResult<PagesProject, Never>> pagesProjectGetProject({required PagesPro
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -97,7 +97,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -120,7 +120,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> pagesProjectDeleteProject({requi
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}',
   headers: headers,
   options: options,
 );

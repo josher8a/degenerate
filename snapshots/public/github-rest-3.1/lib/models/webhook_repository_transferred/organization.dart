@@ -104,6 +104,6 @@ Organization copyWith({Uri? avatarUrl, String? Function()? description, Uri? eve
 
 @override int get hashCode => Object.hash(avatarUrl, description, eventsUrl, hooksUrl, htmlUrl, id, issuesUrl, login, membersUrl, nodeId, publicMembersUrl, reposUrl, url);
 
-@override String toString() => 'Organization(avatarUrl: $avatarUrl, description: $description, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, htmlUrl: $htmlUrl, id: $id, issuesUrl: $issuesUrl, login: $login, membersUrl: $membersUrl, nodeId: $nodeId, publicMembersUrl: $publicMembersUrl, reposUrl: $reposUrl, url: $url)';
+@override String toString() => 'Organization(\n  avatarUrl: $avatarUrl,\n  description: $description,\n  eventsUrl: $eventsUrl,\n  hooksUrl: $hooksUrl,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  issuesUrl: $issuesUrl,\n  login: $login,\n  membersUrl: $membersUrl,\n  nodeId: $nodeId,\n  publicMembersUrl: $publicMembersUrl,\n  reposUrl: $reposUrl,\n  url: $url,\n)';
 
  }

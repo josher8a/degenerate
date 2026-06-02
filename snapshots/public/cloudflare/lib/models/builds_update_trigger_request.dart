@@ -75,6 +75,6 @@ BuildsUpdateTriggerRequest copyWith({List<String>? Function()? branchExcludes, L
 
 @override int get hashCode => Object.hash(Object.hashAll(branchExcludes ?? const []), Object.hashAll(branchIncludes ?? const []), buildCachingEnabled, buildCommand, buildTokenUuid, deployCommand, Object.hashAll(pathExcludes ?? const []), Object.hashAll(pathIncludes ?? const []), rootDirectory, triggerName);
 
-@override String toString() => 'BuildsUpdateTriggerRequest(branchExcludes: $branchExcludes, branchIncludes: $branchIncludes, buildCachingEnabled: $buildCachingEnabled, buildCommand: $buildCommand, buildTokenUuid: $buildTokenUuid, deployCommand: $deployCommand, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, rootDirectory: $rootDirectory, triggerName: $triggerName)';
+@override String toString() => 'BuildsUpdateTriggerRequest(\n  branchExcludes: $branchExcludes,\n  branchIncludes: $branchIncludes,\n  buildCachingEnabled: $buildCachingEnabled,\n  buildCommand: $buildCommand,\n  buildTokenUuid: $buildTokenUuid,\n  deployCommand: $deployCommand,\n  pathExcludes: $pathExcludes,\n  pathIncludes: $pathIncludes,\n  rootDirectory: $rootDirectory,\n  triggerName: $triggerName,\n)';
 
  }

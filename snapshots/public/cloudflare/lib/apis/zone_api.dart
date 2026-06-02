@@ -93,7 +93,7 @@ Future<ApiResult<ZonesZone?, Never>> zones0Get({required ZonesIdentifier zoneId,
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -116,7 +116,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -139,7 +139,7 @@ Future<ApiResult<ResponseSingleId5Result?, Never>> zones0Delete({required ZonesI
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -163,7 +163,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> putZonesZoneIdActivationCheck({re
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/activation_check',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/activation_check',
   headers: headers,
   options: options,
 );
@@ -226,7 +226,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/purge_cache',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/purge_cache',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

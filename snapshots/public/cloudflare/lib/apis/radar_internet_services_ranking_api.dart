@@ -49,7 +49,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetRankingInternetServicesCategoriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetRankingInternetServicesCategoriesError.fromResponse(response),
+  onError: RadarGetRankingInternetServicesCategoriesError.fromResponse,
 );
  } 
 /// Get Internet services rank time series
@@ -108,7 +108,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetRankingDomainTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetRankingInternetServicesTimeseriesError.fromResponse(response),
+  onError: RadarGetRankingInternetServicesTimeseriesError.fromResponse,
 );
  } 
 /// Get top Internet services
@@ -157,7 +157,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetRankingTopInternetServicesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetRankingTopInternetServicesError.fromResponse(response),
+  onError: RadarGetRankingTopInternetServicesError.fromResponse,
 );
  } 
  }

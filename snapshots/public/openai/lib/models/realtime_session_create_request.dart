@@ -167,6 +167,6 @@ RealtimeSessionCreateRequest copyWith({ClientSecret? clientSecret, dynamic Funct
 
 @override int get hashCode => Object.hash(clientSecret, modalities, instructions, voice, inputAudioFormat, outputAudioFormat, inputAudioTranscription, speed, tracing, turnDetection, Object.hashAll(tools ?? const []), toolChoice, temperature, maxResponseOutputTokens, truncation, prompt);
 
-@override String toString() => 'RealtimeSessionCreateRequest(clientSecret: $clientSecret, modalities: $modalities, instructions: $instructions, voice: $voice, inputAudioFormat: $inputAudioFormat, outputAudioFormat: $outputAudioFormat, inputAudioTranscription: $inputAudioTranscription, speed: $speed, tracing: $tracing, turnDetection: $turnDetection, tools: $tools, toolChoice: $toolChoice, temperature: $temperature, maxResponseOutputTokens: $maxResponseOutputTokens, truncation: $truncation, prompt: $prompt)';
+@override String toString() => 'RealtimeSessionCreateRequest(\n  clientSecret: $clientSecret,\n  modalities: $modalities,\n  instructions: $instructions,\n  voice: $voice,\n  inputAudioFormat: $inputAudioFormat,\n  outputAudioFormat: $outputAudioFormat,\n  inputAudioTranscription: $inputAudioTranscription,\n  speed: $speed,\n  tracing: $tracing,\n  turnDetection: $turnDetection,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  temperature: $temperature,\n  maxResponseOutputTokens: $maxResponseOutputTokens,\n  truncation: $truncation,\n  prompt: $prompt,\n)';
 
  }

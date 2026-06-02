@@ -74,7 +74,7 @@ final String? contactEmail;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  'account': account != null ? account?.toJson() : null,
+  'account': account?.toJson(),
   'repository_selection': repositorySelection.toJson(),
   'access_tokens_url': accessTokensUrl.toString(),
   'repositories_url': repositoriesUrl.toString(),
@@ -91,8 +91,8 @@ Map<String, dynamic> toJson() { return {
   'has_multiple_single_files': ?hasMultipleSingleFiles,
   'single_file_paths': ?singleFilePaths,
   'app_slug': appSlug,
-  'suspended_by': suspendedBy != null ? suspendedBy?.toJson() : null,
-  'suspended_at': suspendedAt != null ? suspendedAt?.toIso8601String() : null,
+  'suspended_by': suspendedBy?.toJson(),
+  'suspended_at': suspendedAt?.toIso8601String(),
   'contact_email': ?contactEmail,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
@@ -161,6 +161,6 @@ Installation copyWith({int? id, InstallationAccount? Function()? account, Authen
 
 @override int get hashCode => Object.hashAll([id, account, repositorySelection, accessTokensUrl, repositoriesUrl, htmlUrl, appId, clientId, targetId, targetType, permissions, Object.hashAll(events), createdAt, updatedAt, singleFileName, hasMultipleSingleFiles, Object.hashAll(singleFilePaths ?? const []), appSlug, suspendedBy, suspendedAt, contactEmail]);
 
-@override String toString() => 'Installation(id: $id, account: $account, repositorySelection: $repositorySelection, accessTokensUrl: $accessTokensUrl, repositoriesUrl: $repositoriesUrl, htmlUrl: $htmlUrl, appId: $appId, clientId: $clientId, targetId: $targetId, targetType: $targetType, permissions: $permissions, events: $events, createdAt: $createdAt, updatedAt: $updatedAt, singleFileName: $singleFileName, hasMultipleSingleFiles: $hasMultipleSingleFiles, singleFilePaths: $singleFilePaths, appSlug: $appSlug, suspendedBy: $suspendedBy, suspendedAt: $suspendedAt, contactEmail: $contactEmail)';
+@override String toString() => 'Installation(\n  id: $id,\n  account: $account,\n  repositorySelection: $repositorySelection,\n  accessTokensUrl: $accessTokensUrl,\n  repositoriesUrl: $repositoriesUrl,\n  htmlUrl: $htmlUrl,\n  appId: $appId,\n  clientId: $clientId,\n  targetId: $targetId,\n  targetType: $targetType,\n  permissions: $permissions,\n  events: $events,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  singleFileName: $singleFileName,\n  hasMultipleSingleFiles: $hasMultipleSingleFiles,\n  singleFilePaths: $singleFilePaths,\n  appSlug: $appSlug,\n  suspendedBy: $suspendedBy,\n  suspendedAt: $suspendedAt,\n  contactEmail: $contactEmail,\n)';
 
  }

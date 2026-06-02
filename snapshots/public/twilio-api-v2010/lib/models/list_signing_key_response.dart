@@ -69,6 +69,6 @@ ListSigningKeyResponse copyWith({List<AccountSigningKey>? Function()? signingKey
 
 @override int get hashCode => Object.hash(Object.hashAll(signingKeys ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
 
-@override String toString() => 'ListSigningKeyResponse(signingKeys: $signingKeys, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+@override String toString() => 'ListSigningKeyResponse(\n  signingKeys: $signingKeys,\n  end: $end,\n  firstPageUri: $firstPageUri,\n  nextPageUri: $nextPageUri,\n  page: $page,\n  pageSize: $pageSize,\n  previousPageUri: $previousPageUri,\n  start: $start,\n  uri: $uri,\n)';
 
  }

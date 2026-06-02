@@ -15,7 +15,7 @@ Future<ApiResult<List<IamSsoConnector>?, Never>> getAllSsoConnectors({required I
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/sso_connectors',
   headers: headers,
   options: options,
 );
@@ -36,7 +36,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/sso_connectors',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -57,7 +57,7 @@ Future<ApiResult<IamSsoConnector?, Never>> getSsoConnector({required IamCommonCo
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -78,7 +78,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toJson())}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -99,7 +99,7 @@ Future<ApiResult<ResponseSingleId4Result?, Never>> deleteSsoConnector({required 
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -119,7 +119,7 @@ Future<ApiResult<ResponseCommon35, Never>> beginSsoConnectorVerification({requir
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toString())}/begin_verification',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/sso_connectors/${Uri.encodeComponent(ssoConnectorId.toJson())}/begin_verification',
   headers: headers,
   options: options,
 );

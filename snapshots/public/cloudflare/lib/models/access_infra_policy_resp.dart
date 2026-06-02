@@ -70,6 +70,6 @@ AccessInfraPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDe
 
 @override int get hashCode => Object.hash(createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt, connectionRules);
 
-@override String toString() => 'AccessInfraPolicyResp(createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt, connectionRules: $connectionRules)';
+@override String toString() => 'AccessInfraPolicyResp(\n  createdAt: $createdAt,\n  decision: $decision,\n  exclude: $exclude,\n  id: $id,\n  include: $include,\n  name: $name,\n  require: $require,\n  updatedAt: $updatedAt,\n  connectionRules: $connectionRules,\n)';
 
  }

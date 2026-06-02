@@ -105,6 +105,6 @@ DataCookies copyWith({String? domain, double? expires, bool? httpOnly, String? n
 
 @override int get hashCode => Object.hash(domain, expires, httpOnly, name, path, priority, sameParty, secure, session, size, sourcePort, sourceScheme, value);
 
-@override String toString() => 'DataCookies(domain: $domain, expires: $expires, httpOnly: $httpOnly, name: $name, path: $path, priority: $priority, sameParty: $sameParty, secure: $secure, session: $session, size: $size, sourcePort: $sourcePort, sourceScheme: $sourceScheme, value: $value)';
+@override String toString() => 'DataCookies(\n  domain: $domain,\n  expires: $expires,\n  httpOnly: $httpOnly,\n  name: $name,\n  path: $path,\n  priority: $priority,\n  sameParty: $sameParty,\n  secure: $secure,\n  session: $session,\n  size: $size,\n  sourcePort: $sourcePort,\n  sourceScheme: $sourceScheme,\n  value: $value,\n)';
 
  }

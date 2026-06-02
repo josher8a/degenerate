@@ -100,6 +100,6 @@ CertificateLogs copyWith({Api? api, String? description, DateTime? endExclusive,
 
 @override int get hashCode => Object.hash(api, description, endExclusive, $operator, slug, startInclusive, state, stateTimestamp, url);
 
-@override String toString() => 'CertificateLogs(api: $api, description: $description, endExclusive: $endExclusive, \$operator: ${$operator}, slug: $slug, startInclusive: $startInclusive, state: $state, stateTimestamp: $stateTimestamp, url: $url)';
+@override String toString() => 'CertificateLogs(\n  api: $api,\n  description: $description,\n  endExclusive: $endExclusive,\n  \$operator: ${$operator},\n  slug: $slug,\n  startInclusive: $startInclusive,\n  state: $state,\n  stateTimestamp: $stateTimestamp,\n  url: $url,\n)';
 
  }

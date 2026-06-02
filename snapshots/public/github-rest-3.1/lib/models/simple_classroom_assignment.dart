@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
   'submitted': submitted,
   'passing': passing,
   'language': language,
-  'deadline': deadline != null ? deadline?.toIso8601String() : null,
+  'deadline': deadline?.toIso8601String(),
   'classroom': classroom.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
@@ -156,6 +156,6 @@ SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, Cl
 
 @override int get hashCode => Object.hash(id, publicRepo, title, type, inviteLink, invitationsEnabled, slug, studentsAreRepoAdmins, feedbackPullRequestsEnabled, maxTeams, maxMembers, editor, accepted, submitted, passing, language, deadline, classroom);
 
-@override String toString() => 'SimpleClassroomAssignment(id: $id, publicRepo: $publicRepo, title: $title, type: $type, inviteLink: $inviteLink, invitationsEnabled: $invitationsEnabled, slug: $slug, studentsAreRepoAdmins: $studentsAreRepoAdmins, feedbackPullRequestsEnabled: $feedbackPullRequestsEnabled, maxTeams: $maxTeams, maxMembers: $maxMembers, editor: $editor, accepted: $accepted, submitted: $submitted, passing: $passing, language: $language, deadline: $deadline, classroom: $classroom)';
+@override String toString() => 'SimpleClassroomAssignment(\n  id: $id,\n  publicRepo: $publicRepo,\n  title: $title,\n  type: $type,\n  inviteLink: $inviteLink,\n  invitationsEnabled: $invitationsEnabled,\n  slug: $slug,\n  studentsAreRepoAdmins: $studentsAreRepoAdmins,\n  feedbackPullRequestsEnabled: $feedbackPullRequestsEnabled,\n  maxTeams: $maxTeams,\n  maxMembers: $maxMembers,\n  editor: $editor,\n  accepted: $accepted,\n  submitted: $submitted,\n  passing: $passing,\n  language: $language,\n  deadline: $deadline,\n  classroom: $classroom,\n)';
 
  }

@@ -17,7 +17,7 @@ Future<ApiResult<List<AddressingLease>?, Never>> ipAddressManagementListLeases({
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/leases',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/leases',
   headers: headers,
   options: options,
 );

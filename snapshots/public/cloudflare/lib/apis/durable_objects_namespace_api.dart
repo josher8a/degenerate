@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/durable_objects/namespaces',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/durable_objects/namespaces',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -59,7 +59,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/durable_objects/namespaces/${Uri.encodeComponent(id.toString())}/objects',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/durable_objects/namespaces/${Uri.encodeComponent(id.toJson())}/objects',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

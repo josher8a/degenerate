@@ -28,8 +28,8 @@ final Verification? verification;
 
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
-  'author': author != null ? author?.toJson() : null,
-  'committer': committer != null ? committer?.toJson() : null,
+  'author': author?.toJson(),
+  'committer': committer?.toJson(),
   'message': message,
   'comment_count': commentCount,
   'tree': tree.toJson(),

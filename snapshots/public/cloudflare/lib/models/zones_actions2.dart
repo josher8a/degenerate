@@ -134,6 +134,43 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ZonesActions2$Unknown;
 
+R when<R>({required R Function(ZonesActions2AlwaysUseHttps) alwaysUseHttps, required R Function(ZonesActions2AutomaticHttpsRewrites) automaticHttpsRewrites, required R Function(ZonesActions2BrowserCacheTtl) browserCacheTtl, required R Function(ZonesActions2BrowserCheck) browserCheck, required R Function(ZonesActions2BypassCacheOnCookie) bypassCacheOnCookie, required R Function(ZonesActions2CacheByDeviceType) cacheByDeviceType, required R Function(ZonesActions2CacheDeceptionArmor) cacheDeceptionArmor, required R Function(ZonesActions2CacheKeyFields) cacheKeyFields, required R Function(ZonesActions2CacheLevel) cacheLevel, required R Function(ZonesActions2CacheOnCookie) cacheOnCookie, required R Function(ZonesActions2CacheTtlByStatus) cacheTtlByStatus, required R Function(ZonesActions2DisableApps) disableApps, required R Function(ZonesActions2DisablePerformance) disablePerformance, required R Function(ZonesActions2DisableSecurity) disableSecurity, required R Function(ZonesActions2DisableZaraz) disableZaraz, required R Function(ZonesActions2EdgeCacheTtl) edgeCacheTtl, required R Function(ZonesActions2EmailObfuscation) emailObfuscation, required R Function(ZonesActions2ExplicitCacheControl) explicitCacheControl, required R Function(ZonesActions2ForwardingUrl) forwardingUrl, required R Function(ZonesActions2HostHeaderOverride) hostHeaderOverride, required R Function(ZonesActions2IpGeolocation) ipGeolocation, required R Function(ZonesActions2Mirage) mirage, required R Function(ZonesActions2OpportunisticEncryption) opportunisticEncryption, required R Function(ZonesActions2OriginErrorPagePassThru) originErrorPagePassThru, required R Function(ZonesActions2Polish) polish, required R Function(ZonesActions2ResolveOverride) resolveOverride, required R Function(ZonesActions2RespectStrongEtag) respectStrongEtag, required R Function(ZonesActions2ResponseBuffering) responseBuffering, required R Function(ZonesActions2RocketLoader) rocketLoader, required R Function(ZonesActions2SecurityLevel) securityLevel, required R Function(ZonesActions2SortQueryStringForCache) sortQueryStringForCache, required R Function(ZonesActions2Ssl) ssl, required R Function(ZonesActions2TrueClientIpHeader) trueClientIpHeader, required R Function(ZonesActions2Waf) waf, required R Function(ZonesActions2$Unknown) unknown, }) { return switch (this) {
+  final ZonesActions2AlwaysUseHttps v => alwaysUseHttps(v),
+  final ZonesActions2AutomaticHttpsRewrites v => automaticHttpsRewrites(v),
+  final ZonesActions2BrowserCacheTtl v => browserCacheTtl(v),
+  final ZonesActions2BrowserCheck v => browserCheck(v),
+  final ZonesActions2BypassCacheOnCookie v => bypassCacheOnCookie(v),
+  final ZonesActions2CacheByDeviceType v => cacheByDeviceType(v),
+  final ZonesActions2CacheDeceptionArmor v => cacheDeceptionArmor(v),
+  final ZonesActions2CacheKeyFields v => cacheKeyFields(v),
+  final ZonesActions2CacheLevel v => cacheLevel(v),
+  final ZonesActions2CacheOnCookie v => cacheOnCookie(v),
+  final ZonesActions2CacheTtlByStatus v => cacheTtlByStatus(v),
+  final ZonesActions2DisableApps v => disableApps(v),
+  final ZonesActions2DisablePerformance v => disablePerformance(v),
+  final ZonesActions2DisableSecurity v => disableSecurity(v),
+  final ZonesActions2DisableZaraz v => disableZaraz(v),
+  final ZonesActions2EdgeCacheTtl v => edgeCacheTtl(v),
+  final ZonesActions2EmailObfuscation v => emailObfuscation(v),
+  final ZonesActions2ExplicitCacheControl v => explicitCacheControl(v),
+  final ZonesActions2ForwardingUrl v => forwardingUrl(v),
+  final ZonesActions2HostHeaderOverride v => hostHeaderOverride(v),
+  final ZonesActions2IpGeolocation v => ipGeolocation(v),
+  final ZonesActions2Mirage v => mirage(v),
+  final ZonesActions2OpportunisticEncryption v => opportunisticEncryption(v),
+  final ZonesActions2OriginErrorPagePassThru v => originErrorPagePassThru(v),
+  final ZonesActions2Polish v => polish(v),
+  final ZonesActions2ResolveOverride v => resolveOverride(v),
+  final ZonesActions2RespectStrongEtag v => respectStrongEtag(v),
+  final ZonesActions2ResponseBuffering v => responseBuffering(v),
+  final ZonesActions2RocketLoader v => rocketLoader(v),
+  final ZonesActions2SecurityLevel v => securityLevel(v),
+  final ZonesActions2SortQueryStringForCache v => sortQueryStringForCache(v),
+  final ZonesActions2Ssl v => ssl(v),
+  final ZonesActions2TrueClientIpHeader v => trueClientIpHeader(v),
+  final ZonesActions2Waf v => waf(v),
+  final ZonesActions2$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ZonesActions2AlwaysUseHttps extends ZonesActions2 {const ZonesActions2AlwaysUseHttps(this.zonesAlwaysUseHttps);
 

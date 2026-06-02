@@ -147,6 +147,6 @@ PostProductsRequest copyWith({bool? Function()? active, DefaultPriceData? Functi
 
 @override int get hashCode => Object.hash(active, defaultPriceData, description, Object.hashAll(expand ?? const []), id, Object.hashAll(images ?? const []), Object.hashAll(marketingFeatures ?? const []), metadata, name, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, url);
 
-@override String toString() => 'PostProductsRequest(active: $active, defaultPriceData: $defaultPriceData, description: $description, expand: $expand, id: $id, images: $images, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, url: $url)';
+@override String toString() => 'PostProductsRequest(\n  active: $active,\n  defaultPriceData: $defaultPriceData,\n  description: $description,\n  expand: $expand,\n  id: $id,\n  images: $images,\n  marketingFeatures: $marketingFeatures,\n  metadata: $metadata,\n  name: $name,\n  packageDimensions: $packageDimensions,\n  shippable: $shippable,\n  statementDescriptor: $statementDescriptor,\n  taxCode: $taxCode,\n  unitLabel: $unitLabel,\n  url: $url,\n)';
 
  }

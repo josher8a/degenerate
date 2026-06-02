@@ -17,7 +17,7 @@ Future<ApiResult<List<AccessApps>?, Never>> zoneLevelAccessApplicationsListAcces
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<AccessApps?, Never>> zoneLevelAccessApplicationsGetAnAccessAppl
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toString())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, Never>> zo
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toString())}',
   headers: headers,
   options: options,
 );
@@ -131,7 +131,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> zoneLevelAccessApplicationsRevok
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/revoke_tokens',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toString())}/revoke_tokens',
   headers: headers,
   options: options,
 );
@@ -154,7 +154,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toString())}/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -178,7 +178,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toString())}/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -201,7 +201,7 @@ Future<ApiResult<AccessSchemasPolicyCheckResponseResult?, Never>> zoneLevelAcces
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/user_policy_checks',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toString())}/user_policy_checks',
   headers: headers,
   options: options,
 );

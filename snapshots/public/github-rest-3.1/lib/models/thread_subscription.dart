@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'subscribed': subscribed,
   'ignored': ignored,
   'reason': reason,
-  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
+  'created_at': createdAt?.toIso8601String(),
   'url': url.toString(),
   if (threadUrl != null) 'thread_url': threadUrl?.toString(),
   if (repositoryUrl != null) 'repository_url': repositoryUrl?.toString(),

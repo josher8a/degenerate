@@ -116,6 +116,6 @@ LivestreamsessionSessionMeetingIdActiveLivestreamResponseData copyWith({DateTime
 
 @override int get hashCode => Object.hash(createdAt, errMessage, id, ingestSeconds, invokedTime, livestreamId, paging, stoppedTime, updatedAt, viewerSeconds);
 
-@override String toString() => 'LivestreamsessionSessionMeetingIdActiveLivestreamResponseData(createdAt: $createdAt, errMessage: $errMessage, id: $id, ingestSeconds: $ingestSeconds, invokedTime: $invokedTime, livestreamId: $livestreamId, paging: $paging, stoppedTime: $stoppedTime, updatedAt: $updatedAt, viewerSeconds: $viewerSeconds)';
+@override String toString() => 'LivestreamsessionSessionMeetingIdActiveLivestreamResponseData(\n  createdAt: $createdAt,\n  errMessage: $errMessage,\n  id: $id,\n  ingestSeconds: $ingestSeconds,\n  invokedTime: $invokedTime,\n  livestreamId: $livestreamId,\n  paging: $paging,\n  stoppedTime: $stoppedTime,\n  updatedAt: $updatedAt,\n  viewerSeconds: $viewerSeconds,\n)';
 
  }

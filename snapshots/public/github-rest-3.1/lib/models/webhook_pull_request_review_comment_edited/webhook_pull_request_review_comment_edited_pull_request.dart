@@ -118,8 +118,8 @@ final WebhooksIssueCommentUser? user;
 
 Map<String, dynamic> toJson() { return {
   '_links': links.toJson(),
-  'active_lock_reason': activeLockReason != null ? activeLockReason?.toJson() : null,
-  'assignee': assignee != null ? assignee?.toJson() : null,
+  'active_lock_reason': activeLockReason?.toJson(),
+  'assignee': assignee?.toJson(),
   'assignees': assignees.map((e) => e?.toJson()).toList(),
   'author_association': authorAssociation.toJson(),
   if (autoMerge != null) 'auto_merge': autoMerge?.toJson(),
@@ -139,7 +139,7 @@ Map<String, dynamic> toJson() { return {
   'locked': locked,
   'merge_commit_sha': mergeCommitSha,
   'merged_at': mergedAt,
-  'milestone': milestone != null ? milestone?.toJson() : null,
+  'milestone': milestone?.toJson(),
   'node_id': nodeId,
   'number': number,
   'patch_url': patchUrl.toString(),
@@ -152,7 +152,7 @@ Map<String, dynamic> toJson() { return {
   'title': title,
   'updated_at': updatedAt,
   'url': url.toString(),
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
       json.containsKey('active_lock_reason') &&
@@ -267,6 +267,6 @@ WebhookPullRequestReviewCommentEditedPullRequest copyWith({WebhooksPullRequest5L
 
 @override int get hashCode => Object.hashAll([links, activeLockReason, assignee, Object.hashAll(assignees), authorAssociation, autoMerge, base, body, closedAt, commentsUrl, commitsUrl, createdAt, diffUrl, draft, head, htmlUrl, id, issueUrl, Object.hashAll(labels), locked, mergeCommitSha, mergedAt, milestone, nodeId, number, patchUrl, Object.hashAll(requestedReviewers), Object.hashAll(requestedTeams), reviewCommentUrl, reviewCommentsUrl, state, statusesUrl, title, updatedAt, url, user]);
 
-@override String toString() => 'WebhookPullRequestReviewCommentEditedPullRequest(links: $links, activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, autoMerge: $autoMerge, base: $base, body: $body, closedAt: $closedAt, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, createdAt: $createdAt, diffUrl: $diffUrl, draft: $draft, head: $head, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, labels: $labels, locked: $locked, mergeCommitSha: $mergeCommitSha, mergedAt: $mergedAt, milestone: $milestone, nodeId: $nodeId, number: $number, patchUrl: $patchUrl, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, reviewCommentUrl: $reviewCommentUrl, reviewCommentsUrl: $reviewCommentsUrl, state: $state, statusesUrl: $statusesUrl, title: $title, updatedAt: $updatedAt, url: $url, user: $user)';
+@override String toString() => 'WebhookPullRequestReviewCommentEditedPullRequest(\n  links: $links,\n  activeLockReason: $activeLockReason,\n  assignee: $assignee,\n  assignees: $assignees,\n  authorAssociation: $authorAssociation,\n  autoMerge: $autoMerge,\n  base: $base,\n  body: $body,\n  closedAt: $closedAt,\n  commentsUrl: $commentsUrl,\n  commitsUrl: $commitsUrl,\n  createdAt: $createdAt,\n  diffUrl: $diffUrl,\n  draft: $draft,\n  head: $head,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  issueUrl: $issueUrl,\n  labels: $labels,\n  locked: $locked,\n  mergeCommitSha: $mergeCommitSha,\n  mergedAt: $mergedAt,\n  milestone: $milestone,\n  nodeId: $nodeId,\n  number: $number,\n  patchUrl: $patchUrl,\n  requestedReviewers: $requestedReviewers,\n  requestedTeams: $requestedTeams,\n  reviewCommentUrl: $reviewCommentUrl,\n  reviewCommentsUrl: $reviewCommentsUrl,\n  state: $state,\n  statusesUrl: $statusesUrl,\n  title: $title,\n  updatedAt: $updatedAt,\n  url: $url,\n  user: $user,\n)';
 
  }

@@ -17,7 +17,7 @@ Future<ApiResult<List<CallsApp>?, Never>> callsAppsList({required CallsAccountId
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/calls/apps',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/calls/apps',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<CallsApp?, Never>> callsAppsRetrieveAppDetails({required CallsI
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps/${Uri.encodeComponent(appId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/calls/apps/${Uri.encodeComponent(appId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps/${Uri.encodeComponent(appId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/calls/apps/${Uri.encodeComponent(appId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<CallsApp?, Never>> callsAppsDeleteApp({required CallsIdentifier
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/apps/${Uri.encodeComponent(appId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/calls/apps/${Uri.encodeComponent(appId.toJson())}',
   headers: headers,
   options: options,
 );

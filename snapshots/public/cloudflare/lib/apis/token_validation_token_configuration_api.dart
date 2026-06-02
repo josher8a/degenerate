@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/config',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/config',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -49,7 +49,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/config',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/config',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -70,7 +70,7 @@ Future<ApiResult<ShieldTokenConfiguration, Never>> tokenValidationConfigGet({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/config/${Uri.encodeComponent(configId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/config/${Uri.encodeComponent(configId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -93,7 +93,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/config/${Uri.encodeComponent(configId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/config/${Uri.encodeComponent(configId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -114,7 +114,7 @@ Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult, Never>> tok
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/config/${Uri.encodeComponent(configId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/config/${Uri.encodeComponent(configId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -135,7 +135,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/config/${Uri.encodeComponent(configId.toString())}/credentials',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/config/${Uri.encodeComponent(configId.toJson())}/credentials',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

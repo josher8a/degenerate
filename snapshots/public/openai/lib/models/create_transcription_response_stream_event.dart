@@ -25,6 +25,12 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CreateTranscriptionResponseStreamEvent$Unknown;
 
+R when<R>({required R Function(CreateTranscriptionResponseStreamEventTranscriptTextSegment) transcriptTextSegment, required R Function(CreateTranscriptionResponseStreamEventTranscriptTextDelta) transcriptTextDelta, required R Function(CreateTranscriptionResponseStreamEventTranscriptTextDone) transcriptTextDone, required R Function(CreateTranscriptionResponseStreamEvent$Unknown) unknown, }) { return switch (this) {
+  final CreateTranscriptionResponseStreamEventTranscriptTextSegment v => transcriptTextSegment(v),
+  final CreateTranscriptionResponseStreamEventTranscriptTextDelta v => transcriptTextDelta(v),
+  final CreateTranscriptionResponseStreamEventTranscriptTextDone v => transcriptTextDone(v),
+  final CreateTranscriptionResponseStreamEvent$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class CreateTranscriptionResponseStreamEventTranscriptTextSegment extends CreateTranscriptionResponseStreamEvent {const CreateTranscriptionResponseStreamEventTranscriptTextSegment(this.transcriptTextSegmentEvent);
 

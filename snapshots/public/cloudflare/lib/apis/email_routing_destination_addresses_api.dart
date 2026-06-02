@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email/routing/addresses',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email/routing/addresses',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email/routing/addresses',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email/routing/addresses',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -80,7 +80,7 @@ Future<ApiResult<EmailDestinationAddressProperties?, Never>> emailRoutingDestina
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email/routing/addresses/${Uri.encodeComponent(destinationAddressIdentifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email/routing/addresses/${Uri.encodeComponent(destinationAddressIdentifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -102,7 +102,7 @@ Future<ApiResult<EmailDestinationAddressProperties?, Never>> emailRoutingDestina
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email/routing/addresses/${Uri.encodeComponent(destinationAddressIdentifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email/routing/addresses/${Uri.encodeComponent(destinationAddressIdentifier.toJson())}',
   headers: headers,
   options: options,
 );

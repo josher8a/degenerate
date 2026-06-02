@@ -30,6 +30,13 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is Annotation$Unknown;
 
+R when<R>({required R Function(AnnotationFileCitation) fileCitation, required R Function(AnnotationUrlCitation) urlCitation, required R Function(AnnotationContainerFileCitation) containerFileCitation, required R Function(AnnotationFilePath) filePath, required R Function(Annotation$Unknown) unknown, }) { return switch (this) {
+  final AnnotationFileCitation v => fileCitation(v),
+  final AnnotationUrlCitation v => urlCitation(v),
+  final AnnotationContainerFileCitation v => containerFileCitation(v),
+  final AnnotationFilePath v => filePath(v),
+  final Annotation$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class AnnotationFileCitation extends Annotation {const AnnotationFileCitation(this.fileCitationBody);
 

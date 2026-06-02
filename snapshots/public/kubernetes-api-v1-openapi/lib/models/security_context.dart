@@ -100,6 +100,6 @@ SecurityContext copyWith({bool? Function()? allowPrivilegeEscalation, AppArmorPr
 
 @override int get hashCode => Object.hash(allowPrivilegeEscalation, appArmorProfile, capabilities, privileged, procMount, readOnlyRootFilesystem, runAsGroup, runAsNonRoot, runAsUser, seLinuxOptions, seccompProfile, windowsOptions);
 
-@override String toString() => 'SecurityContext(allowPrivilegeEscalation: $allowPrivilegeEscalation, appArmorProfile: $appArmorProfile, capabilities: $capabilities, privileged: $privileged, procMount: $procMount, readOnlyRootFilesystem: $readOnlyRootFilesystem, runAsGroup: $runAsGroup, runAsNonRoot: $runAsNonRoot, runAsUser: $runAsUser, seLinuxOptions: $seLinuxOptions, seccompProfile: $seccompProfile, windowsOptions: $windowsOptions)';
+@override String toString() => 'SecurityContext(\n  allowPrivilegeEscalation: $allowPrivilegeEscalation,\n  appArmorProfile: $appArmorProfile,\n  capabilities: $capabilities,\n  privileged: $privileged,\n  procMount: $procMount,\n  readOnlyRootFilesystem: $readOnlyRootFilesystem,\n  runAsGroup: $runAsGroup,\n  runAsNonRoot: $runAsNonRoot,\n  runAsUser: $runAsUser,\n  seLinuxOptions: $seLinuxOptions,\n  seccompProfile: $seccompProfile,\n  windowsOptions: $windowsOptions,\n)';
 
  }

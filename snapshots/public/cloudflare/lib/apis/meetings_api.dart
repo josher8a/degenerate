@@ -35,7 +35,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -59,7 +59,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -87,7 +87,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -99,7 +99,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddParticipantError.fromResponse(response),
+  onError: AddParticipantError.fromResponse,
 );
  } 
 /// Replace a meeting
@@ -112,7 +112,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -135,7 +135,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -146,7 +146,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddParticipantError.fromResponse(response),
+  onError: AddParticipantError.fromResponse,
 );
  } 
 /// Fetch all participants of a meeting
@@ -167,7 +167,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/participants',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/participants',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -179,7 +179,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitPagingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddParticipantError.fromResponse(response),
+  onError: AddParticipantError.fromResponse,
 );
  } 
 /// Add a participant
@@ -192,7 +192,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/participants',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/participants',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -203,7 +203,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddParticipantError.fromResponse(response),
+  onError: AddParticipantError.fromResponse,
 );
  } 
 /// Fetch a participant's detail
@@ -215,7 +215,7 @@ Future<ApiResult<RealtimekitGenericSuccessResponse, AddParticipantError>> getMee
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/participants/${Uri.encodeComponent(participantId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/participants/${Uri.encodeComponent(participantId)}',
   headers: headers,
   options: options,
 );
@@ -225,7 +225,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddParticipantError.fromResponse(response),
+  onError: AddParticipantError.fromResponse,
 );
  } 
 /// Edit a participant's detail
@@ -238,7 +238,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/participants/${Uri.encodeComponent(participantId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/participants/${Uri.encodeComponent(participantId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -249,7 +249,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddParticipantError.fromResponse(response),
+  onError: AddParticipantError.fromResponse,
 );
  } 
 /// Delete a participant
@@ -261,7 +261,7 @@ Future<ApiResult<RealtimekitGenericSuccessResponse, AddParticipantError>> delete
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/participants/${Uri.encodeComponent(participantId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/participants/${Uri.encodeComponent(participantId)}',
   headers: headers,
   options: options,
 );
@@ -271,7 +271,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddParticipantError.fromResponse(response),
+  onError: AddParticipantError.fromResponse,
 );
  } 
 /// Refresh participant's authentication token
@@ -283,7 +283,7 @@ Future<ApiResult<RealtimekitGenericSuccessResponse, AddParticipantError>> regene
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/participants/${Uri.encodeComponent(participantId)}/token',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/participants/${Uri.encodeComponent(participantId)}/token',
   headers: headers,
   options: options,
 );
@@ -293,7 +293,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddParticipantError.fromResponse(response),
+  onError: AddParticipantError.fromResponse,
 );
  } 
  }

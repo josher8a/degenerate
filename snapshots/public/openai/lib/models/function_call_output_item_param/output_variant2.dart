@@ -26,6 +26,12 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is OutputVariant2$Unknown;
 
+R when<R>({required R Function(OutputVariant2InputText) inputText, required R Function(OutputVariant2InputImage) inputImage, required R Function(OutputVariant2InputFile) inputFile, required R Function(OutputVariant2$Unknown) unknown, }) { return switch (this) {
+  final OutputVariant2InputText v => inputText(v),
+  final OutputVariant2InputImage v => inputImage(v),
+  final OutputVariant2InputFile v => inputFile(v),
+  final OutputVariant2$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class OutputVariant2InputText extends OutputVariant2 {const OutputVariant2InputText(this.inputTextContentParam);
 

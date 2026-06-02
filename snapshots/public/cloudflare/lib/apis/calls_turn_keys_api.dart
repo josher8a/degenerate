@@ -17,7 +17,7 @@ Future<ApiResult<List<CallsTurnKeyObject>?, Never>> callsTurnKeyList({required C
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/turn_keys',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/calls/turn_keys',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/turn_keys',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/calls/turn_keys',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<CallsTurnKeyObject?, Never>> callsRetrieveTurnKeyDetails({requi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/turn_keys/${Uri.encodeComponent(keyId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/calls/turn_keys/${Uri.encodeComponent(keyId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/turn_keys/${Uri.encodeComponent(keyId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/calls/turn_keys/${Uri.encodeComponent(keyId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<CallsTurnKeyObject?, Never>> callsDeleteTurnKey({required Calls
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/calls/turn_keys/${Uri.encodeComponent(keyId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/calls/turn_keys/${Uri.encodeComponent(keyId.toJson())}',
   headers: headers,
   options: options,
 );

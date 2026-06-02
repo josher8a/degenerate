@@ -17,7 +17,7 @@ Future<ApiResult<WorkersPlacementRegionsResponse, Never>> workerPlacementListReg
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/placement/regions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/placement/regions',
   headers: headers,
   options: options,
 );

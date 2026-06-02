@@ -134,6 +134,6 @@ RepositoryAdvisoryUpdate copyWith({String? Function()? summary, String? Function
 
 @override int get hashCode => Object.hash(summary, description, cveId, Object.hashAll(vulnerabilities ?? const []), Object.hashAll(cweIds ?? const []), Object.hashAll(credits ?? const []), severity, cvssVectorString, state, Object.hashAll(collaboratingUsers ?? const []), Object.hashAll(collaboratingTeams ?? const []));
 
-@override String toString() => 'RepositoryAdvisoryUpdate(summary: $summary, description: $description, cveId: $cveId, vulnerabilities: $vulnerabilities, cweIds: $cweIds, credits: $credits, severity: $severity, cvssVectorString: $cvssVectorString, state: $state, collaboratingUsers: $collaboratingUsers, collaboratingTeams: $collaboratingTeams)';
+@override String toString() => 'RepositoryAdvisoryUpdate(\n  summary: $summary,\n  description: $description,\n  cveId: $cveId,\n  vulnerabilities: $vulnerabilities,\n  cweIds: $cweIds,\n  credits: $credits,\n  severity: $severity,\n  cvssVectorString: $cvssVectorString,\n  state: $state,\n  collaboratingUsers: $collaboratingUsers,\n  collaboratingTeams: $collaboratingTeams,\n)';
 
  }

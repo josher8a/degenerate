@@ -18,6 +18,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is FunctionShellCallEnvironment$Unknown;
 
+R when<R>({required R Function(FunctionShellCallEnvironmentLocal) local, required R Function(FunctionShellCallEnvironmentContainerReference) containerReference, required R Function(FunctionShellCallEnvironment$Unknown) unknown, }) { return switch (this) {
+  final FunctionShellCallEnvironmentLocal v => local(v),
+  final FunctionShellCallEnvironmentContainerReference v => containerReference(v),
+  final FunctionShellCallEnvironment$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class FunctionShellCallEnvironmentLocal extends FunctionShellCallEnvironment {const FunctionShellCallEnvironmentLocal(this.localEnvironmentResource);
 

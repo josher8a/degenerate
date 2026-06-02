@@ -108,6 +108,6 @@ PaymentMethodDetailsSofort copyWith({String? Function()? bankCode, String? Funct
 
 @override int get hashCode => Object.hash(bankCode, bankName, bic, country, generatedSepaDebit, generatedSepaDebitMandate, ibanLast4, preferredLanguage, verifiedName);
 
-@override String toString() => 'PaymentMethodDetailsSofort(bankCode: $bankCode, bankName: $bankName, bic: $bic, country: $country, generatedSepaDebit: $generatedSepaDebit, generatedSepaDebitMandate: $generatedSepaDebitMandate, ibanLast4: $ibanLast4, preferredLanguage: $preferredLanguage, verifiedName: $verifiedName)';
+@override String toString() => 'PaymentMethodDetailsSofort(\n  bankCode: $bankCode,\n  bankName: $bankName,\n  bic: $bic,\n  country: $country,\n  generatedSepaDebit: $generatedSepaDebit,\n  generatedSepaDebitMandate: $generatedSepaDebitMandate,\n  ibanLast4: $ibanLast4,\n  preferredLanguage: $preferredLanguage,\n  verifiedName: $verifiedName,\n)';
 
  }

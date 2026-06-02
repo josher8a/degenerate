@@ -99,6 +99,6 @@ AccountSipSipIpAccessControlListSipIpAddress copyWith({String? Function()? sid, 
 
 @override int get hashCode => Object.hash(sid, accountSid, friendlyName, ipAddress, cidrPrefixLength, ipAccessControlListSid, dateCreated, dateUpdated, uri);
 
-@override String toString() => 'AccountSipSipIpAccessControlListSipIpAddress(sid: $sid, accountSid: $accountSid, friendlyName: $friendlyName, ipAddress: $ipAddress, cidrPrefixLength: $cidrPrefixLength, ipAccessControlListSid: $ipAccessControlListSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri)';
+@override String toString() => 'AccountSipSipIpAccessControlListSipIpAddress(\n  sid: $sid,\n  accountSid: $accountSid,\n  friendlyName: $friendlyName,\n  ipAddress: $ipAddress,\n  cidrPrefixLength: $cidrPrefixLength,\n  ipAccessControlListSid: $ipAccessControlListSid,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  uri: $uri,\n)';
 
  }

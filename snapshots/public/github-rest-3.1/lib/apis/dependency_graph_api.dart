@@ -36,7 +36,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => DependencyGraphDiff2.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Export a software bill of materials (SBOM) for a repository.
@@ -58,7 +58,7 @@ return execute(
   onSuccess: (response) {
     return DependencyGraphSpdxSbom.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Create a snapshot of dependencies for a repository

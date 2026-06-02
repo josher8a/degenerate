@@ -26,7 +26,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetCountryReadResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GetCountryReadError.fromResponse(response),
+  onError: GetCountryReadError.fromResponse,
 );
  } 
  }

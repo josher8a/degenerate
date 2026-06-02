@@ -17,7 +17,7 @@ Future<ApiResult<List<SecondaryDnsAcl>?, Never>> secondaryDnsAclListAcLs({requir
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/acls',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secondary_dns/acls',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/acls',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secondary_dns/acls',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<SecondaryDnsAcl?, Never>> secondaryDnsAclAclDetails({required S
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/acls/${Uri.encodeComponent(aclId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secondary_dns/acls/${Uri.encodeComponent(aclId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/acls/${Uri.encodeComponent(aclId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secondary_dns/acls/${Uri.encodeComponent(aclId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> second
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/acls/${Uri.encodeComponent(aclId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secondary_dns/acls/${Uri.encodeComponent(aclId.toJson())}',
   headers: headers,
   options: options,
 );

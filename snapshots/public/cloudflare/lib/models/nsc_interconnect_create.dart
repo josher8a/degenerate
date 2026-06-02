@@ -23,6 +23,11 @@ bool get isUnknown => this is NscInterconnectCreate$Unknown;
 
 /// Shared by all variants of this union.
 String get account;
+R when<R>({required R Function(NscInterconnectCreateDirect) direct, required R Function(NscInterconnectCreateGcpPartner) gcpPartner, required R Function(NscInterconnectCreate$Unknown) unknown, }) { return switch (this) {
+  final NscInterconnectCreateDirect v => direct(v),
+  final NscInterconnectCreateGcpPartner v => gcpPartner(v),
+  final NscInterconnectCreate$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class NscInterconnectCreateDirect extends NscInterconnectCreate {const NscInterconnectCreateDirect(this.nscInterconnectCreatePhysicalBody);
 
@@ -76,9 +81,11 @@ NscInterconnectCreateGcpPartner copyWith({String? account, Bandwidth? bandwidth,
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class NscInterconnectCreate$Unknown extends NscInterconnectCreate {const NscInterconnectCreate$Unknown(this.json);
+@immutable final class NscInterconnectCreate$Unknown extends NscInterconnectCreate {NscInterconnectCreate$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String _account = json['account'] as String;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -91,6 +98,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'NscInterconnectCreate.unknown($json)';
 
-@override String get account => json['account'] as String;
+@override String get account => _account;
 
  }

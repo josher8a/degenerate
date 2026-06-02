@@ -113,6 +113,6 @@ AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn copyWith({String? Fun
 
 @override int get hashCode => Object.hash(sid, accountSid, resourceSid, friendlyName, description, configuration, uniqueName, dateCreated, dateUpdated, uri, subresourceUris);
 
-@override String toString() => 'AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(sid: $sid, accountSid: $accountSid, resourceSid: $resourceSid, friendlyName: $friendlyName, description: $description, configuration: $configuration, uniqueName: $uniqueName, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri, subresourceUris: $subresourceUris)';
+@override String toString() => 'AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(\n  sid: $sid,\n  accountSid: $accountSid,\n  resourceSid: $resourceSid,\n  friendlyName: $friendlyName,\n  description: $description,\n  configuration: $configuration,\n  uniqueName: $uniqueName,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  uri: $uri,\n  subresourceUris: $subresourceUris,\n)';
 
  }

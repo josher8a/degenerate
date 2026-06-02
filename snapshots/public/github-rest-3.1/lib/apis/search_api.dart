@@ -64,7 +64,7 @@ return execute(
   onSuccess: (response) {
     return SearchCodeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => SearchCodeError.fromResponse(response),
+  onError: SearchCodeError.fromResponse,
 );
  } 
 /// Search commits
@@ -165,7 +165,7 @@ return execute(
   onSuccess: (response) {
     return SearchIssuesAndPullRequestsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => SearchIssuesAndPullRequestsError.fromResponse(response),
+  onError: SearchIssuesAndPullRequestsError.fromResponse,
 );
  } 
 /// Search labels
@@ -214,7 +214,7 @@ return execute(
   onSuccess: (response) {
     return SearchLabelsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// Search repositories
@@ -262,7 +262,7 @@ return execute(
   onSuccess: (response) {
     return SearchReposResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => SearchReposError.fromResponse(response),
+  onError: SearchReposError.fromResponse,
 );
  } 
 /// Search topics
@@ -353,7 +353,7 @@ return execute(
   onSuccess: (response) {
     return SearchUsersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => SearchUsersError.fromResponse(response),
+  onError: SearchUsersError.fromResponse,
 );
  } 
  }

@@ -52,7 +52,7 @@ final AuthorAssociation authorAssociation;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
   'body': body,
   'state': state,
   'html_url': htmlUrl.toString(),
@@ -107,6 +107,6 @@ PullRequestReview copyWith({int? id, String? nodeId, SimpleUser? Function()? use
 
 @override int get hashCode => Object.hash(id, nodeId, user, body, state, htmlUrl, pullRequestUrl, links, submittedAt, commitId, bodyHtml, bodyText, authorAssociation);
 
-@override String toString() => 'PullRequestReview(id: $id, nodeId: $nodeId, user: $user, body: $body, state: $state, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, submittedAt: $submittedAt, commitId: $commitId, bodyHtml: $bodyHtml, bodyText: $bodyText, authorAssociation: $authorAssociation)';
+@override String toString() => 'PullRequestReview(\n  id: $id,\n  nodeId: $nodeId,\n  user: $user,\n  body: $body,\n  state: $state,\n  htmlUrl: $htmlUrl,\n  pullRequestUrl: $pullRequestUrl,\n  links: $links,\n  submittedAt: $submittedAt,\n  commitId: $commitId,\n  bodyHtml: $bodyHtml,\n  bodyText: $bodyText,\n  authorAssociation: $authorAssociation,\n)';
 
  }

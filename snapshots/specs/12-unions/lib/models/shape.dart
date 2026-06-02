@@ -25,6 +25,12 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is Shape$Unknown;
 
+R when<R>({required R Function(ShapeCircle) circle, required R Function(ShapeRectangle) rectangle, required R Function(ShapeTriangle) triangle, required R Function(Shape$Unknown) unknown, }) { return switch (this) {
+  final ShapeCircle v => circle(v),
+  final ShapeRectangle v => rectangle(v),
+  final ShapeTriangle v => triangle(v),
+  final Shape$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ShapeCircle extends Shape {const ShapeCircle(this.circle);
 

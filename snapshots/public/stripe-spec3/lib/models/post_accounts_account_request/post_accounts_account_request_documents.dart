@@ -70,6 +70,6 @@ PostAccountsAccountRequestDocuments copyWith({BankAccountOwnershipVerification? 
 
 @override int get hashCode => Object.hash(bankAccountOwnershipVerification, companyLicense, companyMemorandumOfAssociation, companyMinisterialDecree, companyRegistrationVerification, companyTaxIdVerification, proofOfAddress, proofOfRegistration, proofOfUltimateBeneficialOwnership);
 
-@override String toString() => 'PostAccountsAccountRequestDocuments(bankAccountOwnershipVerification: $bankAccountOwnershipVerification, companyLicense: $companyLicense, companyMemorandumOfAssociation: $companyMemorandumOfAssociation, companyMinisterialDecree: $companyMinisterialDecree, companyRegistrationVerification: $companyRegistrationVerification, companyTaxIdVerification: $companyTaxIdVerification, proofOfAddress: $proofOfAddress, proofOfRegistration: $proofOfRegistration, proofOfUltimateBeneficialOwnership: $proofOfUltimateBeneficialOwnership)';
+@override String toString() => 'PostAccountsAccountRequestDocuments(\n  bankAccountOwnershipVerification: $bankAccountOwnershipVerification,\n  companyLicense: $companyLicense,\n  companyMemorandumOfAssociation: $companyMemorandumOfAssociation,\n  companyMinisterialDecree: $companyMinisterialDecree,\n  companyRegistrationVerification: $companyRegistrationVerification,\n  companyTaxIdVerification: $companyTaxIdVerification,\n  proofOfAddress: $proofOfAddress,\n  proofOfRegistration: $proofOfRegistration,\n  proofOfUltimateBeneficialOwnership: $proofOfUltimateBeneficialOwnership,\n)';
 
  }

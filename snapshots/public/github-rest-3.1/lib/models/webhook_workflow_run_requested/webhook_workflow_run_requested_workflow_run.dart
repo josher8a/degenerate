@@ -111,13 +111,13 @@ final Uri workflowUrl;
 final String displayTitle;
 
 Map<String, dynamic> toJson() { return {
-  'actor': actor != null ? actor?.toJson() : null,
+  'actor': actor?.toJson(),
   'artifacts_url': artifactsUrl.toString(),
   'cancel_url': cancelUrl.toString(),
   'check_suite_id': checkSuiteId,
   'check_suite_node_id': checkSuiteNodeId,
   'check_suite_url': checkSuiteUrl.toString(),
-  'conclusion': conclusion != null ? conclusion?.toJson() : null,
+  'conclusion': conclusion?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'event': event,
   'head_branch': headBranch,
@@ -131,7 +131,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'node_id': nodeId,
   'path': path,
-  'previous_attempt_url': previousAttemptUrl != null ? previousAttemptUrl?.toString() : null,
+  'previous_attempt_url': previousAttemptUrl?.toString(),
   'pull_requests': pullRequests.map((e) => e.toJson()).toList(),
   if (referencedWorkflows != null) 'referenced_workflows': referencedWorkflows?.map((e) => e.toJson()).toList(),
   'repository': repository.toJson(),
@@ -140,7 +140,7 @@ Map<String, dynamic> toJson() { return {
   'run_number': runNumber,
   'run_started_at': runStartedAt.toIso8601String(),
   'status': status.toJson(),
-  'triggering_actor': triggeringActor != null ? triggeringActor?.toJson() : null,
+  'triggering_actor': triggeringActor?.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   'workflow_id': workflowId,
@@ -258,6 +258,6 @@ WebhookWorkflowRunRequestedWorkflowRun copyWith({WebhookDeploymentCreatedWorkflo
 
 @override int get hashCode => Object.hashAll([actor, artifactsUrl, cancelUrl, checkSuiteId, checkSuiteNodeId, checkSuiteUrl, conclusion, createdAt, event, headBranch, headCommit, headRepository, headSha, htmlUrl, id, jobsUrl, logsUrl, name, nodeId, path, previousAttemptUrl, Object.hashAll(pullRequests), Object.hashAll(referencedWorkflows ?? const []), repository, rerunUrl, runAttempt, runNumber, runStartedAt, status, triggeringActor, updatedAt, url, workflowId, workflowUrl, displayTitle]);
 
-@override String toString() => 'WebhookWorkflowRunRequestedWorkflowRun(actor: $actor, artifactsUrl: $artifactsUrl, cancelUrl: $cancelUrl, checkSuiteId: $checkSuiteId, checkSuiteNodeId: $checkSuiteNodeId, checkSuiteUrl: $checkSuiteUrl, conclusion: $conclusion, createdAt: $createdAt, event: $event, headBranch: $headBranch, headCommit: $headCommit, headRepository: $headRepository, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, jobsUrl: $jobsUrl, logsUrl: $logsUrl, name: $name, nodeId: $nodeId, path: $path, previousAttemptUrl: $previousAttemptUrl, pullRequests: $pullRequests, referencedWorkflows: $referencedWorkflows, repository: $repository, rerunUrl: $rerunUrl, runAttempt: $runAttempt, runNumber: $runNumber, runStartedAt: $runStartedAt, status: $status, triggeringActor: $triggeringActor, updatedAt: $updatedAt, url: $url, workflowId: $workflowId, workflowUrl: $workflowUrl, displayTitle: $displayTitle)';
+@override String toString() => 'WebhookWorkflowRunRequestedWorkflowRun(\n  actor: $actor,\n  artifactsUrl: $artifactsUrl,\n  cancelUrl: $cancelUrl,\n  checkSuiteId: $checkSuiteId,\n  checkSuiteNodeId: $checkSuiteNodeId,\n  checkSuiteUrl: $checkSuiteUrl,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  event: $event,\n  headBranch: $headBranch,\n  headCommit: $headCommit,\n  headRepository: $headRepository,\n  headSha: $headSha,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  jobsUrl: $jobsUrl,\n  logsUrl: $logsUrl,\n  name: $name,\n  nodeId: $nodeId,\n  path: $path,\n  previousAttemptUrl: $previousAttemptUrl,\n  pullRequests: $pullRequests,\n  referencedWorkflows: $referencedWorkflows,\n  repository: $repository,\n  rerunUrl: $rerunUrl,\n  runAttempt: $runAttempt,\n  runNumber: $runNumber,\n  runStartedAt: $runStartedAt,\n  status: $status,\n  triggeringActor: $triggeringActor,\n  updatedAt: $updatedAt,\n  url: $url,\n  workflowId: $workflowId,\n  workflowUrl: $workflowUrl,\n  displayTitle: $displayTitle,\n)';
 
  }

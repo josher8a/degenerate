@@ -81,6 +81,6 @@ DlpEmailRule copyWith({DlpEmailRuleAction? action, List<DlpEmailRuleCondition>? 
 
 @override int get hashCode => Object.hash(action, Object.hashAll(conditions), createdAt, description, enabled, name, priority, ruleId, updatedAt);
 
-@override String toString() => 'DlpEmailRule(action: $action, conditions: $conditions, createdAt: $createdAt, description: $description, enabled: $enabled, name: $name, priority: $priority, ruleId: $ruleId, updatedAt: $updatedAt)';
+@override String toString() => 'DlpEmailRule(\n  action: $action,\n  conditions: $conditions,\n  createdAt: $createdAt,\n  description: $description,\n  enabled: $enabled,\n  name: $name,\n  priority: $priority,\n  ruleId: $ruleId,\n  updatedAt: $updatedAt,\n)';
 
  }

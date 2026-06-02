@@ -83,6 +83,6 @@ AigConfigGetGatewayDynamicRouteVersionResponseResult copyWith({Active? active, S
 
 @override int get hashCode => Object.hash(active, comment, createdAt, data, Object.hashAll(elements), gatewayId, id, modifiedAt, name, versionId);
 
-@override String toString() => 'AigConfigGetGatewayDynamicRouteVersionResponseResult(active: $active, comment: $comment, createdAt: $createdAt, data: $data, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, versionId: $versionId)';
+@override String toString() => 'AigConfigGetGatewayDynamicRouteVersionResponseResult(\n  active: $active,\n  comment: $comment,\n  createdAt: $createdAt,\n  data: $data,\n  elements: $elements,\n  gatewayId: $gatewayId,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  name: $name,\n  versionId: $versionId,\n)';
 
  }

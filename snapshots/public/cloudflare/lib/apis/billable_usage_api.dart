@@ -46,7 +46,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/billing/usage/paygo',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/billing/usage/paygo',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

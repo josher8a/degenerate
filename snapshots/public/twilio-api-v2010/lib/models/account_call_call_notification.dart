@@ -134,6 +134,6 @@ AccountCallCallNotification copyWith({String? Function()? accountSid, String? Fu
 
 @override int get hashCode => Object.hash(accountSid, apiVersion, callSid, dateCreated, dateUpdated, errorCode, log, messageDate, messageText, moreInfo, requestMethod, requestUrl, sid, uri);
 
-@override String toString() => 'AccountCallCallNotification(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, errorCode: $errorCode, log: $log, messageDate: $messageDate, messageText: $messageText, moreInfo: $moreInfo, requestMethod: $requestMethod, requestUrl: $requestUrl, sid: $sid, uri: $uri)';
+@override String toString() => 'AccountCallCallNotification(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  callSid: $callSid,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  errorCode: $errorCode,\n  log: $log,\n  messageDate: $messageDate,\n  messageText: $messageText,\n  moreInfo: $moreInfo,\n  requestMethod: $requestMethod,\n  requestUrl: $requestUrl,\n  sid: $sid,\n  uri: $uri,\n)';
 
  }

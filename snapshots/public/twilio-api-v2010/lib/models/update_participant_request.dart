@@ -136,6 +136,6 @@ UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? ho
 
 @override int get hashCode => Object.hash(muted, hold, holdUrl, holdMethod, announceUrl, announceMethod, waitUrl, waitMethod, beepOnExit, endConferenceOnExit, coaching, callSidToCoach);
 
-@override String toString() => 'UpdateParticipantRequest(muted: $muted, hold: $hold, holdUrl: $holdUrl, holdMethod: $holdMethod, announceUrl: $announceUrl, announceMethod: $announceMethod, waitUrl: $waitUrl, waitMethod: $waitMethod, beepOnExit: $beepOnExit, endConferenceOnExit: $endConferenceOnExit, coaching: $coaching, callSidToCoach: $callSidToCoach)';
+@override String toString() => 'UpdateParticipantRequest(\n  muted: $muted,\n  hold: $hold,\n  holdUrl: $holdUrl,\n  holdMethod: $holdMethod,\n  announceUrl: $announceUrl,\n  announceMethod: $announceMethod,\n  waitUrl: $waitUrl,\n  waitMethod: $waitMethod,\n  beepOnExit: $beepOnExit,\n  endConferenceOnExit: $endConferenceOnExit,\n  coaching: $coaching,\n  callSidToCoach: $callSidToCoach,\n)';
 
  }

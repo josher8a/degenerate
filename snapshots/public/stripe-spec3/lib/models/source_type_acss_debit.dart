@@ -75,6 +75,6 @@ SourceTypeAcssDebit copyWith({String? Function()? bankAddressCity, String? Funct
 
 @override int get hashCode => Object.hash(bankAddressCity, bankAddressLine1, bankAddressLine2, bankAddressPostalCode, bankName, category, country, fingerprint, last4, routingNumber);
 
-@override String toString() => 'SourceTypeAcssDebit(bankAddressCity: $bankAddressCity, bankAddressLine1: $bankAddressLine1, bankAddressLine2: $bankAddressLine2, bankAddressPostalCode: $bankAddressPostalCode, bankName: $bankName, category: $category, country: $country, fingerprint: $fingerprint, last4: $last4, routingNumber: $routingNumber)';
+@override String toString() => 'SourceTypeAcssDebit(\n  bankAddressCity: $bankAddressCity,\n  bankAddressLine1: $bankAddressLine1,\n  bankAddressLine2: $bankAddressLine2,\n  bankAddressPostalCode: $bankAddressPostalCode,\n  bankName: $bankName,\n  category: $category,\n  country: $country,\n  fingerprint: $fingerprint,\n  last4: $last4,\n  routingNumber: $routingNumber,\n)';
 
  }

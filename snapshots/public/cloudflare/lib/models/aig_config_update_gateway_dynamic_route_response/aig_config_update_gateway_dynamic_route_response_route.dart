@@ -77,6 +77,6 @@ AigConfigUpdateGatewayDynamicRouteResponseRoute copyWith({String? accountTag, Da
 
 @override int get hashCode => Object.hash(accountTag, createdAt, deployment, Object.hashAll(elements), gatewayId, id, modifiedAt, name, version);
 
-@override String toString() => 'AigConfigUpdateGatewayDynamicRouteResponseRoute(accountTag: $accountTag, createdAt: $createdAt, deployment: $deployment, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, version: $version)';
+@override String toString() => 'AigConfigUpdateGatewayDynamicRouteResponseRoute(\n  accountTag: $accountTag,\n  createdAt: $createdAt,\n  deployment: $deployment,\n  elements: $elements,\n  gatewayId: $gatewayId,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  name: $name,\n  version: $version,\n)';
 
  }

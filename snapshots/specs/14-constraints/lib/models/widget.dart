@@ -44,7 +44,7 @@ if (ratio$ != null) {
 }
 final tags$ = tags;
 if (tags$ != null) {
-  if (tags$.length < 1) errors.add('tags: must have >= 1 items');
+  if (tags$.isEmpty) errors.add('tags: must have >= 1 items');
   if (tags$.length > 3) errors.add('tags: must have <= 3 items');
   if (tags$.toSet().length != tags$.length) errors.add('tags: items must be unique');
 }

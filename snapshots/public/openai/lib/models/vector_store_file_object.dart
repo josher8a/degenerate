@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'vector_store_id': vectorStoreId,
   'status': status.toJson(),
-  'last_error': lastError != null ? lastError?.toJson() : null,
+  'last_error': lastError?.toJson(),
   if (chunkingStrategy != null) 'chunking_strategy': chunkingStrategy?.toJson(),
   'attributes': ?attributes,
 }; } 
@@ -115,6 +115,6 @@ VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object,
 
 @override int get hashCode => Object.hash(id, object, usageBytes, createdAt, vectorStoreId, status, lastError, chunkingStrategy, attributes);
 
-@override String toString() => 'VectorStoreFileObject(id: $id, object: $object, usageBytes: $usageBytes, createdAt: $createdAt, vectorStoreId: $vectorStoreId, status: $status, lastError: $lastError, chunkingStrategy: $chunkingStrategy, attributes: $attributes)';
+@override String toString() => 'VectorStoreFileObject(\n  id: $id,\n  object: $object,\n  usageBytes: $usageBytes,\n  createdAt: $createdAt,\n  vectorStoreId: $vectorStoreId,\n  status: $status,\n  lastError: $lastError,\n  chunkingStrategy: $chunkingStrategy,\n  attributes: $attributes,\n)';
 
  }

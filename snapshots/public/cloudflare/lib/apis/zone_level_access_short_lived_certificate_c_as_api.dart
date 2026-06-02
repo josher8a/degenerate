@@ -17,7 +17,7 @@ Future<ApiResult<AccessSchemasCa?, Never>> zoneLevelAccessShortLivedCertificateC
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/ca',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toJson())}/ca',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<AccessSchemasCa?, Never>> zoneLevelAccessShortLivedCertificateC
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/ca',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toJson())}/ca',
   headers: headers,
   options: options,
 );
@@ -61,7 +61,7 @@ Future<ApiResult<AccessCaComponentsSchemasIdResponseResult?, Never>> zoneLevelAc
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/${Uri.encodeComponent(appId.toString())}/ca',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/${Uri.encodeComponent(appId.toJson())}/ca',
   headers: headers,
   options: options,
 );
@@ -83,7 +83,7 @@ Future<ApiResult<List<AccessSchemasCa>?, Never>> zoneLevelAccessShortLivedCertif
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/apps/ca',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/apps/ca',
   headers: headers,
   options: options,
 );

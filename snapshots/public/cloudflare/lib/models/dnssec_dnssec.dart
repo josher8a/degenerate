@@ -180,6 +180,6 @@ DnssecDnssec copyWith({DnssecAlgorithm? Function()? algorithm, DnssecDigest? Fun
 
 @override int get hashCode => Object.hash(algorithm, digest, digestAlgorithm, digestType, dnssecMultiSigner, dnssecPresigned, dnssecUseNsec3, ds, flags, keyTag, keyType, modifiedOn, publicKey, status);
 
-@override String toString() => 'DnssecDnssec(algorithm: $algorithm, digest: $digest, digestAlgorithm: $digestAlgorithm, digestType: $digestType, dnssecMultiSigner: $dnssecMultiSigner, dnssecPresigned: $dnssecPresigned, dnssecUseNsec3: $dnssecUseNsec3, ds: $ds, flags: $flags, keyTag: $keyTag, keyType: $keyType, modifiedOn: $modifiedOn, publicKey: $publicKey, status: $status)';
+@override String toString() => 'DnssecDnssec(\n  algorithm: $algorithm,\n  digest: $digest,\n  digestAlgorithm: $digestAlgorithm,\n  digestType: $digestType,\n  dnssecMultiSigner: $dnssecMultiSigner,\n  dnssecPresigned: $dnssecPresigned,\n  dnssecUseNsec3: $dnssecUseNsec3,\n  ds: $ds,\n  flags: $flags,\n  keyTag: $keyTag,\n  keyType: $keyType,\n  modifiedOn: $modifiedOn,\n  publicKey: $publicKey,\n  status: $status,\n)';
 
  }

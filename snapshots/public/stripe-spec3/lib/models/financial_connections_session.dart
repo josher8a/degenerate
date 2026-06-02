@@ -126,6 +126,6 @@ FinancialConnectionsSession copyWith({BankConnectionsResourceAccountholder? Func
 
 @override int get hashCode => Object.hash(accountHolder, accounts, clientSecret, filters, id, livemode, object, Object.hashAll(permissions), Object.hashAll(prefetch ?? const []), returnUrl);
 
-@override String toString() => 'FinancialConnectionsSession(accountHolder: $accountHolder, accounts: $accounts, clientSecret: $clientSecret, filters: $filters, id: $id, livemode: $livemode, object: $object, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)';
+@override String toString() => 'FinancialConnectionsSession(\n  accountHolder: $accountHolder,\n  accounts: $accounts,\n  clientSecret: $clientSecret,\n  filters: $filters,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  permissions: $permissions,\n  prefetch: $prefetch,\n  returnUrl: $returnUrl,\n)';
 
  }

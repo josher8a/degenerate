@@ -17,7 +17,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> cloudflareImagesKeysListSigning
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/keys',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/keys',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> cloudflareImagesKeysAddSigningK
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/keys/${Uri.encodeComponent(signingKeyName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/keys/${Uri.encodeComponent(signingKeyName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -63,7 +63,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> cloudflareImagesKeysDeleteSigni
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/keys/${Uri.encodeComponent(signingKeyName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/keys/${Uri.encodeComponent(signingKeyName.toJson())}',
   headers: headers,
   options: options,
 );

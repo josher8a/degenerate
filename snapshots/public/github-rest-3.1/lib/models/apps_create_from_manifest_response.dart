@@ -155,6 +155,6 @@ AppsCreateFromManifestResponse copyWith({int? id, String? Function()? slug, Stri
 
 @override int get hashCode => Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount, clientSecret, webhookSecret, pem, Object.hashAll(additionalProperties.entries));
 
-@override String toString() => 'AppsCreateFromManifestResponse(id: $id, slug: $slug, nodeId: $nodeId, clientId: $clientId, owner: $owner, name: $name, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events, installationsCount: $installationsCount, clientSecret: $clientSecret, webhookSecret: $webhookSecret, pem: $pem, additionalProperties: $additionalProperties)';
+@override String toString() => 'AppsCreateFromManifestResponse(\n  id: $id,\n  slug: $slug,\n  nodeId: $nodeId,\n  clientId: $clientId,\n  owner: $owner,\n  name: $name,\n  description: $description,\n  externalUrl: $externalUrl,\n  htmlUrl: $htmlUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  permissions: $permissions,\n  events: $events,\n  installationsCount: $installationsCount,\n  clientSecret: $clientSecret,\n  webhookSecret: $webhookSecret,\n  pem: $pem,\n  additionalProperties: $additionalProperties,\n)';
 
  }

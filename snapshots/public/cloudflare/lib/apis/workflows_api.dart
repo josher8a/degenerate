@@ -42,7 +42,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorGetWorkflowDetailsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => WorListWorkflowsError.fromResponse(response),
+  onError: WorListWorkflowsError.fromResponse,
 );
  } 
 /// Get Workflow details
@@ -65,7 +65,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorGetWorkflowDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorGetWorkflowDetailsError.fromResponse(response),
+  onError: WorGetWorkflowDetailsError.fromResponse,
 );
  } 
 /// Create/modify Workflow
@@ -90,7 +90,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorCreateOrModifyWorkflowResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorCreateOrModifyWorkflowError.fromResponse(response),
+  onError: WorCreateOrModifyWorkflowError.fromResponse,
 );
  } 
 /// Deletes a Workflow
@@ -113,7 +113,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorDeleteWorkflowResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorDeleteWorkflowError.fromResponse(response),
+  onError: WorDeleteWorkflowError.fromResponse,
 );
  } 
 /// List of workflow instances
@@ -162,7 +162,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorListWorkflowInstancesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => WorListWorkflowInstancesError.fromResponse(response),
+  onError: WorListWorkflowInstancesError.fromResponse,
 );
  } 
 /// Create a new workflow instance
@@ -187,7 +187,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorBatchCreateWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorCreateNewWorkflowInstanceError.fromResponse(response),
+  onError: WorCreateNewWorkflowInstanceError.fromResponse,
 );
  } 
 /// Get logs and status from instance
@@ -221,7 +221,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorDescribeWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorDescribeWorkflowInstanceError.fromResponse(response),
+  onError: WorDescribeWorkflowInstanceError.fromResponse,
 );
  } 
 /// Send event to instance
@@ -246,7 +246,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) => WorSendEventWorkflowInstanceError.fromResponse(response),
+  onError: WorSendEventWorkflowInstanceError.fromResponse,
 );
  } 
 /// Change status of instance
@@ -271,7 +271,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorChangeStatusWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorChangeStatusWorkflowInstanceError.fromResponse(response),
+  onError: WorChangeStatusWorkflowInstanceError.fromResponse,
 );
  } 
 /// Batch create new Workflow instances
@@ -296,7 +296,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorBatchCreateWorkflowInstanceResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => WorBatchCreateWorkflowInstanceError.fromResponse(response),
+  onError: WorBatchCreateWorkflowInstanceError.fromResponse,
 );
  } 
 /// Batch terminate instances of a workflow
@@ -321,7 +321,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorBatchTerminateWorkflowInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorBatchTerminateWorkflowInstancesError.fromResponse(response),
+  onError: WorBatchTerminateWorkflowInstancesError.fromResponse,
 );
  } 
 /// Get status of the job responsible for terminate all instances of a workflow
@@ -344,7 +344,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorStatusTerminateWorkflowInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorStatusTerminateWorkflowInstancesError.fromResponse(response),
+  onError: WorStatusTerminateWorkflowInstancesError.fromResponse,
 );
  } 
 /// List deployed Workflow versions
@@ -378,7 +378,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorDescribeWorkflowVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => WorListWorkflowVersionsError.fromResponse(response),
+  onError: WorListWorkflowVersionsError.fromResponse,
 );
  } 
 /// Get Workflow version details
@@ -401,7 +401,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorDescribeWorkflowVersionsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorDescribeWorkflowVersionsError.fromResponse(response),
+  onError: WorDescribeWorkflowVersionsError.fromResponse,
 );
  } 
 /// Get Workflow version dag
@@ -424,7 +424,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorDescribeWorkflowVersionsDagResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorDescribeWorkflowVersionsDagError.fromResponse(response),
+  onError: WorDescribeWorkflowVersionsDagError.fromResponse,
 );
  } 
 /// Get Workflow version graph
@@ -447,7 +447,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorDescribeWorkflowVersionsDagResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorDescribeWorkflowVersionsGraphError.fromResponse(response),
+  onError: WorDescribeWorkflowVersionsGraphError.fromResponse,
 );
  } 
  }

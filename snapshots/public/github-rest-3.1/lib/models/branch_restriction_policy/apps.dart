@@ -93,6 +93,6 @@ Apps copyWith({int? Function()? id, String? Function()? slug, String? Function()
 
 @override int get hashCode => Object.hash(id, slug, nodeId, owner, name, clientId, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events ?? const []));
 
-@override String toString() => 'Apps(id: $id, slug: $slug, nodeId: $nodeId, owner: $owner, name: $name, clientId: $clientId, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events)';
+@override String toString() => 'Apps(\n  id: $id,\n  slug: $slug,\n  nodeId: $nodeId,\n  owner: $owner,\n  name: $name,\n  clientId: $clientId,\n  description: $description,\n  externalUrl: $externalUrl,\n  htmlUrl: $htmlUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  permissions: $permissions,\n  events: $events,\n)';
 
  }

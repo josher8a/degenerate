@@ -51,11 +51,11 @@ if (height < 0) errors.add('height: must be >= 0');
 if (height > 2048) errors.add('height: must be <= 2048');
 final negativePrompt$ = negativePrompt;
 if (negativePrompt$ != null) {
-  if (negativePrompt$.length < 1) errors.add('negativePrompt: length must be >= 1');
+  if (negativePrompt$.isEmpty) errors.add('negativePrompt: length must be >= 1');
 }
 if (numSteps < 1) errors.add('numSteps: must be >= 1');
 if (numSteps > 50) errors.add('numSteps: must be <= 50');
-if (prompt.length < 1) errors.add('prompt: length must be >= 1');
+if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
 final seed$ = seed;
 if (seed$ != null) {
   if (seed$ < 0) errors.add('seed: must be >= 0');

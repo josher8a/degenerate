@@ -87,6 +87,6 @@ RealtimeServerEventConversationItemInputAudioTranscriptionSegment copyWith({Stri
 
 @override int get hashCode => Object.hash(eventId, type, itemId, contentIndex, text, id, speaker, start, end);
 
-@override String toString() => 'RealtimeServerEventConversationItemInputAudioTranscriptionSegment(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, text: $text, id: $id, speaker: $speaker, start: $start, end: $end)';
+@override String toString() => 'RealtimeServerEventConversationItemInputAudioTranscriptionSegment(\n  eventId: $eventId,\n  type: $type,\n  itemId: $itemId,\n  contentIndex: $contentIndex,\n  text: $text,\n  id: $id,\n  speaker: $speaker,\n  start: $start,\n  end: $end,\n)';
 
  }

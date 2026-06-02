@@ -51,14 +51,14 @@ Map<String, dynamic> toJson() { return {
   'sha': sha,
   'size': size,
   'url': url.toString(),
-  'html_url': htmlUrl != null ? htmlUrl?.toString() : null,
-  'git_url': gitUrl != null ? gitUrl?.toString() : null,
-  'download_url': downloadUrl != null ? downloadUrl?.toString() : null,
+  'html_url': htmlUrl?.toString(),
+  'git_url': gitUrl?.toString(),
+  'download_url': downloadUrl?.toString(),
   'type': type,
   'content': content,
   'encoding': encoding,
   '_links': links.toJson(),
-  'license': license != null ? license?.toJson() : null,
+  'license': license?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('path') && json['path'] is String &&
@@ -106,6 +106,6 @@ LicenseContent copyWith({String? name, String? path, String? sha, int? size, Uri
 
 @override int get hashCode => Object.hash(name, path, sha, size, url, htmlUrl, gitUrl, downloadUrl, type, content, encoding, links, license);
 
-@override String toString() => 'LicenseContent(name: $name, path: $path, sha: $sha, size: $size, url: $url, htmlUrl: $htmlUrl, gitUrl: $gitUrl, downloadUrl: $downloadUrl, type: $type, content: $content, encoding: $encoding, links: $links, license: $license)';
+@override String toString() => 'LicenseContent(\n  name: $name,\n  path: $path,\n  sha: $sha,\n  size: $size,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  gitUrl: $gitUrl,\n  downloadUrl: $downloadUrl,\n  type: $type,\n  content: $content,\n  encoding: $encoding,\n  links: $links,\n  license: $license,\n)';
 
  }

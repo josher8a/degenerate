@@ -177,6 +177,6 @@ PostIssuingCardsRequest copyWith({String? Function()? cardholder, String? curren
 
 @override int get hashCode => Object.hash(cardholder, currency, expMonth, expYear, Object.hashAll(expand ?? const []), financialAccount, metadata, personalizationDesign, pin, replacementFor, replacementReason, secondLine, shipping, spendingControls, status, type);
 
-@override String toString() => 'PostIssuingCardsRequest(cardholder: $cardholder, currency: $currency, expMonth: $expMonth, expYear: $expYear, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, personalizationDesign: $personalizationDesign, pin: $pin, replacementFor: $replacementFor, replacementReason: $replacementReason, secondLine: $secondLine, shipping: $shipping, spendingControls: $spendingControls, status: $status, type: $type)';
+@override String toString() => 'PostIssuingCardsRequest(\n  cardholder: $cardholder,\n  currency: $currency,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  expand: $expand,\n  financialAccount: $financialAccount,\n  metadata: $metadata,\n  personalizationDesign: $personalizationDesign,\n  pin: $pin,\n  replacementFor: $replacementFor,\n  replacementReason: $replacementReason,\n  secondLine: $secondLine,\n  shipping: $shipping,\n  spendingControls: $spendingControls,\n  status: $status,\n  type: $type,\n)';
 
  }

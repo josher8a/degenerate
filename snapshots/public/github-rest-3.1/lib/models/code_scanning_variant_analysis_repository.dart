@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'full_name': fullName,
   'private': private,
   'stargazers_count': stargazersCount,
-  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
+  'updated_at': updatedAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String &&

@@ -241,6 +241,6 @@ TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnames
 
 @override int get hashCode => Object.hash(certificateAuthority, Object.hashAll(certificates), cloudflareBranding, Object.hashAll(dcvDelegationRecords ?? const []), Object.hashAll(hosts), id, primaryCertificate, status, type, Object.hashAll(validationErrors ?? const []), validationMethod, Object.hashAll(validationRecords ?? const []), validityDays);
 
-@override String toString() => 'TlsCertificatesAndHostnamesCertificatePack(certificateAuthority: $certificateAuthority, certificates: $certificates, cloudflareBranding: $cloudflareBranding, dcvDelegationRecords: $dcvDelegationRecords, hosts: $hosts, id: $id, primaryCertificate: $primaryCertificate, status: $status, type: $type, validationErrors: $validationErrors, validationMethod: $validationMethod, validationRecords: $validationRecords, validityDays: $validityDays)';
+@override String toString() => 'TlsCertificatesAndHostnamesCertificatePack(\n  certificateAuthority: $certificateAuthority,\n  certificates: $certificates,\n  cloudflareBranding: $cloudflareBranding,\n  dcvDelegationRecords: $dcvDelegationRecords,\n  hosts: $hosts,\n  id: $id,\n  primaryCertificate: $primaryCertificate,\n  status: $status,\n  type: $type,\n  validationErrors: $validationErrors,\n  validationMethod: $validationMethod,\n  validationRecords: $validationRecords,\n  validityDays: $validityDays,\n)';
 
  }

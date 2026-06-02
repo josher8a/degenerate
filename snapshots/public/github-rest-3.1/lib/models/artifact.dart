@@ -54,9 +54,9 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'archive_download_url': archiveDownloadUrl,
   'expired': expired,
-  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
-  'expires_at': expiresAt != null ? expiresAt?.toIso8601String() : null,
-  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
+  'created_at': createdAt?.toIso8601String(),
+  'expires_at': expiresAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
   'digest': ?digest,
   if (workflowRun != null) 'workflow_run': workflowRun?.toJson(),
 }; } 
@@ -101,6 +101,6 @@ Artifact copyWith({int? id, String? nodeId, String? name, int? sizeInBytes, Stri
 
 @override int get hashCode => Object.hash(id, nodeId, name, sizeInBytes, url, archiveDownloadUrl, expired, createdAt, expiresAt, updatedAt, digest, workflowRun);
 
-@override String toString() => 'Artifact(id: $id, nodeId: $nodeId, name: $name, sizeInBytes: $sizeInBytes, url: $url, archiveDownloadUrl: $archiveDownloadUrl, expired: $expired, createdAt: $createdAt, expiresAt: $expiresAt, updatedAt: $updatedAt, digest: $digest, workflowRun: $workflowRun)';
+@override String toString() => 'Artifact(\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  sizeInBytes: $sizeInBytes,\n  url: $url,\n  archiveDownloadUrl: $archiveDownloadUrl,\n  expired: $expired,\n  createdAt: $createdAt,\n  expiresAt: $expiresAt,\n  updatedAt: $updatedAt,\n  digest: $digest,\n  workflowRun: $workflowRun,\n)';
 
  }

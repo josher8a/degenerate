@@ -101,6 +101,6 @@ WorkersScriptAndVersionSettingsItem copyWith({WorkersScriptAndVersionSettingsIte
 
 @override int get hashCode => Object.hash(annotations, Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), limits, logpush, migrations, observability, placement, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers ?? const []), usageModel);
 
-@override String toString() => 'WorkersScriptAndVersionSettingsItem(annotations: $annotations, bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, limits: $limits, logpush: $logpush, migrations: $migrations, observability: $observability, placement: $placement, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)';
+@override String toString() => 'WorkersScriptAndVersionSettingsItem(\n  annotations: $annotations,\n  bindings: $bindings,\n  compatibilityDate: $compatibilityDate,\n  compatibilityFlags: $compatibilityFlags,\n  limits: $limits,\n  logpush: $logpush,\n  migrations: $migrations,\n  observability: $observability,\n  placement: $placement,\n  tags: $tags,\n  tailConsumers: $tailConsumers,\n  usageModel: $usageModel,\n)';
 
  }

@@ -143,6 +143,6 @@ DependencyGraphDiff2 copyWith({ChangeType? changeType, String? manifest, String?
 
 @override int get hashCode => Object.hash(changeType, manifest, ecosystem, name, version, packageUrl, license, sourceRepositoryUrl, Object.hashAll(vulnerabilities), scope);
 
-@override String toString() => 'DependencyGraphDiff2(changeType: $changeType, manifest: $manifest, ecosystem: $ecosystem, name: $name, version: $version, packageUrl: $packageUrl, license: $license, sourceRepositoryUrl: $sourceRepositoryUrl, vulnerabilities: $vulnerabilities, scope: $scope)';
+@override String toString() => 'DependencyGraphDiff2(\n  changeType: $changeType,\n  manifest: $manifest,\n  ecosystem: $ecosystem,\n  name: $name,\n  version: $version,\n  packageUrl: $packageUrl,\n  license: $license,\n  sourceRepositoryUrl: $sourceRepositoryUrl,\n  vulnerabilities: $vulnerabilities,\n  scope: $scope,\n)';
 
  }

@@ -18,7 +18,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/seats',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/seats',
   headers: headers,
   body: jsonEncode(body),
   options: options,

@@ -209,6 +209,6 @@ PostSourcesRequest copyWith({int? Function()? amount, String? Function()? curren
 
 @override int get hashCode => Object.hash(amount, currency, customer, Object.hashAll(expand ?? const []), flow, mandate, metadata, originalSource, owner, receiver, redirect, sourceOrder, statementDescriptor, token, type, usage);
 
-@override String toString() => 'PostSourcesRequest(amount: $amount, currency: $currency, customer: $customer, expand: $expand, flow: $flow, mandate: $mandate, metadata: $metadata, originalSource: $originalSource, owner: $owner, receiver: $receiver, redirect: $redirect, sourceOrder: $sourceOrder, statementDescriptor: $statementDescriptor, token: $token, type: $type, usage: $usage)';
+@override String toString() => 'PostSourcesRequest(\n  amount: $amount,\n  currency: $currency,\n  customer: $customer,\n  expand: $expand,\n  flow: $flow,\n  mandate: $mandate,\n  metadata: $metadata,\n  originalSource: $originalSource,\n  owner: $owner,\n  receiver: $receiver,\n  redirect: $redirect,\n  sourceOrder: $sourceOrder,\n  statementDescriptor: $statementDescriptor,\n  token: $token,\n  type: $type,\n  usage: $usage,\n)';
 
  }

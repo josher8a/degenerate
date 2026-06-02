@@ -14,7 +14,7 @@ factory MqConsumerRequest.fromJson(Map<String, dynamic> json) { return switch (j
 factory MqConsumerRequest.httpPull({MqQueueName? deadLetterQueue, MqHttpConsumerRequestSettings? settings, }) { return MqConsumerRequestHttpPull(MqHttpConsumerRequest(type: 'http_pull', deadLetterQueue: deadLetterQueue, settings: settings)); }
 
 /// Build the `worker` variant.
-factory MqConsumerRequest.worker({MqQueueName? deadLetterQueue, required MqScriptName scriptName, MqWorkerConsumerRequestSettings? settings, }) { return MqConsumerRequestWorker(MqWorkerConsumerRequest(type: 'worker', deadLetterQueue: deadLetterQueue, scriptName: scriptName, settings: settings)); }
+factory MqConsumerRequest.worker({required MqScriptName scriptName, MqQueueName? deadLetterQueue, MqWorkerConsumerRequestSettings? settings, }) { return MqConsumerRequestWorker(MqWorkerConsumerRequest(type: 'worker', deadLetterQueue: deadLetterQueue, scriptName: scriptName, settings: settings)); }
 
 /// The discriminator value identifying this variant.
 String get type;
@@ -24,6 +24,11 @@ bool get isUnknown => this is MqConsumerRequest$Unknown;
 
 /// Shared by all variants of this union.
 MqQueueName? get deadLetterQueue;
+R when<R>({required R Function(MqConsumerRequestHttpPull) httpPull, required R Function(MqConsumerRequestWorker) worker, required R Function(MqConsumerRequest$Unknown) unknown, }) { return switch (this) {
+  final MqConsumerRequestHttpPull v => httpPull(v),
+  final MqConsumerRequestWorker v => worker(v),
+  final MqConsumerRequest$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class MqConsumerRequestHttpPull extends MqConsumerRequest {const MqConsumerRequestHttpPull(this.mqHttpConsumerRequest);
 
@@ -76,9 +81,11 @@ MqConsumerRequestWorker copyWith({MqQueueName? Function()? deadLetterQueue, MqSc
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class MqConsumerRequest$Unknown extends MqConsumerRequest {const MqConsumerRequest$Unknown(this.json);
+@immutable final class MqConsumerRequest$Unknown extends MqConsumerRequest {MqConsumerRequest$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final MqQueueName? _deadLetterQueue = json['dead_letter_queue'] != null ? MqQueueName.fromJson(json['dead_letter_queue'] as String) : null;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -91,6 +98,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'MqConsumerRequest.unknown($json)';
 
-@override MqQueueName? get deadLetterQueue => json['dead_letter_queue'] != null ? MqQueueName.fromJson(json['dead_letter_queue'] as String) : null;
+@override MqQueueName? get deadLetterQueue => _deadLetterQueue;
 
  }

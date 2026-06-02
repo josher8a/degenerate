@@ -168,7 +168,7 @@ final String? verificationKey;
 
 Map<String, dynamic> toJson() { return {
   'account': account.toJson(),
-  'activated_on': activatedOn != null ? activatedOn?.toIso8601String() : null,
+  'activated_on': activatedOn?.toIso8601String(),
   'cname_suffix': ?cnameSuffix,
   'created_on': createdOn.toIso8601String(),
   'development_mode': developmentMode,
@@ -267,6 +267,6 @@ ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn
 
 @override int get hashCode => Object.hashAll([account, activatedOn, cnameSuffix, createdOn, developmentMode, id, meta, modifiedOn, name, Object.hashAll(nameServers), originalDnshost, Object.hashAll(originalNameServers ?? const []), originalRegistrar, owner, paused, Object.hashAll(permissions ?? const []), plan, status, tenant, tenantUnit, type, Object.hashAll(vanityNameServers), verificationKey]);
 
-@override String toString() => 'ZonesZone(account: $account, activatedOn: $activatedOn, cnameSuffix: $cnameSuffix, createdOn: $createdOn, developmentMode: $developmentMode, id: $id, meta: $meta, modifiedOn: $modifiedOn, name: $name, nameServers: $nameServers, originalDnshost: $originalDnshost, originalNameServers: $originalNameServers, originalRegistrar: $originalRegistrar, owner: $owner, paused: $paused, permissions: $permissions, plan: $plan, status: $status, tenant: $tenant, tenantUnit: $tenantUnit, type: $type, vanityNameServers: $vanityNameServers, verificationKey: $verificationKey)';
+@override String toString() => 'ZonesZone(\n  account: $account,\n  activatedOn: $activatedOn,\n  cnameSuffix: $cnameSuffix,\n  createdOn: $createdOn,\n  developmentMode: $developmentMode,\n  id: $id,\n  meta: $meta,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  nameServers: $nameServers,\n  originalDnshost: $originalDnshost,\n  originalNameServers: $originalNameServers,\n  originalRegistrar: $originalRegistrar,\n  owner: $owner,\n  paused: $paused,\n  permissions: $permissions,\n  plan: $plan,\n  status: $status,\n  tenant: $tenant,\n  tenantUnit: $tenantUnit,\n  type: $type,\n  vanityNameServers: $vanityNameServers,\n  verificationKey: $verificationKey,\n)';
 
  }

@@ -21,7 +21,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/certificate_authorities/hostname_associations',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/certificate_authorities/hostname_associations',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -44,7 +44,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/certificate_authorities/hostname_associations',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/certificate_authorities/hostname_associations',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -85,7 +85,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/client_certificates',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/client_certificates',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -110,7 +110,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/client_certificates',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/client_certificates',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -133,7 +133,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, Never>> clientCe
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/client_certificates/${Uri.encodeComponent(clientCertificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/client_certificates/${Uri.encodeComponent(clientCertificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -156,7 +156,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/client_certificates/${Uri.encodeComponent(clientCertificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/client_certificates/${Uri.encodeComponent(clientCertificateId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -179,7 +179,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, Never>> clientCe
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/client_certificates/${Uri.encodeComponent(clientCertificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/client_certificates/${Uri.encodeComponent(clientCertificateId.toJson())}',
   headers: headers,
   options: options,
 );

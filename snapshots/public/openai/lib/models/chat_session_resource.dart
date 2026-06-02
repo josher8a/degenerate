@@ -184,6 +184,6 @@ ChatSessionResource copyWith({String? id, ChatSessionResourceObject? object, int
 
 @override int get hashCode => Object.hash(id, object, expiresAt, clientSecret, workflow, user, rateLimits, maxRequestsPer1Minute, status, chatkitConfiguration);
 
-@override String toString() => 'ChatSessionResource(id: $id, object: $object, expiresAt: $expiresAt, clientSecret: $clientSecret, workflow: $workflow, user: $user, rateLimits: $rateLimits, maxRequestsPer1Minute: $maxRequestsPer1Minute, status: $status, chatkitConfiguration: $chatkitConfiguration)';
+@override String toString() => 'ChatSessionResource(\n  id: $id,\n  object: $object,\n  expiresAt: $expiresAt,\n  clientSecret: $clientSecret,\n  workflow: $workflow,\n  user: $user,\n  rateLimits: $rateLimits,\n  maxRequestsPer1Minute: $maxRequestsPer1Minute,\n  status: $status,\n  chatkitConfiguration: $chatkitConfiguration,\n)';
 
  }

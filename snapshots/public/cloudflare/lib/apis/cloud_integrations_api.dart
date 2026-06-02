@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/providers',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -45,7 +45,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => McnProvider.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CatalogSyncsPrebuiltPoliciesListError.fromResponse(response),
+  onError: CatalogSyncsPrebuiltPoliciesListError.fromResponse,
 );
  } 
 /// Create Cloud Integration
@@ -61,7 +61,7 @@ if (forwarded != null) {
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/providers',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -73,7 +73,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnProvider.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsCreateError.fromResponse(response),
+  onError: CatalogSyncsCreateError.fromResponse,
 );
  } 
 /// Read Cloud Integration
@@ -91,7 +91,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -104,7 +104,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnProvider.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsListError.fromResponse(response),
+  onError: CatalogSyncsListError.fromResponse,
 );
  } 
 /// Update Cloud Integration
@@ -117,7 +117,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -129,7 +129,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnProvider.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsPatchError.fromResponse(response),
+  onError: CatalogSyncsPatchError.fromResponse,
 );
  } 
 /// Patch Cloud Integration
@@ -142,7 +142,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -154,7 +154,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnProvider.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsPatchError.fromResponse(response),
+  onError: CatalogSyncsPatchError.fromResponse,
 );
  } 
 /// Delete Cloud Integration
@@ -166,7 +166,7 @@ Future<ApiResult<McnDeletedProvider?, CatalogSyncsListError>> providersDelete({r
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -177,7 +177,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnDeletedProvider.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsListError.fromResponse(response),
+  onError: CatalogSyncsListError.fromResponse,
 );
  } 
 /// Run Discovery
@@ -195,7 +195,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toString())}/discover',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toJson())}/discover',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -207,7 +207,7 @@ return execute(
   onSuccess: (response) {
     return McnGoodResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CatalogSyncsDeleteError.fromResponse(response),
+  onError: CatalogSyncsDeleteError.fromResponse,
 );
  } 
 /// Get Cloud Integration Setup Config
@@ -219,7 +219,7 @@ Future<ApiResult<McnProviderInitialSetupResponseResult?, CatalogSyncsListError>>
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toString())}/initial_setup',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/providers/${Uri.encodeComponent(providerId.toJson())}/initial_setup',
   headers: headers,
   options: options,
 );
@@ -230,7 +230,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnProviderInitialSetupResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsListError.fromResponse(response),
+  onError: CatalogSyncsListError.fromResponse,
 );
  } 
 /// Run Discovery for All Integrations
@@ -242,7 +242,7 @@ Future<ApiResult<McnGoodResponse, ProvidersDiscoverAllError>> providersDiscoverA
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/providers/discover',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/providers/discover',
   headers: headers,
   options: options,
 );
@@ -252,7 +252,7 @@ return execute(
   onSuccess: (response) {
     return McnGoodResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ProvidersDiscoverAllError.fromResponse(response),
+  onError: ProvidersDiscoverAllError.fromResponse,
 );
  } 
  }

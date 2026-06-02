@@ -63,7 +63,7 @@ Future<ApiResult<LoadBalancingMonitor?, Never>> loadBalancerMonitorsMonitorDetai
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}',
+  path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}',
+  path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -110,7 +110,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}',
+  path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -133,7 +133,7 @@ Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> loadBa
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}',
+  path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -156,7 +156,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}/preview',
+  path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toJson())}/preview',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -179,7 +179,7 @@ Future<ApiResult<List<LoadBalancingMonitorGroupReferencesResponseResult>, Never>
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}/references',
+  path: '/user/load_balancers/monitors/${Uri.encodeComponent(monitorId.toJson())}/references',
   headers: headers,
   options: options,
 );

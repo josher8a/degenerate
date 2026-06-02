@@ -30,7 +30,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => TelemetryValuesListResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => TelemetryValuesListError.fromResponse(response),
+  onError: TelemetryValuesListError.fromResponse,
 );
  } 
  }

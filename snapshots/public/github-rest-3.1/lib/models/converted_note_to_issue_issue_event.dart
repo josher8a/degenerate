@@ -84,6 +84,6 @@ ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, S
 
 @override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, projectCard);
 
-@override String toString() => 'ConvertedNoteToIssueIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, projectCard: $projectCard)';
+@override String toString() => 'ConvertedNoteToIssueIssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  performedViaGithubApp: $performedViaGithubApp,\n  projectCard: $projectCard,\n)';
 
  }

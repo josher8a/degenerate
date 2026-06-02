@@ -33,6 +33,14 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is McnResourceDetailsSectionItemValue$Unknown;
 
+R when<R>({required R Function(McnResourceDetailsSectionItemValueMcnStringItem) mcnStringItem, required R Function(McnResourceDetailsSectionItemValueMcnYamlItem) mcnYamlItem, required R Function(McnResourceDetailsSectionItemValueMcnYamlDiffItem) mcnYamlDiffItem, required R Function(McnResourceDetailsSectionItemValueMcnResourcePreviewItem) mcnResourcePreviewItem, required R Function(McnResourceDetailsSectionItemValueMcnListItem) mcnListItem, required R Function(McnResourceDetailsSectionItemValue$Unknown) unknown, }) { return switch (this) {
+  final McnResourceDetailsSectionItemValueMcnStringItem v => mcnStringItem(v),
+  final McnResourceDetailsSectionItemValueMcnYamlItem v => mcnYamlItem(v),
+  final McnResourceDetailsSectionItemValueMcnYamlDiffItem v => mcnYamlDiffItem(v),
+  final McnResourceDetailsSectionItemValueMcnResourcePreviewItem v => mcnResourcePreviewItem(v),
+  final McnResourceDetailsSectionItemValueMcnListItem v => mcnListItem(v),
+  final McnResourceDetailsSectionItemValue$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class McnResourceDetailsSectionItemValueMcnStringItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnStringItem(this.mcnStringItem);
 

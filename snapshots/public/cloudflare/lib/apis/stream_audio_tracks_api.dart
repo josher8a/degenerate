@@ -17,7 +17,7 @@ Future<ApiResult<List<StreamAdditionalAudio>?, Never>> listAudioTracks({required
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/audio',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/audio',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/audio/${Uri.encodeComponent(audioIdentifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/audio/${Uri.encodeComponent(audioIdentifier.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<String?, Never>> deleteAudioTracks({required StreamAccountIdent
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/audio/${Uri.encodeComponent(audioIdentifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/audio/${Uri.encodeComponent(audioIdentifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/audio/copy',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/audio/copy',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

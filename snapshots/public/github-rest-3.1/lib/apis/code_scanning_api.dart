@@ -70,7 +70,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeScanningOrganizationAlertItems.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CodeScanningListAlertsForOrgError.fromResponse(response),
+  onError: CodeScanningListAlertsForOrgError.fromResponse,
 );
  } 
 /// List code scanning alerts for a repository
@@ -143,7 +143,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeScanningAlertItems.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CodeScanningListAlertsForRepoError.fromResponse(response),
+  onError: CodeScanningListAlertsForRepoError.fromResponse,
 );
  } 
 /// Get a code scanning alert
@@ -167,7 +167,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningGetAlertError.fromResponse(response),
+  onError: CodeScanningGetAlertError.fromResponse,
 );
  } 
 /// Update a code scanning alert
@@ -192,7 +192,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningUpdateAlertError.fromResponse(response),
+  onError: CodeScanningUpdateAlertError.fromResponse,
 );
  } 
 /// Get the status of an autofix for a code scanning alert
@@ -216,7 +216,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAutofix.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningGetAutofixError.fromResponse(response),
+  onError: CodeScanningGetAutofixError.fromResponse,
 );
  } 
 /// Create an autofix for a code scanning alert
@@ -244,7 +244,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAutofix.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningCreateAutofixError.fromResponse(response),
+  onError: CodeScanningCreateAutofixError.fromResponse,
 );
  } 
 /// Commit an autofix for a code scanning alert
@@ -272,7 +272,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAutofixCommitsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningCommitAutofixError.fromResponse(response),
+  onError: CodeScanningCommitAutofixError.fromResponse,
 );
  } 
 /// List instances of a code scanning alert
@@ -314,7 +314,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeScanningAlertInstanceList.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CodeScanningListAlertInstancesError.fromResponse(response),
+  onError: CodeScanningListAlertInstancesError.fromResponse,
 );
  } 
 /// List code scanning analyses for a repository
@@ -383,7 +383,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeScanningAnalysis.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CodeScanningListRecentAnalysesError.fromResponse(response),
+  onError: CodeScanningListRecentAnalysesError.fromResponse,
 );
  } 
 /// Get a code scanning analysis for a repository
@@ -421,7 +421,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAnalysis.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningGetAnalysisError.fromResponse(response),
+  onError: CodeScanningGetAnalysisError.fromResponse,
 );
  } 
 /// Delete a code scanning analysis from a repository
@@ -514,7 +514,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningAnalysisDeletion.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningDeleteAnalysisError.fromResponse(response),
+  onError: CodeScanningDeleteAnalysisError.fromResponse,
 );
  } 
 /// List CodeQL databases for a repository
@@ -539,7 +539,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeScanningCodeqlDatabase.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CodeScanningListCodeqlDatabasesError.fromResponse(response),
+  onError: CodeScanningListCodeqlDatabasesError.fromResponse,
 );
  } 
 /// Get a CodeQL database for a repository
@@ -569,7 +569,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningCodeqlDatabase.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningGetCodeqlDatabaseError.fromResponse(response),
+  onError: CodeScanningGetCodeqlDatabaseError.fromResponse,
 );
  } 
 /// Delete a CodeQL database
@@ -591,7 +591,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CodeScanningDeleteCodeqlDatabaseError.fromResponse(response),
+  onError: CodeScanningDeleteCodeqlDatabaseError.fromResponse,
 );
  } 
 /// Create a CodeQL variant analysis
@@ -622,7 +622,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningVariantAnalysis.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningCreateVariantAnalysisError.fromResponse(response),
+  onError: CodeScanningCreateVariantAnalysisError.fromResponse,
 );
  } 
 /// Get the summary of a CodeQL variant analysis
@@ -646,7 +646,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningVariantAnalysis.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningGetVariantAnalysisError.fromResponse(response),
+  onError: CodeScanningGetVariantAnalysisError.fromResponse,
 );
  } 
 /// Get the analysis status of a repository in a CodeQL variant analysis
@@ -670,7 +670,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningVariantAnalysisRepoTask.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningGetVariantAnalysisRepoTaskError.fromResponse(response),
+  onError: CodeScanningGetVariantAnalysisRepoTaskError.fromResponse,
 );
  } 
 /// Get a code scanning default setup configuration
@@ -694,7 +694,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningDefaultSetup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningGetDefaultSetupError.fromResponse(response),
+  onError: CodeScanningGetDefaultSetupError.fromResponse,
 );
  } 
 /// Update a code scanning default setup configuration
@@ -720,7 +720,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningUpdateDefaultSetupError.fromResponse(response),
+  onError: CodeScanningUpdateDefaultSetupError.fromResponse,
 );
  } 
 /// Upload an analysis as SARIF data
@@ -777,7 +777,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningSarifsReceipt.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningUploadSarifError.fromResponse(response),
+  onError: CodeScanningUploadSarifError.fromResponse,
 );
  } 
 /// Get information about a SARIF upload
@@ -800,7 +800,7 @@ return execute(
   onSuccess: (response) {
     return CodeScanningSarifsStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeScanningGetSarifError.fromResponse(response),
+  onError: CodeScanningGetSarifError.fromResponse,
 );
  } 
  }

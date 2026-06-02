@@ -69,7 +69,7 @@ return execute(
   onSuccess: (response) {
     return Migration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get an organization migration status
@@ -108,7 +108,7 @@ return execute(
   onSuccess: (response) {
     return Migration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Download an organization migration archive
@@ -128,7 +128,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete an organization migration archive
@@ -148,7 +148,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Unlock an organization repository
@@ -168,7 +168,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List repositories in an organization migration
@@ -202,7 +202,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List user migrations
@@ -236,7 +236,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Migration.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Start a user migration
@@ -260,7 +260,7 @@ return execute(
   onSuccess: (response) {
     return Migration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListNotificationsForAuthenticatedUserError.fromResponse(response),
+  onError: ActivityListNotificationsForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get a user migration status
@@ -299,7 +299,7 @@ return execute(
   onSuccess: (response) {
     return Migration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Download a user migration archive
@@ -339,7 +339,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Delete a user migration archive
@@ -359,7 +359,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Unlock a user repository
@@ -379,7 +379,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// List repositories for a user migration
@@ -413,7 +413,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
  }

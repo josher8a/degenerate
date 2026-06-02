@@ -283,6 +283,6 @@ CreateImageRequest copyWith({String? prompt, CreateImageRequestModel? Function()
 
 @override int get hashCode => Object.hash(prompt, model, n, quality, responseFormat, outputFormat, outputCompression, stream, partialImages, size, moderation, background, style, user);
 
-@override String toString() => 'CreateImageRequest(prompt: $prompt, model: $model, n: $n, quality: $quality, responseFormat: $responseFormat, outputFormat: $outputFormat, outputCompression: $outputCompression, stream: $stream, partialImages: $partialImages, size: $size, moderation: $moderation, background: $background, style: $style, user: $user)';
+@override String toString() => 'CreateImageRequest(\n  prompt: $prompt,\n  model: $model,\n  n: $n,\n  quality: $quality,\n  responseFormat: $responseFormat,\n  outputFormat: $outputFormat,\n  outputCompression: $outputCompression,\n  stream: $stream,\n  partialImages: $partialImages,\n  size: $size,\n  moderation: $moderation,\n  background: $background,\n  style: $style,\n  user: $user,\n)';
 
  }

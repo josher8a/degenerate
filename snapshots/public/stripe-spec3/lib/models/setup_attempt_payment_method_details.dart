@@ -159,6 +159,6 @@ SetupAttemptPaymentMethodDetails copyWith({SetupAttemptPaymentMethodDetailsAcssD
 
 @override int get hashCode => Object.hashAll([acssDebit, amazonPay, auBecsDebit, bacsDebit, bancontact, boleto, card, cardPresent, cashapp, ideal, kakaoPay, klarna, krCard, link, naverPay, nzBankAccount, paypal, payto, revolutPay, sepaDebit, sofort, type, usBankAccount]);
 
-@override String toString() => 'SetupAttemptPaymentMethodDetails(acssDebit: $acssDebit, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, bancontact: $bancontact, boleto: $boleto, card: $card, cardPresent: $cardPresent, cashapp: $cashapp, ideal: $ideal, kakaoPay: $kakaoPay, klarna: $klarna, krCard: $krCard, link: $link, naverPay: $naverPay, nzBankAccount: $nzBankAccount, paypal: $paypal, payto: $payto, revolutPay: $revolutPay, sepaDebit: $sepaDebit, sofort: $sofort, type: $type, usBankAccount: $usBankAccount)';
+@override String toString() => 'SetupAttemptPaymentMethodDetails(\n  acssDebit: $acssDebit,\n  amazonPay: $amazonPay,\n  auBecsDebit: $auBecsDebit,\n  bacsDebit: $bacsDebit,\n  bancontact: $bancontact,\n  boleto: $boleto,\n  card: $card,\n  cardPresent: $cardPresent,\n  cashapp: $cashapp,\n  ideal: $ideal,\n  kakaoPay: $kakaoPay,\n  klarna: $klarna,\n  krCard: $krCard,\n  link: $link,\n  naverPay: $naverPay,\n  nzBankAccount: $nzBankAccount,\n  paypal: $paypal,\n  payto: $payto,\n  revolutPay: $revolutPay,\n  sepaDebit: $sepaDebit,\n  sofort: $sofort,\n  type: $type,\n  usBankAccount: $usBankAccount,\n)';
 
  }

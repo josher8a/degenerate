@@ -105,6 +105,6 @@ EvalResponsesSource copyWith({CreateEvalResponsesRunDataSourceType? type, Map<St
 
 @override int get hashCode => Object.hash(type, metadata, model, instructionsSearch, createdAfter, createdBefore, reasoningEffort, temperature, topP, Object.hashAll(users ?? const []), Object.hashAll(tools ?? const []));
 
-@override String toString() => 'EvalResponsesSource(type: $type, metadata: $metadata, model: $model, instructionsSearch: $instructionsSearch, createdAfter: $createdAfter, createdBefore: $createdBefore, reasoningEffort: $reasoningEffort, temperature: $temperature, topP: $topP, users: $users, tools: $tools)';
+@override String toString() => 'EvalResponsesSource(\n  type: $type,\n  metadata: $metadata,\n  model: $model,\n  instructionsSearch: $instructionsSearch,\n  createdAfter: $createdAfter,\n  createdBefore: $createdBefore,\n  reasoningEffort: $reasoningEffort,\n  temperature: $temperature,\n  topP: $topP,\n  users: $users,\n  tools: $tools,\n)';
 
  }

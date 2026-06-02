@@ -34,7 +34,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/namespaces/${Uri.encodeComponent(namespace)}/tables',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2-catalog/${Uri.encodeComponent(bucketName.toJson())}/namespaces/${Uri.encodeComponent(namespace)}/tables',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -47,7 +47,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2DataCatalogTableListResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => DisableCatalogError.fromResponse(response),
+  onError: DisableCatalogError.fromResponse,
 );
  } 
  }

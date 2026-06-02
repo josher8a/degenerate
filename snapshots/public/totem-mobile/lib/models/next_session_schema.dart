@@ -171,5 +171,5 @@ final class NextSessionSchema {
 
   @override
   String toString() =>
-      'NextSessionSchema(slug: $slug, start: $start, link: $link, title: $title, seatsLeft: $seatsLeft, duration: $duration, meetingProvider: $meetingProvider, calLink: $calLink, attending: $attending, cancelled: $cancelled, open: $open, joinable: $joinable)';
+      'NextSessionSchema(\n  slug: $slug,\n  start: $start,\n  link: $link,\n  title: $title,\n  seatsLeft: $seatsLeft,\n  duration: $duration,\n  meetingProvider: $meetingProvider,\n  calLink: $calLink,\n  attending: $attending,\n  cancelled: $cancelled,\n  open: $open,\n  joinable: $joinable,\n)';
 }

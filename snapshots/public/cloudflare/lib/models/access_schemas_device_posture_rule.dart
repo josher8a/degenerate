@@ -69,6 +69,6 @@ AccessSchemasDevicePostureRule copyWith({AccessDevicePostureCheck? Function()? c
 
 @override int get hashCode => Object.hash(check, data, description, error, id, ruleName, success, timestamp, type);
 
-@override String toString() => 'AccessSchemasDevicePostureRule(check: $check, data: $data, description: $description, error: $error, id: $id, ruleName: $ruleName, success: $success, timestamp: $timestamp, type: $type)';
+@override String toString() => 'AccessSchemasDevicePostureRule(\n  check: $check,\n  data: $data,\n  description: $description,\n  error: $error,\n  id: $id,\n  ruleName: $ruleName,\n  success: $success,\n  timestamp: $timestamp,\n  type: $type,\n)';
 
  }

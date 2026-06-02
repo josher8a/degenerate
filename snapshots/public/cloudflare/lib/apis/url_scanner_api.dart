@@ -30,7 +30,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => UrlscannerCreateScanBulkResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => UrlscannerCreateScanBulkError.fromResponse(response),
+  onError: UrlscannerCreateScanBulkError.fromResponse,
 );
  } 
 /// Get URL scan's DOM
@@ -52,7 +52,7 @@ return execute(
   onSuccess: (response) {
     return response.body;
   },
-  onError: (response) => UrlscannerGetScanDomError.fromResponse(response),
+  onError: UrlscannerGetScanDomError.fromResponse,
 );
  } 
 /// Get URL scan's HAR
@@ -74,7 +74,7 @@ return execute(
   onSuccess: (response) {
     return UrlscannerGetScanHarResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => UrlscannerGetScanHarError.fromResponse(response),
+  onError: UrlscannerGetScanHarError.fromResponse,
 );
  } 
 /// Get raw response
@@ -96,7 +96,7 @@ return execute(
   onSuccess: (response) {
     return response.body;
   },
-  onError: (response) => UrlscannerGetResponseError.fromResponse(response),
+  onError: UrlscannerGetResponseError.fromResponse,
 );
  } 
 /// Get URL scan
@@ -118,7 +118,7 @@ return execute(
   onSuccess: (response) {
     return UrlscannerGetScanResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => UrlscannerGetScanError.fromResponse(response),
+  onError: UrlscannerGetScanError.fromResponse,
 );
  } 
 /// Create URL Scan
@@ -143,7 +143,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String;
   },
-  onError: (response) => UrlscannerCreateScanError.fromResponse(response),
+  onError: UrlscannerCreateScanError.fromResponse,
 );
  } 
 /// Get screenshot
@@ -173,7 +173,7 @@ return execute(
   onSuccess: (response) {
     return response.body;
   },
-  onError: (response) => UrlscannerGetScanScreenshotError.fromResponse(response),
+  onError: UrlscannerGetScanScreenshotError.fromResponse,
 );
  } 
 /// Search URL scans
@@ -206,7 +206,7 @@ return execute(
   onSuccess: (response) {
     return UrlscannerSearchScansResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => UrlscannerSearchScansError.fromResponse(response),
+  onError: UrlscannerSearchScansError.fromResponse,
 );
  } 
  }

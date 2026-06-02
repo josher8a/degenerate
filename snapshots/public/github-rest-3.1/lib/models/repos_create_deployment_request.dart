@@ -77,6 +77,6 @@ ReposCreateDeploymentRequest copyWith({String? ref, String Function()? task, boo
 
 @override int get hashCode => Object.hash(ref, task, autoMerge, Object.hashAll(requiredContexts ?? const []), payload, environment, description, transientEnvironment, productionEnvironment);
 
-@override String toString() => 'ReposCreateDeploymentRequest(ref: $ref, task: $task, autoMerge: $autoMerge, requiredContexts: $requiredContexts, payload: $payload, environment: $environment, description: $description, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment)';
+@override String toString() => 'ReposCreateDeploymentRequest(\n  ref: $ref,\n  task: $task,\n  autoMerge: $autoMerge,\n  requiredContexts: $requiredContexts,\n  payload: $payload,\n  environment: $environment,\n  description: $description,\n  transientEnvironment: $transientEnvironment,\n  productionEnvironment: $productionEnvironment,\n)';
 
  }

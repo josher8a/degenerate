@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   'created_on': createdOn.toJson(),
   if (description != null) 'description': description?.toJson(),
   'id': id.toJson(),
-  'kind': kind != null ? kind?.toJson() : null,
+  'kind': kind?.toJson(),
   'modified_on': modifiedOn.toJson(),
   'name': name.toJson(),
   'num_items': numItems.toJson(),

@@ -75,6 +75,6 @@ FileCommitCommit copyWith({String? Function()? sha, String? Function()? nodeId, 
 
 @override int get hashCode => Object.hash(sha, nodeId, url, htmlUrl, author, committer, message, tree, Object.hashAll(parents ?? const []), verification);
 
-@override String toString() => 'FileCommitCommit(sha: $sha, nodeId: $nodeId, url: $url, htmlUrl: $htmlUrl, author: $author, committer: $committer, message: $message, tree: $tree, parents: $parents, verification: $verification)';
+@override String toString() => 'FileCommitCommit(\n  sha: $sha,\n  nodeId: $nodeId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  author: $author,\n  committer: $committer,\n  message: $message,\n  tree: $tree,\n  parents: $parents,\n  verification: $verification,\n)';
 
  }

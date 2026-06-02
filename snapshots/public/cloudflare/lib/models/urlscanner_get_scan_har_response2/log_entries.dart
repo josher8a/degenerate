@@ -123,6 +123,6 @@ LogEntries copyWith({String? initialPriority, String? initiatorType, String? pri
 
 @override int get hashCode => Object.hash(initialPriority, initiatorType, priority, requestId, requestTime, resourceType, cache, connection, pageref, request, response, serverIpAddress, startedDateTime, time);
 
-@override String toString() => 'LogEntries(initialPriority: $initialPriority, initiatorType: $initiatorType, priority: $priority, requestId: $requestId, requestTime: $requestTime, resourceType: $resourceType, cache: $cache, connection: $connection, pageref: $pageref, request: $request, response: $response, serverIpAddress: $serverIpAddress, startedDateTime: $startedDateTime, time: $time)';
+@override String toString() => 'LogEntries(\n  initialPriority: $initialPriority,\n  initiatorType: $initiatorType,\n  priority: $priority,\n  requestId: $requestId,\n  requestTime: $requestTime,\n  resourceType: $resourceType,\n  cache: $cache,\n  connection: $connection,\n  pageref: $pageref,\n  request: $request,\n  response: $response,\n  serverIpAddress: $serverIpAddress,\n  startedDateTime: $startedDateTime,\n  time: $time,\n)';
 
  }

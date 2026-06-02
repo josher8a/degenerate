@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/certificates',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -51,7 +51,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/certificates',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -74,7 +74,7 @@ Future<ApiResult<AccessCertificates?, Never>> accessMtlsAuthenticationGetAnMtlsC
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -97,7 +97,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -120,7 +120,7 @@ Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, Never>> ac
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -142,7 +142,7 @@ Future<ApiResult<List<AccessSettings>?, Never>> accessMtlsAuthenticationListMtls
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates/settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/certificates/settings',
   headers: headers,
   options: options,
 );
@@ -165,7 +165,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/certificates/settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/certificates/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

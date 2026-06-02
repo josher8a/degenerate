@@ -149,6 +149,6 @@ StreamLiveInput copyWith({StreamLiveInputCreated? Function()? created, StreamLiv
 
 @override int get hashCode => Object.hash(created, deleteRecordingAfterDays, enabled, meta, modified, recording, rtmps, rtmpsPlayback, srt, srtPlayback, status, uid, webRtc, webRtcPlayback);
 
-@override String toString() => 'StreamLiveInput(created: $created, deleteRecordingAfterDays: $deleteRecordingAfterDays, enabled: $enabled, meta: $meta, modified: $modified, recording: $recording, rtmps: $rtmps, rtmpsPlayback: $rtmpsPlayback, srt: $srt, srtPlayback: $srtPlayback, status: $status, uid: $uid, webRtc: $webRtc, webRtcPlayback: $webRtcPlayback)';
+@override String toString() => 'StreamLiveInput(\n  created: $created,\n  deleteRecordingAfterDays: $deleteRecordingAfterDays,\n  enabled: $enabled,\n  meta: $meta,\n  modified: $modified,\n  recording: $recording,\n  rtmps: $rtmps,\n  rtmpsPlayback: $rtmpsPlayback,\n  srt: $srt,\n  srtPlayback: $srtPlayback,\n  status: $status,\n  uid: $uid,\n  webRtc: $webRtc,\n  webRtcPlayback: $webRtcPlayback,\n)';
 
  }

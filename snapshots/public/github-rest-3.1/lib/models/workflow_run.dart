@@ -153,7 +153,7 @@ Map<String, dynamic> toJson() { return {
   'workflow_id': workflowId,
   'url': url,
   'html_url': htmlUrl,
-  'pull_requests': pullRequests != null ? pullRequests?.map((e) => e.toJson()).toList() : null,
+  'pull_requests': pullRequests?.map((e) => e.toJson()).toList(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   if (actor != null) 'actor': actor?.toJson(),
@@ -167,7 +167,7 @@ Map<String, dynamic> toJson() { return {
   'rerun_url': rerunUrl,
   'previous_attempt_url': ?previousAttemptUrl,
   'workflow_url': workflowUrl,
-  'head_commit': headCommit != null ? headCommit?.toJson() : null,
+  'head_commit': headCommit?.toJson(),
   'repository': repository.toJson(),
   'head_repository': headRepository.toJson(),
   'head_repository_id': ?headRepositoryId,
@@ -278,6 +278,6 @@ WorkflowRun copyWith({int? id, String? Function()? name, String? nodeId, int? Fu
 
 @override int get hashCode => Object.hashAll([id, name, nodeId, checkSuiteId, checkSuiteNodeId, headBranch, headSha, path, runNumber, runAttempt, Object.hashAll(referencedWorkflows ?? const []), event, status, conclusion, workflowId, url, htmlUrl, Object.hashAll(pullRequests ?? const []), createdAt, updatedAt, actor, triggeringActor, runStartedAt, jobsUrl, logsUrl, checkSuiteUrl, artifactsUrl, cancelUrl, rerunUrl, previousAttemptUrl, workflowUrl, headCommit, repository, headRepository, headRepositoryId, displayTitle]);
 
-@override String toString() => 'WorkflowRun(id: $id, name: $name, nodeId: $nodeId, checkSuiteId: $checkSuiteId, checkSuiteNodeId: $checkSuiteNodeId, headBranch: $headBranch, headSha: $headSha, path: $path, runNumber: $runNumber, runAttempt: $runAttempt, referencedWorkflows: $referencedWorkflows, event: $event, status: $status, conclusion: $conclusion, workflowId: $workflowId, url: $url, htmlUrl: $htmlUrl, pullRequests: $pullRequests, createdAt: $createdAt, updatedAt: $updatedAt, actor: $actor, triggeringActor: $triggeringActor, runStartedAt: $runStartedAt, jobsUrl: $jobsUrl, logsUrl: $logsUrl, checkSuiteUrl: $checkSuiteUrl, artifactsUrl: $artifactsUrl, cancelUrl: $cancelUrl, rerunUrl: $rerunUrl, previousAttemptUrl: $previousAttemptUrl, workflowUrl: $workflowUrl, headCommit: $headCommit, repository: $repository, headRepository: $headRepository, headRepositoryId: $headRepositoryId, displayTitle: $displayTitle)';
+@override String toString() => 'WorkflowRun(\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  checkSuiteId: $checkSuiteId,\n  checkSuiteNodeId: $checkSuiteNodeId,\n  headBranch: $headBranch,\n  headSha: $headSha,\n  path: $path,\n  runNumber: $runNumber,\n  runAttempt: $runAttempt,\n  referencedWorkflows: $referencedWorkflows,\n  event: $event,\n  status: $status,\n  conclusion: $conclusion,\n  workflowId: $workflowId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  pullRequests: $pullRequests,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  actor: $actor,\n  triggeringActor: $triggeringActor,\n  runStartedAt: $runStartedAt,\n  jobsUrl: $jobsUrl,\n  logsUrl: $logsUrl,\n  checkSuiteUrl: $checkSuiteUrl,\n  artifactsUrl: $artifactsUrl,\n  cancelUrl: $cancelUrl,\n  rerunUrl: $rerunUrl,\n  previousAttemptUrl: $previousAttemptUrl,\n  workflowUrl: $workflowUrl,\n  headCommit: $headCommit,\n  repository: $repository,\n  headRepository: $headRepository,\n  headRepositoryId: $headRepositoryId,\n  displayTitle: $displayTitle,\n)';
 
  }

@@ -142,6 +142,6 @@ AccountAddress copyWith({String? Function()? accountSid, String? Function()? cit
 
 @override int get hashCode => Object.hash(accountSid, city, customerName, dateCreated, dateUpdated, friendlyName, isoCountry, postalCode, region, sid, street, uri, emergencyEnabled, validated, verified, streetSecondary);
 
-@override String toString() => 'AccountAddress(accountSid: $accountSid, city: $city, customerName: $customerName, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, isoCountry: $isoCountry, postalCode: $postalCode, region: $region, sid: $sid, street: $street, uri: $uri, emergencyEnabled: $emergencyEnabled, validated: $validated, verified: $verified, streetSecondary: $streetSecondary)';
+@override String toString() => 'AccountAddress(\n  accountSid: $accountSid,\n  city: $city,\n  customerName: $customerName,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  friendlyName: $friendlyName,\n  isoCountry: $isoCountry,\n  postalCode: $postalCode,\n  region: $region,\n  sid: $sid,\n  street: $street,\n  uri: $uri,\n  emergencyEnabled: $emergencyEnabled,\n  validated: $validated,\n  verified: $verified,\n  streetSecondary: $streetSecondary,\n)';
 
  }

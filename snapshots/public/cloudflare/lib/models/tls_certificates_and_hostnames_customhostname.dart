@@ -170,6 +170,6 @@ TlsCertificatesAndHostnamesCustomhostname copyWith({TlsCertificatesAndHostnamesC
 
 @override int get hashCode => Object.hash(createdAt, customMetadata, customOriginServer, customOriginSni, hostname, id, ownershipVerification, ownershipVerificationHttp, ssl, status, Object.hashAll(verificationErrors ?? const []));
 
-@override String toString() => 'TlsCertificatesAndHostnamesCustomhostname(createdAt: $createdAt, customMetadata: $customMetadata, customOriginServer: $customOriginServer, customOriginSni: $customOriginSni, hostname: $hostname, id: $id, ownershipVerification: $ownershipVerification, ownershipVerificationHttp: $ownershipVerificationHttp, ssl: $ssl, status: $status, verificationErrors: $verificationErrors)';
+@override String toString() => 'TlsCertificatesAndHostnamesCustomhostname(\n  createdAt: $createdAt,\n  customMetadata: $customMetadata,\n  customOriginServer: $customOriginServer,\n  customOriginSni: $customOriginSni,\n  hostname: $hostname,\n  id: $id,\n  ownershipVerification: $ownershipVerification,\n  ownershipVerificationHttp: $ownershipVerificationHttp,\n  ssl: $ssl,\n  status: $status,\n  verificationErrors: $verificationErrors,\n)';
 
  }

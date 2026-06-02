@@ -145,6 +145,6 @@ ObservatoryLighthouseReport copyWith({double? Function()? cls, ObservatoryDevice
 
 @override int get hashCode => Object.hash(cls, deviceType, error, fcp, jsonReportUrl, lcp, performanceScore, si, state, tbt, ttfb, tti);
 
-@override String toString() => 'ObservatoryLighthouseReport(cls: $cls, deviceType: $deviceType, error: $error, fcp: $fcp, jsonReportUrl: $jsonReportUrl, lcp: $lcp, performanceScore: $performanceScore, si: $si, state: $state, tbt: $tbt, ttfb: $ttfb, tti: $tti)';
+@override String toString() => 'ObservatoryLighthouseReport(\n  cls: $cls,\n  deviceType: $deviceType,\n  error: $error,\n  fcp: $fcp,\n  jsonReportUrl: $jsonReportUrl,\n  lcp: $lcp,\n  performanceScore: $performanceScore,\n  si: $si,\n  state: $state,\n  tbt: $tbt,\n  ttfb: $ttfb,\n  tti: $tti,\n)';
 
  }

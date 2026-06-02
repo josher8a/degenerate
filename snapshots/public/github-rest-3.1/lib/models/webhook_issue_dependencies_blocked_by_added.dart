@@ -104,6 +104,6 @@ WebhookIssueDependenciesBlockedByAdded copyWith({WebhookIssueDependenciesBlocked
 
 @override int get hashCode => Object.hash(action, blockedIssueId, blockedIssue, blockingIssueId, blockingIssue, blockingIssueRepo, installation, organization, repository, sender);
 
-@override String toString() => 'WebhookIssueDependenciesBlockedByAdded(action: $action, blockedIssueId: $blockedIssueId, blockedIssue: $blockedIssue, blockingIssueId: $blockingIssueId, blockingIssue: $blockingIssue, blockingIssueRepo: $blockingIssueRepo, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+@override String toString() => 'WebhookIssueDependenciesBlockedByAdded(\n  action: $action,\n  blockedIssueId: $blockedIssueId,\n  blockedIssue: $blockedIssue,\n  blockingIssueId: $blockingIssueId,\n  blockingIssue: $blockingIssue,\n  blockingIssueRepo: $blockingIssueRepo,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  sender: $sender,\n)';
 
  }

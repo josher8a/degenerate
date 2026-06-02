@@ -64,7 +64,7 @@ Future<ApiResult<IamMembershipWithPolicies?, Never>> userSAccountMembershipsMemb
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/memberships/${Uri.encodeComponent(membershipId.toString())}',
+  path: '/memberships/${Uri.encodeComponent(membershipId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -87,7 +87,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/memberships/${Uri.encodeComponent(membershipId.toString())}',
+  path: '/memberships/${Uri.encodeComponent(membershipId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -110,7 +110,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> userSAccountMembershipsDeleteMemb
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/memberships/${Uri.encodeComponent(membershipId.toString())}',
+  path: '/memberships/${Uri.encodeComponent(membershipId.toJson())}',
   headers: headers,
   options: options,
 );

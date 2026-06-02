@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'original_position': originalPosition,
   'subject_type': ?subjectType,
   'commit_id': commitId,
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
   'body': body,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
@@ -152,6 +152,6 @@ PullRequestReviewCommentEventComment copyWith({int? id, String? nodeId, Uri? url
 
 @override int get hashCode => Object.hash(id, nodeId, url, pullRequestReviewId, diffHunk, path, position, originalPosition, subjectType, commitId, user, body, createdAt, updatedAt, htmlUrl, pullRequestUrl, links, originalCommitId, reactions, inReplyToId);
 
-@override String toString() => 'PullRequestReviewCommentEventComment(id: $id, nodeId: $nodeId, url: $url, pullRequestReviewId: $pullRequestReviewId, diffHunk: $diffHunk, path: $path, position: $position, originalPosition: $originalPosition, subjectType: $subjectType, commitId: $commitId, user: $user, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, originalCommitId: $originalCommitId, reactions: $reactions, inReplyToId: $inReplyToId)';
+@override String toString() => 'PullRequestReviewCommentEventComment(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  pullRequestReviewId: $pullRequestReviewId,\n  diffHunk: $diffHunk,\n  path: $path,\n  position: $position,\n  originalPosition: $originalPosition,\n  subjectType: $subjectType,\n  commitId: $commitId,\n  user: $user,\n  body: $body,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  htmlUrl: $htmlUrl,\n  pullRequestUrl: $pullRequestUrl,\n  links: $links,\n  originalCommitId: $originalCommitId,\n  reactions: $reactions,\n  inReplyToId: $inReplyToId,\n)';
 
  }

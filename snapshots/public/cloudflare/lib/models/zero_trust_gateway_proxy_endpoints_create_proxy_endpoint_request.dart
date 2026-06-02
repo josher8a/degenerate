@@ -23,6 +23,11 @@ bool get isUnknown => this is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointR
 
 /// Shared by all variants of this union.
 ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name;
+R when<R>({required R Function(ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity) identity, required R Function(ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp) ip, required R Function(ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown) unknown, }) { return switch (this) {
+  final ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity v => identity(v),
+  final ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp v => ip(v),
+  final ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity extends ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(this.zeroTrustGatewayProxyEndpointIdentityCreate);
 
@@ -72,9 +77,11 @@ ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp copyWith({ZeroTrustGa
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown extends ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown(this.json);
+@immutable final class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown extends ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest {ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final ZeroTrustGatewayProxyEndpointsComponentsSchemasName _name = ZeroTrustGatewayProxyEndpointsComponentsSchemasName.fromJson(json['name'] as String);
 
 @override String get kind => json['kind'] as String? ?? '';
 
@@ -87,6 +94,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.unknown($json)';
 
-@override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name => ZeroTrustGatewayProxyEndpointsComponentsSchemasName.fromJson(json['name'] as String);
+@override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name => _name;
 
  }

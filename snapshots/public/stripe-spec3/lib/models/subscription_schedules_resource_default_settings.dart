@@ -92,6 +92,6 @@ SubscriptionSchedulesResourceDefaultSettings copyWith({double? Function()? appli
 
 @override int get hashCode => Object.hash(applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, defaultPaymentMethod, description, invoiceSettings, onBehalfOf, transferData);
 
-@override String toString() => 'SubscriptionSchedulesResourceDefaultSettings(applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, defaultPaymentMethod: $defaultPaymentMethod, description: $description, invoiceSettings: $invoiceSettings, onBehalfOf: $onBehalfOf, transferData: $transferData)';
+@override String toString() => 'SubscriptionSchedulesResourceDefaultSettings(\n  applicationFeePercent: $applicationFeePercent,\n  automaticTax: $automaticTax,\n  billingCycleAnchor: $billingCycleAnchor,\n  billingThresholds: $billingThresholds,\n  collectionMethod: $collectionMethod,\n  defaultPaymentMethod: $defaultPaymentMethod,\n  description: $description,\n  invoiceSettings: $invoiceSettings,\n  onBehalfOf: $onBehalfOf,\n  transferData: $transferData,\n)';
 
  }

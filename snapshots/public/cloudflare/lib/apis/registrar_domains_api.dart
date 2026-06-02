@@ -17,7 +17,7 @@ Future<ApiResult<List<DomainProperties>?, Never>> registrarDomainsListDomains({r
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/registrar/domains',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/registrar/domains',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> registrarDomainsGetDomain({requi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/registrar/domains/${Uri.encodeComponent(domainName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/registrar/domains/${Uri.encodeComponent(domainName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -62,7 +62,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/registrar/domains/${Uri.encodeComponent(domainName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/registrar/domains/${Uri.encodeComponent(domainName.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

@@ -35,7 +35,7 @@ return execute(
   onSuccess: (response) {
     return GetAttackerListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetAttackerListError.fromResponse(response),
+  onError: GetAttackerListError.fromResponse,
 );
  } 
  }

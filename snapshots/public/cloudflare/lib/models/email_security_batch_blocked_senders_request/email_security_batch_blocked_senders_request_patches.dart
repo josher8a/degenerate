@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id');
 List<String> validate() { final errors = <String>[];
 final pattern$ = pattern;
 if (pattern$ != null) {
-  if (pattern$.length < 1) errors.add('pattern: length must be >= 1');
+  if (pattern$.isEmpty) errors.add('pattern: length must be >= 1');
 }
 return errors; } 
 EmailSecurityBatchBlockedSendersRequestPatches copyWith({String? Function()? comments, bool? Function()? isRegex, String? Function()? pattern, EmailSecurityPatternType? Function()? patternType, EmailSecurityBlockedSenderId? id, }) { return EmailSecurityBatchBlockedSendersRequestPatches(

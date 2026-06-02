@@ -92,6 +92,6 @@ AssignedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? a
 
 @override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, assignee, assigner);
 
-@override String toString() => 'AssignedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, assignee: $assignee, assigner: $assigner)';
+@override String toString() => 'AssignedIssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  performedViaGithubApp: $performedViaGithubApp,\n  assignee: $assignee,\n  assigner: $assigner,\n)';
 
  }

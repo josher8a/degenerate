@@ -121,6 +121,6 @@ EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String?
 
 @override int get hashCode => Object.hash(object, id, runId, evalId, createdAt, status, datasourceItemId, datasourceItem, Object.hashAll(results), sample);
 
-@override String toString() => 'EvalRunOutputItem(object: $object, id: $id, runId: $runId, evalId: $evalId, createdAt: $createdAt, status: $status, datasourceItemId: $datasourceItemId, datasourceItem: $datasourceItem, results: $results, sample: $sample)';
+@override String toString() => 'EvalRunOutputItem(\n  object: $object,\n  id: $id,\n  runId: $runId,\n  evalId: $evalId,\n  createdAt: $createdAt,\n  status: $status,\n  datasourceItemId: $datasourceItemId,\n  datasourceItem: $datasourceItem,\n  results: $results,\n  sample: $sample,\n)';
 
  }

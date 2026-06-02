@@ -85,6 +85,6 @@ CodespacesCreateWithPrForAuthenticatedUserRequest copyWith({String? Function()? 
 
 @override int get hashCode => Object.hash(location, geo, clientIp, machine, devcontainerPath, multiRepoPermissionsOptOut, workingDirectory, idleTimeoutMinutes, displayName, retentionPeriodMinutes);
 
-@override String toString() => 'CodespacesCreateWithPrForAuthenticatedUserRequest(location: $location, geo: $geo, clientIp: $clientIp, machine: $machine, devcontainerPath: $devcontainerPath, multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes, displayName: $displayName, retentionPeriodMinutes: $retentionPeriodMinutes)';
+@override String toString() => 'CodespacesCreateWithPrForAuthenticatedUserRequest(\n  location: $location,\n  geo: $geo,\n  clientIp: $clientIp,\n  machine: $machine,\n  devcontainerPath: $devcontainerPath,\n  multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut,\n  workingDirectory: $workingDirectory,\n  idleTimeoutMinutes: $idleTimeoutMinutes,\n  displayName: $displayName,\n  retentionPeriodMinutes: $retentionPeriodMinutes,\n)';
 
  }

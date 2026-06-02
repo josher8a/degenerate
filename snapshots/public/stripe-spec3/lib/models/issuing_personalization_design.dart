@@ -184,6 +184,6 @@ IssuingPersonalizationDesign copyWith({IssuingPersonalizationDesignCardLogo? Fun
 
 @override int get hashCode => Object.hash(cardLogo, carrierText, created, id, livemode, lookupKey, metadata, name, object, physicalBundle, preferences, rejectionReasons, status);
 
-@override String toString() => 'IssuingPersonalizationDesign(cardLogo: $cardLogo, carrierText: $carrierText, created: $created, id: $id, livemode: $livemode, lookupKey: $lookupKey, metadata: $metadata, name: $name, object: $object, physicalBundle: $physicalBundle, preferences: $preferences, rejectionReasons: $rejectionReasons, status: $status)';
+@override String toString() => 'IssuingPersonalizationDesign(\n  cardLogo: $cardLogo,\n  carrierText: $carrierText,\n  created: $created,\n  id: $id,\n  livemode: $livemode,\n  lookupKey: $lookupKey,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n  physicalBundle: $physicalBundle,\n  preferences: $preferences,\n  rejectionReasons: $rejectionReasons,\n  status: $status,\n)';
 
  }

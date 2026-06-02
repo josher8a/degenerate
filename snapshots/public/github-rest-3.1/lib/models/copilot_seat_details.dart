@@ -115,6 +115,6 @@ CopilotSeatDetails copyWith({SimpleUser? Function()? assignee, OrganizationSimpl
 
 @override int get hashCode => Object.hash(assignee, organization, assigningTeam, pendingCancellationDate, lastActivityAt, lastActivityEditor, lastAuthenticatedAt, createdAt, updatedAt, planType);
 
-@override String toString() => 'CopilotSeatDetails(assignee: $assignee, organization: $organization, assigningTeam: $assigningTeam, pendingCancellationDate: $pendingCancellationDate, lastActivityAt: $lastActivityAt, lastActivityEditor: $lastActivityEditor, lastAuthenticatedAt: $lastAuthenticatedAt, createdAt: $createdAt, updatedAt: $updatedAt, planType: $planType)';
+@override String toString() => 'CopilotSeatDetails(\n  assignee: $assignee,\n  organization: $organization,\n  assigningTeam: $assigningTeam,\n  pendingCancellationDate: $pendingCancellationDate,\n  lastActivityAt: $lastActivityAt,\n  lastActivityEditor: $lastActivityEditor,\n  lastAuthenticatedAt: $lastAuthenticatedAt,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  planType: $planType,\n)';
 
  }

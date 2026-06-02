@@ -17,7 +17,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> getAccountLimits({required Build
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/account/limits',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/account/limits',
   headers: headers,
   options: options,
 );

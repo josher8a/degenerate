@@ -45,7 +45,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => DestinationListResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => DestinationListError.fromResponse(response),
+  onError: DestinationListError.fromResponse,
 );
  } 
 /// Create Destination
@@ -70,7 +70,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DestinationCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => DestinationCreateError.fromResponse(response),
+  onError: DestinationCreateError.fromResponse,
 );
  } 
 /// Update Destination
@@ -95,7 +95,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DestinationCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => DestinationUpdateError.fromResponse(response),
+  onError: DestinationUpdateError.fromResponse,
 );
  } 
 /// Delete Destination
@@ -118,7 +118,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DestinationCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => DestinationsDeleteError.fromResponse(response),
+  onError: DestinationsDeleteError.fromResponse,
 );
  } 
  }

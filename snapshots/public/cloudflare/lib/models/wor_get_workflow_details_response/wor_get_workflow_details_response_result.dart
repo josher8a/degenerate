@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'modified_on': modifiedOn.toIso8601String(),
   'name': name,
   'script_name': scriptName,
-  'triggered_on': triggeredOn != null ? triggeredOn?.toIso8601String() : null,
+  'triggered_on': triggeredOn?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('class_name') && json['class_name'] is String &&
       json.containsKey('created_on') && json['created_on'] is String &&
@@ -49,7 +49,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('class
       json.containsKey('triggered_on') && json['triggered_on'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.isEmpty) errors.add('name: length must be >= 1');
 if (name.length > 64) errors.add('name: length must be <= 64');
 if (!RegExp(r'^[a-zA-Z0-9_][a-zA-Z0-9-_]*$').hasMatch(name)) errors.add(r'name: must match pattern ^[a-zA-Z0-9_][a-zA-Z0-9-_]*$');
 return errors; } 

@@ -80,6 +80,6 @@ AccessSchemasOrganizations copyWith({AccessSchemasAuthDomain? Function()? authDo
 
 @override int get hashCode => Object.hash(authDomain, createdAt, denyUnmatchedRequests, Object.hashAll(denyUnmatchedRequestsExemptedZoneNames ?? const []), isUiReadOnly, loginDesign, name, uiReadOnlyToggleReason, updatedAt, userSeatExpirationInactiveTime);
 
-@override String toString() => 'AccessSchemasOrganizations(authDomain: $authDomain, createdAt: $createdAt, denyUnmatchedRequests: $denyUnmatchedRequests, denyUnmatchedRequestsExemptedZoneNames: $denyUnmatchedRequestsExemptedZoneNames, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, name: $name, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, updatedAt: $updatedAt, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime)';
+@override String toString() => 'AccessSchemasOrganizations(\n  authDomain: $authDomain,\n  createdAt: $createdAt,\n  denyUnmatchedRequests: $denyUnmatchedRequests,\n  denyUnmatchedRequestsExemptedZoneNames: $denyUnmatchedRequestsExemptedZoneNames,\n  isUiReadOnly: $isUiReadOnly,\n  loginDesign: $loginDesign,\n  name: $name,\n  uiReadOnlyToggleReason: $uiReadOnlyToggleReason,\n  updatedAt: $updatedAt,\n  userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime,\n)';
 
  }

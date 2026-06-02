@@ -118,6 +118,6 @@ McnCreateOnrampRequest copyWith({McnResourceId? Function()? adoptedHubId, List<M
 
 @override int get hashCode => Object.hash(adoptedHubId, Object.hashAll(attachedHubs ?? const []), Object.hashAll(attachedVpcs ?? const []), cloudAsn, cloudType, description, dynamicRouting, hubProviderId, installRoutesInCloud, installRoutesInMagicWan, manageHubToHubAttachments, manageVpcToHubAttachments, name, region, type, vpc);
 
-@override String toString() => 'McnCreateOnrampRequest(adoptedHubId: $adoptedHubId, attachedHubs: $attachedHubs, attachedVpcs: $attachedVpcs, cloudAsn: $cloudAsn, cloudType: $cloudType, description: $description, dynamicRouting: $dynamicRouting, hubProviderId: $hubProviderId, installRoutesInCloud: $installRoutesInCloud, installRoutesInMagicWan: $installRoutesInMagicWan, manageHubToHubAttachments: $manageHubToHubAttachments, manageVpcToHubAttachments: $manageVpcToHubAttachments, name: $name, region: $region, type: $type, vpc: $vpc)';
+@override String toString() => 'McnCreateOnrampRequest(\n  adoptedHubId: $adoptedHubId,\n  attachedHubs: $attachedHubs,\n  attachedVpcs: $attachedVpcs,\n  cloudAsn: $cloudAsn,\n  cloudType: $cloudType,\n  description: $description,\n  dynamicRouting: $dynamicRouting,\n  hubProviderId: $hubProviderId,\n  installRoutesInCloud: $installRoutesInCloud,\n  installRoutesInMagicWan: $installRoutesInMagicWan,\n  manageHubToHubAttachments: $manageHubToHubAttachments,\n  manageVpcToHubAttachments: $manageVpcToHubAttachments,\n  name: $name,\n  region: $region,\n  type: $type,\n  vpc: $vpc,\n)';
 
  }

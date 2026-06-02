@@ -89,6 +89,6 @@ AccessReusablePolicyResp copyWith({List<AccessApprovalGroup>? Function()? approv
 
 @override int get hashCode => Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration, appCount, reusable);
 
-@override String toString() => 'AccessReusablePolicyResp(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration, appCount: $appCount, reusable: $reusable)';
+@override String toString() => 'AccessReusablePolicyResp(\n  approvalGroups: $approvalGroups,\n  approvalRequired: $approvalRequired,\n  connectionRules: $connectionRules,\n  isolationRequired: $isolationRequired,\n  mfaConfig: $mfaConfig,\n  purposeJustificationPrompt: $purposeJustificationPrompt,\n  purposeJustificationRequired: $purposeJustificationRequired,\n  sessionDuration: $sessionDuration,\n  appCount: $appCount,\n  reusable: $reusable,\n)';
 
  }

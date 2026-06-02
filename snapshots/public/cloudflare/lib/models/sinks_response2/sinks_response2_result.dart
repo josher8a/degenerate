@@ -55,7 +55,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.isEmpty) errors.add('name: length must be >= 1');
 if (name.length > 128) errors.add('name: length must be <= 128');
 return errors; } 
 SinksResponse2Result copyWith({SinksRequestConfig? Function()? config, DateTime? createdAt, CloudflarePipelinesFormat? Function()? format, String? id, DateTime? modifiedAt, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, SinksRequestType? type, }) { return SinksResponse2Result(

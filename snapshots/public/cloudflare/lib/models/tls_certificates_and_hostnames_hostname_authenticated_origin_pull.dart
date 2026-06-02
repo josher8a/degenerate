@@ -115,6 +115,6 @@ TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull copyWith({TlsCertific
 
 @override int get hashCode => Object.hash(certId, certStatus, certUpdatedAt, certUploadedOn, certificate, createdAt, enabled, expiresOn, hostname, issuer, serialNumber, signature, status, updatedAt, id, privateKey);
 
-@override String toString() => 'TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull(certId: $certId, certStatus: $certStatus, certUpdatedAt: $certUpdatedAt, certUploadedOn: $certUploadedOn, certificate: $certificate, createdAt: $createdAt, enabled: $enabled, expiresOn: $expiresOn, hostname: $hostname, issuer: $issuer, serialNumber: $serialNumber, signature: $signature, status: $status, updatedAt: $updatedAt, id: $id, privateKey: $privateKey)';
+@override String toString() => 'TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull(\n  certId: $certId,\n  certStatus: $certStatus,\n  certUpdatedAt: $certUpdatedAt,\n  certUploadedOn: $certUploadedOn,\n  certificate: $certificate,\n  createdAt: $createdAt,\n  enabled: $enabled,\n  expiresOn: $expiresOn,\n  hostname: $hostname,\n  issuer: $issuer,\n  serialNumber: $serialNumber,\n  signature: $signature,\n  status: $status,\n  updatedAt: $updatedAt,\n  id: $id,\n  privateKey: $privateKey,\n)';
 
  }

@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/policies',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/policies',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -51,7 +51,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/policies',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/policies',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -74,7 +74,7 @@ Future<ApiResult<AccessReusablePolicyResp?, Never>> accessPoliciesGetAnAccessReu
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/policies/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -97,7 +97,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/policies/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -120,7 +120,7 @@ Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, Never>> ac
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/policies/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   options: options,
 );

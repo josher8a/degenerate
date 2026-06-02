@@ -94,6 +94,6 @@ StartRecordingRequest copyWith({bool Function()? allowMultipleRecordings, Realti
 
 @override int get hashCode => Object.hash(allowMultipleRecordings, audioConfig, fileNamePrefix, interactiveConfig, maxSeconds, meetingId, realtimekitBucketConfig, rtmpOutConfig, storageConfig, url, videoConfig);
 
-@override String toString() => 'StartRecordingRequest(allowMultipleRecordings: $allowMultipleRecordings, audioConfig: $audioConfig, fileNamePrefix: $fileNamePrefix, interactiveConfig: $interactiveConfig, maxSeconds: $maxSeconds, meetingId: $meetingId, realtimekitBucketConfig: $realtimekitBucketConfig, rtmpOutConfig: $rtmpOutConfig, storageConfig: $storageConfig, url: $url, videoConfig: $videoConfig)';
+@override String toString() => 'StartRecordingRequest(\n  allowMultipleRecordings: $allowMultipleRecordings,\n  audioConfig: $audioConfig,\n  fileNamePrefix: $fileNamePrefix,\n  interactiveConfig: $interactiveConfig,\n  maxSeconds: $maxSeconds,\n  meetingId: $meetingId,\n  realtimekitBucketConfig: $realtimekitBucketConfig,\n  rtmpOutConfig: $rtmpOutConfig,\n  storageConfig: $storageConfig,\n  url: $url,\n  videoConfig: $videoConfig,\n)';
 
  }

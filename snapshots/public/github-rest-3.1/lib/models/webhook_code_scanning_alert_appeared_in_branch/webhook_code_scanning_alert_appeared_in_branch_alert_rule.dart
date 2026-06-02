@@ -20,7 +20,7 @@ final CodeScanningAlertRuleSeverity? severity;
 Map<String, dynamic> toJson() { return {
   'description': description,
   'id': id,
-  'severity': severity != null ? severity?.toJson() : null,
+  'severity': severity?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
       json.containsKey('id') && json['id'] is String &&

@@ -76,7 +76,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/routing/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/email/routing/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -89,7 +89,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer3SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEmailRoutingSummaryError.fromResponse(response),
+  onError: RadarGetEmailRoutingSummaryError.fromResponse,
 );
  } 
 /// Get email routing time series grouped by dimension
@@ -163,7 +163,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/routing/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/email/routing/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -176,7 +176,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEmailRoutingTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetEmailRoutingTimeseriesGroupError.fromResponse,
 );
  } 
  }

@@ -125,6 +125,6 @@ TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()
 
 @override int get hashCode => Object.hash(address, addressKana, addressKanji, configurationOverrides, displayName, displayNameKana, displayNameKanji, id, livemode, metadata, object, phone);
 
-@override String toString() => 'TerminalLocation(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, configurationOverrides: $configurationOverrides, displayName: $displayName, displayNameKana: $displayNameKana, displayNameKanji: $displayNameKanji, id: $id, livemode: $livemode, metadata: $metadata, object: $object, phone: $phone)';
+@override String toString() => 'TerminalLocation(\n  address: $address,\n  addressKana: $addressKana,\n  addressKanji: $addressKanji,\n  configurationOverrides: $configurationOverrides,\n  displayName: $displayName,\n  displayNameKana: $displayNameKana,\n  displayNameKanji: $displayNameKanji,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  phone: $phone,\n)';
 
  }

@@ -17,7 +17,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final text$ = text;
 if (text$ != null) {
-  if (text$.length < 1) errors.add('text: length must be >= 1');
+  if (text$.isEmpty) errors.add('text: length must be >= 1');
 }
 return errors; } 
 Contexts copyWith({String? Function()? text}) { return Contexts(

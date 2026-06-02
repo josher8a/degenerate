@@ -120,7 +120,7 @@ final actionTimeout$ = actionTimeout;
 if (actionTimeout$ != null) {
   if (actionTimeout$ > 120000) errors.add('actionTimeout: must be <= 120000');
 }
-if (html.length < 1) errors.add('html: length must be >= 1');
+if (html.isEmpty) errors.add('html: length must be >= 1');
 final waitForTimeout$ = waitForTimeout;
 if (waitForTimeout$ != null) {
   if (waitForTimeout$ > 120000) errors.add('waitForTimeout: must be <= 120000');
@@ -177,6 +177,6 @@ BrapiPostScreenshotRequestVariant1 copyWith({double? Function()? actionTimeout, 
 
 @override int get hashCode => Object.hashAll([actionTimeout, Object.hashAll(addScriptTag ?? const []), Object.hashAll(addStyleTag ?? const []), Object.hashAll(allowRequestPattern ?? const []), Object.hashAll(allowResourceTypes ?? const []), authenticate, bestAttempt, Object.hashAll(cookies ?? const []), emulateMediaType, gotoOptions, html, Object.hashAll(rejectRequestPattern ?? const []), Object.hashAll(rejectResourceTypes ?? const []), screenshotOptions, scrollPage, selector, setExtraHttpHeaders, setJavaScriptEnabled, userAgent, viewport, waitForSelector, waitForTimeout]);
 
-@override String toString() => 'BrapiPostScreenshotRequestVariant1(actionTimeout: $actionTimeout, addScriptTag: $addScriptTag, addStyleTag: $addStyleTag, allowRequestPattern: $allowRequestPattern, allowResourceTypes: $allowResourceTypes, authenticate: $authenticate, bestAttempt: $bestAttempt, cookies: $cookies, emulateMediaType: $emulateMediaType, gotoOptions: $gotoOptions, html: $html, rejectRequestPattern: $rejectRequestPattern, rejectResourceTypes: $rejectResourceTypes, screenshotOptions: $screenshotOptions, scrollPage: $scrollPage, selector: $selector, setExtraHttpHeaders: $setExtraHttpHeaders, setJavaScriptEnabled: $setJavaScriptEnabled, userAgent: $userAgent, viewport: $viewport, waitForSelector: $waitForSelector, waitForTimeout: $waitForTimeout)';
+@override String toString() => 'BrapiPostScreenshotRequestVariant1(\n  actionTimeout: $actionTimeout,\n  addScriptTag: $addScriptTag,\n  addStyleTag: $addStyleTag,\n  allowRequestPattern: $allowRequestPattern,\n  allowResourceTypes: $allowResourceTypes,\n  authenticate: $authenticate,\n  bestAttempt: $bestAttempt,\n  cookies: $cookies,\n  emulateMediaType: $emulateMediaType,\n  gotoOptions: $gotoOptions,\n  html: $html,\n  rejectRequestPattern: $rejectRequestPattern,\n  rejectResourceTypes: $rejectResourceTypes,\n  screenshotOptions: $screenshotOptions,\n  scrollPage: $scrollPage,\n  selector: $selector,\n  setExtraHttpHeaders: $setExtraHttpHeaders,\n  setJavaScriptEnabled: $setJavaScriptEnabled,\n  userAgent: $userAgent,\n  viewport: $viewport,\n  waitForSelector: $waitForSelector,\n  waitForTimeout: $waitForTimeout,\n)';
 
  }

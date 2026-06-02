@@ -93,6 +93,6 @@ BillingUsageReportUserUsageItems copyWith({String? date, String? product, String
 
 @override int get hashCode => Object.hash(date, product, sku, quantity, unitType, pricePerUnit, grossAmount, discountAmount, netAmount, repositoryName);
 
-@override String toString() => 'BillingUsageReportUserUsageItems(date: $date, product: $product, sku: $sku, quantity: $quantity, unitType: $unitType, pricePerUnit: $pricePerUnit, grossAmount: $grossAmount, discountAmount: $discountAmount, netAmount: $netAmount, repositoryName: $repositoryName)';
+@override String toString() => 'BillingUsageReportUserUsageItems(\n  date: $date,\n  product: $product,\n  sku: $sku,\n  quantity: $quantity,\n  unitType: $unitType,\n  pricePerUnit: $pricePerUnit,\n  grossAmount: $grossAmount,\n  discountAmount: $discountAmount,\n  netAmount: $netAmount,\n  repositoryName: $repositoryName,\n)';
 
  }

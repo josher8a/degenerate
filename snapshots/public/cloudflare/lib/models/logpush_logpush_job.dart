@@ -136,6 +136,6 @@ LogpushLogpushJob copyWith({LogpushDataset? Function()? dataset, LogpushDestinat
 
 @override int get hashCode => Object.hash(dataset, destinationConf, enabled, errorMessage, frequency, id, kind, lastComplete, lastError, logpullOptions, maxUploadBytes, maxUploadIntervalSeconds, maxUploadRecords, name, outputOptions);
 
-@override String toString() => 'LogpushLogpushJob(dataset: $dataset, destinationConf: $destinationConf, enabled: $enabled, errorMessage: $errorMessage, frequency: $frequency, id: $id, kind: $kind, lastComplete: $lastComplete, lastError: $lastError, logpullOptions: $logpullOptions, maxUploadBytes: $maxUploadBytes, maxUploadIntervalSeconds: $maxUploadIntervalSeconds, maxUploadRecords: $maxUploadRecords, name: $name, outputOptions: $outputOptions)';
+@override String toString() => 'LogpushLogpushJob(\n  dataset: $dataset,\n  destinationConf: $destinationConf,\n  enabled: $enabled,\n  errorMessage: $errorMessage,\n  frequency: $frequency,\n  id: $id,\n  kind: $kind,\n  lastComplete: $lastComplete,\n  lastError: $lastError,\n  logpullOptions: $logpullOptions,\n  maxUploadBytes: $maxUploadBytes,\n  maxUploadIntervalSeconds: $maxUploadIntervalSeconds,\n  maxUploadRecords: $maxUploadRecords,\n  name: $name,\n  outputOptions: $outputOptions,\n)';
 
  }

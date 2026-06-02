@@ -75,6 +75,6 @@ RealtimekitParticipantQualityStatsQualityStats copyWith({double? Function()? aud
 
 @override int get hashCode => Object.hash(audioBandwidth, audioPacketLoss, Object.hashAll(audioStats ?? const []), averageQuality, end, peerId, start, videoBandwidth, videoPacketLoss, Object.hashAll(videoStats ?? const []));
 
-@override String toString() => 'RealtimekitParticipantQualityStatsQualityStats(audioBandwidth: $audioBandwidth, audioPacketLoss: $audioPacketLoss, audioStats: $audioStats, averageQuality: $averageQuality, end: $end, peerId: $peerId, start: $start, videoBandwidth: $videoBandwidth, videoPacketLoss: $videoPacketLoss, videoStats: $videoStats)';
+@override String toString() => 'RealtimekitParticipantQualityStatsQualityStats(\n  audioBandwidth: $audioBandwidth,\n  audioPacketLoss: $audioPacketLoss,\n  audioStats: $audioStats,\n  averageQuality: $averageQuality,\n  end: $end,\n  peerId: $peerId,\n  start: $start,\n  videoBandwidth: $videoBandwidth,\n  videoPacketLoss: $videoPacketLoss,\n  videoStats: $videoStats,\n)';
 
  }

@@ -17,7 +17,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> smartShieldSettingsGetCacheRese
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield/cache_reserve_clear',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/smart_shield/cache_reserve_clear',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> smartShieldSettingsStartCacheRe
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield/cache_reserve_clear',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/smart_shield/cache_reserve_clear',
   headers: headers,
   options: options,
 );

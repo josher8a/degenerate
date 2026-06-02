@@ -150,27 +150,27 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toString(),
   'summary': summary,
   'description': description,
-  'severity': severity != null ? severity?.toJson() : null,
-  'author': author != null ? author?.toJson() : null,
-  'publisher': publisher != null ? publisher?.toJson() : null,
+  'severity': severity?.toJson(),
+  'author': author?.toJson(),
+  'publisher': publisher?.toJson(),
   'identifiers': identifiers.map((e) => e.toJson()).toList(),
   'state': state.toJson(),
-  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
-  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
-  'published_at': publishedAt != null ? publishedAt?.toIso8601String() : null,
-  'closed_at': closedAt != null ? closedAt?.toIso8601String() : null,
-  'withdrawn_at': withdrawnAt != null ? withdrawnAt?.toIso8601String() : null,
-  'submission': submission != null ? submission?.toJson() : null,
-  'vulnerabilities': vulnerabilities != null ? vulnerabilities?.map((e) => e.toJson()).toList() : null,
-  'cvss': cvss != null ? cvss?.toJson() : null,
+  'created_at': createdAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
+  'published_at': publishedAt?.toIso8601String(),
+  'closed_at': closedAt?.toIso8601String(),
+  'withdrawn_at': withdrawnAt?.toIso8601String(),
+  'submission': submission?.toJson(),
+  'vulnerabilities': vulnerabilities?.map((e) => e.toJson()).toList(),
+  'cvss': cvss?.toJson(),
   if (cvssSeverities != null) 'cvss_severities': cvssSeverities?.toJson(),
-  'cwes': cwes != null ? cwes?.map((e) => e.toJson()).toList() : null,
+  'cwes': cwes?.map((e) => e.toJson()).toList(),
   'cwe_ids': cweIds,
-  'credits': credits != null ? credits?.map((e) => e.toJson()).toList() : null,
-  'credits_detailed': creditsDetailed != null ? creditsDetailed?.map((e) => e.toJson()).toList() : null,
-  'collaborating_users': collaboratingUsers != null ? collaboratingUsers?.map((e) => e.toJson()).toList() : null,
-  'collaborating_teams': collaboratingTeams != null ? collaboratingTeams?.map((e) => e.toJson()).toList() : null,
-  'private_fork': privateFork != null ? privateFork?.toJson() : null,
+  'credits': credits?.map((e) => e.toJson()).toList(),
+  'credits_detailed': creditsDetailed?.map((e) => e.toJson()).toList(),
+  'collaborating_users': collaboratingUsers?.map((e) => e.toJson()).toList(),
+  'collaborating_teams': collaboratingTeams?.map((e) => e.toJson()).toList(),
+  'private_fork': privateFork?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
       json.containsKey('cve_id') && json['cve_id'] is String &&
@@ -267,6 +267,6 @@ RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url
 
 @override int get hashCode => Object.hashAll([ghsaId, cveId, url, htmlUrl, summary, description, severity, author, publisher, Object.hashAll(identifiers), state, createdAt, updatedAt, publishedAt, closedAt, withdrawnAt, submission, Object.hashAll(vulnerabilities ?? const []), cvss, cvssSeverities, Object.hashAll(cwes ?? const []), Object.hashAll(cweIds ?? const []), Object.hashAll(credits ?? const []), Object.hashAll(creditsDetailed ?? const []), Object.hashAll(collaboratingUsers ?? const []), Object.hashAll(collaboratingTeams ?? const []), privateFork]);
 
-@override String toString() => 'RepositoryAdvisory(ghsaId: $ghsaId, cveId: $cveId, url: $url, htmlUrl: $htmlUrl, summary: $summary, description: $description, severity: $severity, author: $author, publisher: $publisher, identifiers: $identifiers, state: $state, createdAt: $createdAt, updatedAt: $updatedAt, publishedAt: $publishedAt, closedAt: $closedAt, withdrawnAt: $withdrawnAt, submission: $submission, vulnerabilities: $vulnerabilities, cvss: $cvss, cvssSeverities: $cvssSeverities, cwes: $cwes, cweIds: $cweIds, credits: $credits, creditsDetailed: $creditsDetailed, collaboratingUsers: $collaboratingUsers, collaboratingTeams: $collaboratingTeams, privateFork: $privateFork)';
+@override String toString() => 'RepositoryAdvisory(\n  ghsaId: $ghsaId,\n  cveId: $cveId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  summary: $summary,\n  description: $description,\n  severity: $severity,\n  author: $author,\n  publisher: $publisher,\n  identifiers: $identifiers,\n  state: $state,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  publishedAt: $publishedAt,\n  closedAt: $closedAt,\n  withdrawnAt: $withdrawnAt,\n  submission: $submission,\n  vulnerabilities: $vulnerabilities,\n  cvss: $cvss,\n  cvssSeverities: $cvssSeverities,\n  cwes: $cwes,\n  cweIds: $cweIds,\n  credits: $credits,\n  creditsDetailed: $creditsDetailed,\n  collaboratingUsers: $collaboratingUsers,\n  collaboratingTeams: $collaboratingTeams,\n  privateFork: $privateFork,\n)';
 
  }

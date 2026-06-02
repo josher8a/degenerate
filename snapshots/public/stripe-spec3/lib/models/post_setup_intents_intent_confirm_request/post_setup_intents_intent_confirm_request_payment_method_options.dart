@@ -82,6 +82,6 @@ PostSetupIntentsIntentConfirmRequestPaymentMethodOptions copyWith({PostSetupInte
 
 @override int get hashCode => Object.hash(acssDebit, amazonPay, bacsDebit, card, cardPresent, klarna, link, paypal, payto, sepaDebit, usBankAccount);
 
-@override String toString() => 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptions(acssDebit: $acssDebit, amazonPay: $amazonPay, bacsDebit: $bacsDebit, card: $card, cardPresent: $cardPresent, klarna: $klarna, link: $link, paypal: $paypal, payto: $payto, sepaDebit: $sepaDebit, usBankAccount: $usBankAccount)';
+@override String toString() => 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptions(\n  acssDebit: $acssDebit,\n  amazonPay: $amazonPay,\n  bacsDebit: $bacsDebit,\n  card: $card,\n  cardPresent: $cardPresent,\n  klarna: $klarna,\n  link: $link,\n  paypal: $paypal,\n  payto: $payto,\n  sepaDebit: $sepaDebit,\n  usBankAccount: $usBankAccount,\n)';
 
  }

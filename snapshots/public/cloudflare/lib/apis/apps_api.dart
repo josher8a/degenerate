@@ -17,7 +17,7 @@ Future<ApiResult<GetAppsResponse, Never>> getApps({required RealtimekitAccountId
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/apps',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/apps',
   headers: headers,
   options: options,
 );

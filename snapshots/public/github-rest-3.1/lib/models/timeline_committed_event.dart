@@ -95,6 +95,6 @@ TimelineCommittedEvent copyWith({String? Function()? event, String? sha, String?
 
 @override int get hashCode => Object.hash(event, sha, nodeId, url, author, committer, message, tree, Object.hashAll(parents), verification, htmlUrl);
 
-@override String toString() => 'TimelineCommittedEvent(event: $event, sha: $sha, nodeId: $nodeId, url: $url, author: $author, committer: $committer, message: $message, tree: $tree, parents: $parents, verification: $verification, htmlUrl: $htmlUrl)';
+@override String toString() => 'TimelineCommittedEvent(\n  event: $event,\n  sha: $sha,\n  nodeId: $nodeId,\n  url: $url,\n  author: $author,\n  committer: $committer,\n  message: $message,\n  tree: $tree,\n  parents: $parents,\n  verification: $verification,\n  htmlUrl: $htmlUrl,\n)';
 
  }

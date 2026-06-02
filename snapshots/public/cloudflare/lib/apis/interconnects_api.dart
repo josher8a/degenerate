@@ -30,7 +30,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/interconnects',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cni/interconnects',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -52,7 +52,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/interconnects',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cni/interconnects',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -72,7 +72,7 @@ Future<ApiResult<NscInterconnect, Never>> getInterconnect({required String icon,
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/interconnects/${Uri.encodeComponent(icon)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cni/interconnects/${Uri.encodeComponent(icon)}',
   headers: headers,
   options: options,
 );
@@ -91,7 +91,7 @@ Future<ApiResult<void, Never>> deleteInterconnect({required String icon, require
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/interconnects/${Uri.encodeComponent(icon)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cni/interconnects/${Uri.encodeComponent(icon)}',
   headers: headers,
   options: options,
 );
@@ -108,7 +108,7 @@ Future<ApiResult<void, Never>> getInterconnectLoa({required String icon, require
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/interconnects/${Uri.encodeComponent(icon)}/loa',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cni/interconnects/${Uri.encodeComponent(icon)}/loa',
   headers: headers,
   options: options,
 );
@@ -125,7 +125,7 @@ Future<ApiResult<NscStatusInfo, Never>> getInterconnectStatus({required String i
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/interconnects/${Uri.encodeComponent(icon)}/status',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cni/interconnects/${Uri.encodeComponent(icon)}/status',
   headers: headers,
   options: options,
 );

@@ -159,7 +159,7 @@ final customMetadata$ = customMetadata;
 if (customMetadata$ != null) {
   if (customMetadata$.length > 5) errors.add('customMetadata: must have <= 5 items');
 }
-if (id.length < 1) errors.add('id: length must be >= 1');
+if (id.isEmpty) errors.add('id: length must be >= 1');
 if (id.length > 32) errors.add('id: length must be <= 32');
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
 if (maxNumResults < 1) errors.add('maxNumResults: must be >= 1');
@@ -242,6 +242,6 @@ AiSearchCreateInstancesResponseResult copyWith({String? Function()? aiGatewayId,
 
 @override int get hashCode => Object.hashAll([aiGatewayId, aiSearchModel, cache, cacheThreshold, chunkOverlap, chunkSize, createdAt, createdBy, Object.hashAll(customMetadata ?? const []), embeddingModel, enable, fusionMethod, hybridSearchEnabled, id, lastActivity, maxNumResults, metadata, modifiedAt, modifiedBy, paused, publicEndpointId, publicEndpointParams, reranking, rerankingModel, retrievalOptions, rewriteModel, rewriteQuery, scoreThreshold, source, sourceParams, status, tokenId, type, vectorizeName]);
 
-@override String toString() => 'AiSearchCreateInstancesResponseResult(aiGatewayId: $aiGatewayId, aiSearchModel: $aiSearchModel, cache: $cache, cacheThreshold: $cacheThreshold, chunkOverlap: $chunkOverlap, chunkSize: $chunkSize, createdAt: $createdAt, createdBy: $createdBy, customMetadata: $customMetadata, embeddingModel: $embeddingModel, enable: $enable, fusionMethod: $fusionMethod, hybridSearchEnabled: $hybridSearchEnabled, id: $id, lastActivity: $lastActivity, maxNumResults: $maxNumResults, metadata: $metadata, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, paused: $paused, publicEndpointId: $publicEndpointId, publicEndpointParams: $publicEndpointParams, reranking: $reranking, rerankingModel: $rerankingModel, retrievalOptions: $retrievalOptions, rewriteModel: $rewriteModel, rewriteQuery: $rewriteQuery, scoreThreshold: $scoreThreshold, source: $source, sourceParams: $sourceParams, status: $status, tokenId: $tokenId, type: $type, vectorizeName: $vectorizeName)';
+@override String toString() => 'AiSearchCreateInstancesResponseResult(\n  aiGatewayId: $aiGatewayId,\n  aiSearchModel: $aiSearchModel,\n  cache: $cache,\n  cacheThreshold: $cacheThreshold,\n  chunkOverlap: $chunkOverlap,\n  chunkSize: $chunkSize,\n  createdAt: $createdAt,\n  createdBy: $createdBy,\n  customMetadata: $customMetadata,\n  embeddingModel: $embeddingModel,\n  enable: $enable,\n  fusionMethod: $fusionMethod,\n  hybridSearchEnabled: $hybridSearchEnabled,\n  id: $id,\n  lastActivity: $lastActivity,\n  maxNumResults: $maxNumResults,\n  metadata: $metadata,\n  modifiedAt: $modifiedAt,\n  modifiedBy: $modifiedBy,\n  paused: $paused,\n  publicEndpointId: $publicEndpointId,\n  publicEndpointParams: $publicEndpointParams,\n  reranking: $reranking,\n  rerankingModel: $rerankingModel,\n  retrievalOptions: $retrievalOptions,\n  rewriteModel: $rewriteModel,\n  rewriteQuery: $rewriteQuery,\n  scoreThreshold: $scoreThreshold,\n  source: $source,\n  sourceParams: $sourceParams,\n  status: $status,\n  tokenId: $tokenId,\n  type: $type,\n  vectorizeName: $vectorizeName,\n)';
 
  }

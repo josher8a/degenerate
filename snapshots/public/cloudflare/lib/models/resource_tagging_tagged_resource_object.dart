@@ -129,6 +129,36 @@ ResourceTaggingResourceId get id;
 ResourceTaggingResourceName get name;
 /// Shared by all variants of this union.
 Map<String,String> get tags;
+R when<R>({required R Function(ResourceTaggingTaggedResourceObjectAccessApplication) accessApplication, required R Function(ResourceTaggingTaggedResourceObjectAccessApplicationPolicy) accessApplicationPolicy, required R Function(ResourceTaggingTaggedResourceObjectAccessGroup) accessGroup, required R Function(ResourceTaggingTaggedResourceObjectAccount) account, required R Function(ResourceTaggingTaggedResourceObjectAiGateway) aiGateway, required R Function(ResourceTaggingTaggedResourceObjectAlertingPolicy) alertingPolicy, required R Function(ResourceTaggingTaggedResourceObjectAlertingWebhook) alertingWebhook, required R Function(ResourceTaggingTaggedResourceObjectGatewayOperation) apiGatewayOperation, required R Function(ResourceTaggingTaggedResourceObjectCloudflaredTunnel) cloudflaredTunnel, required R Function(ResourceTaggingTaggedResourceObjectCustomCertificate) customCertificate, required R Function(ResourceTaggingTaggedResourceObjectCustomHostname) customHostname, required R Function(ResourceTaggingTaggedResourceObjectD1Database) d1Database, required R Function(ResourceTaggingTaggedResourceObjectDnsRecord) dnsRecord, required R Function(ResourceTaggingTaggedResourceObjectDurableObjectNamespace) durableObjectNamespace, required R Function(ResourceTaggingTaggedResourceObjectGatewayList) gatewayList, required R Function(ResourceTaggingTaggedResourceObjectGatewayRule) gatewayRule, required R Function(ResourceTaggingTaggedResourceObjectImage) image, required R Function(ResourceTaggingTaggedResourceObjectKvNamespace) kvNamespace, required R Function(ResourceTaggingTaggedResourceObjectManagedClientCertificate) managedClientCertificate, required R Function(ResourceTaggingTaggedResourceObjectQueue) queue, required R Function(ResourceTaggingTaggedResourceObjectR2Bucket) r2Bucket, required R Function(ResourceTaggingTaggedResourceObjectResourceShare) resourceShare, required R Function(ResourceTaggingTaggedResourceObjectStreamLiveInput) streamLiveInput, required R Function(ResourceTaggingTaggedResourceObjectStreamVideo) streamVideo, required R Function(ResourceTaggingTaggedResourceObjectWorker) worker, required R Function(ResourceTaggingTaggedResourceObjectWorkerVersion) workerVersion, required R Function(ResourceTaggingTaggedResourceObjectZone) zone, required R Function(ResourceTaggingTaggedResourceObject$Unknown) unknown, }) { return switch (this) {
+  final ResourceTaggingTaggedResourceObjectAccessApplication v => accessApplication(v),
+  final ResourceTaggingTaggedResourceObjectAccessApplicationPolicy v => accessApplicationPolicy(v),
+  final ResourceTaggingTaggedResourceObjectAccessGroup v => accessGroup(v),
+  final ResourceTaggingTaggedResourceObjectAccount v => account(v),
+  final ResourceTaggingTaggedResourceObjectAiGateway v => aiGateway(v),
+  final ResourceTaggingTaggedResourceObjectAlertingPolicy v => alertingPolicy(v),
+  final ResourceTaggingTaggedResourceObjectAlertingWebhook v => alertingWebhook(v),
+  final ResourceTaggingTaggedResourceObjectGatewayOperation v => apiGatewayOperation(v),
+  final ResourceTaggingTaggedResourceObjectCloudflaredTunnel v => cloudflaredTunnel(v),
+  final ResourceTaggingTaggedResourceObjectCustomCertificate v => customCertificate(v),
+  final ResourceTaggingTaggedResourceObjectCustomHostname v => customHostname(v),
+  final ResourceTaggingTaggedResourceObjectD1Database v => d1Database(v),
+  final ResourceTaggingTaggedResourceObjectDnsRecord v => dnsRecord(v),
+  final ResourceTaggingTaggedResourceObjectDurableObjectNamespace v => durableObjectNamespace(v),
+  final ResourceTaggingTaggedResourceObjectGatewayList v => gatewayList(v),
+  final ResourceTaggingTaggedResourceObjectGatewayRule v => gatewayRule(v),
+  final ResourceTaggingTaggedResourceObjectImage v => image(v),
+  final ResourceTaggingTaggedResourceObjectKvNamespace v => kvNamespace(v),
+  final ResourceTaggingTaggedResourceObjectManagedClientCertificate v => managedClientCertificate(v),
+  final ResourceTaggingTaggedResourceObjectQueue v => queue(v),
+  final ResourceTaggingTaggedResourceObjectR2Bucket v => r2Bucket(v),
+  final ResourceTaggingTaggedResourceObjectResourceShare v => resourceShare(v),
+  final ResourceTaggingTaggedResourceObjectStreamLiveInput v => streamLiveInput(v),
+  final ResourceTaggingTaggedResourceObjectStreamVideo v => streamVideo(v),
+  final ResourceTaggingTaggedResourceObjectWorker v => worker(v),
+  final ResourceTaggingTaggedResourceObjectWorkerVersion v => workerVersion(v),
+  final ResourceTaggingTaggedResourceObjectZone v => zone(v),
+  final ResourceTaggingTaggedResourceObject$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectAccessApplication extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessApplication(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -1005,9 +1035,17 @@ ResourceTaggingTaggedResourceObjectZone copyWith({ResourceTaggingEtag? etag, Res
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class ResourceTaggingTaggedResourceObject$Unknown extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObject$Unknown(this.json);
+@immutable final class ResourceTaggingTaggedResourceObject$Unknown extends ResourceTaggingTaggedResourceObject {ResourceTaggingTaggedResourceObject$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final ResourceTaggingEtag _etag = ResourceTaggingEtag.fromJson(json['etag'] as String);
+
+late final ResourceTaggingResourceId _id = ResourceTaggingResourceId.fromJson(json['id'] as String);
+
+late final ResourceTaggingResourceName _name = ResourceTaggingResourceName.fromJson(json['name'] as String);
+
+late final Map<String,String> _tags = (json['tags'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -1020,12 +1058,12 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ResourceTaggingTaggedResourceObject.unknown($json)';
 
-@override ResourceTaggingEtag get etag => ResourceTaggingEtag.fromJson(json['etag'] as String);
+@override ResourceTaggingEtag get etag => _etag;
 
-@override ResourceTaggingResourceId get id => ResourceTaggingResourceId.fromJson(json['id'] as String);
+@override ResourceTaggingResourceId get id => _id;
 
-@override ResourceTaggingResourceName get name => ResourceTaggingResourceName.fromJson(json['name'] as String);
+@override ResourceTaggingResourceName get name => _name;
 
-@override Map<String,String> get tags => (json['tags'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+@override Map<String,String> get tags => _tags;
 
  }

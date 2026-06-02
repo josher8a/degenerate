@@ -97,6 +97,6 @@ PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret,
 
 @override int get hashCode => Object.hash(clientSecret, confirmationToken, Object.hashAll(expand ?? const []), mandateData, paymentMethod, paymentMethodData, paymentMethodOptions, returnUrl, useStripeSdk);
 
-@override String toString() => 'PostSetupIntentsIntentConfirmRequest(clientSecret: $clientSecret, confirmationToken: $confirmationToken, expand: $expand, mandateData: $mandateData, paymentMethod: $paymentMethod, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, returnUrl: $returnUrl, useStripeSdk: $useStripeSdk)';
+@override String toString() => 'PostSetupIntentsIntentConfirmRequest(\n  clientSecret: $clientSecret,\n  confirmationToken: $confirmationToken,\n  expand: $expand,\n  mandateData: $mandateData,\n  paymentMethod: $paymentMethod,\n  paymentMethodData: $paymentMethodData,\n  paymentMethodOptions: $paymentMethodOptions,\n  returnUrl: $returnUrl,\n  useStripeSdk: $useStripeSdk,\n)';
 
  }

@@ -106,6 +106,6 @@ AccountAvailablePhoneNumberCountryAvailablePhoneNumberNational copyWith({String?
 
 @override int get hashCode => Object.hash(friendlyName, phoneNumber, lata, locality, rateCenter, latitude, longitude, region, postalCode, isoCountry, addressRequirements, beta, capabilities);
 
-@override String toString() => 'AccountAvailablePhoneNumberCountryAvailablePhoneNumberNational(friendlyName: $friendlyName, phoneNumber: $phoneNumber, lata: $lata, locality: $locality, rateCenter: $rateCenter, latitude: $latitude, longitude: $longitude, region: $region, postalCode: $postalCode, isoCountry: $isoCountry, addressRequirements: $addressRequirements, beta: $beta, capabilities: $capabilities)';
+@override String toString() => 'AccountAvailablePhoneNumberCountryAvailablePhoneNumberNational(\n  friendlyName: $friendlyName,\n  phoneNumber: $phoneNumber,\n  lata: $lata,\n  locality: $locality,\n  rateCenter: $rateCenter,\n  latitude: $latitude,\n  longitude: $longitude,\n  region: $region,\n  postalCode: $postalCode,\n  isoCountry: $isoCountry,\n  addressRequirements: $addressRequirements,\n  beta: $beta,\n  capabilities: $capabilities,\n)';
 
  }

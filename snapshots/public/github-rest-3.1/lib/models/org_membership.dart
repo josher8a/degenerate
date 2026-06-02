@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'enterprise_teams_providing_indirect_membership': ?enterpriseTeamsProvidingIndirectMembership,
   'organization_url': organizationUrl.toString(),
   'organization': organization.toJson(),
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
   if (permissions != null) 'permissions': permissions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
@@ -118,6 +118,6 @@ OrgMembership copyWith({Uri? url, OrgMembershipState? state, OrgMembershipRole? 
 
 @override int get hashCode => Object.hash(url, state, role, directMembership, Object.hashAll(enterpriseTeamsProvidingIndirectMembership ?? const []), organizationUrl, organization, user, permissions);
 
-@override String toString() => 'OrgMembership(url: $url, state: $state, role: $role, directMembership: $directMembership, enterpriseTeamsProvidingIndirectMembership: $enterpriseTeamsProvidingIndirectMembership, organizationUrl: $organizationUrl, organization: $organization, user: $user, permissions: $permissions)';
+@override String toString() => 'OrgMembership(\n  url: $url,\n  state: $state,\n  role: $role,\n  directMembership: $directMembership,\n  enterpriseTeamsProvidingIndirectMembership: $enterpriseTeamsProvidingIndirectMembership,\n  organizationUrl: $organizationUrl,\n  organization: $organization,\n  user: $user,\n  permissions: $permissions,\n)';
 
  }

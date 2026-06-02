@@ -193,6 +193,6 @@ BankAccount copyWith({ApplicationFeeAccount? Function()? account, String? Functi
 
 @override int get hashCode => Object.hash(account, accountHolderName, accountHolderType, accountType, Object.hashAll(availablePayoutMethods ?? const []), bankName, country, currency, customer, defaultForCurrency, fingerprint, futureRequirements, id, last4, metadata, object, requirements, routingNumber, status);
 
-@override String toString() => 'BankAccount(account: $account, accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountType: $accountType, availablePayoutMethods: $availablePayoutMethods, bankName: $bankName, country: $country, currency: $currency, customer: $customer, defaultForCurrency: $defaultForCurrency, fingerprint: $fingerprint, futureRequirements: $futureRequirements, id: $id, last4: $last4, metadata: $metadata, object: $object, requirements: $requirements, routingNumber: $routingNumber, status: $status)';
+@override String toString() => 'BankAccount(\n  account: $account,\n  accountHolderName: $accountHolderName,\n  accountHolderType: $accountHolderType,\n  accountType: $accountType,\n  availablePayoutMethods: $availablePayoutMethods,\n  bankName: $bankName,\n  country: $country,\n  currency: $currency,\n  customer: $customer,\n  defaultForCurrency: $defaultForCurrency,\n  fingerprint: $fingerprint,\n  futureRequirements: $futureRequirements,\n  id: $id,\n  last4: $last4,\n  metadata: $metadata,\n  object: $object,\n  requirements: $requirements,\n  routingNumber: $routingNumber,\n  status: $status,\n)';
 
  }

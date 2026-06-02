@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
   'url': url.toString(),
-  'actor': actor != null ? actor?.toJson() : null,
+  'actor': actor?.toJson(),
   'event': event,
   'commit_id': commitId,
   'commit_url': commitUrl,
@@ -156,6 +156,6 @@ IssueEvent copyWith({int? id, String? nodeId, Uri? url, SimpleUser? Function()? 
 
 @override int get hashCode => Object.hashAll([id, nodeId, url, actor, event, commitId, commitUrl, createdAt, issue, label, assignee, assigner, reviewRequester, requestedReviewer, requestedTeam, dismissedReview, milestone, projectCard, rename, authorAssociation, lockReason, performedViaGithubApp]);
 
-@override String toString() => 'IssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, issue: $issue, label: $label, assignee: $assignee, assigner: $assigner, reviewRequester: $reviewRequester, requestedReviewer: $requestedReviewer, requestedTeam: $requestedTeam, dismissedReview: $dismissedReview, milestone: $milestone, projectCard: $projectCard, rename: $rename, authorAssociation: $authorAssociation, lockReason: $lockReason, performedViaGithubApp: $performedViaGithubApp)';
+@override String toString() => 'IssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  issue: $issue,\n  label: $label,\n  assignee: $assignee,\n  assigner: $assigner,\n  reviewRequester: $reviewRequester,\n  requestedReviewer: $requestedReviewer,\n  requestedTeam: $requestedTeam,\n  dismissedReview: $dismissedReview,\n  milestone: $milestone,\n  projectCard: $projectCard,\n  rename: $rename,\n  authorAssociation: $authorAssociation,\n  lockReason: $lockReason,\n  performedViaGithubApp: $performedViaGithubApp,\n)';
 
  }

@@ -90,17 +90,17 @@ final Uri url;
 Map<String, dynamic> toJson() { return {
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
   'created_at': createdAt.toIso8601String(),
-  'dismissed_at': dismissedAt != null ? dismissedAt?.toIso8601String() : null,
-  'dismissed_by': dismissedBy != null ? dismissedBy?.toJson() : null,
+  'dismissed_at': dismissedAt?.toIso8601String(),
+  'dismissed_by': dismissedBy?.toJson(),
   if (dismissedComment != null) 'dismissed_comment': dismissedComment?.toJson(),
-  'dismissed_reason': dismissedReason != null ? dismissedReason?.toJson() : null,
+  'dismissed_reason': dismissedReason?.toJson(),
   'fixed_at': ?fixedAt,
   'html_url': htmlUrl.toString(),
   if (instancesUrl != null) 'instances_url': instancesUrl?.toString(),
   if (mostRecentInstance != null) 'most_recent_instance': mostRecentInstance?.toJson(),
   'number': number,
   'rule': rule.toJson(),
-  'state': state != null ? state?.toJson() : null,
+  'state': state?.toJson(),
   'tool': tool.toJson(),
   'url': url.toString(),
 }; } 
@@ -151,6 +151,6 @@ WebhookCodeScanningAlertFixedAlert copyWith({List<SimpleUser>? Function()? assig
 
 @override int get hashCode => Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, instancesUrl, mostRecentInstance, number, rule, state, tool, url);
 
-@override String toString() => 'WebhookCodeScanningAlertFixedAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, instancesUrl: $instancesUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url)';
+@override String toString() => 'WebhookCodeScanningAlertFixedAlert(\n  assignees: $assignees,\n  createdAt: $createdAt,\n  dismissedAt: $dismissedAt,\n  dismissedBy: $dismissedBy,\n  dismissedComment: $dismissedComment,\n  dismissedReason: $dismissedReason,\n  fixedAt: $fixedAt,\n  htmlUrl: $htmlUrl,\n  instancesUrl: $instancesUrl,\n  mostRecentInstance: $mostRecentInstance,\n  number: $number,\n  rule: $rule,\n  state: $state,\n  tool: $tool,\n  url: $url,\n)';
 
  }

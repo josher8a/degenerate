@@ -90,6 +90,6 @@ EmailSecurityUpdateDomainRequest copyWith({List<EmailSecurityDeliveryMode>? Func
 
 @override int get hashCode => Object.hash(Object.hashAll(allowedDeliveryModes ?? const []), domain, Object.hashAll(dropDispositions ?? const []), folder, integrationId, Object.hashAll(ipRestrictions), lookbackHops, Object.hashAll(regions ?? const []), requireTlsInbound, requireTlsOutbound, transport);
 
-@override String toString() => 'EmailSecurityUpdateDomainRequest(allowedDeliveryModes: $allowedDeliveryModes, domain: $domain, dropDispositions: $dropDispositions, folder: $folder, integrationId: $integrationId, ipRestrictions: $ipRestrictions, lookbackHops: $lookbackHops, regions: $regions, requireTlsInbound: $requireTlsInbound, requireTlsOutbound: $requireTlsOutbound, transport: $transport)';
+@override String toString() => 'EmailSecurityUpdateDomainRequest(\n  allowedDeliveryModes: $allowedDeliveryModes,\n  domain: $domain,\n  dropDispositions: $dropDispositions,\n  folder: $folder,\n  integrationId: $integrationId,\n  ipRestrictions: $ipRestrictions,\n  lookbackHops: $lookbackHops,\n  regions: $regions,\n  requireTlsInbound: $requireTlsInbound,\n  requireTlsOutbound: $requireTlsOutbound,\n  transport: $transport,\n)';
 
  }

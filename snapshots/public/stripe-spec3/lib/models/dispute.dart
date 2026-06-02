@@ -253,6 +253,6 @@ Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, Ap
 
 @override int get hashCode => Object.hash(amount, Object.hashAll(balanceTransactions), charge, created, currency, Object.hashAll(enhancedEligibilityTypes), evidence, evidenceDetails, id, isChargeRefundable, livemode, metadata, object, paymentIntent, paymentMethodDetails, reason, status);
 
-@override String toString() => 'Dispute(amount: $amount, balanceTransactions: $balanceTransactions, charge: $charge, created: $created, currency: $currency, enhancedEligibilityTypes: $enhancedEligibilityTypes, evidence: $evidence, evidenceDetails: $evidenceDetails, id: $id, isChargeRefundable: $isChargeRefundable, livemode: $livemode, metadata: $metadata, object: $object, paymentIntent: $paymentIntent, paymentMethodDetails: $paymentMethodDetails, reason: $reason, status: $status)';
+@override String toString() => 'Dispute(\n  amount: $amount,\n  balanceTransactions: $balanceTransactions,\n  charge: $charge,\n  created: $created,\n  currency: $currency,\n  enhancedEligibilityTypes: $enhancedEligibilityTypes,\n  evidence: $evidence,\n  evidenceDetails: $evidenceDetails,\n  id: $id,\n  isChargeRefundable: $isChargeRefundable,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  paymentIntent: $paymentIntent,\n  paymentMethodDetails: $paymentMethodDetails,\n  reason: $reason,\n  status: $status,\n)';
 
  }

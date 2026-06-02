@@ -122,6 +122,6 @@ TelemetryQueryRequestParameters copyWith({List<ParametersCalculations>? Function
 
 @override int get hashCode => Object.hash(Object.hashAll(calculations ?? const []), Object.hashAll(datasets ?? const []), filterCombination, Object.hashAll(filters ?? const []), Object.hashAll(groupBys ?? const []), Object.hashAll(havings ?? const []), limit, needle, orderBy);
 
-@override String toString() => 'TelemetryQueryRequestParameters(calculations: $calculations, datasets: $datasets, filterCombination: $filterCombination, filters: $filters, groupBys: $groupBys, havings: $havings, limit: $limit, needle: $needle, orderBy: $orderBy)';
+@override String toString() => 'TelemetryQueryRequestParameters(\n  calculations: $calculations,\n  datasets: $datasets,\n  filterCombination: $filterCombination,\n  filters: $filters,\n  groupBys: $groupBys,\n  havings: $havings,\n  limit: $limit,\n  needle: $needle,\n  orderBy: $orderBy,\n)';
 
  }

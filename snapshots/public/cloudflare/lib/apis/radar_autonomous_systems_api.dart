@@ -51,7 +51,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEntitiesAsnListResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEntitiesAsnListError.fromResponse(response),
+  onError: RadarGetEntitiesAsnListError.fromResponse,
 );
  } 
 /// Get AS details by ASN
@@ -82,7 +82,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEntitiesAsnByIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEntitiesAsnByIdError.fromResponse(response),
+  onError: RadarGetEntitiesAsnByIdError.fromResponse,
 );
  } 
 /// Get IRR AS-SETs that an AS is a member of
@@ -113,7 +113,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAsnsAsSetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAsnsAsSetError.fromResponse(response),
+  onError: RadarGetAsnsAsSetError.fromResponse,
 );
  } 
 /// Get AS-level relationships by ASN
@@ -147,7 +147,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAsnsRelResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAsnsRelError.fromResponse(response),
+  onError: RadarGetAsnsRelError.fromResponse,
 );
  } 
 /// Get AS rankings by botnet threat feed activity
@@ -204,7 +204,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAsBotnetThreatFeedResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAsBotnetThreatFeedError.fromResponse(response),
+  onError: RadarGetAsBotnetThreatFeedError.fromResponse,
 );
  } 
 /// Get AS details by IP address
@@ -236,7 +236,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEntitiesAsnByIpResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEntitiesAsnByIpError.fromResponse(response),
+  onError: RadarGetEntitiesAsnByIpError.fromResponse,
 );
  } 
  }

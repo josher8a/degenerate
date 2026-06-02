@@ -17,7 +17,7 @@ Future<ApiResult<List<ZeroTrustGatewayCategories>?, Never>> zeroTrustGatewayCate
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/categories',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/categories',
   headers: headers,
   options: options,
 );

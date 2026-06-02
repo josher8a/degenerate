@@ -59,8 +59,8 @@ Map<String, dynamic> toJson() { return {
   'maximum_cache_ttl': maximumCacheTtl.toJson(),
   'minimum_cache_ttl': minimumCacheTtl.toJson(),
   'name': name.toJson(),
-  'negative_cache_ttl': negativeCacheTtl != null ? negativeCacheTtl?.toJson() : null,
-  'ratelimit': ratelimit != null ? ratelimit?.toJson() : null,
+  'negative_cache_ttl': negativeCacheTtl?.toJson(),
+  'ratelimit': ratelimit?.toJson(),
   'retries': retries.toJson(),
   'upstream_ips': upstreamIps,
   'dns_firewall_ips': dnsFirewallIps,
@@ -112,6 +112,6 @@ DnsFirewallDnsFirewallClusterResponse copyWith({DnsFirewallAttackMitigation? Fun
 
 @override int get hashCode => Object.hash(attackMitigation, deprecateAnyRequests, ecsFallback, maximumCacheTtl, minimumCacheTtl, name, negativeCacheTtl, ratelimit, retries, Object.hashAll(upstreamIps), Object.hashAll(dnsFirewallIps), id, modifiedOn);
 
-@override String toString() => 'DnsFirewallDnsFirewallClusterResponse(attackMitigation: $attackMitigation, deprecateAnyRequests: $deprecateAnyRequests, ecsFallback: $ecsFallback, maximumCacheTtl: $maximumCacheTtl, minimumCacheTtl: $minimumCacheTtl, name: $name, negativeCacheTtl: $negativeCacheTtl, ratelimit: $ratelimit, retries: $retries, upstreamIps: $upstreamIps, dnsFirewallIps: $dnsFirewallIps, id: $id, modifiedOn: $modifiedOn)';
+@override String toString() => 'DnsFirewallDnsFirewallClusterResponse(\n  attackMitigation: $attackMitigation,\n  deprecateAnyRequests: $deprecateAnyRequests,\n  ecsFallback: $ecsFallback,\n  maximumCacheTtl: $maximumCacheTtl,\n  minimumCacheTtl: $minimumCacheTtl,\n  name: $name,\n  negativeCacheTtl: $negativeCacheTtl,\n  ratelimit: $ratelimit,\n  retries: $retries,\n  upstreamIps: $upstreamIps,\n  dnsFirewallIps: $dnsFirewallIps,\n  id: $id,\n  modifiedOn: $modifiedOn,\n)';
 
  }

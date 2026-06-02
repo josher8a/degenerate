@@ -81,6 +81,6 @@ DigitalExperienceMonitoringHttpDetailsResponse copyWith({String? Function()? hos
 
 @override int get hashCode => Object.hash(host, httpStats, Object.hashAll(httpStatsByColo ?? const []), interval, kind, method, name, Object.hashAll(targetPolicies ?? const []), targeted);
 
-@override String toString() => 'DigitalExperienceMonitoringHttpDetailsResponse(host: $host, httpStats: $httpStats, httpStatsByColo: $httpStatsByColo, interval: $interval, kind: $kind, method: $method, name: $name, targetPolicies: $targetPolicies, targeted: $targeted)';
+@override String toString() => 'DigitalExperienceMonitoringHttpDetailsResponse(\n  host: $host,\n  httpStats: $httpStats,\n  httpStatsByColo: $httpStatsByColo,\n  interval: $interval,\n  kind: $kind,\n  method: $method,\n  name: $name,\n  targetPolicies: $targetPolicies,\n  targeted: $targeted,\n)';
 
  }

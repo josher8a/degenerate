@@ -19,7 +19,7 @@ final ListsName name;
 
 Map<String, dynamic> toJson() { return {
   if (description != null) 'description': description?.toJson(),
-  'kind': kind != null ? kind?.toJson() : null,
+  'kind': kind?.toJson(),
   'name': name.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&

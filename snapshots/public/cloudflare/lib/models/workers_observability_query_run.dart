@@ -131,6 +131,6 @@ WorkersObservabilityQueryRun copyWith({String? accountId, String? Function()? cr
 
 @override int get hashCode => Object.hash(accountId, created, dry, environmentId, granularity, id, query, statistics, status, timeframe, updated, userId, workspaceId);
 
-@override String toString() => 'WorkersObservabilityQueryRun(accountId: $accountId, created: $created, dry: $dry, environmentId: $environmentId, granularity: $granularity, id: $id, query: $query, statistics: $statistics, status: $status, timeframe: $timeframe, updated: $updated, userId: $userId, workspaceId: $workspaceId)';
+@override String toString() => 'WorkersObservabilityQueryRun(\n  accountId: $accountId,\n  created: $created,\n  dry: $dry,\n  environmentId: $environmentId,\n  granularity: $granularity,\n  id: $id,\n  query: $query,\n  statistics: $statistics,\n  status: $status,\n  timeframe: $timeframe,\n  updated: $updated,\n  userId: $userId,\n  workspaceId: $workspaceId,\n)';
 
  }

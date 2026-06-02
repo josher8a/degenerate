@@ -106,6 +106,6 @@ PostInvoicesInvoiceLinesLineItemIdRequest copyWith({int? Function()? amount, Str
 
 @override int get hashCode => Object.hash(amount, description, discountable, discounts, Object.hashAll(expand ?? const []), metadata, period, priceData, pricing, quantity, taxAmounts, taxRates);
 
-@override String toString() => 'PostInvoicesInvoiceLinesLineItemIdRequest(amount: $amount, description: $description, discountable: $discountable, discounts: $discounts, expand: $expand, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates)';
+@override String toString() => 'PostInvoicesInvoiceLinesLineItemIdRequest(\n  amount: $amount,\n  description: $description,\n  discountable: $discountable,\n  discounts: $discounts,\n  expand: $expand,\n  metadata: $metadata,\n  period: $period,\n  priceData: $priceData,\n  pricing: $pricing,\n  quantity: $quantity,\n  taxAmounts: $taxAmounts,\n  taxRates: $taxRates,\n)';
 
  }

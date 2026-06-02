@@ -211,5 +211,5 @@ final class KeeperProfileSchema {
 
   @override
   String toString() =>
-      'KeeperProfileSchema(user: $user, circleCount: $circleCount, monthJoined: $monthJoined, bioHtml: $bioHtml, username: $username, title: $title, bio: $bio, location: $location, languages: $languages, instagramUsername: $instagramUsername, website: $website, xUsername: $xUsername, blueskyUsername: $blueskyUsername)';
+      'KeeperProfileSchema(\n  user: $user,\n  circleCount: $circleCount,\n  monthJoined: $monthJoined,\n  bioHtml: $bioHtml,\n  username: $username,\n  title: $title,\n  bio: $bio,\n  location: $location,\n  languages: $languages,\n  instagramUsername: $instagramUsername,\n  website: $website,\n  xUsername: $xUsername,\n  blueskyUsername: $blueskyUsername,\n)';
 }

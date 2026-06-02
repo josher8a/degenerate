@@ -97,6 +97,6 @@ PostPaymentIntentsIntentIncrementAuthorizationRequest copyWith({int? amount, Pos
 
 @override int get hashCode => Object.hash(amount, amountDetails, applicationFeeAmount, description, Object.hashAll(expand ?? const []), hooks, metadata, paymentDetails, statementDescriptor, transferData);
 
-@override String toString() => 'PostPaymentIntentsIntentIncrementAuthorizationRequest(amount: $amount, amountDetails: $amountDetails, applicationFeeAmount: $applicationFeeAmount, description: $description, expand: $expand, hooks: $hooks, metadata: $metadata, paymentDetails: $paymentDetails, statementDescriptor: $statementDescriptor, transferData: $transferData)';
+@override String toString() => 'PostPaymentIntentsIntentIncrementAuthorizationRequest(\n  amount: $amount,\n  amountDetails: $amountDetails,\n  applicationFeeAmount: $applicationFeeAmount,\n  description: $description,\n  expand: $expand,\n  hooks: $hooks,\n  metadata: $metadata,\n  paymentDetails: $paymentDetails,\n  statementDescriptor: $statementDescriptor,\n  transferData: $transferData,\n)';
 
  }

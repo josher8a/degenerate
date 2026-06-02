@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'permissions_result': permissionsResult.toJson(),
   'repository_selection': repositorySelection.toJson(),
   'repository_count': repositoryCount,
-  'repositories': repositories != null ? repositories?.map((e) => e.toJson()).toList() : null,
+  'repositories': repositories?.map((e) => e.toJson()).toList(),
   'created_at': createdAt,
   'token_id': tokenId,
   'token_name': tokenName,
@@ -126,6 +126,6 @@ PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PermissionsAdde
 
 @override int get hashCode => Object.hash(id, owner, permissionsAdded, permissionsUpgraded, permissionsResult, repositorySelection, repositoryCount, Object.hashAll(repositories ?? const []), createdAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt);
 
-@override String toString() => 'PersonalAccessTokenRequest(id: $id, owner: $owner, permissionsAdded: $permissionsAdded, permissionsUpgraded: $permissionsUpgraded, permissionsResult: $permissionsResult, repositorySelection: $repositorySelection, repositoryCount: $repositoryCount, repositories: $repositories, createdAt: $createdAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)';
+@override String toString() => 'PersonalAccessTokenRequest(\n  id: $id,\n  owner: $owner,\n  permissionsAdded: $permissionsAdded,\n  permissionsUpgraded: $permissionsUpgraded,\n  permissionsResult: $permissionsResult,\n  repositorySelection: $repositorySelection,\n  repositoryCount: $repositoryCount,\n  repositories: $repositories,\n  createdAt: $createdAt,\n  tokenId: $tokenId,\n  tokenName: $tokenName,\n  tokenExpired: $tokenExpired,\n  tokenExpiresAt: $tokenExpiresAt,\n  tokenLastUsedAt: $tokenLastUsedAt,\n)';
 
  }

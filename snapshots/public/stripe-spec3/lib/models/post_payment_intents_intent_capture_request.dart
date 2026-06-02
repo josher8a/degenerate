@@ -106,6 +106,6 @@ PostPaymentIntentsIntentCaptureRequest copyWith({PostPaymentIntentsIntentCapture
 
 @override int get hashCode => Object.hash(amountDetails, amountToCapture, applicationFeeAmount, Object.hashAll(expand ?? const []), finalCapture, hooks, metadata, paymentDetails, statementDescriptor, statementDescriptorSuffix, transferData);
 
-@override String toString() => 'PostPaymentIntentsIntentCaptureRequest(amountDetails: $amountDetails, amountToCapture: $amountToCapture, applicationFeeAmount: $applicationFeeAmount, expand: $expand, finalCapture: $finalCapture, hooks: $hooks, metadata: $metadata, paymentDetails: $paymentDetails, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData)';
+@override String toString() => 'PostPaymentIntentsIntentCaptureRequest(\n  amountDetails: $amountDetails,\n  amountToCapture: $amountToCapture,\n  applicationFeeAmount: $applicationFeeAmount,\n  expand: $expand,\n  finalCapture: $finalCapture,\n  hooks: $hooks,\n  metadata: $metadata,\n  paymentDetails: $paymentDetails,\n  statementDescriptor: $statementDescriptor,\n  statementDescriptorSuffix: $statementDescriptorSuffix,\n  transferData: $transferData,\n)';
 
  }

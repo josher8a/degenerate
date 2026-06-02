@@ -78,6 +78,6 @@ ReposCreateReleaseRequest copyWith({String? tagName, String? Function()? targetC
 
 @override int get hashCode => Object.hash(tagName, targetCommitish, name, body, draft, prerelease, discussionCategoryName, generateReleaseNotes, makeLatest);
 
-@override String toString() => 'ReposCreateReleaseRequest(tagName: $tagName, targetCommitish: $targetCommitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, discussionCategoryName: $discussionCategoryName, generateReleaseNotes: $generateReleaseNotes, makeLatest: $makeLatest)';
+@override String toString() => 'ReposCreateReleaseRequest(\n  tagName: $tagName,\n  targetCommitish: $targetCommitish,\n  name: $name,\n  body: $body,\n  draft: $draft,\n  prerelease: $prerelease,\n  discussionCategoryName: $discussionCategoryName,\n  generateReleaseNotes: $generateReleaseNotes,\n  makeLatest: $makeLatest,\n)';
 
  }

@@ -120,6 +120,6 @@ TreasuryTransactionsResourceFlowDetails copyWith({TreasuryCreditReversal? Functi
 
 @override int get hashCode => Object.hash(creditReversal, debitReversal, inboundTransfer, issuingAuthorization, outboundPayment, outboundTransfer, receivedCredit, receivedDebit, type);
 
-@override String toString() => 'TreasuryTransactionsResourceFlowDetails(creditReversal: $creditReversal, debitReversal: $debitReversal, inboundTransfer: $inboundTransfer, issuingAuthorization: $issuingAuthorization, outboundPayment: $outboundPayment, outboundTransfer: $outboundTransfer, receivedCredit: $receivedCredit, receivedDebit: $receivedDebit, type: $type)';
+@override String toString() => 'TreasuryTransactionsResourceFlowDetails(\n  creditReversal: $creditReversal,\n  debitReversal: $debitReversal,\n  inboundTransfer: $inboundTransfer,\n  issuingAuthorization: $issuingAuthorization,\n  outboundPayment: $outboundPayment,\n  outboundTransfer: $outboundTransfer,\n  receivedCredit: $receivedCredit,\n  receivedDebit: $receivedDebit,\n  type: $type,\n)';
 
  }

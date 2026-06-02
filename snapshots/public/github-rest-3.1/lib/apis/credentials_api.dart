@@ -41,7 +41,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => CredentialsRevokeError.fromResponse(response),
+  onError: CredentialsRevokeError.fromResponse,
 );
  } 
  }

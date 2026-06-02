@@ -183,6 +183,6 @@ PostCreditNotesRequest copyWith({int? Function()? amount, int? Function()? credi
 
 @override int get hashCode => Object.hash(amount, creditAmount, effectiveAt, emailType, Object.hashAll(expand ?? const []), invoice, Object.hashAll(lines ?? const []), memo, metadata, outOfBandAmount, reason, refundAmount, Object.hashAll(refunds ?? const []), shippingCost);
 
-@override String toString() => 'PostCreditNotesRequest(amount: $amount, creditAmount: $creditAmount, effectiveAt: $effectiveAt, emailType: $emailType, expand: $expand, invoice: $invoice, lines: $lines, memo: $memo, metadata: $metadata, outOfBandAmount: $outOfBandAmount, reason: $reason, refundAmount: $refundAmount, refunds: $refunds, shippingCost: $shippingCost)';
+@override String toString() => 'PostCreditNotesRequest(\n  amount: $amount,\n  creditAmount: $creditAmount,\n  effectiveAt: $effectiveAt,\n  emailType: $emailType,\n  expand: $expand,\n  invoice: $invoice,\n  lines: $lines,\n  memo: $memo,\n  metadata: $metadata,\n  outOfBandAmount: $outOfBandAmount,\n  reason: $reason,\n  refundAmount: $refundAmount,\n  refunds: $refunds,\n  shippingCost: $shippingCost,\n)';
 
  }

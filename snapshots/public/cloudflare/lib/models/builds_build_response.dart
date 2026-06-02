@@ -115,6 +115,6 @@ BuildsBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, Buil
 
 @override int get hashCode => Object.hash(buildOutcome, buildTriggerMetadata, buildUuid, createdOn, initializingOn, modifiedOn, pullRequest, runningOn, status, stoppedOn, trigger);
 
-@override String toString() => 'BuildsBuildResponse(buildOutcome: $buildOutcome, buildTriggerMetadata: $buildTriggerMetadata, buildUuid: $buildUuid, createdOn: $createdOn, initializingOn: $initializingOn, modifiedOn: $modifiedOn, pullRequest: $pullRequest, runningOn: $runningOn, status: $status, stoppedOn: $stoppedOn, trigger: $trigger)';
+@override String toString() => 'BuildsBuildResponse(\n  buildOutcome: $buildOutcome,\n  buildTriggerMetadata: $buildTriggerMetadata,\n  buildUuid: $buildUuid,\n  createdOn: $createdOn,\n  initializingOn: $initializingOn,\n  modifiedOn: $modifiedOn,\n  pullRequest: $pullRequest,\n  runningOn: $runningOn,\n  status: $status,\n  stoppedOn: $stoppedOn,\n  trigger: $trigger,\n)';
 
  }

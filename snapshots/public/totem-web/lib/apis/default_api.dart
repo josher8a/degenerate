@@ -25,7 +25,7 @@ return execute(
   onSuccess: (response) {
     return PublicUserSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CurrentUserError.fromResponse(response),
+  onError: CurrentUserError.fromResponse,
 );
  } 
 /// User Avatar Update
@@ -45,7 +45,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CurrentUserError.fromResponse(response),
+  onError: CurrentUserError.fromResponse,
 );
  } 
 /// User Upload Profile Image
@@ -67,7 +67,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CurrentUserError.fromResponse(response),
+  onError: CurrentUserError.fromResponse,
 );
  } 
 /// Dev Version

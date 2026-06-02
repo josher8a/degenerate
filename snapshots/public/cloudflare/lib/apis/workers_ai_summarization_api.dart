@@ -40,7 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfFacebookBartLargeCnnError.fromResponse(response),
+  onError: WorkersAiPostRunCfFacebookBartLargeCnnError.fromResponse,
 );
  } 
 /// Execute @cf/facebook/nonomni-bart-large-cnn model.
@@ -75,7 +75,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfFacebookNonomniBartLargeCnnError.fromResponse(response),
+  onError: WorkersAiPostRunCfFacebookNonomniBartLargeCnnError.fromResponse,
 );
  } 
  }

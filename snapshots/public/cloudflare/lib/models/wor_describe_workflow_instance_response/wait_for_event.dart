@@ -52,7 +52,7 @@ final WaitForEventType type;
 
 Map<String, dynamic> toJson() { return {
   'end': end.toIso8601String(),
-  'error': error != null ? error?.toJson() : null,
+  'error': error?.toJson(),
   'finished': finished,
   'name': name,
   'output': output.toJson(),

@@ -101,6 +101,6 @@ CodeSearchResultItem copyWith({String? name, String? path, String? sha, Uri? url
 
 @override int get hashCode => Object.hash(name, path, sha, url, gitUrl, htmlUrl, repository, score, fileSize, language, lastModifiedAt, Object.hashAll(lineNumbers ?? const []), Object.hashAll(textMatches ?? const []));
 
-@override String toString() => 'CodeSearchResultItem(name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, repository: $repository, score: $score, fileSize: $fileSize, language: $language, lastModifiedAt: $lastModifiedAt, lineNumbers: $lineNumbers, textMatches: $textMatches)';
+@override String toString() => 'CodeSearchResultItem(\n  name: $name,\n  path: $path,\n  sha: $sha,\n  url: $url,\n  gitUrl: $gitUrl,\n  htmlUrl: $htmlUrl,\n  repository: $repository,\n  score: $score,\n  fileSize: $fileSize,\n  language: $language,\n  lastModifiedAt: $lastModifiedAt,\n  lineNumbers: $lineNumbers,\n  textMatches: $textMatches,\n)';
 
  }

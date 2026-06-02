@@ -31,10 +31,10 @@ final String workflowId;
 
 Map<String, dynamic> toJson() { return {
   'created_on': createdOn.toIso8601String(),
-  'ended_on': endedOn != null ? endedOn?.toIso8601String() : null,
+  'ended_on': endedOn?.toIso8601String(),
   'id': id,
   'modified_on': modifiedOn.toIso8601String(),
-  'started_on': startedOn != null ? startedOn?.toIso8601String() : null,
+  'started_on': startedOn?.toIso8601String(),
   'status': status.toJson(),
   'version_id': versionId,
   'workflow_id': workflowId,
@@ -49,7 +49,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('workflow_id') && json['workflow_id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length < 1) errors.add('id: length must be >= 1');
+if (id.isEmpty) errors.add('id: length must be >= 1');
 if (id.length > 100) errors.add('id: length must be <= 100');
 if (!RegExp(r'^[a-zA-Z0-9_][a-zA-Z0-9-_]*$').hasMatch(id)) errors.add(r'id: must match pattern ^[a-zA-Z0-9_][a-zA-Z0-9-_]*$');
 return errors; } 

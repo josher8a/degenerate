@@ -72,7 +72,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/as112/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/as112/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -85,7 +85,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer3SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetDnsAs112SummaryError.fromResponse(response),
+  onError: RadarGetDnsAs112SummaryError.fromResponse,
 );
  } 
 /// Get AS112 DNS queries time series
@@ -165,7 +165,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetDnsAs112TimeseriesError.fromResponse(response),
+  onError: RadarGetDnsAs112TimeseriesError.fromResponse,
 );
  } 
 /// Get AS112 time series grouped by dimension
@@ -235,7 +235,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/as112/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/as112/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -248,7 +248,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetDnsAs112TimeseriesGroupError.fromResponse(response),
+  onError: RadarGetDnsAs112TimeseriesGroupError.fromResponse,
 );
  } 
 /// Get top locations by AS112 DNS queries
@@ -312,7 +312,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetDnsAs112TopLocationsError.fromResponse(response),
+  onError: RadarGetDnsAs112TopLocationsError.fromResponse,
 );
  } 
 /// Get top locations by AS112 DNS queries with DNSSEC support
@@ -363,7 +363,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/as112/top/locations/dnssec/${Uri.encodeComponent('${dnssec.toJson()}')}',
+  path: '/radar/as112/top/locations/dnssec/${Uri.encodeComponent(dnssec.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -376,7 +376,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetDnsAs112TopLocationsByDnssecError.fromResponse(response),
+  onError: RadarGetDnsAs112TopLocationsByDnssecError.fromResponse,
 );
  } 
 /// Get top locations by AS112 DNS queries with EDNS support
@@ -427,7 +427,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/as112/top/locations/edns/${Uri.encodeComponent('${edns.toJson()}')}',
+  path: '/radar/as112/top/locations/edns/${Uri.encodeComponent(edns.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -440,7 +440,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetDnsAs112TopLocationsByEdnsError.fromResponse(response),
+  onError: RadarGetDnsAs112TopLocationsByEdnsError.fromResponse,
 );
  } 
 /// Get top locations by AS112 DNS queries for an IP version
@@ -491,7 +491,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/as112/top/locations/ip_version/${Uri.encodeComponent('${ipVersion.toJson()}')}',
+  path: '/radar/as112/top/locations/ip_version/${Uri.encodeComponent(ipVersion.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -504,7 +504,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetDnsAs112TopLocationsByIpVersionError.fromResponse(response),
+  onError: RadarGetDnsAs112TopLocationsByIpVersionError.fromResponse,
 );
  } 
  }

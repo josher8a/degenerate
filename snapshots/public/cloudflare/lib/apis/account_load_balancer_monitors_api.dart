@@ -17,7 +17,7 @@ Future<ApiResult<List<LoadBalancingMonitor>?, Never>> accountLoadBalancerMonitor
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitors',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitors',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitors',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitors',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<LoadBalancingMonitor?, Never>> accountLoadBalancerMonitorsMonit
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitors/${Uri.encodeComponent(monitorId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitors/${Uri.encodeComponent(monitorId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -110,7 +110,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitors/${Uri.encodeComponent(monitorId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -133,7 +133,7 @@ Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> accoun
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitors/${Uri.encodeComponent(monitorId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -156,7 +156,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}/preview',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitors/${Uri.encodeComponent(monitorId.toJson())}/preview',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -179,7 +179,7 @@ Future<ApiResult<List<LoadBalancingMonitorGroupReferencesResponseResult>, Never>
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitors/${Uri.encodeComponent(monitorId.toString())}/references',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitors/${Uri.encodeComponent(monitorId.toJson())}/references',
   headers: headers,
   options: options,
 );
@@ -201,7 +201,7 @@ Future<ApiResult<Map<String, LoadBalancingPreviewResultValue>?, Never>> accountL
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/preview/${Uri.encodeComponent(previewId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/preview/${Uri.encodeComponent(previewId.toJson())}',
   headers: headers,
   options: options,
 );

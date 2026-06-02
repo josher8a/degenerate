@@ -17,7 +17,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> pagesPurgeBuildCache({required P
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/purge_build_cache',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/purge_build_cache',
   headers: headers,
   options: options,
 );

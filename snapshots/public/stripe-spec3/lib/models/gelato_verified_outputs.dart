@@ -124,6 +124,6 @@ GelatoVerifiedOutputs copyWith({Address? Function()? address, GelatoDataVerified
 
 @override int get hashCode => Object.hash(address, dob, email, firstName, idNumber, idNumberType, lastName, phone, sex, unparsedPlaceOfBirth, unparsedSex);
 
-@override String toString() => 'GelatoVerifiedOutputs(address: $address, dob: $dob, email: $email, firstName: $firstName, idNumber: $idNumber, idNumberType: $idNumberType, lastName: $lastName, phone: $phone, sex: $sex, unparsedPlaceOfBirth: $unparsedPlaceOfBirth, unparsedSex: $unparsedSex)';
+@override String toString() => 'GelatoVerifiedOutputs(\n  address: $address,\n  dob: $dob,\n  email: $email,\n  firstName: $firstName,\n  idNumber: $idNumber,\n  idNumberType: $idNumberType,\n  lastName: $lastName,\n  phone: $phone,\n  sex: $sex,\n  unparsedPlaceOfBirth: $unparsedPlaceOfBirth,\n  unparsedSex: $unparsedSex,\n)';
 
  }

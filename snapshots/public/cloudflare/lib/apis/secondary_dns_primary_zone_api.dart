@@ -17,7 +17,7 @@ Future<ApiResult<SecondaryDnsSingleResponseOutgoingResult?, Never>> secondaryDns
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/outgoing',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/outgoing',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -64,7 +64,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/outgoing',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -87,7 +87,7 @@ Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> second
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/outgoing',
   headers: headers,
   options: options,
 );
@@ -109,7 +109,7 @@ Future<ApiResult<SecondaryDnsDisableTransferResult?, Never>> secondaryDnsPrimary
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing/disable',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/outgoing/disable',
   headers: headers,
   options: options,
 );
@@ -131,7 +131,7 @@ Future<ApiResult<SecondaryDnsEnableTransferResult?, Never>> secondaryDnsPrimaryZ
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing/enable',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/outgoing/enable',
   headers: headers,
   options: options,
 );
@@ -153,7 +153,7 @@ Future<ApiResult<SecondaryDnsSchemasForceResult?, Never>> secondaryDnsPrimaryZon
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing/force_notify',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/outgoing/force_notify',
   headers: headers,
   options: options,
 );
@@ -175,7 +175,7 @@ Future<ApiResult<SecondaryDnsEnableTransferResult?, Never>> secondaryDnsPrimaryZ
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/outgoing/status',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/outgoing/status',
   headers: headers,
   options: options,
 );

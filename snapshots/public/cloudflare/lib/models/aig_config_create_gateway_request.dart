@@ -80,7 +80,7 @@ final cacheTtl$ = cacheTtl;
 if (cacheTtl$ != null) {
   if (cacheTtl$ < 0) errors.add('cacheTtl: must be >= 0');
 }
-if (id.length < 1) errors.add('id: length must be >= 1');
+if (id.isEmpty) errors.add('id: length must be >= 1');
 if (id.length > 64) errors.add('id: length must be <= 64');
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
 final logManagement$ = logManagement;
@@ -137,6 +137,6 @@ AigConfigCreateGatewayRequest copyWith({bool? Function()? authentication, bool? 
 
 @override int get hashCode => Object.hash(authentication, cacheInvalidateOnUpdate, cacheTtl, collectLogs, id, logManagement, logManagementStrategy, logpush, logpushPublicKey, rateLimitingInterval, rateLimitingLimit, rateLimitingTechnique, workersAiBillingMode, zdr);
 
-@override String toString() => 'AigConfigCreateGatewayRequest(authentication: $authentication, cacheInvalidateOnUpdate: $cacheInvalidateOnUpdate, cacheTtl: $cacheTtl, collectLogs: $collectLogs, id: $id, logManagement: $logManagement, logManagementStrategy: $logManagementStrategy, logpush: $logpush, logpushPublicKey: $logpushPublicKey, rateLimitingInterval: $rateLimitingInterval, rateLimitingLimit: $rateLimitingLimit, rateLimitingTechnique: $rateLimitingTechnique, workersAiBillingMode: $workersAiBillingMode, zdr: $zdr)';
+@override String toString() => 'AigConfigCreateGatewayRequest(\n  authentication: $authentication,\n  cacheInvalidateOnUpdate: $cacheInvalidateOnUpdate,\n  cacheTtl: $cacheTtl,\n  collectLogs: $collectLogs,\n  id: $id,\n  logManagement: $logManagement,\n  logManagementStrategy: $logManagementStrategy,\n  logpush: $logpush,\n  logpushPublicKey: $logpushPublicKey,\n  rateLimitingInterval: $rateLimitingInterval,\n  rateLimitingLimit: $rateLimitingLimit,\n  rateLimitingTechnique: $rateLimitingTechnique,\n  workersAiBillingMode: $workersAiBillingMode,\n  zdr: $zdr,\n)';
 
  }

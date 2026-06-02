@@ -56,7 +56,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_settings/views',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -81,7 +81,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_settings/views',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -104,7 +104,7 @@ Future<ApiResult<DnsSettingsDnsViewResponse?, Never>> dnsViewsForAnAccountGetInt
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views/${Uri.encodeComponent(viewId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_settings/views/${Uri.encodeComponent(viewId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -127,7 +127,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views/${Uri.encodeComponent(viewId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_settings/views/${Uri.encodeComponent(viewId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -150,7 +150,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> dnsViewsForAnAccountDeleteInterna
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings/views/${Uri.encodeComponent(viewId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_settings/views/${Uri.encodeComponent(viewId.toJson())}',
   headers: headers,
   options: options,
 );

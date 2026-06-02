@@ -172,6 +172,6 @@ TerminalReaderReaderResourceReaderAction copyWith({TerminalReaderReaderResourceC
 
 @override int get hashCode => Object.hash(collectInputs, collectPaymentMethod, confirmPaymentIntent, failureCode, failureMessage, processPaymentIntent, processSetupIntent, refundPayment, setReaderDisplay, status, type);
 
-@override String toString() => 'TerminalReaderReaderResourceReaderAction(collectInputs: $collectInputs, collectPaymentMethod: $collectPaymentMethod, confirmPaymentIntent: $confirmPaymentIntent, failureCode: $failureCode, failureMessage: $failureMessage, processPaymentIntent: $processPaymentIntent, processSetupIntent: $processSetupIntent, refundPayment: $refundPayment, setReaderDisplay: $setReaderDisplay, status: $status, type: $type)';
+@override String toString() => 'TerminalReaderReaderResourceReaderAction(\n  collectInputs: $collectInputs,\n  collectPaymentMethod: $collectPaymentMethod,\n  confirmPaymentIntent: $confirmPaymentIntent,\n  failureCode: $failureCode,\n  failureMessage: $failureMessage,\n  processPaymentIntent: $processPaymentIntent,\n  processSetupIntent: $processSetupIntent,\n  refundPayment: $refundPayment,\n  setReaderDisplay: $setReaderDisplay,\n  status: $status,\n  type: $type,\n)';
 
  }

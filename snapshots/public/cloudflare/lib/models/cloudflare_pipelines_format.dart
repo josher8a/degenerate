@@ -21,6 +21,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CloudflarePipelinesFormat$Unknown;
 
+R when<R>({required R Function(CloudflarePipelinesFormatJson) json, required R Function(CloudflarePipelinesFormatParquet) parquet, required R Function(CloudflarePipelinesFormat$Unknown) unknown, }) { return switch (this) {
+  final CloudflarePipelinesFormatJson v => json(v),
+  final CloudflarePipelinesFormatParquet v => parquet(v),
+  final CloudflarePipelinesFormat$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class CloudflarePipelinesFormatJson extends CloudflarePipelinesFormat {const CloudflarePipelinesFormatJson(this.cloudflarePipelinesJsonFormat);
 

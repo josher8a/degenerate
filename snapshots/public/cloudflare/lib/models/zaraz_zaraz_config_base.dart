@@ -160,6 +160,6 @@ ZarazZarazConfigBase copyWith({Analytics? Function()? analytics, Consent? Functi
 
 @override int get hashCode => Object.hash(analytics, consent, dataLayer, debugKey, historyChange, settings, triggers, variables, zarazVersion);
 
-@override String toString() => 'ZarazZarazConfigBase(analytics: $analytics, consent: $consent, dataLayer: $dataLayer, debugKey: $debugKey, historyChange: $historyChange, settings: $settings, triggers: $triggers, variables: $variables, zarazVersion: $zarazVersion)';
+@override String toString() => 'ZarazZarazConfigBase(\n  analytics: $analytics,\n  consent: $consent,\n  dataLayer: $dataLayer,\n  debugKey: $debugKey,\n  historyChange: $historyChange,\n  settings: $settings,\n  triggers: $triggers,\n  variables: $variables,\n  zarazVersion: $zarazVersion,\n)';
 
  }

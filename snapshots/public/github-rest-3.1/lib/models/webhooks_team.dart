@@ -127,6 +127,6 @@ WebhooksTeam copyWith({bool? Function()? deleted, String? Function()? descriptio
 
 @override int get hashCode => Object.hash(deleted, description, htmlUrl, id, membersUrl, name, nodeId, parent, permission, privacy, notificationSetting, repositoriesUrl, slug, url, type, organizationId, enterpriseId);
 
-@override String toString() => 'WebhooksTeam(deleted: $deleted, description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, parent: $parent, permission: $permission, privacy: $privacy, notificationSetting: $notificationSetting, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)';
+@override String toString() => 'WebhooksTeam(\n  deleted: $deleted,\n  description: $description,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  membersUrl: $membersUrl,\n  name: $name,\n  nodeId: $nodeId,\n  parent: $parent,\n  permission: $permission,\n  privacy: $privacy,\n  notificationSetting: $notificationSetting,\n  repositoriesUrl: $repositoriesUrl,\n  slug: $slug,\n  url: $url,\n  type: $type,\n  organizationId: $organizationId,\n  enterpriseId: $enterpriseId,\n)';
 
  }

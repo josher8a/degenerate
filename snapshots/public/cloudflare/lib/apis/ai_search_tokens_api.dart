@@ -43,7 +43,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AiSearchCreateTokensResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AiSearchListTokensError.fromResponse(response),
+  onError: AiSearchListTokensError.fromResponse,
 );
  } 
 /// Create new tokens.
@@ -68,7 +68,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchCreateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchCreateTokensError.fromResponse(response),
+  onError: AiSearchCreateTokensError.fromResponse,
 );
  } 
 /// Read tokens.
@@ -89,7 +89,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchCreateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchFetchTokensError.fromResponse(response),
+  onError: AiSearchFetchTokensError.fromResponse,
 );
  } 
 /// Update tokens.
@@ -112,7 +112,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchCreateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchUpdateTokensError.fromResponse(response),
+  onError: AiSearchUpdateTokensError.fromResponse,
 );
  } 
 /// Delete tokens.
@@ -133,7 +133,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchCreateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchDeleteTokensError.fromResponse(response),
+  onError: AiSearchDeleteTokensError.fromResponse,
 );
  } 
  }

@@ -96,6 +96,6 @@ ProtectedBranch copyWith({Uri? url, StatusCheckPolicy? Function()? requiredStatu
 
 @override int get hashCode => Object.hash(url, requiredStatusChecks, requiredPullRequestReviews, requiredSignatures, enforceAdmins, requiredLinearHistory, allowForcePushes, allowDeletions, restrictions, requiredConversationResolution, blockCreations, lockBranch, allowForkSyncing);
 
-@override String toString() => 'ProtectedBranch(url: $url, requiredStatusChecks: $requiredStatusChecks, requiredPullRequestReviews: $requiredPullRequestReviews, requiredSignatures: $requiredSignatures, enforceAdmins: $enforceAdmins, requiredLinearHistory: $requiredLinearHistory, allowForcePushes: $allowForcePushes, allowDeletions: $allowDeletions, restrictions: $restrictions, requiredConversationResolution: $requiredConversationResolution, blockCreations: $blockCreations, lockBranch: $lockBranch, allowForkSyncing: $allowForkSyncing)';
+@override String toString() => 'ProtectedBranch(\n  url: $url,\n  requiredStatusChecks: $requiredStatusChecks,\n  requiredPullRequestReviews: $requiredPullRequestReviews,\n  requiredSignatures: $requiredSignatures,\n  enforceAdmins: $enforceAdmins,\n  requiredLinearHistory: $requiredLinearHistory,\n  allowForcePushes: $allowForcePushes,\n  allowDeletions: $allowDeletions,\n  restrictions: $restrictions,\n  requiredConversationResolution: $requiredConversationResolution,\n  blockCreations: $blockCreations,\n  lockBranch: $lockBranch,\n  allowForkSyncing: $allowForkSyncing,\n)';
 
  }

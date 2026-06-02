@@ -129,7 +129,7 @@ Map<String, dynamic> toJson() { return {
   'size': size.toJson(),
   'seconds': seconds,
   'remixed_from_video_id': remixedFromVideoId,
-  'error': error != null ? error?.toJson() : null,
+  'error': error?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
@@ -177,6 +177,6 @@ VideoResource copyWith({String? id, VideoResourceObject? object, VideoModel? mod
 
 @override int get hashCode => Object.hash(id, object, model, status, progress, createdAt, completedAt, expiresAt, prompt, size, seconds, remixedFromVideoId, error);
 
-@override String toString() => 'VideoResource(id: $id, object: $object, model: $model, status: $status, progress: $progress, createdAt: $createdAt, completedAt: $completedAt, expiresAt: $expiresAt, prompt: $prompt, size: $size, seconds: $seconds, remixedFromVideoId: $remixedFromVideoId, error: $error)';
+@override String toString() => 'VideoResource(\n  id: $id,\n  object: $object,\n  model: $model,\n  status: $status,\n  progress: $progress,\n  createdAt: $createdAt,\n  completedAt: $completedAt,\n  expiresAt: $expiresAt,\n  prompt: $prompt,\n  size: $size,\n  seconds: $seconds,\n  remixedFromVideoId: $remixedFromVideoId,\n  error: $error,\n)';
 
  }

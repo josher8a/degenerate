@@ -93,6 +93,6 @@ GetEventQueryAlertListResponse copyWith({int? accountId, String? createdAt, bool
 
 @override int get hashCode => Object.hash(accountId, createdAt, enabled, frequency, id, lastSentAt, notificationType, queryId, updatedAt, userEmail);
 
-@override String toString() => 'GetEventQueryAlertListResponse(accountId: $accountId, createdAt: $createdAt, enabled: $enabled, frequency: $frequency, id: $id, lastSentAt: $lastSentAt, notificationType: $notificationType, queryId: $queryId, updatedAt: $updatedAt, userEmail: $userEmail)';
+@override String toString() => 'GetEventQueryAlertListResponse(\n  accountId: $accountId,\n  createdAt: $createdAt,\n  enabled: $enabled,\n  frequency: $frequency,\n  id: $id,\n  lastSentAt: $lastSentAt,\n  notificationType: $notificationType,\n  queryId: $queryId,\n  updatedAt: $updatedAt,\n  userEmail: $userEmail,\n)';
 
  }

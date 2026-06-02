@@ -176,7 +176,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'status': status.toJson(),
   'step_details': stepDetails.toJson(),
-  'last_error': lastError != null ? lastError?.toJson() : null,
+  'last_error': lastError?.toJson(),
   'expired_at': expiredAt,
   'cancelled_at': cancelledAt,
   'failed_at': failedAt,
@@ -239,6 +239,6 @@ RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt,
 
 @override int get hashCode => Object.hash(id, object, createdAt, assistantId, threadId, runId, type, status, stepDetails, lastError, expiredAt, cancelledAt, failedAt, completedAt, metadata, usage);
 
-@override String toString() => 'RunStepObject(id: $id, object: $object, createdAt: $createdAt, assistantId: $assistantId, threadId: $threadId, runId: $runId, type: $type, status: $status, stepDetails: $stepDetails, lastError: $lastError, expiredAt: $expiredAt, cancelledAt: $cancelledAt, failedAt: $failedAt, completedAt: $completedAt, metadata: $metadata, usage: $usage)';
+@override String toString() => 'RunStepObject(\n  id: $id,\n  object: $object,\n  createdAt: $createdAt,\n  assistantId: $assistantId,\n  threadId: $threadId,\n  runId: $runId,\n  type: $type,\n  status: $status,\n  stepDetails: $stepDetails,\n  lastError: $lastError,\n  expiredAt: $expiredAt,\n  cancelledAt: $cancelledAt,\n  failedAt: $failedAt,\n  completedAt: $completedAt,\n  metadata: $metadata,\n  usage: $usage,\n)';
 
  }

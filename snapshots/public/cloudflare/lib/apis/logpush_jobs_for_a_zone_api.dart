@@ -17,7 +17,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> getZonesZoneIdLogpushDatasetsDat
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/datasets/${Uri.encodeComponent('${datasetId.toJson()}')}/fields',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/datasets/${Uri.encodeComponent(datasetId.toJson())}/fields',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<List<LogpushLogpushJob>?, Never>> getZonesZoneIdLogpushDatasets
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/datasets/${Uri.encodeComponent('${datasetId.toJson()}')}/jobs',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/datasets/${Uri.encodeComponent(datasetId.toJson())}/jobs',
   headers: headers,
   options: options,
 );
@@ -61,7 +61,7 @@ Future<ApiResult<List<LogpushLogpushJob>?, Never>> getZonesZoneIdLogpushJobs({re
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/jobs',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/jobs',
   headers: headers,
   options: options,
 );
@@ -84,7 +84,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/jobs',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/jobs',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -107,7 +107,7 @@ Future<ApiResult<LogpushLogpushJob?, Never>> getZonesZoneIdLogpushJobsJobId({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
   headers: headers,
   options: options,
 );
@@ -130,7 +130,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -153,7 +153,7 @@ Future<ApiResult<DeleteAccountsAccountIdLogpushJobsJobIdResponseResult?, Never>>
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
   headers: headers,
   options: options,
 );
@@ -176,7 +176,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/ownership',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/ownership',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -200,7 +200,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/ownership/validate',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/ownership/validate',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -224,7 +224,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/validate/destination',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/validate/destination',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -248,7 +248,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/validate/destination/exists',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/validate/destination/exists',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -272,7 +272,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/validate/origin',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/validate/origin',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

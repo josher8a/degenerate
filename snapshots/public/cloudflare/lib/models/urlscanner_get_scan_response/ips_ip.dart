@@ -132,6 +132,6 @@ IpsIp copyWith({String? asn, String? asnDescription, String? asnLocationAlpha2, 
 
 @override int get hashCode => Object.hash(asn, asnDescription, asnLocationAlpha2, asnName, asnOrgName, continent, geonameId, ip, ipVersion, latitude, locationAlpha2, locationName, longitude, subdivision1Name, subdivision2Name);
 
-@override String toString() => 'IpsIp(asn: $asn, asnDescription: $asnDescription, asnLocationAlpha2: $asnLocationAlpha2, asnName: $asnName, asnOrgName: $asnOrgName, continent: $continent, geonameId: $geonameId, ip: $ip, ipVersion: $ipVersion, latitude: $latitude, locationAlpha2: $locationAlpha2, locationName: $locationName, longitude: $longitude, subdivision1Name: $subdivision1Name, subdivision2Name: $subdivision2Name)';
+@override String toString() => 'IpsIp(\n  asn: $asn,\n  asnDescription: $asnDescription,\n  asnLocationAlpha2: $asnLocationAlpha2,\n  asnName: $asnName,\n  asnOrgName: $asnOrgName,\n  continent: $continent,\n  geonameId: $geonameId,\n  ip: $ip,\n  ipVersion: $ipVersion,\n  latitude: $latitude,\n  locationAlpha2: $locationAlpha2,\n  locationName: $locationName,\n  longitude: $longitude,\n  subdivision1Name: $subdivision1Name,\n  subdivision2Name: $subdivision2Name,\n)';
 
  }

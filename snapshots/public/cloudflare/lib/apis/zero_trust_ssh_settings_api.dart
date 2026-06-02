@@ -17,7 +17,7 @@ Future<ApiResult<ZeroTrustGatewaySettings?, Never>> zeroTrustGetAuditSshSettings
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/audit_ssh_settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/audit_ssh_settings',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/audit_ssh_settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/audit_ssh_settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<ZeroTrustGatewaySettings?, Never>> zeroTrustRotateSshAccountSee
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/audit_ssh_settings/rotate_seed',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/audit_ssh_settings/rotate_seed',
   headers: headers,
   options: options,
 );

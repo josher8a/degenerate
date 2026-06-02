@@ -183,6 +183,6 @@ IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String
 
 @override int get hashCode => Object.hash(bin, clearingDate, created, currency, id, interchangeFeesAmount, livemode, metadata, netTotalAmount, network, networkFeesAmount, networkSettlementIdentifier, object, settlementService, status, transactionAmount, transactionCount);
 
-@override String toString() => 'IssuingSettlement(bin: $bin, clearingDate: $clearingDate, created: $created, currency: $currency, id: $id, interchangeFeesAmount: $interchangeFeesAmount, livemode: $livemode, metadata: $metadata, netTotalAmount: $netTotalAmount, network: $network, networkFeesAmount: $networkFeesAmount, networkSettlementIdentifier: $networkSettlementIdentifier, object: $object, settlementService: $settlementService, status: $status, transactionAmount: $transactionAmount, transactionCount: $transactionCount)';
+@override String toString() => 'IssuingSettlement(\n  bin: $bin,\n  clearingDate: $clearingDate,\n  created: $created,\n  currency: $currency,\n  id: $id,\n  interchangeFeesAmount: $interchangeFeesAmount,\n  livemode: $livemode,\n  metadata: $metadata,\n  netTotalAmount: $netTotalAmount,\n  network: $network,\n  networkFeesAmount: $networkFeesAmount,\n  networkSettlementIdentifier: $networkSettlementIdentifier,\n  object: $object,\n  settlementService: $settlementService,\n  status: $status,\n  transactionAmount: $transactionAmount,\n  transactionCount: $transactionCount,\n)';
 
  }

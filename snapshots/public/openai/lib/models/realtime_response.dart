@@ -116,6 +116,6 @@ RealtimeResponse copyWith({String? Function()? id, RealtimeBetaResponseObject? F
 
 @override int get hashCode => Object.hash(id, object, status, statusDetails, Object.hashAll(output ?? const []), metadata, audio, usage, conversationId, Object.hashAll(outputModalities ?? const []), maxOutputTokens);
 
-@override String toString() => 'RealtimeResponse(id: $id, object: $object, status: $status, statusDetails: $statusDetails, output: $output, metadata: $metadata, audio: $audio, usage: $usage, conversationId: $conversationId, outputModalities: $outputModalities, maxOutputTokens: $maxOutputTokens)';
+@override String toString() => 'RealtimeResponse(\n  id: $id,\n  object: $object,\n  status: $status,\n  statusDetails: $statusDetails,\n  output: $output,\n  metadata: $metadata,\n  audio: $audio,\n  usage: $usage,\n  conversationId: $conversationId,\n  outputModalities: $outputModalities,\n  maxOutputTokens: $maxOutputTokens,\n)';
 
  }

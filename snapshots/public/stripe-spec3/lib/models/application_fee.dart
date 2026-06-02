@@ -161,6 +161,6 @@ ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amoun
 
 @override int get hashCode => Object.hash(account, amount, amountRefunded, application, balanceTransaction, charge, created, currency, feeSource, id, livemode, object, originatingTransaction, refunded, refunds);
 
-@override String toString() => 'ApplicationFee(account: $account, amount: $amount, amountRefunded: $amountRefunded, application: $application, balanceTransaction: $balanceTransaction, charge: $charge, created: $created, currency: $currency, feeSource: $feeSource, id: $id, livemode: $livemode, object: $object, originatingTransaction: $originatingTransaction, refunded: $refunded, refunds: $refunds)';
+@override String toString() => 'ApplicationFee(\n  account: $account,\n  amount: $amount,\n  amountRefunded: $amountRefunded,\n  application: $application,\n  balanceTransaction: $balanceTransaction,\n  charge: $charge,\n  created: $created,\n  currency: $currency,\n  feeSource: $feeSource,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  originatingTransaction: $originatingTransaction,\n  refunded: $refunded,\n  refunds: $refunds,\n)';
 
  }

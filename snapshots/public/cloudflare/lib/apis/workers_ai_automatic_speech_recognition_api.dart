@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfDeepgramFluxError.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfDeepgramFluxError.fromResponse,
 );
  } 
 /// Execute @cf/deepgram/flux model.
@@ -60,7 +60,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfDeepgramFluxError.fromResponse(response),
+  onError: WorkersAiPostRunCfDeepgramFluxError.fromResponse,
 );
  } 
 /// Open Websocket connection with @cf/deepgram/nova-3 model.
@@ -80,7 +80,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfDeepgramNova3Error.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfDeepgramNova3Error.fromResponse,
 );
  } 
 /// Execute @cf/deepgram/nova-3 model.
@@ -115,7 +115,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfDeepgramNova3Error.fromResponse(response),
+  onError: WorkersAiPostRunCfDeepgramNova3Error.fromResponse,
 );
  } 
 /// Open Websocket connection with @cf/deepgram/nova-3-internal model.
@@ -135,7 +135,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfDeepgramNova3InternalError.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfDeepgramNova3InternalError.fromResponse,
 );
  } 
 /// Execute @cf/openai/whisper model.
@@ -170,7 +170,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfOpenaiWhisperError.fromResponse(response),
+  onError: WorkersAiPostRunCfOpenaiWhisperError.fromResponse,
 );
  } 
 /// Execute @cf/openai/whisper-large-v3-turbo model.
@@ -205,7 +205,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => TurboError.fromResponse(response),
+  onError: TurboError.fromResponse,
 );
  } 
 /// Execute @cf/openai/whisper-tiny-en model.
@@ -240,7 +240,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfOpenaiWhisperTinyEnError.fromResponse(response),
+  onError: WorkersAiPostRunCfOpenaiWhisperTinyEnError.fromResponse,
 );
  } 
  }

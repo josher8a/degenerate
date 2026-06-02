@@ -48,7 +48,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetGeolocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetGeolocationsError.fromResponse(response),
+  onError: RadarGetGeolocationsError.fromResponse,
 );
  } 
 /// Get Geolocation details
@@ -79,7 +79,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetGeolocationDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetGeolocationDetailsError.fromResponse(response),
+  onError: RadarGetGeolocationDetailsError.fromResponse,
 );
  } 
  }

@@ -1136,12 +1136,12 @@ class FileEmitter {
 
   _HelperMethodInfo? _securityApplyMethod(IrSecurityScheme scheme) {
     final methodName = 'apply${_securityMethodSuffix(scheme.name)}';
-    final configParam = _HelperParam('config', 'ApiConfig');
+    const configParam = _HelperParam('config', 'ApiConfig');
     _HelperMethodInfo apiKey(String collection, String? paramName) {
       final key = _stringOrNull(paramName);
       return _HelperMethodInfo(
         methodName,
-        [configParam, _HelperParam('value', 'String')],
+        [configParam, const _HelperParam('value', 'String')],
         'return config.copyWith($collection: {...config.$collection, $key: value});',
       );
     }
@@ -1156,17 +1156,17 @@ class FileEmitter {
       'http' => switch (scheme.scheme) {
         'bearer' => _HelperMethodInfo(
             methodName,
-            [configParam, _HelperParam('token', 'String')],
-            "return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer \$token'});",
+            [configParam, const _HelperParam('token', 'String')],
+            r"return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});",
           ),
         'basic' => _HelperMethodInfo(
             methodName,
             [
               configParam,
-              _HelperParam('username', 'String', named: true, required: true),
-              _HelperParam('password', 'String', named: true, required: true),
+              const _HelperParam('username', 'String', named: true, required: true),
+              const _HelperParam('password', 'String', named: true, required: true),
             ],
-            "return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic \${base64Encode(utf8.encode('\$username:\$password'))}'});",
+            r"return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'});",
           ),
         _ => null,
       },
@@ -1186,20 +1186,20 @@ class FileEmitter {
     return switch (scheme.type) {
       'apiKey' => _HelperMethodInfo(
           helperName,
-          [_HelperParam('value', 'String')],
+          [const _HelperParam('value', 'String')],
           'return $sdkClassName($securityClass.$applyName(_config, value));',
         ),
       'http' => switch (scheme.scheme) {
         'bearer' => _HelperMethodInfo(
             helperName,
-            [_HelperParam('token', 'String')],
+            [const _HelperParam('token', 'String')],
             'return $sdkClassName($securityClass.$applyName(_config, token));',
           ),
         'basic' => _HelperMethodInfo(
             helperName,
             [
-              _HelperParam('username', 'String', named: true, required: true),
-              _HelperParam('password', 'String', named: true, required: true),
+              const _HelperParam('username', 'String', named: true, required: true),
+              const _HelperParam('password', 'String', named: true, required: true),
             ],
             'return $sdkClassName($securityClass.$applyName(_config, username: username, password: password));',
           ),

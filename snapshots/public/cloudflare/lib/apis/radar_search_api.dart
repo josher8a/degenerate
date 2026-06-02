@@ -53,7 +53,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetSearchGlobalResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetSearchGlobalError.fromResponse(response),
+  onError: RadarGetSearchGlobalError.fromResponse,
 );
  } 
  }

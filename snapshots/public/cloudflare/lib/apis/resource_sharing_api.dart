@@ -52,7 +52,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -77,7 +77,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -134,7 +134,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -157,7 +157,7 @@ Future<ApiResult<ResponseCommon33Result?, Never>> shareDelete({required Resource
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -191,7 +191,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}/recipients',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}/recipients',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -216,7 +216,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}/recipients',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}/recipients',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -240,7 +240,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}/recipients',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}/recipients',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -266,7 +266,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}/recipients/${Uri.encodeComponent(recipientId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}/recipients/${Uri.encodeComponent(recipientId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -290,7 +290,7 @@ Future<ApiResult<ResponseCommon33Result?, Never>> shareRecipientDelete({required
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}/recipients/${Uri.encodeComponent(recipientId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}/recipients/${Uri.encodeComponent(recipientId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -327,7 +327,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}/resources',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}/resources',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -352,7 +352,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}/resources',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}/resources',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -375,7 +375,7 @@ Future<ApiResult<ResponseCommon33Result?, Never>> shareResourcesGetById({require
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}/resources/${Uri.encodeComponent(resourceId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}/resources/${Uri.encodeComponent(resourceId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -398,7 +398,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}/resources/${Uri.encodeComponent(resourceId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}/resources/${Uri.encodeComponent(resourceId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -421,7 +421,7 @@ Future<ApiResult<ResponseCommon33Result?, Never>> shareResourceDelete({required 
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/shares/${Uri.encodeComponent(shareId.toString())}/resources/${Uri.encodeComponent(resourceId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/shares/${Uri.encodeComponent(shareId.toJson())}/resources/${Uri.encodeComponent(resourceId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -472,7 +472,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/shares',
+  path: '/organizations/${Uri.encodeComponent(organizationId.toJson())}/shares',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

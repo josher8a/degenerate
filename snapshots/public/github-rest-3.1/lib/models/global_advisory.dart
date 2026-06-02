@@ -166,25 +166,25 @@ Map<String, dynamic> toJson() { return {
   'cve_id': cveId,
   'url': url,
   'html_url': htmlUrl.toString(),
-  'repository_advisory_url': repositoryAdvisoryUrl != null ? repositoryAdvisoryUrl?.toString() : null,
+  'repository_advisory_url': repositoryAdvisoryUrl?.toString(),
   'summary': summary,
   'description': description,
   'type': type.toJson(),
   'severity': severity.toJson(),
-  'source_code_location': sourceCodeLocation != null ? sourceCodeLocation?.toString() : null,
-  'identifiers': identifiers != null ? identifiers?.map((e) => e.toJson()).toList() : null,
+  'source_code_location': sourceCodeLocation?.toString(),
+  'identifiers': identifiers?.map((e) => e.toJson()).toList(),
   'references': references,
   'published_at': publishedAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  'github_reviewed_at': githubReviewedAt != null ? githubReviewedAt?.toIso8601String() : null,
-  'nvd_published_at': nvdPublishedAt != null ? nvdPublishedAt?.toIso8601String() : null,
-  'withdrawn_at': withdrawnAt != null ? withdrawnAt?.toIso8601String() : null,
-  'vulnerabilities': vulnerabilities != null ? vulnerabilities?.map((e) => e.toJson()).toList() : null,
-  'cvss': cvss != null ? cvss?.toJson() : null,
+  'github_reviewed_at': githubReviewedAt?.toIso8601String(),
+  'nvd_published_at': nvdPublishedAt?.toIso8601String(),
+  'withdrawn_at': withdrawnAt?.toIso8601String(),
+  'vulnerabilities': vulnerabilities?.map((e) => e.toJson()).toList(),
+  'cvss': cvss?.toJson(),
   if (cvssSeverities != null) 'cvss_severities': cvssSeverities?.toJson(),
   if (epss != null) 'epss': epss?.toJson(),
-  'cwes': cwes != null ? cwes?.map((e) => e.toJson()).toList() : null,
-  'credits': credits != null ? credits?.map((e) => e.toJson()).toList() : null,
+  'cwes': cwes?.map((e) => e.toJson()).toList(),
+  'credits': credits?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
       json.containsKey('cve_id') && json['cve_id'] is String &&
@@ -268,6 +268,6 @@ GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url,
 
 @override int get hashCode => Object.hashAll([ghsaId, cveId, url, htmlUrl, repositoryAdvisoryUrl, summary, description, type, severity, sourceCodeLocation, Object.hashAll(identifiers ?? const []), Object.hashAll(references ?? const []), publishedAt, updatedAt, githubReviewedAt, nvdPublishedAt, withdrawnAt, Object.hashAll(vulnerabilities ?? const []), cvss, cvssSeverities, epss, Object.hashAll(cwes ?? const []), Object.hashAll(credits ?? const [])]);
 
-@override String toString() => 'GlobalAdvisory(ghsaId: $ghsaId, cveId: $cveId, url: $url, htmlUrl: $htmlUrl, repositoryAdvisoryUrl: $repositoryAdvisoryUrl, summary: $summary, description: $description, type: $type, severity: $severity, sourceCodeLocation: $sourceCodeLocation, identifiers: $identifiers, references: $references, publishedAt: $publishedAt, updatedAt: $updatedAt, githubReviewedAt: $githubReviewedAt, nvdPublishedAt: $nvdPublishedAt, withdrawnAt: $withdrawnAt, vulnerabilities: $vulnerabilities, cvss: $cvss, cvssSeverities: $cvssSeverities, epss: $epss, cwes: $cwes, credits: $credits)';
+@override String toString() => 'GlobalAdvisory(\n  ghsaId: $ghsaId,\n  cveId: $cveId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  repositoryAdvisoryUrl: $repositoryAdvisoryUrl,\n  summary: $summary,\n  description: $description,\n  type: $type,\n  severity: $severity,\n  sourceCodeLocation: $sourceCodeLocation,\n  identifiers: $identifiers,\n  references: $references,\n  publishedAt: $publishedAt,\n  updatedAt: $updatedAt,\n  githubReviewedAt: $githubReviewedAt,\n  nvdPublishedAt: $nvdPublishedAt,\n  withdrawnAt: $withdrawnAt,\n  vulnerabilities: $vulnerabilities,\n  cvss: $cvss,\n  cvssSeverities: $cvssSeverities,\n  epss: $epss,\n  cwes: $cwes,\n  credits: $credits,\n)';
 
  }

@@ -53,7 +53,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cfd_tunnel',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -78,7 +78,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cfd_tunnel',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -101,7 +101,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> cloudflareTunnelGetACloudflareT
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -124,7 +124,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -148,7 +148,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toJson())}',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -171,7 +171,7 @@ Future<ApiResult<List<TunnelTunnelClient>?, Never>> cloudflareTunnelListCloudfla
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/connections',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toJson())}/connections',
   headers: headers,
   options: options,
 );
@@ -200,7 +200,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/connections',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toJson())}/connections',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -225,7 +225,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> cloudflareTunnelGetCloudflareTu
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/connectors/${Uri.encodeComponent(connectorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toJson())}/connectors/${Uri.encodeComponent(connectorId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -248,7 +248,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/management',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toJson())}/management',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -271,7 +271,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> cloudflareTunnelGetACloudflareT
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/token',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toJson())}/token',
   headers: headers,
   options: options,
 );
@@ -334,7 +334,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/tunnels',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/tunnels',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -394,7 +394,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/warp_connector',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/warp_connector',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -419,7 +419,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/warp_connector',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/warp_connector',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -442,7 +442,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> cloudflareTunnelGetAWarpConnect
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/warp_connector/${Uri.encodeComponent(tunnelId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/warp_connector/${Uri.encodeComponent(tunnelId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -465,7 +465,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/warp_connector/${Uri.encodeComponent(tunnelId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/warp_connector/${Uri.encodeComponent(tunnelId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -489,7 +489,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/warp_connector/${Uri.encodeComponent(tunnelId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/warp_connector/${Uri.encodeComponent(tunnelId.toJson())}',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -512,7 +512,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> cloudflareTunnelGetAWarpConnect
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/warp_connector/${Uri.encodeComponent(tunnelId.toString())}/token',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/warp_connector/${Uri.encodeComponent(tunnelId.toJson())}/token',
   headers: headers,
   options: options,
 );

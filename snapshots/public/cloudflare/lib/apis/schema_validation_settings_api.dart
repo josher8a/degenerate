@@ -17,7 +17,7 @@ Future<ApiResult<ShieldGlobalSettings, Never>> schemaValidationGetSettings({requ
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/settings',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -64,7 +64,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -96,7 +96,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/settings/operations',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -121,7 +121,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/settings/operations',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -144,7 +144,7 @@ Future<ApiResult<ShieldPerOperationSetting, Never>> schemaValidationGetPerOperat
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations/${Uri.encodeComponent(operationId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/settings/operations/${Uri.encodeComponent(operationId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -167,7 +167,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations/${Uri.encodeComponent(operationId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/settings/operations/${Uri.encodeComponent(operationId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -190,7 +190,7 @@ Future<ApiResult<SchemaValidationDeletePerOperationSettingResponseResult, Never>
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/settings/operations/${Uri.encodeComponent(operationId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/settings/operations/${Uri.encodeComponent(operationId.toJson())}',
   headers: headers,
   options: options,
 );

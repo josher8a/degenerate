@@ -25,7 +25,7 @@ return execute(
   onSuccess: (response) {
     return AigConfigListGatewayDynamicRoutesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigListGatewayDynamicRoutesError.fromResponse(response),
+  onError: AigConfigListGatewayDynamicRoutesError.fromResponse,
 );
  } 
 /// Create a new AI Gateway Dynamic Route.
@@ -48,7 +48,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigGetGatewayDynamicRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigPostGatewayDynamicRouteError.fromResponse(response),
+  onError: AigConfigPostGatewayDynamicRouteError.fromResponse,
 );
  } 
 /// Get an AI Gateway Dynamic Route.
@@ -69,7 +69,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigGetGatewayDynamicRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigGetGatewayDynamicRouteError.fromResponse(response),
+  onError: AigConfigGetGatewayDynamicRouteError.fromResponse,
 );
  } 
 /// Update an AI Gateway Dynamic Route.
@@ -91,7 +91,7 @@ return execute(
   onSuccess: (response) {
     return AigConfigUpdateGatewayDynamicRouteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigUpdateGatewayDynamicRouteError.fromResponse(response),
+  onError: AigConfigUpdateGatewayDynamicRouteError.fromResponse,
 );
  } 
 /// Delete an AI Gateway Dynamic Route.
@@ -112,7 +112,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigDeleteGatewayDynamicRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigDeleteGatewayDynamicRouteError.fromResponse(response),
+  onError: AigConfigDeleteGatewayDynamicRouteError.fromResponse,
 );
  } 
 /// List all AI Gateway Dynamic Route Deployments.
@@ -132,7 +132,7 @@ return execute(
   onSuccess: (response) {
     return AigConfigListGatewayDynamicRouteDeploymentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigListGatewayDynamicRouteDeploymentsError.fromResponse(response),
+  onError: AigConfigListGatewayDynamicRouteDeploymentsError.fromResponse,
 );
  } 
 /// Create a new AI Gateway Dynamic Route Deployment.
@@ -155,7 +155,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigDeleteGatewayDynamicRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigPostGatewayDynamicRouteDeploymentError.fromResponse(response),
+  onError: AigConfigPostGatewayDynamicRouteDeploymentError.fromResponse,
 );
  } 
 /// List all AI Gateway Dynamic Route Versions.
@@ -175,7 +175,7 @@ return execute(
   onSuccess: (response) {
     return AigConfigListGatewayDynamicRouteVersionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigListGatewayDynamicRouteVersionsError.fromResponse(response),
+  onError: AigConfigListGatewayDynamicRouteVersionsError.fromResponse,
 );
  } 
 /// Create a new AI Gateway Dynamic Route Version.
@@ -198,7 +198,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigDeleteGatewayDynamicRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigPostGatewayDynamicRouteVersionError.fromResponse(response),
+  onError: AigConfigPostGatewayDynamicRouteVersionError.fromResponse,
 );
  } 
 /// Get an AI Gateway Dynamic Route Version.
@@ -219,7 +219,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigGetGatewayDynamicRouteVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigGetGatewayDynamicRouteVersionError.fromResponse(response),
+  onError: AigConfigGetGatewayDynamicRouteVersionError.fromResponse,
 );
  } 
  }

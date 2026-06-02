@@ -74,6 +74,6 @@ AutoragConfigAiSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Func
 
 @override int get hashCode => Object.hash(filters, maxNumResults, model, query, rankingOptions, reranking, rewriteQuery, stream, systemPrompt);
 
-@override String toString() => 'AutoragConfigAiSearchRequest(filters: $filters, maxNumResults: $maxNumResults, model: $model, query: $query, rankingOptions: $rankingOptions, reranking: $reranking, rewriteQuery: $rewriteQuery, stream: $stream, systemPrompt: $systemPrompt)';
+@override String toString() => 'AutoragConfigAiSearchRequest(\n  filters: $filters,\n  maxNumResults: $maxNumResults,\n  model: $model,\n  query: $query,\n  rankingOptions: $rankingOptions,\n  reranking: $reranking,\n  rewriteQuery: $rewriteQuery,\n  stream: $stream,\n  systemPrompt: $systemPrompt,\n)';
 
  }

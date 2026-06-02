@@ -62,7 +62,7 @@ final TeamsDevicesIpProfileUpdatedAt updatedAt;
 
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toJson(),
-  'description': description != null ? description?.toJson() : null,
+  'description': description?.toJson(),
   'enabled': enabled.toJson(),
   'id': id.toJson(),
   'match': match.toJson(),
@@ -105,6 +105,6 @@ TeamsDevicesIpProfile copyWith({TeamsDevicesIpProfileCreatedAt? createdAt, Teams
 
 @override int get hashCode => Object.hash(createdAt, description, enabled, id, match, name, precedence, subnetId, updatedAt);
 
-@override String toString() => 'TeamsDevicesIpProfile(createdAt: $createdAt, description: $description, enabled: $enabled, id: $id, match: $match, name: $name, precedence: $precedence, subnetId: $subnetId, updatedAt: $updatedAt)';
+@override String toString() => 'TeamsDevicesIpProfile(\n  createdAt: $createdAt,\n  description: $description,\n  enabled: $enabled,\n  id: $id,\n  match: $match,\n  name: $name,\n  precedence: $precedence,\n  subnetId: $subnetId,\n  updatedAt: $updatedAt,\n)';
 
  }

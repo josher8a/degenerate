@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/pipelines',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/pipelines',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -51,7 +51,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/pipelines',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/pipelines',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -74,7 +74,7 @@ Future<ApiResult<PipelinesByPipelineIdResponseResult, Never>> getV4AccountsByAcc
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/pipelines/${Uri.encodeComponent(pipelineId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/pipelines/${Uri.encodeComponent(pipelineId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -96,7 +96,7 @@ Future<ApiResult<void, Never>> deleteV4AccountsByAccountIdPipelinesV1PipelinesBy
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/pipelines/${Uri.encodeComponent(pipelineId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/pipelines/${Uri.encodeComponent(pipelineId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -127,7 +127,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/sinks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/sinks',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -152,7 +152,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/sinks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/sinks',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -175,7 +175,7 @@ Future<ApiResult<SinksBySinkIdResponseResult, Never>> getV4AccountsByAccountIdPi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/sinks/${Uri.encodeComponent(sinkId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/sinks/${Uri.encodeComponent(sinkId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -203,7 +203,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/sinks/${Uri.encodeComponent(sinkId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/sinks/${Uri.encodeComponent(sinkId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -236,7 +236,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/streams',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/streams',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -261,7 +261,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/streams',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/streams',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -284,7 +284,7 @@ Future<ApiResult<StreamsByStreamIdResponseResult, Never>> getV4AccountsByAccount
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/streams/${Uri.encodeComponent(streamId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/streams/${Uri.encodeComponent(streamId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -307,7 +307,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/streams/${Uri.encodeComponent(streamId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/streams/${Uri.encodeComponent(streamId.toJson())}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -336,7 +336,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/streams/${Uri.encodeComponent(streamId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/streams/${Uri.encodeComponent(streamId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -358,7 +358,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pipelines/v1/validate_sql',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pipelines/v1/validate_sql',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,

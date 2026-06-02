@@ -40,7 +40,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListPublicEventsError.fromResponse(response),
+  onError: ActivityListPublicEventsError.fromResponse,
 );
  } 
 /// Get feeds
@@ -109,7 +109,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// List notifications for the authenticated user
@@ -155,7 +155,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListNotificationsForAuthenticatedUserError.fromResponse(response),
+  onError: ActivityListNotificationsForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Mark notifications as read
@@ -179,7 +179,7 @@ return execute(
   onSuccess: (response) {
     return ActivityMarkNotificationsAsReadResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Get a thread
@@ -201,7 +201,7 @@ return execute(
   onSuccess: (response) {
     return Thread.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Mark a thread as read
@@ -221,7 +221,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Mark a thread as done
@@ -264,7 +264,7 @@ return execute(
   onSuccess: (response) {
     return ThreadSubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Set a thread subscription
@@ -292,7 +292,7 @@ return execute(
   onSuccess: (response) {
     return ThreadSubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Delete a thread subscription
@@ -312,7 +312,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// List public organization events
@@ -485,7 +485,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => (v as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => (v as List<dynamic>).map((e) => Stargazer.fromJson(e as Map<String, dynamic>)).toList(),);
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// List watchers
@@ -540,7 +540,7 @@ return execute(
   onSuccess: (response) {
     return RepositorySubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Set a repository subscription
@@ -626,7 +626,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Check if a repository is starred by the authenticated user
@@ -646,7 +646,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Star a repository for the authenticated user
@@ -666,7 +666,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Unstar a repository for the authenticated user
@@ -686,7 +686,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// List repositories watched by the authenticated user
@@ -720,7 +720,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// List events for the authenticated user

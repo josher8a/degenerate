@@ -112,6 +112,6 @@ WorkersWorker copyWith({DateTime? createdOn, DateTime? Function()? deployedOn, S
 
 @override int get hashCode => Object.hash(createdOn, deployedOn, id, logpush, name, observability, references, subdomain, Object.hashAll(tags), Object.hashAll(tailConsumers), updatedOn);
 
-@override String toString() => 'WorkersWorker(createdOn: $createdOn, deployedOn: $deployedOn, id: $id, logpush: $logpush, name: $name, observability: $observability, references: $references, subdomain: $subdomain, tags: $tags, tailConsumers: $tailConsumers, updatedOn: $updatedOn)';
+@override String toString() => 'WorkersWorker(\n  createdOn: $createdOn,\n  deployedOn: $deployedOn,\n  id: $id,\n  logpush: $logpush,\n  name: $name,\n  observability: $observability,\n  references: $references,\n  subdomain: $subdomain,\n  tags: $tags,\n  tailConsumers: $tailConsumers,\n  updatedOn: $updatedOn,\n)';
 
  }

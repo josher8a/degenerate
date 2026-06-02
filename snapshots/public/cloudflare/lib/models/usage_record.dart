@@ -125,6 +125,6 @@ UsageRecord copyWith({String? billingCurrency, DateTime? billingPeriodStart, Dat
 
 @override int get hashCode => Object.hash(billingCurrency, billingPeriodStart, chargePeriodEnd, chargePeriodStart, consumedQuantity, consumedUnit, contractedCost, cumulatedContractedCost, cumulatedPricingQuantity, pricingQuantity, serviceName);
 
-@override String toString() => 'UsageRecord(billingCurrency: $billingCurrency, billingPeriodStart: $billingPeriodStart, chargePeriodEnd: $chargePeriodEnd, chargePeriodStart: $chargePeriodStart, consumedQuantity: $consumedQuantity, consumedUnit: $consumedUnit, contractedCost: $contractedCost, cumulatedContractedCost: $cumulatedContractedCost, cumulatedPricingQuantity: $cumulatedPricingQuantity, pricingQuantity: $pricingQuantity, serviceName: $serviceName)';
+@override String toString() => 'UsageRecord(\n  billingCurrency: $billingCurrency,\n  billingPeriodStart: $billingPeriodStart,\n  chargePeriodEnd: $chargePeriodEnd,\n  chargePeriodStart: $chargePeriodStart,\n  consumedQuantity: $consumedQuantity,\n  consumedUnit: $consumedUnit,\n  contractedCost: $contractedCost,\n  cumulatedContractedCost: $cumulatedContractedCost,\n  cumulatedPricingQuantity: $cumulatedPricingQuantity,\n  pricingQuantity: $pricingQuantity,\n  serviceName: $serviceName,\n)';
 
  }

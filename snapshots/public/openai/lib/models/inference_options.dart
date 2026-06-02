@@ -15,7 +15,7 @@ final ToolChoice? toolChoice;
 final String? model;
 
 Map<String, dynamic> toJson() { return {
-  'tool_choice': toolChoice != null ? toolChoice?.toJson() : null,
+  'tool_choice': toolChoice?.toJson(),
   'model': model,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tool_choice') &&

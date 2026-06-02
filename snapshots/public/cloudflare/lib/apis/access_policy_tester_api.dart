@@ -18,7 +18,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/policy-tests',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/policy-tests',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -30,7 +30,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessPolicyInitRespResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => AccessPolicyTestsError.fromResponse(response),
+  onError: AccessPolicyTestsError.fromResponse,
 );
  } 
 /// Get the current status of a given Access policy test
@@ -42,7 +42,7 @@ Future<ApiResult<AccessPolicyUpdateRespResult?, AccessPolicyTestsError>> accessP
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/policy-tests/${Uri.encodeComponent(policyTestId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/policy-tests/${Uri.encodeComponent(policyTestId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -53,7 +53,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessPolicyUpdateRespResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => AccessPolicyTestsError.fromResponse(response),
+  onError: AccessPolicyTestsError.fromResponse,
 );
  } 
 /// Get an Access policy test users page
@@ -77,7 +77,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/policy-tests/${Uri.encodeComponent(policyTestId.toString())}/users',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/policy-tests/${Uri.encodeComponent(policyTestId.toJson())}/users',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -90,7 +90,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AccessPolicyUsers.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AccessPolicyTestsError.fromResponse(response),
+  onError: AccessPolicyTestsError.fromResponse,
 );
  } 
  }

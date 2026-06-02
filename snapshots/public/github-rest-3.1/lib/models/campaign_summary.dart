@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'ends_at': endsAt.toIso8601String(),
   if (closedAt != null) 'closed_at': closedAt?.toIso8601String(),
   'state': state.toJson(),
-  'contact_link': contactLink != null ? contactLink?.toString() : null,
+  'contact_link': contactLink?.toString(),
   if (alertStats != null) 'alert_stats': alertStats?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('number') && json['number'] is num &&
@@ -113,6 +113,6 @@ CampaignSummary copyWith({int? number, DateTime? createdAt, DateTime? updatedAt,
 
 @override int get hashCode => Object.hash(number, createdAt, updatedAt, name, description, Object.hashAll(managers), Object.hashAll(teamManagers ?? const []), publishedAt, endsAt, closedAt, state, contactLink, alertStats);
 
-@override String toString() => 'CampaignSummary(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, description: $description, managers: $managers, teamManagers: $teamManagers, publishedAt: $publishedAt, endsAt: $endsAt, closedAt: $closedAt, state: $state, contactLink: $contactLink, alertStats: $alertStats)';
+@override String toString() => 'CampaignSummary(\n  number: $number,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  name: $name,\n  description: $description,\n  managers: $managers,\n  teamManagers: $teamManagers,\n  publishedAt: $publishedAt,\n  endsAt: $endsAt,\n  closedAt: $closedAt,\n  state: $state,\n  contactLink: $contactLink,\n  alertStats: $alertStats,\n)';
 
  }

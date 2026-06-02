@@ -59,7 +59,7 @@ if (comments$ != null) {
 }
 final pattern$ = pattern;
 if (pattern$ != null) {
-  if (pattern$.length < 1) errors.add('pattern: length must be >= 1');
+  if (pattern$.isEmpty) errors.add('pattern: length must be >= 1');
   if (pattern$.length > 1024) errors.add('pattern: length must be <= 1024');
 }
 return errors; } 
@@ -88,6 +88,6 @@ EmailSecurityBatchAllowPoliciesRequestPatches copyWith({String? Function()? comm
 
 @override int get hashCode => Object.hash(comments, isAcceptableSender, isExemptRecipient, isRegex, isTrustedSender, pattern, patternType, verifySender, id);
 
-@override String toString() => 'EmailSecurityBatchAllowPoliciesRequestPatches(comments: $comments, isAcceptableSender: $isAcceptableSender, isExemptRecipient: $isExemptRecipient, isRegex: $isRegex, isTrustedSender: $isTrustedSender, pattern: $pattern, patternType: $patternType, verifySender: $verifySender, id: $id)';
+@override String toString() => 'EmailSecurityBatchAllowPoliciesRequestPatches(\n  comments: $comments,\n  isAcceptableSender: $isAcceptableSender,\n  isExemptRecipient: $isExemptRecipient,\n  isRegex: $isRegex,\n  isTrustedSender: $isTrustedSender,\n  pattern: $pattern,\n  patternType: $patternType,\n  verifySender: $verifySender,\n  id: $id,\n)';
 
  }

@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -51,7 +51,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -74,7 +74,7 @@ Future<ApiResult<dynamic, Never>> getZoneRuleset({required RulesetsRulesetId rul
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -97,7 +97,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -120,7 +120,7 @@ Future<ApiResult<void, Never>> deleteZoneRuleset({required RulesetsRulesetId rul
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -140,7 +140,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -164,7 +164,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -187,7 +187,7 @@ Future<ApiResult<dynamic, Never>> deleteZoneRulesetRule({required RulesetsRuleId
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -209,7 +209,7 @@ Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, Never
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/versions',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/versions',
   headers: headers,
   options: options,
 );
@@ -231,7 +231,7 @@ Future<ApiResult<dynamic, Never>> getZoneRulesetVersion({required RulesetsRulese
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/versions/${Uri.encodeComponent(rulesetVersion.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/versions/${Uri.encodeComponent(rulesetVersion.toJson())}',
   headers: headers,
   options: options,
 );
@@ -253,7 +253,7 @@ Future<ApiResult<void, Never>> deleteZoneRulesetVersion({required RulesetsRulese
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/versions/${Uri.encodeComponent(rulesetVersion.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/versions/${Uri.encodeComponent(rulesetVersion.toJson())}',
   headers: headers,
   options: options,
 );
@@ -272,7 +272,7 @@ Future<ApiResult<dynamic, Never>> listZoneRulesetVersionRulesByTag({required Rul
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/versions/${Uri.encodeComponent(rulesetVersion.toString())}/by_tag/${Uri.encodeComponent(ruleTag.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/versions/${Uri.encodeComponent(rulesetVersion.toJson())}/by_tag/${Uri.encodeComponent(ruleTag.toJson())}',
   headers: headers,
   options: options,
 );
@@ -294,7 +294,7 @@ Future<ApiResult<dynamic, Never>> getZoneEntrypointRuleset({required RulesetsRul
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/phases/${Uri.encodeComponent('${rulesetPhase.toJson()}')}/entrypoint',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toJson())}/entrypoint',
   headers: headers,
   options: options,
 );
@@ -317,7 +317,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/phases/${Uri.encodeComponent('${rulesetPhase.toJson()}')}/entrypoint',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toJson())}/entrypoint',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -340,7 +340,7 @@ Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, Never
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/phases/${Uri.encodeComponent('${rulesetPhase.toJson()}')}/entrypoint/versions',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toJson())}/entrypoint/versions',
   headers: headers,
   options: options,
 );
@@ -362,7 +362,7 @@ Future<ApiResult<dynamic, Never>> getZoneEntrypointRulesetVersion({required Rule
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/rulesets/phases/${Uri.encodeComponent('${rulesetPhase.toJson()}')}/entrypoint/versions/${Uri.encodeComponent(rulesetVersion.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toJson())}/entrypoint/versions/${Uri.encodeComponent(rulesetVersion.toJson())}',
   headers: headers,
   options: options,
 );

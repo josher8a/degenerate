@@ -19,6 +19,10 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ResponsesClientEvent$Unknown;
 
+R when<R>({required R Function(ResponsesClientEventResponseCreate) responseCreate, required R Function(ResponsesClientEvent$Unknown) unknown, }) { return switch (this) {
+  final ResponsesClientEventResponseCreate v => responseCreate(v),
+  final ResponsesClientEvent$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ResponsesClientEventResponseCreate extends ResponsesClientEvent {const ResponsesClientEventResponseCreate(this.createResponse);
 

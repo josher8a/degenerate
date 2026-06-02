@@ -80,6 +80,6 @@ TunnelTeamnet copyWith({TunnelRouteComment? Function()? comment, TunnelCreatedAt
 
 @override int get hashCode => Object.hash(comment, createdAt, deletedAt, id, network, tunType, tunnelId, tunnelName, virtualNetworkId, virtualNetworkName);
 
-@override String toString() => 'TunnelTeamnet(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, network: $network, tunType: $tunType, tunnelId: $tunnelId, tunnelName: $tunnelName, virtualNetworkId: $virtualNetworkId, virtualNetworkName: $virtualNetworkName)';
+@override String toString() => 'TunnelTeamnet(\n  comment: $comment,\n  createdAt: $createdAt,\n  deletedAt: $deletedAt,\n  id: $id,\n  network: $network,\n  tunType: $tunType,\n  tunnelId: $tunnelId,\n  tunnelName: $tunnelName,\n  virtualNetworkId: $virtualNetworkId,\n  virtualNetworkName: $virtualNetworkName,\n)';
 
  }

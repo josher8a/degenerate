@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'commit_id': commitId,
   'commit_url': commitUrl,
   'created_at': createdAt,
-  'performed_via_github_app': performedViaGithubApp != null ? performedViaGithubApp?.toJson() : null,
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
   'milestone': milestone.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
@@ -85,6 +85,6 @@ MilestonedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser?
 
 @override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, milestone);
 
-@override String toString() => 'MilestonedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, milestone: $milestone)';
+@override String toString() => 'MilestonedIssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  performedViaGithubApp: $performedViaGithubApp,\n  milestone: $milestone,\n)';
 
  }

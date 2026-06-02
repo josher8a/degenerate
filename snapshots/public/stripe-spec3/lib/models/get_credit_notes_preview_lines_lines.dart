@@ -80,6 +80,6 @@ GetCreditNotesPreviewLinesLines copyWith({int? Function()? amount, String? Funct
 
 @override int get hashCode => Object.hash(amount, description, invoiceLineItem, quantity, taxAmounts, taxRates, type, unitAmount, unitAmountDecimal);
 
-@override String toString() => 'GetCreditNotesPreviewLinesLines(amount: $amount, description: $description, invoiceLineItem: $invoiceLineItem, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+@override String toString() => 'GetCreditNotesPreviewLinesLines(\n  amount: $amount,\n  description: $description,\n  invoiceLineItem: $invoiceLineItem,\n  quantity: $quantity,\n  taxAmounts: $taxAmounts,\n  taxRates: $taxRates,\n  type: $type,\n  unitAmount: $unitAmount,\n  unitAmountDecimal: $unitAmountDecimal,\n)';
 
  }

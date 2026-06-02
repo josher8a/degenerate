@@ -77,6 +77,6 @@ IntelWhois copyWith({String? Function()? createdDate, IntelDomainName? Function(
 
 @override int get hashCode => Object.hash(createdDate, domain, Object.hashAll(nameservers ?? const []), registrant, registrantCountry, registrantEmail, registrantOrg, registrar, updatedDate);
 
-@override String toString() => 'IntelWhois(createdDate: $createdDate, domain: $domain, nameservers: $nameservers, registrant: $registrant, registrantCountry: $registrantCountry, registrantEmail: $registrantEmail, registrantOrg: $registrantOrg, registrar: $registrar, updatedDate: $updatedDate)';
+@override String toString() => 'IntelWhois(\n  createdDate: $createdDate,\n  domain: $domain,\n  nameservers: $nameservers,\n  registrant: $registrant,\n  registrantCountry: $registrantCountry,\n  registrantEmail: $registrantEmail,\n  registrantOrg: $registrantOrg,\n  registrar: $registrar,\n  updatedDate: $updatedDate,\n)';
 
  }

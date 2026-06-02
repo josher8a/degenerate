@@ -89,6 +89,6 @@ RequestsResponse copyWith({IpStatsAsn? asn, bool? Function()? contentAvailable, 
 
 @override int get hashCode => Object.hash(asn, contentAvailable, dataLength, encodedDataLength, geoip, hasExtraInfo, hash, requestId, response, size, type);
 
-@override String toString() => 'RequestsResponse(asn: $asn, contentAvailable: $contentAvailable, dataLength: $dataLength, encodedDataLength: $encodedDataLength, geoip: $geoip, hasExtraInfo: $hasExtraInfo, hash: $hash, requestId: $requestId, response: $response, size: $size, type: $type)';
+@override String toString() => 'RequestsResponse(\n  asn: $asn,\n  contentAvailable: $contentAvailable,\n  dataLength: $dataLength,\n  encodedDataLength: $encodedDataLength,\n  geoip: $geoip,\n  hasExtraInfo: $hasExtraInfo,\n  hash: $hash,\n  requestId: $requestId,\n  response: $response,\n  size: $size,\n  type: $type,\n)';
 
  }

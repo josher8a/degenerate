@@ -53,9 +53,9 @@ Map<String, dynamic> toJson() { return {
   'sha': sha,
   'content': ?content,
   'url': url.toString(),
-  'git_url': gitUrl != null ? gitUrl?.toString() : null,
-  'html_url': htmlUrl != null ? htmlUrl?.toString() : null,
-  'download_url': downloadUrl != null ? downloadUrl?.toString() : null,
+  'git_url': gitUrl?.toString(),
+  'html_url': htmlUrl?.toString(),
+  'download_url': downloadUrl?.toString(),
   if (entries != null) 'entries': entries?.map((e) => e.toJson()).toList(),
   'encoding': ?encoding,
   '_links': links.toJson(),
@@ -103,6 +103,6 @@ ContentTree copyWith({String? type, int? size, String? name, String? path, Strin
 
 @override int get hashCode => Object.hash(type, size, name, path, sha, content, url, gitUrl, htmlUrl, downloadUrl, Object.hashAll(entries ?? const []), encoding, links);
 
-@override String toString() => 'ContentTree(type: $type, size: $size, name: $name, path: $path, sha: $sha, content: $content, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, entries: $entries, encoding: $encoding, links: $links)';
+@override String toString() => 'ContentTree(\n  type: $type,\n  size: $size,\n  name: $name,\n  path: $path,\n  sha: $sha,\n  content: $content,\n  url: $url,\n  gitUrl: $gitUrl,\n  htmlUrl: $htmlUrl,\n  downloadUrl: $downloadUrl,\n  entries: $entries,\n  encoding: $encoding,\n  links: $links,\n)';
 
  }

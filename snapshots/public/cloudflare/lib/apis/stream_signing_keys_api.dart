@@ -17,7 +17,7 @@ Future<ApiResult<List<StreamKeyResponseCollectionResult>?, Never>> streamSigning
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/keys',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/keys',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<StreamKeys?, Never>> streamSigningKeysCreateSigningKeys({requir
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/keys',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/keys',
   headers: headers,
   options: options,
 );
@@ -61,7 +61,7 @@ Future<ApiResult<String?, Never>> streamSigningKeysDeleteSigningKeys({required S
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/keys/${Uri.encodeComponent(identifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/keys/${Uri.encodeComponent(identifier.toJson())}',
   headers: headers,
   options: options,
 );

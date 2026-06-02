@@ -17,7 +17,7 @@ Future<ApiResult<SecondaryDnsForceResult?, Never>> secondaryDnsSecondaryZoneForc
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/force_axfr',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/force_axfr',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<SecondaryDnsSingleResponseIncomingResult?, Never>> secondaryDns
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/incoming',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/incoming',
   headers: headers,
   options: options,
 );
@@ -62,7 +62,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/incoming',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/incoming',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/incoming',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/incoming',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> second
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/secondary_dns/incoming',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/secondary_dns/incoming',
   headers: headers,
   options: options,
 );

@@ -42,7 +42,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCertificateAuthoritiesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetCertificateAuthoritiesError.fromResponse(response),
+  onError: RadarGetCertificateAuthoritiesError.fromResponse,
 );
  } 
 /// Get certificate authority details
@@ -73,7 +73,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCertificateAuthorityDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetCertificateAuthorityDetailsError.fromResponse(response),
+  onError: RadarGetCertificateAuthorityDetailsError.fromResponse,
 );
  } 
 /// List certificate logs
@@ -110,7 +110,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCertificateLogsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetCertificateLogsError.fromResponse(response),
+  onError: RadarGetCertificateLogsError.fromResponse,
 );
  } 
 /// Get certificate log details
@@ -141,7 +141,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCertificateLogDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetCertificateLogDetailsError.fromResponse(response),
+  onError: RadarGetCertificateLogDetailsError.fromResponse,
 );
  } 
 /// Get certificate distribution by dimension
@@ -260,7 +260,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/ct/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/ct/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -273,7 +273,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCtSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetCtSummaryError.fromResponse(response),
+  onError: RadarGetCtSummaryError.fromResponse,
 );
  } 
 /// Get certificates time series
@@ -402,7 +402,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetCtTimeseriesError.fromResponse(response),
+  onError: RadarGetCtTimeseriesError.fromResponse,
 );
  } 
 /// Get time series of certificate distribution by dimension
@@ -524,7 +524,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/ct/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/ct/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -537,7 +537,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCtTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetCtTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetCtTimeseriesGroupError.fromResponse,
 );
  } 
  }

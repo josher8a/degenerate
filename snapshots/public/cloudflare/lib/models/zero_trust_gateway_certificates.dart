@@ -163,6 +163,6 @@ ZeroTrustGatewayCertificates copyWith({ZeroTrustGatewayBindingStatus? Function()
 
 @override int get hashCode => Object.hash(bindingStatus, certificate, createdAt, expiresOn, fingerprint, id, inUse, issuerOrg, issuerRaw, type, updatedAt, uploadedOn);
 
-@override String toString() => 'ZeroTrustGatewayCertificates(bindingStatus: $bindingStatus, certificate: $certificate, createdAt: $createdAt, expiresOn: $expiresOn, fingerprint: $fingerprint, id: $id, inUse: $inUse, issuerOrg: $issuerOrg, issuerRaw: $issuerRaw, type: $type, updatedAt: $updatedAt, uploadedOn: $uploadedOn)';
+@override String toString() => 'ZeroTrustGatewayCertificates(\n  bindingStatus: $bindingStatus,\n  certificate: $certificate,\n  createdAt: $createdAt,\n  expiresOn: $expiresOn,\n  fingerprint: $fingerprint,\n  id: $id,\n  inUse: $inUse,\n  issuerOrg: $issuerOrg,\n  issuerRaw: $issuerRaw,\n  type: $type,\n  updatedAt: $updatedAt,\n  uploadedOn: $uploadedOn,\n)';
 
  }

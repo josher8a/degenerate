@@ -69,6 +69,6 @@ InsightsUserStats2 copyWith({String? Function()? actorType, String? Function()? 
 
 @override int get hashCode => Object.hash(actorType, actorName, actorId, integrationId, oauthApplicationId, totalRequestCount, rateLimitedRequestCount, lastRateLimitedTimestamp, lastRequestTimestamp);
 
-@override String toString() => 'InsightsUserStats2(actorType: $actorType, actorName: $actorName, actorId: $actorId, integrationId: $integrationId, oauthApplicationId: $oauthApplicationId, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount, lastRateLimitedTimestamp: $lastRateLimitedTimestamp, lastRequestTimestamp: $lastRequestTimestamp)';
+@override String toString() => 'InsightsUserStats2(\n  actorType: $actorType,\n  actorName: $actorName,\n  actorId: $actorId,\n  integrationId: $integrationId,\n  oauthApplicationId: $oauthApplicationId,\n  totalRequestCount: $totalRequestCount,\n  rateLimitedRequestCount: $rateLimitedRequestCount,\n  lastRateLimitedTimestamp: $lastRateLimitedTimestamp,\n  lastRequestTimestamp: $lastRequestTimestamp,\n)';
 
  }

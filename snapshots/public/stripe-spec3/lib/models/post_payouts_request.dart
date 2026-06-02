@@ -125,6 +125,6 @@ PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? 
 
 @override int get hashCode => Object.hash(amount, currency, description, destination, Object.hashAll(expand ?? const []), metadata, method, payoutMethod, sourceType, statementDescriptor);
 
-@override String toString() => 'PostPayoutsRequest(amount: $amount, currency: $currency, description: $description, destination: $destination, expand: $expand, metadata: $metadata, method: $method, payoutMethod: $payoutMethod, sourceType: $sourceType, statementDescriptor: $statementDescriptor)';
+@override String toString() => 'PostPayoutsRequest(\n  amount: $amount,\n  currency: $currency,\n  description: $description,\n  destination: $destination,\n  expand: $expand,\n  metadata: $metadata,\n  method: $method,\n  payoutMethod: $payoutMethod,\n  sourceType: $sourceType,\n  statementDescriptor: $statementDescriptor,\n)';
 
  }

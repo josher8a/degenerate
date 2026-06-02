@@ -84,6 +84,6 @@ Lists copyWith({List<String>? asns, List<ListsCertificates>? certificates, List<
 
 @override int get hashCode => Object.hash(Object.hashAll(asns), Object.hashAll(certificates), Object.hashAll(continents), Object.hashAll(countries), Object.hashAll(domains), Object.hashAll(hashes), Object.hashAll(ips), Object.hashAll(linkDomains), Object.hashAll(servers), Object.hashAll(urls));
 
-@override String toString() => 'Lists(asns: $asns, certificates: $certificates, continents: $continents, countries: $countries, domains: $domains, hashes: $hashes, ips: $ips, linkDomains: $linkDomains, servers: $servers, urls: $urls)';
+@override String toString() => 'Lists(\n  asns: $asns,\n  certificates: $certificates,\n  continents: $continents,\n  countries: $countries,\n  domains: $domains,\n  hashes: $hashes,\n  ips: $ips,\n  linkDomains: $linkDomains,\n  servers: $servers,\n  urls: $urls,\n)';
 
  }

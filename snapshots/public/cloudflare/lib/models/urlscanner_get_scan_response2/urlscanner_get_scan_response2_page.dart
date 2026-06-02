@@ -133,6 +133,6 @@ UrlscannerGetScanResponse2Page copyWith({String? apexDomain, String? asn, String
 
 @override int get hashCode => Object.hash(apexDomain, asn, asnname, city, country, domain, ip, mimeType, screenshot, server, status, title, tlsAgeDays, tlsIssuer, tlsValidDays, tlsValidFrom, url);
 
-@override String toString() => 'UrlscannerGetScanResponse2Page(apexDomain: $apexDomain, asn: $asn, asnname: $asnname, city: $city, country: $country, domain: $domain, ip: $ip, mimeType: $mimeType, screenshot: $screenshot, server: $server, status: $status, title: $title, tlsAgeDays: $tlsAgeDays, tlsIssuer: $tlsIssuer, tlsValidDays: $tlsValidDays, tlsValidFrom: $tlsValidFrom, url: $url)';
+@override String toString() => 'UrlscannerGetScanResponse2Page(\n  apexDomain: $apexDomain,\n  asn: $asn,\n  asnname: $asnname,\n  city: $city,\n  country: $country,\n  domain: $domain,\n  ip: $ip,\n  mimeType: $mimeType,\n  screenshot: $screenshot,\n  server: $server,\n  status: $status,\n  title: $title,\n  tlsAgeDays: $tlsAgeDays,\n  tlsIssuer: $tlsIssuer,\n  tlsValidDays: $tlsValidDays,\n  tlsValidFrom: $tlsValidFrom,\n  url: $url,\n)';
 
  }

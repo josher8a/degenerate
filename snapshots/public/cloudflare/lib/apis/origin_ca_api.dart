@@ -81,7 +81,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesCertificates?, Never>> originCaGetCe
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -103,7 +103,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesCertificateRevokeResponseResult?, Ne
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );

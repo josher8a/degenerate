@@ -17,7 +17,7 @@ Future<ApiResult<EmailEmailSettingsProperties?, Never>> emailRoutingSettingsGetE
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/routing',
   headers: headers,
   options: options,
 );
@@ -45,7 +45,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/dns',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/routing/dns',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -69,7 +69,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/dns',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/routing/dns',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -93,7 +93,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/dns',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/routing/dns',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -117,7 +117,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/dns',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/routing/dns',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,

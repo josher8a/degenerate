@@ -108,6 +108,6 @@ CheckoutCardPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCap
 
 @override int get hashCode => Object.hash(captureMethod, installments, requestExtendedAuthorization, requestIncrementalAuthorization, requestMulticapture, requestOvercapture, requestThreeDSecure, restrictions, setupFutureUsage, statementDescriptorSuffixKana, statementDescriptorSuffixKanji);
 
-@override String toString() => 'CheckoutCardPaymentMethodOptions(captureMethod: $captureMethod, installments: $installments, requestExtendedAuthorization: $requestExtendedAuthorization, requestIncrementalAuthorization: $requestIncrementalAuthorization, requestMulticapture: $requestMulticapture, requestOvercapture: $requestOvercapture, requestThreeDSecure: $requestThreeDSecure, restrictions: $restrictions, setupFutureUsage: $setupFutureUsage, statementDescriptorSuffixKana: $statementDescriptorSuffixKana, statementDescriptorSuffixKanji: $statementDescriptorSuffixKanji)';
+@override String toString() => 'CheckoutCardPaymentMethodOptions(\n  captureMethod: $captureMethod,\n  installments: $installments,\n  requestExtendedAuthorization: $requestExtendedAuthorization,\n  requestIncrementalAuthorization: $requestIncrementalAuthorization,\n  requestMulticapture: $requestMulticapture,\n  requestOvercapture: $requestOvercapture,\n  requestThreeDSecure: $requestThreeDSecure,\n  restrictions: $restrictions,\n  setupFutureUsage: $setupFutureUsage,\n  statementDescriptorSuffixKana: $statementDescriptorSuffixKana,\n  statementDescriptorSuffixKanji: $statementDescriptorSuffixKanji,\n)';
 
  }

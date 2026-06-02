@@ -35,7 +35,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/users',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -60,7 +60,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/users',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -83,7 +83,7 @@ Future<ApiResult<AccessSchemasUsers?, Never>> zeroTrustUsersGetUser({required Ac
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/users/${Uri.encodeComponent(userId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -106,7 +106,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/users/${Uri.encodeComponent(userId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -129,7 +129,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> zeroTrustUsersDeleteUser({requir
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/users/${Uri.encodeComponent(userId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -151,7 +151,7 @@ Future<ApiResult<List<AccessActiveSessionsResponseResult>?, Never>> zeroTrustUse
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}/active_sessions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/users/${Uri.encodeComponent(userId.toJson())}/active_sessions',
   headers: headers,
   options: options,
 );
@@ -173,7 +173,7 @@ Future<ApiResult<AccessActiveSessionResponseResult?, Never>> zeroTrustUsersGetAc
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}/active_sessions/${Uri.encodeComponent(nonce.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/users/${Uri.encodeComponent(userId.toJson())}/active_sessions/${Uri.encodeComponent(nonce.toJson())}',
   headers: headers,
   options: options,
 );
@@ -195,7 +195,7 @@ Future<ApiResult<List<AccessFailedLoginResponseResult>?, Never>> zeroTrustUsersG
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}/failed_logins',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/users/${Uri.encodeComponent(userId.toJson())}/failed_logins',
   headers: headers,
   options: options,
 );
@@ -217,7 +217,7 @@ Future<ApiResult<AccessIdentity?, Never>> zeroTrustUsersGetLastSeenIdentity({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}/last_seen_identity',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/users/${Uri.encodeComponent(userId.toJson())}/last_seen_identity',
   headers: headers,
   options: options,
 );
@@ -239,7 +239,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> zeroTrustUsersDeleteMfaAuthentic
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/users/${Uri.encodeComponent(userId.toString())}/mfa_authenticators/${Uri.encodeComponent(authenticatorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/users/${Uri.encodeComponent(userId.toJson())}/mfa_authenticators/${Uri.encodeComponent(authenticatorId.toJson())}',
   headers: headers,
   options: options,
 );

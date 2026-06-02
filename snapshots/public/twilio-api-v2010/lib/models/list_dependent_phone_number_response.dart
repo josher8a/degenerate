@@ -69,6 +69,6 @@ ListDependentPhoneNumberResponse copyWith({List<AccountAddressDependentPhoneNumb
 
 @override int get hashCode => Object.hash(Object.hashAll(dependentPhoneNumbers ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
 
-@override String toString() => 'ListDependentPhoneNumberResponse(dependentPhoneNumbers: $dependentPhoneNumbers, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+@override String toString() => 'ListDependentPhoneNumberResponse(\n  dependentPhoneNumbers: $dependentPhoneNumbers,\n  end: $end,\n  firstPageUri: $firstPageUri,\n  nextPageUri: $nextPageUri,\n  page: $page,\n  pageSize: $pageSize,\n  previousPageUri: $previousPageUri,\n  start: $start,\n  uri: $uri,\n)';
 
  }

@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final ingress$ = ingress;
 if (ingress$ != null) {
-  if (ingress$.length < 1) errors.add('ingress: must have >= 1 items');
+  if (ingress$.isEmpty) errors.add('ingress: must have >= 1 items');
 }
 return errors; } 
 TunnelConfig copyWith({List<TunnelIngressRule>? Function()? ingress, TunnelOriginRequest? Function()? originRequest, WarpRouting? Function()? warpRouting, }) { return TunnelConfig(

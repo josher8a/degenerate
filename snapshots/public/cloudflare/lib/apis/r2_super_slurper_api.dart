@@ -59,7 +59,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DeleteIpProfileResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => SlurperCreateJobError.fromResponse(response),
+  onError: SlurperCreateJobError.fromResponse,
 );
  } 
 /// Get job details
@@ -151,7 +151,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String?;
   },
-  onError: (response) => SlurperCreateJobError.fromResponse(response),
+  onError: SlurperCreateJobError.fromResponse,
 );
  } 
 /// Get job progress

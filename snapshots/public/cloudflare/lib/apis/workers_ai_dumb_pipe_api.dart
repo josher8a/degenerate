@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError.fromResponse,
 );
  } 
 /// Open Websocket connection with @cf/pipecat-ai/smart-turn-v3 model.
@@ -45,7 +45,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError.fromResponse,
 );
  } 
 /// Open Websocket connection with @cf/test/hello-world-cog model.
@@ -65,7 +65,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfTestHelloWorldCogError.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfTestHelloWorldCogError.fromResponse,
 );
  } 
  }

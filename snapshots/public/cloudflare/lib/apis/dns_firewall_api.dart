@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_firewall',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_firewall',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -51,7 +51,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_firewall',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_firewall',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -74,7 +74,7 @@ Future<ApiResult<DnsFirewallDnsFirewallClusterResponse?, Never>> dnsFirewallClus
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -97,7 +97,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -120,7 +120,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> dnsFirewallDeleteDnsFirewallClust
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -142,7 +142,7 @@ Future<ApiResult<DnsFirewallDnsFirewallReverseDns?, Never>> dnsFirewallShowDnsFi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toString())}/reverse_dns',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toJson())}/reverse_dns',
   headers: headers,
   options: options,
 );
@@ -165,7 +165,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toString())}/reverse_dns',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toJson())}/reverse_dns',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

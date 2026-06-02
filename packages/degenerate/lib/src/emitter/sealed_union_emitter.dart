@@ -148,7 +148,8 @@ class DiscriminatedUnionEmitter {
                 ..body = Code('this is $unknownClassName'),
             ),
           )
-          ..methods.addAll(commonFields.map(_baseCommonGetter)),
+          ..methods.addAll(commonFields.map(_baseCommonGetter))
+          ..methods.add(_buildWhen(unknownClassName)),
       ),
     );
 
@@ -180,6 +181,47 @@ class DiscriminatedUnionEmitter {
       ..docs.add('/// Shared by all variants of this union.'),
   );
 
+  /// Exhaustive `when` method: one required callback per variant + unknown.
+  Method _buildWhen(String unknownClassName) {
+    final params = <Parameter>[];
+    final cases = <String>[];
+
+    for (final entry in union.mapping.entries) {
+      final className = _variantClassName(entry.key);
+      final paramName = _variantCtorName(entry.key);
+      params.add(Parameter(
+        (p) => p
+          ..name = paramName
+          ..named = true
+          ..required = true
+          ..type = refer('R Function($className)'),
+      ));
+      cases.add('  final $className v => $paramName(v),');
+    }
+
+    params.add(Parameter(
+      (p) => p
+        ..name = 'unknown'
+        ..named = true
+        ..required = true
+        ..type = refer('R Function($unknownClassName)'),
+    ));
+    cases.add('  final $unknownClassName v => unknown(v),');
+
+    return Method(
+      (m) => m
+        ..name = 'when'
+        ..types.add(refer('R'))
+        ..returns = refer('R')
+        ..optionalParameters.addAll(params)
+        ..body = Code(
+          'return switch (this) {\n'
+          '${cases.join('\n')}\n'
+          '};',
+        ),
+    );
+  }
+
   /// Override getter for a hoisted field on a variant whose payload exposes it
   /// directly (a `$ref` wrapper field).
   Method _forwardCommonGetter(IrField f, String payloadField) => Method(
@@ -190,21 +232,6 @@ class DiscriminatedUnionEmitter {
       ..annotations.add(refer('override'))
       ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
       ..body = Code('$payloadField.${f.name}'),
-  );
-
-  /// Override getter for a hoisted field on the unknown variant, read from the
-  /// raw JSON. Required fields are cast directly (an unknown variant of a known
-  /// family still carries the shared fields); optional fields read null-safely.
-  Method _unknownCommonGetter(IrField f) => Method(
-    (m) => m
-      ..name = f.name
-      ..type = MethodType.getter
-      ..lambda = true
-      ..annotations.add(refer('override'))
-      ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
-      ..body = Code(
-        buildFromJsonCode(f.type, 'json[${dartStringLiteral(f.originalName)}]', isOptional: !f.isRequired),
-      ),
   );
 
   /// Class name for a variant, disambiguated when it would collide with an
@@ -366,7 +393,12 @@ class DiscriminatedUnionEmitter {
         ..optionalParameters.addAll(
           // Mirror the payload constructor's parameters (nullability + default)
           // so the flattened arguments type-check against it.
-          fields.map(
+          // Sort required before optional to satisfy always_put_required_named_parameters_first.
+          (fields.toList()..sort((a, b) {
+            final aReq = a.isRequired && !fieldHasDefault(a) ? 0 : 1;
+            final bReq = b.isRequired && !fieldHasDefault(b) ? 0 : 1;
+            return aReq.compareTo(bReq);
+          })).map(
             (f) => Parameter(
               (p) => p
                 ..name = f.name
@@ -416,6 +448,7 @@ class DiscriminatedUnionEmitter {
   }
 
   Class _buildUnknownVariant(String className) {
+    final hasCommon = commonFields.isNotEmpty;
     return Class(
       (b) => b
         ..name = className
@@ -429,7 +462,7 @@ class DiscriminatedUnionEmitter {
         ..constructors.add(
           Constructor(
             (c) => c
-              ..constant = true
+              ..constant = !hasCommon
               ..requiredParameters.add(
                 Parameter(
                   (p) => p
@@ -447,6 +480,7 @@ class DiscriminatedUnionEmitter {
               ..type = refer('Map<String, dynamic>'),
           ),
         )
+        ..fields.addAll(commonFields.map(_unknownLazyField))
         ..methods.add(
           Method(
             (m) => m
@@ -480,9 +514,32 @@ class DiscriminatedUnionEmitter {
             "'${escapeNameForString(union.name)}.unknown(\$json)'",
           ),
         )
-        ..methods.addAll(commonFields.map(_unknownCommonGetter)),
+        ..methods.addAll(commonFields.map(_unknownCachedGetter)),
     );
   }
+
+  /// `late final` field for caching a parsed common-field value on `$Unknown`.
+  Field _unknownLazyField(IrField f) => Field(
+    (b) => b
+      ..name = '_${f.name}'
+      ..late = true
+      ..modifier = FieldModifier.final$
+      ..type = irTypeToReference(f.type, forceNullable: !f.isRequired)
+      ..assignment = Code(
+        buildFromJsonCode(f.type, 'json[${dartStringLiteral(f.originalName)}]', isOptional: !f.isRequired),
+      ),
+  );
+
+  /// Override getter on `$Unknown` that reads from the cached `late final` field.
+  Method _unknownCachedGetter(IrField f) => Method(
+    (m) => m
+      ..name = f.name
+      ..type = MethodType.getter
+      ..lambda = true
+      ..annotations.add(refer('override'))
+      ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
+      ..body = Code('_${f.name}'),
+  );
 
   List<Spec> _buildVariant(String discriminatorValue, IrType variantType) {
     final className = _variantClassName(discriminatorValue);

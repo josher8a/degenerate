@@ -40,7 +40,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => CreateServersResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ListServersError.fromResponse(response),
+  onError: ListServersError.fromResponse,
 );
  } 
 /// Create a new MCP Server
@@ -63,7 +63,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return CreateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => CreateServersError.fromResponse(response),
+  onError: CreateServersError.fromResponse,
 );
  } 
 /// Read the details of a MCP Server
@@ -84,7 +84,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return CreateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => FetchServersError.fromResponse(response),
+  onError: FetchServersError.fromResponse,
 );
  } 
 /// Update a MCP Server
@@ -107,7 +107,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return CreateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => UpdateServersError.fromResponse(response),
+  onError: UpdateServersError.fromResponse,
 );
  } 
 /// Delete a MCP Server
@@ -128,7 +128,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return CreateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => DeleteServersError.fromResponse(response),
+  onError: DeleteServersError.fromResponse,
 );
  } 
 /// Sync MCP Server Capabilities
@@ -149,7 +149,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>;
   },
-  onError: (response) => SyncServerError.fromResponse(response),
+  onError: SyncServerError.fromResponse,
 );
  } 
  }

@@ -86,6 +86,6 @@ PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItems copyWith({Po
 
 @override int get hashCode => Object.hash(billingThresholds, clearUsage, deleted, discounts, id, metadata, price, priceData, quantity, taxRates);
 
-@override String toString() => 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItems(billingThresholds: $billingThresholds, clearUsage: $clearUsage, deleted: $deleted, discounts: $discounts, id: $id, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)';
+@override String toString() => 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItems(\n  billingThresholds: $billingThresholds,\n  clearUsage: $clearUsage,\n  deleted: $deleted,\n  discounts: $discounts,\n  id: $id,\n  metadata: $metadata,\n  price: $price,\n  priceData: $priceData,\n  quantity: $quantity,\n  taxRates: $taxRates,\n)';
 
  }

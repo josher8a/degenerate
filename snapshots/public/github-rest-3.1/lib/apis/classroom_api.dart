@@ -27,7 +27,7 @@ return execute(
   onSuccess: (response) {
     return ClassroomAssignment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List accepted assignments for an assignment
@@ -83,7 +83,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => ClassroomAssignmentGrade.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List classrooms
@@ -138,7 +138,7 @@ return execute(
   onSuccess: (response) {
     return Classroom.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List assignments for a classroom

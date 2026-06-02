@@ -105,6 +105,6 @@ AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAss
 
 @override int get hashCode => Object.hash(sid, accountSid, resourceSid, assignedAddOnSid, friendlyName, productName, uniqueName, uri, enabled);
 
-@override String toString() => 'AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension(sid: $sid, accountSid: $accountSid, resourceSid: $resourceSid, assignedAddOnSid: $assignedAddOnSid, friendlyName: $friendlyName, productName: $productName, uniqueName: $uniqueName, uri: $uri, enabled: $enabled)';
+@override String toString() => 'AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension(\n  sid: $sid,\n  accountSid: $accountSid,\n  resourceSid: $resourceSid,\n  assignedAddOnSid: $assignedAddOnSid,\n  friendlyName: $friendlyName,\n  productName: $productName,\n  uniqueName: $uniqueName,\n  uri: $uri,\n  enabled: $enabled,\n)';
 
  }

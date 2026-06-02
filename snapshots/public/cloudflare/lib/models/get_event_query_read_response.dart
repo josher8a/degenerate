@@ -101,6 +101,6 @@ GetEventQueryReadResponse copyWith({int? accountId, bool? alertEnabled, bool? al
 
 @override int get hashCode => Object.hash(accountId, alertEnabled, alertRollupEnabled, createdAt, id, name, queryJson, ruleEnabled, ruleScope, updatedAt, userEmail);
 
-@override String toString() => 'GetEventQueryReadResponse(accountId: $accountId, alertEnabled: $alertEnabled, alertRollupEnabled: $alertRollupEnabled, createdAt: $createdAt, id: $id, name: $name, queryJson: $queryJson, ruleEnabled: $ruleEnabled, ruleScope: $ruleScope, updatedAt: $updatedAt, userEmail: $userEmail)';
+@override String toString() => 'GetEventQueryReadResponse(\n  accountId: $accountId,\n  alertEnabled: $alertEnabled,\n  alertRollupEnabled: $alertRollupEnabled,\n  createdAt: $createdAt,\n  id: $id,\n  name: $name,\n  queryJson: $queryJson,\n  ruleEnabled: $ruleEnabled,\n  ruleScope: $ruleScope,\n  updatedAt: $updatedAt,\n  userEmail: $userEmail,\n)';
 
  }

@@ -75,6 +75,6 @@ AudioProducer copyWith({int? Function()? bytesSent, int? Function()? jitter, Str
 
 @override int get hashCode => Object.hash(bytesSent, jitter, mid, mosQuality, packetsLost, packetsSent, producerId, rtt, ssrc, timestamp);
 
-@override String toString() => 'AudioProducer(bytesSent: $bytesSent, jitter: $jitter, mid: $mid, mosQuality: $mosQuality, packetsLost: $packetsLost, packetsSent: $packetsSent, producerId: $producerId, rtt: $rtt, ssrc: $ssrc, timestamp: $timestamp)';
+@override String toString() => 'AudioProducer(\n  bytesSent: $bytesSent,\n  jitter: $jitter,\n  mid: $mid,\n  mosQuality: $mosQuality,\n  packetsLost: $packetsLost,\n  packetsSent: $packetsSent,\n  producerId: $producerId,\n  rtt: $rtt,\n  ssrc: $ssrc,\n  timestamp: $timestamp,\n)';
 
  }

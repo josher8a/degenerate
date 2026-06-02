@@ -23,6 +23,11 @@ bool get isUnknown => this is ChatCompletionMessageToolCalls2$Unknown;
 
 /// Shared by all variants of this union.
 String get id;
+R when<R>({required R Function(ChatCompletionMessageToolCalls2Function) function, required R Function(ChatCompletionMessageToolCalls2Custom) custom, required R Function(ChatCompletionMessageToolCalls2$Unknown) unknown, }) { return switch (this) {
+  final ChatCompletionMessageToolCalls2Function v => function(v),
+  final ChatCompletionMessageToolCalls2Custom v => custom(v),
+  final ChatCompletionMessageToolCalls2$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ChatCompletionMessageToolCalls2Function extends ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2Function(this.chatCompletionMessageToolCall);
 
@@ -74,9 +79,11 @@ ChatCompletionMessageToolCalls2Custom copyWith({String? id, ChatCompletionMessag
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class ChatCompletionMessageToolCalls2$Unknown extends ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2$Unknown(this.json);
+@immutable final class ChatCompletionMessageToolCalls2$Unknown extends ChatCompletionMessageToolCalls2 {ChatCompletionMessageToolCalls2$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String _id = json['id'] as String;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -89,6 +96,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ChatCompletionMessageToolCalls2.unknown($json)';
 
-@override String get id => json['id'] as String;
+@override String get id => _id;
 
  }

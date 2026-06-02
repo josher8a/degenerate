@@ -86,6 +86,6 @@ PersistentVolumeClaimSpec copyWith({List<String>? Function()? accessModes, Typed
 
 @override int get hashCode => Object.hash(Object.hashAll(accessModes ?? const []), dataSource, dataSourceRef, resources, selector, storageClassName, volumeAttributesClassName, volumeMode, volumeName);
 
-@override String toString() => 'PersistentVolumeClaimSpec(accessModes: $accessModes, dataSource: $dataSource, dataSourceRef: $dataSourceRef, resources: $resources, selector: $selector, storageClassName: $storageClassName, volumeAttributesClassName: $volumeAttributesClassName, volumeMode: $volumeMode, volumeName: $volumeName)';
+@override String toString() => 'PersistentVolumeClaimSpec(\n  accessModes: $accessModes,\n  dataSource: $dataSource,\n  dataSourceRef: $dataSourceRef,\n  resources: $resources,\n  selector: $selector,\n  storageClassName: $storageClassName,\n  volumeAttributesClassName: $volumeAttributesClassName,\n  volumeMode: $volumeMode,\n  volumeName: $volumeName,\n)';
 
  }

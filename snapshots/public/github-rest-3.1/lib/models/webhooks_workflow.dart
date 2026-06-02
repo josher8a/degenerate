@@ -84,6 +84,6 @@ WebhooksWorkflow copyWith({Uri? badgeUrl, DateTime? createdAt, Uri? htmlUrl, int
 
 @override int get hashCode => Object.hash(badgeUrl, createdAt, htmlUrl, id, name, nodeId, path, state, updatedAt, url);
 
-@override String toString() => 'WebhooksWorkflow(badgeUrl: $badgeUrl, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, path: $path, state: $state, updatedAt: $updatedAt, url: $url)';
+@override String toString() => 'WebhooksWorkflow(\n  badgeUrl: $badgeUrl,\n  createdAt: $createdAt,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  path: $path,\n  state: $state,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
  }

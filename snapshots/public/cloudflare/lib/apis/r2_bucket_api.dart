@@ -20,7 +20,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_notifications/r2/${Uri.encodeComponent(bucketName.toString())}/configuration',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/event_notifications/r2/${Uri.encodeComponent(bucketName.toJson())}/configuration',
   headers: headers,
   options: options,
 );
@@ -31,7 +31,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>;
   },
-  onError: (response) => R2GetEventNotificationConfigError.fromResponse(response),
+  onError: R2GetEventNotificationConfigError.fromResponse,
 );
  } 
 /// Get Event Notification Rule
@@ -46,7 +46,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_notifications/r2/${Uri.encodeComponent(bucketName.toString())}/configuration/queues/${Uri.encodeComponent(queueId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/event_notifications/r2/${Uri.encodeComponent(bucketName.toJson())}/configuration/queues/${Uri.encodeComponent(queueId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -57,7 +57,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>;
   },
-  onError: (response) => R2GetEventNotificationConfigError.fromResponse(response),
+  onError: R2GetEventNotificationConfigError.fromResponse,
 );
  } 
 /// Create Event Notification Rule
@@ -73,7 +73,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_notifications/r2/${Uri.encodeComponent(bucketName.toString())}/configuration/queues/${Uri.encodeComponent(queueId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/event_notifications/r2/${Uri.encodeComponent(bucketName.toJson())}/configuration/queues/${Uri.encodeComponent(queueId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -100,7 +100,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_notifications/r2/${Uri.encodeComponent(bucketName.toString())}/configuration/queues/${Uri.encodeComponent(queueId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/event_notifications/r2/${Uri.encodeComponent(bucketName.toJson())}/configuration/queues/${Uri.encodeComponent(queueId.toJson())}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -147,7 +147,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -175,7 +175,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -201,7 +201,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -227,7 +227,7 @@ headers['cf-r2-storage-class'] = cfR2StorageClass.toJson();
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -252,7 +252,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -277,7 +277,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/cors',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/cors',
   headers: headers,
   options: options,
 );
@@ -303,7 +303,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/cors',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/cors',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -329,7 +329,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/cors',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/cors',
   headers: headers,
   options: options,
 );
@@ -354,7 +354,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/custom',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/domains/custom',
   headers: headers,
   options: options,
 );
@@ -380,7 +380,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/custom',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/domains/custom',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -406,7 +406,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/custom/${Uri.encodeComponent(domain.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/domains/custom/${Uri.encodeComponent(domain.toJson())}',
   headers: headers,
   options: options,
 );
@@ -432,7 +432,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/custom/${Uri.encodeComponent(domain.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/domains/custom/${Uri.encodeComponent(domain.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -458,7 +458,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/custom/${Uri.encodeComponent(domain.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/domains/custom/${Uri.encodeComponent(domain.toJson())}',
   headers: headers,
   options: options,
 );
@@ -483,7 +483,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/managed',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/domains/managed',
   headers: headers,
   options: options,
 );
@@ -509,7 +509,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/domains/managed',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/domains/managed',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -535,7 +535,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/lifecycle',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/lifecycle',
   headers: headers,
   options: options,
 );
@@ -561,7 +561,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/lifecycle',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/lifecycle',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -584,7 +584,7 @@ Future<ApiResult<Map<String, dynamic>, Never>> r2GetBucketLocalUploadsConfigurat
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/local-uploads',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/local-uploads',
   headers: headers,
   options: options,
 );
@@ -607,7 +607,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/local-uploads',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/local-uploads',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -633,7 +633,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/lock',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/lock',
   headers: headers,
   options: options,
 );
@@ -659,7 +659,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/lock',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/lock',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -685,7 +685,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/sippy',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/sippy',
   headers: headers,
   options: options,
 );
@@ -711,7 +711,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/sippy',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/sippy',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -737,7 +737,7 @@ if (cfR2Jurisdiction != null) {
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/buckets/${Uri.encodeComponent(bucketName.toString())}/sippy',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/buckets/${Uri.encodeComponent(bucketName.toJson())}/sippy',
   headers: headers,
   options: options,
 );
@@ -760,7 +760,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/temp-access-credentials',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/temp-access-credentials',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

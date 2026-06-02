@@ -83,6 +83,6 @@ ExternalAccountPayoutBankAccount copyWith({String? Function()? accountHolderName
 
 @override int get hashCode => Object.hash(accountHolderName, accountHolderType, accountNumber, accountType, country, currency, documents, object, routingNumber);
 
-@override String toString() => 'ExternalAccountPayoutBankAccount(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, country: $country, currency: $currency, documents: $documents, object: $object, routingNumber: $routingNumber)';
+@override String toString() => 'ExternalAccountPayoutBankAccount(\n  accountHolderName: $accountHolderName,\n  accountHolderType: $accountHolderType,\n  accountNumber: $accountNumber,\n  accountType: $accountType,\n  country: $country,\n  currency: $currency,\n  documents: $documents,\n  object: $object,\n  routingNumber: $routingNumber,\n)';
 
  }

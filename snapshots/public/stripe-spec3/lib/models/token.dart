@@ -135,6 +135,6 @@ Token copyWith({BankAccount? Function()? bankAccount, Card? Function()? card, St
 
 @override int get hashCode => Object.hash(bankAccount, card, clientIp, created, id, livemode, object, type, used);
 
-@override String toString() => 'Token(bankAccount: $bankAccount, card: $card, clientIp: $clientIp, created: $created, id: $id, livemode: $livemode, object: $object, type: $type, used: $used)';
+@override String toString() => 'Token(\n  bankAccount: $bankAccount,\n  card: $card,\n  clientIp: $clientIp,\n  created: $created,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  type: $type,\n  used: $used,\n)';
 
  }

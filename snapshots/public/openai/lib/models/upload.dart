@@ -145,6 +145,6 @@ Upload copyWith({String? id, int? createdAt, String? filename, int? bytes, Strin
 
 @override int get hashCode => Object.hash(id, createdAt, filename, bytes, purpose, status, expiresAt, object, file);
 
-@override String toString() => 'Upload(id: $id, createdAt: $createdAt, filename: $filename, bytes: $bytes, purpose: $purpose, status: $status, expiresAt: $expiresAt, object: $object, file: $file)';
+@override String toString() => 'Upload(\n  id: $id,\n  createdAt: $createdAt,\n  filename: $filename,\n  bytes: $bytes,\n  purpose: $purpose,\n  status: $status,\n  expiresAt: $expiresAt,\n  object: $object,\n  file: $file,\n)';
 
  }

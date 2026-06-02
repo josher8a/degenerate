@@ -111,6 +111,6 @@ PageShieldConnection copyWith({DateTime? addedAt, bool? Function()? domainReport
 
 @override int get hashCode => Object.hash(addedAt, domainReportedMalicious, firstPageUrl, firstSeenAt, host, id, lastSeenAt, Object.hashAll(maliciousDomainCategories ?? const []), Object.hashAll(maliciousUrlCategories ?? const []), Object.hashAll(pageUrls ?? const []), url, urlContainsCdnCgiPath, urlReportedMalicious);
 
-@override String toString() => 'PageShieldConnection(addedAt: $addedAt, domainReportedMalicious: $domainReportedMalicious, firstPageUrl: $firstPageUrl, firstSeenAt: $firstSeenAt, host: $host, id: $id, lastSeenAt: $lastSeenAt, maliciousDomainCategories: $maliciousDomainCategories, maliciousUrlCategories: $maliciousUrlCategories, pageUrls: $pageUrls, url: $url, urlContainsCdnCgiPath: $urlContainsCdnCgiPath, urlReportedMalicious: $urlReportedMalicious)';
+@override String toString() => 'PageShieldConnection(\n  addedAt: $addedAt,\n  domainReportedMalicious: $domainReportedMalicious,\n  firstPageUrl: $firstPageUrl,\n  firstSeenAt: $firstSeenAt,\n  host: $host,\n  id: $id,\n  lastSeenAt: $lastSeenAt,\n  maliciousDomainCategories: $maliciousDomainCategories,\n  maliciousUrlCategories: $maliciousUrlCategories,\n  pageUrls: $pageUrls,\n  url: $url,\n  urlContainsCdnCgiPath: $urlContainsCdnCgiPath,\n  urlReportedMalicious: $urlReportedMalicious,\n)';
 
  }

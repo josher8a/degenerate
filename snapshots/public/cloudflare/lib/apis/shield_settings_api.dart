@@ -23,7 +23,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/configuration',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/api_gateway/configuration',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -54,7 +54,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/configuration',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/api_gateway/configuration',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

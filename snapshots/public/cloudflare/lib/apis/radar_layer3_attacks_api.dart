@@ -69,7 +69,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/attacks/layer3/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/attacks/layer3/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -82,7 +82,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer3SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAttacksLayer3SummaryError.fromResponse(response),
+  onError: RadarGetAttacksLayer3SummaryError.fromResponse,
 );
  } 
 /// Get layer 3 attacks by bytes time series
@@ -170,7 +170,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAttacksLayer3TimeseriesByBytesError.fromResponse(response),
+  onError: RadarGetAttacksLayer3TimeseriesByBytesError.fromResponse,
 );
  } 
 /// Get layer 3 attacks time series grouped by dimension
@@ -240,7 +240,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/attacks/layer3/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/attacks/layer3/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -253,7 +253,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAttacksLayer3TimeseriesGroupError.fromResponse(response),
+  onError: RadarGetAttacksLayer3TimeseriesGroupError.fromResponse,
 );
  } 
 /// Get top layer 3 attack pairs (origin and target locations)
@@ -339,7 +339,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer3TopAttacksResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAttacksLayer3TopAttacksError.fromResponse(response),
+  onError: RadarGetAttacksLayer3TopAttacksError.fromResponse,
 );
  } 
 /// Get top origin locations of layer 3 attacks
@@ -413,7 +413,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer3TopOriginLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAttacksLayer3TopOriginLocationsError.fromResponse(response),
+  onError: RadarGetAttacksLayer3TopOriginLocationsError.fromResponse,
 );
  } 
 /// Get top target locations of layer 3 attacks
@@ -487,7 +487,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer3TopTargetLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAttacksLayer3TopTargetLocationsError.fromResponse(response),
+  onError: RadarGetAttacksLayer3TopTargetLocationsError.fromResponse,
 );
  } 
  }

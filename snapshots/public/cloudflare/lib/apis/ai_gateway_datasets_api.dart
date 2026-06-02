@@ -48,7 +48,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AigConfigCreateDatasetResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AigConfigListDatasetError.fromResponse(response),
+  onError: AigConfigListDatasetError.fromResponse,
 );
  } 
 /// Create a new Dataset
@@ -73,7 +73,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigCreateDatasetError.fromResponse(response),
+  onError: AigConfigCreateDatasetError.fromResponse,
 );
  } 
 /// Fetch a Dataset
@@ -96,7 +96,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigFetchDatasetError.fromResponse(response),
+  onError: AigConfigFetchDatasetError.fromResponse,
 );
  } 
 /// Update a Dataset
@@ -121,7 +121,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigUpdateDatasetError.fromResponse(response),
+  onError: AigConfigUpdateDatasetError.fromResponse,
 );
  } 
 /// Delete a Dataset
@@ -144,7 +144,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigDeleteDatasetError.fromResponse(response),
+  onError: AigConfigDeleteDatasetError.fromResponse,
 );
  } 
  }

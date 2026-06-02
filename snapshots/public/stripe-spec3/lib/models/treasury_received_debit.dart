@@ -241,6 +241,6 @@ TreasuryReceivedDebit copyWith({int? amount, int? created, String? currency, Str
 
 @override int get hashCode => Object.hash(amount, created, currency, description, failureCode, financialAccount, hostedRegulatoryReceiptUrl, id, initiatingPaymentMethodDetails, linkedFlows, livemode, network, object, reversalDetails, status, transaction);
 
-@override String toString() => 'TreasuryReceivedDebit(amount: $amount, created: $created, currency: $currency, description: $description, failureCode: $failureCode, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, initiatingPaymentMethodDetails: $initiatingPaymentMethodDetails, linkedFlows: $linkedFlows, livemode: $livemode, network: $network, object: $object, reversalDetails: $reversalDetails, status: $status, transaction: $transaction)';
+@override String toString() => 'TreasuryReceivedDebit(\n  amount: $amount,\n  created: $created,\n  currency: $currency,\n  description: $description,\n  failureCode: $failureCode,\n  financialAccount: $financialAccount,\n  hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl,\n  id: $id,\n  initiatingPaymentMethodDetails: $initiatingPaymentMethodDetails,\n  linkedFlows: $linkedFlows,\n  livemode: $livemode,\n  network: $network,\n  object: $object,\n  reversalDetails: $reversalDetails,\n  status: $status,\n  transaction: $transaction,\n)';
 
  }

@@ -18,7 +18,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/repos/connections',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/repos/connections',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -41,7 +41,7 @@ Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> deleteRepoConne
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/repos/connections/${Uri.encodeComponent(repoConnectionUuid.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/repos/connections/${Uri.encodeComponent(repoConnectionUuid.toJson())}',
   headers: headers,
   options: options,
 );
@@ -52,7 +52,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) => CancelBuildByUuidError.fromResponse(response),
+  onError: CancelBuildByUuidError.fromResponse,
 );
  } 
  }

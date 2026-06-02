@@ -23,6 +23,12 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ThreadResourceStatus$Unknown;
 
+R when<R>({required R Function(ThreadResourceStatusActive) active, required R Function(ThreadResourceStatusLocked) locked, required R Function(ThreadResourceStatusClosed) closed, required R Function(ThreadResourceStatus$Unknown) unknown, }) { return switch (this) {
+  final ThreadResourceStatusActive v => active(v),
+  final ThreadResourceStatusLocked v => locked(v),
+  final ThreadResourceStatusClosed v => closed(v),
+  final ThreadResourceStatus$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ThreadResourceStatusActive extends ThreadResourceStatus {const ThreadResourceStatusActive(this.activeStatus);
 

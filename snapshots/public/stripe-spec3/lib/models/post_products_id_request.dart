@@ -131,6 +131,6 @@ PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? de
 
 @override int get hashCode => Object.hash(active, defaultPrice, description, Object.hashAll(expand ?? const []), images, marketingFeatures, metadata, name, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, url);
 
-@override String toString() => 'PostProductsIdRequest(active: $active, defaultPrice: $defaultPrice, description: $description, expand: $expand, images: $images, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, url: $url)';
+@override String toString() => 'PostProductsIdRequest(\n  active: $active,\n  defaultPrice: $defaultPrice,\n  description: $description,\n  expand: $expand,\n  images: $images,\n  marketingFeatures: $marketingFeatures,\n  metadata: $metadata,\n  name: $name,\n  packageDimensions: $packageDimensions,\n  shippable: $shippable,\n  statementDescriptor: $statementDescriptor,\n  taxCode: $taxCode,\n  unitLabel: $unitLabel,\n  url: $url,\n)';
 
  }

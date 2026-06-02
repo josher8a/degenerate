@@ -252,6 +252,6 @@ CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? pro
 
 @override int get hashCode => Object.hash(image, prompt, mask, background, model, n, size, responseFormat, outputFormat, outputCompression, user, inputFidelity, stream, partialImages, quality);
 
-@override String toString() => 'CreateImageEditRequest(image: $image, prompt: $prompt, mask: $mask, background: $background, model: $model, n: $n, size: $size, responseFormat: $responseFormat, outputFormat: $outputFormat, outputCompression: $outputCompression, user: $user, inputFidelity: $inputFidelity, stream: $stream, partialImages: $partialImages, quality: $quality)';
+@override String toString() => 'CreateImageEditRequest(\n  image: $image,\n  prompt: $prompt,\n  mask: $mask,\n  background: $background,\n  model: $model,\n  n: $n,\n  size: $size,\n  responseFormat: $responseFormat,\n  outputFormat: $outputFormat,\n  outputCompression: $outputCompression,\n  user: $user,\n  inputFidelity: $inputFidelity,\n  stream: $stream,\n  partialImages: $partialImages,\n  quality: $quality,\n)';
 
  }

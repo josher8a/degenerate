@@ -103,6 +103,6 @@ PostCheckoutSessionsRequestPaymentIntentData copyWith({int? Function()? applicat
 
 @override int get hashCode => Object.hash(applicationFeeAmount, captureMethod, description, metadata, onBehalfOf, receiptEmail, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup);
 
-@override String toString() => 'PostCheckoutSessionsRequestPaymentIntentData(applicationFeeAmount: $applicationFeeAmount, captureMethod: $captureMethod, description: $description, metadata: $metadata, onBehalfOf: $onBehalfOf, receiptEmail: $receiptEmail, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)';
+@override String toString() => 'PostCheckoutSessionsRequestPaymentIntentData(\n  applicationFeeAmount: $applicationFeeAmount,\n  captureMethod: $captureMethod,\n  description: $description,\n  metadata: $metadata,\n  onBehalfOf: $onBehalfOf,\n  receiptEmail: $receiptEmail,\n  setupFutureUsage: $setupFutureUsage,\n  shipping: $shipping,\n  statementDescriptor: $statementDescriptor,\n  statementDescriptorSuffix: $statementDescriptorSuffix,\n  transferData: $transferData,\n  transferGroup: $transferGroup,\n)';
 
  }

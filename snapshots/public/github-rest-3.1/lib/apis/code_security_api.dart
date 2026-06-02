@@ -46,7 +46,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeSecurityConfiguration.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Create a code security configuration for an enterprise
@@ -74,7 +74,7 @@ return execute(
   onSuccess: (response) {
     return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse(response),
+  onError: ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse,
 );
  } 
 /// Get default code security configurations for an enterprise
@@ -126,7 +126,7 @@ return execute(
   onSuccess: (response) {
     return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Update a custom code security configuration for an enterprise
@@ -154,7 +154,7 @@ return execute(
   onSuccess: (response) {
     return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodeSecurityAttachEnterpriseConfigurationError.fromResponse(response),
+  onError: CodeSecurityAttachEnterpriseConfigurationError.fromResponse,
 );
  } 
 /// Delete a code security configuration for an enterprise
@@ -180,7 +180,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CodeSecurityDeleteConfigurationError.fromResponse(response),
+  onError: CodeSecurityDeleteConfigurationError.fromResponse,
 );
  } 
 /// Attach an enterprise configuration to repositories
@@ -210,7 +210,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => CodeSecurityAttachEnterpriseConfigurationError.fromResponse(response),
+  onError: CodeSecurityAttachEnterpriseConfigurationError.fromResponse,
 );
  } 
 /// Set a code security configuration as a default for an enterprise
@@ -240,7 +240,7 @@ return execute(
   onSuccess: (response) {
     return CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Get repositories associated with an enterprise code security configuration
@@ -284,7 +284,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeSecurityConfigurationRepositories.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Get code security configurations for an organization
@@ -328,7 +328,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeSecurityConfiguration.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Create a code security configuration
@@ -382,7 +382,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeSecurityDefaultConfigurations2.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Detach configurations from repositories
@@ -409,7 +409,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CodeSecurityDeleteConfigurationError.fromResponse(response),
+  onError: CodeSecurityDeleteConfigurationError.fromResponse,
 );
  } 
 /// Get a code security configuration
@@ -435,7 +435,7 @@ return execute(
   onSuccess: (response) {
     return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Update a code security configuration
@@ -488,7 +488,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CodeSecurityDeleteConfigurationError.fromResponse(response),
+  onError: CodeSecurityDeleteConfigurationError.fromResponse,
 );
  } 
 /// Attach a configuration to repositories
@@ -547,7 +547,7 @@ return execute(
   onSuccess: (response) {
     return CodeSecuritySetConfigurationAsDefaultResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Get repositories associated with a code security configuration
@@ -591,7 +591,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CodeSecurityConfigurationRepositories.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Get the code security configuration associated with a repository
@@ -617,7 +617,7 @@ return execute(
   onSuccess: (response) {
     return CodeSecurityConfigurationForRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
  }

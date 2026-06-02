@@ -14,7 +14,7 @@ factory InputContent.fromJson(Map<String, dynamic> json) { return switch (json['
 factory InputContent.inputText({required String text}) { return InputContentInputText(InputTextContent(type: 'input_text', text: text)); }
 
 /// Build the `input_image` variant.
-factory InputContent.inputImage({String? imageUrl, String? fileId, required ImageDetail detail, }) { return InputContentInputImage(InputImageContent(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory InputContent.inputImage({required ImageDetail detail, String? imageUrl, String? fileId, }) { return InputContentInputImage(InputImageContent(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
 factory InputContent.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return InputContentInputFile(InputFileContent(type: 'input_file', fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
@@ -25,6 +25,12 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is InputContent$Unknown;
 
+R when<R>({required R Function(InputContentInputText) inputText, required R Function(InputContentInputImage) inputImage, required R Function(InputContentInputFile) inputFile, required R Function(InputContent$Unknown) unknown, }) { return switch (this) {
+  final InputContentInputText v => inputText(v),
+  final InputContentInputImage v => inputImage(v),
+  final InputContentInputFile v => inputFile(v),
+  final InputContent$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class InputContentInputText extends InputContent {const InputContentInputText(this.inputTextContent);
 

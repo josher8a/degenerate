@@ -104,6 +104,6 @@ UsageImagesResult copyWith({UsageImagesResultObject? object, int? images, int? n
 
 @override int get hashCode => Object.hash(object, images, numModelRequests, source, size, projectId, userId, apiKeyId, model);
 
-@override String toString() => 'UsageImagesResult(object: $object, images: $images, numModelRequests: $numModelRequests, source: $source, size: $size, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model)';
+@override String toString() => 'UsageImagesResult(\n  object: $object,\n  images: $images,\n  numModelRequests: $numModelRequests,\n  source: $source,\n  size: $size,\n  projectId: $projectId,\n  userId: $userId,\n  apiKeyId: $apiKeyId,\n  model: $model,\n)';
 
  }

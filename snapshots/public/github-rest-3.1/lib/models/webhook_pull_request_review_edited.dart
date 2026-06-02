@@ -74,6 +74,6 @@ WebhookPullRequestReviewEdited copyWith({ItemEditedAction? action, WebhookPullRe
 
 @override int get hashCode => Object.hash(action, changes, enterprise, installation, organization, pullRequest, repository, review, sender);
 
-@override String toString() => 'WebhookPullRequestReviewEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, review: $review, sender: $sender)';
+@override String toString() => 'WebhookPullRequestReviewEdited(\n  action: $action,\n  changes: $changes,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  repository: $repository,\n  review: $review,\n  sender: $sender,\n)';
 
  }

@@ -157,6 +157,6 @@ AccountTranscription copyWith({String? Function()? accountSid, String? Function(
 
 @override int get hashCode => Object.hash(accountSid, apiVersion, dateCreated, dateUpdated, duration, price, priceUnit, recordingSid, sid, status, transcriptionText, type, uri);
 
-@override String toString() => 'AccountTranscription(accountSid: $accountSid, apiVersion: $apiVersion, dateCreated: $dateCreated, dateUpdated: $dateUpdated, duration: $duration, price: $price, priceUnit: $priceUnit, recordingSid: $recordingSid, sid: $sid, status: $status, transcriptionText: $transcriptionText, type: $type, uri: $uri)';
+@override String toString() => 'AccountTranscription(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  duration: $duration,\n  price: $price,\n  priceUnit: $priceUnit,\n  recordingSid: $recordingSid,\n  sid: $sid,\n  status: $status,\n  transcriptionText: $transcriptionText,\n  type: $type,\n  uri: $uri,\n)';
 
  }

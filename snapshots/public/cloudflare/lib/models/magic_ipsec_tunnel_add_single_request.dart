@@ -95,6 +95,6 @@ MagicIpsecTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function
 
 @override int get hashCode => Object.hash(automaticReturnRouting, bgp, cloudflareEndpoint, customRemoteIdentities, customerEndpoint, description, healthCheck, interfaceAddress, interfaceAddress6, name, psk, replayProtection);
 
-@override String toString() => 'MagicIpsecTunnelAddSingleRequest(automaticReturnRouting: $automaticReturnRouting, bgp: $bgp, cloudflareEndpoint: $cloudflareEndpoint, customRemoteIdentities: $customRemoteIdentities, customerEndpoint: $customerEndpoint, description: $description, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, name: $name, psk: $psk, replayProtection: $replayProtection)';
+@override String toString() => 'MagicIpsecTunnelAddSingleRequest(\n  automaticReturnRouting: $automaticReturnRouting,\n  bgp: $bgp,\n  cloudflareEndpoint: $cloudflareEndpoint,\n  customRemoteIdentities: $customRemoteIdentities,\n  customerEndpoint: $customerEndpoint,\n  description: $description,\n  healthCheck: $healthCheck,\n  interfaceAddress: $interfaceAddress,\n  interfaceAddress6: $interfaceAddress6,\n  name: $name,\n  psk: $psk,\n  replayProtection: $replayProtection,\n)';
 
  }

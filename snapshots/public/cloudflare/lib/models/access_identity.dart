@@ -136,6 +136,6 @@ AccessIdentity copyWith({String? Function()? accountId, String? Function()? auth
 
 @override int get hashCode => Object.hash(accountId, authStatus, commonName, deviceId, deviceSessions, devicePosture, email, geo, iat, idp, ip, isGateway, isWarp, mtlsAuth, serviceTokenId, serviceTokenStatus, userUuid, version);
 
-@override String toString() => 'AccessIdentity(accountId: $accountId, authStatus: $authStatus, commonName: $commonName, deviceId: $deviceId, deviceSessions: $deviceSessions, devicePosture: $devicePosture, email: $email, geo: $geo, iat: $iat, idp: $idp, ip: $ip, isGateway: $isGateway, isWarp: $isWarp, mtlsAuth: $mtlsAuth, serviceTokenId: $serviceTokenId, serviceTokenStatus: $serviceTokenStatus, userUuid: $userUuid, version: $version)';
+@override String toString() => 'AccessIdentity(\n  accountId: $accountId,\n  authStatus: $authStatus,\n  commonName: $commonName,\n  deviceId: $deviceId,\n  deviceSessions: $deviceSessions,\n  devicePosture: $devicePosture,\n  email: $email,\n  geo: $geo,\n  iat: $iat,\n  idp: $idp,\n  ip: $ip,\n  isGateway: $isGateway,\n  isWarp: $isWarp,\n  mtlsAuth: $mtlsAuth,\n  serviceTokenId: $serviceTokenId,\n  serviceTokenStatus: $serviceTokenStatus,\n  userUuid: $userUuid,\n  version: $version,\n)';
 
  }

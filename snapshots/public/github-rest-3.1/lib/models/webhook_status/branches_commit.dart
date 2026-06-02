@@ -13,7 +13,7 @@ final Uri? url;
 
 Map<String, dynamic> toJson() { return {
   'sha': sha,
-  'url': url != null ? url?.toString() : null,
+  'url': url?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('url') && json['url'] is String; } 

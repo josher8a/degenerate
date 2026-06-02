@@ -73,6 +73,6 @@ WebhookPullRequestUnassigned copyWith({WebhookIssuesUnassignedAction? action, We
 
 @override int get hashCode => Object.hash(action, assignee, enterprise, installation, number, organization, pullRequest, repository, sender);
 
-@override String toString() => 'WebhookPullRequestUnassigned(action: $action, assignee: $assignee, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)';
+@override String toString() => 'WebhookPullRequestUnassigned(\n  action: $action,\n  assignee: $assignee,\n  enterprise: $enterprise,\n  installation: $installation,\n  number: $number,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  repository: $repository,\n  sender: $sender,\n)';
 
  }

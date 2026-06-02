@@ -19,6 +19,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is FunctionShellCallOutputOutcomeParam$Unknown;
 
+R when<R>({required R Function(FunctionShellCallOutputOutcomeParamTimeout) timeout, required R Function(FunctionShellCallOutputOutcomeParamExit) exit, required R Function(FunctionShellCallOutputOutcomeParam$Unknown) unknown, }) { return switch (this) {
+  final FunctionShellCallOutputOutcomeParamTimeout v => timeout(v),
+  final FunctionShellCallOutputOutcomeParamExit v => exit(v),
+  final FunctionShellCallOutputOutcomeParam$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class FunctionShellCallOutputOutcomeParamTimeout extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParamTimeout(this.functionShellCallOutputTimeoutOutcomeParam);
 

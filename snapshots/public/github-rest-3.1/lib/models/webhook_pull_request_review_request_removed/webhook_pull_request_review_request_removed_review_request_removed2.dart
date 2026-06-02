@@ -76,6 +76,6 @@ WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2 copyWith({ReviewRequ
 
 @override int get hashCode => Object.hash(action, enterprise, installation, number, organization, pullRequest, repository, requestedTeam, sender);
 
-@override String toString() => 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, requestedTeam: $requestedTeam, sender: $sender)';
+@override String toString() => 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2(\n  action: $action,\n  enterprise: $enterprise,\n  installation: $installation,\n  number: $number,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  repository: $repository,\n  requestedTeam: $requestedTeam,\n  sender: $sender,\n)';
 
  }

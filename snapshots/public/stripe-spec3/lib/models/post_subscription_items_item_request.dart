@@ -112,6 +112,6 @@ PostSubscriptionItemsItemRequest copyWith({PostSubscriptionItemsItemRequestBilli
 
 @override int get hashCode => Object.hash(billingThresholds, discounts, Object.hashAll(expand ?? const []), metadata, offSession, paymentBehavior, price, priceData, prorationBehavior, prorationDate, quantity, taxRates);
 
-@override String toString() => 'PostSubscriptionItemsItemRequest(billingThresholds: $billingThresholds, discounts: $discounts, expand: $expand, metadata: $metadata, offSession: $offSession, paymentBehavior: $paymentBehavior, price: $price, priceData: $priceData, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, quantity: $quantity, taxRates: $taxRates)';
+@override String toString() => 'PostSubscriptionItemsItemRequest(\n  billingThresholds: $billingThresholds,\n  discounts: $discounts,\n  expand: $expand,\n  metadata: $metadata,\n  offSession: $offSession,\n  paymentBehavior: $paymentBehavior,\n  price: $price,\n  priceData: $priceData,\n  prorationBehavior: $prorationBehavior,\n  prorationDate: $prorationDate,\n  quantity: $quantity,\n  taxRates: $taxRates,\n)';
 
  }

@@ -20,7 +20,7 @@ if (xMagicNewHcTarget != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cf_interconnects',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cf_interconnects',
   headers: headers,
   options: options,
 );
@@ -46,7 +46,7 @@ if (xMagicNewHcTarget != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cf_interconnects',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cf_interconnects',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -72,7 +72,7 @@ if (xMagicNewHcTarget != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cf_interconnects/${Uri.encodeComponent(cfInterconnectId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cf_interconnects/${Uri.encodeComponent(cfInterconnectId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -98,7 +98,7 @@ if (xMagicNewHcTarget != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cf_interconnects/${Uri.encodeComponent(cfInterconnectId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cf_interconnects/${Uri.encodeComponent(cfInterconnectId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

@@ -157,6 +157,6 @@ Event copyWith({String? Function()? account, String? Function()? apiVersion, Str
 
 @override int get hashCode => Object.hash(account, apiVersion, context, created, data, id, livemode, object, pendingWebhooks, request, type);
 
-@override String toString() => 'Event(account: $account, apiVersion: $apiVersion, context: $context, created: $created, data: $data, id: $id, livemode: $livemode, object: $object, pendingWebhooks: $pendingWebhooks, request: $request, type: $type)';
+@override String toString() => 'Event(\n  account: $account,\n  apiVersion: $apiVersion,\n  context: $context,\n  created: $created,\n  data: $data,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  pendingWebhooks: $pendingWebhooks,\n  request: $request,\n  type: $type,\n)';
 
  }

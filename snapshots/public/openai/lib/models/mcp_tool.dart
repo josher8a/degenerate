@@ -174,6 +174,6 @@ McpTool copyWith({String? type, String? serverLabel, String? Function()? serverU
 
 @override int get hashCode => Object.hash(type, serverLabel, serverUrl, connectorId, authorization, serverDescription, headers, allowedTools, requireApproval, deferLoading);
 
-@override String toString() => 'McpTool(type: $type, serverLabel: $serverLabel, serverUrl: $serverUrl, connectorId: $connectorId, authorization: $authorization, serverDescription: $serverDescription, headers: $headers, allowedTools: $allowedTools, requireApproval: $requireApproval, deferLoading: $deferLoading)';
+@override String toString() => 'McpTool(\n  type: $type,\n  serverLabel: $serverLabel,\n  serverUrl: $serverUrl,\n  connectorId: $connectorId,\n  authorization: $authorization,\n  serverDescription: $serverDescription,\n  headers: $headers,\n  allowedTools: $allowedTools,\n  requireApproval: $requireApproval,\n  deferLoading: $deferLoading,\n)';
 
  }

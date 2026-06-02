@@ -119,6 +119,6 @@ TlsCertificatesAndHostnamesCertificatePackCertificate copyWith({String? Function
 
 @override int get hashCode => Object.hash(bundleMethod, expiresOn, geoRestrictions, Object.hashAll(hosts), id, issuer, modifiedOn, priority, signature, status, uploadedOn, zoneId);
 
-@override String toString() => 'TlsCertificatesAndHostnamesCertificatePackCertificate(bundleMethod: $bundleMethod, expiresOn: $expiresOn, geoRestrictions: $geoRestrictions, hosts: $hosts, id: $id, issuer: $issuer, modifiedOn: $modifiedOn, priority: $priority, signature: $signature, status: $status, uploadedOn: $uploadedOn, zoneId: $zoneId)';
+@override String toString() => 'TlsCertificatesAndHostnamesCertificatePackCertificate(\n  bundleMethod: $bundleMethod,\n  expiresOn: $expiresOn,\n  geoRestrictions: $geoRestrictions,\n  hosts: $hosts,\n  id: $id,\n  issuer: $issuer,\n  modifiedOn: $modifiedOn,\n  priority: $priority,\n  signature: $signature,\n  status: $status,\n  uploadedOn: $uploadedOn,\n  zoneId: $zoneId,\n)';
 
  }

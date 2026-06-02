@@ -26,7 +26,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersAiListFinetunesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorkersAiListFinetunesError.fromResponse(response),
+  onError: WorkersAiListFinetunesError.fromResponse,
 );
  } 
 /// Create a new Finetune
@@ -49,7 +49,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersAiCreateFinetuneResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorkersAiCreateFinetuneError.fromResponse(response),
+  onError: WorkersAiCreateFinetuneError.fromResponse,
 );
  } 
 /// Upload a Finetune Asset
@@ -76,7 +76,7 @@ return execute(
   onSuccess: (response) {
     return WorkersAiUploadFinetuneAssetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => WorkersAiUploadFinetuneAssetError.fromResponse(response),
+  onError: WorkersAiUploadFinetuneAssetError.fromResponse,
 );
  } 
 /// List Public Finetunes
@@ -111,7 +111,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorkersAiCreateFinetuneResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => WorkersAiListPublicFinetunesError.fromResponse(response),
+  onError: WorkersAiListPublicFinetunesError.fromResponse,
 );
  } 
  }

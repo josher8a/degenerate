@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('datas
       json.containsKey('name') && json['name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (datasetIds.length < 1) errors.add('datasetIds: must have >= 1 items');
+if (datasetIds.isEmpty) errors.add('datasetIds: must have >= 1 items');
 if (datasetIds.length > 5) errors.add('datasetIds: must have <= 5 items');
 return errors; } 
 AigConfigCreateEvaluationsRequest copyWith({List<String>? datasetIds, List<String>? evaluationTypeIds, String? name, }) { return AigConfigCreateEvaluationsRequest(

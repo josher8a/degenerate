@@ -17,7 +17,7 @@ Future<ApiResult<List<WorkersNamespaceResponse>?, Never>> namespaceWorkerList({r
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<WorkersNamespaceResponse?, Never>> namespaceWorkerGetNamespace(
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -110,7 +110,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -133,7 +133,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> namespaceWorkerDeleteNamespace({
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}',
   headers: headers,
   options: options,
 );
@@ -161,7 +161,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -194,7 +194,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -217,7 +217,7 @@ Future<ApiResult<WorkersNamespaceScriptResponse, Never>> namespaceWorkerScriptWo
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -245,7 +245,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -281,7 +281,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -306,7 +306,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/assets-upload-session',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/assets-upload-session',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -329,7 +329,7 @@ Future<ApiResult<List<WorkersBindingItem>, Never>> namespaceWorkerGetScriptBindi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/bindings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/bindings',
   headers: headers,
   options: options,
 );
@@ -351,7 +351,7 @@ Future<ApiResult<String, Never>> namespaceWorkerGetScriptContent({required Worke
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/content',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/content',
   headers: headers,
   options: options,
 );
@@ -378,7 +378,7 @@ if (cfWorkerMainModulePart != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/content',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/content',
   headers: headers,
   body: [
     if (body.files case final files$?)
@@ -406,7 +406,7 @@ Future<ApiResult<List<WorkersSecret>, Never>> namespaceWorkerListScriptSecrets({
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/secrets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/secrets',
   headers: headers,
   options: options,
 );
@@ -429,7 +429,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/secrets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/secrets',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -458,7 +458,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/secrets/${Uri.encodeComponent(secretName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/secrets/${Uri.encodeComponent(secretName.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -488,7 +488,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/secrets/${Uri.encodeComponent(secretName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/secrets/${Uri.encodeComponent(secretName.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -512,7 +512,7 @@ Future<ApiResult<WorkersNamespaceScriptAndVersionSettingsItem?, Never>> namespac
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/settings',
   headers: headers,
   options: options,
 );
@@ -534,7 +534,7 @@ Future<ApiResult<WorkersNamespaceScriptAndVersionSettingsItem?, Never>> namespac
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/settings',
   headers: headers,
   body: [
     if (body.settings case final settings$?)
@@ -561,7 +561,7 @@ Future<ApiResult<List<WorkersTag>?, Never>> namespaceWorkerGetScriptTags({requir
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/tags',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/tags',
   headers: headers,
   options: options,
 );
@@ -584,7 +584,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/tags',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/tags',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -607,7 +607,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> namespaceWorkerPutScriptTag({req
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/tags/${Uri.encodeComponent(tag.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/tags/${Uri.encodeComponent(tag.toJson())}',
   headers: headers,
   options: options,
 );
@@ -629,7 +629,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> namespaceWorkerDeleteScriptTag({
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toString())}/scripts/${Uri.encodeComponent(scriptName.toString())}/tags/${Uri.encodeComponent(tag.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/dispatch/namespaces/${Uri.encodeComponent(dispatchNamespace.toJson())}/scripts/${Uri.encodeComponent(scriptName.toJson())}/tags/${Uri.encodeComponent(tag.toJson())}',
   headers: headers,
   options: options,
 );

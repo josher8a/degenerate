@@ -55,7 +55,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/routes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/teamnet/routes',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -80,7 +80,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/routes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/teamnet/routes',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -103,7 +103,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> tunnelRouteGetTunnelRoute({requ
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/routes/${Uri.encodeComponent(routeId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/teamnet/routes/${Uri.encodeComponent(routeId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -126,7 +126,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/routes/${Uri.encodeComponent(routeId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/teamnet/routes/${Uri.encodeComponent(routeId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -150,7 +150,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> tunnelRouteDeleteATunnelRoute({
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/routes/${Uri.encodeComponent(routeId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/teamnet/routes/${Uri.encodeComponent(routeId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -181,7 +181,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/routes/ip/${Uri.encodeComponent(ip.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/teamnet/routes/ip/${Uri.encodeComponent(ip.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

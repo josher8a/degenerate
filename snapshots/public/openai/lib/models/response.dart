@@ -287,9 +287,9 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'completed_at': ?completedAt,
   'error': error.toJson(),
-  'incomplete_details': incompleteDetails != null ? incompleteDetails?.toJson() : null,
+  'incomplete_details': incompleteDetails?.toJson(),
   'output': output.map((e) => e.toJson()).toList(),
-  'instructions': instructions != null ? instructions?.toJson() : null,
+  'instructions': instructions?.toJson(),
   'output_text': ?outputText,
   if (usage != null) 'usage': usage?.toJson(),
   'parallel_tool_calls': parallelToolCalls,
@@ -379,6 +379,6 @@ Response copyWith({Map<String, String>? Function()? metadata, int? Function()? t
 
 @override int get hashCode => Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, id, object, status, createdAt, completedAt, error, incompleteDetails, Object.hashAll(output), instructions, outputText, usage, parallelToolCalls, conversation]);
 
-@override String toString() => 'Response(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention, id: $id, object: $object, status: $status, createdAt: $createdAt, completedAt: $completedAt, error: $error, incompleteDetails: $incompleteDetails, output: $output, instructions: $instructions, outputText: $outputText, usage: $usage, parallelToolCalls: $parallelToolCalls, conversation: $conversation)';
+@override String toString() => 'Response(\n  metadata: $metadata,\n  topLogprobs: $topLogprobs,\n  temperature: $temperature,\n  topP: $topP,\n  user: $user,\n  safetyIdentifier: $safetyIdentifier,\n  promptCacheKey: $promptCacheKey,\n  serviceTier: $serviceTier,\n  promptCacheRetention: $promptCacheRetention,\n  id: $id,\n  object: $object,\n  status: $status,\n  createdAt: $createdAt,\n  completedAt: $completedAt,\n  error: $error,\n  incompleteDetails: $incompleteDetails,\n  output: $output,\n  instructions: $instructions,\n  outputText: $outputText,\n  usage: $usage,\n  parallelToolCalls: $parallelToolCalls,\n  conversation: $conversation,\n)';
 
  }

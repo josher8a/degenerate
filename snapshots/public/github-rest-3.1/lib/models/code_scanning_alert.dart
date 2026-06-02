@@ -74,11 +74,11 @@ Map<String, dynamic> toJson() { return {
   'url': url.toJson(),
   'html_url': htmlUrl.toJson(),
   'instances_url': instancesUrl.toJson(),
-  'state': state != null ? state?.toJson() : null,
+  'state': state?.toJson(),
   if (fixedAt != null) 'fixed_at': fixedAt?.toJson(),
-  'dismissed_by': dismissedBy != null ? dismissedBy?.toJson() : null,
-  'dismissed_at': dismissedAt != null ? dismissedAt?.toJson() : null,
-  'dismissed_reason': dismissedReason != null ? dismissedReason?.toJson() : null,
+  'dismissed_by': dismissedBy?.toJson(),
+  'dismissed_at': dismissedAt?.toJson(),
+  'dismissed_reason': dismissedReason?.toJson(),
   if (dismissedComment != null) 'dismissed_comment': dismissedComment?.toJson(),
   'rule': rule.toJson(),
   'tool': tool.toJson(),
@@ -139,6 +139,6 @@ CodeScanningAlert copyWith({AlertNumber? number, AlertCreatedAt? createdAt, Aler
 
 @override int get hashCode => Object.hash(number, createdAt, updatedAt, url, htmlUrl, instancesUrl, state, fixedAt, dismissedBy, dismissedAt, dismissedReason, dismissedComment, rule, tool, mostRecentInstance, dismissalApprovedBy, Object.hashAll(assignees ?? const []));
 
-@override String toString() => 'CodeScanningAlert(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, instancesUrl: $instancesUrl, state: $state, fixedAt: $fixedAt, dismissedBy: $dismissedBy, dismissedAt: $dismissedAt, dismissedReason: $dismissedReason, dismissedComment: $dismissedComment, rule: $rule, tool: $tool, mostRecentInstance: $mostRecentInstance, dismissalApprovedBy: $dismissalApprovedBy, assignees: $assignees)';
+@override String toString() => 'CodeScanningAlert(\n  number: $number,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  instancesUrl: $instancesUrl,\n  state: $state,\n  fixedAt: $fixedAt,\n  dismissedBy: $dismissedBy,\n  dismissedAt: $dismissedAt,\n  dismissedReason: $dismissedReason,\n  dismissedComment: $dismissedComment,\n  rule: $rule,\n  tool: $tool,\n  mostRecentInstance: $mostRecentInstance,\n  dismissalApprovedBy: $dismissalApprovedBy,\n  assignees: $assignees,\n)';
 
  }

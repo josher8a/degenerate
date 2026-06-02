@@ -180,6 +180,6 @@ TeamFull copyWith({int? id, String? nodeId, Uri? url, Uri? htmlUrl, String? name
 
 @override int get hashCode => Object.hashAll([id, nodeId, url, htmlUrl, name, slug, description, privacy, notificationSetting, permission, membersUrl, repositoriesUrl, parent, membersCount, reposCount, createdAt, updatedAt, organization, ldapDn, type, organizationId, enterpriseId]);
 
-@override String toString() => 'TeamFull(id: $id, nodeId: $nodeId, url: $url, htmlUrl: $htmlUrl, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, parent: $parent, membersCount: $membersCount, reposCount: $reposCount, createdAt: $createdAt, updatedAt: $updatedAt, organization: $organization, ldapDn: $ldapDn, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)';
+@override String toString() => 'TeamFull(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  name: $name,\n  slug: $slug,\n  description: $description,\n  privacy: $privacy,\n  notificationSetting: $notificationSetting,\n  permission: $permission,\n  membersUrl: $membersUrl,\n  repositoriesUrl: $repositoriesUrl,\n  parent: $parent,\n  membersCount: $membersCount,\n  reposCount: $reposCount,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  organization: $organization,\n  ldapDn: $ldapDn,\n  type: $type,\n  organizationId: $organizationId,\n  enterpriseId: $enterpriseId,\n)';
 
  }

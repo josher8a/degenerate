@@ -36,7 +36,7 @@ factory MessageContent.reasoningText({required String text}) { return MessageCon
 factory MessageContent.refusal({required String refusal}) { return MessageContentRefusal(RefusalContent(type: 'refusal', refusal: refusal)); }
 
 /// Build the `input_image` variant.
-factory MessageContent.inputImage({String? imageUrl, String? fileId, required ImageDetail detail, }) { return MessageContentInputImage(InputImageContent(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory MessageContent.inputImage({required ImageDetail detail, String? imageUrl, String? fileId, }) { return MessageContentInputImage(InputImageContent(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `computer_screenshot` variant.
 factory MessageContent.computerScreenshot({required String? imageUrl, required String? fileId, required ImageDetail detail, }) { return MessageContentComputerScreenshot(ComputerScreenshotContent(type: ComputerScreenshotContentType.fromJson('computer_screenshot'), imageUrl: imageUrl, fileId: fileId, detail: detail)); }
@@ -50,6 +50,18 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is MessageContent$Unknown;
 
+R when<R>({required R Function(MessageContentInputText) inputText, required R Function(MessageContentOutputText) outputText, required R Function(MessageContentText) text, required R Function(MessageContentSummaryText) summaryText, required R Function(MessageContentReasoningText) reasoningText, required R Function(MessageContentRefusal) refusal, required R Function(MessageContentInputImage) inputImage, required R Function(MessageContentComputerScreenshot) computerScreenshot, required R Function(MessageContentInputFile) inputFile, required R Function(MessageContent$Unknown) unknown, }) { return switch (this) {
+  final MessageContentInputText v => inputText(v),
+  final MessageContentOutputText v => outputText(v),
+  final MessageContentText v => text(v),
+  final MessageContentSummaryText v => summaryText(v),
+  final MessageContentReasoningText v => reasoningText(v),
+  final MessageContentRefusal v => refusal(v),
+  final MessageContentInputImage v => inputImage(v),
+  final MessageContentComputerScreenshot v => computerScreenshot(v),
+  final MessageContentInputFile v => inputFile(v),
+  final MessageContent$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class MessageContentInputText extends MessageContent {const MessageContentInputText(this.inputTextContent);
 

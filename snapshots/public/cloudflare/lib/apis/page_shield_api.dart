@@ -17,7 +17,7 @@ Future<ApiResult<PageShieldGetZoneSettingsResponse?, Never>> pageShieldGetSettin
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -102,7 +102,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/connections',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield/connections',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -126,7 +126,7 @@ Future<ApiResult<PageShieldConnection, Never>> pageShieldGetConnection({required
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/connections/${Uri.encodeComponent(connectionId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield/connections/${Uri.encodeComponent(connectionId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -193,7 +193,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/cookies',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield/cookies',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -217,7 +217,7 @@ Future<ApiResult<PageShieldCookie, Never>> pageShieldGetCookie({required PageShi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/cookies/${Uri.encodeComponent(cookieId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield/cookies/${Uri.encodeComponent(cookieId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -239,7 +239,7 @@ Future<ApiResult<List<PageShieldPolicyWithId>, Never>> pageShieldListPolicies({r
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/policies',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield/policies',
   headers: headers,
   options: options,
 );
@@ -262,7 +262,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/policies',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield/policies',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -285,7 +285,7 @@ Future<ApiResult<PageShieldPolicyWithId, Never>> pageShieldGetPolicy({required P
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield/policies/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -308,7 +308,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield/policies/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -331,7 +331,7 @@ Future<ApiResult<void, Never>> pageShieldDeletePolicy({required PageShieldId zon
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield/policies/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -392,7 +392,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/scripts',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield/scripts',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -416,7 +416,7 @@ Future<ApiResult<PageShieldGetZoneScriptResponseResult, Never>> pageShieldGetScr
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/page_shield/scripts/${Uri.encodeComponent(scriptId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/page_shield/scripts/${Uri.encodeComponent(scriptId.toJson())}',
   headers: headers,
   options: options,
 );

@@ -110,7 +110,7 @@ final cacheTtl$ = cacheTtl;
 if (cacheTtl$ != null) {
   if (cacheTtl$ < 0) errors.add('cacheTtl: must be >= 0');
 }
-if (id.length < 1) errors.add('id: length must be >= 1');
+if (id.isEmpty) errors.add('id: length must be >= 1');
 if (id.length > 64) errors.add('id: length must be <= 64');
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
 final logManagement$ = logManagement;
@@ -181,6 +181,6 @@ AigConfigCreateGatewayResponseResult copyWith({bool? Function()? authentication,
 
 @override int get hashCode => Object.hashAll([authentication, cacheInvalidateOnUpdate, cacheTtl, collectLogs, createdAt, dlp, id, isDefault, logManagement, logManagementStrategy, logpush, logpushPublicKey, modifiedAt, Object.hashAll(otel ?? const []), rateLimitingInterval, rateLimitingLimit, rateLimitingTechnique, storeId, stripe, workersAiBillingMode, zdr]);
 
-@override String toString() => 'AigConfigCreateGatewayResponseResult(authentication: $authentication, cacheInvalidateOnUpdate: $cacheInvalidateOnUpdate, cacheTtl: $cacheTtl, collectLogs: $collectLogs, createdAt: $createdAt, dlp: $dlp, id: $id, isDefault: $isDefault, logManagement: $logManagement, logManagementStrategy: $logManagementStrategy, logpush: $logpush, logpushPublicKey: $logpushPublicKey, modifiedAt: $modifiedAt, otel: $otel, rateLimitingInterval: $rateLimitingInterval, rateLimitingLimit: $rateLimitingLimit, rateLimitingTechnique: $rateLimitingTechnique, storeId: $storeId, stripe: $stripe, workersAiBillingMode: $workersAiBillingMode, zdr: $zdr)';
+@override String toString() => 'AigConfigCreateGatewayResponseResult(\n  authentication: $authentication,\n  cacheInvalidateOnUpdate: $cacheInvalidateOnUpdate,\n  cacheTtl: $cacheTtl,\n  collectLogs: $collectLogs,\n  createdAt: $createdAt,\n  dlp: $dlp,\n  id: $id,\n  isDefault: $isDefault,\n  logManagement: $logManagement,\n  logManagementStrategy: $logManagementStrategy,\n  logpush: $logpush,\n  logpushPublicKey: $logpushPublicKey,\n  modifiedAt: $modifiedAt,\n  otel: $otel,\n  rateLimitingInterval: $rateLimitingInterval,\n  rateLimitingLimit: $rateLimitingLimit,\n  rateLimitingTechnique: $rateLimitingTechnique,\n  storeId: $storeId,\n  stripe: $stripe,\n  workersAiBillingMode: $workersAiBillingMode,\n  zdr: $zdr,\n)';
 
  }

@@ -71,7 +71,7 @@ return execute(
   onSuccess: (response) {
     return OrganizationFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update an organization
@@ -105,7 +105,7 @@ return execute(
   onSuccess: (response) {
     return OrganizationFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => OrgsUpdateError.fromResponse(response),
+  onError: OrgsUpdateError.fromResponse,
 );
  } 
 /// Delete an organization
@@ -133,7 +133,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Create an artifact deployment record
@@ -326,7 +326,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete attestations by subject digest
@@ -346,7 +346,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List attestation repositories
@@ -406,7 +406,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// List attestations
@@ -501,7 +501,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Block a user from an organization
@@ -521,7 +521,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Unblock a user from an organization
@@ -574,7 +574,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List organization webhooks
@@ -613,7 +613,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrgHook.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create an organization webhook
@@ -642,7 +642,7 @@ return execute(
   onSuccess: (response) {
     return OrgHook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get an organization webhook
@@ -670,7 +670,7 @@ return execute(
   onSuccess: (response) {
     return OrgHook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update an organization webhook
@@ -703,7 +703,7 @@ return execute(
   onSuccess: (response) {
     return OrgHook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete an organization webhook
@@ -728,7 +728,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get a webhook configuration for an organization
@@ -821,7 +821,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
+  onError: AppsGetWebhookDeliveryError.fromResponse,
 );
  } 
 /// Get a webhook delivery for an organization webhook
@@ -848,7 +848,7 @@ return execute(
   onSuccess: (response) {
     return HookDelivery.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
+  onError: AppsGetWebhookDeliveryError.fromResponse,
 );
  } 
 /// Redeliver a delivery for an organization webhook
@@ -875,7 +875,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
+  onError: AppsGetWebhookDeliveryError.fromResponse,
 );
  } 
 /// Ping an organization webhook
@@ -901,7 +901,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get route stats by actor
@@ -937,7 +937,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/orgs/${Uri.encodeComponent(org)}/insights/api/route-stats/${Uri.encodeComponent('${actorType.toJson()}')}/${Uri.encodeComponent(actorId.toString())}',
+  path: '/orgs/${Uri.encodeComponent(org)}/insights/api/route-stats/${Uri.encodeComponent(actorType.toJson())}/${Uri.encodeComponent(actorId.toString())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1076,7 +1076,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/orgs/${Uri.encodeComponent(org)}/insights/api/summary-stats/${Uri.encodeComponent('${actorType.toJson()}')}/${Uri.encodeComponent(actorId.toString())}',
+  path: '/orgs/${Uri.encodeComponent(org)}/insights/api/summary-stats/${Uri.encodeComponent(actorType.toJson())}/${Uri.encodeComponent(actorId.toString())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1171,7 +1171,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/orgs/${Uri.encodeComponent(org)}/insights/api/time-stats/${Uri.encodeComponent('${actorType.toJson()}')}/${Uri.encodeComponent(actorId.toString())}',
+  path: '/orgs/${Uri.encodeComponent(org)}/insights/api/time-stats/${Uri.encodeComponent(actorType.toJson())}/${Uri.encodeComponent(actorId.toString())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1311,7 +1311,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create an organization invitation
@@ -1338,7 +1338,7 @@ return execute(
   onSuccess: (response) {
     return OrganizationInvitation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Cancel an organization invitation
@@ -1360,7 +1360,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List organization invitation teams
@@ -1394,7 +1394,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List issue types for an organization
@@ -1417,7 +1417,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => IssueType.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create issue type for an organization
@@ -1446,7 +1446,7 @@ return execute(
   onSuccess: (response) {
     return IssueType.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// Update issue type for an organization
@@ -1475,7 +1475,7 @@ return execute(
   onSuccess: (response) {
     return IssueType.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// Delete issue type for an organization
@@ -1500,7 +1500,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// List organization members
@@ -1540,7 +1540,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Check organization membership for a user
@@ -1582,7 +1582,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Get organization membership for a user
@@ -1604,7 +1604,7 @@ return execute(
   onSuccess: (response) {
     return OrgMembership.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set organization membership for a user
@@ -1636,7 +1636,7 @@ return execute(
   onSuccess: (response) {
     return OrgMembership.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
 /// Remove organization membership for a user
@@ -1661,7 +1661,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Get all organization roles for an organization
@@ -1690,7 +1690,7 @@ return execute(
   onSuccess: (response) {
     return OrgsListOrgRolesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Remove all organization roles for a team
@@ -1857,7 +1857,7 @@ return execute(
   onSuccess: (response) {
     return OrganizationRole.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List teams that are assigned to an organization role
@@ -1991,7 +1991,7 @@ return execute(
   onSuccess: (response) {
     return OrgsConvertMemberToOutsideCollaboratorResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Remove outside collaborator from an organization
@@ -2011,7 +2011,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => OrgsRemoveOutsideCollaboratorError.fromResponse(response),
+  onError: OrgsRemoveOutsideCollaboratorError.fromResponse,
 );
  } 
 /// List requests to access organization resources with fine-grained personal access tokens
@@ -2075,7 +2075,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationProgrammaticAccessGrantRequest.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => OrgsListPatGrantRequestsError.fromResponse(response),
+  onError: OrgsListPatGrantRequestsError.fromResponse,
 );
  } 
 /// Review requests to access organization resources with fine-grained personal access tokens
@@ -2101,7 +2101,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => OrgsListPatGrantRequestsError.fromResponse(response),
+  onError: OrgsListPatGrantRequestsError.fromResponse,
 );
  } 
 /// Review a request to access organization resources with a fine-grained personal access token
@@ -2125,7 +2125,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => OrgsListPatGrantRequestsError.fromResponse(response),
+  onError: OrgsListPatGrantRequestsError.fromResponse,
 );
  } 
 /// List repositories requested to be accessed by a fine-grained personal access token
@@ -2161,7 +2161,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => BillingGetAllBudgetsOrgError.fromResponse(response),
+  onError: BillingGetAllBudgetsOrgError.fromResponse,
 );
  } 
 /// List fine-grained personal access tokens with access to organization resources
@@ -2225,7 +2225,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationProgrammaticAccessGrant.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => OrgsListPatGrantRequestsError.fromResponse(response),
+  onError: OrgsListPatGrantRequestsError.fromResponse,
 );
  } 
 /// Update the access to organization resources via fine-grained personal access tokens
@@ -2251,7 +2251,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => OrgsListPatGrantRequestsError.fromResponse(response),
+  onError: OrgsListPatGrantRequestsError.fromResponse,
 );
  } 
 /// Update the access a fine-grained personal access token has to organization resources
@@ -2275,7 +2275,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => OrgsListPatGrantRequestsError.fromResponse(response),
+  onError: OrgsListPatGrantRequestsError.fromResponse,
 );
  } 
 /// List repositories a fine-grained personal access token has access to
@@ -2311,7 +2311,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => BillingGetAllBudgetsOrgError.fromResponse(response),
+  onError: BillingGetAllBudgetsOrgError.fromResponse,
 );
  } 
 /// Get all custom properties for an organization
@@ -2335,7 +2335,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Create or update custom properties for an organization
@@ -2368,7 +2368,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Get a custom property for an organization
@@ -2391,7 +2391,7 @@ return execute(
   onSuccess: (response) {
     return CustomProperty.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Create or update a custom property for an organization
@@ -2419,7 +2419,7 @@ return execute(
   onSuccess: (response) {
     return CustomProperty.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Remove a custom property for an organization
@@ -2443,7 +2443,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// List custom property values for organization repositories
@@ -2481,7 +2481,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrgRepoCustomPropertyValues.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Create or update custom property values for organization repositories
@@ -2512,7 +2512,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// List public organization members
@@ -2586,7 +2586,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Remove public organization membership for the authenticated user
@@ -2639,7 +2639,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => RulesetVersion.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Get organization ruleset version
@@ -2661,7 +2661,7 @@ return execute(
   onSuccess: (response) {
     return RulesetVersionWithState.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Get immutable releases settings for an organization
@@ -2843,7 +2843,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrgMembership.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListNotificationsForAuthenticatedUserError.fromResponse(response),
+  onError: ActivityListNotificationsForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get an organization membership for the authenticated user
@@ -2865,7 +2865,7 @@ return execute(
   onSuccess: (response) {
     return OrgMembership.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Update an organization membership for the authenticated user
@@ -2889,7 +2889,7 @@ return execute(
   onSuccess: (response) {
     return OrgMembership.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// List organizations for the authenticated user
@@ -2928,7 +2928,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// List organizations for a user

@@ -30,7 +30,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return CcAccountRegistryToken.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => GenerateImageRegistryCredentialsError.fromResponse(response),
+  onError: GenerateImageRegistryCredentialsError.fromResponse,
 );
  } 
  }

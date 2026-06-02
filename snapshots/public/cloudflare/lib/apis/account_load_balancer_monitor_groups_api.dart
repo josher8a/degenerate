@@ -17,7 +17,7 @@ Future<ApiResult<List<LoadBalancingMonitorGroup>, Never>> accountLoadBalancerMon
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitor_groups',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitor_groups',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitor_groups',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitor_groups',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -52,7 +52,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse(response),
+  onError: AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse,
 );
  } 
 /// Monitor Group Details
@@ -64,7 +64,7 @@ Future<ApiResult<LoadBalancingMonitorGroup, Never>> accountLoadBalancerMonitorGr
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -87,7 +87,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -99,7 +99,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse(response),
+  onError: AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse,
 );
  } 
 /// Patch Monitor Group
@@ -112,7 +112,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -124,7 +124,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse(response),
+  onError: AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse,
 );
  } 
 /// Delete Monitor Group
@@ -136,7 +136,7 @@ Future<ApiResult<LoadBalancingMonitorGroup, AccountLoadBalancerMonitorGroupsCrea
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -147,7 +147,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse(response),
+  onError: AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse,
 );
  } 
 /// List Monitor Group References
@@ -159,7 +159,7 @@ Future<ApiResult<List<LoadBalancingMonitorGroupReferencesResponseResult>, Never>
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId.toString())}/references',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/monitor_groups/${Uri.encodeComponent(monitorGroupId.toJson())}/references',
   headers: headers,
   options: options,
 );

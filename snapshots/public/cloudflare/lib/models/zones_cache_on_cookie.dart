@@ -55,7 +55,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final value$ = value;
 if (value$ != null) {
-  if (value$.length < 1) errors.add('value: length must be >= 1');
+  if (value$.isEmpty) errors.add('value: length must be >= 1');
   if (value$.length > 150) errors.add('value: length must be <= 150');
 }
 return errors; } 

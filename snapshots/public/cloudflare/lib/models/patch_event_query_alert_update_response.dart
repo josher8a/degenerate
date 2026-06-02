@@ -93,6 +93,6 @@ PatchEventQueryAlertUpdateResponse copyWith({int? accountId, String? createdAt, 
 
 @override int get hashCode => Object.hash(accountId, createdAt, enabled, frequency, id, lastSentAt, notificationType, queryId, updatedAt, userEmail);
 
-@override String toString() => 'PatchEventQueryAlertUpdateResponse(accountId: $accountId, createdAt: $createdAt, enabled: $enabled, frequency: $frequency, id: $id, lastSentAt: $lastSentAt, notificationType: $notificationType, queryId: $queryId, updatedAt: $updatedAt, userEmail: $userEmail)';
+@override String toString() => 'PatchEventQueryAlertUpdateResponse(\n  accountId: $accountId,\n  createdAt: $createdAt,\n  enabled: $enabled,\n  frequency: $frequency,\n  id: $id,\n  lastSentAt: $lastSentAt,\n  notificationType: $notificationType,\n  queryId: $queryId,\n  updatedAt: $updatedAt,\n  userEmail: $userEmail,\n)';
 
  }

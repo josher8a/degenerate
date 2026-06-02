@@ -54,7 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBotsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBotsError.fromResponse(response),
+  onError: RadarGetBotsError.fromResponse,
 );
  } 
 /// Get bot details
@@ -85,7 +85,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBotDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBotDetailsError.fromResponse(response),
+  onError: RadarGetBotDetailsError.fromResponse,
 );
  } 
 /// Get bots HTTP requests distribution by dimension
@@ -166,7 +166,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/bots/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/bots/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -179,7 +179,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsSummaryByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBotsSummaryError.fromResponse(response),
+  onError: RadarGetBotsSummaryError.fromResponse,
 );
  } 
 /// Get bots HTTP requests time series
@@ -273,7 +273,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBotsTimeseriesError.fromResponse(response),
+  onError: RadarGetBotsTimeseriesError.fromResponse,
 );
  } 
 /// Get time series distribution of bots HTTP requests by dimension.
@@ -357,7 +357,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/bots/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/bots/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -370,7 +370,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBotsTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetBotsTimeseriesGroupError.fromResponse,
 );
  } 
  }

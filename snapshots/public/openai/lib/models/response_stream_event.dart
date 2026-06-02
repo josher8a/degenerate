@@ -227,6 +227,62 @@ bool get isUnknown => this is ResponseStreamEvent$Unknown;
 
 /// Shared by all variants of this union.
 int get sequenceNumber;
+R when<R>({required R Function(ResponseStreamEventResponseAudioDelta) responseAudioDelta, required R Function(ResponseStreamEventResponseAudioDone) responseAudioDone, required R Function(ResponseStreamEventResponseAudioTranscriptDelta) responseAudioTranscriptDelta, required R Function(ResponseStreamEventResponseAudioTranscriptDone) responseAudioTranscriptDone, required R Function(ResponseStreamEventResponseCodeInterpreterCallCodeDelta) responseCodeInterpreterCallCodeDelta, required R Function(ResponseStreamEventResponseCodeInterpreterCallCodeDone) responseCodeInterpreterCallCodeDone, required R Function(ResponseStreamEventResponseCodeInterpreterCallCompleted) responseCodeInterpreterCallCompleted, required R Function(ResponseStreamEventResponseCodeInterpreterCallInProgress) responseCodeInterpreterCallInProgress, required R Function(ResponseStreamEventResponseCodeInterpreterCallInterpreting) responseCodeInterpreterCallInterpreting, required R Function(ResponseStreamEventResponseCompleted) responseCompleted, required R Function(ResponseStreamEventResponseContentPartAdded) responseContentPartAdded, required R Function(ResponseStreamEventResponseContentPartDone) responseContentPartDone, required R Function(ResponseStreamEventResponseCreated) responseCreated, required R Function(ResponseStreamEventError) error, required R Function(ResponseStreamEventResponseFileSearchCallCompleted) responseFileSearchCallCompleted, required R Function(ResponseStreamEventResponseFileSearchCallInProgress) responseFileSearchCallInProgress, required R Function(ResponseStreamEventResponseFileSearchCallSearching) responseFileSearchCallSearching, required R Function(ResponseStreamEventResponseFunctionCallArgumentsDelta) responseFunctionCallArgumentsDelta, required R Function(ResponseStreamEventResponseFunctionCallArgumentsDone) responseFunctionCallArgumentsDone, required R Function(ResponseStreamEventResponseInProgress) responseInProgress, required R Function(ResponseStreamEventResponseFailed) responseFailed, required R Function(ResponseStreamEventResponseIncomplete) responseIncomplete, required R Function(ResponseStreamEventResponseOutputItemAdded) responseOutputItemAdded, required R Function(ResponseStreamEventResponseOutputItemDone) responseOutputItemDone, required R Function(ResponseStreamEventResponseReasoningSummaryPartAdded) responseReasoningSummaryPartAdded, required R Function(ResponseStreamEventResponseReasoningSummaryPartDone) responseReasoningSummaryPartDone, required R Function(ResponseStreamEventResponseReasoningSummaryTextDelta) responseReasoningSummaryTextDelta, required R Function(ResponseStreamEventResponseReasoningSummaryTextDone) responseReasoningSummaryTextDone, required R Function(ResponseStreamEventResponseReasoningTextDelta) responseReasoningTextDelta, required R Function(ResponseStreamEventResponseReasoningTextDone) responseReasoningTextDone, required R Function(ResponseStreamEventResponseRefusalDelta) responseRefusalDelta, required R Function(ResponseStreamEventResponseRefusalDone) responseRefusalDone, required R Function(ResponseStreamEventResponseOutputTextDelta) responseOutputTextDelta, required R Function(ResponseStreamEventResponseOutputTextDone) responseOutputTextDone, required R Function(ResponseStreamEventResponseWebSearchCallCompleted) responseWebSearchCallCompleted, required R Function(ResponseStreamEventResponseWebSearchCallInProgress) responseWebSearchCallInProgress, required R Function(ResponseStreamEventResponseWebSearchCallSearching) responseWebSearchCallSearching, required R Function(ResponseStreamEventResponseImageGenerationCallCompleted) responseImageGenerationCallCompleted, required R Function(ResponseStreamEventResponseImageGenerationCallGenerating) responseImageGenerationCallGenerating, required R Function(ResponseStreamEventResponseImageGenerationCallInProgress) responseImageGenerationCallInProgress, required R Function(ResponseStreamEventResponseImageGenerationCallPartialImage) responseImageGenerationCallPartialImage, required R Function(ResponseStreamEventResponseMcpCallArgumentsDelta) responseMcpCallArgumentsDelta, required R Function(ResponseStreamEventResponseMcpCallArgumentsDone) responseMcpCallArgumentsDone, required R Function(ResponseStreamEventResponseMcpCallCompleted) responseMcpCallCompleted, required R Function(ResponseStreamEventResponseMcpCallFailed) responseMcpCallFailed, required R Function(ResponseStreamEventResponseMcpCallInProgress) responseMcpCallInProgress, required R Function(ResponseStreamEventResponseMcpListToolsCompleted) responseMcpListToolsCompleted, required R Function(ResponseStreamEventResponseMcpListToolsFailed) responseMcpListToolsFailed, required R Function(ResponseStreamEventResponseMcpListToolsInProgress) responseMcpListToolsInProgress, required R Function(ResponseStreamEventResponseOutputTextAnnotationAdded) responseOutputTextAnnotationAdded, required R Function(ResponseStreamEventResponseQueued) responseQueued, required R Function(ResponseStreamEventResponseCustomToolCallInputDelta) responseCustomToolCallInputDelta, required R Function(ResponseStreamEventResponseCustomToolCallInputDone) responseCustomToolCallInputDone, required R Function(ResponseStreamEvent$Unknown) unknown, }) { return switch (this) {
+  final ResponseStreamEventResponseAudioDelta v => responseAudioDelta(v),
+  final ResponseStreamEventResponseAudioDone v => responseAudioDone(v),
+  final ResponseStreamEventResponseAudioTranscriptDelta v => responseAudioTranscriptDelta(v),
+  final ResponseStreamEventResponseAudioTranscriptDone v => responseAudioTranscriptDone(v),
+  final ResponseStreamEventResponseCodeInterpreterCallCodeDelta v => responseCodeInterpreterCallCodeDelta(v),
+  final ResponseStreamEventResponseCodeInterpreterCallCodeDone v => responseCodeInterpreterCallCodeDone(v),
+  final ResponseStreamEventResponseCodeInterpreterCallCompleted v => responseCodeInterpreterCallCompleted(v),
+  final ResponseStreamEventResponseCodeInterpreterCallInProgress v => responseCodeInterpreterCallInProgress(v),
+  final ResponseStreamEventResponseCodeInterpreterCallInterpreting v => responseCodeInterpreterCallInterpreting(v),
+  final ResponseStreamEventResponseCompleted v => responseCompleted(v),
+  final ResponseStreamEventResponseContentPartAdded v => responseContentPartAdded(v),
+  final ResponseStreamEventResponseContentPartDone v => responseContentPartDone(v),
+  final ResponseStreamEventResponseCreated v => responseCreated(v),
+  final ResponseStreamEventError v => error(v),
+  final ResponseStreamEventResponseFileSearchCallCompleted v => responseFileSearchCallCompleted(v),
+  final ResponseStreamEventResponseFileSearchCallInProgress v => responseFileSearchCallInProgress(v),
+  final ResponseStreamEventResponseFileSearchCallSearching v => responseFileSearchCallSearching(v),
+  final ResponseStreamEventResponseFunctionCallArgumentsDelta v => responseFunctionCallArgumentsDelta(v),
+  final ResponseStreamEventResponseFunctionCallArgumentsDone v => responseFunctionCallArgumentsDone(v),
+  final ResponseStreamEventResponseInProgress v => responseInProgress(v),
+  final ResponseStreamEventResponseFailed v => responseFailed(v),
+  final ResponseStreamEventResponseIncomplete v => responseIncomplete(v),
+  final ResponseStreamEventResponseOutputItemAdded v => responseOutputItemAdded(v),
+  final ResponseStreamEventResponseOutputItemDone v => responseOutputItemDone(v),
+  final ResponseStreamEventResponseReasoningSummaryPartAdded v => responseReasoningSummaryPartAdded(v),
+  final ResponseStreamEventResponseReasoningSummaryPartDone v => responseReasoningSummaryPartDone(v),
+  final ResponseStreamEventResponseReasoningSummaryTextDelta v => responseReasoningSummaryTextDelta(v),
+  final ResponseStreamEventResponseReasoningSummaryTextDone v => responseReasoningSummaryTextDone(v),
+  final ResponseStreamEventResponseReasoningTextDelta v => responseReasoningTextDelta(v),
+  final ResponseStreamEventResponseReasoningTextDone v => responseReasoningTextDone(v),
+  final ResponseStreamEventResponseRefusalDelta v => responseRefusalDelta(v),
+  final ResponseStreamEventResponseRefusalDone v => responseRefusalDone(v),
+  final ResponseStreamEventResponseOutputTextDelta v => responseOutputTextDelta(v),
+  final ResponseStreamEventResponseOutputTextDone v => responseOutputTextDone(v),
+  final ResponseStreamEventResponseWebSearchCallCompleted v => responseWebSearchCallCompleted(v),
+  final ResponseStreamEventResponseWebSearchCallInProgress v => responseWebSearchCallInProgress(v),
+  final ResponseStreamEventResponseWebSearchCallSearching v => responseWebSearchCallSearching(v),
+  final ResponseStreamEventResponseImageGenerationCallCompleted v => responseImageGenerationCallCompleted(v),
+  final ResponseStreamEventResponseImageGenerationCallGenerating v => responseImageGenerationCallGenerating(v),
+  final ResponseStreamEventResponseImageGenerationCallInProgress v => responseImageGenerationCallInProgress(v),
+  final ResponseStreamEventResponseImageGenerationCallPartialImage v => responseImageGenerationCallPartialImage(v),
+  final ResponseStreamEventResponseMcpCallArgumentsDelta v => responseMcpCallArgumentsDelta(v),
+  final ResponseStreamEventResponseMcpCallArgumentsDone v => responseMcpCallArgumentsDone(v),
+  final ResponseStreamEventResponseMcpCallCompleted v => responseMcpCallCompleted(v),
+  final ResponseStreamEventResponseMcpCallFailed v => responseMcpCallFailed(v),
+  final ResponseStreamEventResponseMcpCallInProgress v => responseMcpCallInProgress(v),
+  final ResponseStreamEventResponseMcpListToolsCompleted v => responseMcpListToolsCompleted(v),
+  final ResponseStreamEventResponseMcpListToolsFailed v => responseMcpListToolsFailed(v),
+  final ResponseStreamEventResponseMcpListToolsInProgress v => responseMcpListToolsInProgress(v),
+  final ResponseStreamEventResponseOutputTextAnnotationAdded v => responseOutputTextAnnotationAdded(v),
+  final ResponseStreamEventResponseQueued v => responseQueued(v),
+  final ResponseStreamEventResponseCustomToolCallInputDelta v => responseCustomToolCallInputDelta(v),
+  final ResponseStreamEventResponseCustomToolCallInputDone v => responseCustomToolCallInputDone(v),
+  final ResponseStreamEvent$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ResponseStreamEventResponseAudioDelta extends ResponseStreamEvent {const ResponseStreamEventResponseAudioDelta(this.responseAudioDeltaEvent);
 
@@ -1584,9 +1640,11 @@ ResponseStreamEventResponseCustomToolCallInputDone copyWith({int? sequenceNumber
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class ResponseStreamEvent$Unknown extends ResponseStreamEvent {const ResponseStreamEvent$Unknown(this.json);
+@immutable final class ResponseStreamEvent$Unknown extends ResponseStreamEvent {ResponseStreamEvent$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final int _sequenceNumber = (json['sequence_number'] as num).toInt();
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -1599,6 +1657,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ResponseStreamEvent.unknown($json)';
 
-@override int get sequenceNumber => (json['sequence_number'] as num).toInt();
+@override int get sequenceNumber => _sequenceNumber;
 
  }

@@ -98,6 +98,6 @@ TurboRequest copyWith({TurboRequestAudio? audio, int Function()? beamSize, doubl
 
 @override int get hashCode => Object.hash(audio, beamSize, compressionRatioThreshold, conditionOnPreviousText, hallucinationSilenceThreshold, initialPrompt, language, logProbThreshold, noSpeechThreshold, prefix, task, vadFilter);
 
-@override String toString() => 'TurboRequest(audio: $audio, beamSize: $beamSize, compressionRatioThreshold: $compressionRatioThreshold, conditionOnPreviousText: $conditionOnPreviousText, hallucinationSilenceThreshold: $hallucinationSilenceThreshold, initialPrompt: $initialPrompt, language: $language, logProbThreshold: $logProbThreshold, noSpeechThreshold: $noSpeechThreshold, prefix: $prefix, task: $task, vadFilter: $vadFilter)';
+@override String toString() => 'TurboRequest(\n  audio: $audio,\n  beamSize: $beamSize,\n  compressionRatioThreshold: $compressionRatioThreshold,\n  conditionOnPreviousText: $conditionOnPreviousText,\n  hallucinationSilenceThreshold: $hallucinationSilenceThreshold,\n  initialPrompt: $initialPrompt,\n  language: $language,\n  logProbThreshold: $logProbThreshold,\n  noSpeechThreshold: $noSpeechThreshold,\n  prefix: $prefix,\n  task: $task,\n  vadFilter: $vadFilter,\n)';
 
  }

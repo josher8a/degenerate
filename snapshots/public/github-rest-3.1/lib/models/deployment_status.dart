@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
   'state': state.toJson(),
-  'creator': creator != null ? creator?.toJson() : null,
+  'creator': creator?.toJson(),
   'description': description,
   'environment': environment,
   'target_url': targetUrl.toString(),
@@ -126,6 +126,6 @@ DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusSt
 
 @override int get hashCode => Object.hash(url, id, nodeId, state, creator, description, environment, targetUrl, createdAt, updatedAt, deploymentUrl, repositoryUrl, environmentUrl, logUrl, performedViaGithubApp);
 
-@override String toString() => 'DeploymentStatus(url: $url, id: $id, nodeId: $nodeId, state: $state, creator: $creator, description: $description, environment: $environment, targetUrl: $targetUrl, createdAt: $createdAt, updatedAt: $updatedAt, deploymentUrl: $deploymentUrl, repositoryUrl: $repositoryUrl, environmentUrl: $environmentUrl, logUrl: $logUrl, performedViaGithubApp: $performedViaGithubApp)';
+@override String toString() => 'DeploymentStatus(\n  url: $url,\n  id: $id,\n  nodeId: $nodeId,\n  state: $state,\n  creator: $creator,\n  description: $description,\n  environment: $environment,\n  targetUrl: $targetUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  deploymentUrl: $deploymentUrl,\n  repositoryUrl: $repositoryUrl,\n  environmentUrl: $environmentUrl,\n  logUrl: $logUrl,\n  performedViaGithubApp: $performedViaGithubApp,\n)';
 
  }

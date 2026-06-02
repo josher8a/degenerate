@@ -59,13 +59,13 @@ factory RealtimeServerEvent.fromJson(Map<String, dynamic> json) { return switch 
 factory RealtimeServerEvent.conversationCreated({required String eventId, required RealtimeServerEventConversationCreatedConversation conversation, }) { return RealtimeServerEventConversationCreated$Variant(RealtimeServerEventConversationCreated(type: 'conversation.created', eventId: eventId, conversation: conversation)); }
 
 /// Build the `conversation.item.created` variant.
-factory RealtimeServerEvent.conversationItemCreated({required String eventId, String? previousItemId, required RealtimeConversationItem item, }) { return RealtimeServerEventConversationItemCreated$Variant(RealtimeServerEventConversationItemCreated(type: 'conversation.item.created', eventId: eventId, previousItemId: previousItemId, item: item)); }
+factory RealtimeServerEvent.conversationItemCreated({required String eventId, required RealtimeConversationItem item, String? previousItemId, }) { return RealtimeServerEventConversationItemCreated$Variant(RealtimeServerEventConversationItemCreated(type: 'conversation.item.created', eventId: eventId, previousItemId: previousItemId, item: item)); }
 
 /// Build the `conversation.item.deleted` variant.
 factory RealtimeServerEvent.conversationItemDeleted({required String eventId, required String itemId, }) { return RealtimeServerEventConversationItemDeleted$Variant(RealtimeServerEventConversationItemDeleted(type: 'conversation.item.deleted', eventId: eventId, itemId: itemId)); }
 
 /// Build the `conversation.item.input_audio_transcription.completed` variant.
-factory RealtimeServerEvent.conversationItemInputAudioTranscriptionCompleted({required String eventId, required String itemId, required int contentIndex, required String transcript, List<LogProbProperties>? logprobs, required CreateTranscriptionResponseJsonUsage usage, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Variant(RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(type: 'conversation.item.input_audio_transcription.completed', eventId: eventId, itemId: itemId, contentIndex: contentIndex, transcript: transcript, logprobs: logprobs, usage: usage)); }
+factory RealtimeServerEvent.conversationItemInputAudioTranscriptionCompleted({required String eventId, required String itemId, required int contentIndex, required String transcript, required CreateTranscriptionResponseJsonUsage usage, List<LogProbProperties>? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Variant(RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(type: 'conversation.item.input_audio_transcription.completed', eventId: eventId, itemId: itemId, contentIndex: contentIndex, transcript: transcript, logprobs: logprobs, usage: usage)); }
 
 /// Build the `conversation.item.input_audio_transcription.delta` variant.
 factory RealtimeServerEvent.conversationItemInputAudioTranscriptionDelta({required String eventId, required String itemId, int? contentIndex, String? delta, List<LogProbProperties>? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant(RealtimeServerEventConversationItemInputAudioTranscriptionDelta(type: 'conversation.item.input_audio_transcription.delta', eventId: eventId, itemId: itemId, contentIndex: contentIndex, delta: delta, logprobs: logprobs)); }
@@ -86,7 +86,7 @@ factory RealtimeServerEvent.error({required String eventId, required RealtimeBet
 factory RealtimeServerEvent.inputAudioBufferCleared({required String eventId}) { return RealtimeServerEventInputAudioBufferCleared$Variant(RealtimeServerEventInputAudioBufferCleared(type: 'input_audio_buffer.cleared', eventId: eventId)); }
 
 /// Build the `input_audio_buffer.committed` variant.
-factory RealtimeServerEvent.inputAudioBufferCommitted({required String eventId, String? previousItemId, required String itemId, }) { return RealtimeServerEventInputAudioBufferCommitted$Variant(RealtimeServerEventInputAudioBufferCommitted(type: 'input_audio_buffer.committed', eventId: eventId, previousItemId: previousItemId, itemId: itemId)); }
+factory RealtimeServerEvent.inputAudioBufferCommitted({required String eventId, required String itemId, String? previousItemId, }) { return RealtimeServerEventInputAudioBufferCommitted$Variant(RealtimeServerEventInputAudioBufferCommitted(type: 'input_audio_buffer.committed', eventId: eventId, previousItemId: previousItemId, itemId: itemId)); }
 
 /// Build the `input_audio_buffer.dtmf_event_received` variant.
 factory RealtimeServerEvent.inputAudioBufferDtmfEventReceived({required String event, required int receivedAt, }) { return RealtimeServerEventInputAudioBufferDtmfEventReceived$Variant(RealtimeServerEventInputAudioBufferDtmfEventReceived(type: 'input_audio_buffer.dtmf_event_received', event: event, receivedAt: receivedAt)); }
@@ -158,10 +158,10 @@ factory RealtimeServerEvent.outputAudioBufferStopped({required String eventId, r
 factory RealtimeServerEvent.outputAudioBufferCleared({required String eventId, required String responseId, }) { return RealtimeServerEventOutputAudioBufferCleared$Variant(RealtimeServerEventOutputAudioBufferCleared(type: 'output_audio_buffer.cleared', eventId: eventId, responseId: responseId)); }
 
 /// Build the `conversation.item.added` variant.
-factory RealtimeServerEvent.conversationItemAdded({required String eventId, String? previousItemId, required RealtimeConversationItem item, }) { return RealtimeServerEventConversationItemAdded$Variant(RealtimeServerEventConversationItemAdded(type: 'conversation.item.added', eventId: eventId, previousItemId: previousItemId, item: item)); }
+factory RealtimeServerEvent.conversationItemAdded({required String eventId, required RealtimeConversationItem item, String? previousItemId, }) { return RealtimeServerEventConversationItemAdded$Variant(RealtimeServerEventConversationItemAdded(type: 'conversation.item.added', eventId: eventId, previousItemId: previousItemId, item: item)); }
 
 /// Build the `conversation.item.done` variant.
-factory RealtimeServerEvent.conversationItemDone({required String eventId, String? previousItemId, required RealtimeConversationItem item, }) { return RealtimeServerEventConversationItemDone$Variant(RealtimeServerEventConversationItemDone(type: 'conversation.item.done', eventId: eventId, previousItemId: previousItemId, item: item)); }
+factory RealtimeServerEvent.conversationItemDone({required String eventId, required RealtimeConversationItem item, String? previousItemId, }) { return RealtimeServerEventConversationItemDone$Variant(RealtimeServerEventConversationItemDone(type: 'conversation.item.done', eventId: eventId, previousItemId: previousItemId, item: item)); }
 
 /// Build the `input_audio_buffer.timeout_triggered` variant.
 factory RealtimeServerEvent.inputAudioBufferTimeoutTriggered({required String eventId, required int audioStartMs, required int audioEndMs, required String itemId, }) { return RealtimeServerEventInputAudioBufferTimeoutTriggered$Variant(RealtimeServerEventInputAudioBufferTimeoutTriggered(type: 'input_audio_buffer.timeout_triggered', eventId: eventId, audioStartMs: audioStartMs, audioEndMs: audioEndMs, itemId: itemId)); }
@@ -199,6 +199,55 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is RealtimeServerEvent$Unknown;
 
+R when<R>({required R Function(RealtimeServerEventConversationCreated$Variant) conversationCreated, required R Function(RealtimeServerEventConversationItemCreated$Variant) conversationItemCreated, required R Function(RealtimeServerEventConversationItemDeleted$Variant) conversationItemDeleted, required R Function(RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Variant) conversationItemInputAudioTranscriptionCompleted, required R Function(RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant) conversationItemInputAudioTranscriptionDelta, required R Function(RealtimeServerEventConversationItemInputAudioTranscriptionFailed$Variant) conversationItemInputAudioTranscriptionFailed, required R Function(RealtimeServerEventConversationItemRetrieved$Variant) conversationItemRetrieved, required R Function(RealtimeServerEventConversationItemTruncated$Variant) conversationItemTruncated, required R Function(RealtimeServerEventError$Variant) error, required R Function(RealtimeServerEventInputAudioBufferCleared$Variant) inputAudioBufferCleared, required R Function(RealtimeServerEventInputAudioBufferCommitted$Variant) inputAudioBufferCommitted, required R Function(RealtimeServerEventInputAudioBufferDtmfEventReceived$Variant) inputAudioBufferDtmfEventReceived, required R Function(RealtimeServerEventInputAudioBufferSpeechStarted$Variant) inputAudioBufferSpeechStarted, required R Function(RealtimeServerEventInputAudioBufferSpeechStopped$Variant) inputAudioBufferSpeechStopped, required R Function(RealtimeServerEventRateLimitsUpdated$Variant) rateLimitsUpdated, required R Function(RealtimeServerEventResponseOutputAudioDelta) responseOutputAudioDelta, required R Function(RealtimeServerEventResponseOutputAudioDone) responseOutputAudioDone, required R Function(RealtimeServerEventResponseOutputAudioTranscriptDelta) responseOutputAudioTranscriptDelta, required R Function(RealtimeServerEventResponseOutputAudioTranscriptDone) responseOutputAudioTranscriptDone, required R Function(RealtimeServerEventResponseContentPartAdded$Variant) responseContentPartAdded, required R Function(RealtimeServerEventResponseContentPartDone$Variant) responseContentPartDone, required R Function(RealtimeServerEventResponseCreated$Variant) responseCreated, required R Function(RealtimeServerEventResponseDone$Variant) responseDone, required R Function(RealtimeServerEventResponseFunctionCallArgumentsDelta$Variant) responseFunctionCallArgumentsDelta, required R Function(RealtimeServerEventResponseFunctionCallArgumentsDone$Variant) responseFunctionCallArgumentsDone, required R Function(RealtimeServerEventResponseOutputItemAdded$Variant) responseOutputItemAdded, required R Function(RealtimeServerEventResponseOutputItemDone$Variant) responseOutputItemDone, required R Function(RealtimeServerEventResponseOutputTextDelta) responseOutputTextDelta, required R Function(RealtimeServerEventResponseOutputTextDone) responseOutputTextDone, required R Function(RealtimeServerEventSessionCreated$Variant) sessionCreated, required R Function(RealtimeServerEventSessionUpdated$Variant) sessionUpdated, required R Function(RealtimeServerEventOutputAudioBufferStarted$Variant) outputAudioBufferStarted, required R Function(RealtimeServerEventOutputAudioBufferStopped$Variant) outputAudioBufferStopped, required R Function(RealtimeServerEventOutputAudioBufferCleared$Variant) outputAudioBufferCleared, required R Function(RealtimeServerEventConversationItemAdded$Variant) conversationItemAdded, required R Function(RealtimeServerEventConversationItemDone$Variant) conversationItemDone, required R Function(RealtimeServerEventInputAudioBufferTimeoutTriggered$Variant) inputAudioBufferTimeoutTriggered, required R Function(RealtimeServerEventConversationItemInputAudioTranscriptionSegment$Variant) conversationItemInputAudioTranscriptionSegment, required R Function(RealtimeServerEventMcpListToolsInProgress$Variant) mcpListToolsInProgress, required R Function(RealtimeServerEventMcpListToolsCompleted$Variant) mcpListToolsCompleted, required R Function(RealtimeServerEventMcpListToolsFailed$Variant) mcpListToolsFailed, required R Function(RealtimeServerEventResponseMcpCallArgumentsDelta$Variant) responseMcpCallArgumentsDelta, required R Function(RealtimeServerEventResponseMcpCallArgumentsDone$Variant) responseMcpCallArgumentsDone, required R Function(RealtimeServerEventResponseMcpCallInProgress$Variant) responseMcpCallInProgress, required R Function(RealtimeServerEventResponseMcpCallCompleted$Variant) responseMcpCallCompleted, required R Function(RealtimeServerEventResponseMcpCallFailed$Variant) responseMcpCallFailed, required R Function(RealtimeServerEvent$Unknown) unknown, }) { return switch (this) {
+  final RealtimeServerEventConversationCreated$Variant v => conversationCreated(v),
+  final RealtimeServerEventConversationItemCreated$Variant v => conversationItemCreated(v),
+  final RealtimeServerEventConversationItemDeleted$Variant v => conversationItemDeleted(v),
+  final RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Variant v => conversationItemInputAudioTranscriptionCompleted(v),
+  final RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant v => conversationItemInputAudioTranscriptionDelta(v),
+  final RealtimeServerEventConversationItemInputAudioTranscriptionFailed$Variant v => conversationItemInputAudioTranscriptionFailed(v),
+  final RealtimeServerEventConversationItemRetrieved$Variant v => conversationItemRetrieved(v),
+  final RealtimeServerEventConversationItemTruncated$Variant v => conversationItemTruncated(v),
+  final RealtimeServerEventError$Variant v => error(v),
+  final RealtimeServerEventInputAudioBufferCleared$Variant v => inputAudioBufferCleared(v),
+  final RealtimeServerEventInputAudioBufferCommitted$Variant v => inputAudioBufferCommitted(v),
+  final RealtimeServerEventInputAudioBufferDtmfEventReceived$Variant v => inputAudioBufferDtmfEventReceived(v),
+  final RealtimeServerEventInputAudioBufferSpeechStarted$Variant v => inputAudioBufferSpeechStarted(v),
+  final RealtimeServerEventInputAudioBufferSpeechStopped$Variant v => inputAudioBufferSpeechStopped(v),
+  final RealtimeServerEventRateLimitsUpdated$Variant v => rateLimitsUpdated(v),
+  final RealtimeServerEventResponseOutputAudioDelta v => responseOutputAudioDelta(v),
+  final RealtimeServerEventResponseOutputAudioDone v => responseOutputAudioDone(v),
+  final RealtimeServerEventResponseOutputAudioTranscriptDelta v => responseOutputAudioTranscriptDelta(v),
+  final RealtimeServerEventResponseOutputAudioTranscriptDone v => responseOutputAudioTranscriptDone(v),
+  final RealtimeServerEventResponseContentPartAdded$Variant v => responseContentPartAdded(v),
+  final RealtimeServerEventResponseContentPartDone$Variant v => responseContentPartDone(v),
+  final RealtimeServerEventResponseCreated$Variant v => responseCreated(v),
+  final RealtimeServerEventResponseDone$Variant v => responseDone(v),
+  final RealtimeServerEventResponseFunctionCallArgumentsDelta$Variant v => responseFunctionCallArgumentsDelta(v),
+  final RealtimeServerEventResponseFunctionCallArgumentsDone$Variant v => responseFunctionCallArgumentsDone(v),
+  final RealtimeServerEventResponseOutputItemAdded$Variant v => responseOutputItemAdded(v),
+  final RealtimeServerEventResponseOutputItemDone$Variant v => responseOutputItemDone(v),
+  final RealtimeServerEventResponseOutputTextDelta v => responseOutputTextDelta(v),
+  final RealtimeServerEventResponseOutputTextDone v => responseOutputTextDone(v),
+  final RealtimeServerEventSessionCreated$Variant v => sessionCreated(v),
+  final RealtimeServerEventSessionUpdated$Variant v => sessionUpdated(v),
+  final RealtimeServerEventOutputAudioBufferStarted$Variant v => outputAudioBufferStarted(v),
+  final RealtimeServerEventOutputAudioBufferStopped$Variant v => outputAudioBufferStopped(v),
+  final RealtimeServerEventOutputAudioBufferCleared$Variant v => outputAudioBufferCleared(v),
+  final RealtimeServerEventConversationItemAdded$Variant v => conversationItemAdded(v),
+  final RealtimeServerEventConversationItemDone$Variant v => conversationItemDone(v),
+  final RealtimeServerEventInputAudioBufferTimeoutTriggered$Variant v => inputAudioBufferTimeoutTriggered(v),
+  final RealtimeServerEventConversationItemInputAudioTranscriptionSegment$Variant v => conversationItemInputAudioTranscriptionSegment(v),
+  final RealtimeServerEventMcpListToolsInProgress$Variant v => mcpListToolsInProgress(v),
+  final RealtimeServerEventMcpListToolsCompleted$Variant v => mcpListToolsCompleted(v),
+  final RealtimeServerEventMcpListToolsFailed$Variant v => mcpListToolsFailed(v),
+  final RealtimeServerEventResponseMcpCallArgumentsDelta$Variant v => responseMcpCallArgumentsDelta(v),
+  final RealtimeServerEventResponseMcpCallArgumentsDone$Variant v => responseMcpCallArgumentsDone(v),
+  final RealtimeServerEventResponseMcpCallInProgress$Variant v => responseMcpCallInProgress(v),
+  final RealtimeServerEventResponseMcpCallCompleted$Variant v => responseMcpCallCompleted(v),
+  final RealtimeServerEventResponseMcpCallFailed$Variant v => responseMcpCallFailed(v),
+  final RealtimeServerEvent$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class RealtimeServerEventConversationCreated$Variant extends RealtimeServerEvent {const RealtimeServerEventConversationCreated$Variant(this.realtimeServerEventConversationCreated);
 

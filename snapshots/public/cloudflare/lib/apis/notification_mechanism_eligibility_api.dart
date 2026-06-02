@@ -17,7 +17,7 @@ Future<ApiResult<Map<String, List<AaaEligibility>>?, Never>> notificationMechani
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/eligible',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/destinations/eligible',
   headers: headers,
   options: options,
 );

@@ -119,6 +119,6 @@ ClimateProduct copyWith({int? created, Map<String,ClimateRemovalsProductsPrice>?
 
 @override int get hashCode => Object.hash(created, currentPricesPerMetricTon, deliveryYear, id, livemode, metricTonsAvailable, name, object, Object.hashAll(suppliers));
 
-@override String toString() => 'ClimateProduct(created: $created, currentPricesPerMetricTon: $currentPricesPerMetricTon, deliveryYear: $deliveryYear, id: $id, livemode: $livemode, metricTonsAvailable: $metricTonsAvailable, name: $name, object: $object, suppliers: $suppliers)';
+@override String toString() => 'ClimateProduct(\n  created: $created,\n  currentPricesPerMetricTon: $currentPricesPerMetricTon,\n  deliveryYear: $deliveryYear,\n  id: $id,\n  livemode: $livemode,\n  metricTonsAvailable: $metricTonsAvailable,\n  name: $name,\n  object: $object,\n  suppliers: $suppliers,\n)';
 
  }

@@ -17,7 +17,7 @@ Future<ApiResult<BundleStatus?, Never>> wafProductApiLeakedCredentialsGetStatus(
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/leaked-credential-checks',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/leaked-credential-checks',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<List<BundleCustomDetection>?, Never>> wafProductApiLeakedCreden
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks/detections',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/leaked-credential-checks/detections',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks/detections',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/leaked-credential-checks/detections',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<BundleCustomDetection?, Never>> wafProductApiLeakedCredentialsG
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks/detections/${Uri.encodeComponent(detectionId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/leaked-credential-checks/detections/${Uri.encodeComponent(detectionId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -132,7 +132,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks/detections/${Uri.encodeComponent(detectionId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/leaked-credential-checks/detections/${Uri.encodeComponent(detectionId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -155,7 +155,7 @@ Future<ApiResult<ResponseCommon31Result, Never>> wafProductApiLeakedCredentialsD
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/leaked-credential-checks/detections/${Uri.encodeComponent(detectionId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/leaked-credential-checks/detections/${Uri.encodeComponent(detectionId.toJson())}',
   headers: headers,
   options: options,
 );

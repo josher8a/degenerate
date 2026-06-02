@@ -119,12 +119,12 @@ final Uri url;
 final WebhooksIssueCommentUser? user;
 
 Map<String, dynamic> toJson() { return {
-  'active_lock_reason': activeLockReason != null ? activeLockReason?.toJson() : null,
+  'active_lock_reason': activeLockReason?.toJson(),
   if (assignee != null) 'assignee': assignee?.toJson(),
   'assignees': assignees.map((e) => e?.toJson()).toList(),
   'author_association': authorAssociation.toJson(),
   'body': body,
-  'closed_at': closedAt != null ? closedAt?.toIso8601String() : null,
+  'closed_at': closedAt?.toIso8601String(),
   'comments': comments,
   'comments_url': commentsUrl.toString(),
   'created_at': createdAt.toIso8601String(),
@@ -135,7 +135,7 @@ Map<String, dynamic> toJson() { return {
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
   'labels_url': labelsUrl,
   'locked': ?locked,
-  'milestone': milestone != null ? milestone?.toJson() : null,
+  'milestone': milestone?.toJson(),
   'node_id': nodeId,
   'number': number,
   if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
@@ -153,7 +153,7 @@ Map<String, dynamic> toJson() { return {
   'title': title,
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') &&
       json.containsKey('assignees') &&
@@ -253,6 +253,6 @@ WebhookIssuesEditedIssue copyWith({ActiveLockReason? Function()? activeLockReaso
 
 @override int get hashCode => Object.hashAll([activeLockReason, assignee, Object.hashAll(assignees), authorAssociation, body, closedAt, comments, commentsUrl, createdAt, draft, eventsUrl, htmlUrl, id, Object.hashAll(labels ?? const []), labelsUrl, locked, milestone, nodeId, number, performedViaGithubApp, pullRequest, reactions, repositoryUrl, pinnedComment, subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, timelineUrl, type, title, updatedAt, url, user]);
 
-@override String toString() => 'WebhookIssuesEditedIssue(activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, body: $body, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, createdAt: $createdAt, draft: $draft, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, labels: $labels, labelsUrl: $labelsUrl, locked: $locked, milestone: $milestone, nodeId: $nodeId, number: $number, performedViaGithubApp: $performedViaGithubApp, pullRequest: $pullRequest, reactions: $reactions, repositoryUrl: $repositoryUrl, pinnedComment: $pinnedComment, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, type: $type, title: $title, updatedAt: $updatedAt, url: $url, user: $user)';
+@override String toString() => 'WebhookIssuesEditedIssue(\n  activeLockReason: $activeLockReason,\n  assignee: $assignee,\n  assignees: $assignees,\n  authorAssociation: $authorAssociation,\n  body: $body,\n  closedAt: $closedAt,\n  comments: $comments,\n  commentsUrl: $commentsUrl,\n  createdAt: $createdAt,\n  draft: $draft,\n  eventsUrl: $eventsUrl,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  labels: $labels,\n  labelsUrl: $labelsUrl,\n  locked: $locked,\n  milestone: $milestone,\n  nodeId: $nodeId,\n  number: $number,\n  performedViaGithubApp: $performedViaGithubApp,\n  pullRequest: $pullRequest,\n  reactions: $reactions,\n  repositoryUrl: $repositoryUrl,\n  pinnedComment: $pinnedComment,\n  subIssuesSummary: $subIssuesSummary,\n  issueDependenciesSummary: $issueDependenciesSummary,\n  issueFieldValues: $issueFieldValues,\n  state: $state,\n  stateReason: $stateReason,\n  timelineUrl: $timelineUrl,\n  type: $type,\n  title: $title,\n  updatedAt: $updatedAt,\n  url: $url,\n  user: $user,\n)';
 
  }

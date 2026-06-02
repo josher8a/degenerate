@@ -77,17 +77,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('deployment_name') && json['deployment_name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.isEmpty) errors.add('name: length must be >= 1');
 if (name.length > 256) errors.add('name: length must be <= 256');
 if (digest.length < 71) errors.add('digest: length must be >= 71');
 if (digest.length > 71) errors.add('digest: length must be <= 71');
 if (!RegExp(r'^sha256:[a-f0-9]{64}$').hasMatch(digest)) errors.add(r'digest: must match pattern ^sha256:[a-f0-9]{64}$');
 final version$ = version;
 if (version$ != null) {
-  if (version$.length < 1) errors.add('version: length must be >= 1');
+  if (version$.isEmpty) errors.add('version: length must be >= 1');
   if (version$.length > 100) errors.add('version: length must be <= 100');
 }
-if (logicalEnvironment.length < 1) errors.add('logicalEnvironment: length must be >= 1');
+if (logicalEnvironment.isEmpty) errors.add('logicalEnvironment: length must be >= 1');
 if (logicalEnvironment.length > 128) errors.add('logicalEnvironment: length must be <= 128');
 final physicalEnvironment$ = physicalEnvironment;
 if (physicalEnvironment$ != null) {
@@ -105,7 +105,7 @@ if (runtimeRisks$ != null) {
 }
 final githubRepository$ = githubRepository;
 if (githubRepository$ != null) {
-  if (githubRepository$.length < 1) errors.add('githubRepository: length must be >= 1');
+  if (githubRepository$.isEmpty) errors.add('githubRepository: length must be >= 1');
   if (githubRepository$.length > 100) errors.add('githubRepository: length must be <= 100');
   if (!RegExp(r'^[A-Za-z0-9.\-_]+$').hasMatch(githubRepository$)) errors.add(r'githubRepository: must match pattern ^[A-Za-z0-9.\-_]+$');
 }
@@ -139,6 +139,6 @@ OrgsCreateArtifactDeploymentRecordRequest copyWith({String? name, String? digest
 
 @override int get hashCode => Object.hash(name, digest, version, status, logicalEnvironment, physicalEnvironment, cluster, deploymentName, tags, Object.hashAll(runtimeRisks ?? const []), githubRepository);
 
-@override String toString() => 'OrgsCreateArtifactDeploymentRecordRequest(name: $name, digest: $digest, version: $version, status: $status, logicalEnvironment: $logicalEnvironment, physicalEnvironment: $physicalEnvironment, cluster: $cluster, deploymentName: $deploymentName, tags: $tags, runtimeRisks: $runtimeRisks, githubRepository: $githubRepository)';
+@override String toString() => 'OrgsCreateArtifactDeploymentRecordRequest(\n  name: $name,\n  digest: $digest,\n  version: $version,\n  status: $status,\n  logicalEnvironment: $logicalEnvironment,\n  physicalEnvironment: $physicalEnvironment,\n  cluster: $cluster,\n  deploymentName: $deploymentName,\n  tags: $tags,\n  runtimeRisks: $runtimeRisks,\n  githubRepository: $githubRepository,\n)';
 
  }

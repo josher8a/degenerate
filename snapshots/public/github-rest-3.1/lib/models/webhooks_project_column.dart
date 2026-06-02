@@ -78,6 +78,6 @@ WebhooksProjectColumn copyWith({int? Function()? afterId, Uri? cardsUrl, DateTim
 
 @override int get hashCode => Object.hash(afterId, cardsUrl, createdAt, id, name, nodeId, projectUrl, updatedAt, url);
 
-@override String toString() => 'WebhooksProjectColumn(afterId: $afterId, cardsUrl: $cardsUrl, createdAt: $createdAt, id: $id, name: $name, nodeId: $nodeId, projectUrl: $projectUrl, updatedAt: $updatedAt, url: $url)';
+@override String toString() => 'WebhooksProjectColumn(\n  afterId: $afterId,\n  cardsUrl: $cardsUrl,\n  createdAt: $createdAt,\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  projectUrl: $projectUrl,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
  }

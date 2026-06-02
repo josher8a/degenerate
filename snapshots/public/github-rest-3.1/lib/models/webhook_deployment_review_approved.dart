@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   'since': since,
   if (workflowJobRun != null) 'workflow_job_run': workflowJobRun?.toJson(),
   if (workflowJobRuns != null) 'workflow_job_runs': workflowJobRuns?.map((e) => e.toJson()).toList(),
-  'workflow_run': workflowRun != null ? workflowRun?.toJson() : null,
+  'workflow_run': workflowRun?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('organization') &&
@@ -98,6 +98,6 @@ WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction?
 
 @override int get hashCode => Object.hash(action, approver, comment, enterprise, installation, organization, repository, Object.hashAll(reviewers ?? const []), sender, since, workflowJobRun, Object.hashAll(workflowJobRuns ?? const []), workflowRun);
 
-@override String toString() => 'WebhookDeploymentReviewApproved(action: $action, approver: $approver, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, reviewers: $reviewers, sender: $sender, since: $since, workflowJobRun: $workflowJobRun, workflowJobRuns: $workflowJobRuns, workflowRun: $workflowRun)';
+@override String toString() => 'WebhookDeploymentReviewApproved(\n  action: $action,\n  approver: $approver,\n  comment: $comment,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  reviewers: $reviewers,\n  sender: $sender,\n  since: $since,\n  workflowJobRun: $workflowJobRun,\n  workflowJobRuns: $workflowJobRuns,\n  workflowRun: $workflowRun,\n)';
 
  }

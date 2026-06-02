@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/search',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/search',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

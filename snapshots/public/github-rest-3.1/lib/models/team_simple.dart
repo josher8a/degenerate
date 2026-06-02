@@ -133,6 +133,6 @@ TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, Stri
 
 @override int get hashCode => Object.hash(id, nodeId, url, membersUrl, name, description, permission, privacy, notificationSetting, htmlUrl, repositoriesUrl, slug, ldapDn, type, organizationId, enterpriseId);
 
-@override String toString() => 'TeamSimple(id: $id, nodeId: $nodeId, url: $url, membersUrl: $membersUrl, name: $name, description: $description, permission: $permission, privacy: $privacy, notificationSetting: $notificationSetting, htmlUrl: $htmlUrl, repositoriesUrl: $repositoriesUrl, slug: $slug, ldapDn: $ldapDn, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)';
+@override String toString() => 'TeamSimple(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  membersUrl: $membersUrl,\n  name: $name,\n  description: $description,\n  permission: $permission,\n  privacy: $privacy,\n  notificationSetting: $notificationSetting,\n  htmlUrl: $htmlUrl,\n  repositoriesUrl: $repositoriesUrl,\n  slug: $slug,\n  ldapDn: $ldapDn,\n  type: $type,\n  organizationId: $organizationId,\n  enterpriseId: $enterpriseId,\n)';
 
  }

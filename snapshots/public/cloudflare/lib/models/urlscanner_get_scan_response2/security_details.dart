@@ -105,6 +105,6 @@ SecurityDetails copyWith({double? certificateId, String? certificateTransparency
 
 @override int get hashCode => Object.hash(certificateId, certificateTransparencyCompliance, cipher, encryptedClientHello, issuer, keyExchange, keyExchangeGroup, protocol, Object.hashAll(sanList), serverSignatureAlgorithm, subjectName, validFrom, validTo);
 
-@override String toString() => 'SecurityDetails(certificateId: $certificateId, certificateTransparencyCompliance: $certificateTransparencyCompliance, cipher: $cipher, encryptedClientHello: $encryptedClientHello, issuer: $issuer, keyExchange: $keyExchange, keyExchangeGroup: $keyExchangeGroup, protocol: $protocol, sanList: $sanList, serverSignatureAlgorithm: $serverSignatureAlgorithm, subjectName: $subjectName, validFrom: $validFrom, validTo: $validTo)';
+@override String toString() => 'SecurityDetails(\n  certificateId: $certificateId,\n  certificateTransparencyCompliance: $certificateTransparencyCompliance,\n  cipher: $cipher,\n  encryptedClientHello: $encryptedClientHello,\n  issuer: $issuer,\n  keyExchange: $keyExchange,\n  keyExchangeGroup: $keyExchangeGroup,\n  protocol: $protocol,\n  sanList: $sanList,\n  serverSignatureAlgorithm: $serverSignatureAlgorithm,\n  subjectName: $subjectName,\n  validFrom: $validFrom,\n  validTo: $validTo,\n)';
 
  }

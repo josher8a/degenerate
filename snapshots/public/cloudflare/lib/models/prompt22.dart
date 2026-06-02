@@ -84,7 +84,7 @@ if (presencePenalty$ != null) {
   if (presencePenalty$ < 0) errors.add('presencePenalty: must be >= 0');
   if (presencePenalty$ > 2) errors.add('presencePenalty: must be <= 2');
 }
-if (prompt.length < 1) errors.add('prompt: length must be >= 1');
+if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
 if (prompt.length > 131072) errors.add('prompt: length must be <= 131072');
 final repetitionPenalty$ = repetitionPenalty;
 if (repetitionPenalty$ != null) {
@@ -142,6 +142,6 @@ Prompt22 copyWith({double? Function()? frequencyPenalty, MessagesImage? Function
 
 @override int get hashCode => Object.hash(frequencyPenalty, image, lora, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, seed, stream, temperature, topK, topP);
 
-@override String toString() => 'Prompt22(frequencyPenalty: $frequencyPenalty, image: $image, lora: $lora, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, seed: $seed, stream: $stream, temperature: $temperature, topK: $topK, topP: $topP)';
+@override String toString() => 'Prompt22(\n  frequencyPenalty: $frequencyPenalty,\n  image: $image,\n  lora: $lora,\n  maxTokens: $maxTokens,\n  presencePenalty: $presencePenalty,\n  prompt: $prompt,\n  raw: $raw,\n  repetitionPenalty: $repetitionPenalty,\n  seed: $seed,\n  stream: $stream,\n  temperature: $temperature,\n  topK: $topK,\n  topP: $topP,\n)';
 
  }

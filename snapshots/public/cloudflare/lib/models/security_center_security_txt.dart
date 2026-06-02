@@ -77,6 +77,6 @@ SecurityCenterSecurityTxt copyWith({List<Uri>? Function()? acknowledgments, List
 
 @override int get hashCode => Object.hash(Object.hashAll(acknowledgments ?? const []), Object.hashAll(canonical ?? const []), Object.hashAll(contact ?? const []), enabled, Object.hashAll(encryption ?? const []), expires, Object.hashAll(hiring ?? const []), Object.hashAll(policy ?? const []), preferredLanguages);
 
-@override String toString() => 'SecurityCenterSecurityTxt(acknowledgments: $acknowledgments, canonical: $canonical, contact: $contact, enabled: $enabled, encryption: $encryption, expires: $expires, hiring: $hiring, policy: $policy, preferredLanguages: $preferredLanguages)';
+@override String toString() => 'SecurityCenterSecurityTxt(\n  acknowledgments: $acknowledgments,\n  canonical: $canonical,\n  contact: $contact,\n  enabled: $enabled,\n  encryption: $encryption,\n  expires: $expires,\n  hiring: $hiring,\n  policy: $policy,\n  preferredLanguages: $preferredLanguages,\n)';
 
  }

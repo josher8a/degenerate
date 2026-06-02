@@ -112,6 +112,6 @@ SecurityCenterIssue copyWith({bool? Function()? dismissed, String? Function()? i
 
 @override int get hashCode => Object.hash(dismissed, id, issueClass, issueType, payload, resolveLink, resolveText, severity, since, subject, timestamp);
 
-@override String toString() => 'SecurityCenterIssue(dismissed: $dismissed, id: $id, issueClass: $issueClass, issueType: $issueType, payload: $payload, resolveLink: $resolveLink, resolveText: $resolveText, severity: $severity, since: $since, subject: $subject, timestamp: $timestamp)';
+@override String toString() => 'SecurityCenterIssue(\n  dismissed: $dismissed,\n  id: $id,\n  issueClass: $issueClass,\n  issueType: $issueType,\n  payload: $payload,\n  resolveLink: $resolveLink,\n  resolveText: $resolveText,\n  severity: $severity,\n  since: $since,\n  subject: $subject,\n  timestamp: $timestamp,\n)';
 
  }

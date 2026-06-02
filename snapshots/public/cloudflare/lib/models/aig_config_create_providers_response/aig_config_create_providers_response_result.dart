@@ -60,7 +60,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('secret_preview') && json['secret_preview'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (gatewayId.length < 1) errors.add('gatewayId: length must be >= 1');
+if (gatewayId.isEmpty) errors.add('gatewayId: length must be >= 1');
 if (gatewayId.length > 64) errors.add('gatewayId: length must be <= 64');
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(gatewayId)) errors.add(r'gatewayId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
 return errors; } 
@@ -91,6 +91,6 @@ AigConfigCreateProvidersResponseResult copyWith({String? alias, bool? defaultCon
 
 @override int get hashCode => Object.hash(alias, defaultConfig, gatewayId, id, modifiedAt, providerSlug, rateLimit, rateLimitPeriod, secretId, secretPreview);
 
-@override String toString() => 'AigConfigCreateProvidersResponseResult(alias: $alias, defaultConfig: $defaultConfig, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, providerSlug: $providerSlug, rateLimit: $rateLimit, rateLimitPeriod: $rateLimitPeriod, secretId: $secretId, secretPreview: $secretPreview)';
+@override String toString() => 'AigConfigCreateProvidersResponseResult(\n  alias: $alias,\n  defaultConfig: $defaultConfig,\n  gatewayId: $gatewayId,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  providerSlug: $providerSlug,\n  rateLimit: $rateLimit,\n  rateLimitPeriod: $rateLimitPeriod,\n  secretId: $secretId,\n  secretPreview: $secretPreview,\n)';
 
  }

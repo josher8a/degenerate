@@ -44,7 +44,7 @@ return execute(
   onSuccess: (response) {
     return QueryMatch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionQueriesError.fromResponse,
 );
  } 
 /// Download matches for string queries by ID
@@ -83,7 +83,7 @@ return execute(
   onSuccess: (response) {
     return QueryMatch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionQueriesError.fromResponse,
 );
  } 
 /// Read string queries by ID
@@ -103,7 +103,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Create new saved string queries
@@ -139,7 +139,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionQueriesError.fromResponse,
 );
  } 
 /// Update saved string queries by ID
@@ -159,7 +159,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Delete saved string queries by ID
@@ -193,7 +193,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionQueriesError.fromResponse,
 );
  } 
 /// Create new saved string queries in bulk
@@ -215,7 +215,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionQueriesError.fromResponse,
 );
  } 
 /// Create new string queries
@@ -235,7 +235,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Read the total number of saved string queries
@@ -255,7 +255,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
  }

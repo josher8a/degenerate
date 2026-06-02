@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/spectrum/apps',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/spectrum/apps',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/spectrum/apps',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/spectrum/apps',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -80,7 +80,7 @@ Future<ApiResult<SpectrumConfigAppConfigSingleResult?, Never>> spectrumApplicati
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/spectrum/apps/${Uri.encodeComponent(appId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/spectrum/apps/${Uri.encodeComponent(appId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -103,7 +103,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/spectrum/apps/${Uri.encodeComponent(appId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/spectrum/apps/${Uri.encodeComponent(appId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -126,7 +126,7 @@ Future<ApiResult<ResponseSingleId5Result?, Never>> spectrumApplicationsDeleteSpe
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/spectrum/apps/${Uri.encodeComponent(appId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/spectrum/apps/${Uri.encodeComponent(appId.toJson())}',
   headers: headers,
   options: options,
 );

@@ -109,7 +109,7 @@ Future<ApiResult<ZeroTrustGatewayGatewayAccountResult?, Never>> zeroTrustAccount
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway',
   headers: headers,
   options: options,
 );
@@ -131,7 +131,7 @@ Future<ApiResult<ZeroTrustGatewayGatewayAccountResult?, Never>> zeroTrustAccount
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway',
   headers: headers,
   options: options,
 );
@@ -153,7 +153,7 @@ Future<ApiResult<ZeroTrustGatewayGatewayAccountConfigResult?, Never>> zeroTrustA
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/configuration',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/configuration',
   headers: headers,
   options: options,
 );
@@ -176,7 +176,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/configuration',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/configuration',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -200,7 +200,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/configuration',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/configuration',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -223,7 +223,7 @@ Future<ApiResult<ZeroTrustGatewayGatewayAccountLoggingSettings?, Never>> zeroTru
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/logging',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/logging',
   headers: headers,
   options: options,
 );
@@ -246,7 +246,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/logging',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/logging',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

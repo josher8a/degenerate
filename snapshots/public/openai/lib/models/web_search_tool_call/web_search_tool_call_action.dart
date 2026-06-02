@@ -28,6 +28,12 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is WebSearchToolCallAction$Unknown;
 
+R when<R>({required R Function(WebSearchToolCallActionSearch) search, required R Function(WebSearchToolCallActionOpenPage) openPage, required R Function(WebSearchToolCallActionFindInPage) findInPage, required R Function(WebSearchToolCallAction$Unknown) unknown, }) { return switch (this) {
+  final WebSearchToolCallActionSearch v => search(v),
+  final WebSearchToolCallActionOpenPage v => openPage(v),
+  final WebSearchToolCallActionFindInPage v => findInPage(v),
+  final WebSearchToolCallAction$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class WebSearchToolCallActionSearch extends WebSearchToolCallAction {const WebSearchToolCallActionSearch(this.webSearchActionSearch);
 

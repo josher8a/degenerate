@@ -112,6 +112,6 @@ RealtimeResponseCreateParams copyWith({List<OutputModalities>? Function()? outpu
 
 @override int get hashCode => Object.hash(Object.hashAll(outputModalities ?? const []), instructions, audio, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens, conversation, metadata, prompt, Object.hashAll(input ?? const []));
 
-@override String toString() => 'RealtimeResponseCreateParams(outputModalities: $outputModalities, instructions: $instructions, audio: $audio, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens, conversation: $conversation, metadata: $metadata, prompt: $prompt, input: $input)';
+@override String toString() => 'RealtimeResponseCreateParams(\n  outputModalities: $outputModalities,\n  instructions: $instructions,\n  audio: $audio,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  maxOutputTokens: $maxOutputTokens,\n  conversation: $conversation,\n  metadata: $metadata,\n  prompt: $prompt,\n  input: $input,\n)';
 
  }

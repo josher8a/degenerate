@@ -119,6 +119,6 @@ CategoryScores copyWith({double? hate, double? hateThreatening, double? harassme
 
 @override int get hashCode => Object.hash(hate, hateThreatening, harassment, harassmentThreatening, illicit, illicitViolent, selfHarm, selfHarmIntent, selfHarmInstructions, sexual, sexualMinors, violence, violenceGraphic);
 
-@override String toString() => 'CategoryScores(hate: $hate, hateThreatening: $hateThreatening, harassment: $harassment, harassmentThreatening: $harassmentThreatening, illicit: $illicit, illicitViolent: $illicitViolent, selfHarm: $selfHarm, selfHarmIntent: $selfHarmIntent, selfHarmInstructions: $selfHarmInstructions, sexual: $sexual, sexualMinors: $sexualMinors, violence: $violence, violenceGraphic: $violenceGraphic)';
+@override String toString() => 'CategoryScores(\n  hate: $hate,\n  hateThreatening: $hateThreatening,\n  harassment: $harassment,\n  harassmentThreatening: $harassmentThreatening,\n  illicit: $illicit,\n  illicitViolent: $illicitViolent,\n  selfHarm: $selfHarm,\n  selfHarmIntent: $selfHarmIntent,\n  selfHarmInstructions: $selfHarmInstructions,\n  sexual: $sexual,\n  sexualMinors: $sexualMinors,\n  violence: $violence,\n  violenceGraphic: $violenceGraphic,\n)';
 
  }

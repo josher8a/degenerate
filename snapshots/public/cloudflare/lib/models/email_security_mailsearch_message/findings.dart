@@ -69,6 +69,6 @@ Findings copyWith({String? Function()? attachment, String? Function()? detail, E
 
 @override int get hashCode => Object.hash(attachment, detail, detection, field, name, portion, reason, score, value);
 
-@override String toString() => 'Findings(attachment: $attachment, detail: $detail, detection: $detection, field: $field, name: $name, portion: $portion, reason: $reason, score: $score, value: $value)';
+@override String toString() => 'Findings(\n  attachment: $attachment,\n  detail: $detail,\n  detection: $detection,\n  field: $field,\n  name: $name,\n  portion: $portion,\n  reason: $reason,\n  score: $score,\n  value: $value,\n)';
 
  }

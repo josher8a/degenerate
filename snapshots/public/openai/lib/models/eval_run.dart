@@ -151,6 +151,6 @@ EvalRun copyWith({EvalRunObject? object, String? id, String? evalId, String? sta
 
 @override int get hashCode => Object.hash(object, id, evalId, status, model, name, createdAt, reportUrl, resultCounts, Object.hashAll(perModelUsage), Object.hashAll(perTestingCriteriaResults), dataSource, metadata, error);
 
-@override String toString() => 'EvalRun(object: $object, id: $id, evalId: $evalId, status: $status, model: $model, name: $name, createdAt: $createdAt, reportUrl: $reportUrl, resultCounts: $resultCounts, perModelUsage: $perModelUsage, perTestingCriteriaResults: $perTestingCriteriaResults, dataSource: $dataSource, metadata: $metadata, error: $error)';
+@override String toString() => 'EvalRun(\n  object: $object,\n  id: $id,\n  evalId: $evalId,\n  status: $status,\n  model: $model,\n  name: $name,\n  createdAt: $createdAt,\n  reportUrl: $reportUrl,\n  resultCounts: $resultCounts,\n  perModelUsage: $perModelUsage,\n  perTestingCriteriaResults: $perTestingCriteriaResults,\n  dataSource: $dataSource,\n  metadata: $metadata,\n  error: $error,\n)';
 
  }

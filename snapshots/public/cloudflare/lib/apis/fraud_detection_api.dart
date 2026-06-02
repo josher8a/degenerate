@@ -17,7 +17,7 @@ Future<ApiResult<FraudFraudSettings?, Never>> fraudDetectionZoneGetSettings({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/fraud_detection/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/fraud_detection/settings',
   headers: headers,
   options: options,
 );
@@ -45,7 +45,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/fraud_detection/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/fraud_detection/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

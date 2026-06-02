@@ -122,6 +122,6 @@ SetupAttemptPaymentMethodDetailsCard copyWith({String? Function()? brand, SetupA
 
 @override int get hashCode => Object.hash(brand, checks, country, expMonth, expYear, fingerprint, funding, last4, network, threeDSecure, wallet);
 
-@override String toString() => 'SetupAttemptPaymentMethodDetailsCard(brand: $brand, checks: $checks, country: $country, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, last4: $last4, network: $network, threeDSecure: $threeDSecure, wallet: $wallet)';
+@override String toString() => 'SetupAttemptPaymentMethodDetailsCard(\n  brand: $brand,\n  checks: $checks,\n  country: $country,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  last4: $last4,\n  network: $network,\n  threeDSecure: $threeDSecure,\n  wallet: $wallet,\n)';
 
  }

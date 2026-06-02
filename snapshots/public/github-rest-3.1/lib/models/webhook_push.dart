@@ -71,7 +71,7 @@ final SimpleUser? sender;
 
 Map<String, dynamic> toJson() { return {
   'after': after,
-  'base_ref': baseRef != null ? baseRef?.toJson() : null,
+  'base_ref': baseRef?.toJson(),
   'before': before,
   'commits': commits.map((e) => e.toJson()).toList(),
   'compare': compare,
@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'deleted': deleted,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'forced': forced,
-  'head_commit': headCommit != null ? headCommit?.toJson() : null,
+  'head_commit': headCommit?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'pusher': pusher.toJson(),
@@ -138,6 +138,6 @@ WebhookPush copyWith({String? after, WebhooksNullableString? Function()? baseRef
 
 @override int get hashCode => Object.hash(after, baseRef, before, Object.hashAll(commits), compare, created, deleted, enterprise, forced, headCommit, installation, organization, pusher, ref, repository, sender);
 
-@override String toString() => 'WebhookPush(after: $after, baseRef: $baseRef, before: $before, commits: $commits, compare: $compare, created: $created, deleted: $deleted, enterprise: $enterprise, forced: $forced, headCommit: $headCommit, installation: $installation, organization: $organization, pusher: $pusher, ref: $ref, repository: $repository, sender: $sender)';
+@override String toString() => 'WebhookPush(\n  after: $after,\n  baseRef: $baseRef,\n  before: $before,\n  commits: $commits,\n  compare: $compare,\n  created: $created,\n  deleted: $deleted,\n  enterprise: $enterprise,\n  forced: $forced,\n  headCommit: $headCommit,\n  installation: $installation,\n  organization: $organization,\n  pusher: $pusher,\n  ref: $ref,\n  repository: $repository,\n  sender: $sender,\n)';
 
  }

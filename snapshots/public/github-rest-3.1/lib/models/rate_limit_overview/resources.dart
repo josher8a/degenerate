@@ -88,6 +88,6 @@ Resources copyWith({RateLimit? core, RateLimit? Function()? graphql, RateLimit? 
 
 @override int get hashCode => Object.hash(core, graphql, search, codeSearch, sourceImport, integrationManifest, codeScanningUpload, actionsRunnerRegistration, scim, dependencySnapshots, dependencySbom, codeScanningAutofix);
 
-@override String toString() => 'Resources(core: $core, graphql: $graphql, search: $search, codeSearch: $codeSearch, sourceImport: $sourceImport, integrationManifest: $integrationManifest, codeScanningUpload: $codeScanningUpload, actionsRunnerRegistration: $actionsRunnerRegistration, scim: $scim, dependencySnapshots: $dependencySnapshots, dependencySbom: $dependencySbom, codeScanningAutofix: $codeScanningAutofix)';
+@override String toString() => 'Resources(\n  core: $core,\n  graphql: $graphql,\n  search: $search,\n  codeSearch: $codeSearch,\n  sourceImport: $sourceImport,\n  integrationManifest: $integrationManifest,\n  codeScanningUpload: $codeScanningUpload,\n  actionsRunnerRegistration: $actionsRunnerRegistration,\n  scim: $scim,\n  dependencySnapshots: $dependencySnapshots,\n  dependencySbom: $dependencySbom,\n  codeScanningAutofix: $codeScanningAutofix,\n)';
 
  }

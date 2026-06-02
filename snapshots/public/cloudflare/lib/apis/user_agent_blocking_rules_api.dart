@@ -35,7 +35,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/firewall/ua_rules',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -60,7 +60,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/firewall/ua_rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -83,7 +83,7 @@ Future<ApiResult<FirewallFirewalluablock?, Never>> userAgentBlockingRulesGetAUse
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -106,7 +106,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -129,7 +129,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> userAgentBlockingRulesDeleteAUser
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/firewall/ua_rules/${Uri.encodeComponent(uaRuleId.toJson())}',
   headers: headers,
   options: options,
 );

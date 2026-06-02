@@ -82,6 +82,6 @@ DnsFirewallDnsFirewallCluster copyWith({DnsFirewallAttackMitigation? Function()?
 
 @override int get hashCode => Object.hash(attackMitigation, deprecateAnyRequests, ecsFallback, maximumCacheTtl, minimumCacheTtl, name, negativeCacheTtl, ratelimit, retries, Object.hashAll(upstreamIps ?? const []));
 
-@override String toString() => 'DnsFirewallDnsFirewallCluster(attackMitigation: $attackMitigation, deprecateAnyRequests: $deprecateAnyRequests, ecsFallback: $ecsFallback, maximumCacheTtl: $maximumCacheTtl, minimumCacheTtl: $minimumCacheTtl, name: $name, negativeCacheTtl: $negativeCacheTtl, ratelimit: $ratelimit, retries: $retries, upstreamIps: $upstreamIps)';
+@override String toString() => 'DnsFirewallDnsFirewallCluster(\n  attackMitigation: $attackMitigation,\n  deprecateAnyRequests: $deprecateAnyRequests,\n  ecsFallback: $ecsFallback,\n  maximumCacheTtl: $maximumCacheTtl,\n  minimumCacheTtl: $minimumCacheTtl,\n  name: $name,\n  negativeCacheTtl: $negativeCacheTtl,\n  ratelimit: $ratelimit,\n  retries: $retries,\n  upstreamIps: $upstreamIps,\n)';
 
  }

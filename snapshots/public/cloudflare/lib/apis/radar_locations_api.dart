@@ -54,7 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEntitiesLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEntitiesLocationsError.fromResponse(response),
+  onError: RadarGetEntitiesLocationsError.fromResponse,
 );
  } 
 /// Get location details
@@ -85,7 +85,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEntitiesLocationByAlpha2ResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEntitiesLocationByAlpha2Error.fromResponse(response),
+  onError: RadarGetEntitiesLocationByAlpha2Error.fromResponse,
 );
  } 
  }

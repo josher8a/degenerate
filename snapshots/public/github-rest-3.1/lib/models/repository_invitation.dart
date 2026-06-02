@@ -43,8 +43,8 @@ final String nodeId;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'repository': repository.toJson(),
-  'invitee': invitee != null ? invitee?.toJson() : null,
-  'inviter': inviter != null ? inviter?.toJson() : null,
+  'invitee': invitee?.toJson(),
+  'inviter': inviter?.toJson(),
   'permissions': permissions.toJson(),
   'created_at': createdAt.toIso8601String(),
   'expired': ?expired,
@@ -88,6 +88,6 @@ RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUse
 
 @override int get hashCode => Object.hash(id, repository, invitee, inviter, permissions, createdAt, expired, url, htmlUrl, nodeId);
 
-@override String toString() => 'RepositoryInvitation(id: $id, repository: $repository, invitee: $invitee, inviter: $inviter, permissions: $permissions, createdAt: $createdAt, expired: $expired, url: $url, htmlUrl: $htmlUrl, nodeId: $nodeId)';
+@override String toString() => 'RepositoryInvitation(\n  id: $id,\n  repository: $repository,\n  invitee: $invitee,\n  inviter: $inviter,\n  permissions: $permissions,\n  createdAt: $createdAt,\n  expired: $expired,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  nodeId: $nodeId,\n)';
 
  }

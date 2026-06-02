@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   if (creator != null) 'creator': creator?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  'archived_at': archivedAt != null ? archivedAt?.toIso8601String() : null,
+  'archived_at': archivedAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('content_node_id') && json['content_node_id'] is String &&
@@ -83,6 +83,6 @@ Item copyWith({double? id, String? Function()? nodeId, String? Function()? proje
 
 @override int get hashCode => Object.hash(id, nodeId, projectNodeId, contentNodeId, contentType, creator, createdAt, updatedAt, archivedAt);
 
-@override String toString() => 'Item(id: $id, nodeId: $nodeId, projectNodeId: $projectNodeId, contentNodeId: $contentNodeId, contentType: $contentType, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, archivedAt: $archivedAt)';
+@override String toString() => 'Item(\n  id: $id,\n  nodeId: $nodeId,\n  projectNodeId: $projectNodeId,\n  contentNodeId: $contentNodeId,\n  contentType: $contentType,\n  creator: $creator,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  archivedAt: $archivedAt,\n)';
 
  }

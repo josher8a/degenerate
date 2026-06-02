@@ -133,6 +133,6 @@ IssuingAuthorizationMerchantData copyWith({String? category, String? categoryCod
 
 @override int get hashCode => Object.hash(category, categoryCode, city, country, name, networkId, postalCode, state, taxId, terminalId, url);
 
-@override String toString() => 'IssuingAuthorizationMerchantData(category: $category, categoryCode: $categoryCode, city: $city, country: $country, name: $name, networkId: $networkId, postalCode: $postalCode, state: $state, taxId: $taxId, terminalId: $terminalId, url: $url)';
+@override String toString() => 'IssuingAuthorizationMerchantData(\n  category: $category,\n  categoryCode: $categoryCode,\n  city: $city,\n  country: $country,\n  name: $name,\n  networkId: $networkId,\n  postalCode: $postalCode,\n  state: $state,\n  taxId: $taxId,\n  terminalId: $terminalId,\n  url: $url,\n)';
 
  }

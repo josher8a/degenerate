@@ -27,9 +27,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('desti
       json.containsKey('source'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.isEmpty) errors.add('name: length must be >= 1');
 if (name.length > 128) errors.add('name: length must be <= 128');
-if (source.length < 1) errors.add('source: must have >= 1 items');
+if (source.isEmpty) errors.add('source: must have >= 1 items');
 return errors; } 
 AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequest copyWith({AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination? destination, String? name, List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource>? source, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequest(
   destination: destination ?? this.destination,

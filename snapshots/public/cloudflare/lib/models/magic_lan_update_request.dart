@@ -71,6 +71,6 @@ MagicLanUpdateRequest copyWith({MagicBondId? Function()? bondId, bool? Function(
 
 @override int get hashCode => Object.hash(bondId, isBreakout, isPrioritized, name, nat, physport, Object.hashAll(routedSubnets ?? const []), staticAddressing, vlanTag);
 
-@override String toString() => 'MagicLanUpdateRequest(bondId: $bondId, isBreakout: $isBreakout, isPrioritized: $isPrioritized, name: $name, nat: $nat, physport: $physport, routedSubnets: $routedSubnets, staticAddressing: $staticAddressing, vlanTag: $vlanTag)';
+@override String toString() => 'MagicLanUpdateRequest(\n  bondId: $bondId,\n  isBreakout: $isBreakout,\n  isPrioritized: $isPrioritized,\n  name: $name,\n  nat: $nat,\n  physport: $physport,\n  routedSubnets: $routedSubnets,\n  staticAddressing: $staticAddressing,\n  vlanTag: $vlanTag,\n)';
 
  }

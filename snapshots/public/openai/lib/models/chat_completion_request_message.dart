@@ -37,6 +37,15 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ChatCompletionRequestMessage$Unknown;
 
+R when<R>({required R Function(ChatCompletionRequestMessageDeveloper) developer, required R Function(ChatCompletionRequestMessageSystem) system, required R Function(ChatCompletionRequestMessageUser) user, required R Function(ChatCompletionRequestMessageAssistant) assistant, required R Function(ChatCompletionRequestMessageTool) tool, required R Function(ChatCompletionRequestMessageFunction) function, required R Function(ChatCompletionRequestMessage$Unknown) unknown, }) { return switch (this) {
+  final ChatCompletionRequestMessageDeveloper v => developer(v),
+  final ChatCompletionRequestMessageSystem v => system(v),
+  final ChatCompletionRequestMessageUser v => user(v),
+  final ChatCompletionRequestMessageAssistant v => assistant(v),
+  final ChatCompletionRequestMessageTool v => tool(v),
+  final ChatCompletionRequestMessageFunction v => function(v),
+  final ChatCompletionRequestMessage$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ChatCompletionRequestMessageDeveloper extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageDeveloper(this.chatCompletionRequestDeveloperMessage);
 

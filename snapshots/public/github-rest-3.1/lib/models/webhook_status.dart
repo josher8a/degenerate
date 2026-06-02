@@ -135,6 +135,6 @@ WebhookStatus copyWith({Uri? Function()? avatarUrl, List<Branches>? branches, We
 
 @override int get hashCode => Object.hash(avatarUrl, Object.hashAll(branches), commit, context, createdAt, description, enterprise, id, installation, name, organization, repository, sender, sha, state, targetUrl, updatedAt);
 
-@override String toString() => 'WebhookStatus(avatarUrl: $avatarUrl, branches: $branches, commit: $commit, context: $context, createdAt: $createdAt, description: $description, enterprise: $enterprise, id: $id, installation: $installation, name: $name, organization: $organization, repository: $repository, sender: $sender, sha: $sha, state: $state, targetUrl: $targetUrl, updatedAt: $updatedAt)';
+@override String toString() => 'WebhookStatus(\n  avatarUrl: $avatarUrl,\n  branches: $branches,\n  commit: $commit,\n  context: $context,\n  createdAt: $createdAt,\n  description: $description,\n  enterprise: $enterprise,\n  id: $id,\n  installation: $installation,\n  name: $name,\n  organization: $organization,\n  repository: $repository,\n  sender: $sender,\n  sha: $sha,\n  state: $state,\n  targetUrl: $targetUrl,\n  updatedAt: $updatedAt,\n)';
 
  }

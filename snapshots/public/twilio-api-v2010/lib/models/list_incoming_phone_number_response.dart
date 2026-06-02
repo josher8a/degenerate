@@ -69,6 +69,6 @@ ListIncomingPhoneNumberResponse copyWith({List<AccountIncomingPhoneNumber>? Func
 
 @override int get hashCode => Object.hash(Object.hashAll(incomingPhoneNumbers ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
 
-@override String toString() => 'ListIncomingPhoneNumberResponse(incomingPhoneNumbers: $incomingPhoneNumbers, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+@override String toString() => 'ListIncomingPhoneNumberResponse(\n  incomingPhoneNumbers: $incomingPhoneNumbers,\n  end: $end,\n  firstPageUri: $firstPageUri,\n  nextPageUri: $nextPageUri,\n  page: $page,\n  pageSize: $pageSize,\n  previousPageUri: $previousPageUri,\n  start: $start,\n  uri: $uri,\n)';
 
  }

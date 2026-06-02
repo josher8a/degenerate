@@ -26,7 +26,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('logic
       json.containsKey('deployments'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (logicalEnvironment.length < 1) errors.add('logicalEnvironment: length must be >= 1');
+if (logicalEnvironment.isEmpty) errors.add('logicalEnvironment: length must be >= 1');
 if (logicalEnvironment.length > 128) errors.add('logicalEnvironment: length must be <= 128');
 final physicalEnvironment$ = physicalEnvironment;
 if (physicalEnvironment$ != null) {

@@ -145,6 +145,6 @@ PaymentMethodInteracPresent copyWith({String? Function()? brand, String? Functio
 
 @override int get hashCode => Object.hash(brand, cardholderName, country, description, expMonth, expYear, fingerprint, funding, issuer, last4, networks, Object.hashAll(preferredLocales ?? const []), readMethod);
 
-@override String toString() => 'PaymentMethodInteracPresent(brand: $brand, cardholderName: $cardholderName, country: $country, description: $description, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, issuer: $issuer, last4: $last4, networks: $networks, preferredLocales: $preferredLocales, readMethod: $readMethod)';
+@override String toString() => 'PaymentMethodInteracPresent(\n  brand: $brand,\n  cardholderName: $cardholderName,\n  country: $country,\n  description: $description,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  issuer: $issuer,\n  last4: $last4,\n  networks: $networks,\n  preferredLocales: $preferredLocales,\n  readMethod: $readMethod,\n)';
 
  }

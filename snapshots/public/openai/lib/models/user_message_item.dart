@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'type': type,
   'content': content.map((e) => e.toJson()).toList(),
   'attachments': attachments.map((e) => e.toJson()).toList(),
-  'inference_options': inferenceOptions != null ? inferenceOptions?.toJson() : null,
+  'inference_options': inferenceOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&

@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final callId$ = callId;
 if (callId$ != null) {
-  if (callId$.length < 1) errors.add('callId: length must be >= 1');
+  if (callId$.isEmpty) errors.add('callId: length must be >= 1');
   if (callId$.length > 64) errors.add('callId: length must be <= 64');
 }
 return errors; } 

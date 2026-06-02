@@ -46,7 +46,7 @@ return execute(
   onSuccess: (response) {
     return GetTagIndicatorsListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetTagIndicatorsListError.fromResponse(response),
+  onError: GetTagIndicatorsListError.fromResponse,
 );
  } 
 /// Lists all tags (SoT)
@@ -85,7 +85,7 @@ return execute(
   onSuccess: (response) {
     return GetTagListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetTagListError.fromResponse(response),
+  onError: GetTagListError.fromResponse,
 );
  } 
 /// Updates a tag (SoT)
@@ -109,7 +109,7 @@ return execute(
   onSuccess: (response) {
     return PatchTagUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PatchTagUpdateError.fromResponse(response),
+  onError: PatchTagUpdateError.fromResponse,
 );
  } 
 /// Deletes a tag (SoT)
@@ -131,7 +131,7 @@ return execute(
   onSuccess: (response) {
     return DeleteTagDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteTagDeleteError.fromResponse(response),
+  onError: DeleteTagDeleteError.fromResponse,
 );
  } 
 /// Creates a new tag
@@ -155,7 +155,7 @@ return execute(
   onSuccess: (response) {
     return PostTagCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostTagCreateError.fromResponse(response),
+  onError: PostTagCreateError.fromResponse,
 );
  } 
  }

@@ -14,7 +14,7 @@ final SimpleUser? user;
 
 Map<String, dynamic> toJson() { return {
   'starred_at': starredAt.toIso8601String(),
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('starred_at') && json['starred_at'] is String &&
       json.containsKey('user'); } 

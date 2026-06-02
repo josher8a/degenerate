@@ -121,7 +121,7 @@ Map<String, dynamic> toJson() { return {
   'build_config': buildConfig.toJson(),
   'created_on': createdOn.toIso8601String(),
   'deployment_trigger': deploymentTrigger.toJson(),
-  'env_vars': envVars != null ? envVars?.map((k, v) => MapEntry(k, v?.toJson())) : null,
+  'env_vars': envVars?.map((k, v) => MapEntry(k, v?.toJson())),
   'environment': environment.toJson(),
   'id': id,
   'is_skipped': isSkipped,
@@ -192,6 +192,6 @@ PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? b
 
 @override int get hashCode => Object.hash(Object.hashAll(aliases ?? const []), buildConfig, createdOn, deploymentTrigger, envVars, environment, id, isSkipped, latestStage, modifiedOn, projectId, projectName, shortId, source, Object.hashAll(stages), url, usesFunctions);
 
-@override String toString() => 'PagesDeployment(aliases: $aliases, buildConfig: $buildConfig, createdOn: $createdOn, deploymentTrigger: $deploymentTrigger, envVars: $envVars, environment: $environment, id: $id, isSkipped: $isSkipped, latestStage: $latestStage, modifiedOn: $modifiedOn, projectId: $projectId, projectName: $projectName, shortId: $shortId, source: $source, stages: $stages, url: $url, usesFunctions: $usesFunctions)';
+@override String toString() => 'PagesDeployment(\n  aliases: $aliases,\n  buildConfig: $buildConfig,\n  createdOn: $createdOn,\n  deploymentTrigger: $deploymentTrigger,\n  envVars: $envVars,\n  environment: $environment,\n  id: $id,\n  isSkipped: $isSkipped,\n  latestStage: $latestStage,\n  modifiedOn: $modifiedOn,\n  projectId: $projectId,\n  projectName: $projectName,\n  shortId: $shortId,\n  source: $source,\n  stages: $stages,\n  url: $url,\n  usesFunctions: $usesFunctions,\n)';
 
  }

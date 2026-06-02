@@ -126,6 +126,6 @@ Tests copyWith({String? created, String? description, bool? enabled, String? hos
 
 @override int get hashCode => Object.hash(created, description, enabled, host, httpResults, Object.hashAll(httpResultsByColo ?? const []), id, interval, kind, method, name, Object.hashAll(targetPolicies ?? const []), targeted, tracerouteResults, Object.hashAll(tracerouteResultsByColo ?? const []), updated);
 
-@override String toString() => 'Tests(created: $created, description: $description, enabled: $enabled, host: $host, httpResults: $httpResults, httpResultsByColo: $httpResultsByColo, id: $id, interval: $interval, kind: $kind, method: $method, name: $name, targetPolicies: $targetPolicies, targeted: $targeted, tracerouteResults: $tracerouteResults, tracerouteResultsByColo: $tracerouteResultsByColo, updated: $updated)';
+@override String toString() => 'Tests(\n  created: $created,\n  description: $description,\n  enabled: $enabled,\n  host: $host,\n  httpResults: $httpResults,\n  httpResultsByColo: $httpResultsByColo,\n  id: $id,\n  interval: $interval,\n  kind: $kind,\n  method: $method,\n  name: $name,\n  targetPolicies: $targetPolicies,\n  targeted: $targeted,\n  tracerouteResults: $tracerouteResults,\n  tracerouteResultsByColo: $tracerouteResultsByColo,\n  updated: $updated,\n)';
 
  }

@@ -23,7 +23,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/live_inputs',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -48,7 +48,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/live_inputs',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -71,7 +71,7 @@ Future<ApiResult<StreamLiveInput?, Never>> streamLiveInputsRetrieveALiveInput({r
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -94,7 +94,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -117,7 +117,7 @@ Future<ApiResult<void, Never>> streamLiveInputsDeleteALiveInput({required Stream
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -136,7 +136,7 @@ Future<ApiResult<StreamLiveInput?, Never>> streamLiveInputsDisableALiveInput({re
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}/disable',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toJson())}/disable',
   headers: headers,
   options: options,
 );
@@ -158,7 +158,7 @@ Future<ApiResult<StreamLiveInput?, Never>> streamLiveInputsEnableALiveInput({req
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}/enable',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toJson())}/enable',
   headers: headers,
   options: options,
 );
@@ -180,7 +180,7 @@ Future<ApiResult<List<StreamOutput>?, Never>> streamLiveInputsListAllOutputsAsso
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}/outputs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toJson())}/outputs',
   headers: headers,
   options: options,
 );
@@ -203,7 +203,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}/outputs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toJson())}/outputs',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -227,7 +227,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}/outputs/${Uri.encodeComponent(outputIdentifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toJson())}/outputs/${Uri.encodeComponent(outputIdentifier.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -250,7 +250,7 @@ Future<ApiResult<void, Never>> streamLiveInputsDeleteAnOutput({required StreamOu
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toString())}/outputs/${Uri.encodeComponent(outputIdentifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/live_inputs/${Uri.encodeComponent(liveInputIdentifier.toJson())}/outputs/${Uri.encodeComponent(outputIdentifier.toJson())}',
   headers: headers,
   options: options,
 );

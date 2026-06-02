@@ -66,11 +66,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('chara
       json.containsKey('period') && json['period'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (characteristics.length < 1) errors.add('characteristics: must have >= 1 items');
+if (characteristics.isEmpty) errors.add('characteristics: must have >= 1 items');
 if (characteristics.toSet().length != characteristics.length) errors.add('characteristics: items must be unique');
 final countingExpression$ = countingExpression;
 if (countingExpression$ != null) {
-  if (countingExpression$.length < 1) errors.add('countingExpression: length must be >= 1');
+  if (countingExpression$.isEmpty) errors.add('countingExpression: length must be >= 1');
 }
 if (period < 0) errors.add('period: must be >= 0');
 final requestsPerPeriod$ = requestsPerPeriod;
@@ -79,7 +79,7 @@ if (requestsPerPeriod$ != null) {
 }
 final scoreResponseHeaderName$ = scoreResponseHeaderName;
 if (scoreResponseHeaderName$ != null) {
-  if (scoreResponseHeaderName$.length < 1) errors.add('scoreResponseHeaderName: length must be >= 1');
+  if (scoreResponseHeaderName$.isEmpty) errors.add('scoreResponseHeaderName: length must be >= 1');
 }
 return errors; } 
 RulesetsRuleRatelimit copyWith({List<String>? characteristics, String? Function()? countingExpression, int? Function()? mitigationTimeout, int? period, int? Function()? requestsPerPeriod, bool Function()? requestsToOrigin, int? Function()? scorePerPeriod, String? Function()? scoreResponseHeaderName, }) { return RulesetsRuleRatelimit(

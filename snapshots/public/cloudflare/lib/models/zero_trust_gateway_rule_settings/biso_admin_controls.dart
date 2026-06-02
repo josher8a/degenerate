@@ -319,6 +319,6 @@ BisoAdminControls copyWith({Copy? Function()? copy, bool? Function()? dcp, bool?
 
 @override int get hashCode => Object.hash(copy, dcp, dd, dk, download, dp, du, keyboard, paste, printing, upload, version);
 
-@override String toString() => 'BisoAdminControls(copy: $copy, dcp: $dcp, dd: $dd, dk: $dk, download: $download, dp: $dp, du: $du, keyboard: $keyboard, paste: $paste, printing: $printing, upload: $upload, version: $version)';
+@override String toString() => 'BisoAdminControls(\n  copy: $copy,\n  dcp: $dcp,\n  dd: $dd,\n  dk: $dk,\n  download: $download,\n  dp: $dp,\n  du: $du,\n  keyboard: $keyboard,\n  paste: $paste,\n  printing: $printing,\n  upload: $upload,\n  version: $version,\n)';
 
  }

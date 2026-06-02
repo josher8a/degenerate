@@ -74,6 +74,6 @@ WebhookDiscussionCommentEdited copyWith({ItemEditedAction? action, WebhookDiscus
 
 @override int get hashCode => Object.hash(action, changes, comment, discussion, enterprise, installation, organization, repository, sender);
 
-@override String toString() => 'WebhookDiscussionCommentEdited(action: $action, changes: $changes, comment: $comment, discussion: $discussion, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+@override String toString() => 'WebhookDiscussionCommentEdited(\n  action: $action,\n  changes: $changes,\n  comment: $comment,\n  discussion: $discussion,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  sender: $sender,\n)';
 
  }

@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_subscriptions/subscriptions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/event_subscriptions/subscriptions',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_subscriptions/subscriptions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/event_subscriptions/subscriptions',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -69,7 +69,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MqEventSubscription.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => SubscriptionsCreateError.fromResponse(response),
+  onError: SubscriptionsCreateError.fromResponse,
 );
  } 
 /// Get Event Subscription
@@ -81,7 +81,7 @@ Future<ApiResult<MqEventSubscription?, SubscriptionsGetError>> subscriptionsGet(
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_subscriptions/subscriptions/${Uri.encodeComponent(subscriptionId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/event_subscriptions/subscriptions/${Uri.encodeComponent(subscriptionId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -92,7 +92,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MqEventSubscription.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => SubscriptionsGetError.fromResponse(response),
+  onError: SubscriptionsGetError.fromResponse,
 );
  } 
 /// Update Event Subscription
@@ -105,7 +105,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_subscriptions/subscriptions/${Uri.encodeComponent(subscriptionId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/event_subscriptions/subscriptions/${Uri.encodeComponent(subscriptionId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -117,7 +117,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MqEventSubscription.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => SubscriptionsPatchError.fromResponse(response),
+  onError: SubscriptionsPatchError.fromResponse,
 );
  } 
 /// Delete Event Subscription
@@ -129,7 +129,7 @@ Future<ApiResult<MqEventSubscription?, Never>> subscriptionsDelete({required MqI
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/event_subscriptions/subscriptions/${Uri.encodeComponent(subscriptionId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/event_subscriptions/subscriptions/${Uri.encodeComponent(subscriptionId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -151,7 +151,7 @@ Future<ApiResult<List<MqQueue>?, Never>> queuesList({required MqIdentifier accou
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues',
   headers: headers,
   options: options,
 );
@@ -174,7 +174,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -197,7 +197,7 @@ Future<ApiResult<MqQueue?, Never>> queuesGet({required MqIdentifier queueId, req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -220,7 +220,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -244,7 +244,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -267,7 +267,7 @@ Future<ApiResult<Success, Never>> queuesDelete({required MqIdentifier queueId, r
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -288,7 +288,7 @@ Future<ApiResult<List<MqConsumerResponse>?, Never>> queuesListConsumers({require
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}/consumers',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}/consumers',
   headers: headers,
   options: options,
 );
@@ -311,7 +311,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}/consumers',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}/consumers',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -334,7 +334,7 @@ Future<ApiResult<MqConsumerResponse?, Never>> queuesGetConsumer({required MqIden
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}/consumers/${Uri.encodeComponent(consumerId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}/consumers/${Uri.encodeComponent(consumerId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -357,7 +357,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}/consumers/${Uri.encodeComponent(consumerId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}/consumers/${Uri.encodeComponent(consumerId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -380,7 +380,7 @@ Future<ApiResult<Success, Never>> queuesDeleteConsumer({required MqIdentifier co
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}/consumers/${Uri.encodeComponent(consumerId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}/consumers/${Uri.encodeComponent(consumerId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -402,7 +402,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}/messages',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}/messages',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -425,7 +425,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}/messages/ack',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}/messages/ack',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -449,7 +449,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}/messages/batch',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}/messages/batch',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -472,7 +472,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}/messages/pull',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}/messages/pull',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -495,7 +495,7 @@ Future<ApiResult<QueuesPurgeGetResponseResult?, Never>> queuesPurgeGet({required
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}/purge',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}/purge',
   headers: headers,
   options: options,
 );
@@ -518,7 +518,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/queues/${Uri.encodeComponent(queueId.toString())}/purge',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/queues/${Uri.encodeComponent(queueId.toJson())}/purge',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,

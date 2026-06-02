@@ -10,10 +10,10 @@ factory UsersGetAuthenticatedResponse.fromJson(Map<String, dynamic> json) { retu
 }; }
 
 /// Build the `public` variant.
-factory UsersGetAuthenticatedResponse.public({required String login, required int id, required String nodeId, required Uri avatarUrl, required String? gravatarId, required Uri url, required Uri htmlUrl, required Uri followersUrl, required String followingUrl, required String gistsUrl, required String starredUrl, required Uri subscriptionsUrl, required Uri organizationsUrl, required Uri reposUrl, required String eventsUrl, required Uri receivedEventsUrl, required String type, required bool siteAdmin, required String? name, required String? company, required String? blog, required String? location, required String? email, String? notificationEmail, required bool? hireable, required String? bio, String? twitterUsername, required int publicRepos, required int publicGists, required int followers, required int following, required DateTime createdAt, required DateTime updatedAt, PrivateUserPlan? plan, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, }) { return UsersGetAuthenticatedResponsePublic(PublicUser(userViewType: 'public', login: login, id: id, nodeId: nodeId, avatarUrl: avatarUrl, gravatarId: gravatarId, url: url, htmlUrl: htmlUrl, followersUrl: followersUrl, followingUrl: followingUrl, gistsUrl: gistsUrl, starredUrl: starredUrl, subscriptionsUrl: subscriptionsUrl, organizationsUrl: organizationsUrl, reposUrl: reposUrl, eventsUrl: eventsUrl, receivedEventsUrl: receivedEventsUrl, type: type, siteAdmin: siteAdmin, name: name, company: company, blog: blog, location: location, email: email, notificationEmail: notificationEmail, hireable: hireable, bio: bio, twitterUsername: twitterUsername, publicRepos: publicRepos, publicGists: publicGists, followers: followers, following: following, createdAt: createdAt, updatedAt: updatedAt, plan: plan, privateGists: privateGists, totalPrivateRepos: totalPrivateRepos, ownedPrivateRepos: ownedPrivateRepos, diskUsage: diskUsage, collaborators: collaborators)); }
+factory UsersGetAuthenticatedResponse.public({required Uri reposUrl, required int id, required String nodeId, required Uri avatarUrl, required String? gravatarId, required Uri url, required Uri htmlUrl, required Uri followersUrl, required String followingUrl, required String gistsUrl, required String starredUrl, required Uri subscriptionsUrl, required Uri organizationsUrl, required String login, required String eventsUrl, required Uri receivedEventsUrl, required String type, required bool siteAdmin, required String? name, required String? company, required String? blog, required String? location, required String? email, required DateTime updatedAt, required bool? hireable, required DateTime createdAt, required int following, required int publicRepos, required int publicGists, required int followers, required String? bio, int? collaborators, String? notificationEmail, PrivateUserPlan? plan, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, String? twitterUsername, }) { return UsersGetAuthenticatedResponsePublic(PublicUser(userViewType: 'public', login: login, id: id, nodeId: nodeId, avatarUrl: avatarUrl, gravatarId: gravatarId, url: url, htmlUrl: htmlUrl, followersUrl: followersUrl, followingUrl: followingUrl, gistsUrl: gistsUrl, starredUrl: starredUrl, subscriptionsUrl: subscriptionsUrl, organizationsUrl: organizationsUrl, reposUrl: reposUrl, eventsUrl: eventsUrl, receivedEventsUrl: receivedEventsUrl, type: type, siteAdmin: siteAdmin, name: name, company: company, blog: blog, location: location, email: email, notificationEmail: notificationEmail, hireable: hireable, bio: bio, twitterUsername: twitterUsername, publicRepos: publicRepos, publicGists: publicGists, followers: followers, following: following, createdAt: createdAt, updatedAt: updatedAt, plan: plan, privateGists: privateGists, totalPrivateRepos: totalPrivateRepos, ownedPrivateRepos: ownedPrivateRepos, diskUsage: diskUsage, collaborators: collaborators)); }
 
 /// Build the `private` variant.
-factory UsersGetAuthenticatedResponse.private({required String login, required int id, required String nodeId, required Uri avatarUrl, required String? gravatarId, required Uri url, required Uri htmlUrl, required Uri followersUrl, required String followingUrl, required String gistsUrl, required String starredUrl, required Uri subscriptionsUrl, required Uri organizationsUrl, required Uri reposUrl, required String eventsUrl, required Uri receivedEventsUrl, required String type, required bool siteAdmin, required String? name, required String? company, required String? blog, required String? location, required String? email, String? notificationEmail, required bool? hireable, required String? bio, String? twitterUsername, required int publicRepos, required int publicGists, required int followers, required int following, required DateTime createdAt, required DateTime updatedAt, required int privateGists, required int totalPrivateRepos, required int ownedPrivateRepos, required int diskUsage, required int collaborators, required bool twoFactorAuthentication, PrivateUserPlan? plan, bool? businessPlus, String? ldapDn, }) { return UsersGetAuthenticatedResponsePrivate(PrivateUser(userViewType: 'private', login: login, id: id, nodeId: nodeId, avatarUrl: avatarUrl, gravatarId: gravatarId, url: url, htmlUrl: htmlUrl, followersUrl: followersUrl, followingUrl: followingUrl, gistsUrl: gistsUrl, starredUrl: starredUrl, subscriptionsUrl: subscriptionsUrl, organizationsUrl: organizationsUrl, reposUrl: reposUrl, eventsUrl: eventsUrl, receivedEventsUrl: receivedEventsUrl, type: type, siteAdmin: siteAdmin, name: name, company: company, blog: blog, location: location, email: email, notificationEmail: notificationEmail, hireable: hireable, bio: bio, twitterUsername: twitterUsername, publicRepos: publicRepos, publicGists: publicGists, followers: followers, following: following, createdAt: createdAt, updatedAt: updatedAt, privateGists: privateGists, totalPrivateRepos: totalPrivateRepos, ownedPrivateRepos: ownedPrivateRepos, diskUsage: diskUsage, collaborators: collaborators, twoFactorAuthentication: twoFactorAuthentication, plan: plan, businessPlus: businessPlus, ldapDn: ldapDn)); }
+factory UsersGetAuthenticatedResponse.private({required Uri reposUrl, required int id, required String nodeId, required Uri avatarUrl, required String? gravatarId, required Uri url, required Uri htmlUrl, required Uri followersUrl, required String followingUrl, required String gistsUrl, required String starredUrl, required Uri subscriptionsUrl, required Uri organizationsUrl, required String login, required String eventsUrl, required Uri receivedEventsUrl, required String type, required bool siteAdmin, required String? name, required String? company, required String? blog, required String? location, required String? email, required bool twoFactorAuthentication, required bool? hireable, required String? bio, required int collaborators, required int diskUsage, required int publicGists, required int followers, required int following, required DateTime createdAt, required DateTime updatedAt, required int privateGists, required int totalPrivateRepos, required int ownedPrivateRepos, required int publicRepos, String? twitterUsername, String? notificationEmail, PrivateUserPlan? plan, bool? businessPlus, String? ldapDn, }) { return UsersGetAuthenticatedResponsePrivate(PrivateUser(userViewType: 'private', login: login, id: id, nodeId: nodeId, avatarUrl: avatarUrl, gravatarId: gravatarId, url: url, htmlUrl: htmlUrl, followersUrl: followersUrl, followingUrl: followingUrl, gistsUrl: gistsUrl, starredUrl: starredUrl, subscriptionsUrl: subscriptionsUrl, organizationsUrl: organizationsUrl, reposUrl: reposUrl, eventsUrl: eventsUrl, receivedEventsUrl: receivedEventsUrl, type: type, siteAdmin: siteAdmin, name: name, company: company, blog: blog, location: location, email: email, notificationEmail: notificationEmail, hireable: hireable, bio: bio, twitterUsername: twitterUsername, publicRepos: publicRepos, publicGists: publicGists, followers: followers, following: following, createdAt: createdAt, updatedAt: updatedAt, privateGists: privateGists, totalPrivateRepos: totalPrivateRepos, ownedPrivateRepos: ownedPrivateRepos, diskUsage: diskUsage, collaborators: collaborators, twoFactorAuthentication: twoFactorAuthentication, plan: plan, businessPlus: businessPlus, ldapDn: ldapDn)); }
 
 /// The discriminator value identifying this variant.
 String get userViewType;
@@ -99,6 +99,11 @@ int? get ownedPrivateRepos;
 int? get diskUsage;
 /// Shared by all variants of this union.
 int? get collaborators;
+R when<R>({required R Function(UsersGetAuthenticatedResponsePublic) public, required R Function(UsersGetAuthenticatedResponsePrivate) private, required R Function(UsersGetAuthenticatedResponse$Unknown) unknown, }) { return switch (this) {
+  final UsersGetAuthenticatedResponsePublic v => public(v),
+  final UsersGetAuthenticatedResponsePrivate v => private(v),
+  final UsersGetAuthenticatedResponse$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class UsersGetAuthenticatedResponsePublic extends UsersGetAuthenticatedResponse {const UsersGetAuthenticatedResponsePublic(this.publicUser);
 
@@ -379,9 +384,87 @@ UsersGetAuthenticatedResponsePrivate copyWith({String? login, int? id, String? n
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class UsersGetAuthenticatedResponse$Unknown extends UsersGetAuthenticatedResponse {const UsersGetAuthenticatedResponse$Unknown(this.json);
+@immutable final class UsersGetAuthenticatedResponse$Unknown extends UsersGetAuthenticatedResponse {UsersGetAuthenticatedResponse$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String _login = json['login'] as String;
+
+late final int _id = (json['id'] as num).toInt();
+
+late final String _nodeId = json['node_id'] as String;
+
+late final Uri _avatarUrl = Uri.parse(json['avatar_url'] as String);
+
+late final String? _gravatarId = json['gravatar_id'] as String?;
+
+late final Uri _url = Uri.parse(json['url'] as String);
+
+late final Uri _htmlUrl = Uri.parse(json['html_url'] as String);
+
+late final Uri _followersUrl = Uri.parse(json['followers_url'] as String);
+
+late final String _followingUrl = json['following_url'] as String;
+
+late final String _gistsUrl = json['gists_url'] as String;
+
+late final String _starredUrl = json['starred_url'] as String;
+
+late final Uri _subscriptionsUrl = Uri.parse(json['subscriptions_url'] as String);
+
+late final Uri _organizationsUrl = Uri.parse(json['organizations_url'] as String);
+
+late final Uri _reposUrl = Uri.parse(json['repos_url'] as String);
+
+late final String _eventsUrl = json['events_url'] as String;
+
+late final Uri _receivedEventsUrl = Uri.parse(json['received_events_url'] as String);
+
+late final String _type = json['type'] as String;
+
+late final bool _siteAdmin = json['site_admin'] as bool;
+
+late final String? _name = json['name'] as String?;
+
+late final String? _company = json['company'] as String?;
+
+late final String? _blog = json['blog'] as String?;
+
+late final String? _location = json['location'] as String?;
+
+late final String? _email = json['email'] as String?;
+
+late final String? _notificationEmail = json['notification_email'] as String?;
+
+late final bool? _hireable = json['hireable'] as bool?;
+
+late final String? _bio = json['bio'] as String?;
+
+late final String? _twitterUsername = json['twitter_username'] as String?;
+
+late final int _publicRepos = (json['public_repos'] as num).toInt();
+
+late final int _publicGists = (json['public_gists'] as num).toInt();
+
+late final int _followers = (json['followers'] as num).toInt();
+
+late final int _following = (json['following'] as num).toInt();
+
+late final DateTime _createdAt = DateTime.parse(json['created_at'] as String);
+
+late final DateTime _updatedAt = DateTime.parse(json['updated_at'] as String);
+
+late final PrivateUserPlan? _plan = json['plan'] != null ? PrivateUserPlan.fromJson(json['plan'] as Map<String, dynamic>) : null;
+
+late final int? _privateGists = json['private_gists'] != null ? (json['private_gists'] as num).toInt() : null;
+
+late final int? _totalPrivateRepos = json['total_private_repos'] != null ? (json['total_private_repos'] as num).toInt() : null;
+
+late final int? _ownedPrivateRepos = json['owned_private_repos'] != null ? (json['owned_private_repos'] as num).toInt() : null;
+
+late final int? _diskUsage = json['disk_usage'] != null ? (json['disk_usage'] as num).toInt() : null;
+
+late final int? _collaborators = json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null;
 
 @override String get userViewType => json['user_view_type'] as String? ?? '';
 
@@ -394,82 +477,82 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'UsersGetAuthenticatedResponse.unknown($json)';
 
-@override String get login => json['login'] as String;
+@override String get login => _login;
 
-@override int get id => (json['id'] as num).toInt();
+@override int get id => _id;
 
-@override String get nodeId => json['node_id'] as String;
+@override String get nodeId => _nodeId;
 
-@override Uri get avatarUrl => Uri.parse(json['avatar_url'] as String);
+@override Uri get avatarUrl => _avatarUrl;
 
-@override String? get gravatarId => json['gravatar_id'] as String?;
+@override String? get gravatarId => _gravatarId;
 
-@override Uri get url => Uri.parse(json['url'] as String);
+@override Uri get url => _url;
 
-@override Uri get htmlUrl => Uri.parse(json['html_url'] as String);
+@override Uri get htmlUrl => _htmlUrl;
 
-@override Uri get followersUrl => Uri.parse(json['followers_url'] as String);
+@override Uri get followersUrl => _followersUrl;
 
-@override String get followingUrl => json['following_url'] as String;
+@override String get followingUrl => _followingUrl;
 
-@override String get gistsUrl => json['gists_url'] as String;
+@override String get gistsUrl => _gistsUrl;
 
-@override String get starredUrl => json['starred_url'] as String;
+@override String get starredUrl => _starredUrl;
 
-@override Uri get subscriptionsUrl => Uri.parse(json['subscriptions_url'] as String);
+@override Uri get subscriptionsUrl => _subscriptionsUrl;
 
-@override Uri get organizationsUrl => Uri.parse(json['organizations_url'] as String);
+@override Uri get organizationsUrl => _organizationsUrl;
 
-@override Uri get reposUrl => Uri.parse(json['repos_url'] as String);
+@override Uri get reposUrl => _reposUrl;
 
-@override String get eventsUrl => json['events_url'] as String;
+@override String get eventsUrl => _eventsUrl;
 
-@override Uri get receivedEventsUrl => Uri.parse(json['received_events_url'] as String);
+@override Uri get receivedEventsUrl => _receivedEventsUrl;
 
-@override String get type => json['type'] as String;
+@override String get type => _type;
 
-@override bool get siteAdmin => json['site_admin'] as bool;
+@override bool get siteAdmin => _siteAdmin;
 
-@override String? get name => json['name'] as String?;
+@override String? get name => _name;
 
-@override String? get company => json['company'] as String?;
+@override String? get company => _company;
 
-@override String? get blog => json['blog'] as String?;
+@override String? get blog => _blog;
 
-@override String? get location => json['location'] as String?;
+@override String? get location => _location;
 
-@override String? get email => json['email'] as String?;
+@override String? get email => _email;
 
-@override String? get notificationEmail => json['notification_email'] as String?;
+@override String? get notificationEmail => _notificationEmail;
 
-@override bool? get hireable => json['hireable'] as bool?;
+@override bool? get hireable => _hireable;
 
-@override String? get bio => json['bio'] as String?;
+@override String? get bio => _bio;
 
-@override String? get twitterUsername => json['twitter_username'] as String?;
+@override String? get twitterUsername => _twitterUsername;
 
-@override int get publicRepos => (json['public_repos'] as num).toInt();
+@override int get publicRepos => _publicRepos;
 
-@override int get publicGists => (json['public_gists'] as num).toInt();
+@override int get publicGists => _publicGists;
 
-@override int get followers => (json['followers'] as num).toInt();
+@override int get followers => _followers;
 
-@override int get following => (json['following'] as num).toInt();
+@override int get following => _following;
 
-@override DateTime get createdAt => DateTime.parse(json['created_at'] as String);
+@override DateTime get createdAt => _createdAt;
 
-@override DateTime get updatedAt => DateTime.parse(json['updated_at'] as String);
+@override DateTime get updatedAt => _updatedAt;
 
-@override PrivateUserPlan? get plan => json['plan'] != null ? PrivateUserPlan.fromJson(json['plan'] as Map<String, dynamic>) : null;
+@override PrivateUserPlan? get plan => _plan;
 
-@override int? get privateGists => json['private_gists'] != null ? (json['private_gists'] as num).toInt() : null;
+@override int? get privateGists => _privateGists;
 
-@override int? get totalPrivateRepos => json['total_private_repos'] != null ? (json['total_private_repos'] as num).toInt() : null;
+@override int? get totalPrivateRepos => _totalPrivateRepos;
 
-@override int? get ownedPrivateRepos => json['owned_private_repos'] != null ? (json['owned_private_repos'] as num).toInt() : null;
+@override int? get ownedPrivateRepos => _ownedPrivateRepos;
 
-@override int? get diskUsage => json['disk_usage'] != null ? (json['disk_usage'] as num).toInt() : null;
+@override int? get diskUsage => _diskUsage;
 
-@override int? get collaborators => json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null;
+@override int? get collaborators => _collaborators;
 
  }

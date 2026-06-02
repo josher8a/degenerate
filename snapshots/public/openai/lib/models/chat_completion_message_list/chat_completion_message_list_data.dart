@@ -86,6 +86,6 @@ ChatCompletionMessageListData copyWith({String? Function()? content, String? Fun
 
 @override int get hashCode => Object.hash(content, refusal, Object.hashAll(toolCalls ?? const []), Object.hashAll(annotations ?? const []), role, functionCall, audio, id, Object.hashAll(contentParts ?? const []));
 
-@override String toString() => 'ChatCompletionMessageListData(content: $content, refusal: $refusal, toolCalls: $toolCalls, annotations: $annotations, role: $role, functionCall: $functionCall, audio: $audio, id: $id, contentParts: $contentParts)';
+@override String toString() => 'ChatCompletionMessageListData(\n  content: $content,\n  refusal: $refusal,\n  toolCalls: $toolCalls,\n  annotations: $annotations,\n  role: $role,\n  functionCall: $functionCall,\n  audio: $audio,\n  id: $id,\n  contentParts: $contentParts,\n)';
 
  }

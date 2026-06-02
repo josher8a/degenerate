@@ -163,6 +163,6 @@ IdentityVerificationReport copyWith({String? Function()? clientReferenceId, int?
 
 @override int get hashCode => Object.hash(clientReferenceId, created, document, email, id, idNumber, livemode, object, options, phone, selfie, type, verificationFlow, verificationSession);
 
-@override String toString() => 'IdentityVerificationReport(clientReferenceId: $clientReferenceId, created: $created, document: $document, email: $email, id: $id, idNumber: $idNumber, livemode: $livemode, object: $object, options: $options, phone: $phone, selfie: $selfie, type: $type, verificationFlow: $verificationFlow, verificationSession: $verificationSession)';
+@override String toString() => 'IdentityVerificationReport(\n  clientReferenceId: $clientReferenceId,\n  created: $created,\n  document: $document,\n  email: $email,\n  id: $id,\n  idNumber: $idNumber,\n  livemode: $livemode,\n  object: $object,\n  options: $options,\n  phone: $phone,\n  selfie: $selfie,\n  type: $type,\n  verificationFlow: $verificationFlow,\n  verificationSession: $verificationSession,\n)';
 
  }

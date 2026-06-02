@@ -157,6 +157,6 @@ TerminalReader copyWith({TerminalReaderReaderResourceReaderAction? Function()? a
 
 @override int get hashCode => Object.hash(action, deviceSwVersion, deviceType, id, ipAddress, label, lastSeenAt, livemode, location, metadata, object, serialNumber, status);
 
-@override String toString() => 'TerminalReader(action: $action, deviceSwVersion: $deviceSwVersion, deviceType: $deviceType, id: $id, ipAddress: $ipAddress, label: $label, lastSeenAt: $lastSeenAt, livemode: $livemode, location: $location, metadata: $metadata, object: $object, serialNumber: $serialNumber, status: $status)';
+@override String toString() => 'TerminalReader(\n  action: $action,\n  deviceSwVersion: $deviceSwVersion,\n  deviceType: $deviceType,\n  id: $id,\n  ipAddress: $ipAddress,\n  label: $label,\n  lastSeenAt: $lastSeenAt,\n  livemode: $livemode,\n  location: $location,\n  metadata: $metadata,\n  object: $object,\n  serialNumber: $serialNumber,\n  status: $status,\n)';
 
  }

@@ -101,7 +101,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/http/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -114,7 +114,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer3SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpSummaryError.fromResponse(response),
+  onError: RadarGetHttpSummaryError.fromResponse,
 );
  } 
 /// Get HTTP requests time series
@@ -231,7 +231,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTimeseriesError.fromResponse(response),
+  onError: RadarGetHttpTimeseriesError.fromResponse,
 );
  } 
 /// Get HTTP requests time series grouped by dimension
@@ -333,7 +333,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/http/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -346,7 +346,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetHttpTimeseriesGroupError.fromResponse,
 );
  } 
 /// Get top ASes by HTTP requests
@@ -460,7 +460,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopAsesByHttpRequestsError.fromResponse(response),
+  onError: RadarGetHttpTopAsesByHttpRequestsError.fromResponse,
 );
  } 
 /// Get top ASes by HTTP requests for a bot class
@@ -556,7 +556,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/bot_class/${Uri.encodeComponent('${botClass.toJson()}')}',
+  path: '/radar/http/top/ases/bot_class/${Uri.encodeComponent(botClass.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -569,7 +569,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopAsesByBotClassError.fromResponse(response),
+  onError: RadarGetHttpTopAsesByBotClassError.fromResponse,
 );
  } 
 /// Get top ASes by HTTP requests for a browser family
@@ -665,7 +665,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/browser_family/${Uri.encodeComponent('${browserFamily.toJson()}')}',
+  path: '/radar/http/top/ases/browser_family/${Uri.encodeComponent(browserFamily.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -678,7 +678,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopAsesByBrowserFamilyError.fromResponse(response),
+  onError: RadarGetHttpTopAsesByBrowserFamilyError.fromResponse,
 );
  } 
 /// Get top ASes by HTTP requests for a device type
@@ -774,7 +774,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/device_type/${Uri.encodeComponent('${deviceType.toJson()}')}',
+  path: '/radar/http/top/ases/device_type/${Uri.encodeComponent(deviceType.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -787,7 +787,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopAsesByDeviceTypeError.fromResponse(response),
+  onError: RadarGetHttpTopAsesByDeviceTypeError.fromResponse,
 );
  } 
 /// Get top ASes by HTTP requests for an HTTP protocol
@@ -883,7 +883,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/http_protocol/${Uri.encodeComponent('${httpProtocol.toJson()}')}',
+  path: '/radar/http/top/ases/http_protocol/${Uri.encodeComponent(httpProtocol.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -896,7 +896,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopAsesByHttpProtocolError.fromResponse(response),
+  onError: RadarGetHttpTopAsesByHttpProtocolError.fromResponse,
 );
  } 
 /// Get top ASes by HTTP requests for an HTTP version
@@ -992,7 +992,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/http_version/${Uri.encodeComponent('${httpVersion.toJson()}')}',
+  path: '/radar/http/top/ases/http_version/${Uri.encodeComponent(httpVersion.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1005,7 +1005,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopAsesByHttpVersionError.fromResponse(response),
+  onError: RadarGetHttpTopAsesByHttpVersionError.fromResponse,
 );
  } 
 /// Get top ASes by HTTP requests for an IP version
@@ -1101,7 +1101,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/ip_version/${Uri.encodeComponent('${ipVersion.toJson()}')}',
+  path: '/radar/http/top/ases/ip_version/${Uri.encodeComponent(ipVersion.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1114,7 +1114,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopAsesByIpVersionError.fromResponse(response),
+  onError: RadarGetHttpTopAsesByIpVersionError.fromResponse,
 );
  } 
 /// Get top ASes by HTTP requests for an OS
@@ -1210,7 +1210,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/os/${Uri.encodeComponent('${os.toJson()}')}',
+  path: '/radar/http/top/ases/os/${Uri.encodeComponent(os.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1223,7 +1223,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopAsesByOperatingSystemError.fromResponse(response),
+  onError: RadarGetHttpTopAsesByOperatingSystemError.fromResponse,
 );
  } 
 /// Get top ASes by HTTP requests for a TLS version
@@ -1319,7 +1319,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/ases/tls_version/${Uri.encodeComponent('${tlsVersion.toJson()}')}',
+  path: '/radar/http/top/ases/tls_version/${Uri.encodeComponent(tlsVersion.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1332,7 +1332,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopAsesByTlsVersionError.fromResponse(response),
+  onError: RadarGetHttpTopAsesByTlsVersionError.fromResponse,
 );
  } 
 /// Get top locations by HTTP requests
@@ -1446,7 +1446,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopLocationsByHttpRequestsError.fromResponse(response),
+  onError: RadarGetHttpTopLocationsByHttpRequestsError.fromResponse,
 );
  } 
 /// Get top locations by HTTP requests for a bot class
@@ -1542,7 +1542,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/bot_class/${Uri.encodeComponent('${botClass.toJson()}')}',
+  path: '/radar/http/top/locations/bot_class/${Uri.encodeComponent(botClass.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1555,7 +1555,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopLocationsByBotClassError.fromResponse(response),
+  onError: RadarGetHttpTopLocationsByBotClassError.fromResponse,
 );
  } 
 /// Get top locations by HTTP requests for a browser family
@@ -1651,7 +1651,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/browser_family/${Uri.encodeComponent('${browserFamily.toJson()}')}',
+  path: '/radar/http/top/locations/browser_family/${Uri.encodeComponent(browserFamily.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1664,7 +1664,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopLocationsByBrowserFamilyError.fromResponse(response),
+  onError: RadarGetHttpTopLocationsByBrowserFamilyError.fromResponse,
 );
  } 
 /// Get top locations by HTTP requests for a device type
@@ -1760,7 +1760,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/device_type/${Uri.encodeComponent('${deviceType.toJson()}')}',
+  path: '/radar/http/top/locations/device_type/${Uri.encodeComponent(deviceType.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1773,7 +1773,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopLocationsByDeviceTypeError.fromResponse(response),
+  onError: RadarGetHttpTopLocationsByDeviceTypeError.fromResponse,
 );
  } 
 /// Get top locations by HTTP requests for an HTTP protocol
@@ -1869,7 +1869,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/http_protocol/${Uri.encodeComponent('${httpProtocol.toJson()}')}',
+  path: '/radar/http/top/locations/http_protocol/${Uri.encodeComponent(httpProtocol.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1882,7 +1882,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopLocationsByHttpProtocolError.fromResponse(response),
+  onError: RadarGetHttpTopLocationsByHttpProtocolError.fromResponse,
 );
  } 
 /// Get top locations by HTTP requests for an HTTP version
@@ -1978,7 +1978,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/http_version/${Uri.encodeComponent('${httpVersion.toJson()}')}',
+  path: '/radar/http/top/locations/http_version/${Uri.encodeComponent(httpVersion.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -1991,7 +1991,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopLocationsByHttpVersionError.fromResponse(response),
+  onError: RadarGetHttpTopLocationsByHttpVersionError.fromResponse,
 );
  } 
 /// Get top locations by HTTP requests for an IP version
@@ -2087,7 +2087,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/ip_version/${Uri.encodeComponent('${ipVersion.toJson()}')}',
+  path: '/radar/http/top/locations/ip_version/${Uri.encodeComponent(ipVersion.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -2100,7 +2100,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopLocationsByIpVersionError.fromResponse(response),
+  onError: RadarGetHttpTopLocationsByIpVersionError.fromResponse,
 );
  } 
 /// Get top locations by HTTP requests for an OS
@@ -2196,7 +2196,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/os/${Uri.encodeComponent('${os.toJson()}')}',
+  path: '/radar/http/top/locations/os/${Uri.encodeComponent(os.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -2209,7 +2209,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopLocationsByOperatingSystemError.fromResponse(response),
+  onError: RadarGetHttpTopLocationsByOperatingSystemError.fromResponse,
 );
  } 
 /// Get top locations by HTTP requests for a TLS version
@@ -2305,7 +2305,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/http/top/locations/tls_version/${Uri.encodeComponent('${tlsVersion.toJson()}')}',
+  path: '/radar/http/top/locations/tls_version/${Uri.encodeComponent(tlsVersion.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -2318,7 +2318,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetHttpTopLocationsByTlsVersionError.fromResponse(response),
+  onError: RadarGetHttpTopLocationsByTlsVersionError.fromResponse,
 );
  } 
  }

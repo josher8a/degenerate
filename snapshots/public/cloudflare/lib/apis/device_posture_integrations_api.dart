@@ -63,7 +63,7 @@ Future<ApiResult<TeamsDevicesDevicePostureIntegrations?, Never>> devicePostureIn
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/integration/${Uri.encodeComponent(integrationId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/integration/${Uri.encodeComponent(integrationId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/integration/${Uri.encodeComponent(integrationId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/integration/${Uri.encodeComponent(integrationId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> devicePostureIntegrationsDeleteD
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/integration/${Uri.encodeComponent(integrationId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/integration/${Uri.encodeComponent(integrationId.toJson())}',
   headers: headers,
   options: options,
 );

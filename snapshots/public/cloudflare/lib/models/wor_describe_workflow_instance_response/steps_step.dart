@@ -56,7 +56,7 @@ final StepType type;
 Map<String, dynamic> toJson() { return {
   'attempts': attempts.map((e) => e.toJson()).toList(),
   'config': config.toJson(),
-  'end': end != null ? end?.toIso8601String() : null,
+  'end': end?.toIso8601String(),
   'name': name,
   'output': output,
   'start': start.toIso8601String(),

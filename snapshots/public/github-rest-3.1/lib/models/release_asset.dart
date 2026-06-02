@@ -92,7 +92,7 @@ Map<String, dynamic> toJson() { return {
   'download_count': downloadCount,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  'uploader': uploader != null ? uploader?.toJson() : null,
+  'uploader': uploader?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
       json.containsKey('browser_download_url') && json['browser_download_url'] is String &&
@@ -143,6 +143,6 @@ ReleaseAsset copyWith({Uri? url, Uri? browserDownloadUrl, int? id, String? nodeI
 
 @override int get hashCode => Object.hash(url, browserDownloadUrl, id, nodeId, name, label, state, contentType, size, digest, downloadCount, createdAt, updatedAt, uploader);
 
-@override String toString() => 'ReleaseAsset(url: $url, browserDownloadUrl: $browserDownloadUrl, id: $id, nodeId: $nodeId, name: $name, label: $label, state: $state, contentType: $contentType, size: $size, digest: $digest, downloadCount: $downloadCount, createdAt: $createdAt, updatedAt: $updatedAt, uploader: $uploader)';
+@override String toString() => 'ReleaseAsset(\n  url: $url,\n  browserDownloadUrl: $browserDownloadUrl,\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  label: $label,\n  state: $state,\n  contentType: $contentType,\n  size: $size,\n  digest: $digest,\n  downloadCount: $downloadCount,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  uploader: $uploader,\n)';
 
  }

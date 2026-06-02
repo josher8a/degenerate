@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/resource_groups',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -51,7 +51,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/resource_groups',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -74,7 +74,7 @@ Future<ApiResult<IamResourceGroup?, Never>> accountResourceGroupDetails({require
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -97,7 +97,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -120,7 +120,7 @@ Future<ApiResult<ResponseSingleId4Result?, Never>> accountResourceGroupDelete({r
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/resource_groups/${Uri.encodeComponent(resourceGroupId.toJson())}',
   headers: headers,
   options: options,
 );

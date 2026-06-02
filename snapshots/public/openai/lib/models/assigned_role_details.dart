@@ -103,6 +103,6 @@ AssignedRoleDetails copyWith({String? id, String? name, List<String>? permission
 
 @override int get hashCode => Object.hash(id, name, Object.hashAll(permissions), resourceType, predefinedRole, description, createdAt, updatedAt, createdBy, createdByUserObj, metadata);
 
-@override String toString() => 'AssignedRoleDetails(id: $id, name: $name, permissions: $permissions, resourceType: $resourceType, predefinedRole: $predefinedRole, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, createdBy: $createdBy, createdByUserObj: $createdByUserObj, metadata: $metadata)';
+@override String toString() => 'AssignedRoleDetails(\n  id: $id,\n  name: $name,\n  permissions: $permissions,\n  resourceType: $resourceType,\n  predefinedRole: $predefinedRole,\n  description: $description,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  createdBy: $createdBy,\n  createdByUserObj: $createdByUserObj,\n  metadata: $metadata,\n)';
 
  }

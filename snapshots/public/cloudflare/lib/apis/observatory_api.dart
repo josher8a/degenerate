@@ -17,7 +17,7 @@ Future<ApiResult<ObservatoryAvailabilities?, Never>> speedGetAvailabilities({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/availabilities',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/speed_api/availabilities',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<List<ObservatoryPagesResponseCollectionResult>?, Never>> speedL
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/pages',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/speed_api/pages',
   headers: headers,
   options: options,
 );
@@ -73,7 +73,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/pages/${Uri.encodeComponent(url.toString())}/tests',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/speed_api/pages/${Uri.encodeComponent(url.toJson())}/tests',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -98,7 +98,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/pages/${Uri.encodeComponent(url.toString())}/tests',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/speed_api/pages/${Uri.encodeComponent(url.toJson())}/tests',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -127,7 +127,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/pages/${Uri.encodeComponent(url.toString())}/tests',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/speed_api/pages/${Uri.encodeComponent(url.toJson())}/tests',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -151,7 +151,7 @@ Future<ApiResult<ObservatoryPageTest?, Never>> speedGetTest({required Observator
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/pages/${Uri.encodeComponent(url.toString())}/tests/${Uri.encodeComponent(testId)}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/speed_api/pages/${Uri.encodeComponent(url.toJson())}/tests/${Uri.encodeComponent(testId)}',
   headers: headers,
   options: options,
 );
@@ -184,7 +184,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/pages/${Uri.encodeComponent(url.toString())}/trend',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/speed_api/pages/${Uri.encodeComponent(url.toJson())}/trend',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -214,7 +214,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/schedule/${Uri.encodeComponent(url.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/speed_api/schedule/${Uri.encodeComponent(url.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -247,7 +247,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/schedule/${Uri.encodeComponent(url.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/speed_api/schedule/${Uri.encodeComponent(url.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -277,7 +277,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/speed_api/schedule/${Uri.encodeComponent(url.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/speed_api/schedule/${Uri.encodeComponent(url.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

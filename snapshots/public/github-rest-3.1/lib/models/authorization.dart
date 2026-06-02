@@ -61,13 +61,13 @@ Map<String, dynamic> toJson() { return {
   'hashed_token': hashedToken,
   'app': app.toJson(),
   'note': note,
-  'note_url': noteUrl != null ? noteUrl?.toString() : null,
+  'note_url': noteUrl?.toString(),
   'updated_at': updatedAt.toIso8601String(),
   'created_at': createdAt.toIso8601String(),
   'fingerprint': fingerprint,
   if (user != null) 'user': user?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
-  'expires_at': expiresAt != null ? expiresAt?.toIso8601String() : null,
+  'expires_at': expiresAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('url') && json['url'] is String &&
@@ -119,6 +119,6 @@ Authorization copyWith({int? id, Uri? url, List<String>? Function()? scopes, Str
 
 @override int get hashCode => Object.hash(id, url, Object.hashAll(scopes ?? const []), token, tokenLastEight, hashedToken, app, note, noteUrl, updatedAt, createdAt, fingerprint, user, installation, expiresAt);
 
-@override String toString() => 'Authorization(id: $id, url: $url, scopes: $scopes, token: $token, tokenLastEight: $tokenLastEight, hashedToken: $hashedToken, app: $app, note: $note, noteUrl: $noteUrl, updatedAt: $updatedAt, createdAt: $createdAt, fingerprint: $fingerprint, user: $user, installation: $installation, expiresAt: $expiresAt)';
+@override String toString() => 'Authorization(\n  id: $id,\n  url: $url,\n  scopes: $scopes,\n  token: $token,\n  tokenLastEight: $tokenLastEight,\n  hashedToken: $hashedToken,\n  app: $app,\n  note: $note,\n  noteUrl: $noteUrl,\n  updatedAt: $updatedAt,\n  createdAt: $createdAt,\n  fingerprint: $fingerprint,\n  user: $user,\n  installation: $installation,\n  expiresAt: $expiresAt,\n)';
 
  }

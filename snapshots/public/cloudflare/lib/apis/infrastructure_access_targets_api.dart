@@ -85,7 +85,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/infrastructure/targets',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -108,7 +108,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/infrastructure/targets',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -129,7 +129,7 @@ Future<ApiResult<InfraTarget?, Never>> infraTargetsGet({required InfraAccountTag
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets/${Uri.encodeComponent(targetId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/infrastructure/targets/${Uri.encodeComponent(targetId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -150,7 +150,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets/${Uri.encodeComponent(targetId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/infrastructure/targets/${Uri.encodeComponent(targetId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -171,7 +171,7 @@ Future<ApiResult<void, Never>> infraTargetsDelete({required InfraAccountTag acco
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets/${Uri.encodeComponent(targetId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/infrastructure/targets/${Uri.encodeComponent(targetId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -191,7 +191,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets/batch',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/infrastructure/targets/batch',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -215,7 +215,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/infrastructure/targets/batch_delete',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/infrastructure/targets/batch_delete',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

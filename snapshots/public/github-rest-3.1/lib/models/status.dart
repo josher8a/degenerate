@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   'context': context,
   'created_at': createdAt,
   'updated_at': updatedAt,
-  'creator': creator != null ? creator?.toJson() : null,
+  'creator': creator?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
@@ -92,6 +92,6 @@ Status copyWith({String? url, String? Function()? avatarUrl, int? id, String? no
 
 @override int get hashCode => Object.hash(url, avatarUrl, id, nodeId, state, description, targetUrl, context, createdAt, updatedAt, creator);
 
-@override String toString() => 'Status(url: $url, avatarUrl: $avatarUrl, id: $id, nodeId: $nodeId, state: $state, description: $description, targetUrl: $targetUrl, context: $context, createdAt: $createdAt, updatedAt: $updatedAt, creator: $creator)';
+@override String toString() => 'Status(\n  url: $url,\n  avatarUrl: $avatarUrl,\n  id: $id,\n  nodeId: $nodeId,\n  state: $state,\n  description: $description,\n  targetUrl: $targetUrl,\n  context: $context,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  creator: $creator,\n)';
 
  }

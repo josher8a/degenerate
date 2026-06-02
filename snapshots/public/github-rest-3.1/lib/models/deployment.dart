@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'original_environment': ?originalEnvironment,
   'environment': environment,
   'description': description,
-  'creator': creator != null ? creator?.toJson() : null,
+  'creator': creator?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'statuses_url': statusesUrl.toString(),
@@ -143,6 +143,6 @@ Deployment copyWith({Uri? url, int? id, String? nodeId, String? sha, String? ref
 
 @override int get hashCode => Object.hash(url, id, nodeId, sha, ref, task, payload, originalEnvironment, environment, description, creator, createdAt, updatedAt, statusesUrl, repositoryUrl, transientEnvironment, productionEnvironment, performedViaGithubApp);
 
-@override String toString() => 'Deployment(url: $url, id: $id, nodeId: $nodeId, sha: $sha, ref: $ref, task: $task, payload: $payload, originalEnvironment: $originalEnvironment, environment: $environment, description: $description, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, statusesUrl: $statusesUrl, repositoryUrl: $repositoryUrl, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment, performedViaGithubApp: $performedViaGithubApp)';
+@override String toString() => 'Deployment(\n  url: $url,\n  id: $id,\n  nodeId: $nodeId,\n  sha: $sha,\n  ref: $ref,\n  task: $task,\n  payload: $payload,\n  originalEnvironment: $originalEnvironment,\n  environment: $environment,\n  description: $description,\n  creator: $creator,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  statusesUrl: $statusesUrl,\n  repositoryUrl: $repositoryUrl,\n  transientEnvironment: $transientEnvironment,\n  productionEnvironment: $productionEnvironment,\n  performedViaGithubApp: $performedViaGithubApp,\n)';
 
  }

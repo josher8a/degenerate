@@ -18,7 +18,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/site_info',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rum/site_info',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -41,7 +41,7 @@ Future<ApiResult<RumSite?, Never>> webAnalyticsGetSite({required RumIdentifier a
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/site_info/${Uri.encodeComponent(siteId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rum/site_info/${Uri.encodeComponent(siteId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -64,7 +64,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/site_info/${Uri.encodeComponent(siteId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rum/site_info/${Uri.encodeComponent(siteId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -87,7 +87,7 @@ Future<ApiResult<RumSiteTagResponseSingleResult?, Never>> webAnalyticsDeleteSite
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/site_info/${Uri.encodeComponent(siteId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rum/site_info/${Uri.encodeComponent(siteId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -121,7 +121,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/site_info/list',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rum/site_info/list',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -146,7 +146,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/v2/${Uri.encodeComponent(rulesetId.toString())}/rule',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rum/v2/${Uri.encodeComponent(rulesetId.toJson())}/rule',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -170,7 +170,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/v2/${Uri.encodeComponent(rulesetId.toString())}/rule/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rum/v2/${Uri.encodeComponent(rulesetId.toJson())}/rule/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -193,7 +193,7 @@ Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> webAna
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/v2/${Uri.encodeComponent(rulesetId.toString())}/rule/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rum/v2/${Uri.encodeComponent(rulesetId.toJson())}/rule/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -215,7 +215,7 @@ Future<ApiResult<RumRulesResponseCollectionResult?, Never>> webAnalyticsListRule
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/v2/${Uri.encodeComponent(rulesetId.toString())}/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rum/v2/${Uri.encodeComponent(rulesetId.toJson())}/rules',
   headers: headers,
   options: options,
 );
@@ -238,7 +238,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rum/v2/${Uri.encodeComponent(rulesetId.toString())}/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rum/v2/${Uri.encodeComponent(rulesetId.toJson())}/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -261,7 +261,7 @@ Future<ApiResult<RumRumSite?, Never>> webAnalyticsGetRumStatus({required RumIden
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/rum',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/rum',
   headers: headers,
   options: options,
 );
@@ -284,7 +284,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/rum',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/rum',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

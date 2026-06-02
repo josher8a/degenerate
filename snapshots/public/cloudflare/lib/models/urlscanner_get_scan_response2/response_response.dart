@@ -97,6 +97,6 @@ ResponseResponse copyWith({String? charset, Map<String, dynamic>? Function()? he
 
 @override int get hashCode => Object.hash(charset, headers, mimeType, protocol, remoteIpAddress, remotePort, securityDetails, Object.hashAll(securityHeaders), securityState, status, statusText, url);
 
-@override String toString() => 'ResponseResponse(charset: $charset, headers: $headers, mimeType: $mimeType, protocol: $protocol, remoteIpAddress: $remoteIpAddress, remotePort: $remotePort, securityDetails: $securityDetails, securityHeaders: $securityHeaders, securityState: $securityState, status: $status, statusText: $statusText, url: $url)';
+@override String toString() => 'ResponseResponse(\n  charset: $charset,\n  headers: $headers,\n  mimeType: $mimeType,\n  protocol: $protocol,\n  remoteIpAddress: $remoteIpAddress,\n  remotePort: $remotePort,\n  securityDetails: $securityDetails,\n  securityHeaders: $securityHeaders,\n  securityState: $securityState,\n  status: $status,\n  statusText: $statusText,\n  url: $url,\n)';
 
  }

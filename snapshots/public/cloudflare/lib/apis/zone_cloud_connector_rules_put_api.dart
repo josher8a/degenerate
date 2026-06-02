@@ -16,7 +16,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cloud_connector/rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cloud_connector/rules',
   headers: headers,
   body: jsonEncode(body),
   options: options,

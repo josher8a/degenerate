@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'commit_id': commitId,
   'commit_url': commitUrl,
   'created_at': createdAt,
-  'performed_via_github_app': performedViaGithubApp != null ? performedViaGithubApp?.toJson() : null,
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
   'dismissed_review': dismissedReview.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
@@ -85,6 +85,6 @@ ReviewDismissedIssueEvent copyWith({int? id, String? nodeId, String? url, Simple
 
 @override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, dismissedReview);
 
-@override String toString() => 'ReviewDismissedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, dismissedReview: $dismissedReview)';
+@override String toString() => 'ReviewDismissedIssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  performedViaGithubApp: $performedViaGithubApp,\n  dismissedReview: $dismissedReview,\n)';
 
  }

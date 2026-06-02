@@ -43,6 +43,18 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ComputerAction$Unknown;
 
+R when<R>({required R Function(ComputerActionClick) click, required R Function(ComputerActionDoubleClick) doubleClick, required R Function(ComputerActionDrag) drag, required R Function(ComputerActionKeypress) keypress, required R Function(ComputerActionMove) move, required R Function(ComputerActionScreenshot) screenshot, required R Function(ComputerActionScroll) scroll, required R Function(ComputerActionType) type, required R Function(ComputerActionWait) wait, required R Function(ComputerAction$Unknown) unknown, }) { return switch (this) {
+  final ComputerActionClick v => click(v),
+  final ComputerActionDoubleClick v => doubleClick(v),
+  final ComputerActionDrag v => drag(v),
+  final ComputerActionKeypress v => keypress(v),
+  final ComputerActionMove v => move(v),
+  final ComputerActionScreenshot v => screenshot(v),
+  final ComputerActionScroll v => scroll(v),
+  final ComputerActionType v => type(v),
+  final ComputerActionWait v => wait(v),
+  final ComputerAction$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ComputerActionClick extends ComputerAction {const ComputerActionClick(this.clickParam);
 

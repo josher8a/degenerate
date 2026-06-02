@@ -102,6 +102,6 @@ PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()
 
 @override int get hashCode => Object.hash(active, code, customer, customerAccount, Object.hashAll(expand ?? const []), expiresAt, maxRedemptions, metadata, promotion, restrictions);
 
-@override String toString() => 'PostPromotionCodesRequest(active: $active, code: $code, customer: $customer, customerAccount: $customerAccount, expand: $expand, expiresAt: $expiresAt, maxRedemptions: $maxRedemptions, metadata: $metadata, promotion: $promotion, restrictions: $restrictions)';
+@override String toString() => 'PostPromotionCodesRequest(\n  active: $active,\n  code: $code,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  expand: $expand,\n  expiresAt: $expiresAt,\n  maxRedemptions: $maxRedemptions,\n  metadata: $metadata,\n  promotion: $promotion,\n  restrictions: $restrictions,\n)';
 
  }

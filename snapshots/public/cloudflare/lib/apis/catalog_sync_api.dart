@@ -17,7 +17,7 @@ Future<ApiResult<List<McnCatalogSync>?, CatalogSyncsListError>> catalogSyncsList
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/catalog-syncs',
   headers: headers,
   options: options,
 );
@@ -28,7 +28,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => McnCatalogSync.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CatalogSyncsListError.fromResponse(response),
+  onError: CatalogSyncsListError.fromResponse,
 );
  } 
 /// Create Catalog Sync
@@ -44,7 +44,7 @@ if (forwarded != null) {
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/catalog-syncs',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -56,7 +56,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsCreateError.fromResponse(response),
+  onError: CatalogSyncsCreateError.fromResponse,
 );
  } 
 /// Read Catalog Sync
@@ -68,7 +68,7 @@ Future<ApiResult<McnCatalogSync?, CatalogSyncsListError>> catalogSyncsRead({requ
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -79,7 +79,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsListError.fromResponse(response),
+  onError: CatalogSyncsListError.fromResponse,
 );
  } 
 /// Update Catalog Sync
@@ -92,7 +92,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -104,7 +104,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsPatchError.fromResponse(response),
+  onError: CatalogSyncsPatchError.fromResponse,
 );
  } 
 /// Patch Catalog Sync
@@ -117,7 +117,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -129,7 +129,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsPatchError.fromResponse(response),
+  onError: CatalogSyncsPatchError.fromResponse,
 );
  } 
 /// Delete Catalog Sync
@@ -147,7 +147,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -160,7 +160,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnDeletedCatalogSync.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsDeleteError.fromResponse(response),
+  onError: CatalogSyncsDeleteError.fromResponse,
 );
  } 
 /// Run Catalog Sync
@@ -172,7 +172,7 @@ Future<ApiResult<McnPolicyResult?, CatalogSyncsPatchError>> catalogSyncsRefresh(
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toString())}/refresh',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/catalog-syncs/${Uri.encodeComponent(syncId.toJson())}/refresh',
   headers: headers,
   options: options,
 );
@@ -183,7 +183,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnPolicyResult.fromJson(json['result'] as String) : null;
   },
-  onError: (response) => CatalogSyncsPatchError.fromResponse(response),
+  onError: CatalogSyncsPatchError.fromResponse,
 );
  } 
 /// List Prebuilt Policies
@@ -201,7 +201,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/catalog-syncs/prebuilt-policies',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/catalog-syncs/prebuilt-policies',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -214,7 +214,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => McnCatalogSyncsPrebuiltPolicy.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CatalogSyncsPrebuiltPoliciesListError.fromResponse(response),
+  onError: CatalogSyncsPrebuiltPoliciesListError.fromResponse,
 );
  } 
  }

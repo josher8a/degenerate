@@ -60,7 +60,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ListAbuseReportsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => ListAbuseReportsError.fromResponse(response),
+  onError: ListAbuseReportsError.fromResponse,
 );
  } 
 /// List abuse report emails
@@ -94,7 +94,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ListEmailsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => ListEmailsError.fromResponse(response),
+  onError: ListEmailsError.fromResponse,
 );
  } 
 /// List abuse report mitigations
@@ -146,7 +146,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ListMitigationsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => ListMitigationsError.fromResponse(response),
+  onError: ListMitigationsError.fromResponse,
 );
  } 
 /// Request review on mitigations
@@ -171,7 +171,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AbuseReportsMitigationListItem.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => RequestReviewError.fromResponse(response),
+  onError: RequestReviewError.fromResponse,
 );
  } 
 /// Abuse Report Details
@@ -194,7 +194,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AbuseReportsAbuseReport.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => GetAbuseReportError.fromResponse(response),
+  onError: GetAbuseReportError.fromResponse,
 );
  } 
 /// Submit an abuse report
@@ -207,7 +207,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId)}/abuse-reports/${Uri.encodeComponent(reportParam.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/abuse-reports/${Uri.encodeComponent(reportParam.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -219,7 +219,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String;
   },
-  onError: (response) => SubmitAbuseReportError.fromResponse(response),
+  onError: SubmitAbuseReportError.fromResponse,
 );
  } 
  }

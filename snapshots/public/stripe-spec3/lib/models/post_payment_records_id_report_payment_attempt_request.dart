@@ -85,6 +85,6 @@ PostPaymentRecordsIdReportPaymentAttemptRequest copyWith({String? Function()? de
 
 @override int get hashCode => Object.hash(description, Object.hashAll(expand ?? const []), failed, guaranteed, initiatedAt, metadata, outcome, paymentMethodDetails, shippingDetails);
 
-@override String toString() => 'PostPaymentRecordsIdReportPaymentAttemptRequest(description: $description, expand: $expand, failed: $failed, guaranteed: $guaranteed, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, paymentMethodDetails: $paymentMethodDetails, shippingDetails: $shippingDetails)';
+@override String toString() => 'PostPaymentRecordsIdReportPaymentAttemptRequest(\n  description: $description,\n  expand: $expand,\n  failed: $failed,\n  guaranteed: $guaranteed,\n  initiatedAt: $initiatedAt,\n  metadata: $metadata,\n  outcome: $outcome,\n  paymentMethodDetails: $paymentMethodDetails,\n  shippingDetails: $shippingDetails,\n)';
 
  }

@@ -127,6 +127,6 @@ Thresholds copyWith({ShieldAuthIdTokens? Function()? authIdTokens, ShieldDataPoi
 
 @override int get hashCode => Object.hash(authIdTokens, dataPoints, lastUpdated, p50, p90, p99, periodSeconds, requests, suggestedThreshold);
 
-@override String toString() => 'Thresholds(authIdTokens: $authIdTokens, dataPoints: $dataPoints, lastUpdated: $lastUpdated, p50: $p50, p90: $p90, p99: $p99, periodSeconds: $periodSeconds, requests: $requests, suggestedThreshold: $suggestedThreshold)';
+@override String toString() => 'Thresholds(\n  authIdTokens: $authIdTokens,\n  dataPoints: $dataPoints,\n  lastUpdated: $lastUpdated,\n  p50: $p50,\n  p90: $p90,\n  p99: $p99,\n  periodSeconds: $periodSeconds,\n  requests: $requests,\n  suggestedThreshold: $suggestedThreshold,\n)';
 
  }

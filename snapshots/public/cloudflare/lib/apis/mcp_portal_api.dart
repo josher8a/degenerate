@@ -40,7 +40,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => CreatePortalsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ListPortalsError.fromResponse(response),
+  onError: ListPortalsError.fromResponse,
 );
  } 
 /// Create a new MCP Portal
@@ -63,7 +63,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return CreatePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => CreatePortalsError.fromResponse(response),
+  onError: CreatePortalsError.fromResponse,
 );
  } 
 /// Read details of an MCP Portal
@@ -84,7 +84,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return FetchGatewaysResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => FetchGatewaysError.fromResponse(response),
+  onError: FetchGatewaysError.fromResponse,
 );
  } 
 /// Update a MCP Portal
@@ -107,7 +107,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return CreatePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => UpdatePortalsError.fromResponse(response),
+  onError: UpdatePortalsError.fromResponse,
 );
  } 
 /// Delete a MCP Portal
@@ -128,7 +128,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return CreatePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => DeletePortalsError.fromResponse(response),
+  onError: DeletePortalsError.fromResponse,
 );
  } 
  }

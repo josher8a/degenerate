@@ -17,7 +17,7 @@ Future<ApiResult<ResponseCommon75Result, Never>> wafContentScanningDisable({requ
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/disable',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/content-upload-scan/disable',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<ResponseCommon75Result, Never>> wafContentScanningEnable({requi
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/enable',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/content-upload-scan/enable',
   headers: headers,
   options: options,
 );
@@ -61,7 +61,7 @@ Future<ApiResult<List<BundleCustomScan>?, Never>> wafContentScanningListCustomSc
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/payloads',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/content-upload-scan/payloads',
   headers: headers,
   options: options,
 );
@@ -84,7 +84,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/payloads',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/content-upload-scan/payloads',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -107,7 +107,7 @@ Future<ApiResult<List<BundleCustomScan>?, Never>> wafContentScanningDeleteCustom
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/payloads/${Uri.encodeComponent(expressionId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/content-upload-scan/payloads/${Uri.encodeComponent(expressionId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -129,7 +129,7 @@ Future<ApiResult<BundleSchemasStatus?, Never>> wafContentScanningGetStatus({requ
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/content-upload-scan/settings',
   headers: headers,
   options: options,
 );
@@ -152,7 +152,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/content-upload-scan/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/content-upload-scan/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

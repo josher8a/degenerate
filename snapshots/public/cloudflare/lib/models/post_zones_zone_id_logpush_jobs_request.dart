@@ -102,6 +102,6 @@ PostZonesZoneIdLogpushJobsRequest copyWith({LogpushDataset? Function()? dataset,
 
 @override int get hashCode => Object.hash(dataset, destinationConf, enabled, filter, frequency, kind, logpullOptions, maxUploadBytes, maxUploadIntervalSeconds, maxUploadRecords, name, outputOptions, ownershipChallenge);
 
-@override String toString() => 'PostZonesZoneIdLogpushJobsRequest(dataset: $dataset, destinationConf: $destinationConf, enabled: $enabled, filter: $filter, frequency: $frequency, kind: $kind, logpullOptions: $logpullOptions, maxUploadBytes: $maxUploadBytes, maxUploadIntervalSeconds: $maxUploadIntervalSeconds, maxUploadRecords: $maxUploadRecords, name: $name, outputOptions: $outputOptions, ownershipChallenge: $ownershipChallenge)';
+@override String toString() => 'PostZonesZoneIdLogpushJobsRequest(\n  dataset: $dataset,\n  destinationConf: $destinationConf,\n  enabled: $enabled,\n  filter: $filter,\n  frequency: $frequency,\n  kind: $kind,\n  logpullOptions: $logpullOptions,\n  maxUploadBytes: $maxUploadBytes,\n  maxUploadIntervalSeconds: $maxUploadIntervalSeconds,\n  maxUploadRecords: $maxUploadRecords,\n  name: $name,\n  outputOptions: $outputOptions,\n  ownershipChallenge: $ownershipChallenge,\n)';
 
  }

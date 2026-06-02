@@ -108,6 +108,6 @@ PostBillingCreditGrantsRequest copyWith({PostBillingCreditGrantsRequestAmount? a
 
 @override int get hashCode => Object.hash(amount, applicabilityConfig, category, customer, customerAccount, effectiveAt, Object.hashAll(expand ?? const []), expiresAt, metadata, name, priority);
 
-@override String toString() => 'PostBillingCreditGrantsRequest(amount: $amount, applicabilityConfig: $applicabilityConfig, category: $category, customer: $customer, customerAccount: $customerAccount, effectiveAt: $effectiveAt, expand: $expand, expiresAt: $expiresAt, metadata: $metadata, name: $name, priority: $priority)';
+@override String toString() => 'PostBillingCreditGrantsRequest(\n  amount: $amount,\n  applicabilityConfig: $applicabilityConfig,\n  category: $category,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  effectiveAt: $effectiveAt,\n  expand: $expand,\n  expiresAt: $expiresAt,\n  metadata: $metadata,\n  name: $name,\n  priority: $priority,\n)';
 
  }

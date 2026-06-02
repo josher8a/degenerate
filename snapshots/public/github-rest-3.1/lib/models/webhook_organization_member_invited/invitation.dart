@@ -45,11 +45,11 @@ final String? invitationSource;
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'email': email,
-  'failed_at': failedAt != null ? failedAt?.toIso8601String() : null,
+  'failed_at': failedAt?.toIso8601String(),
   'failed_reason': failedReason,
   'id': id,
   'invitation_teams_url': invitationTeamsUrl.toString(),
-  'inviter': inviter != null ? inviter?.toJson() : null,
+  'inviter': inviter?.toJson(),
   'login': login,
   'node_id': nodeId,
   'role': role,
@@ -98,6 +98,6 @@ Invitation copyWith({DateTime? createdAt, String? Function()? email, DateTime? F
 
 @override int get hashCode => Object.hash(createdAt, email, failedAt, failedReason, id, invitationTeamsUrl, inviter, login, nodeId, role, teamCount, invitationSource);
 
-@override String toString() => 'Invitation(createdAt: $createdAt, email: $email, failedAt: $failedAt, failedReason: $failedReason, id: $id, invitationTeamsUrl: $invitationTeamsUrl, inviter: $inviter, login: $login, nodeId: $nodeId, role: $role, teamCount: $teamCount, invitationSource: $invitationSource)';
+@override String toString() => 'Invitation(\n  createdAt: $createdAt,\n  email: $email,\n  failedAt: $failedAt,\n  failedReason: $failedReason,\n  id: $id,\n  invitationTeamsUrl: $invitationTeamsUrl,\n  inviter: $inviter,\n  login: $login,\n  nodeId: $nodeId,\n  role: $role,\n  teamCount: $teamCount,\n  invitationSource: $invitationSource,\n)';
 
  }

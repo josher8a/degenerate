@@ -30,7 +30,7 @@ return execute(
   onSuccess: (response) {
     return ActionsCacheRetentionLimitForEnterprise.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set GitHub Actions cache retention limit for an enterprise
@@ -55,7 +55,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse(response),
+  onError: ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse,
 );
  } 
 /// Get GitHub Actions cache storage limit for an enterprise
@@ -80,7 +80,7 @@ return execute(
   onSuccess: (response) {
     return ActionsCacheStorageLimitForEnterprise.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set GitHub Actions cache storage limit for an enterprise
@@ -105,7 +105,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse(response),
+  onError: ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse,
 );
  } 
 /// Get GitHub Actions cache retention limit for an organization
@@ -130,7 +130,7 @@ return execute(
   onSuccess: (response) {
     return ActionsCacheRetentionLimitForOrganization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set GitHub Actions cache retention limit for an organization
@@ -155,7 +155,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse(response),
+  onError: ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse,
 );
  } 
 /// Get GitHub Actions cache storage limit for an organization
@@ -180,7 +180,7 @@ return execute(
   onSuccess: (response) {
     return ActionsCacheStorageLimitForOrganization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set GitHub Actions cache storage limit for an organization
@@ -205,7 +205,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse(response),
+  onError: ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse,
 );
  } 
 /// Get GitHub Actions cache usage for an organization
@@ -699,7 +699,7 @@ return execute(
   onSuccess: (response) {
     return ActionsArtifactAndLogRetentionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set artifact and log retention settings for an organization
@@ -723,7 +723,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse(response),
+  onError: ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse,
 );
  } 
 /// Get fork PR contributor approval permissions for an organization
@@ -747,7 +747,7 @@ return execute(
   onSuccess: (response) {
     return ActionsForkPrContributorApproval.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Set fork PR contributor approval permissions for an organization
@@ -771,7 +771,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get private repo fork PR workflow settings for an organization
@@ -793,7 +793,7 @@ return execute(
   onSuccess: (response) {
     return ActionsForkPrWorkflowsPrivateRepos.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set private repo fork PR workflow settings for an organization
@@ -815,7 +815,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// List selected repositories enabled for GitHub Actions in an organization
@@ -985,7 +985,7 @@ return execute(
   onSuccess: (response) {
     return SelfHostedRunnersSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set self-hosted runners settings for an organization
@@ -1009,7 +1009,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse(response),
+  onError: ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse,
 );
  } 
 /// List repositories allowed to use self-hosted runners in an organization
@@ -1044,7 +1044,7 @@ return execute(
   onSuccess: (response) {
     return ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set repositories allowed to use self-hosted runners in an organization
@@ -1068,7 +1068,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// Add a repository to the list of repositories allowed to use self-hosted runners in an organization
@@ -1090,7 +1090,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse(response),
+  onError: ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse,
 );
  } 
 /// Remove a repository from the list of repositories allowed to use self-hosted runners in an organization
@@ -1112,7 +1112,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse(response),
+  onError: ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromResponse,
 );
  } 
 /// Get default workflow permissions for an organization
@@ -1618,7 +1618,7 @@ return execute(
   onSuccess: (response) {
     return ActionsGenerateRunnerJitconfigForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGenerateRunnerJitconfigForOrgError.fromResponse(response),
+  onError: ActionsGenerateRunnerJitconfigForOrgError.fromResponse,
 );
  } 
 /// Create a registration token for an organization
@@ -1729,7 +1729,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsDeleteSelfHostedRunnerFromOrgError.fromResponse(response),
+  onError: ActionsDeleteSelfHostedRunnerFromOrgError.fromResponse,
 );
  } 
 /// List labels for a self-hosted runner for an organization
@@ -1755,7 +1755,7 @@ return execute(
   onSuccess: (response) {
     return ActionsListLabelsForSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Add custom labels to a self-hosted runner for an organization
@@ -1783,7 +1783,7 @@ return execute(
   onSuccess: (response) {
     return ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// Set custom labels for a self-hosted runner for an organization
@@ -1812,7 +1812,7 @@ return execute(
   onSuccess: (response) {
     return ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// Remove all custom labels from a self-hosted runner for an organization
@@ -1839,7 +1839,7 @@ return execute(
   onSuccess: (response) {
     return ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Remove a custom label from a self-hosted runner for an organization
@@ -1869,7 +1869,7 @@ return execute(
   onSuccess: (response) {
     return ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// List organization secrets
@@ -2478,7 +2478,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsDownloadArtifactError.fromResponse(response),
+  onError: ActionsDownloadArtifactError.fromResponse,
 );
  } 
 /// Get GitHub Actions cache retention limit for a repository
@@ -2503,7 +2503,7 @@ return execute(
   onSuccess: (response) {
     return ActionsCacheRetentionLimitForRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set GitHub Actions cache retention limit for a repository
@@ -2528,7 +2528,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse(response),
+  onError: ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse,
 );
  } 
 /// Get GitHub Actions cache storage limit for a repository
@@ -2553,7 +2553,7 @@ return execute(
   onSuccess: (response) {
     return ActionsCacheStorageLimitForRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set GitHub Actions cache storage limit for a repository
@@ -2578,7 +2578,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse(response),
+  onError: ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse,
 );
  } 
 /// Get GitHub Actions cache usage for a repository
@@ -2778,7 +2778,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Get the customization template for an OIDC subject claim for a repository
@@ -2802,7 +2802,7 @@ return execute(
   onSuccess: (response) {
     return OidcCustomSubRepo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetCustomOidcSubClaimForRepoError.fromResponse(response),
+  onError: ActionsGetCustomOidcSubClaimForRepoError.fromResponse,
 );
  } 
 /// Set the customization template for an OIDC subject claim for a repository
@@ -2828,7 +2828,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetCustomOidcSubClaimForRepoError.fromResponse(response),
+  onError: ActionsSetCustomOidcSubClaimForRepoError.fromResponse,
 );
  } 
 /// List repository organization secrets
@@ -3021,7 +3021,7 @@ return execute(
   onSuccess: (response) {
     return ActionsArtifactAndLogRetentionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Set artifact and log retention settings for a repository
@@ -3045,7 +3045,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get fork PR contributor approval permissions for a repository
@@ -3069,7 +3069,7 @@ return execute(
   onSuccess: (response) {
     return ActionsForkPrContributorApproval.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Set fork PR contributor approval permissions for a repository
@@ -3093,7 +3093,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get private repo fork PR workflow settings for a repository
@@ -3117,7 +3117,7 @@ return execute(
   onSuccess: (response) {
     return ActionsForkPrWorkflowsPrivateRepos.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set private repo fork PR workflow settings for a repository
@@ -3141,7 +3141,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get allowed actions and reusable workflows for a repository
@@ -3330,7 +3330,7 @@ return execute(
   onSuccess: (response) {
     return ActionsGenerateRunnerJitconfigForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGenerateRunnerJitconfigForOrgError.fromResponse(response),
+  onError: ActionsGenerateRunnerJitconfigForOrgError.fromResponse,
 );
  } 
 /// Create a registration token for a repository
@@ -3441,7 +3441,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsDeleteSelfHostedRunnerFromOrgError.fromResponse(response),
+  onError: ActionsDeleteSelfHostedRunnerFromOrgError.fromResponse,
 );
  } 
 /// List labels for a self-hosted runner for a repository
@@ -3467,7 +3467,7 @@ return execute(
   onSuccess: (response) {
     return ActionsListLabelsForSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Add custom labels to a self-hosted runner for a repository
@@ -3495,7 +3495,7 @@ return execute(
   onSuccess: (response) {
     return ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// Set custom labels for a self-hosted runner for a repository
@@ -3524,7 +3524,7 @@ return execute(
   onSuccess: (response) {
     return ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// Remove all custom labels from a self-hosted runner for a repository
@@ -3551,7 +3551,7 @@ return execute(
   onSuccess: (response) {
     return ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Remove a custom label from a self-hosted runner for a repository
@@ -3581,7 +3581,7 @@ return execute(
   onSuccess: (response) {
     return ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// List workflow runs for a repository
@@ -3747,7 +3747,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// List workflow run artifacts
@@ -3860,7 +3860,7 @@ return execute(
   onSuccess: (response) {
     return ActionsListJobsForWorkflowRunAttemptResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Download workflow run attempt logs
@@ -3908,7 +3908,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsCancelWorkflowRunError.fromResponse(response),
+  onError: ActionsCancelWorkflowRunError.fromResponse,
 );
  } 
 /// Review custom deployment protection rules for a workflow run
@@ -3959,7 +3959,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsCancelWorkflowRunError.fromResponse(response),
+  onError: ActionsCancelWorkflowRunError.fromResponse,
 );
  } 
 /// List jobs for a workflow run
@@ -4045,7 +4045,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsDeleteWorkflowRunLogsError.fromResponse(response),
+  onError: ActionsDeleteWorkflowRunLogsError.fromResponse,
 );
  } 
 /// Get pending deployments for a workflow run

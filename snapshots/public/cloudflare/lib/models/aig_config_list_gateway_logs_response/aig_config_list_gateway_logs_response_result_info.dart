@@ -99,6 +99,6 @@ AigConfigListGatewayLogsResponseResultInfo copyWith({double? Function()? count, 
 
 @override int get hashCode => Object.hash(count, maxCost, maxDuration, maxTokensIn, maxTokensOut, maxTotalTokens, minCost, minDuration, minTokensIn, minTokensOut, minTotalTokens, page, perPage, totalCount);
 
-@override String toString() => 'AigConfigListGatewayLogsResponseResultInfo(count: $count, maxCost: $maxCost, maxDuration: $maxDuration, maxTokensIn: $maxTokensIn, maxTokensOut: $maxTokensOut, maxTotalTokens: $maxTotalTokens, minCost: $minCost, minDuration: $minDuration, minTokensIn: $minTokensIn, minTokensOut: $minTokensOut, minTotalTokens: $minTotalTokens, page: $page, perPage: $perPage, totalCount: $totalCount)';
+@override String toString() => 'AigConfigListGatewayLogsResponseResultInfo(\n  count: $count,\n  maxCost: $maxCost,\n  maxDuration: $maxDuration,\n  maxTokensIn: $maxTokensIn,\n  maxTokensOut: $maxTokensOut,\n  maxTotalTokens: $maxTotalTokens,\n  minCost: $minCost,\n  minDuration: $minDuration,\n  minTokensIn: $minTokensIn,\n  minTokensOut: $minTokensOut,\n  minTotalTokens: $minTotalTokens,\n  page: $page,\n  perPage: $perPage,\n  totalCount: $totalCount,\n)';
 
  }

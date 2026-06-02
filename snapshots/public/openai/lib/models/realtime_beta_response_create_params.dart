@@ -141,6 +141,6 @@ RealtimeBetaResponseCreateParams copyWith({List<Modalities>? Function()? modalit
 
 @override int get hashCode => Object.hash(Object.hashAll(modalities ?? const []), instructions, voice, outputAudioFormat, Object.hashAll(tools ?? const []), toolChoice, temperature, maxOutputTokens, conversation, metadata, prompt, Object.hashAll(input ?? const []));
 
-@override String toString() => 'RealtimeBetaResponseCreateParams(modalities: $modalities, instructions: $instructions, voice: $voice, outputAudioFormat: $outputAudioFormat, tools: $tools, toolChoice: $toolChoice, temperature: $temperature, maxOutputTokens: $maxOutputTokens, conversation: $conversation, metadata: $metadata, prompt: $prompt, input: $input)';
+@override String toString() => 'RealtimeBetaResponseCreateParams(\n  modalities: $modalities,\n  instructions: $instructions,\n  voice: $voice,\n  outputAudioFormat: $outputAudioFormat,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  temperature: $temperature,\n  maxOutputTokens: $maxOutputTokens,\n  conversation: $conversation,\n  metadata: $metadata,\n  prompt: $prompt,\n  input: $input,\n)';
 
  }

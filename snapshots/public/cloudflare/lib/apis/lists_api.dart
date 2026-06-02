@@ -17,7 +17,7 @@ Future<ApiResult<List<ListsList>?, Never>> listsGetLists({required ListsAccountI
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rules/lists',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rules/lists',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rules/lists',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rules/lists',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<ResponseCommon41Result, Never>> listsGetAList({required ListsLi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rules/lists/${Uri.encodeComponent(listId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rules/lists/${Uri.encodeComponent(listId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rules/lists/${Uri.encodeComponent(listId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rules/lists/${Uri.encodeComponent(listId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<ResponseCommon41Result, Never>> listsDeleteAList({required List
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rules/lists/${Uri.encodeComponent(listId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rules/lists/${Uri.encodeComponent(listId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -143,7 +143,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rules/lists/${Uri.encodeComponent(listId.toString())}/items',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rules/lists/${Uri.encodeComponent(listId.toJson())}/items',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -172,7 +172,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rules/lists/${Uri.encodeComponent(listId.toString())}/items',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rules/lists/${Uri.encodeComponent(listId.toJson())}/items',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -200,7 +200,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rules/lists/${Uri.encodeComponent(listId.toString())}/items',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rules/lists/${Uri.encodeComponent(listId.toJson())}/items',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -228,7 +228,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rules/lists/${Uri.encodeComponent(listId.toString())}/items',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rules/lists/${Uri.encodeComponent(listId.toJson())}/items',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -251,7 +251,7 @@ Future<ApiResult<ResponseCommon41Result, Never>> listsGetAListItem({required Lis
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rules/lists/${Uri.encodeComponent(listId.toString())}/items/${Uri.encodeComponent(itemId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rules/lists/${Uri.encodeComponent(listId.toJson())}/items/${Uri.encodeComponent(itemId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -275,7 +275,7 @@ Future<ApiResult<ResponseCommon41Result, Never>> listsGetBulkOperationStatus({re
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rules/lists/bulk_operations/${Uri.encodeComponent(operationId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rules/lists/bulk_operations/${Uri.encodeComponent(operationId.toJson())}',
   headers: headers,
   options: options,
 );

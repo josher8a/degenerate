@@ -154,7 +154,7 @@ if (frequencyPenalty$ != null) {
 }
 final functions$ = functions;
 if (functions$ != null) {
-  if (functions$.length < 1) errors.add('functions: must have >= 1 items');
+  if (functions$.isEmpty) errors.add('functions: must have >= 1 items');
   if (functions$.length > 128) errors.add('functions: must have <= 128 items');
 }
 final n$ = n;
@@ -167,7 +167,7 @@ if (presencePenalty$ != null) {
   if (presencePenalty$ < -2) errors.add('presencePenalty: must be >= -2');
   if (presencePenalty$ > 2) errors.add('presencePenalty: must be <= 2');
 }
-if (prompt.length < 1) errors.add('prompt: length must be >= 1');
+if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
 final temperature$ = temperature;
 if (temperature$ != null) {
   if (temperature$ < 0) errors.add('temperature: must be >= 0');
@@ -255,6 +255,6 @@ Prompt43 copyWith({MessagesAudioVariant1? Function()? audio, ChatTemplateKwargs?
 
 @override int get hashCode => Object.hashAll([audio, chatTemplateKwargs, frequencyPenalty, functionCall, Object.hashAll(functions ?? const []), logitBias, logprobs, maxCompletionTokens, maxTokens, metadata, Object.hashAll(modalities ?? const []), model, n, parallelToolCalls, prediction, presencePenalty, prompt, reasoningEffort, responseFormat, seed, serviceTier, stop, store, stream, streamOptions, temperature, toolChoice, Object.hashAll(tools ?? const []), topLogprobs, topP, user, webSearchOptions]);
 
-@override String toString() => 'Prompt43(audio: $audio, chatTemplateKwargs: $chatTemplateKwargs, frequencyPenalty: $frequencyPenalty, functionCall: $functionCall, functions: $functions, logitBias: $logitBias, logprobs: $logprobs, maxCompletionTokens: $maxCompletionTokens, maxTokens: $maxTokens, metadata: $metadata, modalities: $modalities, model: $model, n: $n, parallelToolCalls: $parallelToolCalls, prediction: $prediction, presencePenalty: $presencePenalty, prompt: $prompt, reasoningEffort: $reasoningEffort, responseFormat: $responseFormat, seed: $seed, serviceTier: $serviceTier, stop: $stop, store: $store, stream: $stream, streamOptions: $streamOptions, temperature: $temperature, toolChoice: $toolChoice, tools: $tools, topLogprobs: $topLogprobs, topP: $topP, user: $user, webSearchOptions: $webSearchOptions)';
+@override String toString() => 'Prompt43(\n  audio: $audio,\n  chatTemplateKwargs: $chatTemplateKwargs,\n  frequencyPenalty: $frequencyPenalty,\n  functionCall: $functionCall,\n  functions: $functions,\n  logitBias: $logitBias,\n  logprobs: $logprobs,\n  maxCompletionTokens: $maxCompletionTokens,\n  maxTokens: $maxTokens,\n  metadata: $metadata,\n  modalities: $modalities,\n  model: $model,\n  n: $n,\n  parallelToolCalls: $parallelToolCalls,\n  prediction: $prediction,\n  presencePenalty: $presencePenalty,\n  prompt: $prompt,\n  reasoningEffort: $reasoningEffort,\n  responseFormat: $responseFormat,\n  seed: $seed,\n  serviceTier: $serviceTier,\n  stop: $stop,\n  store: $store,\n  stream: $stream,\n  streamOptions: $streamOptions,\n  temperature: $temperature,\n  toolChoice: $toolChoice,\n  tools: $tools,\n  topLogprobs: $topLogprobs,\n  topP: $topP,\n  user: $user,\n  webSearchOptions: $webSearchOptions,\n)';
 
  }

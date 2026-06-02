@@ -250,6 +250,6 @@ Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Funct
 
 @override int get hashCode => Object.hashAll([id, object, endpoint, model, errors, inputFileId, completionWindow, status, outputFileId, errorFileId, createdAt, inProgressAt, expiresAt, finalizingAt, completedAt, failedAt, expiredAt, cancellingAt, cancelledAt, requestCounts, usage, metadata]);
 
-@override String toString() => 'Batch(id: $id, object: $object, endpoint: $endpoint, model: $model, errors: $errors, inputFileId: $inputFileId, completionWindow: $completionWindow, status: $status, outputFileId: $outputFileId, errorFileId: $errorFileId, createdAt: $createdAt, inProgressAt: $inProgressAt, expiresAt: $expiresAt, finalizingAt: $finalizingAt, completedAt: $completedAt, failedAt: $failedAt, expiredAt: $expiredAt, cancellingAt: $cancellingAt, cancelledAt: $cancelledAt, requestCounts: $requestCounts, usage: $usage, metadata: $metadata)';
+@override String toString() => 'Batch(\n  id: $id,\n  object: $object,\n  endpoint: $endpoint,\n  model: $model,\n  errors: $errors,\n  inputFileId: $inputFileId,\n  completionWindow: $completionWindow,\n  status: $status,\n  outputFileId: $outputFileId,\n  errorFileId: $errorFileId,\n  createdAt: $createdAt,\n  inProgressAt: $inProgressAt,\n  expiresAt: $expiresAt,\n  finalizingAt: $finalizingAt,\n  completedAt: $completedAt,\n  failedAt: $failedAt,\n  expiredAt: $expiredAt,\n  cancellingAt: $cancellingAt,\n  cancelledAt: $cancelledAt,\n  requestCounts: $requestCounts,\n  usage: $usage,\n  metadata: $metadata,\n)';
 
  }

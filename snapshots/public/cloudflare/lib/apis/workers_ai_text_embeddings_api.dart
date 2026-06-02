@@ -40,7 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBaaiBgeBaseEnError.fromResponse(response),
+  onError: WorkersAiPostRunCfBaaiBgeBaseEnError.fromResponse,
 );
  } 
 /// Execute @cf/baai/bge-large-en-v1.5 model.
@@ -75,7 +75,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBaaiBgeLargeEnError.fromResponse(response),
+  onError: WorkersAiPostRunCfBaaiBgeLargeEnError.fromResponse,
 );
  } 
 /// Execute @cf/baai/bge-m3 model.
@@ -110,7 +110,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBaaiBgeM3Error.fromResponse(response),
+  onError: WorkersAiPostRunCfBaaiBgeM3Error.fromResponse,
 );
  } 
 /// Execute @cf/baai/bge-small-en-v1.5 model.
@@ -145,7 +145,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBaaiBgeSmallEnError.fromResponse(response),
+  onError: WorkersAiPostRunCfBaaiBgeSmallEnError.fromResponse,
 );
  } 
 /// Execute @cf/baai/omni-bge-base-en-v1.5 model.
@@ -180,7 +180,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBaaiOmniBgeBaseEnError.fromResponse(response),
+  onError: WorkersAiPostRunCfBaaiOmniBgeBaseEnError.fromResponse,
 );
  } 
 /// Execute @cf/baai/omni-bge-large-en-v1.5 model.
@@ -215,7 +215,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBaaiOmniBgeLargeEnError.fromResponse(response),
+  onError: WorkersAiPostRunCfBaaiOmniBgeLargeEnError.fromResponse,
 );
  } 
 /// Execute @cf/baai/omni-bge-m3 model.
@@ -250,7 +250,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBaaiOmniBgeM3Error.fromResponse(response),
+  onError: WorkersAiPostRunCfBaaiOmniBgeM3Error.fromResponse,
 );
  } 
 /// Execute @cf/baai/omni-bge-small-en-v1.5 model.
@@ -285,7 +285,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBaaiOmniBgeSmallEnError.fromResponse(response),
+  onError: WorkersAiPostRunCfBaaiOmniBgeSmallEnError.fromResponse,
 );
  } 
 /// Execute @cf/baai/ray-bge-large-en-v1.5 model.
@@ -320,7 +320,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBaaiRayBgeLargeEnError.fromResponse(response),
+  onError: WorkersAiPostRunCfBaaiRayBgeLargeEnError.fromResponse,
 );
  } 
 /// Execute @cf/google/embeddinggemma-300m model.
@@ -355,7 +355,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfGoogleEmbeddinggemma300mError.fromResponse(response),
+  onError: WorkersAiPostRunCfGoogleEmbeddinggemma300mError.fromResponse,
 );
  } 
 /// Execute @cf/google/omni-embeddinggemma-300m model.
@@ -390,7 +390,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mError.fromResponse(response),
+  onError: WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mError.fromResponse,
 );
  } 
 /// Execute @cf/pfnet/plamo-embedding-1b model.
@@ -425,7 +425,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfPfnetPlamoEmbedding1bError.fromResponse(response),
+  onError: WorkersAiPostRunCfPfnetPlamoEmbedding1bError.fromResponse,
 );
  } 
 /// Execute @cf/qwen/qwen3-embedding-0.6b model.
@@ -460,7 +460,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfQwenQwen3Embedding06bError.fromResponse(response),
+  onError: WorkersAiPostRunCfQwenQwen3Embedding06bError.fromResponse,
 );
  } 
  }

@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/certificate_packs',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/ssl/certificate_packs',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -56,7 +56,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesCertificatePack?, Never>> certificat
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/certificate_packs/${Uri.encodeComponent(certificatePackId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/ssl/certificate_packs/${Uri.encodeComponent(certificatePackId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -79,7 +79,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/certificate_packs/${Uri.encodeComponent(certificatePackId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/ssl/certificate_packs/${Uri.encodeComponent(certificatePackId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -102,7 +102,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> certificatePacksDeleteAdvancedCer
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/certificate_packs/${Uri.encodeComponent(certificatePackId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/ssl/certificate_packs/${Uri.encodeComponent(certificatePackId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -125,7 +125,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/certificate_packs/order',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/ssl/certificate_packs/order',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -148,7 +148,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesCertificatePackQuotaResponseResult?,
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/certificate_packs/quota',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/ssl/certificate_packs/quota',
   headers: headers,
   options: options,
 );

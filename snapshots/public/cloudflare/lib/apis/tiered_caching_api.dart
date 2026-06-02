@@ -17,7 +17,7 @@ Future<ApiResult<CacheRulesResultObject?, Never>> tieredCachingGetTieredCachingS
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/argo/tiered_caching',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/argo/tiered_caching',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/argo/tiered_caching',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/argo/tiered_caching',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

@@ -43,7 +43,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_analytics/report',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_analytics/report',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -96,7 +96,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_analytics/report/bytime',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_analytics/report/bytime',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

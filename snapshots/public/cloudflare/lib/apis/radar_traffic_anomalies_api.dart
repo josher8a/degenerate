@@ -68,7 +68,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetTrafficAnomaliesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetTrafficAnomaliesError.fromResponse(response),
+  onError: RadarGetTrafficAnomaliesError.fromResponse,
 );
  } 
 /// Get top locations by total traffic anomalies
@@ -114,7 +114,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetTrafficAnomaliesTopResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetTrafficAnomaliesTopError.fromResponse(response),
+  onError: RadarGetTrafficAnomaliesTopError.fromResponse,
 );
  } 
  }

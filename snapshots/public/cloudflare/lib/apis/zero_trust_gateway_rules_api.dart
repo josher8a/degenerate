@@ -17,7 +17,7 @@ Future<ApiResult<List<ZeroTrustGatewayRules>?, Never>> zeroTrustGatewayRulesList
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/rules',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<ZeroTrustGatewayRules?, Never>> zeroTrustGatewayRulesZeroTrustG
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> zeroTrustGatewayRulesDeleteZeroT
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -131,7 +131,7 @@ Future<ApiResult<ZeroTrustGatewayRules?, Never>> zeroTrustGatewayRulesResetExpir
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules/${Uri.encodeComponent(ruleId.toString())}/reset_expiration',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/rules/${Uri.encodeComponent(ruleId.toJson())}/reset_expiration',
   headers: headers,
   options: options,
 );
@@ -153,7 +153,7 @@ Future<ApiResult<List<ZeroTrustGatewayRules>?, Never>> zeroTrustGatewayRulesList
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/rules/tenant',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/rules/tenant',
   headers: headers,
   options: options,
 );

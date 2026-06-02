@@ -31,12 +31,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final checkPresence$ = checkPresence;
 if (checkPresence$ != null) {
-  if (checkPresence$.length < 1) errors.add('checkPresence: must have >= 1 items');
+  if (checkPresence$.isEmpty) errors.add('checkPresence: must have >= 1 items');
   if (checkPresence$.length > 50) errors.add('checkPresence: must have <= 50 items');
 }
 final include$ = include;
 if (include$ != null) {
-  if (include$.length < 1) errors.add('include: must have >= 1 items');
+  if (include$.isEmpty) errors.add('include: must have >= 1 items');
   if (include$.length > 50) errors.add('include: must have <= 50 items');
 }
 return errors; } 

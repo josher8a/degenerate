@@ -113,6 +113,6 @@ SubscriptionItem copyWith({SubscriptionItemBillingThresholds? Function()? billin
 
 @override int get hashCode => Object.hash(billingThresholds, created, currentPeriodEnd, currentPeriodStart, Object.hashAll(discounts), id, metadata, object, price, quantity, subscription, Object.hashAll(taxRates ?? const []));
 
-@override String toString() => 'SubscriptionItem(billingThresholds: $billingThresholds, created: $created, currentPeriodEnd: $currentPeriodEnd, currentPeriodStart: $currentPeriodStart, discounts: $discounts, id: $id, metadata: $metadata, object: $object, price: $price, quantity: $quantity, subscription: $subscription, taxRates: $taxRates)';
+@override String toString() => 'SubscriptionItem(\n  billingThresholds: $billingThresholds,\n  created: $created,\n  currentPeriodEnd: $currentPeriodEnd,\n  currentPeriodStart: $currentPeriodStart,\n  discounts: $discounts,\n  id: $id,\n  metadata: $metadata,\n  object: $object,\n  price: $price,\n  quantity: $quantity,\n  subscription: $subscription,\n  taxRates: $taxRates,\n)';
 
  }

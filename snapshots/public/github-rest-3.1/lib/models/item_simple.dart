@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (creator != null) 'creator': creator?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  'archived_at': archivedAt != null ? archivedAt?.toIso8601String() : null,
+  'archived_at': archivedAt?.toIso8601String(),
   if (projectUrl != null) 'project_url': projectUrl?.toString(),
   if (itemUrl != null) 'item_url': itemUrl?.toString(),
 }; } 
@@ -89,6 +89,6 @@ ItemSimple copyWith({double? id, String? Function()? nodeId, ItemSimpleContent? 
 
 @override int get hashCode => Object.hash(id, nodeId, content, contentType, creator, createdAt, updatedAt, archivedAt, projectUrl, itemUrl);
 
-@override String toString() => 'ItemSimple(id: $id, nodeId: $nodeId, content: $content, contentType: $contentType, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, archivedAt: $archivedAt, projectUrl: $projectUrl, itemUrl: $itemUrl)';
+@override String toString() => 'ItemSimple(\n  id: $id,\n  nodeId: $nodeId,\n  content: $content,\n  contentType: $contentType,\n  creator: $creator,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  archivedAt: $archivedAt,\n  projectUrl: $projectUrl,\n  itemUrl: $itemUrl,\n)';
 
  }

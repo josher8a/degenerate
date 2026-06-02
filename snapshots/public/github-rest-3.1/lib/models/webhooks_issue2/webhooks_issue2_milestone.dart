@@ -58,12 +58,12 @@ final DateTime updatedAt;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  'closed_at': closedAt != null ? closedAt?.toIso8601String() : null,
+  'closed_at': closedAt?.toIso8601String(),
   'closed_issues': closedIssues,
   'created_at': createdAt.toIso8601String(),
-  'creator': creator != null ? creator?.toJson() : null,
+  'creator': creator?.toJson(),
   'description': description,
-  'due_on': dueOn != null ? dueOn?.toIso8601String() : null,
+  'due_on': dueOn?.toIso8601String(),
   'html_url': htmlUrl.toString(),
   'id': id,
   'labels_url': labelsUrl.toString(),
@@ -130,6 +130,6 @@ WebhooksIssue2Milestone copyWith({DateTime? Function()? closedAt, int? closedIss
 
 @override int get hashCode => Object.hash(closedAt, closedIssues, createdAt, creator, description, dueOn, htmlUrl, id, labelsUrl, nodeId, number, openIssues, state, title, updatedAt, url);
 
-@override String toString() => 'WebhooksIssue2Milestone(closedAt: $closedAt, closedIssues: $closedIssues, createdAt: $createdAt, creator: $creator, description: $description, dueOn: $dueOn, htmlUrl: $htmlUrl, id: $id, labelsUrl: $labelsUrl, nodeId: $nodeId, number: $number, openIssues: $openIssues, state: $state, title: $title, updatedAt: $updatedAt, url: $url)';
+@override String toString() => 'WebhooksIssue2Milestone(\n  closedAt: $closedAt,\n  closedIssues: $closedIssues,\n  createdAt: $createdAt,\n  creator: $creator,\n  description: $description,\n  dueOn: $dueOn,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  labelsUrl: $labelsUrl,\n  nodeId: $nodeId,\n  number: $number,\n  openIssues: $openIssues,\n  state: $state,\n  title: $title,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
  }

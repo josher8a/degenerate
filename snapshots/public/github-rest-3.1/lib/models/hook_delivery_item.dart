@@ -110,6 +110,6 @@ HookDeliveryItem copyWith({int? id, String? guid, DateTime? deliveredAt, bool? r
 
 @override int get hashCode => Object.hash(id, guid, deliveredAt, redelivery, duration, status, statusCode, event, action, installationId, repositoryId, throttledAt);
 
-@override String toString() => 'HookDeliveryItem(id: $id, guid: $guid, deliveredAt: $deliveredAt, redelivery: $redelivery, duration: $duration, status: $status, statusCode: $statusCode, event: $event, action: $action, installationId: $installationId, repositoryId: $repositoryId, throttledAt: $throttledAt)';
+@override String toString() => 'HookDeliveryItem(\n  id: $id,\n  guid: $guid,\n  deliveredAt: $deliveredAt,\n  redelivery: $redelivery,\n  duration: $duration,\n  status: $status,\n  statusCode: $statusCode,\n  event: $event,\n  action: $action,\n  installationId: $installationId,\n  repositoryId: $repositoryId,\n  throttledAt: $throttledAt,\n)';
 
  }

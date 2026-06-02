@@ -86,7 +86,7 @@ final description$ = description;
 if (description$ != null) {
   if (description$.length > 512) errors.add('description: length must be <= 512');
 }
-if (id.length < 1) errors.add('id: length must be >= 1');
+if (id.isEmpty) errors.add('id: length must be >= 1');
 if (id.length > 32) errors.add('id: length must be <= 32');
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
 if (name.length > 350) errors.add('name: length must be <= 350');
@@ -128,6 +128,6 @@ CreateServersResponseResult copyWith({CreateServersRequestAuthType? authType, Da
 
 @override int get hashCode => Object.hash(authType, createdAt, createdBy, description, error, hostname, id, lastSuccessfulSync, lastSynced, modifiedAt, modifiedBy, name, Object.hashAll(prompts), status, Object.hashAll(tools));
 
-@override String toString() => 'CreateServersResponseResult(authType: $authType, createdAt: $createdAt, createdBy: $createdBy, description: $description, error: $error, hostname: $hostname, id: $id, lastSuccessfulSync: $lastSuccessfulSync, lastSynced: $lastSynced, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, prompts: $prompts, status: $status, tools: $tools)';
+@override String toString() => 'CreateServersResponseResult(\n  authType: $authType,\n  createdAt: $createdAt,\n  createdBy: $createdBy,\n  description: $description,\n  error: $error,\n  hostname: $hostname,\n  id: $id,\n  lastSuccessfulSync: $lastSuccessfulSync,\n  lastSynced: $lastSynced,\n  modifiedAt: $modifiedAt,\n  modifiedBy: $modifiedBy,\n  name: $name,\n  prompts: $prompts,\n  status: $status,\n  tools: $tools,\n)';
 
  }

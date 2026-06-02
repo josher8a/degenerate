@@ -141,19 +141,19 @@ Map<String, dynamic> toJson() { return {
   'locked': locked,
   'active_lock_reason': ?activeLockReason,
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
   'labels': labels.map((e) => e.toJson()).toList(),
   if (subIssuesSummary != null) 'sub_issues_summary': subIssuesSummary?.toJson(),
   if (issueDependenciesSummary != null) 'issue_dependencies_summary': issueDependenciesSummary?.toJson(),
   if (issueFieldValues != null) 'issue_field_values': issueFieldValues?.map((e) => e.toJson()).toList(),
   'state': state,
   'state_reason': ?stateReason,
-  'assignee': assignee != null ? assignee?.toJson() : null,
-  'milestone': milestone != null ? milestone?.toJson() : null,
+  'assignee': assignee?.toJson(),
+  'milestone': milestone?.toJson(),
   'comments': comments,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  'closed_at': closedAt != null ? closedAt?.toIso8601String() : null,
+  'closed_at': closedAt?.toIso8601String(),
   if (textMatches != null) 'text_matches': textMatches?.map((e) => e.toJson()).toList(),
   if (pullRequest != null) 'pull_request': pullRequest?.toJson(),
   'body': ?body,
@@ -278,6 +278,6 @@ IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl,
 
 @override int get hashCode => Object.hashAll([url, repositoryUrl, labelsUrl, commentsUrl, eventsUrl, htmlUrl, id, nodeId, number, title, locked, activeLockReason, Object.hashAll(assignees ?? const []), user, Object.hashAll(labels), subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, assignee, milestone, comments, createdAt, updatedAt, closedAt, Object.hashAll(textMatches ?? const []), pullRequest, body, score, authorAssociation, draft, repository, bodyHtml, bodyText, timelineUrl, type, performedViaGithubApp, pinnedComment, reactions]);
 
-@override String toString() => 'IssueSearchResultItem(url: $url, repositoryUrl: $repositoryUrl, labelsUrl: $labelsUrl, commentsUrl: $commentsUrl, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, number: $number, title: $title, locked: $locked, activeLockReason: $activeLockReason, assignees: $assignees, user: $user, labels: $labels, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, assignee: $assignee, milestone: $milestone, comments: $comments, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, textMatches: $textMatches, pullRequest: $pullRequest, body: $body, score: $score, authorAssociation: $authorAssociation, draft: $draft, repository: $repository, bodyHtml: $bodyHtml, bodyText: $bodyText, timelineUrl: $timelineUrl, type: $type, performedViaGithubApp: $performedViaGithubApp, pinnedComment: $pinnedComment, reactions: $reactions)';
+@override String toString() => 'IssueSearchResultItem(\n  url: $url,\n  repositoryUrl: $repositoryUrl,\n  labelsUrl: $labelsUrl,\n  commentsUrl: $commentsUrl,\n  eventsUrl: $eventsUrl,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  nodeId: $nodeId,\n  number: $number,\n  title: $title,\n  locked: $locked,\n  activeLockReason: $activeLockReason,\n  assignees: $assignees,\n  user: $user,\n  labels: $labels,\n  subIssuesSummary: $subIssuesSummary,\n  issueDependenciesSummary: $issueDependenciesSummary,\n  issueFieldValues: $issueFieldValues,\n  state: $state,\n  stateReason: $stateReason,\n  assignee: $assignee,\n  milestone: $milestone,\n  comments: $comments,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  closedAt: $closedAt,\n  textMatches: $textMatches,\n  pullRequest: $pullRequest,\n  body: $body,\n  score: $score,\n  authorAssociation: $authorAssociation,\n  draft: $draft,\n  repository: $repository,\n  bodyHtml: $bodyHtml,\n  bodyText: $bodyText,\n  timelineUrl: $timelineUrl,\n  type: $type,\n  performedViaGithubApp: $performedViaGithubApp,\n  pinnedComment: $pinnedComment,\n  reactions: $reactions,\n)';
 
  }

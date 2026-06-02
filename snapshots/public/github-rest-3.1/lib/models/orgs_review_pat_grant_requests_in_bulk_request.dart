@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
 List<String> validate() { final errors = <String>[];
 final patRequestIds$ = patRequestIds;
 if (patRequestIds$ != null) {
-  if (patRequestIds$.length < 1) errors.add('patRequestIds: must have >= 1 items');
+  if (patRequestIds$.isEmpty) errors.add('patRequestIds: must have >= 1 items');
   if (patRequestIds$.length > 100) errors.add('patRequestIds: must have <= 100 items');
 }
 final reason$ = reason;

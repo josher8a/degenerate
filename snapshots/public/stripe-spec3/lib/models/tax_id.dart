@@ -114,6 +114,6 @@ TaxId copyWith({String? Function()? country, int? created, BankConnectionsResour
 
 @override int get hashCode => Object.hash(country, created, customer, customerAccount, id, livemode, object, owner, type, value, verification);
 
-@override String toString() => 'TaxId(country: $country, created: $created, customer: $customer, customerAccount: $customerAccount, id: $id, livemode: $livemode, object: $object, owner: $owner, type: $type, value: $value, verification: $verification)';
+@override String toString() => 'TaxId(\n  country: $country,\n  created: $created,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  owner: $owner,\n  type: $type,\n  value: $value,\n  verification: $verification,\n)';
 
  }

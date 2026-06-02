@@ -43,7 +43,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/post_quantum/origin/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/post_quantum/origin/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -56,7 +56,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsSummaryByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetOriginPostQuantumSummaryError.fromResponse(response),
+  onError: RadarGetOriginPostQuantumSummaryError.fromResponse,
 );
  } 
 /// Get Origin Post-Quantum Data Over Time
@@ -94,7 +94,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/post_quantum/origin/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/post_quantum/origin/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -107,7 +107,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetOriginPostQuantumTimeseriesGroupsError.fromResponse(response),
+  onError: RadarGetOriginPostQuantumTimeseriesGroupsError.fromResponse,
 );
  } 
 /// Check Post-Quantum TLS support
@@ -136,7 +136,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetPostQuantumTlsSupportResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetPostQuantumTlsSupportError.fromResponse(response),
+  onError: RadarGetPostQuantumTlsSupportError.fromResponse,
 );
  } 
  }

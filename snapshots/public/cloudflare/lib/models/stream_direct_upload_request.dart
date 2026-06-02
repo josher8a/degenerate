@@ -74,6 +74,6 @@ StreamDirectUploadRequest copyWith({List<String>? Function()? allowedOrigins, St
 
 @override int get hashCode => Object.hash(Object.hashAll(allowedOrigins ?? const []), creator, expiry, maxDurationSeconds, meta, requireSignedUrLs, scheduledDeletion, thumbnailTimestampPct, watermark);
 
-@override String toString() => 'StreamDirectUploadRequest(allowedOrigins: $allowedOrigins, creator: $creator, expiry: $expiry, maxDurationSeconds: $maxDurationSeconds, meta: $meta, requireSignedUrLs: $requireSignedUrLs, scheduledDeletion: $scheduledDeletion, thumbnailTimestampPct: $thumbnailTimestampPct, watermark: $watermark)';
+@override String toString() => 'StreamDirectUploadRequest(\n  allowedOrigins: $allowedOrigins,\n  creator: $creator,\n  expiry: $expiry,\n  maxDurationSeconds: $maxDurationSeconds,\n  meta: $meta,\n  requireSignedUrLs: $requireSignedUrLs,\n  scheduledDeletion: $scheduledDeletion,\n  thumbnailTimestampPct: $thumbnailTimestampPct,\n  watermark: $watermark,\n)';
 
  }

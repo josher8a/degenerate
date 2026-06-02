@@ -33,10 +33,10 @@ final String sha;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  'author': author != null ? author?.toJson() : null,
+  'author': author?.toJson(),
   'comments_url': commentsUrl.toString(),
   'commit': commit.toJson(),
-  'committer': committer != null ? committer?.toJson() : null,
+  'committer': committer?.toJson(),
   'html_url': htmlUrl.toString(),
   'node_id': nodeId,
   'parents': parents.map((e) => e.toJson()).toList(),
@@ -77,6 +77,6 @@ WebhookStatusCommit copyWith({WebhookStatusCommitAuthor? Function()? author, Uri
 
 @override int get hashCode => Object.hash(author, commentsUrl, commit, committer, htmlUrl, nodeId, Object.hashAll(parents), sha, url);
 
-@override String toString() => 'WebhookStatusCommit(author: $author, commentsUrl: $commentsUrl, commit: $commit, committer: $committer, htmlUrl: $htmlUrl, nodeId: $nodeId, parents: $parents, sha: $sha, url: $url)';
+@override String toString() => 'WebhookStatusCommit(\n  author: $author,\n  commentsUrl: $commentsUrl,\n  commit: $commit,\n  committer: $committer,\n  htmlUrl: $htmlUrl,\n  nodeId: $nodeId,\n  parents: $parents,\n  sha: $sha,\n  url: $url,\n)';
 
  }

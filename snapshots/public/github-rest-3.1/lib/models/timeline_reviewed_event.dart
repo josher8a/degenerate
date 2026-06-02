@@ -120,6 +120,6 @@ TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUs
 
 @override int get hashCode => Object.hash(event, id, nodeId, user, body, state, htmlUrl, pullRequestUrl, links, submittedAt, updatedAt, commitId, bodyHtml, bodyText, authorAssociation);
 
-@override String toString() => 'TimelineReviewedEvent(event: $event, id: $id, nodeId: $nodeId, user: $user, body: $body, state: $state, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, submittedAt: $submittedAt, updatedAt: $updatedAt, commitId: $commitId, bodyHtml: $bodyHtml, bodyText: $bodyText, authorAssociation: $authorAssociation)';
+@override String toString() => 'TimelineReviewedEvent(\n  event: $event,\n  id: $id,\n  nodeId: $nodeId,\n  user: $user,\n  body: $body,\n  state: $state,\n  htmlUrl: $htmlUrl,\n  pullRequestUrl: $pullRequestUrl,\n  links: $links,\n  submittedAt: $submittedAt,\n  updatedAt: $updatedAt,\n  commitId: $commitId,\n  bodyHtml: $bodyHtml,\n  bodyText: $bodyText,\n  authorAssociation: $authorAssociation,\n)';
 
  }

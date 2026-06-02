@@ -152,6 +152,6 @@ CodeScanningAnalysis copyWith({CodeScanningRef? ref, CodeScanningAnalysisCommitS
 
 @override int get hashCode => Object.hash(ref, commitSha, analysisKey, environment, category, error, createdAt, resultsCount, rulesCount, id, url, sarifId, tool, deletable, warning);
 
-@override String toString() => 'CodeScanningAnalysis(ref: $ref, commitSha: $commitSha, analysisKey: $analysisKey, environment: $environment, category: $category, error: $error, createdAt: $createdAt, resultsCount: $resultsCount, rulesCount: $rulesCount, id: $id, url: $url, sarifId: $sarifId, tool: $tool, deletable: $deletable, warning: $warning)';
+@override String toString() => 'CodeScanningAnalysis(\n  ref: $ref,\n  commitSha: $commitSha,\n  analysisKey: $analysisKey,\n  environment: $environment,\n  category: $category,\n  error: $error,\n  createdAt: $createdAt,\n  resultsCount: $resultsCount,\n  rulesCount: $rulesCount,\n  id: $id,\n  url: $url,\n  sarifId: $sarifId,\n  tool: $tool,\n  deletable: $deletable,\n  warning: $warning,\n)';
 
  }

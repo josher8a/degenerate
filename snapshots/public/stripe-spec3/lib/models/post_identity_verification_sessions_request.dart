@@ -111,6 +111,6 @@ PostIdentityVerificationSessionsRequest copyWith({String? Function()? clientRefe
 
 @override int get hashCode => Object.hash(clientReferenceId, Object.hashAll(expand ?? const []), metadata, options, providedDetails, relatedCustomer, relatedCustomerAccount, relatedPerson, returnUrl, type, verificationFlow);
 
-@override String toString() => 'PostIdentityVerificationSessionsRequest(clientReferenceId: $clientReferenceId, expand: $expand, metadata: $metadata, options: $options, providedDetails: $providedDetails, relatedCustomer: $relatedCustomer, relatedCustomerAccount: $relatedCustomerAccount, relatedPerson: $relatedPerson, returnUrl: $returnUrl, type: $type, verificationFlow: $verificationFlow)';
+@override String toString() => 'PostIdentityVerificationSessionsRequest(\n  clientReferenceId: $clientReferenceId,\n  expand: $expand,\n  metadata: $metadata,\n  options: $options,\n  providedDetails: $providedDetails,\n  relatedCustomer: $relatedCustomer,\n  relatedCustomerAccount: $relatedCustomerAccount,\n  relatedPerson: $relatedPerson,\n  returnUrl: $returnUrl,\n  type: $type,\n  verificationFlow: $verificationFlow,\n)';
 
  }

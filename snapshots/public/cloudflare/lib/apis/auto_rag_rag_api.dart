@@ -43,7 +43,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AutoragConfigFilesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AutoragConfigFilesError.fromResponse(response),
+  onError: AutoragConfigFilesError.fromResponse,
 );
  } 
 /// Sync
@@ -64,7 +64,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AutoragConfigSyncResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AutoragConfigSyncError.fromResponse(response),
+  onError: AutoragConfigSyncError.fromResponse,
 );
  } 
  }

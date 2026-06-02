@@ -218,6 +218,6 @@ TreasuryCreditReversal copyWith({int? amount, int? created, String? currency, St
 
 @override int get hashCode => Object.hash(amount, created, currency, financialAccount, hostedRegulatoryReceiptUrl, id, livemode, metadata, network, object, receivedCredit, status, statusTransitions, transaction);
 
-@override String toString() => 'TreasuryCreditReversal(amount: $amount, created: $created, currency: $currency, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, livemode: $livemode, metadata: $metadata, network: $network, object: $object, receivedCredit: $receivedCredit, status: $status, statusTransitions: $statusTransitions, transaction: $transaction)';
+@override String toString() => 'TreasuryCreditReversal(\n  amount: $amount,\n  created: $created,\n  currency: $currency,\n  financialAccount: $financialAccount,\n  hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  network: $network,\n  object: $object,\n  receivedCredit: $receivedCredit,\n  status: $status,\n  statusTransitions: $statusTransitions,\n  transaction: $transaction,\n)';
 
  }

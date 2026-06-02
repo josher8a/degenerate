@@ -158,6 +158,6 @@ PromotionCode copyWith({bool? active, String? code, int? created, BankAccountCus
 
 @override int get hashCode => Object.hash(active, code, created, customer, customerAccount, expiresAt, id, livemode, maxRedemptions, metadata, object, promotion, restrictions, timesRedeemed);
 
-@override String toString() => 'PromotionCode(active: $active, code: $code, created: $created, customer: $customer, customerAccount: $customerAccount, expiresAt: $expiresAt, id: $id, livemode: $livemode, maxRedemptions: $maxRedemptions, metadata: $metadata, object: $object, promotion: $promotion, restrictions: $restrictions, timesRedeemed: $timesRedeemed)';
+@override String toString() => 'PromotionCode(\n  active: $active,\n  code: $code,\n  created: $created,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  expiresAt: $expiresAt,\n  id: $id,\n  livemode: $livemode,\n  maxRedemptions: $maxRedemptions,\n  metadata: $metadata,\n  object: $object,\n  promotion: $promotion,\n  restrictions: $restrictions,\n  timesRedeemed: $timesRedeemed,\n)';
 
  }

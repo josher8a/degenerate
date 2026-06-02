@@ -196,6 +196,6 @@ PdfOptions copyWith({bool Function()? displayHeaderFooter, String? Function()? f
 
 @override int get hashCode => Object.hash(displayHeaderFooter, footerTemplate, format, headerTemplate, height, landscape, margin, omitBackground, outline, pageRanges, preferCssPageSize, printBackground, scale, tagged, timeout, width);
 
-@override String toString() => 'PdfOptions(displayHeaderFooter: $displayHeaderFooter, footerTemplate: $footerTemplate, format: $format, headerTemplate: $headerTemplate, height: $height, landscape: $landscape, margin: $margin, omitBackground: $omitBackground, outline: $outline, pageRanges: $pageRanges, preferCssPageSize: $preferCssPageSize, printBackground: $printBackground, scale: $scale, tagged: $tagged, timeout: $timeout, width: $width)';
+@override String toString() => 'PdfOptions(\n  displayHeaderFooter: $displayHeaderFooter,\n  footerTemplate: $footerTemplate,\n  format: $format,\n  headerTemplate: $headerTemplate,\n  height: $height,\n  landscape: $landscape,\n  margin: $margin,\n  omitBackground: $omitBackground,\n  outline: $outline,\n  pageRanges: $pageRanges,\n  preferCssPageSize: $preferCssPageSize,\n  printBackground: $printBackground,\n  scale: $scale,\n  tagged: $tagged,\n  timeout: $timeout,\n  width: $width,\n)';
 
  }

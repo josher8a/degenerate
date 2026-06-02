@@ -83,6 +83,6 @@ AsSets copyWith({int? asMembersCount, int? asSetMembersCount, int? asSetUpstream
 
 @override int get hashCode => Object.hash(asMembersCount, asSetMembersCount, asSetUpstreamsCount, asnConeSize, hierarchicalAsn, inferredAsn, Object.hashAll(irrSources), name, peeringdbAsn);
 
-@override String toString() => 'AsSets(asMembersCount: $asMembersCount, asSetMembersCount: $asSetMembersCount, asSetUpstreamsCount: $asSetUpstreamsCount, asnConeSize: $asnConeSize, hierarchicalAsn: $hierarchicalAsn, inferredAsn: $inferredAsn, irrSources: $irrSources, name: $name, peeringdbAsn: $peeringdbAsn)';
+@override String toString() => 'AsSets(\n  asMembersCount: $asMembersCount,\n  asSetMembersCount: $asSetMembersCount,\n  asSetUpstreamsCount: $asSetUpstreamsCount,\n  asnConeSize: $asnConeSize,\n  hierarchicalAsn: $hierarchicalAsn,\n  inferredAsn: $inferredAsn,\n  irrSources: $irrSources,\n  name: $name,\n  peeringdbAsn: $peeringdbAsn,\n)';
 
  }

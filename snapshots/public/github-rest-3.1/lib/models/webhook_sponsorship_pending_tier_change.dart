@@ -97,6 +97,6 @@ WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChang
 
 @override int get hashCode => Object.hash(action, changes, effectiveDate, enterprise, installation, organization, repository, sender, sponsorship);
 
-@override String toString() => 'WebhookSponsorshipPendingTierChange(action: $action, changes: $changes, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)';
+@override String toString() => 'WebhookSponsorshipPendingTierChange(\n  action: $action,\n  changes: $changes,\n  effectiveDate: $effectiveDate,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  sender: $sender,\n  sponsorship: $sponsorship,\n)';
 
  }

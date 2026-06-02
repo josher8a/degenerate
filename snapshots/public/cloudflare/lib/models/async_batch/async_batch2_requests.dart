@@ -76,7 +76,7 @@ if (presencePenalty$ != null) {
 }
 final prompt$ = prompt;
 if (prompt$ != null) {
-  if (prompt$.length < 1) errors.add('prompt: length must be >= 1');
+  if (prompt$.isEmpty) errors.add('prompt: length must be >= 1');
 }
 final repetitionPenalty$ = repetitionPenalty;
 if (repetitionPenalty$ != null) {
@@ -125,6 +125,6 @@ AsyncBatch2Requests copyWith({String? Function()? externalReference, double? Fun
 
 @override int get hashCode => Object.hash(externalReference, frequencyPenalty, maxTokens, presencePenalty, prompt, repetitionPenalty, responseFormat, seed, stream, temperature, topP);
 
-@override String toString() => 'AsyncBatch2Requests(externalReference: $externalReference, frequencyPenalty: $frequencyPenalty, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, topP: $topP)';
+@override String toString() => 'AsyncBatch2Requests(\n  externalReference: $externalReference,\n  frequencyPenalty: $frequencyPenalty,\n  maxTokens: $maxTokens,\n  presencePenalty: $presencePenalty,\n  prompt: $prompt,\n  repetitionPenalty: $repetitionPenalty,\n  responseFormat: $responseFormat,\n  seed: $seed,\n  stream: $stream,\n  temperature: $temperature,\n  topP: $topP,\n)';
 
  }

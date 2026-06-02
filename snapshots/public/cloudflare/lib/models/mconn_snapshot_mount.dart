@@ -82,6 +82,6 @@ MconnSnapshotMount copyWith({double? Function()? availableBytes, String? Functio
 
 @override int get hashCode => Object.hash(availableBytes, connectorId, fileSystem, isReadOnly, isRemovable, kind, mountPoint, name, totalBytes);
 
-@override String toString() => 'MconnSnapshotMount(availableBytes: $availableBytes, connectorId: $connectorId, fileSystem: $fileSystem, isReadOnly: $isReadOnly, isRemovable: $isRemovable, kind: $kind, mountPoint: $mountPoint, name: $name, totalBytes: $totalBytes)';
+@override String toString() => 'MconnSnapshotMount(\n  availableBytes: $availableBytes,\n  connectorId: $connectorId,\n  fileSystem: $fileSystem,\n  isReadOnly: $isReadOnly,\n  isRemovable: $isRemovable,\n  kind: $kind,\n  mountPoint: $mountPoint,\n  name: $name,\n  totalBytes: $totalBytes,\n)';
 
  }

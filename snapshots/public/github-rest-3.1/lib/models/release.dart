@@ -92,8 +92,8 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toString(),
   'assets_url': assetsUrl.toString(),
   'upload_url': uploadUrl,
-  'tarball_url': tarballUrl != null ? tarballUrl?.toString() : null,
-  'zipball_url': zipballUrl != null ? zipballUrl?.toString() : null,
+  'tarball_url': tarballUrl?.toString(),
+  'zipball_url': zipballUrl?.toString(),
   'id': id,
   'node_id': nodeId,
   'tag_name': tagName,
@@ -104,7 +104,7 @@ Map<String, dynamic> toJson() { return {
   'prerelease': prerelease,
   'immutable': ?immutable,
   'created_at': createdAt.toIso8601String(),
-  'published_at': publishedAt != null ? publishedAt?.toIso8601String() : null,
+  'published_at': publishedAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   'author': author.toJson(),
   'assets': assets.map((e) => e.toJson()).toList(),
@@ -188,6 +188,6 @@ Release copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? uploadUrl, Uri
 
 @override int get hashCode => Object.hashAll([url, htmlUrl, assetsUrl, uploadUrl, tarballUrl, zipballUrl, id, nodeId, tagName, targetCommitish, name, body, draft, prerelease, immutable, createdAt, publishedAt, updatedAt, author, Object.hashAll(assets), bodyHtml, bodyText, mentionsCount, discussionUrl, reactions]);
 
-@override String toString() => 'Release(url: $url, htmlUrl: $htmlUrl, assetsUrl: $assetsUrl, uploadUrl: $uploadUrl, tarballUrl: $tarballUrl, zipballUrl: $zipballUrl, id: $id, nodeId: $nodeId, tagName: $tagName, targetCommitish: $targetCommitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, immutable: $immutable, createdAt: $createdAt, publishedAt: $publishedAt, updatedAt: $updatedAt, author: $author, assets: $assets, bodyHtml: $bodyHtml, bodyText: $bodyText, mentionsCount: $mentionsCount, discussionUrl: $discussionUrl, reactions: $reactions)';
+@override String toString() => 'Release(\n  url: $url,\n  htmlUrl: $htmlUrl,\n  assetsUrl: $assetsUrl,\n  uploadUrl: $uploadUrl,\n  tarballUrl: $tarballUrl,\n  zipballUrl: $zipballUrl,\n  id: $id,\n  nodeId: $nodeId,\n  tagName: $tagName,\n  targetCommitish: $targetCommitish,\n  name: $name,\n  body: $body,\n  draft: $draft,\n  prerelease: $prerelease,\n  immutable: $immutable,\n  createdAt: $createdAt,\n  publishedAt: $publishedAt,\n  updatedAt: $updatedAt,\n  author: $author,\n  assets: $assets,\n  bodyHtml: $bodyHtml,\n  bodyText: $bodyText,\n  mentionsCount: $mentionsCount,\n  discussionUrl: $discussionUrl,\n  reactions: $reactions,\n)';
 
  }

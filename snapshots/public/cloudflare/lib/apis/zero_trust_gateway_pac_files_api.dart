@@ -17,7 +17,7 @@ Future<ApiResult<List<ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectio
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/pacfiles',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/pacfiles',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/pacfiles',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/pacfiles',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<ZeroTrustGatewayPacfile?, Never>> zeroTrustGatewayPacfilesDetai
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/pacfiles/${Uri.encodeComponent(pacfileId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/pacfiles/${Uri.encodeComponent(pacfileId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/pacfiles/${Uri.encodeComponent(pacfileId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/pacfiles/${Uri.encodeComponent(pacfileId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> zeroTrustGatewayPacfilesDelete({
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/pacfiles/${Uri.encodeComponent(pacfileId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/pacfiles/${Uri.encodeComponent(pacfileId.toJson())}',
   headers: headers,
   options: options,
 );

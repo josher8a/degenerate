@@ -163,6 +163,6 @@ AccountRecordingRecordingAddOnResult copyWith({String? Function()? sid, String? 
 
 @override int get hashCode => Object.hash(sid, accountSid, status, addOnSid, addOnConfigurationSid, dateCreated, dateUpdated, dateCompleted, referenceSid, subresourceUris);
 
-@override String toString() => 'AccountRecordingRecordingAddOnResult(sid: $sid, accountSid: $accountSid, status: $status, addOnSid: $addOnSid, addOnConfigurationSid: $addOnConfigurationSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, dateCompleted: $dateCompleted, referenceSid: $referenceSid, subresourceUris: $subresourceUris)';
+@override String toString() => 'AccountRecordingRecordingAddOnResult(\n  sid: $sid,\n  accountSid: $accountSid,\n  status: $status,\n  addOnSid: $addOnSid,\n  addOnConfigurationSid: $addOnConfigurationSid,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  dateCompleted: $dateCompleted,\n  referenceSid: $referenceSid,\n  subresourceUris: $subresourceUris,\n)';
 
  }

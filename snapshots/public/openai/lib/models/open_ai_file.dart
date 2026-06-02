@@ -162,6 +162,6 @@ OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? ex
 
 @override int get hashCode => Object.hash(id, bytes, createdAt, expiresAt, filename, object, purpose, status, statusDetails);
 
-@override String toString() => 'OpenAiFile(id: $id, bytes: $bytes, createdAt: $createdAt, expiresAt: $expiresAt, filename: $filename, object: $object, purpose: $purpose, status: $status, statusDetails: $statusDetails)';
+@override String toString() => 'OpenAiFile(\n  id: $id,\n  bytes: $bytes,\n  createdAt: $createdAt,\n  expiresAt: $expiresAt,\n  filename: $filename,\n  object: $object,\n  purpose: $purpose,\n  status: $status,\n  statusDetails: $statusDetails,\n)';
 
  }

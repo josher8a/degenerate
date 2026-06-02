@@ -32,8 +32,8 @@ Map<String, dynamic> toJson() { return {
   if (maintainer != null) 'maintainer': maintainer?.toJson(),
   'node_id': nodeId,
   'privacy_level': privacyLevel,
-  'sponsor': sponsor != null ? sponsor?.toJson() : null,
-  'sponsorable': sponsorable != null ? sponsorable?.toJson() : null,
+  'sponsor': sponsor?.toJson(),
+  'sponsorable': sponsorable?.toJson(),
   'tier': tier.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&

@@ -81,6 +81,6 @@ Devices copyWith({String? Function()? deviceId, String? Function()? deviceName, 
 
 @override int get hashCode => Object.hash(deviceId, deviceName, eligible, ineligibleReason, personEmail, platform, registrationId, status, timestamp, version);
 
-@override String toString() => 'Devices(deviceId: $deviceId, deviceName: $deviceName, eligible: $eligible, ineligibleReason: $ineligibleReason, personEmail: $personEmail, platform: $platform, registrationId: $registrationId, status: $status, timestamp: $timestamp, version: $version)';
+@override String toString() => 'Devices(\n  deviceId: $deviceId,\n  deviceName: $deviceName,\n  eligible: $eligible,\n  ineligibleReason: $ineligibleReason,\n  personEmail: $personEmail,\n  platform: $platform,\n  registrationId: $registrationId,\n  status: $status,\n  timestamp: $timestamp,\n  version: $version,\n)';
 
  }

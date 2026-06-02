@@ -112,6 +112,6 @@ PatchEventUpdateRequest copyWith({String? Function()? attacker, String? Function
 
 @override int get hashCode => Object.hash(attacker, attackerCountry, category, createdAt, datasetId, date, event, indicator, indicatorType, insight, raw, targetCountry, targetIndustry, tlp);
 
-@override String toString() => 'PatchEventUpdateRequest(attacker: $attacker, attackerCountry: $attackerCountry, category: $category, createdAt: $createdAt, datasetId: $datasetId, date: $date, event: $event, indicator: $indicator, indicatorType: $indicatorType, insight: $insight, raw: $raw, targetCountry: $targetCountry, targetIndustry: $targetIndustry, tlp: $tlp)';
+@override String toString() => 'PatchEventUpdateRequest(\n  attacker: $attacker,\n  attackerCountry: $attackerCountry,\n  category: $category,\n  createdAt: $createdAt,\n  datasetId: $datasetId,\n  date: $date,\n  event: $event,\n  indicator: $indicator,\n  indicatorType: $indicatorType,\n  insight: $insight,\n  raw: $raw,\n  targetCountry: $targetCountry,\n  targetIndustry: $targetIndustry,\n  tlp: $tlp,\n)';
 
  }

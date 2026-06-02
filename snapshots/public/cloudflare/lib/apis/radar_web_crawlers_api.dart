@@ -66,7 +66,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/bots/crawlers/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/bots/crawlers/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -79,7 +79,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCrawlersSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetCrawlersSummaryError.fromResponse(response),
+  onError: RadarGetCrawlersSummaryError.fromResponse,
 );
  } 
 /// Get time series of crawler HTTP request distribution by dimension
@@ -143,7 +143,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/bots/crawlers/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/bots/crawlers/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -156,7 +156,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetCrawlersTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetCrawlersTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetCrawlersTimeseriesGroupError.fromResponse,
 );
  } 
  }

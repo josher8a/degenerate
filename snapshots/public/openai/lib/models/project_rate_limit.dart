@@ -108,6 +108,6 @@ ProjectRateLimit copyWith({ProjectRateLimitObject? object, String? id, String? m
 
 @override int get hashCode => Object.hash(object, id, model, maxRequestsPer1Minute, maxTokensPer1Minute, maxImagesPer1Minute, maxAudioMegabytesPer1Minute, maxRequestsPer1Day, batch1DayMaxInputTokens);
 
-@override String toString() => 'ProjectRateLimit(object: $object, id: $id, model: $model, maxRequestsPer1Minute: $maxRequestsPer1Minute, maxTokensPer1Minute: $maxTokensPer1Minute, maxImagesPer1Minute: $maxImagesPer1Minute, maxAudioMegabytesPer1Minute: $maxAudioMegabytesPer1Minute, maxRequestsPer1Day: $maxRequestsPer1Day, batch1DayMaxInputTokens: $batch1DayMaxInputTokens)';
+@override String toString() => 'ProjectRateLimit(\n  object: $object,\n  id: $id,\n  model: $model,\n  maxRequestsPer1Minute: $maxRequestsPer1Minute,\n  maxTokensPer1Minute: $maxTokensPer1Minute,\n  maxImagesPer1Minute: $maxImagesPer1Minute,\n  maxAudioMegabytesPer1Minute: $maxAudioMegabytesPer1Minute,\n  maxRequestsPer1Day: $maxRequestsPer1Day,\n  batch1DayMaxInputTokens: $batch1DayMaxInputTokens,\n)';
 
  }

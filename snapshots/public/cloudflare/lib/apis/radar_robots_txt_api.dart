@@ -52,7 +52,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetRobotsTxtTopDomainCategoriesByFilesParsedError.fromResponse(response),
+  onError: RadarGetRobotsTxtTopDomainCategoriesByFilesParsedError.fromResponse,
 );
  } 
 /// Get top user agents on robots.txt files
@@ -107,7 +107,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetRobotsTxtTopUserAgentsByDirectiveError.fromResponse(response),
+  onError: RadarGetRobotsTxtTopUserAgentsByDirectiveError.fromResponse,
 );
  } 
  }

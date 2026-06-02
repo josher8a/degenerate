@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/acm/custom_trust_store',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/acm/custom_trust_store',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/acm/custom_trust_store',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/acm/custom_trust_store',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -80,7 +80,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesCustomTrustStore?, Never>> customOri
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/acm/custom_trust_store/${Uri.encodeComponent(customOriginTrustStoreId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/acm/custom_trust_store/${Uri.encodeComponent(customOriginTrustStoreId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -102,7 +102,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> customOriginTrustStoreDelete({req
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/acm/custom_trust_store/${Uri.encodeComponent(customOriginTrustStoreId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/acm/custom_trust_store/${Uri.encodeComponent(customOriginTrustStoreId.toJson())}',
   headers: headers,
   options: options,
 );

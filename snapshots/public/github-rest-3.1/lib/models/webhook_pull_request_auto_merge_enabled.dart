@@ -97,6 +97,6 @@ WebhookPullRequestAutoMergeEnabled copyWith({WebhookPullRequestAutoMergeEnabledA
 
 @override int get hashCode => Object.hash(action, enterprise, installation, number, organization, pullRequest, reason, repository, sender);
 
-@override String toString() => 'WebhookPullRequestAutoMergeEnabled(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, reason: $reason, repository: $repository, sender: $sender)';
+@override String toString() => 'WebhookPullRequestAutoMergeEnabled(\n  action: $action,\n  enterprise: $enterprise,\n  installation: $installation,\n  number: $number,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  reason: $reason,\n  repository: $repository,\n  sender: $sender,\n)';
 
  }

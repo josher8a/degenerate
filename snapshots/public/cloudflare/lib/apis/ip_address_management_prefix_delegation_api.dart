@@ -17,7 +17,7 @@ Future<ApiResult<List<AddressingIpamDelegations>?, Never>> ipAddressManagementPr
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/delegations',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/delegations',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/delegations',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/delegations',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> ipAddressManagementPrefixDelegati
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/delegations/${Uri.encodeComponent(delegationId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/delegations/${Uri.encodeComponent(delegationId.toJson())}',
   headers: headers,
   options: options,
 );

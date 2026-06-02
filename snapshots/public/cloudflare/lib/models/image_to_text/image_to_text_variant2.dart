@@ -91,6 +91,6 @@ ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, MessagesImag
 
 @override int get hashCode => Object.hash(frequencyPenalty, image, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, seed, temperature, topK, topP);
 
-@override String toString() => 'ImageToTextVariant2(frequencyPenalty: $frequencyPenalty, image: $image, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, seed: $seed, temperature: $temperature, topK: $topK, topP: $topP)';
+@override String toString() => 'ImageToTextVariant2(\n  frequencyPenalty: $frequencyPenalty,\n  image: $image,\n  maxTokens: $maxTokens,\n  presencePenalty: $presencePenalty,\n  prompt: $prompt,\n  raw: $raw,\n  repetitionPenalty: $repetitionPenalty,\n  seed: $seed,\n  temperature: $temperature,\n  topK: $topK,\n  topP: $topP,\n)';
 
  }

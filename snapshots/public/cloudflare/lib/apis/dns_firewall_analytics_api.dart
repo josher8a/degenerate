@@ -43,7 +43,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toString())}/dns_analytics/report',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toJson())}/dns_analytics/report',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -96,7 +96,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toString())}/dns_analytics/report/bytime',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_firewall/${Uri.encodeComponent(dnsFirewallId.toJson())}/dns_analytics/report/bytime',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

@@ -91,7 +91,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CancelResponseError.fromResponse(response),
+  onError: CancelResponseError.fromResponse,
 );
  } 
 /// Cancels a model response with the given ID. Only responses created with
@@ -114,7 +114,7 @@ return execute(
   onSuccess: (response) {
     return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CancelResponseError.fromResponse(response),
+  onError: CancelResponseError.fromResponse,
 );
  } 
 /// Returns a list of input items for a given response.

@@ -17,7 +17,7 @@ Future<ApiResult<List<TlsCertificatesAndHostnamesBase>?, Never>> keylessSslForAZ
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/keyless_certificates',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/keyless_certificates',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/keyless_certificates',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/keyless_certificates',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesBase?, Never>> keylessSslForAZoneGet
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/keyless_certificates/${Uri.encodeComponent(keylessCertificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/keyless_certificates/${Uri.encodeComponent(keylessCertificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/keyless_certificates/${Uri.encodeComponent(keylessCertificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/keyless_certificates/${Uri.encodeComponent(keylessCertificateId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> keylessSslForAZoneDeleteKeylessSs
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/keyless_certificates/${Uri.encodeComponent(keylessCertificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/keyless_certificates/${Uri.encodeComponent(keylessCertificateId.toJson())}',
   headers: headers,
   options: options,
 );

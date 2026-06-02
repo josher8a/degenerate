@@ -17,7 +17,7 @@ Future<ApiResult<List<DnsCustomNameserversCustomNs>?, Never>> accountLevelCustom
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/custom_ns',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/custom_ns',
   headers: headers,
   options: options,
 );
@@ -38,7 +38,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/custom_ns',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/custom_ns',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -59,7 +59,7 @@ Future<ApiResult<List<String>?, Never>> accountLevelCustomNameserversDeleteAccou
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/custom_ns/${Uri.encodeComponent(customNsId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/custom_ns/${Uri.encodeComponent(customNsId.toJson())}',
   headers: headers,
   options: options,
 );

@@ -166,6 +166,6 @@ CreditNoteLineItem copyWith({int? amount, String? Function()? description, int? 
 
 @override int get hashCode => Object.hash(amount, description, discountAmount, Object.hashAll(discountAmounts), id, invoiceLineItem, livemode, object, Object.hashAll(pretaxCreditAmounts), quantity, Object.hashAll(taxRates), Object.hashAll(taxes ?? const []), type, unitAmount, unitAmountDecimal);
 
-@override String toString() => 'CreditNoteLineItem(amount: $amount, description: $description, discountAmount: $discountAmount, discountAmounts: $discountAmounts, id: $id, invoiceLineItem: $invoiceLineItem, livemode: $livemode, object: $object, pretaxCreditAmounts: $pretaxCreditAmounts, quantity: $quantity, taxRates: $taxRates, taxes: $taxes, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+@override String toString() => 'CreditNoteLineItem(\n  amount: $amount,\n  description: $description,\n  discountAmount: $discountAmount,\n  discountAmounts: $discountAmounts,\n  id: $id,\n  invoiceLineItem: $invoiceLineItem,\n  livemode: $livemode,\n  object: $object,\n  pretaxCreditAmounts: $pretaxCreditAmounts,\n  quantity: $quantity,\n  taxRates: $taxRates,\n  taxes: $taxes,\n  type: $type,\n  unitAmount: $unitAmount,\n  unitAmountDecimal: $unitAmountDecimal,\n)';
 
  }

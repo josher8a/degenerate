@@ -105,6 +105,6 @@ UrlscannerGetScanResponse2Stats copyWith({double? iPv6Percentage, List<DomainSta
 
 @override int get hashCode => Object.hash(iPv6Percentage, Object.hashAll(domainStats), Object.hashAll(ipStats), malicious, Object.hashAll(protocolStats), Object.hashAll(resourceStats), securePercentage, secureRequests, Object.hashAll(serverStats), Object.hashAll(tlsStats), totalLinks, uniqAsNs, uniqCountries);
 
-@override String toString() => 'UrlscannerGetScanResponse2Stats(iPv6Percentage: $iPv6Percentage, domainStats: $domainStats, ipStats: $ipStats, malicious: $malicious, protocolStats: $protocolStats, resourceStats: $resourceStats, securePercentage: $securePercentage, secureRequests: $secureRequests, serverStats: $serverStats, tlsStats: $tlsStats, totalLinks: $totalLinks, uniqAsNs: $uniqAsNs, uniqCountries: $uniqCountries)';
+@override String toString() => 'UrlscannerGetScanResponse2Stats(\n  iPv6Percentage: $iPv6Percentage,\n  domainStats: $domainStats,\n  ipStats: $ipStats,\n  malicious: $malicious,\n  protocolStats: $protocolStats,\n  resourceStats: $resourceStats,\n  securePercentage: $securePercentage,\n  secureRequests: $secureRequests,\n  serverStats: $serverStats,\n  tlsStats: $tlsStats,\n  totalLinks: $totalLinks,\n  uniqAsNs: $uniqAsNs,\n  uniqCountries: $uniqCountries,\n)';
 
  }

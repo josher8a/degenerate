@@ -98,7 +98,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/user/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/user/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -123,7 +123,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> ipAccessRulesForAUserDeleteAnIpAc
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/user/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/user/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );

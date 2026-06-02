@@ -21,6 +21,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ChatCompletionRequestAssistantMessageContentPart$Unknown;
 
+R when<R>({required R Function(ChatCompletionRequestAssistantMessageContentPartText) text, required R Function(ChatCompletionRequestAssistantMessageContentPartRefusal) refusal, required R Function(ChatCompletionRequestAssistantMessageContentPart$Unknown) unknown, }) { return switch (this) {
+  final ChatCompletionRequestAssistantMessageContentPartText v => text(v),
+  final ChatCompletionRequestAssistantMessageContentPartRefusal v => refusal(v),
+  final ChatCompletionRequestAssistantMessageContentPart$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ChatCompletionRequestAssistantMessageContentPartText extends ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPartText(this.chatCompletionRequestMessageContentPartText);
 

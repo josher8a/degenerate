@@ -50,10 +50,10 @@ final bool lockBranch;
 final bool allowForkSyncing;
 
 Map<String, dynamic> toJson() { return {
-  'required_status_checks': requiredStatusChecks != null ? requiredStatusChecks?.toJson() : null,
+  'required_status_checks': requiredStatusChecks?.toJson(),
   'enforce_admins': enforceAdmins,
-  'required_pull_request_reviews': requiredPullRequestReviews != null ? requiredPullRequestReviews?.toJson() : null,
-  'restrictions': restrictions != null ? restrictions?.toJson() : null,
+  'required_pull_request_reviews': requiredPullRequestReviews?.toJson(),
+  'restrictions': restrictions?.toJson(),
   'required_linear_history': ?requiredLinearHistory,
   'allow_force_pushes': ?allowForcePushes,
   'allow_deletions': ?allowDeletions,
@@ -95,6 +95,6 @@ ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestR
 
 @override int get hashCode => Object.hash(requiredStatusChecks, enforceAdmins, requiredPullRequestReviews, restrictions, requiredLinearHistory, allowForcePushes, allowDeletions, blockCreations, requiredConversationResolution, lockBranch, allowForkSyncing);
 
-@override String toString() => 'ReposUpdateBranchProtectionRequest(requiredStatusChecks: $requiredStatusChecks, enforceAdmins: $enforceAdmins, requiredPullRequestReviews: $requiredPullRequestReviews, restrictions: $restrictions, requiredLinearHistory: $requiredLinearHistory, allowForcePushes: $allowForcePushes, allowDeletions: $allowDeletions, blockCreations: $blockCreations, requiredConversationResolution: $requiredConversationResolution, lockBranch: $lockBranch, allowForkSyncing: $allowForkSyncing)';
+@override String toString() => 'ReposUpdateBranchProtectionRequest(\n  requiredStatusChecks: $requiredStatusChecks,\n  enforceAdmins: $enforceAdmins,\n  requiredPullRequestReviews: $requiredPullRequestReviews,\n  restrictions: $restrictions,\n  requiredLinearHistory: $requiredLinearHistory,\n  allowForcePushes: $allowForcePushes,\n  allowDeletions: $allowDeletions,\n  blockCreations: $blockCreations,\n  requiredConversationResolution: $requiredConversationResolution,\n  lockBranch: $lockBranch,\n  allowForkSyncing: $allowForkSyncing,\n)';
 
  }

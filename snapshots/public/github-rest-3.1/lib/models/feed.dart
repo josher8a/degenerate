@@ -86,6 +86,6 @@ Feed copyWith({String? timelineUrl, String? userUrl, String? Function()? current
 
 @override int get hashCode => Object.hash(timelineUrl, userUrl, currentUserPublicUrl, currentUserUrl, currentUserActorUrl, currentUserOrganizationUrl, Object.hashAll(currentUserOrganizationUrls ?? const []), securityAdvisoriesUrl, repositoryDiscussionsUrl, repositoryDiscussionsCategoryUrl, links);
 
-@override String toString() => 'Feed(timelineUrl: $timelineUrl, userUrl: $userUrl, currentUserPublicUrl: $currentUserPublicUrl, currentUserUrl: $currentUserUrl, currentUserActorUrl: $currentUserActorUrl, currentUserOrganizationUrl: $currentUserOrganizationUrl, currentUserOrganizationUrls: $currentUserOrganizationUrls, securityAdvisoriesUrl: $securityAdvisoriesUrl, repositoryDiscussionsUrl: $repositoryDiscussionsUrl, repositoryDiscussionsCategoryUrl: $repositoryDiscussionsCategoryUrl, links: $links)';
+@override String toString() => 'Feed(\n  timelineUrl: $timelineUrl,\n  userUrl: $userUrl,\n  currentUserPublicUrl: $currentUserPublicUrl,\n  currentUserUrl: $currentUserUrl,\n  currentUserActorUrl: $currentUserActorUrl,\n  currentUserOrganizationUrl: $currentUserOrganizationUrl,\n  currentUserOrganizationUrls: $currentUserOrganizationUrls,\n  securityAdvisoriesUrl: $securityAdvisoriesUrl,\n  repositoryDiscussionsUrl: $repositoryDiscussionsUrl,\n  repositoryDiscussionsCategoryUrl: $repositoryDiscussionsCategoryUrl,\n  links: $links,\n)';
 
  }

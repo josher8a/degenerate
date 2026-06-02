@@ -101,6 +101,6 @@ SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, String? Fu
 
 @override int get hashCode => Object.hash(author, title, slug, dateCreated, dateModified, subtitle, Object.hashAll(categories), shortDescription, recurring, image, content);
 
-@override String toString() => 'SessionSpaceSchema(author: $author, title: $title, slug: $slug, dateCreated: $dateCreated, dateModified: $dateModified, subtitle: $subtitle, categories: $categories, shortDescription: $shortDescription, recurring: $recurring, image: $image, content: $content)';
+@override String toString() => 'SessionSpaceSchema(\n  author: $author,\n  title: $title,\n  slug: $slug,\n  dateCreated: $dateCreated,\n  dateModified: $dateModified,\n  subtitle: $subtitle,\n  categories: $categories,\n  shortDescription: $shortDescription,\n  recurring: $recurring,\n  image: $image,\n  content: $content,\n)';
 
  }

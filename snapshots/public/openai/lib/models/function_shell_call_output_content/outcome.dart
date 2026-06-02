@@ -19,6 +19,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is Outcome$Unknown;
 
+R when<R>({required R Function(OutcomeTimeout) timeout, required R Function(OutcomeExit) exit, required R Function(Outcome$Unknown) unknown, }) { return switch (this) {
+  final OutcomeTimeout v => timeout(v),
+  final OutcomeExit v => exit(v),
+  final Outcome$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class OutcomeTimeout extends Outcome {const OutcomeTimeout(this.functionShellCallOutputTimeoutOutcome);
 

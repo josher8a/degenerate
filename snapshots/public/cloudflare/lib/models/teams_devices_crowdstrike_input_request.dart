@@ -164,6 +164,6 @@ TeamsDevicesCrowdstrikeInputRequest copyWith({String? connectionId, String? Func
 
 @override int get hashCode => Object.hash(connectionId, lastSeen, $operator, os, overall, sensorConfig, state, version, versionOperator);
 
-@override String toString() => 'TeamsDevicesCrowdstrikeInputRequest(connectionId: $connectionId, lastSeen: $lastSeen, \$operator: ${$operator}, os: $os, overall: $overall, sensorConfig: $sensorConfig, state: $state, version: $version, versionOperator: $versionOperator)';
+@override String toString() => 'TeamsDevicesCrowdstrikeInputRequest(\n  connectionId: $connectionId,\n  lastSeen: $lastSeen,\n  \$operator: ${$operator},\n  os: $os,\n  overall: $overall,\n  sensorConfig: $sensorConfig,\n  state: $state,\n  version: $version,\n  versionOperator: $versionOperator,\n)';
 
  }

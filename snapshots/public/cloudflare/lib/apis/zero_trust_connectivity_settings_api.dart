@@ -17,7 +17,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> zeroTrustAccountsGetConnectivit
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/connectivity_settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/connectivity_settings',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/zerotrust/connectivity_settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/zerotrust/connectivity_settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

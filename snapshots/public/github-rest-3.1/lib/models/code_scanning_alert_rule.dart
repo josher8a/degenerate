@@ -78,6 +78,6 @@ CodeScanningAlertRule copyWith({String? Function()? id, String? Function()? name
 
 @override int get hashCode => Object.hash(id, name, severity, securitySeverityLevel, description, fullDescription, Object.hashAll(tags ?? const []), help, helpUri);
 
-@override String toString() => 'CodeScanningAlertRule(id: $id, name: $name, severity: $severity, securitySeverityLevel: $securitySeverityLevel, description: $description, fullDescription: $fullDescription, tags: $tags, help: $help, helpUri: $helpUri)';
+@override String toString() => 'CodeScanningAlertRule(\n  id: $id,\n  name: $name,\n  severity: $severity,\n  securitySeverityLevel: $securitySeverityLevel,\n  description: $description,\n  fullDescription: $fullDescription,\n  tags: $tags,\n  help: $help,\n  helpUri: $helpUri,\n)';
 
  }

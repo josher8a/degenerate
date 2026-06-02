@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (org != null) 'org': org?.toJson(),
   'payload': payload.toJson(),
   'public': public,
-  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
+  'created_at': createdAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('type') && json['type'] is String &&

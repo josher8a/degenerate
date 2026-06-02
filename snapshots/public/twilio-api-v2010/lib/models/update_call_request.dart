@@ -104,6 +104,6 @@ UpdateCallRequest copyWith({Uri? Function()? url, Method? Function()? method, Ca
 
 @override int get hashCode => Object.hash(url, method, status, fallbackUrl, fallbackMethod, statusCallback, statusCallbackMethod, twiml, timeLimit);
 
-@override String toString() => 'UpdateCallRequest(url: $url, method: $method, status: $status, fallbackUrl: $fallbackUrl, fallbackMethod: $fallbackMethod, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, twiml: $twiml, timeLimit: $timeLimit)';
+@override String toString() => 'UpdateCallRequest(\n  url: $url,\n  method: $method,\n  status: $status,\n  fallbackUrl: $fallbackUrl,\n  fallbackMethod: $fallbackMethod,\n  statusCallback: $statusCallback,\n  statusCallbackMethod: $statusCallbackMethod,\n  twiml: $twiml,\n  timeLimit: $timeLimit,\n)';
 
  }

@@ -120,6 +120,6 @@ MagicVisibilityPcapsPcapsResponseFull copyWith({MagicVisibilityPcapsPcapsByteLim
 
 @override int get hashCode => Object.hash(byteLimit, coloName, destinationConf, errorMessage, filterV1, id, packetsCaptured, status, stopRequested, submitted, system, timeLimit, type);
 
-@override String toString() => 'MagicVisibilityPcapsPcapsResponseFull(byteLimit: $byteLimit, coloName: $coloName, destinationConf: $destinationConf, errorMessage: $errorMessage, filterV1: $filterV1, id: $id, packetsCaptured: $packetsCaptured, status: $status, stopRequested: $stopRequested, submitted: $submitted, system: $system, timeLimit: $timeLimit, type: $type)';
+@override String toString() => 'MagicVisibilityPcapsPcapsResponseFull(\n  byteLimit: $byteLimit,\n  coloName: $coloName,\n  destinationConf: $destinationConf,\n  errorMessage: $errorMessage,\n  filterV1: $filterV1,\n  id: $id,\n  packetsCaptured: $packetsCaptured,\n  status: $status,\n  stopRequested: $stopRequested,\n  submitted: $submitted,\n  system: $system,\n  timeLimit: $timeLimit,\n  type: $type,\n)';
 
  }

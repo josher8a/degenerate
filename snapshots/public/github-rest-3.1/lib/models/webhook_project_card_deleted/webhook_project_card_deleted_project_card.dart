@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'column_url': columnUrl.toString(),
   if (contentUrl != null) 'content_url': contentUrl?.toString(),
   'created_at': createdAt.toIso8601String(),
-  'creator': creator != null ? creator?.toJson() : null,
+  'creator': creator?.toJson(),
   'id': id,
   'node_id': nodeId,
   'note': note,
@@ -105,6 +105,6 @@ WebhookProjectCardDeletedProjectCard copyWith({int? Function()? afterId, bool? a
 
 @override int get hashCode => Object.hash(afterId, archived, columnId, columnUrl, contentUrl, createdAt, creator, id, nodeId, note, projectUrl, updatedAt, url);
 
-@override String toString() => 'WebhookProjectCardDeletedProjectCard(afterId: $afterId, archived: $archived, columnId: $columnId, columnUrl: $columnUrl, contentUrl: $contentUrl, createdAt: $createdAt, creator: $creator, id: $id, nodeId: $nodeId, note: $note, projectUrl: $projectUrl, updatedAt: $updatedAt, url: $url)';
+@override String toString() => 'WebhookProjectCardDeletedProjectCard(\n  afterId: $afterId,\n  archived: $archived,\n  columnId: $columnId,\n  columnUrl: $columnUrl,\n  contentUrl: $contentUrl,\n  createdAt: $createdAt,\n  creator: $creator,\n  id: $id,\n  nodeId: $nodeId,\n  note: $note,\n  projectUrl: $projectUrl,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
  }

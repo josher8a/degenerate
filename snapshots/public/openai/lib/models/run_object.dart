@@ -199,14 +199,14 @@ Map<String, dynamic> toJson() { return {
   'thread_id': threadId,
   'assistant_id': assistantId,
   'status': status.toJson(),
-  'required_action': requiredAction != null ? requiredAction?.toJson() : null,
-  'last_error': lastError != null ? lastError?.toJson() : null,
+  'required_action': requiredAction?.toJson(),
+  'last_error': lastError?.toJson(),
   'expires_at': expiresAt,
   'started_at': startedAt,
   'cancelled_at': cancelledAt,
   'failed_at': failedAt,
   'completed_at': completedAt,
-  'incomplete_details': incompleteDetails != null ? incompleteDetails?.toJson() : null,
+  'incomplete_details': incompleteDetails?.toJson(),
   'model': model,
   'instructions': instructions,
   'tools': tools.map((e) => e.toJson()).toList(),
@@ -216,10 +216,10 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
   'max_prompt_tokens': maxPromptTokens,
   'max_completion_tokens': maxCompletionTokens,
-  'truncation_strategy': truncationStrategy != null ? truncationStrategy?.toJson() : null,
-  'tool_choice': toolChoice != null ? toolChoice?.toJson() : null,
+  'truncation_strategy': truncationStrategy?.toJson(),
+  'tool_choice': toolChoice?.toJson(),
   'parallel_tool_calls': parallelToolCalls.toJson(),
-  'response_format': responseFormat != null ? responseFormat?.toJson() : null,
+  'response_format': responseFormat?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
@@ -319,6 +319,6 @@ RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String?
 
 @override int get hashCode => Object.hashAll([id, object, createdAt, threadId, assistantId, status, requiredAction, lastError, expiresAt, startedAt, cancelledAt, failedAt, completedAt, incompleteDetails, model, instructions, Object.hashAll(tools), metadata, usage, temperature, topP, maxPromptTokens, maxCompletionTokens, truncationStrategy, toolChoice, parallelToolCalls, responseFormat]);
 
-@override String toString() => 'RunObject(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, assistantId: $assistantId, status: $status, requiredAction: $requiredAction, lastError: $lastError, expiresAt: $expiresAt, startedAt: $startedAt, cancelledAt: $cancelledAt, failedAt: $failedAt, completedAt: $completedAt, incompleteDetails: $incompleteDetails, model: $model, instructions: $instructions, tools: $tools, metadata: $metadata, usage: $usage, temperature: $temperature, topP: $topP, maxPromptTokens: $maxPromptTokens, maxCompletionTokens: $maxCompletionTokens, truncationStrategy: $truncationStrategy, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, responseFormat: $responseFormat)';
+@override String toString() => 'RunObject(\n  id: $id,\n  object: $object,\n  createdAt: $createdAt,\n  threadId: $threadId,\n  assistantId: $assistantId,\n  status: $status,\n  requiredAction: $requiredAction,\n  lastError: $lastError,\n  expiresAt: $expiresAt,\n  startedAt: $startedAt,\n  cancelledAt: $cancelledAt,\n  failedAt: $failedAt,\n  completedAt: $completedAt,\n  incompleteDetails: $incompleteDetails,\n  model: $model,\n  instructions: $instructions,\n  tools: $tools,\n  metadata: $metadata,\n  usage: $usage,\n  temperature: $temperature,\n  topP: $topP,\n  maxPromptTokens: $maxPromptTokens,\n  maxCompletionTokens: $maxCompletionTokens,\n  truncationStrategy: $truncationStrategy,\n  toolChoice: $toolChoice,\n  parallelToolCalls: $parallelToolCalls,\n  responseFormat: $responseFormat,\n)';
 
  }

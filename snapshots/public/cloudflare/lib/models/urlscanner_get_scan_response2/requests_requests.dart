@@ -84,6 +84,6 @@ RequestsRequests copyWith({String? documentUrl, String? frameId, bool? hasUserGe
 
 @override int get hashCode => Object.hash(documentUrl, frameId, hasUserGesture, initiator, loaderId, redirectHasExtraInfo, request, requestId, type, wallTime);
 
-@override String toString() => 'RequestsRequests(documentUrl: $documentUrl, frameId: $frameId, hasUserGesture: $hasUserGesture, initiator: $initiator, loaderId: $loaderId, redirectHasExtraInfo: $redirectHasExtraInfo, request: $request, requestId: $requestId, type: $type, wallTime: $wallTime)';
+@override String toString() => 'RequestsRequests(\n  documentUrl: $documentUrl,\n  frameId: $frameId,\n  hasUserGesture: $hasUserGesture,\n  initiator: $initiator,\n  loaderId: $loaderId,\n  redirectHasExtraInfo: $redirectHasExtraInfo,\n  request: $request,\n  requestId: $requestId,\n  type: $type,\n  wallTime: $wallTime,\n)';
 
  }

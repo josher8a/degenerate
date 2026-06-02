@@ -105,6 +105,6 @@ WebhooksSecurityAdvisory copyWith({WebhooksSecurityAdvisoryCvss? cvss, CvssSever
 
 @override int get hashCode => Object.hash(cvss, cvssSeverities, Object.hashAll(cwes), description, ghsaId, Object.hashAll(identifiers), publishedAt, Object.hashAll(references), severity, summary, updatedAt, Object.hashAll(vulnerabilities), withdrawnAt);
 
-@override String toString() => 'WebhooksSecurityAdvisory(cvss: $cvss, cvssSeverities: $cvssSeverities, cwes: $cwes, description: $description, ghsaId: $ghsaId, identifiers: $identifiers, publishedAt: $publishedAt, references: $references, severity: $severity, summary: $summary, updatedAt: $updatedAt, vulnerabilities: $vulnerabilities, withdrawnAt: $withdrawnAt)';
+@override String toString() => 'WebhooksSecurityAdvisory(\n  cvss: $cvss,\n  cvssSeverities: $cvssSeverities,\n  cwes: $cwes,\n  description: $description,\n  ghsaId: $ghsaId,\n  identifiers: $identifiers,\n  publishedAt: $publishedAt,\n  references: $references,\n  severity: $severity,\n  summary: $summary,\n  updatedAt: $updatedAt,\n  vulnerabilities: $vulnerabilities,\n  withdrawnAt: $withdrawnAt,\n)';
 
  }

@@ -101,7 +101,7 @@ Future<ApiResult<Organization, Never>> organizationsRetrieve({required Organizat
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/organizations/${Uri.encodeComponent(organizationId.toString())}',
+  path: '/organizations/${Uri.encodeComponent(organizationId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -124,7 +124,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/organizations/${Uri.encodeComponent(organizationId.toString())}',
+  path: '/organizations/${Uri.encodeComponent(organizationId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -148,7 +148,7 @@ Future<ApiResult<DeleteOrganizationResponse, Never>> organizationsDelete({requir
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/organizations/${Uri.encodeComponent(organizationId.toString())}',
+  path: '/organizations/${Uri.encodeComponent(organizationId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -203,7 +203,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/accounts',
+  path: '/organizations/${Uri.encodeComponent(organizationId.toJson())}/accounts',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -227,7 +227,7 @@ Future<ApiResult<Profile, Never>> organizationsGetProfile({required Organization
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/profile',
+  path: '/organizations/${Uri.encodeComponent(organizationId.toJson())}/profile',
   headers: headers,
   options: options,
 );
@@ -250,7 +250,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/organizations/${Uri.encodeComponent(organizationId.toString())}/profile',
+  path: '/organizations/${Uri.encodeComponent(organizationId.toJson())}/profile',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

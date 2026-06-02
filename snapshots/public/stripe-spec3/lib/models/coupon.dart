@@ -150,6 +150,6 @@ Coupon copyWith({int? Function()? amountOff, CouponAppliesTo? Function()? applie
 
 @override int get hashCode => Object.hash(amountOff, appliesTo, created, currency, currencyOptions, duration, durationInMonths, id, livemode, maxRedemptions, metadata, name, object, percentOff, redeemBy, timesRedeemed, valid);
 
-@override String toString() => 'Coupon(amountOff: $amountOff, appliesTo: $appliesTo, created: $created, currency: $currency, currencyOptions: $currencyOptions, duration: $duration, durationInMonths: $durationInMonths, id: $id, livemode: $livemode, maxRedemptions: $maxRedemptions, metadata: $metadata, name: $name, object: $object, percentOff: $percentOff, redeemBy: $redeemBy, timesRedeemed: $timesRedeemed, valid: $valid)';
+@override String toString() => 'Coupon(\n  amountOff: $amountOff,\n  appliesTo: $appliesTo,\n  created: $created,\n  currency: $currency,\n  currencyOptions: $currencyOptions,\n  duration: $duration,\n  durationInMonths: $durationInMonths,\n  id: $id,\n  livemode: $livemode,\n  maxRedemptions: $maxRedemptions,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n  percentOff: $percentOff,\n  redeemBy: $redeemBy,\n  timesRedeemed: $timesRedeemed,\n  valid: $valid,\n)';
 
  }

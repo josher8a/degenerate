@@ -64,7 +64,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('worker_binding'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.isEmpty) errors.add('name: length must be >= 1');
 if (name.length > 128) errors.add('name: length must be <= 128');
 return errors; } 
 StreamsByStreamIdResponse2Result copyWith({DateTime? createdAt, Uri? Function()? endpoint, CloudflarePipelinesFormat? Function()? format, Http? http, String? id, DateTime? modifiedAt, String? name, int? version, WorkerBinding? workerBinding, }) { return StreamsByStreamIdResponse2Result(
@@ -92,6 +92,6 @@ StreamsByStreamIdResponse2Result copyWith({DateTime? createdAt, Uri? Function()?
 
 @override int get hashCode => Object.hash(createdAt, endpoint, format, http, id, modifiedAt, name, version, workerBinding);
 
-@override String toString() => 'StreamsByStreamIdResponse2Result(createdAt: $createdAt, endpoint: $endpoint, format: $format, http: $http, id: $id, modifiedAt: $modifiedAt, name: $name, version: $version, workerBinding: $workerBinding)';
+@override String toString() => 'StreamsByStreamIdResponse2Result(\n  createdAt: $createdAt,\n  endpoint: $endpoint,\n  format: $format,\n  http: $http,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  name: $name,\n  version: $version,\n  workerBinding: $workerBinding,\n)';
 
  }

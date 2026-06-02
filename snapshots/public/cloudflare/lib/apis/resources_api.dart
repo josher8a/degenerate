@@ -65,7 +65,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/resources',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/resources',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -78,7 +78,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => McnResourceDetails.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => CatalogSyncsListError.fromResponse(response),
+  onError: CatalogSyncsListError.fromResponse,
 );
  } 
 /// Read Resource
@@ -96,7 +96,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/resources/${Uri.encodeComponent(resourceId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/resources/${Uri.encodeComponent(resourceId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -109,7 +109,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnResourceDetails.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CatalogSyncsListError.fromResponse(response),
+  onError: CatalogSyncsListError.fromResponse,
 );
  } 
 /// Export Resources
@@ -157,7 +157,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/resources/export',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/resources/export',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -169,7 +169,7 @@ return execute(
   onSuccess: (response) {
     return Uint8List.fromList(response.bodyBytes);
   },
-  onError: (response) => CatalogSyncsListError.fromResponse(response),
+  onError: CatalogSyncsListError.fromResponse,
 );
  } 
 /// Preview Rego Query
@@ -182,7 +182,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/cloud/resources/policy-preview',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/cloud/resources/policy-preview',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -194,7 +194,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? McnResourcesCatalogPolicyPreview.fromJson(json['result'] as String) : null;
   },
-  onError: (response) => ResourcesCatalogPolicyPreviewError.fromResponse(response),
+  onError: ResourcesCatalogPolicyPreviewError.fromResponse,
 );
  } 
  }

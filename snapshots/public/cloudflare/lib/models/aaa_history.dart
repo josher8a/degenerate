@@ -137,6 +137,6 @@ AaaHistory copyWith({AaaAlertBody? Function()? alertBody, AaaSchemasAlertType? F
 
 @override int get hashCode => Object.hash(alertBody, alertType, description, id, mechanism, mechanismType, name, policyId, sent);
 
-@override String toString() => 'AaaHistory(alertBody: $alertBody, alertType: $alertType, description: $description, id: $id, mechanism: $mechanism, mechanismType: $mechanismType, name: $name, policyId: $policyId, sent: $sent)';
+@override String toString() => 'AaaHistory(\n  alertBody: $alertBody,\n  alertType: $alertType,\n  description: $description,\n  id: $id,\n  mechanism: $mechanism,\n  mechanismType: $mechanismType,\n  name: $name,\n  policyId: $policyId,\n  sent: $sent,\n)';
 
  }

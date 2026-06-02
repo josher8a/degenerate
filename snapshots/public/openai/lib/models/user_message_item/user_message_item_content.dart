@@ -24,6 +24,11 @@ bool get isUnknown => this is UserMessageItemContent$Unknown;
 
 /// Shared by all variants of this union.
 String get text;
+R when<R>({required R Function(UserMessageItemContentInputText) inputText, required R Function(UserMessageItemContentQuotedText) quotedText, required R Function(UserMessageItemContent$Unknown) unknown, }) { return switch (this) {
+  final UserMessageItemContentInputText v => inputText(v),
+  final UserMessageItemContentQuotedText v => quotedText(v),
+  final UserMessageItemContent$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class UserMessageItemContentInputText extends UserMessageItemContent {const UserMessageItemContentInputText(this.userMessageInputText);
 
@@ -73,9 +78,11 @@ UserMessageItemContentQuotedText copyWith({String? text}) { return UserMessageIt
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class UserMessageItemContent$Unknown extends UserMessageItemContent {const UserMessageItemContent$Unknown(this.json);
+@immutable final class UserMessageItemContent$Unknown extends UserMessageItemContent {UserMessageItemContent$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String _text = json['text'] as String;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -88,6 +95,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'UserMessageItemContent.unknown($json)';
 
-@override String get text => json['text'] as String;
+@override String get text => _text;
 
  }

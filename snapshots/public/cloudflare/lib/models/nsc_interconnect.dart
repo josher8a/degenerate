@@ -10,10 +10,10 @@ factory NscInterconnect.fromJson(Map<String, dynamic> json) { return switch (jso
 }; }
 
 /// Build the `direct` variant.
-factory NscInterconnect.direct({required String account, required String name, String? owner, required NscFacilityInfo facility, required NscCloudflareSite site, required String slotId, required String speed, }) { return NscInterconnectDirect(NscInterconnectPhysicalBody(type: 'direct', account: account, name: name, owner: owner, facility: facility, site: site, slotId: slotId, speed: speed)); }
+factory NscInterconnect.direct({required String account, required String name, required NscFacilityInfo facility, required NscCloudflareSite site, required String slotId, required String speed, String? owner, }) { return NscInterconnectDirect(NscInterconnectPhysicalBody(type: 'direct', account: account, name: name, owner: owner, facility: facility, site: site, slotId: slotId, speed: speed)); }
 
 /// Build the `gcp_partner` variant.
-factory NscInterconnect.gcpPartner({required String account, required String name, String? owner, required String region, Bandwidth? speed, }) { return NscInterconnectGcpPartner(NscInterconnectGcpPartnerBody(type: 'gcp_partner', account: account, name: name, owner: owner, region: region, speed: speed)); }
+factory NscInterconnect.gcpPartner({required String account, required String name, required String region, String? owner, Bandwidth? speed, }) { return NscInterconnectGcpPartner(NscInterconnectGcpPartnerBody(type: 'gcp_partner', account: account, name: name, owner: owner, region: region, speed: speed)); }
 
 /// The discriminator value identifying this variant.
 String get type;
@@ -27,6 +27,11 @@ String get account;
 String get name;
 /// Shared by all variants of this union.
 String? get owner;
+R when<R>({required R Function(NscInterconnectDirect) direct, required R Function(NscInterconnectGcpPartner) gcpPartner, required R Function(NscInterconnect$Unknown) unknown, }) { return switch (this) {
+  final NscInterconnectDirect v => direct(v),
+  final NscInterconnectGcpPartner v => gcpPartner(v),
+  final NscInterconnect$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class NscInterconnectDirect extends NscInterconnect {const NscInterconnectDirect(this.nscInterconnectPhysicalBody);
 
@@ -94,9 +99,15 @@ NscInterconnectGcpPartner copyWith({String? account, String? name, String? Funct
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class NscInterconnect$Unknown extends NscInterconnect {const NscInterconnect$Unknown(this.json);
+@immutable final class NscInterconnect$Unknown extends NscInterconnect {NscInterconnect$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String _account = json['account'] as String;
+
+late final String _name = json['name'] as String;
+
+late final String? _owner = json['owner'] as String?;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -109,10 +120,10 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'NscInterconnect.unknown($json)';
 
-@override String get account => json['account'] as String;
+@override String get account => _account;
 
-@override String get name => json['name'] as String;
+@override String get name => _name;
 
-@override String? get owner => json['owner'] as String?;
+@override String? get owner => _owner;
 
  }

@@ -179,6 +179,6 @@ GelatoDocumentReport copyWith({Address? Function()? address, GelatoDataDocumentR
 
 @override int get hashCode => Object.hash(address, dob, error, expirationDate, Object.hashAll(files ?? const []), firstName, issuedDate, issuingCountry, lastName, number, sex, status, type, unparsedPlaceOfBirth, unparsedSex);
 
-@override String toString() => 'GelatoDocumentReport(address: $address, dob: $dob, error: $error, expirationDate: $expirationDate, files: $files, firstName: $firstName, issuedDate: $issuedDate, issuingCountry: $issuingCountry, lastName: $lastName, number: $number, sex: $sex, status: $status, type: $type, unparsedPlaceOfBirth: $unparsedPlaceOfBirth, unparsedSex: $unparsedSex)';
+@override String toString() => 'GelatoDocumentReport(\n  address: $address,\n  dob: $dob,\n  error: $error,\n  expirationDate: $expirationDate,\n  files: $files,\n  firstName: $firstName,\n  issuedDate: $issuedDate,\n  issuingCountry: $issuingCountry,\n  lastName: $lastName,\n  number: $number,\n  sex: $sex,\n  status: $status,\n  type: $type,\n  unparsedPlaceOfBirth: $unparsedPlaceOfBirth,\n  unparsedSex: $unparsedSex,\n)';
 
  }

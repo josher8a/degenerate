@@ -123,6 +123,6 @@ ReportingReportType copyWith({int? dataAvailableEnd, int? dataAvailableStart, Li
 
 @override int get hashCode => Object.hash(dataAvailableEnd, dataAvailableStart, Object.hashAll(defaultColumns ?? const []), id, livemode, name, object, updated, version);
 
-@override String toString() => 'ReportingReportType(dataAvailableEnd: $dataAvailableEnd, dataAvailableStart: $dataAvailableStart, defaultColumns: $defaultColumns, id: $id, livemode: $livemode, name: $name, object: $object, updated: $updated, version: $version)';
+@override String toString() => 'ReportingReportType(\n  dataAvailableEnd: $dataAvailableEnd,\n  dataAvailableStart: $dataAvailableStart,\n  defaultColumns: $defaultColumns,\n  id: $id,\n  livemode: $livemode,\n  name: $name,\n  object: $object,\n  updated: $updated,\n  version: $version,\n)';
 
  }

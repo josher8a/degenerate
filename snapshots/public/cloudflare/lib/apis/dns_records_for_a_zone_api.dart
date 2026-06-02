@@ -119,7 +119,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -151,7 +151,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -172,7 +172,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> dnsRecordsForAZoneDnsRecordDetai
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/${Uri.encodeComponent(dnsRecordId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records/${Uri.encodeComponent(dnsRecordId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -202,7 +202,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/${Uri.encodeComponent(dnsRecordId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records/${Uri.encodeComponent(dnsRecordId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -233,7 +233,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/${Uri.encodeComponent(dnsRecordId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records/${Uri.encodeComponent(dnsRecordId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -254,7 +254,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> dnsRecordsForAZoneDeleteDnsRecord
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/${Uri.encodeComponent(dnsRecordId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records/${Uri.encodeComponent(dnsRecordId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -287,7 +287,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/batch',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records/batch',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -312,7 +312,7 @@ Future<ApiResult<String, Never>> dnsRecordsForAZoneExportDnsRecords({required Dn
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/export',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records/export',
   headers: headers,
   options: options,
 );
@@ -335,7 +335,7 @@ Future<ApiResult<DnsRecordsDnsResponseImportScanResult?, Never>> dnsRecordsForAZ
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/import',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records/import',
   headers: headers,
   body: [
     ApiMultipartField.text('file', body.file),
@@ -363,7 +363,7 @@ Future<ApiResult<List<Map<String, dynamic>>?, Never>> dnsRecordsForAZoneReviewDn
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/scan/review',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records/scan/review',
   headers: headers,
   options: options,
 );
@@ -387,7 +387,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/scan/review',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records/scan/review',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -410,7 +410,7 @@ Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAZoneTriggerDnsScan({req
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/scan/trigger',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records/scan/trigger',
   headers: headers,
   options: options,
 );
@@ -431,7 +431,7 @@ Future<ApiResult<DnsRecordsDnsResponseZoneUsageResult?, Never>> dnsRecordsForAZo
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_records/usage',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dns_records/usage',
   headers: headers,
   options: options,
 );

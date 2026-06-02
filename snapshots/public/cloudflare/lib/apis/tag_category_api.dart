@@ -35,7 +35,7 @@ return execute(
   onSuccess: (response) {
     return GetTagCategoryListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetTagCategoryListError.fromResponse(response),
+  onError: GetTagCategoryListError.fromResponse,
 );
  } 
 /// Updates a tag category (SoT)
@@ -59,7 +59,7 @@ return execute(
   onSuccess: (response) {
     return PatchTagCategoryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PatchTagCategoryUpdateError.fromResponse(response),
+  onError: PatchTagCategoryUpdateError.fromResponse,
 );
  } 
 /// Deletes a tag category (SoT)
@@ -81,7 +81,7 @@ return execute(
   onSuccess: (response) {
     return DeleteTagCategoryDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteTagCategoryDeleteError.fromResponse(response),
+  onError: DeleteTagCategoryDeleteError.fromResponse,
 );
  } 
 /// Creates a new tag category (SoT)
@@ -105,7 +105,7 @@ return execute(
   onSuccess: (response) {
     return PostTagCategoryCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostTagCategoryCreateError.fromResponse(response),
+  onError: PostTagCategoryCreateError.fromResponse,
 );
  } 
  }

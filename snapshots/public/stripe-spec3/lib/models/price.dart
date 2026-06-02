@@ -217,6 +217,6 @@ Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String
 
 @override int get hashCode => Object.hashAll([active, billingScheme, created, currency, currencyOptions, customUnitAmount, id, livemode, lookupKey, metadata, nickname, object, product, recurring, taxBehavior, Object.hashAll(tiers ?? const []), tiersMode, transformQuantity, type, unitAmount, unitAmountDecimal]);
 
-@override String toString() => 'Price(active: $active, billingScheme: $billingScheme, created: $created, currency: $currency, currencyOptions: $currencyOptions, customUnitAmount: $customUnitAmount, id: $id, livemode: $livemode, lookupKey: $lookupKey, metadata: $metadata, nickname: $nickname, object: $object, product: $product, recurring: $recurring, taxBehavior: $taxBehavior, tiers: $tiers, tiersMode: $tiersMode, transformQuantity: $transformQuantity, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+@override String toString() => 'Price(\n  active: $active,\n  billingScheme: $billingScheme,\n  created: $created,\n  currency: $currency,\n  currencyOptions: $currencyOptions,\n  customUnitAmount: $customUnitAmount,\n  id: $id,\n  livemode: $livemode,\n  lookupKey: $lookupKey,\n  metadata: $metadata,\n  nickname: $nickname,\n  object: $object,\n  product: $product,\n  recurring: $recurring,\n  taxBehavior: $taxBehavior,\n  tiers: $tiers,\n  tiersMode: $tiersMode,\n  transformQuantity: $transformQuantity,\n  type: $type,\n  unitAmount: $unitAmount,\n  unitAmountDecimal: $unitAmountDecimal,\n)';
 
  }

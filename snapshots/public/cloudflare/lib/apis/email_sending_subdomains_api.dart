@@ -17,7 +17,7 @@ Future<ApiResult<List<EmailSendingSubdomainProperties>?, Never>> emailSendingSub
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/sending/subdomains',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/sending/subdomains',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/sending/subdomains',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/sending/subdomains',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<EmailSendingSubdomainProperties?, Never>> emailSendingSubdomain
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/sending/subdomains/${Uri.encodeComponent(subdomainId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/sending/subdomains/${Uri.encodeComponent(subdomainId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -85,7 +85,7 @@ Future<ApiResult<ResponseCommon30, Never>> emailSendingSubdomainsDeleteSendingSu
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/sending/subdomains/${Uri.encodeComponent(subdomainId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/sending/subdomains/${Uri.encodeComponent(subdomainId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -106,7 +106,7 @@ Future<ApiResult<List<EmailDnsRecord>?, Never>> emailSendingSubdomainsGetSending
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/sending/subdomains/${Uri.encodeComponent(subdomainId.toString())}/dns',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/sending/subdomains/${Uri.encodeComponent(subdomainId.toJson())}/dns',
   headers: headers,
   options: options,
 );

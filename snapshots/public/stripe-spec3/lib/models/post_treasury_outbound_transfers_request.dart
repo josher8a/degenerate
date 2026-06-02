@@ -102,6 +102,6 @@ PostTreasuryOutboundTransfersRequest copyWith({int? amount, String? currency, St
 
 @override int get hashCode => Object.hash(amount, currency, description, destinationPaymentMethod, destinationPaymentMethodData, destinationPaymentMethodOptions, Object.hashAll(expand ?? const []), financialAccount, metadata, statementDescriptor);
 
-@override String toString() => 'PostTreasuryOutboundTransfersRequest(amount: $amount, currency: $currency, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodData: $destinationPaymentMethodData, destinationPaymentMethodOptions: $destinationPaymentMethodOptions, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, statementDescriptor: $statementDescriptor)';
+@override String toString() => 'PostTreasuryOutboundTransfersRequest(\n  amount: $amount,\n  currency: $currency,\n  description: $description,\n  destinationPaymentMethod: $destinationPaymentMethod,\n  destinationPaymentMethodData: $destinationPaymentMethodData,\n  destinationPaymentMethodOptions: $destinationPaymentMethodOptions,\n  expand: $expand,\n  financialAccount: $financialAccount,\n  metadata: $metadata,\n  statementDescriptor: $statementDescriptor,\n)';
 
  }

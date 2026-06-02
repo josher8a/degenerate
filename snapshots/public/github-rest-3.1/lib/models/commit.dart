@@ -46,8 +46,8 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toString(),
   'comments_url': commentsUrl.toString(),
   'commit': commit.toJson(),
-  'author': author != null ? author?.toJson() : null,
-  'committer': committer != null ? committer?.toJson() : null,
+  'author': author?.toJson(),
+  'committer': committer?.toJson(),
   'parents': parents.map((e) => e.toJson()).toList(),
   if (stats != null) 'stats': stats?.toJson(),
   if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
@@ -90,6 +90,6 @@ Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? comme
 
 @override int get hashCode => Object.hash(url, sha, nodeId, htmlUrl, commentsUrl, commit, author, committer, Object.hashAll(parents), stats, Object.hashAll(files ?? const []));
 
-@override String toString() => 'Commit(url: $url, sha: $sha, nodeId: $nodeId, htmlUrl: $htmlUrl, commentsUrl: $commentsUrl, commit: $commit, author: $author, committer: $committer, parents: $parents, stats: $stats, files: $files)';
+@override String toString() => 'Commit(\n  url: $url,\n  sha: $sha,\n  nodeId: $nodeId,\n  htmlUrl: $htmlUrl,\n  commentsUrl: $commentsUrl,\n  commit: $commit,\n  author: $author,\n  committer: $committer,\n  parents: $parents,\n  stats: $stats,\n  files: $files,\n)';
 
  }

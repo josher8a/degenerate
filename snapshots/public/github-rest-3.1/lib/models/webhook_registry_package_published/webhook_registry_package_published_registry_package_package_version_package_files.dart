@@ -91,6 +91,6 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles copyWit
 
 @override int get hashCode => Object.hash(contentType, createdAt, downloadUrl, id, md5, name, sha1, sha256, size, state, updatedAt);
 
-@override String toString() => 'WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles(contentType: $contentType, createdAt: $createdAt, downloadUrl: $downloadUrl, id: $id, md5: $md5, name: $name, sha1: $sha1, sha256: $sha256, size: $size, state: $state, updatedAt: $updatedAt)';
+@override String toString() => 'WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles(\n  contentType: $contentType,\n  createdAt: $createdAt,\n  downloadUrl: $downloadUrl,\n  id: $id,\n  md5: $md5,\n  name: $name,\n  sha1: $sha1,\n  sha256: $sha256,\n  size: $size,\n  state: $state,\n  updatedAt: $updatedAt,\n)';
 
  }

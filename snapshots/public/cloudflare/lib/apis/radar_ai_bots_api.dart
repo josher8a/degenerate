@@ -86,7 +86,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/ai/bots/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/ai/bots/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -99,7 +99,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsSummaryByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAiBotsSummaryError.fromResponse(response),
+  onError: RadarGetAiBotsSummaryError.fromResponse,
 );
  } 
 /// Get AI bots HTTP requests time series
@@ -196,7 +196,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAiBotsTimeseriesError.fromResponse(response),
+  onError: RadarGetAiBotsTimeseriesError.fromResponse,
 );
  } 
 /// Get time series distribution of AI bots HTTP requests by dimension.
@@ -283,7 +283,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/ai/bots/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/ai/bots/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -296,7 +296,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAiBotsTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetAiBotsTimeseriesGroupError.fromResponse,
 );
  } 
  }

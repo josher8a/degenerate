@@ -102,6 +102,6 @@ NodeSystemInfo copyWith({String? architecture, String? bootId, String? container
 
 @override int get hashCode => Object.hash(architecture, bootId, containerRuntimeVersion, kernelVersion, kubeProxyVersion, kubeletVersion, machineId, operatingSystem, osImage, swap, systemUuid);
 
-@override String toString() => 'NodeSystemInfo(architecture: $architecture, bootId: $bootId, containerRuntimeVersion: $containerRuntimeVersion, kernelVersion: $kernelVersion, kubeProxyVersion: $kubeProxyVersion, kubeletVersion: $kubeletVersion, machineId: $machineId, operatingSystem: $operatingSystem, osImage: $osImage, swap: $swap, systemUuid: $systemUuid)';
+@override String toString() => 'NodeSystemInfo(\n  architecture: $architecture,\n  bootId: $bootId,\n  containerRuntimeVersion: $containerRuntimeVersion,\n  kernelVersion: $kernelVersion,\n  kubeProxyVersion: $kubeProxyVersion,\n  kubeletVersion: $kubeletVersion,\n  machineId: $machineId,\n  operatingSystem: $operatingSystem,\n  osImage: $osImage,\n  swap: $swap,\n  systemUuid: $systemUuid,\n)';
 
  }

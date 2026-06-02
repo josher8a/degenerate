@@ -190,6 +190,6 @@ Variant1Cookies copyWith({String? Function()? domain, double? Function()? expire
 
 @override int get hashCode => Object.hash(domain, expires, httpOnly, name, partitionKey, path, priority, sameParty, sameSite, secure, sourcePort, sourceScheme, url, value);
 
-@override String toString() => 'Variant1Cookies(domain: $domain, expires: $expires, httpOnly: $httpOnly, name: $name, partitionKey: $partitionKey, path: $path, priority: $priority, sameParty: $sameParty, sameSite: $sameSite, secure: $secure, sourcePort: $sourcePort, sourceScheme: $sourceScheme, url: $url, value: $value)';
+@override String toString() => 'Variant1Cookies(\n  domain: $domain,\n  expires: $expires,\n  httpOnly: $httpOnly,\n  name: $name,\n  partitionKey: $partitionKey,\n  path: $path,\n  priority: $priority,\n  sameParty: $sameParty,\n  sameSite: $sameSite,\n  secure: $secure,\n  sourcePort: $sourcePort,\n  sourceScheme: $sourceScheme,\n  url: $url,\n  value: $value,\n)';
 
  }

@@ -77,6 +77,6 @@ Geoloc copyWith({String? Function()? city, String? Function()? continent, bool? 
 
 @override int get hashCode => Object.hash(city, continent, isEuCountry, isoCode, latitude, longitude, postalCode, regionCode, subdivision2IsoCode, timezone);
 
-@override String toString() => 'Geoloc(city: $city, continent: $continent, isEuCountry: $isEuCountry, isoCode: $isoCode, latitude: $latitude, longitude: $longitude, postalCode: $postalCode, regionCode: $regionCode, subdivision2IsoCode: $subdivision2IsoCode, timezone: $timezone)';
+@override String toString() => 'Geoloc(\n  city: $city,\n  continent: $continent,\n  isEuCountry: $isEuCountry,\n  isoCode: $isoCode,\n  latitude: $latitude,\n  longitude: $longitude,\n  postalCode: $postalCode,\n  regionCode: $regionCode,\n  subdivision2IsoCode: $subdivision2IsoCode,\n  timezone: $timezone,\n)';
 
  }

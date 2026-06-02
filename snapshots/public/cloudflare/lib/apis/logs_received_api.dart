@@ -17,7 +17,7 @@ Future<ApiResult<LogcontrolRetentionFlag?, Never>> getZonesZoneIdLogsControlRete
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logs/control/retention/flag',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logs/control/retention/flag',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logs/control/retention/flag',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logs/control/retention/flag',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -72,7 +72,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logs/rayids/${Uri.encodeComponent(rayId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logs/rayids/${Uri.encodeComponent(rayId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -114,7 +114,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logs/received',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logs/received',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -137,7 +137,7 @@ Future<ApiResult<LogshareFieldsResponse, Never>> getZonesZoneIdLogsReceivedField
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logs/received/fields',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logs/received/fields',
   headers: headers,
   options: options,
 );

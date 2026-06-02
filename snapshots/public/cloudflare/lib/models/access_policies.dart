@@ -102,6 +102,6 @@ AccessPolicies copyWith({List<AccessSchemasApprovalGroup>? Function()? approvalG
 
 @override int get hashCode => Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), isolationRequired, name, precedence, purposeJustificationPrompt, purposeJustificationRequired, Object.hashAll(require ?? const []), updatedAt);
 
-@override String toString() => 'AccessPolicies(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, isolationRequired: $isolationRequired, name: $name, precedence: $precedence, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, require: $require, updatedAt: $updatedAt)';
+@override String toString() => 'AccessPolicies(\n  approvalGroups: $approvalGroups,\n  approvalRequired: $approvalRequired,\n  createdAt: $createdAt,\n  decision: $decision,\n  exclude: $exclude,\n  id: $id,\n  include: $include,\n  isolationRequired: $isolationRequired,\n  name: $name,\n  precedence: $precedence,\n  purposeJustificationPrompt: $purposeJustificationPrompt,\n  purposeJustificationRequired: $purposeJustificationRequired,\n  require: $require,\n  updatedAt: $updatedAt,\n)';
 
  }

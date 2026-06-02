@@ -117,6 +117,6 @@ IamSingleUserResponseResult copyWith({List<String>? Function()? betas, IamCountr
 
 @override int get hashCode => Object.hash(Object.hashAll(betas ?? const []), country, firstName, hasBusinessZones, hasEnterpriseZones, hasProZones, id, lastName, Object.hashAll(organizations ?? const []), suspended, telephone, twoFactorAuthenticationEnabled, twoFactorAuthenticationLocked, zipcode);
 
-@override String toString() => 'IamSingleUserResponseResult(betas: $betas, country: $country, firstName: $firstName, hasBusinessZones: $hasBusinessZones, hasEnterpriseZones: $hasEnterpriseZones, hasProZones: $hasProZones, id: $id, lastName: $lastName, organizations: $organizations, suspended: $suspended, telephone: $telephone, twoFactorAuthenticationEnabled: $twoFactorAuthenticationEnabled, twoFactorAuthenticationLocked: $twoFactorAuthenticationLocked, zipcode: $zipcode)';
+@override String toString() => 'IamSingleUserResponseResult(\n  betas: $betas,\n  country: $country,\n  firstName: $firstName,\n  hasBusinessZones: $hasBusinessZones,\n  hasEnterpriseZones: $hasEnterpriseZones,\n  hasProZones: $hasProZones,\n  id: $id,\n  lastName: $lastName,\n  organizations: $organizations,\n  suspended: $suspended,\n  telephone: $telephone,\n  twoFactorAuthenticationEnabled: $twoFactorAuthenticationEnabled,\n  twoFactorAuthenticationLocked: $twoFactorAuthenticationLocked,\n  zipcode: $zipcode,\n)';
 
  }

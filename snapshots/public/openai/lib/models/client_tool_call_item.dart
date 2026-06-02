@@ -122,6 +122,6 @@ ClientToolCallItem copyWith({String? id, AssistantMessageItemObject? object, int
 
 @override int get hashCode => Object.hash(id, object, createdAt, threadId, type, status, callId, name, arguments, output);
 
-@override String toString() => 'ClientToolCallItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, status: $status, callId: $callId, name: $name, arguments: $arguments, output: $output)';
+@override String toString() => 'ClientToolCallItem(\n  id: $id,\n  object: $object,\n  createdAt: $createdAt,\n  threadId: $threadId,\n  type: $type,\n  status: $status,\n  callId: $callId,\n  name: $name,\n  arguments: $arguments,\n  output: $output,\n)';
 
  }

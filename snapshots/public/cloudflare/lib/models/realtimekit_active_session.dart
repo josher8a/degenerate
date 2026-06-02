@@ -189,6 +189,6 @@ RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveS
 
 @override int get hashCode => Object.hash(associatedId, Object.hashAll(breakoutRooms ?? const []), createdAt, endedAt, id, liveParticipants, maxConcurrentParticipants, meetingDisplayName, meta, minutesConsumed, organizationId, startedAt, status, type, updatedAt);
 
-@override String toString() => 'RealtimekitActiveSession(associatedId: $associatedId, breakoutRooms: $breakoutRooms, createdAt: $createdAt, endedAt: $endedAt, id: $id, liveParticipants: $liveParticipants, maxConcurrentParticipants: $maxConcurrentParticipants, meetingDisplayName: $meetingDisplayName, meta: $meta, minutesConsumed: $minutesConsumed, organizationId: $organizationId, startedAt: $startedAt, status: $status, type: $type, updatedAt: $updatedAt)';
+@override String toString() => 'RealtimekitActiveSession(\n  associatedId: $associatedId,\n  breakoutRooms: $breakoutRooms,\n  createdAt: $createdAt,\n  endedAt: $endedAt,\n  id: $id,\n  liveParticipants: $liveParticipants,\n  maxConcurrentParticipants: $maxConcurrentParticipants,\n  meetingDisplayName: $meetingDisplayName,\n  meta: $meta,\n  minutesConsumed: $minutesConsumed,\n  organizationId: $organizationId,\n  startedAt: $startedAt,\n  status: $status,\n  type: $type,\n  updatedAt: $updatedAt,\n)';
 
  }

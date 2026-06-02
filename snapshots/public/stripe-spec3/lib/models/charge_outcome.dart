@@ -145,6 +145,6 @@ ChargeOutcome copyWith({AdviceCode? Function()? adviceCode, String? Function()? 
 
 @override int get hashCode => Object.hash(adviceCode, networkAdviceCode, networkDeclineCode, networkStatus, reason, riskLevel, riskScore, rule, sellerMessage, type);
 
-@override String toString() => 'ChargeOutcome(adviceCode: $adviceCode, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, networkStatus: $networkStatus, reason: $reason, riskLevel: $riskLevel, riskScore: $riskScore, rule: $rule, sellerMessage: $sellerMessage, type: $type)';
+@override String toString() => 'ChargeOutcome(\n  adviceCode: $adviceCode,\n  networkAdviceCode: $networkAdviceCode,\n  networkDeclineCode: $networkDeclineCode,\n  networkStatus: $networkStatus,\n  reason: $reason,\n  riskLevel: $riskLevel,\n  riskScore: $riskScore,\n  rule: $rule,\n  sellerMessage: $sellerMessage,\n  type: $type,\n)';
 
  }

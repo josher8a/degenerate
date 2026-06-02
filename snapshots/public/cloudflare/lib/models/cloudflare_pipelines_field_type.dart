@@ -33,6 +33,20 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CloudflarePipelinesFieldType$Unknown;
 
+R when<R>({required R Function(CloudflarePipelinesFieldTypeInt32) int32, required R Function(CloudflarePipelinesFieldTypeInt64) int64, required R Function(CloudflarePipelinesFieldTypeFloat32) float32, required R Function(CloudflarePipelinesFieldTypeFloat64) float64, required R Function(CloudflarePipelinesFieldTypeBool) $bool, required R Function(CloudflarePipelinesFieldTypeString) string, required R Function(CloudflarePipelinesFieldTypeBinary) binary, required R Function(CloudflarePipelinesFieldTypeTimestamp) timestamp, required R Function(CloudflarePipelinesFieldTypeJson) json, required R Function(CloudflarePipelinesFieldTypeStruct) struct, required R Function(CloudflarePipelinesFieldTypeList) list, required R Function(CloudflarePipelinesFieldType$Unknown) unknown, }) { return switch (this) {
+  final CloudflarePipelinesFieldTypeInt32 v => int32(v),
+  final CloudflarePipelinesFieldTypeInt64 v => int64(v),
+  final CloudflarePipelinesFieldTypeFloat32 v => float32(v),
+  final CloudflarePipelinesFieldTypeFloat64 v => float64(v),
+  final CloudflarePipelinesFieldTypeBool v => $bool(v),
+  final CloudflarePipelinesFieldTypeString v => string(v),
+  final CloudflarePipelinesFieldTypeBinary v => binary(v),
+  final CloudflarePipelinesFieldTypeTimestamp v => timestamp(v),
+  final CloudflarePipelinesFieldTypeJson v => json(v),
+  final CloudflarePipelinesFieldTypeStruct v => struct(v),
+  final CloudflarePipelinesFieldTypeList v => list(v),
+  final CloudflarePipelinesFieldType$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class CloudflarePipelinesFieldTypeInt32 extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeInt32(this.int32);
 

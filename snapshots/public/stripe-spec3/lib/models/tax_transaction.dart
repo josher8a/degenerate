@@ -173,6 +173,6 @@ TaxTransaction copyWith({int? created, String? currency, String? Function()? cus
 
 @override int get hashCode => Object.hash(created, currency, customer, customerDetails, id, lineItems, livemode, metadata, object, postedAt, reference, reversal, shipFromDetails, shippingCost, taxDate, type);
 
-@override String toString() => 'TaxTransaction(created: $created, currency: $currency, customer: $customer, customerDetails: $customerDetails, id: $id, lineItems: $lineItems, livemode: $livemode, metadata: $metadata, object: $object, postedAt: $postedAt, reference: $reference, reversal: $reversal, shipFromDetails: $shipFromDetails, shippingCost: $shippingCost, taxDate: $taxDate, type: $type)';
+@override String toString() => 'TaxTransaction(\n  created: $created,\n  currency: $currency,\n  customer: $customer,\n  customerDetails: $customerDetails,\n  id: $id,\n  lineItems: $lineItems,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  postedAt: $postedAt,\n  reference: $reference,\n  reversal: $reversal,\n  shipFromDetails: $shipFromDetails,\n  shippingCost: $shippingCost,\n  taxDate: $taxDate,\n  type: $type,\n)';
 
  }

@@ -18,7 +18,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/diagnostics/traceroute',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/diagnostics/traceroute',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   if (creator != null) 'creator': creator?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  'archived_at': archivedAt != null ? archivedAt?.toIso8601String() : null,
+  'archived_at': archivedAt?.toIso8601String(),
   if (itemUrl != null) 'item_url': itemUrl?.toString(),
   if (fields != null) 'fields': fields?.map((e) => e).toList(),
 }; } 
@@ -96,6 +96,6 @@ ItemWithContent copyWith({double? id, String? Function()? nodeId, Uri? Function(
 
 @override int get hashCode => Object.hash(id, nodeId, projectUrl, contentType, content, creator, createdAt, updatedAt, archivedAt, itemUrl, Object.hashAll(fields ?? const []));
 
-@override String toString() => 'ItemWithContent(id: $id, nodeId: $nodeId, projectUrl: $projectUrl, contentType: $contentType, content: $content, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, archivedAt: $archivedAt, itemUrl: $itemUrl, fields: $fields)';
+@override String toString() => 'ItemWithContent(\n  id: $id,\n  nodeId: $nodeId,\n  projectUrl: $projectUrl,\n  contentType: $contentType,\n  content: $content,\n  creator: $creator,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  archivedAt: $archivedAt,\n  itemUrl: $itemUrl,\n  fields: $fields,\n)';
 
  }

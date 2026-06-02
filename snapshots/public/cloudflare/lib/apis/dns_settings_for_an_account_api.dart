@@ -17,7 +17,7 @@ Future<ApiResult<DnsSettingsAccountSettings, Never>> dnsSettingsForAnAccountList
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_settings',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

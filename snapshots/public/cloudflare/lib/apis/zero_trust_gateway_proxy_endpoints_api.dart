@@ -17,7 +17,7 @@ Future<ApiResult<List<ZeroTrustGatewayProxyEndpoints>?, Never>> zeroTrustGateway
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/proxy_endpoints',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/proxy_endpoints',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/proxy_endpoints',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/proxy_endpoints',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, Never>> zeroTrustGatewayProxyE
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/proxy_endpoints/${Uri.encodeComponent(proxyEndpointId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/proxy_endpoints/${Uri.encodeComponent(proxyEndpointId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/proxy_endpoints/${Uri.encodeComponent(proxyEndpointId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/proxy_endpoints/${Uri.encodeComponent(proxyEndpointId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> zeroTrustGatewayProxyEndpointsDe
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/proxy_endpoints/${Uri.encodeComponent(proxyEndpointId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/proxy_endpoints/${Uri.encodeComponent(proxyEndpointId.toJson())}',
   headers: headers,
   options: options,
 );

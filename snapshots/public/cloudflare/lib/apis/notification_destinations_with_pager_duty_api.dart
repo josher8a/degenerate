@@ -17,7 +17,7 @@ Future<ApiResult<List<AaaPagerduty>?, Never>> notificationDestinationsWithPagerD
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/pagerduty',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/destinations/pagerduty',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<ResponseCommon2, Never>> notificationDestinationsWithPagerDutyD
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/pagerduty',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/destinations/pagerduty',
   headers: headers,
   options: options,
 );
@@ -60,7 +60,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> notificationDestinationsWithPager
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/pagerduty/connect',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/destinations/pagerduty/connect',
   headers: headers,
   options: options,
 );
@@ -82,7 +82,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> notificationDestinationsWithPager
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/pagerduty/connect/${Uri.encodeComponent(tokenId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/destinations/pagerduty/connect/${Uri.encodeComponent(tokenId.toJson())}',
   headers: headers,
   options: options,
 );

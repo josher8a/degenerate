@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/workers/${Uri.encodeComponent(externalScriptId.toString())}/builds',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/workers/${Uri.encodeComponent(externalScriptId.toJson())}/builds',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -50,7 +50,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> listTriggersByScript({required B
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/workers/${Uri.encodeComponent(externalScriptId.toString())}/triggers',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/workers/${Uri.encodeComponent(externalScriptId.toJson())}/triggers',
   headers: headers,
   options: options,
 );
@@ -87,7 +87,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/workers',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -100,7 +100,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorkersWorker.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ListWorkersError.fromResponse(response),
+  onError: ListWorkersError.fromResponse,
 );
  } 
 /// Create Worker
@@ -113,7 +113,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/workers',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -125,7 +125,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => CreateWorkerError.fromResponse(response),
+  onError: CreateWorkerError.fromResponse,
 );
  } 
 /// Get Worker
@@ -137,7 +137,7 @@ Future<ApiResult<WorkersWorker, GetWorkerError>> getWorker({required WorkersIden
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/workers/${Uri.encodeComponent(workerId)}',
   headers: headers,
   options: options,
 );
@@ -148,7 +148,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => GetWorkerError.fromResponse(response),
+  onError: GetWorkerError.fromResponse,
 );
  } 
 /// Update Worker
@@ -161,7 +161,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/workers/${Uri.encodeComponent(workerId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -173,7 +173,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => EditWorkerError.fromResponse(response),
+  onError: EditWorkerError.fromResponse,
 );
  } 
 /// Edit Worker
@@ -186,7 +186,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/workers/${Uri.encodeComponent(workerId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -198,7 +198,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => EditWorkerError.fromResponse(response),
+  onError: EditWorkerError.fromResponse,
 );
  } 
 /// Delete Worker
@@ -210,7 +210,7 @@ Future<ApiResult<ResponseCommon80, DeleteWorkerError>> deleteWorker({required Wo
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/workers/${Uri.encodeComponent(workerId)}',
   headers: headers,
   options: options,
 );
@@ -220,7 +220,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteWorkerError.fromResponse(response),
+  onError: DeleteWorkerError.fromResponse,
 );
  } 
  }

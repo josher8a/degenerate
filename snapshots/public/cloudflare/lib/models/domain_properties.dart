@@ -155,6 +155,6 @@ DomainProperties copyWith({Available? Function()? available, CanRegister? Functi
 
 @override int get hashCode => Object.hash(available, canRegister, createdAt, currentRegistrar, expiresAt, id, locked, registrantContact, registryStatuses, supportedTld, transferIn, updatedAt);
 
-@override String toString() => 'DomainProperties(available: $available, canRegister: $canRegister, createdAt: $createdAt, currentRegistrar: $currentRegistrar, expiresAt: $expiresAt, id: $id, locked: $locked, registrantContact: $registrantContact, registryStatuses: $registryStatuses, supportedTld: $supportedTld, transferIn: $transferIn, updatedAt: $updatedAt)';
+@override String toString() => 'DomainProperties(\n  available: $available,\n  canRegister: $canRegister,\n  createdAt: $createdAt,\n  currentRegistrar: $currentRegistrar,\n  expiresAt: $expiresAt,\n  id: $id,\n  locked: $locked,\n  registrantContact: $registrantContact,\n  registryStatuses: $registryStatuses,\n  supportedTld: $supportedTld,\n  transferIn: $transferIn,\n  updatedAt: $updatedAt,\n)';
 
  }

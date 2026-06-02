@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/spectrum/analytics/aggregate/current',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/spectrum/analytics/aggregate/current',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -78,7 +78,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/spectrum/analytics/events/bytime',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/spectrum/analytics/events/bytime',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -129,7 +129,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/spectrum/analytics/events/summary',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/spectrum/analytics/events/summary',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

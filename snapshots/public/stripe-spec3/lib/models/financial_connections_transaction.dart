@@ -174,6 +174,6 @@ FinancialConnectionsTransaction copyWith({String? account, int? amount, String? 
 
 @override int get hashCode => Object.hash(account, amount, currency, description, id, livemode, object, status, statusTransitions, transactedAt, transactionRefresh, updated);
 
-@override String toString() => 'FinancialConnectionsTransaction(account: $account, amount: $amount, currency: $currency, description: $description, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions, transactedAt: $transactedAt, transactionRefresh: $transactionRefresh, updated: $updated)';
+@override String toString() => 'FinancialConnectionsTransaction(\n  account: $account,\n  amount: $amount,\n  currency: $currency,\n  description: $description,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  status: $status,\n  statusTransitions: $statusTransitions,\n  transactedAt: $transactedAt,\n  transactionRefresh: $transactionRefresh,\n  updated: $updated,\n)';
 
  }

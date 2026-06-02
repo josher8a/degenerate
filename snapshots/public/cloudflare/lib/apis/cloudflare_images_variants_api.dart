@@ -17,7 +17,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> cloudflareImagesVariantsListVar
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/variants',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/variants',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/variants',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/variants',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<ImagesImageVariantResponse?, Never>> cloudflareImagesVariantsVa
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/variants/${Uri.encodeComponent(variantId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/variants/${Uri.encodeComponent(variantId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/variants/${Uri.encodeComponent(variantId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/variants/${Uri.encodeComponent(variantId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> cloudflareImagesVariantsDeleteAV
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/variants/${Uri.encodeComponent(variantId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/variants/${Uri.encodeComponent(variantId.toJson())}',
   headers: headers,
   options: options,
 );

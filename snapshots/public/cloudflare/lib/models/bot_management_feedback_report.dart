@@ -118,6 +118,6 @@ BotManagementFeedbackReport copyWith({DateTime? Function()? createdAt, String? d
 
 @override int get hashCode => Object.hash(createdAt, description, expression, firstRequestSeenAt, lastRequestSeenAt, requests, requestsByAttribute, requestsByScore, requestsByScoreSrc, subtype, type);
 
-@override String toString() => 'BotManagementFeedbackReport(createdAt: $createdAt, description: $description, expression: $expression, firstRequestSeenAt: $firstRequestSeenAt, lastRequestSeenAt: $lastRequestSeenAt, requests: $requests, requestsByAttribute: $requestsByAttribute, requestsByScore: $requestsByScore, requestsByScoreSrc: $requestsByScoreSrc, subtype: $subtype, type: $type)';
+@override String toString() => 'BotManagementFeedbackReport(\n  createdAt: $createdAt,\n  description: $description,\n  expression: $expression,\n  firstRequestSeenAt: $firstRequestSeenAt,\n  lastRequestSeenAt: $lastRequestSeenAt,\n  requests: $requests,\n  requestsByAttribute: $requestsByAttribute,\n  requestsByScore: $requestsByScore,\n  requestsByScoreSrc: $requestsByScoreSrc,\n  subtype: $subtype,\n  type: $type,\n)';
 
  }

@@ -74,6 +74,6 @@ TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull copyWith({TlsCertificates
 
 @override int get hashCode => Object.hash(certificate, expiresOn, id, issuer, signature, status, uploadedOn, enabled, privateKey);
 
-@override String toString() => 'TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull(certificate: $certificate, expiresOn: $expiresOn, id: $id, issuer: $issuer, signature: $signature, status: $status, uploadedOn: $uploadedOn, enabled: $enabled, privateKey: $privateKey)';
+@override String toString() => 'TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull(\n  certificate: $certificate,\n  expiresOn: $expiresOn,\n  id: $id,\n  issuer: $issuer,\n  signature: $signature,\n  status: $status,\n  uploadedOn: $uploadedOn,\n  enabled: $enabled,\n  privateKey: $privateKey,\n)';
 
  }

@@ -69,6 +69,6 @@ RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation copyWith({doub
 
 @override int get hashCode => Object.hash(backendRtt, effectiveNetworktype, fractionalLoss, jitter, reflexiveConnectivity, relayConnectivity, rtt, throughtput, turnConnectivity);
 
-@override String toString() => 'RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation(backendRtt: $backendRtt, effectiveNetworktype: $effectiveNetworktype, fractionalLoss: $fractionalLoss, jitter: $jitter, reflexiveConnectivity: $reflexiveConnectivity, relayConnectivity: $relayConnectivity, rtt: $rtt, throughtput: $throughtput, turnConnectivity: $turnConnectivity)';
+@override String toString() => 'RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation(\n  backendRtt: $backendRtt,\n  effectiveNetworktype: $effectiveNetworktype,\n  fractionalLoss: $fractionalLoss,\n  jitter: $jitter,\n  reflexiveConnectivity: $reflexiveConnectivity,\n  relayConnectivity: $relayConnectivity,\n  rtt: $rtt,\n  throughtput: $throughtput,\n  turnConnectivity: $turnConnectivity,\n)';
 
  }

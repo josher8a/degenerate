@@ -17,7 +17,7 @@ Future<ApiResult<List<AaaPolicies>?, Never>> notificationPoliciesListNotificatio
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/policies',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/policies',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/policies',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/policies',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<AaaPolicies?, Never>> notificationPoliciesGetANotificationPolic
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/policies/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/policies/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<ResponseCollection, Never>> notificationPoliciesDeleteANotifica
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/policies/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   options: options,
 );

@@ -36,10 +36,10 @@ factory ConversationItem.fromJson(Map<String, dynamic> json) { return switch (js
 factory ConversationItem.message({required String id, required MessageStatus status, required MessageRole role, required List<MessageContent> content, }) { return ConversationItemMessage(Message(type: 'message', id: id, status: status, role: role, content: content)); }
 
 /// Build the `FunctionToolCallResource` variant.
-factory ConversationItem.functionToolCallResource({String? id, required String callId, String? namespace, required String name, required String arguments, ComputerToolCallOutputStatus? status, }) { return ConversationItemFunctionToolCallResource(FunctionToolCall(type: 'FunctionToolCallResource', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
+factory ConversationItem.functionToolCallResource({required String callId, required String name, required String arguments, String? id, String? namespace, ComputerToolCallOutputStatus? status, }) { return ConversationItemFunctionToolCallResource(FunctionToolCall(type: 'FunctionToolCallResource', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
 
 /// Build the `FunctionToolCallOutputResource` variant.
-factory ConversationItem.functionToolCallOutputResource({String? id, required String callId, required CustomToolCallOutputOutput output, ComputerToolCallOutputStatus? status, }) { return ConversationItemFunctionToolCallOutputResource(FunctionToolCallOutput(type: 'FunctionToolCallOutputResource', id: id, callId: callId, output: output, status: status)); }
+factory ConversationItem.functionToolCallOutputResource({required String callId, required CustomToolCallOutputOutput output, String? id, ComputerToolCallOutputStatus? status, }) { return ConversationItemFunctionToolCallOutputResource(FunctionToolCallOutput(type: 'FunctionToolCallOutputResource', id: id, callId: callId, output: output, status: status)); }
 
 /// Build the `file_search_call` variant.
 factory ConversationItem.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, List<FileSearchToolCallResults>? results, }) { return ConversationItemFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
@@ -51,10 +51,10 @@ factory ConversationItem.webSearchCall({required String id, required WebSearchTo
 factory ConversationItem.imageGenerationCall({required String id, required ImageGenToolCallStatus status, required String? result, }) { return ConversationItemImageGenerationCall(ImageGenToolCall(type: 'image_generation_call', id: id, status: status, result: result)); }
 
 /// Build the `computer_call` variant.
-factory ConversationItem.computerCall({required String id, required String callId, ComputerAction? action, List<ComputerAction>? actions, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputStatus status, }) { return ConversationItemComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
+factory ConversationItem.computerCall({required String id, required String callId, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputStatus status, ComputerAction? action, List<ComputerAction>? actions, }) { return ConversationItemComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
 
 /// Build the `ComputerToolCallOutputResource` variant.
-factory ConversationItem.computerToolCallOutputResource({String? id, required String callId, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, required ComputerScreenshotImage output, ComputerToolCallOutputStatus? status, }) { return ConversationItemComputerToolCallOutputResource(ComputerToolCallOutput(type: ComputerToolCallOutputType.fromJson('ComputerToolCallOutputResource'), id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status)); }
+factory ConversationItem.computerToolCallOutputResource({required String callId, required ComputerScreenshotImage output, String? id, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ConversationItemComputerToolCallOutputResource(ComputerToolCallOutput(type: ComputerToolCallOutputType.fromJson('ComputerToolCallOutputResource'), id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status)); }
 
 /// Build the `tool_search_call` variant.
 factory ConversationItem.toolSearchCall({required String id, required String? callId, required ToolSearchExecutionType execution, required dynamic arguments, required FunctionCallStatus status, String? createdBy, }) { return ConversationItemToolSearchCall(ToolSearchCall(type: 'tool_search_call', id: id, callId: callId, execution: execution, arguments: arguments, status: status, createdBy: createdBy)); }
@@ -63,7 +63,7 @@ factory ConversationItem.toolSearchCall({required String id, required String? ca
 factory ConversationItem.toolSearchOutput({required String id, required String? callId, required ToolSearchExecutionType execution, required List<Tool> tools, required FunctionCallOutputStatusEnum status, String? createdBy, }) { return ConversationItemToolSearchOutput(ToolSearchOutput(type: 'tool_search_output', id: id, callId: callId, execution: execution, tools: tools, status: status, createdBy: createdBy)); }
 
 /// Build the `reasoning` variant.
-factory ConversationItem.reasoning({required String id, String? encryptedContent, required List<SummaryTextContent> summary, List<ReasoningTextContent>? content, ComputerToolCallOutputStatus? status, }) { return ConversationItemReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
+factory ConversationItem.reasoning({required String id, required List<SummaryTextContent> summary, String? encryptedContent, List<ReasoningTextContent>? content, ComputerToolCallOutputStatus? status, }) { return ConversationItemReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
 
 /// Build the `code_interpreter_call` variant.
 factory ConversationItem.codeInterpreterCall({required String id, required CodeInterpreterToolCallStatus status, required String containerId, required String? code, required List<CodeInterpreterToolCallOutputs>? outputs, }) { return ConversationItemCodeInterpreterCall(CodeInterpreterToolCall(type: 'code_interpreter_call', id: id, status: status, containerId: containerId, code: code, outputs: outputs)); }
@@ -99,10 +99,10 @@ factory ConversationItem.mcpApprovalResponse({required String id, required Strin
 factory ConversationItem.mcpCall({required String id, required String serverLabel, required String name, required String arguments, String? output, String? error, McpToolCallStatus? status, String? approvalRequestId, }) { return ConversationItemMcpCall(McpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, output: output, error: error, status: status, approvalRequestId: approvalRequestId)); }
 
 /// Build the `custom_tool_call` variant.
-factory ConversationItem.customToolCall({String? id, required String callId, String? namespace, required String name, required String input, }) { return ConversationItemCustomToolCall(CustomToolCall(type: 'custom_tool_call', id: id, callId: callId, namespace: namespace, name: name, input: input)); }
+factory ConversationItem.customToolCall({required String callId, required String name, required String input, String? id, String? namespace, }) { return ConversationItemCustomToolCall(CustomToolCall(type: 'custom_tool_call', id: id, callId: callId, namespace: namespace, name: name, input: input)); }
 
 /// Build the `custom_tool_call_output` variant.
-factory ConversationItem.customToolCallOutput({String? id, required String callId, required CustomToolCallOutputOutput output, }) { return ConversationItemCustomToolCallOutput(CustomToolCallOutput(type: 'custom_tool_call_output', id: id, callId: callId, output: output)); }
+factory ConversationItem.customToolCallOutput({required String callId, required CustomToolCallOutputOutput output, String? id, }) { return ConversationItemCustomToolCallOutput(CustomToolCallOutput(type: 'custom_tool_call_output', id: id, callId: callId, output: output)); }
 
 /// The discriminator value identifying this variant.
 String get type;
@@ -112,6 +112,33 @@ bool get isUnknown => this is ConversationItem$Unknown;
 
 /// Shared by all variants of this union.
 String? get id;
+R when<R>({required R Function(ConversationItemMessage) message, required R Function(ConversationItemFunctionToolCallResource) functionToolCallResource, required R Function(ConversationItemFunctionToolCallOutputResource) functionToolCallOutputResource, required R Function(ConversationItemFileSearchCall) fileSearchCall, required R Function(ConversationItemWebSearchCall) webSearchCall, required R Function(ConversationItemImageGenerationCall) imageGenerationCall, required R Function(ConversationItemComputerCall) computerCall, required R Function(ConversationItemComputerToolCallOutputResource) computerToolCallOutputResource, required R Function(ConversationItemToolSearchCall) toolSearchCall, required R Function(ConversationItemToolSearchOutput) toolSearchOutput, required R Function(ConversationItemReasoning) reasoning, required R Function(ConversationItemCodeInterpreterCall) codeInterpreterCall, required R Function(ConversationItemLocalShellCall) localShellCall, required R Function(ConversationItemLocalShellCallOutput) localShellCallOutput, required R Function(ConversationItemShellCall) shellCall, required R Function(ConversationItemShellCallOutput) shellCallOutput, required R Function(ConversationItemApplyPatchCall) applyPatchCall, required R Function(ConversationItemApplyPatchCallOutput) applyPatchCallOutput, required R Function(ConversationItemMcpListTools) mcpListTools, required R Function(ConversationItemMcpApprovalRequest) mcpApprovalRequest, required R Function(ConversationItemMcpApprovalResponse) mcpApprovalResponse, required R Function(ConversationItemMcpCall) mcpCall, required R Function(ConversationItemCustomToolCall) customToolCall, required R Function(ConversationItemCustomToolCallOutput) customToolCallOutput, required R Function(ConversationItem$Unknown) unknown, }) { return switch (this) {
+  final ConversationItemMessage v => message(v),
+  final ConversationItemFunctionToolCallResource v => functionToolCallResource(v),
+  final ConversationItemFunctionToolCallOutputResource v => functionToolCallOutputResource(v),
+  final ConversationItemFileSearchCall v => fileSearchCall(v),
+  final ConversationItemWebSearchCall v => webSearchCall(v),
+  final ConversationItemImageGenerationCall v => imageGenerationCall(v),
+  final ConversationItemComputerCall v => computerCall(v),
+  final ConversationItemComputerToolCallOutputResource v => computerToolCallOutputResource(v),
+  final ConversationItemToolSearchCall v => toolSearchCall(v),
+  final ConversationItemToolSearchOutput v => toolSearchOutput(v),
+  final ConversationItemReasoning v => reasoning(v),
+  final ConversationItemCodeInterpreterCall v => codeInterpreterCall(v),
+  final ConversationItemLocalShellCall v => localShellCall(v),
+  final ConversationItemLocalShellCallOutput v => localShellCallOutput(v),
+  final ConversationItemShellCall v => shellCall(v),
+  final ConversationItemShellCallOutput v => shellCallOutput(v),
+  final ConversationItemApplyPatchCall v => applyPatchCall(v),
+  final ConversationItemApplyPatchCallOutput v => applyPatchCallOutput(v),
+  final ConversationItemMcpListTools v => mcpListTools(v),
+  final ConversationItemMcpApprovalRequest v => mcpApprovalRequest(v),
+  final ConversationItemMcpApprovalResponse v => mcpApprovalResponse(v),
+  final ConversationItemMcpCall v => mcpCall(v),
+  final ConversationItemCustomToolCall v => customToolCall(v),
+  final ConversationItemCustomToolCallOutput v => customToolCallOutput(v),
+  final ConversationItem$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ConversationItemMessage extends ConversationItem {const ConversationItemMessage(this.message);
 
@@ -757,9 +784,11 @@ ConversationItemCustomToolCallOutput copyWith({String? Function()? id, String? c
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class ConversationItem$Unknown extends ConversationItem {const ConversationItem$Unknown(this.json);
+@immutable final class ConversationItem$Unknown extends ConversationItem {ConversationItem$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String? _id = json['id'] as String?;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -772,6 +801,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ConversationItem.unknown($json)';
 
-@override String? get id => json['id'] as String?;
+@override String? get id => _id;
 
  }

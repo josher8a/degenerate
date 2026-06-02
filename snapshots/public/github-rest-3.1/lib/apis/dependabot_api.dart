@@ -78,7 +78,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => DependabotAlertWithRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => DependabotListAlertsForEnterpriseError.fromResponse(response),
+  onError: DependabotListAlertsForEnterpriseError.fromResponse,
 );
  } 
 /// Lists the repositories Dependabot can access in an organization
@@ -114,7 +114,7 @@ return execute(
   onSuccess: (response) {
     return DependabotRepositoryAccessDetails.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Updates Dependabot's repository access list for an organization
@@ -148,7 +148,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Set the default repository access level for Dependabot
@@ -176,7 +176,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// List Dependabot alerts for an organization
@@ -256,7 +256,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => DependabotAlertWithRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => DependabotListAlertsForOrgError.fromResponse(response),
+  onError: DependabotListAlertsForOrgError.fromResponse,
 );
  } 
 /// List organization secrets
@@ -561,7 +561,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => DependabotAlert.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => DependabotListAlertsForOrgError.fromResponse(response),
+  onError: DependabotListAlertsForOrgError.fromResponse,
 );
  } 
 /// Get a Dependabot alert
@@ -583,7 +583,7 @@ return execute(
   onSuccess: (response) {
     return DependabotAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Update a Dependabot alert
@@ -609,7 +609,7 @@ return execute(
   onSuccess: (response) {
     return DependabotAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DependabotUpdateAlertError.fromResponse(response),
+  onError: DependabotUpdateAlertError.fromResponse,
 );
  } 
 /// List repository secrets

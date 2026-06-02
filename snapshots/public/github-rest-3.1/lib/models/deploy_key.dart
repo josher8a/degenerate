@@ -82,6 +82,6 @@ DeployKey copyWith({int? id, String? key, String? url, String? title, bool? veri
 
 @override int get hashCode => Object.hash(id, key, url, title, verified, createdAt, readOnly, addedBy, lastUsed, enabled);
 
-@override String toString() => 'DeployKey(id: $id, key: $key, url: $url, title: $title, verified: $verified, createdAt: $createdAt, readOnly: $readOnly, addedBy: $addedBy, lastUsed: $lastUsed, enabled: $enabled)';
+@override String toString() => 'DeployKey(\n  id: $id,\n  key: $key,\n  url: $url,\n  title: $title,\n  verified: $verified,\n  createdAt: $createdAt,\n  readOnly: $readOnly,\n  addedBy: $addedBy,\n  lastUsed: $lastUsed,\n  enabled: $enabled,\n)';
 
  }

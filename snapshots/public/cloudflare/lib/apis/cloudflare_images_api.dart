@@ -19,7 +19,7 @@ Future<ApiResult<ImagesImage?, Never>> cloudflareImagesUploadAnImageViaUrl({requ
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1',
   headers: headers,
   body: [
     if (body.creator case final creator$?)
@@ -55,7 +55,7 @@ Future<ApiResult<ImagesImage?, Never>> cloudflareImagesImageDetails({required Im
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/${Uri.encodeComponent(imageId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/${Uri.encodeComponent(imageId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -78,7 +78,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/${Uri.encodeComponent(imageId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/${Uri.encodeComponent(imageId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -101,7 +101,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> cloudflareImagesDeleteImage({req
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/${Uri.encodeComponent(imageId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/${Uri.encodeComponent(imageId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -123,7 +123,7 @@ Future<ApiResult<Uint8List, Never>> cloudflareImagesBaseImage({required ImagesIm
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/${Uri.encodeComponent(imageId.toString())}/blob',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/${Uri.encodeComponent(imageId.toJson())}/blob',
   headers: headers,
   options: options,
 );
@@ -144,7 +144,7 @@ Future<ApiResult<ImagesImagesStats?, Never>> cloudflareImagesUsageStatistics({re
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v1/stats',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v1/stats',
   headers: headers,
   options: options,
 );
@@ -224,7 +224,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v2',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v2',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -237,7 +237,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ImagesImagesListResponse2Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => CloudflareImagesListImagesError.fromResponse(response),
+  onError: CloudflareImagesListImagesError.fromResponse,
 );
  } 
 /// Create authenticated direct upload URL V2
@@ -249,7 +249,7 @@ Future<ApiResult<ImagesImageDirectUploadResponseResult?, Never>> cloudflareImage
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/images/v2/direct_upload',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/images/v2/direct_upload',
   headers: headers,
   body: [
     if (body.creator case final creator$?)

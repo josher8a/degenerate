@@ -122,6 +122,6 @@ TopicSearchResultItem copyWith({String? name, String? Function()? displayName, S
 
 @override int get hashCode => Object.hash(name, displayName, shortDescription, description, createdBy, released, createdAt, updatedAt, featured, curated, score, repositoryCount, logoUrl, Object.hashAll(textMatches ?? const []), Object.hashAll(related ?? const []), Object.hashAll(aliases ?? const []));
 
-@override String toString() => 'TopicSearchResultItem(name: $name, displayName: $displayName, shortDescription: $shortDescription, description: $description, createdBy: $createdBy, released: $released, createdAt: $createdAt, updatedAt: $updatedAt, featured: $featured, curated: $curated, score: $score, repositoryCount: $repositoryCount, logoUrl: $logoUrl, textMatches: $textMatches, related: $related, aliases: $aliases)';
+@override String toString() => 'TopicSearchResultItem(\n  name: $name,\n  displayName: $displayName,\n  shortDescription: $shortDescription,\n  description: $description,\n  createdBy: $createdBy,\n  released: $released,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  featured: $featured,\n  curated: $curated,\n  score: $score,\n  repositoryCount: $repositoryCount,\n  logoUrl: $logoUrl,\n  textMatches: $textMatches,\n  related: $related,\n  aliases: $aliases,\n)';
 
  }

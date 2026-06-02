@@ -17,7 +17,7 @@ Future<ApiResult<List<WorkersRoute>, Never>> workerRoutesListRoutes({required Wo
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/workers/routes',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/workers/routes',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/workers/routes',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/workers/routes',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<WorkersRoute, Never>> workerRoutesGetRoute({required WorkersIde
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/workers/routes/${Uri.encodeComponent(routeId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/workers/routes/${Uri.encodeComponent(routeId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/workers/routes/${Uri.encodeComponent(routeId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/workers/routes/${Uri.encodeComponent(routeId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<AaaIdResponseResult, Never>> workerRoutesDeleteRoute({required 
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/workers/routes/${Uri.encodeComponent(routeId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/workers/routes/${Uri.encodeComponent(routeId.toJson())}',
   headers: headers,
   options: options,
 );

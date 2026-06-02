@@ -139,6 +139,6 @@ ZeroTrustGatewayLocations copyWith({ZeroTrustGatewayClientDefault? Function()? c
 
 @override int get hashCode => Object.hash(clientDefault, createdAt, dnsDestinationIpsId, dnsDestinationIpv6BlockId, dohSubdomain, ecsSupport, endpoints, id, ip, ipv4Destination, ipv4DestinationBackup, name, Object.hashAll(networks ?? const []), updatedAt);
 
-@override String toString() => 'ZeroTrustGatewayLocations(clientDefault: $clientDefault, createdAt: $createdAt, dnsDestinationIpsId: $dnsDestinationIpsId, dnsDestinationIpv6BlockId: $dnsDestinationIpv6BlockId, dohSubdomain: $dohSubdomain, ecsSupport: $ecsSupport, endpoints: $endpoints, id: $id, ip: $ip, ipv4Destination: $ipv4Destination, ipv4DestinationBackup: $ipv4DestinationBackup, name: $name, networks: $networks, updatedAt: $updatedAt)';
+@override String toString() => 'ZeroTrustGatewayLocations(\n  clientDefault: $clientDefault,\n  createdAt: $createdAt,\n  dnsDestinationIpsId: $dnsDestinationIpsId,\n  dnsDestinationIpv6BlockId: $dnsDestinationIpv6BlockId,\n  dohSubdomain: $dohSubdomain,\n  ecsSupport: $ecsSupport,\n  endpoints: $endpoints,\n  id: $id,\n  ip: $ip,\n  ipv4Destination: $ipv4Destination,\n  ipv4DestinationBackup: $ipv4DestinationBackup,\n  name: $name,\n  networks: $networks,\n  updatedAt: $updatedAt,\n)';
 
  }

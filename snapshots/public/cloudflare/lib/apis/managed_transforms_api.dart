@@ -17,7 +17,7 @@ Future<ApiResult<dynamic, Never>> listManagedTransforms({required RulesetsZoneId
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/managed_headers',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/managed_headers',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/managed_headers',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/managed_headers',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<void, Never>> deleteManagedTransforms({required RulesetsZoneId 
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/managed_headers',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/managed_headers',
   headers: headers,
   options: options,
 );

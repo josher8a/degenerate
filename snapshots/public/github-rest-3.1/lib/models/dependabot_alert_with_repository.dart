@@ -83,11 +83,11 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toJson(),
   'created_at': createdAt.toJson(),
   'updated_at': updatedAt.toJson(),
-  'dismissed_at': dismissedAt != null ? dismissedAt?.toJson() : null,
-  'dismissed_by': dismissedBy != null ? dismissedBy?.toJson() : null,
-  'dismissed_reason': dismissedReason != null ? dismissedReason?.toJson() : null,
+  'dismissed_at': dismissedAt?.toJson(),
+  'dismissed_by': dismissedBy?.toJson(),
+  'dismissed_reason': dismissedReason?.toJson(),
   'dismissed_comment': dismissedComment,
-  'fixed_at': fixedAt != null ? fixedAt?.toJson() : null,
+  'fixed_at': fixedAt?.toJson(),
   if (autoDismissedAt != null) 'auto_dismissed_at': autoDismissedAt?.toJson(),
   if (dismissalRequest != null) 'dismissal_request': dismissalRequest?.toJson(),
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
@@ -158,6 +158,6 @@ DependabotAlertWithRepository copyWith({AlertNumber? number, DependabotAlertStat
 
 @override int get hashCode => Object.hash(number, state, dependency, securityAdvisory, securityVulnerability, url, htmlUrl, createdAt, updatedAt, dismissedAt, dismissedBy, dismissedReason, dismissedComment, fixedAt, autoDismissedAt, dismissalRequest, Object.hashAll(assignees ?? const []), repository);
 
-@override String toString() => 'DependabotAlertWithRepository(number: $number, state: $state, dependency: $dependency, securityAdvisory: $securityAdvisory, securityVulnerability: $securityVulnerability, url: $url, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedReason: $dismissedReason, dismissedComment: $dismissedComment, fixedAt: $fixedAt, autoDismissedAt: $autoDismissedAt, dismissalRequest: $dismissalRequest, assignees: $assignees, repository: $repository)';
+@override String toString() => 'DependabotAlertWithRepository(\n  number: $number,\n  state: $state,\n  dependency: $dependency,\n  securityAdvisory: $securityAdvisory,\n  securityVulnerability: $securityVulnerability,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  dismissedAt: $dismissedAt,\n  dismissedBy: $dismissedBy,\n  dismissedReason: $dismissedReason,\n  dismissedComment: $dismissedComment,\n  fixedAt: $fixedAt,\n  autoDismissedAt: $autoDismissedAt,\n  dismissalRequest: $dismissalRequest,\n  assignees: $assignees,\n  repository: $repository,\n)';
 
  }

@@ -186,6 +186,6 @@ TelemetryQueryRequest copyWith({bool? Function()? chart, bool? Function()? compa
 
 @override int get hashCode => Object.hash(chart, compare, dry, granularity, ignoreSeries, limit, offset, offsetBy, offsetDirection, parameters, patternType, queryId, timeframe, view);
 
-@override String toString() => 'TelemetryQueryRequest(chart: $chart, compare: $compare, dry: $dry, granularity: $granularity, ignoreSeries: $ignoreSeries, limit: $limit, offset: $offset, offsetBy: $offsetBy, offsetDirection: $offsetDirection, parameters: $parameters, patternType: $patternType, queryId: $queryId, timeframe: $timeframe, view: $view)';
+@override String toString() => 'TelemetryQueryRequest(\n  chart: $chart,\n  compare: $compare,\n  dry: $dry,\n  granularity: $granularity,\n  ignoreSeries: $ignoreSeries,\n  limit: $limit,\n  offset: $offset,\n  offsetBy: $offsetBy,\n  offsetDirection: $offsetDirection,\n  parameters: $parameters,\n  patternType: $patternType,\n  queryId: $queryId,\n  timeframe: $timeframe,\n  view: $view,\n)';
 
  }

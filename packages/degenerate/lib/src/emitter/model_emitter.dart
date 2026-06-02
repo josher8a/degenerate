@@ -314,10 +314,11 @@ class ModelEmitter {
     // appending `$` until unique among everything already in scope.
     final taken = {for (final f in model.fields) f.name};
     String fresh(String base) {
-      var n = base;
-      while (taken.contains(n)) {
-        n = '$n\$';
+      final sb = StringBuffer(base);
+      while (taken.contains(sb.toString())) {
+        sb.write(r'$');
       }
+      final n = sb.toString();
       taken.add(n);
       return n;
     }
@@ -383,9 +384,10 @@ class ModelEmitter {
     if (type is IrPrimitive) {
       if (type.kind == PrimitiveKind.string) {
         if (c.minLength != null) {
-          out.add(
-            'if ($accessor.length < ${c.minLength}) ${err('length must be >= ${c.minLength}')}',
-          );
+          final check = c.minLength == 1
+              ? '$accessor.isEmpty'
+              : '$accessor.length < ${c.minLength}';
+          out.add('if ($check) ${err('length must be >= ${c.minLength}')}');
         }
         if (c.maxLength != null) {
           out.add(
@@ -427,9 +429,10 @@ class ModelEmitter {
       }
     } else if (type is IrList) {
       if (c.minItems != null) {
-        out.add(
-          'if ($accessor.length < ${c.minItems}) ${err('must have >= ${c.minItems} items')}',
-        );
+        final check = c.minItems == 1
+            ? '$accessor.isEmpty'
+            : '$accessor.length < ${c.minItems}';
+        out.add('if ($check) ${err('must have >= ${c.minItems} items')}');
       }
       if (c.maxItems != null) {
         out.add(
@@ -532,14 +535,22 @@ class ModelEmitter {
   }
 
   Method _buildToString() {
-    var fieldStr = model.fields.map(toStringField).join(', ');
-    if (model.additionalProperties != null) {
-      if (fieldStr.isNotEmpty) fieldStr += ', ';
-      fieldStr += '$_overflowFieldName: \$$_overflowFieldName';
+    final allFields = [
+      ...model.fields.map(toStringField),
+      if (model.additionalProperties != null)
+        '$_overflowFieldName: \$$_overflowFieldName',
+    ];
+
+    if (allFields.length > 8) {
+      const nl = r'\n';
+      final lines = allFields.map((f) => '  $f').join(',$nl');
+      return buildToStringOverride(
+        "'${escapeNameForString(model.name)}($nl$lines,$nl)'",
+      );
     }
 
     return buildToStringOverride(
-      "'${escapeNameForString(model.name)}($fieldStr)'",
+      "'${escapeNameForString(model.name)}(${allFields.join(', ')})'",
     );
   }
 

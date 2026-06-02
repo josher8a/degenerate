@@ -98,6 +98,6 @@ PostInvoicesInvoiceAddLinesRequestLines copyWith({int? Function()? amount, Strin
 
 @override int get hashCode => Object.hash(amount, description, discountable, discounts, invoiceItem, metadata, period, priceData, pricing, quantity, taxAmounts, taxRates);
 
-@override String toString() => 'PostInvoicesInvoiceAddLinesRequestLines(amount: $amount, description: $description, discountable: $discountable, discounts: $discounts, invoiceItem: $invoiceItem, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates)';
+@override String toString() => 'PostInvoicesInvoiceAddLinesRequestLines(\n  amount: $amount,\n  description: $description,\n  discountable: $discountable,\n  discounts: $discounts,\n  invoiceItem: $invoiceItem,\n  metadata: $metadata,\n  period: $period,\n  priceData: $priceData,\n  pricing: $pricing,\n  quantity: $quantity,\n  taxAmounts: $taxAmounts,\n  taxRates: $taxRates,\n)';
 
  }

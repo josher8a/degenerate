@@ -54,7 +54,7 @@ if (numSteps$ != null) {
   if (numSteps$ < 1) errors.add('numSteps: must be >= 1');
   if (numSteps$ > 40) errors.add('numSteps: must be <= 40');
 }
-if (prompt.length < 1) errors.add('prompt: length must be >= 1');
+if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
 final seed$ = seed;
 if (seed$ != null) {
   if (seed$ < 0) errors.add('seed: must be >= 0');

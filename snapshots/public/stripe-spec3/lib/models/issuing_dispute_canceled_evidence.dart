@@ -101,6 +101,6 @@ IssuingDisputeCanceledEvidence copyWith({IssuingDisputeCanceledEvidenceAdditiona
 
 @override int get hashCode => Object.hash(additionalDocumentation, canceledAt, cancellationPolicyProvided, cancellationReason, expectedAt, explanation, productDescription, productType, returnStatus, returnedAt);
 
-@override String toString() => 'IssuingDisputeCanceledEvidence(additionalDocumentation: $additionalDocumentation, canceledAt: $canceledAt, cancellationPolicyProvided: $cancellationPolicyProvided, cancellationReason: $cancellationReason, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType, returnStatus: $returnStatus, returnedAt: $returnedAt)';
+@override String toString() => 'IssuingDisputeCanceledEvidence(\n  additionalDocumentation: $additionalDocumentation,\n  canceledAt: $canceledAt,\n  cancellationPolicyProvided: $cancellationPolicyProvided,\n  cancellationReason: $cancellationReason,\n  expectedAt: $expectedAt,\n  explanation: $explanation,\n  productDescription: $productDescription,\n  productType: $productType,\n  returnStatus: $returnStatus,\n  returnedAt: $returnedAt,\n)';
 
  }

@@ -88,6 +88,6 @@ UrlscannerGetScanResponseResultScan copyWith({ScanAsns? Function()? asns, List<L
 
 @override int get hashCode => Object.hash(asns, Object.hashAll(certificates), domains, geo, ips, links, meta, page, Object.hashAll(performance), task, verdicts);
 
-@override String toString() => 'UrlscannerGetScanResponseResultScan(asns: $asns, certificates: $certificates, domains: $domains, geo: $geo, ips: $ips, links: $links, meta: $meta, page: $page, performance: $performance, task: $task, verdicts: $verdicts)';
+@override String toString() => 'UrlscannerGetScanResponseResultScan(\n  asns: $asns,\n  certificates: $certificates,\n  domains: $domains,\n  geo: $geo,\n  ips: $ips,\n  links: $links,\n  meta: $meta,\n  page: $page,\n  performance: $performance,\n  task: $task,\n  verdicts: $verdicts,\n)';
 
  }

@@ -73,6 +73,6 @@ WebhookInstallationTargetRenamed copyWith({WebhookInstallationTargetRenamedAccou
 
 @override int get hashCode => Object.hash(account, action, changes, enterprise, installation, organization, repository, sender, targetType);
 
-@override String toString() => 'WebhookInstallationTargetRenamed(account: $account, action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, targetType: $targetType)';
+@override String toString() => 'WebhookInstallationTargetRenamed(\n  account: $account,\n  action: $action,\n  changes: $changes,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  sender: $sender,\n  targetType: $targetType,\n)';
 
  }

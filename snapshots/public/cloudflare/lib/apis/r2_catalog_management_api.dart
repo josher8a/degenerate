@@ -20,7 +20,7 @@ Future<ApiResult<R2DataCatalogCatalogList?, ListCatalogsError>> listCatalogs({re
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2-catalog',
   headers: headers,
   options: options,
 );
@@ -31,7 +31,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2DataCatalogCatalogList.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => ListCatalogsError.fromResponse(response),
+  onError: ListCatalogsError.fromResponse,
 );
  } 
 /// Get R2 catalog details
@@ -45,7 +45,7 @@ Future<ApiResult<R2DataCatalogCatalog?, DisableCatalogError>> getCatalogDetails(
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2-catalog/${Uri.encodeComponent(bucketName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -56,7 +56,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2DataCatalogCatalog.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => DisableCatalogError.fromResponse(response),
+  onError: DisableCatalogError.fromResponse,
 );
  } 
 /// Disable R2 catalog
@@ -71,7 +71,7 @@ Future<ApiResult<void, DisableCatalogError>> disableCatalog({required R2DataCata
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/disable',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2-catalog/${Uri.encodeComponent(bucketName.toJson())}/disable',
   headers: headers,
   options: options,
 );
@@ -79,7 +79,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DisableCatalogError.fromResponse(response),
+  onError: DisableCatalogError.fromResponse,
 );
  } 
 /// Enable R2 bucket as a catalog
@@ -94,7 +94,7 @@ Future<ApiResult<R2DataCatalogCatalogActivationResponse?, EnableCatalogError>> e
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/enable',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2-catalog/${Uri.encodeComponent(bucketName.toJson())}/enable',
   headers: headers,
   options: options,
 );
@@ -105,7 +105,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2DataCatalogCatalogActivationResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => EnableCatalogError.fromResponse(response),
+  onError: EnableCatalogError.fromResponse,
 );
  } 
  }

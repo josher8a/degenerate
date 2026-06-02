@@ -130,6 +130,6 @@ AccountBusinessProfile copyWith({AccountAnnualRevenue? Function()? annualRevenue
 
 @override int get hashCode => Object.hash(annualRevenue, estimatedWorkerCount, mcc, Object.hashAll(minorityOwnedBusinessDesignation ?? const []), monthlyEstimatedRevenue, name, productDescription, supportAddress, supportEmail, supportPhone, supportUrl, url);
 
-@override String toString() => 'AccountBusinessProfile(annualRevenue: $annualRevenue, estimatedWorkerCount: $estimatedWorkerCount, mcc: $mcc, minorityOwnedBusinessDesignation: $minorityOwnedBusinessDesignation, monthlyEstimatedRevenue: $monthlyEstimatedRevenue, name: $name, productDescription: $productDescription, supportAddress: $supportAddress, supportEmail: $supportEmail, supportPhone: $supportPhone, supportUrl: $supportUrl, url: $url)';
+@override String toString() => 'AccountBusinessProfile(\n  annualRevenue: $annualRevenue,\n  estimatedWorkerCount: $estimatedWorkerCount,\n  mcc: $mcc,\n  minorityOwnedBusinessDesignation: $minorityOwnedBusinessDesignation,\n  monthlyEstimatedRevenue: $monthlyEstimatedRevenue,\n  name: $name,\n  productDescription: $productDescription,\n  supportAddress: $supportAddress,\n  supportEmail: $supportEmail,\n  supportPhone: $supportPhone,\n  supportUrl: $supportUrl,\n  url: $url,\n)';
 
  }

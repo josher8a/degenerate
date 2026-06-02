@@ -127,6 +127,6 @@ Workflow copyWith({int? id, String? nodeId, String? name, String? path, Workflow
 
 @override int get hashCode => Object.hash(id, nodeId, name, path, state, createdAt, updatedAt, url, htmlUrl, badgeUrl, deletedAt);
 
-@override String toString() => 'Workflow(id: $id, nodeId: $nodeId, name: $name, path: $path, state: $state, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, badgeUrl: $badgeUrl, deletedAt: $deletedAt)';
+@override String toString() => 'Workflow(\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  path: $path,\n  state: $state,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  badgeUrl: $badgeUrl,\n  deletedAt: $deletedAt,\n)';
 
  }

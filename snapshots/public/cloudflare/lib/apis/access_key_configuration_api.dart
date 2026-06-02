@@ -17,7 +17,7 @@ Future<ApiResult<AccessKeyConfig?, Never>> accessKeyConfigurationGetTheAccessKey
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/keys',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/keys',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/keys',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/keys',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<AccessKeyConfig?, Never>> accessKeyConfigurationRotateAccessKey
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/keys/rotate',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/keys/rotate',
   headers: headers,
   options: options,
 );

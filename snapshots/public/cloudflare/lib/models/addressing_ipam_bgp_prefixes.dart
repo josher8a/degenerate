@@ -80,6 +80,6 @@ AddressingIpamBgpPrefixes copyWith({AddressingSchemasAsn? Function()? asn, Addre
 
 @override int get hashCode => Object.hash(asn, asnPrependCount, autoAdvertiseWithdraw, bgpSignalOpts, cidr, createdAt, id, modifiedAt, onDemand);
 
-@override String toString() => 'AddressingIpamBgpPrefixes(asn: $asn, asnPrependCount: $asnPrependCount, autoAdvertiseWithdraw: $autoAdvertiseWithdraw, bgpSignalOpts: $bgpSignalOpts, cidr: $cidr, createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, onDemand: $onDemand)';
+@override String toString() => 'AddressingIpamBgpPrefixes(\n  asn: $asn,\n  asnPrependCount: $asnPrependCount,\n  autoAdvertiseWithdraw: $autoAdvertiseWithdraw,\n  bgpSignalOpts: $bgpSignalOpts,\n  cidr: $cidr,\n  createdAt: $createdAt,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  onDemand: $onDemand,\n)';
 
  }

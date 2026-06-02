@@ -93,6 +93,6 @@ Package copyWith({int? id, String? name, PackageType? packageType, String? url, 
 
 @override int get hashCode => Object.hash(id, name, packageType, url, htmlUrl, versionCount, visibility, owner, repository, createdAt, updatedAt);
 
-@override String toString() => 'Package(id: $id, name: $name, packageType: $packageType, url: $url, htmlUrl: $htmlUrl, versionCount: $versionCount, visibility: $visibility, owner: $owner, repository: $repository, createdAt: $createdAt, updatedAt: $updatedAt)';
+@override String toString() => 'Package(\n  id: $id,\n  name: $name,\n  packageType: $packageType,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  versionCount: $versionCount,\n  visibility: $visibility,\n  owner: $owner,\n  repository: $repository,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
  }

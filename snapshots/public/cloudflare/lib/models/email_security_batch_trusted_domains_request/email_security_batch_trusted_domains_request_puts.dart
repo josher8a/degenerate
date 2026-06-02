@@ -48,7 +48,7 @@ final comments$ = comments;
 if (comments$ != null) {
   if (comments$.length > 1024) errors.add('comments: length must be <= 1024');
 }
-if (pattern.length < 1) errors.add('pattern: length must be >= 1');
+if (pattern.isEmpty) errors.add('pattern: length must be >= 1');
 if (pattern.length > 1024) errors.add('pattern: length must be <= 1024');
 return errors; } 
 EmailSecurityBatchTrustedDomainsRequestPuts copyWith({String? Function()? comments, bool? isRecent, bool? isRegex, bool? isSimilarity, String? pattern, EmailSecurityTrustedDomainId? id, }) { return EmailSecurityBatchTrustedDomainsRequestPuts(

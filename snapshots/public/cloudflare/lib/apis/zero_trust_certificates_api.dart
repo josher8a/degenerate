@@ -17,7 +17,7 @@ Future<ApiResult<List<ZeroTrustGatewayCertificates>?, Never>> zeroTrustCertifica
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/certificates',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/certificates',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/certificates',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/certificates',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<ZeroTrustGatewayCertificates?, Never>> zeroTrustCertificatesZer
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -85,7 +85,7 @@ Future<ApiResult<ZeroTrustGatewayCertificates?, Never>> zeroTrustCertificatesDel
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -107,7 +107,7 @@ Future<ApiResult<ZeroTrustGatewayCertificates?, Never>> zeroTrustCertificatesAct
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/certificates/${Uri.encodeComponent(certificateId.toString())}/activate',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/certificates/${Uri.encodeComponent(certificateId.toJson())}/activate',
   headers: headers,
   options: options,
 );
@@ -129,7 +129,7 @@ Future<ApiResult<ZeroTrustGatewayCertificates?, Never>> zeroTrustCertificatesDea
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/certificates/${Uri.encodeComponent(certificateId.toString())}/deactivate',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/certificates/${Uri.encodeComponent(certificateId.toJson())}/deactivate',
   headers: headers,
   options: options,
 );

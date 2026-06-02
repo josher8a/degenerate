@@ -18,7 +18,7 @@ final Collaborator? user;
 Map<String, dynamic> toJson() { return {
   'permission': permission,
   'role_name': roleName,
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('permission') && json['permission'] is String &&
       json.containsKey('role_name') && json['role_name'] is String &&

@@ -449,7 +449,7 @@ void main() {
       expect(source, contains('if (score > 100)'));
       // List field is optional → null-guarded via a captured local.
       expect(source, contains(r'final tags$ = tags;'));
-      expect(source, contains(r'if (tags$.length < 1)'));
+      expect(source, contains(r'if (tags$.isEmpty)'));
       expect(source, contains(r'tags$.toSet().length != tags$.length'));
       expect(() => _formatOrFail(source), returnsNormally);
     });

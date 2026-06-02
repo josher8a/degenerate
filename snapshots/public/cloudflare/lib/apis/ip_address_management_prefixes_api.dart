@@ -17,7 +17,7 @@ Future<ApiResult<AddressingLoaUploadResponseResult?, Never>> ipAddressManagement
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/loa_documents',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/loa_documents',
   headers: headers,
   body: [
     ApiMultipartField.text('loa_document', body.loaDocument),
@@ -43,7 +43,7 @@ Future<ApiResult<Uint8List, Never>> ipAddressManagementPrefixesDownloadLoaDocume
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/loa_documents/${Uri.encodeComponent(loaDocumentId.toString())}/download',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/loa_documents/${Uri.encodeComponent(loaDocumentId.toJson())}/download',
   headers: headers,
   options: options,
 );
@@ -64,7 +64,7 @@ Future<ApiResult<List<AddressingIpamPrefixes>?, Never>> ipAddressManagementPrefi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes',
   headers: headers,
   options: options,
 );
@@ -87,7 +87,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -110,7 +110,7 @@ Future<ApiResult<AddressingIpamPrefixes?, Never>> ipAddressManagementPrefixesPre
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -133,7 +133,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -156,7 +156,7 @@ Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementPrefixesDeletePrefi
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -177,7 +177,7 @@ Future<ApiResult<AddressingIpamPrefixes?, Never>> ipAddressManagementPrefixesVal
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/validate',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/validate',
   headers: headers,
   options: options,
 );

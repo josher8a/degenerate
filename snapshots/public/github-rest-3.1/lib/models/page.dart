@@ -153,7 +153,7 @@ final bool? httpsEnforced;
 
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
-  'status': status != null ? status?.toJson() : null,
+  'status': status?.toJson(),
   'cname': cname,
   if (protectedDomainState != null) 'protected_domain_state': protectedDomainState?.toJson(),
   if (pendingDomainUnverifiedAt != null) 'pending_domain_unverified_at': pendingDomainUnverifiedAt?.toIso8601String(),
@@ -201,6 +201,6 @@ Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cna
 
 @override int get hashCode => Object.hash(url, status, cname, protectedDomainState, pendingDomainUnverifiedAt, custom404, htmlUrl, buildType, source, public, httpsCertificate, httpsEnforced);
 
-@override String toString() => 'Page(url: $url, status: $status, cname: $cname, protectedDomainState: $protectedDomainState, pendingDomainUnverifiedAt: $pendingDomainUnverifiedAt, custom404: $custom404, htmlUrl: $htmlUrl, buildType: $buildType, source: $source, public: $public, httpsCertificate: $httpsCertificate, httpsEnforced: $httpsEnforced)';
+@override String toString() => 'Page(\n  url: $url,\n  status: $status,\n  cname: $cname,\n  protectedDomainState: $protectedDomainState,\n  pendingDomainUnverifiedAt: $pendingDomainUnverifiedAt,\n  custom404: $custom404,\n  htmlUrl: $htmlUrl,\n  buildType: $buildType,\n  source: $source,\n  public: $public,\n  httpsCertificate: $httpsCertificate,\n  httpsEnforced: $httpsEnforced,\n)';
 
  }

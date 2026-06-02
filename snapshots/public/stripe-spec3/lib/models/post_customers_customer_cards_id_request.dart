@@ -155,6 +155,6 @@ PostCustomersCustomerCardsIdRequest copyWith({String? Function()? accountHolderN
 
 @override int get hashCode => Object.hash(accountHolderName, accountHolderType, addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, expMonth, expYear, Object.hashAll(expand ?? const []), metadata, name, owner);
 
-@override String toString() => 'PostCustomersCustomerCardsIdRequest(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, expMonth: $expMonth, expYear: $expYear, expand: $expand, metadata: $metadata, name: $name, owner: $owner)';
+@override String toString() => 'PostCustomersCustomerCardsIdRequest(\n  accountHolderName: $accountHolderName,\n  accountHolderType: $accountHolderType,\n  addressCity: $addressCity,\n  addressCountry: $addressCountry,\n  addressLine1: $addressLine1,\n  addressLine2: $addressLine2,\n  addressState: $addressState,\n  addressZip: $addressZip,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  expand: $expand,\n  metadata: $metadata,\n  name: $name,\n  owner: $owner,\n)';
 
  }

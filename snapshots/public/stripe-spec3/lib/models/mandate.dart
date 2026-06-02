@@ -188,6 +188,6 @@ Mandate copyWith({CustomerAcceptance? customerAcceptance, String? id, bool? live
 
 @override int get hashCode => Object.hash(customerAcceptance, id, livemode, multiUse, object, onBehalfOf, paymentMethod, paymentMethodDetails, singleUse, status, type);
 
-@override String toString() => 'Mandate(customerAcceptance: $customerAcceptance, id: $id, livemode: $livemode, multiUse: $multiUse, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodDetails: $paymentMethodDetails, singleUse: $singleUse, status: $status, type: $type)';
+@override String toString() => 'Mandate(\n  customerAcceptance: $customerAcceptance,\n  id: $id,\n  livemode: $livemode,\n  multiUse: $multiUse,\n  object: $object,\n  onBehalfOf: $onBehalfOf,\n  paymentMethod: $paymentMethod,\n  paymentMethodDetails: $paymentMethodDetails,\n  singleUse: $singleUse,\n  status: $status,\n  type: $type,\n)';
 
  }

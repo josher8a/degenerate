@@ -11,7 +11,7 @@ factory CreateTranscriptionResponseDiarizedJsonUsage.fromJson(Map<String, dynami
 }; }
 
 /// Build the `tokens` variant.
-factory CreateTranscriptionResponseDiarizedJsonUsage.tokens({required int inputTokens, TranscriptTextUsageTokensInputTokenDetails? inputTokenDetails, required int outputTokens, required int totalTokens, }) { return CreateTranscriptionResponseDiarizedJsonUsageTokens(TranscriptTextUsageTokens(type: TranscriptTextUsageTokensType.fromJson('tokens'), inputTokens: inputTokens, inputTokenDetails: inputTokenDetails, outputTokens: outputTokens, totalTokens: totalTokens)); }
+factory CreateTranscriptionResponseDiarizedJsonUsage.tokens({required int inputTokens, required int outputTokens, required int totalTokens, TranscriptTextUsageTokensInputTokenDetails? inputTokenDetails, }) { return CreateTranscriptionResponseDiarizedJsonUsageTokens(TranscriptTextUsageTokens(type: TranscriptTextUsageTokensType.fromJson('tokens'), inputTokens: inputTokens, inputTokenDetails: inputTokenDetails, outputTokens: outputTokens, totalTokens: totalTokens)); }
 
 /// Build the `duration` variant.
 factory CreateTranscriptionResponseDiarizedJsonUsage.duration({required double seconds}) { return CreateTranscriptionResponseDiarizedJsonUsageDuration(TranscriptTextUsageDuration(type: TranscriptTextUsageDurationType.fromJson('duration'), seconds: seconds)); }
@@ -22,6 +22,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CreateTranscriptionResponseDiarizedJsonUsage$Unknown;
 
+R when<R>({required R Function(CreateTranscriptionResponseDiarizedJsonUsageTokens) tokens, required R Function(CreateTranscriptionResponseDiarizedJsonUsageDuration) duration, required R Function(CreateTranscriptionResponseDiarizedJsonUsage$Unknown) unknown, }) { return switch (this) {
+  final CreateTranscriptionResponseDiarizedJsonUsageTokens v => tokens(v),
+  final CreateTranscriptionResponseDiarizedJsonUsageDuration v => duration(v),
+  final CreateTranscriptionResponseDiarizedJsonUsage$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class CreateTranscriptionResponseDiarizedJsonUsageTokens extends CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsageTokens(this.transcriptTextUsageTokens);
 

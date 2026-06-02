@@ -127,6 +127,6 @@ CreateAssistantRequest copyWith({CreateAssistantRequestModel? model, String? Fun
 
 @override int get hashCode => Object.hash(model, name, description, instructions, reasoningEffort, Object.hashAll(tools), toolResources, metadata, temperature, topP, responseFormat);
 
-@override String toString() => 'CreateAssistantRequest(model: $model, name: $name, description: $description, instructions: $instructions, reasoningEffort: $reasoningEffort, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)';
+@override String toString() => 'CreateAssistantRequest(\n  model: $model,\n  name: $name,\n  description: $description,\n  instructions: $instructions,\n  reasoningEffort: $reasoningEffort,\n  tools: $tools,\n  toolResources: $toolResources,\n  metadata: $metadata,\n  temperature: $temperature,\n  topP: $topP,\n  responseFormat: $responseFormat,\n)';
 
  }

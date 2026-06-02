@@ -30,7 +30,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Package.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// List packages for an organization
@@ -70,7 +70,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Package.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Get a package for an organization
@@ -84,7 +84,7 @@ Future<ApiResult<Package, Never>> packagesGetPackageForOrganization({required Pa
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}',
   headers: headers,
   options: options,
 );
@@ -109,7 +109,7 @@ Future<ApiResult<void, ActivityCheckRepoIsStarredByAuthenticatedUserError>> pack
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}',
   headers: headers,
   options: options,
 );
@@ -117,7 +117,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Restore a package for an organization
@@ -143,7 +143,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/restore',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/restore',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -153,7 +153,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// List package versions for a package owned by an organization
@@ -179,7 +179,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/versions',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/versions',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -192,7 +192,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => PackageVersion.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get a package version for an organization
@@ -206,7 +206,7 @@ Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForOrganizatio
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
   options: options,
 );
@@ -231,7 +231,7 @@ Future<ApiResult<void, ActivityCheckRepoIsStarredByAuthenticatedUserError>> pack
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
   options: options,
 );
@@ -239,7 +239,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Restore package version for an organization
@@ -259,7 +259,7 @@ Future<ApiResult<void, ActivityCheckRepoIsStarredByAuthenticatedUserError>> pack
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
+  path: '/orgs/${Uri.encodeComponent(org)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
   headers: headers,
   options: options,
 );
@@ -267,7 +267,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get list of conflicting packages during Docker migration for authenticated-user
@@ -344,7 +344,7 @@ Future<ApiResult<Package, Never>> packagesGetPackageForAuthenticatedUser({requir
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}',
+  path: '/user/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}',
   headers: headers,
   options: options,
 );
@@ -367,7 +367,7 @@ Future<ApiResult<void, ActivityCheckRepoIsStarredByAuthenticatedUserError>> pack
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/user/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}',
+  path: '/user/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}',
   headers: headers,
   options: options,
 );
@@ -375,7 +375,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Restore a package for the authenticated user
@@ -399,7 +399,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/user/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/restore',
+  path: '/user/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/restore',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -409,7 +409,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// List package versions for a package owned by the authenticated user
@@ -435,7 +435,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/versions',
+  path: '/user/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/versions',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -448,7 +448,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => PackageVersion.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get a package version for the authenticated user
@@ -462,7 +462,7 @@ Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForAuthenticat
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
+  path: '/user/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
   options: options,
 );
@@ -487,7 +487,7 @@ Future<ApiResult<void, ActivityCheckRepoIsStarredByAuthenticatedUserError>> pack
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/user/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
+  path: '/user/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
   options: options,
 );
@@ -495,7 +495,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Restore a package version for the authenticated user
@@ -513,7 +513,7 @@ Future<ApiResult<void, ActivityCheckRepoIsStarredByAuthenticatedUserError>> pack
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/user/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
+  path: '/user/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
   headers: headers,
   options: options,
 );
@@ -521,7 +521,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get list of conflicting packages during Docker migration for user
@@ -546,7 +546,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Package.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// List packages for a user
@@ -586,7 +586,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Package.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Get a package for a user
@@ -600,7 +600,7 @@ Future<ApiResult<Package, Never>> packagesGetPackageForUser({required PackagesGe
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}',
   headers: headers,
   options: options,
 );
@@ -625,7 +625,7 @@ Future<ApiResult<void, ActivityCheckRepoIsStarredByAuthenticatedUserError>> pack
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}',
   headers: headers,
   options: options,
 );
@@ -633,7 +633,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Restore a package for a user
@@ -659,7 +659,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/restore',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/restore',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -669,7 +669,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// List package versions for a package owned by a user
@@ -683,7 +683,7 @@ Future<ApiResult<List<PackageVersion>, ActivityCheckRepoIsStarredByAuthenticated
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/versions',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/versions',
   headers: headers,
   options: options,
 );
@@ -694,7 +694,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => PackageVersion.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get a package version for a user
@@ -708,7 +708,7 @@ Future<ApiResult<PackageVersion, Never>> packagesGetPackageVersionForUser({requi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
   options: options,
 );
@@ -733,7 +733,7 @@ Future<ApiResult<void, ActivityCheckRepoIsStarredByAuthenticatedUserError>> pack
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}',
   headers: headers,
   options: options,
 );
@@ -741,7 +741,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Restore package version for a user
@@ -761,7 +761,7 @@ Future<ApiResult<void, ActivityCheckRepoIsStarredByAuthenticatedUserError>> pack
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent('${packageType.toJson()}')}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
+  path: '/users/${Uri.encodeComponent(username)}/packages/${Uri.encodeComponent(packageType.toJson())}/${Uri.encodeComponent(packageName)}/versions/${Uri.encodeComponent(packageVersionId.toString())}/restore',
   headers: headers,
   options: options,
 );
@@ -769,7 +769,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
  }

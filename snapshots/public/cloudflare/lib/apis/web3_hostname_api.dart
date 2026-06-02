@@ -15,7 +15,7 @@ Future<ApiResult<List<Web3Web3Hostname>?, Never>> web3HostnameListWeb3Hostnames(
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/web3/hostnames',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/web3/hostnames',
   headers: headers,
   options: options,
 );
@@ -36,7 +36,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/web3/hostnames',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/web3/hostnames',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -57,7 +57,7 @@ Future<ApiResult<Web3Web3Hostname?, Never>> web3HostnameDetails({required Web3Id
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/web3/hostnames/${Uri.encodeComponent(identifier.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/web3/hostnames/${Uri.encodeComponent(identifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -78,7 +78,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/web3/hostnames/${Uri.encodeComponent(identifier.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/web3/hostnames/${Uri.encodeComponent(identifier.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -99,7 +99,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> web3HostnameDeleteWeb3Hostname(
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/web3/hostnames/${Uri.encodeComponent(identifier.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/web3/hostnames/${Uri.encodeComponent(identifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -119,7 +119,7 @@ Future<ApiResult<Web3ContentListDetails?, Never>> web3HostnameIpfsUniversalPathG
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/web3/hostnames/${Uri.encodeComponent(identifier.toString())}/ipfs_universal_path/content_list',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/web3/hostnames/${Uri.encodeComponent(identifier.toJson())}/ipfs_universal_path/content_list',
   headers: headers,
   options: options,
 );
@@ -140,7 +140,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/web3/hostnames/${Uri.encodeComponent(identifier.toString())}/ipfs_universal_path/content_list',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/web3/hostnames/${Uri.encodeComponent(identifier.toJson())}/ipfs_universal_path/content_list',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -161,7 +161,7 @@ Future<ApiResult<Web3ContentListEntryCollectionResponseResult?, Never>> web3Host
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/web3/hostnames/${Uri.encodeComponent(identifier.toString())}/ipfs_universal_path/content_list/entries',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/web3/hostnames/${Uri.encodeComponent(identifier.toJson())}/ipfs_universal_path/content_list/entries',
   headers: headers,
   options: options,
 );
@@ -182,7 +182,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/web3/hostnames/${Uri.encodeComponent(identifier.toString())}/ipfs_universal_path/content_list/entries',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/web3/hostnames/${Uri.encodeComponent(identifier.toJson())}/ipfs_universal_path/content_list/entries',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -203,7 +203,7 @@ Future<ApiResult<Web3ContentListEntry?, Never>> web3HostnameIpfsUniversalPathGat
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/web3/hostnames/${Uri.encodeComponent(identifier.toString())}/ipfs_universal_path/content_list/entries/${Uri.encodeComponent(contentListEntryIdentifier.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/web3/hostnames/${Uri.encodeComponent(identifier.toJson())}/ipfs_universal_path/content_list/entries/${Uri.encodeComponent(contentListEntryIdentifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -224,7 +224,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/web3/hostnames/${Uri.encodeComponent(identifier.toString())}/ipfs_universal_path/content_list/entries/${Uri.encodeComponent(contentListEntryIdentifier.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/web3/hostnames/${Uri.encodeComponent(identifier.toJson())}/ipfs_universal_path/content_list/entries/${Uri.encodeComponent(contentListEntryIdentifier.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -245,7 +245,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> web3HostnameDeleteIpfsUniversal
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/web3/hostnames/${Uri.encodeComponent(identifier.toString())}/ipfs_universal_path/content_list/entries/${Uri.encodeComponent(contentListEntryIdentifier.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/web3/hostnames/${Uri.encodeComponent(identifier.toJson())}/ipfs_universal_path/content_list/entries/${Uri.encodeComponent(contentListEntryIdentifier.toJson())}',
   headers: headers,
   options: options,
 );

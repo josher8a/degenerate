@@ -49,7 +49,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_
       json.containsKey('field_name') && json['field_name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (fieldName.length < 1) errors.add('fieldName: length must be >= 1');
+if (fieldName.isEmpty) errors.add('fieldName: length must be >= 1');
 if (fieldName.length > 64) errors.add('fieldName: length must be <= 64');
 return errors; } 
 CustomMetadata copyWith({DataType? dataType, String? fieldName, }) { return CustomMetadata(

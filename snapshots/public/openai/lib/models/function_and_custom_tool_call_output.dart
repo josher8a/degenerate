@@ -14,7 +14,7 @@ factory FunctionAndCustomToolCallOutput.fromJson(Map<String, dynamic> json) { re
 factory FunctionAndCustomToolCallOutput.inputText({required String text}) { return FunctionAndCustomToolCallOutputInputText(InputTextContent(type: 'input_text', text: text)); }
 
 /// Build the `input_image` variant.
-factory FunctionAndCustomToolCallOutput.inputImage({String? imageUrl, String? fileId, required ImageDetail detail, }) { return FunctionAndCustomToolCallOutputInputImage(InputImageContent(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory FunctionAndCustomToolCallOutput.inputImage({required ImageDetail detail, String? imageUrl, String? fileId, }) { return FunctionAndCustomToolCallOutputInputImage(InputImageContent(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
 factory FunctionAndCustomToolCallOutput.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return FunctionAndCustomToolCallOutputInputFile(InputFileContent(type: 'input_file', fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
@@ -25,6 +25,12 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is FunctionAndCustomToolCallOutput$Unknown;
 
+R when<R>({required R Function(FunctionAndCustomToolCallOutputInputText) inputText, required R Function(FunctionAndCustomToolCallOutputInputImage) inputImage, required R Function(FunctionAndCustomToolCallOutputInputFile) inputFile, required R Function(FunctionAndCustomToolCallOutput$Unknown) unknown, }) { return switch (this) {
+  final FunctionAndCustomToolCallOutputInputText v => inputText(v),
+  final FunctionAndCustomToolCallOutputInputImage v => inputImage(v),
+  final FunctionAndCustomToolCallOutputInputFile v => inputFile(v),
+  final FunctionAndCustomToolCallOutput$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class FunctionAndCustomToolCallOutputInputText extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputText(this.inputTextContent);
 

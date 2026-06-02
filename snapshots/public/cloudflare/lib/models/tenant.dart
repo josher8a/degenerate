@@ -97,6 +97,6 @@ Tenant copyWith({DateTime? cdate, String? Function()? customerId, DateTime? edat
 
 @override int get hashCode => Object.hash(cdate, customerId, edate, tenantContacts, Object.hashAll(tenantLabels), tenantMetadata, tenantName, tenantNetwork, tenantStatus, tenantTag, tenantType, Object.hashAll(tenantUnits));
 
-@override String toString() => 'Tenant(cdate: $cdate, customerId: $customerId, edate: $edate, tenantContacts: $tenantContacts, tenantLabels: $tenantLabels, tenantMetadata: $tenantMetadata, tenantName: $tenantName, tenantNetwork: $tenantNetwork, tenantStatus: $tenantStatus, tenantTag: $tenantTag, tenantType: $tenantType, tenantUnits: $tenantUnits)';
+@override String toString() => 'Tenant(\n  cdate: $cdate,\n  customerId: $customerId,\n  edate: $edate,\n  tenantContacts: $tenantContacts,\n  tenantLabels: $tenantLabels,\n  tenantMetadata: $tenantMetadata,\n  tenantName: $tenantName,\n  tenantNetwork: $tenantNetwork,\n  tenantStatus: $tenantStatus,\n  tenantTag: $tenantTag,\n  tenantType: $tenantType,\n  tenantUnits: $tenantUnits,\n)';
 
  }

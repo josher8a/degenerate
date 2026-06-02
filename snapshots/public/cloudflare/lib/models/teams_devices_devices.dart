@@ -172,6 +172,6 @@ TeamsDevicesDevices copyWith({TeamsDevicesCreated? Function()? created, TeamsDev
 
 @override int get hashCode => Object.hash(created, deleted, deviceType, id, ip, key, lastSeen, macAddress, manufacturer, model, name, osDistroName, osDistroRevision, osVersion, osVersionExtra, revokedAt, serialNumber, updated, user, version);
 
-@override String toString() => 'TeamsDevicesDevices(created: $created, deleted: $deleted, deviceType: $deviceType, id: $id, ip: $ip, key: $key, lastSeen: $lastSeen, macAddress: $macAddress, manufacturer: $manufacturer, model: $model, name: $name, osDistroName: $osDistroName, osDistroRevision: $osDistroRevision, osVersion: $osVersion, osVersionExtra: $osVersionExtra, revokedAt: $revokedAt, serialNumber: $serialNumber, updated: $updated, user: $user, version: $version)';
+@override String toString() => 'TeamsDevicesDevices(\n  created: $created,\n  deleted: $deleted,\n  deviceType: $deviceType,\n  id: $id,\n  ip: $ip,\n  key: $key,\n  lastSeen: $lastSeen,\n  macAddress: $macAddress,\n  manufacturer: $manufacturer,\n  model: $model,\n  name: $name,\n  osDistroName: $osDistroName,\n  osDistroRevision: $osDistroRevision,\n  osVersion: $osVersion,\n  osVersionExtra: $osVersionExtra,\n  revokedAt: $revokedAt,\n  serialNumber: $serialNumber,\n  updated: $updated,\n  user: $user,\n  version: $version,\n)';
 
  }

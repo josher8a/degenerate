@@ -99,6 +99,6 @@ OrganizationSimple copyWith({String? login, int? id, String? nodeId, Uri? url, U
 
 @override int get hashCode => Object.hash(login, id, nodeId, url, reposUrl, eventsUrl, hooksUrl, issuesUrl, membersUrl, publicMembersUrl, avatarUrl, description);
 
-@override String toString() => 'OrganizationSimple(login: $login, id: $id, nodeId: $nodeId, url: $url, reposUrl: $reposUrl, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, issuesUrl: $issuesUrl, membersUrl: $membersUrl, publicMembersUrl: $publicMembersUrl, avatarUrl: $avatarUrl, description: $description)';
+@override String toString() => 'OrganizationSimple(\n  login: $login,\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  reposUrl: $reposUrl,\n  eventsUrl: $eventsUrl,\n  hooksUrl: $hooksUrl,\n  issuesUrl: $issuesUrl,\n  membersUrl: $membersUrl,\n  publicMembersUrl: $publicMembersUrl,\n  avatarUrl: $avatarUrl,\n  description: $description,\n)';
 
  }

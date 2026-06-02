@@ -71,13 +71,13 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl,
   'details_url': detailsUrl,
   'status': status.toJson(),
-  'conclusion': conclusion != null ? conclusion?.toJson() : null,
-  'started_at': startedAt != null ? startedAt?.toIso8601String() : null,
-  'completed_at': completedAt != null ? completedAt?.toIso8601String() : null,
+  'conclusion': conclusion?.toJson(),
+  'started_at': startedAt?.toIso8601String(),
+  'completed_at': completedAt?.toIso8601String(),
   'output': output.toJson(),
   'name': name,
-  'check_suite': checkSuite != null ? checkSuite?.toJson() : null,
-  'app': app != null ? app?.toJson() : null,
+  'check_suite': checkSuite?.toJson(),
+  'app': app?.toJson(),
   'pull_requests': pullRequests.map((e) => e.toJson()).toList(),
   if (deployment != null) 'deployment': deployment?.toJson(),
 }; } 
@@ -138,6 +138,6 @@ CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()?
 
 @override int get hashCode => Object.hash(id, headSha, nodeId, externalId, url, htmlUrl, detailsUrl, status, conclusion, startedAt, completedAt, output, name, checkSuite, app, Object.hashAll(pullRequests), deployment);
 
-@override String toString() => 'CheckRun(id: $id, headSha: $headSha, nodeId: $nodeId, externalId: $externalId, url: $url, htmlUrl: $htmlUrl, detailsUrl: $detailsUrl, status: $status, conclusion: $conclusion, startedAt: $startedAt, completedAt: $completedAt, output: $output, name: $name, checkSuite: $checkSuite, app: $app, pullRequests: $pullRequests, deployment: $deployment)';
+@override String toString() => 'CheckRun(\n  id: $id,\n  headSha: $headSha,\n  nodeId: $nodeId,\n  externalId: $externalId,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  detailsUrl: $detailsUrl,\n  status: $status,\n  conclusion: $conclusion,\n  startedAt: $startedAt,\n  completedAt: $completedAt,\n  output: $output,\n  name: $name,\n  checkSuite: $checkSuite,\n  app: $app,\n  pullRequests: $pullRequests,\n  deployment: $deployment,\n)';
 
  }

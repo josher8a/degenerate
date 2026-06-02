@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   if (reactions != null) 'reactions': reactions?.toJson(),
   'updated_at': updatedAt,
   'url': url.toString(),
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
@@ -120,6 +120,6 @@ WebhookCommitCommentCreatedComment copyWith({AuthorAssociation? authorAssociatio
 
 @override int get hashCode => Object.hash(authorAssociation, body, commitId, createdAt, htmlUrl, id, line, nodeId, path, position, reactions, updatedAt, url, user);
 
-@override String toString() => 'WebhookCommitCommentCreatedComment(authorAssociation: $authorAssociation, body: $body, commitId: $commitId, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, line: $line, nodeId: $nodeId, path: $path, position: $position, reactions: $reactions, updatedAt: $updatedAt, url: $url, user: $user)';
+@override String toString() => 'WebhookCommitCommentCreatedComment(\n  authorAssociation: $authorAssociation,\n  body: $body,\n  commitId: $commitId,\n  createdAt: $createdAt,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  line: $line,\n  nodeId: $nodeId,\n  path: $path,\n  position: $position,\n  reactions: $reactions,\n  updatedAt: $updatedAt,\n  url: $url,\n  user: $user,\n)';
 
  }

@@ -72,7 +72,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetQualityIndexSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetQualityIndexSummaryError.fromResponse(response),
+  onError: RadarGetQualityIndexSummaryError.fromResponse,
 );
  } 
 /// Get Internet Quality Index (IQI) time series
@@ -145,7 +145,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetQualityIndexTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetQualityIndexTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetQualityIndexTimeseriesGroupError.fromResponse,
 );
  } 
 /// Get speed tests histogram
@@ -207,7 +207,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetQualitySpeedHistogramResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetQualitySpeedHistogramError.fromResponse(response),
+  onError: RadarGetQualitySpeedHistogramError.fromResponse,
 );
  } 
 /// Get speed tests summary
@@ -263,7 +263,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetQualitySpeedSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetQualitySpeedSummaryError.fromResponse(response),
+  onError: RadarGetQualitySpeedSummaryError.fromResponse,
 );
  } 
 /// Get top ASes by speed test results
@@ -328,7 +328,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetQualitySpeedTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetQualitySpeedTopAsesError.fromResponse(response),
+  onError: RadarGetQualitySpeedTopAsesError.fromResponse,
 );
  } 
 /// Get top locations by speed test results
@@ -393,7 +393,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetQualitySpeedTopLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetQualitySpeedTopLocationsError.fromResponse(response),
+  onError: RadarGetQualitySpeedTopLocationsError.fromResponse,
 );
  } 
  }

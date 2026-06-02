@@ -83,6 +83,6 @@ TlsCertificatesAndHostnamesCertificateObjectPost copyWith({TlsCertificatesAndHos
 
 @override int get hashCode => Object.hash(ca, certificates, expiresOn, id, issuer, name, serialNumber, signature, updatedAt, uploadedOn);
 
-@override String toString() => 'TlsCertificatesAndHostnamesCertificateObjectPost(ca: $ca, certificates: $certificates, expiresOn: $expiresOn, id: $id, issuer: $issuer, name: $name, serialNumber: $serialNumber, signature: $signature, updatedAt: $updatedAt, uploadedOn: $uploadedOn)';
+@override String toString() => 'TlsCertificatesAndHostnamesCertificateObjectPost(\n  ca: $ca,\n  certificates: $certificates,\n  expiresOn: $expiresOn,\n  id: $id,\n  issuer: $issuer,\n  name: $name,\n  serialNumber: $serialNumber,\n  signature: $signature,\n  updatedAt: $updatedAt,\n  uploadedOn: $uploadedOn,\n)';
 
  }

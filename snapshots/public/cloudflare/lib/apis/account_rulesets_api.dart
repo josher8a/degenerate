@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -51,7 +51,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -74,7 +74,7 @@ Future<ApiResult<dynamic, Never>> getAccountRuleset({required RulesetsRulesetId 
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -97,7 +97,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -120,7 +120,7 @@ Future<ApiResult<void, Never>> deleteAccountRuleset({required RulesetsRulesetId 
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -140,7 +140,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -164,7 +164,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -187,7 +187,7 @@ Future<ApiResult<dynamic, Never>> deleteAccountRulesetRule({required RulesetsRul
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -209,7 +209,7 @@ Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, Never
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/versions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/versions',
   headers: headers,
   options: options,
 );
@@ -231,7 +231,7 @@ Future<ApiResult<dynamic, Never>> getAccountRulesetVersion({required RulesetsRul
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/versions/${Uri.encodeComponent(rulesetVersion.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/versions/${Uri.encodeComponent(rulesetVersion.toJson())}',
   headers: headers,
   options: options,
 );
@@ -253,7 +253,7 @@ Future<ApiResult<void, Never>> deleteAccountRulesetVersion({required RulesetsRul
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/versions/${Uri.encodeComponent(rulesetVersion.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/versions/${Uri.encodeComponent(rulesetVersion.toJson())}',
   headers: headers,
   options: options,
 );
@@ -272,7 +272,7 @@ Future<ApiResult<dynamic, Never>> listAccountRulesetVersionRulesByTag({required 
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/${Uri.encodeComponent(rulesetId.toString())}/versions/${Uri.encodeComponent(rulesetVersion.toString())}/by_tag/${Uri.encodeComponent(ruleTag.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/${Uri.encodeComponent(rulesetId.toJson())}/versions/${Uri.encodeComponent(rulesetVersion.toJson())}/by_tag/${Uri.encodeComponent(ruleTag.toJson())}',
   headers: headers,
   options: options,
 );
@@ -294,7 +294,7 @@ Future<ApiResult<dynamic, Never>> getAccountEntrypointRuleset({required Rulesets
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/phases/${Uri.encodeComponent('${rulesetPhase.toJson()}')}/entrypoint',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toJson())}/entrypoint',
   headers: headers,
   options: options,
 );
@@ -317,7 +317,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/phases/${Uri.encodeComponent('${rulesetPhase.toJson()}')}/entrypoint',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toJson())}/entrypoint',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -340,7 +340,7 @@ Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, Never
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/phases/${Uri.encodeComponent('${rulesetPhase.toJson()}')}/entrypoint/versions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toJson())}/entrypoint/versions',
   headers: headers,
   options: options,
 );
@@ -362,7 +362,7 @@ Future<ApiResult<dynamic, Never>> getAccountEntrypointRulesetVersion({required R
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/rulesets/phases/${Uri.encodeComponent('${rulesetPhase.toJson()}')}/entrypoint/versions/${Uri.encodeComponent(rulesetVersion.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/rulesets/phases/${Uri.encodeComponent(rulesetPhase.toJson())}/entrypoint/versions/${Uri.encodeComponent(rulesetVersion.toJson())}',
   headers: headers,
   options: options,
 );

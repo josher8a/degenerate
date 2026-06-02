@@ -118,6 +118,6 @@ TokenCountsBody copyWith({String? Function()? model, CompactResponseMethodPublic
 
 @override int get hashCode => Object.hash(model, input, previousResponseId, Object.hashAll(tools ?? const []), text, reasoning, truncation, instructions, conversation, toolChoice, parallelToolCalls);
 
-@override String toString() => 'TokenCountsBody(model: $model, input: $input, previousResponseId: $previousResponseId, tools: $tools, text: $text, reasoning: $reasoning, truncation: $truncation, instructions: $instructions, conversation: $conversation, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls)';
+@override String toString() => 'TokenCountsBody(\n  model: $model,\n  input: $input,\n  previousResponseId: $previousResponseId,\n  tools: $tools,\n  text: $text,\n  reasoning: $reasoning,\n  truncation: $truncation,\n  instructions: $instructions,\n  conversation: $conversation,\n  toolChoice: $toolChoice,\n  parallelToolCalls: $parallelToolCalls,\n)';
 
  }

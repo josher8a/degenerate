@@ -75,6 +75,6 @@ UrlscannerGetScanResponse2MetaProcessors copyWith({ProcessorsAsn? asn, Processor
 
 @override int get hashCode => Object.hash(asn, dns, domainCategories, geoip, phishing, radarRank, robotsTxt, urlCategories, wappa);
 
-@override String toString() => 'UrlscannerGetScanResponse2MetaProcessors(asn: $asn, dns: $dns, domainCategories: $domainCategories, geoip: $geoip, phishing: $phishing, radarRank: $radarRank, robotsTxt: $robotsTxt, urlCategories: $urlCategories, wappa: $wappa)';
+@override String toString() => 'UrlscannerGetScanResponse2MetaProcessors(\n  asn: $asn,\n  dns: $dns,\n  domainCategories: $domainCategories,\n  geoip: $geoip,\n  phishing: $phishing,\n  radarRank: $radarRank,\n  robotsTxt: $robotsTxt,\n  urlCategories: $urlCategories,\n  wappa: $wappa,\n)';
 
  }

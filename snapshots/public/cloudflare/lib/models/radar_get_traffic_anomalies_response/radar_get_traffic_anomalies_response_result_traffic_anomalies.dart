@@ -76,6 +76,6 @@ RadarGetTrafficAnomaliesResponseResultTrafficAnomalies copyWith({AsnDetails? Fun
 
 @override int get hashCode => Object.hash(asnDetails, endDate, locationDetails, originDetails, startDate, status, type, uuid, Object.hashAll(visibleInDataSources ?? const []));
 
-@override String toString() => 'RadarGetTrafficAnomaliesResponseResultTrafficAnomalies(asnDetails: $asnDetails, endDate: $endDate, locationDetails: $locationDetails, originDetails: $originDetails, startDate: $startDate, status: $status, type: $type, uuid: $uuid, visibleInDataSources: $visibleInDataSources)';
+@override String toString() => 'RadarGetTrafficAnomaliesResponseResultTrafficAnomalies(\n  asnDetails: $asnDetails,\n  endDate: $endDate,\n  locationDetails: $locationDetails,\n  originDetails: $originDetails,\n  startDate: $startDate,\n  status: $status,\n  type: $type,\n  uuid: $uuid,\n  visibleInDataSources: $visibleInDataSources,\n)';
 
  }

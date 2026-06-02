@@ -18,7 +18,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/api_gateway/expression-template/fallthrough',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/api_gateway/expression-template/fallthrough',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

@@ -23,7 +23,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/pools',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -48,7 +48,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/pools',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -72,7 +72,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/pools',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -95,7 +95,7 @@ Future<ApiResult<LoadBalancingPool?, Never>> accountLoadBalancerPoolsPoolDetails
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -118,7 +118,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -142,7 +142,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -165,7 +165,7 @@ Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> accoun
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -187,7 +187,7 @@ Future<ApiResult<LoadBalancingHealthDetailsResult?, Never>> accountLoadBalancerP
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}/health',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}/health',
   headers: headers,
   options: options,
 );
@@ -210,7 +210,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}/preview',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}/preview',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -233,7 +233,7 @@ Future<ApiResult<List<LoadBalancingMonitorGroupReferencesResponseResult>, Never>
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}/references',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}/references',
   headers: headers,
   options: options,
 );

@@ -93,6 +93,6 @@ AccountQueue copyWith({String? Function()? dateUpdated, int Function()? currentS
 
 @override int get hashCode => Object.hash(dateUpdated, currentSize, friendlyName, uri, accountSid, averageWaitTime, sid, dateCreated, maxSize);
 
-@override String toString() => 'AccountQueue(dateUpdated: $dateUpdated, currentSize: $currentSize, friendlyName: $friendlyName, uri: $uri, accountSid: $accountSid, averageWaitTime: $averageWaitTime, sid: $sid, dateCreated: $dateCreated, maxSize: $maxSize)';
+@override String toString() => 'AccountQueue(\n  dateUpdated: $dateUpdated,\n  currentSize: $currentSize,\n  friendlyName: $friendlyName,\n  uri: $uri,\n  accountSid: $accountSid,\n  averageWaitTime: $averageWaitTime,\n  sid: $sid,\n  dateCreated: $dateCreated,\n  maxSize: $maxSize,\n)';
 
  }

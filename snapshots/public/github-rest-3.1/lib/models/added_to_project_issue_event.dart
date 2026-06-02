@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'commit_id': commitId,
   'commit_url': commitUrl,
   'created_at': createdAt,
-  'performed_via_github_app': performedViaGithubApp != null ? performedViaGithubApp?.toJson() : null,
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
   if (projectCard != null) 'project_card': projectCard?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
@@ -84,6 +84,6 @@ AddedToProjectIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleU
 
 @override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, projectCard);
 
-@override String toString() => 'AddedToProjectIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, projectCard: $projectCard)';
+@override String toString() => 'AddedToProjectIssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  performedViaGithubApp: $performedViaGithubApp,\n  projectCard: $projectCard,\n)';
 
  }

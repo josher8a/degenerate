@@ -87,6 +87,6 @@ CsiPersistentVolumeSource copyWith({SecretReference? Function()? controllerExpan
 
 @override int get hashCode => Object.hash(controllerExpandSecretRef, controllerPublishSecretRef, driver, fsType, nodeExpandSecretRef, nodePublishSecretRef, nodeStageSecretRef, readOnly, volumeAttributes, volumeHandle);
 
-@override String toString() => 'CsiPersistentVolumeSource(controllerExpandSecretRef: $controllerExpandSecretRef, controllerPublishSecretRef: $controllerPublishSecretRef, driver: $driver, fsType: $fsType, nodeExpandSecretRef: $nodeExpandSecretRef, nodePublishSecretRef: $nodePublishSecretRef, nodeStageSecretRef: $nodeStageSecretRef, readOnly: $readOnly, volumeAttributes: $volumeAttributes, volumeHandle: $volumeHandle)';
+@override String toString() => 'CsiPersistentVolumeSource(\n  controllerExpandSecretRef: $controllerExpandSecretRef,\n  controllerPublishSecretRef: $controllerPublishSecretRef,\n  driver: $driver,\n  fsType: $fsType,\n  nodeExpandSecretRef: $nodeExpandSecretRef,\n  nodePublishSecretRef: $nodePublishSecretRef,\n  nodeStageSecretRef: $nodeStageSecretRef,\n  readOnly: $readOnly,\n  volumeAttributes: $volumeAttributes,\n  volumeHandle: $volumeHandle,\n)';
 
  }

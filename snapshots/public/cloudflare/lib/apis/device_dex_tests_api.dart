@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/devices/dex_tests',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/devices/dex_tests',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/devices/dex_tests',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/devices/dex_tests',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -80,7 +80,7 @@ Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, Never>> d
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/devices/dex_tests/${Uri.encodeComponent(dexTestId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/devices/dex_tests/${Uri.encodeComponent(dexTestId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -103,7 +103,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/devices/dex_tests/${Uri.encodeComponent(dexTestId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/devices/dex_tests/${Uri.encodeComponent(dexTestId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -126,7 +126,7 @@ Future<ApiResult<DigitalExperienceMonitoringDexDeleteResponseCollectionResult?, 
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/devices/dex_tests/${Uri.encodeComponent(dexTestId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/devices/dex_tests/${Uri.encodeComponent(dexTestId.toJson())}',
   headers: headers,
   options: options,
 );

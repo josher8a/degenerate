@@ -194,6 +194,6 @@ Transfer copyWith({int? amount, int? amountReversed, ApplicationFeeBalanceTransa
 
 @override int get hashCode => Object.hash(amount, amountReversed, balanceTransaction, created, currency, description, destination, destinationPayment, id, livemode, metadata, object, reversals, reversed, sourceTransaction, sourceType, transferGroup);
 
-@override String toString() => 'Transfer(amount: $amount, amountReversed: $amountReversed, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, description: $description, destination: $destination, destinationPayment: $destinationPayment, id: $id, livemode: $livemode, metadata: $metadata, object: $object, reversals: $reversals, reversed: $reversed, sourceTransaction: $sourceTransaction, sourceType: $sourceType, transferGroup: $transferGroup)';
+@override String toString() => 'Transfer(\n  amount: $amount,\n  amountReversed: $amountReversed,\n  balanceTransaction: $balanceTransaction,\n  created: $created,\n  currency: $currency,\n  description: $description,\n  destination: $destination,\n  destinationPayment: $destinationPayment,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  reversals: $reversals,\n  reversed: $reversed,\n  sourceTransaction: $sourceTransaction,\n  sourceType: $sourceType,\n  transferGroup: $transferGroup,\n)';
 
  }

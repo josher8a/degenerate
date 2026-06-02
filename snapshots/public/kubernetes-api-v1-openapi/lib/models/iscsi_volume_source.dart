@@ -95,6 +95,6 @@ IscsiVolumeSource copyWith({bool? Function()? chapAuthDiscovery, bool? Function(
 
 @override int get hashCode => Object.hash(chapAuthDiscovery, chapAuthSession, fsType, initiatorName, iqn, iscsiInterface, lun, Object.hashAll(portals ?? const []), readOnly, secretRef, targetPortal);
 
-@override String toString() => 'IscsiVolumeSource(chapAuthDiscovery: $chapAuthDiscovery, chapAuthSession: $chapAuthSession, fsType: $fsType, initiatorName: $initiatorName, iqn: $iqn, iscsiInterface: $iscsiInterface, lun: $lun, portals: $portals, readOnly: $readOnly, secretRef: $secretRef, targetPortal: $targetPortal)';
+@override String toString() => 'IscsiVolumeSource(\n  chapAuthDiscovery: $chapAuthDiscovery,\n  chapAuthSession: $chapAuthSession,\n  fsType: $fsType,\n  initiatorName: $initiatorName,\n  iqn: $iqn,\n  iscsiInterface: $iscsiInterface,\n  lun: $lun,\n  portals: $portals,\n  readOnly: $readOnly,\n  secretRef: $secretRef,\n  targetPortal: $targetPortal,\n)';
 
  }

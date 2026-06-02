@@ -17,7 +17,7 @@ Future<ApiResult<List<TlsCertificatesAndHostnamesComponentsSchemasCertificateObj
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mtls_certificates',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mtls_certificates',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mtls_certificates',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mtls_certificates',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject?,
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mtls_certificates/${Uri.encodeComponent(mtlsCertificateId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mtls_certificates/${Uri.encodeComponent(mtlsCertificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -85,7 +85,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesComponentsSchemasCertificateObject?,
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mtls_certificates/${Uri.encodeComponent(mtlsCertificateId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mtls_certificates/${Uri.encodeComponent(mtlsCertificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -107,7 +107,7 @@ Future<ApiResult<List<TlsCertificatesAndHostnamesAssociationObject>?, Never>> mT
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mtls_certificates/${Uri.encodeComponent(mtlsCertificateId.toString())}/associations',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mtls_certificates/${Uri.encodeComponent(mtlsCertificateId.toJson())}/associations',
   headers: headers,
   options: options,
 );

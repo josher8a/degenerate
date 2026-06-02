@@ -80,10 +80,10 @@ final Uri? zipballUrl;
 Map<String, dynamic> toJson() { return {
   'assets': assets.map((e) => e.toJson()).toList(),
   'assets_url': assetsUrl.toString(),
-  'author': author != null ? author?.toJson() : null,
+  'author': author?.toJson(),
   'body': body,
-  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
-  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
+  'created_at': createdAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
   if (discussionUrl != null) 'discussion_url': discussionUrl?.toString(),
   'draft': draft,
   'html_url': htmlUrl.toString(),
@@ -92,14 +92,14 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'node_id': nodeId,
   'prerelease': prerelease,
-  'published_at': publishedAt != null ? publishedAt?.toIso8601String() : null,
+  'published_at': publishedAt?.toIso8601String(),
   if (reactions != null) 'reactions': reactions?.toJson(),
   'tag_name': tagName,
-  'tarball_url': tarballUrl != null ? tarballUrl?.toString() : null,
+  'tarball_url': tarballUrl?.toString(),
   'target_commitish': targetCommitish,
   'upload_url': uploadUrl,
   'url': url.toString(),
-  'zipball_url': zipballUrl != null ? zipballUrl?.toString() : null,
+  'zipball_url': zipballUrl?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('assets') &&
       json.containsKey('assets_url') && json['assets_url'] is String &&
@@ -172,6 +172,6 @@ WebhooksRelease copyWith({List<WebhooksReleaseAssets>? assets, Uri? assetsUrl, W
 
 @override int get hashCode => Object.hashAll([Object.hashAll(assets), assetsUrl, author, body, createdAt, updatedAt, discussionUrl, draft, htmlUrl, id, immutable, name, nodeId, prerelease, publishedAt, reactions, tagName, tarballUrl, targetCommitish, uploadUrl, url, zipballUrl]);
 
-@override String toString() => 'WebhooksRelease(assets: $assets, assetsUrl: $assetsUrl, author: $author, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, discussionUrl: $discussionUrl, draft: $draft, htmlUrl: $htmlUrl, id: $id, immutable: $immutable, name: $name, nodeId: $nodeId, prerelease: $prerelease, publishedAt: $publishedAt, reactions: $reactions, tagName: $tagName, tarballUrl: $tarballUrl, targetCommitish: $targetCommitish, uploadUrl: $uploadUrl, url: $url, zipballUrl: $zipballUrl)';
+@override String toString() => 'WebhooksRelease(\n  assets: $assets,\n  assetsUrl: $assetsUrl,\n  author: $author,\n  body: $body,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  discussionUrl: $discussionUrl,\n  draft: $draft,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  immutable: $immutable,\n  name: $name,\n  nodeId: $nodeId,\n  prerelease: $prerelease,\n  publishedAt: $publishedAt,\n  reactions: $reactions,\n  tagName: $tagName,\n  tarballUrl: $tarballUrl,\n  targetCommitish: $targetCommitish,\n  uploadUrl: $uploadUrl,\n  url: $url,\n  zipballUrl: $zipballUrl,\n)';
 
  }

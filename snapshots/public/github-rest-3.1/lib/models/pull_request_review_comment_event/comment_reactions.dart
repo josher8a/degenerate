@@ -75,6 +75,6 @@ CommentReactions copyWith({int? Function()? plus1, int? Function()? minus1, int?
 
 @override int get hashCode => Object.hash(plus1, minus1, confused, eyes, heart, hooray, laugh, rocket, totalCount, url);
 
-@override String toString() => 'CommentReactions(plus1: $plus1, minus1: $minus1, confused: $confused, eyes: $eyes, heart: $heart, hooray: $hooray, laugh: $laugh, rocket: $rocket, totalCount: $totalCount, url: $url)';
+@override String toString() => 'CommentReactions(\n  plus1: $plus1,\n  minus1: $minus1,\n  confused: $confused,\n  eyes: $eyes,\n  heart: $heart,\n  hooray: $hooray,\n  laugh: $laugh,\n  rocket: $rocket,\n  totalCount: $totalCount,\n  url: $url,\n)';
 
  }

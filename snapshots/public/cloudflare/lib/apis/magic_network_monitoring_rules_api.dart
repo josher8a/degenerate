@@ -17,7 +17,7 @@ Future<ApiResult<List<MagicVisibilityMnmMnmRule>?, Never>> magicNetworkMonitorin
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/rules',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -64,7 +64,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/rules',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -87,7 +87,7 @@ Future<ApiResult<MagicVisibilityMnmMnmRule?, Never>> magicNetworkMonitoringRules
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -110,7 +110,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -133,7 +133,7 @@ Future<ApiResult<MagicVisibilityMnmMnmRule?, Never>> magicNetworkMonitoringRules
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -155,7 +155,7 @@ Future<ApiResult<MagicVisibilityMnmMnmRuleAdvertisableResponse?, Never>> magicNe
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/rules/${Uri.encodeComponent(ruleId.toString())}/advertisement',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/rules/${Uri.encodeComponent(ruleId.toJson())}/advertisement',
   headers: headers,
   options: options,
 );

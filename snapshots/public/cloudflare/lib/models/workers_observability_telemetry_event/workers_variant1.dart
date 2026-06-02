@@ -77,6 +77,6 @@ WorkersVariant1 copyWith({String? Function()? durableObjectId, String? Function(
 
 @override int get hashCode => Object.hash(durableObjectId, entrypoint, event, eventType, executionModel, outcome, requestId, scriptName, scriptVersion, truncated);
 
-@override String toString() => 'WorkersVariant1(durableObjectId: $durableObjectId, entrypoint: $entrypoint, event: $event, eventType: $eventType, executionModel: $executionModel, outcome: $outcome, requestId: $requestId, scriptName: $scriptName, scriptVersion: $scriptVersion, truncated: $truncated)';
+@override String toString() => 'WorkersVariant1(\n  durableObjectId: $durableObjectId,\n  entrypoint: $entrypoint,\n  event: $event,\n  eventType: $eventType,\n  executionModel: $executionModel,\n  outcome: $outcome,\n  requestId: $requestId,\n  scriptName: $scriptName,\n  scriptVersion: $scriptVersion,\n  truncated: $truncated,\n)';
 
  }

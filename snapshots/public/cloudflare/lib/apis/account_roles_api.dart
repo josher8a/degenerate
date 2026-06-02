@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/roles',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/roles',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -50,7 +50,7 @@ Future<ApiResult<IamRole?, Never>> accountRolesRoleDetails({required IamRoleComp
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/roles/${Uri.encodeComponent(roleId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/roles/${Uri.encodeComponent(roleId.toJson())}',
   headers: headers,
   options: options,
 );

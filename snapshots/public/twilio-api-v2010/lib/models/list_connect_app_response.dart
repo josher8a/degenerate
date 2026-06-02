@@ -69,6 +69,6 @@ ListConnectAppResponse copyWith({List<AccountConnectApp>? Function()? connectApp
 
 @override int get hashCode => Object.hash(Object.hashAll(connectApps ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
 
-@override String toString() => 'ListConnectAppResponse(connectApps: $connectApps, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+@override String toString() => 'ListConnectAppResponse(\n  connectApps: $connectApps,\n  end: $end,\n  firstPageUri: $firstPageUri,\n  nextPageUri: $nextPageUri,\n  page: $page,\n  pageSize: $pageSize,\n  previousPageUri: $previousPageUri,\n  start: $start,\n  uri: $uri,\n)';
 
  }

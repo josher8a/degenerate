@@ -103,10 +103,10 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'html_url': htmlUrl,
   'status': status.toJson(),
-  'conclusion': conclusion != null ? conclusion?.toJson() : null,
+  'conclusion': conclusion?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'started_at': startedAt.toIso8601String(),
-  'completed_at': completedAt != null ? completedAt?.toIso8601String() : null,
+  'completed_at': completedAt?.toIso8601String(),
   'name': name,
   if (steps != null) 'steps': steps?.map((e) => e.toJson()).toList(),
   'check_run_url': checkRunUrl,
@@ -192,6 +192,6 @@ Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, 
 
 @override int get hashCode => Object.hashAll([id, runId, runUrl, runAttempt, nodeId, headSha, url, htmlUrl, status, conclusion, createdAt, startedAt, completedAt, name, Object.hashAll(steps ?? const []), checkRunUrl, Object.hashAll(labels), runnerId, runnerName, runnerGroupId, runnerGroupName, workflowName, headBranch]);
 
-@override String toString() => 'Job(id: $id, runId: $runId, runUrl: $runUrl, runAttempt: $runAttempt, nodeId: $nodeId, headSha: $headSha, url: $url, htmlUrl: $htmlUrl, status: $status, conclusion: $conclusion, createdAt: $createdAt, startedAt: $startedAt, completedAt: $completedAt, name: $name, steps: $steps, checkRunUrl: $checkRunUrl, labels: $labels, runnerId: $runnerId, runnerName: $runnerName, runnerGroupId: $runnerGroupId, runnerGroupName: $runnerGroupName, workflowName: $workflowName, headBranch: $headBranch)';
+@override String toString() => 'Job(\n  id: $id,\n  runId: $runId,\n  runUrl: $runUrl,\n  runAttempt: $runAttempt,\n  nodeId: $nodeId,\n  headSha: $headSha,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  status: $status,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  startedAt: $startedAt,\n  completedAt: $completedAt,\n  name: $name,\n  steps: $steps,\n  checkRunUrl: $checkRunUrl,\n  labels: $labels,\n  runnerId: $runnerId,\n  runnerName: $runnerName,\n  runnerGroupId: $runnerGroupId,\n  runnerGroupName: $runnerGroupName,\n  workflowName: $workflowName,\n  headBranch: $headBranch,\n)';
 
  }

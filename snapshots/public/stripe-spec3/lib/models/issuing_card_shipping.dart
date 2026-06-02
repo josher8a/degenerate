@@ -202,6 +202,6 @@ IssuingCardShipping copyWith({Address? address, IssuingCardShippingAddressValida
 
 @override int get hashCode => Object.hash(address, addressValidation, carrier, customs, eta, name, phoneNumber, requireSignature, service, status, trackingNumber, trackingUrl, type);
 
-@override String toString() => 'IssuingCardShipping(address: $address, addressValidation: $addressValidation, carrier: $carrier, customs: $customs, eta: $eta, name: $name, phoneNumber: $phoneNumber, requireSignature: $requireSignature, service: $service, status: $status, trackingNumber: $trackingNumber, trackingUrl: $trackingUrl, type: $type)';
+@override String toString() => 'IssuingCardShipping(\n  address: $address,\n  addressValidation: $addressValidation,\n  carrier: $carrier,\n  customs: $customs,\n  eta: $eta,\n  name: $name,\n  phoneNumber: $phoneNumber,\n  requireSignature: $requireSignature,\n  service: $service,\n  status: $status,\n  trackingNumber: $trackingNumber,\n  trackingUrl: $trackingUrl,\n  type: $type,\n)';
 
  }

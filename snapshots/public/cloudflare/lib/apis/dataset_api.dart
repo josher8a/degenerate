@@ -26,7 +26,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetDatasetListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GetDatasetListError.fromResponse(response),
+  onError: GetDatasetListError.fromResponse,
 );
  } 
 /// Reads a dataset
@@ -46,7 +46,7 @@ return execute(
   onSuccess: (response) {
     return GetDatasetReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetDatasetReadError.fromResponse(response),
+  onError: GetDatasetReadError.fromResponse,
 );
  } 
 /// Updates an existing dataset
@@ -68,7 +68,7 @@ return execute(
   onSuccess: (response) {
     return PostDatasetUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostDatasetUpdateError.fromResponse(response),
+  onError: PostDatasetUpdateError.fromResponse,
 );
  } 
 /// Updates an existing dataset
@@ -90,7 +90,7 @@ return execute(
   onSuccess: (response) {
     return PatchDatasetUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PatchDatasetUpdateError.fromResponse(response),
+  onError: PatchDatasetUpdateError.fromResponse,
 );
  } 
 /// Delete a dataset
@@ -112,7 +112,7 @@ return execute(
   onSuccess: (response) {
     return DeleteDatasetDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteDatasetDeleteError.fromResponse(response),
+  onError: DeleteDatasetDeleteError.fromResponse,
 );
  } 
 /// Creates a dataset
@@ -134,7 +134,7 @@ return execute(
   onSuccess: (response) {
     return PostDatasetCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostDatasetCreateError.fromResponse(response),
+  onError: PostDatasetCreateError.fromResponse,
 );
  } 
  }

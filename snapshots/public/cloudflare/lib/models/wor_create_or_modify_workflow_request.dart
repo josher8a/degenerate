@@ -23,9 +23,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('class
       json.containsKey('script_name') && json['script_name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (className.length < 1) errors.add('className: length must be >= 1');
+if (className.isEmpty) errors.add('className: length must be >= 1');
 if (className.length > 255) errors.add('className: length must be <= 255');
-if (scriptName.length < 1) errors.add('scriptName: length must be >= 1');
+if (scriptName.isEmpty) errors.add('scriptName: length must be >= 1');
 if (scriptName.length > 255) errors.add('scriptName: length must be <= 255');
 return errors; } 
 WorCreateOrModifyWorkflowRequest copyWith({String? className, WorCreateOrModifyWorkflowRequestLimits? Function()? limits, String? scriptName, }) { return WorCreateOrModifyWorkflowRequest(

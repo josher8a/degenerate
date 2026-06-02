@@ -176,6 +176,6 @@ HealthchecksHealthchecks copyWith({HealthchecksAddress? Function()? address, Lis
 
 @override int get hashCode => Object.hash(address, Object.hashAll(checkRegions ?? const []), consecutiveFails, consecutiveSuccesses, createdOn, description, failureReason, httpConfig, id, interval, modifiedOn, name, retries, status, suspended, tcpConfig, timeout, type);
 
-@override String toString() => 'HealthchecksHealthchecks(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, createdOn: $createdOn, description: $description, failureReason: $failureReason, httpConfig: $httpConfig, id: $id, interval: $interval, modifiedOn: $modifiedOn, name: $name, retries: $retries, status: $status, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)';
+@override String toString() => 'HealthchecksHealthchecks(\n  address: $address,\n  checkRegions: $checkRegions,\n  consecutiveFails: $consecutiveFails,\n  consecutiveSuccesses: $consecutiveSuccesses,\n  createdOn: $createdOn,\n  description: $description,\n  failureReason: $failureReason,\n  httpConfig: $httpConfig,\n  id: $id,\n  interval: $interval,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  retries: $retries,\n  status: $status,\n  suspended: $suspended,\n  tcpConfig: $tcpConfig,\n  timeout: $timeout,\n  type: $type,\n)';
 
  }

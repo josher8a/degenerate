@@ -122,6 +122,6 @@ WaitingroomQueryEvent copyWith({WaitingroomEventCustomPageHtml? Function()? cust
 
 @override int get hashCode => Object.hash(customPageHtml, description, disableSessionRenewal, eventEndTime, eventStartTime, name, newUsersPerMinute, prequeueStartTime, queueingMethod, sessionDuration, shuffleAtEventStart, suspended, totalActiveUsers, turnstileAction, turnstileMode);
 
-@override String toString() => 'WaitingroomQueryEvent(customPageHtml: $customPageHtml, description: $description, disableSessionRenewal: $disableSessionRenewal, eventEndTime: $eventEndTime, eventStartTime: $eventStartTime, name: $name, newUsersPerMinute: $newUsersPerMinute, prequeueStartTime: $prequeueStartTime, queueingMethod: $queueingMethod, sessionDuration: $sessionDuration, shuffleAtEventStart: $shuffleAtEventStart, suspended: $suspended, totalActiveUsers: $totalActiveUsers, turnstileAction: $turnstileAction, turnstileMode: $turnstileMode)';
+@override String toString() => 'WaitingroomQueryEvent(\n  customPageHtml: $customPageHtml,\n  description: $description,\n  disableSessionRenewal: $disableSessionRenewal,\n  eventEndTime: $eventEndTime,\n  eventStartTime: $eventStartTime,\n  name: $name,\n  newUsersPerMinute: $newUsersPerMinute,\n  prequeueStartTime: $prequeueStartTime,\n  queueingMethod: $queueingMethod,\n  sessionDuration: $sessionDuration,\n  shuffleAtEventStart: $shuffleAtEventStart,\n  suspended: $suspended,\n  totalActiveUsers: $totalActiveUsers,\n  turnstileAction: $turnstileAction,\n  turnstileMode: $turnstileMode,\n)';
 
  }

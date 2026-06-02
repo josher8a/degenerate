@@ -99,6 +99,6 @@ Overrides copyWith({LoadBalancingAdaptiveRouting? Function()? adaptiveRouting, M
 
 @override int get hashCode => Object.hash(adaptiveRouting, countryPools, Object.hashAll(defaultPools ?? const []), fallbackPool, locationStrategy, popPools, randomSteering, regionPools, sessionAffinity, sessionAffinityAttributes, sessionAffinityTtl, steeringPolicy, ttl);
 
-@override String toString() => 'Overrides(adaptiveRouting: $adaptiveRouting, countryPools: $countryPools, defaultPools: $defaultPools, fallbackPool: $fallbackPool, locationStrategy: $locationStrategy, popPools: $popPools, randomSteering: $randomSteering, regionPools: $regionPools, sessionAffinity: $sessionAffinity, sessionAffinityAttributes: $sessionAffinityAttributes, sessionAffinityTtl: $sessionAffinityTtl, steeringPolicy: $steeringPolicy, ttl: $ttl)';
+@override String toString() => 'Overrides(\n  adaptiveRouting: $adaptiveRouting,\n  countryPools: $countryPools,\n  defaultPools: $defaultPools,\n  fallbackPool: $fallbackPool,\n  locationStrategy: $locationStrategy,\n  popPools: $popPools,\n  randomSteering: $randomSteering,\n  regionPools: $regionPools,\n  sessionAffinity: $sessionAffinity,\n  sessionAffinityAttributes: $sessionAffinityAttributes,\n  sessionAffinityTtl: $sessionAffinityTtl,\n  steeringPolicy: $steeringPolicy,\n  ttl: $ttl,\n)';
 
  }

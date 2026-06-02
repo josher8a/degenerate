@@ -21,19 +21,19 @@ factory RealtimeClientEvent.fromJson(Map<String, dynamic> json) { return switch 
 }; }
 
 /// Build the `conversation.item.create` variant.
-factory RealtimeClientEvent.conversationItemCreate({String? eventId, String? previousItemId, required RealtimeConversationItem item, }) { return RealtimeClientEventConversationItemCreate$Variant(RealtimeClientEventConversationItemCreate(type: 'conversation.item.create', eventId: eventId, previousItemId: previousItemId, item: item)); }
+factory RealtimeClientEvent.conversationItemCreate({required RealtimeConversationItem item, String? eventId, String? previousItemId, }) { return RealtimeClientEventConversationItemCreate$Variant(RealtimeClientEventConversationItemCreate(type: 'conversation.item.create', eventId: eventId, previousItemId: previousItemId, item: item)); }
 
 /// Build the `conversation.item.delete` variant.
-factory RealtimeClientEvent.conversationItemDelete({String? eventId, required String itemId, }) { return RealtimeClientEventConversationItemDelete$Variant(RealtimeClientEventConversationItemDelete(type: 'conversation.item.delete', eventId: eventId, itemId: itemId)); }
+factory RealtimeClientEvent.conversationItemDelete({required String itemId, String? eventId, }) { return RealtimeClientEventConversationItemDelete$Variant(RealtimeClientEventConversationItemDelete(type: 'conversation.item.delete', eventId: eventId, itemId: itemId)); }
 
 /// Build the `conversation.item.retrieve` variant.
-factory RealtimeClientEvent.conversationItemRetrieve({String? eventId, required String itemId, }) { return RealtimeClientEventConversationItemRetrieve$Variant(RealtimeClientEventConversationItemRetrieve(type: 'conversation.item.retrieve', eventId: eventId, itemId: itemId)); }
+factory RealtimeClientEvent.conversationItemRetrieve({required String itemId, String? eventId, }) { return RealtimeClientEventConversationItemRetrieve$Variant(RealtimeClientEventConversationItemRetrieve(type: 'conversation.item.retrieve', eventId: eventId, itemId: itemId)); }
 
 /// Build the `conversation.item.truncate` variant.
-factory RealtimeClientEvent.conversationItemTruncate({String? eventId, required String itemId, required int contentIndex, required int audioEndMs, }) { return RealtimeClientEventConversationItemTruncate$Variant(RealtimeClientEventConversationItemTruncate(type: 'conversation.item.truncate', eventId: eventId, itemId: itemId, contentIndex: contentIndex, audioEndMs: audioEndMs)); }
+factory RealtimeClientEvent.conversationItemTruncate({required String itemId, required int contentIndex, required int audioEndMs, String? eventId, }) { return RealtimeClientEventConversationItemTruncate$Variant(RealtimeClientEventConversationItemTruncate(type: 'conversation.item.truncate', eventId: eventId, itemId: itemId, contentIndex: contentIndex, audioEndMs: audioEndMs)); }
 
 /// Build the `input_audio_buffer.append` variant.
-factory RealtimeClientEvent.inputAudioBufferAppend({String? eventId, required String audio, }) { return RealtimeClientEventInputAudioBufferAppend$Variant(RealtimeClientEventInputAudioBufferAppend(type: 'input_audio_buffer.append', eventId: eventId, audio: audio)); }
+factory RealtimeClientEvent.inputAudioBufferAppend({required String audio, String? eventId, }) { return RealtimeClientEventInputAudioBufferAppend$Variant(RealtimeClientEventInputAudioBufferAppend(type: 'input_audio_buffer.append', eventId: eventId, audio: audio)); }
 
 /// Build the `input_audio_buffer.clear` variant.
 factory RealtimeClientEvent.inputAudioBufferClear({String? eventId}) { return RealtimeClientEventInputAudioBufferClear$Variant(RealtimeClientEventInputAudioBufferClear(type: 'input_audio_buffer.clear', eventId: eventId)); }
@@ -51,7 +51,7 @@ factory RealtimeClientEvent.responseCancel({String? eventId, String? responseId,
 factory RealtimeClientEvent.responseCreate({String? eventId, RealtimeResponseCreateParams? response, }) { return RealtimeClientEventResponseCreate$Variant(RealtimeClientEventResponseCreate(type: 'response.create', eventId: eventId, response: response)); }
 
 /// Build the `session.update` variant.
-factory RealtimeClientEvent.sessionUpdate({String? eventId, required RealtimeClientEventSessionUpdateSession session, }) { return RealtimeClientEventSessionUpdate$Variant(RealtimeClientEventSessionUpdate(type: 'session.update', eventId: eventId, session: session)); }
+factory RealtimeClientEvent.sessionUpdate({required RealtimeClientEventSessionUpdateSession session, String? eventId, }) { return RealtimeClientEventSessionUpdate$Variant(RealtimeClientEventSessionUpdate(type: 'session.update', eventId: eventId, session: session)); }
 
 /// The discriminator value identifying this variant.
 String get type;
@@ -61,6 +61,20 @@ bool get isUnknown => this is RealtimeClientEvent$Unknown;
 
 /// Shared by all variants of this union.
 String? get eventId;
+R when<R>({required R Function(RealtimeClientEventConversationItemCreate$Variant) conversationItemCreate, required R Function(RealtimeClientEventConversationItemDelete$Variant) conversationItemDelete, required R Function(RealtimeClientEventConversationItemRetrieve$Variant) conversationItemRetrieve, required R Function(RealtimeClientEventConversationItemTruncate$Variant) conversationItemTruncate, required R Function(RealtimeClientEventInputAudioBufferAppend$Variant) inputAudioBufferAppend, required R Function(RealtimeClientEventInputAudioBufferClear$Variant) inputAudioBufferClear, required R Function(RealtimeClientEventOutputAudioBufferClear$Variant) outputAudioBufferClear, required R Function(RealtimeClientEventInputAudioBufferCommit$Variant) inputAudioBufferCommit, required R Function(RealtimeClientEventResponseCancel$Variant) responseCancel, required R Function(RealtimeClientEventResponseCreate$Variant) responseCreate, required R Function(RealtimeClientEventSessionUpdate$Variant) sessionUpdate, required R Function(RealtimeClientEvent$Unknown) unknown, }) { return switch (this) {
+  final RealtimeClientEventConversationItemCreate$Variant v => conversationItemCreate(v),
+  final RealtimeClientEventConversationItemDelete$Variant v => conversationItemDelete(v),
+  final RealtimeClientEventConversationItemRetrieve$Variant v => conversationItemRetrieve(v),
+  final RealtimeClientEventConversationItemTruncate$Variant v => conversationItemTruncate(v),
+  final RealtimeClientEventInputAudioBufferAppend$Variant v => inputAudioBufferAppend(v),
+  final RealtimeClientEventInputAudioBufferClear$Variant v => inputAudioBufferClear(v),
+  final RealtimeClientEventOutputAudioBufferClear$Variant v => outputAudioBufferClear(v),
+  final RealtimeClientEventInputAudioBufferCommit$Variant v => inputAudioBufferCommit(v),
+  final RealtimeClientEventResponseCancel$Variant v => responseCancel(v),
+  final RealtimeClientEventResponseCreate$Variant v => responseCreate(v),
+  final RealtimeClientEventSessionUpdate$Variant v => sessionUpdate(v),
+  final RealtimeClientEvent$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class RealtimeClientEventConversationItemCreate$Variant extends RealtimeClientEvent {const RealtimeClientEventConversationItemCreate$Variant(this.realtimeClientEventConversationItemCreate);
 
@@ -328,9 +342,11 @@ RealtimeClientEventSessionUpdate$Variant copyWith({String? Function()? eventId, 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class RealtimeClientEvent$Unknown extends RealtimeClientEvent {const RealtimeClientEvent$Unknown(this.json);
+@immutable final class RealtimeClientEvent$Unknown extends RealtimeClientEvent {RealtimeClientEvent$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String? _eventId = json['event_id'] as String?;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -343,6 +359,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'RealtimeClientEvent.unknown($json)';
 
-@override String? get eventId => json['event_id'] as String?;
+@override String? get eventId => _eventId;
 
  }

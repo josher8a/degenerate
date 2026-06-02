@@ -195,6 +195,6 @@ LineItem copyWith({int? amount, String? currency, String? Function()? descriptio
 
 @override int get hashCode => Object.hash(amount, currency, description, Object.hashAll(discountAmounts ?? const []), discountable, Object.hashAll(discounts), id, invoice, livemode, metadata, object, parent, period, Object.hashAll(pretaxCreditAmounts ?? const []), pricing, quantity, subscription, subtotal, Object.hashAll(taxes ?? const []));
 
-@override String toString() => 'LineItem(amount: $amount, currency: $currency, description: $description, discountAmounts: $discountAmounts, discountable: $discountable, discounts: $discounts, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, object: $object, parent: $parent, period: $period, pretaxCreditAmounts: $pretaxCreditAmounts, pricing: $pricing, quantity: $quantity, subscription: $subscription, subtotal: $subtotal, taxes: $taxes)';
+@override String toString() => 'LineItem(\n  amount: $amount,\n  currency: $currency,\n  description: $description,\n  discountAmounts: $discountAmounts,\n  discountable: $discountable,\n  discounts: $discounts,\n  id: $id,\n  invoice: $invoice,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  parent: $parent,\n  period: $period,\n  pretaxCreditAmounts: $pretaxCreditAmounts,\n  pricing: $pricing,\n  quantity: $quantity,\n  subscription: $subscription,\n  subtotal: $subtotal,\n  taxes: $taxes,\n)';
 
  }

@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final tokenSources$ = tokenSources;
 if (tokenSources$ != null) {
-  if (tokenSources$.length < 1) errors.add('tokenSources: must have >= 1 items');
+  if (tokenSources$.isEmpty) errors.add('tokenSources: must have >= 1 items');
   if (tokenSources$.length > 4) errors.add('tokenSources: must have <= 4 items');
 }
 return errors; } 

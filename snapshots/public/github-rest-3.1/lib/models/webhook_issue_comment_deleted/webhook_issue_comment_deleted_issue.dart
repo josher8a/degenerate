@@ -108,7 +108,7 @@ final WebhookIssueCommentDeletedIssueUser user;
 
 Map<String, dynamic> toJson() { return {
   'active_lock_reason': activeLockReason,
-  'assignee': assignee != null ? assignee?.toJson() : null,
+  'assignee': assignee?.toJson(),
   'assignees': assignees.map((e) => e).toList(),
   'author_association': authorAssociation,
   'body': body,
@@ -239,6 +239,6 @@ WebhookIssueCommentDeletedIssue copyWith({String? Function()? activeLockReason, 
 
 @override int get hashCode => Object.hashAll([activeLockReason, assignee, Object.hashAll(assignees), authorAssociation, body, closedAt, comments, commentsUrl, createdAt, draft, eventsUrl, htmlUrl, id, Object.hashAll(labels), labelsUrl, locked, milestone, nodeId, number, performedViaGithubApp, pullRequest, reactions, repositoryUrl, subIssuesSummary, issueDependenciesSummary, state, stateReason, timelineUrl, title, type, updatedAt, url, user]);
 
-@override String toString() => 'WebhookIssueCommentDeletedIssue(activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, body: $body, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, createdAt: $createdAt, draft: $draft, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, labels: $labels, labelsUrl: $labelsUrl, locked: $locked, milestone: $milestone, nodeId: $nodeId, number: $number, performedViaGithubApp: $performedViaGithubApp, pullRequest: $pullRequest, reactions: $reactions, repositoryUrl: $repositoryUrl, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, title: $title, type: $type, updatedAt: $updatedAt, url: $url, user: $user)';
+@override String toString() => 'WebhookIssueCommentDeletedIssue(\n  activeLockReason: $activeLockReason,\n  assignee: $assignee,\n  assignees: $assignees,\n  authorAssociation: $authorAssociation,\n  body: $body,\n  closedAt: $closedAt,\n  comments: $comments,\n  commentsUrl: $commentsUrl,\n  createdAt: $createdAt,\n  draft: $draft,\n  eventsUrl: $eventsUrl,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  labels: $labels,\n  labelsUrl: $labelsUrl,\n  locked: $locked,\n  milestone: $milestone,\n  nodeId: $nodeId,\n  number: $number,\n  performedViaGithubApp: $performedViaGithubApp,\n  pullRequest: $pullRequest,\n  reactions: $reactions,\n  repositoryUrl: $repositoryUrl,\n  subIssuesSummary: $subIssuesSummary,\n  issueDependenciesSummary: $issueDependenciesSummary,\n  state: $state,\n  stateReason: $stateReason,\n  timelineUrl: $timelineUrl,\n  title: $title,\n  type: $type,\n  updatedAt: $updatedAt,\n  url: $url,\n  user: $user,\n)';
 
  }

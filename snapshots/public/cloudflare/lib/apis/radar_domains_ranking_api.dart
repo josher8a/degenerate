@@ -55,7 +55,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetRankingDomainDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetRankingDomainDetailsError.fromResponse(response),
+  onError: RadarGetRankingDomainDetailsError.fromResponse,
 );
  } 
 /// Get domains rank time series
@@ -127,7 +127,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetRankingDomainTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetRankingDomainTimeseriesError.fromResponse(response),
+  onError: RadarGetRankingDomainTimeseriesError.fromResponse,
 );
  } 
 /// Get top or trending domains
@@ -184,7 +184,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetRankingTopDomainsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetRankingTopDomainsError.fromResponse(response),
+  onError: RadarGetRankingTopDomainsError.fromResponse,
 );
  } 
  }

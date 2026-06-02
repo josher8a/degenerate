@@ -100,7 +100,7 @@ return execute(
   onSuccess: (response) {
     return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateProjectServiceAccountError.fromResponse(response),
+  onError: CreateProjectServiceAccountError.fromResponse,
 );
  } 
 /// Returns a list of API keys in the project.
@@ -173,7 +173,7 @@ return execute(
   onSuccess: (response) {
     return KeyDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateProjectServiceAccountError.fromResponse(response),
+  onError: CreateProjectServiceAccountError.fromResponse,
 );
  } 
 /// Archives a project in the organization. Archived projects cannot be used or updated.
@@ -247,7 +247,7 @@ return execute(
   onSuccess: (response) {
     return ProjectRateLimit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateProjectServiceAccountError.fromResponse(response),
+  onError: CreateProjectServiceAccountError.fromResponse,
 );
  } 
 /// Returns a list of service accounts in the project.
@@ -278,7 +278,7 @@ return execute(
   onSuccess: (response) {
     return ProjectServiceAccountListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateProjectServiceAccountError.fromResponse(response),
+  onError: CreateProjectServiceAccountError.fromResponse,
 );
  } 
 /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
@@ -300,7 +300,7 @@ return execute(
   onSuccess: (response) {
     return ProjectServiceAccountCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateProjectServiceAccountError.fromResponse(response),
+  onError: CreateProjectServiceAccountError.fromResponse,
 );
  } 
 /// Retrieves a service account in the project.
@@ -373,7 +373,7 @@ return execute(
   onSuccess: (response) {
     return ProjectUserListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateProjectServiceAccountError.fromResponse(response),
+  onError: CreateProjectServiceAccountError.fromResponse,
 );
  } 
 /// Adds a user to the project. Users must already be members of the organization to be added to a project.
@@ -395,7 +395,7 @@ return execute(
   onSuccess: (response) {
     return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateProjectServiceAccountError.fromResponse(response),
+  onError: CreateProjectServiceAccountError.fromResponse,
 );
  } 
 /// Retrieves a user in the project.
@@ -436,7 +436,7 @@ return execute(
   onSuccess: (response) {
     return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateProjectServiceAccountError.fromResponse(response),
+  onError: CreateProjectServiceAccountError.fromResponse,
 );
  } 
 /// Deletes a user from the project.
@@ -460,7 +460,7 @@ return execute(
   onSuccess: (response) {
     return ProjectUserDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateProjectServiceAccountError.fromResponse(response),
+  onError: CreateProjectServiceAccountError.fromResponse,
 );
  } 
  }

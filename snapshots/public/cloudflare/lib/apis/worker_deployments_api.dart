@@ -17,7 +17,7 @@ Future<ApiResult<WorkerDeploymentsListDeploymentsResponseResult, Never>> workerD
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/deployments',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/scripts/${Uri.encodeComponent(scriptName.toJson())}/deployments',
   headers: headers,
   options: options,
 );
@@ -46,7 +46,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/deployments',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/scripts/${Uri.encodeComponent(scriptName.toJson())}/deployments',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -71,7 +71,7 @@ Future<ApiResult<WorkersDeployment, Never>> workerDeploymentsGetDeployment({requ
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/deployments/${Uri.encodeComponent(deploymentId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/scripts/${Uri.encodeComponent(scriptName.toJson())}/deployments/${Uri.encodeComponent(deploymentId)}',
   headers: headers,
   options: options,
 );
@@ -93,7 +93,7 @@ Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsDeleteDeployment({re
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/scripts/${Uri.encodeComponent(scriptName.toString())}/deployments/${Uri.encodeComponent(deploymentId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/scripts/${Uri.encodeComponent(scriptName.toJson())}/deployments/${Uri.encodeComponent(deploymentId)}',
   headers: headers,
   options: options,
 );

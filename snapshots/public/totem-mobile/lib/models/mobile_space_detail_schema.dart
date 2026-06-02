@@ -160,5 +160,5 @@ final class MobileSpaceDetailSchema {
 
   @override
   String toString() =>
-      'MobileSpaceDetailSchema(slug: $slug, title: $title, imageLink: $imageLink, shortDescription: $shortDescription, content: $content, author: $author, category: $category, subscribers: $subscribers, recurring: $recurring, price: $price, nextEvents: $nextEvents)';
+      'MobileSpaceDetailSchema(\n  slug: $slug,\n  title: $title,\n  imageLink: $imageLink,\n  shortDescription: $shortDescription,\n  content: $content,\n  author: $author,\n  category: $category,\n  subscribers: $subscribers,\n  recurring: $recurring,\n  price: $price,\n  nextEvents: $nextEvents,\n)';
 }

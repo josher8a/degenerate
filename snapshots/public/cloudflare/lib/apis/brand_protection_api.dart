@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Update alerts on submitted domains by ID
@@ -45,7 +45,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Update verification statuses of tracked URLs to awaiting by ID
@@ -65,7 +65,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Update verification statuses of tracked URLs to disproven by ID
@@ -85,7 +85,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Update verification statuses of tracked URLs to confirmed by ID
@@ -105,7 +105,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Read all brands
@@ -125,7 +125,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Create new brands
@@ -145,7 +145,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Delete brands by ID
@@ -165,7 +165,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Read patterns for brands by ID
@@ -185,7 +185,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Create new patterns for brands by ID
@@ -205,7 +205,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Delete patterns for brands by ID
@@ -225,7 +225,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Update verification statuses of submitted URLs to awaiting by ID
@@ -245,7 +245,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Read submitted domains by ID
@@ -265,7 +265,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Read recent URL submissions
@@ -285,7 +285,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Update verification statuses of submitted URLs to disproven by ID
@@ -305,7 +305,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Read URL submissions by ID
@@ -325,7 +325,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Create new URL submissions
@@ -347,7 +347,7 @@ return execute(
   onSuccess: (response) {
     return UrlSubmit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Read submitted domains by pattern
@@ -367,7 +367,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Read submitted URLs by ID
@@ -390,7 +390,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList();
   },
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Update verification statuses of submitted URLs to confirmed by ID
@@ -410,7 +410,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Internal route for testing URL submissions
@@ -428,7 +428,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Run liveness checks
@@ -448,7 +448,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Run readiness checks
@@ -468,7 +468,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
  }

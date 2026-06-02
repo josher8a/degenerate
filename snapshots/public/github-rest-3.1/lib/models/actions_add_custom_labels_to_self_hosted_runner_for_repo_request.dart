@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('labels'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (labels.length < 1) errors.add('labels: must have >= 1 items');
+if (labels.isEmpty) errors.add('labels: must have >= 1 items');
 if (labels.length > 100) errors.add('labels: must have <= 100 items');
 return errors; } 
 ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest copyWith({List<String>? labels}) { return ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest(

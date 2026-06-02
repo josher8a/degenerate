@@ -85,6 +85,6 @@ RepositoryAdvisoryCreate copyWith({String? summary, String? description, String?
 
 @override int get hashCode => Object.hash(summary, description, cveId, Object.hashAll(vulnerabilities), Object.hashAll(cweIds ?? const []), Object.hashAll(credits ?? const []), severity, cvssVectorString, startPrivateFork);
 
-@override String toString() => 'RepositoryAdvisoryCreate(summary: $summary, description: $description, cveId: $cveId, vulnerabilities: $vulnerabilities, cweIds: $cweIds, credits: $credits, severity: $severity, cvssVectorString: $cvssVectorString, startPrivateFork: $startPrivateFork)';
+@override String toString() => 'RepositoryAdvisoryCreate(\n  summary: $summary,\n  description: $description,\n  cveId: $cveId,\n  vulnerabilities: $vulnerabilities,\n  cweIds: $cweIds,\n  credits: $credits,\n  severity: $severity,\n  cvssVectorString: $cvssVectorString,\n  startPrivateFork: $startPrivateFork,\n)';
 
  }

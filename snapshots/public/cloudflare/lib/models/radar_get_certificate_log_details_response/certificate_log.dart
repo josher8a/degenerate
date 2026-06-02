@@ -92,7 +92,7 @@ Map<String, dynamic> toJson() { return {
   'endExclusive': endExclusive.toIso8601String(),
   'lastUpdate': lastUpdate.toIso8601String(),
   'operator': $operator,
-  'performance': performance != null ? performance?.toJson() : null,
+  'performance': performance?.toJson(),
   'related': related.map((e) => e.toJson()).toList(),
   'slug': slug,
   'startInclusive': startInclusive.toIso8601String(),
@@ -165,6 +165,6 @@ CertificateLog copyWith({Api? api, double? avgThroughput, String? description, D
 
 @override int get hashCode => Object.hash(api, avgThroughput, description, endExclusive, lastUpdate, $operator, performance, Object.hashAll(related), slug, startInclusive, state, stateTimestamp, submittableCertCount, submittedCertCount, url);
 
-@override String toString() => 'CertificateLog(api: $api, avgThroughput: $avgThroughput, description: $description, endExclusive: $endExclusive, lastUpdate: $lastUpdate, \$operator: ${$operator}, performance: $performance, related: $related, slug: $slug, startInclusive: $startInclusive, state: $state, stateTimestamp: $stateTimestamp, submittableCertCount: $submittableCertCount, submittedCertCount: $submittedCertCount, url: $url)';
+@override String toString() => 'CertificateLog(\n  api: $api,\n  avgThroughput: $avgThroughput,\n  description: $description,\n  endExclusive: $endExclusive,\n  lastUpdate: $lastUpdate,\n  \$operator: ${$operator},\n  performance: $performance,\n  related: $related,\n  slug: $slug,\n  startInclusive: $startInclusive,\n  state: $state,\n  stateTimestamp: $stateTimestamp,\n  submittableCertCount: $submittableCertCount,\n  submittedCertCount: $submittedCertCount,\n  url: $url,\n)';
 
  }

@@ -42,7 +42,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Create a gist
@@ -69,7 +69,7 @@ return execute(
   onSuccess: (response) {
     return GistSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// List public gists
@@ -108,7 +108,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
 /// List starred gists
@@ -145,7 +145,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Get a gist
@@ -172,7 +172,7 @@ return execute(
   onSuccess: (response) {
     return GistSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsGetError.fromResponse(response),
+  onError: GistsGetError.fromResponse,
 );
  } 
 /// Update a gist
@@ -205,7 +205,7 @@ return execute(
   onSuccess: (response) {
     return GistSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete a gist
@@ -225,7 +225,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// List gist comments
@@ -264,7 +264,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GistComment.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Create a gist comment
@@ -293,7 +293,7 @@ return execute(
   onSuccess: (response) {
     return GistComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Get a gist comment
@@ -320,7 +320,7 @@ return execute(
   onSuccess: (response) {
     return GistComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsGetCommentError.fromResponse(response),
+  onError: GistsGetCommentError.fromResponse,
 );
  } 
 /// Update a gist comment
@@ -349,7 +349,7 @@ return execute(
   onSuccess: (response) {
     return GistComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete a gist comment
@@ -369,7 +369,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// List gist commits
@@ -403,7 +403,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GistCommit.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// List gist forks
@@ -437,7 +437,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GistSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Fork a gist
@@ -459,7 +459,7 @@ return execute(
   onSuccess: (response) {
     return BaseGist.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// Check if a gist is starred
@@ -479,7 +479,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => GistsCheckIsStarredError.fromResponse(response),
+  onError: GistsCheckIsStarredError.fromResponse,
 );
  } 
 /// Star a gist
@@ -499,7 +499,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Unstar a gist
@@ -519,7 +519,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Get a gist revision
@@ -546,7 +546,7 @@ return execute(
   onSuccess: (response) {
     return GistSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// List gists for a user
@@ -583,7 +583,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
  }

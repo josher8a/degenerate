@@ -78,6 +78,6 @@ MagicLansAddSingleRequest copyWith({MagicBondId? Function()? bondId, bool? Funct
 
 @override int get hashCode => Object.hash(bondId, haLink, isBreakout, isPrioritized, name, nat, physport, Object.hashAll(routedSubnets ?? const []), staticAddressing, vlanTag);
 
-@override String toString() => 'MagicLansAddSingleRequest(bondId: $bondId, haLink: $haLink, isBreakout: $isBreakout, isPrioritized: $isPrioritized, name: $name, nat: $nat, physport: $physport, routedSubnets: $routedSubnets, staticAddressing: $staticAddressing, vlanTag: $vlanTag)';
+@override String toString() => 'MagicLansAddSingleRequest(\n  bondId: $bondId,\n  haLink: $haLink,\n  isBreakout: $isBreakout,\n  isPrioritized: $isPrioritized,\n  name: $name,\n  nat: $nat,\n  physport: $physport,\n  routedSubnets: $routedSubnets,\n  staticAddressing: $staticAddressing,\n  vlanTag: $vlanTag,\n)';
 
  }

@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/pagerules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/pagerules',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/pagerules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/pagerules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -80,7 +80,7 @@ Future<ApiResult<ZonesPageRule?, Never>> pageRulesGetAPageRule({required ZonesSc
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/pagerules/${Uri.encodeComponent(pageruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/pagerules/${Uri.encodeComponent(pageruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -103,7 +103,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/pagerules/${Uri.encodeComponent(pageruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/pagerules/${Uri.encodeComponent(pageruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -127,7 +127,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/pagerules/${Uri.encodeComponent(pageruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/pagerules/${Uri.encodeComponent(pageruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -150,7 +150,7 @@ Future<ApiResult<ResponseSingleId5Result?, Never>> pageRulesDeleteAPageRule({req
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/pagerules/${Uri.encodeComponent(pageruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/pagerules/${Uri.encodeComponent(pageruleId.toJson())}',
   headers: headers,
   options: options,
 );

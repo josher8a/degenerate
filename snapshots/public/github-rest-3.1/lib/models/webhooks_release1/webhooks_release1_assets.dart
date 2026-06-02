@@ -114,6 +114,6 @@ WebhooksRelease1Assets copyWith({Uri? browserDownloadUrl, String? contentType, D
 
 @override int get hashCode => Object.hash(browserDownloadUrl, contentType, createdAt, downloadCount, id, label, name, nodeId, size, digest, state, updatedAt, uploader, url);
 
-@override String toString() => 'WebhooksRelease1Assets(browserDownloadUrl: $browserDownloadUrl, contentType: $contentType, createdAt: $createdAt, downloadCount: $downloadCount, id: $id, label: $label, name: $name, nodeId: $nodeId, size: $size, digest: $digest, state: $state, updatedAt: $updatedAt, uploader: $uploader, url: $url)';
+@override String toString() => 'WebhooksRelease1Assets(\n  browserDownloadUrl: $browserDownloadUrl,\n  contentType: $contentType,\n  createdAt: $createdAt,\n  downloadCount: $downloadCount,\n  id: $id,\n  label: $label,\n  name: $name,\n  nodeId: $nodeId,\n  size: $size,\n  digest: $digest,\n  state: $state,\n  updatedAt: $updatedAt,\n  uploader: $uploader,\n  url: $url,\n)';
 
  }

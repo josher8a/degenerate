@@ -140,6 +140,6 @@ LoadBalancingPool copyWith({List<LoadBalancingCheckRegions2>? Function()? checkR
 
 @override int get hashCode => Object.hash(Object.hashAll(checkRegions ?? const []), createdOn, description, disabledAt, enabled, id, latitude, loadShedding, longitude, minimumOrigins, modifiedOn, monitor, monitorGroup, name, Object.hashAll(networks ?? const []), notificationEmail, notificationFilter, originSteering, Object.hashAll(origins ?? const []));
 
-@override String toString() => 'LoadBalancingPool(checkRegions: $checkRegions, createdOn: $createdOn, description: $description, disabledAt: $disabledAt, enabled: $enabled, id: $id, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, modifiedOn: $modifiedOn, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, networks: $networks, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)';
+@override String toString() => 'LoadBalancingPool(\n  checkRegions: $checkRegions,\n  createdOn: $createdOn,\n  description: $description,\n  disabledAt: $disabledAt,\n  enabled: $enabled,\n  id: $id,\n  latitude: $latitude,\n  loadShedding: $loadShedding,\n  longitude: $longitude,\n  minimumOrigins: $minimumOrigins,\n  modifiedOn: $modifiedOn,\n  monitor: $monitor,\n  monitorGroup: $monitorGroup,\n  name: $name,\n  networks: $networks,\n  notificationEmail: $notificationEmail,\n  notificationFilter: $notificationFilter,\n  originSteering: $originSteering,\n  origins: $origins,\n)';
 
  }

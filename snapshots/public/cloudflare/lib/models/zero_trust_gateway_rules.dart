@@ -150,7 +150,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('traffic'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (filters.length < 1) errors.add('filters: must have >= 1 items');
+if (filters.isEmpty) errors.add('filters: must have >= 1 items');
 if (filters.length > 1) errors.add('filters: must have <= 1 items');
 return errors; } 
 ZeroTrustGatewayRules copyWith({ZeroTrustGatewayAction? action, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayDeletedAt? Function()? deletedAt, ZeroTrustGatewaySchemasDescription? Function()? description, ZeroTrustGatewayDevicePosture? Function()? devicePosture, ZeroTrustGatewayEnabled? enabled, ZeroTrustGatewayExpiration? Function()? expiration, List<ZeroTrustGatewayFilters2>? filters, ZeroTrustGatewaySchemasUuid? Function()? id, ZeroTrustGatewayIdentity? Function()? identity, ZeroTrustGatewayComponentsSchemasName? name, ZeroTrustGatewayPrecedence? precedence, ZeroTrustGatewayReadOnly? Function()? readOnly, ZeroTrustGatewayRuleSettings? Function()? ruleSettings, ZeroTrustGatewaySchedule? Function()? schedule, ZeroTrustGatewaySharable? Function()? sharable, ZeroTrustGatewaySourceAccount? Function()? sourceAccount, ZeroTrustGatewayTraffic? traffic, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, ZeroTrustGatewayVersion? Function()? version, ZeroTrustGatewayWarningStatus? Function()? warningStatus, }) { return ZeroTrustGatewayRules(
@@ -202,6 +202,6 @@ ZeroTrustGatewayRules copyWith({ZeroTrustGatewayAction? action, ZeroTrustGateway
 
 @override int get hashCode => Object.hashAll([action, createdAt, deletedAt, description, devicePosture, enabled, expiration, Object.hashAll(filters), id, identity, name, precedence, readOnly, ruleSettings, schedule, sharable, sourceAccount, traffic, updatedAt, version, warningStatus]);
 
-@override String toString() => 'ZeroTrustGatewayRules(action: $action, createdAt: $createdAt, deletedAt: $deletedAt, description: $description, devicePosture: $devicePosture, enabled: $enabled, expiration: $expiration, filters: $filters, id: $id, identity: $identity, name: $name, precedence: $precedence, readOnly: $readOnly, ruleSettings: $ruleSettings, schedule: $schedule, sharable: $sharable, sourceAccount: $sourceAccount, traffic: $traffic, updatedAt: $updatedAt, version: $version, warningStatus: $warningStatus)';
+@override String toString() => 'ZeroTrustGatewayRules(\n  action: $action,\n  createdAt: $createdAt,\n  deletedAt: $deletedAt,\n  description: $description,\n  devicePosture: $devicePosture,\n  enabled: $enabled,\n  expiration: $expiration,\n  filters: $filters,\n  id: $id,\n  identity: $identity,\n  name: $name,\n  precedence: $precedence,\n  readOnly: $readOnly,\n  ruleSettings: $ruleSettings,\n  schedule: $schedule,\n  sharable: $sharable,\n  sourceAccount: $sourceAccount,\n  traffic: $traffic,\n  updatedAt: $updatedAt,\n  version: $version,\n  warningStatus: $warningStatus,\n)';
 
  }

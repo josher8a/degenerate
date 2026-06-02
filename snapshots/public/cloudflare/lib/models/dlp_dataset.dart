@@ -104,6 +104,6 @@ DlpDataset copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? co
 
 @override int get hashCode => Object.hash(caseSensitive, Object.hashAll(columns), createdAt, description, encodingVersion, id, name, numCells, secret, status, updatedAt, Object.hashAll(uploads));
 
-@override String toString() => 'DlpDataset(caseSensitive: $caseSensitive, columns: $columns, createdAt: $createdAt, description: $description, encodingVersion: $encodingVersion, id: $id, name: $name, numCells: $numCells, secret: $secret, status: $status, updatedAt: $updatedAt, uploads: $uploads)';
+@override String toString() => 'DlpDataset(\n  caseSensitive: $caseSensitive,\n  columns: $columns,\n  createdAt: $createdAt,\n  description: $description,\n  encodingVersion: $encodingVersion,\n  id: $id,\n  name: $name,\n  numCells: $numCells,\n  secret: $secret,\n  status: $status,\n  updatedAt: $updatedAt,\n  uploads: $uploads,\n)';
 
  }

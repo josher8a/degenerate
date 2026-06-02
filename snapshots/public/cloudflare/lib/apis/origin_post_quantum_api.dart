@@ -17,7 +17,7 @@ Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsGetOriginPost
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/origin_post_quantum_encryption',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/origin_post_quantum_encryption',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/origin_post_quantum_encryption',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/origin_post_quantum_encryption',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

@@ -57,12 +57,12 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'issue_url': issueUrl.toString(),
   'node_id': nodeId,
-  'performed_via_github_app': performedViaGithubApp != null ? performedViaGithubApp?.toJson() : null,
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
   'reactions': reactions.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   if (pin != null) 'pin': pin?.toJson(),
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
@@ -109,6 +109,6 @@ WebhookIssueCommentCreatedComment copyWith({AuthorAssociation? authorAssociation
 
 @override int get hashCode => Object.hash(authorAssociation, body, createdAt, htmlUrl, id, issueUrl, nodeId, performedViaGithubApp, reactions, updatedAt, url, pin, user);
 
-@override String toString() => 'WebhookIssueCommentCreatedComment(authorAssociation: $authorAssociation, body: $body, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, nodeId: $nodeId, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, updatedAt: $updatedAt, url: $url, pin: $pin, user: $user)';
+@override String toString() => 'WebhookIssueCommentCreatedComment(\n  authorAssociation: $authorAssociation,\n  body: $body,\n  createdAt: $createdAt,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  issueUrl: $issueUrl,\n  nodeId: $nodeId,\n  performedViaGithubApp: $performedViaGithubApp,\n  reactions: $reactions,\n  updatedAt: $updatedAt,\n  url: $url,\n  pin: $pin,\n  user: $user,\n)';
 
  }

@@ -81,6 +81,6 @@ PullRequestReviewEventReview copyWith({int? Function()? id, String? Function()? 
 
 @override int get hashCode => Object.hash(id, nodeId, user, body, commitId, submittedAt, state, htmlUrl, pullRequestUrl, links, updatedAt);
 
-@override String toString() => 'PullRequestReviewEventReview(id: $id, nodeId: $nodeId, user: $user, body: $body, commitId: $commitId, submittedAt: $submittedAt, state: $state, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, updatedAt: $updatedAt)';
+@override String toString() => 'PullRequestReviewEventReview(\n  id: $id,\n  nodeId: $nodeId,\n  user: $user,\n  body: $body,\n  commitId: $commitId,\n  submittedAt: $submittedAt,\n  state: $state,\n  htmlUrl: $htmlUrl,\n  pullRequestUrl: $pullRequestUrl,\n  links: $links,\n  updatedAt: $updatedAt,\n)';
 
  }

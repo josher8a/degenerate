@@ -10,10 +10,10 @@ factory ZeroTrustGatewayProxyEndpoints.fromJson(Map<String, dynamic> json) { ret
 }; }
 
 /// Build the `identity` variant.
-factory ZeroTrustGatewayProxyEndpoints.identity({ZeroTrustGatewayReadOnlyTimestamp? createdAt, ZeroTrustGatewayComponentsSchemasUuid? id, required ZeroTrustGatewayProxyEndpointsComponentsSchemasName name, ZeroTrustGatewaySchemasSubdomain? subdomain, ZeroTrustGatewayReadOnlyTimestamp? updatedAt, }) { return ZeroTrustGatewayProxyEndpointsIdentity(ZeroTrustGatewayProxyEndpointIdentity(kind: 'identity', createdAt: createdAt, id: id, name: name, subdomain: subdomain, updatedAt: updatedAt)); }
+factory ZeroTrustGatewayProxyEndpoints.identity({required ZeroTrustGatewayProxyEndpointsComponentsSchemasName name, ZeroTrustGatewayReadOnlyTimestamp? createdAt, ZeroTrustGatewayComponentsSchemasUuid? id, ZeroTrustGatewaySchemasSubdomain? subdomain, ZeroTrustGatewayReadOnlyTimestamp? updatedAt, }) { return ZeroTrustGatewayProxyEndpointsIdentity(ZeroTrustGatewayProxyEndpointIdentity(kind: 'identity', createdAt: createdAt, id: id, name: name, subdomain: subdomain, updatedAt: updatedAt)); }
 
 /// Build the `ip` variant.
-factory ZeroTrustGatewayProxyEndpoints.ip({ZeroTrustGatewayReadOnlyTimestamp? createdAt, ZeroTrustGatewayComponentsSchemasUuid? id, required List<String> ips, required ZeroTrustGatewayProxyEndpointsComponentsSchemasName name, ZeroTrustGatewaySchemasSubdomain? subdomain, ZeroTrustGatewayReadOnlyTimestamp? updatedAt, }) { return ZeroTrustGatewayProxyEndpointsIp(ZeroTrustGatewayProxyEndpointIp(kind: 'ip', createdAt: createdAt, id: id, ips: ips, name: name, subdomain: subdomain, updatedAt: updatedAt)); }
+factory ZeroTrustGatewayProxyEndpoints.ip({required List<String> ips, required ZeroTrustGatewayProxyEndpointsComponentsSchemasName name, ZeroTrustGatewayReadOnlyTimestamp? createdAt, ZeroTrustGatewayComponentsSchemasUuid? id, ZeroTrustGatewaySchemasSubdomain? subdomain, ZeroTrustGatewayReadOnlyTimestamp? updatedAt, }) { return ZeroTrustGatewayProxyEndpointsIp(ZeroTrustGatewayProxyEndpointIp(kind: 'ip', createdAt: createdAt, id: id, ips: ips, name: name, subdomain: subdomain, updatedAt: updatedAt)); }
 
 /// The discriminator value identifying this variant.
 String get kind;
@@ -31,6 +31,11 @@ ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name;
 ZeroTrustGatewaySchemasSubdomain? get subdomain;
 /// Shared by all variants of this union.
 ZeroTrustGatewayReadOnlyTimestamp? get updatedAt;
+R when<R>({required R Function(ZeroTrustGatewayProxyEndpointsIdentity) identity, required R Function(ZeroTrustGatewayProxyEndpointsIp) ip, required R Function(ZeroTrustGatewayProxyEndpoints$Unknown) unknown, }) { return switch (this) {
+  final ZeroTrustGatewayProxyEndpointsIdentity v => identity(v),
+  final ZeroTrustGatewayProxyEndpointsIp v => ip(v),
+  final ZeroTrustGatewayProxyEndpoints$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ZeroTrustGatewayProxyEndpointsIdentity extends ZeroTrustGatewayProxyEndpoints {const ZeroTrustGatewayProxyEndpointsIdentity(this.zeroTrustGatewayProxyEndpointIdentity);
 
@@ -105,9 +110,19 @@ ZeroTrustGatewayProxyEndpointsIp copyWith({ZeroTrustGatewayReadOnlyTimestamp? Fu
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class ZeroTrustGatewayProxyEndpoints$Unknown extends ZeroTrustGatewayProxyEndpoints {const ZeroTrustGatewayProxyEndpoints$Unknown(this.json);
+@immutable final class ZeroTrustGatewayProxyEndpoints$Unknown extends ZeroTrustGatewayProxyEndpoints {ZeroTrustGatewayProxyEndpoints$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final ZeroTrustGatewayReadOnlyTimestamp? _createdAt = json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null;
+
+late final ZeroTrustGatewayComponentsSchemasUuid? _id = json['id'] != null ? ZeroTrustGatewayComponentsSchemasUuid.fromJson(json['id'] as String) : null;
+
+late final ZeroTrustGatewayProxyEndpointsComponentsSchemasName _name = ZeroTrustGatewayProxyEndpointsComponentsSchemasName.fromJson(json['name'] as String);
+
+late final ZeroTrustGatewaySchemasSubdomain? _subdomain = json['subdomain'] != null ? ZeroTrustGatewaySchemasSubdomain.fromJson(json['subdomain'] as String) : null;
+
+late final ZeroTrustGatewayReadOnlyTimestamp? _updatedAt = json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null;
 
 @override String get kind => json['kind'] as String? ?? '';
 
@@ -120,14 +135,14 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ZeroTrustGatewayProxyEndpoints.unknown($json)';
 
-@override ZeroTrustGatewayReadOnlyTimestamp? get createdAt => json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null;
+@override ZeroTrustGatewayReadOnlyTimestamp? get createdAt => _createdAt;
 
-@override ZeroTrustGatewayComponentsSchemasUuid? get id => json['id'] != null ? ZeroTrustGatewayComponentsSchemasUuid.fromJson(json['id'] as String) : null;
+@override ZeroTrustGatewayComponentsSchemasUuid? get id => _id;
 
-@override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name => ZeroTrustGatewayProxyEndpointsComponentsSchemasName.fromJson(json['name'] as String);
+@override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name => _name;
 
-@override ZeroTrustGatewaySchemasSubdomain? get subdomain => json['subdomain'] != null ? ZeroTrustGatewaySchemasSubdomain.fromJson(json['subdomain'] as String) : null;
+@override ZeroTrustGatewaySchemasSubdomain? get subdomain => _subdomain;
 
-@override ZeroTrustGatewayReadOnlyTimestamp? get updatedAt => json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null;
+@override ZeroTrustGatewayReadOnlyTimestamp? get updatedAt => _updatedAt;
 
  }

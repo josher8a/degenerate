@@ -86,6 +86,6 @@ PostTransfersRequest copyWith({int? Function()? amount, String? currency, String
 
 @override int get hashCode => Object.hash(amount, currency, description, destination, Object.hashAll(expand ?? const []), metadata, sourceTransaction, sourceType, transferGroup);
 
-@override String toString() => 'PostTransfersRequest(amount: $amount, currency: $currency, description: $description, destination: $destination, expand: $expand, metadata: $metadata, sourceTransaction: $sourceTransaction, sourceType: $sourceType, transferGroup: $transferGroup)';
+@override String toString() => 'PostTransfersRequest(\n  amount: $amount,\n  currency: $currency,\n  description: $description,\n  destination: $destination,\n  expand: $expand,\n  metadata: $metadata,\n  sourceTransaction: $sourceTransaction,\n  sourceType: $sourceType,\n  transferGroup: $transferGroup,\n)';
 
  }

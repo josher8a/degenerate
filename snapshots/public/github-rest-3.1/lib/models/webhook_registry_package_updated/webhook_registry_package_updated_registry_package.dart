@@ -98,6 +98,6 @@ WebhookRegistryPackageUpdatedRegistryPackage copyWith({String? createdAt, dynami
 
 @override int get hashCode => Object.hash(createdAt, description, ecosystem, htmlUrl, id, name, namespace, owner, packageType, packageVersion, registry, updatedAt);
 
-@override String toString() => 'WebhookRegistryPackageUpdatedRegistryPackage(createdAt: $createdAt, description: $description, ecosystem: $ecosystem, htmlUrl: $htmlUrl, id: $id, name: $name, namespace: $namespace, owner: $owner, packageType: $packageType, packageVersion: $packageVersion, registry: $registry, updatedAt: $updatedAt)';
+@override String toString() => 'WebhookRegistryPackageUpdatedRegistryPackage(\n  createdAt: $createdAt,\n  description: $description,\n  ecosystem: $ecosystem,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  namespace: $namespace,\n  owner: $owner,\n  packageType: $packageType,\n  packageVersion: $packageVersion,\n  registry: $registry,\n  updatedAt: $updatedAt,\n)';
 
  }

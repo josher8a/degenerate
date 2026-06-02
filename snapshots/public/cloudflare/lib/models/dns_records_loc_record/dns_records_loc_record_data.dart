@@ -233,6 +233,6 @@ DnsRecordsLocRecordData copyWith({double? Function()? altitude, double? Function
 
 @override int get hashCode => Object.hash(altitude, latDegrees, latDirection, latMinutes, latSeconds, longDegrees, longDirection, longMinutes, longSeconds, precisionHorz, precisionVert, size);
 
-@override String toString() => 'DnsRecordsLocRecordData(altitude: $altitude, latDegrees: $latDegrees, latDirection: $latDirection, latMinutes: $latMinutes, latSeconds: $latSeconds, longDegrees: $longDegrees, longDirection: $longDirection, longMinutes: $longMinutes, longSeconds: $longSeconds, precisionHorz: $precisionHorz, precisionVert: $precisionVert, size: $size)';
+@override String toString() => 'DnsRecordsLocRecordData(\n  altitude: $altitude,\n  latDegrees: $latDegrees,\n  latDirection: $latDirection,\n  latMinutes: $latMinutes,\n  latSeconds: $latSeconds,\n  longDegrees: $longDegrees,\n  longDirection: $longDirection,\n  longMinutes: $longMinutes,\n  longSeconds: $longSeconds,\n  precisionHorz: $precisionHorz,\n  precisionVert: $precisionVert,\n  size: $size,\n)';
 
  }

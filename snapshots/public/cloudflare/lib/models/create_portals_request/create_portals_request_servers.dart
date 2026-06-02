@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('server_id') && json['server_id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (serverId.length < 1) errors.add('serverId: length must be >= 1');
+if (serverId.isEmpty) errors.add('serverId: length must be >= 1');
 if (serverId.length > 32) errors.add('serverId: length must be <= 32');
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(serverId)) errors.add(r'serverId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
 return errors; } 

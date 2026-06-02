@@ -28,22 +28,22 @@ factory OutputItem.fromJson(Map<String, dynamic> json) { return switch (json['ty
 }; }
 
 /// Build the `message` variant.
-factory OutputItem.message({required String id, required ChatCompletionResponseMessageRole role, required List<OutputMessageContent> content, MessagePhase? phase, required ComputerToolCallOutputStatus status, }) { return OutputItemMessage(OutputMessage(type: 'message', id: id, role: role, content: content, phase: phase, status: status)); }
+factory OutputItem.message({required String id, required ChatCompletionResponseMessageRole role, required List<OutputMessageContent> content, required ComputerToolCallOutputStatus status, MessagePhase? phase, }) { return OutputItemMessage(OutputMessage(type: 'message', id: id, role: role, content: content, phase: phase, status: status)); }
 
 /// Build the `file_search_call` variant.
 factory OutputItem.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, List<FileSearchToolCallResults>? results, }) { return OutputItemFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
 
 /// Build the `function_call` variant.
-factory OutputItem.functionCall({String? id, required String callId, String? namespace, required String name, required String arguments, ComputerToolCallOutputStatus? status, }) { return OutputItemFunctionCall(FunctionToolCall(type: 'function_call', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
+factory OutputItem.functionCall({required String callId, required String name, required String arguments, String? id, String? namespace, ComputerToolCallOutputStatus? status, }) { return OutputItemFunctionCall(FunctionToolCall(type: 'function_call', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
 
 /// Build the `web_search_call` variant.
 factory OutputItem.webSearchCall({required String id, required WebSearchToolCallStatus status, required WebSearchToolCallAction action, }) { return OutputItemWebSearchCall(WebSearchToolCall(type: 'web_search_call', id: id, status: status, action: action)); }
 
 /// Build the `computer_call` variant.
-factory OutputItem.computerCall({required String id, required String callId, ComputerAction? action, List<ComputerAction>? actions, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputStatus status, }) { return OutputItemComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
+factory OutputItem.computerCall({required String id, required String callId, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputStatus status, ComputerAction? action, List<ComputerAction>? actions, }) { return OutputItemComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
 
 /// Build the `reasoning` variant.
-factory OutputItem.reasoning({required String id, String? encryptedContent, required List<SummaryTextContent> summary, List<ReasoningTextContent>? content, ComputerToolCallOutputStatus? status, }) { return OutputItemReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
+factory OutputItem.reasoning({required String id, required List<SummaryTextContent> summary, String? encryptedContent, List<ReasoningTextContent>? content, ComputerToolCallOutputStatus? status, }) { return OutputItemReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
 
 /// Build the `tool_search_call` variant.
 factory OutputItem.toolSearchCall({required String id, required String? callId, required ToolSearchExecutionType execution, required dynamic arguments, required FunctionCallStatus status, String? createdBy, }) { return OutputItemToolSearchCall(ToolSearchCall(type: 'tool_search_call', id: id, callId: callId, execution: execution, arguments: arguments, status: status, createdBy: createdBy)); }
@@ -85,7 +85,7 @@ factory OutputItem.mcpListTools({required String id, required String serverLabel
 factory OutputItem.mcpApprovalRequest({required String id, required String serverLabel, required String name, required String arguments, }) { return OutputItemMcpApprovalRequest(McpApprovalRequest(type: 'mcp_approval_request', id: id, serverLabel: serverLabel, name: name, arguments: arguments)); }
 
 /// Build the `custom_tool_call` variant.
-factory OutputItem.customToolCall({String? id, required String callId, String? namespace, required String name, required String input, }) { return OutputItemCustomToolCall(CustomToolCall(type: 'custom_tool_call', id: id, callId: callId, namespace: namespace, name: name, input: input)); }
+factory OutputItem.customToolCall({required String callId, required String name, required String input, String? id, String? namespace, }) { return OutputItemCustomToolCall(CustomToolCall(type: 'custom_tool_call', id: id, callId: callId, namespace: namespace, name: name, input: input)); }
 
 /// The discriminator value identifying this variant.
 String get type;
@@ -95,6 +95,29 @@ bool get isUnknown => this is OutputItem$Unknown;
 
 /// Shared by all variants of this union.
 String? get id;
+R when<R>({required R Function(OutputItemMessage) message, required R Function(OutputItemFileSearchCall) fileSearchCall, required R Function(OutputItemFunctionCall) functionCall, required R Function(OutputItemWebSearchCall) webSearchCall, required R Function(OutputItemComputerCall) computerCall, required R Function(OutputItemReasoning) reasoning, required R Function(OutputItemToolSearchCall) toolSearchCall, required R Function(OutputItemToolSearchOutput) toolSearchOutput, required R Function(OutputItemCompaction) compaction, required R Function(OutputItemImageGenerationCall) imageGenerationCall, required R Function(OutputItemCodeInterpreterCall) codeInterpreterCall, required R Function(OutputItemLocalShellCall) localShellCall, required R Function(OutputItemShellCall) shellCall, required R Function(OutputItemShellCallOutput) shellCallOutput, required R Function(OutputItemApplyPatchCall) applyPatchCall, required R Function(OutputItemApplyPatchCallOutput) applyPatchCallOutput, required R Function(OutputItemMcpCall) mcpCall, required R Function(OutputItemMcpListTools) mcpListTools, required R Function(OutputItemMcpApprovalRequest) mcpApprovalRequest, required R Function(OutputItemCustomToolCall) customToolCall, required R Function(OutputItem$Unknown) unknown, }) { return switch (this) {
+  final OutputItemMessage v => message(v),
+  final OutputItemFileSearchCall v => fileSearchCall(v),
+  final OutputItemFunctionCall v => functionCall(v),
+  final OutputItemWebSearchCall v => webSearchCall(v),
+  final OutputItemComputerCall v => computerCall(v),
+  final OutputItemReasoning v => reasoning(v),
+  final OutputItemToolSearchCall v => toolSearchCall(v),
+  final OutputItemToolSearchOutput v => toolSearchOutput(v),
+  final OutputItemCompaction v => compaction(v),
+  final OutputItemImageGenerationCall v => imageGenerationCall(v),
+  final OutputItemCodeInterpreterCall v => codeInterpreterCall(v),
+  final OutputItemLocalShellCall v => localShellCall(v),
+  final OutputItemShellCall v => shellCall(v),
+  final OutputItemShellCallOutput v => shellCallOutput(v),
+  final OutputItemApplyPatchCall v => applyPatchCall(v),
+  final OutputItemApplyPatchCallOutput v => applyPatchCallOutput(v),
+  final OutputItemMcpCall v => mcpCall(v),
+  final OutputItemMcpListTools v => mcpListTools(v),
+  final OutputItemMcpApprovalRequest v => mcpApprovalRequest(v),
+  final OutputItemCustomToolCall v => customToolCall(v),
+  final OutputItem$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class OutputItemMessage extends OutputItem {const OutputItemMessage(this.outputMessage);
 
@@ -637,9 +660,11 @@ OutputItemCustomToolCall copyWith({String? Function()? id, String? callId, Strin
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class OutputItem$Unknown extends OutputItem {const OutputItem$Unknown(this.json);
+@immutable final class OutputItem$Unknown extends OutputItem {OutputItem$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String? _id = json['id'] as String?;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -652,6 +677,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'OutputItem.unknown($json)';
 
-@override String? get id => json['id'] as String?;
+@override String? get id => _id;
 
  }

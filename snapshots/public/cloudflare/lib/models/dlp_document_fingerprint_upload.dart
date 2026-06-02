@@ -84,6 +84,6 @@ DlpDocumentFingerprintUpload copyWith({DateTime? createdAt, String? description,
 
 @override int get hashCode => Object.hash(createdAt, description, entryId, fileName, id, matchPercent, name, status, updatedAt, version);
 
-@override String toString() => 'DlpDocumentFingerprintUpload(createdAt: $createdAt, description: $description, entryId: $entryId, fileName: $fileName, id: $id, matchPercent: $matchPercent, name: $name, status: $status, updatedAt: $updatedAt, version: $version)';
+@override String toString() => 'DlpDocumentFingerprintUpload(\n  createdAt: $createdAt,\n  description: $description,\n  entryId: $entryId,\n  fileName: $fileName,\n  id: $id,\n  matchPercent: $matchPercent,\n  name: $name,\n  status: $status,\n  updatedAt: $updatedAt,\n  version: $version,\n)';
 
  }

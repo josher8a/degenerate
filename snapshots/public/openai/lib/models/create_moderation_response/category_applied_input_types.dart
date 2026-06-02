@@ -449,6 +449,6 @@ CategoryAppliedInputTypes copyWith({List<Hate>? hate, List<HateThreatening>? hat
 
 @override int get hashCode => Object.hash(Object.hashAll(hate), Object.hashAll(hateThreatening), Object.hashAll(harassment), Object.hashAll(harassmentThreatening), Object.hashAll(illicit), Object.hashAll(illicitViolent), Object.hashAll(selfHarm), Object.hashAll(selfHarmIntent), Object.hashAll(selfHarmInstructions), Object.hashAll(sexual), Object.hashAll(sexualMinors), Object.hashAll(violence), Object.hashAll(violenceGraphic));
 
-@override String toString() => 'CategoryAppliedInputTypes(hate: $hate, hateThreatening: $hateThreatening, harassment: $harassment, harassmentThreatening: $harassmentThreatening, illicit: $illicit, illicitViolent: $illicitViolent, selfHarm: $selfHarm, selfHarmIntent: $selfHarmIntent, selfHarmInstructions: $selfHarmInstructions, sexual: $sexual, sexualMinors: $sexualMinors, violence: $violence, violenceGraphic: $violenceGraphic)';
+@override String toString() => 'CategoryAppliedInputTypes(\n  hate: $hate,\n  hateThreatening: $hateThreatening,\n  harassment: $harassment,\n  harassmentThreatening: $harassmentThreatening,\n  illicit: $illicit,\n  illicitViolent: $illicitViolent,\n  selfHarm: $selfHarm,\n  selfHarmIntent: $selfHarmIntent,\n  selfHarmInstructions: $selfHarmInstructions,\n  sexual: $sexual,\n  sexualMinors: $sexualMinors,\n  violence: $violence,\n  violenceGraphic: $violenceGraphic,\n)';
 
  }

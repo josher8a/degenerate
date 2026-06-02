@@ -69,6 +69,6 @@ MqQueue copyWith({List<MqConsumerResponse>? Function()? consumers, double? Funct
 
 @override int get hashCode => Object.hash(Object.hashAll(consumers ?? const []), consumersTotalCount, createdOn, modifiedOn, Object.hashAll(producers ?? const []), producersTotalCount, queueId, queueName, settings);
 
-@override String toString() => 'MqQueue(consumers: $consumers, consumersTotalCount: $consumersTotalCount, createdOn: $createdOn, modifiedOn: $modifiedOn, producers: $producers, producersTotalCount: $producersTotalCount, queueId: $queueId, queueName: $queueName, settings: $settings)';
+@override String toString() => 'MqQueue(\n  consumers: $consumers,\n  consumersTotalCount: $consumersTotalCount,\n  createdOn: $createdOn,\n  modifiedOn: $modifiedOn,\n  producers: $producers,\n  producersTotalCount: $producersTotalCount,\n  queueId: $queueId,\n  queueName: $queueName,\n  settings: $settings,\n)';
 
  }

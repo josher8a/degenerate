@@ -30,7 +30,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersObservabilityQueryResults.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => TelemetryQueryError.fromResponse(response),
+  onError: TelemetryQueryError.fromResponse,
 );
  } 
  }

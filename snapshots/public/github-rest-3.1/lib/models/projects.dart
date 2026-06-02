@@ -78,13 +78,13 @@ Map<String, dynamic> toJson() { return {
   'title': title,
   'description': description,
   'public': public,
-  'closed_at': closedAt != null ? closedAt?.toIso8601String() : null,
+  'closed_at': closedAt?.toIso8601String(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'number': number,
   'short_description': shortDescription,
-  'deleted_at': deletedAt != null ? deletedAt?.toIso8601String() : null,
-  'deleted_by': deletedBy != null ? deletedBy?.toJson() : null,
+  'deleted_at': deletedAt?.toIso8601String(),
+  'deleted_by': deletedBy?.toJson(),
   if (state != null) 'state': state?.toJson(),
   if (latestStatusUpdate != null) 'latest_status_update': latestStatusUpdate?.toJson(),
   'is_template': ?isTemplate,
@@ -144,6 +144,6 @@ Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? cr
 
 @override int get hashCode => Object.hash(id, nodeId, owner, creator, title, description, public, closedAt, createdAt, updatedAt, number, shortDescription, deletedAt, deletedBy, state, latestStatusUpdate, isTemplate);
 
-@override String toString() => 'Projects(id: $id, nodeId: $nodeId, owner: $owner, creator: $creator, title: $title, description: $description, public: $public, closedAt: $closedAt, createdAt: $createdAt, updatedAt: $updatedAt, number: $number, shortDescription: $shortDescription, deletedAt: $deletedAt, deletedBy: $deletedBy, state: $state, latestStatusUpdate: $latestStatusUpdate, isTemplate: $isTemplate)';
+@override String toString() => 'Projects(\n  id: $id,\n  nodeId: $nodeId,\n  owner: $owner,\n  creator: $creator,\n  title: $title,\n  description: $description,\n  public: $public,\n  closedAt: $closedAt,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  number: $number,\n  shortDescription: $shortDescription,\n  deletedAt: $deletedAt,\n  deletedBy: $deletedBy,\n  state: $state,\n  latestStatusUpdate: $latestStatusUpdate,\n  isTemplate: $isTemplate,\n)';
 
  }

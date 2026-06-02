@@ -23,7 +23,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/verification',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/ssl/verification',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -48,7 +48,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/verification/${Uri.encodeComponent(certificatePackId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/ssl/verification/${Uri.encodeComponent(certificatePackId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

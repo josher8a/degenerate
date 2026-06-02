@@ -76,13 +76,13 @@ final description$ = description;
 if (description$ != null) {
   if (description$.length > 1000) errors.add('description: length must be <= 1000');
 }
-if (environmentId.length < 1) errors.add('environmentId: length must be >= 1');
+if (environmentId.isEmpty) errors.add('environmentId: length must be >= 1');
 if (environmentId.length > 64) errors.add('environmentId: length must be <= 64');
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(environmentId)) errors.add(r'environmentId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
-if (id.length < 1) errors.add('id: length must be >= 1');
+if (id.isEmpty) errors.add('id: length must be >= 1');
 if (id.length > 64) errors.add('id: length must be <= 64');
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
-if (workspaceId.length < 1) errors.add('workspaceId: length must be >= 1');
+if (workspaceId.isEmpty) errors.add('workspaceId: length must be >= 1');
 if (workspaceId.length > 64) errors.add('workspaceId: length must be <= 64');
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(workspaceId)) errors.add(r'workspaceId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
 return errors; } 
@@ -113,6 +113,6 @@ WorkersObservabilityQuery copyWith({String? created, String? Function()? descrip
 
 @override int get hashCode => Object.hash(created, description, environmentId, generated, id, name, parameters, updated, userId, workspaceId);
 
-@override String toString() => 'WorkersObservabilityQuery(created: $created, description: $description, environmentId: $environmentId, generated: $generated, id: $id, name: $name, parameters: $parameters, updated: $updated, userId: $userId, workspaceId: $workspaceId)';
+@override String toString() => 'WorkersObservabilityQuery(\n  created: $created,\n  description: $description,\n  environmentId: $environmentId,\n  generated: $generated,\n  id: $id,\n  name: $name,\n  parameters: $parameters,\n  updated: $updated,\n  userId: $userId,\n  workspaceId: $workspaceId,\n)';
 
  }

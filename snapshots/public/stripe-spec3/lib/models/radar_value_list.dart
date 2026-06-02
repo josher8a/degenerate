@@ -104,6 +104,6 @@ RadarValueList copyWith({String? alias, int? created, String? createdBy, String?
 
 @override int get hashCode => Object.hash(alias, created, createdBy, id, itemType, listItems, livemode, metadata, name, object);
 
-@override String toString() => 'RadarValueList(alias: $alias, created: $created, createdBy: $createdBy, id: $id, itemType: $itemType, listItems: $listItems, livemode: $livemode, metadata: $metadata, name: $name, object: $object)';
+@override String toString() => 'RadarValueList(\n  alias: $alias,\n  created: $created,\n  createdBy: $createdBy,\n  id: $id,\n  itemType: $itemType,\n  listItems: $listItems,\n  livemode: $livemode,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n)';
 
  }

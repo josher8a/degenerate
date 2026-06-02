@@ -141,6 +141,6 @@ IamUserInvite copyWith({IamSchemasExpiresOn? Function()? expiresOn, IamInviteCom
 
 @override int get hashCode => Object.hash(expiresOn, id, invitedBy, invitedMemberEmail, invitedMemberId, invitedOn, organizationId, organizationIsEnforcingTwofactor, organizationName, Object.hashAll(roles ?? const []), status);
 
-@override String toString() => 'IamUserInvite(expiresOn: $expiresOn, id: $id, invitedBy: $invitedBy, invitedMemberEmail: $invitedMemberEmail, invitedMemberId: $invitedMemberId, invitedOn: $invitedOn, organizationId: $organizationId, organizationIsEnforcingTwofactor: $organizationIsEnforcingTwofactor, organizationName: $organizationName, roles: $roles, status: $status)';
+@override String toString() => 'IamUserInvite(\n  expiresOn: $expiresOn,\n  id: $id,\n  invitedBy: $invitedBy,\n  invitedMemberEmail: $invitedMemberEmail,\n  invitedMemberId: $invitedMemberId,\n  invitedOn: $invitedOn,\n  organizationId: $organizationId,\n  organizationIsEnforcingTwofactor: $organizationIsEnforcingTwofactor,\n  organizationName: $organizationName,\n  roles: $roles,\n  status: $status,\n)';
 
  }

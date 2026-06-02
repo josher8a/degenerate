@@ -81,6 +81,6 @@ ParticipantPeerStatsDeviceInfo copyWith({String? Function()? browser, String? Fu
 
 @override int get hashCode => Object.hash(browser, browserVersion, cpus, engine, isMobile, os, osVersion, sdkName, sdkVersion, userAgent, webglSupport);
 
-@override String toString() => 'ParticipantPeerStatsDeviceInfo(browser: $browser, browserVersion: $browserVersion, cpus: $cpus, engine: $engine, isMobile: $isMobile, os: $os, osVersion: $osVersion, sdkName: $sdkName, sdkVersion: $sdkVersion, userAgent: $userAgent, webglSupport: $webglSupport)';
+@override String toString() => 'ParticipantPeerStatsDeviceInfo(\n  browser: $browser,\n  browserVersion: $browserVersion,\n  cpus: $cpus,\n  engine: $engine,\n  isMobile: $isMobile,\n  os: $os,\n  osVersion: $osVersion,\n  sdkName: $sdkName,\n  sdkVersion: $sdkVersion,\n  userAgent: $userAgent,\n  webglSupport: $webglSupport,\n)';
 
  }

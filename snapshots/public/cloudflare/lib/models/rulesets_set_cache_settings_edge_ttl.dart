@@ -66,7 +66,7 @@ if ($default$ != null) {
 }
 final statusCodeTtl$ = statusCodeTtl;
 if (statusCodeTtl$ != null) {
-  if (statusCodeTtl$.length < 1) errors.add('statusCodeTtl: must have >= 1 items');
+  if (statusCodeTtl$.isEmpty) errors.add('statusCodeTtl: must have >= 1 items');
   if (statusCodeTtl$.toSet().length != statusCodeTtl$.length) errors.add('statusCodeTtl: items must be unique');
 }
 return errors; } 

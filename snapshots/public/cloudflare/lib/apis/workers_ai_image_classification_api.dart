@@ -40,7 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMicrosoftNonomniResnet50Error.fromResponse(response),
+  onError: WorkersAiPostRunCfMicrosoftNonomniResnet50Error.fromResponse,
 );
  } 
 /// Execute @cf/microsoft/resnet-50 model.
@@ -75,7 +75,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMicrosoftResnet50Error.fromResponse(response),
+  onError: WorkersAiPostRunCfMicrosoftResnet50Error.fromResponse,
 );
  } 
  }

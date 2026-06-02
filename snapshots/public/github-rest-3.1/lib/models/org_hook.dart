@@ -91,6 +91,6 @@ OrgHook copyWith({int? id, Uri? url, Uri? pingUrl, Uri? Function()? deliveriesUr
 
 @override int get hashCode => Object.hash(id, url, pingUrl, deliveriesUrl, name, Object.hashAll(events), active, config, updatedAt, createdAt, type);
 
-@override String toString() => 'OrgHook(id: $id, url: $url, pingUrl: $pingUrl, deliveriesUrl: $deliveriesUrl, name: $name, events: $events, active: $active, config: $config, updatedAt: $updatedAt, createdAt: $createdAt, type: $type)';
+@override String toString() => 'OrgHook(\n  id: $id,\n  url: $url,\n  pingUrl: $pingUrl,\n  deliveriesUrl: $deliveriesUrl,\n  name: $name,\n  events: $events,\n  active: $active,\n  config: $config,\n  updatedAt: $updatedAt,\n  createdAt: $createdAt,\n  type: $type,\n)';
 
  }

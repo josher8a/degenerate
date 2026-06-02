@@ -93,6 +93,6 @@ TunnelWarpConnectorTunnel copyWith({TunnelAccountId? Function()? accountTag, Lis
 
 @override int get hashCode => Object.hash(accountTag, Object.hashAll(connections ?? const []), connsActiveAt, connsInactiveAt, createdAt, deletedAt, id, metadata, name, status, tunType);
 
-@override String toString() => 'TunnelWarpConnectorTunnel(accountTag: $accountTag, connections: $connections, connsActiveAt: $connsActiveAt, connsInactiveAt: $connsInactiveAt, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, metadata: $metadata, name: $name, status: $status, tunType: $tunType)';
+@override String toString() => 'TunnelWarpConnectorTunnel(\n  accountTag: $accountTag,\n  connections: $connections,\n  connsActiveAt: $connsActiveAt,\n  connsInactiveAt: $connsInactiveAt,\n  createdAt: $createdAt,\n  deletedAt: $deletedAt,\n  id: $id,\n  metadata: $metadata,\n  name: $name,\n  status: $status,\n  tunType: $tunType,\n)';
 
  }

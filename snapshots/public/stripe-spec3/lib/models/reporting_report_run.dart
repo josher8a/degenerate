@@ -138,6 +138,6 @@ ReportingReportRun copyWith({int? created, String? Function()? error, String? id
 
 @override int get hashCode => Object.hash(created, error, id, livemode, object, parameters, reportType, result, status, succeededAt);
 
-@override String toString() => 'ReportingReportRun(created: $created, error: $error, id: $id, livemode: $livemode, object: $object, parameters: $parameters, reportType: $reportType, result: $result, status: $status, succeededAt: $succeededAt)';
+@override String toString() => 'ReportingReportRun(\n  created: $created,\n  error: $error,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  parameters: $parameters,\n  reportType: $reportType,\n  result: $result,\n  status: $status,\n  succeededAt: $succeededAt,\n)';
 
  }

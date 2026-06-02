@@ -39,7 +39,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AiSearchInstanceListJobsError.fromResponse(response),
+  onError: AiSearchInstanceListJobsError.fromResponse,
 );
  } 
 /// Create new job
@@ -64,7 +64,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchInstanceChangeJobStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchInstanceCreateJobError.fromResponse(response),
+  onError: AiSearchInstanceCreateJobError.fromResponse,
 );
  } 
 /// Get a Job Details
@@ -87,7 +87,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchInstanceChangeJobStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchInstanceGetJobError.fromResponse(response),
+  onError: AiSearchInstanceGetJobError.fromResponse,
 );
  } 
 /// Change Job Status
@@ -112,7 +112,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AiSearchInstanceChangeJobStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AiSearchInstanceChangeJobStatusError.fromResponse(response),
+  onError: AiSearchInstanceChangeJobStatusError.fromResponse,
 );
  } 
 /// List Job Logs
@@ -146,7 +146,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AiSearchInstanceListJobLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AiSearchInstanceListJobLogsError.fromResponse(response),
+  onError: AiSearchInstanceListJobLogsError.fromResponse,
 );
  } 
  }

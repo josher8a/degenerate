@@ -153,6 +153,6 @@ Messages30 copyWith({double? Function()? frequencyPenalty, List<Messages10Functi
 
 @override int get hashCode => Object.hash(frequencyPenalty, Object.hashAll(functions ?? const []), guidedJson, maxTokens, Object.hashAll(messages), presencePenalty, raw, repetitionPenalty, responseFormat, seed, stream, temperature, Object.hashAll(tools ?? const []), topK, topP);
 
-@override String toString() => 'Messages30(frequencyPenalty: $frequencyPenalty, functions: $functions, guidedJson: $guidedJson, maxTokens: $maxTokens, messages: $messages, presencePenalty: $presencePenalty, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, tools: $tools, topK: $topK, topP: $topP)';
+@override String toString() => 'Messages30(\n  frequencyPenalty: $frequencyPenalty,\n  functions: $functions,\n  guidedJson: $guidedJson,\n  maxTokens: $maxTokens,\n  messages: $messages,\n  presencePenalty: $presencePenalty,\n  raw: $raw,\n  repetitionPenalty: $repetitionPenalty,\n  responseFormat: $responseFormat,\n  seed: $seed,\n  stream: $stream,\n  temperature: $temperature,\n  tools: $tools,\n  topK: $topK,\n  topP: $topP,\n)';
 
  }

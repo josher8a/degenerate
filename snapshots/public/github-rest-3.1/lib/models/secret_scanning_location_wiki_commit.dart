@@ -87,6 +87,6 @@ SecretScanningLocationWikiCommit copyWith({String? path, double? startLine, doub
 
 @override int get hashCode => Object.hash(path, startLine, endLine, startColumn, endColumn, blobSha, pageUrl, commitSha, commitUrl);
 
-@override String toString() => 'SecretScanningLocationWikiCommit(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn, blobSha: $blobSha, pageUrl: $pageUrl, commitSha: $commitSha, commitUrl: $commitUrl)';
+@override String toString() => 'SecretScanningLocationWikiCommit(\n  path: $path,\n  startLine: $startLine,\n  endLine: $endLine,\n  startColumn: $startColumn,\n  endColumn: $endColumn,\n  blobSha: $blobSha,\n  pageUrl: $pageUrl,\n  commitSha: $commitSha,\n  commitUrl: $commitUrl,\n)';
 
  }

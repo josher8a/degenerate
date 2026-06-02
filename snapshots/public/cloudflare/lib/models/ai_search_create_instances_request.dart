@@ -120,7 +120,7 @@ final customMetadata$ = customMetadata;
 if (customMetadata$ != null) {
   if (customMetadata$.length > 5) errors.add('customMetadata: must have <= 5 items');
 }
-if (id.length < 1) errors.add('id: length must be >= 1');
+if (id.isEmpty) errors.add('id: length must be >= 1');
 if (id.length > 32) errors.add('id: length must be <= 32');
 if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
 if (maxNumResults < 1) errors.add('maxNumResults: must be >= 1');
@@ -185,6 +185,6 @@ AiSearchCreateInstancesRequest copyWith({String? Function()? aiGatewayId, AiSear
 
 @override int get hashCode => Object.hashAll([aiGatewayId, aiSearchModel, cache, cacheThreshold, chunk, chunkOverlap, chunkSize, Object.hashAll(customMetadata ?? const []), embeddingModel, fusionMethod, hybridSearchEnabled, id, maxNumResults, metadata, publicEndpointParams, reranking, rerankingModel, retrievalOptions, rewriteModel, rewriteQuery, scoreThreshold, source, sourceParams, tokenId, type]);
 
-@override String toString() => 'AiSearchCreateInstancesRequest(aiGatewayId: $aiGatewayId, aiSearchModel: $aiSearchModel, cache: $cache, cacheThreshold: $cacheThreshold, chunk: $chunk, chunkOverlap: $chunkOverlap, chunkSize: $chunkSize, customMetadata: $customMetadata, embeddingModel: $embeddingModel, fusionMethod: $fusionMethod, hybridSearchEnabled: $hybridSearchEnabled, id: $id, maxNumResults: $maxNumResults, metadata: $metadata, publicEndpointParams: $publicEndpointParams, reranking: $reranking, rerankingModel: $rerankingModel, retrievalOptions: $retrievalOptions, rewriteModel: $rewriteModel, rewriteQuery: $rewriteQuery, scoreThreshold: $scoreThreshold, source: $source, sourceParams: $sourceParams, tokenId: $tokenId, type: $type)';
+@override String toString() => 'AiSearchCreateInstancesRequest(\n  aiGatewayId: $aiGatewayId,\n  aiSearchModel: $aiSearchModel,\n  cache: $cache,\n  cacheThreshold: $cacheThreshold,\n  chunk: $chunk,\n  chunkOverlap: $chunkOverlap,\n  chunkSize: $chunkSize,\n  customMetadata: $customMetadata,\n  embeddingModel: $embeddingModel,\n  fusionMethod: $fusionMethod,\n  hybridSearchEnabled: $hybridSearchEnabled,\n  id: $id,\n  maxNumResults: $maxNumResults,\n  metadata: $metadata,\n  publicEndpointParams: $publicEndpointParams,\n  reranking: $reranking,\n  rerankingModel: $rerankingModel,\n  retrievalOptions: $retrievalOptions,\n  rewriteModel: $rewriteModel,\n  rewriteQuery: $rewriteQuery,\n  scoreThreshold: $scoreThreshold,\n  source: $source,\n  sourceParams: $sourceParams,\n  tokenId: $tokenId,\n  type: $type,\n)';
 
  }

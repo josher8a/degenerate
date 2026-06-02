@@ -112,6 +112,6 @@ MagicGreTunnel copyWith({MagicAutomaticReturnRouting? Function()? automaticRetur
 
 @override int get hashCode => Object.hash(automaticReturnRouting, bgp, bgpStatus, cloudflareGreEndpoint, createdOn, customerGreEndpoint, description, healthCheck, id, interfaceAddress, interfaceAddress6, modifiedOn, mtu, name, ttl);
 
-@override String toString() => 'MagicGreTunnel(automaticReturnRouting: $automaticReturnRouting, bgp: $bgp, bgpStatus: $bgpStatus, cloudflareGreEndpoint: $cloudflareGreEndpoint, createdOn: $createdOn, customerGreEndpoint: $customerGreEndpoint, description: $description, healthCheck: $healthCheck, id: $id, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, modifiedOn: $modifiedOn, mtu: $mtu, name: $name, ttl: $ttl)';
+@override String toString() => 'MagicGreTunnel(\n  automaticReturnRouting: $automaticReturnRouting,\n  bgp: $bgp,\n  bgpStatus: $bgpStatus,\n  cloudflareGreEndpoint: $cloudflareGreEndpoint,\n  createdOn: $createdOn,\n  customerGreEndpoint: $customerGreEndpoint,\n  description: $description,\n  healthCheck: $healthCheck,\n  id: $id,\n  interfaceAddress: $interfaceAddress,\n  interfaceAddress6: $interfaceAddress6,\n  modifiedOn: $modifiedOn,\n  mtu: $mtu,\n  name: $name,\n  ttl: $ttl,\n)';
 
  }

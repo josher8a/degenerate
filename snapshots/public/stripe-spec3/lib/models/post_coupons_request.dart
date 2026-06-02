@@ -117,6 +117,6 @@ PostCouponsRequest copyWith({int? Function()? amountOff, AppliesTo? Function()? 
 
 @override int get hashCode => Object.hash(amountOff, appliesTo, currency, currencyOptions, duration, durationInMonths, Object.hashAll(expand ?? const []), id, maxRedemptions, metadata, name, percentOff, redeemBy);
 
-@override String toString() => 'PostCouponsRequest(amountOff: $amountOff, appliesTo: $appliesTo, currency: $currency, currencyOptions: $currencyOptions, duration: $duration, durationInMonths: $durationInMonths, expand: $expand, id: $id, maxRedemptions: $maxRedemptions, metadata: $metadata, name: $name, percentOff: $percentOff, redeemBy: $redeemBy)';
+@override String toString() => 'PostCouponsRequest(\n  amountOff: $amountOff,\n  appliesTo: $appliesTo,\n  currency: $currency,\n  currencyOptions: $currencyOptions,\n  duration: $duration,\n  durationInMonths: $durationInMonths,\n  expand: $expand,\n  id: $id,\n  maxRedemptions: $maxRedemptions,\n  metadata: $metadata,\n  name: $name,\n  percentOff: $percentOff,\n  redeemBy: $redeemBy,\n)';
 
  }

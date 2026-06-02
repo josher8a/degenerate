@@ -17,7 +17,7 @@ Future<ApiResult<List<MagicVisibilityPcapsPcapsCollectionResponseResult>?, Magic
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pcaps',
   headers: headers,
   options: options,
 );
@@ -28,7 +28,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),)).toList();
   },
-  onError: (response) => MagicPcapCollectionListPacketCaptureRequestsError.fromResponse(response),
+  onError: MagicPcapCollectionListPacketCaptureRequestsError.fromResponse,
 );
  } 
 /// Create PCAP request
@@ -41,7 +41,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pcaps',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -53,7 +53,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),) : null;
   },
-  onError: (response) => MagicPcapCollectionCreatePcapRequestError.fromResponse(response),
+  onError: MagicPcapCollectionCreatePcapRequestError.fromResponse,
 );
  } 
 /// Get PCAP request
@@ -65,7 +65,7 @@ Future<ApiResult<MagicVisibilityPcapsPcapsCollectionResponseResult?, MagicPcapCo
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/${Uri.encodeComponent(pcapId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pcaps/${Uri.encodeComponent(pcapId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -76,7 +76,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),) : null;
   },
-  onError: (response) => MagicPcapCollectionGetPcapRequestError.fromResponse(response),
+  onError: MagicPcapCollectionGetPcapRequestError.fromResponse,
 );
  } 
 /// Download Simple PCAP
@@ -88,7 +88,7 @@ Future<ApiResult<void, Never>> magicPcapCollectionDownloadSimplePcap({required M
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/${Uri.encodeComponent(pcapId.toString())}/download',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pcaps/${Uri.encodeComponent(pcapId.toJson())}/download',
   headers: headers,
   options: options,
 );
@@ -107,7 +107,7 @@ Future<ApiResult<void, MagicPcapCollectionStopFullPcapError>> magicPcapCollectio
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/${Uri.encodeComponent(pcapId.toString())}/stop',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pcaps/${Uri.encodeComponent(pcapId.toJson())}/stop',
   headers: headers,
   options: options,
 );
@@ -115,7 +115,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => MagicPcapCollectionStopFullPcapError.fromResponse(response),
+  onError: MagicPcapCollectionStopFullPcapError.fromResponse,
 );
  } 
 /// List PCAPs Bucket Ownership
@@ -127,7 +127,7 @@ Future<ApiResult<List<MagicVisibilityPcapsPcapsOwnershipResponse>?, MagicPcapCol
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/ownership',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pcaps/ownership',
   headers: headers,
   options: options,
 );
@@ -138,7 +138,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => MagicPcapCollectionListPcaPsBucketOwnershipError.fromResponse(response),
+  onError: MagicPcapCollectionListPcaPsBucketOwnershipError.fromResponse,
 );
  } 
 /// Add buckets for full packet captures
@@ -151,7 +151,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/ownership',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pcaps/ownership',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -163,7 +163,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
-  onError: (response) => MagicPcapCollectionAddBucketsForFullPacketCapturesError.fromResponse(response),
+  onError: MagicPcapCollectionAddBucketsForFullPacketCapturesError.fromResponse,
 );
  } 
 /// Delete buckets for full packet captures
@@ -175,7 +175,7 @@ Future<ApiResult<void, Never>> magicPcapCollectionDeleteBucketsForFullPacketCapt
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/ownership/${Uri.encodeComponent(ownershipId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pcaps/ownership/${Uri.encodeComponent(ownershipId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -195,7 +195,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pcaps/ownership/validate',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pcaps/ownership/validate',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -207,7 +207,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
-  onError: (response) => MagicPcapCollectionValidateBucketsForFullPacketCapturesError.fromResponse(response),
+  onError: MagicPcapCollectionValidateBucketsForFullPacketCapturesError.fromResponse,
 );
  } 
  }

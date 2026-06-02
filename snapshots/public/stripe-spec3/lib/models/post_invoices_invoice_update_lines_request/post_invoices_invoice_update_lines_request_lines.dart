@@ -95,6 +95,6 @@ PostInvoicesInvoiceUpdateLinesRequestLines copyWith({int? Function()? amount, St
 
 @override int get hashCode => Object.hash(amount, description, discountable, discounts, id, metadata, period, priceData, pricing, quantity, taxAmounts, taxRates);
 
-@override String toString() => 'PostInvoicesInvoiceUpdateLinesRequestLines(amount: $amount, description: $description, discountable: $discountable, discounts: $discounts, id: $id, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates)';
+@override String toString() => 'PostInvoicesInvoiceUpdateLinesRequestLines(\n  amount: $amount,\n  description: $description,\n  discountable: $discountable,\n  discounts: $discounts,\n  id: $id,\n  metadata: $metadata,\n  period: $period,\n  priceData: $priceData,\n  pricing: $pricing,\n  quantity: $quantity,\n  taxAmounts: $taxAmounts,\n  taxRates: $taxRates,\n)';
 
  }

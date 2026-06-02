@@ -67,13 +67,13 @@ Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
   'title': title,
   'description': description,
-  'creator': creator != null ? creator?.toJson() : null,
+  'creator': creator?.toJson(),
   'open_issues': openIssues,
   'closed_issues': closedIssues,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  'closed_at': closedAt != null ? closedAt?.toIso8601String() : null,
-  'due_on': dueOn != null ? dueOn?.toIso8601String() : null,
+  'closed_at': closedAt?.toIso8601String(),
+  'due_on': dueOn?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -130,6 +130,6 @@ Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nod
 
 @override int get hashCode => Object.hash(url, htmlUrl, labelsUrl, id, nodeId, number, state, title, description, creator, openIssues, closedIssues, createdAt, updatedAt, closedAt, dueOn);
 
-@override String toString() => 'Milestone(url: $url, htmlUrl: $htmlUrl, labelsUrl: $labelsUrl, id: $id, nodeId: $nodeId, number: $number, state: $state, title: $title, description: $description, creator: $creator, openIssues: $openIssues, closedIssues: $closedIssues, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, dueOn: $dueOn)';
+@override String toString() => 'Milestone(\n  url: $url,\n  htmlUrl: $htmlUrl,\n  labelsUrl: $labelsUrl,\n  id: $id,\n  nodeId: $nodeId,\n  number: $number,\n  state: $state,\n  title: $title,\n  description: $description,\n  creator: $creator,\n  openIssues: $openIssues,\n  closedIssues: $closedIssues,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  closedAt: $closedAt,\n  dueOn: $dueOn,\n)';
 
  }

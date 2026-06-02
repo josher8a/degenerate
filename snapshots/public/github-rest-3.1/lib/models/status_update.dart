@@ -128,6 +128,6 @@ StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNo
 
 @override int get hashCode => Object.hash(id, nodeId, projectNodeId, creator, createdAt, updatedAt, status, startDate, targetDate, body);
 
-@override String toString() => 'StatusUpdate(id: $id, nodeId: $nodeId, projectNodeId: $projectNodeId, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, status: $status, startDate: $startDate, targetDate: $targetDate, body: $body)';
+@override String toString() => 'StatusUpdate(\n  id: $id,\n  nodeId: $nodeId,\n  projectNodeId: $projectNodeId,\n  creator: $creator,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  status: $status,\n  startDate: $startDate,\n  targetDate: $targetDate,\n  body: $body,\n)';
 
  }

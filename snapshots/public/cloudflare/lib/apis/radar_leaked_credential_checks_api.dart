@@ -71,7 +71,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/leaked_credential_checks/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/leaked_credential_checks/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -84,7 +84,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsSummaryByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetLeakedCredentialChecksSummaryError.fromResponse(response),
+  onError: RadarGetLeakedCredentialChecksSummaryError.fromResponse,
 );
  } 
 /// Get time series distribution of HTTP authentication requests by dimension.
@@ -161,7 +161,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/leaked_credential_checks/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/leaked_credential_checks/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -174,7 +174,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetLeakedCredentialChecksTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetLeakedCredentialChecksTimeseriesGroupError.fromResponse,
 );
  } 
  }

@@ -121,8 +121,8 @@ final String url;
 Map<String, dynamic> toJson() { return {
   'app': app.toJson(),
   'check_suite': checkSuite.toJson(),
-  'completed_at': completedAt != null ? completedAt?.toIso8601String() : null,
-  'conclusion': conclusion != null ? conclusion?.toJson() : null,
+  'completed_at': completedAt?.toIso8601String(),
+  'conclusion': conclusion?.toJson(),
   if (deployment != null) 'deployment': deployment?.toJson(),
   'details_url': detailsUrl,
   'external_id': externalId,
@@ -194,6 +194,6 @@ CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? check
 
 @override int get hashCode => Object.hash(app, checkSuite, completedAt, conclusion, deployment, detailsUrl, externalId, headSha, htmlUrl, id, name, nodeId, output, Object.hashAll(pullRequests), startedAt, status, url);
 
-@override String toString() => 'CheckRunWithSimpleCheckSuite(app: $app, checkSuite: $checkSuite, completedAt: $completedAt, conclusion: $conclusion, deployment: $deployment, detailsUrl: $detailsUrl, externalId: $externalId, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, output: $output, pullRequests: $pullRequests, startedAt: $startedAt, status: $status, url: $url)';
+@override String toString() => 'CheckRunWithSimpleCheckSuite(\n  app: $app,\n  checkSuite: $checkSuite,\n  completedAt: $completedAt,\n  conclusion: $conclusion,\n  deployment: $deployment,\n  detailsUrl: $detailsUrl,\n  externalId: $externalId,\n  headSha: $headSha,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  output: $output,\n  pullRequests: $pullRequests,\n  startedAt: $startedAt,\n  status: $status,\n  url: $url,\n)';
 
  }

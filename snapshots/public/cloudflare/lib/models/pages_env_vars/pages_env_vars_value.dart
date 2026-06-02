@@ -23,6 +23,11 @@ bool get isUnknown => this is PagesEnvVarsValue$Unknown;
 
 /// Shared by all variants of this union.
 String get value;
+R when<R>({required R Function(PagesEnvVarsValuePlainText) plainText, required R Function(PagesEnvVarsValueSecretText) secretText, required R Function(PagesEnvVarsValue$Unknown) unknown, }) { return switch (this) {
+  final PagesEnvVarsValuePlainText v => plainText(v),
+  final PagesEnvVarsValueSecretText v => secretText(v),
+  final PagesEnvVarsValue$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class PagesEnvVarsValuePlainText extends PagesEnvVarsValue {const PagesEnvVarsValuePlainText(this.pagesPlainTextEnvVar);
 
@@ -72,9 +77,11 @@ PagesEnvVarsValueSecretText copyWith({String? value}) { return PagesEnvVarsValue
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class PagesEnvVarsValue$Unknown extends PagesEnvVarsValue {const PagesEnvVarsValue$Unknown(this.json);
+@immutable final class PagesEnvVarsValue$Unknown extends PagesEnvVarsValue {PagesEnvVarsValue$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String _value = json['value'] as String;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -87,6 +94,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'PagesEnvVarsValue.unknown($json)';
 
-@override String get value => json['value'] as String;
+@override String get value => _value;
 
  }

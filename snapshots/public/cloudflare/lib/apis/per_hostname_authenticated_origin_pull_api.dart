@@ -18,7 +18,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/hostnames',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/origin_tls_client_auth/hostnames',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -41,7 +41,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesHostnameCertidObject?, Never>> perHo
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/hostnames/${Uri.encodeComponent(hostname.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/origin_tls_client_auth/hostnames/${Uri.encodeComponent(hostname.toJson())}',
   headers: headers,
   options: options,
 );
@@ -63,7 +63,7 @@ Future<ApiResult<List<TlsCertificatesAndHostnamesSchemasCertificateObject>?, Nev
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/hostnames/certificates',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/origin_tls_client_auth/hostnames/certificates',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/hostnames/certificates',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/origin_tls_client_auth/hostnames/certificates',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, Never>> p
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/hostnames/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/origin_tls_client_auth/hostnames/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -133,7 +133,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, Never>> p
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/origin_tls_client_auth/hostnames/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/origin_tls_client_auth/hostnames/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );

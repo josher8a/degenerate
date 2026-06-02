@@ -81,6 +81,6 @@ PaymentIntentParamMandateOptions copyWith({int? amount, MandatePaytoAmountType? 
 
 @override int get hashCode => Object.hash(amount, amountType, description, endDate, interval, intervalCount, reference, startDate, Object.hashAll(supportedTypes ?? const []));
 
-@override String toString() => 'PaymentIntentParamMandateOptions(amount: $amount, amountType: $amountType, description: $description, endDate: $endDate, interval: $interval, intervalCount: $intervalCount, reference: $reference, startDate: $startDate, supportedTypes: $supportedTypes)';
+@override String toString() => 'PaymentIntentParamMandateOptions(\n  amount: $amount,\n  amountType: $amountType,\n  description: $description,\n  endDate: $endDate,\n  interval: $interval,\n  intervalCount: $intervalCount,\n  reference: $reference,\n  startDate: $startDate,\n  supportedTypes: $supportedTypes,\n)';
 
  }

@@ -64,7 +64,7 @@ final List<String>? exclude;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  'owner': owner != null ? owner?.toJson() : null,
+  'owner': owner?.toJson(),
   'guid': guid,
   'state': state,
   'lock_repositories': lockRepositories,
@@ -141,6 +141,6 @@ Migration copyWith({int? id, SimpleUser? Function()? owner, String? guid, String
 
 @override int get hashCode => Object.hash(id, owner, guid, state, lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(repositories), url, createdAt, updatedAt, nodeId, archiveUrl, Object.hashAll(exclude ?? const []));
 
-@override String toString() => 'Migration(id: $id, owner: $owner, guid: $guid, state: $state, lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, repositories: $repositories, url: $url, createdAt: $createdAt, updatedAt: $updatedAt, nodeId: $nodeId, archiveUrl: $archiveUrl, exclude: $exclude)';
+@override String toString() => 'Migration(\n  id: $id,\n  owner: $owner,\n  guid: $guid,\n  state: $state,\n  lockRepositories: $lockRepositories,\n  excludeMetadata: $excludeMetadata,\n  excludeGitData: $excludeGitData,\n  excludeAttachments: $excludeAttachments,\n  excludeReleases: $excludeReleases,\n  excludeOwnerProjects: $excludeOwnerProjects,\n  orgMetadataOnly: $orgMetadataOnly,\n  repositories: $repositories,\n  url: $url,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  nodeId: $nodeId,\n  archiveUrl: $archiveUrl,\n  exclude: $exclude,\n)';
 
  }

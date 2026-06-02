@@ -82,6 +82,6 @@ PredefinedProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatch
 
 @override int get hashCode => Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(entries), id, name, ocrEnabled, openAccess, type);
 
-@override String toString() => 'PredefinedProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, id: $id, name: $name, ocrEnabled: $ocrEnabled, openAccess: $openAccess, type: $type)';
+@override String toString() => 'PredefinedProfile(\n  aiContextEnabled: $aiContextEnabled,\n  allowedMatchCount: $allowedMatchCount,\n  confidenceThreshold: $confidenceThreshold,\n  contextAwareness: $contextAwareness,\n  entries: $entries,\n  id: $id,\n  name: $name,\n  ocrEnabled: $ocrEnabled,\n  openAccess: $openAccess,\n  type: $type,\n)';
 
  }

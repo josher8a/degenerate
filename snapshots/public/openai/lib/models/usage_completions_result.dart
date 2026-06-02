@@ -133,6 +133,6 @@ UsageCompletionsResult copyWith({UsageCompletionsResultObject? object, int? inpu
 
 @override int get hashCode => Object.hash(object, inputTokens, inputCachedTokens, outputTokens, inputAudioTokens, outputAudioTokens, numModelRequests, projectId, userId, apiKeyId, model, batch, serviceTier);
 
-@override String toString() => 'UsageCompletionsResult(object: $object, inputTokens: $inputTokens, inputCachedTokens: $inputCachedTokens, outputTokens: $outputTokens, inputAudioTokens: $inputAudioTokens, outputAudioTokens: $outputAudioTokens, numModelRequests: $numModelRequests, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model, batch: $batch, serviceTier: $serviceTier)';
+@override String toString() => 'UsageCompletionsResult(\n  object: $object,\n  inputTokens: $inputTokens,\n  inputCachedTokens: $inputCachedTokens,\n  outputTokens: $outputTokens,\n  inputAudioTokens: $inputAudioTokens,\n  outputAudioTokens: $outputAudioTokens,\n  numModelRequests: $numModelRequests,\n  projectId: $projectId,\n  userId: $userId,\n  apiKeyId: $apiKeyId,\n  model: $model,\n  batch: $batch,\n  serviceTier: $serviceTier,\n)';
 
  }

@@ -133,6 +133,6 @@ View copyWith({int? id, int? number, String? name, Layout? layout, String? nodeI
 
 @override int get hashCode => Object.hash(id, number, name, layout, nodeId, projectUrl, htmlUrl, creator, createdAt, updatedAt, filter, Object.hashAll(visibleFields), Object.hashAll(sortBy), Object.hashAll(groupBy), Object.hashAll(verticalGroupBy));
 
-@override String toString() => 'View(id: $id, number: $number, name: $name, layout: $layout, nodeId: $nodeId, projectUrl: $projectUrl, htmlUrl: $htmlUrl, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, filter: $filter, visibleFields: $visibleFields, sortBy: $sortBy, groupBy: $groupBy, verticalGroupBy: $verticalGroupBy)';
+@override String toString() => 'View(\n  id: $id,\n  number: $number,\n  name: $name,\n  layout: $layout,\n  nodeId: $nodeId,\n  projectUrl: $projectUrl,\n  htmlUrl: $htmlUrl,\n  creator: $creator,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  filter: $filter,\n  visibleFields: $visibleFields,\n  sortBy: $sortBy,\n  groupBy: $groupBy,\n  verticalGroupBy: $verticalGroupBy,\n)';
 
  }

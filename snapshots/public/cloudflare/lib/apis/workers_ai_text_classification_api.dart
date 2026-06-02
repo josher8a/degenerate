@@ -40,7 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBaaiBgeRerankerBaseError.fromResponse(response),
+  onError: WorkersAiPostRunCfBaaiBgeRerankerBaseError.fromResponse,
 );
  } 
 /// Execute @cf/huggingface/distilbert-sst-2-int8 model.
@@ -75,7 +75,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error.fromResponse(response),
+  onError: WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error.fromResponse,
 );
  } 
  }

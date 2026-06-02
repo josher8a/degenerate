@@ -39,7 +39,7 @@ final String targetCommitish;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  'author': author != null ? author?.toJson() : null,
+  'author': author?.toJson(),
   'created_at': createdAt,
   'draft': draft,
   'html_url': htmlUrl.toString(),
@@ -91,6 +91,6 @@ WebhookPackageUpdatedPackagePackageVersionRelease copyWith({WebhooksRelease1Auth
 
 @override int get hashCode => Object.hash(author, createdAt, draft, htmlUrl, id, name, prerelease, publishedAt, tagName, targetCommitish, url);
 
-@override String toString() => 'WebhookPackageUpdatedPackagePackageVersionRelease(author: $author, createdAt: $createdAt, draft: $draft, htmlUrl: $htmlUrl, id: $id, name: $name, prerelease: $prerelease, publishedAt: $publishedAt, tagName: $tagName, targetCommitish: $targetCommitish, url: $url)';
+@override String toString() => 'WebhookPackageUpdatedPackagePackageVersionRelease(\n  author: $author,\n  createdAt: $createdAt,\n  draft: $draft,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  prerelease: $prerelease,\n  publishedAt: $publishedAt,\n  tagName: $tagName,\n  targetCommitish: $targetCommitish,\n  url: $url,\n)';
 
  }

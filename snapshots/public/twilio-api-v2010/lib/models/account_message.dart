@@ -269,6 +269,6 @@ AccountMessage copyWith({String? Function()? body, String? Function()? numSegmen
 
 @override int get hashCode => Object.hash(body, numSegments, direction, from, to, dateUpdated, price, errorMessage, uri, accountSid, numMedia, status, messagingServiceSid, sid, dateSent, dateCreated, errorCode, priceUnit, apiVersion, subresourceUris);
 
-@override String toString() => 'AccountMessage(body: $body, numSegments: $numSegments, direction: $direction, from: $from, to: $to, dateUpdated: $dateUpdated, price: $price, errorMessage: $errorMessage, uri: $uri, accountSid: $accountSid, numMedia: $numMedia, status: $status, messagingServiceSid: $messagingServiceSid, sid: $sid, dateSent: $dateSent, dateCreated: $dateCreated, errorCode: $errorCode, priceUnit: $priceUnit, apiVersion: $apiVersion, subresourceUris: $subresourceUris)';
+@override String toString() => 'AccountMessage(\n  body: $body,\n  numSegments: $numSegments,\n  direction: $direction,\n  from: $from,\n  to: $to,\n  dateUpdated: $dateUpdated,\n  price: $price,\n  errorMessage: $errorMessage,\n  uri: $uri,\n  accountSid: $accountSid,\n  numMedia: $numMedia,\n  status: $status,\n  messagingServiceSid: $messagingServiceSid,\n  sid: $sid,\n  dateSent: $dateSent,\n  dateCreated: $dateCreated,\n  errorCode: $errorCode,\n  priceUnit: $priceUnit,\n  apiVersion: $apiVersion,\n  subresourceUris: $subresourceUris,\n)';
 
  }

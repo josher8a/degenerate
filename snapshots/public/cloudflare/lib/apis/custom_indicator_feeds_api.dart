@@ -17,7 +17,7 @@ Future<ApiResult<List<CustomIndicatorFeedsIndicatorFeedItem>?, Never>> customInd
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/indicator-feeds',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/indicator-feeds',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<CustomIndicatorFeedsIndicatorFeedMetadata?, Never>> customIndic
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<String, Never>> customIndicatorFeedsGetIndicatorFeedData({requi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}/data',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}/data',
   headers: headers,
   options: options,
 );
@@ -130,7 +130,7 @@ Future<ApiResult<CustomIndicatorFeedsUpdateFeed?, Never>> customIndicatorFeedsDo
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}/download',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}/download',
   headers: headers,
   options: options,
 );
@@ -152,7 +152,7 @@ Future<ApiResult<CustomIndicatorFeedsUpdateFeed?, Never>> customIndicatorFeedsUp
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}/snapshot',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/indicator-feeds/${Uri.encodeComponent(feedId.toString())}/snapshot',
   headers: headers,
   body: [
     if (body.source case final source$?)
@@ -180,7 +180,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/permissions/add',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/indicator-feeds/permissions/add',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -204,7 +204,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/permissions/remove',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/indicator-feeds/permissions/remove',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -227,7 +227,7 @@ Future<ApiResult<List<CustomIndicatorFeedsPermissionListItem>?, Never>> customIn
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/indicator-feeds/permissions/view',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/indicator-feeds/permissions/view',
   headers: headers,
   options: options,
 );

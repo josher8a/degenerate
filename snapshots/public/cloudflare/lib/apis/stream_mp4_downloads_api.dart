@@ -17,7 +17,7 @@ Future<ApiResult<StreamDownloadsResponseResult?, Never>> streamMP4DownloadsListD
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/downloads',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<StreamDownloads?, Never>> streamMP4DownloadsCreateDownloads({re
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/downloads',
   headers: headers,
   options: options,
 );
@@ -61,7 +61,7 @@ Future<ApiResult<String?, Never>> streamMP4DownloadsDeleteDownloads({required St
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/downloads',
   headers: headers,
   options: options,
 );
@@ -83,7 +83,7 @@ Future<ApiResult<StreamDownloadsResponseResult?, Never>> streamDownloadsCreateTy
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads/${Uri.encodeComponent('${downloadType.toJson()}')}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/downloads/${Uri.encodeComponent(downloadType.toJson())}',
   headers: headers,
   options: options,
 );
@@ -105,7 +105,7 @@ Future<ApiResult<String?, Never>> streamDownloadsDeleteTypeSpecificDownloads({re
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/downloads/${Uri.encodeComponent('${downloadType.toJson()}')}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/downloads/${Uri.encodeComponent(downloadType.toJson())}',
   headers: headers,
   options: options,
 );

@@ -143,16 +143,16 @@ Map<String, dynamic> toJson() { return {
   'address': address.toJson(),
   if (address2 != null) 'address2': address2?.toJson(),
   'city': city.toJson(),
-  'country': country != null ? country?.toJson() : null,
+  'country': country?.toJson(),
   if (email != null) 'email': email?.toJson(),
   if (fax != null) 'fax': fax?.toJson(),
-  'first_name': firstName != null ? firstName?.toJson() : null,
+  'first_name': firstName?.toJson(),
   if (id != null) 'id': id?.toJson(),
-  'last_name': lastName != null ? lastName?.toJson() : null,
+  'last_name': lastName?.toJson(),
   'organization': organization.toJson(),
-  'phone': phone != null ? phone?.toJson() : null,
+  'phone': phone?.toJson(),
   'state': state.toJson(),
-  'zip': zip != null ? zip?.toJson() : null,
+  'zip': zip?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('city') &&
@@ -196,6 +196,6 @@ ContactProperties copyWith({Address? address, Address2? Function()? address2, Ci
 
 @override int get hashCode => Object.hash(address, address2, city, country, email, fax, firstName, id, lastName, organization, phone, state, zip);
 
-@override String toString() => 'ContactProperties(address: $address, address2: $address2, city: $city, country: $country, email: $email, fax: $fax, firstName: $firstName, id: $id, lastName: $lastName, organization: $organization, phone: $phone, state: $state, zip: $zip)';
+@override String toString() => 'ContactProperties(\n  address: $address,\n  address2: $address2,\n  city: $city,\n  country: $country,\n  email: $email,\n  fax: $fax,\n  firstName: $firstName,\n  id: $id,\n  lastName: $lastName,\n  organization: $organization,\n  phone: $phone,\n  state: $state,\n  zip: $zip,\n)';
 
  }

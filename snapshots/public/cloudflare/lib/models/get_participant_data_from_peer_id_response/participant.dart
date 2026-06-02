@@ -93,6 +93,6 @@ Participant copyWith({String? Function()? createdAt, String? Function()? customP
 
 @override int get hashCode => Object.hash(createdAt, customParticipantId, displayName, duration, id, joinedAt, leftAt, peerReport, peerStats, qualityStats, role, updatedAt, userId);
 
-@override String toString() => 'Participant(createdAt: $createdAt, customParticipantId: $customParticipantId, displayName: $displayName, duration: $duration, id: $id, joinedAt: $joinedAt, leftAt: $leftAt, peerReport: $peerReport, peerStats: $peerStats, qualityStats: $qualityStats, role: $role, updatedAt: $updatedAt, userId: $userId)';
+@override String toString() => 'Participant(\n  createdAt: $createdAt,\n  customParticipantId: $customParticipantId,\n  displayName: $displayName,\n  duration: $duration,\n  id: $id,\n  joinedAt: $joinedAt,\n  leftAt: $leftAt,\n  peerReport: $peerReport,\n  peerStats: $peerStats,\n  qualityStats: $qualityStats,\n  role: $role,\n  updatedAt: $updatedAt,\n  userId: $userId,\n)';
 
  }

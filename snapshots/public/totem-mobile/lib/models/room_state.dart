@@ -243,5 +243,5 @@ final class RoomState {
 
   @override
   String toString() =>
-      'RoomState(sessionSlug: $sessionSlug, version: $version, status: $status, turnState: $turnState, statusDetail: $statusDetail, currentSpeaker: $currentSpeaker, nextSpeaker: $nextSpeaker, talkingOrder: $talkingOrder, keeper: $keeper, bannedParticipants: $bannedParticipants)';
+      'RoomState(\n  sessionSlug: $sessionSlug,\n  version: $version,\n  status: $status,\n  turnState: $turnState,\n  statusDetail: $statusDetail,\n  currentSpeaker: $currentSpeaker,\n  nextSpeaker: $nextSpeaker,\n  talkingOrder: $talkingOrder,\n  keeper: $keeper,\n  bannedParticipants: $bannedParticipants,\n)';
 }

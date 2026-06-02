@@ -86,6 +86,6 @@ DosSynProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn, St
 
 @override int get hashCode => Object.hash(burstSensitivity, createdOn, id, mitigationType, mode, modifiedOn, name, rateSensitivity, scope);
 
-@override String toString() => 'DosSynProtectionRule(burstSensitivity: $burstSensitivity, createdOn: $createdOn, id: $id, mitigationType: $mitigationType, mode: $mode, modifiedOn: $modifiedOn, name: $name, rateSensitivity: $rateSensitivity, scope: $scope)';
+@override String toString() => 'DosSynProtectionRule(\n  burstSensitivity: $burstSensitivity,\n  createdOn: $createdOn,\n  id: $id,\n  mitigationType: $mitigationType,\n  mode: $mode,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  rateSensitivity: $rateSensitivity,\n  scope: $scope,\n)';
 
  }

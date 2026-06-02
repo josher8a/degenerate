@@ -152,6 +152,6 @@ Item copyWith({LineItemsAdjustableQuantity? Function()? adjustableQuantity, int?
 
 @override int get hashCode => Object.hash(adjustableQuantity, amountDiscount, amountSubtotal, amountTax, amountTotal, currency, description, Object.hashAll(discounts ?? const []), id, metadata, object, price, quantity, Object.hashAll(taxes ?? const []));
 
-@override String toString() => 'Item(adjustableQuantity: $adjustableQuantity, amountDiscount: $amountDiscount, amountSubtotal: $amountSubtotal, amountTax: $amountTax, amountTotal: $amountTotal, currency: $currency, description: $description, discounts: $discounts, id: $id, metadata: $metadata, object: $object, price: $price, quantity: $quantity, taxes: $taxes)';
+@override String toString() => 'Item(\n  adjustableQuantity: $adjustableQuantity,\n  amountDiscount: $amountDiscount,\n  amountSubtotal: $amountSubtotal,\n  amountTax: $amountTax,\n  amountTotal: $amountTotal,\n  currency: $currency,\n  description: $description,\n  discounts: $discounts,\n  id: $id,\n  metadata: $metadata,\n  object: $object,\n  price: $price,\n  quantity: $quantity,\n  taxes: $taxes,\n)';
 
  }

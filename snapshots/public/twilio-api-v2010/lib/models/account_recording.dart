@@ -259,6 +259,6 @@ AccountRecording copyWith({String? Function()? accountSid, String? Function()? a
 
 @override int get hashCode => Object.hash(accountSid, apiVersion, callSid, conferenceSid, dateCreated, dateUpdated, startTime, duration, sid, price, priceUnit, status, channels, source, errorCode, uri, encryptionDetails, subresourceUris, mediaUrl);
 
-@override String toString() => 'AccountRecording(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, startTime: $startTime, duration: $duration, sid: $sid, price: $price, priceUnit: $priceUnit, status: $status, channels: $channels, source: $source, errorCode: $errorCode, uri: $uri, encryptionDetails: $encryptionDetails, subresourceUris: $subresourceUris, mediaUrl: $mediaUrl)';
+@override String toString() => 'AccountRecording(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  callSid: $callSid,\n  conferenceSid: $conferenceSid,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  startTime: $startTime,\n  duration: $duration,\n  sid: $sid,\n  price: $price,\n  priceUnit: $priceUnit,\n  status: $status,\n  channels: $channels,\n  source: $source,\n  errorCode: $errorCode,\n  uri: $uri,\n  encryptionDetails: $encryptionDetails,\n  subresourceUris: $subresourceUris,\n  mediaUrl: $mediaUrl,\n)';
 
  }

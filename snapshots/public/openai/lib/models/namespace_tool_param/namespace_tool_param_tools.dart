@@ -26,6 +26,11 @@ bool get isUnknown => this is NamespaceToolParamTools$Unknown;
 String get name;
 /// Shared by all variants of this union.
 String? get description;
+R when<R>({required R Function(NamespaceToolParamToolsFunction) function, required R Function(NamespaceToolParamToolsCustom) custom, required R Function(NamespaceToolParamTools$Unknown) unknown, }) { return switch (this) {
+  final NamespaceToolParamToolsFunction v => function(v),
+  final NamespaceToolParamToolsCustom v => custom(v),
+  final NamespaceToolParamTools$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class NamespaceToolParamToolsFunction extends NamespaceToolParamTools {const NamespaceToolParamToolsFunction(this.functionToolParam);
 
@@ -85,9 +90,13 @@ NamespaceToolParamToolsCustom copyWith({String? name, String? Function()? descri
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class NamespaceToolParamTools$Unknown extends NamespaceToolParamTools {const NamespaceToolParamTools$Unknown(this.json);
+@immutable final class NamespaceToolParamTools$Unknown extends NamespaceToolParamTools {NamespaceToolParamTools$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String _name = json['name'] as String;
+
+late final String? _description = json['description'] as String?;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -100,8 +109,8 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'NamespaceToolParamTools.unknown($json)';
 
-@override String get name => json['name'] as String;
+@override String get name => _name;
 
-@override String? get description => json['description'] as String?;
+@override String? get description => _description;
 
  }

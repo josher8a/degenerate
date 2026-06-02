@@ -144,6 +144,6 @@ PagesDomain copyWith({PagesDomainCertificateAuthority? certificateAuthority, Str
 
 @override int get hashCode => Object.hash(certificateAuthority, createdOn, domainId, id, name, status, validationData, verificationData, zoneTag);
 
-@override String toString() => 'PagesDomain(certificateAuthority: $certificateAuthority, createdOn: $createdOn, domainId: $domainId, id: $id, name: $name, status: $status, validationData: $validationData, verificationData: $verificationData, zoneTag: $zoneTag)';
+@override String toString() => 'PagesDomain(\n  certificateAuthority: $certificateAuthority,\n  createdOn: $createdOn,\n  domainId: $domainId,\n  id: $id,\n  name: $name,\n  status: $status,\n  validationData: $validationData,\n  verificationData: $verificationData,\n  zoneTag: $zoneTag,\n)';
 
  }

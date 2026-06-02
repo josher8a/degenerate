@@ -17,7 +17,7 @@ Future<ApiResult<ArgoConfigResultObject, Never>> argoSmartRoutingGetArgoSmartRou
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/argo/smart_routing',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/argo/smart_routing',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/argo/smart_routing',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/argo/smart_routing',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

@@ -75,6 +75,6 @@ FileCommitContent copyWith({String? Function()? name, String? Function()? path, 
 
 @override int get hashCode => Object.hash(name, path, sha, size, url, htmlUrl, gitUrl, downloadUrl, type, links);
 
-@override String toString() => 'FileCommitContent(name: $name, path: $path, sha: $sha, size: $size, url: $url, htmlUrl: $htmlUrl, gitUrl: $gitUrl, downloadUrl: $downloadUrl, type: $type, links: $links)';
+@override String toString() => 'FileCommitContent(\n  name: $name,\n  path: $path,\n  sha: $sha,\n  size: $size,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  gitUrl: $gitUrl,\n  downloadUrl: $downloadUrl,\n  type: $type,\n  links: $links,\n)';
 
  }

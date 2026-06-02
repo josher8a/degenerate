@@ -149,6 +149,6 @@ GistSimple copyWith({List<Forks>? Function()? forks, List<GistHistory>? Function
 
 @override int get hashCode => Object.hashAll([Object.hashAll(forks ?? const []), Object.hashAll(history ?? const []), forkOf, url, forksUrl, commitsUrl, id, nodeId, gitPullUrl, gitPushUrl, htmlUrl, files, public, createdAt, updatedAt, description, comments, commentsEnabled, user, commentsUrl, owner, truncated]);
 
-@override String toString() => 'GistSimple(forks: $forks, history: $history, forkOf: $forkOf, url: $url, forksUrl: $forksUrl, commitsUrl: $commitsUrl, id: $id, nodeId: $nodeId, gitPullUrl: $gitPullUrl, gitPushUrl: $gitPushUrl, htmlUrl: $htmlUrl, files: $files, public: $public, createdAt: $createdAt, updatedAt: $updatedAt, description: $description, comments: $comments, commentsEnabled: $commentsEnabled, user: $user, commentsUrl: $commentsUrl, owner: $owner, truncated: $truncated)';
+@override String toString() => 'GistSimple(\n  forks: $forks,\n  history: $history,\n  forkOf: $forkOf,\n  url: $url,\n  forksUrl: $forksUrl,\n  commitsUrl: $commitsUrl,\n  id: $id,\n  nodeId: $nodeId,\n  gitPullUrl: $gitPullUrl,\n  gitPushUrl: $gitPushUrl,\n  htmlUrl: $htmlUrl,\n  files: $files,\n  public: $public,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  description: $description,\n  comments: $comments,\n  commentsEnabled: $commentsEnabled,\n  user: $user,\n  commentsUrl: $commentsUrl,\n  owner: $owner,\n  truncated: $truncated,\n)';
 
  }

@@ -109,6 +109,6 @@ MconnCustomerConnector copyWith({bool? activated, MconnCustomerDevice? Function(
 
 @override int get hashCode => Object.hash(activated, device, id, Object.hashAll(interruptWindowDaysOfWeek), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, lastUpdated, licenseKey, notes, timezone);
 
-@override String toString() => 'MconnCustomerConnector(activated: $activated, device: $device, id: $id, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, lastUpdated: $lastUpdated, licenseKey: $licenseKey, notes: $notes, timezone: $timezone)';
+@override String toString() => 'MconnCustomerConnector(\n  activated: $activated,\n  device: $device,\n  id: $id,\n  interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek,\n  interruptWindowDurationHours: $interruptWindowDurationHours,\n  interruptWindowEmbargoDates: $interruptWindowEmbargoDates,\n  interruptWindowHourOfDay: $interruptWindowHourOfDay,\n  lastHeartbeat: $lastHeartbeat,\n  lastSeenVersion: $lastSeenVersion,\n  lastUpdated: $lastUpdated,\n  licenseKey: $licenseKey,\n  notes: $notes,\n  timezone: $timezone,\n)';
 
  }

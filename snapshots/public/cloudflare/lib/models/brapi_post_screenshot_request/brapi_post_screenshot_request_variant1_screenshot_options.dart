@@ -97,6 +97,6 @@ BrapiPostScreenshotRequestVariant1ScreenshotOptions copyWith({bool? Function()? 
 
 @override int get hashCode => Object.hash(captureBeyondViewport, clip, encoding, fromSurface, fullPage, omitBackground, optimizeForSpeed, quality, type);
 
-@override String toString() => 'BrapiPostScreenshotRequestVariant1ScreenshotOptions(captureBeyondViewport: $captureBeyondViewport, clip: $clip, encoding: $encoding, fromSurface: $fromSurface, fullPage: $fullPage, omitBackground: $omitBackground, optimizeForSpeed: $optimizeForSpeed, quality: $quality, type: $type)';
+@override String toString() => 'BrapiPostScreenshotRequestVariant1ScreenshotOptions(\n  captureBeyondViewport: $captureBeyondViewport,\n  clip: $clip,\n  encoding: $encoding,\n  fromSurface: $fromSurface,\n  fullPage: $fullPage,\n  omitBackground: $omitBackground,\n  optimizeForSpeed: $optimizeForSpeed,\n  quality: $quality,\n  type: $type,\n)';
 
  }

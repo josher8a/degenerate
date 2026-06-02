@@ -15,7 +15,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> argoAnalyticsForGeolocationArgoA
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/analytics/latency/colos',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/analytics/latency/colos',
   headers: headers,
   options: options,
 );

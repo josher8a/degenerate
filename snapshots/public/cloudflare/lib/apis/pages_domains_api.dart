@@ -17,7 +17,7 @@ Future<ApiResult<List<PagesDomain>, Never>> pagesDomainsGetDomains({required Pag
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/domains',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/domains',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/domains',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/domains',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<PagesDomain, Never>> pagesDomainsGetDomain({required PagesDomai
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/domains/${Uri.encodeComponent(domainName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/domains/${Uri.encodeComponent(domainName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -85,7 +85,7 @@ Future<ApiResult<PagesDomain, Never>> pagesDomainsPatchDomain({required PagesDom
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/domains/${Uri.encodeComponent(domainName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/domains/${Uri.encodeComponent(domainName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -107,7 +107,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> pagesDomainsDeleteDomain({requir
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/domains/${Uri.encodeComponent(domainName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/domains/${Uri.encodeComponent(domainName.toJson())}',
   headers: headers,
   options: options,
 );

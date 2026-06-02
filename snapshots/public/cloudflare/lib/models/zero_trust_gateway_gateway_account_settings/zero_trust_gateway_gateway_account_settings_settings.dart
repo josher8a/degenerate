@@ -100,6 +100,6 @@ ZeroTrustGatewayGatewayAccountSettingsSettings copyWith({ZeroTrustGatewayActivit
 
 @override int get hashCode => Object.hash(activityLog, antivirus, blockPage, bodyScanning, browserIsolation, certificate, customCertificate, extendedEmailMatching, fips, hostSelector, inspection, protocolDetection, sandbox, tlsDecrypt);
 
-@override String toString() => 'ZeroTrustGatewayGatewayAccountSettingsSettings(activityLog: $activityLog, antivirus: $antivirus, blockPage: $blockPage, bodyScanning: $bodyScanning, browserIsolation: $browserIsolation, certificate: $certificate, customCertificate: $customCertificate, extendedEmailMatching: $extendedEmailMatching, fips: $fips, hostSelector: $hostSelector, inspection: $inspection, protocolDetection: $protocolDetection, sandbox: $sandbox, tlsDecrypt: $tlsDecrypt)';
+@override String toString() => 'ZeroTrustGatewayGatewayAccountSettingsSettings(\n  activityLog: $activityLog,\n  antivirus: $antivirus,\n  blockPage: $blockPage,\n  bodyScanning: $bodyScanning,\n  browserIsolation: $browserIsolation,\n  certificate: $certificate,\n  customCertificate: $customCertificate,\n  extendedEmailMatching: $extendedEmailMatching,\n  fips: $fips,\n  hostSelector: $hostSelector,\n  inspection: $inspection,\n  protocolDetection: $protocolDetection,\n  sandbox: $sandbox,\n  tlsDecrypt: $tlsDecrypt,\n)';
 
  }

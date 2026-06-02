@@ -149,16 +149,16 @@ Map<String, dynamic> toJson() { return {
   if (stateReason != null) 'state_reason': stateReason?.toJson(),
   'title': title,
   'body': ?body,
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
   'labels': labels.map((e) => e.toJson()).toList(),
-  'assignee': assignee != null ? assignee?.toJson() : null,
+  'assignee': assignee?.toJson(),
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
-  'milestone': milestone != null ? milestone?.toJson() : null,
+  'milestone': milestone?.toJson(),
   'locked': locked,
   'active_lock_reason': ?activeLockReason,
   'comments': comments,
   if (pullRequest != null) 'pull_request': pullRequest?.toJson(),
-  'closed_at': closedAt != null ? closedAt?.toIso8601String() : null,
+  'closed_at': closedAt?.toIso8601String(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'draft': ?draft,
@@ -284,6 +284,6 @@ Issue copyWith({int? id, String? nodeId, Uri? url, Uri? repositoryUrl, String? l
 
 @override int get hashCode => Object.hashAll([id, nodeId, url, repositoryUrl, labelsUrl, commentsUrl, eventsUrl, htmlUrl, number, state, stateReason, title, body, user, Object.hashAll(labels), assignee, Object.hashAll(assignees ?? const []), milestone, locked, activeLockReason, comments, pullRequest, closedAt, createdAt, updatedAt, draft, closedBy, bodyHtml, bodyText, timelineUrl, type, repository, performedViaGithubApp, authorAssociation, reactions, subIssuesSummary, parentIssueUrl, pinnedComment, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const [])]);
 
-@override String toString() => 'Issue(id: $id, nodeId: $nodeId, url: $url, repositoryUrl: $repositoryUrl, labelsUrl: $labelsUrl, commentsUrl: $commentsUrl, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, number: $number, state: $state, stateReason: $stateReason, title: $title, body: $body, user: $user, labels: $labels, assignee: $assignee, assignees: $assignees, milestone: $milestone, locked: $locked, activeLockReason: $activeLockReason, comments: $comments, pullRequest: $pullRequest, closedAt: $closedAt, createdAt: $createdAt, updatedAt: $updatedAt, draft: $draft, closedBy: $closedBy, bodyHtml: $bodyHtml, bodyText: $bodyText, timelineUrl: $timelineUrl, type: $type, repository: $repository, performedViaGithubApp: $performedViaGithubApp, authorAssociation: $authorAssociation, reactions: $reactions, subIssuesSummary: $subIssuesSummary, parentIssueUrl: $parentIssueUrl, pinnedComment: $pinnedComment, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues)';
+@override String toString() => 'Issue(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  repositoryUrl: $repositoryUrl,\n  labelsUrl: $labelsUrl,\n  commentsUrl: $commentsUrl,\n  eventsUrl: $eventsUrl,\n  htmlUrl: $htmlUrl,\n  number: $number,\n  state: $state,\n  stateReason: $stateReason,\n  title: $title,\n  body: $body,\n  user: $user,\n  labels: $labels,\n  assignee: $assignee,\n  assignees: $assignees,\n  milestone: $milestone,\n  locked: $locked,\n  activeLockReason: $activeLockReason,\n  comments: $comments,\n  pullRequest: $pullRequest,\n  closedAt: $closedAt,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  draft: $draft,\n  closedBy: $closedBy,\n  bodyHtml: $bodyHtml,\n  bodyText: $bodyText,\n  timelineUrl: $timelineUrl,\n  type: $type,\n  repository: $repository,\n  performedViaGithubApp: $performedViaGithubApp,\n  authorAssociation: $authorAssociation,\n  reactions: $reactions,\n  subIssuesSummary: $subIssuesSummary,\n  parentIssueUrl: $parentIssueUrl,\n  pinnedComment: $pinnedComment,\n  issueDependenciesSummary: $issueDependenciesSummary,\n  issueFieldValues: $issueFieldValues,\n)';
 
  }

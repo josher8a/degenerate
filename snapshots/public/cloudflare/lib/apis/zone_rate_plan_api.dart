@@ -17,7 +17,7 @@ Future<ApiResult<List<AvailableRatePlan>?, Never>> zoneRatePlanListAvailablePlan
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/available_plans',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/available_plans',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<AvailableRatePlan?, Never>> zoneRatePlanAvailablePlanDetails({r
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/available_plans/${Uri.encodeComponent(planIdentifier.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/available_plans/${Uri.encodeComponent(planIdentifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -61,7 +61,7 @@ Future<ApiResult<List<RatePlan>?, Never>> zoneRatePlanListAvailableRatePlans({re
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/available_rate_plans',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/available_rate_plans',
   headers: headers,
   options: options,
 );

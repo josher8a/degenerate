@@ -27,6 +27,12 @@ bool get isUnknown => this is VariablesValue$Unknown;
 
 /// Shared by all variants of this union.
 String get name;
+R when<R>({required R Function(VariablesValueSecret) secret, required R Function(VariablesValueString) string, required R Function(VariablesValueWorker) worker, required R Function(VariablesValue$Unknown) unknown, }) { return switch (this) {
+  final VariablesValueSecret v => secret(v),
+  final VariablesValueString v => string(v),
+  final VariablesValueWorker v => worker(v),
+  final VariablesValue$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class VariablesValueSecret extends VariablesValue {const VariablesValueSecret(this.zarazSecretVariable);
 
@@ -102,9 +108,11 @@ VariablesValueWorker copyWith({String? name, ZarazWorkerVariableValue? value, })
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class VariablesValue$Unknown extends VariablesValue {const VariablesValue$Unknown(this.json);
+@immutable final class VariablesValue$Unknown extends VariablesValue {VariablesValue$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String _name = json['name'] as String;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -117,6 +125,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'VariablesValue.unknown($json)';
 
-@override String get name => json['name'] as String;
+@override String get name => _name;
 
  }

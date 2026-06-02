@@ -102,6 +102,6 @@ TunnelCfdTunnel copyWith({TunnelAccountId? Function()? accountTag, TunnelConfigS
 
 @override int get hashCode => Object.hash(accountTag, configSrc, Object.hashAll(connections ?? const []), connsActiveAt, connsInactiveAt, createdAt, deletedAt, id, metadata, name, remoteConfig, status, tunType);
 
-@override String toString() => 'TunnelCfdTunnel(accountTag: $accountTag, configSrc: $configSrc, connections: $connections, connsActiveAt: $connsActiveAt, connsInactiveAt: $connsInactiveAt, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, metadata: $metadata, name: $name, remoteConfig: $remoteConfig, status: $status, tunType: $tunType)';
+@override String toString() => 'TunnelCfdTunnel(\n  accountTag: $accountTag,\n  configSrc: $configSrc,\n  connections: $connections,\n  connsActiveAt: $connsActiveAt,\n  connsInactiveAt: $connsInactiveAt,\n  createdAt: $createdAt,\n  deletedAt: $deletedAt,\n  id: $id,\n  metadata: $metadata,\n  name: $name,\n  remoteConfig: $remoteConfig,\n  status: $status,\n  tunType: $tunType,\n)';
 
  }

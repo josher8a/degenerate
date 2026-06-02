@@ -69,6 +69,6 @@ McnUpdateOnrampRequest copyWith({List<McnResourceId>? Function()? attachedHubs, 
 
 @override int get hashCode => Object.hash(Object.hashAll(attachedHubs ?? const []), Object.hashAll(attachedVpcs ?? const []), description, installRoutesInCloud, installRoutesInMagicWan, manageHubToHubAttachments, manageVpcToHubAttachments, name, vpc);
 
-@override String toString() => 'McnUpdateOnrampRequest(attachedHubs: $attachedHubs, attachedVpcs: $attachedVpcs, description: $description, installRoutesInCloud: $installRoutesInCloud, installRoutesInMagicWan: $installRoutesInMagicWan, manageHubToHubAttachments: $manageHubToHubAttachments, manageVpcToHubAttachments: $manageVpcToHubAttachments, name: $name, vpc: $vpc)';
+@override String toString() => 'McnUpdateOnrampRequest(\n  attachedHubs: $attachedHubs,\n  attachedVpcs: $attachedVpcs,\n  description: $description,\n  installRoutesInCloud: $installRoutesInCloud,\n  installRoutesInMagicWan: $installRoutesInMagicWan,\n  manageHubToHubAttachments: $manageHubToHubAttachments,\n  manageVpcToHubAttachments: $manageVpcToHubAttachments,\n  name: $name,\n  vpc: $vpc,\n)';
 
  }

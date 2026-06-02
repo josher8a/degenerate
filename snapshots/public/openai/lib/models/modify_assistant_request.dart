@@ -132,6 +132,6 @@ ModifyAssistantRequest copyWith({CreateAssistantRequestModel? Function()? model,
 
 @override int get hashCode => Object.hash(model, reasoningEffort, name, description, instructions, Object.hashAll(tools), toolResources, metadata, temperature, topP, responseFormat);
 
-@override String toString() => 'ModifyAssistantRequest(model: $model, reasoningEffort: $reasoningEffort, name: $name, description: $description, instructions: $instructions, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)';
+@override String toString() => 'ModifyAssistantRequest(\n  model: $model,\n  reasoningEffort: $reasoningEffort,\n  name: $name,\n  description: $description,\n  instructions: $instructions,\n  tools: $tools,\n  toolResources: $toolResources,\n  metadata: $metadata,\n  temperature: $temperature,\n  topP: $topP,\n  responseFormat: $responseFormat,\n)';
 
  }

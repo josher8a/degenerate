@@ -42,7 +42,7 @@ return execute(
   onSuccess: (response) {
     return PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetCustomOidcSubClaimForRepoError.fromResponse(response),
+  onError: ActionsGetCustomOidcSubClaimForRepoError.fromResponse,
 );
  } 
 /// Create a private registry for an organization
@@ -69,7 +69,7 @@ return execute(
   onSuccess: (response) {
     return OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get private registries public key for an organization
@@ -94,7 +94,7 @@ return execute(
   onSuccess: (response) {
     return PrivateRegistriesGetOrgPublicKeyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get a private registry for an organization
@@ -119,7 +119,7 @@ return execute(
   onSuccess: (response) {
     return OrgPrivateRegistryConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update a private registry for an organization
@@ -144,7 +144,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete a private registry for an organization
@@ -167,7 +167,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetCustomOidcSubClaimForRepoError.fromResponse(response),
+  onError: ActionsGetCustomOidcSubClaimForRepoError.fromResponse,
 );
  } 
  }

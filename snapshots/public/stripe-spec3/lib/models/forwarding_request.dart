@@ -147,6 +147,6 @@ ForwardingRequest copyWith({int? created, String? id, bool? livemode, Map<String
 
 @override int get hashCode => Object.hash(created, id, livemode, metadata, object, paymentMethod, Object.hashAll(replacements), requestContext, requestDetails, responseDetails, url);
 
-@override String toString() => 'ForwardingRequest(created: $created, id: $id, livemode: $livemode, metadata: $metadata, object: $object, paymentMethod: $paymentMethod, replacements: $replacements, requestContext: $requestContext, requestDetails: $requestDetails, responseDetails: $responseDetails, url: $url)';
+@override String toString() => 'ForwardingRequest(\n  created: $created,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  paymentMethod: $paymentMethod,\n  replacements: $replacements,\n  requestContext: $requestContext,\n  requestDetails: $requestDetails,\n  responseDetails: $responseDetails,\n  url: $url,\n)';
 
  }

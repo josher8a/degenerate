@@ -27,7 +27,7 @@ final Uri? htmlUrl;
 Map<String, dynamic> toJson() { return {
   'key': key,
   'name': name,
-  'url': url != null ? url?.toString() : null,
+  'url': url?.toString(),
   'spdx_id': spdxId,
   'node_id': nodeId,
   if (htmlUrl != null) 'html_url': htmlUrl?.toString(),

@@ -26,7 +26,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('namespace'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (namespace.length < 1) errors.add('namespace: must have >= 1 items');
+if (namespace.isEmpty) errors.add('namespace: must have >= 1 items');
 if (namespace.length > 16) errors.add('namespace: must have <= 16 items');
 return errors; } 
 R2DataCatalogTableIdentifier copyWith({String? name, List<String>? namespace, }) { return R2DataCatalogTableIdentifier(

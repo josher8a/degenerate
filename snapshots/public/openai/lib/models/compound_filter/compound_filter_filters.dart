@@ -17,6 +17,10 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CompoundFilterFilters$Unknown;
 
+R when<R>({required R Function(CompoundFilterFiltersEq) eq, required R Function(CompoundFilterFilters$Unknown) unknown, }) { return switch (this) {
+  final CompoundFilterFiltersEq v => eq(v),
+  final CompoundFilterFilters$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class CompoundFilterFiltersEq extends CompoundFilterFilters {const CompoundFilterFiltersEq(this.comparisonFilter);
 

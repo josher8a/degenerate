@@ -170,6 +170,6 @@ ZeroTrustGatewayBlockPageSettings copyWith({String? Function()? backgroundColor,
 
 @override int get hashCode => Object.hash(backgroundColor, enabled, footerText, headerText, includeContext, logoPath, mailtoAddress, mailtoSubject, mode, name, readOnly, sourceAccount, suppressFooter, targetUri, version);
 
-@override String toString() => 'ZeroTrustGatewayBlockPageSettings(backgroundColor: $backgroundColor, enabled: $enabled, footerText: $footerText, headerText: $headerText, includeContext: $includeContext, logoPath: $logoPath, mailtoAddress: $mailtoAddress, mailtoSubject: $mailtoSubject, mode: $mode, name: $name, readOnly: $readOnly, sourceAccount: $sourceAccount, suppressFooter: $suppressFooter, targetUri: $targetUri, version: $version)';
+@override String toString() => 'ZeroTrustGatewayBlockPageSettings(\n  backgroundColor: $backgroundColor,\n  enabled: $enabled,\n  footerText: $footerText,\n  headerText: $headerText,\n  includeContext: $includeContext,\n  logoPath: $logoPath,\n  mailtoAddress: $mailtoAddress,\n  mailtoSubject: $mailtoSubject,\n  mode: $mode,\n  name: $name,\n  readOnly: $readOnly,\n  sourceAccount: $sourceAccount,\n  suppressFooter: $suppressFooter,\n  targetUri: $targetUri,\n  version: $version,\n)';
 
  }

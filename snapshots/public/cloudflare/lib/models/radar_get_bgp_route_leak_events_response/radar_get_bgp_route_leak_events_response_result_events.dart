@@ -105,6 +105,6 @@ RadarGetBgpRouteLeakEventsResponseResultEvents copyWith({List<String>? countries
 
 @override int get hashCode => Object.hash(Object.hashAll(countries), detectedTs, finished, id, leakAsn, leakCount, Object.hashAll(leakSeg), leakType, maxTs, minTs, originCount, peerCount, prefixCount);
 
-@override String toString() => 'RadarGetBgpRouteLeakEventsResponseResultEvents(countries: $countries, detectedTs: $detectedTs, finished: $finished, id: $id, leakAsn: $leakAsn, leakCount: $leakCount, leakSeg: $leakSeg, leakType: $leakType, maxTs: $maxTs, minTs: $minTs, originCount: $originCount, peerCount: $peerCount, prefixCount: $prefixCount)';
+@override String toString() => 'RadarGetBgpRouteLeakEventsResponseResultEvents(\n  countries: $countries,\n  detectedTs: $detectedTs,\n  finished: $finished,\n  id: $id,\n  leakAsn: $leakAsn,\n  leakCount: $leakCount,\n  leakSeg: $leakSeg,\n  leakType: $leakType,\n  maxTs: $maxTs,\n  minTs: $minTs,\n  originCount: $originCount,\n  peerCount: $peerCount,\n  prefixCount: $prefixCount,\n)';
 
  }

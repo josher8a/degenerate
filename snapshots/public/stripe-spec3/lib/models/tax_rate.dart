@@ -239,6 +239,6 @@ TaxRate copyWith({bool? active, String? Function()? country, int? created, Strin
 
 @override int get hashCode => Object.hash(active, country, created, description, displayName, effectivePercentage, flatAmount, id, inclusive, jurisdiction, jurisdictionLevel, livemode, metadata, object, percentage, rateType, state, taxType);
 
-@override String toString() => 'TaxRate(active: $active, country: $country, created: $created, description: $description, displayName: $displayName, effectivePercentage: $effectivePercentage, flatAmount: $flatAmount, id: $id, inclusive: $inclusive, jurisdiction: $jurisdiction, jurisdictionLevel: $jurisdictionLevel, livemode: $livemode, metadata: $metadata, object: $object, percentage: $percentage, rateType: $rateType, state: $state, taxType: $taxType)';
+@override String toString() => 'TaxRate(\n  active: $active,\n  country: $country,\n  created: $created,\n  description: $description,\n  displayName: $displayName,\n  effectivePercentage: $effectivePercentage,\n  flatAmount: $flatAmount,\n  id: $id,\n  inclusive: $inclusive,\n  jurisdiction: $jurisdiction,\n  jurisdictionLevel: $jurisdictionLevel,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  percentage: $percentage,\n  rateType: $rateType,\n  state: $state,\n  taxType: $taxType,\n)';
 
  }

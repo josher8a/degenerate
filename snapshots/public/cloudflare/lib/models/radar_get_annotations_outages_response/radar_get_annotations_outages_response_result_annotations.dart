@@ -121,6 +121,6 @@ RadarGetAnnotationsOutagesResponseResultAnnotations copyWith({List<int>? asns, L
 
 @override int get hashCode => Object.hash(Object.hashAll(asns), Object.hashAll(asnsDetails), dataSource, description, endDate, eventType, id, linkedUrl, Object.hashAll(locations), Object.hashAll(locationsDetails), Object.hashAll(origins), Object.hashAll(originsDetails), outage, scope, startDate);
 
-@override String toString() => 'RadarGetAnnotationsOutagesResponseResultAnnotations(asns: $asns, asnsDetails: $asnsDetails, dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, id: $id, linkedUrl: $linkedUrl, locations: $locations, locationsDetails: $locationsDetails, origins: $origins, originsDetails: $originsDetails, outage: $outage, scope: $scope, startDate: $startDate)';
+@override String toString() => 'RadarGetAnnotationsOutagesResponseResultAnnotations(\n  asns: $asns,\n  asnsDetails: $asnsDetails,\n  dataSource: $dataSource,\n  description: $description,\n  endDate: $endDate,\n  eventType: $eventType,\n  id: $id,\n  linkedUrl: $linkedUrl,\n  locations: $locations,\n  locationsDetails: $locationsDetails,\n  origins: $origins,\n  originsDetails: $originsDetails,\n  outage: $outage,\n  scope: $scope,\n  startDate: $startDate,\n)';
 
  }

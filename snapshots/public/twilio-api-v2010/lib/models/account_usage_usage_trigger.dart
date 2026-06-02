@@ -168,6 +168,6 @@ AccountUsageUsageTrigger copyWith({String? Function()? accountSid, String? Funct
 
 @override int get hashCode => Object.hash(accountSid, apiVersion, callbackMethod, callbackUrl, currentValue, dateCreated, dateFired, dateUpdated, friendlyName, recurring, sid, triggerBy, triggerValue, uri, usageCategory, usageRecordUri);
 
-@override String toString() => 'AccountUsageUsageTrigger(accountSid: $accountSid, apiVersion: $apiVersion, callbackMethod: $callbackMethod, callbackUrl: $callbackUrl, currentValue: $currentValue, dateCreated: $dateCreated, dateFired: $dateFired, dateUpdated: $dateUpdated, friendlyName: $friendlyName, recurring: $recurring, sid: $sid, triggerBy: $triggerBy, triggerValue: $triggerValue, uri: $uri, usageCategory: $usageCategory, usageRecordUri: $usageRecordUri)';
+@override String toString() => 'AccountUsageUsageTrigger(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  callbackMethod: $callbackMethod,\n  callbackUrl: $callbackUrl,\n  currentValue: $currentValue,\n  dateCreated: $dateCreated,\n  dateFired: $dateFired,\n  dateUpdated: $dateUpdated,\n  friendlyName: $friendlyName,\n  recurring: $recurring,\n  sid: $sid,\n  triggerBy: $triggerBy,\n  triggerValue: $triggerValue,\n  uri: $uri,\n  usageCategory: $usageCategory,\n  usageRecordUri: $usageRecordUri,\n)';
 
  }

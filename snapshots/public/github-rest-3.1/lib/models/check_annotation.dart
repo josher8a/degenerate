@@ -85,6 +85,6 @@ CheckAnnotation copyWith({String? path, int? startLine, int? endLine, int? Funct
 
 @override int get hashCode => Object.hash(path, startLine, endLine, startColumn, endColumn, annotationLevel, title, message, rawDetails, blobHref);
 
-@override String toString() => 'CheckAnnotation(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn, annotationLevel: $annotationLevel, title: $title, message: $message, rawDetails: $rawDetails, blobHref: $blobHref)';
+@override String toString() => 'CheckAnnotation(\n  path: $path,\n  startLine: $startLine,\n  endLine: $endLine,\n  startColumn: $startColumn,\n  endColumn: $endColumn,\n  annotationLevel: $annotationLevel,\n  title: $title,\n  message: $message,\n  rawDetails: $rawDetails,\n  blobHref: $blobHref,\n)';
 
  }

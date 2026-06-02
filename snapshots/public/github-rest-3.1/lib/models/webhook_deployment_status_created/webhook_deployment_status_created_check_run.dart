@@ -47,8 +47,8 @@ final SimpleCheckSuiteStatus status;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  'completed_at': completedAt != null ? completedAt?.toIso8601String() : null,
-  'conclusion': conclusion != null ? conclusion?.toJson() : null,
+  'completed_at': completedAt?.toIso8601String(),
+  'conclusion': conclusion?.toJson(),
   'details_url': detailsUrl.toString(),
   'external_id': externalId,
   'head_sha': headSha,
@@ -103,6 +103,6 @@ WebhookDeploymentStatusCreatedCheckRun copyWith({DateTime? Function()? completed
 
 @override int get hashCode => Object.hash(completedAt, conclusion, detailsUrl, externalId, headSha, htmlUrl, id, name, nodeId, startedAt, status, url);
 
-@override String toString() => 'WebhookDeploymentStatusCreatedCheckRun(completedAt: $completedAt, conclusion: $conclusion, detailsUrl: $detailsUrl, externalId: $externalId, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, startedAt: $startedAt, status: $status, url: $url)';
+@override String toString() => 'WebhookDeploymentStatusCreatedCheckRun(\n  completedAt: $completedAt,\n  conclusion: $conclusion,\n  detailsUrl: $detailsUrl,\n  externalId: $externalId,\n  headSha: $headSha,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  startedAt: $startedAt,\n  status: $status,\n  url: $url,\n)';
 
  }

@@ -96,6 +96,6 @@ CloudforceOneRequestsRequestList copyWith({CloudforceOneRequestsTime? Function()
 
 @override int get hashCode => Object.hash(completedAfter, completedBefore, createdAfter, createdBefore, page, perPage, requestType, sortBy, sortOrder, status);
 
-@override String toString() => 'CloudforceOneRequestsRequestList(completedAfter: $completedAfter, completedBefore: $completedBefore, createdAfter: $createdAfter, createdBefore: $createdBefore, page: $page, perPage: $perPage, requestType: $requestType, sortBy: $sortBy, sortOrder: $sortOrder, status: $status)';
+@override String toString() => 'CloudforceOneRequestsRequestList(\n  completedAfter: $completedAfter,\n  completedBefore: $completedBefore,\n  createdAfter: $createdAfter,\n  createdBefore: $createdBefore,\n  page: $page,\n  perPage: $perPage,\n  requestType: $requestType,\n  sortBy: $sortBy,\n  sortOrder: $sortOrder,\n  status: $status,\n)';
 
  }

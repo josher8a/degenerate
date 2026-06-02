@@ -138,6 +138,6 @@ PaymentMethodCard copyWith({String? brand, PaymentMethodCardChecks? Function()? 
 
 @override int get hashCode => Object.hash(brand, checks, country, displayBrand, expMonth, expYear, fingerprint, funding, generatedFrom, last4, networks, regulatedStatus, threeDSecureUsage, wallet);
 
-@override String toString() => 'PaymentMethodCard(brand: $brand, checks: $checks, country: $country, displayBrand: $displayBrand, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedFrom: $generatedFrom, last4: $last4, networks: $networks, regulatedStatus: $regulatedStatus, threeDSecureUsage: $threeDSecureUsage, wallet: $wallet)';
+@override String toString() => 'PaymentMethodCard(\n  brand: $brand,\n  checks: $checks,\n  country: $country,\n  displayBrand: $displayBrand,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  generatedFrom: $generatedFrom,\n  last4: $last4,\n  networks: $networks,\n  regulatedStatus: $regulatedStatus,\n  threeDSecureUsage: $threeDSecureUsage,\n  wallet: $wallet,\n)';
 
  }

@@ -17,7 +17,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final labels$ = labels;
 if (labels$ != null) {
-  if (labels$.length < 1) errors.add('labels: must have >= 1 items');
+  if (labels$.isEmpty) errors.add('labels: must have >= 1 items');
 }
 return errors; } 
 IssuesAddLabelsRequestVariant1 copyWith({List<String>? Function()? labels}) { return IssuesAddLabelsRequestVariant1(

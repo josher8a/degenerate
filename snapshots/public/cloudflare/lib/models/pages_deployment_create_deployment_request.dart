@@ -153,6 +153,6 @@ PagesDeploymentCreateDeploymentRequest copyWith({Uint8List? Function()? headers,
 
 @override int get hashCode => Object.hash(headers, redirects, routesJson, workerBundle, workerJs, branch, commitDirty, commitHash, commitMessage, functionsFilepathRoutingConfigJson, manifest, pagesBuildOutputDir, wranglerConfigHash);
 
-@override String toString() => 'PagesDeploymentCreateDeploymentRequest(headers: $headers, redirects: $redirects, routesJson: $routesJson, workerBundle: $workerBundle, workerJs: $workerJs, branch: $branch, commitDirty: $commitDirty, commitHash: $commitHash, commitMessage: $commitMessage, functionsFilepathRoutingConfigJson: $functionsFilepathRoutingConfigJson, manifest: $manifest, pagesBuildOutputDir: $pagesBuildOutputDir, wranglerConfigHash: $wranglerConfigHash)';
+@override String toString() => 'PagesDeploymentCreateDeploymentRequest(\n  headers: $headers,\n  redirects: $redirects,\n  routesJson: $routesJson,\n  workerBundle: $workerBundle,\n  workerJs: $workerJs,\n  branch: $branch,\n  commitDirty: $commitDirty,\n  commitHash: $commitHash,\n  commitMessage: $commitMessage,\n  functionsFilepathRoutingConfigJson: $functionsFilepathRoutingConfigJson,\n  manifest: $manifest,\n  pagesBuildOutputDir: $pagesBuildOutputDir,\n  wranglerConfigHash: $wranglerConfigHash,\n)';
 
  }

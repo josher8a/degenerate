@@ -15,7 +15,7 @@ Future<ApiResult<List<IntelSinkholesSinkholeItem>?, Never>> sinkholeConfigGetSin
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/sinkholes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/sinkholes',
   headers: headers,
   options: options,
 );

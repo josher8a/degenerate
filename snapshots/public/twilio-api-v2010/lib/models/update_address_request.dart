@@ -78,6 +78,6 @@ UpdateAddressRequest copyWith({String? Function()? friendlyName, String? Functio
 
 @override int get hashCode => Object.hash(friendlyName, customerName, street, city, region, postalCode, emergencyEnabled, autoCorrectAddress, streetSecondary);
 
-@override String toString() => 'UpdateAddressRequest(friendlyName: $friendlyName, customerName: $customerName, street: $street, city: $city, region: $region, postalCode: $postalCode, emergencyEnabled: $emergencyEnabled, autoCorrectAddress: $autoCorrectAddress, streetSecondary: $streetSecondary)';
+@override String toString() => 'UpdateAddressRequest(\n  friendlyName: $friendlyName,\n  customerName: $customerName,\n  street: $street,\n  city: $city,\n  region: $region,\n  postalCode: $postalCode,\n  emergencyEnabled: $emergencyEnabled,\n  autoCorrectAddress: $autoCorrectAddress,\n  streetSecondary: $streetSecondary,\n)';
 
  }

@@ -131,6 +131,6 @@ CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Fun
 
 @override int get hashCode => Object.hash(addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, cvc, expMonth, expYear, metadata, name, number, object);
 
-@override String toString() => 'CustomerPaymentSourceCard(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, metadata: $metadata, name: $name, number: $number, object: $object)';
+@override String toString() => 'CustomerPaymentSourceCard(\n  addressCity: $addressCity,\n  addressCountry: $addressCountry,\n  addressLine1: $addressLine1,\n  addressLine2: $addressLine2,\n  addressState: $addressState,\n  addressZip: $addressZip,\n  cvc: $cvc,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  metadata: $metadata,\n  name: $name,\n  number: $number,\n  object: $object,\n)';
 
  }

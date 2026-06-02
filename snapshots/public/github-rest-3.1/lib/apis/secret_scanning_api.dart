@@ -79,7 +79,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => OrganizationSecretScanningAlert.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => SecretScanningListAlertsForOrgError.fromResponse(response),
+  onError: SecretScanningListAlertsForOrgError.fromResponse,
 );
  } 
 /// List organization pattern configurations
@@ -103,7 +103,7 @@ return execute(
   onSuccess: (response) {
     return SecretScanningPatternConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Update organization pattern configurations
@@ -129,7 +129,7 @@ return execute(
   onSuccess: (response) {
     return SecretScanningUpdateOrgPatternConfigsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => SecretScanningUpdateOrgPatternConfigsError.fromResponse(response),
+  onError: SecretScanningUpdateOrgPatternConfigsError.fromResponse,
 );
  } 
 /// List secret scanning alerts for a repository
@@ -203,7 +203,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SecretScanningAlert.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => SecretScanningListAlertsForRepoError.fromResponse(response),
+  onError: SecretScanningListAlertsForRepoError.fromResponse,
 );
  } 
 /// Get a secret scanning alert
@@ -237,7 +237,7 @@ return execute(
   onSuccess: (response) {
     return SecretScanningAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => SecretScanningGetAlertError.fromResponse(response),
+  onError: SecretScanningGetAlertError.fromResponse,
 );
  } 
 /// Update a secret scanning alert
@@ -267,7 +267,7 @@ return execute(
   onSuccess: (response) {
     return SecretScanningAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => SecretScanningUpdateAlertError.fromResponse(response),
+  onError: SecretScanningUpdateAlertError.fromResponse,
 );
  } 
 /// List locations for a secret scanning alert
@@ -305,7 +305,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SecretScanningLocation.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => SecretScanningListLocationsForAlertError.fromResponse(response),
+  onError: SecretScanningListLocationsForAlertError.fromResponse,
 );
  } 
 /// Create a push protection bypass
@@ -333,7 +333,7 @@ return execute(
   onSuccess: (response) {
     return SecretScanningPushProtectionBypass.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => SecretScanningCreatePushProtectionBypassError.fromResponse(response),
+  onError: SecretScanningCreatePushProtectionBypassError.fromResponse,
 );
  } 
 /// Get secret scanning scan history for a repository
@@ -360,7 +360,7 @@ return execute(
   onSuccess: (response) {
     return SecretScanningScanHistory.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => SecretScanningGetScanHistoryError.fromResponse(response),
+  onError: SecretScanningGetScanHistoryError.fromResponse,
 );
  } 
  }

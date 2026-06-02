@@ -62,7 +62,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/allow_policies',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/allow_policies',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -88,7 +88,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/allow_policies',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/allow_policies',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -112,7 +112,7 @@ Future<ApiResult<EmailSecurityCreateAllowPolicyResponseResult, Never>> emailSecu
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/allow_policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/allow_policies/${Uri.encodeComponent(policyId.toString())}',
   headers: headers,
   options: options,
 );
@@ -135,7 +135,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/allow_policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/allow_policies/${Uri.encodeComponent(policyId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -159,7 +159,7 @@ Future<ApiResult<EmailSecurityDeleteAllowPolicyResponseResult, Never>> emailSecu
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/allow_policies/${Uri.encodeComponent(policyId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/allow_policies/${Uri.encodeComponent(policyId.toString())}',
   headers: headers,
   options: options,
 );
@@ -182,7 +182,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/allow_policies/batch',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/allow_policies/batch',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -229,7 +229,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/block_senders',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/block_senders',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -255,7 +255,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/block_senders',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/block_senders',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -279,7 +279,7 @@ Future<ApiResult<EmailSecurityCreateBlockedSenderResponseResult, Never>> emailSe
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/block_senders/${Uri.encodeComponent(patternId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/block_senders/${Uri.encodeComponent(patternId.toString())}',
   headers: headers,
   options: options,
 );
@@ -302,7 +302,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/block_senders/${Uri.encodeComponent(patternId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/block_senders/${Uri.encodeComponent(patternId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -326,7 +326,7 @@ Future<ApiResult<EmailSecurityDeleteAllowPolicyResponseResult, Never>> emailSecu
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/block_senders/${Uri.encodeComponent(patternId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/block_senders/${Uri.encodeComponent(patternId.toString())}',
   headers: headers,
   options: options,
 );
@@ -349,7 +349,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/block_senders/batch',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/block_senders/batch',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -404,7 +404,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/domains',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/domains',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -429,7 +429,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/domains',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/domains',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -452,7 +452,7 @@ Future<ApiResult<EmailSecurityGetDomainResponseResult, Never>> emailSecurityGetD
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/domains/${Uri.encodeComponent(domainId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/domains/${Uri.encodeComponent(domainId.toString())}',
   headers: headers,
   options: options,
 );
@@ -475,7 +475,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/domains/${Uri.encodeComponent(domainId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/domains/${Uri.encodeComponent(domainId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -496,7 +496,7 @@ Future<ApiResult<EmailSecurityDeleteAllowPolicyResponseResult, Never>> emailSecu
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/domains/${Uri.encodeComponent(domainId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/domains/${Uri.encodeComponent(domainId.toString())}',
   headers: headers,
   options: options,
 );
@@ -539,7 +539,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/impersonation_registry',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/impersonation_registry',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -564,7 +564,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/impersonation_registry',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/impersonation_registry',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -587,7 +587,7 @@ Future<ApiResult<EmailSecurityCreateDisplayNameResponseResult, Never>> emailSecu
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/impersonation_registry/${Uri.encodeComponent(displayNameId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/impersonation_registry/${Uri.encodeComponent(displayNameId.toString())}',
   headers: headers,
   options: options,
 );
@@ -610,7 +610,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/impersonation_registry/${Uri.encodeComponent(displayNameId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/impersonation_registry/${Uri.encodeComponent(displayNameId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -633,7 +633,7 @@ Future<ApiResult<EmailSecurityDeleteAllowPolicyResponseResult, Never>> emailSecu
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/impersonation_registry/${Uri.encodeComponent(displayNameId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/impersonation_registry/${Uri.encodeComponent(displayNameId.toString())}',
   headers: headers,
   options: options,
 );
@@ -656,7 +656,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/sending_domain_restrictions/batch',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/sending_domain_restrictions/batch',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -706,7 +706,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/trusted_domains',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/trusted_domains',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -732,7 +732,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/trusted_domains',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/trusted_domains',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -755,7 +755,7 @@ Future<ApiResult<EmailSecurityGetTrustedDomainResponseResult, Never>> emailSecur
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/trusted_domains/${Uri.encodeComponent(trustedDomainId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/trusted_domains/${Uri.encodeComponent(trustedDomainId.toString())}',
   headers: headers,
   options: options,
 );
@@ -778,7 +778,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/trusted_domains/${Uri.encodeComponent(trustedDomainId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/trusted_domains/${Uri.encodeComponent(trustedDomainId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -802,7 +802,7 @@ Future<ApiResult<EmailSecurityDeleteAllowPolicyResponseResult, Never>> emailSecu
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/trusted_domains/${Uri.encodeComponent(trustedDomainId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/trusted_domains/${Uri.encodeComponent(trustedDomainId.toString())}',
   headers: headers,
   options: options,
 );
@@ -825,7 +825,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/settings/trusted_domains/batch',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/settings/trusted_domains/batch',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

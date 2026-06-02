@@ -50,7 +50,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/sessions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/sessions',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -79,7 +79,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/sessions/${Uri.encodeComponent(sessionId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/sessions/${Uri.encodeComponent(sessionId)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -103,7 +103,7 @@ Future<ApiResult<GetSessionChatResponse, Never>> getSessionChat({required Realti
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/sessions/${Uri.encodeComponent(sessionId)}/chat',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/sessions/${Uri.encodeComponent(sessionId)}/chat',
   headers: headers,
   options: options,
 );
@@ -148,7 +148,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/sessions/${Uri.encodeComponent(sessionId)}/participants',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/sessions/${Uri.encodeComponent(sessionId)}/participants',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -180,7 +180,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/sessions/${Uri.encodeComponent(sessionId)}/participants/${Uri.encodeComponent(participantId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/sessions/${Uri.encodeComponent(sessionId)}/participants/${Uri.encodeComponent(participantId)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -203,7 +203,7 @@ Future<ApiResult<GetSessionSummaryResponse, Never>> getSessionSummary({required 
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/sessions/${Uri.encodeComponent(sessionId)}/summary',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/sessions/${Uri.encodeComponent(sessionId)}/summary',
   headers: headers,
   options: options,
 );
@@ -224,7 +224,7 @@ Future<ApiResult<void, Never>> postSessionsSessionIdSummary({required Realtimeki
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/sessions/${Uri.encodeComponent(sessionId)}/summary',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/sessions/${Uri.encodeComponent(sessionId)}/summary',
   headers: headers,
   options: options,
 );
@@ -243,7 +243,7 @@ Future<ApiResult<GetSessionTranscriptResponse, Never>> getSessionTranscript({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/sessions/${Uri.encodeComponent(sessionId)}/transcript',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/sessions/${Uri.encodeComponent(sessionId)}/transcript',
   headers: headers,
   options: options,
 );
@@ -270,7 +270,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/sessions/peer-report/${Uri.encodeComponent(peerId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/sessions/peer-report/${Uri.encodeComponent(peerId)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

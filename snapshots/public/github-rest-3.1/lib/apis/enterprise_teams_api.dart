@@ -39,7 +39,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => EnterpriseTeam.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Create an enterprise team
@@ -84,7 +84,7 @@ return execute(
   onSuccess: (response) {
     return EnterpriseTeam.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Update an enterprise team
@@ -108,7 +108,7 @@ return execute(
   onSuccess: (response) {
     return EnterpriseTeam.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Delete an enterprise team
@@ -130,7 +130,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
  }

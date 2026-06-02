@@ -126,7 +126,7 @@ return execute(
   onSuccess: (response) {
     return AccountCallCallRecording.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => UpdateCallRecordingError.fromResponse(response),
+  onError: UpdateCallRecordingError.fromResponse,
 );
  } 
 /// Delete a recording from your account

@@ -17,7 +17,7 @@ Future<ApiResult<GetActiveSessionResponse, GetActiveSessionError>> getActiveSess
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/active-session',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/active-session',
   headers: headers,
   options: options,
 );
@@ -27,7 +27,7 @@ return execute(
   onSuccess: (response) {
     return GetActiveSessionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetActiveSessionError.fromResponse(response),
+  onError: GetActiveSessionError.fromResponse,
 );
  } 
 /// Kick participants from an active session
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/active-session/kick',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/active-session/kick',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -51,7 +51,7 @@ return execute(
   onSuccess: (response) {
     return KickPartcipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetActiveSessionError.fromResponse(response),
+  onError: GetActiveSessionError.fromResponse,
 );
  } 
 /// Kick all participants
@@ -63,7 +63,7 @@ Future<ApiResult<KickAllParticipantsResponse, Never>> kickAllParticipants({requi
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/active-session/kick-all',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/active-session/kick-all',
   headers: headers,
   options: options,
 );
@@ -85,7 +85,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/active-session/mute',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/active-session/mute',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -108,7 +108,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/active-session/mute-all',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/active-session/mute-all',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -131,7 +131,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/meetings/${Uri.encodeComponent(meetingId)}/active-session/poll',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/meetings/${Uri.encodeComponent(meetingId)}/active-session/poll',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

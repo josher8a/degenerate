@@ -78,7 +78,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('data') && json['data'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (data.length < 1) errors.add('data: length must be >= 1');
+if (data.isEmpty) errors.add('data: length must be >= 1');
 if (data.length > 70254592) errors.add('data: length must be <= 70254592');
 return errors; } 
 InlineSkillSourceParam copyWith({InlineSkillSourceParamType? type, MediaType? mediaType, String? data, }) { return InlineSkillSourceParam(

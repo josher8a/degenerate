@@ -60,7 +60,7 @@ factory WorkersBindingItem.dataBlob({required WorkersBindingName name, required 
 factory WorkersBindingItem.dispatchNamespace({required WorkersBindingName name, required String namespace, WorkersBindingKindDispatchNamespaceOutbound? outbound, }) { return WorkersBindingItemDispatchNamespace(WorkersBindingKindDispatchNamespace(type: 'dispatch_namespace', name: name, namespace: namespace, outbound: outbound)); }
 
 /// Build the `durable_object_namespace` variant.
-factory WorkersBindingItem.durableObjectNamespace({String? className, String? dispatchNamespace, String? environment, required WorkersBindingName name, WorkersNamespaceIdentifier? namespaceId, String? scriptName, }) { return WorkersBindingItemDurableObjectNamespace(WorkersBindingKindDurableObjectNamespace(type: 'durable_object_namespace', className: className, dispatchNamespace: dispatchNamespace, environment: environment, name: name, namespaceId: namespaceId, scriptName: scriptName)); }
+factory WorkersBindingItem.durableObjectNamespace({required WorkersBindingName name, String? className, String? dispatchNamespace, String? environment, WorkersNamespaceIdentifier? namespaceId, String? scriptName, }) { return WorkersBindingItemDurableObjectNamespace(WorkersBindingKindDurableObjectNamespace(type: 'durable_object_namespace', className: className, dispatchNamespace: dispatchNamespace, environment: environment, name: name, namespaceId: namespaceId, scriptName: scriptName)); }
 
 /// Build the `hyperdrive` variant.
 factory WorkersBindingItem.hyperdrive({required String id, required WorkersBindingName name, }) { return WorkersBindingItemHyperdrive(WorkersBindingKindHyperdrive(type: 'hyperdrive', id: id, name: name)); }
@@ -90,13 +90,13 @@ factory WorkersBindingItem.plainText({required WorkersBindingName name, required
 factory WorkersBindingItem.queue({required WorkersBindingName name, required String queueName, }) { return WorkersBindingItemQueue(WorkersBindingKindQueue(type: 'queue', name: name, queueName: queueName)); }
 
 /// Build the `r2_bucket` variant.
-factory WorkersBindingItem.r2Bucket({required String bucketName, Jurisdiction? jurisdiction, required WorkersBindingName name, }) { return WorkersBindingItemR2Bucket(WorkersBindingKindR2Bucket(type: 'r2_bucket', bucketName: bucketName, jurisdiction: jurisdiction, name: name)); }
+factory WorkersBindingItem.r2Bucket({required String bucketName, required WorkersBindingName name, Jurisdiction? jurisdiction, }) { return WorkersBindingItemR2Bucket(WorkersBindingKindR2Bucket(type: 'r2_bucket', bucketName: bucketName, jurisdiction: jurisdiction, name: name)); }
 
 /// Build the `ratelimit` variant.
 factory WorkersBindingItem.ratelimit({required WorkersBindingName name, required String namespaceId, required Simple simple, }) { return WorkersBindingItemRatelimit(WorkersBindingKindRatelimit(type: 'ratelimit', name: name, namespaceId: namespaceId, simple: simple)); }
 
 /// Build the `secret_key` variant.
-factory WorkersBindingItem.secretKey({required Map<String,dynamic> algorithm, required WorkersBindingKindSecretKeyFormat format, String? keyBase64, Map<String,dynamic>? keyJwk, required WorkersBindingName name, required List<Usages> usages, }) { return WorkersBindingItemSecretKey(WorkersBindingKindSecretKey(type: 'secret_key', algorithm: algorithm, format: format, keyBase64: keyBase64, keyJwk: keyJwk, name: name, usages: usages)); }
+factory WorkersBindingItem.secretKey({required Map<String,dynamic> algorithm, required WorkersBindingKindSecretKeyFormat format, required WorkersBindingName name, required List<Usages> usages, String? keyBase64, Map<String,dynamic>? keyJwk, }) { return WorkersBindingItemSecretKey(WorkersBindingKindSecretKey(type: 'secret_key', algorithm: algorithm, format: format, keyBase64: keyBase64, keyJwk: keyJwk, name: name, usages: usages)); }
 
 /// Build the `secret_text` variant.
 factory WorkersBindingItem.secretText({required WorkersBindingName name, required String text, }) { return WorkersBindingItemSecretText(WorkersBindingKindSecretText(type: 'secret_text', name: name, text: text)); }
@@ -105,10 +105,10 @@ factory WorkersBindingItem.secretText({required WorkersBindingName name, require
 factory WorkersBindingItem.secretsStoreSecret({required WorkersBindingName name, required String secretName, required String storeId, }) { return WorkersBindingItemSecretsStoreSecret(WorkersBindingKindSecretsStoreSecret(type: 'secrets_store_secret', name: name, secretName: secretName, storeId: storeId)); }
 
 /// Build the `send_email` variant.
-factory WorkersBindingItem.sendEmail({List<String>? allowedDestinationAddresses, List<String>? allowedSenderAddresses, String? destinationAddress, required WorkersBindingName name, }) { return WorkersBindingItemSendEmail(WorkersBindingKindSendEmail(type: 'send_email', allowedDestinationAddresses: allowedDestinationAddresses, allowedSenderAddresses: allowedSenderAddresses, destinationAddress: destinationAddress, name: name)); }
+factory WorkersBindingItem.sendEmail({required WorkersBindingName name, List<String>? allowedDestinationAddresses, List<String>? allowedSenderAddresses, String? destinationAddress, }) { return WorkersBindingItemSendEmail(WorkersBindingKindSendEmail(type: 'send_email', allowedDestinationAddresses: allowedDestinationAddresses, allowedSenderAddresses: allowedSenderAddresses, destinationAddress: destinationAddress, name: name)); }
 
 /// Build the `service` variant.
-factory WorkersBindingItem.service({String? entrypoint, String environment = 'production', required WorkersBindingName name, required String service, }) { return WorkersBindingItemService(WorkersBindingKindService(type: 'service', entrypoint: entrypoint, environment: environment, name: name, service: service)); }
+factory WorkersBindingItem.service({required WorkersBindingName name, required String service, String? entrypoint, String environment = 'production', }) { return WorkersBindingItemService(WorkersBindingKindService(type: 'service', entrypoint: entrypoint, environment: environment, name: name, service: service)); }
 
 /// Build the `text_blob` variant.
 factory WorkersBindingItem.textBlob({required WorkersBindingName name, required String $part, }) { return WorkersBindingItemTextBlob(WorkersBindingKindTextBlob(type: 'text_blob', name: name, $part: $part)); }
@@ -126,7 +126,7 @@ factory WorkersBindingItem.vpcService({required WorkersBindingName name, require
 factory WorkersBindingItem.wasmModule({required WorkersBindingName name, required String $part, }) { return WorkersBindingItemWasmModule(WorkersBindingKindWasmModule(type: 'wasm_module', name: name, $part: $part)); }
 
 /// Build the `workflow` variant.
-factory WorkersBindingItem.workflow({String? className, required WorkersBindingName name, String? scriptName, required String workflowName, }) { return WorkersBindingItemWorkflow(WorkersBindingKindWorkflow(type: 'workflow', className: className, name: name, scriptName: scriptName, workflowName: workflowName)); }
+factory WorkersBindingItem.workflow({required WorkersBindingName name, required String workflowName, String? className, String? scriptName, }) { return WorkersBindingItemWorkflow(WorkersBindingKindWorkflow(type: 'workflow', className: className, name: name, scriptName: scriptName, workflowName: workflowName)); }
 
 /// The discriminator value identifying this variant.
 String get type;
@@ -134,6 +134,39 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is WorkersBindingItem$Unknown;
 
+R when<R>({required R Function(WorkersBindingItemAi) ai, required R Function(WorkersBindingItemAnalyticsEngine) analyticsEngine, required R Function(WorkersBindingItemAssets) assets, required R Function(WorkersBindingItemBrowser) browser, required R Function(WorkersBindingItemD1) d1, required R Function(WorkersBindingItemDataBlob) dataBlob, required R Function(WorkersBindingItemDispatchNamespace) dispatchNamespace, required R Function(WorkersBindingItemDurableObjectNamespace) durableObjectNamespace, required R Function(WorkersBindingItemHyperdrive) hyperdrive, required R Function(WorkersBindingItemImages) images, required R Function(WorkersBindingItemInherit) inherit, required R Function(WorkersBindingItemJson) json, required R Function(WorkersBindingItemKvNamespace) kvNamespace, required R Function(WorkersBindingItemMtlsCertificate) mtlsCertificate, required R Function(WorkersBindingItemPipelines) pipelines, required R Function(WorkersBindingItemPlainText) plainText, required R Function(WorkersBindingItemQueue) queue, required R Function(WorkersBindingItemR2Bucket) r2Bucket, required R Function(WorkersBindingItemRatelimit) ratelimit, required R Function(WorkersBindingItemSecretKey) secretKey, required R Function(WorkersBindingItemSecretText) secretText, required R Function(WorkersBindingItemSecretsStoreSecret) secretsStoreSecret, required R Function(WorkersBindingItemSendEmail) sendEmail, required R Function(WorkersBindingItemService) service, required R Function(WorkersBindingItemTextBlob) textBlob, required R Function(WorkersBindingItemVectorize) vectorize, required R Function(WorkersBindingItemVersionMetadata) versionMetadata, required R Function(WorkersBindingItemVpcService) vpcService, required R Function(WorkersBindingItemWasmModule) wasmModule, required R Function(WorkersBindingItemWorkflow) workflow, required R Function(WorkersBindingItem$Unknown) unknown, }) { return switch (this) {
+  final WorkersBindingItemAi v => ai(v),
+  final WorkersBindingItemAnalyticsEngine v => analyticsEngine(v),
+  final WorkersBindingItemAssets v => assets(v),
+  final WorkersBindingItemBrowser v => browser(v),
+  final WorkersBindingItemD1 v => d1(v),
+  final WorkersBindingItemDataBlob v => dataBlob(v),
+  final WorkersBindingItemDispatchNamespace v => dispatchNamespace(v),
+  final WorkersBindingItemDurableObjectNamespace v => durableObjectNamespace(v),
+  final WorkersBindingItemHyperdrive v => hyperdrive(v),
+  final WorkersBindingItemImages v => images(v),
+  final WorkersBindingItemInherit v => inherit(v),
+  final WorkersBindingItemJson v => json(v),
+  final WorkersBindingItemKvNamespace v => kvNamespace(v),
+  final WorkersBindingItemMtlsCertificate v => mtlsCertificate(v),
+  final WorkersBindingItemPipelines v => pipelines(v),
+  final WorkersBindingItemPlainText v => plainText(v),
+  final WorkersBindingItemQueue v => queue(v),
+  final WorkersBindingItemR2Bucket v => r2Bucket(v),
+  final WorkersBindingItemRatelimit v => ratelimit(v),
+  final WorkersBindingItemSecretKey v => secretKey(v),
+  final WorkersBindingItemSecretText v => secretText(v),
+  final WorkersBindingItemSecretsStoreSecret v => secretsStoreSecret(v),
+  final WorkersBindingItemSendEmail v => sendEmail(v),
+  final WorkersBindingItemService v => service(v),
+  final WorkersBindingItemTextBlob v => textBlob(v),
+  final WorkersBindingItemVectorize v => vectorize(v),
+  final WorkersBindingItemVersionMetadata v => versionMetadata(v),
+  final WorkersBindingItemVpcService v => vpcService(v),
+  final WorkersBindingItemWasmModule v => wasmModule(v),
+  final WorkersBindingItemWorkflow v => workflow(v),
+  final WorkersBindingItem$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class WorkersBindingItemAi extends WorkersBindingItem {const WorkersBindingItemAi(this.workersBindingKindAi);
 

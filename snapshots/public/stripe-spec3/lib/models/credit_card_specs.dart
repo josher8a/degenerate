@@ -137,6 +137,6 @@ CreditCardSpecs copyWith({String? Function()? addressCity, String? Function()? a
 
 @override int get hashCode => Object.hash(addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, currency, cvc, expMonth, expYear, name, networks, number);
 
-@override String toString() => 'CreditCardSpecs(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, currency: $currency, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, name: $name, networks: $networks, number: $number)';
+@override String toString() => 'CreditCardSpecs(\n  addressCity: $addressCity,\n  addressCountry: $addressCountry,\n  addressLine1: $addressLine1,\n  addressLine2: $addressLine2,\n  addressState: $addressState,\n  addressZip: $addressZip,\n  currency: $currency,\n  cvc: $cvc,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  name: $name,\n  networks: $networks,\n  number: $number,\n)';
 
  }

@@ -102,6 +102,6 @@ OrganizationProgrammaticAccessGrant copyWith({int? id, SimpleUser? owner, Organi
 
 @override int get hashCode => Object.hash(id, owner, repositorySelection, repositoriesUrl, permissions, accessGrantedAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt);
 
-@override String toString() => 'OrganizationProgrammaticAccessGrant(id: $id, owner: $owner, repositorySelection: $repositorySelection, repositoriesUrl: $repositoriesUrl, permissions: $permissions, accessGrantedAt: $accessGrantedAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)';
+@override String toString() => 'OrganizationProgrammaticAccessGrant(\n  id: $id,\n  owner: $owner,\n  repositorySelection: $repositorySelection,\n  repositoriesUrl: $repositoriesUrl,\n  permissions: $permissions,\n  accessGrantedAt: $accessGrantedAt,\n  tokenId: $tokenId,\n  tokenName: $tokenName,\n  tokenExpired: $tokenExpired,\n  tokenExpiresAt: $tokenExpiresAt,\n  tokenLastUsedAt: $tokenLastUsedAt,\n)';
 
  }

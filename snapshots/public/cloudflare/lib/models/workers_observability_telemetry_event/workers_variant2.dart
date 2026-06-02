@@ -104,6 +104,6 @@ WorkersVariant2 copyWith({double? cpuTimeMs, List<DiagnosticsChannelEvents>? Fun
 
 @override int get hashCode => Object.hash(cpuTimeMs, Object.hashAll(diagnosticsChannelEvents ?? const []), dispatchNamespace, durableObjectId, entrypoint, event, eventType, executionModel, outcome, requestId, scriptName, scriptVersion, truncated, wallTimeMs);
 
-@override String toString() => 'WorkersVariant2(cpuTimeMs: $cpuTimeMs, diagnosticsChannelEvents: $diagnosticsChannelEvents, dispatchNamespace: $dispatchNamespace, durableObjectId: $durableObjectId, entrypoint: $entrypoint, event: $event, eventType: $eventType, executionModel: $executionModel, outcome: $outcome, requestId: $requestId, scriptName: $scriptName, scriptVersion: $scriptVersion, truncated: $truncated, wallTimeMs: $wallTimeMs)';
+@override String toString() => 'WorkersVariant2(\n  cpuTimeMs: $cpuTimeMs,\n  diagnosticsChannelEvents: $diagnosticsChannelEvents,\n  dispatchNamespace: $dispatchNamespace,\n  durableObjectId: $durableObjectId,\n  entrypoint: $entrypoint,\n  event: $event,\n  eventType: $eventType,\n  executionModel: $executionModel,\n  outcome: $outcome,\n  requestId: $requestId,\n  scriptName: $scriptName,\n  scriptVersion: $scriptVersion,\n  truncated: $truncated,\n  wallTimeMs: $wallTimeMs,\n)';
 
  }

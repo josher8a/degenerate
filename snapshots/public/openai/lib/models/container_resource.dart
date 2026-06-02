@@ -85,6 +85,6 @@ ContainerResource copyWith({String? id, String? object, String? name, int? creat
 
 @override int get hashCode => Object.hash(id, object, name, createdAt, status, lastActiveAt, expiresAfter, memoryLimit, networkPolicy);
 
-@override String toString() => 'ContainerResource(id: $id, object: $object, name: $name, createdAt: $createdAt, status: $status, lastActiveAt: $lastActiveAt, expiresAfter: $expiresAfter, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy)';
+@override String toString() => 'ContainerResource(\n  id: $id,\n  object: $object,\n  name: $name,\n  createdAt: $createdAt,\n  status: $status,\n  lastActiveAt: $lastActiveAt,\n  expiresAfter: $expiresAfter,\n  memoryLimit: $memoryLimit,\n  networkPolicy: $networkPolicy,\n)';
 
  }

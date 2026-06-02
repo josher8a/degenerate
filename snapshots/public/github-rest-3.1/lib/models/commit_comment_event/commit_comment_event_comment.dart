@@ -93,6 +93,6 @@ CommitCommentEventComment copyWith({Uri? Function()? htmlUrl, Uri? Function()? u
 
 @override int get hashCode => Object.hash(htmlUrl, url, id, nodeId, body, path, position, line, commitId, user, createdAt, updatedAt, reactions);
 
-@override String toString() => 'CommitCommentEventComment(htmlUrl: $htmlUrl, url: $url, id: $id, nodeId: $nodeId, body: $body, path: $path, position: $position, line: $line, commitId: $commitId, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, reactions: $reactions)';
+@override String toString() => 'CommitCommentEventComment(\n  htmlUrl: $htmlUrl,\n  url: $url,\n  id: $id,\n  nodeId: $nodeId,\n  body: $body,\n  path: $path,\n  position: $position,\n  line: $line,\n  commitId: $commitId,\n  user: $user,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  reactions: $reactions,\n)';
 
  }

@@ -39,7 +39,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AigConfigCreateProvidersResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AigConfigListProvidersError.fromResponse(response),
+  onError: AigConfigListProvidersError.fromResponse,
 );
  } 
 /// Create a new Provider Configs
@@ -64,7 +64,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigCreateProvidersError.fromResponse(response),
+  onError: AigConfigCreateProvidersError.fromResponse,
 );
  } 
 /// Update a Provider Configs
@@ -89,7 +89,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigUpdateProvidersError.fromResponse(response),
+  onError: AigConfigUpdateProvidersError.fromResponse,
 );
  } 
 /// Delete a Provider Configs
@@ -112,7 +112,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigDeleteProvidersError.fromResponse(response),
+  onError: AigConfigDeleteProvidersError.fromResponse,
 );
  } 
  }

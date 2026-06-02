@@ -178,6 +178,6 @@ RepositoryRuleset copyWith({int? id, String? name, ReposCreateOrgRulesetRequestT
 
 @override int get hashCode => Object.hash(id, name, target, sourceType, source, enforcement, Object.hashAll(bypassActors ?? const []), currentUserCanBypass, nodeId, links, conditions, Object.hashAll(rules ?? const []), createdAt, updatedAt);
 
-@override String toString() => 'RepositoryRuleset(id: $id, name: $name, target: $target, sourceType: $sourceType, source: $source, enforcement: $enforcement, bypassActors: $bypassActors, currentUserCanBypass: $currentUserCanBypass, nodeId: $nodeId, links: $links, conditions: $conditions, rules: $rules, createdAt: $createdAt, updatedAt: $updatedAt)';
+@override String toString() => 'RepositoryRuleset(\n  id: $id,\n  name: $name,\n  target: $target,\n  sourceType: $sourceType,\n  source: $source,\n  enforcement: $enforcement,\n  bypassActors: $bypassActors,\n  currentUserCanBypass: $currentUserCanBypass,\n  nodeId: $nodeId,\n  links: $links,\n  conditions: $conditions,\n  rules: $rules,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
  }

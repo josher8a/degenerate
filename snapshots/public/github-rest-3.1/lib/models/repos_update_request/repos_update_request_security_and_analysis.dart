@@ -92,6 +92,6 @@ ReposUpdateRequestSecurityAndAnalysis copyWith({ReposUpdateRequestSecurityAndAna
 
 @override int get hashCode => Object.hash(advancedSecurity, codeSecurity, secretScanning, secretScanningPushProtection, secretScanningAiDetection, secretScanningNonProviderPatterns, secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions);
 
-@override String toString() => 'ReposUpdateRequestSecurityAndAnalysis(advancedSecurity: $advancedSecurity, codeSecurity: $codeSecurity, secretScanning: $secretScanning, secretScanningPushProtection: $secretScanningPushProtection, secretScanningAiDetection: $secretScanningAiDetection, secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns, secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass: $secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions)';
+@override String toString() => 'ReposUpdateRequestSecurityAndAnalysis(\n  advancedSecurity: $advancedSecurity,\n  codeSecurity: $codeSecurity,\n  secretScanning: $secretScanning,\n  secretScanningPushProtection: $secretScanningPushProtection,\n  secretScanningAiDetection: $secretScanningAiDetection,\n  secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns,\n  secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal,\n  secretScanningDelegatedBypass: $secretScanningDelegatedBypass,\n  secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions,\n)';
 
  }

@@ -43,7 +43,7 @@ return execute(
   onSuccess: (response) {
     return LogoMatch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionQueriesError.fromResponse,
 );
  } 
 /// Download matches for logo queries by ID
@@ -81,7 +81,7 @@ return execute(
   onSuccess: (response) {
     return LogoMatch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionQueriesError.fromResponse,
 );
  } 
 /// Read all saved logo queries
@@ -101,7 +101,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Create new saved logo queries from image files
@@ -142,7 +142,7 @@ return execute(
   onSuccess: (response) {
     return Logo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsBrandProtectionQueriesError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionQueriesError.fromResponse,
 );
  } 
 /// Read saved logo queries by ID
@@ -162,7 +162,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Delete saved logo queries by ID
@@ -182,7 +182,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Create new logo queries from image files
@@ -202,7 +202,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Create new logo queries from URLs
@@ -222,7 +222,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
 /// Internal route for testing signed URLs
@@ -240,7 +240,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => DeleteAccountsBrandProtectionBrandsError.fromResponse(response),
+  onError: DeleteAccountsBrandProtectionBrandsError.fromResponse,
 );
  } 
  }

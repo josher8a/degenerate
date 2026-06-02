@@ -42,7 +42,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AigConfigCreateGatewayResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AigConfigListGatewayError.fromResponse(response),
+  onError: AigConfigListGatewayError.fromResponse,
 );
  } 
 /// Create a new Gateway
@@ -67,7 +67,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateGatewayResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigCreateGatewayError.fromResponse(response),
+  onError: AigConfigCreateGatewayError.fromResponse,
 );
  } 
 /// Get Gateway URL
@@ -90,7 +90,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String;
   },
-  onError: (response) => AigConfigGetGatewayUrlError.fromResponse(response),
+  onError: AigConfigGetGatewayUrlError.fromResponse,
 );
  } 
 /// Fetch a Gateway
@@ -113,7 +113,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateGatewayResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigFetchGatewayError.fromResponse(response),
+  onError: AigConfigFetchGatewayError.fromResponse,
 );
  } 
 /// Update a Gateway
@@ -138,7 +138,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateGatewayResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigUpdateGatewayError.fromResponse(response),
+  onError: AigConfigUpdateGatewayError.fromResponse,
 );
  } 
 /// Delete a Gateway
@@ -161,7 +161,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigCreateGatewayResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigDeleteGatewayError.fromResponse(response),
+  onError: AigConfigDeleteGatewayError.fromResponse,
 );
  } 
  }

@@ -56,9 +56,9 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'pull_request_url': pullRequestUrl.toString(),
   'state': state,
-  'submitted_at': submittedAt != null ? submittedAt?.toIso8601String() : null,
+  'submitted_at': submittedAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
       json.containsKey('author_association') &&
@@ -102,6 +102,6 @@ WebhooksReview copyWith({WebhooksReviewLinks? links, AuthorAssociation? authorAs
 
 @override int get hashCode => Object.hash(links, authorAssociation, body, commitId, htmlUrl, id, nodeId, pullRequestUrl, state, submittedAt, updatedAt, user);
 
-@override String toString() => 'WebhooksReview(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, pullRequestUrl: $pullRequestUrl, state: $state, submittedAt: $submittedAt, updatedAt: $updatedAt, user: $user)';
+@override String toString() => 'WebhooksReview(\n  links: $links,\n  authorAssociation: $authorAssociation,\n  body: $body,\n  commitId: $commitId,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  nodeId: $nodeId,\n  pullRequestUrl: $pullRequestUrl,\n  state: $state,\n  submittedAt: $submittedAt,\n  updatedAt: $updatedAt,\n  user: $user,\n)';
 
  }

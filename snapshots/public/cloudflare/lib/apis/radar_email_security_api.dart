@@ -71,7 +71,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/security/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/email/security/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -84,7 +84,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer3SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEmailSecuritySummaryError.fromResponse(response),
+  onError: RadarGetEmailSecuritySummaryError.fromResponse,
 );
  } 
 /// Get email security time series grouped by dimension
@@ -153,7 +153,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/security/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/email/security/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -166,7 +166,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEmailSecurityTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetEmailSecurityTimeseriesGroupError.fromResponse,
 );
  } 
 /// Get top TLDs by email message volume
@@ -248,7 +248,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEmailSecurityTopTldsByMaliciousResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEmailSecurityTopTldsByMessagesError.fromResponse(response),
+  onError: RadarGetEmailSecurityTopTldsByMessagesError.fromResponse,
 );
  } 
 /// Get top TLDs by email malicious classification
@@ -317,7 +317,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/security/top/tlds/malicious/${Uri.encodeComponent('${malicious.toJson()}')}',
+  path: '/radar/email/security/top/tlds/malicious/${Uri.encodeComponent(malicious.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -330,7 +330,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEmailSecurityTopTldsByMaliciousResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEmailSecurityTopTldsByMaliciousError.fromResponse(response),
+  onError: RadarGetEmailSecurityTopTldsByMaliciousError.fromResponse,
 );
  } 
 /// Get top TLDs by email spam classification
@@ -399,7 +399,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/security/top/tlds/spam/${Uri.encodeComponent('${spam.toJson()}')}',
+  path: '/radar/email/security/top/tlds/spam/${Uri.encodeComponent(spam.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -412,7 +412,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEmailSecurityTopTldsByMaliciousResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEmailSecurityTopTldsBySpamError.fromResponse(response),
+  onError: RadarGetEmailSecurityTopTldsBySpamError.fromResponse,
 );
  } 
 /// Get top TLDs by email spoof classification
@@ -481,7 +481,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/email/security/top/tlds/spoof/${Uri.encodeComponent('${spoof.toJson()}')}',
+  path: '/radar/email/security/top/tlds/spoof/${Uri.encodeComponent(spoof.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -494,7 +494,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetEmailSecurityTopTldsByMaliciousResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetEmailSecurityTopTldsBySpoofError.fromResponse(response),
+  onError: RadarGetEmailSecurityTopTldsBySpoofError.fromResponse,
 );
  } 
  }

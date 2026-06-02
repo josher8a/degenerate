@@ -148,6 +148,6 @@ PaymentMethodDetailsCardPresentReceipt copyWith({PaymentMethodDetailsCardPresent
 
 @override int get hashCode => Object.hash(accountType, applicationCryptogram, applicationPreferredName, authorizationCode, authorizationResponseCode, cardholderVerificationMethod, dedicatedFileName, terminalVerificationResults, transactionStatusInformation);
 
-@override String toString() => 'PaymentMethodDetailsCardPresentReceipt(accountType: $accountType, applicationCryptogram: $applicationCryptogram, applicationPreferredName: $applicationPreferredName, authorizationCode: $authorizationCode, authorizationResponseCode: $authorizationResponseCode, cardholderVerificationMethod: $cardholderVerificationMethod, dedicatedFileName: $dedicatedFileName, terminalVerificationResults: $terminalVerificationResults, transactionStatusInformation: $transactionStatusInformation)';
+@override String toString() => 'PaymentMethodDetailsCardPresentReceipt(\n  accountType: $accountType,\n  applicationCryptogram: $applicationCryptogram,\n  applicationPreferredName: $applicationPreferredName,\n  authorizationCode: $authorizationCode,\n  authorizationResponseCode: $authorizationResponseCode,\n  cardholderVerificationMethod: $cardholderVerificationMethod,\n  dedicatedFileName: $dedicatedFileName,\n  terminalVerificationResults: $terminalVerificationResults,\n  transactionStatusInformation: $transactionStatusInformation,\n)';
 
  }

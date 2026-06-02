@@ -79,9 +79,9 @@ Map<String, dynamic> toJson() { return {
   'content': ?content,
   'sha': sha,
   'url': url.toString(),
-  'git_url': gitUrl != null ? gitUrl?.toString() : null,
-  'html_url': htmlUrl != null ? htmlUrl?.toString() : null,
-  'download_url': downloadUrl != null ? downloadUrl?.toString() : null,
+  'git_url': gitUrl?.toString(),
+  'html_url': htmlUrl?.toString(),
+  'download_url': downloadUrl?.toString(),
   '_links': links.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
@@ -123,6 +123,6 @@ ContentDirectory2 copyWith({ContentDirectoryType? type, int? size, String? name,
 
 @override int get hashCode => Object.hash(type, size, name, path, content, sha, url, gitUrl, htmlUrl, downloadUrl, links);
 
-@override String toString() => 'ContentDirectory2(type: $type, size: $size, name: $name, path: $path, content: $content, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)';
+@override String toString() => 'ContentDirectory2(\n  type: $type,\n  size: $size,\n  name: $name,\n  path: $path,\n  content: $content,\n  sha: $sha,\n  url: $url,\n  gitUrl: $gitUrl,\n  htmlUrl: $htmlUrl,\n  downloadUrl: $downloadUrl,\n  links: $links,\n)';
 
  }

@@ -134,6 +134,6 @@ MagicIpsecTunnel copyWith({MagicAllowNullCipher? Function()? allowNullCipher, Ma
 
 @override int get hashCode => Object.hash(allowNullCipher, automaticReturnRouting, bgp, bgpStatus, cloudflareEndpoint, createdOn, customRemoteIdentities, customerEndpoint, description, healthCheck, id, interfaceAddress, interfaceAddress6, modifiedOn, name, pskMetadata, replayProtection);
 
-@override String toString() => 'MagicIpsecTunnel(allowNullCipher: $allowNullCipher, automaticReturnRouting: $automaticReturnRouting, bgp: $bgp, bgpStatus: $bgpStatus, cloudflareEndpoint: $cloudflareEndpoint, createdOn: $createdOn, customRemoteIdentities: $customRemoteIdentities, customerEndpoint: $customerEndpoint, description: $description, healthCheck: $healthCheck, id: $id, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, modifiedOn: $modifiedOn, name: $name, pskMetadata: $pskMetadata, replayProtection: $replayProtection)';
+@override String toString() => 'MagicIpsecTunnel(\n  allowNullCipher: $allowNullCipher,\n  automaticReturnRouting: $automaticReturnRouting,\n  bgp: $bgp,\n  bgpStatus: $bgpStatus,\n  cloudflareEndpoint: $cloudflareEndpoint,\n  createdOn: $createdOn,\n  customRemoteIdentities: $customRemoteIdentities,\n  customerEndpoint: $customerEndpoint,\n  description: $description,\n  healthCheck: $healthCheck,\n  id: $id,\n  interfaceAddress: $interfaceAddress,\n  interfaceAddress6: $interfaceAddress6,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  pskMetadata: $pskMetadata,\n  replayProtection: $replayProtection,\n)';
 
  }

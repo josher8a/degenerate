@@ -167,6 +167,6 @@ PostInvoicesCreatePreviewRequest copyWith({PostCheckoutSessionsRequestAutomaticT
 
 @override int get hashCode => Object.hash(automaticTax, currency, customer, customerAccount, customerDetails, discounts, Object.hashAll(expand ?? const []), Object.hashAll(invoiceItems ?? const []), issuer, onBehalfOf, previewMode, schedule, scheduleDetails, subscription, subscriptionDetails);
 
-@override String toString() => 'PostInvoicesCreatePreviewRequest(automaticTax: $automaticTax, currency: $currency, customer: $customer, customerAccount: $customerAccount, customerDetails: $customerDetails, discounts: $discounts, expand: $expand, invoiceItems: $invoiceItems, issuer: $issuer, onBehalfOf: $onBehalfOf, previewMode: $previewMode, schedule: $schedule, scheduleDetails: $scheduleDetails, subscription: $subscription, subscriptionDetails: $subscriptionDetails)';
+@override String toString() => 'PostInvoicesCreatePreviewRequest(\n  automaticTax: $automaticTax,\n  currency: $currency,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  customerDetails: $customerDetails,\n  discounts: $discounts,\n  expand: $expand,\n  invoiceItems: $invoiceItems,\n  issuer: $issuer,\n  onBehalfOf: $onBehalfOf,\n  previewMode: $previewMode,\n  schedule: $schedule,\n  scheduleDetails: $scheduleDetails,\n  subscription: $subscription,\n  subscriptionDetails: $subscriptionDetails,\n)';
 
  }

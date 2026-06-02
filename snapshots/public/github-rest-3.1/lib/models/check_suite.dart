@@ -113,16 +113,16 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'head_branch': headBranch,
   'head_sha': headSha,
-  'status': status != null ? status?.toJson() : null,
-  'conclusion': conclusion != null ? conclusion?.toJson() : null,
+  'status': status?.toJson(),
+  'conclusion': conclusion?.toJson(),
   'url': url,
   'before': before,
   'after': after,
-  'pull_requests': pullRequests != null ? pullRequests?.map((e) => e.toJson()).toList() : null,
-  'app': app != null ? app?.toJson() : null,
+  'pull_requests': pullRequests?.map((e) => e.toJson()).toList(),
+  'app': app?.toJson(),
   'repository': repository.toJson(),
-  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
-  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
+  'created_at': createdAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
   'head_commit': headCommit.toJson(),
   'latest_check_runs_count': latestCheckRunsCount,
   'check_runs_url': checkRunsUrl,
@@ -191,6 +191,6 @@ CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, St
 
 @override int get hashCode => Object.hash(id, nodeId, headBranch, headSha, status, conclusion, url, before, after, Object.hashAll(pullRequests ?? const []), app, repository, createdAt, updatedAt, headCommit, latestCheckRunsCount, checkRunsUrl, rerequestable, runsRerequestable);
 
-@override String toString() => 'CheckSuite(id: $id, nodeId: $nodeId, headBranch: $headBranch, headSha: $headSha, status: $status, conclusion: $conclusion, url: $url, before: $before, after: $after, pullRequests: $pullRequests, app: $app, repository: $repository, createdAt: $createdAt, updatedAt: $updatedAt, headCommit: $headCommit, latestCheckRunsCount: $latestCheckRunsCount, checkRunsUrl: $checkRunsUrl, rerequestable: $rerequestable, runsRerequestable: $runsRerequestable)';
+@override String toString() => 'CheckSuite(\n  id: $id,\n  nodeId: $nodeId,\n  headBranch: $headBranch,\n  headSha: $headSha,\n  status: $status,\n  conclusion: $conclusion,\n  url: $url,\n  before: $before,\n  after: $after,\n  pullRequests: $pullRequests,\n  app: $app,\n  repository: $repository,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  headCommit: $headCommit,\n  latestCheckRunsCount: $latestCheckRunsCount,\n  checkRunsUrl: $checkRunsUrl,\n  rerequestable: $rerequestable,\n  runsRerequestable: $runsRerequestable,\n)';
 
  }

@@ -69,6 +69,6 @@ ListOutgoingCallerIdResponse copyWith({List<AccountOutgoingCallerId>? Function()
 
 @override int get hashCode => Object.hash(Object.hashAll(outgoingCallerIds ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
 
-@override String toString() => 'ListOutgoingCallerIdResponse(outgoingCallerIds: $outgoingCallerIds, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+@override String toString() => 'ListOutgoingCallerIdResponse(\n  outgoingCallerIds: $outgoingCallerIds,\n  end: $end,\n  firstPageUri: $firstPageUri,\n  nextPageUri: $nextPageUri,\n  page: $page,\n  pageSize: $pageSize,\n  previousPageUri: $previousPageUri,\n  start: $start,\n  uri: $uri,\n)';
 
  }

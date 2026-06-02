@@ -93,6 +93,6 @@ CodeScanningCodeqlDatabase copyWith({int? id, String? name, String? language, Si
 
 @override int get hashCode => Object.hash(id, name, language, uploader, contentType, size, createdAt, updatedAt, url, commitOid);
 
-@override String toString() => 'CodeScanningCodeqlDatabase(id: $id, name: $name, language: $language, uploader: $uploader, contentType: $contentType, size: $size, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, commitOid: $commitOid)';
+@override String toString() => 'CodeScanningCodeqlDatabase(\n  id: $id,\n  name: $name,\n  language: $language,\n  uploader: $uploader,\n  contentType: $contentType,\n  size: $size,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  url: $url,\n  commitOid: $commitOid,\n)';
 
  }

@@ -29,7 +29,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/routing/rules',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -54,7 +54,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/routing/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -77,7 +77,7 @@ Future<ApiResult<EmailRuleProperties?, Never>> emailRoutingRulesGetRoutingRule({
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules/${Uri.encodeComponent(ruleIdentifier.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/routing/rules/${Uri.encodeComponent(ruleIdentifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -100,7 +100,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules/${Uri.encodeComponent(ruleIdentifier.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/routing/rules/${Uri.encodeComponent(ruleIdentifier.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -123,7 +123,7 @@ Future<ApiResult<EmailRuleProperties?, Never>> emailRoutingRulesDeleteRoutingRul
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules/${Uri.encodeComponent(ruleIdentifier.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/routing/rules/${Uri.encodeComponent(ruleIdentifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -145,7 +145,7 @@ Future<ApiResult<EmailCatchAllRule?, Never>> emailRoutingRulesGetCatchAllRule({r
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules/catch_all',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/routing/rules/catch_all',
   headers: headers,
   options: options,
 );
@@ -168,7 +168,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/email/routing/rules/catch_all',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/email/routing/rules/catch_all',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

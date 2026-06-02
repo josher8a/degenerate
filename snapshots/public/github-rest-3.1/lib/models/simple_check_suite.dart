@@ -101,6 +101,6 @@ SimpleCheckSuite copyWith({String? Function()? after, Integration? Function()? a
 
 @override int get hashCode => Object.hash(after, app, before, conclusion, createdAt, headBranch, headSha, id, nodeId, Object.hashAll(pullRequests ?? const []), repository, status, updatedAt, url);
 
-@override String toString() => 'SimpleCheckSuite(after: $after, app: $app, before: $before, conclusion: $conclusion, createdAt: $createdAt, headBranch: $headBranch, headSha: $headSha, id: $id, nodeId: $nodeId, pullRequests: $pullRequests, repository: $repository, status: $status, updatedAt: $updatedAt, url: $url)';
+@override String toString() => 'SimpleCheckSuite(\n  after: $after,\n  app: $app,\n  before: $before,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  headBranch: $headBranch,\n  headSha: $headSha,\n  id: $id,\n  nodeId: $nodeId,\n  pullRequests: $pullRequests,\n  repository: $repository,\n  status: $status,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
  }

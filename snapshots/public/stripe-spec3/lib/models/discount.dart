@@ -140,6 +140,6 @@ Discount copyWith({String? Function()? checkoutSession, BankAccountCustomer? Fun
 
 @override int get hashCode => Object.hash(checkoutSession, customer, customerAccount, end, id, invoice, invoiceItem, object, promotionCode, source, start, subscription, subscriptionItem);
 
-@override String toString() => 'Discount(checkoutSession: $checkoutSession, customer: $customer, customerAccount: $customerAccount, end: $end, id: $id, invoice: $invoice, invoiceItem: $invoiceItem, object: $object, promotionCode: $promotionCode, source: $source, start: $start, subscription: $subscription, subscriptionItem: $subscriptionItem)';
+@override String toString() => 'Discount(\n  checkoutSession: $checkoutSession,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  end: $end,\n  id: $id,\n  invoice: $invoice,\n  invoiceItem: $invoiceItem,\n  object: $object,\n  promotionCode: $promotionCode,\n  source: $source,\n  start: $start,\n  subscription: $subscription,\n  subscriptionItem: $subscriptionItem,\n)';
 
  }

@@ -28,7 +28,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? PayPerCrawlStripeConnection.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => PayPerCrawlCrawlerCreateStripeConfigError.fromResponse(response),
+  onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
  } 
 /// Creates the stripe config for a crawler
@@ -51,7 +51,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? PayPerCrawlStripeConnectResp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => PayPerCrawlCrawlerCreateStripeConfigError.fromResponse(response),
+  onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
  } 
 /// Deletes the stripe config for a crawler
@@ -73,7 +73,7 @@ return execute(
   onSuccess: (response) {
     return NoResultResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PayPerCrawlCrawlerCreateStripeConfigError.fromResponse(response),
+  onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
  } 
 /// Gets the stripe config for a publisher
@@ -96,7 +96,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? PayPerCrawlStripeConnection.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => PayPerCrawlCrawlerCreateStripeConfigError.fromResponse(response),
+  onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
  } 
 /// Creates the stripe config for a publisher
@@ -119,7 +119,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? PayPerCrawlStripeConnectResp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => PayPerCrawlCrawlerCreateStripeConfigError.fromResponse(response),
+  onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
  } 
 /// Deletes the stripe config for a publisher
@@ -141,7 +141,7 @@ return execute(
   onSuccess: (response) {
     return NoResultResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PayPerCrawlCrawlerCreateStripeConfigError.fromResponse(response),
+  onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
  } 
  }

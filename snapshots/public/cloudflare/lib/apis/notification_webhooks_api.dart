@@ -17,7 +17,7 @@ Future<ApiResult<List<AaaWebhooks>?, Never>> notificationWebhooksListWebhooks({r
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/webhooks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/destinations/webhooks',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/webhooks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/destinations/webhooks',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<AaaWebhooks?, Never>> notificationWebhooksGetAWebhook({required
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/webhooks/${Uri.encodeComponent(webhookId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/destinations/webhooks/${Uri.encodeComponent(webhookId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/webhooks/${Uri.encodeComponent(webhookId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/destinations/webhooks/${Uri.encodeComponent(webhookId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<ResponseCommon2, Never>> notificationWebhooksDeleteAWebhook({re
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/destinations/webhooks/${Uri.encodeComponent(webhookId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/destinations/webhooks/${Uri.encodeComponent(webhookId.toJson())}',
   headers: headers,
   options: options,
 );

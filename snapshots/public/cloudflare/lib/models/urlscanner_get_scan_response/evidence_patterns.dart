@@ -85,6 +85,6 @@ EvidencePatterns copyWith({int? confidence, List<String>? excludes, List<String>
 
 @override int get hashCode => Object.hash(confidence, Object.hashAll(excludes), Object.hashAll(implies), match, name, regex, type, value, version);
 
-@override String toString() => 'EvidencePatterns(confidence: $confidence, excludes: $excludes, implies: $implies, match: $match, name: $name, regex: $regex, type: $type, value: $value, version: $version)';
+@override String toString() => 'EvidencePatterns(\n  confidence: $confidence,\n  excludes: $excludes,\n  implies: $implies,\n  match: $match,\n  name: $name,\n  regex: $regex,\n  type: $type,\n  value: $value,\n  version: $version,\n)';
 
  }

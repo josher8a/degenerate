@@ -69,6 +69,6 @@ BuildsUpsertRepoConnectionResponse copyWith({BuildsCreatedOn? Function()? create
 
 @override int get hashCode => Object.hash(createdOn, deletedOn, modifiedOn, providerAccountId, providerAccountName, providerType, repoConnectionUuid, repoId, repoName);
 
-@override String toString() => 'BuildsUpsertRepoConnectionResponse(createdOn: $createdOn, deletedOn: $deletedOn, modifiedOn: $modifiedOn, providerAccountId: $providerAccountId, providerAccountName: $providerAccountName, providerType: $providerType, repoConnectionUuid: $repoConnectionUuid, repoId: $repoId, repoName: $repoName)';
+@override String toString() => 'BuildsUpsertRepoConnectionResponse(\n  createdOn: $createdOn,\n  deletedOn: $deletedOn,\n  modifiedOn: $modifiedOn,\n  providerAccountId: $providerAccountId,\n  providerAccountName: $providerAccountName,\n  providerType: $providerType,\n  repoConnectionUuid: $repoConnectionUuid,\n  repoId: $repoId,\n  repoName: $repoName,\n)';
 
  }

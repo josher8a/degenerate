@@ -133,6 +133,6 @@ RuleSuite copyWith({int? Function()? id, int? Function()? actorId, String? Funct
 
 @override int get hashCode => Object.hash(id, actorId, actorName, beforeSha, afterSha, ref, repositoryId, repositoryName, pushedAt, result, evaluationResult, Object.hashAll(ruleEvaluations ?? const []));
 
-@override String toString() => 'RuleSuite(id: $id, actorId: $actorId, actorName: $actorName, beforeSha: $beforeSha, afterSha: $afterSha, ref: $ref, repositoryId: $repositoryId, repositoryName: $repositoryName, pushedAt: $pushedAt, result: $result, evaluationResult: $evaluationResult, ruleEvaluations: $ruleEvaluations)';
+@override String toString() => 'RuleSuite(\n  id: $id,\n  actorId: $actorId,\n  actorName: $actorName,\n  beforeSha: $beforeSha,\n  afterSha: $afterSha,\n  ref: $ref,\n  repositoryId: $repositoryId,\n  repositoryName: $repositoryName,\n  pushedAt: $pushedAt,\n  result: $result,\n  evaluationResult: $evaluationResult,\n  ruleEvaluations: $ruleEvaluations,\n)';
 
  }

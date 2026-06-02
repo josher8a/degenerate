@@ -76,6 +76,6 @@ Traces copyWith({List<String>? Function()? errors, String? rootSpanName, String?
 
 @override int get hashCode => Object.hash(Object.hashAll(errors ?? const []), rootSpanName, rootTransactionName, Object.hashAll(service), spans, traceDurationMs, traceEndMs, traceId, traceStartMs);
 
-@override String toString() => 'Traces(errors: $errors, rootSpanName: $rootSpanName, rootTransactionName: $rootTransactionName, service: $service, spans: $spans, traceDurationMs: $traceDurationMs, traceEndMs: $traceEndMs, traceId: $traceId, traceStartMs: $traceStartMs)';
+@override String toString() => 'Traces(\n  errors: $errors,\n  rootSpanName: $rootSpanName,\n  rootTransactionName: $rootTransactionName,\n  service: $service,\n  spans: $spans,\n  traceDurationMs: $traceDurationMs,\n  traceEndMs: $traceEndMs,\n  traceId: $traceId,\n  traceStartMs: $traceStartMs,\n)';
 
  }

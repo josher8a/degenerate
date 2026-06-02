@@ -99,6 +99,6 @@ DnsRecordsSshfpRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecor
 
 @override int get hashCode => Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, data, type);
 
-@override String toString() => 'DnsRecordsSshfpRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, data: $data, type: $type)';
+@override String toString() => 'DnsRecordsSshfpRecord(\n  comment: $comment,\n  name: $name,\n  proxied: $proxied,\n  settings: $settings,\n  tags: $tags,\n  ttl: $ttl,\n  content: $content,\n  data: $data,\n  type: $type,\n)';
 
  }

@@ -17,7 +17,7 @@ Future<ApiResult<Subscription2?, Never>> zoneSubscriptionDetails({required Ident
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/subscription',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/subscription',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/subscription',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/subscription',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -64,7 +64,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/subscription',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/subscription',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

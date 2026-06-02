@@ -29,7 +29,7 @@ return execute(
   onSuccess: (response) {
     return PostIndicatorTypeCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostIndicatorTypeCreateError.fromResponse(response),
+  onError: PostIndicatorTypeCreateError.fromResponse,
 );
  } 
  }

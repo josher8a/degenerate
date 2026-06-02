@@ -19,6 +19,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is AutoCodeInterpreterToolParamNetworkPolicy$Unknown;
 
+R when<R>({required R Function(AutoCodeInterpreterToolParamNetworkPolicyDisabled) disabled, required R Function(AutoCodeInterpreterToolParamNetworkPolicyAllowlist) allowlist, required R Function(AutoCodeInterpreterToolParamNetworkPolicy$Unknown) unknown, }) { return switch (this) {
+  final AutoCodeInterpreterToolParamNetworkPolicyDisabled v => disabled(v),
+  final AutoCodeInterpreterToolParamNetworkPolicyAllowlist v => allowlist(v),
+  final AutoCodeInterpreterToolParamNetworkPolicy$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class AutoCodeInterpreterToolParamNetworkPolicyDisabled extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicyDisabled(this.containerNetworkPolicyDisabledParam);
 

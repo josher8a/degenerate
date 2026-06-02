@@ -16,7 +16,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -37,7 +37,7 @@ Future<ApiResult<CloudforceOneRequestsRequestItem?, Never>> cloudforceOneRequest
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -60,7 +60,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -81,7 +81,7 @@ Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestDelete({required 
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -101,7 +101,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/asset',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toJson())}/asset',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -122,7 +122,7 @@ Future<ApiResult<List<CloudforceOneRequestsRequestAssetItem>?, Never>> cloudforc
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/asset/${Uri.encodeComponent(assetId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toJson())}/asset/${Uri.encodeComponent(assetId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -143,7 +143,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/asset/${Uri.encodeComponent(assetId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toJson())}/asset/${Uri.encodeComponent(assetId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -164,7 +164,7 @@ Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetDelete({requ
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/asset/${Uri.encodeComponent(assetId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toJson())}/asset/${Uri.encodeComponent(assetId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -183,7 +183,7 @@ Future<ApiResult<CloudforceOneRequestsRequestAssetItem?, Never>> cloudforceOneRe
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/asset/new',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toJson())}/asset/new',
   headers: headers,
   body: [
     if (body.source case final source$?)
@@ -209,7 +209,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/message',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toJson())}/message',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -231,7 +231,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/message/${Uri.encodeComponent(messageId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toJson())}/message/${Uri.encodeComponent(messageId.toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -252,7 +252,7 @@ Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestMessageDelete({re
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/message/${Uri.encodeComponent(messageId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toJson())}/message/${Uri.encodeComponent(messageId.toString())}',
   headers: headers,
   options: options,
 );
@@ -272,7 +272,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toString())}/message/new',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/${Uri.encodeComponent(requestId.toJson())}/message/new',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -293,7 +293,7 @@ Future<ApiResult<CloudforceOneRequestsRequestConstants?, Never>> cloudforceOneRe
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/constants',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/constants',
   headers: headers,
   options: options,
 );
@@ -316,7 +316,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/new',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/new',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -337,7 +337,7 @@ Future<ApiResult<CloudforceOneRequestsQuota?, Never>> cloudforceOneRequestQuota(
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/quota',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/quota',
   headers: headers,
   options: options,
 );
@@ -357,7 +357,7 @@ Future<ApiResult<List<String>?, Never>> cloudforceOneRequestTypes({required Clou
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/types',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/types',
   headers: headers,
   options: options,
 );

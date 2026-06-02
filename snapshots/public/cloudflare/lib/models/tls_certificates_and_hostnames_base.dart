@@ -141,6 +141,6 @@ TlsCertificatesAndHostnamesBase copyWith({DateTime? createdOn, TlsCertificatesAn
 
 @override int get hashCode => Object.hash(createdOn, enabled, host, id, modifiedOn, name, Object.hashAll(permissions), port, status, tunnel);
 
-@override String toString() => 'TlsCertificatesAndHostnamesBase(createdOn: $createdOn, enabled: $enabled, host: $host, id: $id, modifiedOn: $modifiedOn, name: $name, permissions: $permissions, port: $port, status: $status, tunnel: $tunnel)';
+@override String toString() => 'TlsCertificatesAndHostnamesBase(\n  createdOn: $createdOn,\n  enabled: $enabled,\n  host: $host,\n  id: $id,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  permissions: $permissions,\n  port: $port,\n  status: $status,\n  tunnel: $tunnel,\n)';
 
  }

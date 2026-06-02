@@ -79,6 +79,6 @@ AccessSaasProps copyWith({List<String>? Function()? allowedIdps, AccessAppLaunch
 
 @override int get hashCode => Object.hash(Object.hashAll(allowedIdps ?? const []), appLauncherVisible, autoRedirectToIdentity, Object.hashAll(customPages ?? const []), logoUrl, name, saasApp, scimConfig, Object.hashAll(tags ?? const []), type);
 
-@override String toString() => 'AccessSaasProps(allowedIdps: $allowedIdps, appLauncherVisible: $appLauncherVisible, autoRedirectToIdentity: $autoRedirectToIdentity, customPages: $customPages, logoUrl: $logoUrl, name: $name, saasApp: $saasApp, scimConfig: $scimConfig, tags: $tags, type: $type)';
+@override String toString() => 'AccessSaasProps(\n  allowedIdps: $allowedIdps,\n  appLauncherVisible: $appLauncherVisible,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  customPages: $customPages,\n  logoUrl: $logoUrl,\n  name: $name,\n  saasApp: $saasApp,\n  scimConfig: $scimConfig,\n  tags: $tags,\n  type: $type,\n)';
 
  }

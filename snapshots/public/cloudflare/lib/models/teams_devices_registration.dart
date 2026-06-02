@@ -120,6 +120,6 @@ TeamsDevicesRegistration copyWith({String? createdAt, String? Function()? delete
 
 @override int get hashCode => Object.hash(createdAt, deletedAt, device, id, key, keyType, lastSeenAt, policy, revokedAt, tunnelType, updatedAt, user);
 
-@override String toString() => 'TeamsDevicesRegistration(createdAt: $createdAt, deletedAt: $deletedAt, device: $device, id: $id, key: $key, keyType: $keyType, lastSeenAt: $lastSeenAt, policy: $policy, revokedAt: $revokedAt, tunnelType: $tunnelType, updatedAt: $updatedAt, user: $user)';
+@override String toString() => 'TeamsDevicesRegistration(\n  createdAt: $createdAt,\n  deletedAt: $deletedAt,\n  device: $device,\n  id: $id,\n  key: $key,\n  keyType: $keyType,\n  lastSeenAt: $lastSeenAt,\n  policy: $policy,\n  revokedAt: $revokedAt,\n  tunnelType: $tunnelType,\n  updatedAt: $updatedAt,\n  user: $user,\n)';
 
  }

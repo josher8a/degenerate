@@ -135,6 +135,6 @@ ScanPage copyWith({String? asn, String? asnLocationAlpha2, String? asnname, List
 
 @override int get hashCode => Object.hash(asn, asnLocationAlpha2, asnname, Object.hashAll(console), Object.hashAll(cookies), country, countryLocationAlpha2, domain, Object.hashAll(headers), ip, js, Object.hashAll(securityViolations), status, subdivision1Name, subdivision2name, url);
 
-@override String toString() => 'ScanPage(asn: $asn, asnLocationAlpha2: $asnLocationAlpha2, asnname: $asnname, console: $console, cookies: $cookies, country: $country, countryLocationAlpha2: $countryLocationAlpha2, domain: $domain, headers: $headers, ip: $ip, js: $js, securityViolations: $securityViolations, status: $status, subdivision1Name: $subdivision1Name, subdivision2name: $subdivision2name, url: $url)';
+@override String toString() => 'ScanPage(\n  asn: $asn,\n  asnLocationAlpha2: $asnLocationAlpha2,\n  asnname: $asnname,\n  console: $console,\n  cookies: $cookies,\n  country: $country,\n  countryLocationAlpha2: $countryLocationAlpha2,\n  domain: $domain,\n  headers: $headers,\n  ip: $ip,\n  js: $js,\n  securityViolations: $securityViolations,\n  status: $status,\n  subdivision1Name: $subdivision1Name,\n  subdivision2name: $subdivision2name,\n  url: $url,\n)';
 
  }

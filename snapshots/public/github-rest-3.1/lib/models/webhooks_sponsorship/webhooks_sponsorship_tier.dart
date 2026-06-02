@@ -76,6 +76,6 @@ WebhooksSponsorshipTier copyWith({String? createdAt, String? description, bool? 
 
 @override int get hashCode => Object.hash(createdAt, description, isCustomAmmount, isCustomAmount, isOneTime, monthlyPriceInCents, monthlyPriceInDollars, name, nodeId);
 
-@override String toString() => 'WebhooksSponsorshipTier(createdAt: $createdAt, description: $description, isCustomAmmount: $isCustomAmmount, isCustomAmount: $isCustomAmount, isOneTime: $isOneTime, monthlyPriceInCents: $monthlyPriceInCents, monthlyPriceInDollars: $monthlyPriceInDollars, name: $name, nodeId: $nodeId)';
+@override String toString() => 'WebhooksSponsorshipTier(\n  createdAt: $createdAt,\n  description: $description,\n  isCustomAmmount: $isCustomAmmount,\n  isCustomAmount: $isCustomAmount,\n  isOneTime: $isOneTime,\n  monthlyPriceInCents: $monthlyPriceInCents,\n  monthlyPriceInDollars: $monthlyPriceInDollars,\n  name: $name,\n  nodeId: $nodeId,\n)';
 
  }

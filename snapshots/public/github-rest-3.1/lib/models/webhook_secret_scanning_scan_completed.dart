@@ -206,6 +206,6 @@ WebhookSecretScanningScanCompleted copyWith({WebhookCheckRunCompletedAction? act
 
 @override int get hashCode => Object.hash(action, type, source, startedAt, completedAt, Object.hashAll(secretTypes ?? const []), customPatternName, customPatternScope, repository, enterprise, installation, organization, sender);
 
-@override String toString() => 'WebhookSecretScanningScanCompleted(action: $action, type: $type, source: $source, startedAt: $startedAt, completedAt: $completedAt, secretTypes: $secretTypes, customPatternName: $customPatternName, customPatternScope: $customPatternScope, repository: $repository, enterprise: $enterprise, installation: $installation, organization: $organization, sender: $sender)';
+@override String toString() => 'WebhookSecretScanningScanCompleted(\n  action: $action,\n  type: $type,\n  source: $source,\n  startedAt: $startedAt,\n  completedAt: $completedAt,\n  secretTypes: $secretTypes,\n  customPatternName: $customPatternName,\n  customPatternScope: $customPatternScope,\n  repository: $repository,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  sender: $sender,\n)';
 
  }

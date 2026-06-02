@@ -67,7 +67,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => PullRequestSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Create a pull request
@@ -102,7 +102,7 @@ return execute(
   onSuccess: (response) {
     return PullRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
 /// List review comments in a repository
@@ -181,7 +181,7 @@ return execute(
   onSuccess: (response) {
     return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update a review comment for a pull request
@@ -231,7 +231,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get a pull request
@@ -275,7 +275,7 @@ return execute(
   onSuccess: (response) {
     return PullRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PullsGetError.fromResponse(response),
+  onError: PullsGetError.fromResponse,
 );
  } 
 /// Update a pull request
@@ -308,7 +308,7 @@ return execute(
   onSuccess: (response) {
     return PullRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
 /// List review comments on a pull request
@@ -396,7 +396,7 @@ return execute(
   onSuccess: (response) {
     return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
 /// Create a reply for a review comment
@@ -430,7 +430,7 @@ return execute(
   onSuccess: (response) {
     return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List commits on a pull request
@@ -516,7 +516,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => PullsListFilesError.fromResponse(response),
+  onError: PullsListFilesError.fromResponse,
 );
  } 
 /// Check if a pull request has been merged
@@ -560,7 +560,7 @@ return execute(
   onSuccess: (response) {
     return PullRequestMergeResult.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PullsMergeError.fromResponse(response),
+  onError: PullsMergeError.fromResponse,
 );
  } 
 /// Get all requested reviewers for a pull request
@@ -606,7 +606,7 @@ return execute(
   onSuccess: (response) {
     return PullRequestSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Remove requested reviewers from a pull request
@@ -630,7 +630,7 @@ return execute(
   onSuccess: (response) {
     return PullRequestSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// List reviews for a pull request
@@ -710,7 +710,7 @@ return execute(
   onSuccess: (response) {
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PullsCreateReviewError.fromResponse(response),
+  onError: PullsCreateReviewError.fromResponse,
 );
  } 
 /// Get a review for a pull request
@@ -739,7 +739,7 @@ return execute(
   onSuccess: (response) {
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update a review for a pull request
@@ -770,7 +770,7 @@ return execute(
   onSuccess: (response) {
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsDeleteSelfHostedRunnerFromOrgError.fromResponse(response),
+  onError: ActionsDeleteSelfHostedRunnerFromOrgError.fromResponse,
 );
  } 
 /// Delete a pending review for a pull request
@@ -799,7 +799,7 @@ return execute(
   onSuccess: (response) {
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// List comments for a pull request review
@@ -840,7 +840,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => ReviewComment.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Dismiss a review for a pull request
@@ -874,7 +874,7 @@ return execute(
   onSuccess: (response) {
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// Submit a review for a pull request
@@ -905,7 +905,7 @@ return execute(
   onSuccess: (response) {
     return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DependabotListAlertsForEnterpriseError.fromResponse(response),
+  onError: DependabotListAlertsForEnterpriseError.fromResponse,
 );
  } 
 /// Update a pull request branch
@@ -930,7 +930,7 @@ return execute(
   onSuccess: (response) {
     return PullsUpdateBranchResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
  }

@@ -16,7 +16,7 @@ final CustomPropertyValueValue? value;
 
 Map<String, dynamic> toJson() { return {
   'property_name': propertyName,
-  'value': value != null ? value?.toJson() : null,
+  'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('property_name') && json['property_name'] is String &&
       json.containsKey('value'); } 

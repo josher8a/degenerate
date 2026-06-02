@@ -86,6 +86,6 @@ DosDnsProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn, St
 
 @override int get hashCode => Object.hash(burstSensitivity, createdOn, id, mode, modifiedOn, name, profileSensitivity, rateSensitivity, scope);
 
-@override String toString() => 'DosDnsProtectionRule(burstSensitivity: $burstSensitivity, createdOn: $createdOn, id: $id, mode: $mode, modifiedOn: $modifiedOn, name: $name, profileSensitivity: $profileSensitivity, rateSensitivity: $rateSensitivity, scope: $scope)';
+@override String toString() => 'DosDnsProtectionRule(\n  burstSensitivity: $burstSensitivity,\n  createdOn: $createdOn,\n  id: $id,\n  mode: $mode,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  profileSensitivity: $profileSensitivity,\n  rateSensitivity: $rateSensitivity,\n  scope: $scope,\n)';
 
  }

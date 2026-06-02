@@ -116,6 +116,6 @@ Retrieval copyWith({List<BoostBy>? Function()? boostBy, int Function()? contextE
 
 @override int get hashCode => Object.hash(Object.hashAll(boostBy ?? const []), contextExpansion, filters, fusionMethod, keywordMatchMode, matchThreshold, maxNumResults, retrievalType, returnOnFailure);
 
-@override String toString() => 'Retrieval(boostBy: $boostBy, contextExpansion: $contextExpansion, filters: $filters, fusionMethod: $fusionMethod, keywordMatchMode: $keywordMatchMode, matchThreshold: $matchThreshold, maxNumResults: $maxNumResults, retrievalType: $retrievalType, returnOnFailure: $returnOnFailure)';
+@override String toString() => 'Retrieval(\n  boostBy: $boostBy,\n  contextExpansion: $contextExpansion,\n  filters: $filters,\n  fusionMethod: $fusionMethod,\n  keywordMatchMode: $keywordMatchMode,\n  matchThreshold: $matchThreshold,\n  maxNumResults: $maxNumResults,\n  retrievalType: $retrievalType,\n  returnOnFailure: $returnOnFailure,\n)';
 
  }

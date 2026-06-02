@@ -167,6 +167,6 @@ TaxCalculation copyWith({int? amountTotal, String? currency, String? Function()?
 
 @override int get hashCode => Object.hash(amountTotal, currency, customer, customerDetails, expiresAt, id, lineItems, livemode, object, shipFromDetails, shippingCost, taxAmountExclusive, taxAmountInclusive, Object.hashAll(taxBreakdown), taxDate);
 
-@override String toString() => 'TaxCalculation(amountTotal: $amountTotal, currency: $currency, customer: $customer, customerDetails: $customerDetails, expiresAt: $expiresAt, id: $id, lineItems: $lineItems, livemode: $livemode, object: $object, shipFromDetails: $shipFromDetails, shippingCost: $shippingCost, taxAmountExclusive: $taxAmountExclusive, taxAmountInclusive: $taxAmountInclusive, taxBreakdown: $taxBreakdown, taxDate: $taxDate)';
+@override String toString() => 'TaxCalculation(\n  amountTotal: $amountTotal,\n  currency: $currency,\n  customer: $customer,\n  customerDetails: $customerDetails,\n  expiresAt: $expiresAt,\n  id: $id,\n  lineItems: $lineItems,\n  livemode: $livemode,\n  object: $object,\n  shipFromDetails: $shipFromDetails,\n  shippingCost: $shippingCost,\n  taxAmountExclusive: $taxAmountExclusive,\n  taxAmountInclusive: $taxAmountInclusive,\n  taxBreakdown: $taxBreakdown,\n  taxDate: $taxDate,\n)';
 
  }

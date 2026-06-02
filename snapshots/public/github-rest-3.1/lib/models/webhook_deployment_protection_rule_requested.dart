@@ -92,6 +92,6 @@ WebhookDeploymentProtectionRuleRequested copyWith({WebhookCheckSuiteRequestedAct
 
 @override int get hashCode => Object.hash(action, environment, event, sha, ref, deploymentCallbackUrl, deployment, Object.hashAll(pullRequests ?? const []), repository, organization, installation, sender);
 
-@override String toString() => 'WebhookDeploymentProtectionRuleRequested(action: $action, environment: $environment, event: $event, sha: $sha, ref: $ref, deploymentCallbackUrl: $deploymentCallbackUrl, deployment: $deployment, pullRequests: $pullRequests, repository: $repository, organization: $organization, installation: $installation, sender: $sender)';
+@override String toString() => 'WebhookDeploymentProtectionRuleRequested(\n  action: $action,\n  environment: $environment,\n  event: $event,\n  sha: $sha,\n  ref: $ref,\n  deploymentCallbackUrl: $deploymentCallbackUrl,\n  deployment: $deployment,\n  pullRequests: $pullRequests,\n  repository: $repository,\n  organization: $organization,\n  installation: $installation,\n  sender: $sender,\n)';
 
  }

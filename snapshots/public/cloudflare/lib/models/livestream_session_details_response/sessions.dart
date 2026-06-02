@@ -77,6 +77,6 @@ Sessions copyWith({DateTime? Function()? createdAt, String? Function()? errMessa
 
 @override int get hashCode => Object.hash(createdAt, errMessage, id, ingestSeconds, invokedTime, livestreamId, startedTime, stoppedTime, updatedAt);
 
-@override String toString() => 'Sessions(createdAt: $createdAt, errMessage: $errMessage, id: $id, ingestSeconds: $ingestSeconds, invokedTime: $invokedTime, livestreamId: $livestreamId, startedTime: $startedTime, stoppedTime: $stoppedTime, updatedAt: $updatedAt)';
+@override String toString() => 'Sessions(\n  createdAt: $createdAt,\n  errMessage: $errMessage,\n  id: $id,\n  ingestSeconds: $ingestSeconds,\n  invokedTime: $invokedTime,\n  livestreamId: $livestreamId,\n  startedTime: $startedTime,\n  stoppedTime: $stoppedTime,\n  updatedAt: $updatedAt,\n)';
 
  }

@@ -17,7 +17,7 @@ Future<ApiResult<List<DlsAccountRegionalHostnamesAccountListRegionsResponseResul
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/regional_hostnames/regions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/regional_hostnames/regions',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<List<DlsRegionalHostnameResponse>?, Never>> dlsAccountRegionalH
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/addressing/regional_hostnames',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/addressing/regional_hostnames',
   headers: headers,
   options: options,
 );
@@ -62,7 +62,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/addressing/regional_hostnames',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/addressing/regional_hostnames',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -85,7 +85,7 @@ Future<ApiResult<DlsRegionalHostnameResponse?, Never>> dlsAccountRegionalHostnam
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/addressing/regional_hostnames/${Uri.encodeComponent(hostname.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/addressing/regional_hostnames/${Uri.encodeComponent(hostname.toJson())}',
   headers: headers,
   options: options,
 );
@@ -108,7 +108,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/addressing/regional_hostnames/${Uri.encodeComponent(hostname.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/addressing/regional_hostnames/${Uri.encodeComponent(hostname.toJson())}',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -131,7 +131,7 @@ Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountDel
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/addressing/regional_hostnames/${Uri.encodeComponent(hostname.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/addressing/regional_hostnames/${Uri.encodeComponent(hostname.toJson())}',
   headers: headers,
   options: options,
 );

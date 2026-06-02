@@ -96,6 +96,29 @@ bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevel$Unknown;
 
 /// Shared by all variants of this union.
 ResourceTaggingResourceId get resourceId;
+R when<R>({required R Function(ResourceTaggingSetTagsRequestAccountLevelAccessApplication) accessApplication, required R Function(ResourceTaggingSetTagsRequestAccountLevelAccessGroup) accessGroup, required R Function(ResourceTaggingSetTagsRequestAccountLevelAccount) account, required R Function(ResourceTaggingSetTagsRequestAccountLevelAiGateway) aiGateway, required R Function(ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy) alertingPolicy, required R Function(ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook) alertingWebhook, required R Function(ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel) cloudflaredTunnel, required R Function(ResourceTaggingSetTagsRequestAccountLevelD1Database) d1Database, required R Function(ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace) durableObjectNamespace, required R Function(ResourceTaggingSetTagsRequestAccountLevelGatewayList) gatewayList, required R Function(ResourceTaggingSetTagsRequestAccountLevelGatewayRule) gatewayRule, required R Function(ResourceTaggingSetTagsRequestAccountLevelImage) image, required R Function(ResourceTaggingSetTagsRequestAccountLevelKvNamespace) kvNamespace, required R Function(ResourceTaggingSetTagsRequestAccountLevelQueue) queue, required R Function(ResourceTaggingSetTagsRequestAccountLevelR2Bucket) r2Bucket, required R Function(ResourceTaggingSetTagsRequestAccountLevelResourceShare) resourceShare, required R Function(ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput) streamLiveInput, required R Function(ResourceTaggingSetTagsRequestAccountLevelStreamVideo) streamVideo, required R Function(ResourceTaggingSetTagsRequestAccountLevelWorker) worker, required R Function(ResourceTaggingSetTagsRequestAccountLevelWorkerVersion) workerVersion, required R Function(ResourceTaggingSetTagsRequestAccountLevel$Unknown) unknown, }) { return switch (this) {
+  final ResourceTaggingSetTagsRequestAccountLevelAccessApplication v => accessApplication(v),
+  final ResourceTaggingSetTagsRequestAccountLevelAccessGroup v => accessGroup(v),
+  final ResourceTaggingSetTagsRequestAccountLevelAccount v => account(v),
+  final ResourceTaggingSetTagsRequestAccountLevelAiGateway v => aiGateway(v),
+  final ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy v => alertingPolicy(v),
+  final ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook v => alertingWebhook(v),
+  final ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel v => cloudflaredTunnel(v),
+  final ResourceTaggingSetTagsRequestAccountLevelD1Database v => d1Database(v),
+  final ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace v => durableObjectNamespace(v),
+  final ResourceTaggingSetTagsRequestAccountLevelGatewayList v => gatewayList(v),
+  final ResourceTaggingSetTagsRequestAccountLevelGatewayRule v => gatewayRule(v),
+  final ResourceTaggingSetTagsRequestAccountLevelImage v => image(v),
+  final ResourceTaggingSetTagsRequestAccountLevelKvNamespace v => kvNamespace(v),
+  final ResourceTaggingSetTagsRequestAccountLevelQueue v => queue(v),
+  final ResourceTaggingSetTagsRequestAccountLevelR2Bucket v => r2Bucket(v),
+  final ResourceTaggingSetTagsRequestAccountLevelResourceShare v => resourceShare(v),
+  final ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput v => streamLiveInput(v),
+  final ResourceTaggingSetTagsRequestAccountLevelStreamVideo v => streamVideo(v),
+  final ResourceTaggingSetTagsRequestAccountLevelWorker v => worker(v),
+  final ResourceTaggingSetTagsRequestAccountLevelWorkerVersion v => workerVersion(v),
+  final ResourceTaggingSetTagsRequestAccountLevel$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelAccessApplication extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelAccessApplication(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
 
@@ -559,9 +582,11 @@ ResourceTaggingSetTagsRequestAccountLevelWorkerVersion copyWith({ResourceTagging
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class ResourceTaggingSetTagsRequestAccountLevel$Unknown extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevel$Unknown(this.json);
+@immutable final class ResourceTaggingSetTagsRequestAccountLevel$Unknown extends ResourceTaggingSetTagsRequestAccountLevel {ResourceTaggingSetTagsRequestAccountLevel$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final ResourceTaggingResourceId _resourceId = ResourceTaggingResourceId.fromJson(json['resource_id'] as String);
 
 @override String get resourceType => json['resource_type'] as String? ?? '';
 
@@ -574,6 +599,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ResourceTaggingSetTagsRequestAccountLevel.unknown($json)';
 
-@override ResourceTaggingResourceId get resourceId => ResourceTaggingResourceId.fromJson(json['resource_id'] as String);
+@override ResourceTaggingResourceId get resourceId => _resourceId;
 
  }

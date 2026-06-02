@@ -102,6 +102,6 @@ Hops copyWith({int? Function()? asn, String? Function()? aso, String? Function()
 
 @override int get hashCode => Object.hash(asn, aso, ipAddress, location, mile, name, packetLossPct, rttMs, ttl);
 
-@override String toString() => 'Hops(asn: $asn, aso: $aso, ipAddress: $ipAddress, location: $location, mile: $mile, name: $name, packetLossPct: $packetLossPct, rttMs: $rttMs, ttl: $ttl)';
+@override String toString() => 'Hops(\n  asn: $asn,\n  aso: $aso,\n  ipAddress: $ipAddress,\n  location: $location,\n  mile: $mile,\n  name: $name,\n  packetLossPct: $packetLossPct,\n  rttMs: $rttMs,\n  ttl: $ttl,\n)';
 
  }

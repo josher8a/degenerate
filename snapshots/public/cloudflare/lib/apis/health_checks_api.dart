@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/healthchecks',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/healthchecks',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -51,7 +51,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/healthchecks',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/healthchecks',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -74,7 +74,7 @@ Future<ApiResult<HealthchecksHealthchecks?, Never>> healthChecksHealthCheckDetai
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/healthchecks/${Uri.encodeComponent(healthcheckId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/healthchecks/${Uri.encodeComponent(healthcheckId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -97,7 +97,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/healthchecks/${Uri.encodeComponent(healthcheckId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/healthchecks/${Uri.encodeComponent(healthcheckId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -121,7 +121,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/healthchecks/${Uri.encodeComponent(healthcheckId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/healthchecks/${Uri.encodeComponent(healthcheckId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -144,7 +144,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> healthChecksDeleteHealthCheck({re
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/healthchecks/${Uri.encodeComponent(healthcheckId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/healthchecks/${Uri.encodeComponent(healthcheckId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -167,7 +167,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/healthchecks/preview',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/healthchecks/preview',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -190,7 +190,7 @@ Future<ApiResult<HealthchecksHealthchecks?, Never>> healthChecksHealthCheckPrevi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/healthchecks/preview/${Uri.encodeComponent(healthcheckId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/healthchecks/preview/${Uri.encodeComponent(healthcheckId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -212,7 +212,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> healthChecksDeletePreviewHealthCh
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/healthchecks/preview/${Uri.encodeComponent(healthcheckId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/healthchecks/preview/${Uri.encodeComponent(healthcheckId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -243,7 +243,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield/healthchecks',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/smart_shield/healthchecks',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -268,7 +268,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield/healthchecks',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/smart_shield/healthchecks',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -291,7 +291,7 @@ Future<ApiResult<SmartshieldHealthchecks?, Never>> smartShieldHealthCheckDetails
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield/healthchecks/${Uri.encodeComponent(healthcheckId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/smart_shield/healthchecks/${Uri.encodeComponent(healthcheckId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -314,7 +314,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield/healthchecks/${Uri.encodeComponent(healthcheckId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/smart_shield/healthchecks/${Uri.encodeComponent(healthcheckId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -338,7 +338,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield/healthchecks/${Uri.encodeComponent(healthcheckId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/smart_shield/healthchecks/${Uri.encodeComponent(healthcheckId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -361,7 +361,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> smartShieldDeleteHealthCheck({req
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield/healthchecks/${Uri.encodeComponent(healthcheckId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/smart_shield/healthchecks/${Uri.encodeComponent(healthcheckId.toJson())}',
   headers: headers,
   options: options,
 );

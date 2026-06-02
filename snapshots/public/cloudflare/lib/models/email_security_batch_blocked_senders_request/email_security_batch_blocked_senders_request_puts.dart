@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'comments': ?comments,
   'is_regex': isRegex,
   'pattern': pattern,
-  'pattern_type': patternType != null ? patternType?.toJson() : null,
+  'pattern_type': patternType?.toJson(),
   'id': id.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_regex') && json['is_regex'] is bool &&
@@ -38,7 +38,7 @@ final comments$ = comments;
 if (comments$ != null) {
   if (comments$.length > 1024) errors.add('comments: length must be <= 1024');
 }
-if (pattern.length < 1) errors.add('pattern: length must be >= 1');
+if (pattern.isEmpty) errors.add('pattern: length must be >= 1');
 if (pattern.length > 1024) errors.add('pattern: length must be <= 1024');
 return errors; } 
 EmailSecurityBatchBlockedSendersRequestPuts copyWith({String? Function()? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, EmailSecurityBlockedSenderId? id, }) { return EmailSecurityBatchBlockedSendersRequestPuts(

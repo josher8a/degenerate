@@ -132,11 +132,11 @@ Map<String, dynamic> toJson() { return {
   'reactions': reactions.toJson(),
   'side': side.toJson(),
   'start_line': startLine,
-  'start_side': startSide != null ? startSide?.toJson() : null,
+  'start_side': startSide?.toJson(),
   if (subjectType != null) 'subject_type': subjectType?.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
       json.containsKey('author_association') &&
@@ -224,6 +224,6 @@ WebhookPullRequestReviewCommentCreatedComment copyWith({WebhooksReviewCommentLin
 
 @override int get hashCode => Object.hashAll([links, authorAssociation, body, commitId, createdAt, diffHunk, htmlUrl, id, inReplyToId, line, nodeId, originalCommitId, originalLine, originalPosition, originalStartLine, path, position, pullRequestReviewId, pullRequestUrl, reactions, side, startLine, startSide, subjectType, updatedAt, url, user]);
 
-@override String toString() => 'WebhookPullRequestReviewCommentCreatedComment(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, createdAt: $createdAt, diffHunk: $diffHunk, htmlUrl: $htmlUrl, id: $id, inReplyToId: $inReplyToId, line: $line, nodeId: $nodeId, originalCommitId: $originalCommitId, originalLine: $originalLine, originalPosition: $originalPosition, originalStartLine: $originalStartLine, path: $path, position: $position, pullRequestReviewId: $pullRequestReviewId, pullRequestUrl: $pullRequestUrl, reactions: $reactions, side: $side, startLine: $startLine, startSide: $startSide, subjectType: $subjectType, updatedAt: $updatedAt, url: $url, user: $user)';
+@override String toString() => 'WebhookPullRequestReviewCommentCreatedComment(\n  links: $links,\n  authorAssociation: $authorAssociation,\n  body: $body,\n  commitId: $commitId,\n  createdAt: $createdAt,\n  diffHunk: $diffHunk,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  inReplyToId: $inReplyToId,\n  line: $line,\n  nodeId: $nodeId,\n  originalCommitId: $originalCommitId,\n  originalLine: $originalLine,\n  originalPosition: $originalPosition,\n  originalStartLine: $originalStartLine,\n  path: $path,\n  position: $position,\n  pullRequestReviewId: $pullRequestReviewId,\n  pullRequestUrl: $pullRequestUrl,\n  reactions: $reactions,\n  side: $side,\n  startLine: $startLine,\n  startSide: $startSide,\n  subjectType: $subjectType,\n  updatedAt: $updatedAt,\n  url: $url,\n  user: $user,\n)';
 
  }

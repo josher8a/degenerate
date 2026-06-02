@@ -49,7 +49,7 @@ final SleepType type;
 
 Map<String, dynamic> toJson() { return {
   'end': end.toIso8601String(),
-  'error': error != null ? error?.toJson() : null,
+  'error': error?.toJson(),
   'finished': finished,
   'name': name,
   'start': start.toIso8601String(),

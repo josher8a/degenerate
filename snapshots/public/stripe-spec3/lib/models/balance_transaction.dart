@@ -372,6 +372,6 @@ BalanceTransaction copyWith({int? amount, int? availableOn, BalanceType? balance
 
 @override int get hashCode => Object.hash(amount, availableOn, balanceType, created, currency, description, exchangeRate, fee, Object.hashAll(feeDetails), id, net, object, reportingCategory, source, status, type);
 
-@override String toString() => 'BalanceTransaction(amount: $amount, availableOn: $availableOn, balanceType: $balanceType, created: $created, currency: $currency, description: $description, exchangeRate: $exchangeRate, fee: $fee, feeDetails: $feeDetails, id: $id, net: $net, object: $object, reportingCategory: $reportingCategory, source: $source, status: $status, type: $type)';
+@override String toString() => 'BalanceTransaction(\n  amount: $amount,\n  availableOn: $availableOn,\n  balanceType: $balanceType,\n  created: $created,\n  currency: $currency,\n  description: $description,\n  exchangeRate: $exchangeRate,\n  fee: $fee,\n  feeDetails: $feeDetails,\n  id: $id,\n  net: $net,\n  object: $object,\n  reportingCategory: $reportingCategory,\n  source: $source,\n  status: $status,\n  type: $type,\n)';
 
  }

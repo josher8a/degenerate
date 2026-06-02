@@ -35,8 +35,8 @@ Map<String, dynamic> toJson() { return {
   'tree_id': treeId,
   'message': message,
   'timestamp': timestamp.toIso8601String(),
-  'author': author != null ? author?.toJson() : null,
-  'committer': committer != null ? committer?.toJson() : null,
+  'author': author?.toJson(),
+  'committer': committer?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('tree_id') && json['tree_id'] is String &&

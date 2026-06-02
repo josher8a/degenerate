@@ -106,6 +106,6 @@ MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? numbe
 
 @override int get hashCode => Object.hash(url, accountsUrl, id, number, name, description, monthlyPriceInCents, yearlyPriceInCents, priceModel, hasFreeTrial, unitName, state, Object.hashAll(bullets));
 
-@override String toString() => 'MarketplaceListingPlan(url: $url, accountsUrl: $accountsUrl, id: $id, number: $number, name: $name, description: $description, monthlyPriceInCents: $monthlyPriceInCents, yearlyPriceInCents: $yearlyPriceInCents, priceModel: $priceModel, hasFreeTrial: $hasFreeTrial, unitName: $unitName, state: $state, bullets: $bullets)';
+@override String toString() => 'MarketplaceListingPlan(\n  url: $url,\n  accountsUrl: $accountsUrl,\n  id: $id,\n  number: $number,\n  name: $name,\n  description: $description,\n  monthlyPriceInCents: $monthlyPriceInCents,\n  yearlyPriceInCents: $yearlyPriceInCents,\n  priceModel: $priceModel,\n  hasFreeTrial: $hasFreeTrial,\n  unitName: $unitName,\n  state: $state,\n  bullets: $bullets,\n)';
 
  }

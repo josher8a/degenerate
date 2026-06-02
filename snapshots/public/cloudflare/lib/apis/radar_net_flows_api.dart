@@ -71,7 +71,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/netflows/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/netflows/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -84,7 +84,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer3SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetNetflowsSummaryError.fromResponse(response),
+  onError: RadarGetNetflowsSummaryError.fromResponse,
 );
  } 
 /// Get network traffic time series
@@ -166,7 +166,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer7TimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetNetflowsTimeseriesError.fromResponse(response),
+  onError: RadarGetNetflowsTimeseriesError.fromResponse,
 );
  } 
 /// Get time series distribution of network traffic by dimension
@@ -238,7 +238,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/netflows/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/netflows/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -251,7 +251,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetNetflowsTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetNetflowsTimeseriesGroupError.fromResponse,
 );
  } 
 /// Get top ASes by network traffic
@@ -325,7 +325,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetNetflowsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetNetflowsTopAsesError.fromResponse(response),
+  onError: RadarGetNetflowsTopAsesError.fromResponse,
 );
  } 
 /// Get top locations by network traffic
@@ -399,7 +399,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetNetflowsTopLocationsError.fromResponse(response),
+  onError: RadarGetNetflowsTopLocationsError.fromResponse,
 );
  } 
  }

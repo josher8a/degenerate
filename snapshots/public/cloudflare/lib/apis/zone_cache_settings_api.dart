@@ -17,7 +17,7 @@ Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsGetCacheReser
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/cache_reserve',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/cache_reserve',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/cache_reserve',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/cache_reserve',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetCacheReserveClear
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/cache_reserve_clear',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/cache_reserve_clear',
   headers: headers,
   options: options,
 );
@@ -84,7 +84,7 @@ Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsStartCacheReserveCle
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/cache_reserve_clear',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/cache_reserve_clear',
   headers: headers,
   options: options,
 );
@@ -105,7 +105,7 @@ Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsGetRegionalTi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/regional_tiered_cache',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/regional_tiered_cache',
   headers: headers,
   options: options,
 );
@@ -128,7 +128,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/regional_tiered_cache',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/regional_tiered_cache',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -151,7 +151,7 @@ Future<ApiResult<CacheRulesResultObject?, Never>> zoneCacheSettingsGetVariantsSe
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/variants',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/variants',
   headers: headers,
   options: options,
 );
@@ -174,7 +174,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/variants',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/variants',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -197,7 +197,7 @@ Future<ApiResult<CacheRulesBase?, Never>> zoneCacheSettingsDeleteVariantsSetting
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/variants',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/variants',
   headers: headers,
   options: options,
 );

@@ -66,7 +66,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAnnotationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAnnotationsError.fromResponse(response),
+  onError: RadarGetAnnotationsError.fromResponse,
 );
  } 
 /// Get latest Internet outages and anomalies
@@ -121,7 +121,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAnnotationsOutagesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAnnotationsOutagesError.fromResponse(response),
+  onError: RadarGetAnnotationsOutagesError.fromResponse,
 );
  } 
 /// Get the number of outages by location
@@ -164,7 +164,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAnnotationsOutagesTopResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetAnnotationsOutagesTopError.fromResponse(response),
+  onError: RadarGetAnnotationsOutagesTopError.fromResponse,
 );
  } 
  }

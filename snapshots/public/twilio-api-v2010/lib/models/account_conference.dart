@@ -155,6 +155,6 @@ AccountConference copyWith({String? Function()? accountSid, String? Function()? 
 
 @override int get hashCode => Object.hash(accountSid, dateCreated, dateUpdated, apiVersion, friendlyName, region, sid, status, uri, subresourceUris, reasonConferenceEnded, callSidEndingConference);
 
-@override String toString() => 'AccountConference(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, apiVersion: $apiVersion, friendlyName: $friendlyName, region: $region, sid: $sid, status: $status, uri: $uri, subresourceUris: $subresourceUris, reasonConferenceEnded: $reasonConferenceEnded, callSidEndingConference: $callSidEndingConference)';
+@override String toString() => 'AccountConference(\n  accountSid: $accountSid,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  apiVersion: $apiVersion,\n  friendlyName: $friendlyName,\n  region: $region,\n  sid: $sid,\n  status: $status,\n  uri: $uri,\n  subresourceUris: $subresourceUris,\n  reasonConferenceEnded: $reasonConferenceEnded,\n  callSidEndingConference: $callSidEndingConference,\n)';
 
  }

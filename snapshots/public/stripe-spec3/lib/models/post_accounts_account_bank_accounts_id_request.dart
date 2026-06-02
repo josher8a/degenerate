@@ -170,6 +170,6 @@ PostAccountsAccountBankAccountsIdRequest copyWith({String? Function()? accountHo
 
 @override int get hashCode => Object.hash(accountHolderName, accountHolderType, accountType, addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, defaultForCurrency, documents, expMonth, expYear, Object.hashAll(expand ?? const []), metadata, name);
 
-@override String toString() => 'PostAccountsAccountBankAccountsIdRequest(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountType: $accountType, addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, defaultForCurrency: $defaultForCurrency, documents: $documents, expMonth: $expMonth, expYear: $expYear, expand: $expand, metadata: $metadata, name: $name)';
+@override String toString() => 'PostAccountsAccountBankAccountsIdRequest(\n  accountHolderName: $accountHolderName,\n  accountHolderType: $accountHolderType,\n  accountType: $accountType,\n  addressCity: $addressCity,\n  addressCountry: $addressCountry,\n  addressLine1: $addressLine1,\n  addressLine2: $addressLine2,\n  addressState: $addressState,\n  addressZip: $addressZip,\n  defaultForCurrency: $defaultForCurrency,\n  documents: $documents,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  expand: $expand,\n  metadata: $metadata,\n  name: $name,\n)';
 
  }

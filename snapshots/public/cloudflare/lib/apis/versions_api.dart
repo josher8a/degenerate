@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}/versions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/workers/${Uri.encodeComponent(workerId)}/versions',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}/versions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/workers/${Uri.encodeComponent(workerId)}/versions',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -88,7 +88,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}/versions/${Uri.encodeComponent(versionId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/workers/${Uri.encodeComponent(workerId)}/versions/${Uri.encodeComponent(versionId)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -112,7 +112,7 @@ Future<ApiResult<ResponseCommon80, Never>> deleteWorkerVersion({required Workers
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/workers/${Uri.encodeComponent(workerId)}/versions/${Uri.encodeComponent(versionId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/workers/workers/${Uri.encodeComponent(workerId)}/versions/${Uri.encodeComponent(versionId)}',
   headers: headers,
   options: options,
 );

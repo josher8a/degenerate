@@ -226,6 +226,6 @@ CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? m
 
 @override int get hashCode => Object.hash(file, model, language, prompt, responseFormat, temperature, Object.hashAll(include ?? const []), Object.hashAll(timestampGranularities ?? const []), stream, chunkingStrategy, Object.hashAll(knownSpeakerNames ?? const []), Object.hashAll(knownSpeakerReferences ?? const []));
 
-@override String toString() => 'CreateTranscriptionRequest(file: $file, model: $model, language: $language, prompt: $prompt, responseFormat: $responseFormat, temperature: $temperature, include: $include, timestampGranularities: $timestampGranularities, stream: $stream, chunkingStrategy: $chunkingStrategy, knownSpeakerNames: $knownSpeakerNames, knownSpeakerReferences: $knownSpeakerReferences)';
+@override String toString() => 'CreateTranscriptionRequest(\n  file: $file,\n  model: $model,\n  language: $language,\n  prompt: $prompt,\n  responseFormat: $responseFormat,\n  temperature: $temperature,\n  include: $include,\n  timestampGranularities: $timestampGranularities,\n  stream: $stream,\n  chunkingStrategy: $chunkingStrategy,\n  knownSpeakerNames: $knownSpeakerNames,\n  knownSpeakerReferences: $knownSpeakerReferences,\n)';
 
  }

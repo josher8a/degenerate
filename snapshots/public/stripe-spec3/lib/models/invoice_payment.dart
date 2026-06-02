@@ -146,6 +146,6 @@ InvoicePayment copyWith({int? Function()? amountPaid, int? amountRequested, int?
 
 @override int get hashCode => Object.hash(amountPaid, amountRequested, created, currency, id, invoice, isDefault, livemode, object, payment, status, statusTransitions);
 
-@override String toString() => 'InvoicePayment(amountPaid: $amountPaid, amountRequested: $amountRequested, created: $created, currency: $currency, id: $id, invoice: $invoice, isDefault: $isDefault, livemode: $livemode, object: $object, payment: $payment, status: $status, statusTransitions: $statusTransitions)';
+@override String toString() => 'InvoicePayment(\n  amountPaid: $amountPaid,\n  amountRequested: $amountRequested,\n  created: $created,\n  currency: $currency,\n  id: $id,\n  invoice: $invoice,\n  isDefault: $isDefault,\n  livemode: $livemode,\n  object: $object,\n  payment: $payment,\n  status: $status,\n  statusTransitions: $statusTransitions,\n)';
 
  }

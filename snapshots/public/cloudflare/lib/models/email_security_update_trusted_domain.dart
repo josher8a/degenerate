@@ -41,7 +41,7 @@ if (comments$ != null) {
 }
 final pattern$ = pattern;
 if (pattern$ != null) {
-  if (pattern$.length < 1) errors.add('pattern: length must be >= 1');
+  if (pattern$.isEmpty) errors.add('pattern: length must be >= 1');
   if (pattern$.length > 1024) errors.add('pattern: length must be <= 1024');
 }
 return errors; } 

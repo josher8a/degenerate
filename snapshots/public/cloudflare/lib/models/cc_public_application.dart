@@ -144,6 +144,6 @@ CcPublicApplication copyWith({CcIso8601Timestamp? createdAt, CcDurableObjectsCon
 
 @override int get hashCode => Object.hash(createdAt, durableObject, health, id, image, instanceType, maxInstances, name, network, observability, rolloutActiveGracePeriod, updatedAt, version);
 
-@override String toString() => 'CcPublicApplication(createdAt: $createdAt, durableObject: $durableObject, health: $health, id: $id, image: $image, instanceType: $instanceType, maxInstances: $maxInstances, name: $name, network: $network, observability: $observability, rolloutActiveGracePeriod: $rolloutActiveGracePeriod, updatedAt: $updatedAt, version: $version)';
+@override String toString() => 'CcPublicApplication(\n  createdAt: $createdAt,\n  durableObject: $durableObject,\n  health: $health,\n  id: $id,\n  image: $image,\n  instanceType: $instanceType,\n  maxInstances: $maxInstances,\n  name: $name,\n  network: $network,\n  observability: $observability,\n  rolloutActiveGracePeriod: $rolloutActiveGracePeriod,\n  updatedAt: $updatedAt,\n  version: $version,\n)';
 
  }

@@ -25,7 +25,7 @@ final Normalization normalization;
 final List<MetaUnits> units;
 
 Map<String, dynamic> toJson() { return {
-  'confidenceInfo': confidenceInfo != null ? confidenceInfo?.toJson() : null,
+  'confidenceInfo': confidenceInfo?.toJson(),
   'dateRange': dateRange.map((e) => e.toJson()).toList(),
   'lastUpdated': lastUpdated.toIso8601String(),
   'normalization': normalization.toJson(),

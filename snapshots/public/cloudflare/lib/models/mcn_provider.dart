@@ -105,6 +105,6 @@ McnProvider copyWith({String? Function()? awsArn, String? Function()? azureSubsc
 
 @override int get hashCode => Object.hash(awsArn, azureSubscriptionId, azureTenantId, cloudType, description, friendlyName, gcpProjectId, gcpServiceAccountEmail, id, lastUpdated, lifecycleState, state, stateV2, status);
 
-@override String toString() => 'McnProvider(awsArn: $awsArn, azureSubscriptionId: $azureSubscriptionId, azureTenantId: $azureTenantId, cloudType: $cloudType, description: $description, friendlyName: $friendlyName, gcpProjectId: $gcpProjectId, gcpServiceAccountEmail: $gcpServiceAccountEmail, id: $id, lastUpdated: $lastUpdated, lifecycleState: $lifecycleState, state: $state, stateV2: $stateV2, status: $status)';
+@override String toString() => 'McnProvider(\n  awsArn: $awsArn,\n  azureSubscriptionId: $azureSubscriptionId,\n  azureTenantId: $azureTenantId,\n  cloudType: $cloudType,\n  description: $description,\n  friendlyName: $friendlyName,\n  gcpProjectId: $gcpProjectId,\n  gcpServiceAccountEmail: $gcpServiceAccountEmail,\n  id: $id,\n  lastUpdated: $lastUpdated,\n  lifecycleState: $lifecycleState,\n  state: $state,\n  stateV2: $stateV2,\n  status: $status,\n)';
 
  }

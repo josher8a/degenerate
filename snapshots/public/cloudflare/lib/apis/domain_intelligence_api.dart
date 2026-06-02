@@ -23,7 +23,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/domain',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/domain',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -55,7 +55,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/domain/bulk',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/domain/bulk',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

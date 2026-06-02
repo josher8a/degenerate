@@ -151,6 +151,6 @@ Field copyWith({int? id, String? Function()? nodeId, String? projectUrl, String?
 
 @override int get hashCode => Object.hash(id, nodeId, projectUrl, name, dataType, Object.hashAll(options ?? const []), configuration, createdAt, updatedAt);
 
-@override String toString() => 'Field(id: $id, nodeId: $nodeId, projectUrl: $projectUrl, name: $name, dataType: $dataType, options: $options, configuration: $configuration, createdAt: $createdAt, updatedAt: $updatedAt)';
+@override String toString() => 'Field(\n  id: $id,\n  nodeId: $nodeId,\n  projectUrl: $projectUrl,\n  name: $name,\n  dataType: $dataType,\n  options: $options,\n  configuration: $configuration,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
  }

@@ -129,6 +129,6 @@ MandatePaymentMethodDetails copyWith({MandateAcssDebit? Function()? acssDebit, M
 
 @override int get hashCode => Object.hash(acssDebit, amazonPay, auBecsDebit, bacsDebit, card, cashapp, kakaoPay, klarna, krCard, link, naverPay, nzBankAccount, paypal, payto, revolutPay, sepaDebit, type, usBankAccount);
 
-@override String toString() => 'MandatePaymentMethodDetails(acssDebit: $acssDebit, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, card: $card, cashapp: $cashapp, kakaoPay: $kakaoPay, klarna: $klarna, krCard: $krCard, link: $link, naverPay: $naverPay, nzBankAccount: $nzBankAccount, paypal: $paypal, payto: $payto, revolutPay: $revolutPay, sepaDebit: $sepaDebit, type: $type, usBankAccount: $usBankAccount)';
+@override String toString() => 'MandatePaymentMethodDetails(\n  acssDebit: $acssDebit,\n  amazonPay: $amazonPay,\n  auBecsDebit: $auBecsDebit,\n  bacsDebit: $bacsDebit,\n  card: $card,\n  cashapp: $cashapp,\n  kakaoPay: $kakaoPay,\n  klarna: $klarna,\n  krCard: $krCard,\n  link: $link,\n  naverPay: $naverPay,\n  nzBankAccount: $nzBankAccount,\n  paypal: $paypal,\n  payto: $payto,\n  revolutPay: $revolutPay,\n  sepaDebit: $sepaDebit,\n  type: $type,\n  usBankAccount: $usBankAccount,\n)';
 
  }

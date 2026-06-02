@@ -174,6 +174,6 @@ PageShieldCookie copyWith({String? Function()? domainAttribute, DateTime? Functi
 
 @override int get hashCode => Object.hash(domainAttribute, expiresAttribute, firstSeenAt, host, httpOnlyAttribute, id, lastSeenAt, maxAgeAttribute, name, Object.hashAll(pageUrls ?? const []), pathAttribute, sameSiteAttribute, secureAttribute, type);
 
-@override String toString() => 'PageShieldCookie(domainAttribute: $domainAttribute, expiresAttribute: $expiresAttribute, firstSeenAt: $firstSeenAt, host: $host, httpOnlyAttribute: $httpOnlyAttribute, id: $id, lastSeenAt: $lastSeenAt, maxAgeAttribute: $maxAgeAttribute, name: $name, pageUrls: $pageUrls, pathAttribute: $pathAttribute, sameSiteAttribute: $sameSiteAttribute, secureAttribute: $secureAttribute, type: $type)';
+@override String toString() => 'PageShieldCookie(\n  domainAttribute: $domainAttribute,\n  expiresAttribute: $expiresAttribute,\n  firstSeenAt: $firstSeenAt,\n  host: $host,\n  httpOnlyAttribute: $httpOnlyAttribute,\n  id: $id,\n  lastSeenAt: $lastSeenAt,\n  maxAgeAttribute: $maxAgeAttribute,\n  name: $name,\n  pageUrls: $pageUrls,\n  pathAttribute: $pathAttribute,\n  sameSiteAttribute: $sameSiteAttribute,\n  secureAttribute: $secureAttribute,\n  type: $type,\n)';
 
  }

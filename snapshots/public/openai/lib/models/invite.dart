@@ -141,6 +141,6 @@ Invite copyWith({InviteObject? object, String? id, String? email, InviteRequestR
 
 @override int get hashCode => Object.hash(object, id, email, role, status, invitedAt, expiresAt, acceptedAt, Object.hashAll(projects ?? const []));
 
-@override String toString() => 'Invite(object: $object, id: $id, email: $email, role: $role, status: $status, invitedAt: $invitedAt, expiresAt: $expiresAt, acceptedAt: $acceptedAt, projects: $projects)';
+@override String toString() => 'Invite(\n  object: $object,\n  id: $id,\n  email: $email,\n  role: $role,\n  status: $status,\n  invitedAt: $invitedAt,\n  expiresAt: $expiresAt,\n  acceptedAt: $acceptedAt,\n  projects: $projects,\n)';
 
  }

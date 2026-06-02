@@ -15,7 +15,7 @@ Future<ApiResult<MagicVisibilityMnmMnmVpcFlowsToken?, Never>> magicNetworkMonito
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/mnm/vpc-flows/token',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/mnm/vpc-flows/token',
   headers: headers,
   options: options,
 );

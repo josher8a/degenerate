@@ -45,7 +45,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Projects.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Get project for organization
@@ -67,7 +67,7 @@ return execute(
   onSuccess: (response) {
     return Projects.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Create draft item for organization owned project
@@ -91,7 +91,7 @@ return execute(
   onSuccess: (response) {
     return ItemSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// List project fields for organization
@@ -128,7 +128,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Field.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Add a field to an organization-owned project.
@@ -150,7 +150,7 @@ return execute(
   onSuccess: (response) {
     return Field.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListNotificationsForAuthenticatedUserError.fromResponse(response),
+  onError: ActivityListNotificationsForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get project field for organization
@@ -172,7 +172,7 @@ return execute(
   onSuccess: (response) {
     return Field.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// List items for an organization owned project
@@ -215,7 +215,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Add item to organization owned project
@@ -239,7 +239,7 @@ return execute(
   onSuccess: (response) {
     return ItemSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Get an item for an organization owned project
@@ -269,7 +269,7 @@ return execute(
   onSuccess: (response) {
     return ItemWithContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Update project item for organization
@@ -293,7 +293,7 @@ return execute(
   onSuccess: (response) {
     return ItemWithContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// Delete project item for organization
@@ -313,7 +313,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Create a view for an organization-owned project
@@ -337,7 +337,7 @@ return execute(
   onSuccess: (response) {
     return View.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ProjectsCreateViewForOrgError.fromResponse(response),
+  onError: ProjectsCreateViewForOrgError.fromResponse,
 );
  } 
 /// List items for an organization project view
@@ -377,7 +377,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Create draft item for user owned project
@@ -401,7 +401,7 @@ return execute(
   onSuccess: (response) {
     return ItemSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Create a view for a user-owned project
@@ -425,7 +425,7 @@ return execute(
   onSuccess: (response) {
     return View.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ProjectsCreateViewForOrgError.fromResponse(response),
+  onError: ProjectsCreateViewForOrgError.fromResponse,
 );
  } 
 /// List projects for user
@@ -465,7 +465,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Projects.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Get project for user
@@ -487,7 +487,7 @@ return execute(
   onSuccess: (response) {
     return Projects.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// List project fields for user
@@ -524,7 +524,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Field.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Add field to user owned project
@@ -548,7 +548,7 @@ return execute(
   onSuccess: (response) {
     return Field.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListNotificationsForAuthenticatedUserError.fromResponse(response),
+  onError: ActivityListNotificationsForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get project field for user
@@ -570,7 +570,7 @@ return execute(
   onSuccess: (response) {
     return Field.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// List items for a user owned project
@@ -613,7 +613,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Add item to user owned project
@@ -637,7 +637,7 @@ return execute(
   onSuccess: (response) {
     return ItemSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Get an item for a user owned project
@@ -667,7 +667,7 @@ return execute(
   onSuccess: (response) {
     return ItemWithContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Update project item for user
@@ -691,7 +691,7 @@ return execute(
   onSuccess: (response) {
     return ItemWithContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// Delete project item for user
@@ -711,7 +711,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// List items for a user project view
@@ -751,7 +751,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
  }

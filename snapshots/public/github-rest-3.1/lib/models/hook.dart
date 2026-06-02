@@ -109,6 +109,6 @@ Hook copyWith({String? type, int? id, String? name, bool? active, List<String>? 
 
 @override int get hashCode => Object.hash(type, id, name, active, Object.hashAll(events), config, updatedAt, createdAt, url, testUrl, pingUrl, deliveriesUrl, lastResponse);
 
-@override String toString() => 'Hook(type: $type, id: $id, name: $name, active: $active, events: $events, config: $config, updatedAt: $updatedAt, createdAt: $createdAt, url: $url, testUrl: $testUrl, pingUrl: $pingUrl, deliveriesUrl: $deliveriesUrl, lastResponse: $lastResponse)';
+@override String toString() => 'Hook(\n  type: $type,\n  id: $id,\n  name: $name,\n  active: $active,\n  events: $events,\n  config: $config,\n  updatedAt: $updatedAt,\n  createdAt: $createdAt,\n  url: $url,\n  testUrl: $testUrl,\n  pingUrl: $pingUrl,\n  deliveriesUrl: $deliveriesUrl,\n  lastResponse: $lastResponse,\n)';
 
  }

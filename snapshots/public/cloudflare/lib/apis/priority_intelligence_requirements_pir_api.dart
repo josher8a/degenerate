@@ -16,7 +16,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/priority',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -37,7 +37,7 @@ Future<ApiResult<CloudforceOneRequestsRequestItem?, Never>> cloudforceOnePriorit
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/${Uri.encodeComponent(priorityId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/priority/${Uri.encodeComponent(priorityId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -58,7 +58,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/${Uri.encodeComponent(priorityId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/priority/${Uri.encodeComponent(priorityId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -79,7 +79,7 @@ Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityDelete({required
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/${Uri.encodeComponent(priorityId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/priority/${Uri.encodeComponent(priorityId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -99,7 +99,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/new',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/priority/new',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -120,7 +120,7 @@ Future<ApiResult<CloudforceOneRequestsQuota?, Never>> cloudforceOnePriorityQuota
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cloudforce-one/requests/priority/quota',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cloudforce-one/requests/priority/quota',
   headers: headers,
   options: options,
 );

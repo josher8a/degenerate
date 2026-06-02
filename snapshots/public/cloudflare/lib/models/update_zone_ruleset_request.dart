@@ -60,7 +60,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.length < 1) errors.add('name: length must be >= 1');
+  if (name$.isEmpty) errors.add('name: length must be >= 1');
 }
 return errors; } 
 UpdateZoneRulesetRequest copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? Function()? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? Function()? kind, RulesetsRulesetPhase? Function()? phase, List<RulesetsRequestRule>? Function()? rules, }) { return UpdateZoneRulesetRequest(

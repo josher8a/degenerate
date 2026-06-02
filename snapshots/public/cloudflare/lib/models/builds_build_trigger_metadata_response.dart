@@ -141,6 +141,6 @@ BuildsBuildTriggerMetadataResponse copyWith({String? Function()? author, BuildsB
 
 @override int get hashCode => Object.hash(author, branch, buildCommand, buildTokenName, buildTokenUuid, buildTriggerSource, commitHash, commitMessage, deployCommand, environmentVariables, providerAccountName, providerType, repoName, rootDirectory);
 
-@override String toString() => 'BuildsBuildTriggerMetadataResponse(author: $author, branch: $branch, buildCommand: $buildCommand, buildTokenName: $buildTokenName, buildTokenUuid: $buildTokenUuid, buildTriggerSource: $buildTriggerSource, commitHash: $commitHash, commitMessage: $commitMessage, deployCommand: $deployCommand, environmentVariables: $environmentVariables, providerAccountName: $providerAccountName, providerType: $providerType, repoName: $repoName, rootDirectory: $rootDirectory)';
+@override String toString() => 'BuildsBuildTriggerMetadataResponse(\n  author: $author,\n  branch: $branch,\n  buildCommand: $buildCommand,\n  buildTokenName: $buildTokenName,\n  buildTokenUuid: $buildTokenUuid,\n  buildTriggerSource: $buildTriggerSource,\n  commitHash: $commitHash,\n  commitMessage: $commitMessage,\n  deployCommand: $deployCommand,\n  environmentVariables: $environmentVariables,\n  providerAccountName: $providerAccountName,\n  providerType: $providerType,\n  repoName: $repoName,\n  rootDirectory: $rootDirectory,\n)';
 
  }

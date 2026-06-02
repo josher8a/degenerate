@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'pull_request': pullRequest.toJson(),
   'repository': repository.toJson(),
-  'requested_reviewer': requestedReviewer != null ? requestedReviewer?.toJson() : null,
+  'requested_reviewer': requestedReviewer?.toJson(),
   'sender': sender.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
@@ -75,6 +75,6 @@ WebhookPullRequestReviewRequestedReviewRequested copyWith({ReviewRequestedAction
 
 @override int get hashCode => Object.hash(action, enterprise, installation, number, organization, pullRequest, repository, requestedReviewer, sender);
 
-@override String toString() => 'WebhookPullRequestReviewRequestedReviewRequested(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, requestedReviewer: $requestedReviewer, sender: $sender)';
+@override String toString() => 'WebhookPullRequestReviewRequestedReviewRequested(\n  action: $action,\n  enterprise: $enterprise,\n  installation: $installation,\n  number: $number,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  repository: $repository,\n  requestedReviewer: $requestedReviewer,\n  sender: $sender,\n)';
 
  }

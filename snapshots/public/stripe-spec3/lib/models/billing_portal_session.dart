@@ -325,6 +325,6 @@ BillingPortalSession copyWith({Configuration? configuration, int? created, Strin
 
 @override int get hashCode => Object.hash(configuration, created, customer, customerAccount, flow, id, livemode, locale, object, onBehalfOf, returnUrl, url);
 
-@override String toString() => 'BillingPortalSession(configuration: $configuration, created: $created, customer: $customer, customerAccount: $customerAccount, flow: $flow, id: $id, livemode: $livemode, locale: $locale, object: $object, onBehalfOf: $onBehalfOf, returnUrl: $returnUrl, url: $url)';
+@override String toString() => 'BillingPortalSession(\n  configuration: $configuration,\n  created: $created,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  flow: $flow,\n  id: $id,\n  livemode: $livemode,\n  locale: $locale,\n  object: $object,\n  onBehalfOf: $onBehalfOf,\n  returnUrl: $returnUrl,\n  url: $url,\n)';
 
  }

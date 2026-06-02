@@ -35,7 +35,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/virtual_networks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/teamnet/virtual_networks',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -60,7 +60,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/virtual_networks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/teamnet/virtual_networks',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -84,7 +84,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/virtual_networks/${Uri.encodeComponent(virtualNetworkId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/teamnet/virtual_networks/${Uri.encodeComponent(virtualNetworkId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -108,7 +108,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/virtual_networks/${Uri.encodeComponent(virtualNetworkId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/teamnet/virtual_networks/${Uri.encodeComponent(virtualNetworkId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -131,7 +131,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> tunnelVirtualNetworkDelete({req
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/teamnet/virtual_networks/${Uri.encodeComponent(virtualNetworkId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/teamnet/virtual_networks/${Uri.encodeComponent(virtualNetworkId.toJson())}',
   headers: headers,
   options: options,
 );

@@ -25,7 +25,7 @@ final CheckRunWithSimpleCheckSuiteStatus status;
 
 Map<String, dynamic> toJson() { return {
   'completed_at': completedAt,
-  'conclusion': conclusion != null ? conclusion?.toJson() : null,
+  'conclusion': conclusion?.toJson(),
   'name': name,
   'number': number,
   'started_at': startedAt,

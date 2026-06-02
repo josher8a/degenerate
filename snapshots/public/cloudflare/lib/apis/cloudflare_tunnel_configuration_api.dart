@@ -17,7 +17,7 @@ Future<ApiResult<TunnelConfiguration?, Never>> cloudflareTunnelConfigurationGetC
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/configurations',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toJson())}/configurations',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toString())}/configurations',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/cfd_tunnel/${Uri.encodeComponent(tunnelId.toJson())}/configurations',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

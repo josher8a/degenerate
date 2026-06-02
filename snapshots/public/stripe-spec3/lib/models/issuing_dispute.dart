@@ -265,6 +265,6 @@ IssuingDispute copyWith({int? amount, List<BalanceTransaction>? Function()? bala
 
 @override int get hashCode => Object.hash(amount, Object.hashAll(balanceTransactions ?? const []), created, currency, evidence, id, livemode, lossReason, metadata, object, status, transaction, treasury);
 
-@override String toString() => 'IssuingDispute(amount: $amount, balanceTransactions: $balanceTransactions, created: $created, currency: $currency, evidence: $evidence, id: $id, livemode: $livemode, lossReason: $lossReason, metadata: $metadata, object: $object, status: $status, transaction: $transaction, treasury: $treasury)';
+@override String toString() => 'IssuingDispute(\n  amount: $amount,\n  balanceTransactions: $balanceTransactions,\n  created: $created,\n  currency: $currency,\n  evidence: $evidence,\n  id: $id,\n  livemode: $livemode,\n  lossReason: $lossReason,\n  metadata: $metadata,\n  object: $object,\n  status: $status,\n  transaction: $transaction,\n  treasury: $treasury,\n)';
 
  }

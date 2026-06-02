@@ -25,7 +25,7 @@ factory Tool.fromJson(Map<String, dynamic> json) { return switch (json['type']) 
 }; }
 
 /// Build the `function` variant.
-factory Tool.function({required String name, String? description, required Map<String,dynamic>? parameters, required bool? strict, bool? deferLoading, }) { return ToolFunction(FunctionTool(type: 'function', name: name, description: description, parameters: parameters, strict: strict, deferLoading: deferLoading)); }
+factory Tool.function({required String name, required Map<String,dynamic>? parameters, required bool? strict, String? description, bool? deferLoading, }) { return ToolFunction(FunctionTool(type: 'function', name: name, description: description, parameters: parameters, strict: strict, deferLoading: deferLoading)); }
 
 /// Build the `file_search` variant.
 factory Tool.fileSearch({required List<String> vectorStoreIds, int? maxNumResults, RankingOptions? rankingOptions, Filters? filters, }) { return ToolFileSearch(FileSearchTool(type: 'file_search', vectorStoreIds: vectorStoreIds, maxNumResults: maxNumResults, rankingOptions: rankingOptions, filters: filters)); }
@@ -66,6 +66,24 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is Tool$Unknown;
 
+R when<R>({required R Function(ToolFunction) function, required R Function(ToolFileSearch) fileSearch, required R Function(ToolComputer) computer, required R Function(ToolComputerUsePreview) computerUsePreview, required R Function(ToolWebSearch) webSearch, required R Function(ToolMcp) mcp, required R Function(ToolCodeInterpreter) codeInterpreter, required R Function(ToolImageGeneration) imageGeneration, required R Function(ToolLocalShell) localShell, required R Function(ToolShell) shell, required R Function(ToolCustom) custom, required R Function(ToolNamespace) namespace, required R Function(ToolToolSearch) toolSearch, required R Function(ToolWebSearchPreview) webSearchPreview, required R Function(ToolApplyPatch) applyPatch, required R Function(Tool$Unknown) unknown, }) { return switch (this) {
+  final ToolFunction v => function(v),
+  final ToolFileSearch v => fileSearch(v),
+  final ToolComputer v => computer(v),
+  final ToolComputerUsePreview v => computerUsePreview(v),
+  final ToolWebSearch v => webSearch(v),
+  final ToolMcp v => mcp(v),
+  final ToolCodeInterpreter v => codeInterpreter(v),
+  final ToolImageGeneration v => imageGeneration(v),
+  final ToolLocalShell v => localShell(v),
+  final ToolShell v => shell(v),
+  final ToolCustom v => custom(v),
+  final ToolNamespace v => namespace(v),
+  final ToolToolSearch v => toolSearch(v),
+  final ToolWebSearchPreview v => webSearchPreview(v),
+  final ToolApplyPatch v => applyPatch(v),
+  final Tool$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ToolFunction extends Tool {const ToolFunction(this.functionTool);
 

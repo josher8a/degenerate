@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'organization': organization.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
   'scope': scope.toJson(),
-  'sender': sender != null ? sender?.toJson() : null,
+  'sender': sender?.toJson(),
   'team': team.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
@@ -100,6 +100,6 @@ WebhookMembershipAdded copyWith({WebhookInstallationRepositoriesAddedAction? act
 
 @override int get hashCode => Object.hash(action, enterprise, installation, member, organization, repository, scope, sender, team);
 
-@override String toString() => 'WebhookMembershipAdded(action: $action, enterprise: $enterprise, installation: $installation, member: $member, organization: $organization, repository: $repository, scope: $scope, sender: $sender, team: $team)';
+@override String toString() => 'WebhookMembershipAdded(\n  action: $action,\n  enterprise: $enterprise,\n  installation: $installation,\n  member: $member,\n  organization: $organization,\n  repository: $repository,\n  scope: $scope,\n  sender: $sender,\n  team: $team,\n)';
 
  }

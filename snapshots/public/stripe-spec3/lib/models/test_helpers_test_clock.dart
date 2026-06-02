@@ -126,6 +126,6 @@ TestHelpersTestClock copyWith({int? created, int? deletesAfter, int? frozenTime,
 
 @override int get hashCode => Object.hash(created, deletesAfter, frozenTime, id, livemode, name, object, status, statusDetails);
 
-@override String toString() => 'TestHelpersTestClock(created: $created, deletesAfter: $deletesAfter, frozenTime: $frozenTime, id: $id, livemode: $livemode, name: $name, object: $object, status: $status, statusDetails: $statusDetails)';
+@override String toString() => 'TestHelpersTestClock(\n  created: $created,\n  deletesAfter: $deletesAfter,\n  frozenTime: $frozenTime,\n  id: $id,\n  livemode: $livemode,\n  name: $name,\n  object: $object,\n  status: $status,\n  statusDetails: $statusDetails,\n)';
 
  }

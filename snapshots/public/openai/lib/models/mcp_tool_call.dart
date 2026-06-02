@@ -130,6 +130,6 @@ McpToolCall copyWith({String? type, String? id, String? serverLabel, String? nam
 
 @override int get hashCode => Object.hash(type, id, serverLabel, name, arguments, output, error, status, approvalRequestId);
 
-@override String toString() => 'McpToolCall(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments, output: $output, error: $error, status: $status, approvalRequestId: $approvalRequestId)';
+@override String toString() => 'McpToolCall(\n  type: $type,\n  id: $id,\n  serverLabel: $serverLabel,\n  name: $name,\n  arguments: $arguments,\n  output: $output,\n  error: $error,\n  status: $status,\n  approvalRequestId: $approvalRequestId,\n)';
 
  }

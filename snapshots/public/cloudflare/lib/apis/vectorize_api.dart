@@ -17,7 +17,7 @@ Future<ApiResult<ResponseCommon33Result, Never>> vectorizeListVectorizeIndexes({
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<VectorizeCreateIndexResponse?, Never>> vectorizeGetVectorizeInd
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -85,7 +85,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> vectorizeDeleteVectorizeIndex({r
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -108,7 +108,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/delete_by_ids',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toJson())}/delete_by_ids',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -132,7 +132,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/get_by_ids',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toJson())}/get_by_ids',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -155,7 +155,7 @@ Future<ApiResult<VectorizeIndexInfoResponse?, Never>> vectorizeIndexInfo({requir
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/info',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toJson())}/info',
   headers: headers,
   options: options,
 );
@@ -184,7 +184,7 @@ headers['Content-Type'] = 'application/x-ndjson';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/insert',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toJson())}/insert',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -218,7 +218,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/list',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toJson())}/list',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -243,7 +243,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/metadata_index/create',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toJson())}/metadata_index/create',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -267,7 +267,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/metadata_index/delete',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toJson())}/metadata_index/delete',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -290,7 +290,7 @@ Future<ApiResult<VectorizeListMetadataIndexResponse?, Never>> vectorizeListMetad
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/metadata_index/list',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toJson())}/metadata_index/list',
   headers: headers,
   options: options,
 );
@@ -313,7 +313,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/query',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toJson())}/query',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -343,7 +343,7 @@ headers['Content-Type'] = 'application/x-ndjson';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toString())}/upsert',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/vectorize/v2/indexes/${Uri.encodeComponent(indexName.toJson())}/upsert',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

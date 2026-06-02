@@ -122,7 +122,7 @@ Map<String, dynamic> toJson() { return {
   if (baseRole != null) 'base_role': baseRole?.toJson(),
   if (source != null) 'source': source?.toJson(),
   'permissions': permissions,
-  'organization': organization != null ? organization?.toJson() : null,
+  'organization': organization?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
 }; } 
@@ -157,6 +157,6 @@ OrganizationRole copyWith({int? id, String? name, String? Function()? descriptio
 
 @override int get hashCode => Object.hash(id, name, description, baseRole, source, Object.hashAll(permissions), organization, createdAt, updatedAt);
 
-@override String toString() => 'OrganizationRole(id: $id, name: $name, description: $description, baseRole: $baseRole, source: $source, permissions: $permissions, organization: $organization, createdAt: $createdAt, updatedAt: $updatedAt)';
+@override String toString() => 'OrganizationRole(\n  id: $id,\n  name: $name,\n  description: $description,\n  baseRole: $baseRole,\n  source: $source,\n  permissions: $permissions,\n  organization: $organization,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
  }

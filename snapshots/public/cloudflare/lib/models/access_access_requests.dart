@@ -118,6 +118,6 @@ AccessAccessRequests copyWith({AccessAction? Function()? action, AccessAllowed? 
 
 @override int get hashCode => Object.hash(action, allowed, appDomain, appUid, connection, createdAt, ipAddress, rayId, userEmail);
 
-@override String toString() => 'AccessAccessRequests(action: $action, allowed: $allowed, appDomain: $appDomain, appUid: $appUid, connection: $connection, createdAt: $createdAt, ipAddress: $ipAddress, rayId: $rayId, userEmail: $userEmail)';
+@override String toString() => 'AccessAccessRequests(\n  action: $action,\n  allowed: $allowed,\n  appDomain: $appDomain,\n  appUid: $appUid,\n  connection: $connection,\n  createdAt: $createdAt,\n  ipAddress: $ipAddress,\n  rayId: $rayId,\n  userEmail: $userEmail,\n)';
 
  }

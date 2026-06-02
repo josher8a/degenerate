@@ -87,6 +87,6 @@ AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, Str
 
 @override int get hashCode => Object.hash(cdate, domain, id, justification, mitigationSummary, originalWork, status, submitter, type, Object.hashAll(urls ?? const []));
 
-@override String toString() => 'AbuseReportsAbuseReport(cdate: $cdate, domain: $domain, id: $id, justification: $justification, mitigationSummary: $mitigationSummary, originalWork: $originalWork, status: $status, submitter: $submitter, type: $type, urls: $urls)';
+@override String toString() => 'AbuseReportsAbuseReport(\n  cdate: $cdate,\n  domain: $domain,\n  id: $id,\n  justification: $justification,\n  mitigationSummary: $mitigationSummary,\n  originalWork: $originalWork,\n  status: $status,\n  submitter: $submitter,\n  type: $type,\n  urls: $urls,\n)';
 
  }

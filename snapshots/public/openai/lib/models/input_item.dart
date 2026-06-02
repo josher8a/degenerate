@@ -22,6 +22,12 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is InputItem$Unknown;
 
+R when<R>({required R Function(InputItemMessage) message, required R Function(InputItemItem) item, required R Function(InputItemItemReferenceParam) itemReferenceParam, required R Function(InputItem$Unknown) unknown, }) { return switch (this) {
+  final InputItemMessage v => message(v),
+  final InputItemItem v => item(v),
+  final InputItemItemReferenceParam v => itemReferenceParam(v),
+  final InputItem$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class InputItemMessage extends InputItem {const InputItemMessage(this.easyInputMessage);
 

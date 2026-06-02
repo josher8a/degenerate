@@ -123,6 +123,6 @@ RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceM
 
 @override int get hashCode => Object.hash(clientDeviceMetadataDetails, createdAt, customerDetails, Object.hashAll(events), id, insights, livemode, metadata, object, outcome, paymentDetails);
 
-@override String toString() => 'RadarPaymentEvaluation(clientDeviceMetadataDetails: $clientDeviceMetadataDetails, createdAt: $createdAt, customerDetails: $customerDetails, events: $events, id: $id, insights: $insights, livemode: $livemode, metadata: $metadata, object: $object, outcome: $outcome, paymentDetails: $paymentDetails)';
+@override String toString() => 'RadarPaymentEvaluation(\n  clientDeviceMetadataDetails: $clientDeviceMetadataDetails,\n  createdAt: $createdAt,\n  customerDetails: $customerDetails,\n  events: $events,\n  id: $id,\n  insights: $insights,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  outcome: $outcome,\n  paymentDetails: $paymentDetails,\n)';
 
  }

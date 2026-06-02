@@ -286,5 +286,5 @@ final class New {
 
   @override
   String toString() =>
-      'New(\$false: ${$false}, none: $none, \$null: ${$null}, \$0: ${$0}, \$empty: ${$empty}, constructor: $constructor, proto: $proto, hasOwnProperty: $hasOwnProperty, type: $type, \$ref: ${$ref}, \$id: ${$id}, xExtensionLookalike: $xExtensionLookalike, \$class: ${$class}, \$import: ${$import}, \$return: ${$return}, \$void: ${$void}, package: $package)';
+      'New(\n  \$false: ${$false},\n  none: $none,\n  \$null: ${$null},\n  \$0: ${$0},\n  \$empty: ${$empty},\n  constructor: $constructor,\n  proto: $proto,\n  hasOwnProperty: $hasOwnProperty,\n  type: $type,\n  \$ref: ${$ref},\n  \$id: ${$id},\n  xExtensionLookalike: $xExtensionLookalike,\n  \$class: ${$class},\n  \$import: ${$import},\n  \$return: ${$return},\n  \$void: ${$void},\n  package: $package,\n)';
 }

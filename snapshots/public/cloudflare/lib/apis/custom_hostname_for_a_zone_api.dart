@@ -41,7 +41,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_hostnames',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -66,7 +66,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_hostnames',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -89,7 +89,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesCustomhostname?, Never>> customHostn
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -112,7 +112,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -135,7 +135,7 @@ Future<ApiResult<CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertif
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -157,7 +157,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toString())}/certificate_pack/${Uri.encodeComponent(certificatePackId.toString())}/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toJson())}/certificate_pack/${Uri.encodeComponent(certificatePackId.toJson())}/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -180,7 +180,7 @@ Future<ApiResult<CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHos
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toString())}/certificate_pack/${Uri.encodeComponent(certificatePackId.toString())}/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_hostnames/${Uri.encodeComponent(customHostnameId.toJson())}/certificate_pack/${Uri.encodeComponent(certificatePackId.toJson())}/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );

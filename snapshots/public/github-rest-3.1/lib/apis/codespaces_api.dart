@@ -40,7 +40,7 @@ return execute(
   onSuccess: (response) {
     return CodespacesListInOrganizationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// List organization secrets
@@ -147,7 +147,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete an organization secret
@@ -169,7 +169,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List selected repositories for an organization secret
@@ -205,7 +205,7 @@ return execute(
   onSuccess: (response) {
     return CodespacesListSelectedReposForOrgSecretResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Set selected repositories for an organization secret
@@ -231,7 +231,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Add selected repository to an organization secret
@@ -252,7 +252,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Remove selected repository from an organization secret
@@ -276,7 +276,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List codespaces for a user in organization
@@ -311,7 +311,7 @@ return execute(
   onSuccess: (response) {
     return CodespacesGetCodespacesForUserInOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Delete a codespace from the organization
@@ -335,7 +335,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Stop a codespace for an organization user
@@ -359,7 +359,7 @@ return execute(
   onSuccess: (response) {
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// List codespaces in a repository for the authenticated user
@@ -394,7 +394,7 @@ return execute(
   onSuccess: (response) {
     return CodespacesListInRepositoryForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Create a codespace in a repository
@@ -420,7 +420,7 @@ return execute(
   onSuccess: (response) {
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesCreateWithRepoForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesCreateWithRepoForAuthenticatedUserError.fromResponse,
 );
  } 
 /// List devcontainer configurations in a repository for the authenticated user
@@ -456,7 +456,7 @@ return execute(
   onSuccess: (response) {
     return CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesListDevcontainersInRepositoryForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesListDevcontainersInRepositoryForAuthenticatedUserError.fromResponse,
 );
  } 
 /// List available machine types for a repository
@@ -494,7 +494,7 @@ return execute(
   onSuccess: (response) {
     return CodespacesRepoMachinesForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get default attributes for a codespace
@@ -529,7 +529,7 @@ return execute(
   onSuccess: (response) {
     return CodespacesPreFlightWithRepoForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Check if permissions defined by a devcontainer have been accepted by the authenticated user
@@ -560,7 +560,7 @@ return execute(
   onSuccess: (response) {
     return CodespacesPermissionsCheckForDevcontainer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesCheckPermissionsForDevcontainerError.fromResponse(response),
+  onError: CodespacesCheckPermissionsForDevcontainerError.fromResponse,
 );
  } 
 /// List repository secrets
@@ -715,7 +715,7 @@ return execute(
   onSuccess: (response) {
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesCreateWithPrForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesCreateWithPrForAuthenticatedUserError.fromResponse,
 );
  } 
 /// List codespaces for the authenticated user
@@ -753,7 +753,7 @@ return execute(
   onSuccess: (response) {
     return CodespacesListForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Create a codespace for the authenticated user
@@ -781,7 +781,7 @@ return execute(
   onSuccess: (response) {
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesCreateForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesCreateForAuthenticatedUserError.fromResponse,
 );
  } 
 /// List secrets for the authenticated user
@@ -897,7 +897,7 @@ return execute(
   onSuccess: (response) {
     return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete a secret for the authenticated user
@@ -946,7 +946,7 @@ return execute(
   onSuccess: (response) {
     return CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Set selected repositories for a user secret
@@ -972,7 +972,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Add a selected repository to a user secret
@@ -996,7 +996,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Remove a selected repository from a user secret
@@ -1020,7 +1020,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get a codespace for the authenticated user
@@ -1044,7 +1044,7 @@ return execute(
   onSuccess: (response) {
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Update a codespace for the authenticated user
@@ -1072,7 +1072,7 @@ return execute(
   onSuccess: (response) {
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Delete a codespace for the authenticated user
@@ -1096,7 +1096,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Export a codespace for the authenticated user
@@ -1122,7 +1122,7 @@ return execute(
   onSuccess: (response) {
     return CodespaceExportDetails.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesExportForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesExportForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get details about a codespace export
@@ -1146,7 +1146,7 @@ return execute(
   onSuccess: (response) {
     return CodespaceExportDetails.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List machine types for a codespace
@@ -1170,7 +1170,7 @@ return execute(
   onSuccess: (response) {
     return CodespacesCodespaceMachinesForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Create a repository from an unpublished codespace
@@ -1200,7 +1200,7 @@ return execute(
   onSuccess: (response) {
     return CodespaceWithFullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// Start a codespace for the authenticated user
@@ -1224,7 +1224,7 @@ return execute(
   onSuccess: (response) {
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesStartForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesStartForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Stop a codespace for the authenticated user
@@ -1248,7 +1248,7 @@ return execute(
   onSuccess: (response) {
     return Codespace.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(response),
+  onError: CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse,
 );
  } 
  }

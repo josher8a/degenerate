@@ -25,7 +25,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/tags',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/tags',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -53,7 +53,7 @@ if (ifMatch != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/tags',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/tags',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -65,7 +65,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => TagsDeleteError.fromResponse(response),
+  onError: TagsDeleteError.fromResponse,
 );
  } 
 /// Delete tags from an account-level resource
@@ -81,7 +81,7 @@ if (ifMatch != null) {
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/tags',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/tags',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -90,7 +90,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => TagsDeleteError.fromResponse(response),
+  onError: TagsDeleteError.fromResponse,
 );
  } 
 /// List tag keys
@@ -108,7 +108,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/tags/keys',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/tags/keys',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -148,7 +148,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/tags/resources',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/tags/resources',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -181,7 +181,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/tags/values/${Uri.encodeComponent(tagKey)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/tags/values/${Uri.encodeComponent(tagKey)}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -213,7 +213,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/tags',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/tags',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -241,7 +241,7 @@ if (ifMatch != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/tags',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/tags',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -253,7 +253,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => TagsDeleteError.fromResponse(response),
+  onError: TagsDeleteError.fromResponse,
 );
  } 
 /// Delete tags from a zone-level resource
@@ -269,7 +269,7 @@ if (ifMatch != null) {
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/tags',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/tags',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -278,7 +278,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => TagsDeleteError.fromResponse(response),
+  onError: TagsDeleteError.fromResponse,
 );
  } 
  }

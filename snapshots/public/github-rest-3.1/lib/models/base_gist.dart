@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   'description': description,
   'comments': comments,
   'comments_enabled': ?commentsEnabled,
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
   'comments_url': commentsUrl.toString(),
   if (owner != null) 'owner': owner?.toJson(),
   'truncated': ?truncated,
@@ -157,6 +157,6 @@ BaseGist copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String?
 
 @override int get hashCode => Object.hashAll([url, forksUrl, commitsUrl, id, nodeId, gitPullUrl, gitPushUrl, htmlUrl, files, public, createdAt, updatedAt, description, comments, commentsEnabled, user, commentsUrl, owner, truncated, Object.hashAll(forks ?? const []), Object.hashAll(history ?? const [])]);
 
-@override String toString() => 'BaseGist(url: $url, forksUrl: $forksUrl, commitsUrl: $commitsUrl, id: $id, nodeId: $nodeId, gitPullUrl: $gitPullUrl, gitPushUrl: $gitPushUrl, htmlUrl: $htmlUrl, files: $files, public: $public, createdAt: $createdAt, updatedAt: $updatedAt, description: $description, comments: $comments, commentsEnabled: $commentsEnabled, user: $user, commentsUrl: $commentsUrl, owner: $owner, truncated: $truncated, forks: $forks, history: $history)';
+@override String toString() => 'BaseGist(\n  url: $url,\n  forksUrl: $forksUrl,\n  commitsUrl: $commitsUrl,\n  id: $id,\n  nodeId: $nodeId,\n  gitPullUrl: $gitPullUrl,\n  gitPushUrl: $gitPushUrl,\n  htmlUrl: $htmlUrl,\n  files: $files,\n  public: $public,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  description: $description,\n  comments: $comments,\n  commentsEnabled: $commentsEnabled,\n  user: $user,\n  commentsUrl: $commentsUrl,\n  owner: $owner,\n  truncated: $truncated,\n  forks: $forks,\n  history: $history,\n)';
 
  }

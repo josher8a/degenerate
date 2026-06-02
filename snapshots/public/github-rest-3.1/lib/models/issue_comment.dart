@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'body_text': ?bodyText,
   'body_html': ?bodyHtml,
   'html_url': htmlUrl.toString(),
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'issue_url': issueUrl.toString(),
@@ -117,6 +117,6 @@ IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? bo
 
 @override int get hashCode => Object.hash(id, nodeId, url, body, bodyText, bodyHtml, htmlUrl, user, createdAt, updatedAt, issueUrl, authorAssociation, performedViaGithubApp, reactions, pin);
 
-@override String toString() => 'IssueComment(id: $id, nodeId: $nodeId, url: $url, body: $body, bodyText: $bodyText, bodyHtml: $bodyHtml, htmlUrl: $htmlUrl, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, issueUrl: $issueUrl, authorAssociation: $authorAssociation, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, pin: $pin)';
+@override String toString() => 'IssueComment(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  body: $body,\n  bodyText: $bodyText,\n  bodyHtml: $bodyHtml,\n  htmlUrl: $htmlUrl,\n  user: $user,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  issueUrl: $issueUrl,\n  authorAssociation: $authorAssociation,\n  performedViaGithubApp: $performedViaGithubApp,\n  reactions: $reactions,\n  pin: $pin,\n)';
 
  }

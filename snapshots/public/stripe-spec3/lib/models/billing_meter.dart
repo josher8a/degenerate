@@ -175,6 +175,6 @@ BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings
 
 @override int get hashCode => Object.hash(created, customerMapping, defaultAggregation, displayName, eventName, eventTimeWindow, id, livemode, object, status, statusTransitions, updated, valueSettings);
 
-@override String toString() => 'BillingMeter(created: $created, customerMapping: $customerMapping, defaultAggregation: $defaultAggregation, displayName: $displayName, eventName: $eventName, eventTimeWindow: $eventTimeWindow, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions, updated: $updated, valueSettings: $valueSettings)';
+@override String toString() => 'BillingMeter(\n  created: $created,\n  customerMapping: $customerMapping,\n  defaultAggregation: $defaultAggregation,\n  displayName: $displayName,\n  eventName: $eventName,\n  eventTimeWindow: $eventTimeWindow,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  status: $status,\n  statusTransitions: $statusTransitions,\n  updated: $updated,\n  valueSettings: $valueSettings,\n)';
 
  }

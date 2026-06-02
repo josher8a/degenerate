@@ -32,28 +32,28 @@ factory ItemResource.fromJson(Map<String, dynamic> json) { return switch (json['
 }; }
 
 /// Build the `InputMessageResource` variant.
-factory ItemResource.inputMessageResource({required InputMessageRole role, ComputerToolCallOutputStatus? status, required List<InputContent> content, }) { return ItemResourceInputMessageResource(InputMessage(type: 'InputMessageResource', role: role, status: status, content: content)); }
+factory ItemResource.inputMessageResource({required InputMessageRole role, required List<InputContent> content, ComputerToolCallOutputStatus? status, }) { return ItemResourceInputMessageResource(InputMessage(type: 'InputMessageResource', role: role, status: status, content: content)); }
 
 /// Build the `message` variant.
-factory ItemResource.message({required String id, required ChatCompletionResponseMessageRole role, required List<OutputMessageContent> content, MessagePhase? phase, required ComputerToolCallOutputStatus status, }) { return ItemResourceMessage(OutputMessage(type: 'message', id: id, role: role, content: content, phase: phase, status: status)); }
+factory ItemResource.message({required String id, required ChatCompletionResponseMessageRole role, required List<OutputMessageContent> content, required ComputerToolCallOutputStatus status, MessagePhase? phase, }) { return ItemResourceMessage(OutputMessage(type: 'message', id: id, role: role, content: content, phase: phase, status: status)); }
 
 /// Build the `file_search_call` variant.
 factory ItemResource.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, List<FileSearchToolCallResults>? results, }) { return ItemResourceFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
 
 /// Build the `computer_call` variant.
-factory ItemResource.computerCall({required String id, required String callId, ComputerAction? action, List<ComputerAction>? actions, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputStatus status, }) { return ItemResourceComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
+factory ItemResource.computerCall({required String id, required String callId, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputStatus status, ComputerAction? action, List<ComputerAction>? actions, }) { return ItemResourceComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
 
 /// Build the `ComputerToolCallOutputResource` variant.
-factory ItemResource.computerToolCallOutputResource({String? id, required String callId, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, required ComputerScreenshotImage output, ComputerToolCallOutputStatus? status, }) { return ItemResourceComputerToolCallOutputResource(ComputerToolCallOutput(type: ComputerToolCallOutputType.fromJson('ComputerToolCallOutputResource'), id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status)); }
+factory ItemResource.computerToolCallOutputResource({required String callId, required ComputerScreenshotImage output, String? id, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ItemResourceComputerToolCallOutputResource(ComputerToolCallOutput(type: ComputerToolCallOutputType.fromJson('ComputerToolCallOutputResource'), id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status)); }
 
 /// Build the `web_search_call` variant.
 factory ItemResource.webSearchCall({required String id, required WebSearchToolCallStatus status, required WebSearchToolCallAction action, }) { return ItemResourceWebSearchCall(WebSearchToolCall(type: 'web_search_call', id: id, status: status, action: action)); }
 
 /// Build the `FunctionToolCallResource` variant.
-factory ItemResource.functionToolCallResource({String? id, required String callId, String? namespace, required String name, required String arguments, ComputerToolCallOutputStatus? status, }) { return ItemResourceFunctionToolCallResource(FunctionToolCall(type: 'FunctionToolCallResource', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
+factory ItemResource.functionToolCallResource({required String callId, required String name, required String arguments, String? id, String? namespace, ComputerToolCallOutputStatus? status, }) { return ItemResourceFunctionToolCallResource(FunctionToolCall(type: 'FunctionToolCallResource', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
 
 /// Build the `FunctionToolCallOutputResource` variant.
-factory ItemResource.functionToolCallOutputResource({String? id, required String callId, required CustomToolCallOutputOutput output, ComputerToolCallOutputStatus? status, }) { return ItemResourceFunctionToolCallOutputResource(FunctionToolCallOutput(type: 'FunctionToolCallOutputResource', id: id, callId: callId, output: output, status: status)); }
+factory ItemResource.functionToolCallOutputResource({required String callId, required CustomToolCallOutputOutput output, String? id, ComputerToolCallOutputStatus? status, }) { return ItemResourceFunctionToolCallOutputResource(FunctionToolCallOutput(type: 'FunctionToolCallOutputResource', id: id, callId: callId, output: output, status: status)); }
 
 /// Build the `tool_search_call` variant.
 factory ItemResource.toolSearchCall({required String id, required String? callId, required ToolSearchExecutionType execution, required dynamic arguments, required FunctionCallStatus status, String? createdBy, }) { return ItemResourceToolSearchCall(ToolSearchCall(type: 'tool_search_call', id: id, callId: callId, execution: execution, arguments: arguments, status: status, createdBy: createdBy)); }
@@ -103,6 +103,31 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ItemResource$Unknown;
 
+R when<R>({required R Function(ItemResourceInputMessageResource) inputMessageResource, required R Function(ItemResourceMessage) message, required R Function(ItemResourceFileSearchCall) fileSearchCall, required R Function(ItemResourceComputerCall) computerCall, required R Function(ItemResourceComputerToolCallOutputResource) computerToolCallOutputResource, required R Function(ItemResourceWebSearchCall) webSearchCall, required R Function(ItemResourceFunctionToolCallResource) functionToolCallResource, required R Function(ItemResourceFunctionToolCallOutputResource) functionToolCallOutputResource, required R Function(ItemResourceToolSearchCall) toolSearchCall, required R Function(ItemResourceToolSearchOutput) toolSearchOutput, required R Function(ItemResourceImageGenerationCall) imageGenerationCall, required R Function(ItemResourceCodeInterpreterCall) codeInterpreterCall, required R Function(ItemResourceLocalShellCall) localShellCall, required R Function(ItemResourceLocalShellCallOutput) localShellCallOutput, required R Function(ItemResourceShellCall) shellCall, required R Function(ItemResourceShellCallOutput) shellCallOutput, required R Function(ItemResourceApplyPatchCall) applyPatchCall, required R Function(ItemResourceApplyPatchCallOutput) applyPatchCallOutput, required R Function(ItemResourceMcpListTools) mcpListTools, required R Function(ItemResourceMcpApprovalRequest) mcpApprovalRequest, required R Function(ItemResourceMcpApprovalResponse) mcpApprovalResponse, required R Function(ItemResourceMcpCall) mcpCall, required R Function(ItemResource$Unknown) unknown, }) { return switch (this) {
+  final ItemResourceInputMessageResource v => inputMessageResource(v),
+  final ItemResourceMessage v => message(v),
+  final ItemResourceFileSearchCall v => fileSearchCall(v),
+  final ItemResourceComputerCall v => computerCall(v),
+  final ItemResourceComputerToolCallOutputResource v => computerToolCallOutputResource(v),
+  final ItemResourceWebSearchCall v => webSearchCall(v),
+  final ItemResourceFunctionToolCallResource v => functionToolCallResource(v),
+  final ItemResourceFunctionToolCallOutputResource v => functionToolCallOutputResource(v),
+  final ItemResourceToolSearchCall v => toolSearchCall(v),
+  final ItemResourceToolSearchOutput v => toolSearchOutput(v),
+  final ItemResourceImageGenerationCall v => imageGenerationCall(v),
+  final ItemResourceCodeInterpreterCall v => codeInterpreterCall(v),
+  final ItemResourceLocalShellCall v => localShellCall(v),
+  final ItemResourceLocalShellCallOutput v => localShellCallOutput(v),
+  final ItemResourceShellCall v => shellCall(v),
+  final ItemResourceShellCallOutput v => shellCallOutput(v),
+  final ItemResourceApplyPatchCall v => applyPatchCall(v),
+  final ItemResourceApplyPatchCallOutput v => applyPatchCallOutput(v),
+  final ItemResourceMcpListTools v => mcpListTools(v),
+  final ItemResourceMcpApprovalRequest v => mcpApprovalRequest(v),
+  final ItemResourceMcpApprovalResponse v => mcpApprovalResponse(v),
+  final ItemResourceMcpCall v => mcpCall(v),
+  final ItemResource$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ItemResourceInputMessageResource extends ItemResource {const ItemResourceInputMessageResource(this.inputMessage);
 

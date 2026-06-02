@@ -82,14 +82,14 @@ final bool? usesFunctions;
 
 Map<String, dynamic> toJson() { return {
   if (buildConfig != null) 'build_config': buildConfig?.toJson(),
-  'canonical_deployment': canonicalDeployment != null ? canonicalDeployment?.toJson() : null,
+  'canonical_deployment': canonicalDeployment?.toJson(),
   'created_on': createdOn.toIso8601String(),
   'deployment_configs': deploymentConfigs.toJson(),
   'domains': ?domains,
   'framework': framework,
   'framework_version': frameworkVersion,
   'id': id,
-  'latest_deployment': latestDeployment != null ? latestDeployment?.toJson() : null,
+  'latest_deployment': latestDeployment?.toJson(),
   'name': name.toJson(),
   'preview_script_name': previewScriptName,
   'production_branch': productionBranch,
@@ -149,6 +149,6 @@ PagesProject copyWith({PagesBuildConfig? Function()? buildConfig, PagesDeploymen
 
 @override int get hashCode => Object.hash(buildConfig, canonicalDeployment, createdOn, deploymentConfigs, Object.hashAll(domains ?? const []), framework, frameworkVersion, id, latestDeployment, name, previewScriptName, productionBranch, productionScriptName, source, subdomain, usesFunctions);
 
-@override String toString() => 'PagesProject(buildConfig: $buildConfig, canonicalDeployment: $canonicalDeployment, createdOn: $createdOn, deploymentConfigs: $deploymentConfigs, domains: $domains, framework: $framework, frameworkVersion: $frameworkVersion, id: $id, latestDeployment: $latestDeployment, name: $name, previewScriptName: $previewScriptName, productionBranch: $productionBranch, productionScriptName: $productionScriptName, source: $source, subdomain: $subdomain, usesFunctions: $usesFunctions)';
+@override String toString() => 'PagesProject(\n  buildConfig: $buildConfig,\n  canonicalDeployment: $canonicalDeployment,\n  createdOn: $createdOn,\n  deploymentConfigs: $deploymentConfigs,\n  domains: $domains,\n  framework: $framework,\n  frameworkVersion: $frameworkVersion,\n  id: $id,\n  latestDeployment: $latestDeployment,\n  name: $name,\n  previewScriptName: $previewScriptName,\n  productionBranch: $productionBranch,\n  productionScriptName: $productionScriptName,\n  source: $source,\n  subdomain: $subdomain,\n  usesFunctions: $usesFunctions,\n)';
 
  }

@@ -180,6 +180,6 @@ ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, Image
 
 @override int get hashCode => Object.hash(type, model, quality, size, outputFormat, outputCompression, moderation, background, inputFidelity, inputImageMask, partialImages, action);
 
-@override String toString() => 'ImageGenTool(type: $type, model: $model, quality: $quality, size: $size, outputFormat: $outputFormat, outputCompression: $outputCompression, moderation: $moderation, background: $background, inputFidelity: $inputFidelity, inputImageMask: $inputImageMask, partialImages: $partialImages, action: $action)';
+@override String toString() => 'ImageGenTool(\n  type: $type,\n  model: $model,\n  quality: $quality,\n  size: $size,\n  outputFormat: $outputFormat,\n  outputCompression: $outputCompression,\n  moderation: $moderation,\n  background: $background,\n  inputFidelity: $inputFidelity,\n  inputImageMask: $inputImageMask,\n  partialImages: $partialImages,\n  action: $action,\n)';
 
  }

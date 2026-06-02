@@ -102,6 +102,6 @@ ClassroomAssignmentGrade copyWith({String? assignmentName, String? assignmentUrl
 
 @override int get hashCode => Object.hash(assignmentName, assignmentUrl, starterCodeUrl, githubUsername, rosterIdentifier, studentRepositoryName, studentRepositoryUrl, submissionTimestamp, pointsAwarded, pointsAvailable, groupName);
 
-@override String toString() => 'ClassroomAssignmentGrade(assignmentName: $assignmentName, assignmentUrl: $assignmentUrl, starterCodeUrl: $starterCodeUrl, githubUsername: $githubUsername, rosterIdentifier: $rosterIdentifier, studentRepositoryName: $studentRepositoryName, studentRepositoryUrl: $studentRepositoryUrl, submissionTimestamp: $submissionTimestamp, pointsAwarded: $pointsAwarded, pointsAvailable: $pointsAvailable, groupName: $groupName)';
+@override String toString() => 'ClassroomAssignmentGrade(\n  assignmentName: $assignmentName,\n  assignmentUrl: $assignmentUrl,\n  starterCodeUrl: $starterCodeUrl,\n  githubUsername: $githubUsername,\n  rosterIdentifier: $rosterIdentifier,\n  studentRepositoryName: $studentRepositoryName,\n  studentRepositoryUrl: $studentRepositoryUrl,\n  submissionTimestamp: $submissionTimestamp,\n  pointsAwarded: $pointsAwarded,\n  pointsAvailable: $pointsAvailable,\n  groupName: $groupName,\n)';
 
  }

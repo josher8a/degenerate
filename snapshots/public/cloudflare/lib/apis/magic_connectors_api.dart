@@ -15,7 +15,7 @@ Future<ApiResult<List<MconnCustomerConnector>?, MconnConnectorListError>> mconnC
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/connectors',
   headers: headers,
   options: options,
 );
@@ -26,7 +26,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => MconnCustomerConnector.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => MconnConnectorListError.fromResponse(response),
+  onError: MconnConnectorListError.fromResponse,
 );
  } 
 /// Add a connector to your account
@@ -37,7 +37,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/connectors',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -49,7 +49,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => MconnConnectorCreateError.fromResponse(response),
+  onError: MconnConnectorCreateError.fromResponse,
 );
  } 
 /// Fetch Connector
@@ -59,7 +59,7 @@ Future<ApiResult<MconnCustomerConnector?, MconnConnectorDeleteError>> mconnConne
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/connectors/${Uri.encodeComponent(connectorId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -70,7 +70,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => MconnConnectorDeleteError.fromResponse(response),
+  onError: MconnConnectorDeleteError.fromResponse,
 );
  } 
 /// Replace Connector or Re-provision License Key
@@ -81,7 +81,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/connectors/${Uri.encodeComponent(connectorId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -93,7 +93,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => MconnConnectorDeleteError.fromResponse(response),
+  onError: MconnConnectorDeleteError.fromResponse,
 );
  } 
 /// Edit Connector to update specific properties or Re-provision License Key
@@ -104,7 +104,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/connectors/${Uri.encodeComponent(connectorId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -116,7 +116,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => MconnConnectorDeleteError.fromResponse(response),
+  onError: MconnConnectorDeleteError.fromResponse,
 );
  } 
 /// Remove a connector from your account
@@ -126,7 +126,7 @@ Future<ApiResult<MconnCustomerConnector?, MconnConnectorDeleteError>> mconnConne
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/connectors/${Uri.encodeComponent(connectorId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -137,7 +137,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => MconnConnectorDeleteError.fromResponse(response),
+  onError: MconnConnectorDeleteError.fromResponse,
 );
  } 
 /// List Events
@@ -161,7 +161,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -174,7 +174,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return MconnCustomerEventsGetResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => MconnConnectorTelemetryEventsListError.fromResponse(response),
+  onError: MconnConnectorTelemetryEventsListError.fromResponse,
 );
  } 
 /// Get Event
@@ -184,7 +184,7 @@ Future<ApiResult<MconnRecordedEvent, MconnConnectorTelemetryEventsGetError>> mco
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events/${Uri.encodeComponent(eventT.toString())}.${Uri.encodeComponent(eventN.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events/${Uri.encodeComponent(eventT.toString())}.${Uri.encodeComponent(eventN.toString())}',
   headers: headers,
   options: options,
 );
@@ -195,7 +195,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return MconnRecordedEvent.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => MconnConnectorTelemetryEventsGetError.fromResponse(response),
+  onError: MconnConnectorTelemetryEventsGetError.fromResponse,
 );
  } 
 /// Get latest Events
@@ -205,7 +205,7 @@ Future<ApiResult<MconnCustomerEventsGetLatestResult, MconnConnectorTelemetryEven
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events/latest',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/events/latest',
   headers: headers,
   options: options,
 );
@@ -216,7 +216,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return MconnCustomerEventsGetLatestResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => MconnConnectorTelemetryEventsGetError.fromResponse(response),
+  onError: MconnConnectorTelemetryEventsGetError.fromResponse,
 );
  } 
 /// List Snapshots
@@ -237,7 +237,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -250,7 +250,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return MconnCustomerSnapshotsGetResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => MconnConnectorTelemetryEventsListError.fromResponse(response),
+  onError: MconnConnectorTelemetryEventsListError.fromResponse,
 );
  } 
 /// Get Snapshot
@@ -260,7 +260,7 @@ Future<ApiResult<MconnSnapshot, MconnConnectorTelemetryEventsGetError>> mconnCon
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots/${Uri.encodeComponent(snapshotT.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots/${Uri.encodeComponent(snapshotT.toString())}',
   headers: headers,
   options: options,
 );
@@ -271,7 +271,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return MconnSnapshot.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => MconnConnectorTelemetryEventsGetError.fromResponse(response),
+  onError: MconnConnectorTelemetryEventsGetError.fromResponse,
 );
  } 
 /// Get latest Snapshots
@@ -281,7 +281,7 @@ Future<ApiResult<MconnCustomerSnapshotsGetLatestResult, MconnConnectorTelemetryE
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots/latest',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/connectors/${Uri.encodeComponent(connectorId)}/telemetry/snapshots/latest',
   headers: headers,
   options: options,
 );
@@ -292,7 +292,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return MconnCustomerSnapshotsGetLatestResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => MconnConnectorTelemetryEventsGetError.fromResponse(response),
+  onError: MconnConnectorTelemetryEventsGetError.fromResponse,
 );
  } 
  }

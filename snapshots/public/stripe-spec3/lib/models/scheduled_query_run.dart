@@ -135,6 +135,6 @@ ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQuery
 
 @override int get hashCode => Object.hash(created, dataLoadTime, error, file, id, livemode, object, resultAvailableUntil, sql, status, title);
 
-@override String toString() => 'ScheduledQueryRun(created: $created, dataLoadTime: $dataLoadTime, error: $error, file: $file, id: $id, livemode: $livemode, object: $object, resultAvailableUntil: $resultAvailableUntil, sql: $sql, status: $status, title: $title)';
+@override String toString() => 'ScheduledQueryRun(\n  created: $created,\n  dataLoadTime: $dataLoadTime,\n  error: $error,\n  file: $file,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  resultAvailableUntil: $resultAvailableUntil,\n  sql: $sql,\n  status: $status,\n  title: $title,\n)';
 
  }

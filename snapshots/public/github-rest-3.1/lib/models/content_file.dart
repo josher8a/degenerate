@@ -81,9 +81,9 @@ Map<String, dynamic> toJson() { return {
   'content': content,
   'sha': sha,
   'url': url.toString(),
-  'git_url': gitUrl != null ? gitUrl?.toString() : null,
-  'html_url': htmlUrl != null ? htmlUrl?.toString() : null,
-  'download_url': downloadUrl != null ? downloadUrl?.toString() : null,
+  'git_url': gitUrl?.toString(),
+  'html_url': htmlUrl?.toString(),
+  'download_url': downloadUrl?.toString(),
   '_links': links.toJson(),
   'target': ?target,
   'submodule_git_url': ?submoduleGitUrl,
@@ -135,6 +135,6 @@ ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String
 
 @override int get hashCode => Object.hash(type, encoding, size, name, path, content, sha, url, gitUrl, htmlUrl, downloadUrl, links, target, submoduleGitUrl);
 
-@override String toString() => 'ContentFile(type: $type, encoding: $encoding, size: $size, name: $name, path: $path, content: $content, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links, target: $target, submoduleGitUrl: $submoduleGitUrl)';
+@override String toString() => 'ContentFile(\n  type: $type,\n  encoding: $encoding,\n  size: $size,\n  name: $name,\n  path: $path,\n  content: $content,\n  sha: $sha,\n  url: $url,\n  gitUrl: $gitUrl,\n  htmlUrl: $htmlUrl,\n  downloadUrl: $downloadUrl,\n  links: $links,\n  target: $target,\n  submoduleGitUrl: $submoduleGitUrl,\n)';
 
  }

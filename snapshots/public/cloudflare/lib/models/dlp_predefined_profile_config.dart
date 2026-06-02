@@ -79,6 +79,6 @@ DlpPredefinedProfileConfig copyWith({bool Function()? aiContextEnabled, int? all
 
 @override int get hashCode => Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, Object.hashAll(enabledEntries), Object.hashAll(entries), id, name, ocrEnabled, openAccess);
 
-@override String toString() => 'DlpPredefinedProfileConfig(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, enabledEntries: $enabledEntries, entries: $entries, id: $id, name: $name, ocrEnabled: $ocrEnabled, openAccess: $openAccess)';
+@override String toString() => 'DlpPredefinedProfileConfig(\n  aiContextEnabled: $aiContextEnabled,\n  allowedMatchCount: $allowedMatchCount,\n  confidenceThreshold: $confidenceThreshold,\n  enabledEntries: $enabledEntries,\n  entries: $entries,\n  id: $id,\n  name: $name,\n  ocrEnabled: $ocrEnabled,\n  openAccess: $openAccess,\n)';
 
  }

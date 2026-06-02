@@ -114,6 +114,6 @@ CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeSc
 
 @override int get hashCode => Object.hash(ref, analysisKey, environment, category, state, commitSha, message, location, htmlUrl, Object.hashAll(classifications ?? const []));
 
-@override String toString() => 'CodeScanningAlertInstanceList(ref: $ref, analysisKey: $analysisKey, environment: $environment, category: $category, state: $state, commitSha: $commitSha, message: $message, location: $location, htmlUrl: $htmlUrl, classifications: $classifications)';
+@override String toString() => 'CodeScanningAlertInstanceList(\n  ref: $ref,\n  analysisKey: $analysisKey,\n  environment: $environment,\n  category: $category,\n  state: $state,\n  commitSha: $commitSha,\n  message: $message,\n  location: $location,\n  htmlUrl: $htmlUrl,\n  classifications: $classifications,\n)';
 
  }

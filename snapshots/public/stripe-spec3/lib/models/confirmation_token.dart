@@ -167,6 +167,6 @@ ConfirmationToken copyWith({int? created, int? Function()? expiresAt, String? id
 
 @override int get hashCode => Object.hash(created, expiresAt, id, livemode, mandateData, object, paymentIntent, paymentMethodOptions, paymentMethodPreview, returnUrl, setupFutureUsage, setupIntent, shipping, useStripeSdk);
 
-@override String toString() => 'ConfirmationToken(created: $created, expiresAt: $expiresAt, id: $id, livemode: $livemode, mandateData: $mandateData, object: $object, paymentIntent: $paymentIntent, paymentMethodOptions: $paymentMethodOptions, paymentMethodPreview: $paymentMethodPreview, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, setupIntent: $setupIntent, shipping: $shipping, useStripeSdk: $useStripeSdk)';
+@override String toString() => 'ConfirmationToken(\n  created: $created,\n  expiresAt: $expiresAt,\n  id: $id,\n  livemode: $livemode,\n  mandateData: $mandateData,\n  object: $object,\n  paymentIntent: $paymentIntent,\n  paymentMethodOptions: $paymentMethodOptions,\n  paymentMethodPreview: $paymentMethodPreview,\n  returnUrl: $returnUrl,\n  setupFutureUsage: $setupFutureUsage,\n  setupIntent: $setupIntent,\n  shipping: $shipping,\n  useStripeSdk: $useStripeSdk,\n)';
 
  }

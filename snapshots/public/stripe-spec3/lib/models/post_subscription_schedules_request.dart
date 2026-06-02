@@ -100,6 +100,6 @@ PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBilli
 
 @override int get hashCode => Object.hash(billingMode, customer, customerAccount, defaultSettings, endBehavior, Object.hashAll(expand ?? const []), fromSubscription, metadata, Object.hashAll(phases ?? const []), startDate);
 
-@override String toString() => 'PostSubscriptionSchedulesRequest(billingMode: $billingMode, customer: $customer, customerAccount: $customerAccount, defaultSettings: $defaultSettings, endBehavior: $endBehavior, expand: $expand, fromSubscription: $fromSubscription, metadata: $metadata, phases: $phases, startDate: $startDate)';
+@override String toString() => 'PostSubscriptionSchedulesRequest(\n  billingMode: $billingMode,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  defaultSettings: $defaultSettings,\n  endBehavior: $endBehavior,\n  expand: $expand,\n  fromSubscription: $fromSubscription,\n  metadata: $metadata,\n  phases: $phases,\n  startDate: $startDate,\n)';
 
  }

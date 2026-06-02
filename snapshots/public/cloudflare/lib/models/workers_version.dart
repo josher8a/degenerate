@@ -154,6 +154,6 @@ WorkersVersion copyWith({WorkersScriptAndVersionSettingsItemAnnotations? Functio
 
 @override int get hashCode => Object.hash(annotations, assets, Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), createdOn, id, limits, mainModule, migrations, Object.hashAll(modules ?? const []), number, placement, source, startupTimeMs, Object.hashAll(urls), usageModel);
 
-@override String toString() => 'WorkersVersion(annotations: $annotations, assets: $assets, bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, createdOn: $createdOn, id: $id, limits: $limits, mainModule: $mainModule, migrations: $migrations, modules: $modules, number: $number, placement: $placement, source: $source, startupTimeMs: $startupTimeMs, urls: $urls, usageModel: $usageModel)';
+@override String toString() => 'WorkersVersion(\n  annotations: $annotations,\n  assets: $assets,\n  bindings: $bindings,\n  compatibilityDate: $compatibilityDate,\n  compatibilityFlags: $compatibilityFlags,\n  createdOn: $createdOn,\n  id: $id,\n  limits: $limits,\n  mainModule: $mainModule,\n  migrations: $migrations,\n  modules: $modules,\n  number: $number,\n  placement: $placement,\n  source: $source,\n  startupTimeMs: $startupTimeMs,\n  urls: $urls,\n  usageModel: $usageModel,\n)';
 
  }

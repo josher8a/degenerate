@@ -137,6 +137,6 @@ AccessAppLauncherProps copyWith({List<String>? Function()? allowedIdps, AccessSc
 
 @override int get hashCode => Object.hash(Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), domain, name, sessionDuration, type, appLauncherLogoUrl, bgColor, Object.hashAll(footerLinks ?? const []), headerBgColor, landingPageDesign, skipAppLauncherLoginPage);
 
-@override String toString() => 'AccessAppLauncherProps(allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, domain: $domain, name: $name, sessionDuration: $sessionDuration, type: $type, appLauncherLogoUrl: $appLauncherLogoUrl, bgColor: $bgColor, footerLinks: $footerLinks, headerBgColor: $headerBgColor, landingPageDesign: $landingPageDesign, skipAppLauncherLoginPage: $skipAppLauncherLoginPage)';
+@override String toString() => 'AccessAppLauncherProps(\n  allowedIdps: $allowedIdps,\n  autoRedirectToIdentity: $autoRedirectToIdentity,\n  customDenyUrl: $customDenyUrl,\n  customNonIdentityDenyUrl: $customNonIdentityDenyUrl,\n  customPages: $customPages,\n  domain: $domain,\n  name: $name,\n  sessionDuration: $sessionDuration,\n  type: $type,\n  appLauncherLogoUrl: $appLauncherLogoUrl,\n  bgColor: $bgColor,\n  footerLinks: $footerLinks,\n  headerBgColor: $headerBgColor,\n  landingPageDesign: $landingPageDesign,\n  skipAppLauncherLoginPage: $skipAppLauncherLoginPage,\n)';
 
  }

@@ -97,7 +97,7 @@ Map<String, dynamic> toJson() { return {
   'submitted': submitted,
   'passing': passing,
   'language': language,
-  'deadline': deadline != null ? deadline?.toIso8601String() : null,
+  'deadline': deadline?.toIso8601String(),
   'starter_code_repository': starterCodeRepository.toJson(),
   'classroom': classroom.toJson(),
 }; } 
@@ -165,6 +165,6 @@ ClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, Classroo
 
 @override int get hashCode => Object.hash(id, publicRepo, title, type, inviteLink, invitationsEnabled, slug, studentsAreRepoAdmins, feedbackPullRequestsEnabled, maxTeams, maxMembers, editor, accepted, submitted, passing, language, deadline, starterCodeRepository, classroom);
 
-@override String toString() => 'ClassroomAssignment(id: $id, publicRepo: $publicRepo, title: $title, type: $type, inviteLink: $inviteLink, invitationsEnabled: $invitationsEnabled, slug: $slug, studentsAreRepoAdmins: $studentsAreRepoAdmins, feedbackPullRequestsEnabled: $feedbackPullRequestsEnabled, maxTeams: $maxTeams, maxMembers: $maxMembers, editor: $editor, accepted: $accepted, submitted: $submitted, passing: $passing, language: $language, deadline: $deadline, starterCodeRepository: $starterCodeRepository, classroom: $classroom)';
+@override String toString() => 'ClassroomAssignment(\n  id: $id,\n  publicRepo: $publicRepo,\n  title: $title,\n  type: $type,\n  inviteLink: $inviteLink,\n  invitationsEnabled: $invitationsEnabled,\n  slug: $slug,\n  studentsAreRepoAdmins: $studentsAreRepoAdmins,\n  feedbackPullRequestsEnabled: $feedbackPullRequestsEnabled,\n  maxTeams: $maxTeams,\n  maxMembers: $maxMembers,\n  editor: $editor,\n  accepted: $accepted,\n  submitted: $submitted,\n  passing: $passing,\n  language: $language,\n  deadline: $deadline,\n  starterCodeRepository: $starterCodeRepository,\n  classroom: $classroom,\n)';
 
  }

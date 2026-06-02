@@ -38,7 +38,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String?;
   },
-  onError: (response) => BrapiPostContentError.fromResponse(response),
+  onError: BrapiPostContentError.fromResponse,
 );
  } 
 /// Get json.
@@ -71,7 +71,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Map<String, dynamic>));
   },
-  onError: (response) => BrapiPostJsonError.fromResponse(response),
+  onError: BrapiPostJsonError.fromResponse,
 );
  } 
 /// Get Links.
@@ -104,7 +104,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => e as String).toList();
   },
-  onError: (response) => BrapiPostLinksError.fromResponse(response),
+  onError: BrapiPostLinksError.fromResponse,
 );
  } 
 /// Get markdown.
@@ -137,7 +137,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String?;
   },
-  onError: (response) => BrapiPostMarkdownError.fromResponse(response),
+  onError: BrapiPostMarkdownError.fromResponse,
 );
  } 
 /// Get PDF.
@@ -169,7 +169,7 @@ return execute(
   onSuccess: (response) {
     return response.body;
   },
-  onError: (response) => BrapiPostPdfError.fromResponse(response),
+  onError: BrapiPostPdfError.fromResponse,
 );
  } 
 /// Scrape elements.
@@ -202,7 +202,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => BrapiPostScrapeResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => BrapiPostScrapeError.fromResponse(response),
+  onError: BrapiPostScrapeError.fromResponse,
 );
  } 
 /// Get screenshot.
@@ -234,7 +234,7 @@ return execute(
   onSuccess: (response) {
     return BrapiPostScreenshotResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => BrapiPostScreenshotError.fromResponse(response),
+  onError: BrapiPostScreenshotError.fromResponse,
 );
  } 
 /// Get HTML content and screenshot.
@@ -267,7 +267,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? BrapiPostSnapshotResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => BrapiPostSnapshotError.fromResponse(response),
+  onError: BrapiPostSnapshotError.fromResponse,
 );
  } 
  }

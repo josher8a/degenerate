@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'commit_id': commitId,
   'commit_url': commitUrl,
   'created_at': createdAt,
-  'performed_via_github_app': performedViaGithubApp != null ? performedViaGithubApp?.toJson() : null,
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
   'assignee': assignee.toJson(),
   'assigner': assigner.toJson(),
 }; } 
@@ -92,6 +92,6 @@ UnassignedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser?
 
 @override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, assignee, assigner);
 
-@override String toString() => 'UnassignedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, assignee: $assignee, assigner: $assigner)';
+@override String toString() => 'UnassignedIssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  performedViaGithubApp: $performedViaGithubApp,\n  assignee: $assignee,\n  assigner: $assigner,\n)';
 
  }

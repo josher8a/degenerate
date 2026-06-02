@@ -152,5 +152,5 @@ final class UserSchema {
 
   @override
   String toString() =>
-      'UserSchema(profileAvatarType: $profileAvatarType, circleCount: $circleCount, name: $name, slug: $slug, isStaff: $isStaff, apiKey: $apiKey, profileAvatarSeed: $profileAvatarSeed, profileImage: $profileImage, email: $email, dateCreated: $dateCreated)';
+      'UserSchema(\n  profileAvatarType: $profileAvatarType,\n  circleCount: $circleCount,\n  name: $name,\n  slug: $slug,\n  isStaff: $isStaff,\n  apiKey: $apiKey,\n  profileAvatarSeed: $profileAvatarSeed,\n  profileImage: $profileImage,\n  email: $email,\n  dateCreated: $dateCreated,\n)';
 }

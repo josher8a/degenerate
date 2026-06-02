@@ -170,6 +170,6 @@ RealtimekitStorageConfig copyWith({String? Function()? accessKey, RealtimekitSto
 
 @override int get hashCode => Object.hash(accessKey, authMethod, bucket, host, password, path, port, privateKey, region, secret, type, username);
 
-@override String toString() => 'RealtimekitStorageConfig(accessKey: $accessKey, authMethod: $authMethod, bucket: $bucket, host: $host, password: $password, path: $path, port: $port, privateKey: $privateKey, region: $region, secret: $secret, type: $type, username: $username)';
+@override String toString() => 'RealtimekitStorageConfig(\n  accessKey: $accessKey,\n  authMethod: $authMethod,\n  bucket: $bucket,\n  host: $host,\n  password: $password,\n  path: $path,\n  port: $port,\n  privateKey: $privateKey,\n  region: $region,\n  secret: $secret,\n  type: $type,\n  username: $username,\n)';
 
  }

@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final expression$ = expression;
 if (expression$ != null) {
-  if (expression$.length < 1) errors.add('expression: length must be >= 1');
+  if (expression$.isEmpty) errors.add('expression: length must be >= 1');
 }
 return errors; } 
 RulesetsRewriteUriQuery copyWith({String? Function()? expression, String? Function()? value, }) { return RulesetsRewriteUriQuery(

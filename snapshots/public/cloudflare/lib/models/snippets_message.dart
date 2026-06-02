@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (message.length < 1) errors.add('message: length must be >= 1');
+if (message.isEmpty) errors.add('message: length must be >= 1');
 return errors; } 
 SnippetsMessage copyWith({int? Function()? code, String? message, }) { return SnippetsMessage(
   code: code != null ? code() : this.code,

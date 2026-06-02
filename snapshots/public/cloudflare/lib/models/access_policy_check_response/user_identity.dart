@@ -88,6 +88,6 @@ UserIdentity copyWith({String? Function()? accountId, Map<String, dynamic>? Func
 
 @override int get hashCode => Object.hash(accountId, deviceSessions, email, geo, iat, id, isGateway, isWarp, name, userUuid, version);
 
-@override String toString() => 'UserIdentity(accountId: $accountId, deviceSessions: $deviceSessions, email: $email, geo: $geo, iat: $iat, id: $id, isGateway: $isGateway, isWarp: $isWarp, name: $name, userUuid: $userUuid, version: $version)';
+@override String toString() => 'UserIdentity(\n  accountId: $accountId,\n  deviceSessions: $deviceSessions,\n  email: $email,\n  geo: $geo,\n  iat: $iat,\n  id: $id,\n  isGateway: $isGateway,\n  isWarp: $isWarp,\n  name: $name,\n  userUuid: $userUuid,\n  version: $version,\n)';
 
  }

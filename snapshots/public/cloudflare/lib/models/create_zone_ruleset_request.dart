@@ -61,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('phase'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.isEmpty) errors.add('name: length must be >= 1');
 return errors; } 
 CreateZoneRulesetRequest copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? kind, RulesetsRulesetPhase? phase, List<RulesetsRequestRule>? Function()? rules, }) { return CreateZoneRulesetRequest(
   description: description != null ? description() : this.description,

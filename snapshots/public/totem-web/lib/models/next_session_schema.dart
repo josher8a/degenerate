@@ -98,6 +98,6 @@ NextSessionSchema copyWith({String? slug, DateTime? start, String? link, String?
 
 @override int get hashCode => Object.hash(slug, start, link, title, seatsLeft, duration, meetingProvider, calLink, attending, cancelled, open, joinable);
 
-@override String toString() => 'NextSessionSchema(slug: $slug, start: $start, link: $link, title: $title, seatsLeft: $seatsLeft, duration: $duration, meetingProvider: $meetingProvider, calLink: $calLink, attending: $attending, cancelled: $cancelled, open: $open, joinable: $joinable)';
+@override String toString() => 'NextSessionSchema(\n  slug: $slug,\n  start: $start,\n  link: $link,\n  title: $title,\n  seatsLeft: $seatsLeft,\n  duration: $duration,\n  meetingProvider: $meetingProvider,\n  calLink: $calLink,\n  attending: $attending,\n  cancelled: $cancelled,\n  open: $open,\n  joinable: $joinable,\n)';
 
  }

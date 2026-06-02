@@ -38,7 +38,7 @@ return execute(
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an account link
@@ -75,7 +75,7 @@ return execute(
   onSuccess: (response) {
     return AccountLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an Account Session
@@ -104,7 +104,7 @@ return execute(
   onSuccess: (response) {
     return AccountSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all connected accounts
@@ -149,7 +149,7 @@ return execute(
   onSuccess: (response) {
     return GetAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -216,7 +216,7 @@ return execute(
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve account
@@ -249,7 +249,7 @@ return execute(
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update an account
@@ -316,7 +316,7 @@ return execute(
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete an account
@@ -347,7 +347,7 @@ return execute(
   onSuccess: (response) {
     return DeletedAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an external account
@@ -382,7 +382,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an external account
@@ -415,7 +415,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -478,7 +478,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete an external account
@@ -503,7 +503,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all account capabilities
@@ -536,7 +536,7 @@ return execute(
   onSuccess: (response) {
     return GetAccountsAccountCapabilitiesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an Account Capability
@@ -569,7 +569,7 @@ return execute(
   onSuccess: (response) {
     return Capability.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update an Account Capability
@@ -598,7 +598,7 @@ return execute(
   onSuccess: (response) {
     return Capability.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all external accounts
@@ -643,7 +643,7 @@ return execute(
   onSuccess: (response) {
     return GetAccountsAccountExternalAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an external account
@@ -678,7 +678,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an external account
@@ -711,7 +711,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -774,7 +774,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete an external account
@@ -799,7 +799,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a login link
@@ -828,7 +828,7 @@ return execute(
   onSuccess: (response) {
     return LoginLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all persons
@@ -878,7 +878,7 @@ return execute(
   onSuccess: (response) {
     return GetAccountsAccountPeopleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a person
@@ -961,7 +961,7 @@ return execute(
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a person
@@ -994,7 +994,7 @@ return execute(
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a person
@@ -1077,7 +1077,7 @@ return execute(
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a person
@@ -1102,7 +1102,7 @@ return execute(
   onSuccess: (response) {
     return DeletedPerson.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all persons
@@ -1152,7 +1152,7 @@ return execute(
   onSuccess: (response) {
     return GetAccountsAccountPersonsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a person
@@ -1235,7 +1235,7 @@ return execute(
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a person
@@ -1268,7 +1268,7 @@ return execute(
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a person
@@ -1351,7 +1351,7 @@ return execute(
   onSuccess: (response) {
     return Person.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a person
@@ -1376,7 +1376,7 @@ return execute(
   onSuccess: (response) {
     return DeletedPerson.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Reject an account
@@ -1406,7 +1406,7 @@ return execute(
   onSuccess: (response) {
     return Account.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -1450,7 +1450,7 @@ return execute(
   onSuccess: (response) {
     return GetApplePayDomainsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -1477,7 +1477,7 @@ return execute(
   onSuccess: (response) {
     return ApplePayDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -1509,7 +1509,7 @@ return execute(
   onSuccess: (response) {
     return ApplePayDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -1533,7 +1533,7 @@ return execute(
   onSuccess: (response) {
     return DeletedApplePayDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all application fees
@@ -1581,7 +1581,7 @@ return execute(
   onSuccess: (response) {
     return GetApplicationFeesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an application fee refund
@@ -1614,7 +1614,7 @@ return execute(
   onSuccess: (response) {
     return FeeRefund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update an application fee refund
@@ -1645,7 +1645,7 @@ return execute(
   onSuccess: (response) {
     return FeeRefund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an application fee
@@ -1678,7 +1678,7 @@ return execute(
   onSuccess: (response) {
     return ApplicationFee.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -1708,7 +1708,7 @@ return execute(
   onSuccess: (response) {
     return ApplicationFee.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all application fee refunds
@@ -1750,7 +1750,7 @@ return execute(
   onSuccess: (response) {
     return GetApplicationFeesIdRefundsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an application fee refund
@@ -1789,7 +1789,7 @@ return execute(
   onSuccess: (response) {
     return FeeRefund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List secrets
@@ -1833,7 +1833,7 @@ return execute(
   onSuccess: (response) {
     return GetAppsSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Set a Secret
@@ -1865,7 +1865,7 @@ return execute(
   onSuccess: (response) {
     return AppsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a Secret
@@ -1894,7 +1894,7 @@ return execute(
   onSuccess: (response) {
     return AppsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Find a Secret
@@ -1930,7 +1930,7 @@ return execute(
   onSuccess: (response) {
     return AppsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve balance
@@ -1964,7 +1964,7 @@ return execute(
   onSuccess: (response) {
     return Balance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all balance transactions
@@ -2023,7 +2023,7 @@ return execute(
   onSuccess: (response) {
     return GetBalanceHistoryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a balance transaction
@@ -2058,7 +2058,7 @@ return execute(
   onSuccess: (response) {
     return BalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve balance settings
@@ -2092,7 +2092,7 @@ return execute(
   onSuccess: (response) {
     return BalanceSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update balance settings
@@ -2122,7 +2122,7 @@ return execute(
   onSuccess: (response) {
     return BalanceSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all balance transactions
@@ -2181,7 +2181,7 @@ return execute(
   onSuccess: (response) {
     return GetBalanceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a balance transaction
@@ -2216,7 +2216,7 @@ return execute(
   onSuccess: (response) {
     return BalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List billing alerts
@@ -2264,7 +2264,7 @@ return execute(
   onSuccess: (response) {
     return GetBillingAlertsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a billing alert
@@ -2295,7 +2295,7 @@ return execute(
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a billing alert
@@ -2328,7 +2328,7 @@ return execute(
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Activate a billing alert
@@ -2355,7 +2355,7 @@ return execute(
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Archive a billing alert
@@ -2382,7 +2382,7 @@ return execute(
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Deactivate a billing alert
@@ -2409,7 +2409,7 @@ return execute(
   onSuccess: (response) {
     return BillingAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve the credit balance summary for a customer
@@ -2451,7 +2451,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditBalanceSummary.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List credit balance transactions
@@ -2502,7 +2502,7 @@ return execute(
   onSuccess: (response) {
     return GetBillingCreditBalanceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a credit balance transaction
@@ -2535,7 +2535,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List credit grants
@@ -2583,7 +2583,7 @@ return execute(
   onSuccess: (response) {
     return GetBillingCreditGrantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a credit grant
@@ -2628,7 +2628,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a credit grant
@@ -2661,7 +2661,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a credit grant
@@ -2692,7 +2692,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Expire a credit grant
@@ -2719,7 +2719,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Void a credit grant
@@ -2746,7 +2746,7 @@ return execute(
   onSuccess: (response) {
     return BillingCreditGrant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a billing meter event adjustment
@@ -2777,7 +2777,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeterEventAdjustment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a billing meter event
@@ -2810,7 +2810,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeterEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List billing meters
@@ -2855,7 +2855,7 @@ return execute(
   onSuccess: (response) {
     return GetBillingMetersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a billing meter
@@ -2891,7 +2891,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a billing meter
@@ -2924,7 +2924,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a billing meter
@@ -2953,7 +2953,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Deactivate a billing meter
@@ -2980,7 +2980,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List billing meter event summaries
@@ -3028,7 +3028,7 @@ return execute(
   onSuccess: (response) {
     return GetBillingMetersIdEventSummariesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Reactivate a billing meter
@@ -3055,7 +3055,7 @@ return execute(
   onSuccess: (response) {
     return BillingMeter.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List portal configurations
@@ -3103,7 +3103,7 @@ return execute(
   onSuccess: (response) {
     return GetBillingPortalConfigurationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a portal configuration
@@ -3141,7 +3141,7 @@ return execute(
   onSuccess: (response) {
     return BillingPortalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a portal configuration
@@ -3174,7 +3174,7 @@ return execute(
   onSuccess: (response) {
     return BillingPortalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a portal configuration
@@ -3215,7 +3215,7 @@ return execute(
   onSuccess: (response) {
     return BillingPortalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a portal session
@@ -3256,7 +3256,7 @@ return execute(
   onSuccess: (response) {
     return BillingPortalSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all charges
@@ -3310,7 +3310,7 @@ return execute(
   onSuccess: (response) {
     return GetChargesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -3376,7 +3376,7 @@ return execute(
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Search charges
@@ -3419,7 +3419,7 @@ return execute(
   onSuccess: (response) {
     return GetChargesSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a charge
@@ -3452,7 +3452,7 @@ return execute(
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a charge
@@ -3493,7 +3493,7 @@ return execute(
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Capture a payment
@@ -3540,7 +3540,7 @@ return execute(
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -3572,7 +3572,7 @@ return execute(
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -3604,7 +3604,7 @@ return execute(
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -3630,7 +3630,7 @@ return execute(
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a refund
@@ -3681,7 +3681,7 @@ return execute(
   onSuccess: (response) {
     return Charge.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all refunds
@@ -3723,7 +3723,7 @@ return execute(
   onSuccess: (response) {
     return GetChargesChargeRefundsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create customer balance refund
@@ -3780,7 +3780,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -3812,7 +3812,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -3840,7 +3840,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all Checkout Sessions
@@ -3906,7 +3906,7 @@ return execute(
   onSuccess: (response) {
     return GetCheckoutSessionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a Checkout Session
@@ -4029,7 +4029,7 @@ return execute(
   onSuccess: (response) {
     return CheckoutSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Checkout Session
@@ -4062,7 +4062,7 @@ return execute(
   onSuccess: (response) {
     return CheckoutSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a Checkout Session
@@ -4099,7 +4099,7 @@ return execute(
   onSuccess: (response) {
     return CheckoutSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Expire a Checkout Session
@@ -4128,7 +4128,7 @@ return execute(
   onSuccess: (response) {
     return CheckoutSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Checkout Session's line items
@@ -4170,7 +4170,7 @@ return execute(
   onSuccess: (response) {
     return GetCheckoutSessionsSessionLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List orders
@@ -4213,7 +4213,7 @@ return execute(
   onSuccess: (response) {
     return GetClimateOrdersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an order
@@ -4252,7 +4252,7 @@ return execute(
   onSuccess: (response) {
     return ClimateOrder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an order
@@ -4285,7 +4285,7 @@ return execute(
   onSuccess: (response) {
     return ClimateOrder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update an order
@@ -4316,7 +4316,7 @@ return execute(
   onSuccess: (response) {
     return ClimateOrder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel an order
@@ -4346,7 +4346,7 @@ return execute(
   onSuccess: (response) {
     return ClimateOrder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List products
@@ -4388,7 +4388,7 @@ return execute(
   onSuccess: (response) {
     return GetClimateProductsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a product
@@ -4421,7 +4421,7 @@ return execute(
   onSuccess: (response) {
     return ClimateProduct.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List suppliers
@@ -4463,7 +4463,7 @@ return execute(
   onSuccess: (response) {
     return GetClimateSuppliersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a supplier
@@ -4496,7 +4496,7 @@ return execute(
   onSuccess: (response) {
     return ClimateSupplier.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a ConfirmationToken
@@ -4529,7 +4529,7 @@ return execute(
   onSuccess: (response) {
     return ConfirmationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List Country Specs
@@ -4571,7 +4571,7 @@ return execute(
   onSuccess: (response) {
     return GetCountrySpecsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Country Spec
@@ -4604,7 +4604,7 @@ return execute(
   onSuccess: (response) {
     return CountrySpec.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all coupons
@@ -4649,7 +4649,7 @@ return execute(
   onSuccess: (response) {
     return GetCouponsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a coupon
@@ -4702,7 +4702,7 @@ return execute(
   onSuccess: (response) {
     return Coupon.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a coupon
@@ -4735,7 +4735,7 @@ return execute(
   onSuccess: (response) {
     return Coupon.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a coupon
@@ -4768,7 +4768,7 @@ return execute(
   onSuccess: (response) {
     return Coupon.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a coupon
@@ -4793,7 +4793,7 @@ return execute(
   onSuccess: (response) {
     return DeletedCoupon.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all credit notes
@@ -4847,7 +4847,7 @@ return execute(
   onSuccess: (response) {
     return GetCreditNotesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a credit note
@@ -4911,7 +4911,7 @@ return execute(
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Preview a credit note
@@ -4983,7 +4983,7 @@ return execute(
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a credit note preview's line items
@@ -5064,7 +5064,7 @@ return execute(
   onSuccess: (response) {
     return GetCreditNotesPreviewLinesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a credit note's line items
@@ -5106,7 +5106,7 @@ return execute(
   onSuccess: (response) {
     return GetCreditNotesCreditNoteLinesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a credit note
@@ -5139,7 +5139,7 @@ return execute(
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a credit note
@@ -5170,7 +5170,7 @@ return execute(
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Void a credit note
@@ -5197,7 +5197,7 @@ return execute(
   onSuccess: (response) {
     return CreditNote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a Customer Session
@@ -5229,7 +5229,7 @@ return execute(
   onSuccess: (response) {
     return CustomerSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all customers
@@ -5280,7 +5280,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a customer
@@ -5349,7 +5349,7 @@ return execute(
   onSuccess: (response) {
     return Customer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Search customers
@@ -5392,7 +5392,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a customer
@@ -5425,7 +5425,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => Customer.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a customer
@@ -5502,7 +5502,7 @@ return execute(
   onSuccess: (response) {
     return Customer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a customer
@@ -5527,7 +5527,7 @@ return execute(
   onSuccess: (response) {
     return DeletedCustomer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List customer balance transactions
@@ -5575,7 +5575,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersCustomerBalanceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a customer balance transaction
@@ -5608,7 +5608,7 @@ return execute(
   onSuccess: (response) {
     return CustomerBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a customer balance transaction
@@ -5641,7 +5641,7 @@ return execute(
   onSuccess: (response) {
     return CustomerBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a customer credit balance transaction
@@ -5672,7 +5672,7 @@ return execute(
   onSuccess: (response) {
     return CustomerBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a card
@@ -5713,7 +5713,7 @@ return execute(
   onSuccess: (response) {
     return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -5765,7 +5765,7 @@ return execute(
   onSuccess: (response) {
     return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a customer source
@@ -5792,7 +5792,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Verify a bank account
@@ -5821,7 +5821,7 @@ return execute(
   onSuccess: (response) {
     return BankAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a card
@@ -5862,7 +5862,7 @@ return execute(
   onSuccess: (response) {
     return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -5914,7 +5914,7 @@ return execute(
   onSuccess: (response) {
     return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a customer source
@@ -5941,7 +5941,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a cash balance
@@ -5974,7 +5974,7 @@ return execute(
   onSuccess: (response) {
     return CashBalance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a cash balance's settings
@@ -6003,7 +6003,7 @@ return execute(
   onSuccess: (response) {
     return CashBalance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List cash balance transactions
@@ -6045,7 +6045,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersCustomerCashBalanceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a cash balance transaction
@@ -6078,7 +6078,7 @@ return execute(
   onSuccess: (response) {
     return CustomerCashBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -6110,7 +6110,7 @@ return execute(
   onSuccess: (response) {
     return Discount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a customer discount
@@ -6135,7 +6135,7 @@ return execute(
   onSuccess: (response) {
     return DeletedDiscount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create or retrieve funding instructions for a customer cash balance
@@ -6167,7 +6167,7 @@ return execute(
   onSuccess: (response) {
     return FundingInstructions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List a Customer's PaymentMethods
@@ -6215,7 +6215,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersCustomerPaymentMethodsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Customer's PaymentMethod
@@ -6248,7 +6248,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -6292,7 +6292,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersCustomerSourcesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a card
@@ -6333,7 +6333,7 @@ return execute(
   onSuccess: (response) {
     return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -6365,7 +6365,7 @@ return execute(
   onSuccess: (response) {
     return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -6417,7 +6417,7 @@ return execute(
   onSuccess: (response) {
     return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a customer source
@@ -6444,7 +6444,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Verify a bank account
@@ -6473,7 +6473,7 @@ return execute(
   onSuccess: (response) {
     return BankAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List active subscriptions
@@ -6515,7 +6515,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersCustomerSubscriptionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a subscription
@@ -6598,7 +6598,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a subscription
@@ -6631,7 +6631,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a subscription on a customer
@@ -6714,7 +6714,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel a subscription
@@ -6749,7 +6749,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -6781,7 +6781,7 @@ return execute(
   onSuccess: (response) {
     return Discount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a customer discount
@@ -6806,7 +6806,7 @@ return execute(
   onSuccess: (response) {
     return DeletedDiscount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all Customer tax IDs
@@ -6848,7 +6848,7 @@ return execute(
   onSuccess: (response) {
     return GetCustomersCustomerTaxIdsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a Customer tax ID
@@ -6877,7 +6877,7 @@ return execute(
   onSuccess: (response) {
     return TaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Customer tax ID
@@ -6910,7 +6910,7 @@ return execute(
   onSuccess: (response) {
     return TaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a Customer tax ID
@@ -6935,7 +6935,7 @@ return execute(
   onSuccess: (response) {
     return DeletedTaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all disputes
@@ -6986,7 +6986,7 @@ return execute(
   onSuccess: (response) {
     return GetDisputesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a dispute
@@ -7019,7 +7019,7 @@ return execute(
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a dispute
@@ -7054,7 +7054,7 @@ return execute(
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Close a dispute
@@ -7083,7 +7083,7 @@ return execute(
   onSuccess: (response) {
     return Dispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all active entitlements
@@ -7126,7 +7126,7 @@ return execute(
   onSuccess: (response) {
     return GetEntitlementsActiveEntitlementsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an active entitlement
@@ -7159,7 +7159,7 @@ return execute(
   onSuccess: (response) {
     return EntitlementsActiveEntitlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all features
@@ -7207,7 +7207,7 @@ return execute(
   onSuccess: (response) {
     return GetEntitlementsFeaturesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a feature
@@ -7238,7 +7238,7 @@ return execute(
   onSuccess: (response) {
     return EntitlementsFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a feature
@@ -7271,7 +7271,7 @@ return execute(
   onSuccess: (response) {
     return EntitlementsFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Updates a feature
@@ -7304,7 +7304,7 @@ return execute(
   onSuccess: (response) {
     return EntitlementsFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an ephemeral key
@@ -7339,7 +7339,7 @@ return execute(
   onSuccess: (response) {
     return EphemeralKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Immediately invalidate an ephemeral key
@@ -7366,7 +7366,7 @@ return execute(
   onSuccess: (response) {
     return EphemeralKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all events
@@ -7420,7 +7420,7 @@ return execute(
   onSuccess: (response) {
     return GetEventsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an event
@@ -7453,7 +7453,7 @@ return execute(
   onSuccess: (response) {
     return Event.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all exchange rates
@@ -7497,7 +7497,7 @@ return execute(
   onSuccess: (response) {
     return GetExchangeRatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an exchange rate
@@ -7532,7 +7532,7 @@ return execute(
   onSuccess: (response) {
     return ExchangeRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -7595,7 +7595,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all file links
@@ -7646,7 +7646,7 @@ return execute(
   onSuccess: (response) {
     return GetFileLinksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a file link
@@ -7678,7 +7678,7 @@ return execute(
   onSuccess: (response) {
     return FileLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a file link
@@ -7711,7 +7711,7 @@ return execute(
   onSuccess: (response) {
     return FileLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a file link
@@ -7742,7 +7742,7 @@ return execute(
   onSuccess: (response) {
     return FileLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all files
@@ -7790,7 +7790,7 @@ return execute(
   onSuccess: (response) {
     return GetFilesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a file
@@ -7823,7 +7823,7 @@ return execute(
   onSuccess: (response) {
     return File.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a file
@@ -7856,7 +7856,7 @@ return execute(
   onSuccess: (response) {
     return File.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List Accounts
@@ -7906,7 +7906,7 @@ return execute(
   onSuccess: (response) {
     return GetFinancialConnectionsAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an Account
@@ -7939,7 +7939,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Disconnect an Account
@@ -7966,7 +7966,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List Account Owners
@@ -8009,7 +8009,7 @@ return execute(
   onSuccess: (response) {
     return GetFinancialConnectionsAccountsAccountOwnersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Refresh Account data
@@ -8037,7 +8037,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Subscribe to data refreshes for an Account
@@ -8065,7 +8065,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Unsubscribe from data refreshes for an Account
@@ -8093,7 +8093,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a Session
@@ -8128,7 +8128,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Session
@@ -8161,7 +8161,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List Transactions
@@ -8210,7 +8210,7 @@ return execute(
   onSuccess: (response) {
     return GetFinancialConnectionsTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Transaction
@@ -8243,7 +8243,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all ForwardingRequests
@@ -8291,7 +8291,7 @@ return execute(
   onSuccess: (response) {
     return GetForwardingRequestsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a ForwardingRequest
@@ -8325,7 +8325,7 @@ return execute(
   onSuccess: (response) {
     return ForwardingRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a ForwardingRequest
@@ -8358,7 +8358,7 @@ return execute(
   onSuccess: (response) {
     return ForwardingRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List VerificationReports
@@ -8412,7 +8412,7 @@ return execute(
   onSuccess: (response) {
     return GetIdentityVerificationReportsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a VerificationReport
@@ -8445,7 +8445,7 @@ return execute(
   onSuccess: (response) {
     return IdentityVerificationReport.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List VerificationSessions
@@ -8502,7 +8502,7 @@ return execute(
   onSuccess: (response) {
     return GetIdentityVerificationSessionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a VerificationSession
@@ -8555,7 +8555,7 @@ return execute(
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a VerificationSession
@@ -8591,7 +8591,7 @@ return execute(
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a VerificationSession
@@ -8629,7 +8629,7 @@ return execute(
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel a VerificationSession
@@ -8658,7 +8658,7 @@ return execute(
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Redact a VerificationSession
@@ -8703,7 +8703,7 @@ return execute(
   onSuccess: (response) {
     return IdentityVerificationSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all payments for an invoice
@@ -8759,7 +8759,7 @@ return execute(
   onSuccess: (response) {
     return GetInvoicePaymentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an InvoicePayment
@@ -8792,7 +8792,7 @@ return execute(
   onSuccess: (response) {
     return InvoicePayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all invoice rendering templates
@@ -8837,7 +8837,7 @@ return execute(
   onSuccess: (response) {
     return GetInvoiceRenderingTemplatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an invoice rendering template
@@ -8873,7 +8873,7 @@ return execute(
   onSuccess: (response) {
     return InvoiceRenderingTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Archive an invoice rendering template
@@ -8900,7 +8900,7 @@ return execute(
   onSuccess: (response) {
     return InvoiceRenderingTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Unarchive an invoice rendering template
@@ -8927,7 +8927,7 @@ return execute(
   onSuccess: (response) {
     return InvoiceRenderingTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all invoice items
@@ -8984,7 +8984,7 @@ return execute(
   onSuccess: (response) {
     return GetInvoiceitemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an invoice item
@@ -9047,7 +9047,7 @@ return execute(
   onSuccess: (response) {
     return Invoiceitem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an invoice item
@@ -9080,7 +9080,7 @@ return execute(
   onSuccess: (response) {
     return Invoiceitem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update an invoice item
@@ -9133,7 +9133,7 @@ return execute(
   onSuccess: (response) {
     return Invoiceitem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete an invoice item
@@ -9158,7 +9158,7 @@ return execute(
   onSuccess: (response) {
     return DeletedInvoiceitem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all invoices
@@ -9221,7 +9221,7 @@ return execute(
   onSuccess: (response) {
     return GetInvoicesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an invoice
@@ -9312,7 +9312,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a preview invoice
@@ -9375,7 +9375,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Search invoices
@@ -9418,7 +9418,7 @@ return execute(
   onSuccess: (response) {
     return GetInvoicesSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an invoice
@@ -9451,7 +9451,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update an invoice
@@ -9535,7 +9535,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a draft invoice
@@ -9560,7 +9560,7 @@ return execute(
   onSuccess: (response) {
     return DeletedInvoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Bulk add invoice line items
@@ -9590,7 +9590,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Attach a payment to an Invoice
@@ -9630,7 +9630,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Finalize an invoice
@@ -9659,7 +9659,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an invoice's line items
@@ -9701,7 +9701,7 @@ return execute(
   onSuccess: (response) {
     return GetInvoicesInvoiceLinesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update an invoice's line item
@@ -9753,7 +9753,7 @@ return execute(
   onSuccess: (response) {
     return LineItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Mark an invoice as uncollectible
@@ -9780,7 +9780,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Pay an invoice
@@ -9819,7 +9819,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Bulk remove invoice line items
@@ -9849,7 +9849,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Send an invoice for manual payment
@@ -9878,7 +9878,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Bulk update invoice line items
@@ -9908,7 +9908,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Void an invoice
@@ -9937,7 +9937,7 @@ return execute(
   onSuccess: (response) {
     return Invoice.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all authorizations
@@ -9991,7 +9991,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingAuthorizationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an authorization
@@ -10024,7 +10024,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update an authorization
@@ -10053,7 +10053,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all cardholders
@@ -10110,7 +10110,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingCardholdersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a cardholder
@@ -10157,7 +10157,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCardholder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a cardholder
@@ -10190,7 +10190,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCardholder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a cardholder
@@ -10235,7 +10235,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCardholder.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all cards
@@ -10301,7 +10301,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingCardsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a card
@@ -10356,7 +10356,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a card
@@ -10389,7 +10389,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a card
@@ -10430,7 +10430,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all disputes
@@ -10481,7 +10481,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingDisputesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a dispute
@@ -10518,7 +10518,7 @@ return execute(
   onSuccess: (response) {
     return IssuingDispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a dispute
@@ -10551,7 +10551,7 @@ return execute(
   onSuccess: (response) {
     return IssuingDispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a dispute
@@ -10584,7 +10584,7 @@ return execute(
   onSuccess: (response) {
     return IssuingDispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Submit a dispute
@@ -10613,7 +10613,7 @@ return execute(
   onSuccess: (response) {
     return IssuingDispute.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all personalization designs
@@ -10665,7 +10665,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingPersonalizationDesignsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a personalization design
@@ -10707,7 +10707,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a personalization design
@@ -10740,7 +10740,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a personalization design
@@ -10783,7 +10783,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all physical bundles
@@ -10831,7 +10831,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingPhysicalBundlesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a physical bundle
@@ -10864,7 +10864,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPhysicalBundle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a settlement
@@ -10897,7 +10897,7 @@ return execute(
   onSuccess: (response) {
     return IssuingSettlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a settlement
@@ -10926,7 +10926,7 @@ return execute(
   onSuccess: (response) {
     return IssuingSettlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all issuing tokens for card
@@ -10975,7 +10975,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingTokensResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an issuing token
@@ -11008,7 +11008,7 @@ return execute(
   onSuccess: (response) {
     return IssuingToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a token status
@@ -11036,7 +11036,7 @@ return execute(
   onSuccess: (response) {
     return IssuingToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all transactions
@@ -11090,7 +11090,7 @@ return execute(
   onSuccess: (response) {
     return GetIssuingTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a transaction
@@ -11123,7 +11123,7 @@ return execute(
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a transaction
@@ -11152,7 +11152,7 @@ return execute(
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a Session
@@ -11187,7 +11187,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Session
@@ -11220,7 +11220,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsSession.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List Accounts
@@ -11270,7 +11270,7 @@ return execute(
   onSuccess: (response) {
     return GetLinkedAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an Account
@@ -11303,7 +11303,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Disconnect an Account
@@ -11330,7 +11330,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List Account Owners
@@ -11373,7 +11373,7 @@ return execute(
   onSuccess: (response) {
     return GetLinkedAccountsAccountOwnersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Refresh Account data
@@ -11401,7 +11401,7 @@ return execute(
   onSuccess: (response) {
     return FinancialConnectionsAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Mandate
@@ -11434,7 +11434,7 @@ return execute(
   onSuccess: (response) {
     return Mandate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List Payment Attempt Records
@@ -11474,7 +11474,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentAttemptRecordsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Payment Attempt Record
@@ -11507,7 +11507,7 @@ return execute(
   onSuccess: (response) {
     return PaymentAttemptRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all PaymentIntents
@@ -11558,7 +11558,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentIntentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a PaymentIntent
@@ -11664,7 +11664,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Search PaymentIntents
@@ -11707,7 +11707,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentIntentsSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a PaymentIntent
@@ -11747,7 +11747,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a PaymentIntent
@@ -11828,7 +11828,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all PaymentIntent LineItems
@@ -11870,7 +11870,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentIntentsIntentAmountDetailsLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Reconcile a customer_balance PaymentIntent
@@ -11901,7 +11901,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel a PaymentIntent
@@ -11934,7 +11934,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Capture a PaymentIntent
@@ -11985,7 +11985,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Confirm a PaymentIntent
@@ -12083,7 +12083,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Increment an authorization
@@ -12150,7 +12150,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Verify microdeposits on a PaymentIntent
@@ -12183,7 +12183,7 @@ return execute(
   onSuccess: (response) {
     return PaymentIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all payment links
@@ -12228,7 +12228,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentLinksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a payment link
@@ -12312,7 +12312,7 @@ return execute(
   onSuccess: (response) {
     return PaymentLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve payment link
@@ -12345,7 +12345,7 @@ return execute(
   onSuccess: (response) {
     return PaymentLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a payment link
@@ -12418,7 +12418,7 @@ return execute(
   onSuccess: (response) {
     return PaymentLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a payment link's line items
@@ -12460,7 +12460,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentLinksPaymentLinkLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List payment method configurations
@@ -12505,7 +12505,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentMethodConfigurationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a payment method configuration
@@ -12648,7 +12648,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve payment method configuration
@@ -12681,7 +12681,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update payment method configuration
@@ -12824,7 +12824,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List payment method domains
@@ -12872,7 +12872,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentMethodDomainsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a payment method domain
@@ -12902,7 +12902,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a payment method domain
@@ -12935,7 +12935,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a payment method domain
@@ -12964,7 +12964,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Validate an existing payment method domain
@@ -12996,7 +12996,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethodDomain.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List PaymentMethods
@@ -13050,7 +13050,7 @@ return execute(
   onSuccess: (response) {
     return GetPaymentMethodsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Shares a PaymentMethod
@@ -13197,7 +13197,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a PaymentMethod
@@ -13230,7 +13230,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a PaymentMethod
@@ -13269,7 +13269,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Attach a PaymentMethod to a Customer
@@ -13312,7 +13312,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Detach a PaymentMethod from a Customer
@@ -13339,7 +13339,7 @@ return execute(
   onSuccess: (response) {
     return PaymentMethod.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Report a payment
@@ -13389,7 +13389,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Payment Record
@@ -13422,7 +13422,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Report a payment attempt
@@ -13465,7 +13465,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Report payment attempt canceled
@@ -13496,7 +13496,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Report payment attempt failed
@@ -13527,7 +13527,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Report payment attempt guaranteed
@@ -13558,7 +13558,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Report payment attempt informational
@@ -13593,7 +13593,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Report a refund
@@ -13630,7 +13630,7 @@ return execute(
   onSuccess: (response) {
     return PaymentRecord.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all payouts
@@ -13684,7 +13684,7 @@ return execute(
   onSuccess: (response) {
     return GetPayoutsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a payout
@@ -13731,7 +13731,7 @@ return execute(
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a payout
@@ -13764,7 +13764,7 @@ return execute(
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a payout
@@ -13793,7 +13793,7 @@ return execute(
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel a payout
@@ -13820,7 +13820,7 @@ return execute(
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Reverse a payout
@@ -13851,7 +13851,7 @@ return execute(
   onSuccess: (response) {
     return Payout.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all plans
@@ -13902,7 +13902,7 @@ return execute(
   onSuccess: (response) {
     return GetPlansResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a plan
@@ -13961,7 +13961,7 @@ return execute(
   onSuccess: (response) {
     return Plan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a plan
@@ -13994,7 +13994,7 @@ return execute(
   onSuccess: (response) {
     return Plan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a plan
@@ -14031,7 +14031,7 @@ return execute(
   onSuccess: (response) {
     return Plan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a plan
@@ -14056,7 +14056,7 @@ return execute(
   onSuccess: (response) {
     return DeletedPlan.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all prices
@@ -14121,7 +14121,7 @@ return execute(
   onSuccess: (response) {
     return GetPricesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a price
@@ -14183,7 +14183,7 @@ return execute(
   onSuccess: (response) {
     return Price.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Search prices
@@ -14226,7 +14226,7 @@ return execute(
   onSuccess: (response) {
     return GetPricesSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a price
@@ -14259,7 +14259,7 @@ return execute(
   onSuccess: (response) {
     return Price.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a price
@@ -14300,7 +14300,7 @@ return execute(
   onSuccess: (response) {
     return Price.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all products
@@ -14357,7 +14357,7 @@ return execute(
   onSuccess: (response) {
     return GetProductsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a product
@@ -14411,7 +14411,7 @@ return execute(
   onSuccess: (response) {
     return Product.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Search products
@@ -14454,7 +14454,7 @@ return execute(
   onSuccess: (response) {
     return GetProductsSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a product
@@ -14487,7 +14487,7 @@ return execute(
   onSuccess: (response) {
     return Product.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a product
@@ -14540,7 +14540,7 @@ return execute(
   onSuccess: (response) {
     return Product.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a product
@@ -14565,7 +14565,7 @@ return execute(
   onSuccess: (response) {
     return DeletedProduct.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all features attached to a product
@@ -14607,7 +14607,7 @@ return execute(
   onSuccess: (response) {
     return GetProductsProductFeaturesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Attach a feature to a product
@@ -14635,7 +14635,7 @@ return execute(
   onSuccess: (response) {
     return ProductFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a product_feature
@@ -14668,7 +14668,7 @@ return execute(
   onSuccess: (response) {
     return ProductFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Remove a feature from a product
@@ -14693,7 +14693,7 @@ return execute(
   onSuccess: (response) {
     return DeletedProductFeature.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all promotion codes
@@ -14753,7 +14753,7 @@ return execute(
   onSuccess: (response) {
     return GetPromotionCodesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a promotion code
@@ -14797,7 +14797,7 @@ return execute(
   onSuccess: (response) {
     return PromotionCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a promotion code
@@ -14830,7 +14830,7 @@ return execute(
   onSuccess: (response) {
     return PromotionCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a promotion code
@@ -14863,7 +14863,7 @@ return execute(
   onSuccess: (response) {
     return PromotionCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all quotes
@@ -14917,7 +14917,7 @@ return execute(
   onSuccess: (response) {
     return GetQuotesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a quote
@@ -14984,7 +14984,7 @@ return execute(
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a quote
@@ -15017,7 +15017,7 @@ return execute(
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a quote
@@ -15080,7 +15080,7 @@ return execute(
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Accept a quote
@@ -15107,7 +15107,7 @@ return execute(
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel a quote
@@ -15134,7 +15134,7 @@ return execute(
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a quote's upfront line items
@@ -15176,7 +15176,7 @@ return execute(
   onSuccess: (response) {
     return GetQuotesQuoteComputedUpfrontLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Finalize a quote
@@ -15205,7 +15205,7 @@ return execute(
   onSuccess: (response) {
     return Quote.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a quote's line items
@@ -15247,7 +15247,7 @@ return execute(
   onSuccess: (response) {
     return GetQuotesQuoteLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Download quote PDF
@@ -15280,7 +15280,7 @@ return execute(
   onSuccess: (response) {
     return Uint8List.fromList(response.bodyBytes);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all early fraud warnings
@@ -15331,7 +15331,7 @@ return execute(
   onSuccess: (response) {
     return GetRadarEarlyFraudWarningsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an early fraud warning
@@ -15366,7 +15366,7 @@ return execute(
   onSuccess: (response) {
     return RadarEarlyFraudWarning.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a Payment Evaluation
@@ -15399,7 +15399,7 @@ return execute(
   onSuccess: (response) {
     return RadarPaymentEvaluation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all value list items
@@ -15448,7 +15448,7 @@ return execute(
   onSuccess: (response) {
     return GetRadarValueListItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a value list item
@@ -15477,7 +15477,7 @@ return execute(
   onSuccess: (response) {
     return RadarValueListItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a value list item
@@ -15510,7 +15510,7 @@ return execute(
   onSuccess: (response) {
     return RadarValueListItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a value list item
@@ -15535,7 +15535,7 @@ return execute(
   onSuccess: (response) {
     return DeletedRadarValueListItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all value lists
@@ -15586,7 +15586,7 @@ return execute(
   onSuccess: (response) {
     return GetRadarValueListsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a value list
@@ -15619,7 +15619,7 @@ return execute(
   onSuccess: (response) {
     return RadarValueList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a value list
@@ -15652,7 +15652,7 @@ return execute(
   onSuccess: (response) {
     return RadarValueList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a value list
@@ -15685,7 +15685,7 @@ return execute(
   onSuccess: (response) {
     return RadarValueList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a value list
@@ -15710,7 +15710,7 @@ return execute(
   onSuccess: (response) {
     return DeletedRadarValueList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all refunds
@@ -15761,7 +15761,7 @@ return execute(
   onSuccess: (response) {
     return GetRefundsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create customer balance refund
@@ -15820,7 +15820,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a refund
@@ -15853,7 +15853,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a refund
@@ -15884,7 +15884,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel a refund
@@ -15913,7 +15913,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all Report Runs
@@ -15958,7 +15958,7 @@ return execute(
   onSuccess: (response) {
     return GetReportingReportRunsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a Report Run
@@ -15988,7 +15988,7 @@ return execute(
   onSuccess: (response) {
     return ReportingReportRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Report Run
@@ -16021,7 +16021,7 @@ return execute(
   onSuccess: (response) {
     return ReportingReportRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all Report Types
@@ -16054,7 +16054,7 @@ return execute(
   onSuccess: (response) {
     return GetReportingReportTypesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Report Type
@@ -16087,7 +16087,7 @@ return execute(
   onSuccess: (response) {
     return ReportingReportType.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all open reviews
@@ -16132,7 +16132,7 @@ return execute(
   onSuccess: (response) {
     return GetReviewsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a review
@@ -16165,7 +16165,7 @@ return execute(
   onSuccess: (response) {
     return Review.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Approve a review
@@ -16192,7 +16192,7 @@ return execute(
   onSuccess: (response) {
     return Review.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all SetupAttempts
@@ -16238,7 +16238,7 @@ return execute(
   onSuccess: (response) {
     return GetSetupAttemptsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all SetupIntents
@@ -16295,7 +16295,7 @@ return execute(
   onSuccess: (response) {
     return GetSetupIntentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a SetupIntent
@@ -16367,7 +16367,7 @@ return execute(
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a SetupIntent
@@ -16407,7 +16407,7 @@ return execute(
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a SetupIntent
@@ -16458,7 +16458,7 @@ return execute(
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel a SetupIntent
@@ -16489,7 +16489,7 @@ return execute(
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Confirm a SetupIntent
@@ -16545,7 +16545,7 @@ return execute(
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Verify microdeposits on a SetupIntent
@@ -16578,7 +16578,7 @@ return execute(
   onSuccess: (response) {
     return SetupIntent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all shipping rates
@@ -16629,7 +16629,7 @@ return execute(
   onSuccess: (response) {
     return GetShippingRatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a shipping rate
@@ -16669,7 +16669,7 @@ return execute(
   onSuccess: (response) {
     return ShippingRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a shipping rate
@@ -16702,7 +16702,7 @@ return execute(
   onSuccess: (response) {
     return ShippingRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a shipping rate
@@ -16737,7 +16737,7 @@ return execute(
   onSuccess: (response) {
     return ShippingRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update an existing Sigma Query
@@ -16768,7 +16768,7 @@ return execute(
   onSuccess: (response) {
     return Query.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all scheduled query runs
@@ -16810,7 +16810,7 @@ return execute(
   onSuccess: (response) {
     return GetSigmaScheduledQueryRunsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a scheduled query run
@@ -16843,7 +16843,7 @@ return execute(
   onSuccess: (response) {
     return ScheduledQueryRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Shares a source
@@ -16900,7 +16900,7 @@ return execute(
   onSuccess: (response) {
     return Source.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a source
@@ -16936,7 +16936,7 @@ return execute(
   onSuccess: (response) {
     return Source.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a source
@@ -16975,7 +16975,7 @@ return execute(
   onSuccess: (response) {
     return Source.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Source MandateNotification
@@ -17008,7 +17008,7 @@ return execute(
   onSuccess: (response) {
     return SourceMandateNotification.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -17049,7 +17049,7 @@ return execute(
   onSuccess: (response) {
     return GetSourcesSourceSourceTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a source transaction
@@ -17082,7 +17082,7 @@ return execute(
   onSuccess: (response) {
     return SourceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 ///
@@ -17109,7 +17109,7 @@ return execute(
   onSuccess: (response) {
     return Source.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all subscription items
@@ -17152,7 +17152,7 @@ return execute(
   onSuccess: (response) {
     return GetSubscriptionItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a subscription item
@@ -17200,7 +17200,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a subscription item
@@ -17233,7 +17233,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a subscription item
@@ -17282,7 +17282,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a subscription item
@@ -17315,7 +17315,7 @@ return execute(
   onSuccess: (response) {
     return DeletedSubscriptionItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all schedules
@@ -17378,7 +17378,7 @@ return execute(
   onSuccess: (response) {
     return GetSubscriptionSchedulesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a schedule
@@ -17423,7 +17423,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a schedule
@@ -17456,7 +17456,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a schedule
@@ -17493,7 +17493,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel a schedule
@@ -17524,7 +17524,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Release a schedule
@@ -17553,7 +17553,7 @@ return execute(
   onSuccess: (response) {
     return SubscriptionSchedule.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List subscriptions
@@ -17625,7 +17625,7 @@ return execute(
   onSuccess: (response) {
     return GetSubscriptionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a subscription
@@ -17726,7 +17726,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Search subscriptions
@@ -17769,7 +17769,7 @@ return execute(
   onSuccess: (response) {
     return GetSubscriptionsSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a subscription
@@ -17802,7 +17802,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a subscription
@@ -17909,7 +17909,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel a subscription
@@ -17946,7 +17946,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a subscription discount
@@ -17971,7 +17971,7 @@ return execute(
   onSuccess: (response) {
     return DeletedDiscount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Migrate a subscription
@@ -17999,7 +17999,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Resume a subscription
@@ -18032,7 +18032,7 @@ return execute(
   onSuccess: (response) {
     return Subscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Find a Tax Association
@@ -18066,7 +18066,7 @@ return execute(
   onSuccess: (response) {
     return TaxAssociation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a Tax Calculation
@@ -18105,7 +18105,7 @@ return execute(
   onSuccess: (response) {
     return TaxCalculation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Tax Calculation
@@ -18138,7 +18138,7 @@ return execute(
   onSuccess: (response) {
     return TaxCalculation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a calculation's line items
@@ -18180,7 +18180,7 @@ return execute(
   onSuccess: (response) {
     return GetTaxCalculationsCalculationLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List registrations
@@ -18225,7 +18225,7 @@ return execute(
   onSuccess: (response) {
     return GetTaxRegistrationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a registration
@@ -18257,7 +18257,7 @@ return execute(
   onSuccess: (response) {
     return TaxRegistration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a registration
@@ -18290,7 +18290,7 @@ return execute(
   onSuccess: (response) {
     return TaxRegistration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a registration
@@ -18323,7 +18323,7 @@ return execute(
   onSuccess: (response) {
     return TaxRegistration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve settings
@@ -18356,7 +18356,7 @@ return execute(
   onSuccess: (response) {
     return TaxSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update settings
@@ -18387,7 +18387,7 @@ return execute(
   onSuccess: (response) {
     return TaxSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a transaction from a calculation
@@ -18420,7 +18420,7 @@ return execute(
   onSuccess: (response) {
     return TaxTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a reversal transaction
@@ -18458,7 +18458,7 @@ return execute(
   onSuccess: (response) {
     return TaxTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a transaction
@@ -18491,7 +18491,7 @@ return execute(
   onSuccess: (response) {
     return TaxTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a transaction's line items
@@ -18533,7 +18533,7 @@ return execute(
   onSuccess: (response) {
     return GetTaxTransactionsTransactionLineItemsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all tax codes
@@ -18575,7 +18575,7 @@ return execute(
   onSuccess: (response) {
     return GetTaxCodesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a tax code
@@ -18608,7 +18608,7 @@ return execute(
   onSuccess: (response) {
     return TaxCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all tax IDs
@@ -18656,7 +18656,7 @@ return execute(
   onSuccess: (response) {
     return GetTaxIdsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a tax ID
@@ -18687,7 +18687,7 @@ return execute(
   onSuccess: (response) {
     return TaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a tax ID
@@ -18720,7 +18720,7 @@ return execute(
   onSuccess: (response) {
     return TaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a tax ID
@@ -18745,7 +18745,7 @@ return execute(
   onSuccess: (response) {
     return DeletedTaxId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all tax rates
@@ -18796,7 +18796,7 @@ return execute(
   onSuccess: (response) {
     return GetTaxRatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a tax rate
@@ -18840,7 +18840,7 @@ return execute(
   onSuccess: (response) {
     return TaxRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a tax rate
@@ -18873,7 +18873,7 @@ return execute(
   onSuccess: (response) {
     return TaxRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a tax rate
@@ -18916,7 +18916,7 @@ return execute(
   onSuccess: (response) {
     return TaxRate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all Configurations
@@ -18961,7 +18961,7 @@ return execute(
   onSuccess: (response) {
     return GetTerminalConfigurationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a Configuration
@@ -19010,7 +19010,7 @@ return execute(
   onSuccess: (response) {
     return TerminalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Configuration
@@ -19043,7 +19043,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalConfiguration.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a Configuration
@@ -19092,7 +19092,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalConfiguration.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a Configuration
@@ -19117,7 +19117,7 @@ return execute(
   onSuccess: (response) {
     return DeletedTerminalConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a Connection Token
@@ -19146,7 +19146,7 @@ return execute(
   onSuccess: (response) {
     return TerminalConnectionToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all Locations
@@ -19188,7 +19188,7 @@ return execute(
   onSuccess: (response) {
     return GetTerminalLocationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a Location
@@ -19234,7 +19234,7 @@ return execute(
   onSuccess: (response) {
     return TerminalLocation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Location
@@ -19267,7 +19267,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalLocation.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalLocation.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a Location
@@ -19312,7 +19312,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalLocation.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalLocation.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a Location
@@ -19337,7 +19337,7 @@ return execute(
   onSuccess: (response) {
     return DeletedTerminalLocation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an Onboarding Link
@@ -19368,7 +19368,7 @@ return execute(
   onSuccess: (response) {
     return TerminalOnboardingLink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all Readers
@@ -19422,7 +19422,7 @@ return execute(
   onSuccess: (response) {
     return GetTerminalReadersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a Reader
@@ -19456,7 +19456,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Reader
@@ -19489,7 +19489,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalReader.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalReader.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a Reader
@@ -19520,7 +19520,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => TerminalReader.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedTerminalReader.fromJson(v as Map<String, dynamic>),);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a Reader
@@ -19545,7 +19545,7 @@ return execute(
   onSuccess: (response) {
     return DeletedTerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel the current reader action
@@ -19572,7 +19572,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Collect inputs using a Reader
@@ -19602,7 +19602,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Hand off a PaymentIntent to a Reader and collect card details
@@ -19632,7 +19632,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Confirm a PaymentIntent on the Reader
@@ -19662,7 +19662,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Hand-off a PaymentIntent to a Reader
@@ -19692,7 +19692,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Hand-off a SetupIntent to a Reader
@@ -19723,7 +19723,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Refund a Charge or a PaymentIntent in-person
@@ -19764,7 +19764,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Set reader display
@@ -19794,7 +19794,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a refund using a Terminal-supported device.
@@ -19838,7 +19838,7 @@ return execute(
   onSuccess: (response) {
     return TerminalRefund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a test Confirmation Token
@@ -19877,7 +19877,7 @@ return execute(
   onSuccess: (response) {
     return ConfirmationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Fund a test mode cash balance
@@ -19908,7 +19908,7 @@ return execute(
   onSuccess: (response) {
     return CustomerCashBalanceTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a test-mode authorization
@@ -19966,7 +19966,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Capture a test-mode authorization
@@ -19999,7 +19999,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Expire a test-mode authorization
@@ -20026,7 +20026,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Finalize a test-mode authorization's amount
@@ -20058,7 +20058,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Respond to fraud challenge
@@ -20086,7 +20086,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Increment a test-mode authorization
@@ -20116,7 +20116,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Reverse a test-mode authorization
@@ -20145,7 +20145,7 @@ return execute(
   onSuccess: (response) {
     return IssuingAuthorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Deliver a testmode card
@@ -20172,7 +20172,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Fail a testmode card
@@ -20199,7 +20199,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Return a testmode card
@@ -20226,7 +20226,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Ship a testmode card
@@ -20253,7 +20253,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Submit a testmode card
@@ -20280,7 +20280,7 @@ return execute(
   onSuccess: (response) {
     return IssuingCard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Activate a testmode personalization design
@@ -20307,7 +20307,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Deactivate a testmode personalization design
@@ -20334,7 +20334,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Reject a testmode personalization design
@@ -20362,7 +20362,7 @@ return execute(
   onSuccess: (response) {
     return IssuingPersonalizationDesign.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a test-mode settlement
@@ -20403,7 +20403,7 @@ return execute(
   onSuccess: (response) {
     return IssuingSettlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Complete a test-mode settlement
@@ -20430,7 +20430,7 @@ return execute(
   onSuccess: (response) {
     return IssuingSettlement.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a test-mode force capture
@@ -20465,7 +20465,7 @@ return execute(
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a test-mode unlinked refund
@@ -20500,7 +20500,7 @@ return execute(
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Refund a test-mode transaction
@@ -20529,7 +20529,7 @@ return execute(
   onSuccess: (response) {
     return IssuingTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Expire a pending refund.
@@ -20556,7 +20556,7 @@ return execute(
   onSuccess: (response) {
     return Refund.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Simulate presenting a payment method
@@ -20593,7 +20593,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Simulate a successful input collection
@@ -20622,7 +20622,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Simulate an input collection timeout
@@ -20649,7 +20649,7 @@ return execute(
   onSuccess: (response) {
     return TerminalReader.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all test clocks
@@ -20691,7 +20691,7 @@ return execute(
   onSuccess: (response) {
     return GetTestHelpersTestClocksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a test clock
@@ -20721,7 +20721,7 @@ return execute(
   onSuccess: (response) {
     return TestHelpersTestClock.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a test clock
@@ -20754,7 +20754,7 @@ return execute(
   onSuccess: (response) {
     return TestHelpersTestClock.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a test clock
@@ -20779,7 +20779,7 @@ return execute(
   onSuccess: (response) {
     return DeletedTestHelpersTestClock.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Advance a test clock
@@ -20807,7 +20807,7 @@ return execute(
   onSuccess: (response) {
     return TestHelpersTestClock.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Fail an InboundTransfer
@@ -20836,7 +20836,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Return an InboundTransfer
@@ -20863,7 +20863,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Succeed an InboundTransfer
@@ -20890,7 +20890,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Update an OutboundPayment
@@ -20918,7 +20918,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Fail an OutboundPayment
@@ -20945,7 +20945,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Post an OutboundPayment
@@ -20972,7 +20972,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Return an OutboundPayment
@@ -21001,7 +21001,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Update an OutboundTransfer
@@ -21029,7 +21029,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Fail an OutboundTransfer
@@ -21056,7 +21056,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Post an OutboundTransfer
@@ -21083,7 +21083,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Return an OutboundTransfer
@@ -21112,7 +21112,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Create a ReceivedCredit
@@ -21147,7 +21147,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryReceivedCredit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Test mode: Create a ReceivedDebit
@@ -21182,7 +21182,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryReceivedDebit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a CVC update token
@@ -21224,7 +21224,7 @@ return execute(
   onSuccess: (response) {
     return Token.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a token
@@ -21257,7 +21257,7 @@ return execute(
   onSuccess: (response) {
     return Token.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all top-ups
@@ -21308,7 +21308,7 @@ return execute(
   onSuccess: (response) {
     return GetTopupsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a top-up
@@ -21347,7 +21347,7 @@ return execute(
   onSuccess: (response) {
     return Topup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a top-up
@@ -21380,7 +21380,7 @@ return execute(
   onSuccess: (response) {
     return Topup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a top-up
@@ -21411,7 +21411,7 @@ return execute(
   onSuccess: (response) {
     return Topup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel a top-up
@@ -21438,7 +21438,7 @@ return execute(
   onSuccess: (response) {
     return Topup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all transfers
@@ -21489,7 +21489,7 @@ return execute(
   onSuccess: (response) {
     return GetTransfersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a transfer
@@ -21530,7 +21530,7 @@ return execute(
   onSuccess: (response) {
     return Transfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all reversals
@@ -21572,7 +21572,7 @@ return execute(
   onSuccess: (response) {
     return GetTransfersIdReversalsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a transfer reversal
@@ -21611,7 +21611,7 @@ return execute(
   onSuccess: (response) {
     return TransferReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a transfer
@@ -21644,7 +21644,7 @@ return execute(
   onSuccess: (response) {
     return Transfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a transfer
@@ -21677,7 +21677,7 @@ return execute(
   onSuccess: (response) {
     return Transfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a reversal
@@ -21710,7 +21710,7 @@ return execute(
   onSuccess: (response) {
     return TransferReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a reversal
@@ -21741,7 +21741,7 @@ return execute(
   onSuccess: (response) {
     return TransferReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all CreditReversals
@@ -21790,7 +21790,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryCreditReversalsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a CreditReversal
@@ -21820,7 +21820,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryCreditReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a CreditReversal
@@ -21853,7 +21853,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryCreditReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all DebitReversals
@@ -21905,7 +21905,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryDebitReversalsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a DebitReversal
@@ -21935,7 +21935,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryDebitReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a DebitReversal
@@ -21968,7 +21968,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryDebitReversal.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all FinancialAccounts
@@ -22016,7 +22016,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryFinancialAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a FinancialAccount
@@ -22052,7 +22052,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryFinancialAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a FinancialAccount
@@ -22085,7 +22085,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryFinancialAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a FinancialAccount
@@ -22122,7 +22122,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryFinancialAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Close a FinancialAccount
@@ -22151,7 +22151,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryFinancialAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve FinancialAccount Features
@@ -22184,7 +22184,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryFinancialAccountFeatures.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update FinancialAccount Features
@@ -22225,7 +22225,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryFinancialAccountFeatures.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all InboundTransfers
@@ -22271,7 +22271,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryInboundTransfersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an InboundTransfer
@@ -22308,7 +22308,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an InboundTransfer
@@ -22341,7 +22341,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel an InboundTransfer
@@ -22368,7 +22368,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryInboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all OutboundPayments
@@ -22420,7 +22420,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryOutboundPaymentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an OutboundPayment
@@ -22466,7 +22466,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an OutboundPayment
@@ -22499,7 +22499,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel an OutboundPayment
@@ -22526,7 +22526,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundPayment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all OutboundTransfers
@@ -22572,7 +22572,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryOutboundTransfersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create an OutboundTransfer
@@ -22614,7 +22614,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve an OutboundTransfer
@@ -22647,7 +22647,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Cancel an OutboundTransfer
@@ -22674,7 +22674,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryOutboundTransfer.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all ReceivedCredits
@@ -22723,7 +22723,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryReceivedCreditsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a ReceivedCredit
@@ -22756,7 +22756,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryReceivedCredit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all ReceivedDebits
@@ -22802,7 +22802,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryReceivedDebitsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a ReceivedDebit
@@ -22835,7 +22835,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryReceivedDebit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all TransactionEntries
@@ -22890,7 +22890,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryTransactionEntriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a TransactionEntry
@@ -22923,7 +22923,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryTransactionEntry.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all Transactions
@@ -22978,7 +22978,7 @@ return execute(
   onSuccess: (response) {
     return GetTreasuryTransactionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a Transaction
@@ -23011,7 +23011,7 @@ return execute(
   onSuccess: (response) {
     return TreasuryTransaction.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// List all webhook endpoints
@@ -23053,7 +23053,7 @@ return execute(
   onSuccess: (response) {
     return GetWebhookEndpointsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Create a webhook endpoint
@@ -23090,7 +23090,7 @@ return execute(
   onSuccess: (response) {
     return WebhookEndpoint.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Retrieve a webhook endpoint
@@ -23123,7 +23123,7 @@ return execute(
   onSuccess: (response) {
     return WebhookEndpoint.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Update a webhook endpoint
@@ -23160,7 +23160,7 @@ return execute(
   onSuccess: (response) {
     return WebhookEndpoint.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
 /// Delete a webhook endpoint
@@ -23185,7 +23185,7 @@ return execute(
   onSuccess: (response) {
     return DeletedWebhookEndpoint.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteAccountsAccountError.fromResponse(response),
+  onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
  }

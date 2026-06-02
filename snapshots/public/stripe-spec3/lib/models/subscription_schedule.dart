@@ -239,6 +239,6 @@ SubscriptionSchedule copyWith({BillingPortalConfigurationApplication? Function()
 
 @override int get hashCode => Object.hash(application, billingMode, canceledAt, completedAt, created, currentPhase, customer, customerAccount, defaultSettings, endBehavior, id, livemode, metadata, object, Object.hashAll(phases), releasedAt, releasedSubscription, status, subscription, testClock);
 
-@override String toString() => 'SubscriptionSchedule(application: $application, billingMode: $billingMode, canceledAt: $canceledAt, completedAt: $completedAt, created: $created, currentPhase: $currentPhase, customer: $customer, customerAccount: $customerAccount, defaultSettings: $defaultSettings, endBehavior: $endBehavior, id: $id, livemode: $livemode, metadata: $metadata, object: $object, phases: $phases, releasedAt: $releasedAt, releasedSubscription: $releasedSubscription, status: $status, subscription: $subscription, testClock: $testClock)';
+@override String toString() => 'SubscriptionSchedule(\n  application: $application,\n  billingMode: $billingMode,\n  canceledAt: $canceledAt,\n  completedAt: $completedAt,\n  created: $created,\n  currentPhase: $currentPhase,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  defaultSettings: $defaultSettings,\n  endBehavior: $endBehavior,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  phases: $phases,\n  releasedAt: $releasedAt,\n  releasedSubscription: $releasedSubscription,\n  status: $status,\n  subscription: $subscription,\n  testClock: $testClock,\n)';
 
  }

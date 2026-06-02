@@ -17,7 +17,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesUuidObject?, Never>> dcvDelegationUu
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dcv_delegation/uuid',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/dcv_delegation/uuid',
   headers: headers,
   options: options,
 );

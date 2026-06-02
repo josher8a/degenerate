@@ -137,6 +137,6 @@ WebhookPingHook copyWith({bool? active, int? Function()? appId, ReposCreateWebho
 
 @override int get hashCode => Object.hash(active, appId, config, createdAt, deliveriesUrl, Object.hashAll(events), id, lastResponse, name, pingUrl, testUrl, type, updatedAt, url);
 
-@override String toString() => 'WebhookPingHook(active: $active, appId: $appId, config: $config, createdAt: $createdAt, deliveriesUrl: $deliveriesUrl, events: $events, id: $id, lastResponse: $lastResponse, name: $name, pingUrl: $pingUrl, testUrl: $testUrl, type: $type, updatedAt: $updatedAt, url: $url)';
+@override String toString() => 'WebhookPingHook(\n  active: $active,\n  appId: $appId,\n  config: $config,\n  createdAt: $createdAt,\n  deliveriesUrl: $deliveriesUrl,\n  events: $events,\n  id: $id,\n  lastResponse: $lastResponse,\n  name: $name,\n  pingUrl: $pingUrl,\n  testUrl: $testUrl,\n  type: $type,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
  }

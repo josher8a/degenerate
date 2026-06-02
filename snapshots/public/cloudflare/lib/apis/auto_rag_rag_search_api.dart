@@ -28,7 +28,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AutoragConfigAiSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AutoragConfigAiSearchError.fromResponse(response),
+  onError: AutoragConfigAiSearchError.fromResponse,
 );
  } 
 /// Search
@@ -51,7 +51,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AutoragConfigSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AutoragConfigSearchError.fromResponse(response),
+  onError: AutoragConfigSearchError.fromResponse,
 );
  } 
  }

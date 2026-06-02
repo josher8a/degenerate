@@ -21,6 +21,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CodeInterpreterToolCallOutputs$Unknown;
 
+R when<R>({required R Function(CodeInterpreterToolCallOutputsLogs) logs, required R Function(CodeInterpreterToolCallOutputsImage) image, required R Function(CodeInterpreterToolCallOutputs$Unknown) unknown, }) { return switch (this) {
+  final CodeInterpreterToolCallOutputsLogs v => logs(v),
+  final CodeInterpreterToolCallOutputsImage v => image(v),
+  final CodeInterpreterToolCallOutputs$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class CodeInterpreterToolCallOutputsLogs extends CodeInterpreterToolCallOutputs {const CodeInterpreterToolCallOutputsLogs(this.codeInterpreterOutputLogs);
 

@@ -94,18 +94,18 @@ final RealtimekitRecordingStatus status;
 final DateTime? stoppedTime;
 
 Map<String, dynamic> toJson() { return {
-  'audio_download_url': audioDownloadUrl != null ? audioDownloadUrl?.toString() : null,
-  'download_url': downloadUrl != null ? downloadUrl?.toString() : null,
-  'download_url_expiry': downloadUrlExpiry != null ? downloadUrlExpiry?.toIso8601String() : null,
+  'audio_download_url': audioDownloadUrl?.toString(),
+  'download_url': downloadUrl?.toString(),
+  'download_url_expiry': downloadUrlExpiry?.toIso8601String(),
   'file_size': fileSize,
   'id': id,
   'invoked_time': invokedTime.toIso8601String(),
   'output_file_name': outputFileName,
   'recording_duration': ?recordingDuration,
   'session_id': sessionId,
-  'started_time': startedTime != null ? startedTime?.toIso8601String() : null,
+  'started_time': startedTime?.toIso8601String(),
   'status': status.toJson(),
-  'stopped_time': stoppedTime != null ? stoppedTime?.toIso8601String() : null,
+  'stopped_time': stoppedTime?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio_download_url') && json['audio_download_url'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
@@ -149,6 +149,6 @@ RealtimekitRecording copyWith({Uri? Function()? audioDownloadUrl, Uri? Function(
 
 @override int get hashCode => Object.hash(audioDownloadUrl, downloadUrl, downloadUrlExpiry, fileSize, id, invokedTime, outputFileName, recordingDuration, sessionId, startedTime, status, stoppedTime);
 
-@override String toString() => 'RealtimekitRecording(audioDownloadUrl: $audioDownloadUrl, downloadUrl: $downloadUrl, downloadUrlExpiry: $downloadUrlExpiry, fileSize: $fileSize, id: $id, invokedTime: $invokedTime, outputFileName: $outputFileName, recordingDuration: $recordingDuration, sessionId: $sessionId, startedTime: $startedTime, status: $status, stoppedTime: $stoppedTime)';
+@override String toString() => 'RealtimekitRecording(\n  audioDownloadUrl: $audioDownloadUrl,\n  downloadUrl: $downloadUrl,\n  downloadUrlExpiry: $downloadUrlExpiry,\n  fileSize: $fileSize,\n  id: $id,\n  invokedTime: $invokedTime,\n  outputFileName: $outputFileName,\n  recordingDuration: $recordingDuration,\n  sessionId: $sessionId,\n  startedTime: $startedTime,\n  status: $status,\n  stoppedTime: $stoppedTime,\n)';
 
  }

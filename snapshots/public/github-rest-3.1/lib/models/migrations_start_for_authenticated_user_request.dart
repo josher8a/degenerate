@@ -77,6 +77,6 @@ MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepos
 
 @override int get hashCode => Object.hash(lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(exclude ?? const []), Object.hashAll(repositories));
 
-@override String toString() => 'MigrationsStartForAuthenticatedUserRequest(lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, exclude: $exclude, repositories: $repositories)';
+@override String toString() => 'MigrationsStartForAuthenticatedUserRequest(\n  lockRepositories: $lockRepositories,\n  excludeMetadata: $excludeMetadata,\n  excludeGitData: $excludeGitData,\n  excludeAttachments: $excludeAttachments,\n  excludeReleases: $excludeReleases,\n  excludeOwnerProjects: $excludeOwnerProjects,\n  orgMetadataOnly: $orgMetadataOnly,\n  exclude: $exclude,\n  repositories: $repositories,\n)';
 
  }

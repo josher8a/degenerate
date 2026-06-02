@@ -133,17 +133,17 @@ Map<String, dynamic> toJson() { return {
   'state': state,
   'locked': locked,
   'title': title,
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
   'body': body,
   'labels': labels.map((e) => e.toJson()).toList(),
-  'milestone': milestone != null ? milestone?.toJson() : null,
+  'milestone': milestone?.toJson(),
   'active_lock_reason': ?activeLockReason,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  'closed_at': closedAt != null ? closedAt?.toIso8601String() : null,
-  'merged_at': mergedAt != null ? mergedAt?.toIso8601String() : null,
+  'closed_at': closedAt?.toIso8601String(),
+  'merged_at': mergedAt?.toIso8601String(),
   'merge_commit_sha': mergeCommitSha,
-  'assignee': assignee != null ? assignee?.toJson() : null,
+  'assignee': assignee?.toJson(),
   if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
   if (requestedReviewers != null) 'requested_reviewers': requestedReviewers?.map((e) => e.toJson()).toList(),
   if (requestedTeams != null) 'requested_teams': requestedTeams?.map((e) => e.toJson()).toList(),
@@ -264,6 +264,6 @@ PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri
 
 @override int get hashCode => Object.hashAll([url, id, nodeId, htmlUrl, diffUrl, patchUrl, issueUrl, commitsUrl, reviewCommentsUrl, reviewCommentUrl, commentsUrl, statusesUrl, number, state, locked, title, user, body, Object.hashAll(labels), milestone, activeLockReason, createdAt, updatedAt, closedAt, mergedAt, mergeCommitSha, assignee, Object.hashAll(assignees ?? const []), Object.hashAll(requestedReviewers ?? const []), Object.hashAll(requestedTeams ?? const []), head, base, links, authorAssociation, autoMerge, draft]);
 
-@override String toString() => 'PullRequestSimple(url: $url, id: $id, nodeId: $nodeId, htmlUrl: $htmlUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, issueUrl: $issueUrl, commitsUrl: $commitsUrl, reviewCommentsUrl: $reviewCommentsUrl, reviewCommentUrl: $reviewCommentUrl, commentsUrl: $commentsUrl, statusesUrl: $statusesUrl, number: $number, state: $state, locked: $locked, title: $title, user: $user, body: $body, labels: $labels, milestone: $milestone, activeLockReason: $activeLockReason, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, mergedAt: $mergedAt, mergeCommitSha: $mergeCommitSha, assignee: $assignee, assignees: $assignees, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, head: $head, base: $base, links: $links, authorAssociation: $authorAssociation, autoMerge: $autoMerge, draft: $draft)';
+@override String toString() => 'PullRequestSimple(\n  url: $url,\n  id: $id,\n  nodeId: $nodeId,\n  htmlUrl: $htmlUrl,\n  diffUrl: $diffUrl,\n  patchUrl: $patchUrl,\n  issueUrl: $issueUrl,\n  commitsUrl: $commitsUrl,\n  reviewCommentsUrl: $reviewCommentsUrl,\n  reviewCommentUrl: $reviewCommentUrl,\n  commentsUrl: $commentsUrl,\n  statusesUrl: $statusesUrl,\n  number: $number,\n  state: $state,\n  locked: $locked,\n  title: $title,\n  user: $user,\n  body: $body,\n  labels: $labels,\n  milestone: $milestone,\n  activeLockReason: $activeLockReason,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  closedAt: $closedAt,\n  mergedAt: $mergedAt,\n  mergeCommitSha: $mergeCommitSha,\n  assignee: $assignee,\n  assignees: $assignees,\n  requestedReviewers: $requestedReviewers,\n  requestedTeams: $requestedTeams,\n  head: $head,\n  base: $base,\n  links: $links,\n  authorAssociation: $authorAssociation,\n  autoMerge: $autoMerge,\n  draft: $draft,\n)';
 
  }

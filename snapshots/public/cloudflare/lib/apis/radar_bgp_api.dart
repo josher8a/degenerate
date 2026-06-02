@@ -81,7 +81,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpHijacksEventsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpHijacksEventsError.fromResponse(response),
+  onError: RadarGetBgpHijacksEventsError.fromResponse,
 );
  } 
 /// Get announced IP address space time series
@@ -150,7 +150,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpIpsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpIpsTimeseriesError.fromResponse(response),
+  onError: RadarGetBgpIpsTimeseriesError.fromResponse,
 );
  } 
 /// Get BGP route leak events
@@ -214,7 +214,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRouteLeakEventsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpRouteLeakEventsError.fromResponse(response),
+  onError: RadarGetBgpRouteLeakEventsError.fromResponse,
 );
  } 
 /// List ASes from global routing tables
@@ -257,7 +257,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRoutesAsnsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpRoutesAsnsError.fromResponse(response),
+  onError: RadarGetBgpRoutesAsnsError.fromResponse,
 );
  } 
 /// Get Multi-Origin AS (MOAS) prefixes
@@ -297,7 +297,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpPfx2asMoasResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpPfx2asMoasError.fromResponse(response),
+  onError: RadarGetBgpPfx2asMoasError.fromResponse,
 );
  } 
 /// Get prefix-to-ASN mapping
@@ -340,7 +340,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpPfx2asResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpPfx2asError.fromResponse(response),
+  onError: RadarGetBgpPfx2asError.fromResponse,
 );
  } 
 /// Get real-time BGP routes for a prefix
@@ -374,7 +374,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRoutesRealtimeResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpRoutesRealtimeError.fromResponse(response),
+  onError: RadarGetBgpRoutesRealtimeError.fromResponse,
 );
  } 
 /// Get BGP routing table stats
@@ -411,7 +411,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRoutesStatsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpRoutesStatsError.fromResponse(response),
+  onError: RadarGetBgpRoutesStatsError.fromResponse,
 );
  } 
 /// Get ASPA changes over time
@@ -454,7 +454,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRpkiAspaChangesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpRpkiAspaChangesError.fromResponse(response),
+  onError: RadarGetBgpRpkiAspaChangesError.fromResponse,
 );
  } 
 /// Get ASPA objects snapshot
@@ -497,7 +497,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRpkiAspaSnapshotResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpRpkiAspaSnapshotError.fromResponse(response),
+  onError: RadarGetBgpRpkiAspaSnapshotError.fromResponse,
 );
  } 
 /// Get ASPA count time series
@@ -549,7 +549,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpRpkiAspaTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpRpkiAspaTimeseriesError.fromResponse(response),
+  onError: RadarGetBgpRpkiAspaTimeseriesError.fromResponse,
 );
  } 
 /// Get BGP time series
@@ -618,7 +618,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpTimeseriesError.fromResponse(response),
+  onError: RadarGetBgpTimeseriesError.fromResponse,
 );
  } 
 /// Get top ASes by BGP updates
@@ -687,7 +687,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpTopAsesError.fromResponse(response),
+  onError: RadarGetBgpTopAsesError.fromResponse,
 );
  } 
 /// Get top ASes by prefix count
@@ -724,7 +724,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpTopAsnsByPrefixesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpTopAsnsByPrefixesError.fromResponse(response),
+  onError: RadarGetBgpTopAsnsByPrefixesError.fromResponse,
 );
  } 
 /// Get top prefixes by BGP updates
@@ -788,7 +788,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetBgpTopPrefixesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetBgpTopPrefixesError.fromResponse(response),
+  onError: RadarGetBgpTopPrefixesError.fromResponse,
 );
  } 
  }

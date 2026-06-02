@@ -193,5 +193,5 @@ final class True {
 
   @override
   String toString() =>
-      'True(\$false: ${$false}, none: $none, \$null: ${$null}, \$0: ${$0}, \$empty: ${$empty}, constructor: $constructor, proto: $proto, hasOwnProperty: $hasOwnProperty, type: $type, \$ref: ${$ref}, \$id: ${$id}, xExtensionLookalike: $xExtensionLookalike, additionalProperties: $additionalProperties)';
+      'True(\n  \$false: ${$false},\n  none: $none,\n  \$null: ${$null},\n  \$0: ${$0},\n  \$empty: ${$empty},\n  constructor: $constructor,\n  proto: $proto,\n  hasOwnProperty: $hasOwnProperty,\n  type: $type,\n  \$ref: ${$ref},\n  \$id: ${$id},\n  xExtensionLookalike: $xExtensionLookalike,\n  additionalProperties: $additionalProperties,\n)';
 }

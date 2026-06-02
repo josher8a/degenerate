@@ -15,6 +15,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ChecksCreateRequest$Unknown;
 
+R when<R>({required R Function(ChecksCreateRequestCompleted$Variant) completed, required R Function(ChecksCreateRequestQueued) queued, required R Function(ChecksCreateRequest$Unknown) unknown, }) { return switch (this) {
+  final ChecksCreateRequestCompleted$Variant v => completed(v),
+  final ChecksCreateRequestQueued v => queued(v),
+  final ChecksCreateRequest$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ChecksCreateRequestCompleted$Variant extends ChecksCreateRequest {const ChecksCreateRequestCompleted$Variant(this.checksCreateRequestCompleted);
 

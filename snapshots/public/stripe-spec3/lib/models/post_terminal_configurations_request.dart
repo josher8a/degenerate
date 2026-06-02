@@ -106,6 +106,6 @@ PostTerminalConfigurationsRequest copyWith({PostTerminalConfigurationsRequestBbp
 
 @override int get hashCode => Object.hash(bbposWisepad3, bbposWiseposE, cellular, Object.hashAll(expand ?? const []), name, offline, rebootWindow, stripeS700, stripeS710, tipping, verifoneP400, wifi);
 
-@override String toString() => 'PostTerminalConfigurationsRequest(bbposWisepad3: $bbposWisepad3, bbposWiseposE: $bbposWiseposE, cellular: $cellular, expand: $expand, name: $name, offline: $offline, rebootWindow: $rebootWindow, stripeS700: $stripeS700, stripeS710: $stripeS710, tipping: $tipping, verifoneP400: $verifoneP400, wifi: $wifi)';
+@override String toString() => 'PostTerminalConfigurationsRequest(\n  bbposWisepad3: $bbposWisepad3,\n  bbposWiseposE: $bbposWiseposE,\n  cellular: $cellular,\n  expand: $expand,\n  name: $name,\n  offline: $offline,\n  rebootWindow: $rebootWindow,\n  stripeS700: $stripeS700,\n  stripeS710: $stripeS710,\n  tipping: $tipping,\n  verifoneP400: $verifoneP400,\n  wifi: $wifi,\n)';
 
  }

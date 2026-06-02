@@ -141,6 +141,6 @@ Tipping copyWith({Aed? Function()? aed, Aud? Function()? aud, Cad? Function()? c
 
 @override int get hashCode => Object.hashAll([aed, aud, cad, chf, czk, dkk, eur, gbp, gip, hkd, huf, jpy, mxn, myr, nok, nzd, pln, ron, sek, sgd, usd]);
 
-@override String toString() => 'Tipping(aed: $aed, aud: $aud, cad: $cad, chf: $chf, czk: $czk, dkk: $dkk, eur: $eur, gbp: $gbp, gip: $gip, hkd: $hkd, huf: $huf, jpy: $jpy, mxn: $mxn, myr: $myr, nok: $nok, nzd: $nzd, pln: $pln, ron: $ron, sek: $sek, sgd: $sgd, usd: $usd)';
+@override String toString() => 'Tipping(\n  aed: $aed,\n  aud: $aud,\n  cad: $cad,\n  chf: $chf,\n  czk: $czk,\n  dkk: $dkk,\n  eur: $eur,\n  gbp: $gbp,\n  gip: $gip,\n  hkd: $hkd,\n  huf: $huf,\n  jpy: $jpy,\n  mxn: $mxn,\n  myr: $myr,\n  nok: $nok,\n  nzd: $nzd,\n  pln: $pln,\n  ron: $ron,\n  sek: $sek,\n  sgd: $sgd,\n  usd: $usd,\n)';
 
  }

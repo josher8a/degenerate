@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'app': app.toJson(),
   'before': before,
   'check_runs_url': checkRunsUrl.toString(),
-  'conclusion': conclusion != null ? conclusion?.toJson() : null,
+  'conclusion': conclusion?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'head_branch': headBranch,
   'head_commit': headCommit.toJson(),
@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   'pull_requests': pullRequests.map((e) => e.toJson()).toList(),
   'rerequestable': ?rerequestable,
   'runs_rerequestable': ?runsRerequestable,
-  'status': status != null ? status?.toJson() : null,
+  'status': status?.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
 }; } 
@@ -146,6 +146,6 @@ WebhookCheckSuiteRequestedCheckSuite copyWith({String? Function()? after, Webhoo
 
 @override int get hashCode => Object.hash(after, app, before, checkRunsUrl, conclusion, createdAt, headBranch, headCommit, headSha, id, latestCheckRunsCount, nodeId, Object.hashAll(pullRequests), rerequestable, runsRerequestable, status, updatedAt, url);
 
-@override String toString() => 'WebhookCheckSuiteRequestedCheckSuite(after: $after, app: $app, before: $before, checkRunsUrl: $checkRunsUrl, conclusion: $conclusion, createdAt: $createdAt, headBranch: $headBranch, headCommit: $headCommit, headSha: $headSha, id: $id, latestCheckRunsCount: $latestCheckRunsCount, nodeId: $nodeId, pullRequests: $pullRequests, rerequestable: $rerequestable, runsRerequestable: $runsRerequestable, status: $status, updatedAt: $updatedAt, url: $url)';
+@override String toString() => 'WebhookCheckSuiteRequestedCheckSuite(\n  after: $after,\n  app: $app,\n  before: $before,\n  checkRunsUrl: $checkRunsUrl,\n  conclusion: $conclusion,\n  createdAt: $createdAt,\n  headBranch: $headBranch,\n  headCommit: $headCommit,\n  headSha: $headSha,\n  id: $id,\n  latestCheckRunsCount: $latestCheckRunsCount,\n  nodeId: $nodeId,\n  pullRequests: $pullRequests,\n  rerequestable: $rerequestable,\n  runsRerequestable: $runsRerequestable,\n  status: $status,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
  }

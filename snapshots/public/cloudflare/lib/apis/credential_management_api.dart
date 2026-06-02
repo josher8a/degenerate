@@ -20,7 +20,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/credential',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2-catalog/${Uri.encodeComponent(bucketName.toJson())}/credential',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -32,7 +32,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) => DisableCatalogError.fromResponse(response),
+  onError: DisableCatalogError.fromResponse,
 );
  } 
  }

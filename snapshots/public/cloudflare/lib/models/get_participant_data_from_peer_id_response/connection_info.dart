@@ -75,6 +75,6 @@ ConnectionInfo copyWith({double? Function()? backendRTT, ConnectionInfoConnectiv
 
 @override int get hashCode => Object.hash(backendRTT, connectivity, effectiveNetworkType, fractionalLoss, ipDetails, jitter, location, rTT, throughput, turnConnectivity);
 
-@override String toString() => 'ConnectionInfo(backendRTT: $backendRTT, connectivity: $connectivity, effectiveNetworkType: $effectiveNetworkType, fractionalLoss: $fractionalLoss, ipDetails: $ipDetails, jitter: $jitter, location: $location, rTT: $rTT, throughput: $throughput, turnConnectivity: $turnConnectivity)';
+@override String toString() => 'ConnectionInfo(\n  backendRTT: $backendRTT,\n  connectivity: $connectivity,\n  effectiveNetworkType: $effectiveNetworkType,\n  fractionalLoss: $fractionalLoss,\n  ipDetails: $ipDetails,\n  jitter: $jitter,\n  location: $location,\n  rTT: $rTT,\n  throughput: $throughput,\n  turnConnectivity: $turnConnectivity,\n)';
 
  }

@@ -42,7 +42,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Create a team
@@ -68,7 +68,7 @@ return execute(
   onSuccess: (response) {
     return TeamFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
 /// Get a team by name
@@ -93,7 +93,7 @@ return execute(
   onSuccess: (response) {
     return TeamFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update a team
@@ -120,7 +120,7 @@ return execute(
   onSuccess: (response) {
     return TeamFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// Delete a team
@@ -500,7 +500,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => TeamFull.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
  }

@@ -17,7 +17,7 @@ Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, Never>> diagnosticsEn
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/diagnostics/endpoint-healthchecks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/diagnostics/endpoint-healthchecks',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/diagnostics/endpoint-healthchecks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/diagnostics/endpoint-healthchecks',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, Never>> diagnosticsEn
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/diagnostics/endpoint-healthchecks/${Uri.encodeComponent(id.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/diagnostics/endpoint-healthchecks/${Uri.encodeComponent(id.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/diagnostics/endpoint-healthchecks/${Uri.encodeComponent(id.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/diagnostics/endpoint-healthchecks/${Uri.encodeComponent(id.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckDelete(
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/diagnostics/endpoint-healthchecks/${Uri.encodeComponent(id.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/diagnostics/endpoint-healthchecks/${Uri.encodeComponent(id.toJson())}',
   headers: headers,
   options: options,
 );

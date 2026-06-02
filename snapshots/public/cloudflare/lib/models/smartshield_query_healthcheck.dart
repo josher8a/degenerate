@@ -101,6 +101,6 @@ SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, List<Smartshi
 
 @override int get hashCode => Object.hash(address, Object.hashAll(checkRegions ?? const []), consecutiveFails, consecutiveSuccesses, description, httpConfig, interval, name, retries, suspended, tcpConfig, timeout, type);
 
-@override String toString() => 'SmartshieldQueryHealthcheck(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, description: $description, httpConfig: $httpConfig, interval: $interval, name: $name, retries: $retries, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)';
+@override String toString() => 'SmartshieldQueryHealthcheck(\n  address: $address,\n  checkRegions: $checkRegions,\n  consecutiveFails: $consecutiveFails,\n  consecutiveSuccesses: $consecutiveSuccesses,\n  description: $description,\n  httpConfig: $httpConfig,\n  interval: $interval,\n  name: $name,\n  retries: $retries,\n  suspended: $suspended,\n  tcpConfig: $tcpConfig,\n  timeout: $timeout,\n  type: $type,\n)';
 
  }

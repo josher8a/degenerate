@@ -174,6 +174,6 @@ LogpushOutputOptions copyWith({bool? Function()? cve202144228, String? Function(
 
 @override int get hashCode => Object.hash(cve202144228, batchPrefix, batchSuffix, fieldDelimiter, Object.hashAll(fieldNames ?? const []), outputType, recordDelimiter, recordPrefix, recordSuffix, recordTemplate, sampleRate, timestampFormat);
 
-@override String toString() => 'LogpushOutputOptions(cve202144228: $cve202144228, batchPrefix: $batchPrefix, batchSuffix: $batchSuffix, fieldDelimiter: $fieldDelimiter, fieldNames: $fieldNames, outputType: $outputType, recordDelimiter: $recordDelimiter, recordPrefix: $recordPrefix, recordSuffix: $recordSuffix, recordTemplate: $recordTemplate, sampleRate: $sampleRate, timestampFormat: $timestampFormat)';
+@override String toString() => 'LogpushOutputOptions(\n  cve202144228: $cve202144228,\n  batchPrefix: $batchPrefix,\n  batchSuffix: $batchSuffix,\n  fieldDelimiter: $fieldDelimiter,\n  fieldNames: $fieldNames,\n  outputType: $outputType,\n  recordDelimiter: $recordDelimiter,\n  recordPrefix: $recordPrefix,\n  recordSuffix: $recordSuffix,\n  recordTemplate: $recordTemplate,\n  sampleRate: $sampleRate,\n  timestampFormat: $timestampFormat,\n)';
 
  }

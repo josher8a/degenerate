@@ -47,7 +47,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/access_rules/rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/firewall/access_rules/rules',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -74,7 +74,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/access_rules/rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/firewall/access_rules/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -98,7 +98,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -124,7 +124,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/firewall/access_rules/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

@@ -81,7 +81,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List organization issues assigned to the authenticated user
@@ -146,7 +146,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List assignees
@@ -180,7 +180,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Check if a user can be assigned
@@ -204,7 +204,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List repository issues
@@ -278,7 +278,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create an issue
@@ -312,7 +312,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => IssuesCreateError.fromResponse(response),
+  onError: IssuesCreateError.fromResponse,
 );
  } 
 /// List issue comments for a repository
@@ -364,7 +364,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => IssueComment.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get an issue comment
@@ -393,7 +393,7 @@ return execute(
   onSuccess: (response) {
     return IssueComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update an issue comment
@@ -424,7 +424,7 @@ return execute(
   onSuccess: (response) {
     return IssueComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Delete an issue comment
@@ -472,7 +472,7 @@ return execute(
   onSuccess: (response) {
     return IssueComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => IssuesPinCommentError.fromResponse(response),
+  onError: IssuesPinCommentError.fromResponse,
 );
  } 
 /// Unpin an issue comment
@@ -492,7 +492,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => IssuesUnpinCommentError.fromResponse(response),
+  onError: IssuesUnpinCommentError.fromResponse,
 );
  } 
 /// List issue events for a repository
@@ -526,7 +526,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => IssueEvent.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Get an issue event
@@ -548,7 +548,7 @@ return execute(
   onSuccess: (response) {
     return IssueEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => IssuesGetEventError.fromResponse(response),
+  onError: IssuesGetEventError.fromResponse,
 );
  } 
 /// Get an issue
@@ -585,7 +585,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => IssuesGetError.fromResponse(response),
+  onError: IssuesGetError.fromResponse,
 );
  } 
 /// Update an issue
@@ -616,7 +616,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => IssuesUpdateError.fromResponse(response),
+  onError: IssuesUpdateError.fromResponse,
 );
  } 
 /// Add assignees to an issue
@@ -686,7 +686,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List issue comments
@@ -732,7 +732,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => IssueComment.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => IssuesGetError.fromResponse(response),
+  onError: IssuesGetError.fromResponse,
 );
  } 
 /// Create an issue comment
@@ -768,7 +768,7 @@ return execute(
   onSuccess: (response) {
     return IssueComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => IssuesAddBlockedByDependencyError.fromResponse(response),
+  onError: IssuesAddBlockedByDependencyError.fromResponse,
 );
  } 
 /// List dependencies an issue is blocked by
@@ -809,7 +809,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => IssuesGetError.fromResponse(response),
+  onError: IssuesGetError.fromResponse,
 );
  } 
 /// Add a dependency an issue is blocked by
@@ -844,7 +844,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => IssuesAddBlockedByDependencyError.fromResponse(response),
+  onError: IssuesAddBlockedByDependencyError.fromResponse,
 );
  } 
 /// Remove dependency an issue is blocked by
@@ -876,7 +876,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => IssuesRemoveDependencyBlockedByError.fromResponse(response),
+  onError: IssuesRemoveDependencyBlockedByError.fromResponse,
 );
  } 
 /// List dependencies an issue is blocking
@@ -917,7 +917,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => IssuesGetError.fromResponse(response),
+  onError: IssuesGetError.fromResponse,
 );
  } 
 /// List issue events
@@ -951,7 +951,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => IssueEventForIssue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsDownloadArtifactError.fromResponse(response),
+  onError: ActionsDownloadArtifactError.fromResponse,
 );
  } 
 /// List labels for an issue
@@ -985,7 +985,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => IssuesGetError.fromResponse(response),
+  onError: IssuesGetError.fromResponse,
 );
  } 
 /// Add labels to an issue
@@ -1010,7 +1010,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => IssuesAddLabelsError.fromResponse(response),
+  onError: IssuesAddLabelsError.fromResponse,
 );
  } 
 /// Set labels for an issue
@@ -1035,7 +1035,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => IssuesAddLabelsError.fromResponse(response),
+  onError: IssuesAddLabelsError.fromResponse,
 );
  } 
 /// Remove all labels from an issue
@@ -1055,7 +1055,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => IssuesGetError.fromResponse(response),
+  onError: IssuesGetError.fromResponse,
 );
  } 
 /// Remove a label from an issue
@@ -1078,7 +1078,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => IssuesGetError.fromResponse(response),
+  onError: IssuesGetError.fromResponse,
 );
  } 
 /// Lock an issue
@@ -1102,7 +1102,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => IssuesAddBlockedByDependencyError.fromResponse(response),
+  onError: IssuesAddBlockedByDependencyError.fromResponse,
 );
  } 
 /// Unlock an issue
@@ -1122,7 +1122,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Get parent issue
@@ -1151,7 +1151,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => IssuesGetError.fromResponse(response),
+  onError: IssuesGetError.fromResponse,
 );
  } 
 /// Remove sub-issue
@@ -1183,7 +1183,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetCustomOidcSubClaimForRepoError.fromResponse(response),
+  onError: ActionsGetCustomOidcSubClaimForRepoError.fromResponse,
 );
  } 
 /// List sub-issues
@@ -1224,7 +1224,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => IssuesGetError.fromResponse(response),
+  onError: IssuesGetError.fromResponse,
 );
  } 
 /// Add sub-issue
@@ -1259,7 +1259,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => IssuesAddBlockedByDependencyError.fromResponse(response),
+  onError: IssuesAddBlockedByDependencyError.fromResponse,
 );
  } 
 /// Reprioritize sub-issue
@@ -1283,7 +1283,7 @@ return execute(
   onSuccess: (response) {
     return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => IssuesReprioritizeSubIssueError.fromResponse(response),
+  onError: IssuesReprioritizeSubIssueError.fromResponse,
 );
  } 
 /// List timeline events for an issue
@@ -1317,7 +1317,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => TimelineIssueEvents.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => IssuesGetError.fromResponse(response),
+  onError: IssuesGetError.fromResponse,
 );
  } 
 /// List labels for a repository
@@ -1351,7 +1351,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create a label
@@ -1375,7 +1375,7 @@ return execute(
   onSuccess: (response) {
     return Label.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get a label
@@ -1397,7 +1397,7 @@ return execute(
   onSuccess: (response) {
     return Label.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update a label
@@ -1482,7 +1482,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Milestone.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create a milestone
@@ -1506,7 +1506,7 @@ return execute(
   onSuccess: (response) {
     return Milestone.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get a milestone
@@ -1528,7 +1528,7 @@ return execute(
   onSuccess: (response) {
     return Milestone.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update a milestone
@@ -1571,7 +1571,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List labels for issues in a milestone
@@ -1666,7 +1666,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
  }

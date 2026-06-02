@@ -130,6 +130,6 @@ TaxRateData copyWith({String? Function()? country, String? Function()? descripti
 
 @override int get hashCode => Object.hash(country, description, displayName, inclusive, jurisdiction, jurisdictionLevel, percentage, state, taxType);
 
-@override String toString() => 'TaxRateData(country: $country, description: $description, displayName: $displayName, inclusive: $inclusive, jurisdiction: $jurisdiction, jurisdictionLevel: $jurisdictionLevel, percentage: $percentage, state: $state, taxType: $taxType)';
+@override String toString() => 'TaxRateData(\n  country: $country,\n  description: $description,\n  displayName: $displayName,\n  inclusive: $inclusive,\n  jurisdiction: $jurisdiction,\n  jurisdictionLevel: $jurisdictionLevel,\n  percentage: $percentage,\n  state: $state,\n  taxType: $taxType,\n)';
 
  }

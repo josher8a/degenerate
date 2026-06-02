@@ -73,6 +73,6 @@ AiSearchCreateTokensResponseResult copyWith({String? cfApiId, DateTime? createdA
 
 @override int get hashCode => Object.hash(cfApiId, createdAt, createdBy, enabled, id, legacy, modifiedAt, modifiedBy, name);
 
-@override String toString() => 'AiSearchCreateTokensResponseResult(cfApiId: $cfApiId, createdAt: $createdAt, createdBy: $createdBy, enabled: $enabled, id: $id, legacy: $legacy, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name)';
+@override String toString() => 'AiSearchCreateTokensResponseResult(\n  cfApiId: $cfApiId,\n  createdAt: $createdAt,\n  createdBy: $createdBy,\n  enabled: $enabled,\n  id: $id,\n  legacy: $legacy,\n  modifiedAt: $modifiedAt,\n  modifiedBy: $modifiedBy,\n  name: $name,\n)';
 
  }

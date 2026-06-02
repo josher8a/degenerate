@@ -49,7 +49,7 @@ final class RoomsApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) => GetStateError.fromResponse(response),
+      onError: GetStateError.fromResponse,
     );
   }
 
@@ -79,7 +79,7 @@ final class RoomsApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) => GetStateError.fromResponse(response),
+      onError: GetStateError.fromResponse,
     );
   }
 
@@ -109,7 +109,7 @@ final class RoomsApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) => GetStateError.fromResponse(response),
+      onError: GetStateError.fromResponse,
     );
   }
 
@@ -136,7 +136,7 @@ final class RoomsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) => GetStateError.fromResponse(response),
+      onError: GetStateError.fromResponse,
     );
   }
 
@@ -162,7 +162,7 @@ final class RoomsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) => GetStateError.fromResponse(response),
+      onError: GetStateError.fromResponse,
     );
   }
 
@@ -205,7 +205,7 @@ final class RoomsApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) => GetStateError.fromResponse(response),
+      onError: GetStateError.fromResponse,
     );
   }
 }

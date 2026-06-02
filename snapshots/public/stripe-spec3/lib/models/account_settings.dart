@@ -79,6 +79,6 @@ AccountSettings copyWith({AccountBacsDebitPaymentsSettings? Function()? bacsDebi
 
 @override int get hashCode => Object.hash(bacsDebitPayments, branding, cardIssuing, cardPayments, dashboard, invoices, payments, payouts, sepaDebitPayments, treasury);
 
-@override String toString() => 'AccountSettings(bacsDebitPayments: $bacsDebitPayments, branding: $branding, cardIssuing: $cardIssuing, cardPayments: $cardPayments, dashboard: $dashboard, invoices: $invoices, payments: $payments, payouts: $payouts, sepaDebitPayments: $sepaDebitPayments, treasury: $treasury)';
+@override String toString() => 'AccountSettings(\n  bacsDebitPayments: $bacsDebitPayments,\n  branding: $branding,\n  cardIssuing: $cardIssuing,\n  cardPayments: $cardPayments,\n  dashboard: $dashboard,\n  invoices: $invoices,\n  payments: $payments,\n  payouts: $payouts,\n  sepaDebitPayments: $sepaDebitPayments,\n  treasury: $treasury,\n)';
 
  }

@@ -128,6 +128,6 @@ PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applic
 
 @override int get hashCode => Object.hash(applicationFeePercent, billingCycleAnchor, billingMode, Object.hashAll(defaultTaxRates ?? const []), description, invoiceSettings, metadata, onBehalfOf, prorationBehavior, transferData, trialEnd, trialPeriodDays, trialSettings);
 
-@override String toString() => 'PostCheckoutSessionsRequestSubscriptionData(applicationFeePercent: $applicationFeePercent, billingCycleAnchor: $billingCycleAnchor, billingMode: $billingMode, defaultTaxRates: $defaultTaxRates, description: $description, invoiceSettings: $invoiceSettings, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, transferData: $transferData, trialEnd: $trialEnd, trialPeriodDays: $trialPeriodDays, trialSettings: $trialSettings)';
+@override String toString() => 'PostCheckoutSessionsRequestSubscriptionData(\n  applicationFeePercent: $applicationFeePercent,\n  billingCycleAnchor: $billingCycleAnchor,\n  billingMode: $billingMode,\n  defaultTaxRates: $defaultTaxRates,\n  description: $description,\n  invoiceSettings: $invoiceSettings,\n  metadata: $metadata,\n  onBehalfOf: $onBehalfOf,\n  prorationBehavior: $prorationBehavior,\n  transferData: $transferData,\n  trialEnd: $trialEnd,\n  trialPeriodDays: $trialPeriodDays,\n  trialSettings: $trialSettings,\n)';
 
  }

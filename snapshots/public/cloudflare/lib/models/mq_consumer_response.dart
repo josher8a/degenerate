@@ -30,6 +30,11 @@ DateTime? get createdOn;
 String? get deadLetterQueue;
 /// Shared by all variants of this union.
 MqQueueName? get queueName;
+R when<R>({required R Function(MqConsumerResponseHttpPull) httpPull, required R Function(MqConsumerResponseWorker) worker, required R Function(MqConsumerResponse$Unknown) unknown, }) { return switch (this) {
+  final MqConsumerResponseHttpPull v => httpPull(v),
+  final MqConsumerResponseWorker v => worker(v),
+  final MqConsumerResponse$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class MqConsumerResponseHttpPull extends MqConsumerResponse {const MqConsumerResponseHttpPull(this.mqHttpConsumerResponse);
 
@@ -100,9 +105,17 @@ MqConsumerResponseWorker copyWith({MqIdentifier? Function()? consumerId, DateTim
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class MqConsumerResponse$Unknown extends MqConsumerResponse {const MqConsumerResponse$Unknown(this.json);
+@immutable final class MqConsumerResponse$Unknown extends MqConsumerResponse {MqConsumerResponse$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final MqIdentifier? _consumerId = json['consumer_id'] != null ? MqIdentifier.fromJson(json['consumer_id'] as String) : null;
+
+late final DateTime? _createdOn = json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null;
+
+late final String? _deadLetterQueue = json['dead_letter_queue'] as String?;
+
+late final MqQueueName? _queueName = json['queue_name'] != null ? MqQueueName.fromJson(json['queue_name'] as String) : null;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -115,12 +128,12 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'MqConsumerResponse.unknown($json)';
 
-@override MqIdentifier? get consumerId => json['consumer_id'] != null ? MqIdentifier.fromJson(json['consumer_id'] as String) : null;
+@override MqIdentifier? get consumerId => _consumerId;
 
-@override DateTime? get createdOn => json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null;
+@override DateTime? get createdOn => _createdOn;
 
-@override String? get deadLetterQueue => json['dead_letter_queue'] as String?;
+@override String? get deadLetterQueue => _deadLetterQueue;
 
-@override MqQueueName? get queueName => json['queue_name'] != null ? MqQueueName.fromJson(json['queue_name'] as String) : null;
+@override MqQueueName? get queueName => _queueName;
 
  }

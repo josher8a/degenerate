@@ -29,7 +29,7 @@ return execute(
   onSuccess: (response) {
     return NoResultResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PayPerCrawlCrawlerCreateStripeConfigError.fromResponse(response),
+  onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
  } 
 /// Gets the can_be_enabled zone setting
@@ -54,7 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? PayPerCrawlZonesCanBeEnabledPayload.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => PayPerCrawlCrawlerCreateStripeConfigError.fromResponse(response),
+  onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
  } 
 /// Get the pay-per-crawl config
@@ -77,7 +77,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? PayPerCrawlDaricConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => PayPerCrawlCrawlerCreateStripeConfigError.fromResponse(response),
+  onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
  } 
 /// Creates pay-per-crawl config for a zone
@@ -102,7 +102,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? PayPerCrawlDaricConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => PayPerCrawlCrawlerCreateStripeConfigError.fromResponse(response),
+  onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
  } 
 /// Changes pay-per-crawl config for a zone
@@ -127,7 +127,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? PayPerCrawlDaricConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => PayPerCrawlCrawlerCreateStripeConfigError.fromResponse(response),
+  onError: PayPerCrawlCrawlerCreateStripeConfigError.fromResponse,
 );
  } 
  }

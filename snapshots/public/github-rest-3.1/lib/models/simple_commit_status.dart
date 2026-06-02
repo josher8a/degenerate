@@ -44,9 +44,9 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'state': state,
   'context': context,
-  'target_url': targetUrl != null ? targetUrl?.toString() : null,
+  'target_url': targetUrl?.toString(),
   'required': ?$required,
-  'avatar_url': avatarUrl != null ? avatarUrl?.toString() : null,
+  'avatar_url': avatarUrl?.toString(),
   'url': url.toString(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
@@ -90,6 +90,6 @@ SimpleCommitStatus copyWith({String? Function()? description, int? id, String? n
 
 @override int get hashCode => Object.hash(description, id, nodeId, state, context, targetUrl, $required, avatarUrl, url, createdAt, updatedAt);
 
-@override String toString() => 'SimpleCommitStatus(description: $description, id: $id, nodeId: $nodeId, state: $state, context: $context, targetUrl: $targetUrl, \$required: ${$required}, avatarUrl: $avatarUrl, url: $url, createdAt: $createdAt, updatedAt: $updatedAt)';
+@override String toString() => 'SimpleCommitStatus(\n  description: $description,\n  id: $id,\n  nodeId: $nodeId,\n  state: $state,\n  context: $context,\n  targetUrl: $targetUrl,\n  \$required: ${$required},\n  avatarUrl: $avatarUrl,\n  url: $url,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
  }

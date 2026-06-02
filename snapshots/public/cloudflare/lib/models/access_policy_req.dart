@@ -101,6 +101,6 @@ AccessPolicyReq copyWith({AccessDecision? decision, List<AccessRule>? Function()
 
 @override int get hashCode => Object.hash(decision, Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const []), Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration);
 
-@override String toString() => 'AccessPolicyReq(decision: $decision, exclude: $exclude, include: $include, name: $name, require: $require, approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration)';
+@override String toString() => 'AccessPolicyReq(\n  decision: $decision,\n  exclude: $exclude,\n  include: $include,\n  name: $name,\n  require: $require,\n  approvalGroups: $approvalGroups,\n  approvalRequired: $approvalRequired,\n  connectionRules: $connectionRules,\n  isolationRequired: $isolationRequired,\n  mfaConfig: $mfaConfig,\n  purposeJustificationPrompt: $purposeJustificationPrompt,\n  purposeJustificationRequired: $purposeJustificationRequired,\n  sessionDuration: $sessionDuration,\n)';
 
  }

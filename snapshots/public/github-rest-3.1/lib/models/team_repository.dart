@@ -297,11 +297,11 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'name': name,
   'full_name': fullName,
-  'license': license != null ? license?.toJson() : null,
+  'license': license?.toJson(),
   'forks': forks,
   if (permissions != null) 'permissions': permissions?.toJson(),
   'role_name': ?roleName,
-  'owner': owner != null ? owner?.toJson() : null,
+  'owner': owner?.toJson(),
   'private': private,
   'html_url': htmlUrl.toString(),
   'description': description,
@@ -345,10 +345,10 @@ Map<String, dynamic> toJson() { return {
   'teams_url': teamsUrl.toString(),
   'trees_url': treesUrl,
   'clone_url': cloneUrl,
-  'mirror_url': mirrorUrl != null ? mirrorUrl?.toString() : null,
+  'mirror_url': mirrorUrl?.toString(),
   'hooks_url': hooksUrl.toString(),
   'svn_url': svnUrl.toString(),
-  'homepage': homepage != null ? homepage?.toString() : null,
+  'homepage': homepage?.toString(),
   'language': language,
   'forks_count': forksCount,
   'stargazers_count': stargazersCount,
@@ -366,9 +366,9 @@ Map<String, dynamic> toJson() { return {
   'archived': archived,
   'disabled': disabled,
   'visibility': visibility,
-  'pushed_at': pushedAt != null ? pushedAt?.toIso8601String() : null,
-  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
-  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
+  'pushed_at': pushedAt?.toIso8601String(),
+  'created_at': createdAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
   'allow_rebase_merge': allowRebaseMerge,
   'temp_clone_token': ?tempCloneToken,
   'allow_squash_merge': allowSquashMerge,
@@ -641,6 +641,6 @@ TeamRepository copyWith({int? id, String? nodeId, String? name, String? fullName
 
 @override int get hashCode => Object.hashAll([id, nodeId, name, fullName, license, forks, permissions, roleName, owner, private, htmlUrl, description, fork, url, archiveUrl, assigneesUrl, blobsUrl, branchesUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl, contributorsUrl, deploymentsUrl, downloadsUrl, eventsUrl, forksUrl, gitCommitsUrl, gitRefsUrl, gitTagsUrl, gitUrl, issueCommentUrl, issueEventsUrl, issuesUrl, keysUrl, labelsUrl, languagesUrl, mergesUrl, milestonesUrl, notificationsUrl, pullsUrl, releasesUrl, sshUrl, stargazersUrl, statusesUrl, subscribersUrl, subscriptionUrl, tagsUrl, teamsUrl, treesUrl, cloneUrl, mirrorUrl, hooksUrl, svnUrl, homepage, language, forksCount, stargazersCount, watchersCount, size, defaultBranch, openIssuesCount, isTemplate, Object.hashAll(topics ?? const []), hasIssues, hasProjects, hasWiki, hasPages, hasDownloads, archived, disabled, visibility, pushedAt, createdAt, updatedAt, allowRebaseMerge, tempCloneToken, allowSquashMerge, allowAutoMerge, deleteBranchOnMerge, allowMergeCommit, allowForking, webCommitSignoffRequired, subscribersCount, networkCount, openIssues, watchers, masterBranch]);
 
-@override String toString() => 'TeamRepository(id: $id, nodeId: $nodeId, name: $name, fullName: $fullName, license: $license, forks: $forks, permissions: $permissions, roleName: $roleName, owner: $owner, private: $private, htmlUrl: $htmlUrl, description: $description, fork: $fork, url: $url, archiveUrl: $archiveUrl, assigneesUrl: $assigneesUrl, blobsUrl: $blobsUrl, branchesUrl: $branchesUrl, collaboratorsUrl: $collaboratorsUrl, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, compareUrl: $compareUrl, contentsUrl: $contentsUrl, contributorsUrl: $contributorsUrl, deploymentsUrl: $deploymentsUrl, downloadsUrl: $downloadsUrl, eventsUrl: $eventsUrl, forksUrl: $forksUrl, gitCommitsUrl: $gitCommitsUrl, gitRefsUrl: $gitRefsUrl, gitTagsUrl: $gitTagsUrl, gitUrl: $gitUrl, issueCommentUrl: $issueCommentUrl, issueEventsUrl: $issueEventsUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelsUrl: $labelsUrl, languagesUrl: $languagesUrl, mergesUrl: $mergesUrl, milestonesUrl: $milestonesUrl, notificationsUrl: $notificationsUrl, pullsUrl: $pullsUrl, releasesUrl: $releasesUrl, sshUrl: $sshUrl, stargazersUrl: $stargazersUrl, statusesUrl: $statusesUrl, subscribersUrl: $subscribersUrl, subscriptionUrl: $subscriptionUrl, tagsUrl: $tagsUrl, teamsUrl: $teamsUrl, treesUrl: $treesUrl, cloneUrl: $cloneUrl, mirrorUrl: $mirrorUrl, hooksUrl: $hooksUrl, svnUrl: $svnUrl, homepage: $homepage, language: $language, forksCount: $forksCount, stargazersCount: $stargazersCount, watchersCount: $watchersCount, size: $size, defaultBranch: $defaultBranch, openIssuesCount: $openIssuesCount, isTemplate: $isTemplate, topics: $topics, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasPages: $hasPages, hasDownloads: $hasDownloads, archived: $archived, disabled: $disabled, visibility: $visibility, pushedAt: $pushedAt, createdAt: $createdAt, updatedAt: $updatedAt, allowRebaseMerge: $allowRebaseMerge, tempCloneToken: $tempCloneToken, allowSquashMerge: $allowSquashMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, allowMergeCommit: $allowMergeCommit, allowForking: $allowForking, webCommitSignoffRequired: $webCommitSignoffRequired, subscribersCount: $subscribersCount, networkCount: $networkCount, openIssues: $openIssues, watchers: $watchers, masterBranch: $masterBranch)';
+@override String toString() => 'TeamRepository(\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  fullName: $fullName,\n  license: $license,\n  forks: $forks,\n  permissions: $permissions,\n  roleName: $roleName,\n  owner: $owner,\n  private: $private,\n  htmlUrl: $htmlUrl,\n  description: $description,\n  fork: $fork,\n  url: $url,\n  archiveUrl: $archiveUrl,\n  assigneesUrl: $assigneesUrl,\n  blobsUrl: $blobsUrl,\n  branchesUrl: $branchesUrl,\n  collaboratorsUrl: $collaboratorsUrl,\n  commentsUrl: $commentsUrl,\n  commitsUrl: $commitsUrl,\n  compareUrl: $compareUrl,\n  contentsUrl: $contentsUrl,\n  contributorsUrl: $contributorsUrl,\n  deploymentsUrl: $deploymentsUrl,\n  downloadsUrl: $downloadsUrl,\n  eventsUrl: $eventsUrl,\n  forksUrl: $forksUrl,\n  gitCommitsUrl: $gitCommitsUrl,\n  gitRefsUrl: $gitRefsUrl,\n  gitTagsUrl: $gitTagsUrl,\n  gitUrl: $gitUrl,\n  issueCommentUrl: $issueCommentUrl,\n  issueEventsUrl: $issueEventsUrl,\n  issuesUrl: $issuesUrl,\n  keysUrl: $keysUrl,\n  labelsUrl: $labelsUrl,\n  languagesUrl: $languagesUrl,\n  mergesUrl: $mergesUrl,\n  milestonesUrl: $milestonesUrl,\n  notificationsUrl: $notificationsUrl,\n  pullsUrl: $pullsUrl,\n  releasesUrl: $releasesUrl,\n  sshUrl: $sshUrl,\n  stargazersUrl: $stargazersUrl,\n  statusesUrl: $statusesUrl,\n  subscribersUrl: $subscribersUrl,\n  subscriptionUrl: $subscriptionUrl,\n  tagsUrl: $tagsUrl,\n  teamsUrl: $teamsUrl,\n  treesUrl: $treesUrl,\n  cloneUrl: $cloneUrl,\n  mirrorUrl: $mirrorUrl,\n  hooksUrl: $hooksUrl,\n  svnUrl: $svnUrl,\n  homepage: $homepage,\n  language: $language,\n  forksCount: $forksCount,\n  stargazersCount: $stargazersCount,\n  watchersCount: $watchersCount,\n  size: $size,\n  defaultBranch: $defaultBranch,\n  openIssuesCount: $openIssuesCount,\n  isTemplate: $isTemplate,\n  topics: $topics,\n  hasIssues: $hasIssues,\n  hasProjects: $hasProjects,\n  hasWiki: $hasWiki,\n  hasPages: $hasPages,\n  hasDownloads: $hasDownloads,\n  archived: $archived,\n  disabled: $disabled,\n  visibility: $visibility,\n  pushedAt: $pushedAt,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  allowRebaseMerge: $allowRebaseMerge,\n  tempCloneToken: $tempCloneToken,\n  allowSquashMerge: $allowSquashMerge,\n  allowAutoMerge: $allowAutoMerge,\n  deleteBranchOnMerge: $deleteBranchOnMerge,\n  allowMergeCommit: $allowMergeCommit,\n  allowForking: $allowForking,\n  webCommitSignoffRequired: $webCommitSignoffRequired,\n  subscribersCount: $subscribersCount,\n  networkCount: $networkCount,\n  openIssues: $openIssues,\n  watchers: $watchers,\n  masterBranch: $masterBranch,\n)';
 
  }

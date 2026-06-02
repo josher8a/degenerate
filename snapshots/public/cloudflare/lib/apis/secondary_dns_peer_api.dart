@@ -17,7 +17,7 @@ Future<ApiResult<List<SecondaryDnsPeer>?, Never>> secondaryDnsPeerListPeers({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/peers',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secondary_dns/peers',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/peers',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secondary_dns/peers',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<SecondaryDnsPeer?, Never>> secondaryDnsPeerPeerDetails({require
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/peers/${Uri.encodeComponent(peerId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secondary_dns/peers/${Uri.encodeComponent(peerId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/peers/${Uri.encodeComponent(peerId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secondary_dns/peers/${Uri.encodeComponent(peerId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> second
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/secondary_dns/peers/${Uri.encodeComponent(peerId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/secondary_dns/peers/${Uri.encodeComponent(peerId.toJson())}',
   headers: headers,
   options: options,
 );

@@ -97,7 +97,7 @@ final dynamic dismissalApprovedBy;
 final List<SimpleUser>? assignees;
 
 Map<String, dynamic> toJson() { return {
-  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
+  'created_at': createdAt?.toIso8601String(),
   'dismissed_at': dismissedAt,
   'dismissed_by': dismissedBy,
   if (dismissedComment != null) 'dismissed_comment': dismissedComment?.toJson(),
@@ -108,8 +108,8 @@ Map<String, dynamic> toJson() { return {
   if (mostRecentInstance != null) 'most_recent_instance': mostRecentInstance?.toJson(),
   'number': number,
   'rule': rule.toJson(),
-  'state': state != null ? state?.toJson() : null,
-  'tool': tool != null ? tool?.toJson() : null,
+  'state': state?.toJson(),
+  'tool': tool?.toJson(),
   'updated_at': ?updatedAt,
   'url': url.toString(),
   'dismissal_approved_by': ?dismissalApprovedBy,
@@ -166,6 +166,6 @@ WebhookCodeScanningAlertCreatedAlert copyWith({DateTime? Function()? createdAt, 
 
 @override int get hashCode => Object.hash(createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, instancesUrl, mostRecentInstance, number, rule, state, tool, updatedAt, url, dismissalApprovedBy, Object.hashAll(assignees ?? const []));
 
-@override String toString() => 'WebhookCodeScanningAlertCreatedAlert(createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, instancesUrl: $instancesUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, updatedAt: $updatedAt, url: $url, dismissalApprovedBy: $dismissalApprovedBy, assignees: $assignees)';
+@override String toString() => 'WebhookCodeScanningAlertCreatedAlert(\n  createdAt: $createdAt,\n  dismissedAt: $dismissedAt,\n  dismissedBy: $dismissedBy,\n  dismissedComment: $dismissedComment,\n  dismissedReason: $dismissedReason,\n  fixedAt: $fixedAt,\n  htmlUrl: $htmlUrl,\n  instancesUrl: $instancesUrl,\n  mostRecentInstance: $mostRecentInstance,\n  number: $number,\n  rule: $rule,\n  state: $state,\n  tool: $tool,\n  updatedAt: $updatedAt,\n  url: $url,\n  dismissalApprovedBy: $dismissalApprovedBy,\n  assignees: $assignees,\n)';
 
  }

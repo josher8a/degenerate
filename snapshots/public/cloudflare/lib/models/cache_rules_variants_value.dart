@@ -162,6 +162,6 @@ CacheRulesVariantsValue copyWith({List<String>? Function()? avif, List<String>? 
 
 @override int get hashCode => Object.hash(Object.hashAll(avif ?? const []), Object.hashAll(bmp ?? const []), Object.hashAll(gif ?? const []), Object.hashAll(jp2 ?? const []), Object.hashAll(jpeg ?? const []), Object.hashAll(jpg ?? const []), Object.hashAll(jpg2 ?? const []), Object.hashAll(png ?? const []), Object.hashAll(tif ?? const []), Object.hashAll(tiff ?? const []), Object.hashAll(webp ?? const []));
 
-@override String toString() => 'CacheRulesVariantsValue(avif: $avif, bmp: $bmp, gif: $gif, jp2: $jp2, jpeg: $jpeg, jpg: $jpg, jpg2: $jpg2, png: $png, tif: $tif, tiff: $tiff, webp: $webp)';
+@override String toString() => 'CacheRulesVariantsValue(\n  avif: $avif,\n  bmp: $bmp,\n  gif: $gif,\n  jp2: $jp2,\n  jpeg: $jpeg,\n  jpg: $jpg,\n  jpg2: $jpg2,\n  png: $png,\n  tif: $tif,\n  tiff: $tiff,\n  webp: $webp,\n)';
 
  }

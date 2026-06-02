@@ -17,7 +17,7 @@ Future<ApiResult<Map<String, List<AaaAlertTypes>>?, Never>> notificationAlertTyp
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/available_alerts',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/available_alerts',
   headers: headers,
   options: options,
 );

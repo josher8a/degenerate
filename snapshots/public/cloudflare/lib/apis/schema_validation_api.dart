@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/schemas',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/schemas',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -85,7 +85,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas/${Uri.encodeComponent(schemaId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/schemas/${Uri.encodeComponent(schemaId.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -110,7 +110,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas/${Uri.encodeComponent(schemaId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/schemas/${Uri.encodeComponent(schemaId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -133,7 +133,7 @@ Future<ApiResult<SchemaValidationDeleteSchemaResponseResult, Never>> schemaValid
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas/${Uri.encodeComponent(schemaId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/schemas/${Uri.encodeComponent(schemaId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -185,7 +185,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas/${Uri.encodeComponent(schemaId.toString())}/operations',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/schemas/${Uri.encodeComponent(schemaId.toJson())}/operations',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -218,7 +218,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/schema_validation/schemas/hosts',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/schema_validation/schemas/hosts',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

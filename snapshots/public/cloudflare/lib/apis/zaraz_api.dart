@@ -17,7 +17,7 @@ Future<ApiResult<ZarazZarazConfigReturn, Never>> getZonesZoneIdentifierZarazConf
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/config',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/zaraz/config',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/config',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/zaraz/config',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<ZarazZarazConfigReturn, Never>> getZonesZoneIdentifierZarazDefa
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/default',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/zaraz/default',
   headers: headers,
   options: options,
 );
@@ -85,7 +85,7 @@ Future<ApiResult<ZarazZarazConfigReturn, Never>> getZonesZoneIdentifierZarazExpo
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/export',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/zaraz/export',
   headers: headers,
   options: options,
 );
@@ -121,7 +121,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/history',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/zaraz/history',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -146,7 +146,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/history',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/zaraz/history',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -173,7 +173,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/history/configs',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/zaraz/history/configs',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -198,7 +198,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/publish',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/zaraz/publish',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -221,7 +221,7 @@ Future<ApiResult<ZarazZarazWorkflow, Never>> getZonesZoneIdentifierZarazWorkflow
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/workflow',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/zaraz/workflow',
   headers: headers,
   options: options,
 );
@@ -244,7 +244,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/settings/zaraz/workflow',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/settings/zaraz/workflow',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

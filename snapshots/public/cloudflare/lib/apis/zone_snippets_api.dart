@@ -26,7 +26,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/snippets',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -50,7 +50,7 @@ Future<ApiResult<Map<String, dynamic>, Never>> getZoneSnippet({required Snippets
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/${Uri.encodeComponent(snippetName.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/snippets/${Uri.encodeComponent(snippetName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -72,7 +72,7 @@ Future<ApiResult<Map<String, dynamic>, Never>> updateZoneSnippet({required Snipp
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/${Uri.encodeComponent(snippetName.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/snippets/${Uri.encodeComponent(snippetName.toJson())}',
   headers: headers,
   body: [
     ApiMultipartField.text('metadata', body.metadata.toString()),
@@ -98,7 +98,7 @@ Future<ApiResult<Map<String, dynamic>, Never>> deleteZoneSnippet({required Snipp
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/${Uri.encodeComponent(snippetName.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/snippets/${Uri.encodeComponent(snippetName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -120,7 +120,7 @@ Future<ApiResult<Map<String, List<Uint8List>>, Never>> getZoneSnippetContent({re
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/${Uri.encodeComponent(snippetName.toString())}/content',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/snippets/${Uri.encodeComponent(snippetName.toJson())}/content',
   headers: headers,
   options: options,
 );
@@ -142,7 +142,7 @@ Future<ApiResult<Map<String, dynamic>, Never>> listZoneSnippetRules({required Sn
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/snippet_rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/snippets/snippet_rules',
   headers: headers,
   options: options,
 );
@@ -165,7 +165,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/snippet_rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/snippets/snippet_rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -188,7 +188,7 @@ Future<ApiResult<Map<String, dynamic>, Never>> deleteZoneSnippetRules({required 
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/snippets/snippet_rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/snippets/snippet_rules',
   headers: headers,
   options: options,
 );

@@ -118,6 +118,6 @@ SourceConfig copyWith({bool? Function()? deploymentsEnabled, String? Function()?
 
 @override int get hashCode => Object.hash(deploymentsEnabled, owner, ownerId, Object.hashAll(pathExcludes ?? const []), Object.hashAll(pathIncludes ?? const []), prCommentsEnabled, Object.hashAll(previewBranchExcludes ?? const []), Object.hashAll(previewBranchIncludes ?? const []), previewDeploymentSetting, productionBranch, productionDeploymentsEnabled, repoId, repoName);
 
-@override String toString() => 'SourceConfig(deploymentsEnabled: $deploymentsEnabled, owner: $owner, ownerId: $ownerId, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, prCommentsEnabled: $prCommentsEnabled, previewBranchExcludes: $previewBranchExcludes, previewBranchIncludes: $previewBranchIncludes, previewDeploymentSetting: $previewDeploymentSetting, productionBranch: $productionBranch, productionDeploymentsEnabled: $productionDeploymentsEnabled, repoId: $repoId, repoName: $repoName)';
+@override String toString() => 'SourceConfig(\n  deploymentsEnabled: $deploymentsEnabled,\n  owner: $owner,\n  ownerId: $ownerId,\n  pathExcludes: $pathExcludes,\n  pathIncludes: $pathIncludes,\n  prCommentsEnabled: $prCommentsEnabled,\n  previewBranchExcludes: $previewBranchExcludes,\n  previewBranchIncludes: $previewBranchIncludes,\n  previewDeploymentSetting: $previewDeploymentSetting,\n  productionBranch: $productionBranch,\n  productionDeploymentsEnabled: $productionDeploymentsEnabled,\n  repoId: $repoId,\n  repoName: $repoName,\n)';
 
  }

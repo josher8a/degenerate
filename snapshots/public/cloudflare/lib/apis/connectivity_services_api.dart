@@ -27,7 +27,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/connectivity/directory/services',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/connectivity/directory/services',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -50,7 +50,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/connectivity/directory/services',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/connectivity/directory/services',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

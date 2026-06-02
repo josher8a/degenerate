@@ -28,7 +28,7 @@ final Verification? verification;
 
 Map<String, dynamic> toJson() { return {
   'author': author.toJson(),
-  'committer': committer != null ? committer?.toJson() : null,
+  'committer': committer?.toJson(),
   'comment_count': commentCount,
   'message': message,
   'tree': tree.toJson(),

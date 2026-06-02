@@ -160,7 +160,7 @@ final class DefaultApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) => AuthRequestPinError.fromResponse(response),
+      onError: AuthRequestPinError.fromResponse,
     );
   }
 
@@ -192,7 +192,7 @@ final class DefaultApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) => AuthRefreshTokenError.fromResponse(response),
+      onError: AuthRefreshTokenError.fromResponse,
     );
   }
 
@@ -224,7 +224,7 @@ final class DefaultApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) => AuthRefreshTokenError.fromResponse(response),
+      onError: AuthRefreshTokenError.fromResponse,
     );
   }
 
@@ -255,7 +255,7 @@ final class DefaultApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) => AuthLogoutError.fromResponse(response),
+      onError: AuthLogoutError.fromResponse,
     );
   }
 }

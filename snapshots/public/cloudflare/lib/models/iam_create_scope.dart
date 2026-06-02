@@ -21,7 +21,7 @@ final IamCreateResourceGroupScopeScopeKey? key;
 final List<IamCreateResourceGroupScopeScopeObject> objects;
 
 Map<String, dynamic> toJson() { return {
-  'key': key != null ? key?.toJson() : null,
+  'key': key?.toJson(),
   'objects': objects.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&

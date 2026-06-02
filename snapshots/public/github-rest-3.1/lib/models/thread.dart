@@ -78,6 +78,6 @@ Thread copyWith({String? id, MinimalRepository? repository, Subject? subject, St
 
 @override int get hashCode => Object.hash(id, repository, subject, reason, unread, updatedAt, lastReadAt, url, subscriptionUrl);
 
-@override String toString() => 'Thread(id: $id, repository: $repository, subject: $subject, reason: $reason, unread: $unread, updatedAt: $updatedAt, lastReadAt: $lastReadAt, url: $url, subscriptionUrl: $subscriptionUrl)';
+@override String toString() => 'Thread(\n  id: $id,\n  repository: $repository,\n  subject: $subject,\n  reason: $reason,\n  unread: $unread,\n  updatedAt: $updatedAt,\n  lastReadAt: $lastReadAt,\n  url: $url,\n  subscriptionUrl: $subscriptionUrl,\n)';
 
  }

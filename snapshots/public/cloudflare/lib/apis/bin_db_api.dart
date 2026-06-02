@@ -29,7 +29,7 @@ return execute(
   onSuccess: (response) {
     return PostBinDbPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostBinDbPostError.fromResponse(response),
+  onError: PostBinDbPostError.fromResponse,
 );
  } 
 /// Retrieves a file from Binary Storage
@@ -47,7 +47,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => GetBinDbGetBinaryError.fromResponse(response),
+  onError: GetBinDbGetBinaryError.fromResponse,
 );
  } 
  }

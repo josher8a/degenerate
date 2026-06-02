@@ -120,6 +120,6 @@ FileLink copyWith({int? created, bool? expired, int? Function()? expiresAt, File
 
 @override int get hashCode => Object.hash(created, expired, expiresAt, file, id, livemode, metadata, object, url);
 
-@override String toString() => 'FileLink(created: $created, expired: $expired, expiresAt: $expiresAt, file: $file, id: $id, livemode: $livemode, metadata: $metadata, object: $object, url: $url)';
+@override String toString() => 'FileLink(\n  created: $created,\n  expired: $expired,\n  expiresAt: $expiresAt,\n  file: $file,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  url: $url,\n)';
 
  }

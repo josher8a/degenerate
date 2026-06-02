@@ -17,7 +17,7 @@ Future<ApiResult<List<AaaSilence>?, Never>> notificationSilencesListSilences({re
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/silences',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/silences',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/silences',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/silences',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -63,7 +63,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/silences',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/silences',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -86,7 +86,7 @@ Future<ApiResult<AaaSilence?, Never>> notificationSilencesGetSilence({required A
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/silences/${Uri.encodeComponent(silenceId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/silences/${Uri.encodeComponent(silenceId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -108,7 +108,7 @@ Future<ApiResult<ResponseCommon2, Never>> notificationSilencesDeleteSilences({re
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/silences/${Uri.encodeComponent(silenceId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/silences/${Uri.encodeComponent(silenceId.toJson())}',
   headers: headers,
   options: options,
 );

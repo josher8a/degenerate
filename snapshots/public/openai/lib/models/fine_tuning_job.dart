@@ -149,7 +149,7 @@ final Map<String,String>? metadata;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'created_at': createdAt,
-  'error': error != null ? error?.toJson() : null,
+  'error': error?.toJson(),
   'fine_tuned_model': fineTunedModel,
   'finished_at': finishedAt,
   'hyperparameters': hyperparameters.toJson(),
@@ -234,6 +234,6 @@ FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function
 
 @override int get hashCode => Object.hash(id, createdAt, error, fineTunedModel, finishedAt, hyperparameters, model, object, organizationId, Object.hashAll(resultFiles), status, trainedTokens, trainingFile, validationFile, Object.hashAll(integrations ?? const []), seed, estimatedFinish, method, metadata);
 
-@override String toString() => 'FineTuningJob(id: $id, createdAt: $createdAt, error: $error, fineTunedModel: $fineTunedModel, finishedAt: $finishedAt, hyperparameters: $hyperparameters, model: $model, object: $object, organizationId: $organizationId, resultFiles: $resultFiles, status: $status, trainedTokens: $trainedTokens, trainingFile: $trainingFile, validationFile: $validationFile, integrations: $integrations, seed: $seed, estimatedFinish: $estimatedFinish, method: $method, metadata: $metadata)';
+@override String toString() => 'FineTuningJob(\n  id: $id,\n  createdAt: $createdAt,\n  error: $error,\n  fineTunedModel: $fineTunedModel,\n  finishedAt: $finishedAt,\n  hyperparameters: $hyperparameters,\n  model: $model,\n  object: $object,\n  organizationId: $organizationId,\n  resultFiles: $resultFiles,\n  status: $status,\n  trainedTokens: $trainedTokens,\n  trainingFile: $trainingFile,\n  validationFile: $validationFile,\n  integrations: $integrations,\n  seed: $seed,\n  estimatedFinish: $estimatedFinish,\n  method: $method,\n  metadata: $metadata,\n)';
 
  }

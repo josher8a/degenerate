@@ -261,5 +261,5 @@ final class SessionDetailSchema {
 
   @override
   String toString() =>
-      'SessionDetailSchema(slug: $slug, title: $title, space: $space, content: $content, seatsLeft: $seatsLeft, duration: $duration, start: $start, attending: $attending, open: $open, started: $started, cancelled: $cancelled, joinable: $joinable, ended: $ended, rsvpUrl: $rsvpUrl, joinUrl: $joinUrl, subscribeUrl: $subscribeUrl, calLink: $calLink, subscribed: $subscribed, userTimezone: $userTimezone, meetingProvider: $meetingProvider)';
+      'SessionDetailSchema(\n  slug: $slug,\n  title: $title,\n  space: $space,\n  content: $content,\n  seatsLeft: $seatsLeft,\n  duration: $duration,\n  start: $start,\n  attending: $attending,\n  open: $open,\n  started: $started,\n  cancelled: $cancelled,\n  joinable: $joinable,\n  ended: $ended,\n  rsvpUrl: $rsvpUrl,\n  joinUrl: $joinUrl,\n  subscribeUrl: $subscribeUrl,\n  calLink: $calLink,\n  subscribed: $subscribed,\n  userTimezone: $userTimezone,\n  meetingProvider: $meetingProvider,\n)';
 }

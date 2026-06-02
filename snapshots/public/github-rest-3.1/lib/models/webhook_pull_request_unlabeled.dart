@@ -74,6 +74,6 @@ WebhookPullRequestUnlabeled copyWith({WebhookDiscussionUnlabeledAction? action, 
 
 @override int get hashCode => Object.hash(action, enterprise, installation, label, number, organization, pullRequest, repository, sender);
 
-@override String toString() => 'WebhookPullRequestUnlabeled(action: $action, enterprise: $enterprise, installation: $installation, label: $label, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)';
+@override String toString() => 'WebhookPullRequestUnlabeled(\n  action: $action,\n  enterprise: $enterprise,\n  installation: $installation,\n  label: $label,\n  number: $number,\n  organization: $organization,\n  pullRequest: $pullRequest,\n  repository: $repository,\n  sender: $sender,\n)';
 
  }

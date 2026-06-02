@@ -145,6 +145,6 @@ MagicTransitNodeResult copyWith({MagicTransitAsn? Function()? asn, MagicTransitI
 
 @override int get hashCode => Object.hash(asn, ip, Object.hashAll(labels ?? const []), maxRttMs, meanRttMs, minRttMs, name, packetCount, stdDevRttMs);
 
-@override String toString() => 'MagicTransitNodeResult(asn: $asn, ip: $ip, labels: $labels, maxRttMs: $maxRttMs, meanRttMs: $meanRttMs, minRttMs: $minRttMs, name: $name, packetCount: $packetCount, stdDevRttMs: $stdDevRttMs)';
+@override String toString() => 'MagicTransitNodeResult(\n  asn: $asn,\n  ip: $ip,\n  labels: $labels,\n  maxRttMs: $maxRttMs,\n  meanRttMs: $meanRttMs,\n  minRttMs: $minRttMs,\n  name: $name,\n  packetCount: $packetCount,\n  stdDevRttMs: $stdDevRttMs,\n)';
 
  }

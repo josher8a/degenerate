@@ -104,6 +104,6 @@ FetchAllLivestreamsResponseData copyWith({DateTime? Function()? createdAt, Strin
 
 @override int get hashCode => Object.hash(createdAt, disabled, id, ingestServer, meetingId, name, paging, playbackUrl, status, streamKey, updatedAt);
 
-@override String toString() => 'FetchAllLivestreamsResponseData(createdAt: $createdAt, disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, paging: $paging, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey, updatedAt: $updatedAt)';
+@override String toString() => 'FetchAllLivestreamsResponseData(\n  createdAt: $createdAt,\n  disabled: $disabled,\n  id: $id,\n  ingestServer: $ingestServer,\n  meetingId: $meetingId,\n  name: $name,\n  paging: $paging,\n  playbackUrl: $playbackUrl,\n  status: $status,\n  streamKey: $streamKey,\n  updatedAt: $updatedAt,\n)';
 
  }

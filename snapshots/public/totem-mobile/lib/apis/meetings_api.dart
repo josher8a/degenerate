@@ -44,7 +44,7 @@ final class MeetingsApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) => GetLivekitTokenError.fromResponse(response),
+      onError: GetLivekitTokenError.fromResponse,
     );
   }
 
@@ -69,7 +69,7 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
+      onError: AcceptTotemEndpointError.fromResponse,
     );
   }
 
@@ -94,7 +94,7 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
+      onError: AcceptTotemEndpointError.fromResponse,
     );
   }
 
@@ -119,7 +119,7 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
+      onError: AcceptTotemEndpointError.fromResponse,
     );
   }
 
@@ -144,7 +144,7 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
+      onError: AcceptTotemEndpointError.fromResponse,
     );
   }
 
@@ -170,7 +170,7 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
+      onError: AcceptTotemEndpointError.fromResponse,
     );
   }
 
@@ -195,7 +195,7 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
+      onError: AcceptTotemEndpointError.fromResponse,
     );
   }
 
@@ -221,7 +221,7 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (_) {},
-      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
+      onError: AcceptTotemEndpointError.fromResponse,
     );
   }
 
@@ -253,7 +253,7 @@ final class MeetingsApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) => AcceptTotemEndpointError.fromResponse(response),
+      onError: AcceptTotemEndpointError.fromResponse,
     );
   }
 
@@ -287,7 +287,7 @@ final class MeetingsApi with ApiExecutor {
           jsonDecode(response.body) as Map<String, dynamic>,
         );
       },
-      onError: (response) => GetLivekitTokenError.fromResponse(response),
+      onError: GetLivekitTokenError.fromResponse,
     );
   }
 }

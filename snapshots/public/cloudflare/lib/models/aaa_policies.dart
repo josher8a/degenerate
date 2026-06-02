@@ -84,6 +84,6 @@ AaaPolicies copyWith({AaaAlertInterval? Function()? alertInterval, AaaAlertType?
 
 @override int get hashCode => Object.hash(alertInterval, alertType, created, description, enabled, filters, id, mechanisms, modified, name);
 
-@override String toString() => 'AaaPolicies(alertInterval: $alertInterval, alertType: $alertType, created: $created, description: $description, enabled: $enabled, filters: $filters, id: $id, mechanisms: $mechanisms, modified: $modified, name: $name)';
+@override String toString() => 'AaaPolicies(\n  alertInterval: $alertInterval,\n  alertType: $alertType,\n  created: $created,\n  description: $description,\n  enabled: $enabled,\n  filters: $filters,\n  id: $id,\n  mechanisms: $mechanisms,\n  modified: $modified,\n  name: $name,\n)';
 
  }

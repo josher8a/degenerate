@@ -17,7 +17,7 @@ Future<ApiResult<List<ZeroTrustGatewayAppTypes>?, Never>> zeroTrustGatewayApplic
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/app_types',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/app_types',
   headers: headers,
   options: options,
 );

@@ -140,6 +140,6 @@ RealtimeSessionCreateResponse copyWith({String? Function()? id, String? Function
 
 @override int get hashCode => Object.hash(id, object, expiresAt, Object.hashAll(include ?? const []), model, outputModalities, instructions, audio, tracing, turnDetection, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens);
 
-@override String toString() => 'RealtimeSessionCreateResponse(id: $id, object: $object, expiresAt: $expiresAt, include: $include, model: $model, outputModalities: $outputModalities, instructions: $instructions, audio: $audio, tracing: $tracing, turnDetection: $turnDetection, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens)';
+@override String toString() => 'RealtimeSessionCreateResponse(\n  id: $id,\n  object: $object,\n  expiresAt: $expiresAt,\n  include: $include,\n  model: $model,\n  outputModalities: $outputModalities,\n  instructions: $instructions,\n  audio: $audio,\n  tracing: $tracing,\n  turnDetection: $turnDetection,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  maxOutputTokens: $maxOutputTokens,\n)';
 
  }

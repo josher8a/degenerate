@@ -104,6 +104,6 @@ ZonesZonePlan copyWith({bool? Function()? canSubscribe, String? Function()? curr
 
 @override int get hashCode => Object.hash(canSubscribe, currency, externallyManaged, frequency, id, isSubscribed, legacyDiscount, legacyId, name, price);
 
-@override String toString() => 'ZonesZonePlan(canSubscribe: $canSubscribe, currency: $currency, externallyManaged: $externallyManaged, frequency: $frequency, id: $id, isSubscribed: $isSubscribed, legacyDiscount: $legacyDiscount, legacyId: $legacyId, name: $name, price: $price)';
+@override String toString() => 'ZonesZonePlan(\n  canSubscribe: $canSubscribe,\n  currency: $currency,\n  externallyManaged: $externallyManaged,\n  frequency: $frequency,\n  id: $id,\n  isSubscribed: $isSubscribed,\n  legacyDiscount: $legacyDiscount,\n  legacyId: $legacyId,\n  name: $name,\n  price: $price,\n)';
 
  }

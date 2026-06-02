@@ -35,7 +35,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/permission_groups',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/permission_groups',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -59,7 +59,7 @@ Future<ApiResult<IamPermissionGroup?, Never>> accountPermissionGroupDetails({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/permission_groups/${Uri.encodeComponent(permissionGroupId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/permission_groups/${Uri.encodeComponent(permissionGroupId.toJson())}',
   headers: headers,
   options: options,
 );

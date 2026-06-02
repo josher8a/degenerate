@@ -19,7 +19,7 @@ Future<ApiResult<List<AddressingServiceBinding>?, Never>> ipAddressManagementSer
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bindings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/bindings',
   headers: headers,
   options: options,
 );
@@ -44,7 +44,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bindings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/bindings',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -67,7 +67,7 @@ Future<ApiResult<AddressingServiceBinding?, Never>> ipAddressManagementServiceBi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bindings/${Uri.encodeComponent(bindingId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/bindings/${Uri.encodeComponent(bindingId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -89,7 +89,7 @@ Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementServiceBindingsDele
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toString())}/bindings/${Uri.encodeComponent(bindingId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/prefixes/${Uri.encodeComponent(prefixId.toJson())}/bindings/${Uri.encodeComponent(bindingId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -111,7 +111,7 @@ Future<ApiResult<List<IpAddressManagementServiceBindingsListServicesResponseResu
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/services',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/services',
   headers: headers,
   options: options,
 );

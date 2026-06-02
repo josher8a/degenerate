@@ -77,6 +77,6 @@ AigConfigCreateEvaluationsResponseResultResults copyWith({DateTime? createdAt, S
 
 @override int get hashCode => Object.hash(createdAt, evaluationId, evaluationTypeId, id, modifiedAt, result, status, statusDescription, totalLogs);
 
-@override String toString() => 'AigConfigCreateEvaluationsResponseResultResults(createdAt: $createdAt, evaluationId: $evaluationId, evaluationTypeId: $evaluationTypeId, id: $id, modifiedAt: $modifiedAt, result: $result, status: $status, statusDescription: $statusDescription, totalLogs: $totalLogs)';
+@override String toString() => 'AigConfigCreateEvaluationsResponseResultResults(\n  createdAt: $createdAt,\n  evaluationId: $evaluationId,\n  evaluationTypeId: $evaluationTypeId,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  result: $result,\n  status: $status,\n  statusDescription: $statusDescription,\n  totalLogs: $totalLogs,\n)';
 
  }

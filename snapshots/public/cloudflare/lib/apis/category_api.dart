@@ -36,7 +36,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetCategoryListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GetCategoryListError.fromResponse(response),
+  onError: GetCategoryListError.fromResponse,
 );
  } 
 /// Reads a category
@@ -56,7 +56,7 @@ return execute(
   onSuccess: (response) {
     return GetCategoryReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetCategoryReadError.fromResponse(response),
+  onError: GetCategoryReadError.fromResponse,
 );
  } 
 /// Updates a category
@@ -78,7 +78,7 @@ return execute(
   onSuccess: (response) {
     return PostCategoryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostCategoryUpdateError.fromResponse(response),
+  onError: PostCategoryUpdateError.fromResponse,
 );
  } 
 /// Updates a category
@@ -100,7 +100,7 @@ return execute(
   onSuccess: (response) {
     return PatchCategoryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PatchCategoryUpdateError.fromResponse(response),
+  onError: PatchCategoryUpdateError.fromResponse,
 );
  } 
 /// Deletes a category
@@ -120,7 +120,7 @@ return execute(
   onSuccess: (response) {
     return DeleteCategoryDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteCategoryDeleteError.fromResponse(response),
+  onError: DeleteCategoryDeleteError.fromResponse,
 );
  } 
 /// Lists categories
@@ -141,7 +141,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetCategoryListCompleteResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GetCategoryListCompleteError.fromResponse(response),
+  onError: GetCategoryListCompleteError.fromResponse,
 );
  } 
 /// Creates a new category
@@ -163,7 +163,7 @@ return execute(
   onSuccess: (response) {
     return PostCategoryCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostCategoryCreateError.fromResponse(response),
+  onError: PostCategoryCreateError.fromResponse,
 );
  } 
 /// Get all application categories

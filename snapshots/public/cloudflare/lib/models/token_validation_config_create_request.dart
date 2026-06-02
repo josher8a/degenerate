@@ -34,7 +34,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('crede
       json.containsKey('token_type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (tokenSources.length < 1) errors.add('tokenSources: must have >= 1 items');
+if (tokenSources.isEmpty) errors.add('tokenSources: must have >= 1 items');
 if (tokenSources.length > 4) errors.add('tokenSources: must have <= 4 items');
 return errors; } 
 TokenValidationConfigCreateRequest copyWith({ShieldCredentials? credentials, ShieldDescription? description, ShieldTitle? title, List<ShieldHeader>? tokenSources, ShieldTokenType? tokenType, }) { return TokenValidationConfigCreateRequest(

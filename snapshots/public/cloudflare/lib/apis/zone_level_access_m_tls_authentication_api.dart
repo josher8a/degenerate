@@ -17,7 +17,7 @@ Future<ApiResult<List<AccessComponentsSchemasCertificates>?, Never>> zoneLevelAc
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/certificates',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/certificates',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<AccessComponentsSchemasCertificates?, Never>> zoneLevelAccessMt
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, Never>> zo
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/certificates/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -131,7 +131,7 @@ Future<ApiResult<List<AccessSchemasSettings>?, Never>> zoneLevelAccessMtlsAuthen
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/certificates/settings',
   headers: headers,
   options: options,
 );
@@ -154,7 +154,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/access/certificates/settings',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/access/certificates/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

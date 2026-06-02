@@ -91,6 +91,6 @@ RadarGetEntitiesAsnByIpResponseResultAsn copyWith({String? Function()? aka, int?
 
 @override int get hashCode => Object.hash(aka, asn, country, countryName, estimatedUsers, name, orgName, Object.hashAll(related), source, website);
 
-@override String toString() => 'RadarGetEntitiesAsnByIpResponseResultAsn(aka: $aka, asn: $asn, country: $country, countryName: $countryName, estimatedUsers: $estimatedUsers, name: $name, orgName: $orgName, related: $related, source: $source, website: $website)';
+@override String toString() => 'RadarGetEntitiesAsnByIpResponseResultAsn(\n  aka: $aka,\n  asn: $asn,\n  country: $country,\n  countryName: $countryName,\n  estimatedUsers: $estimatedUsers,\n  name: $name,\n  orgName: $orgName,\n  related: $related,\n  source: $source,\n  website: $website,\n)';
 
  }

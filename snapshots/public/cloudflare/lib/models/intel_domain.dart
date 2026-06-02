@@ -81,6 +81,6 @@ IntelDomain copyWith({IntelAdditionalInformation? Function()? additionalInformat
 
 @override int get hashCode => Object.hash(additionalInformation, application, Object.hashAll(contentCategories ?? const []), domain, Object.hashAll(inheritedContentCategories ?? const []), inheritedFrom, Object.hashAll(inheritedRiskTypes ?? const []), popularityRank, Object.hashAll(resolvesToRefs ?? const []), riskScore, Object.hashAll(riskTypes ?? const []));
 
-@override String toString() => 'IntelDomain(additionalInformation: $additionalInformation, application: $application, contentCategories: $contentCategories, domain: $domain, inheritedContentCategories: $inheritedContentCategories, inheritedFrom: $inheritedFrom, inheritedRiskTypes: $inheritedRiskTypes, popularityRank: $popularityRank, resolvesToRefs: $resolvesToRefs, riskScore: $riskScore, riskTypes: $riskTypes)';
+@override String toString() => 'IntelDomain(\n  additionalInformation: $additionalInformation,\n  application: $application,\n  contentCategories: $contentCategories,\n  domain: $domain,\n  inheritedContentCategories: $inheritedContentCategories,\n  inheritedFrom: $inheritedFrom,\n  inheritedRiskTypes: $inheritedRiskTypes,\n  popularityRank: $popularityRank,\n  resolvesToRefs: $resolvesToRefs,\n  riskScore: $riskScore,\n  riskTypes: $riskTypes,\n)';
 
  }

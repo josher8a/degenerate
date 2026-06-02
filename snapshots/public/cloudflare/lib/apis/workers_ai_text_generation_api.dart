@@ -40,7 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError.fromResponse(response),
+  onError: WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError.fromResponse,
 );
  } 
 /// Execute @cf/deepseek-ai/deepseek-math-7b-instruct model.
@@ -75,7 +75,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError.fromResponse(response),
+  onError: WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError.fromResponse,
 );
  } 
 /// Execute @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
@@ -110,7 +110,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError.fromResponse(response),
+  onError: WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError.fromResponse,
 );
  } 
 /// Execute @cf/defog/sqlcoder-7b-2 model.
@@ -145,7 +145,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfDefogSqlcoder7b2Error.fromResponse(response),
+  onError: WorkersAiPostRunCfDefogSqlcoder7b2Error.fromResponse,
 );
  } 
 /// Execute @cf/fblgit/una-cybertron-7b-v2-bf16 model.
@@ -180,7 +180,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => Bf16Error.fromResponse(response),
+  onError: Bf16Error.fromResponse,
 );
  } 
 /// Execute @cf/google/gemma-2b-it-lora model.
@@ -215,7 +215,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfGoogleGemma2bItLoraError.fromResponse(response),
+  onError: WorkersAiPostRunCfGoogleGemma2bItLoraError.fromResponse,
 );
  } 
 /// Execute @cf/google/gemma-3-12b-it model.
@@ -250,7 +250,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfGoogleGemma312bItError.fromResponse(response),
+  onError: WorkersAiPostRunCfGoogleGemma312bItError.fromResponse,
 );
  } 
 /// Execute @cf/google/gemma-7b-it-lora model.
@@ -285,7 +285,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfGoogleGemma7bItLoraError.fromResponse(response),
+  onError: WorkersAiPostRunCfGoogleGemma7bItLoraError.fromResponse,
 );
  } 
 /// Execute @cf/ibm-granite/granite-4.0-h-micro model.
@@ -320,7 +320,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfIbmGranite40HMicroError.fromResponse(response),
+  onError: WorkersAiPostRunCfIbmGranite40HMicroError.fromResponse,
 );
  } 
 /// Execute @cf/meta-llama/llama-2-7b-chat-hf-lora model.
@@ -355,7 +355,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama27bChatHfLoraError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama27bChatHfLoraError.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-2-7b-chat-fp16 model.
@@ -390,7 +390,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama27bChatFp16Error.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama27bChatFp16Error.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-2-7b-chat-int8 model.
@@ -425,7 +425,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama27bChatInt8Error.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama27bChatInt8Error.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-3-8b-instruct model.
@@ -460,7 +460,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama38bInstructError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama38bInstructError.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-3-8b-instruct-awq model.
@@ -495,7 +495,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama38bInstructAwqError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama38bInstructAwqError.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-3.1-8b-instruct-awq model.
@@ -530,7 +530,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama318bInstructAwqError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama318bInstructAwqError.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-3.1-8b-instruct-fp8 model.
@@ -565,7 +565,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama318bInstructFp8Error.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama318bInstructFp8Error.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-3.1-8b-instruct-fp8-fast model.
@@ -600,7 +600,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama318bInstructFp8FastError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama318bInstructFp8FastError.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-3.1-70b-instruct-fp8-fast model.
@@ -635,7 +635,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama3170bInstructFp8FastError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama3170bInstructFp8FastError.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-3.2-1b-instruct model.
@@ -670,7 +670,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama321bInstructError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama321bInstructError.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-3.2-3b-instruct model.
@@ -705,7 +705,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama323bInstructError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama323bInstructError.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-3.2-11b-vision-instruct model.
@@ -740,7 +740,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama3211bVisionInstructError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama3211bVisionInstructError.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-3.3-70b-instruct-fp8-fast model.
@@ -775,7 +775,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama370bInstructFp8FastError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama370bInstructFp8FastError.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-4-scout-17b-16e-instruct model.
@@ -810,7 +810,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlama4Scout17b16eInstructError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlama4Scout17b16eInstructError.fromResponse,
 );
  } 
 /// Execute @cf/meta/llama-guard-3-8b model.
@@ -845,7 +845,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaLlamaGuard38bError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaLlamaGuard38bError.fromResponse,
 );
  } 
 /// Execute @cf/microsoft/phi-2 model.
@@ -880,7 +880,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMicrosoftPhi2Error.fromResponse(response),
+  onError: WorkersAiPostRunCfMicrosoftPhi2Error.fromResponse,
 );
  } 
 /// Execute @cf/mistral/mistral-7b-instruct-v0.1 model.
@@ -915,7 +915,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMistral7bInstructError.fromResponse(response),
+  onError: WorkersAiPostRunCfMistral7bInstructError.fromResponse,
 );
  } 
 /// Execute @cf/mistral/mistral-7b-instruct-v0.2-lora model.
@@ -950,7 +950,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => LoraError.fromResponse(response),
+  onError: LoraError.fromResponse,
 );
  } 
 /// Execute @cf/mistralai/mistral-small-3.1-24b-instruct model.
@@ -985,7 +985,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMistralaiMistralSmall3124bInstructError.fromResponse(response),
+  onError: WorkersAiPostRunCfMistralaiMistralSmall3124bInstructError.fromResponse,
 );
  } 
 /// Execute @cf/openai/gpt-oss-20b model.
@@ -1020,7 +1020,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfOpenaiGptOss20bError.fromResponse(response),
+  onError: WorkersAiPostRunCfOpenaiGptOss20bError.fromResponse,
 );
  } 
 /// Execute @cf/openai/gpt-oss-120b model.
@@ -1055,7 +1055,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfOpenaiGptOss120bError.fromResponse(response),
+  onError: WorkersAiPostRunCfOpenaiGptOss120bError.fromResponse,
 );
  } 
 /// Execute @cf/openchat/openchat-3.5-0106 model.
@@ -1090,7 +1090,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfOpenchat350106Error.fromResponse(response),
+  onError: WorkersAiPostRunCfOpenchat350106Error.fromResponse,
 );
  } 
 /// Execute @cf/qwen/qwen1.5-0.5b-chat model.
@@ -1125,7 +1125,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfQwenQwen1505bChatError.fromResponse(response),
+  onError: WorkersAiPostRunCfQwenQwen1505bChatError.fromResponse,
 );
  } 
 /// Execute @cf/qwen/qwen1.5-1.8b-chat model.
@@ -1160,7 +1160,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfQwenQwen1518bChatError.fromResponse(response),
+  onError: WorkersAiPostRunCfQwenQwen1518bChatError.fromResponse,
 );
  } 
 /// Execute @cf/qwen/qwen1.5-7b-chat-awq model.
@@ -1195,7 +1195,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfQwenQwen157bChatAwqError.fromResponse(response),
+  onError: WorkersAiPostRunCfQwenQwen157bChatAwqError.fromResponse,
 );
  } 
 /// Execute @cf/qwen/qwen1.5-14b-chat-awq model.
@@ -1230,7 +1230,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfQwenQwen1514bChatAwqError.fromResponse(response),
+  onError: WorkersAiPostRunCfQwenQwen1514bChatAwqError.fromResponse,
 );
  } 
 /// Execute @cf/qwen/qwen2.5-coder-32b-instruct model.
@@ -1265,7 +1265,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfQwenQwen25Coder32bInstructError.fromResponse(response),
+  onError: WorkersAiPostRunCfQwenQwen25Coder32bInstructError.fromResponse,
 );
  } 
 /// Execute @cf/qwen/qwen3-30b-a3b-fp8 model.
@@ -1300,7 +1300,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfQwenQwen330bA3bFp8Error.fromResponse(response),
+  onError: WorkersAiPostRunCfQwenQwen330bA3bFp8Error.fromResponse,
 );
  } 
 /// Execute @cf/qwen/qwq-32b model.
@@ -1335,7 +1335,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfQwenQwq32bError.fromResponse(response),
+  onError: WorkersAiPostRunCfQwenQwq32bError.fromResponse,
 );
  } 
 /// Execute @cf/thebloke/discolm-german-7b-v1-awq model.
@@ -1370,7 +1370,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => AwqError.fromResponse(response),
+  onError: AwqError.fromResponse,
 );
  } 
 /// Execute @cf/tiiuae/falcon-7b-instruct model.
@@ -1405,7 +1405,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfTiiuaeFalcon7bInstructError.fromResponse(response),
+  onError: WorkersAiPostRunCfTiiuaeFalcon7bInstructError.fromResponse,
 );
  } 
 /// Execute @cf/tinyllama/tinyllama-1.1b-chat-v1.0 model.
@@ -1440,7 +1440,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfTinyllama11bChatError.fromResponse(response),
+  onError: WorkersAiPostRunCfTinyllama11bChatError.fromResponse,
 );
  } 
 /// Execute @cf/zai-org/glm-4.7-flash model.
@@ -1475,7 +1475,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfZaiOrgGlm47FlashError.fromResponse(response),
+  onError: WorkersAiPostRunCfZaiOrgGlm47FlashError.fromResponse,
 );
  } 
 /// Execute @hf/google/gemma-7b-it model.
@@ -1510,7 +1510,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunHfGoogleGemma7bItError.fromResponse(response),
+  onError: WorkersAiPostRunHfGoogleGemma7bItError.fromResponse,
 );
  } 
 /// Execute @hf/mistral/mistral-7b-instruct-v0.2 model.
@@ -1545,7 +1545,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunHfMistral7bInstructError.fromResponse(response),
+  onError: WorkersAiPostRunHfMistral7bInstructError.fromResponse,
 );
  } 
 /// Execute @hf/nexusflow/starling-lm-7b-beta model.
@@ -1580,7 +1580,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunHfNexusflowStarlingLm7bBetaError.fromResponse(response),
+  onError: WorkersAiPostRunHfNexusflowStarlingLm7bBetaError.fromResponse,
 );
  } 
 /// Execute @hf/nousresearch/hermes-2-pro-mistral-7b model.
@@ -1615,7 +1615,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunHfNousresearchHermes2ProMistral7bError.fromResponse(response),
+  onError: WorkersAiPostRunHfNousresearchHermes2ProMistral7bError.fromResponse,
 );
  } 
 /// Execute @hf/thebloke/deepseek-coder-6.7b-base-awq model.
@@ -1650,7 +1650,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqError.fromResponse(response),
+  onError: WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqError.fromResponse,
 );
  } 
 /// Execute @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
@@ -1685,7 +1685,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqError.fromResponse(response),
+  onError: WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqError.fromResponse,
 );
  } 
 /// Execute @hf/thebloke/llama-2-13b-chat-awq model.
@@ -1720,7 +1720,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunHfTheblokeLlama213bChatAwqError.fromResponse(response),
+  onError: WorkersAiPostRunHfTheblokeLlama213bChatAwqError.fromResponse,
 );
  } 
 /// Execute @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
@@ -1755,7 +1755,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => AwqError.fromResponse(response),
+  onError: AwqError.fromResponse,
 );
  } 
 /// Execute @hf/thebloke/neural-chat-7b-v3-1-awq model.
@@ -1790,7 +1790,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => AwqError.fromResponse(response),
+  onError: AwqError.fromResponse,
 );
  } 
 /// Execute @hf/thebloke/openhermes-2.5-mistral-7b-awq model.
@@ -1825,7 +1825,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqError.fromResponse(response),
+  onError: WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqError.fromResponse,
 );
  } 
 /// Execute @hf/thebloke/zephyr-7b-beta-awq model.
@@ -1860,7 +1860,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunHfTheblokeZephyr7bBetaAwqError.fromResponse(response),
+  onError: WorkersAiPostRunHfTheblokeZephyr7bBetaAwqError.fromResponse,
 );
  } 
 /// Execute @cf/aisingapore/gemma-sea-lion-v4-27b-it model. (streaming)

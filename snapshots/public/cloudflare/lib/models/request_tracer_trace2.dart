@@ -110,6 +110,6 @@ RequestTracerTrace2 copyWith({String? Function()? action, Map<String, dynamic>? 
 
 @override int get hashCode => Object.hash(action, actionParameters, description, expression, kind, matched, name, stepName, Object.hashAll(trace ?? const []), type);
 
-@override String toString() => 'RequestTracerTrace2(action: $action, actionParameters: $actionParameters, description: $description, expression: $expression, kind: $kind, matched: $matched, name: $name, stepName: $stepName, trace: $trace, type: $type)';
+@override String toString() => 'RequestTracerTrace2(\n  action: $action,\n  actionParameters: $actionParameters,\n  description: $description,\n  expression: $expression,\n  kind: $kind,\n  matched: $matched,\n  name: $name,\n  stepName: $stepName,\n  trace: $trace,\n  type: $type,\n)';
 
  }

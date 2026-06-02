@@ -187,6 +187,6 @@ Subscription2 copyWith({Subscription2App? Function()? app, List<ComponentValue2>
 
 @override int get hashCode => Object.hash(app, Object.hashAll(componentValues ?? const []), currency, currentPeriodEnd, currentPeriodStart, frequency, id, price, ratePlan, state, zone);
 
-@override String toString() => 'Subscription2(app: $app, componentValues: $componentValues, currency: $currency, currentPeriodEnd: $currentPeriodEnd, currentPeriodStart: $currentPeriodStart, frequency: $frequency, id: $id, price: $price, ratePlan: $ratePlan, state: $state, zone: $zone)';
+@override String toString() => 'Subscription2(\n  app: $app,\n  componentValues: $componentValues,\n  currency: $currency,\n  currentPeriodEnd: $currentPeriodEnd,\n  currentPeriodStart: $currentPeriodStart,\n  frequency: $frequency,\n  id: $id,\n  price: $price,\n  ratePlan: $ratePlan,\n  state: $state,\n  zone: $zone,\n)';
 
  }

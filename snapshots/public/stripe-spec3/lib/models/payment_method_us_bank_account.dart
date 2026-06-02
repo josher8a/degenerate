@@ -102,6 +102,6 @@ PaymentMethodUsBankAccount copyWith({InboundTransfersPaymentMethodDetailsUsBankA
 
 @override int get hashCode => Object.hash(accountHolderType, accountType, bankName, financialConnectionsAccount, fingerprint, last4, networks, routingNumber, statusDetails);
 
-@override String toString() => 'PaymentMethodUsBankAccount(accountHolderType: $accountHolderType, accountType: $accountType, bankName: $bankName, financialConnectionsAccount: $financialConnectionsAccount, fingerprint: $fingerprint, last4: $last4, networks: $networks, routingNumber: $routingNumber, statusDetails: $statusDetails)';
+@override String toString() => 'PaymentMethodUsBankAccount(\n  accountHolderType: $accountHolderType,\n  accountType: $accountType,\n  bankName: $bankName,\n  financialConnectionsAccount: $financialConnectionsAccount,\n  fingerprint: $fingerprint,\n  last4: $last4,\n  networks: $networks,\n  routingNumber: $routingNumber,\n  statusDetails: $statusDetails,\n)';
 
  }

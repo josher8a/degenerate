@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'body': body,
   'columns_url': columnsUrl.toString(),
   'created_at': createdAt.toIso8601String(),
-  'creator': creator != null ? creator?.toJson() : null,
+  'creator': creator?.toJson(),
   'html_url': htmlUrl.toString(),
   'id': id,
   'name': name,
@@ -108,6 +108,6 @@ WebhooksProject copyWith({String? Function()? body, Uri? columnsUrl, DateTime? c
 
 @override int get hashCode => Object.hash(body, columnsUrl, createdAt, creator, htmlUrl, id, name, nodeId, number, ownerUrl, state, updatedAt, url);
 
-@override String toString() => 'WebhooksProject(body: $body, columnsUrl: $columnsUrl, createdAt: $createdAt, creator: $creator, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, number: $number, ownerUrl: $ownerUrl, state: $state, updatedAt: $updatedAt, url: $url)';
+@override String toString() => 'WebhooksProject(\n  body: $body,\n  columnsUrl: $columnsUrl,\n  createdAt: $createdAt,\n  creator: $creator,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  number: $number,\n  ownerUrl: $ownerUrl,\n  state: $state,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
  }

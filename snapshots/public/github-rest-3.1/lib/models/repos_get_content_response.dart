@@ -26,6 +26,13 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ReposGetContentResponse$Unknown;
 
+R when<R>({required R Function(ReposGetContentResponseArray) array, required R Function(ReposGetContentResponseFile) file, required R Function(ReposGetContentResponseSymlink) symlink, required R Function(ReposGetContentResponseSubmodule) submodule, required R Function(ReposGetContentResponse$Unknown) unknown, }) { return switch (this) {
+  final ReposGetContentResponseArray v => array(v),
+  final ReposGetContentResponseFile v => file(v),
+  final ReposGetContentResponseSymlink v => symlink(v),
+  final ReposGetContentResponseSubmodule v => submodule(v),
+  final ReposGetContentResponse$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ReposGetContentResponseArray extends ReposGetContentResponse {const ReposGetContentResponseArray(this.listContentDirectory2);
 

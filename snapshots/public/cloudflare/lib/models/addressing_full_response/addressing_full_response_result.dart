@@ -80,6 +80,6 @@ AddressingFullResponseResult copyWith({AddressingCanDelete? Function()? canDelet
 
 @override int get hashCode => Object.hash(canDelete, canModifyIps, createdAt, defaultSni, description, enabled, id, modifiedAt, Object.hashAll(ips ?? const []), Object.hashAll(memberships ?? const []));
 
-@override String toString() => 'AddressingFullResponseResult(canDelete: $canDelete, canModifyIps: $canModifyIps, createdAt: $createdAt, defaultSni: $defaultSni, description: $description, enabled: $enabled, id: $id, modifiedAt: $modifiedAt, ips: $ips, memberships: $memberships)';
+@override String toString() => 'AddressingFullResponseResult(\n  canDelete: $canDelete,\n  canModifyIps: $canModifyIps,\n  createdAt: $createdAt,\n  defaultSni: $defaultSni,\n  description: $description,\n  enabled: $enabled,\n  id: $id,\n  modifiedAt: $modifiedAt,\n  ips: $ips,\n  memberships: $memberships,\n)';
 
  }

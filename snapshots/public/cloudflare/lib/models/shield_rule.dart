@@ -75,6 +75,6 @@ ShieldRule copyWith({ShieldAction? action, ShieldTimestamp? Function()? createdA
 
 @override int get hashCode => Object.hash(action, createdAt, description, enabled, expression, id, lastUpdated, selector, title);
 
-@override String toString() => 'ShieldRule(action: $action, createdAt: $createdAt, description: $description, enabled: $enabled, expression: $expression, id: $id, lastUpdated: $lastUpdated, selector: $selector, title: $title)';
+@override String toString() => 'ShieldRule(\n  action: $action,\n  createdAt: $createdAt,\n  description: $description,\n  enabled: $enabled,\n  expression: $expression,\n  id: $id,\n  lastUpdated: $lastUpdated,\n  selector: $selector,\n  title: $title,\n)';
 
  }

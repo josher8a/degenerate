@@ -176,6 +176,6 @@ RealtimeConversationItemWithReference copyWith({String? Function()? id, Realtime
 
 @override int get hashCode => Object.hash(id, type, object, status, role, Object.hashAll(content ?? const []), callId, name, arguments, output);
 
-@override String toString() => 'RealtimeConversationItemWithReference(id: $id, type: $type, object: $object, status: $status, role: $role, content: $content, callId: $callId, name: $name, arguments: $arguments, output: $output)';
+@override String toString() => 'RealtimeConversationItemWithReference(\n  id: $id,\n  type: $type,\n  object: $object,\n  status: $status,\n  role: $role,\n  content: $content,\n  callId: $callId,\n  name: $name,\n  arguments: $arguments,\n  output: $output,\n)';
 
  }

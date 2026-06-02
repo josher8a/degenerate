@@ -19,7 +19,7 @@ Future<ApiResult<R2DataCatalogTableMaintenanceConfigResponse?, DisableCatalogErr
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/namespaces/${Uri.encodeComponent(namespace)}/tables/${Uri.encodeComponent(tableName)}/maintenance-configs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2-catalog/${Uri.encodeComponent(bucketName.toJson())}/namespaces/${Uri.encodeComponent(namespace)}/tables/${Uri.encodeComponent(tableName)}/maintenance-configs',
   headers: headers,
   options: options,
 );
@@ -30,7 +30,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2DataCatalogTableMaintenanceConfigResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => DisableCatalogError.fromResponse(response),
+  onError: DisableCatalogError.fromResponse,
 );
  } 
 /// Update table maintenance configuration
@@ -45,7 +45,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2-catalog/${Uri.encodeComponent(bucketName.toString())}/namespaces/${Uri.encodeComponent(namespace)}/tables/${Uri.encodeComponent(tableName)}/maintenance-configs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2-catalog/${Uri.encodeComponent(bucketName.toJson())}/namespaces/${Uri.encodeComponent(namespace)}/tables/${Uri.encodeComponent(tableName)}/maintenance-configs',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -57,7 +57,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? R2DataCatalogTableMaintenanceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => DisableCatalogError.fromResponse(response),
+  onError: DisableCatalogError.fromResponse,
 );
  } 
  }

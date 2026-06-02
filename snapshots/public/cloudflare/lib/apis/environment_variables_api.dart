@@ -17,7 +17,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> listEnvironmentVariables({requir
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}/environment_variables',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toJson())}/environment_variables',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}/environment_variables',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toJson())}/environment_variables',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -52,7 +52,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) => CancelBuildByUuidError.fromResponse(response),
+  onError: CancelBuildByUuidError.fromResponse,
 );
  } 
 /// Delete environment variable
@@ -64,7 +64,7 @@ Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> deleteEnvironme
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}/environment_variables/${Uri.encodeComponent(environmentVariableKey.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toJson())}/environment_variables/${Uri.encodeComponent(environmentVariableKey.toJson())}',
   headers: headers,
   options: options,
 );
@@ -75,7 +75,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
-  onError: (response) => CancelBuildByUuidError.fromResponse(response),
+  onError: CancelBuildByUuidError.fromResponse,
 );
  } 
  }

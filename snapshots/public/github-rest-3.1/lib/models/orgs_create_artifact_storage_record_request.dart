@@ -93,14 +93,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('registry_url') && json['registry_url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.isEmpty) errors.add('name: length must be >= 1');
 if (name.length > 256) errors.add('name: length must be <= 256');
 if (digest.length < 71) errors.add('digest: length must be >= 71');
 if (digest.length > 71) errors.add('digest: length must be <= 71');
 if (!RegExp(r'^sha256:[a-f0-9]{64}$').hasMatch(digest)) errors.add(r'digest: must match pattern ^sha256:[a-f0-9]{64}$');
 final version$ = version;
 if (version$ != null) {
-  if (version$.length < 1) errors.add('version: length must be >= 1');
+  if (version$.isEmpty) errors.add('version: length must be >= 1');
   if (version$.length > 100) errors.add('version: length must be <= 100');
 }
 final artifactUrl$ = artifactUrl;
@@ -108,7 +108,7 @@ if (artifactUrl$ != null) {
 }
 final githubRepository$ = githubRepository;
 if (githubRepository$ != null) {
-  if (githubRepository$.length < 1) errors.add('githubRepository: length must be >= 1');
+  if (githubRepository$.isEmpty) errors.add('githubRepository: length must be >= 1');
   if (githubRepository$.length > 100) errors.add('githubRepository: length must be <= 100');
   if (!RegExp(r'^[A-Za-z0-9.\-_]+$').hasMatch(githubRepository$)) errors.add(r'githubRepository: must match pattern ^[A-Za-z0-9.\-_]+$');
 }
@@ -138,6 +138,6 @@ OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, S
 
 @override int get hashCode => Object.hash(name, digest, version, artifactUrl, path, registryUrl, repository, status, githubRepository);
 
-@override String toString() => 'OrgsCreateArtifactStorageRecordRequest(name: $name, digest: $digest, version: $version, artifactUrl: $artifactUrl, path: $path, registryUrl: $registryUrl, repository: $repository, status: $status, githubRepository: $githubRepository)';
+@override String toString() => 'OrgsCreateArtifactStorageRecordRequest(\n  name: $name,\n  digest: $digest,\n  version: $version,\n  artifactUrl: $artifactUrl,\n  path: $path,\n  registryUrl: $registryUrl,\n  repository: $repository,\n  status: $status,\n  githubRepository: $githubRepository,\n)';
 
  }

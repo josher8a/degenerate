@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_certificates',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_certificates',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_certificates',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_certificates',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -80,7 +80,7 @@ Future<ApiResult<TlsCertificatesAndHostnamesCustomCertificate?, Never>> customSs
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_certificates/${Uri.encodeComponent(customCertificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_certificates/${Uri.encodeComponent(customCertificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -103,7 +103,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_certificates/${Uri.encodeComponent(customCertificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_certificates/${Uri.encodeComponent(customCertificateId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -126,7 +126,7 @@ Future<ApiResult<AaaIdResponseResult?, Never>> customSslForAZoneDeleteSslConfigu
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_certificates/${Uri.encodeComponent(customCertificateId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_certificates/${Uri.encodeComponent(customCertificateId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -149,7 +149,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/custom_certificates/prioritize',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/custom_certificates/prioritize',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

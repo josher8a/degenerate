@@ -87,6 +87,6 @@ TerminalReaderReaderResourceInput copyWith({TerminalReaderReaderResourceCustomTe
 
 @override int get hashCode => Object.hash(customText, email, numeric, phone, $required, selection, signature, skipped, text, Object.hashAll(toggles ?? const []), type);
 
-@override String toString() => 'TerminalReaderReaderResourceInput(customText: $customText, email: $email, numeric: $numeric, phone: $phone, \$required: ${$required}, selection: $selection, signature: $signature, skipped: $skipped, text: $text, toggles: $toggles, type: $type)';
+@override String toString() => 'TerminalReaderReaderResourceInput(\n  customText: $customText,\n  email: $email,\n  numeric: $numeric,\n  phone: $phone,\n  \$required: ${$required},\n  selection: $selection,\n  signature: $signature,\n  skipped: $skipped,\n  text: $text,\n  toggles: $toggles,\n  type: $type,\n)';
 
  }

@@ -116,6 +116,6 @@ CustomProperty copyWith({String? propertyName, Uri? Function()? url, CustomPrope
 
 @override int get hashCode => Object.hash(propertyName, url, sourceType, valueType, $required, defaultValue, description, Object.hashAll(allowedValues ?? const []), valuesEditableBy, requireExplicitValues);
 
-@override String toString() => 'CustomProperty(propertyName: $propertyName, url: $url, sourceType: $sourceType, valueType: $valueType, \$required: ${$required}, defaultValue: $defaultValue, description: $description, allowedValues: $allowedValues, valuesEditableBy: $valuesEditableBy, requireExplicitValues: $requireExplicitValues)';
+@override String toString() => 'CustomProperty(\n  propertyName: $propertyName,\n  url: $url,\n  sourceType: $sourceType,\n  valueType: $valueType,\n  \$required: ${$required},\n  defaultValue: $defaultValue,\n  description: $description,\n  allowedValues: $allowedValues,\n  valuesEditableBy: $valuesEditableBy,\n  requireExplicitValues: $requireExplicitValues,\n)';
 
  }

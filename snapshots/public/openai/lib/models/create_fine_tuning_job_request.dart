@@ -92,7 +92,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('model
 List<String> validate() { final errors = <String>[];
 final suffix$ = suffix;
 if (suffix$ != null) {
-  if (suffix$.length < 1) errors.add('suffix: length must be >= 1');
+  if (suffix$.isEmpty) errors.add('suffix: length must be >= 1');
   if (suffix$.length > 64) errors.add('suffix: length must be <= 64');
 }
 final seed$ = seed;
@@ -126,6 +126,6 @@ CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, Str
 
 @override int get hashCode => Object.hash(model, trainingFile, hyperparameters, suffix, validationFile, Object.hashAll(integrations ?? const []), seed, method, metadata);
 
-@override String toString() => 'CreateFineTuningJobRequest(model: $model, trainingFile: $trainingFile, hyperparameters: $hyperparameters, suffix: $suffix, validationFile: $validationFile, integrations: $integrations, seed: $seed, method: $method, metadata: $metadata)';
+@override String toString() => 'CreateFineTuningJobRequest(\n  model: $model,\n  trainingFile: $trainingFile,\n  hyperparameters: $hyperparameters,\n  suffix: $suffix,\n  validationFile: $validationFile,\n  integrations: $integrations,\n  seed: $seed,\n  method: $method,\n  metadata: $metadata,\n)';
 
  }

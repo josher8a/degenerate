@@ -22,6 +22,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ResponseOutputTextAnnotations$Unknown;
 
+R when<R>({required R Function(ResponseOutputTextAnnotationsFile) file, required R Function(ResponseOutputTextAnnotationsUrl) url, required R Function(ResponseOutputTextAnnotations$Unknown) unknown, }) { return switch (this) {
+  final ResponseOutputTextAnnotationsFile v => file(v),
+  final ResponseOutputTextAnnotationsUrl v => url(v),
+  final ResponseOutputTextAnnotations$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ResponseOutputTextAnnotationsFile extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotationsFile(this.fileAnnotation);
 

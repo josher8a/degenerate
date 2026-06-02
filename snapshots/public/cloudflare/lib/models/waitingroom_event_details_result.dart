@@ -148,6 +148,6 @@ WaitingroomEventDetailsResult copyWith({WaitingroomTimestamp? Function()? create
 
 @override int get hashCode => Object.hash(createdOn, customPageHtml, description, disableSessionRenewal, eventEndTime, eventStartTime, id, modifiedOn, name, newUsersPerMinute, prequeueStartTime, queueingMethod, sessionDuration, shuffleAtEventStart, suspended, totalActiveUsers);
 
-@override String toString() => 'WaitingroomEventDetailsResult(createdOn: $createdOn, customPageHtml: $customPageHtml, description: $description, disableSessionRenewal: $disableSessionRenewal, eventEndTime: $eventEndTime, eventStartTime: $eventStartTime, id: $id, modifiedOn: $modifiedOn, name: $name, newUsersPerMinute: $newUsersPerMinute, prequeueStartTime: $prequeueStartTime, queueingMethod: $queueingMethod, sessionDuration: $sessionDuration, shuffleAtEventStart: $shuffleAtEventStart, suspended: $suspended, totalActiveUsers: $totalActiveUsers)';
+@override String toString() => 'WaitingroomEventDetailsResult(\n  createdOn: $createdOn,\n  customPageHtml: $customPageHtml,\n  description: $description,\n  disableSessionRenewal: $disableSessionRenewal,\n  eventEndTime: $eventEndTime,\n  eventStartTime: $eventStartTime,\n  id: $id,\n  modifiedOn: $modifiedOn,\n  name: $name,\n  newUsersPerMinute: $newUsersPerMinute,\n  prequeueStartTime: $prequeueStartTime,\n  queueingMethod: $queueingMethod,\n  sessionDuration: $sessionDuration,\n  shuffleAtEventStart: $shuffleAtEventStart,\n  suspended: $suspended,\n  totalActiveUsers: $totalActiveUsers,\n)';
 
  }

@@ -138,6 +138,6 @@ TunnelOriginRequest copyWith({Access? Function()? access, String? Function()? ca
 
 @override int get hashCode => Object.hash(access, caPool, connectTimeout, disableChunkedEncoding, http2Origin, httpHostHeader, keepAliveConnections, keepAliveTimeout, matchSnItoHost, noHappyEyeballs, noTlsVerify, originServerName, proxyType, tcpKeepAlive, tlsTimeout);
 
-@override String toString() => 'TunnelOriginRequest(access: $access, caPool: $caPool, connectTimeout: $connectTimeout, disableChunkedEncoding: $disableChunkedEncoding, http2Origin: $http2Origin, httpHostHeader: $httpHostHeader, keepAliveConnections: $keepAliveConnections, keepAliveTimeout: $keepAliveTimeout, matchSnItoHost: $matchSnItoHost, noHappyEyeballs: $noHappyEyeballs, noTlsVerify: $noTlsVerify, originServerName: $originServerName, proxyType: $proxyType, tcpKeepAlive: $tcpKeepAlive, tlsTimeout: $tlsTimeout)';
+@override String toString() => 'TunnelOriginRequest(\n  access: $access,\n  caPool: $caPool,\n  connectTimeout: $connectTimeout,\n  disableChunkedEncoding: $disableChunkedEncoding,\n  http2Origin: $http2Origin,\n  httpHostHeader: $httpHostHeader,\n  keepAliveConnections: $keepAliveConnections,\n  keepAliveTimeout: $keepAliveTimeout,\n  matchSnItoHost: $matchSnItoHost,\n  noHappyEyeballs: $noHappyEyeballs,\n  noTlsVerify: $noTlsVerify,\n  originServerName: $originServerName,\n  proxyType: $proxyType,\n  tcpKeepAlive: $tcpKeepAlive,\n  tlsTimeout: $tlsTimeout,\n)';
 
  }

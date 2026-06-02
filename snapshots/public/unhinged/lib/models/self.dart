@@ -23,11 +23,11 @@ sealed class Self {
 
   /// Build the `type` variant.
   factory Self.type({
-    bool $false = true,
     required dynamic none,
-    NewNull $null = NewNull.$null,
     required New0 $0,
     required String $empty,
+    bool $false = true,
+    NewNull $null = NewNull.$null,
     String? constructor,
     String? proto,
     String? hasOwnProperty,
@@ -72,8 +72,8 @@ sealed class Self {
 
   /// Build the `String` variant.
   factory Self.string({
-    int? length,
     required String value,
+    int? length,
     String? charAt,
     bool? trim,
   }) {
@@ -88,6 +88,20 @@ sealed class Self {
 
   /// Whether this variant is unknown (not defined in the OpenAPI spec).
   bool get isUnknown => this is Self$Unknown;
+
+  R when<R>({
+    required R Function(SelfType) type,
+    required R Function(SelfProto) proto,
+    required R Function(SelfString) string,
+    required R Function(Self$Unknown) unknown,
+  }) {
+    return switch (this) {
+      final SelfType v => type(v),
+      final SelfProto v => proto(v),
+      final SelfString v => string(v),
+      final Self$Unknown v => unknown(v),
+    };
+  }
 }
 
 @immutable

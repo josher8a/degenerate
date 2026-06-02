@@ -26,7 +26,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetGroupListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GetGroupListError.fromResponse(response),
+  onError: GetGroupListError.fromResponse,
 );
  } 
 /// Create a group
@@ -48,7 +48,7 @@ return execute(
   onSuccess: (response) {
     return PostGroupCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostGroupCreateError.fromResponse(response),
+  onError: PostGroupCreateError.fromResponse,
 );
  } 
 /// Read a group for an account
@@ -68,7 +68,7 @@ return execute(
   onSuccess: (response) {
     return GetGroupReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetGroupReadError.fromResponse(response),
+  onError: GetGroupReadError.fromResponse,
 );
  } 
 /// Update a group
@@ -90,7 +90,7 @@ return execute(
   onSuccess: (response) {
     return PutGroupUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PutGroupUpdateError.fromResponse(response),
+  onError: PutGroupUpdateError.fromResponse,
 );
  } 
 /// Delete a group for an account
@@ -110,7 +110,7 @@ return execute(
   onSuccess: (response) {
     return DeleteGroupDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteGroupDeleteError.fromResponse(response),
+  onError: DeleteGroupDeleteError.fromResponse,
 );
  } 
 /// List group members
@@ -131,7 +131,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetGroupMemberListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GetGroupMemberListError.fromResponse(response),
+  onError: GetGroupMemberListError.fromResponse,
 );
  } 
 /// Create a group member
@@ -153,7 +153,7 @@ return execute(
   onSuccess: (response) {
     return PostGroupMemberCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostGroupMemberCreateError.fromResponse(response),
+  onError: PostGroupMemberCreateError.fromResponse,
 );
  } 
 /// Delete a group member
@@ -173,7 +173,7 @@ return execute(
   onSuccess: (response) {
     return DeleteGroupMemberDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeleteGroupMemberDeleteError.fromResponse(response),
+  onError: DeleteGroupMemberDeleteError.fromResponse,
 );
  } 
  }

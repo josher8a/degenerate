@@ -18,7 +18,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/clip',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/clip',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

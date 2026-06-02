@@ -40,7 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BError.fromResponse(response),
+  onError: WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BError.fromResponse,
 );
  } 
 /// Execute @cf/ai4bharat/omni-indictrans2-en-indic-1b model.
@@ -75,7 +75,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bError.fromResponse(response),
+  onError: WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bError.fromResponse,
 );
  } 
 /// Execute @cf/meta/m2m100-1.2b model.
@@ -110,7 +110,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfMetaM2m10012bError.fromResponse(response),
+  onError: WorkersAiPostRunCfMetaM2m10012bError.fromResponse,
 );
  } 
  }

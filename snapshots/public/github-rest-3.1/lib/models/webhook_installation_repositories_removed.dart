@@ -84,6 +84,6 @@ WebhookInstallationRepositoriesRemoved copyWith({WebhookInstallationRepositories
 
 @override int get hashCode => Object.hash(action, enterprise, installation, organization, Object.hashAll(repositoriesAdded), Object.hashAll(repositoriesRemoved), repository, repositorySelection, requester, sender);
 
-@override String toString() => 'WebhookInstallationRepositoriesRemoved(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositoriesAdded: $repositoriesAdded, repositoriesRemoved: $repositoriesRemoved, repository: $repository, repositorySelection: $repositorySelection, requester: $requester, sender: $sender)';
+@override String toString() => 'WebhookInstallationRepositoriesRemoved(\n  action: $action,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  repositoriesAdded: $repositoriesAdded,\n  repositoriesRemoved: $repositoriesRemoved,\n  repository: $repository,\n  repositorySelection: $repositorySelection,\n  requester: $requester,\n  sender: $sender,\n)';
 
  }

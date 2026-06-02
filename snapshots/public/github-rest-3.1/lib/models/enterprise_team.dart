@@ -104,6 +104,6 @@ EnterpriseTeam copyWith({int? id, String? name, String? Function()? description,
 
 @override int get hashCode => Object.hash(id, name, description, slug, url, syncToOrganizations, organizationSelectionType, groupId, groupName, htmlUrl, membersUrl, createdAt, updatedAt);
 
-@override String toString() => 'EnterpriseTeam(id: $id, name: $name, description: $description, slug: $slug, url: $url, syncToOrganizations: $syncToOrganizations, organizationSelectionType: $organizationSelectionType, groupId: $groupId, groupName: $groupName, htmlUrl: $htmlUrl, membersUrl: $membersUrl, createdAt: $createdAt, updatedAt: $updatedAt)';
+@override String toString() => 'EnterpriseTeam(\n  id: $id,\n  name: $name,\n  description: $description,\n  slug: $slug,\n  url: $url,\n  syncToOrganizations: $syncToOrganizations,\n  organizationSelectionType: $organizationSelectionType,\n  groupId: $groupId,\n  groupName: $groupName,\n  htmlUrl: $htmlUrl,\n  membersUrl: $membersUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
  }

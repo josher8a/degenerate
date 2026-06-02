@@ -76,6 +76,6 @@ FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType? Fu
 
 @override int get hashCode => Object.hash(timeline, user, securityAdvisories, currentUser, currentUserPublic, currentUserActor, currentUserOrganization, Object.hashAll(currentUserOrganizations ?? const []), repositoryDiscussions, repositoryDiscussionsCategory);
 
-@override String toString() => 'FeedLinks(timeline: $timeline, user: $user, securityAdvisories: $securityAdvisories, currentUser: $currentUser, currentUserPublic: $currentUserPublic, currentUserActor: $currentUserActor, currentUserOrganization: $currentUserOrganization, currentUserOrganizations: $currentUserOrganizations, repositoryDiscussions: $repositoryDiscussions, repositoryDiscussionsCategory: $repositoryDiscussionsCategory)';
+@override String toString() => 'FeedLinks(\n  timeline: $timeline,\n  user: $user,\n  securityAdvisories: $securityAdvisories,\n  currentUser: $currentUser,\n  currentUserPublic: $currentUserPublic,\n  currentUserActor: $currentUserActor,\n  currentUserOrganization: $currentUserOrganization,\n  currentUserOrganizations: $currentUserOrganizations,\n  repositoryDiscussions: $repositoryDiscussions,\n  repositoryDiscussionsCategory: $repositoryDiscussionsCategory,\n)';
 
  }

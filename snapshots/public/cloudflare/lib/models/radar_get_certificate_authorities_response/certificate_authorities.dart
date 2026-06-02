@@ -100,6 +100,6 @@ CertificateAuthorities copyWith({CertificateRecordType? certificateRecordType, S
 
 @override int get hashCode => Object.hash(certificateRecordType, country, countryName, name, owner, parentName, parentSha256Fingerprint, revocationStatus, sha256Fingerprint);
 
-@override String toString() => 'CertificateAuthorities(certificateRecordType: $certificateRecordType, country: $country, countryName: $countryName, name: $name, owner: $owner, parentName: $parentName, parentSha256Fingerprint: $parentSha256Fingerprint, revocationStatus: $revocationStatus, sha256Fingerprint: $sha256Fingerprint)';
+@override String toString() => 'CertificateAuthorities(\n  certificateRecordType: $certificateRecordType,\n  country: $country,\n  countryName: $countryName,\n  name: $name,\n  owner: $owner,\n  parentName: $parentName,\n  parentSha256Fingerprint: $parentSha256Fingerprint,\n  revocationStatus: $revocationStatus,\n  sha256Fingerprint: $sha256Fingerprint,\n)';
 
  }

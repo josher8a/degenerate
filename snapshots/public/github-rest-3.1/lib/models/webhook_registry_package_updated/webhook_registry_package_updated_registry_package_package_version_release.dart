@@ -91,6 +91,6 @@ WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease copyWith({Pack
 
 @override int get hashCode => Object.hash(author, createdAt, draft, htmlUrl, id, name, prerelease, publishedAt, tagName, targetCommitish, url);
 
-@override String toString() => 'WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(author: $author, createdAt: $createdAt, draft: $draft, htmlUrl: $htmlUrl, id: $id, name: $name, prerelease: $prerelease, publishedAt: $publishedAt, tagName: $tagName, targetCommitish: $targetCommitish, url: $url)';
+@override String toString() => 'WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(\n  author: $author,\n  createdAt: $createdAt,\n  draft: $draft,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  prerelease: $prerelease,\n  publishedAt: $publishedAt,\n  tagName: $tagName,\n  targetCommitish: $targetCommitish,\n  url: $url,\n)';
 
  }

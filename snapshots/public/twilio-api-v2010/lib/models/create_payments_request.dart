@@ -218,6 +218,6 @@ CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, Pay
 
 @override int get hashCode => Object.hash(idempotencyKey, statusCallback, bankAccountType, chargeAmount, currency, description, input, minPostalCodeLength, parameter, paymentConnector, paymentMethod, postalCode, securityCode, timeout, tokenType, validCardTypes);
 
-@override String toString() => 'CreatePaymentsRequest(idempotencyKey: $idempotencyKey, statusCallback: $statusCallback, bankAccountType: $bankAccountType, chargeAmount: $chargeAmount, currency: $currency, description: $description, input: $input, minPostalCodeLength: $minPostalCodeLength, parameter: $parameter, paymentConnector: $paymentConnector, paymentMethod: $paymentMethod, postalCode: $postalCode, securityCode: $securityCode, timeout: $timeout, tokenType: $tokenType, validCardTypes: $validCardTypes)';
+@override String toString() => 'CreatePaymentsRequest(\n  idempotencyKey: $idempotencyKey,\n  statusCallback: $statusCallback,\n  bankAccountType: $bankAccountType,\n  chargeAmount: $chargeAmount,\n  currency: $currency,\n  description: $description,\n  input: $input,\n  minPostalCodeLength: $minPostalCodeLength,\n  parameter: $parameter,\n  paymentConnector: $paymentConnector,\n  paymentMethod: $paymentMethod,\n  postalCode: $postalCode,\n  securityCode: $securityCode,\n  timeout: $timeout,\n  tokenType: $tokenType,\n  validCardTypes: $validCardTypes,\n)';
 
  }

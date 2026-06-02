@@ -105,6 +105,6 @@ DnsRecordsUriRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecords
 
 @override int get hashCode => Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, data, priority, type);
 
-@override String toString() => 'DnsRecordsUriRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, data: $data, priority: $priority, type: $type)';
+@override String toString() => 'DnsRecordsUriRecord(\n  comment: $comment,\n  name: $name,\n  proxied: $proxied,\n  settings: $settings,\n  tags: $tags,\n  ttl: $ttl,\n  content: $content,\n  data: $data,\n  priority: $priority,\n  type: $type,\n)';
 
  }

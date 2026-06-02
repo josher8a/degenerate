@@ -39,7 +39,7 @@ Future<ApiResult<IamUserInvite?, Never>> userSInvitesInvitationDetails({required
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/invites/${Uri.encodeComponent(inviteId.toString())}',
+  path: '/user/invites/${Uri.encodeComponent(inviteId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -62,7 +62,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/user/invites/${Uri.encodeComponent(inviteId.toString())}',
+  path: '/user/invites/${Uri.encodeComponent(inviteId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

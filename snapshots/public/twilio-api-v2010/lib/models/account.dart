@@ -126,6 +126,6 @@ Account copyWith({String? Function()? authToken, String? Function()? dateCreated
 
 @override int get hashCode => Object.hash(authToken, dateCreated, dateUpdated, friendlyName, ownerAccountSid, sid, status, subresourceUris, type, uri);
 
-@override String toString() => 'Account(authToken: $authToken, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, ownerAccountSid: $ownerAccountSid, sid: $sid, status: $status, subresourceUris: $subresourceUris, type: $type, uri: $uri)';
+@override String toString() => 'Account(\n  authToken: $authToken,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  friendlyName: $friendlyName,\n  ownerAccountSid: $ownerAccountSid,\n  sid: $sid,\n  status: $status,\n  subresourceUris: $subresourceUris,\n  type: $type,\n  uri: $uri,\n)';
 
  }

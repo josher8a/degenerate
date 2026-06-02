@@ -159,16 +159,16 @@ final WebhooksIssueCommentUser? user;
 
 Map<String, dynamic> toJson() { return {
   '_links': links.toJson(),
-  'active_lock_reason': activeLockReason != null ? activeLockReason?.toJson() : null,
+  'active_lock_reason': activeLockReason?.toJson(),
   'additions': ?additions,
-  'assignee': assignee != null ? assignee?.toJson() : null,
+  'assignee': assignee?.toJson(),
   'assignees': assignees.map((e) => e?.toJson()).toList(),
   'author_association': authorAssociation.toJson(),
-  'auto_merge': autoMerge != null ? autoMerge?.toJson() : null,
+  'auto_merge': autoMerge?.toJson(),
   'base': base.toJson(),
   'body': body,
   'changed_files': ?changedFiles,
-  'closed_at': closedAt != null ? closedAt?.toIso8601String() : null,
+  'closed_at': closedAt?.toIso8601String(),
   'comments': ?comments,
   'comments_url': commentsUrl.toString(),
   'commits': ?commits,
@@ -188,9 +188,9 @@ Map<String, dynamic> toJson() { return {
   'mergeable': ?mergeable,
   'mergeable_state': ?mergeableState,
   'merged': ?merged,
-  'merged_at': mergedAt != null ? mergedAt?.toIso8601String() : null,
+  'merged_at': mergedAt?.toIso8601String(),
   if (mergedBy != null) 'merged_by': mergedBy?.toJson(),
-  'milestone': milestone != null ? milestone?.toJson() : null,
+  'milestone': milestone?.toJson(),
   'node_id': nodeId,
   'number': number,
   'patch_url': patchUrl.toString(),
@@ -205,7 +205,7 @@ Map<String, dynamic> toJson() { return {
   'title': title,
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
       json.containsKey('active_lock_reason') &&
@@ -346,6 +346,6 @@ WebhookPullRequestLabeledPullRequest copyWith({WebhooksPullRequest5Links? links,
 
 @override int get hashCode => Object.hashAll([links, activeLockReason, additions, assignee, Object.hashAll(assignees), authorAssociation, autoMerge, base, body, changedFiles, closedAt, comments, commentsUrl, commits, commitsUrl, createdAt, deletions, diffUrl, draft, head, htmlUrl, id, issueUrl, Object.hashAll(labels), locked, maintainerCanModify, mergeCommitSha, mergeable, mergeableState, merged, mergedAt, mergedBy, milestone, nodeId, number, patchUrl, rebaseable, Object.hashAll(requestedReviewers), Object.hashAll(requestedTeams), reviewCommentUrl, reviewComments, reviewCommentsUrl, state, statusesUrl, title, updatedAt, url, user]);
 
-@override String toString() => 'WebhookPullRequestLabeledPullRequest(links: $links, activeLockReason: $activeLockReason, additions: $additions, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, autoMerge: $autoMerge, base: $base, body: $body, changedFiles: $changedFiles, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, commits: $commits, commitsUrl: $commitsUrl, createdAt: $createdAt, deletions: $deletions, diffUrl: $diffUrl, draft: $draft, head: $head, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, labels: $labels, locked: $locked, maintainerCanModify: $maintainerCanModify, mergeCommitSha: $mergeCommitSha, mergeable: $mergeable, mergeableState: $mergeableState, merged: $merged, mergedAt: $mergedAt, mergedBy: $mergedBy, milestone: $milestone, nodeId: $nodeId, number: $number, patchUrl: $patchUrl, rebaseable: $rebaseable, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, reviewCommentUrl: $reviewCommentUrl, reviewComments: $reviewComments, reviewCommentsUrl: $reviewCommentsUrl, state: $state, statusesUrl: $statusesUrl, title: $title, updatedAt: $updatedAt, url: $url, user: $user)';
+@override String toString() => 'WebhookPullRequestLabeledPullRequest(\n  links: $links,\n  activeLockReason: $activeLockReason,\n  additions: $additions,\n  assignee: $assignee,\n  assignees: $assignees,\n  authorAssociation: $authorAssociation,\n  autoMerge: $autoMerge,\n  base: $base,\n  body: $body,\n  changedFiles: $changedFiles,\n  closedAt: $closedAt,\n  comments: $comments,\n  commentsUrl: $commentsUrl,\n  commits: $commits,\n  commitsUrl: $commitsUrl,\n  createdAt: $createdAt,\n  deletions: $deletions,\n  diffUrl: $diffUrl,\n  draft: $draft,\n  head: $head,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  issueUrl: $issueUrl,\n  labels: $labels,\n  locked: $locked,\n  maintainerCanModify: $maintainerCanModify,\n  mergeCommitSha: $mergeCommitSha,\n  mergeable: $mergeable,\n  mergeableState: $mergeableState,\n  merged: $merged,\n  mergedAt: $mergedAt,\n  mergedBy: $mergedBy,\n  milestone: $milestone,\n  nodeId: $nodeId,\n  number: $number,\n  patchUrl: $patchUrl,\n  rebaseable: $rebaseable,\n  requestedReviewers: $requestedReviewers,\n  requestedTeams: $requestedTeams,\n  reviewCommentUrl: $reviewCommentUrl,\n  reviewComments: $reviewComments,\n  reviewCommentsUrl: $reviewCommentsUrl,\n  state: $state,\n  statusesUrl: $statusesUrl,\n  title: $title,\n  updatedAt: $updatedAt,\n  url: $url,\n  user: $user,\n)';
 
  }

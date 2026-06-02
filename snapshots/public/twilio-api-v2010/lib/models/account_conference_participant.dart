@@ -186,6 +186,6 @@ AccountConferenceParticipant copyWith({String? Function()? accountSid, String? F
 
 @override int get hashCode => Object.hash(accountSid, callSid, label, callSidToCoach, coaching, conferenceSid, dateCreated, dateUpdated, endConferenceOnExit, muted, hold, startConferenceOnEnter, status, queueTime, uri);
 
-@override String toString() => 'AccountConferenceParticipant(accountSid: $accountSid, callSid: $callSid, label: $label, callSidToCoach: $callSidToCoach, coaching: $coaching, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, endConferenceOnExit: $endConferenceOnExit, muted: $muted, hold: $hold, startConferenceOnEnter: $startConferenceOnEnter, status: $status, queueTime: $queueTime, uri: $uri)';
+@override String toString() => 'AccountConferenceParticipant(\n  accountSid: $accountSid,\n  callSid: $callSid,\n  label: $label,\n  callSidToCoach: $callSidToCoach,\n  coaching: $coaching,\n  conferenceSid: $conferenceSid,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  endConferenceOnExit: $endConferenceOnExit,\n  muted: $muted,\n  hold: $hold,\n  startConferenceOnEnter: $startConferenceOnEnter,\n  status: $status,\n  queueTime: $queueTime,\n  uri: $uri,\n)';
 
  }

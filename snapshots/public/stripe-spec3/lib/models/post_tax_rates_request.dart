@@ -114,6 +114,6 @@ PostTaxRatesRequest copyWith({bool? Function()? active, String? Function()? coun
 
 @override int get hashCode => Object.hash(active, country, description, displayName, Object.hashAll(expand ?? const []), inclusive, jurisdiction, metadata, percentage, state, taxType);
 
-@override String toString() => 'PostTaxRatesRequest(active: $active, country: $country, description: $description, displayName: $displayName, expand: $expand, inclusive: $inclusive, jurisdiction: $jurisdiction, metadata: $metadata, percentage: $percentage, state: $state, taxType: $taxType)';
+@override String toString() => 'PostTaxRatesRequest(\n  active: $active,\n  country: $country,\n  description: $description,\n  displayName: $displayName,\n  expand: $expand,\n  inclusive: $inclusive,\n  jurisdiction: $jurisdiction,\n  metadata: $metadata,\n  percentage: $percentage,\n  state: $state,\n  taxType: $taxType,\n)';
 
  }

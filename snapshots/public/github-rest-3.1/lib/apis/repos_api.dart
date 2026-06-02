@@ -76,7 +76,7 @@ return execute(
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
 /// Get all organization repository rulesets
@@ -113,7 +113,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => RepositoryRuleset.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Create an organization repository ruleset
@@ -137,7 +137,7 @@ return execute(
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposCreateOrgRulesetError.fromResponse(response),
+  onError: ReposCreateOrgRulesetError.fromResponse,
 );
  } 
 /// List organization rule suites
@@ -187,7 +187,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => RuleSuites2.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Get an organization rule suite
@@ -210,7 +210,7 @@ return execute(
   onSuccess: (response) {
     return RuleSuite.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Get an organization repository ruleset
@@ -235,7 +235,7 @@ return execute(
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Update an organization repository ruleset
@@ -259,7 +259,7 @@ return execute(
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposCreateOrgRulesetError.fromResponse(response),
+  onError: ReposCreateOrgRulesetError.fromResponse,
 );
  } 
 /// Delete an organization repository ruleset
@@ -279,7 +279,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Get a repository
@@ -305,7 +305,7 @@ return execute(
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Update a repository
@@ -329,7 +329,7 @@ return execute(
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// Delete a repository
@@ -354,7 +354,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ReposDeleteError.fromResponse(response),
+  onError: ReposDeleteError.fromResponse,
 );
  } 
 /// List repository activities
@@ -409,7 +409,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Activity.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsDeleteSelfHostedRunnerFromOrgError.fromResponse(response),
+  onError: ActionsDeleteSelfHostedRunnerFromOrgError.fromResponse,
 );
  } 
 /// Create an attestation
@@ -437,7 +437,7 @@ return execute(
   onSuccess: (response) {
     return ReposCreateAttestationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
 /// List attestations
@@ -527,7 +527,7 @@ return execute(
   onSuccess: (response) {
     return Autolink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Get an autolink reference of a repository
@@ -551,7 +551,7 @@ return execute(
   onSuccess: (response) {
     return Autolink.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete an autolink reference from a repository
@@ -573,7 +573,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Check if Dependabot security updates are enabled for a repository
@@ -669,7 +669,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => ShortBranch.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get a branch
@@ -691,7 +691,7 @@ return execute(
   onSuccess: (response) {
     return BranchWithProtection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get branch protection
@@ -713,7 +713,7 @@ return execute(
   onSuccess: (response) {
     return BranchProtection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update branch protection
@@ -745,7 +745,7 @@ return execute(
   onSuccess: (response) {
     return ProtectedBranch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DependabotListAlertsForEnterpriseError.fromResponse(response),
+  onError: DependabotListAlertsForEnterpriseError.fromResponse,
 );
  } 
 /// Delete branch protection
@@ -765,7 +765,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Get admin branch protection
@@ -831,7 +831,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get pull request review protection
@@ -881,7 +881,7 @@ return execute(
   onSuccess: (response) {
     return ProtectedBranchPullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Delete pull request review protection
@@ -901,7 +901,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get commit signature protection
@@ -928,7 +928,7 @@ return execute(
   onSuccess: (response) {
     return ProtectedBranchAdminEnforced.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create commit signature protection
@@ -952,7 +952,7 @@ return execute(
   onSuccess: (response) {
     return ProtectedBranchAdminEnforced.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete commit signature protection
@@ -974,7 +974,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get status checks protection
@@ -996,7 +996,7 @@ return execute(
   onSuccess: (response) {
     return StatusCheckPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update status check protection
@@ -1022,7 +1022,7 @@ return execute(
   onSuccess: (response) {
     return StatusCheckPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Remove status check protection
@@ -1064,7 +1064,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => e as String).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Add status check contexts
@@ -1089,7 +1089,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => e as String).toList();
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// Set status check contexts
@@ -1114,7 +1114,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => e as String).toList();
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Remove status check contexts
@@ -1139,7 +1139,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => e as String).toList();
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get access restrictions
@@ -1166,7 +1166,7 @@ return execute(
   onSuccess: (response) {
     return BranchRestrictionPolicy.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete access restrictions
@@ -1212,7 +1212,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Add app access restrictions
@@ -1239,7 +1239,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Set app access restrictions
@@ -1266,7 +1266,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Remove app access restrictions
@@ -1293,7 +1293,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Get teams with access to the protected branch
@@ -1318,7 +1318,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Add team access restrictions
@@ -1345,7 +1345,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Set team access restrictions
@@ -1372,7 +1372,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Remove team access restrictions
@@ -1399,7 +1399,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Get users with access to the protected branch
@@ -1424,7 +1424,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Add user access restrictions
@@ -1455,7 +1455,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Set user access restrictions
@@ -1486,7 +1486,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Remove user access restrictions
@@ -1517,7 +1517,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Rename a branch
@@ -1548,7 +1548,7 @@ return execute(
   onSuccess: (response) {
     return BranchWithProtection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// List CODEOWNERS errors
@@ -1628,7 +1628,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Collaborator.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Check if a user is a repository collaborator
@@ -1701,7 +1701,7 @@ return execute(
   onSuccess: (response) {
     return RepositoryInvitation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
 /// Remove a repository collaborator
@@ -1742,7 +1742,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
 /// Get repository permissions for a user
@@ -1772,7 +1772,7 @@ return execute(
   onSuccess: (response) {
     return RepositoryCollaboratorPermission.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List commit comments for a repository
@@ -1841,7 +1841,7 @@ return execute(
   onSuccess: (response) {
     return CommitComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update a commit comment
@@ -1872,7 +1872,7 @@ return execute(
   onSuccess: (response) {
     return CommitComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete a commit comment
@@ -1892,7 +1892,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List commits
@@ -1972,7 +1972,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Commit.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ReposListCommitsError.fromResponse(response),
+  onError: ReposListCommitsError.fromResponse,
 );
  } 
 /// List branches for HEAD commit
@@ -1997,7 +1997,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => BranchShort.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GitCreateRefError.fromResponse(response),
+  onError: GitCreateRefError.fromResponse,
 );
  } 
 /// List commit comments
@@ -2070,7 +2070,7 @@ return execute(
   onSuccess: (response) {
     return CommitComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
 /// List pull requests associated with a commit
@@ -2106,7 +2106,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => PullRequestSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsCancelWorkflowRunError.fromResponse(response),
+  onError: ActionsCancelWorkflowRunError.fromResponse,
 );
  } 
 /// Get a commit
@@ -2178,7 +2178,7 @@ return execute(
   onSuccess: (response) {
     return Commit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposGetCommitError.fromResponse(response),
+  onError: ReposGetCommitError.fromResponse,
 );
  } 
 /// Get the combined status for a specific reference
@@ -2218,7 +2218,7 @@ return execute(
   onSuccess: (response) {
     return CombinedCommitStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List commit statuses for a reference
@@ -2367,7 +2367,7 @@ return execute(
   onSuccess: (response) {
     return CommitComparison.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposCompareCommitsError.fromResponse(response),
+  onError: ReposCompareCommitsError.fromResponse,
 );
  } 
 /// Get repository content
@@ -2421,7 +2421,7 @@ return execute(
   onSuccess: (response) {
     return ReposGetContentResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Create or update file contents
@@ -2450,7 +2450,7 @@ return execute(
   onSuccess: (response) {
     return FileCommit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposCreateOrUpdateFileContentsError.fromResponse(response),
+  onError: ReposCreateOrUpdateFileContentsError.fromResponse,
 );
  } 
 /// Delete a file
@@ -2483,7 +2483,7 @@ return execute(
   onSuccess: (response) {
     return FileCommit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposDeleteFileError.fromResponse(response),
+  onError: ReposDeleteFileError.fromResponse,
 );
  } 
 /// List repository contributors
@@ -2522,7 +2522,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Contributor.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// List deployments
@@ -2638,7 +2638,7 @@ return execute(
   onSuccess: (response) {
     return Deployment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Get a deployment
@@ -2660,7 +2660,7 @@ return execute(
   onSuccess: (response) {
     return Deployment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete a deployment
@@ -2689,7 +2689,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// List deployment statuses
@@ -2723,7 +2723,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => DeploymentStatus.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create a deployment status
@@ -2749,7 +2749,7 @@ return execute(
   onSuccess: (response) {
     return DeploymentStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Get a deployment status
@@ -2771,7 +2771,7 @@ return execute(
   onSuccess: (response) {
     return DeploymentStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create a repository dispatch event
@@ -2799,7 +2799,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List environments
@@ -2893,7 +2893,7 @@ return execute(
   onSuccess: (response) {
     return Environment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposCheckPrivateVulnerabilityReportingError.fromResponse(response),
+  onError: ReposCheckPrivateVulnerabilityReportingError.fromResponse,
 );
  } 
 /// Delete an environment
@@ -3223,7 +3223,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ReposListForksError.fromResponse(response),
+  onError: ReposListForksError.fromResponse,
 );
  } 
 /// Create a fork
@@ -3253,7 +3253,7 @@ return execute(
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposCreateForkError.fromResponse(response),
+  onError: ReposCreateForkError.fromResponse,
 );
  } 
 /// List repository webhooks
@@ -3287,7 +3287,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Hook.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create a repository webhook
@@ -3312,7 +3312,7 @@ return execute(
   onSuccess: (response) {
     return Hook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// Get a repository webhook
@@ -3334,7 +3334,7 @@ return execute(
   onSuccess: (response) {
     return Hook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update a repository webhook
@@ -3358,7 +3358,7 @@ return execute(
   onSuccess: (response) {
     return Hook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete a repository webhook
@@ -3380,7 +3380,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get a webhook configuration for a repository
@@ -3462,7 +3462,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
+  onError: AppsGetWebhookDeliveryError.fromResponse,
 );
  } 
 /// Get a delivery for a repository webhook
@@ -3484,7 +3484,7 @@ return execute(
   onSuccess: (response) {
     return HookDelivery.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
+  onError: AppsGetWebhookDeliveryError.fromResponse,
 );
  } 
 /// Redeliver a delivery for a repository webhook
@@ -3506,7 +3506,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
+  onError: AppsGetWebhookDeliveryError.fromResponse,
 );
  } 
 /// Ping a repository webhook
@@ -3526,7 +3526,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Test the push repository webhook
@@ -3549,7 +3549,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Check if immutable releases are enabled for a repository
@@ -3591,7 +3591,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsCancelWorkflowRunError.fromResponse(response),
+  onError: ActionsCancelWorkflowRunError.fromResponse,
 );
  } 
 /// Disable immutable releases
@@ -3611,7 +3611,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsCancelWorkflowRunError.fromResponse(response),
+  onError: ActionsCancelWorkflowRunError.fromResponse,
 );
  } 
 /// List repository invitations
@@ -3743,7 +3743,7 @@ return execute(
   onSuccess: (response) {
     return DeployKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Get a deploy key
@@ -3765,7 +3765,7 @@ return execute(
   onSuccess: (response) {
     return DeployKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete a deploy key
@@ -3852,7 +3852,7 @@ return execute(
   onSuccess: (response) {
     return Commit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GistsListPublicError.fromResponse(response),
+  onError: GistsListPublicError.fromResponse,
 );
  } 
 /// Get a GitHub Pages site
@@ -3876,7 +3876,7 @@ return execute(
   onSuccess: (response) {
     return Page.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create a GitHub Pages site
@@ -3904,7 +3904,7 @@ return execute(
   onSuccess: (response) {
     return Page.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GitCreateRefError.fromResponse(response),
+  onError: GitCreateRefError.fromResponse,
 );
  } 
 /// Update information about a GitHub Pages site
@@ -3930,7 +3930,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ReposUpdateInformationAboutPagesSiteError.fromResponse(response),
+  onError: ReposUpdateInformationAboutPagesSiteError.fromResponse,
 );
  } 
 /// Delete a GitHub Pages site
@@ -3954,7 +3954,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => GitCreateCommitError.fromResponse(response),
+  onError: GitCreateCommitError.fromResponse,
 );
  } 
 /// List GitHub Pages builds
@@ -4084,7 +4084,7 @@ return execute(
   onSuccess: (response) {
     return PageDeployment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposCreatePagesDeploymentError.fromResponse(response),
+  onError: ReposCreatePagesDeploymentError.fromResponse,
 );
  } 
 /// Get the status of a GitHub Pages deployment
@@ -4108,7 +4108,7 @@ return execute(
   onSuccess: (response) {
     return PagesDeploymentStatus.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Cancel a GitHub Pages deployment
@@ -4130,7 +4130,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get a DNS health check for GitHub Pages
@@ -4158,7 +4158,7 @@ return execute(
   onSuccess: (response) {
     return PagesHealthCheck.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Check if private vulnerability reporting is enabled for a repository
@@ -4180,7 +4180,7 @@ return execute(
   onSuccess: (response) {
     return ReposCheckPrivateVulnerabilityReportingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposCheckPrivateVulnerabilityReportingError.fromResponse(response),
+  onError: ReposCheckPrivateVulnerabilityReportingError.fromResponse,
 );
  } 
 /// Enable private vulnerability reporting for a repository
@@ -4200,7 +4200,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ReposCheckPrivateVulnerabilityReportingError.fromResponse(response),
+  onError: ReposCheckPrivateVulnerabilityReportingError.fromResponse,
 );
  } 
 /// Disable private vulnerability reporting for a repository
@@ -4220,7 +4220,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ReposCheckPrivateVulnerabilityReportingError.fromResponse(response),
+  onError: ReposCheckPrivateVulnerabilityReportingError.fromResponse,
 );
  } 
 /// Get all custom property values for a repository
@@ -4244,7 +4244,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Create or update custom property values for a repository
@@ -4269,7 +4269,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// Get a repository README
@@ -4304,7 +4304,7 @@ return execute(
   onSuccess: (response) {
     return ContentFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get a repository README for a directory
@@ -4339,7 +4339,7 @@ return execute(
   onSuccess: (response) {
     return ContentFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List releases
@@ -4375,7 +4375,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Release.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create a release
@@ -4401,7 +4401,7 @@ return execute(
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get a release asset
@@ -4429,7 +4429,7 @@ return execute(
   onSuccess: (response) {
     return ReleaseAsset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Update a release asset
@@ -4495,7 +4495,7 @@ return execute(
   onSuccess: (response) {
     return ReleaseNotesContent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get the latest release
@@ -4540,7 +4540,7 @@ return execute(
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get a release
@@ -4588,7 +4588,7 @@ return execute(
   onSuccess: (response) {
     return Release.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete a release
@@ -4766,7 +4766,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => RepositoryRuleset.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Create a repository ruleset
@@ -4790,7 +4790,7 @@ return execute(
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposCreateOrgRulesetError.fromResponse(response),
+  onError: ReposCreateOrgRulesetError.fromResponse,
 );
  } 
 /// List repository rule suites
@@ -4837,7 +4837,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => RuleSuites2.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Get a repository rule suite
@@ -4860,7 +4860,7 @@ return execute(
   onSuccess: (response) {
     return RuleSuite.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Get a repository ruleset
@@ -4893,7 +4893,7 @@ return execute(
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Update a repository ruleset
@@ -4917,7 +4917,7 @@ return execute(
   onSuccess: (response) {
     return RepositoryRuleset.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposCreateOrgRulesetError.fromResponse(response),
+  onError: ReposCreateOrgRulesetError.fromResponse,
 );
  } 
 /// Delete a repository ruleset
@@ -4937,7 +4937,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Get repository ruleset history
@@ -4971,7 +4971,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => RulesetVersion.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Get repository ruleset version
@@ -4993,7 +4993,7 @@ return execute(
   onSuccess: (response) {
     return RulesetVersionWithState.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => OrgsGetOrgRulesetHistoryError.fromResponse(response),
+  onError: OrgsGetOrgRulesetHistoryError.fromResponse,
 );
  } 
 /// Get the weekly commit activity
@@ -5097,7 +5097,7 @@ return execute(
   onSuccess: (response) {
     return ParticipationStats.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get the hourly commit count for each day
@@ -5245,7 +5245,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Get all repository topics
@@ -5278,7 +5278,7 @@ return execute(
   onSuccess: (response) {
     return Topic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Replace all repository topics
@@ -5302,7 +5302,7 @@ return execute(
   onSuccess: (response) {
     return Topic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// Get repository clones
@@ -5332,7 +5332,7 @@ return execute(
   onSuccess: (response) {
     return CloneTraffic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Get top referral paths
@@ -5355,7 +5355,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => ContentTraffic.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Get top referral sources
@@ -5378,7 +5378,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => ReferrerTraffic.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Get page views
@@ -5408,7 +5408,7 @@ return execute(
   onSuccess: (response) {
     return ViewTraffic.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsReRunJobForWorkflowRunError.fromResponse(response),
+  onError: ActionsReRunJobForWorkflowRunError.fromResponse,
 );
  } 
 /// Transfer a repository
@@ -5574,7 +5574,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// List repositories for the authenticated user
@@ -5631,7 +5631,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityListNotificationsForAuthenticatedUserError.fromResponse(response),
+  onError: ActivityListNotificationsForAuthenticatedUserError.fromResponse,
 );
  } 
 /// Create a repository for the authenticated user
@@ -5657,7 +5657,7 @@ return execute(
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposCreateForAuthenticatedUserError.fromResponse(response),
+  onError: ReposCreateForAuthenticatedUserError.fromResponse,
 );
  } 
 /// List repository invitations for the authenticated user
@@ -5691,7 +5691,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => RepositoryInvitation.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Accept a repository invitation
@@ -5711,7 +5711,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CodeSecurityAttachEnterpriseConfigurationError.fromResponse(response),
+  onError: CodeSecurityAttachEnterpriseConfigurationError.fromResponse,
 );
  } 
 /// Decline a repository invitation
@@ -5731,7 +5731,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => CodeSecurityAttachEnterpriseConfigurationError.fromResponse(response),
+  onError: CodeSecurityAttachEnterpriseConfigurationError.fromResponse,
 );
  } 
 /// List repositories for a user

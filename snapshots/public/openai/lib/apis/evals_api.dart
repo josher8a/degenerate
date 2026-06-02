@@ -129,7 +129,7 @@ return execute(
   onSuccess: (response) {
     return DeleteEvalResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CancelResponseError.fromResponse(response),
+  onError: CancelResponseError.fromResponse,
 );
  } 
 /// Get a list of runs for an evaluation.
@@ -189,7 +189,7 @@ return execute(
   onSuccess: (response) {
     return EvalRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateEvalRunError.fromResponse(response),
+  onError: CreateEvalRunError.fromResponse,
 );
  } 
 /// Get an evaluation run by ID.
@@ -250,7 +250,7 @@ return execute(
   onSuccess: (response) {
     return DeleteEvalRunResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CancelResponseError.fromResponse(response),
+  onError: CancelResponseError.fromResponse,
 );
  } 
 /// Get a list of output items for an evaluation run.

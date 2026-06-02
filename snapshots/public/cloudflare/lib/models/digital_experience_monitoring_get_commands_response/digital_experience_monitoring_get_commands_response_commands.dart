@@ -70,6 +70,6 @@ DigitalExperienceMonitoringGetCommandsResponseCommands copyWith({DateTime? Funct
 
 @override int get hashCode => Object.hash(completedDate, createdDate, deviceId, filename, id, registrationId, status, type, userEmail);
 
-@override String toString() => 'DigitalExperienceMonitoringGetCommandsResponseCommands(completedDate: $completedDate, createdDate: $createdDate, deviceId: $deviceId, filename: $filename, id: $id, registrationId: $registrationId, status: $status, type: $type, userEmail: $userEmail)';
+@override String toString() => 'DigitalExperienceMonitoringGetCommandsResponseCommands(\n  completedDate: $completedDate,\n  createdDate: $createdDate,\n  deviceId: $deviceId,\n  filename: $filename,\n  id: $id,\n  registrationId: $registrationId,\n  status: $status,\n  type: $type,\n  userEmail: $userEmail,\n)';
 
  }

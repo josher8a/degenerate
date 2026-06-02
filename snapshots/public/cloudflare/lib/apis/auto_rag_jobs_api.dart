@@ -37,7 +37,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AutoragConfigGetJobResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AutoragConfigListJobsError.fromResponse(response),
+  onError: AutoragConfigListJobsError.fromResponse,
 );
  } 
 /// Get a Job Details
@@ -58,7 +58,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AutoragConfigGetJobResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AutoragConfigGetJobError.fromResponse(response),
+  onError: AutoragConfigGetJobError.fromResponse,
 );
  } 
 /// List Job Logs
@@ -90,7 +90,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AiSearchInstanceListJobLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AutoragConfigListJobLogsError.fromResponse(response),
+  onError: AutoragConfigListJobLogsError.fromResponse,
 );
  } 
  }

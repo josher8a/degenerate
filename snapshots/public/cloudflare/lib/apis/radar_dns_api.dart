@@ -122,7 +122,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/dns/summary/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/dns/summary/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -135,7 +135,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAttacksLayer3SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetDnsSummaryError.fromResponse(response),
+  onError: RadarGetDnsSummaryError.fromResponse,
 );
  } 
 /// Get DNS queries time series
@@ -265,7 +265,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetDnsTimeseriesError.fromResponse(response),
+  onError: RadarGetDnsTimeseriesError.fromResponse,
 );
  } 
 /// Get DNS time series grouped by dimension
@@ -388,7 +388,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/radar/dns/timeseries_groups/${Uri.encodeComponent('${dimension.toJson()}')}',
+  path: '/radar/dns/timeseries_groups/${Uri.encodeComponent(dimension.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -401,7 +401,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetDnsTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetDnsTimeseriesGroupError.fromResponse,
 );
  } 
 /// Get top ASes by DNS queries
@@ -531,7 +531,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetDnsTopAsesError.fromResponse(response),
+  onError: RadarGetDnsTopAsesError.fromResponse,
 );
  } 
 /// Get top locations by DNS queries
@@ -666,7 +666,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetDnsTopLocationsError.fromResponse(response),
+  onError: RadarGetDnsTopLocationsError.fromResponse,
 );
  } 
  }

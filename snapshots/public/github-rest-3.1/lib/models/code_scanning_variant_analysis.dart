@@ -191,6 +191,6 @@ CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo,
 
 @override int get hashCode => Object.hash(id, controllerRepo, actor, queryLanguage, queryPackUrl, createdAt, updatedAt, completedAt, status, actionsWorkflowRunId, failureReason, Object.hashAll(scannedRepositories ?? const []), skippedRepositories);
 
-@override String toString() => 'CodeScanningVariantAnalysis(id: $id, controllerRepo: $controllerRepo, actor: $actor, queryLanguage: $queryLanguage, queryPackUrl: $queryPackUrl, createdAt: $createdAt, updatedAt: $updatedAt, completedAt: $completedAt, status: $status, actionsWorkflowRunId: $actionsWorkflowRunId, failureReason: $failureReason, scannedRepositories: $scannedRepositories, skippedRepositories: $skippedRepositories)';
+@override String toString() => 'CodeScanningVariantAnalysis(\n  id: $id,\n  controllerRepo: $controllerRepo,\n  actor: $actor,\n  queryLanguage: $queryLanguage,\n  queryPackUrl: $queryPackUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  completedAt: $completedAt,\n  status: $status,\n  actionsWorkflowRunId: $actionsWorkflowRunId,\n  failureReason: $failureReason,\n  scannedRepositories: $scannedRepositories,\n  skippedRepositories: $skippedRepositories,\n)';
 
  }

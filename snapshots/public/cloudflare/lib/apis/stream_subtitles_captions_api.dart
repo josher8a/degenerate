@@ -17,7 +17,7 @@ Future<ApiResult<List<StreamCaptions>?, Never>> streamSubtitlesCaptionsListCapti
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/captions',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<StreamCaptions?, Never>> streamSubtitlesCaptionsGetCaptionOrSub
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/captions/${Uri.encodeComponent(language.toJson())}',
   headers: headers,
   options: options,
 );
@@ -61,7 +61,7 @@ Future<ApiResult<StreamCaptions?, Never>> streamSubtitlesCaptionsUploadCaptionsO
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/captions/${Uri.encodeComponent(language.toJson())}',
   headers: headers,
   body: [
     ApiMultipartField.text('file', body.file),
@@ -87,7 +87,7 @@ Future<ApiResult<String?, Never>> streamSubtitlesCaptionsDeleteCaptionsOrSubtitl
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/captions/${Uri.encodeComponent(language.toJson())}',
   headers: headers,
   options: options,
 );
@@ -109,7 +109,7 @@ Future<ApiResult<StreamCaptions?, Never>> streamSubtitlesCaptionsGenerateCaption
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}/generate',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/captions/${Uri.encodeComponent(language.toJson())}/generate',
   headers: headers,
   options: options,
 );
@@ -131,7 +131,7 @@ Future<ApiResult<String, Never>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle(
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}/vtt',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/captions/${Uri.encodeComponent(language.toJson())}/vtt',
   headers: headers,
   options: options,
 );

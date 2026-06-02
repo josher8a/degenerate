@@ -84,6 +84,6 @@ ReactionRollup copyWith({Uri? url, int? totalCount, int? plus1, int? minus1, int
 
 @override int get hashCode => Object.hash(url, totalCount, plus1, minus1, laugh, confused, heart, hooray, eyes, rocket);
 
-@override String toString() => 'ReactionRollup(url: $url, totalCount: $totalCount, plus1: $plus1, minus1: $minus1, laugh: $laugh, confused: $confused, heart: $heart, hooray: $hooray, eyes: $eyes, rocket: $rocket)';
+@override String toString() => 'ReactionRollup(\n  url: $url,\n  totalCount: $totalCount,\n  plus1: $plus1,\n  minus1: $minus1,\n  laugh: $laugh,\n  confused: $confused,\n  heart: $heart,\n  hooray: $hooray,\n  eyes: $eyes,\n  rocket: $rocket,\n)';
 
  }

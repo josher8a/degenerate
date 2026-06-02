@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'name': name,
   'runner_group_id': ?runnerGroupId,
-  'image_details': imageDetails != null ? imageDetails?.toJson() : null,
+  'image_details': imageDetails?.toJson(),
   'machine_size_details': machineSizeDetails.toJson(),
   'status': status.toJson(),
   'platform': platform,
@@ -141,6 +141,6 @@ ActionsHostedRunner copyWith({int? id, String? name, int? Function()? runnerGrou
 
 @override int get hashCode => Object.hash(id, name, runnerGroupId, imageDetails, machineSizeDetails, status, platform, maximumRunners, publicIpEnabled, Object.hashAll(publicIps ?? const []), lastActiveOn, imageGen);
 
-@override String toString() => 'ActionsHostedRunner(id: $id, name: $name, runnerGroupId: $runnerGroupId, imageDetails: $imageDetails, machineSizeDetails: $machineSizeDetails, status: $status, platform: $platform, maximumRunners: $maximumRunners, publicIpEnabled: $publicIpEnabled, publicIps: $publicIps, lastActiveOn: $lastActiveOn, imageGen: $imageGen)';
+@override String toString() => 'ActionsHostedRunner(\n  id: $id,\n  name: $name,\n  runnerGroupId: $runnerGroupId,\n  imageDetails: $imageDetails,\n  machineSizeDetails: $machineSizeDetails,\n  status: $status,\n  platform: $platform,\n  maximumRunners: $maximumRunners,\n  publicIpEnabled: $publicIpEnabled,\n  publicIps: $publicIps,\n  lastActiveOn: $lastActiveOn,\n  imageGen: $imageGen,\n)';
 
  }

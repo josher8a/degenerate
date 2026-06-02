@@ -99,6 +99,6 @@ Subkeys copyWith({int? Function()? id, int? Function()? primaryKeyId, String? Fu
 
 @override int get hashCode => Object.hash(id, primaryKeyId, keyId, publicKey, Object.hashAll(emails ?? const []), Object.hashAll(subkeys ?? const []), canSign, canEncryptComms, canEncryptStorage, canCertify, createdAt, expiresAt, rawKey, revoked);
 
-@override String toString() => 'Subkeys(id: $id, primaryKeyId: $primaryKeyId, keyId: $keyId, publicKey: $publicKey, emails: $emails, subkeys: $subkeys, canSign: $canSign, canEncryptComms: $canEncryptComms, canEncryptStorage: $canEncryptStorage, canCertify: $canCertify, createdAt: $createdAt, expiresAt: $expiresAt, rawKey: $rawKey, revoked: $revoked)';
+@override String toString() => 'Subkeys(\n  id: $id,\n  primaryKeyId: $primaryKeyId,\n  keyId: $keyId,\n  publicKey: $publicKey,\n  emails: $emails,\n  subkeys: $subkeys,\n  canSign: $canSign,\n  canEncryptComms: $canEncryptComms,\n  canEncryptStorage: $canEncryptStorage,\n  canCertify: $canCertify,\n  createdAt: $createdAt,\n  expiresAt: $expiresAt,\n  rawKey: $rawKey,\n  revoked: $revoked,\n)';
 
  }

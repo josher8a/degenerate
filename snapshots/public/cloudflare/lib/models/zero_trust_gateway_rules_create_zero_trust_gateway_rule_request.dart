@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
 List<String> validate() { final errors = <String>[];
 final filters$ = filters;
 if (filters$ != null) {
-  if (filters$.length < 1) errors.add('filters: must have >= 1 items');
+  if (filters$.isEmpty) errors.add('filters: must have >= 1 items');
   if (filters$.length > 1) errors.add('filters: must have <= 1 items');
 }
 return errors; } 
@@ -105,6 +105,6 @@ ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest copyWith({ZeroTrustGatewa
 
 @override int get hashCode => Object.hash(action, description, devicePosture, enabled, expiration, Object.hashAll(filters ?? const []), identity, name, precedence, ruleSettings, schedule, traffic);
 
-@override String toString() => 'ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest(action: $action, description: $description, devicePosture: $devicePosture, enabled: $enabled, expiration: $expiration, filters: $filters, identity: $identity, name: $name, precedence: $precedence, ruleSettings: $ruleSettings, schedule: $schedule, traffic: $traffic)';
+@override String toString() => 'ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest(\n  action: $action,\n  description: $description,\n  devicePosture: $devicePosture,\n  enabled: $enabled,\n  expiration: $expiration,\n  filters: $filters,\n  identity: $identity,\n  name: $name,\n  precedence: $precedence,\n  ruleSettings: $ruleSettings,\n  schedule: $schedule,\n  traffic: $traffic,\n)';
 
  }

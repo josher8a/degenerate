@@ -174,6 +174,6 @@ AssistantObject copyWith({String? id, AssistantObjectObject? object, int? create
 
 @override int get hashCode => Object.hash(id, object, createdAt, name, description, model, instructions, Object.hashAll(tools), toolResources, metadata, temperature, topP, responseFormat);
 
-@override String toString() => 'AssistantObject(id: $id, object: $object, createdAt: $createdAt, name: $name, description: $description, model: $model, instructions: $instructions, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)';
+@override String toString() => 'AssistantObject(\n  id: $id,\n  object: $object,\n  createdAt: $createdAt,\n  name: $name,\n  description: $description,\n  model: $model,\n  instructions: $instructions,\n  tools: $tools,\n  toolResources: $toolResources,\n  metadata: $metadata,\n  temperature: $temperature,\n  topP: $topP,\n  responseFormat: $responseFormat,\n)';
 
  }

@@ -69,6 +69,6 @@ ListRecordingAddOnResultResponse copyWith({List<AccountRecordingRecordingAddOnRe
 
 @override int get hashCode => Object.hash(Object.hashAll(addOnResults ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
 
-@override String toString() => 'ListRecordingAddOnResultResponse(addOnResults: $addOnResults, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+@override String toString() => 'ListRecordingAddOnResultResponse(\n  addOnResults: $addOnResults,\n  end: $end,\n  firstPageUri: $firstPageUri,\n  nextPageUri: $nextPageUri,\n  page: $page,\n  pageSize: $pageSize,\n  previousPageUri: $previousPageUri,\n  start: $start,\n  uri: $uri,\n)';
 
  }

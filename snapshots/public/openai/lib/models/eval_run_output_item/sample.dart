@@ -94,6 +94,6 @@ Sample copyWith({List<SampleInput>? input, List<SampleOutput>? output, String? f
 
 @override int get hashCode => Object.hash(Object.hashAll(input), Object.hashAll(output), finishReason, model, usage, error, temperature, maxCompletionTokens, topP, seed);
 
-@override String toString() => 'Sample(input: $input, output: $output, finishReason: $finishReason, model: $model, usage: $usage, error: $error, temperature: $temperature, maxCompletionTokens: $maxCompletionTokens, topP: $topP, seed: $seed)';
+@override String toString() => 'Sample(\n  input: $input,\n  output: $output,\n  finishReason: $finishReason,\n  model: $model,\n  usage: $usage,\n  error: $error,\n  temperature: $temperature,\n  maxCompletionTokens: $maxCompletionTokens,\n  topP: $topP,\n  seed: $seed,\n)';
 
  }

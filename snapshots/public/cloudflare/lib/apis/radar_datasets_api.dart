@@ -48,7 +48,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetReportsDatasetsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetReportsDatasetsError.fromResponse(response),
+  onError: RadarGetReportsDatasetsError.fromResponse,
 );
  } 
 /// Get dataset CSV stream
@@ -70,7 +70,7 @@ return execute(
   onSuccess: (response) {
     return response.body;
   },
-  onError: (response) => RadarGetReportsDatasetDownloadError.fromResponse(response),
+  onError: RadarGetReportsDatasetDownloadError.fromResponse,
 );
  } 
 /// Get dataset download URL
@@ -103,7 +103,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarPostReportsDatasetDownloadUrlResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarPostReportsDatasetDownloadUrlError.fromResponse(response),
+  onError: RadarPostReportsDatasetDownloadUrlError.fromResponse,
 );
  } 
  }

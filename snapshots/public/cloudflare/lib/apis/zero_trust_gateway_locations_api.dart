@@ -17,7 +17,7 @@ Future<ApiResult<List<ZeroTrustGatewayLocations>?, Never>> zeroTrustGatewayLocat
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/locations',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/locations',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/locations',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/locations',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<ZeroTrustGatewayLocations?, Never>> zeroTrustGatewayLocationsZe
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/locations/${Uri.encodeComponent(locationId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/locations/${Uri.encodeComponent(locationId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/locations/${Uri.encodeComponent(locationId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/locations/${Uri.encodeComponent(locationId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> zeroTrustGatewayLocationsDeleteZ
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/gateway/locations/${Uri.encodeComponent(locationId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/gateway/locations/${Uri.encodeComponent(locationId.toJson())}',
   headers: headers,
   options: options,
 );

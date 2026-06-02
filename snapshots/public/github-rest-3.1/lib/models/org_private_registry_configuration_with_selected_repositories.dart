@@ -81,6 +81,6 @@ OrgPrivateRegistryConfigurationWithSelectedRepositories copyWith({String? name, 
 
 @override int get hashCode => Object.hash(name, registryType, url, username, replacesBase, visibility, Object.hashAll(selectedRepositoryIds ?? const []), createdAt, updatedAt);
 
-@override String toString() => 'OrgPrivateRegistryConfigurationWithSelectedRepositories(name: $name, registryType: $registryType, url: $url, username: $username, replacesBase: $replacesBase, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds, createdAt: $createdAt, updatedAt: $updatedAt)';
+@override String toString() => 'OrgPrivateRegistryConfigurationWithSelectedRepositories(\n  name: $name,\n  registryType: $registryType,\n  url: $url,\n  username: $username,\n  replacesBase: $replacesBase,\n  visibility: $visibility,\n  selectedRepositoryIds: $selectedRepositoryIds,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n)';
 
  }

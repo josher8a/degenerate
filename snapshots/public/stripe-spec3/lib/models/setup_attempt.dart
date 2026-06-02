@@ -177,6 +177,6 @@ SetupAttempt copyWith({ApplicationFeeApplication? Function()? application, bool?
 
 @override int get hashCode => Object.hash(application, attachToSelf, created, customer, customerAccount, Object.hashAll(flowDirections ?? const []), id, livemode, object, onBehalfOf, paymentMethod, paymentMethodDetails, setupError, setupIntent, status, usage);
 
-@override String toString() => 'SetupAttempt(application: $application, attachToSelf: $attachToSelf, created: $created, customer: $customer, customerAccount: $customerAccount, flowDirections: $flowDirections, id: $id, livemode: $livemode, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodDetails: $paymentMethodDetails, setupError: $setupError, setupIntent: $setupIntent, status: $status, usage: $usage)';
+@override String toString() => 'SetupAttempt(\n  application: $application,\n  attachToSelf: $attachToSelf,\n  created: $created,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  flowDirections: $flowDirections,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  onBehalfOf: $onBehalfOf,\n  paymentMethod: $paymentMethod,\n  paymentMethodDetails: $paymentMethodDetails,\n  setupError: $setupError,\n  setupIntent: $setupIntent,\n  status: $status,\n  usage: $usage,\n)';
 
  }

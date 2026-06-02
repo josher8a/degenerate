@@ -158,6 +158,6 @@ MconnSnapshotNetdev copyWith({String? Function()? connectorId, String? name, dou
 
 @override int get hashCode => Object.hash(connectorId, name, recvBytes, recvCompressed, recvDrop, recvErrs, recvFifo, recvFrame, recvMulticast, recvPackets, sentBytes, sentCarrier, sentColls, sentCompressed, sentDrop, sentErrs, sentFifo, sentPackets);
 
-@override String toString() => 'MconnSnapshotNetdev(connectorId: $connectorId, name: $name, recvBytes: $recvBytes, recvCompressed: $recvCompressed, recvDrop: $recvDrop, recvErrs: $recvErrs, recvFifo: $recvFifo, recvFrame: $recvFrame, recvMulticast: $recvMulticast, recvPackets: $recvPackets, sentBytes: $sentBytes, sentCarrier: $sentCarrier, sentColls: $sentColls, sentCompressed: $sentCompressed, sentDrop: $sentDrop, sentErrs: $sentErrs, sentFifo: $sentFifo, sentPackets: $sentPackets)';
+@override String toString() => 'MconnSnapshotNetdev(\n  connectorId: $connectorId,\n  name: $name,\n  recvBytes: $recvBytes,\n  recvCompressed: $recvCompressed,\n  recvDrop: $recvDrop,\n  recvErrs: $recvErrs,\n  recvFifo: $recvFifo,\n  recvFrame: $recvFrame,\n  recvMulticast: $recvMulticast,\n  recvPackets: $recvPackets,\n  sentBytes: $sentBytes,\n  sentCarrier: $sentCarrier,\n  sentColls: $sentColls,\n  sentCompressed: $sentCompressed,\n  sentDrop: $sentDrop,\n  sentErrs: $sentErrs,\n  sentFifo: $sentFifo,\n  sentPackets: $sentPackets,\n)';
 
  }

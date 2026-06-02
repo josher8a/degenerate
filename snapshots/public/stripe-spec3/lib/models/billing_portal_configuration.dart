@@ -157,6 +157,6 @@ BillingPortalConfiguration copyWith({bool? active, BillingPortalConfigurationApp
 
 @override int get hashCode => Object.hash(active, application, businessProfile, created, defaultReturnUrl, features, id, isDefault, livemode, loginPage, metadata, name, object, updated);
 
-@override String toString() => 'BillingPortalConfiguration(active: $active, application: $application, businessProfile: $businessProfile, created: $created, defaultReturnUrl: $defaultReturnUrl, features: $features, id: $id, isDefault: $isDefault, livemode: $livemode, loginPage: $loginPage, metadata: $metadata, name: $name, object: $object, updated: $updated)';
+@override String toString() => 'BillingPortalConfiguration(\n  active: $active,\n  application: $application,\n  businessProfile: $businessProfile,\n  created: $created,\n  defaultReturnUrl: $defaultReturnUrl,\n  features: $features,\n  id: $id,\n  isDefault: $isDefault,\n  livemode: $livemode,\n  loginPage: $loginPage,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n  updated: $updated,\n)';
 
  }

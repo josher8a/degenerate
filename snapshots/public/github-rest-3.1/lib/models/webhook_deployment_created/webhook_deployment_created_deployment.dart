@@ -63,7 +63,7 @@ final Uri url;
 
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
-  'creator': creator != null ? creator?.toJson() : null,
+  'creator': creator?.toJson(),
   'description': description,
   'environment': environment,
   'id': id,
@@ -139,6 +139,6 @@ WebhookDeploymentCreatedDeployment copyWith({String? createdAt, WebhooksMileston
 
 @override int get hashCode => Object.hash(createdAt, creator, description, environment, id, nodeId, originalEnvironment, payload, performedViaGithubApp, productionEnvironment, ref, repositoryUrl, sha, statusesUrl, task, transientEnvironment, updatedAt, url);
 
-@override String toString() => 'WebhookDeploymentCreatedDeployment(createdAt: $createdAt, creator: $creator, description: $description, environment: $environment, id: $id, nodeId: $nodeId, originalEnvironment: $originalEnvironment, payload: $payload, performedViaGithubApp: $performedViaGithubApp, productionEnvironment: $productionEnvironment, ref: $ref, repositoryUrl: $repositoryUrl, sha: $sha, statusesUrl: $statusesUrl, task: $task, transientEnvironment: $transientEnvironment, updatedAt: $updatedAt, url: $url)';
+@override String toString() => 'WebhookDeploymentCreatedDeployment(\n  createdAt: $createdAt,\n  creator: $creator,\n  description: $description,\n  environment: $environment,\n  id: $id,\n  nodeId: $nodeId,\n  originalEnvironment: $originalEnvironment,\n  payload: $payload,\n  performedViaGithubApp: $performedViaGithubApp,\n  productionEnvironment: $productionEnvironment,\n  ref: $ref,\n  repositoryUrl: $repositoryUrl,\n  sha: $sha,\n  statusesUrl: $statusesUrl,\n  task: $task,\n  transientEnvironment: $transientEnvironment,\n  updatedAt: $updatedAt,\n  url: $url,\n)';
 
  }

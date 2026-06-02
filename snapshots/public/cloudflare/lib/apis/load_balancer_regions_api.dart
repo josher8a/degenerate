@@ -29,7 +29,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/regions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/regions',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -53,7 +53,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> loadBalancerRegionsGetRegion({re
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/load_balancers/regions/${Uri.encodeComponent('${regionId.toJson()}')}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/load_balancers/regions/${Uri.encodeComponent(regionId.toJson())}',
   headers: headers,
   options: options,
 );

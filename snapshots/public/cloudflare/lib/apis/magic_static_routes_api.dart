@@ -17,7 +17,7 @@ Future<ApiResult<MagicRoutesCollectionResponseResult?, Never>> magicStaticRoutes
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/routes',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/routes',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -64,7 +64,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/routes',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -88,7 +88,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/routes',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -111,7 +111,7 @@ Future<ApiResult<MagicRouteSingleResponseResult?, Never>> magicStaticRoutesRoute
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes/${Uri.encodeComponent(routeId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/routes/${Uri.encodeComponent(routeId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -134,7 +134,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes/${Uri.encodeComponent(routeId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/routes/${Uri.encodeComponent(routeId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -157,7 +157,7 @@ Future<ApiResult<MagicRouteDeletedResponseResult?, Never>> magicStaticRoutesDele
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/routes/${Uri.encodeComponent(routeId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/routes/${Uri.encodeComponent(routeId.toJson())}',
   headers: headers,
   options: options,
 );

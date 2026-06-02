@@ -154,6 +154,6 @@ AlexandriaApplication copyWith({AlexandriaApplicationSource? applicationSource, 
 
 @override int get hashCode => Object.hash(applicationSource, applicationType, applicationTypeDescription, createdAt, Object.hashAll(hostnames), humanId, id, Object.hashAll(ipSubnets), name, Object.hashAll(portProtocols), Object.hashAll(supportDomains), updatedAt, version);
 
-@override String toString() => 'AlexandriaApplication(applicationSource: $applicationSource, applicationType: $applicationType, applicationTypeDescription: $applicationTypeDescription, createdAt: $createdAt, hostnames: $hostnames, humanId: $humanId, id: $id, ipSubnets: $ipSubnets, name: $name, portProtocols: $portProtocols, supportDomains: $supportDomains, updatedAt: $updatedAt, version: $version)';
+@override String toString() => 'AlexandriaApplication(\n  applicationSource: $applicationSource,\n  applicationType: $applicationType,\n  applicationTypeDescription: $applicationTypeDescription,\n  createdAt: $createdAt,\n  hostnames: $hostnames,\n  humanId: $humanId,\n  id: $id,\n  ipSubnets: $ipSubnets,\n  name: $name,\n  portProtocols: $portProtocols,\n  supportDomains: $supportDomains,\n  updatedAt: $updatedAt,\n  version: $version,\n)';
 
  }

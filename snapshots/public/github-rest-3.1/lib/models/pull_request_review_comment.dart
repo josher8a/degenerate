@@ -127,7 +127,7 @@ Map<String, dynamic> toJson() { return {
   'commit_id': commitId,
   'original_commit_id': originalCommitId,
   'in_reply_to_id': ?inReplyToId,
-  'user': user != null ? user?.toJson() : null,
+  'user': user?.toJson(),
   'body': body,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
@@ -227,6 +227,6 @@ PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestRevi
 
 @override int get hashCode => Object.hashAll([url, pullRequestReviewId, id, nodeId, diffHunk, path, position, originalPosition, commitId, originalCommitId, inReplyToId, user, body, createdAt, updatedAt, htmlUrl, pullRequestUrl, authorAssociation, links, startLine, originalStartLine, startSide, line, originalLine, side, subjectType, reactions, bodyHtml, bodyText]);
 
-@override String toString() => 'PullRequestReviewComment(url: $url, pullRequestReviewId: $pullRequestReviewId, id: $id, nodeId: $nodeId, diffHunk: $diffHunk, path: $path, position: $position, originalPosition: $originalPosition, commitId: $commitId, originalCommitId: $originalCommitId, inReplyToId: $inReplyToId, user: $user, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, authorAssociation: $authorAssociation, links: $links, startLine: $startLine, originalStartLine: $originalStartLine, startSide: $startSide, line: $line, originalLine: $originalLine, side: $side, subjectType: $subjectType, reactions: $reactions, bodyHtml: $bodyHtml, bodyText: $bodyText)';
+@override String toString() => 'PullRequestReviewComment(\n  url: $url,\n  pullRequestReviewId: $pullRequestReviewId,\n  id: $id,\n  nodeId: $nodeId,\n  diffHunk: $diffHunk,\n  path: $path,\n  position: $position,\n  originalPosition: $originalPosition,\n  commitId: $commitId,\n  originalCommitId: $originalCommitId,\n  inReplyToId: $inReplyToId,\n  user: $user,\n  body: $body,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  htmlUrl: $htmlUrl,\n  pullRequestUrl: $pullRequestUrl,\n  authorAssociation: $authorAssociation,\n  links: $links,\n  startLine: $startLine,\n  originalStartLine: $originalStartLine,\n  startSide: $startSide,\n  line: $line,\n  originalLine: $originalLine,\n  side: $side,\n  subjectType: $subjectType,\n  reactions: $reactions,\n  bodyHtml: $bodyHtml,\n  bodyText: $bodyText,\n)';
 
  }

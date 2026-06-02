@@ -1008,6 +1008,6 @@ MerchantData copyWith({MerchantDataCategory? Function()? category, String? Funct
 
 @override int get hashCode => Object.hash(category, city, country, name, networkId, postalCode, state, terminalId, url);
 
-@override String toString() => 'MerchantData(category: $category, city: $city, country: $country, name: $name, networkId: $networkId, postalCode: $postalCode, state: $state, terminalId: $terminalId, url: $url)';
+@override String toString() => 'MerchantData(\n  category: $category,\n  city: $city,\n  country: $country,\n  name: $name,\n  networkId: $networkId,\n  postalCode: $postalCode,\n  state: $state,\n  terminalId: $terminalId,\n  url: $url,\n)';
 
  }

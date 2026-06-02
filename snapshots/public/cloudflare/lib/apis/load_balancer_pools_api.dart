@@ -95,7 +95,7 @@ Future<ApiResult<LoadBalancingPool?, Never>> loadBalancerPoolsPoolDetails({requi
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}',
+  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -118,7 +118,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}',
+  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -142,7 +142,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}',
+  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -165,7 +165,7 @@ Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> loadBa
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}',
+  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -187,7 +187,7 @@ Future<ApiResult<LoadBalancingHealthDetailsResult?, Never>> loadBalancerPoolsPoo
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}/health',
+  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}/health',
   headers: headers,
   options: options,
 );
@@ -210,7 +210,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}/preview',
+  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}/preview',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -233,7 +233,7 @@ Future<ApiResult<List<LoadBalancingMonitorGroupReferencesResponseResult>, Never>
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toString())}/references',
+  path: '/user/load_balancers/pools/${Uri.encodeComponent(poolId.toJson())}/references',
   headers: headers,
   options: options,
 );

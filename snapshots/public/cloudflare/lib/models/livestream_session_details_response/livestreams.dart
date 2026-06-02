@@ -84,6 +84,6 @@ Livestreams copyWith({DateTime? Function()? createdAt, bool? Function()? disable
 
 @override int get hashCode => Object.hash(createdAt, disabled, id, ingestServer, meetingId, name, playbackUrl, status, streamKey, updatedAt);
 
-@override String toString() => 'Livestreams(createdAt: $createdAt, disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey, updatedAt: $updatedAt)';
+@override String toString() => 'Livestreams(\n  createdAt: $createdAt,\n  disabled: $disabled,\n  id: $id,\n  ingestServer: $ingestServer,\n  meetingId: $meetingId,\n  name: $name,\n  playbackUrl: $playbackUrl,\n  status: $status,\n  streamKey: $streamKey,\n  updatedAt: $updatedAt,\n)';
 
  }

@@ -68,7 +68,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/logs/scim/updates',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/logs/scim/updates',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

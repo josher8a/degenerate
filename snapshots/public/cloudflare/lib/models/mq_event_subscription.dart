@@ -55,7 +55,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('source'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (events.length < 1) errors.add('events: must have >= 1 items');
+if (events.isEmpty) errors.add('events: must have >= 1 items');
 return errors; } 
 MqEventSubscription copyWith({DateTime? createdAt, MqEventDestination? destination, bool? enabled, List<String>? events, String? id, DateTime? modifiedAt, String? name, MqEventSource? source, }) { return MqEventSubscription(
   createdAt: createdAt ?? this.createdAt,

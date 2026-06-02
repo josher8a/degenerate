@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('skill_id') && json['skill_id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (skillId.length < 1) errors.add('skillId: length must be >= 1');
+if (skillId.isEmpty) errors.add('skillId: length must be >= 1');
 if (skillId.length > 64) errors.add('skillId: length must be <= 64');
 return errors; } 
 SkillReferenceParam copyWith({SkillReferenceParamType? type, String? skillId, String? Function()? version, }) { return SkillReferenceParam(

@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -57,7 +57,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -80,7 +80,7 @@ Future<ApiResult<WorkersKvNamespace?, Never>> workersKvNamespaceGetANamespace({r
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -103,7 +103,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -126,7 +126,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> workersKvNamespaceRemoveANamespa
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -149,7 +149,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}/bulk',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toJson())}/bulk',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -173,7 +173,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}/bulk/delete',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toJson())}/bulk/delete',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -197,7 +197,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}/bulk/get',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toJson())}/bulk/get',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -232,7 +232,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}/keys',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toJson())}/keys',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -256,7 +256,7 @@ Future<ApiResult<WorkersKvAny?, Never>> workersKvNamespaceReadTheMetadataForAKey
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}/metadata/${Uri.encodeComponent(keyName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toJson())}/metadata/${Uri.encodeComponent(keyName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -278,7 +278,7 @@ Future<ApiResult<WorkersKvValue, Never>> workersKvNamespaceReadKeyValuePair({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}/values/${Uri.encodeComponent(keyName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toJson())}/values/${Uri.encodeComponent(keyName.toJson())}',
   headers: headers,
   options: options,
 );
@@ -309,7 +309,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}/values/${Uri.encodeComponent(keyName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toJson())}/values/${Uri.encodeComponent(keyName.toJson())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -339,7 +339,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> workersKvNamespaceDeleteKeyValue
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toString())}/values/${Uri.encodeComponent(keyName.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/storage/kv/namespaces/${Uri.encodeComponent(namespaceId.toJson())}/values/${Uri.encodeComponent(keyName.toJson())}',
   headers: headers,
   options: options,
 );

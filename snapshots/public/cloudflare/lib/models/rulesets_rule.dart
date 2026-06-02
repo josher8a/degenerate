@@ -79,16 +79,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('last_
 List<String> validate() { final errors = <String>[];
 final categories$ = categories;
 if (categories$ != null) {
-  if (categories$.length < 1) errors.add('categories: must have >= 1 items');
+  if (categories$.isEmpty) errors.add('categories: must have >= 1 items');
   if (categories$.toSet().length != categories$.length) errors.add('categories: items must be unique');
 }
 final expression$ = expression;
 if (expression$ != null) {
-  if (expression$.length < 1) errors.add('expression: length must be >= 1');
+  if (expression$.isEmpty) errors.add('expression: length must be >= 1');
 }
 final ref$ = ref;
 if (ref$ != null) {
-  if (ref$.length < 1) errors.add('ref: length must be >= 1');
+  if (ref$.isEmpty) errors.add('ref: length must be >= 1');
 }
 if (!RegExp(r'^[0-9]+$').hasMatch(version)) errors.add(r'version: must match pattern ^[0-9]+$');
 return errors; } 
@@ -125,6 +125,6 @@ RulesetsRule copyWith({RulesetsRuleAction? Function()? action, Map<String, dynam
 
 @override int get hashCode => Object.hash(action, actionParameters, Object.hashAll(categories ?? const []), description, enabled, exposedCredentialCheck, expression, id, lastUpdated, logging, ratelimit, ref, version);
 
-@override String toString() => 'RulesetsRule(action: $action, actionParameters: $actionParameters, categories: $categories, description: $description, enabled: $enabled, exposedCredentialCheck: $exposedCredentialCheck, expression: $expression, id: $id, lastUpdated: $lastUpdated, logging: $logging, ratelimit: $ratelimit, ref: $ref, version: $version)';
+@override String toString() => 'RulesetsRule(\n  action: $action,\n  actionParameters: $actionParameters,\n  categories: $categories,\n  description: $description,\n  enabled: $enabled,\n  exposedCredentialCheck: $exposedCredentialCheck,\n  expression: $expression,\n  id: $id,\n  lastUpdated: $lastUpdated,\n  logging: $logging,\n  ratelimit: $ratelimit,\n  ref: $ref,\n  version: $version,\n)';
 
  }

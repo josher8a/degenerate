@@ -138,6 +138,6 @@ AigConfigListGatewayLogsResponseResult copyWith({bool? cached, double? Function(
 
 @override int get hashCode => Object.hash(cached, cost, createdAt, customCost, duration, id, metadata, model, modelType, path, provider, requestContentType, requestType, responseContentType, statusCode, step, success, tokensIn, tokensOut);
 
-@override String toString() => 'AigConfigListGatewayLogsResponseResult(cached: $cached, cost: $cost, createdAt: $createdAt, customCost: $customCost, duration: $duration, id: $id, metadata: $metadata, model: $model, modelType: $modelType, path: $path, provider: $provider, requestContentType: $requestContentType, requestType: $requestType, responseContentType: $responseContentType, statusCode: $statusCode, step: $step, success: $success, tokensIn: $tokensIn, tokensOut: $tokensOut)';
+@override String toString() => 'AigConfigListGatewayLogsResponseResult(\n  cached: $cached,\n  cost: $cost,\n  createdAt: $createdAt,\n  customCost: $customCost,\n  duration: $duration,\n  id: $id,\n  metadata: $metadata,\n  model: $model,\n  modelType: $modelType,\n  path: $path,\n  provider: $provider,\n  requestContentType: $requestContentType,\n  requestType: $requestType,\n  responseContentType: $responseContentType,\n  statusCode: $statusCode,\n  step: $step,\n  success: $success,\n  tokensIn: $tokensIn,\n  tokensOut: $tokensOut,\n)';
 
  }

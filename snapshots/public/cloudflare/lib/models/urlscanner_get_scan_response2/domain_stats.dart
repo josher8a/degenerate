@@ -77,6 +77,6 @@ DomainStats copyWith({double? count, List<String>? countries, String? domain, do
 
 @override int get hashCode => Object.hash(count, Object.hashAll(countries), domain, encodedSize, index, Object.hashAll(initiators), Object.hashAll(ips), redirects, size);
 
-@override String toString() => 'DomainStats(count: $count, countries: $countries, domain: $domain, encodedSize: $encodedSize, index: $index, initiators: $initiators, ips: $ips, redirects: $redirects, size: $size)';
+@override String toString() => 'DomainStats(\n  count: $count,\n  countries: $countries,\n  domain: $domain,\n  encodedSize: $encodedSize,\n  index: $index,\n  initiators: $initiators,\n  ips: $ips,\n  redirects: $redirects,\n  size: $size,\n)';
 
  }

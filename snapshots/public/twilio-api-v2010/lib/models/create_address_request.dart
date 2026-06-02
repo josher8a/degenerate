@@ -90,6 +90,6 @@ CreateAddressRequest copyWith({String? customerName, String? street, String? cit
 
 @override int get hashCode => Object.hash(customerName, street, city, region, postalCode, isoCountry, friendlyName, emergencyEnabled, autoCorrectAddress, streetSecondary);
 
-@override String toString() => 'CreateAddressRequest(customerName: $customerName, street: $street, city: $city, region: $region, postalCode: $postalCode, isoCountry: $isoCountry, friendlyName: $friendlyName, emergencyEnabled: $emergencyEnabled, autoCorrectAddress: $autoCorrectAddress, streetSecondary: $streetSecondary)';
+@override String toString() => 'CreateAddressRequest(\n  customerName: $customerName,\n  street: $street,\n  city: $city,\n  region: $region,\n  postalCode: $postalCode,\n  isoCountry: $isoCountry,\n  friendlyName: $friendlyName,\n  emergencyEnabled: $emergencyEnabled,\n  autoCorrectAddress: $autoCorrectAddress,\n  streetSecondary: $streetSecondary,\n)';
 
  }

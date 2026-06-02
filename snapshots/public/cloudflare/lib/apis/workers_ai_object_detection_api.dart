@@ -40,7 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfFacebookNonomniDetrResnet50Error.fromResponse(response),
+  onError: WorkersAiPostRunCfFacebookNonomniDetrResnet50Error.fromResponse,
 );
  } 
  }

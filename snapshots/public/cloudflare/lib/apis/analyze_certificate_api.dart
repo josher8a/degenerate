@@ -18,7 +18,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/ssl/analyze',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/ssl/analyze',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

@@ -17,7 +17,7 @@ Future<ApiResult<DnsRecordsDnsResponseAccountUsageResult?, Never>> dnsRecordsFor
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dns_records/usage',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dns_records/usage',
   headers: headers,
   options: options,
 );

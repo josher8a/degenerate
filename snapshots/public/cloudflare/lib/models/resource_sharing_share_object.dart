@@ -140,6 +140,6 @@ ResourceSharingShareObject copyWith({ResourceSharingAccountId? accountId, Resour
 
 @override int get hashCode => Object.hash(accountId, accountName, associatedRecipientCount, associatingRecipientCount, created, disassociatedRecipientCount, disassociatingRecipientCount, id, kind, modified, name, organizationId, Object.hashAll(resources ?? const []), status, targetType);
 
-@override String toString() => 'ResourceSharingShareObject(accountId: $accountId, accountName: $accountName, associatedRecipientCount: $associatedRecipientCount, associatingRecipientCount: $associatingRecipientCount, created: $created, disassociatedRecipientCount: $disassociatedRecipientCount, disassociatingRecipientCount: $disassociatingRecipientCount, id: $id, kind: $kind, modified: $modified, name: $name, organizationId: $organizationId, resources: $resources, status: $status, targetType: $targetType)';
+@override String toString() => 'ResourceSharingShareObject(\n  accountId: $accountId,\n  accountName: $accountName,\n  associatedRecipientCount: $associatedRecipientCount,\n  associatingRecipientCount: $associatingRecipientCount,\n  created: $created,\n  disassociatedRecipientCount: $disassociatedRecipientCount,\n  disassociatingRecipientCount: $disassociatingRecipientCount,\n  id: $id,\n  kind: $kind,\n  modified: $modified,\n  name: $name,\n  organizationId: $organizationId,\n  resources: $resources,\n  status: $status,\n  targetType: $targetType,\n)';
 
  }

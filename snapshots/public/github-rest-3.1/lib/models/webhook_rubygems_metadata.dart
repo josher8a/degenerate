@@ -75,6 +75,6 @@ WebhookRubygemsMetadata copyWith({String? Function()? name, String? Function()? 
 
 @override int get hashCode => Object.hash(name, description, readme, homepage, versionInfo, platform, metadata, repo, Object.hashAll(dependencies ?? const []), commitOid);
 
-@override String toString() => 'WebhookRubygemsMetadata(name: $name, description: $description, readme: $readme, homepage: $homepage, versionInfo: $versionInfo, platform: $platform, metadata: $metadata, repo: $repo, dependencies: $dependencies, commitOid: $commitOid)';
+@override String toString() => 'WebhookRubygemsMetadata(\n  name: $name,\n  description: $description,\n  readme: $readme,\n  homepage: $homepage,\n  versionInfo: $versionInfo,\n  platform: $platform,\n  metadata: $metadata,\n  repo: $repo,\n  dependencies: $dependencies,\n  commitOid: $commitOid,\n)';
 
  }

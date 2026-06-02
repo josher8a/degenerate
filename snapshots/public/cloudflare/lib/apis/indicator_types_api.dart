@@ -35,7 +35,7 @@ return execute(
   onSuccess: (response) {
     return GetIndicatorTypesListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => GetIndicatorTypesListError.fromResponse(response),
+  onError: GetIndicatorTypesListError.fromResponse,
 );
  } 
  }

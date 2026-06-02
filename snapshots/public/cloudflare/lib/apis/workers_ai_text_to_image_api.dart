@@ -40,7 +40,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBlackForestLabsFlux1SchnellError.fromResponse(response),
+  onError: WorkersAiPostRunCfBlackForestLabsFlux1SchnellError.fromResponse,
 );
  } 
 /// Execute @cf/black-forest-labs/flux-2-dev model.
@@ -75,7 +75,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBlackForestLabsFlux2DevError.fromResponse(response),
+  onError: WorkersAiPostRunCfBlackForestLabsFlux2DevError.fromResponse,
 );
  } 
 /// Execute @cf/black-forest-labs/flux-2-klein-4b model.
@@ -110,7 +110,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBlackForestLabsFlux2Klein4bError.fromResponse(response),
+  onError: WorkersAiPostRunCfBlackForestLabsFlux2Klein4bError.fromResponse,
 );
  } 
 /// Execute @cf/black-forest-labs/flux-2-klein-9b model.
@@ -145,7 +145,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBlackForestLabsFlux2Klein9bError.fromResponse(response),
+  onError: WorkersAiPostRunCfBlackForestLabsFlux2Klein9bError.fromResponse,
 );
  } 
 /// Execute @cf/bytedance/stable-diffusion-xl-lightning model.
@@ -180,7 +180,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError.fromResponse(response),
+  onError: WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError.fromResponse,
 );
  } 
 /// Execute @cf/leonardo/lucid-origin model.
@@ -215,7 +215,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfLeonardoLucidOriginError.fromResponse(response),
+  onError: WorkersAiPostRunCfLeonardoLucidOriginError.fromResponse,
 );
  } 
 /// Execute @cf/leonardo/phoenix-1.0 model.
@@ -250,7 +250,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfLeonardoPhoenix10Error.fromResponse(response),
+  onError: WorkersAiPostRunCfLeonardoPhoenix10Error.fromResponse,
 );
  } 
 /// Execute @cf/lykon/dreamshaper-8-lcm model.
@@ -285,7 +285,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfLykonDreamshaper8LcmError.fromResponse(response),
+  onError: WorkersAiPostRunCfLykonDreamshaper8LcmError.fromResponse,
 );
  } 
 /// Execute @cf/runwayml/stable-diffusion-v1-5-img2img model.
@@ -320,7 +320,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => Img2imgError.fromResponse(response),
+  onError: Img2imgError.fromResponse,
 );
  } 
 /// Execute @cf/runwayml/stable-diffusion-v1-5-inpainting model.
@@ -355,7 +355,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => InpaintingError.fromResponse(response),
+  onError: InpaintingError.fromResponse,
 );
  } 
 /// Execute @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
@@ -390,7 +390,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error.fromResponse(response),
+  onError: WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error.fromResponse,
 );
  } 
 /// Open Websocket connection with @cf/sven/test-pipe-http model.
@@ -410,7 +410,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => WorkersAiPostWebsocketRunCfSvenTestPipeHttpError.fromResponse(response),
+  onError: WorkersAiPostWebsocketRunCfSvenTestPipeHttpError.fromResponse,
 );
  } 
  }

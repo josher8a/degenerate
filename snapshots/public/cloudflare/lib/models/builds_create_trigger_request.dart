@@ -97,6 +97,6 @@ BuildsCreateTriggerRequest copyWith({List<String>? branchExcludes, List<String>?
 
 @override int get hashCode => Object.hash(Object.hashAll(branchExcludes), Object.hashAll(branchIncludes), buildCachingEnabled, buildCommand, buildTokenUuid, deployCommand, externalScriptId, Object.hashAll(pathExcludes), Object.hashAll(pathIncludes), repoConnectionUuid, rootDirectory, triggerName);
 
-@override String toString() => 'BuildsCreateTriggerRequest(branchExcludes: $branchExcludes, branchIncludes: $branchIncludes, buildCachingEnabled: $buildCachingEnabled, buildCommand: $buildCommand, buildTokenUuid: $buildTokenUuid, deployCommand: $deployCommand, externalScriptId: $externalScriptId, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, repoConnectionUuid: $repoConnectionUuid, rootDirectory: $rootDirectory, triggerName: $triggerName)';
+@override String toString() => 'BuildsCreateTriggerRequest(\n  branchExcludes: $branchExcludes,\n  branchIncludes: $branchIncludes,\n  buildCachingEnabled: $buildCachingEnabled,\n  buildCommand: $buildCommand,\n  buildTokenUuid: $buildTokenUuid,\n  deployCommand: $deployCommand,\n  externalScriptId: $externalScriptId,\n  pathExcludes: $pathExcludes,\n  pathIncludes: $pathIncludes,\n  repoConnectionUuid: $repoConnectionUuid,\n  rootDirectory: $rootDirectory,\n  triggerName: $triggerName,\n)';
 
  }

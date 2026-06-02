@@ -33,6 +33,11 @@ ImageEditCompletedEventQuality get quality;
 ImageEditCompletedEventBackground get background;
 /// Shared by all variants of this union.
 ImageEditCompletedEventOutputFormat get outputFormat;
+R when<R>({required R Function(ImageEditStreamEventImageEditPartialImage) imageEditPartialImage, required R Function(ImageEditStreamEventImageEditCompleted) imageEditCompleted, required R Function(ImageEditStreamEvent$Unknown) unknown, }) { return switch (this) {
+  final ImageEditStreamEventImageEditPartialImage v => imageEditPartialImage(v),
+  final ImageEditStreamEventImageEditCompleted v => imageEditCompleted(v),
+  final ImageEditStreamEvent$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ImageEditStreamEventImageEditPartialImage extends ImageEditStreamEvent {const ImageEditStreamEventImageEditPartialImage(this.imageEditPartialImageEvent);
 
@@ -114,9 +119,21 @@ ImageEditStreamEventImageEditCompleted copyWith({String? b64Json, int? createdAt
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class ImageEditStreamEvent$Unknown extends ImageEditStreamEvent {const ImageEditStreamEvent$Unknown(this.json);
+@immutable final class ImageEditStreamEvent$Unknown extends ImageEditStreamEvent {ImageEditStreamEvent$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String _b64Json = json['b64_json'] as String;
+
+late final int _createdAt = (json['created_at'] as num).toInt();
+
+late final ImageEditCompletedEventSize _size = ImageEditCompletedEventSize.fromJson(json['size'] as String);
+
+late final ImageEditCompletedEventQuality _quality = ImageEditCompletedEventQuality.fromJson(json['quality'] as String);
+
+late final ImageEditCompletedEventBackground _background = ImageEditCompletedEventBackground.fromJson(json['background'] as String);
+
+late final ImageEditCompletedEventOutputFormat _outputFormat = ImageEditCompletedEventOutputFormat.fromJson(json['output_format'] as String);
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -129,16 +146,16 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ImageEditStreamEvent.unknown($json)';
 
-@override String get b64Json => json['b64_json'] as String;
+@override String get b64Json => _b64Json;
 
-@override int get createdAt => (json['created_at'] as num).toInt();
+@override int get createdAt => _createdAt;
 
-@override ImageEditCompletedEventSize get size => ImageEditCompletedEventSize.fromJson(json['size'] as String);
+@override ImageEditCompletedEventSize get size => _size;
 
-@override ImageEditCompletedEventQuality get quality => ImageEditCompletedEventQuality.fromJson(json['quality'] as String);
+@override ImageEditCompletedEventQuality get quality => _quality;
 
-@override ImageEditCompletedEventBackground get background => ImageEditCompletedEventBackground.fromJson(json['background'] as String);
+@override ImageEditCompletedEventBackground get background => _background;
 
-@override ImageEditCompletedEventOutputFormat get outputFormat => ImageEditCompletedEventOutputFormat.fromJson(json['output_format'] as String);
+@override ImageEditCompletedEventOutputFormat get outputFormat => _outputFormat;
 
  }

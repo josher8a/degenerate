@@ -155,6 +155,6 @@ AccountNotificationInstance copyWith({String? Function()? accountSid, String? Fu
 
 @override int get hashCode => Object.hash(accountSid, apiVersion, callSid, dateCreated, dateUpdated, errorCode, log, messageDate, messageText, moreInfo, requestMethod, requestUrl, requestVariables, responseBody, responseHeaders, sid, uri);
 
-@override String toString() => 'AccountNotificationInstance(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, errorCode: $errorCode, log: $log, messageDate: $messageDate, messageText: $messageText, moreInfo: $moreInfo, requestMethod: $requestMethod, requestUrl: $requestUrl, requestVariables: $requestVariables, responseBody: $responseBody, responseHeaders: $responseHeaders, sid: $sid, uri: $uri)';
+@override String toString() => 'AccountNotificationInstance(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  callSid: $callSid,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  errorCode: $errorCode,\n  log: $log,\n  messageDate: $messageDate,\n  messageText: $messageText,\n  moreInfo: $moreInfo,\n  requestMethod: $requestMethod,\n  requestUrl: $requestUrl,\n  requestVariables: $requestVariables,\n  responseBody: $responseBody,\n  responseHeaders: $responseHeaders,\n  sid: $sid,\n  uri: $uri,\n)';
 
  }

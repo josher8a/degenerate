@@ -105,6 +105,6 @@ ZarazBaseMc copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defau
 
 @override int get hashCode => Object.hash(Object.hashAll(blockingTriggers), defaultFields, defaultPurpose, enabled, name, vendorName, vendorPolicyUrl, actions, component, Object.hashAll(neoEvents ?? const []), Object.hashAll(permissions), settings);
 
-@override String toString() => 'ZarazBaseMc(blockingTriggers: $blockingTriggers, defaultFields: $defaultFields, defaultPurpose: $defaultPurpose, enabled: $enabled, name: $name, vendorName: $vendorName, vendorPolicyUrl: $vendorPolicyUrl, actions: $actions, component: $component, neoEvents: $neoEvents, permissions: $permissions, settings: $settings)';
+@override String toString() => 'ZarazBaseMc(\n  blockingTriggers: $blockingTriggers,\n  defaultFields: $defaultFields,\n  defaultPurpose: $defaultPurpose,\n  enabled: $enabled,\n  name: $name,\n  vendorName: $vendorName,\n  vendorPolicyUrl: $vendorPolicyUrl,\n  actions: $actions,\n  component: $component,\n  neoEvents: $neoEvents,\n  permissions: $permissions,\n  settings: $settings,\n)';
 
  }

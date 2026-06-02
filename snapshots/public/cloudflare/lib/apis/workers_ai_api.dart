@@ -26,7 +26,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();
   },
-  onError: (response) => WorkersAiSearchAuthorError.fromResponse(response),
+  onError: WorkersAiSearchAuthorError.fromResponse,
 );
  } 
 /// Get Model Schema
@@ -55,7 +55,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersAiGetModelSchemaResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => WorkersAiGetModelSchemaError.fromResponse(response),
+  onError: WorkersAiGetModelSchemaError.fromResponse,
 );
  } 
 /// Model Search
@@ -102,7 +102,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();
   },
-  onError: (response) => WorkersAiSearchModelError.fromResponse(response),
+  onError: WorkersAiSearchModelError.fromResponse,
 );
  } 
 /// Execute AI model
@@ -132,7 +132,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? WorkersAiPostRunModelResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
-  onError: (response) => WorkersAiPostRunModelError.fromResponse(response),
+  onError: WorkersAiPostRunModelError.fromResponse,
 );
  } 
 /// Task Search
@@ -153,7 +153,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();
   },
-  onError: (response) => WorkersAiSearchTaskError.fromResponse(response),
+  onError: WorkersAiSearchTaskError.fromResponse,
 );
  } 
 /// Convert Files into Markdown
@@ -180,7 +180,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorkersAiPostToMarkdownResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => WorkersAiPostToMarkdownError.fromResponse(response),
+  onError: WorkersAiPostToMarkdownError.fromResponse,
 );
  } 
 /// Get all converted formats supported
@@ -203,7 +203,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => WorkersAiGetToMarkdownSupportedResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => WorkersAiGetToMarkdownSupportedError.fromResponse(response),
+  onError: WorkersAiGetToMarkdownSupportedError.fromResponse,
 );
  } 
  }

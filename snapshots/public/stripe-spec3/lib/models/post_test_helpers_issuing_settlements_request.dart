@@ -96,6 +96,6 @@ PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDat
 
 @override int get hashCode => Object.hash(bin, clearingDate, currency, Object.hashAll(expand ?? const []), interchangeFeesAmount, netTotalAmount, network, networkSettlementIdentifier, transactionAmount, transactionCount);
 
-@override String toString() => 'PostTestHelpersIssuingSettlementsRequest(bin: $bin, clearingDate: $clearingDate, currency: $currency, expand: $expand, interchangeFeesAmount: $interchangeFeesAmount, netTotalAmount: $netTotalAmount, network: $network, networkSettlementIdentifier: $networkSettlementIdentifier, transactionAmount: $transactionAmount, transactionCount: $transactionCount)';
+@override String toString() => 'PostTestHelpersIssuingSettlementsRequest(\n  bin: $bin,\n  clearingDate: $clearingDate,\n  currency: $currency,\n  expand: $expand,\n  interchangeFeesAmount: $interchangeFeesAmount,\n  netTotalAmount: $netTotalAmount,\n  network: $network,\n  networkSettlementIdentifier: $networkSettlementIdentifier,\n  transactionAmount: $transactionAmount,\n  transactionCount: $transactionCount,\n)';
 
  }

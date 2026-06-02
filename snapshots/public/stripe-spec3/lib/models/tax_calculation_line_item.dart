@@ -143,6 +143,6 @@ TaxCalculationLineItem copyWith({int? amount, int? amountTax, String? id, bool? 
 
 @override int get hashCode => Object.hash(amount, amountTax, id, livemode, metadata, object, product, quantity, reference, taxBehavior, Object.hashAll(taxBreakdown ?? const []), taxCode);
 
-@override String toString() => 'TaxCalculationLineItem(amount: $amount, amountTax: $amountTax, id: $id, livemode: $livemode, metadata: $metadata, object: $object, product: $product, quantity: $quantity, reference: $reference, taxBehavior: $taxBehavior, taxBreakdown: $taxBreakdown, taxCode: $taxCode)';
+@override String toString() => 'TaxCalculationLineItem(\n  amount: $amount,\n  amountTax: $amountTax,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  product: $product,\n  quantity: $quantity,\n  reference: $reference,\n  taxBehavior: $taxBehavior,\n  taxBreakdown: $taxBreakdown,\n  taxCode: $taxCode,\n)';
 
  }

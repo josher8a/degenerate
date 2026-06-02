@@ -31,6 +31,11 @@ bool get isUnknown => this is RealtimeTurnDetection$Unknown;
 bool? get createResponse;
 /// Shared by all variants of this union.
 bool? get interruptResponse;
+R when<R>({required R Function(RealtimeTurnDetectionServerVad) serverVad, required R Function(RealtimeTurnDetectionSemanticVad) semanticVad, required R Function(RealtimeTurnDetection$Unknown) unknown, }) { return switch (this) {
+  final RealtimeTurnDetectionServerVad v => serverVad(v),
+  final RealtimeTurnDetectionSemanticVad v => semanticVad(v),
+  final RealtimeTurnDetection$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class RealtimeTurnDetectionServerVad extends RealtimeTurnDetection {const RealtimeTurnDetectionServerVad(this.serverVad);
 
@@ -91,9 +96,13 @@ RealtimeTurnDetectionSemanticVad copyWith({Eagerness Function()? eagerness, bool
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class RealtimeTurnDetection$Unknown extends RealtimeTurnDetection {const RealtimeTurnDetection$Unknown(this.json);
+@immutable final class RealtimeTurnDetection$Unknown extends RealtimeTurnDetection {RealtimeTurnDetection$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final bool? _createResponse = json['create_response'] as bool?;
+
+late final bool? _interruptResponse = json['interrupt_response'] as bool?;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -106,8 +115,8 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'RealtimeTurnDetection.unknown($json)';
 
-@override bool? get createResponse => json['create_response'] as bool?;
+@override bool? get createResponse => _createResponse;
 
-@override bool? get interruptResponse => json['interrupt_response'] as bool?;
+@override bool? get interruptResponse => _interruptResponse;
 
  }

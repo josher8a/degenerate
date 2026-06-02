@@ -112,6 +112,6 @@ SubscriptionDetails copyWith({SubscriptionDetailsBillingCycleAnchor? Function()?
 
 @override int get hashCode => Object.hash(billingCycleAnchor, billingMode, cancelAt, cancelAtPeriodEnd, cancelNow, defaultTaxRates, Object.hashAll(items ?? const []), prorationBehavior, prorationDate, resumeAt, startDate, trialEnd);
 
-@override String toString() => 'SubscriptionDetails(billingCycleAnchor: $billingCycleAnchor, billingMode: $billingMode, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, cancelNow: $cancelNow, defaultTaxRates: $defaultTaxRates, items: $items, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, resumeAt: $resumeAt, startDate: $startDate, trialEnd: $trialEnd)';
+@override String toString() => 'SubscriptionDetails(\n  billingCycleAnchor: $billingCycleAnchor,\n  billingMode: $billingMode,\n  cancelAt: $cancelAt,\n  cancelAtPeriodEnd: $cancelAtPeriodEnd,\n  cancelNow: $cancelNow,\n  defaultTaxRates: $defaultTaxRates,\n  items: $items,\n  prorationBehavior: $prorationBehavior,\n  prorationDate: $prorationDate,\n  resumeAt: $resumeAt,\n  startDate: $startDate,\n  trialEnd: $trialEnd,\n)';
 
  }

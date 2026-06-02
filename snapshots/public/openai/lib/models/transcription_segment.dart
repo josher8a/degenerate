@@ -94,6 +94,6 @@ TranscriptionSegment copyWith({int? id, int? seek, double? start, double? end, S
 
 @override int get hashCode => Object.hash(id, seek, start, end, text, Object.hashAll(tokens), temperature, avgLogprob, compressionRatio, noSpeechProb);
 
-@override String toString() => 'TranscriptionSegment(id: $id, seek: $seek, start: $start, end: $end, text: $text, tokens: $tokens, temperature: $temperature, avgLogprob: $avgLogprob, compressionRatio: $compressionRatio, noSpeechProb: $noSpeechProb)';
+@override String toString() => 'TranscriptionSegment(\n  id: $id,\n  seek: $seek,\n  start: $start,\n  end: $end,\n  text: $text,\n  tokens: $tokens,\n  temperature: $temperature,\n  avgLogprob: $avgLogprob,\n  compressionRatio: $compressionRatio,\n  noSpeechProb: $noSpeechProb,\n)';
 
  }

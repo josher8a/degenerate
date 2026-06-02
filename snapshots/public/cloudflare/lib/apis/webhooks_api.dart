@@ -17,7 +17,7 @@ Future<ApiResult<RealtimekitWebhooksListSuccessResponse, Never>> getAllWebhooks(
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/webhooks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/webhooks',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/webhooks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/webhooks',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -50,7 +50,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitWebhookSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddWebhookError.fromResponse(response),
+  onError: AddWebhookError.fromResponse,
 );
  } 
 /// Fetch details of a webhook
@@ -62,7 +62,7 @@ Future<ApiResult<RealtimekitWebhookSuccessResponse, AddWebhookError>> getWebhook
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/webhooks/${Uri.encodeComponent(webhookId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/webhooks/${Uri.encodeComponent(webhookId)}',
   headers: headers,
   options: options,
 );
@@ -72,7 +72,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitWebhookSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddWebhookError.fromResponse(response),
+  onError: AddWebhookError.fromResponse,
 );
  } 
 /// Replace a webhook
@@ -85,7 +85,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/webhooks/${Uri.encodeComponent(webhookId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/webhooks/${Uri.encodeComponent(webhookId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -96,7 +96,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitWebhookSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddWebhookError.fromResponse(response),
+  onError: AddWebhookError.fromResponse,
 );
  } 
 /// Edit a webhook
@@ -109,7 +109,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/webhooks/${Uri.encodeComponent(webhookId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/webhooks/${Uri.encodeComponent(webhookId)}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -120,7 +120,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitWebhookSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddWebhookError.fromResponse(response),
+  onError: AddWebhookError.fromResponse,
 );
  } 
 /// Delete a webhook
@@ -132,7 +132,7 @@ Future<ApiResult<RealtimekitWebhookSuccessResponse, AddWebhookError>> deleteWebh
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/realtime/kit/${Uri.encodeComponent(appId.toString())}/webhooks/${Uri.encodeComponent(webhookId)}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/realtime/kit/${Uri.encodeComponent(appId.toJson())}/webhooks/${Uri.encodeComponent(webhookId)}',
   headers: headers,
   options: options,
 );
@@ -142,7 +142,7 @@ return execute(
   onSuccess: (response) {
     return RealtimekitWebhookSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AddWebhookError.fromResponse(response),
+  onError: AddWebhookError.fromResponse,
 );
  } 
  }

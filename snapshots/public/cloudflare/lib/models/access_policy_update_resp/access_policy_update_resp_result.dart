@@ -170,6 +170,6 @@ AccessPolicyUpdateRespResult copyWith({AccessPolicyTestId? Function()? id, Acces
 
 @override int get hashCode => Object.hash(id, percentApproved, percentBlocked, percentErrored, percentUsersProcessed, status, totalUsers, usersApproved, usersBlocked, usersErrored);
 
-@override String toString() => 'AccessPolicyUpdateRespResult(id: $id, percentApproved: $percentApproved, percentBlocked: $percentBlocked, percentErrored: $percentErrored, percentUsersProcessed: $percentUsersProcessed, status: $status, totalUsers: $totalUsers, usersApproved: $usersApproved, usersBlocked: $usersBlocked, usersErrored: $usersErrored)';
+@override String toString() => 'AccessPolicyUpdateRespResult(\n  id: $id,\n  percentApproved: $percentApproved,\n  percentBlocked: $percentBlocked,\n  percentErrored: $percentErrored,\n  percentUsersProcessed: $percentUsersProcessed,\n  status: $status,\n  totalUsers: $totalUsers,\n  usersApproved: $usersApproved,\n  usersBlocked: $usersBlocked,\n  usersErrored: $usersErrored,\n)';
 
  }

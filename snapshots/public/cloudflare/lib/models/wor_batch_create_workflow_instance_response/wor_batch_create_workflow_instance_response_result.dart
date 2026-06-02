@@ -29,7 +29,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('workflow_id') && json['workflow_id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length < 1) errors.add('id: length must be >= 1');
+if (id.isEmpty) errors.add('id: length must be >= 1');
 if (id.length > 100) errors.add('id: length must be <= 100');
 if (!RegExp(r'^[a-zA-Z0-9_][a-zA-Z0-9-_]*$').hasMatch(id)) errors.add(r'id: must match pattern ^[a-zA-Z0-9_][a-zA-Z0-9-_]*$');
 return errors; } 

@@ -51,10 +51,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('allowed_domains'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (allowedDomains.length < 1) errors.add('allowedDomains: must have >= 1 items');
+if (allowedDomains.isEmpty) errors.add('allowedDomains: must have >= 1 items');
 final domainSecrets$ = domainSecrets;
 if (domainSecrets$ != null) {
-  if (domainSecrets$.length < 1) errors.add('domainSecrets: must have >= 1 items');
+  if (domainSecrets$.isEmpty) errors.add('domainSecrets: must have >= 1 items');
 }
 return errors; } 
 ContainerNetworkPolicyAllowlistParam copyWith({ContainerNetworkPolicyAllowlistParamType? type, List<String>? allowedDomains, List<ContainerNetworkPolicyDomainSecretParam>? Function()? domainSecrets, }) { return ContainerNetworkPolicyAllowlistParam(

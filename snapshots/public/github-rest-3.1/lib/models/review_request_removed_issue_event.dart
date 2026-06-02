@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'commit_id': commitId,
   'commit_url': commitUrl,
   'created_at': createdAt,
-  'performed_via_github_app': performedViaGithubApp != null ? performedViaGithubApp?.toJson() : null,
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
   'review_requester': reviewRequester.toJson(),
   if (requestedTeam != null) 'requested_team': requestedTeam?.toJson(),
   if (requestedReviewer != null) 'requested_reviewer': requestedReviewer?.toJson(),
@@ -97,6 +97,6 @@ ReviewRequestRemovedIssueEvent copyWith({int? id, String? nodeId, String? url, S
 
 @override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, reviewRequester, requestedTeam, requestedReviewer);
 
-@override String toString() => 'ReviewRequestRemovedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, reviewRequester: $reviewRequester, requestedTeam: $requestedTeam, requestedReviewer: $requestedReviewer)';
+@override String toString() => 'ReviewRequestRemovedIssueEvent(\n  id: $id,\n  nodeId: $nodeId,\n  url: $url,\n  actor: $actor,\n  event: $event,\n  commitId: $commitId,\n  commitUrl: $commitUrl,\n  createdAt: $createdAt,\n  performedViaGithubApp: $performedViaGithubApp,\n  reviewRequester: $reviewRequester,\n  requestedTeam: $requestedTeam,\n  requestedReviewer: $requestedReviewer,\n)';
 
  }

@@ -27,7 +27,7 @@ final bool? useAccountCustomNsByDefault;
 
 Map<String, dynamic> toJson() { return {
   'abuse_contact_email': abuseContactEmail,
-  'access_approval_expiry': accessApprovalExpiry != null ? accessApprovalExpiry?.toIso8601String() : null,
+  'access_approval_expiry': accessApprovalExpiry?.toIso8601String(),
   'api_access_enabled': apiAccessEnabled,
   'default_nameservers': defaultNameservers,
   'enforce_twofactor': enforceTwofactor,

@@ -81,6 +81,6 @@ Sbom copyWith({String? spdxid, String? spdxVersion, String? Function()? comment,
 
 @override int get hashCode => Object.hash(spdxid, spdxVersion, comment, creationInfo, name, dataLicense, documentNamespace, Object.hashAll(packages), Object.hashAll(relationships ?? const []));
 
-@override String toString() => 'Sbom(spdxid: $spdxid, spdxVersion: $spdxVersion, comment: $comment, creationInfo: $creationInfo, name: $name, dataLicense: $dataLicense, documentNamespace: $documentNamespace, packages: $packages, relationships: $relationships)';
+@override String toString() => 'Sbom(\n  spdxid: $spdxid,\n  spdxVersion: $spdxVersion,\n  comment: $comment,\n  creationInfo: $creationInfo,\n  name: $name,\n  dataLicense: $dataLicense,\n  documentNamespace: $documentNamespace,\n  packages: $packages,\n  relationships: $relationships,\n)';
 
  }

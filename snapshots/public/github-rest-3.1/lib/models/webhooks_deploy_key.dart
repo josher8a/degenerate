@@ -82,6 +82,6 @@ WebhooksDeployKey copyWith({String? Function()? addedBy, String? createdAt, int?
 
 @override int get hashCode => Object.hash(addedBy, createdAt, id, key, lastUsed, readOnly, title, url, verified, enabled);
 
-@override String toString() => 'WebhooksDeployKey(addedBy: $addedBy, createdAt: $createdAt, id: $id, key: $key, lastUsed: $lastUsed, readOnly: $readOnly, title: $title, url: $url, verified: $verified, enabled: $enabled)';
+@override String toString() => 'WebhooksDeployKey(\n  addedBy: $addedBy,\n  createdAt: $createdAt,\n  id: $id,\n  key: $key,\n  lastUsed: $lastUsed,\n  readOnly: $readOnly,\n  title: $title,\n  url: $url,\n  verified: $verified,\n  enabled: $enabled,\n)';
 
  }

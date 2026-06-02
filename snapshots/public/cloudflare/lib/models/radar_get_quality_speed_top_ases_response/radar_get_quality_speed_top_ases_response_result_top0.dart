@@ -94,6 +94,6 @@ RadarGetQualitySpeedTopAsesResponseResultTop0 copyWith({String? bandwidthDownloa
 
 @override int get hashCode => Object.hash(bandwidthDownload, bandwidthUpload, clientAsn, clientAsName, jitterIdle, jitterLoaded, latencyIdle, latencyLoaded, numTests, rankPower);
 
-@override String toString() => 'RadarGetQualitySpeedTopAsesResponseResultTop0(bandwidthDownload: $bandwidthDownload, bandwidthUpload: $bandwidthUpload, clientAsn: $clientAsn, clientAsName: $clientAsName, jitterIdle: $jitterIdle, jitterLoaded: $jitterLoaded, latencyIdle: $latencyIdle, latencyLoaded: $latencyLoaded, numTests: $numTests, rankPower: $rankPower)';
+@override String toString() => 'RadarGetQualitySpeedTopAsesResponseResultTop0(\n  bandwidthDownload: $bandwidthDownload,\n  bandwidthUpload: $bandwidthUpload,\n  clientAsn: $clientAsn,\n  clientAsName: $clientAsName,\n  jitterIdle: $jitterIdle,\n  jitterLoaded: $jitterLoaded,\n  latencyIdle: $latencyIdle,\n  latencyLoaded: $latencyLoaded,\n  numTests: $numTests,\n  rankPower: $rankPower,\n)';
 
  }

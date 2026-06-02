@@ -133,7 +133,7 @@ final String? user;
 
 Map<String, dynamic> toJson() { return {
   'model': model.toJson(),
-  'prompt': prompt != null ? prompt?.toJson() : null,
+  'prompt': prompt?.toJson(),
   'best_of': ?bestOf,
   'echo': ?echo,
   'frequency_penalty': ?frequencyPenalty,
@@ -238,6 +238,6 @@ CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCom
 
 @override int get hashCode => Object.hash(model, prompt, bestOf, echo, frequencyPenalty, logitBias, logprobs, maxTokens, n, presencePenalty, seed, stop, stream, streamOptions, suffix, temperature, topP, user);
 
-@override String toString() => 'CreateCompletionRequest(model: $model, prompt: $prompt, bestOf: $bestOf, echo: $echo, frequencyPenalty: $frequencyPenalty, logitBias: $logitBias, logprobs: $logprobs, maxTokens: $maxTokens, n: $n, presencePenalty: $presencePenalty, seed: $seed, stop: $stop, stream: $stream, streamOptions: $streamOptions, suffix: $suffix, temperature: $temperature, topP: $topP, user: $user)';
+@override String toString() => 'CreateCompletionRequest(\n  model: $model,\n  prompt: $prompt,\n  bestOf: $bestOf,\n  echo: $echo,\n  frequencyPenalty: $frequencyPenalty,\n  logitBias: $logitBias,\n  logprobs: $logprobs,\n  maxTokens: $maxTokens,\n  n: $n,\n  presencePenalty: $presencePenalty,\n  seed: $seed,\n  stop: $stop,\n  stream: $stream,\n  streamOptions: $streamOptions,\n  suffix: $suffix,\n  temperature: $temperature,\n  topP: $topP,\n  user: $user,\n)';
 
  }

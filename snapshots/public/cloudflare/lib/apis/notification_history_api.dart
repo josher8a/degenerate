@@ -32,7 +32,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/alerting/v3/history',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/alerting/v3/history',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

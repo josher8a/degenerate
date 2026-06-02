@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'short_description': shortDescription,
   'content': content,
   'author': author.toJson(),
-  'next_event': nextEvent != null ? nextEvent?.toJson() : null,
+  'next_event': nextEvent?.toJson(),
   'category': category,
   'subscribers': subscribers,
   'recurring': recurring,
@@ -91,6 +91,6 @@ SpaceDetailSchema copyWith({String? slug, String? title, String? Function()? ima
 
 @override int get hashCode => Object.hash(slug, title, imageLink, shortDescription, content, author, nextEvent, category, subscribers, recurring, price);
 
-@override String toString() => 'SpaceDetailSchema(slug: $slug, title: $title, imageLink: $imageLink, shortDescription: $shortDescription, content: $content, author: $author, nextEvent: $nextEvent, category: $category, subscribers: $subscribers, recurring: $recurring, price: $price)';
+@override String toString() => 'SpaceDetailSchema(\n  slug: $slug,\n  title: $title,\n  imageLink: $imageLink,\n  shortDescription: $shortDescription,\n  content: $content,\n  author: $author,\n  nextEvent: $nextEvent,\n  category: $category,\n  subscribers: $subscribers,\n  recurring: $recurring,\n  price: $price,\n)';
 
  }

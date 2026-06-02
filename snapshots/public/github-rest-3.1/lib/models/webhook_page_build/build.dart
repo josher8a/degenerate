@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'duration': duration,
   'error': error.toJson(),
-  'pusher': pusher != null ? pusher?.toJson() : null,
+  'pusher': pusher?.toJson(),
   'status': status,
   'updated_at': updatedAt,
   'url': url.toString(),

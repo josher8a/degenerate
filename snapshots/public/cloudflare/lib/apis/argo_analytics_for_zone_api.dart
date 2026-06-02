@@ -21,7 +21,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/analytics/latency',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/analytics/latency',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

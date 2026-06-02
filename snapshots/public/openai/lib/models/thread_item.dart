@@ -14,22 +14,22 @@ factory ThreadItem.fromJson(Map<String, dynamic> json) { return switch (json['ty
 }; }
 
 /// Build the `chatkit.user_message` variant.
-factory ThreadItem.chatkitUserMessage({required String id, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, required int createdAt, required String threadId, required List<UserMessageItemContent> content, required List<Attachment> attachments, required InferenceOptions? inferenceOptions, }) { return ThreadItemChatkitUserMessage(UserMessageItem(type: 'chatkit.user_message', id: id, object: object, createdAt: createdAt, threadId: threadId, content: content, attachments: attachments, inferenceOptions: inferenceOptions)); }
+factory ThreadItem.chatkitUserMessage({required String id, required int createdAt, required String threadId, required List<UserMessageItemContent> content, required List<Attachment> attachments, required InferenceOptions? inferenceOptions, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, }) { return ThreadItemChatkitUserMessage(UserMessageItem(type: 'chatkit.user_message', id: id, object: object, createdAt: createdAt, threadId: threadId, content: content, attachments: attachments, inferenceOptions: inferenceOptions)); }
 
 /// Build the `chatkit.assistant_message` variant.
-factory ThreadItem.chatkitAssistantMessage({required String id, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, required int createdAt, required String threadId, required List<ResponseOutputText> content, }) { return ThreadItemChatkitAssistantMessage(AssistantMessageItem(type: 'chatkit.assistant_message', id: id, object: object, createdAt: createdAt, threadId: threadId, content: content)); }
+factory ThreadItem.chatkitAssistantMessage({required String id, required int createdAt, required String threadId, required List<ResponseOutputText> content, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, }) { return ThreadItemChatkitAssistantMessage(AssistantMessageItem(type: 'chatkit.assistant_message', id: id, object: object, createdAt: createdAt, threadId: threadId, content: content)); }
 
 /// Build the `chatkit.widget` variant.
-factory ThreadItem.chatkitWidget({required String id, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, required int createdAt, required String threadId, required String widget, }) { return ThreadItemChatkitWidget(WidgetMessageItem(type: 'chatkit.widget', id: id, object: object, createdAt: createdAt, threadId: threadId, widget: widget)); }
+factory ThreadItem.chatkitWidget({required String id, required int createdAt, required String threadId, required String widget, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, }) { return ThreadItemChatkitWidget(WidgetMessageItem(type: 'chatkit.widget', id: id, object: object, createdAt: createdAt, threadId: threadId, widget: widget)); }
 
 /// Build the `chatkit.client_tool_call` variant.
-factory ThreadItem.chatkitClientToolCall({required String id, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, required int createdAt, required String threadId, required ClientToolCallStatus status, required String callId, required String name, required String arguments, required String? output, }) { return ThreadItemChatkitClientToolCall(ClientToolCallItem(type: 'chatkit.client_tool_call', id: id, object: object, createdAt: createdAt, threadId: threadId, status: status, callId: callId, name: name, arguments: arguments, output: output)); }
+factory ThreadItem.chatkitClientToolCall({required String id, required int createdAt, required String threadId, required ClientToolCallStatus status, required String callId, required String name, required String arguments, required String? output, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, }) { return ThreadItemChatkitClientToolCall(ClientToolCallItem(type: 'chatkit.client_tool_call', id: id, object: object, createdAt: createdAt, threadId: threadId, status: status, callId: callId, name: name, arguments: arguments, output: output)); }
 
 /// Build the `chatkit.task` variant.
-factory ThreadItem.chatkitTask({required String id, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, required int createdAt, required String threadId, required TaskType taskType, required String? heading, required String? summary, }) { return ThreadItemChatkitTask(TaskItem(type: 'chatkit.task', id: id, object: object, createdAt: createdAt, threadId: threadId, taskType: taskType, heading: heading, summary: summary)); }
+factory ThreadItem.chatkitTask({required String id, required int createdAt, required String threadId, required TaskType taskType, required String? heading, required String? summary, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, }) { return ThreadItemChatkitTask(TaskItem(type: 'chatkit.task', id: id, object: object, createdAt: createdAt, threadId: threadId, taskType: taskType, heading: heading, summary: summary)); }
 
 /// Build the `chatkit.task_group` variant.
-factory ThreadItem.chatkitTaskGroup({required String id, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, required int createdAt, required String threadId, required List<TaskGroupTask> tasks, }) { return ThreadItemChatkitTaskGroup(TaskGroupItem(type: 'chatkit.task_group', id: id, object: object, createdAt: createdAt, threadId: threadId, tasks: tasks)); }
+factory ThreadItem.chatkitTaskGroup({required String id, required int createdAt, required String threadId, required List<TaskGroupTask> tasks, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, }) { return ThreadItemChatkitTaskGroup(TaskGroupItem(type: 'chatkit.task_group', id: id, object: object, createdAt: createdAt, threadId: threadId, tasks: tasks)); }
 
 /// The discriminator value identifying this variant.
 String get type;
@@ -45,6 +45,15 @@ AssistantMessageItemObject get object;
 int get createdAt;
 /// Shared by all variants of this union.
 String get threadId;
+R when<R>({required R Function(ThreadItemChatkitUserMessage) chatkitUserMessage, required R Function(ThreadItemChatkitAssistantMessage) chatkitAssistantMessage, required R Function(ThreadItemChatkitWidget) chatkitWidget, required R Function(ThreadItemChatkitClientToolCall) chatkitClientToolCall, required R Function(ThreadItemChatkitTask) chatkitTask, required R Function(ThreadItemChatkitTaskGroup) chatkitTaskGroup, required R Function(ThreadItem$Unknown) unknown, }) { return switch (this) {
+  final ThreadItemChatkitUserMessage v => chatkitUserMessage(v),
+  final ThreadItemChatkitAssistantMessage v => chatkitAssistantMessage(v),
+  final ThreadItemChatkitWidget v => chatkitWidget(v),
+  final ThreadItemChatkitClientToolCall v => chatkitClientToolCall(v),
+  final ThreadItemChatkitTask v => chatkitTask(v),
+  final ThreadItemChatkitTaskGroup v => chatkitTaskGroup(v),
+  final ThreadItem$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class ThreadItemChatkitUserMessage extends ThreadItem {const ThreadItemChatkitUserMessage(this.userMessageItem);
 
@@ -254,9 +263,17 @@ ThreadItemChatkitTaskGroup copyWith({String? id, AssistantMessageItemObject? obj
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class ThreadItem$Unknown extends ThreadItem {const ThreadItem$Unknown(this.json);
+@immutable final class ThreadItem$Unknown extends ThreadItem {ThreadItem$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String _id = json['id'] as String;
+
+late final AssistantMessageItemObject _object = AssistantMessageItemObject.fromJson(json['object'] as String);
+
+late final int _createdAt = (json['created_at'] as num).toInt();
+
+late final String _threadId = json['thread_id'] as String;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -269,12 +286,12 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'ThreadItem.unknown($json)';
 
-@override String get id => json['id'] as String;
+@override String get id => _id;
 
-@override AssistantMessageItemObject get object => AssistantMessageItemObject.fromJson(json['object'] as String);
+@override AssistantMessageItemObject get object => _object;
 
-@override int get createdAt => (json['created_at'] as num).toInt();
+@override int get createdAt => _createdAt;
 
-@override String get threadId => json['thread_id'] as String;
+@override String get threadId => _threadId;
 
  }

@@ -197,6 +197,6 @@ Invoiceitem copyWith({int? amount, String? currency, BankAccountCustomer? custom
 
 @override int get hashCode => Object.hashAll([amount, currency, customer, customerAccount, date, description, discountable, Object.hashAll(discounts ?? const []), id, invoice, livemode, metadata, netAmount, object, parent, period, pricing, proration, prorationDetails, quantity, Object.hashAll(taxRates ?? const []), testClock]);
 
-@override String toString() => 'Invoiceitem(amount: $amount, currency: $currency, customer: $customer, customerAccount: $customerAccount, date: $date, description: $description, discountable: $discountable, discounts: $discounts, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, netAmount: $netAmount, object: $object, parent: $parent, period: $period, pricing: $pricing, proration: $proration, prorationDetails: $prorationDetails, quantity: $quantity, taxRates: $taxRates, testClock: $testClock)';
+@override String toString() => 'Invoiceitem(\n  amount: $amount,\n  currency: $currency,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  date: $date,\n  description: $description,\n  discountable: $discountable,\n  discounts: $discounts,\n  id: $id,\n  invoice: $invoice,\n  livemode: $livemode,\n  metadata: $metadata,\n  netAmount: $netAmount,\n  object: $object,\n  parent: $parent,\n  period: $period,\n  pricing: $pricing,\n  proration: $proration,\n  prorationDetails: $prorationDetails,\n  quantity: $quantity,\n  taxRates: $taxRates,\n  testClock: $testClock,\n)';
 
  }

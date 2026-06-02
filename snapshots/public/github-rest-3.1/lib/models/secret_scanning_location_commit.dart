@@ -87,6 +87,6 @@ SecretScanningLocationCommit copyWith({String? path, double? startLine, double? 
 
 @override int get hashCode => Object.hash(path, startLine, endLine, startColumn, endColumn, blobSha, blobUrl, commitSha, commitUrl);
 
-@override String toString() => 'SecretScanningLocationCommit(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn, blobSha: $blobSha, blobUrl: $blobUrl, commitSha: $commitSha, commitUrl: $commitUrl)';
+@override String toString() => 'SecretScanningLocationCommit(\n  path: $path,\n  startLine: $startLine,\n  endLine: $endLine,\n  startColumn: $startColumn,\n  endColumn: $endColumn,\n  blobSha: $blobSha,\n  blobUrl: $blobUrl,\n  commitSha: $commitSha,\n  commitUrl: $commitUrl,\n)';
 
  }

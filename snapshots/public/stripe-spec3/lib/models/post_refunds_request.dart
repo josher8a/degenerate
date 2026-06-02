@@ -113,6 +113,6 @@ PostRefundsRequest copyWith({int? Function()? amount, String? Function()? charge
 
 @override int get hashCode => Object.hash(amount, charge, currency, customer, Object.hashAll(expand ?? const []), instructionsEmail, metadata, origin, paymentIntent, reason, refundApplicationFee, reverseTransfer);
 
-@override String toString() => 'PostRefundsRequest(amount: $amount, charge: $charge, currency: $currency, customer: $customer, expand: $expand, instructionsEmail: $instructionsEmail, metadata: $metadata, origin: $origin, paymentIntent: $paymentIntent, reason: $reason, refundApplicationFee: $refundApplicationFee, reverseTransfer: $reverseTransfer)';
+@override String toString() => 'PostRefundsRequest(\n  amount: $amount,\n  charge: $charge,\n  currency: $currency,\n  customer: $customer,\n  expand: $expand,\n  instructionsEmail: $instructionsEmail,\n  metadata: $metadata,\n  origin: $origin,\n  paymentIntent: $paymentIntent,\n  reason: $reason,\n  refundApplicationFee: $refundApplicationFee,\n  reverseTransfer: $reverseTransfer,\n)';
 
  }

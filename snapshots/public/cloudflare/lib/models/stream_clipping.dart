@@ -114,6 +114,6 @@ StreamClipping copyWith({List<String>? Function()? allowedOrigins, StreamClipped
 
 @override int get hashCode => Object.hash(Object.hashAll(allowedOrigins ?? const []), clippedFromVideoUid, created, creator, endTimeSeconds, maxDurationSeconds, meta, modified, playback, preview, requireSignedUrLs, startTimeSeconds, status, thumbnailTimestampPct, watermark);
 
-@override String toString() => 'StreamClipping(allowedOrigins: $allowedOrigins, clippedFromVideoUid: $clippedFromVideoUid, created: $created, creator: $creator, endTimeSeconds: $endTimeSeconds, maxDurationSeconds: $maxDurationSeconds, meta: $meta, modified: $modified, playback: $playback, preview: $preview, requireSignedUrLs: $requireSignedUrLs, startTimeSeconds: $startTimeSeconds, status: $status, thumbnailTimestampPct: $thumbnailTimestampPct, watermark: $watermark)';
+@override String toString() => 'StreamClipping(\n  allowedOrigins: $allowedOrigins,\n  clippedFromVideoUid: $clippedFromVideoUid,\n  created: $created,\n  creator: $creator,\n  endTimeSeconds: $endTimeSeconds,\n  maxDurationSeconds: $maxDurationSeconds,\n  meta: $meta,\n  modified: $modified,\n  playback: $playback,\n  preview: $preview,\n  requireSignedUrLs: $requireSignedUrLs,\n  startTimeSeconds: $startTimeSeconds,\n  status: $status,\n  thumbnailTimestampPct: $thumbnailTimestampPct,\n  watermark: $watermark,\n)';
 
  }

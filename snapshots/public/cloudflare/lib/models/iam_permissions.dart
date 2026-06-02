@@ -100,6 +100,6 @@ IamPermissions copyWith({IamGrants? Function()? analytics, IamGrants? Function()
 
 @override int get hashCode => Object.hash(analytics, billing, cachePurge, dns, dnsRecords, lb, logs, organization, ssl, waf, zoneSettings, zones);
 
-@override String toString() => 'IamPermissions(analytics: $analytics, billing: $billing, cachePurge: $cachePurge, dns: $dns, dnsRecords: $dnsRecords, lb: $lb, logs: $logs, organization: $organization, ssl: $ssl, waf: $waf, zoneSettings: $zoneSettings, zones: $zones)';
+@override String toString() => 'IamPermissions(\n  analytics: $analytics,\n  billing: $billing,\n  cachePurge: $cachePurge,\n  dns: $dns,\n  dnsRecords: $dnsRecords,\n  lb: $lb,\n  logs: $logs,\n  organization: $organization,\n  ssl: $ssl,\n  waf: $waf,\n  zoneSettings: $zoneSettings,\n  zones: $zones,\n)';
 
  }

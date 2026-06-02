@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   'is_spoof': ?isSpoof,
   'is_trusted_sender': isTrustedSender,
   'pattern': pattern,
-  'pattern_type': patternType != null ? patternType?.toJson() : null,
+  'pattern_type': patternType?.toJson(),
   'verify_sender': verifySender,
   'created_at': createdAt.toIso8601String(),
   'id': id.toJson(),
@@ -105,7 +105,7 @@ final comments$ = comments;
 if (comments$ != null) {
   if (comments$.length > 1024) errors.add('comments: length must be <= 1024');
 }
-if (pattern.length < 1) errors.add('pattern: length must be >= 1');
+if (pattern.isEmpty) errors.add('pattern: length must be >= 1');
 if (pattern.length > 1024) errors.add('pattern: length must be <= 1024');
 return errors; } 
 EmailSecurityCreateAllowPolicyResponseResult copyWith({String? Function()? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, DateTime? createdAt, EmailSecurityAllowPolicyId? id, DateTime? lastModified, }) { return EmailSecurityCreateAllowPolicyResponseResult(
@@ -143,6 +143,6 @@ EmailSecurityCreateAllowPolicyResponseResult copyWith({String? Function()? comme
 
 @override int get hashCode => Object.hash(comments, isAcceptableSender, isExemptRecipient, isRecipient, isRegex, isSender, isSpoof, isTrustedSender, pattern, patternType, verifySender, createdAt, id, lastModified);
 
-@override String toString() => 'EmailSecurityCreateAllowPolicyResponseResult(comments: $comments, isAcceptableSender: $isAcceptableSender, isExemptRecipient: $isExemptRecipient, isRecipient: $isRecipient, isRegex: $isRegex, isSender: $isSender, isSpoof: $isSpoof, isTrustedSender: $isTrustedSender, pattern: $pattern, patternType: $patternType, verifySender: $verifySender, createdAt: $createdAt, id: $id, lastModified: $lastModified)';
+@override String toString() => 'EmailSecurityCreateAllowPolicyResponseResult(\n  comments: $comments,\n  isAcceptableSender: $isAcceptableSender,\n  isExemptRecipient: $isExemptRecipient,\n  isRecipient: $isRecipient,\n  isRegex: $isRegex,\n  isSender: $isSender,\n  isSpoof: $isSpoof,\n  isTrustedSender: $isTrustedSender,\n  pattern: $pattern,\n  patternType: $patternType,\n  verifySender: $verifySender,\n  createdAt: $createdAt,\n  id: $id,\n  lastModified: $lastModified,\n)';
 
  }

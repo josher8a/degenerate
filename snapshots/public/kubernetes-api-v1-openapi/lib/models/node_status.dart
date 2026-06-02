@@ -114,6 +114,6 @@ NodeStatus copyWith({List<NodeAddress>? Function()? addresses, Map<String, Resou
 
 @override int get hashCode => Object.hash(Object.hashAll(addresses ?? const []), allocatable, capacity, Object.hashAll(conditions ?? const []), config, daemonEndpoints, Object.hashAll(declaredFeatures ?? const []), features, Object.hashAll(images ?? const []), nodeInfo, phase, Object.hashAll(runtimeHandlers ?? const []), Object.hashAll(volumesAttached ?? const []), Object.hashAll(volumesInUse ?? const []));
 
-@override String toString() => 'NodeStatus(addresses: $addresses, allocatable: $allocatable, capacity: $capacity, conditions: $conditions, config: $config, daemonEndpoints: $daemonEndpoints, declaredFeatures: $declaredFeatures, features: $features, images: $images, nodeInfo: $nodeInfo, phase: $phase, runtimeHandlers: $runtimeHandlers, volumesAttached: $volumesAttached, volumesInUse: $volumesInUse)';
+@override String toString() => 'NodeStatus(\n  addresses: $addresses,\n  allocatable: $allocatable,\n  capacity: $capacity,\n  conditions: $conditions,\n  config: $config,\n  daemonEndpoints: $daemonEndpoints,\n  declaredFeatures: $declaredFeatures,\n  features: $features,\n  images: $images,\n  nodeInfo: $nodeInfo,\n  phase: $phase,\n  runtimeHandlers: $runtimeHandlers,\n  volumesAttached: $volumesAttached,\n  volumesInUse: $volumesInUse,\n)';
 
  }

@@ -17,7 +17,7 @@ Future<ApiResult<List<AccessSchemasCertificates>?, Never>> accessGatewayCaListSs
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/gateway_ca',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/gateway_ca',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<AccessSchemasCertificates?, Never>> accessGatewayCaAddAnSshCa({
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/gateway_ca',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/gateway_ca',
   headers: headers,
   options: options,
 );
@@ -61,7 +61,7 @@ Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, Never>> ac
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/gateway_ca/${Uri.encodeComponent(certificateId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/gateway_ca/${Uri.encodeComponent(certificateId.toJson())}',
   headers: headers,
   options: options,
 );

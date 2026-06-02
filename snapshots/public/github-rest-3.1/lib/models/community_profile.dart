@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'description': description,
   'documentation': documentation,
   'files': files.toJson(),
-  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
+  'updated_at': updatedAt?.toIso8601String(),
   'content_reports_enabled': ?contentReportsEnabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('health_percentage') && json['health_percentage'] is num &&

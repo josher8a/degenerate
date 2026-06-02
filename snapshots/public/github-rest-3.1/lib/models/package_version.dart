@@ -89,6 +89,6 @@ PackageVersion copyWith({int? id, String? name, String? url, String? packageHtml
 
 @override int get hashCode => Object.hash(id, name, url, packageHtmlUrl, htmlUrl, license, description, createdAt, updatedAt, deletedAt, metadata);
 
-@override String toString() => 'PackageVersion(id: $id, name: $name, url: $url, packageHtmlUrl: $packageHtmlUrl, htmlUrl: $htmlUrl, license: $license, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt, metadata: $metadata)';
+@override String toString() => 'PackageVersion(\n  id: $id,\n  name: $name,\n  url: $url,\n  packageHtmlUrl: $packageHtmlUrl,\n  htmlUrl: $htmlUrl,\n  license: $license,\n  description: $description,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  deletedAt: $deletedAt,\n  metadata: $metadata,\n)';
 
  }

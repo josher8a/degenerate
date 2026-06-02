@@ -156,6 +156,6 @@ PostPlansRequest copyWith({bool? Function()? active, int? Function()? amount, St
 
 @override int get hashCode => Object.hash(active, amount, amountDecimal, billingScheme, currency, Object.hashAll(expand ?? const []), id, interval, intervalCount, metadata, meter, nickname, product, Object.hashAll(tiers ?? const []), tiersMode, transformUsage, trialPeriodDays, usageType);
 
-@override String toString() => 'PostPlansRequest(active: $active, amount: $amount, amountDecimal: $amountDecimal, billingScheme: $billingScheme, currency: $currency, expand: $expand, id: $id, interval: $interval, intervalCount: $intervalCount, metadata: $metadata, meter: $meter, nickname: $nickname, product: $product, tiers: $tiers, tiersMode: $tiersMode, transformUsage: $transformUsage, trialPeriodDays: $trialPeriodDays, usageType: $usageType)';
+@override String toString() => 'PostPlansRequest(\n  active: $active,\n  amount: $amount,\n  amountDecimal: $amountDecimal,\n  billingScheme: $billingScheme,\n  currency: $currency,\n  expand: $expand,\n  id: $id,\n  interval: $interval,\n  intervalCount: $intervalCount,\n  metadata: $metadata,\n  meter: $meter,\n  nickname: $nickname,\n  product: $product,\n  tiers: $tiers,\n  tiersMode: $tiersMode,\n  transformUsage: $transformUsage,\n  trialPeriodDays: $trialPeriodDays,\n  usageType: $usageType,\n)';
 
  }

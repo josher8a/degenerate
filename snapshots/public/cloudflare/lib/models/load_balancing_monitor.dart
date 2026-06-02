@@ -139,6 +139,6 @@ LoadBalancingMonitor copyWith({LoadBalancingAllowInsecure? Function()? allowInse
 
 @override int get hashCode => Object.hash(allowInsecure, consecutiveDown, consecutiveUp, description, expectedBody, expectedCodes, followRedirects, header, interval, method, path, port, probeZone, retries, timeout, type, createdOn, id, modifiedOn);
 
-@override String toString() => 'LoadBalancingMonitor(allowInsecure: $allowInsecure, consecutiveDown: $consecutiveDown, consecutiveUp: $consecutiveUp, description: $description, expectedBody: $expectedBody, expectedCodes: $expectedCodes, followRedirects: $followRedirects, header: $header, interval: $interval, method: $method, path: $path, port: $port, probeZone: $probeZone, retries: $retries, timeout: $timeout, type: $type, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn)';
+@override String toString() => 'LoadBalancingMonitor(\n  allowInsecure: $allowInsecure,\n  consecutiveDown: $consecutiveDown,\n  consecutiveUp: $consecutiveUp,\n  description: $description,\n  expectedBody: $expectedBody,\n  expectedCodes: $expectedCodes,\n  followRedirects: $followRedirects,\n  header: $header,\n  interval: $interval,\n  method: $method,\n  path: $path,\n  port: $port,\n  probeZone: $probeZone,\n  retries: $retries,\n  timeout: $timeout,\n  type: $type,\n  createdOn: $createdOn,\n  id: $id,\n  modifiedOn: $modifiedOn,\n)';
 
  }

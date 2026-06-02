@@ -83,6 +83,6 @@ EntriesResponse copyWith({double? transferSize, double? bodySize, ResponseConten
 
 @override int get hashCode => Object.hash(transferSize, bodySize, content, Object.hashAll(headers), headersSize, httpVersion, redirectUrl, status, statusText);
 
-@override String toString() => 'EntriesResponse(transferSize: $transferSize, bodySize: $bodySize, content: $content, headers: $headers, headersSize: $headersSize, httpVersion: $httpVersion, redirectUrl: $redirectUrl, status: $status, statusText: $statusText)';
+@override String toString() => 'EntriesResponse(\n  transferSize: $transferSize,\n  bodySize: $bodySize,\n  content: $content,\n  headers: $headers,\n  headersSize: $headersSize,\n  httpVersion: $httpVersion,\n  redirectUrl: $redirectUrl,\n  status: $status,\n  statusText: $statusText,\n)';
 
  }

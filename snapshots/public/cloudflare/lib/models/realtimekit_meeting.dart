@@ -92,6 +92,6 @@ RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? 
 
 @override int get hashCode => Object.hash(createdAt, id, liveStreamOnStart, persistChat, recordOnStart, sessionKeepAliveTimeInSecs, status, summarizeOnEnd, title, updatedAt);
 
-@override String toString() => 'RealtimekitMeeting(createdAt: $createdAt, id: $id, liveStreamOnStart: $liveStreamOnStart, persistChat: $persistChat, recordOnStart: $recordOnStart, sessionKeepAliveTimeInSecs: $sessionKeepAliveTimeInSecs, status: $status, summarizeOnEnd: $summarizeOnEnd, title: $title, updatedAt: $updatedAt)';
+@override String toString() => 'RealtimekitMeeting(\n  createdAt: $createdAt,\n  id: $id,\n  liveStreamOnStart: $liveStreamOnStart,\n  persistChat: $persistChat,\n  recordOnStart: $recordOnStart,\n  sessionKeepAliveTimeInSecs: $sessionKeepAliveTimeInSecs,\n  status: $status,\n  summarizeOnEnd: $summarizeOnEnd,\n  title: $title,\n  updatedAt: $updatedAt,\n)';
 
  }

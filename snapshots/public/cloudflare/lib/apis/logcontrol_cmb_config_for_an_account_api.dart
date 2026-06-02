@@ -17,7 +17,7 @@ Future<ApiResult<LogcontrolCmbConfig?, Never>> getAccountsAccountIdLogsControlCm
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/logs/control/cmb/config',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/logs/control/cmb/config',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/logs/control/cmb/config',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/logs/control/cmb/config',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> deleteAccountsAccountIdLogsContr
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/logs/control/cmb/config',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/logs/control/cmb/config',
   headers: headers,
   options: options,
 );

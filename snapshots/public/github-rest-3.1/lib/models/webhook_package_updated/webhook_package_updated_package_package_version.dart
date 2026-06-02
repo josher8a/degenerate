@@ -81,7 +81,7 @@ final String updatedAt;
 final String version;
 
 Map<String, dynamic> toJson() { return {
-  'author': author != null ? author?.toJson() : null,
+  'author': author?.toJson(),
   'body': body,
   'body_html': bodyHtml,
   'created_at': createdAt,
@@ -180,6 +180,6 @@ WebhookPackageUpdatedPackagePackageVersion copyWith({WebhooksRelease1Author? Fun
 
 @override int get hashCode => Object.hashAll([author, body, bodyHtml, createdAt, description, Object.hashAll(dockerMetadata ?? const []), draft, htmlUrl, id, installationCommand, manifest, Object.hashAll(metadata), name, Object.hashAll(packageFiles), packageUrl, prerelease, release, Object.hashAll(rubygemsMetadata ?? const []), sourceUrl, summary, tagName, targetCommitish, targetOid, updatedAt, version]);
 
-@override String toString() => 'WebhookPackageUpdatedPackagePackageVersion(author: $author, body: $body, bodyHtml: $bodyHtml, createdAt: $createdAt, description: $description, dockerMetadata: $dockerMetadata, draft: $draft, htmlUrl: $htmlUrl, id: $id, installationCommand: $installationCommand, manifest: $manifest, metadata: $metadata, name: $name, packageFiles: $packageFiles, packageUrl: $packageUrl, prerelease: $prerelease, release: $release, rubygemsMetadata: $rubygemsMetadata, sourceUrl: $sourceUrl, summary: $summary, tagName: $tagName, targetCommitish: $targetCommitish, targetOid: $targetOid, updatedAt: $updatedAt, version: $version)';
+@override String toString() => 'WebhookPackageUpdatedPackagePackageVersion(\n  author: $author,\n  body: $body,\n  bodyHtml: $bodyHtml,\n  createdAt: $createdAt,\n  description: $description,\n  dockerMetadata: $dockerMetadata,\n  draft: $draft,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  installationCommand: $installationCommand,\n  manifest: $manifest,\n  metadata: $metadata,\n  name: $name,\n  packageFiles: $packageFiles,\n  packageUrl: $packageUrl,\n  prerelease: $prerelease,\n  release: $release,\n  rubygemsMetadata: $rubygemsMetadata,\n  sourceUrl: $sourceUrl,\n  summary: $summary,\n  tagName: $tagName,\n  targetCommitish: $targetCommitish,\n  targetOid: $targetOid,\n  updatedAt: $updatedAt,\n  version: $version,\n)';
 
  }

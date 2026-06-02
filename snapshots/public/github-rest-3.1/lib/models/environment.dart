@@ -81,6 +81,6 @@ Environment copyWith({int? id, String? nodeId, String? name, String? url, String
 
 @override int get hashCode => Object.hash(id, nodeId, name, url, htmlUrl, createdAt, updatedAt, Object.hashAll(protectionRules ?? const []), deploymentBranchPolicy);
 
-@override String toString() => 'Environment(id: $id, nodeId: $nodeId, name: $name, url: $url, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, protectionRules: $protectionRules, deploymentBranchPolicy: $deploymentBranchPolicy)';
+@override String toString() => 'Environment(\n  id: $id,\n  nodeId: $nodeId,\n  name: $name,\n  url: $url,\n  htmlUrl: $htmlUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  protectionRules: $protectionRules,\n  deploymentBranchPolicy: $deploymentBranchPolicy,\n)';
 
  }

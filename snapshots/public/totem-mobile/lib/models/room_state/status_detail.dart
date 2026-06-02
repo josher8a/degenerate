@@ -30,6 +30,20 @@ sealed class StatusDetail {
 
   /// Whether this variant is unknown (not defined in the OpenAPI spec).
   bool get isUnknown => this is StatusDetail$Unknown;
+
+  R when<R>({
+    required R Function(StatusDetailActive) active,
+    required R Function(StatusDetailEnded) ended,
+    required R Function(StatusDetailWaitingRoom) waitingRoom,
+    required R Function(StatusDetail$Unknown) unknown,
+  }) {
+    return switch (this) {
+      final StatusDetailActive v => active(v),
+      final StatusDetailEnded v => ended(v),
+      final StatusDetailWaitingRoom v => waitingRoom(v),
+      final StatusDetail$Unknown v => unknown(v),
+    };
+  }
 }
 
 @immutable

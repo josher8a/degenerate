@@ -70,15 +70,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
 List<String> validate() { final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
-  if (comments$.length < 1) errors.add('comments: length must be >= 1');
+  if (comments$.isEmpty) errors.add('comments: length must be >= 1');
   if (comments$.length > 2000) errors.add('comments: length must be <= 2000');
 }
 final company$ = company;
 if (company$ != null) {
-  if (company$.length < 1) errors.add('company: length must be >= 1');
+  if (company$.isEmpty) errors.add('company: length must be >= 1');
   if (company$.length > 100) errors.add('company: length must be <= 100');
 }
-if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.isEmpty) errors.add('name: length must be >= 1');
 if (name.length > 255) errors.add('name: length must be <= 255');
 final reportedCountry$ = reportedCountry;
 if (reportedCountry$ != null) {
@@ -87,17 +87,17 @@ if (reportedCountry$ != null) {
 }
 final reportedUserAgent$ = reportedUserAgent;
 if (reportedUserAgent$ != null) {
-  if (reportedUserAgent$.length < 1) errors.add('reportedUserAgent: length must be >= 1');
+  if (reportedUserAgent$.isEmpty) errors.add('reportedUserAgent: length must be >= 1');
   if (reportedUserAgent$.length > 255) errors.add('reportedUserAgent: length must be <= 255');
 }
 final tele$ = tele;
 if (tele$ != null) {
-  if (tele$.length < 1) errors.add('tele: length must be >= 1');
+  if (tele$.isEmpty) errors.add('tele: length must be >= 1');
   if (tele$.length > 20) errors.add('tele: length must be <= 20');
 }
 final title$ = title;
 if (title$ != null) {
-  if (title$.length < 1) errors.add('title: length must be >= 1');
+  if (title$.isEmpty) errors.add('title: length must be >= 1');
   if (title$.length > 255) errors.add('title: length must be <= 255');
 }
 return errors; } 
@@ -130,6 +130,6 @@ AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, St
 
 @override int get hashCode => Object.hash(act, comments, company, email, email2, name, reportedCountry, reportedUserAgent, tele, title, urls);
 
-@override String toString() => 'AbuseReportsBaseReportFields(act: $act, comments: $comments, company: $company, email: $email, email2: $email2, name: $name, reportedCountry: $reportedCountry, reportedUserAgent: $reportedUserAgent, tele: $tele, title: $title, urls: $urls)';
+@override String toString() => 'AbuseReportsBaseReportFields(\n  act: $act,\n  comments: $comments,\n  company: $company,\n  email: $email,\n  email2: $email2,\n  name: $name,\n  reportedCountry: $reportedCountry,\n  reportedUserAgent: $reportedUserAgent,\n  tele: $tele,\n  title: $title,\n  urls: $urls,\n)';
 
  }

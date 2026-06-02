@@ -210,9 +210,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('image
       json.containsKey('prompt') && json['prompt'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (images.length < 1) errors.add('images: must have >= 1 items');
+if (images.isEmpty) errors.add('images: must have >= 1 items');
 if (images.length > 16) errors.add('images: must have <= 16 items');
-if (prompt.length < 1) errors.add('prompt: length must be >= 1');
+if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
 if (prompt.length > 32000) errors.add('prompt: length must be <= 32000');
 final n$ = n;
 if (n$ != null) {
@@ -262,6 +262,6 @@ EditImageBodyJsonParam copyWith({EditImageBodyJsonParamModel? Function()? model,
 
 @override int get hashCode => Object.hash(model, Object.hashAll(images), mask, prompt, n, quality, inputFidelity, size, user, outputFormat, outputCompression, moderation, background, stream, partialImages);
 
-@override String toString() => 'EditImageBodyJsonParam(model: $model, images: $images, mask: $mask, prompt: $prompt, n: $n, quality: $quality, inputFidelity: $inputFidelity, size: $size, user: $user, outputFormat: $outputFormat, outputCompression: $outputCompression, moderation: $moderation, background: $background, stream: $stream, partialImages: $partialImages)';
+@override String toString() => 'EditImageBodyJsonParam(\n  model: $model,\n  images: $images,\n  mask: $mask,\n  prompt: $prompt,\n  n: $n,\n  quality: $quality,\n  inputFidelity: $inputFidelity,\n  size: $size,\n  user: $user,\n  outputFormat: $outputFormat,\n  outputCompression: $outputCompression,\n  moderation: $moderation,\n  background: $background,\n  stream: $stream,\n  partialImages: $partialImages,\n)';
 
  }

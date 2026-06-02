@@ -207,6 +207,6 @@ IssuingCardholder copyWith({IssuingCardholderAddress? billing, IssuingCardholder
 
 @override int get hashCode => Object.hash(billing, company, created, email, id, individual, livemode, metadata, name, object, phoneNumber, Object.hashAll(preferredLocales ?? const []), requirements, spendingControls, status, type);
 
-@override String toString() => 'IssuingCardholder(billing: $billing, company: $company, created: $created, email: $email, id: $id, individual: $individual, livemode: $livemode, metadata: $metadata, name: $name, object: $object, phoneNumber: $phoneNumber, preferredLocales: $preferredLocales, requirements: $requirements, spendingControls: $spendingControls, status: $status, type: $type)';
+@override String toString() => 'IssuingCardholder(\n  billing: $billing,\n  company: $company,\n  created: $created,\n  email: $email,\n  id: $id,\n  individual: $individual,\n  livemode: $livemode,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n  phoneNumber: $phoneNumber,\n  preferredLocales: $preferredLocales,\n  requirements: $requirements,\n  spendingControls: $spendingControls,\n  status: $status,\n  type: $type,\n)';
 
  }

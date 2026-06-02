@@ -161,6 +161,6 @@ VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? cr
 
 @override int get hashCode => Object.hash(id, object, createdAt, name, usageBytes, fileCounts, status, expiresAfter, expiresAt, lastActiveAt, metadata);
 
-@override String toString() => 'VectorStoreObject(id: $id, object: $object, createdAt: $createdAt, name: $name, usageBytes: $usageBytes, fileCounts: $fileCounts, status: $status, expiresAfter: $expiresAfter, expiresAt: $expiresAt, lastActiveAt: $lastActiveAt, metadata: $metadata)';
+@override String toString() => 'VectorStoreObject(\n  id: $id,\n  object: $object,\n  createdAt: $createdAt,\n  name: $name,\n  usageBytes: $usageBytes,\n  fileCounts: $fileCounts,\n  status: $status,\n  expiresAfter: $expiresAfter,\n  expiresAt: $expiresAt,\n  lastActiveAt: $lastActiveAt,\n  metadata: $metadata,\n)';
 
  }

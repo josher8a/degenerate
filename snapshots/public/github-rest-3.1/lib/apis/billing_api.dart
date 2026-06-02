@@ -45,7 +45,7 @@ return execute(
   onSuccess: (response) {
     return GetAllBudgets.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => BillingGetAllBudgetsOrgError.fromResponse(response),
+  onError: BillingGetAllBudgetsOrgError.fromResponse,
 );
  } 
 /// Get a budget by ID for an organization
@@ -70,7 +70,7 @@ return execute(
   onSuccess: (response) {
     return GetBudget.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => BillingGetBudgetOrgError.fromResponse(response),
+  onError: BillingGetBudgetOrgError.fromResponse,
 );
  } 
 /// Update a budget for an organization
@@ -97,7 +97,7 @@ return execute(
   onSuccess: (response) {
     return BillingUpdateBudgetOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => BillingUpdateBudgetOrgError.fromResponse(response),
+  onError: BillingUpdateBudgetOrgError.fromResponse,
 );
  } 
 /// Delete a budget for an organization
@@ -122,7 +122,7 @@ return execute(
   onSuccess: (response) {
     return DeleteBudget.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => BillingDeleteBudgetOrgError.fromResponse(response),
+  onError: BillingDeleteBudgetOrgError.fromResponse,
 );
  } 
 /// Get billing premium request usage report for an organization
@@ -169,7 +169,7 @@ return execute(
   onSuccess: (response) {
     return BillingPremiumRequestUsageReportOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => BillingGetGithubBillingPremiumRequestUsageReportOrgError.fromResponse(response),
+  onError: BillingGetGithubBillingPremiumRequestUsageReportOrgError.fromResponse,
 );
  } 
 /// Get billing usage report for an organization
@@ -207,7 +207,7 @@ return execute(
   onSuccess: (response) {
     return BillingUsageReport.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => BillingGetGithubBillingUsageReportOrgError.fromResponse(response),
+  onError: BillingGetGithubBillingUsageReportOrgError.fromResponse,
 );
  } 
 /// Get billing usage summary for an organization
@@ -257,7 +257,7 @@ return execute(
   onSuccess: (response) {
     return BillingUsageSummaryReportOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => BillingGetGithubBillingUsageSummaryReportOrgError.fromResponse(response),
+  onError: BillingGetGithubBillingUsageSummaryReportOrgError.fromResponse,
 );
  } 
 /// Get billing premium request usage report for a user
@@ -301,7 +301,7 @@ return execute(
   onSuccess: (response) {
     return BillingPremiumRequestUsageReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => BillingGetGithubBillingPremiumRequestUsageReportUserError.fromResponse(response),
+  onError: BillingGetGithubBillingPremiumRequestUsageReportUserError.fromResponse,
 );
  } 
 /// Get billing usage report for a user
@@ -339,7 +339,7 @@ return execute(
   onSuccess: (response) {
     return BillingUsageReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => BillingGetGithubBillingUsageReportUserError.fromResponse(response),
+  onError: BillingGetGithubBillingUsageReportUserError.fromResponse,
 );
  } 
 /// Get billing usage summary for a user
@@ -389,7 +389,7 @@ return execute(
   onSuccess: (response) {
     return BillingUsageSummaryReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => BillingGetGithubBillingUsageSummaryReportUserError.fromResponse(response),
+  onError: BillingGetGithubBillingUsageSummaryReportUserError.fromResponse,
 );
  } 
  }

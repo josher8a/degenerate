@@ -93,6 +93,6 @@ AaaAuditLogs copyWith({AaaAuditLogsAction? Function()? action, AaaAuditLogsActor
 
 @override int get hashCode => Object.hash(action, actor, id, $interface, metadata, newValue, oldValue, owner, resource, when);
 
-@override String toString() => 'AaaAuditLogs(action: $action, actor: $actor, id: $id, \$interface: ${$interface}, metadata: $metadata, newValue: $newValue, oldValue: $oldValue, owner: $owner, resource: $resource, when: $when)';
+@override String toString() => 'AaaAuditLogs(\n  action: $action,\n  actor: $actor,\n  id: $id,\n  \$interface: ${$interface},\n  metadata: $metadata,\n  newValue: $newValue,\n  oldValue: $oldValue,\n  owner: $owner,\n  resource: $resource,\n  when: $when,\n)';
 
  }

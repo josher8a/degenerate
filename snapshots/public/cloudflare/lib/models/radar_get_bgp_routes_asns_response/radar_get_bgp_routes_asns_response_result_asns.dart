@@ -97,6 +97,6 @@ RadarGetBgpRoutesAsnsResponseResultAsns copyWith({int? asn, int? coneSize, Strin
 
 @override int get hashCode => Object.hash(asn, coneSize, country, ipv4Count, ipv6Count, name, pfxsCount, rpkiInvalid, rpkiUnknown, rpkiValid);
 
-@override String toString() => 'RadarGetBgpRoutesAsnsResponseResultAsns(asn: $asn, coneSize: $coneSize, country: $country, ipv4Count: $ipv4Count, ipv6Count: $ipv6Count, name: $name, pfxsCount: $pfxsCount, rpkiInvalid: $rpkiInvalid, rpkiUnknown: $rpkiUnknown, rpkiValid: $rpkiValid)';
+@override String toString() => 'RadarGetBgpRoutesAsnsResponseResultAsns(\n  asn: $asn,\n  coneSize: $coneSize,\n  country: $country,\n  ipv4Count: $ipv4Count,\n  ipv6Count: $ipv6Count,\n  name: $name,\n  pfxsCount: $pfxsCount,\n  rpkiInvalid: $rpkiInvalid,\n  rpkiUnknown: $rpkiUnknown,\n  rpkiValid: $rpkiValid,\n)';
 
  }

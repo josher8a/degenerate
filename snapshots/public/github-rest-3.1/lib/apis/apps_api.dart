@@ -50,7 +50,7 @@ return execute(
   onSuccess: (response) {
     return AppsCreateFromManifestResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(response),
+  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse,
 );
  } 
 /// Get a webhook configuration for an app
@@ -134,7 +134,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
+  onError: AppsGetWebhookDeliveryError.fromResponse,
 );
  } 
 /// Get a delivery for an app webhook
@@ -158,7 +158,7 @@ return execute(
   onSuccess: (response) {
     return HookDelivery.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
+  onError: AppsGetWebhookDeliveryError.fromResponse,
 );
  } 
 /// Redeliver a delivery for an app webhook
@@ -182,7 +182,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => AppsGetWebhookDeliveryError.fromResponse(response),
+  onError: AppsGetWebhookDeliveryError.fromResponse,
 );
  } 
 /// List installation requests for the authenticated app
@@ -216,7 +216,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => IntegrationInstallationRequest.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsGetSubscriptionPlanForAccountStubbedError.fromResponse(response),
+  onError: AppsGetSubscriptionPlanForAccountStubbedError.fromResponse,
 );
  } 
 /// List installations for the authenticated app
@@ -281,7 +281,7 @@ return execute(
   onSuccess: (response) {
     return Installation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete an installation for the authenticated app
@@ -303,7 +303,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Create an installation access token for an app
@@ -333,7 +333,7 @@ return execute(
   onSuccess: (response) {
     return InstallationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// Suspend an app installation
@@ -355,7 +355,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Unsuspend an app installation
@@ -377,7 +377,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete an app authorization
@@ -400,7 +400,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Check a token
@@ -424,7 +424,7 @@ return execute(
   onSuccess: (response) {
     return Authorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Reset a token
@@ -448,7 +448,7 @@ return execute(
   onSuccess: (response) {
     return Authorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Delete an app token
@@ -470,7 +470,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Create a scoped access token
@@ -498,7 +498,7 @@ return execute(
   onSuccess: (response) {
     return Authorization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// Get an app
@@ -521,7 +521,7 @@ return execute(
   onSuccess: (response) {
     return Integration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// List repositories accessible to the app installation
@@ -554,7 +554,7 @@ return execute(
   onSuccess: (response) {
     return AppsListReposAccessibleToInstallationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Revoke an installation access token
@@ -599,7 +599,7 @@ return execute(
   onSuccess: (response) {
     return MarketplacePurchase.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsGetSubscriptionPlanForAccountError.fromResponse(response),
+  onError: AppsGetSubscriptionPlanForAccountError.fromResponse,
 );
  } 
 /// List plans
@@ -635,7 +635,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MarketplaceListingPlan.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsGetSubscriptionPlanForAccountError.fromResponse(response),
+  onError: AppsGetSubscriptionPlanForAccountError.fromResponse,
 );
  } 
 /// List accounts for a plan
@@ -677,7 +677,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsListAccountsForPlanError.fromResponse(response),
+  onError: AppsListAccountsForPlanError.fromResponse,
 );
  } 
 /// Get a subscription plan for an account (stubbed)
@@ -701,7 +701,7 @@ return execute(
   onSuccess: (response) {
     return MarketplacePurchase.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsGetSubscriptionPlanForAccountStubbedError.fromResponse(response),
+  onError: AppsGetSubscriptionPlanForAccountStubbedError.fromResponse,
 );
  } 
 /// List plans (stubbed)
@@ -737,7 +737,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MarketplaceListingPlan.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsGetSubscriptionPlanForAccountStubbedError.fromResponse(response),
+  onError: AppsGetSubscriptionPlanForAccountStubbedError.fromResponse,
 );
  } 
 /// List accounts for a plan (stubbed)
@@ -779,7 +779,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => MarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsGetSubscriptionPlanForAccountStubbedError.fromResponse(response),
+  onError: AppsGetSubscriptionPlanForAccountStubbedError.fromResponse,
 );
  } 
 /// Get an organization installation for the authenticated app
@@ -826,7 +826,7 @@ return execute(
   onSuccess: (response) {
     return Installation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List app installations accessible to the user access token
@@ -863,7 +863,7 @@ return execute(
   onSuccess: (response) {
     return AppsListInstallationsForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// List repositories accessible to the user access token
@@ -900,7 +900,7 @@ return execute(
   onSuccess: (response) {
     return AppsListInstallationReposForAuthenticatedUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Add a repository to an app installation
@@ -922,7 +922,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Remove a repository from an app installation
@@ -944,7 +944,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// List subscriptions for the authenticated user
@@ -978,7 +978,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => UserMarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsGetSubscriptionPlanForAccountError.fromResponse(response),
+  onError: AppsGetSubscriptionPlanForAccountError.fromResponse,
 );
  } 
 /// List subscriptions for the authenticated user (stubbed)
@@ -1012,7 +1012,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => UserMarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsGetSubscriptionPlanForAccountStubbedError.fromResponse(response),
+  onError: AppsGetSubscriptionPlanForAccountStubbedError.fromResponse,
 );
  } 
 /// Get a user installation for the authenticated app

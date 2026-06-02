@@ -138,6 +138,6 @@ ResponseProperties copyWith({String? Function()? previousResponseId, ModelIdsRes
 
 @override int get hashCode => Object.hash(previousResponseId, model, reasoning, background, maxOutputTokens, maxToolCalls, text, Object.hashAll(tools ?? const []), toolChoice, prompt, truncation);
 
-@override String toString() => 'ResponseProperties(previousResponseId: $previousResponseId, model: $model, reasoning: $reasoning, background: $background, maxOutputTokens: $maxOutputTokens, maxToolCalls: $maxToolCalls, text: $text, tools: $tools, toolChoice: $toolChoice, prompt: $prompt, truncation: $truncation)';
+@override String toString() => 'ResponseProperties(\n  previousResponseId: $previousResponseId,\n  model: $model,\n  reasoning: $reasoning,\n  background: $background,\n  maxOutputTokens: $maxOutputTokens,\n  maxToolCalls: $maxToolCalls,\n  text: $text,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  prompt: $prompt,\n  truncation: $truncation,\n)';
 
  }

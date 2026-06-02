@@ -250,6 +250,6 @@ TlsCertificatesAndHostnamesClientCertificate copyWith({TlsCertificatesAndHostnam
 
 @override int get hashCode => Object.hash(certificate, certificateAuthority, commonName, country, csr, expiresOn, fingerprintSha256, id, issuedOn, location, organization, organizationalUnit, serialNumber, signature, ski, state, status, validityDays);
 
-@override String toString() => 'TlsCertificatesAndHostnamesClientCertificate(certificate: $certificate, certificateAuthority: $certificateAuthority, commonName: $commonName, country: $country, csr: $csr, expiresOn: $expiresOn, fingerprintSha256: $fingerprintSha256, id: $id, issuedOn: $issuedOn, location: $location, organization: $organization, organizationalUnit: $organizationalUnit, serialNumber: $serialNumber, signature: $signature, ski: $ski, state: $state, status: $status, validityDays: $validityDays)';
+@override String toString() => 'TlsCertificatesAndHostnamesClientCertificate(\n  certificate: $certificate,\n  certificateAuthority: $certificateAuthority,\n  commonName: $commonName,\n  country: $country,\n  csr: $csr,\n  expiresOn: $expiresOn,\n  fingerprintSha256: $fingerprintSha256,\n  id: $id,\n  issuedOn: $issuedOn,\n  location: $location,\n  organization: $organization,\n  organizationalUnit: $organizationalUnit,\n  serialNumber: $serialNumber,\n  signature: $signature,\n  ski: $ski,\n  state: $state,\n  status: $status,\n  validityDays: $validityDays,\n)';
 
  }

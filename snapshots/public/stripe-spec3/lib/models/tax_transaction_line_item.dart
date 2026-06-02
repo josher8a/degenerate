@@ -151,6 +151,6 @@ TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? 
 
 @override int get hashCode => Object.hash(amount, amountTax, id, livemode, metadata, object, product, quantity, reference, reversal, taxBehavior, taxCode, type);
 
-@override String toString() => 'TaxTransactionLineItem(amount: $amount, amountTax: $amountTax, id: $id, livemode: $livemode, metadata: $metadata, object: $object, product: $product, quantity: $quantity, reference: $reference, reversal: $reversal, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)';
+@override String toString() => 'TaxTransactionLineItem(\n  amount: $amount,\n  amountTax: $amountTax,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  object: $object,\n  product: $product,\n  quantity: $quantity,\n  reference: $reference,\n  reversal: $reversal,\n  taxBehavior: $taxBehavior,\n  taxCode: $taxCode,\n  type: $type,\n)';
 
  }

@@ -219,6 +219,6 @@ SpectrumConfigAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumCo
 
 @override int get hashCode => Object.hash(createdOn, id, modifiedOn, argoSmartRouting, dns, edgeIps, ipFirewall, Object.hashAll(originDirect ?? const []), originDns, originPort, protocol, proxyProtocol, tls, trafficType);
 
-@override String toString() => 'SpectrumConfigAppConfig(createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, argoSmartRouting: $argoSmartRouting, dns: $dns, edgeIps: $edgeIps, ipFirewall: $ipFirewall, originDirect: $originDirect, originDns: $originDns, originPort: $originPort, protocol: $protocol, proxyProtocol: $proxyProtocol, tls: $tls, trafficType: $trafficType)';
+@override String toString() => 'SpectrumConfigAppConfig(\n  createdOn: $createdOn,\n  id: $id,\n  modifiedOn: $modifiedOn,\n  argoSmartRouting: $argoSmartRouting,\n  dns: $dns,\n  edgeIps: $edgeIps,\n  ipFirewall: $ipFirewall,\n  originDirect: $originDirect,\n  originDns: $originDns,\n  originPort: $originPort,\n  protocol: $protocol,\n  proxyProtocol: $proxyProtocol,\n  tls: $tls,\n  trafficType: $trafficType,\n)';
 
  }

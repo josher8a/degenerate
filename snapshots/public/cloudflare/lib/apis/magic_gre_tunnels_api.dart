@@ -20,7 +20,7 @@ if (xMagicNewHcTarget != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/gre_tunnels',
   headers: headers,
   options: options,
 );
@@ -46,7 +46,7 @@ if (xMagicNewHcTarget != null) {
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/gre_tunnels',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -73,7 +73,7 @@ if (xMagicNewHcTarget != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/gre_tunnels',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -99,7 +99,7 @@ if (xMagicNewHcTarget != null) {
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels/${Uri.encodeComponent(greTunnelId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/gre_tunnels/${Uri.encodeComponent(greTunnelId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -125,7 +125,7 @@ if (xMagicNewHcTarget != null) {
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels/${Uri.encodeComponent(greTunnelId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/gre_tunnels/${Uri.encodeComponent(greTunnelId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -151,7 +151,7 @@ if (xMagicNewHcTarget != null) {
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/gre_tunnels/${Uri.encodeComponent(greTunnelId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/magic/gre_tunnels/${Uri.encodeComponent(greTunnelId.toJson())}',
   headers: headers,
   options: options,
 );

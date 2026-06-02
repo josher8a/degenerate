@@ -130,6 +130,6 @@ PagesSourceConfig copyWith({bool? deploymentsEnabled, String? owner, String? own
 
 @override int get hashCode => Object.hash(deploymentsEnabled, owner, ownerId, Object.hashAll(pathExcludes), Object.hashAll(pathIncludes), prCommentsEnabled, Object.hashAll(previewBranchExcludes), Object.hashAll(previewBranchIncludes), previewDeploymentSetting, productionBranch, productionDeploymentsEnabled, repoId, repoName);
 
-@override String toString() => 'PagesSourceConfig(deploymentsEnabled: $deploymentsEnabled, owner: $owner, ownerId: $ownerId, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, prCommentsEnabled: $prCommentsEnabled, previewBranchExcludes: $previewBranchExcludes, previewBranchIncludes: $previewBranchIncludes, previewDeploymentSetting: $previewDeploymentSetting, productionBranch: $productionBranch, productionDeploymentsEnabled: $productionDeploymentsEnabled, repoId: $repoId, repoName: $repoName)';
+@override String toString() => 'PagesSourceConfig(\n  deploymentsEnabled: $deploymentsEnabled,\n  owner: $owner,\n  ownerId: $ownerId,\n  pathExcludes: $pathExcludes,\n  pathIncludes: $pathIncludes,\n  prCommentsEnabled: $prCommentsEnabled,\n  previewBranchExcludes: $previewBranchExcludes,\n  previewBranchIncludes: $previewBranchIncludes,\n  previewDeploymentSetting: $previewDeploymentSetting,\n  productionBranch: $productionBranch,\n  productionDeploymentsEnabled: $productionDeploymentsEnabled,\n  repoId: $repoId,\n  repoName: $repoName,\n)';
 
  }

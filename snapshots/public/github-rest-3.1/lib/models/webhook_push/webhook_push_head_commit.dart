@@ -97,6 +97,6 @@ WebhookPushHeadCommit copyWith({List<String>? Function()? added, CommitsAuthor? 
 
 @override int get hashCode => Object.hash(Object.hashAll(added ?? const []), author, committer, distinct, id, message, Object.hashAll(modified ?? const []), Object.hashAll(removed ?? const []), timestamp, treeId, url);
 
-@override String toString() => 'WebhookPushHeadCommit(added: $added, author: $author, committer: $committer, distinct: $distinct, id: $id, message: $message, modified: $modified, removed: $removed, timestamp: $timestamp, treeId: $treeId, url: $url)';
+@override String toString() => 'WebhookPushHeadCommit(\n  added: $added,\n  author: $author,\n  committer: $committer,\n  distinct: $distinct,\n  id: $id,\n  message: $message,\n  modified: $modified,\n  removed: $removed,\n  timestamp: $timestamp,\n  treeId: $treeId,\n  url: $url,\n)';
 
  }

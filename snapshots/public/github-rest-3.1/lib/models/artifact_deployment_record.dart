@@ -92,6 +92,6 @@ ArtifactDeploymentRecord copyWith({int? Function()? id, String? Function()? dige
 
 @override int get hashCode => Object.hash(id, digest, logicalEnvironment, physicalEnvironment, cluster, deploymentName, tags, Object.hashAll(runtimeRisks ?? const []), createdAt, updatedAt, attestationId);
 
-@override String toString() => 'ArtifactDeploymentRecord(id: $id, digest: $digest, logicalEnvironment: $logicalEnvironment, physicalEnvironment: $physicalEnvironment, cluster: $cluster, deploymentName: $deploymentName, tags: $tags, runtimeRisks: $runtimeRisks, createdAt: $createdAt, updatedAt: $updatedAt, attestationId: $attestationId)';
+@override String toString() => 'ArtifactDeploymentRecord(\n  id: $id,\n  digest: $digest,\n  logicalEnvironment: $logicalEnvironment,\n  physicalEnvironment: $physicalEnvironment,\n  cluster: $cluster,\n  deploymentName: $deploymentName,\n  tags: $tags,\n  runtimeRisks: $runtimeRisks,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  attestationId: $attestationId,\n)';
 
  }

@@ -77,6 +77,6 @@ WebhooksMarketplacePurchasePlan copyWith({List<String?>? bullets, String? descri
 
 @override int get hashCode => Object.hash(Object.hashAll(bullets), description, hasFreeTrial, id, monthlyPriceInCents, name, priceModel, unitName, yearlyPriceInCents);
 
-@override String toString() => 'WebhooksMarketplacePurchasePlan(bullets: $bullets, description: $description, hasFreeTrial: $hasFreeTrial, id: $id, monthlyPriceInCents: $monthlyPriceInCents, name: $name, priceModel: $priceModel, unitName: $unitName, yearlyPriceInCents: $yearlyPriceInCents)';
+@override String toString() => 'WebhooksMarketplacePurchasePlan(\n  bullets: $bullets,\n  description: $description,\n  hasFreeTrial: $hasFreeTrial,\n  id: $id,\n  monthlyPriceInCents: $monthlyPriceInCents,\n  name: $name,\n  priceModel: $priceModel,\n  unitName: $unitName,\n  yearlyPriceInCents: $yearlyPriceInCents,\n)';
 
  }

@@ -69,6 +69,6 @@ ListRecordingResponse copyWith({List<AccountRecording>? Function()? recordings, 
 
 @override int get hashCode => Object.hash(Object.hashAll(recordings ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
 
-@override String toString() => 'ListRecordingResponse(recordings: $recordings, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+@override String toString() => 'ListRecordingResponse(\n  recordings: $recordings,\n  end: $end,\n  firstPageUri: $firstPageUri,\n  nextPageUri: $nextPageUri,\n  page: $page,\n  pageSize: $pageSize,\n  previousPageUri: $previousPageUri,\n  start: $start,\n  uri: $uri,\n)';
 
  }

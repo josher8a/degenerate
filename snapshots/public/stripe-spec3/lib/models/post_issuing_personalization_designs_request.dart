@@ -90,6 +90,6 @@ PostIssuingPersonalizationDesignsRequest copyWith({String? Function()? cardLogo,
 
 @override int get hashCode => Object.hash(cardLogo, carrierText, Object.hashAll(expand ?? const []), lookupKey, metadata, name, physicalBundle, preferences, transferLookupKey);
 
-@override String toString() => 'PostIssuingPersonalizationDesignsRequest(cardLogo: $cardLogo, carrierText: $carrierText, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, name: $name, physicalBundle: $physicalBundle, preferences: $preferences, transferLookupKey: $transferLookupKey)';
+@override String toString() => 'PostIssuingPersonalizationDesignsRequest(\n  cardLogo: $cardLogo,\n  carrierText: $carrierText,\n  expand: $expand,\n  lookupKey: $lookupKey,\n  metadata: $metadata,\n  name: $name,\n  physicalBundle: $physicalBundle,\n  preferences: $preferences,\n  transferLookupKey: $transferLookupKey,\n)';
 
  }

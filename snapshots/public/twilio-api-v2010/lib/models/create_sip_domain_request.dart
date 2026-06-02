@@ -121,6 +121,6 @@ CreateSipDomainRequest copyWith({String? domainName, String? Function()? friendl
 
 @override int get hashCode => Object.hash(domainName, friendlyName, voiceUrl, voiceMethod, voiceFallbackUrl, voiceFallbackMethod, voiceStatusCallbackUrl, voiceStatusCallbackMethod, sipRegistration, emergencyCallingEnabled, secure, byocTrunkSid, emergencyCallerSid);
 
-@override String toString() => 'CreateSipDomainRequest(domainName: $domainName, friendlyName: $friendlyName, voiceUrl: $voiceUrl, voiceMethod: $voiceMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceFallbackMethod: $voiceFallbackMethod, voiceStatusCallbackUrl: $voiceStatusCallbackUrl, voiceStatusCallbackMethod: $voiceStatusCallbackMethod, sipRegistration: $sipRegistration, emergencyCallingEnabled: $emergencyCallingEnabled, secure: $secure, byocTrunkSid: $byocTrunkSid, emergencyCallerSid: $emergencyCallerSid)';
+@override String toString() => 'CreateSipDomainRequest(\n  domainName: $domainName,\n  friendlyName: $friendlyName,\n  voiceUrl: $voiceUrl,\n  voiceMethod: $voiceMethod,\n  voiceFallbackUrl: $voiceFallbackUrl,\n  voiceFallbackMethod: $voiceFallbackMethod,\n  voiceStatusCallbackUrl: $voiceStatusCallbackUrl,\n  voiceStatusCallbackMethod: $voiceStatusCallbackMethod,\n  sipRegistration: $sipRegistration,\n  emergencyCallingEnabled: $emergencyCallingEnabled,\n  secure: $secure,\n  byocTrunkSid: $byocTrunkSid,\n  emergencyCallerSid: $emergencyCallerSid,\n)';
 
  }

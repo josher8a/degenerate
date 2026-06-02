@@ -122,6 +122,6 @@ TerminalConfiguration copyWith({TerminalConfigurationConfigurationResourceDevice
 
 @override int get hashCode => Object.hash(bbposWisepad3, bbposWiseposE, cellular, id, isAccountDefault, livemode, name, object, offline, rebootWindow, stripeS700, stripeS710, tipping, verifoneP400, wifi);
 
-@override String toString() => 'TerminalConfiguration(bbposWisepad3: $bbposWisepad3, bbposWiseposE: $bbposWiseposE, cellular: $cellular, id: $id, isAccountDefault: $isAccountDefault, livemode: $livemode, name: $name, object: $object, offline: $offline, rebootWindow: $rebootWindow, stripeS700: $stripeS700, stripeS710: $stripeS710, tipping: $tipping, verifoneP400: $verifoneP400, wifi: $wifi)';
+@override String toString() => 'TerminalConfiguration(\n  bbposWisepad3: $bbposWisepad3,\n  bbposWiseposE: $bbposWiseposE,\n  cellular: $cellular,\n  id: $id,\n  isAccountDefault: $isAccountDefault,\n  livemode: $livemode,\n  name: $name,\n  object: $object,\n  offline: $offline,\n  rebootWindow: $rebootWindow,\n  stripeS700: $stripeS700,\n  stripeS710: $stripeS710,\n  tipping: $tipping,\n  verifoneP400: $verifoneP400,\n  wifi: $wifi,\n)';
 
  }

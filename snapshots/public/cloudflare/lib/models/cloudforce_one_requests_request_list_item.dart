@@ -106,6 +106,6 @@ CloudforceOneRequestsRequestListItem copyWith({CloudforceOneRequestsTime? Functi
 
 @override int get hashCode => Object.hash(completed, created, id, messageTokens, priority, readableId, request, status, summary, tlp, tokens, updated);
 
-@override String toString() => 'CloudforceOneRequestsRequestListItem(completed: $completed, created: $created, id: $id, messageTokens: $messageTokens, priority: $priority, readableId: $readableId, request: $request, status: $status, summary: $summary, tlp: $tlp, tokens: $tokens, updated: $updated)';
+@override String toString() => 'CloudforceOneRequestsRequestListItem(\n  completed: $completed,\n  created: $created,\n  id: $id,\n  messageTokens: $messageTokens,\n  priority: $priority,\n  readableId: $readableId,\n  request: $request,\n  status: $status,\n  summary: $summary,\n  tlp: $tlp,\n  tokens: $tokens,\n  updated: $updated,\n)';
 
  }

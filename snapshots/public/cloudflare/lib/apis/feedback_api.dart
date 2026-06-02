@@ -18,7 +18,7 @@ Future<ApiResult<List<BotManagementFeedbackReport>, Never>> botManagementZoneFee
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/bot_management/feedback',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/bot_management/feedback',
   headers: headers,
   options: options,
 );
@@ -44,7 +44,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/bot_management/feedback',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/bot_management/feedback',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

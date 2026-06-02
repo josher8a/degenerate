@@ -77,7 +77,7 @@ Future<ApiResult<IamTokenBase?, Never>> userApiTokensTokenDetails({required IamT
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/tokens/${Uri.encodeComponent(tokenId.toString())}',
+  path: '/user/tokens/${Uri.encodeComponent(tokenId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -100,7 +100,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/user/tokens/${Uri.encodeComponent(tokenId.toString())}',
+  path: '/user/tokens/${Uri.encodeComponent(tokenId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -123,7 +123,7 @@ Future<ApiResult<ResponseSingleId4Result?, Never>> userApiTokensDeleteToken({req
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/user/tokens/${Uri.encodeComponent(tokenId.toString())}',
+  path: '/user/tokens/${Uri.encodeComponent(tokenId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -146,7 +146,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/user/tokens/${Uri.encodeComponent(tokenId.toString())}/value',
+  path: '/user/tokens/${Uri.encodeComponent(tokenId.toJson())}/value',
   headers: headers,
   body: jsonEncode(body),
   options: options,

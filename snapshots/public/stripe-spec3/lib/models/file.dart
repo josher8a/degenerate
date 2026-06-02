@@ -233,6 +233,6 @@ File copyWith({int? created, int? Function()? expiresAt, String? Function()? fil
 
 @override int get hashCode => Object.hash(created, expiresAt, filename, id, links, object, purpose, size, title, type, url);
 
-@override String toString() => 'File(created: $created, expiresAt: $expiresAt, filename: $filename, id: $id, links: $links, object: $object, purpose: $purpose, size: $size, title: $title, type: $type, url: $url)';
+@override String toString() => 'File(\n  created: $created,\n  expiresAt: $expiresAt,\n  filename: $filename,\n  id: $id,\n  links: $links,\n  object: $object,\n  purpose: $purpose,\n  size: $size,\n  title: $title,\n  type: $type,\n  url: $url,\n)';
 
  }

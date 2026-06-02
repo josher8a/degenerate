@@ -128,6 +128,6 @@ Integration copyWith({int? id, String? Function()? slug, String? nodeId, String?
 
 @override int get hashCode => Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount);
 
-@override String toString() => 'Integration(id: $id, slug: $slug, nodeId: $nodeId, clientId: $clientId, owner: $owner, name: $name, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events, installationsCount: $installationsCount)';
+@override String toString() => 'Integration(\n  id: $id,\n  slug: $slug,\n  nodeId: $nodeId,\n  clientId: $clientId,\n  owner: $owner,\n  name: $name,\n  description: $description,\n  externalUrl: $externalUrl,\n  htmlUrl: $htmlUrl,\n  createdAt: $createdAt,\n  updatedAt: $updatedAt,\n  permissions: $permissions,\n  events: $events,\n  installationsCount: $installationsCount,\n)';
 
  }

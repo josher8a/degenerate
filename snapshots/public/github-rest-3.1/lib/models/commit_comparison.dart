@@ -138,6 +138,6 @@ CommitComparison copyWith({Uri? url, Uri? htmlUrl, Uri? permalinkUrl, Uri? diffU
 
 @override int get hashCode => Object.hash(url, htmlUrl, permalinkUrl, diffUrl, patchUrl, baseCommit, mergeBaseCommit, status, aheadBy, behindBy, totalCommits, Object.hashAll(commits), Object.hashAll(files ?? const []));
 
-@override String toString() => 'CommitComparison(url: $url, htmlUrl: $htmlUrl, permalinkUrl: $permalinkUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, baseCommit: $baseCommit, mergeBaseCommit: $mergeBaseCommit, status: $status, aheadBy: $aheadBy, behindBy: $behindBy, totalCommits: $totalCommits, commits: $commits, files: $files)';
+@override String toString() => 'CommitComparison(\n  url: $url,\n  htmlUrl: $htmlUrl,\n  permalinkUrl: $permalinkUrl,\n  diffUrl: $diffUrl,\n  patchUrl: $patchUrl,\n  baseCommit: $baseCommit,\n  mergeBaseCommit: $mergeBaseCommit,\n  status: $status,\n  aheadBy: $aheadBy,\n  behindBy: $behindBy,\n  totalCommits: $totalCommits,\n  commits: $commits,\n  files: $files,\n)';
 
  }

@@ -23,7 +23,7 @@ final class FeedbackSchema {
   /// Constraint violations for this value (empty when valid).
   List<String> validate() {
     final errors = <String>[];
-    if (message.length < 1) errors.add('message: length must be >= 1');
+    if (message.isEmpty) errors.add('message: length must be >= 1');
     if (message.length > 10000) errors.add('message: length must be <= 10000');
     return errors;
   }

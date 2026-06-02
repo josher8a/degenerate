@@ -181,6 +181,6 @@ BillingCreditGrant copyWith({BillingCreditGrantsResourceAmount? amount, BillingC
 
 @override int get hashCode => Object.hash(amount, applicabilityConfig, category, created, customer, customerAccount, effectiveAt, expiresAt, id, livemode, metadata, name, object, priority, testClock, updated, voidedAt);
 
-@override String toString() => 'BillingCreditGrant(amount: $amount, applicabilityConfig: $applicabilityConfig, category: $category, created: $created, customer: $customer, customerAccount: $customerAccount, effectiveAt: $effectiveAt, expiresAt: $expiresAt, id: $id, livemode: $livemode, metadata: $metadata, name: $name, object: $object, priority: $priority, testClock: $testClock, updated: $updated, voidedAt: $voidedAt)';
+@override String toString() => 'BillingCreditGrant(\n  amount: $amount,\n  applicabilityConfig: $applicabilityConfig,\n  category: $category,\n  created: $created,\n  customer: $customer,\n  customerAccount: $customerAccount,\n  effectiveAt: $effectiveAt,\n  expiresAt: $expiresAt,\n  id: $id,\n  livemode: $livemode,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n  priority: $priority,\n  testClock: $testClock,\n  updated: $updated,\n  voidedAt: $voidedAt,\n)';
 
  }

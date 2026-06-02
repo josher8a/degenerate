@@ -51,7 +51,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetTldsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetTldsError.fromResponse(response),
+  onError: RadarGetTldsError.fromResponse,
 );
  } 
 /// Get TLD details
@@ -82,7 +82,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetTldDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetTldDetailsError.fromResponse(response),
+  onError: RadarGetTldDetailsError.fromResponse,
 );
  } 
  }

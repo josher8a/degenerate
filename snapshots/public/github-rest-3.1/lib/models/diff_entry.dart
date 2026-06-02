@@ -132,6 +132,6 @@ DiffEntry copyWith({String? Function()? sha, String? filename, DiffEntryStatus? 
 
 @override int get hashCode => Object.hash(sha, filename, status, additions, deletions, changes, blobUrl, rawUrl, contentsUrl, patch, previousFilename);
 
-@override String toString() => 'DiffEntry(sha: $sha, filename: $filename, status: $status, additions: $additions, deletions: $deletions, changes: $changes, blobUrl: $blobUrl, rawUrl: $rawUrl, contentsUrl: $contentsUrl, patch: $patch, previousFilename: $previousFilename)';
+@override String toString() => 'DiffEntry(\n  sha: $sha,\n  filename: $filename,\n  status: $status,\n  additions: $additions,\n  deletions: $deletions,\n  changes: $changes,\n  blobUrl: $blobUrl,\n  rawUrl: $rawUrl,\n  contentsUrl: $contentsUrl,\n  patch: $patch,\n  previousFilename: $previousFilename,\n)';
 
  }

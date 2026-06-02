@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('items'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.isEmpty) errors.add('name: length must be >= 1');
 if (name.length > 100) errors.add('name: length must be <= 100');
 if (!RegExp('^[a-zA-Z]').hasMatch(name)) errors.add('name: must match pattern ^[a-zA-Z]');
 if (age < 0) errors.add('age: must be >= 0');
@@ -39,7 +39,7 @@ if (score$ != null) {
   if (score$ >= 1) errors.add('score: must be < 1');
   if (score$ % 0.01 != 0) errors.add('score: must be a multiple of 0.01');
 }
-if (items.length < 1) errors.add('items: must have >= 1 items');
+if (items.isEmpty) errors.add('items: must have >= 1 items');
 if (items.length > 50) errors.add('items: must have <= 50 items');
 return errors; } 
 Constrained copyWith({String? name, int? age, double? Function()? score, List<dynamic>? items, }) { return Constrained(

@@ -95,6 +95,6 @@ MconnSupportDevice copyWith({String? Function()? cryptKeyRotationFinishedAt, Str
 
 @override int get hashCode => Object.hash(cryptKeyRotationFinishedAt, cryptKeyRotationStartedAt, cryptKeyRotationStatusCode, deviceType, ekCert, id, imagedAt, lastUpdated, metadata, pkiRotationFinishedAt, pkiRotationStartedAt, pkiRotationStatusCode, serialNumber);
 
-@override String toString() => 'MconnSupportDevice(cryptKeyRotationFinishedAt: $cryptKeyRotationFinishedAt, cryptKeyRotationStartedAt: $cryptKeyRotationStartedAt, cryptKeyRotationStatusCode: $cryptKeyRotationStatusCode, deviceType: $deviceType, ekCert: $ekCert, id: $id, imagedAt: $imagedAt, lastUpdated: $lastUpdated, metadata: $metadata, pkiRotationFinishedAt: $pkiRotationFinishedAt, pkiRotationStartedAt: $pkiRotationStartedAt, pkiRotationStatusCode: $pkiRotationStatusCode, serialNumber: $serialNumber)';
+@override String toString() => 'MconnSupportDevice(\n  cryptKeyRotationFinishedAt: $cryptKeyRotationFinishedAt,\n  cryptKeyRotationStartedAt: $cryptKeyRotationStartedAt,\n  cryptKeyRotationStatusCode: $cryptKeyRotationStatusCode,\n  deviceType: $deviceType,\n  ekCert: $ekCert,\n  id: $id,\n  imagedAt: $imagedAt,\n  lastUpdated: $lastUpdated,\n  metadata: $metadata,\n  pkiRotationFinishedAt: $pkiRotationFinishedAt,\n  pkiRotationStartedAt: $pkiRotationStartedAt,\n  pkiRotationStatusCode: $pkiRotationStatusCode,\n  serialNumber: $serialNumber,\n)';
 
  }

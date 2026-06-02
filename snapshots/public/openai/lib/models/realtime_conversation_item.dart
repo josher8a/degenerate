@@ -16,19 +16,19 @@ factory RealtimeConversationItem.fromJson(Map<String, dynamic> json) { return sw
 }; }
 
 /// Build the `message` variant.
-factory RealtimeConversationItem.message({String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputStatus? status, required ChatCompletionResponseMessageRole role, required List<RealtimeConversationItemMessageAssistantContent> content, }) { return RealtimeConversationItemMessage(RealtimeConversationItemMessageAssistant(type: 'message', id: id, object: object, status: status, role: role, content: content)); }
+factory RealtimeConversationItem.message({required ChatCompletionResponseMessageRole role, required List<RealtimeConversationItemMessageAssistantContent> content, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputStatus? status, }) { return RealtimeConversationItemMessage(RealtimeConversationItemMessageAssistant(type: 'message', id: id, object: object, status: status, role: role, content: content)); }
 
 /// Build the `function_call` variant.
-factory RealtimeConversationItem.functionCall({String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputStatus? status, String? callId, required String name, required String arguments, }) { return RealtimeConversationItemFunctionCall$Variant(RealtimeConversationItemFunctionCall(type: 'function_call', id: id, object: object, status: status, callId: callId, name: name, arguments: arguments)); }
+factory RealtimeConversationItem.functionCall({required String name, required String arguments, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputStatus? status, String? callId, }) { return RealtimeConversationItemFunctionCall$Variant(RealtimeConversationItemFunctionCall(type: 'function_call', id: id, object: object, status: status, callId: callId, name: name, arguments: arguments)); }
 
 /// Build the `function_call_output` variant.
-factory RealtimeConversationItem.functionCallOutput({String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputStatus? status, required String callId, required String output, }) { return RealtimeConversationItemFunctionCallOutput$Variant(RealtimeConversationItemFunctionCallOutput(type: 'function_call_output', id: id, object: object, status: status, callId: callId, output: output)); }
+factory RealtimeConversationItem.functionCallOutput({required String callId, required String output, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputStatus? status, }) { return RealtimeConversationItemFunctionCallOutput$Variant(RealtimeConversationItemFunctionCallOutput(type: 'function_call_output', id: id, object: object, status: status, callId: callId, output: output)); }
 
 /// Build the `mcp_approval_response` variant.
 factory RealtimeConversationItem.mcpApprovalResponse({required String id, required String approvalRequestId, required bool approve, String? reason, }) { return RealtimeConversationItemMcpApprovalResponse(RealtimeMcpApprovalResponse(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason)); }
 
 /// Build the `mcp_list_tools` variant.
-factory RealtimeConversationItem.mcpListTools({String? id, required String serverLabel, required List<McpListToolsTool> tools, }) { return RealtimeConversationItemMcpListTools(RealtimeMcpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools)); }
+factory RealtimeConversationItem.mcpListTools({required String serverLabel, required List<McpListToolsTool> tools, String? id, }) { return RealtimeConversationItemMcpListTools(RealtimeMcpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools)); }
 
 /// Build the `mcp_call` variant.
 factory RealtimeConversationItem.mcpCall({required String id, required String serverLabel, required String name, required String arguments, String? approvalRequestId, String? output, RealtimeMcpToolCallError? error, }) { return RealtimeConversationItemMcpCall(RealtimeMcpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, approvalRequestId: approvalRequestId, output: output, error: error)); }
@@ -44,6 +44,16 @@ bool get isUnknown => this is RealtimeConversationItem$Unknown;
 
 /// Shared by all variants of this union.
 String? get id;
+R when<R>({required R Function(RealtimeConversationItemMessage) message, required R Function(RealtimeConversationItemFunctionCall$Variant) functionCall, required R Function(RealtimeConversationItemFunctionCallOutput$Variant) functionCallOutput, required R Function(RealtimeConversationItemMcpApprovalResponse) mcpApprovalResponse, required R Function(RealtimeConversationItemMcpListTools) mcpListTools, required R Function(RealtimeConversationItemMcpCall) mcpCall, required R Function(RealtimeConversationItemMcpApprovalRequest) mcpApprovalRequest, required R Function(RealtimeConversationItem$Unknown) unknown, }) { return switch (this) {
+  final RealtimeConversationItemMessage v => message(v),
+  final RealtimeConversationItemFunctionCall$Variant v => functionCall(v),
+  final RealtimeConversationItemFunctionCallOutput$Variant v => functionCallOutput(v),
+  final RealtimeConversationItemMcpApprovalResponse v => mcpApprovalResponse(v),
+  final RealtimeConversationItemMcpListTools v => mcpListTools(v),
+  final RealtimeConversationItemMcpCall v => mcpCall(v),
+  final RealtimeConversationItemMcpApprovalRequest v => mcpApprovalRequest(v),
+  final RealtimeConversationItem$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class RealtimeConversationItemMessage extends RealtimeConversationItem {const RealtimeConversationItemMessage(this.realtimeConversationItemMessageAssistant);
 
@@ -235,9 +245,11 @@ RealtimeConversationItemMcpApprovalRequest copyWith({String? id, String? serverL
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class RealtimeConversationItem$Unknown extends RealtimeConversationItem {const RealtimeConversationItem$Unknown(this.json);
+@immutable final class RealtimeConversationItem$Unknown extends RealtimeConversationItem {RealtimeConversationItem$Unknown(this.json);
 
 final Map<String, dynamic> json;
+
+late final String? _id = json['id'] as String?;
 
 @override String get type => json['type'] as String? ?? '';
 
@@ -250,6 +262,6 @@ final Map<String, dynamic> json;
 
 @override String toString() => 'RealtimeConversationItem.unknown($json)';
 
-@override String? get id => json['id'] as String?;
+@override String? get id => _id;
 
  }

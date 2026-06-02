@@ -99,6 +99,6 @@ SourceTypeCard copyWith({String? Function()? addressLine1Check, String? Function
 
 @override int get hashCode => Object.hash(addressLine1Check, addressZipCheck, brand, country, cvcCheck, dynamicLast4, expMonth, expYear, fingerprint, funding, last4, name, threeDSecure, tokenizationMethod);
 
-@override String toString() => 'SourceTypeCard(addressLine1Check: $addressLine1Check, addressZipCheck: $addressZipCheck, brand: $brand, country: $country, cvcCheck: $cvcCheck, dynamicLast4: $dynamicLast4, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, last4: $last4, name: $name, threeDSecure: $threeDSecure, tokenizationMethod: $tokenizationMethod)';
+@override String toString() => 'SourceTypeCard(\n  addressLine1Check: $addressLine1Check,\n  addressZipCheck: $addressZipCheck,\n  brand: $brand,\n  country: $country,\n  cvcCheck: $cvcCheck,\n  dynamicLast4: $dynamicLast4,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  last4: $last4,\n  name: $name,\n  threeDSecure: $threeDSecure,\n  tokenizationMethod: $tokenizationMethod,\n)';
 
  }

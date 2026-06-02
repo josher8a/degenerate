@@ -206,6 +206,6 @@ Errors copyWith({String? Function()? adviceCode, String? Function()? charge, Str
 
 @override int get hashCode => Object.hash(adviceCode, charge, code, declineCode, docUrl, message, networkAdviceCode, networkDeclineCode, param, paymentIntent, paymentMethod, paymentMethodType, requestLogUrl, setupIntent, source, type);
 
-@override String toString() => 'Errors(adviceCode: $adviceCode, charge: $charge, code: $code, declineCode: $declineCode, docUrl: $docUrl, message: $message, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, param: $param, paymentIntent: $paymentIntent, paymentMethod: $paymentMethod, paymentMethodType: $paymentMethodType, requestLogUrl: $requestLogUrl, setupIntent: $setupIntent, source: $source, type: $type)';
+@override String toString() => 'Errors(\n  adviceCode: $adviceCode,\n  charge: $charge,\n  code: $code,\n  declineCode: $declineCode,\n  docUrl: $docUrl,\n  message: $message,\n  networkAdviceCode: $networkAdviceCode,\n  networkDeclineCode: $networkDeclineCode,\n  param: $param,\n  paymentIntent: $paymentIntent,\n  paymentMethod: $paymentMethod,\n  paymentMethodType: $paymentMethodType,\n  requestLogUrl: $requestLogUrl,\n  setupIntent: $setupIntent,\n  source: $source,\n  type: $type,\n)';
 
  }

@@ -86,6 +86,6 @@ ResourceSharingShareResourceObject copyWith({ResourceSharingCreated? created, Re
 
 @override int get hashCode => Object.hash(created, id, meta, modified, resourceAccountId, resourceId, resourceType, resourceVersion, status);
 
-@override String toString() => 'ResourceSharingShareResourceObject(created: $created, id: $id, meta: $meta, modified: $modified, resourceAccountId: $resourceAccountId, resourceId: $resourceId, resourceType: $resourceType, resourceVersion: $resourceVersion, status: $status)';
+@override String toString() => 'ResourceSharingShareResourceObject(\n  created: $created,\n  id: $id,\n  meta: $meta,\n  modified: $modified,\n  resourceAccountId: $resourceAccountId,\n  resourceId: $resourceId,\n  resourceType: $resourceType,\n  resourceVersion: $resourceVersion,\n  status: $status,\n)';
 
  }

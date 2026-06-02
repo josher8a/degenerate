@@ -179,6 +179,6 @@ Product copyWith({bool? active, int? created, DefaultPrice? Function()? defaultP
 
 @override int get hashCode => Object.hash(active, created, defaultPrice, description, id, Object.hashAll(images), livemode, Object.hashAll(marketingFeatures), metadata, name, object, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, updated, url);
 
-@override String toString() => 'Product(active: $active, created: $created, defaultPrice: $defaultPrice, description: $description, id: $id, images: $images, livemode: $livemode, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, object: $object, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, updated: $updated, url: $url)';
+@override String toString() => 'Product(\n  active: $active,\n  created: $created,\n  defaultPrice: $defaultPrice,\n  description: $description,\n  id: $id,\n  images: $images,\n  livemode: $livemode,\n  marketingFeatures: $marketingFeatures,\n  metadata: $metadata,\n  name: $name,\n  object: $object,\n  packageDimensions: $packageDimensions,\n  shippable: $shippable,\n  statementDescriptor: $statementDescriptor,\n  taxCode: $taxCode,\n  unitLabel: $unitLabel,\n  updated: $updated,\n  url: $url,\n)';
 
  }

@@ -15,7 +15,7 @@ Future<ApiResult<List<String>?, Never>> getSecurityCenterIssueTypes({required Se
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/attack-surface-report/issue-types',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/attack-surface-report/issue-types',
   headers: headers,
   options: options,
 );
@@ -97,7 +97,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/security-center/insights',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/security-center/insights',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -121,7 +121,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> getSecurityCenterInsightContext(
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/security-center/insights/${Uri.encodeComponent(issueId)}/context',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/security-center/insights/${Uri.encodeComponent(issueId)}/context',
   headers: headers,
   options: options,
 );
@@ -142,7 +142,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/security-center/insights/${Uri.encodeComponent(issueId)}/dismiss',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/security-center/insights/${Uri.encodeComponent(issueId)}/dismiss',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -218,7 +218,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/security-center/insights/class',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/security-center/insights/class',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -296,7 +296,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/security-center/insights/severity',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/security-center/insights/severity',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -374,7 +374,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/security-center/insights/type',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/security-center/insights/type',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -458,7 +458,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/security-center/insights',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/security-center/insights',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -481,7 +481,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/security-center/insights/${Uri.encodeComponent(issueId)}/dismiss',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/security-center/insights/${Uri.encodeComponent(issueId)}/dismiss',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -557,7 +557,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/security-center/insights/class',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/security-center/insights/class',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -635,7 +635,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/security-center/insights/severity',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/security-center/insights/severity',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -713,7 +713,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/security-center/insights/type',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/security-center/insights/type',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

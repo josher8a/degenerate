@@ -82,6 +82,6 @@ IssuesUpdateRequest copyWith({dynamic Function()? title, String? Function()? bod
 
 @override int get hashCode => Object.hash(title, body, assignee, state, stateReason, milestone, Object.hashAll(labels ?? const []), Object.hashAll(assignees ?? const []), type);
 
-@override String toString() => 'IssuesUpdateRequest(title: $title, body: $body, assignee: $assignee, state: $state, stateReason: $stateReason, milestone: $milestone, labels: $labels, assignees: $assignees, type: $type)';
+@override String toString() => 'IssuesUpdateRequest(\n  title: $title,\n  body: $body,\n  assignee: $assignee,\n  state: $state,\n  stateReason: $stateReason,\n  milestone: $milestone,\n  labels: $labels,\n  assignees: $assignees,\n  type: $type,\n)';
 
  }

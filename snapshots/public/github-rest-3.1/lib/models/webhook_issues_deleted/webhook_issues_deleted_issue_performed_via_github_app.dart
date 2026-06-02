@@ -48,18 +48,18 @@ final String? slug;
 final DateTime? updatedAt;
 
 Map<String, dynamic> toJson() { return {
-  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
+  'created_at': createdAt?.toIso8601String(),
   'description': description,
   if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
-  'external_url': externalUrl != null ? externalUrl?.toString() : null,
+  'external_url': externalUrl?.toString(),
   'html_url': htmlUrl.toString(),
   'id': id,
   'name': name,
   'node_id': nodeId,
-  'owner': owner != null ? owner?.toJson() : null,
+  'owner': owner?.toJson(),
   if (permissions != null) 'permissions': permissions?.toJson(),
   'slug': ?slug,
-  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
+  'updated_at': updatedAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('description') && json['description'] is String &&
@@ -101,6 +101,6 @@ WebhookIssuesDeletedIssuePerformedViaGithubApp copyWith({DateTime? Function()? c
 
 @override int get hashCode => Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, name, nodeId, owner, permissions, slug, updatedAt);
 
-@override String toString() => 'WebhookIssuesDeletedIssuePerformedViaGithubApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)';
+@override String toString() => 'WebhookIssuesDeletedIssuePerformedViaGithubApp(\n  createdAt: $createdAt,\n  description: $description,\n  events: $events,\n  externalUrl: $externalUrl,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  name: $name,\n  nodeId: $nodeId,\n  owner: $owner,\n  permissions: $permissions,\n  slug: $slug,\n  updatedAt: $updatedAt,\n)';
 
  }

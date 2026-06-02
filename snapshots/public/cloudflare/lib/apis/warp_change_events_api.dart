@@ -39,7 +39,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/dex/warp-change-events',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/dex/warp-change-events',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

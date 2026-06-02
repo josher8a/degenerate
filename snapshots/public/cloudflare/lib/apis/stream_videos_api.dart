@@ -47,7 +47,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -85,7 +85,7 @@ if (uploadMetadata != null) {
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -106,7 +106,7 @@ Future<ApiResult<StreamVideos?, Never>> streamVideosRetrieveVideoDetails({requir
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -129,7 +129,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -152,7 +152,7 @@ Future<ApiResult<void, Never>> streamVideosDeleteVideo({required StreamIdentifie
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}',
   headers: headers,
   options: options,
 );
@@ -171,7 +171,7 @@ Future<ApiResult<String, Never>> streamVideosRetreieveEmbedCodeHtml({required St
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/embed',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/embed',
   headers: headers,
   options: options,
 );
@@ -193,7 +193,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/token',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/${Uri.encodeComponent(identifier.toJson())}/token',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -220,7 +220,7 @@ if (uploadCreator != null) {
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/copy',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/copy',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -247,7 +247,7 @@ if (uploadCreator != null) {
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/direct_upload',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/direct_upload',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -276,7 +276,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/storage-usage',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/stream/storage-usage',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

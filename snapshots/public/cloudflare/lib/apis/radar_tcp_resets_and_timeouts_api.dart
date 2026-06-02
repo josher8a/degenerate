@@ -71,7 +71,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetTcpResetsTimeoutsSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetTcpResetsTimeoutsSummaryError.fromResponse(response),
+  onError: RadarGetTcpResetsTimeoutsSummaryError.fromResponse,
 );
  } 
 /// Get TCP resets and timeouts time series
@@ -140,7 +140,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => RadarGetTcpResetsTimeoutsTimeseriesGroupError.fromResponse(response),
+  onError: RadarGetTcpResetsTimeoutsTimeseriesGroupError.fromResponse,
 );
  } 
  }

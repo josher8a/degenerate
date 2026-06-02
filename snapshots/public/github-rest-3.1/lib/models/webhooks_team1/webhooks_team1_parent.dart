@@ -126,6 +126,6 @@ WebhooksTeam1Parent copyWith({String? Function()? description, Uri? htmlUrl, int
 
 @override int get hashCode => Object.hash(description, htmlUrl, id, membersUrl, name, nodeId, permission, privacy, notificationSetting, repositoriesUrl, slug, url, type, organizationId, enterpriseId);
 
-@override String toString() => 'WebhooksTeam1Parent(description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, permission: $permission, privacy: $privacy, notificationSetting: $notificationSetting, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)';
+@override String toString() => 'WebhooksTeam1Parent(\n  description: $description,\n  htmlUrl: $htmlUrl,\n  id: $id,\n  membersUrl: $membersUrl,\n  name: $name,\n  nodeId: $nodeId,\n  permission: $permission,\n  privacy: $privacy,\n  notificationSetting: $notificationSetting,\n  repositoriesUrl: $repositoriesUrl,\n  slug: $slug,\n  url: $url,\n  type: $type,\n  organizationId: $organizationId,\n  enterpriseId: $enterpriseId,\n)';
 
  }

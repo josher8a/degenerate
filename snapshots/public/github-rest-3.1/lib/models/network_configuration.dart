@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'network_settings_ids': ?networkSettingsIds,
   'failover_network_settings_ids': ?failoverNetworkSettingsIds,
   'failover_network_enabled': ?failoverNetworkEnabled,
-  'created_on': createdOn != null ? createdOn?.toIso8601String() : null,
+  'created_on': createdOn?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&

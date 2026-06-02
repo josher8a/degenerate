@@ -255,7 +255,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('messa
       json.containsKey('model'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (messages.length < 1) errors.add('messages: must have >= 1 items');
+if (messages.isEmpty) errors.add('messages: must have >= 1 items');
 final frequencyPenalty$ = frequencyPenalty;
 if (frequencyPenalty$ != null) {
   if (frequencyPenalty$ < -2) errors.add('frequencyPenalty: must be >= -2');
@@ -283,7 +283,7 @@ if (seed$ != null) {
 }
 final functions$ = functions;
 if (functions$ != null) {
-  if (functions$.length < 1) errors.add('functions: must have >= 1 items');
+  if (functions$.isEmpty) errors.add('functions: must have >= 1 items');
   if (functions$.length > 128) errors.add('functions: must have <= 128 items');
 }
 return errors; } 
@@ -348,6 +348,6 @@ CreateChatCompletionRequest copyWith({List<ChatCompletionRequestMessage>? messag
 
 @override int get hashCode => Object.hashAll([Object.hashAll(messages), model, Object.hashAll(modalities ?? const []), verbosity, reasoningEffort, maxCompletionTokens, frequencyPenalty, presencePenalty, webSearchOptions, topLogprobs, responseFormat, audio, store, stream, stop, logitBias, logprobs, maxTokens, n, prediction, seed, streamOptions, Object.hashAll(tools ?? const []), toolChoice, parallelToolCalls, functionCall, Object.hashAll(functions ?? const [])]);
 
-@override String toString() => 'CreateChatCompletionRequest(messages: $messages, model: $model, modalities: $modalities, verbosity: $verbosity, reasoningEffort: $reasoningEffort, maxCompletionTokens: $maxCompletionTokens, frequencyPenalty: $frequencyPenalty, presencePenalty: $presencePenalty, webSearchOptions: $webSearchOptions, topLogprobs: $topLogprobs, responseFormat: $responseFormat, audio: $audio, store: $store, stream: $stream, stop: $stop, logitBias: $logitBias, logprobs: $logprobs, maxTokens: $maxTokens, n: $n, prediction: $prediction, seed: $seed, streamOptions: $streamOptions, tools: $tools, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, functionCall: $functionCall, functions: $functions)';
+@override String toString() => 'CreateChatCompletionRequest(\n  messages: $messages,\n  model: $model,\n  modalities: $modalities,\n  verbosity: $verbosity,\n  reasoningEffort: $reasoningEffort,\n  maxCompletionTokens: $maxCompletionTokens,\n  frequencyPenalty: $frequencyPenalty,\n  presencePenalty: $presencePenalty,\n  webSearchOptions: $webSearchOptions,\n  topLogprobs: $topLogprobs,\n  responseFormat: $responseFormat,\n  audio: $audio,\n  store: $store,\n  stream: $stream,\n  stop: $stop,\n  logitBias: $logitBias,\n  logprobs: $logprobs,\n  maxTokens: $maxTokens,\n  n: $n,\n  prediction: $prediction,\n  seed: $seed,\n  streamOptions: $streamOptions,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  parallelToolCalls: $parallelToolCalls,\n  functionCall: $functionCall,\n  functions: $functions,\n)';
 
  }

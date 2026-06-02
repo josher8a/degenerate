@@ -114,6 +114,6 @@ AccountShortCode copyWith({String? Function()? accountSid, String? Function()? a
 
 @override int get hashCode => Object.hash(accountSid, apiVersion, dateCreated, dateUpdated, friendlyName, shortCode, sid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsUrl, uri);
 
-@override String toString() => 'AccountShortCode(accountSid: $accountSid, apiVersion: $apiVersion, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, shortCode: $shortCode, sid: $sid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsUrl: $smsUrl, uri: $uri)';
+@override String toString() => 'AccountShortCode(\n  accountSid: $accountSid,\n  apiVersion: $apiVersion,\n  dateCreated: $dateCreated,\n  dateUpdated: $dateUpdated,\n  friendlyName: $friendlyName,\n  shortCode: $shortCode,\n  sid: $sid,\n  smsFallbackMethod: $smsFallbackMethod,\n  smsFallbackUrl: $smsFallbackUrl,\n  smsMethod: $smsMethod,\n  smsUrl: $smsUrl,\n  uri: $uri,\n)';
 
  }

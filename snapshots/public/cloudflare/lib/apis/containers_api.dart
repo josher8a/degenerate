@@ -38,7 +38,7 @@ return execute(
   onSuccess: (response) {
     return BaseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PublicListApplicationsError.fromResponse(response),
+  onError: PublicListApplicationsError.fromResponse,
 );
  } 
  }

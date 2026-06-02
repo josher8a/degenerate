@@ -79,6 +79,6 @@ PaymentMethodDetailsCardWallet copyWith({PaymentMethodDetailsCardWalletAmexExpre
 
 @override int get hashCode => Object.hash(amexExpressCheckout, applePay, dynamicLast4, googlePay, link, masterpass, samsungPay, type, visaCheckout);
 
-@override String toString() => 'PaymentMethodDetailsCardWallet(amexExpressCheckout: $amexExpressCheckout, applePay: $applePay, dynamicLast4: $dynamicLast4, googlePay: $googlePay, link: $link, masterpass: $masterpass, samsungPay: $samsungPay, type: $type, visaCheckout: $visaCheckout)';
+@override String toString() => 'PaymentMethodDetailsCardWallet(\n  amexExpressCheckout: $amexExpressCheckout,\n  applePay: $applePay,\n  dynamicLast4: $dynamicLast4,\n  googlePay: $googlePay,\n  link: $link,\n  masterpass: $masterpass,\n  samsungPay: $samsungPay,\n  type: $type,\n  visaCheckout: $visaCheckout,\n)';
 
  }

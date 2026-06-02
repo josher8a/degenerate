@@ -132,6 +132,6 @@ TransferReversal copyWith({int? amount, ApplicationFeeBalanceTransaction? Functi
 
 @override int get hashCode => Object.hash(amount, balanceTransaction, created, currency, destinationPaymentRefund, id, metadata, object, sourceRefund, transfer);
 
-@override String toString() => 'TransferReversal(amount: $amount, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, destinationPaymentRefund: $destinationPaymentRefund, id: $id, metadata: $metadata, object: $object, sourceRefund: $sourceRefund, transfer: $transfer)';
+@override String toString() => 'TransferReversal(\n  amount: $amount,\n  balanceTransaction: $balanceTransaction,\n  created: $created,\n  currency: $currency,\n  destinationPaymentRefund: $destinationPaymentRefund,\n  id: $id,\n  metadata: $metadata,\n  object: $object,\n  sourceRefund: $sourceRefund,\n  transfer: $transfer,\n)';
 
  }

@@ -97,6 +97,6 @@ IpStats copyWith({IpStatsAsn? asn, double? Function()? count, List<String>? coun
 
 @override int get hashCode => Object.hash(asn, count, Object.hashAll(countries), Object.hashAll(domains), encodedSize, geoip, index, ip, ipv6, redirects, requests, size);
 
-@override String toString() => 'IpStats(asn: $asn, count: $count, countries: $countries, domains: $domains, encodedSize: $encodedSize, geoip: $geoip, index: $index, ip: $ip, ipv6: $ipv6, redirects: $redirects, requests: $requests, size: $size)';
+@override String toString() => 'IpStats(\n  asn: $asn,\n  count: $count,\n  countries: $countries,\n  domains: $domains,\n  encodedSize: $encodedSize,\n  geoip: $geoip,\n  index: $index,\n  ip: $ip,\n  ipv6: $ipv6,\n  redirects: $redirects,\n  requests: $requests,\n  size: $size,\n)';
 
  }

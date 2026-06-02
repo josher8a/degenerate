@@ -126,6 +126,6 @@ StreamWatermarks copyWith({StreamWatermarkCreated? Function()? created, StreamDo
 
 @override int get hashCode => Object.hash(created, downloadedFrom, height, name, opacity, padding, position, scale, size, uid, width);
 
-@override String toString() => 'StreamWatermarks(created: $created, downloadedFrom: $downloadedFrom, height: $height, name: $name, opacity: $opacity, padding: $padding, position: $position, scale: $scale, size: $size, uid: $uid, width: $width)';
+@override String toString() => 'StreamWatermarks(\n  created: $created,\n  downloadedFrom: $downloadedFrom,\n  height: $height,\n  name: $name,\n  opacity: $opacity,\n  padding: $padding,\n  position: $position,\n  scale: $scale,\n  size: $size,\n  uid: $uid,\n  width: $width,\n)';
 
  }

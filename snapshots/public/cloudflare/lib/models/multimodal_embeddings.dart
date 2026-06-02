@@ -21,7 +21,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final image$ = image;
 if (image$ != null) {
-  if (image$.length < 1) errors.add('image: length must be >= 1');
+  if (image$.isEmpty) errors.add('image: length must be >= 1');
 }
 return errors; } 
 MultimodalEmbeddings copyWith({String? Function()? image, List<String>? Function()? text, }) { return MultimodalEmbeddings(

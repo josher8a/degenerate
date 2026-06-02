@@ -157,6 +157,6 @@ TeamsDevicesDevice copyWith({TeamsDevicesAccount? Function()? account, TeamsDevi
 
 @override int get hashCode => Object.hash(account, created, deleted, deviceType, gatewayDeviceId, id, ip, key, keyType, lastSeen, macAddress, model, name, osVersion, serialNumber, tunnelType, updated, user, version);
 
-@override String toString() => 'TeamsDevicesDevice(account: $account, created: $created, deleted: $deleted, deviceType: $deviceType, gatewayDeviceId: $gatewayDeviceId, id: $id, ip: $ip, key: $key, keyType: $keyType, lastSeen: $lastSeen, macAddress: $macAddress, model: $model, name: $name, osVersion: $osVersion, serialNumber: $serialNumber, tunnelType: $tunnelType, updated: $updated, user: $user, version: $version)';
+@override String toString() => 'TeamsDevicesDevice(\n  account: $account,\n  created: $created,\n  deleted: $deleted,\n  deviceType: $deviceType,\n  gatewayDeviceId: $gatewayDeviceId,\n  id: $id,\n  ip: $ip,\n  key: $key,\n  keyType: $keyType,\n  lastSeen: $lastSeen,\n  macAddress: $macAddress,\n  model: $model,\n  name: $name,\n  osVersion: $osVersion,\n  serialNumber: $serialNumber,\n  tunnelType: $tunnelType,\n  updated: $updated,\n  user: $user,\n  version: $version,\n)';
 
  }

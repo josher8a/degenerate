@@ -47,7 +47,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/rules',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -72,7 +72,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/rules',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -95,7 +95,7 @@ Future<ApiResult<ShieldRule, Never>> tokenValidationRulesGet({required ShieldIde
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -118,7 +118,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -141,7 +141,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> tokenValidationRulesDelete({requ
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules/${Uri.encodeComponent(ruleId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/rules/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -167,7 +167,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules/bulk',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/rules/bulk',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -198,7 +198,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules/bulk',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/rules/bulk',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -260,7 +260,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/token_validation/rules/preview',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/token_validation/rules/preview',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

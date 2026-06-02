@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (messages.length < 1) errors.add('messages: must have >= 1 items');
+if (messages.isEmpty) errors.add('messages: must have >= 1 items');
 return errors; } 
 AiSearchInstanceSearchRequest copyWith({AiSearchOptions? Function()? aiSearchOptions, List<AiSearchInstanceChatCompletionRequestMessages>? messages, }) { return AiSearchInstanceSearchRequest(
   aiSearchOptions: aiSearchOptions != null ? aiSearchOptions() : this.aiSearchOptions,

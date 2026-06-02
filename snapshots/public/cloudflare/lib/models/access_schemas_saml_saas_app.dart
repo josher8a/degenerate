@@ -106,6 +106,6 @@ AccessSchemasSamlSaasApp copyWith({AccessOidcSaasAppAuthType? Function()? authTy
 
 @override int get hashCode => Object.hash(authType, consumerServiceUrl, createdAt, Object.hashAll(customAttributes ?? const []), idpEntityId, nameIdFormat, nameIdTransformJsonata, publicKey, spEntityId, ssoEndpoint, updatedAt);
 
-@override String toString() => 'AccessSchemasSamlSaasApp(authType: $authType, consumerServiceUrl: $consumerServiceUrl, createdAt: $createdAt, customAttributes: $customAttributes, idpEntityId: $idpEntityId, nameIdFormat: $nameIdFormat, nameIdTransformJsonata: $nameIdTransformJsonata, publicKey: $publicKey, spEntityId: $spEntityId, ssoEndpoint: $ssoEndpoint, updatedAt: $updatedAt)';
+@override String toString() => 'AccessSchemasSamlSaasApp(\n  authType: $authType,\n  consumerServiceUrl: $consumerServiceUrl,\n  createdAt: $createdAt,\n  customAttributes: $customAttributes,\n  idpEntityId: $idpEntityId,\n  nameIdFormat: $nameIdFormat,\n  nameIdTransformJsonata: $nameIdTransformJsonata,\n  publicKey: $publicKey,\n  spEntityId: $spEntityId,\n  ssoEndpoint: $ssoEndpoint,\n  updatedAt: $updatedAt,\n)';
 
  }

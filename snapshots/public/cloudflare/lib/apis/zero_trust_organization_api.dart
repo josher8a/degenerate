@@ -17,7 +17,7 @@ Future<ApiResult<AccessOrganizations?, Never>> zeroTrustOrganizationGetYourZeroT
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/organizations',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/organizations',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -64,7 +64,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/organizations',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -87,7 +87,7 @@ Future<ApiResult<ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsRes
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations/doh',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/organizations/doh',
   headers: headers,
   options: options,
 );
@@ -110,7 +110,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations/doh',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/organizations/doh',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -140,7 +140,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/organizations/revoke_user',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/access/organizations/revoke_user',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

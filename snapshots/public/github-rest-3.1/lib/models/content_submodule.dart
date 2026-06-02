@@ -71,9 +71,9 @@ Map<String, dynamic> toJson() { return {
   'path': path,
   'sha': sha,
   'url': url.toString(),
-  'git_url': gitUrl != null ? gitUrl?.toString() : null,
-  'html_url': htmlUrl != null ? htmlUrl?.toString() : null,
-  'download_url': downloadUrl != null ? downloadUrl?.toString() : null,
+  'git_url': gitUrl?.toString(),
+  'html_url': htmlUrl?.toString(),
+  'download_url': downloadUrl?.toString(),
   '_links': links.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
@@ -116,6 +116,6 @@ ContentSubmodule copyWith({ContentSubmoduleType? type, Uri? submoduleGitUrl, int
 
 @override int get hashCode => Object.hash(type, submoduleGitUrl, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links);
 
-@override String toString() => 'ContentSubmodule(type: $type, submoduleGitUrl: $submoduleGitUrl, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)';
+@override String toString() => 'ContentSubmodule(\n  type: $type,\n  submoduleGitUrl: $submoduleGitUrl,\n  size: $size,\n  name: $name,\n  path: $path,\n  sha: $sha,\n  url: $url,\n  gitUrl: $gitUrl,\n  htmlUrl: $htmlUrl,\n  downloadUrl: $downloadUrl,\n  links: $links,\n)';
 
  }

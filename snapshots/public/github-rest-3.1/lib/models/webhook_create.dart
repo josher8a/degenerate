@@ -86,6 +86,6 @@ WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Fun
 
 @override int get hashCode => Object.hash(description, enterprise, installation, masterBranch, organization, pusherType, ref, refType, repository, sender);
 
-@override String toString() => 'WebhookCreate(description: $description, enterprise: $enterprise, installation: $installation, masterBranch: $masterBranch, organization: $organization, pusherType: $pusherType, ref: $ref, refType: $refType, repository: $repository, sender: $sender)';
+@override String toString() => 'WebhookCreate(\n  description: $description,\n  enterprise: $enterprise,\n  installation: $installation,\n  masterBranch: $masterBranch,\n  organization: $organization,\n  pusherType: $pusherType,\n  ref: $ref,\n  refType: $refType,\n  repository: $repository,\n  sender: $sender,\n)';
 
  }

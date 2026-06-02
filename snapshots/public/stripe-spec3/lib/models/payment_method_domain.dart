@@ -138,6 +138,6 @@ PaymentMethodDomain copyWith({PaymentMethodDomainResourcePaymentMethodStatus? am
 
 @override int get hashCode => Object.hash(amazonPay, applePay, created, domainName, enabled, googlePay, id, klarna, link, livemode, object, paypal);
 
-@override String toString() => 'PaymentMethodDomain(amazonPay: $amazonPay, applePay: $applePay, created: $created, domainName: $domainName, enabled: $enabled, googlePay: $googlePay, id: $id, klarna: $klarna, link: $link, livemode: $livemode, object: $object, paypal: $paypal)';
+@override String toString() => 'PaymentMethodDomain(\n  amazonPay: $amazonPay,\n  applePay: $applePay,\n  created: $created,\n  domainName: $domainName,\n  enabled: $enabled,\n  googlePay: $googlePay,\n  id: $id,\n  klarna: $klarna,\n  link: $link,\n  livemode: $livemode,\n  object: $object,\n  paypal: $paypal,\n)';
 
  }

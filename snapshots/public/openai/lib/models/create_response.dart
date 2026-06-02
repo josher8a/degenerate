@@ -74,7 +74,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final contextManagement$ = contextManagement;
 if (contextManagement$ != null) {
-  if (contextManagement$.length < 1) errors.add('contextManagement: must have >= 1 items');
+  if (contextManagement$.isEmpty) errors.add('contextManagement: must have >= 1 items');
 }
 return errors; } 
 CreateResponse copyWith({InputParam? Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions? Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return CreateResponse(
@@ -102,6 +102,6 @@ CreateResponse copyWith({InputParam? Function()? input, List<IncludeEnum>? Funct
 
 @override int get hashCode => Object.hash(input, Object.hashAll(include ?? const []), parallelToolCalls, store, instructions, stream, streamOptions, conversation, Object.hashAll(contextManagement ?? const []));
 
-@override String toString() => 'CreateResponse(input: $input, include: $include, parallelToolCalls: $parallelToolCalls, store: $store, instructions: $instructions, stream: $stream, streamOptions: $streamOptions, conversation: $conversation, contextManagement: $contextManagement)';
+@override String toString() => 'CreateResponse(\n  input: $input,\n  include: $include,\n  parallelToolCalls: $parallelToolCalls,\n  store: $store,\n  instructions: $instructions,\n  stream: $stream,\n  streamOptions: $streamOptions,\n  conversation: $conversation,\n  contextManagement: $contextManagement,\n)';
 
  }

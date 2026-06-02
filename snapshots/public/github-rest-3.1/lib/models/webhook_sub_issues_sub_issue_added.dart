@@ -106,6 +106,6 @@ WebhookSubIssuesSubIssueAdded copyWith({WebhookSubIssuesSubIssueAddedAction? act
 
 @override int get hashCode => Object.hash(action, subIssueId, subIssue, subIssueRepo, parentIssueId, parentIssue, installation, organization, repository, sender);
 
-@override String toString() => 'WebhookSubIssuesSubIssueAdded(action: $action, subIssueId: $subIssueId, subIssue: $subIssue, subIssueRepo: $subIssueRepo, parentIssueId: $parentIssueId, parentIssue: $parentIssue, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+@override String toString() => 'WebhookSubIssuesSubIssueAdded(\n  action: $action,\n  subIssueId: $subIssueId,\n  subIssue: $subIssue,\n  subIssueRepo: $subIssueRepo,\n  parentIssueId: $parentIssueId,\n  parentIssue: $parentIssue,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  sender: $sender,\n)';
 
  }

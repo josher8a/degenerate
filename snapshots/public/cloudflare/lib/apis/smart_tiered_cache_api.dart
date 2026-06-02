@@ -17,7 +17,7 @@ Future<ApiResult<CacheRulesResultObject?, Never>> smartTieredCacheGetSmartTiered
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/tiered_cache_smart_topology_enable',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/tiered_cache_smart_topology_enable',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/tiered_cache_smart_topology_enable',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/tiered_cache_smart_topology_enable',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<CacheRulesBase?, Never>> smartTieredCacheDeleteSmartTieredCache
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/cache/tiered_cache_smart_topology_enable',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/cache/tiered_cache_smart_topology_enable',
   headers: headers,
   options: options,
 );

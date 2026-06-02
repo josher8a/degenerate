@@ -27,7 +27,7 @@ return execute(
   onSuccess: (response) {
     return UsersGetAuthenticatedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Update the authenticated user
@@ -51,7 +51,7 @@ return execute(
   onSuccess: (response) {
     return PrivateUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// List users blocked by the authenticated user
@@ -85,7 +85,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Check if a user is blocked by the authenticated user
@@ -105,7 +105,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Block a user
@@ -125,7 +125,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// Unblock a user
@@ -145,7 +145,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Set primary email visibility for the authenticated user
@@ -170,7 +170,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// List email addresses for the authenticated user
@@ -207,7 +207,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Add an email address for the authenticated user
@@ -232,7 +232,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// Delete an email address for the authenticated user
@@ -254,7 +254,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// List followers of the authenticated user
@@ -288,7 +288,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// List the people the authenticated user follows
@@ -322,7 +322,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityDeleteThreadSubscriptionError.fromResponse(response),
+  onError: ActivityDeleteThreadSubscriptionError.fromResponse,
 );
  } 
 /// Check if a person is followed by the authenticated user
@@ -342,7 +342,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Follow a user
@@ -364,7 +364,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// Unfollow a user
@@ -384,7 +384,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// List GPG keys for the authenticated user
@@ -420,7 +420,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GpgKey.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Create a GPG key for the authenticated user
@@ -446,7 +446,7 @@ return execute(
   onSuccess: (response) {
     return GpgKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// Get a GPG key for the authenticated user
@@ -470,7 +470,7 @@ return execute(
   onSuccess: (response) {
     return GpgKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Delete a GPG key for the authenticated user
@@ -492,7 +492,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// List public SSH keys for the authenticated user
@@ -528,7 +528,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Key.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Create a public SSH key for the authenticated user
@@ -554,7 +554,7 @@ return execute(
   onSuccess: (response) {
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// Get a public SSH key for the authenticated user
@@ -578,7 +578,7 @@ return execute(
   onSuccess: (response) {
     return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Delete a public SSH key for the authenticated user
@@ -600,7 +600,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// List public email addresses for the authenticated user
@@ -638,7 +638,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// List social accounts for the authenticated user
@@ -672,7 +672,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SocialAccount.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Add social accounts for the authenticated user
@@ -699,7 +699,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SocialAccount.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// Delete social accounts for the authenticated user
@@ -723,7 +723,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// List SSH signing keys for the authenticated user
@@ -759,7 +759,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => SshSigningKey.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Create a SSH signing key for the authenticated user
@@ -785,7 +785,7 @@ return execute(
   onSuccess: (response) {
     return SshSigningKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AppsCreateInstallationAccessTokenError.fromResponse(response),
+  onError: AppsCreateInstallationAccessTokenError.fromResponse,
 );
  } 
 /// Get an SSH signing key for the authenticated user
@@ -809,7 +809,7 @@ return execute(
   onSuccess: (response) {
     return SshSigningKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Delete an SSH signing key for the authenticated user
@@ -831,7 +831,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(response),
+  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse,
 );
  } 
 /// Get a user using their ID
@@ -859,7 +859,7 @@ return execute(
   onSuccess: (response) {
     return UsersGetByIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List users
@@ -922,7 +922,7 @@ return execute(
   onSuccess: (response) {
     return UsersGetByUsernameResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List attestations by bulk subject digests
@@ -985,7 +985,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete attestations by subject digest
@@ -1005,7 +1005,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// Delete attestations by ID
@@ -1025,7 +1025,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// List attestations
@@ -1068,7 +1068,7 @@ return execute(
   onSuccess: (response) {
     return UsersListAttestationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List followers of a user
@@ -1223,7 +1223,7 @@ return execute(
   onSuccess: (response) {
     return Hovercard.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List public keys for a user

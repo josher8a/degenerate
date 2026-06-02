@@ -89,7 +89,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GlobalAdvisory.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => SecurityAdvisoriesListGlobalAdvisoriesError.fromResponse(response),
+  onError: SecurityAdvisoriesListGlobalAdvisoriesError.fromResponse,
 );
  } 
 /// Get a global security advisory
@@ -111,7 +111,7 @@ return execute(
   onSuccess: (response) {
     return GlobalAdvisory.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(response),
+  onError: ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse,
 );
  } 
 /// List repository security advisories for an organization
@@ -161,7 +161,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => RepositoryAdvisory.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetCustomOidcSubClaimForRepoError.fromResponse(response),
+  onError: ActionsGetCustomOidcSubClaimForRepoError.fromResponse,
 );
  } 
 /// List repository security advisories
@@ -211,7 +211,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => RepositoryAdvisory.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => ActionsGetCustomOidcSubClaimForRepoError.fromResponse(response),
+  onError: ActionsGetCustomOidcSubClaimForRepoError.fromResponse,
 );
  } 
 /// Create a repository security advisory
@@ -239,7 +239,7 @@ return execute(
   onSuccess: (response) {
     return RepositoryAdvisory.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// Privately report a security vulnerability
@@ -264,7 +264,7 @@ return execute(
   onSuccess: (response) {
     return RepositoryAdvisory.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// Get a repository security advisory
@@ -293,7 +293,7 @@ return execute(
   onSuccess: (response) {
     return RepositoryAdvisory.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsApproveWorkflowRunError.fromResponse(response),
+  onError: ActionsApproveWorkflowRunError.fromResponse,
 );
  } 
 /// Update a repository security advisory
@@ -322,7 +322,7 @@ return execute(
   onSuccess: (response) {
     return RepositoryAdvisory.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse(response),
+  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromResponse,
 );
  } 
 /// Request a CVE for a repository security advisory
@@ -350,7 +350,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => ReposCreateForkError.fromResponse(response),
+  onError: ReposCreateForkError.fromResponse,
 );
  } 
 /// Create a temporary private fork
@@ -375,7 +375,7 @@ return execute(
   onSuccess: (response) {
     return FullRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ReposCreateForkError.fromResponse(response),
+  onError: ReposCreateForkError.fromResponse,
 );
  } 
  }

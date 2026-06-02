@@ -196,6 +196,6 @@ TreasuryTransaction copyWith({int? amount, TreasuryTransactionsResourceBalanceIm
 
 @override int get hashCode => Object.hash(amount, balanceImpact, created, currency, description, entries, financialAccount, flow, flowDetails, flowType, id, livemode, object, status, statusTransitions);
 
-@override String toString() => 'TreasuryTransaction(amount: $amount, balanceImpact: $balanceImpact, created: $created, currency: $currency, description: $description, entries: $entries, financialAccount: $financialAccount, flow: $flow, flowDetails: $flowDetails, flowType: $flowType, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions)';
+@override String toString() => 'TreasuryTransaction(\n  amount: $amount,\n  balanceImpact: $balanceImpact,\n  created: $created,\n  currency: $currency,\n  description: $description,\n  entries: $entries,\n  financialAccount: $financialAccount,\n  flow: $flow,\n  flowDetails: $flowDetails,\n  flowType: $flowType,\n  id: $id,\n  livemode: $livemode,\n  object: $object,\n  status: $status,\n  statusTransitions: $statusTransitions,\n)';
 
  }

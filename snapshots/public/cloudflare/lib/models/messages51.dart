@@ -154,10 +154,10 @@ if (frequencyPenalty$ != null) {
 }
 final functions$ = functions;
 if (functions$ != null) {
-  if (functions$.length < 1) errors.add('functions: must have >= 1 items');
+  if (functions$.isEmpty) errors.add('functions: must have >= 1 items');
   if (functions$.length > 128) errors.add('functions: must have <= 128 items');
 }
-if (messages.length < 1) errors.add('messages: must have >= 1 items');
+if (messages.isEmpty) errors.add('messages: must have >= 1 items');
 final n$ = n;
 if (n$ != null) {
   if (n$ < 1) errors.add('n: must be >= 1');
@@ -255,6 +255,6 @@ Messages51 copyWith({MessagesAudioVariant1? Function()? audio, ChatTemplateKwarg
 
 @override int get hashCode => Object.hashAll([audio, chatTemplateKwargs, frequencyPenalty, functionCall, Object.hashAll(functions ?? const []), logitBias, logprobs, maxCompletionTokens, maxTokens, Object.hashAll(messages), metadata, Object.hashAll(modalities ?? const []), model, n, parallelToolCalls, prediction, presencePenalty, reasoningEffort, responseFormat, seed, serviceTier, stop, store, stream, streamOptions, temperature, toolChoice, Object.hashAll(tools ?? const []), topLogprobs, topP, user, webSearchOptions]);
 
-@override String toString() => 'Messages51(audio: $audio, chatTemplateKwargs: $chatTemplateKwargs, frequencyPenalty: $frequencyPenalty, functionCall: $functionCall, functions: $functions, logitBias: $logitBias, logprobs: $logprobs, maxCompletionTokens: $maxCompletionTokens, maxTokens: $maxTokens, messages: $messages, metadata: $metadata, modalities: $modalities, model: $model, n: $n, parallelToolCalls: $parallelToolCalls, prediction: $prediction, presencePenalty: $presencePenalty, reasoningEffort: $reasoningEffort, responseFormat: $responseFormat, seed: $seed, serviceTier: $serviceTier, stop: $stop, store: $store, stream: $stream, streamOptions: $streamOptions, temperature: $temperature, toolChoice: $toolChoice, tools: $tools, topLogprobs: $topLogprobs, topP: $topP, user: $user, webSearchOptions: $webSearchOptions)';
+@override String toString() => 'Messages51(\n  audio: $audio,\n  chatTemplateKwargs: $chatTemplateKwargs,\n  frequencyPenalty: $frequencyPenalty,\n  functionCall: $functionCall,\n  functions: $functions,\n  logitBias: $logitBias,\n  logprobs: $logprobs,\n  maxCompletionTokens: $maxCompletionTokens,\n  maxTokens: $maxTokens,\n  messages: $messages,\n  metadata: $metadata,\n  modalities: $modalities,\n  model: $model,\n  n: $n,\n  parallelToolCalls: $parallelToolCalls,\n  prediction: $prediction,\n  presencePenalty: $presencePenalty,\n  reasoningEffort: $reasoningEffort,\n  responseFormat: $responseFormat,\n  seed: $seed,\n  serviceTier: $serviceTier,\n  stop: $stop,\n  store: $store,\n  stream: $stream,\n  streamOptions: $streamOptions,\n  temperature: $temperature,\n  toolChoice: $toolChoice,\n  tools: $tools,\n  topLogprobs: $topLogprobs,\n  topP: $topP,\n  user: $user,\n  webSearchOptions: $webSearchOptions,\n)';
 
  }

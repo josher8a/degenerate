@@ -79,6 +79,6 @@ StreamVideoClipStandard copyWith({List<String>? Function()? allowedOrigins, Stre
 
 @override int get hashCode => Object.hash(Object.hashAll(allowedOrigins ?? const []), clippedFromVideoUid, creator, endTimeSeconds, maxDurationSeconds, requireSignedUrLs, startTimeSeconds, thumbnailTimestampPct, watermark);
 
-@override String toString() => 'StreamVideoClipStandard(allowedOrigins: $allowedOrigins, clippedFromVideoUid: $clippedFromVideoUid, creator: $creator, endTimeSeconds: $endTimeSeconds, maxDurationSeconds: $maxDurationSeconds, requireSignedUrLs: $requireSignedUrLs, startTimeSeconds: $startTimeSeconds, thumbnailTimestampPct: $thumbnailTimestampPct, watermark: $watermark)';
+@override String toString() => 'StreamVideoClipStandard(\n  allowedOrigins: $allowedOrigins,\n  clippedFromVideoUid: $clippedFromVideoUid,\n  creator: $creator,\n  endTimeSeconds: $endTimeSeconds,\n  maxDurationSeconds: $maxDurationSeconds,\n  requireSignedUrLs: $requireSignedUrLs,\n  startTimeSeconds: $startTimeSeconds,\n  thumbnailTimestampPct: $thumbnailTimestampPct,\n  watermark: $watermark,\n)';
 
  }

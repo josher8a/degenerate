@@ -47,7 +47,7 @@ return execute(
   onSuccess: (response) {
     return Shape.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateOrderError.fromResponse(response),
+  onError: CreateOrderError.fromResponse,
 );
  } 
 /// Create an order with nested items
@@ -69,7 +69,7 @@ return execute(
   onSuccess: (response) {
     return Order.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => CreateOrderError.fromResponse(response),
+  onError: CreateOrderError.fromResponse,
 );
  } 
 /// Set payment method for an order (untagged oneOf)

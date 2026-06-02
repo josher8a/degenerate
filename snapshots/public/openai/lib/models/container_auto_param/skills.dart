@@ -21,6 +21,11 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is Skills$Unknown;
 
+R when<R>({required R Function(SkillsSkillReference) skillReference, required R Function(SkillsInline) inline, required R Function(Skills$Unknown) unknown, }) { return switch (this) {
+  final SkillsSkillReference v => skillReference(v),
+  final SkillsInline v => inline(v),
+  final Skills$Unknown v => unknown(v),
+}; } 
  }
 @immutable final class SkillsSkillReference extends Skills {const SkillsSkillReference(this.skillReferenceParam);
 

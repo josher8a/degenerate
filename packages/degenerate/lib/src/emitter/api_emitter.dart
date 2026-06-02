@@ -506,7 +506,7 @@ class ApiEmitter {
           ? errorUnion.aliasTarget!
           : errorUnion.className;
       buf.writeln(
-        '  onError: (response) => $errorClass.fromResponse(response),',
+        '  onError: $errorClass.fromResponse,',
       );
     } else if (errorResponseContent != null) {
       final errorDeserialize = _buildErrorDeserializeExpr(
@@ -822,7 +822,10 @@ class ApiEmitter {
   String _pathSegmentEncodeExpr(IrParameter p) {
     final valueExpr = switch (p.type) {
       IrPrimitive(kind: PrimitiveKind.string) => p.dartName,
-      IrEnum() => "'\${${p.dartName}.toJson()}'",
+      IrEnum(:final valueKind) when valueKind == PrimitiveKind.string =>
+        '${p.dartName}.toJson()',
+      IrExtensionType(:final inner) when inner.kind == PrimitiveKind.string =>
+        '${p.dartName}.toJson()',
       _ => '${p.dartName}.toString()',
     };
     return 'Uri.encodeComponent($valueExpr)';

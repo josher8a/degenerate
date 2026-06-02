@@ -17,7 +17,7 @@ Future<ApiResult<List<AddressingAddressMaps>?, Never>> ipAddressManagementAddres
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/address_maps',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/address_maps',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/address_maps',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/address_maps',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<AddressingFullResponseResult?, Never>> ipAddressManagementAddre
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsDele
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -130,7 +130,7 @@ Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsAddA
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toString())}/accounts/${Uri.encodeComponent(accountId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toJson())}/accounts/${Uri.encodeComponent(accountId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -151,7 +151,7 @@ Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsRemo
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toString())}/accounts/${Uri.encodeComponent(accountId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toJson())}/accounts/${Uri.encodeComponent(accountId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -172,7 +172,7 @@ Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsAddA
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toString())}/ips/${Uri.encodeComponent(ipAddress.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toJson())}/ips/${Uri.encodeComponent(ipAddress.toJson())}',
   headers: headers,
   options: options,
 );
@@ -193,7 +193,7 @@ Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsRemo
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toString())}/ips/${Uri.encodeComponent(ipAddress.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toJson())}/ips/${Uri.encodeComponent(ipAddress.toJson())}',
   headers: headers,
   options: options,
 );
@@ -214,7 +214,7 @@ Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsAddA
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toString())}/zones/${Uri.encodeComponent(zoneId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toJson())}/zones/${Uri.encodeComponent(zoneId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -235,7 +235,7 @@ Future<ApiResult<ResponseCollection4, Never>> ipAddressManagementAddressMapsRemo
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toString())}/zones/${Uri.encodeComponent(zoneId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/addressing/address_maps/${Uri.encodeComponent(addressMapId.toJson())}/zones/${Uri.encodeComponent(zoneId.toJson())}',
   headers: headers,
   options: options,
 );

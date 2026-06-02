@@ -85,6 +85,6 @@ RealtimekitParticipantsList copyWith({String? Function()? createdAt, String? Fun
 
 @override int get hashCode => Object.hash(createdAt, customParticipantId, displayName, duration, id, joinedAt, leftAt, presetName, updatedAt, userId);
 
-@override String toString() => 'RealtimekitParticipantsList(createdAt: $createdAt, customParticipantId: $customParticipantId, displayName: $displayName, duration: $duration, id: $id, joinedAt: $joinedAt, leftAt: $leftAt, presetName: $presetName, updatedAt: $updatedAt, userId: $userId)';
+@override String toString() => 'RealtimekitParticipantsList(\n  createdAt: $createdAt,\n  customParticipantId: $customParticipantId,\n  displayName: $displayName,\n  duration: $duration,\n  id: $id,\n  joinedAt: $joinedAt,\n  leftAt: $leftAt,\n  presetName: $presetName,\n  updatedAt: $updatedAt,\n  userId: $userId,\n)';
 
  }

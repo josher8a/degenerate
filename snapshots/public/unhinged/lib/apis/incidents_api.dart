@@ -74,7 +74,7 @@ final class IncidentsApi with ApiExecutor {
       onSuccess: (response) {
         return True.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
       },
-      onError: (response) => ListIncidentsV2draftError.fromResponse(response),
+      onError: ListIncidentsV2draftError.fromResponse,
     );
   }
 

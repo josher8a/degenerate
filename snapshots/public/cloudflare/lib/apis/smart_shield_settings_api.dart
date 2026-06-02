@@ -17,7 +17,7 @@ Future<ApiResult<ResponseCommon33Result, SmartShieldGetSettingsError>> smartShie
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/smart_shield',
   headers: headers,
   options: options,
 );
@@ -28,7 +28,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
-  onError: (response) => SmartShieldGetSettingsError.fromResponse(response),
+  onError: SmartShieldGetSettingsError.fromResponse,
 );
  } 
 /// Patch Smart Shield Settings
@@ -41,7 +41,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/smart_shield',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/smart_shield',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -53,7 +53,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
-  onError: (response) => SmartShieldGetSettingsError.fromResponse(response),
+  onError: SmartShieldGetSettingsError.fromResponse,
 );
  } 
  }

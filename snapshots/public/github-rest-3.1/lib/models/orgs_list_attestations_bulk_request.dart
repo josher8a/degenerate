@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('subject_digests'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (subjectDigests.length < 1) errors.add('subjectDigests: must have >= 1 items');
+if (subjectDigests.isEmpty) errors.add('subjectDigests: must have >= 1 items');
 if (subjectDigests.length > 1024) errors.add('subjectDigests: must have <= 1024 items');
 return errors; } 
 OrgsListAttestationsBulkRequest copyWith({List<String>? subjectDigests, String? Function()? predicateType, }) { return OrgsListAttestationsBulkRequest(

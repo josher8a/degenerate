@@ -50,7 +50,7 @@ return execute(
   onSuccess: (response) {
     return InteractionLimitResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Remove interaction restrictions for an organization
@@ -177,7 +177,7 @@ return execute(
   onSuccess: (response) {
     return InteractionLimitResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => ActivityListStargazersForRepoError.fromResponse(response),
+  onError: ActivityListStargazersForRepoError.fromResponse,
 );
  } 
 /// Remove interaction restrictions from your public repositories

@@ -38,7 +38,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/user_groups',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/user_groups',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -63,7 +63,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/user_groups',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/user_groups',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -86,7 +86,7 @@ Future<ApiResult<IamUserGroup?, Never>> accountUserGroupDetails({required IamCom
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -109,7 +109,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -132,7 +132,7 @@ Future<ApiResult<ResponseSingleId4Result?, Never>> accountUserGroupDelete({requi
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -163,7 +163,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toString())}/members',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toJson())}/members',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -188,7 +188,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toString())}/members',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toJson())}/members',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -212,7 +212,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toString())}/members',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toJson())}/members',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -235,7 +235,7 @@ Future<ApiResult<IamUserGroupMember?, Never>> accountUserGroupMemberDelete({requ
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toString())}/members/${Uri.encodeComponent(memberId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/iam/user_groups/${Uri.encodeComponent(userGroupId.toJson())}/members/${Uri.encodeComponent(memberId.toJson())}',
   headers: headers,
   options: options,
 );

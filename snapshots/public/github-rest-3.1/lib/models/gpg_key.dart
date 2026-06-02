@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   'can_encrypt_storage': canEncryptStorage,
   'can_certify': canCertify,
   'created_at': createdAt.toIso8601String(),
-  'expires_at': expiresAt != null ? expiresAt?.toIso8601String() : null,
+  'expires_at': expiresAt?.toIso8601String(),
   'revoked': revoked,
   'raw_key': rawKey,
 }; } 
@@ -119,6 +119,6 @@ GpgKey copyWith({int? id, String? Function()? name, int? Function()? primaryKeyI
 
 @override int get hashCode => Object.hash(id, name, primaryKeyId, keyId, publicKey, Object.hashAll(emails), Object.hashAll(subkeys), canSign, canEncryptComms, canEncryptStorage, canCertify, createdAt, expiresAt, revoked, rawKey);
 
-@override String toString() => 'GpgKey(id: $id, name: $name, primaryKeyId: $primaryKeyId, keyId: $keyId, publicKey: $publicKey, emails: $emails, subkeys: $subkeys, canSign: $canSign, canEncryptComms: $canEncryptComms, canEncryptStorage: $canEncryptStorage, canCertify: $canCertify, createdAt: $createdAt, expiresAt: $expiresAt, revoked: $revoked, rawKey: $rawKey)';
+@override String toString() => 'GpgKey(\n  id: $id,\n  name: $name,\n  primaryKeyId: $primaryKeyId,\n  keyId: $keyId,\n  publicKey: $publicKey,\n  emails: $emails,\n  subkeys: $subkeys,\n  canSign: $canSign,\n  canEncryptComms: $canEncryptComms,\n  canEncryptStorage: $canEncryptStorage,\n  canCertify: $canCertify,\n  createdAt: $createdAt,\n  expiresAt: $expiresAt,\n  revoked: $revoked,\n  rawKey: $rawKey,\n)';
 
  }

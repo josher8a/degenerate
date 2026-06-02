@@ -29,7 +29,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/deployments',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -53,7 +53,7 @@ Future<ApiResult<PagesDeployment, Never>> pagesDeploymentCreateDeployment({requi
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/deployments',
   headers: headers,
   body: [
     if (body.headers case final headers$?)
@@ -104,7 +104,7 @@ Future<ApiResult<PagesDeployment, Never>> pagesDeploymentGetDeploymentInfo({requ
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments/${Uri.encodeComponent(deploymentId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/deployments/${Uri.encodeComponent(deploymentId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -126,7 +126,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> pagesDeploymentDeleteDeployment(
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments/${Uri.encodeComponent(deploymentId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/deployments/${Uri.encodeComponent(deploymentId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -148,7 +148,7 @@ Future<ApiResult<PagesDeploymentLog, Never>> pagesDeploymentGetDeploymentLogs({r
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments/${Uri.encodeComponent(deploymentId.toString())}/history/logs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/deployments/${Uri.encodeComponent(deploymentId.toJson())}/history/logs',
   headers: headers,
   options: options,
 );
@@ -170,7 +170,7 @@ Future<ApiResult<PagesDeployment, Never>> pagesDeploymentRetryDeployment({requir
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments/${Uri.encodeComponent(deploymentId.toString())}/retry',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/deployments/${Uri.encodeComponent(deploymentId.toJson())}/retry',
   headers: headers,
   options: options,
 );
@@ -192,7 +192,7 @@ Future<ApiResult<PagesDeployment, Never>> pagesDeploymentRollbackDeployment({req
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/pages/projects/${Uri.encodeComponent(projectName.toString())}/deployments/${Uri.encodeComponent(deploymentId.toString())}/rollback',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/pages/projects/${Uri.encodeComponent(projectName.toJson())}/deployments/${Uri.encodeComponent(deploymentId.toJson())}/rollback',
   headers: headers,
   options: options,
 );

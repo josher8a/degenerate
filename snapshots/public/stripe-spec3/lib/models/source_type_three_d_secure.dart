@@ -117,6 +117,6 @@ SourceTypeThreeDSecure copyWith({String? Function()? addressLine1Check, String? 
 
 @override int get hashCode => Object.hash(addressLine1Check, addressZipCheck, authenticated, brand, card, country, customer, cvcCheck, dynamicLast4, expMonth, expYear, fingerprint, funding, last4, name, threeDSecure, tokenizationMethod);
 
-@override String toString() => 'SourceTypeThreeDSecure(addressLine1Check: $addressLine1Check, addressZipCheck: $addressZipCheck, authenticated: $authenticated, brand: $brand, card: $card, country: $country, customer: $customer, cvcCheck: $cvcCheck, dynamicLast4: $dynamicLast4, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, last4: $last4, name: $name, threeDSecure: $threeDSecure, tokenizationMethod: $tokenizationMethod)';
+@override String toString() => 'SourceTypeThreeDSecure(\n  addressLine1Check: $addressLine1Check,\n  addressZipCheck: $addressZipCheck,\n  authenticated: $authenticated,\n  brand: $brand,\n  card: $card,\n  country: $country,\n  customer: $customer,\n  cvcCheck: $cvcCheck,\n  dynamicLast4: $dynamicLast4,\n  expMonth: $expMonth,\n  expYear: $expYear,\n  fingerprint: $fingerprint,\n  funding: $funding,\n  last4: $last4,\n  name: $name,\n  threeDSecure: $threeDSecure,\n  tokenizationMethod: $tokenizationMethod,\n)';
 
  }

@@ -17,7 +17,7 @@ Future<ApiResult<Map<String, dynamic>, Never>> r2GetAccountLevelMetrics({require
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/r2/metrics',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/r2/metrics',
   headers: headers,
   options: options,
 );

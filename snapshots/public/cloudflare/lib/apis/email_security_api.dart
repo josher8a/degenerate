@@ -76,7 +76,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/investigate',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/investigate',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -101,7 +101,7 @@ Future<ApiResult<EmailSecurityGetMessageResponseResult, Never>> emailSecurityGet
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/investigate/${Uri.encodeComponent(postfixId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/investigate/${Uri.encodeComponent(postfixId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -123,7 +123,7 @@ Future<ApiResult<EmailSecurityGetMessageDetectionsResponseResult, Never>> emailS
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/investigate/${Uri.encodeComponent(postfixId.toString())}/detections',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/investigate/${Uri.encodeComponent(postfixId.toJson())}/detections',
   headers: headers,
   options: options,
 );
@@ -146,7 +146,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/investigate/${Uri.encodeComponent(postfixId.toString())}/move',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/investigate/${Uri.encodeComponent(postfixId.toJson())}/move',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -169,7 +169,7 @@ Future<ApiResult<EmailSecurityGetMessagePreviewResponseResult, Never>> emailSecu
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/investigate/${Uri.encodeComponent(postfixId.toString())}/preview',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/investigate/${Uri.encodeComponent(postfixId.toJson())}/preview',
   headers: headers,
   options: options,
 );
@@ -191,7 +191,7 @@ Future<ApiResult<EmailSecurityGetMessageRawResponseResult, Never>> emailSecurity
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/investigate/${Uri.encodeComponent(postfixId.toString())}/raw',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/investigate/${Uri.encodeComponent(postfixId.toJson())}/raw',
   headers: headers,
   options: options,
 );
@@ -215,7 +215,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/investigate/${Uri.encodeComponent(postfixId.toString())}/reclassify',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/investigate/${Uri.encodeComponent(postfixId.toJson())}/reclassify',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -239,7 +239,7 @@ Future<ApiResult<EmailSecurityGetMessageTraceResponseResult, Never>> emailSecuri
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/investigate/${Uri.encodeComponent(postfixId.toString())}/trace',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/investigate/${Uri.encodeComponent(postfixId.toJson())}/trace',
   headers: headers,
   options: options,
 );
@@ -262,7 +262,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/investigate/move',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/investigate/move',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -287,7 +287,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/investigate/preview',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/investigate/preview',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -311,7 +311,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/investigate/release',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/investigate/release',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -350,7 +350,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/phishguard/reports',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/phishguard/reports',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -413,7 +413,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/email-security/submissions',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/email-security/submissions',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

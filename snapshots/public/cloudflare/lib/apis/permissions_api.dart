@@ -28,7 +28,7 @@ return execute(
     final json = jsonDecode(response.body) as List<dynamic>;
     return json.map((e) => GetPermissionListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => GetPermissionListError.fromResponse(response),
+  onError: GetPermissionListError.fromResponse,
 );
  } 
 /// Create a permission for dataset
@@ -52,7 +52,7 @@ return execute(
   onSuccess: (response) {
     return PostPermissionCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PostPermissionCreateError.fromResponse(response),
+  onError: PostPermissionCreateError.fromResponse,
 );
  } 
 /// Update a permission for dataset
@@ -76,7 +76,7 @@ return execute(
   onSuccess: (response) {
     return PutPermissionUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => PutPermissionUpdateError.fromResponse(response),
+  onError: PutPermissionUpdateError.fromResponse,
 );
  } 
 /// Delete a permission for dataset
@@ -98,7 +98,7 @@ return execute(
   onSuccess: (response) {
     return DeletePermissionDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => DeletePermissionDeleteError.fromResponse(response),
+  onError: DeletePermissionDeleteError.fromResponse,
 );
  } 
  }

@@ -17,7 +17,7 @@ Future<ApiResult<List<HyperdriveHyperdriveConfig>?, Never>> listHyperdrive({requ
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/hyperdrive/configs',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/hyperdrive/configs',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<HyperdriveHyperdriveConfig?, Never>> getHyperdrive({required Hy
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -110,7 +110,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -133,7 +133,7 @@ Future<ApiResult<Map<String, dynamic>?, Never>> deleteHyperdrive({required Hyper
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/hyperdrive/configs/${Uri.encodeComponent(hyperdriveId.toJson())}',
   headers: headers,
   options: options,
 );

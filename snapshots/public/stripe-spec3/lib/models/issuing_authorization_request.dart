@@ -201,6 +201,6 @@ IssuingAuthorizationRequest copyWith({int? amount, IssuingAuthorizationAmountDet
 
 @override int get hashCode => Object.hash(amount, amountDetails, approved, authorizationCode, created, currency, merchantAmount, merchantCurrency, networkRiskScore, reason, reasonMessage, requestedAt);
 
-@override String toString() => 'IssuingAuthorizationRequest(amount: $amount, amountDetails: $amountDetails, approved: $approved, authorizationCode: $authorizationCode, created: $created, currency: $currency, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, networkRiskScore: $networkRiskScore, reason: $reason, reasonMessage: $reasonMessage, requestedAt: $requestedAt)';
+@override String toString() => 'IssuingAuthorizationRequest(\n  amount: $amount,\n  amountDetails: $amountDetails,\n  approved: $approved,\n  authorizationCode: $authorizationCode,\n  created: $created,\n  currency: $currency,\n  merchantAmount: $merchantAmount,\n  merchantCurrency: $merchantCurrency,\n  networkRiskScore: $networkRiskScore,\n  reason: $reason,\n  reasonMessage: $reasonMessage,\n  requestedAt: $requestedAt,\n)';
 
  }

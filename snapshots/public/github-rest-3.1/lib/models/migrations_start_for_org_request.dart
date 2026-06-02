@@ -78,6 +78,6 @@ MigrationsStartForOrgRequest copyWith({List<String>? repositories, bool Function
 
 @override int get hashCode => Object.hash(Object.hashAll(repositories), lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(exclude ?? const []));
 
-@override String toString() => 'MigrationsStartForOrgRequest(repositories: $repositories, lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, exclude: $exclude)';
+@override String toString() => 'MigrationsStartForOrgRequest(\n  repositories: $repositories,\n  lockRepositories: $lockRepositories,\n  excludeMetadata: $excludeMetadata,\n  excludeGitData: $excludeGitData,\n  excludeAttachments: $excludeAttachments,\n  excludeReleases: $excludeReleases,\n  excludeOwnerProjects: $excludeOwnerProjects,\n  orgMetadataOnly: $orgMetadataOnly,\n  exclude: $exclude,\n)';
 
  }

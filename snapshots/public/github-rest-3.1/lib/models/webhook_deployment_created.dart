@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'sender': sender.toJson(),
   'workflow': workflow.toJson(),
-  'workflow_run': workflowRun != null ? workflowRun?.toJson() : null,
+  'workflow_run': workflowRun?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('deployment') &&
@@ -75,6 +75,6 @@ WebhookDeploymentCreated copyWith({ItemCreatedAction? action, WebhookDeploymentC
 
 @override int get hashCode => Object.hash(action, deployment, enterprise, installation, organization, repository, sender, workflow, workflowRun);
 
-@override String toString() => 'WebhookDeploymentCreated(action: $action, deployment: $deployment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflow: $workflow, workflowRun: $workflowRun)';
+@override String toString() => 'WebhookDeploymentCreated(\n  action: $action,\n  deployment: $deployment,\n  enterprise: $enterprise,\n  installation: $installation,\n  organization: $organization,\n  repository: $repository,\n  sender: $sender,\n  workflow: $workflow,\n  workflowRun: $workflowRun,\n)';
 
  }

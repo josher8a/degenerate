@@ -96,6 +96,6 @@ OrganizationInvitation copyWith({int? id, String? Function()? login, String? Fun
 
 @override int get hashCode => Object.hash(id, login, email, role, createdAt, failedAt, failedReason, inviter, teamCount, nodeId, invitationTeamsUrl, invitationSource);
 
-@override String toString() => 'OrganizationInvitation(id: $id, login: $login, email: $email, role: $role, createdAt: $createdAt, failedAt: $failedAt, failedReason: $failedReason, inviter: $inviter, teamCount: $teamCount, nodeId: $nodeId, invitationTeamsUrl: $invitationTeamsUrl, invitationSource: $invitationSource)';
+@override String toString() => 'OrganizationInvitation(\n  id: $id,\n  login: $login,\n  email: $email,\n  role: $role,\n  createdAt: $createdAt,\n  failedAt: $failedAt,\n  failedReason: $failedReason,\n  inviter: $inviter,\n  teamCount: $teamCount,\n  nodeId: $nodeId,\n  invitationTeamsUrl: $invitationTeamsUrl,\n  invitationSource: $invitationSource,\n)';
 
  }

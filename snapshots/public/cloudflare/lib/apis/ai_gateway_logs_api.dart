@@ -117,7 +117,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => AigConfigListGatewayLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) => AigConfigListGatewayLogsError.fromResponse(response),
+  onError: AigConfigListGatewayLogsError.fromResponse,
 );
  } 
 /// Delete Gateway Logs
@@ -156,7 +156,7 @@ return execute(
   onSuccess: (response) {
     return AigConfigDeleteGatewayLogsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigDeleteGatewayLogsError.fromResponse(response),
+  onError: AigConfigDeleteGatewayLogsError.fromResponse,
 );
  } 
 /// Get Gateway Log Detail
@@ -179,7 +179,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return AigConfigGetGatewayLogDetailResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) => AigConfigGetGatewayLogDetailError.fromResponse(response),
+  onError: AigConfigGetGatewayLogDetailError.fromResponse,
 );
  } 
 /// Patch Gateway Log
@@ -204,7 +204,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>;
   },
-  onError: (response) => AigConfigPatchGatewayLogError.fromResponse(response),
+  onError: AigConfigPatchGatewayLogError.fromResponse,
 );
  } 
 /// Get Gateway Log Request
@@ -226,7 +226,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => AigConfigGetGatewayLogRequestError.fromResponse(response),
+  onError: AigConfigGetGatewayLogRequestError.fromResponse,
 );
  } 
 /// Get Gateway Log Response
@@ -248,7 +248,7 @@ return execute(
   onSuccess: (response) {
     return jsonDecode(response.body) as Map<String, dynamic>;
   },
-  onError: (response) => AigConfigGetGatewayLogResponseError.fromResponse(response),
+  onError: AigConfigGetGatewayLogResponseError.fromResponse,
 );
  } 
  }
