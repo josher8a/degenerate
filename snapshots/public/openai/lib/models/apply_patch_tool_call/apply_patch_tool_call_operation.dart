@@ -12,13 +12,13 @@ factory ApplyPatchToolCallOperation.fromJson(Map<String, dynamic> json) { return
 }; }
 
 /// Build the `create_file` variant.
-factory ApplyPatchToolCallOperation.createFile({required String path, required String diff, }) { return ApplyPatchToolCallOperationCreateFile(ApplyPatchCreateFileOperation(type: ApplyPatchCreateFileOperationType.fromJson('create_file'), path: path, diff: diff)); }
+factory ApplyPatchToolCallOperation.createFile({required String path, required String diff, }) { return ApplyPatchToolCallOperationCreateFile(ApplyPatchCreateFileOperation(path: path, diff: diff)); }
 
 /// Build the `delete_file` variant.
-factory ApplyPatchToolCallOperation.deleteFile({required String path}) { return ApplyPatchToolCallOperationDeleteFile(ApplyPatchDeleteFileOperation(type: ApplyPatchDeleteFileOperationType.fromJson('delete_file'), path: path)); }
+factory ApplyPatchToolCallOperation.deleteFile({required String path}) { return ApplyPatchToolCallOperationDeleteFile(ApplyPatchDeleteFileOperation(path: path)); }
 
 /// Build the `update_file` variant.
-factory ApplyPatchToolCallOperation.updateFile({required String path, required String diff, }) { return ApplyPatchToolCallOperationUpdateFile(ApplyPatchUpdateFileOperation(type: ApplyPatchUpdateFileOperationType.fromJson('update_file'), path: path, diff: diff)); }
+factory ApplyPatchToolCallOperation.updateFile({required String path, required String diff, }) { return ApplyPatchToolCallOperationUpdateFile(ApplyPatchUpdateFileOperation(path: path, diff: diff)); }
 
 /// The discriminator value identifying this variant.
 String get type;

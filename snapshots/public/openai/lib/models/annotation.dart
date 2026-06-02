@@ -13,13 +13,13 @@ factory Annotation.fromJson(Map<String, dynamic> json) { return switch (json['ty
 }; }
 
 /// Build the `file_citation` variant.
-factory Annotation.fileCitation({required String fileId, required int index, required String filename, }) { return AnnotationFileCitation(FileCitationBody(type: 'file_citation', fileId: fileId, index: index, filename: filename)); }
+factory Annotation.fileCitation({required String fileId, required int index, required String filename, }) { return AnnotationFileCitation(FileCitationBody(fileId: fileId, index: index, filename: filename)); }
 
 /// Build the `url_citation` variant.
-factory Annotation.urlCitation({required String url, required int startIndex, required int endIndex, required String title, }) { return AnnotationUrlCitation(UrlCitationBody(type: 'url_citation', url: url, startIndex: startIndex, endIndex: endIndex, title: title)); }
+factory Annotation.urlCitation({required String url, required int startIndex, required int endIndex, required String title, }) { return AnnotationUrlCitation(UrlCitationBody(url: url, startIndex: startIndex, endIndex: endIndex, title: title)); }
 
 /// Build the `container_file_citation` variant.
-factory Annotation.containerFileCitation({required String containerId, required String fileId, required int startIndex, required int endIndex, required String filename, }) { return AnnotationContainerFileCitation(ContainerFileCitationBody(type: 'container_file_citation', containerId: containerId, fileId: fileId, startIndex: startIndex, endIndex: endIndex, filename: filename)); }
+factory Annotation.containerFileCitation({required String containerId, required String fileId, required int startIndex, required int endIndex, required String filename, }) { return AnnotationContainerFileCitation(ContainerFileCitationBody(containerId: containerId, fileId: fileId, startIndex: startIndex, endIndex: endIndex, filename: filename)); }
 
 /// Build the `file_path` variant.
 factory Annotation.filePath({required String fileId, required int index, }) { return AnnotationFilePath(FilePath(type: 'file_path', fileId: fileId, index: index)); }

@@ -11,13 +11,13 @@ factory FunctionAndCustomToolCallOutput.fromJson(Map<String, dynamic> json) { re
 }; }
 
 /// Build the `input_text` variant.
-factory FunctionAndCustomToolCallOutput.inputText({required String text}) { return FunctionAndCustomToolCallOutputInputText(InputTextContent(type: 'input_text', text: text)); }
+factory FunctionAndCustomToolCallOutput.inputText({required String text}) { return FunctionAndCustomToolCallOutputInputText(InputTextContent(text: text)); }
 
 /// Build the `input_image` variant.
-factory FunctionAndCustomToolCallOutput.inputImage({required ImageDetail detail, String? imageUrl, String? fileId, }) { return FunctionAndCustomToolCallOutputInputImage(InputImageContent(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory FunctionAndCustomToolCallOutput.inputImage({required ImageDetail detail, String? imageUrl, String? fileId, }) { return FunctionAndCustomToolCallOutputInputImage(InputImageContent(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
-factory FunctionAndCustomToolCallOutput.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return FunctionAndCustomToolCallOutputInputFile(InputFileContent(type: 'input_file', fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+factory FunctionAndCustomToolCallOutput.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return FunctionAndCustomToolCallOutputInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
 String get type;

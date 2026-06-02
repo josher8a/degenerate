@@ -11,13 +11,13 @@ factory InputContent.fromJson(Map<String, dynamic> json) { return switch (json['
 }; }
 
 /// Build the `input_text` variant.
-factory InputContent.inputText({required String text}) { return InputContentInputText(InputTextContent(type: 'input_text', text: text)); }
+factory InputContent.inputText({required String text}) { return InputContentInputText(InputTextContent(text: text)); }
 
 /// Build the `input_image` variant.
-factory InputContent.inputImage({required ImageDetail detail, String? imageUrl, String? fileId, }) { return InputContentInputImage(InputImageContent(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory InputContent.inputImage({required ImageDetail detail, String? imageUrl, String? fileId, }) { return InputContentInputImage(InputImageContent(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
-factory InputContent.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return InputContentInputFile(InputFileContent(type: 'input_file', fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+factory InputContent.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return InputContentInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
 String get type;

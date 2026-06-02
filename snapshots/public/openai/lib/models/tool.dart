@@ -25,16 +25,16 @@ factory Tool.fromJson(Map<String, dynamic> json) { return switch (json['type']) 
 }; }
 
 /// Build the `function` variant.
-factory Tool.function({required String name, required Map<String,dynamic>? parameters, required bool? strict, String? description, bool? deferLoading, }) { return ToolFunction(FunctionTool(type: 'function', name: name, description: description, parameters: parameters, strict: strict, deferLoading: deferLoading)); }
+factory Tool.function({required String name, required Map<String,dynamic>? parameters, required bool? strict, String? description, bool? deferLoading, }) { return ToolFunction(FunctionTool(name: name, description: description, parameters: parameters, strict: strict, deferLoading: deferLoading)); }
 
 /// Build the `file_search` variant.
-factory Tool.fileSearch({required List<String> vectorStoreIds, int? maxNumResults, RankingOptions? rankingOptions, Filters? filters, }) { return ToolFileSearch(FileSearchTool(type: 'file_search', vectorStoreIds: vectorStoreIds, maxNumResults: maxNumResults, rankingOptions: rankingOptions, filters: filters)); }
+factory Tool.fileSearch({required List<String> vectorStoreIds, int? maxNumResults, RankingOptions? rankingOptions, Filters? filters, }) { return ToolFileSearch(FileSearchTool(vectorStoreIds: vectorStoreIds, maxNumResults: maxNumResults, rankingOptions: rankingOptions, filters: filters)); }
 
 /// Build the `computer_use_preview` variant.
-factory Tool.computerUsePreview({required ComputerEnvironment environment, required int displayWidth, required int displayHeight, }) { return ToolComputerUsePreview(ComputerUsePreviewTool(type: 'computer_use_preview', environment: environment, displayWidth: displayWidth, displayHeight: displayHeight)); }
+factory Tool.computerUsePreview({required ComputerEnvironment environment, required int displayWidth, required int displayHeight, }) { return ToolComputerUsePreview(ComputerUsePreviewTool(environment: environment, displayWidth: displayWidth, displayHeight: displayHeight)); }
 
 /// Build the `web_search` variant.
-factory Tool.webSearch({WebSearchToolFilters? filters, WebSearchApproximateLocation? userLocation, WebSearchToolSearchContextSize searchContextSize = WebSearchToolSearchContextSize.medium, }) { return ToolWebSearch(WebSearchTool(type: 'web_search', filters: filters, userLocation: userLocation, searchContextSize: searchContextSize)); }
+factory Tool.webSearch({WebSearchToolFilters? filters, WebSearchApproximateLocation? userLocation, WebSearchToolSearchContextSize searchContextSize = WebSearchToolSearchContextSize.medium, }) { return ToolWebSearch(WebSearchTool(filters: filters, userLocation: userLocation, searchContextSize: searchContextSize)); }
 
 /// Build the `mcp` variant.
 factory Tool.mcp({required String serverLabel, String? serverUrl, ConnectorId? connectorId, String? authorization, String? serverDescription, Map<String,String>? headers, AllowedTools? allowedTools, RequireApproval? requireApproval, bool? deferLoading, }) { return ToolMcp(McpTool(type: 'mcp', serverLabel: serverLabel, serverUrl: serverUrl, connectorId: connectorId, authorization: authorization, serverDescription: serverDescription, headers: headers, allowedTools: allowedTools, requireApproval: requireApproval, deferLoading: deferLoading)); }
@@ -46,19 +46,19 @@ factory Tool.codeInterpreter({required CodeInterpreterToolContainer container}) 
 factory Tool.imageGeneration({ImageGenToolModel? model, ImageEditCompletedEventQuality quality = ImageEditCompletedEventQuality.auto, ImageEditCompletedEventSize size = ImageEditCompletedEventSize.auto, ImageEditCompletedEventOutputFormat outputFormat = ImageEditCompletedEventOutputFormat.png, int outputCompression = 100, ImageGenToolModeration moderation = ImageGenToolModeration.auto, ImageEditCompletedEventBackground background = ImageEditCompletedEventBackground.auto, InputFidelity? inputFidelity, InputImageMask? inputImageMask, int partialImages = 0, ImageGenActionEnum? action, }) { return ToolImageGeneration(ImageGenTool(type: 'image_generation', model: model, quality: quality, size: size, outputFormat: outputFormat, outputCompression: outputCompression, moderation: moderation, background: background, inputFidelity: inputFidelity, inputImageMask: inputImageMask, partialImages: partialImages, action: action)); }
 
 /// Build the `shell` variant.
-factory Tool.shell({FunctionShellToolParamEnvironment? environment}) { return ToolShell(FunctionShellToolParam(type: 'shell', environment: environment)); }
+factory Tool.shell({FunctionShellToolParamEnvironment? environment}) { return ToolShell(FunctionShellToolParam(environment: environment)); }
 
 /// Build the `custom` variant.
-factory Tool.custom({required String name, String? description, CustomToolParamFormat? format, bool? deferLoading, }) { return ToolCustom(CustomToolParam(type: 'custom', name: name, description: description, format: format, deferLoading: deferLoading)); }
+factory Tool.custom({required String name, String? description, CustomToolParamFormat? format, bool? deferLoading, }) { return ToolCustom(CustomToolParam(name: name, description: description, format: format, deferLoading: deferLoading)); }
 
 /// Build the `namespace` variant.
-factory Tool.namespace({required String name, required String description, required List<NamespaceToolParamTools> tools, }) { return ToolNamespace(NamespaceToolParam(type: 'namespace', name: name, description: description, tools: tools)); }
+factory Tool.namespace({required String name, required String description, required List<NamespaceToolParamTools> tools, }) { return ToolNamespace(NamespaceToolParam(name: name, description: description, tools: tools)); }
 
 /// Build the `tool_search` variant.
-factory Tool.toolSearch({ToolSearchExecutionType? execution, String? description, EmptyModelParam? parameters, }) { return ToolToolSearch(ToolSearchToolParam(type: 'tool_search', execution: execution, description: description, parameters: parameters)); }
+factory Tool.toolSearch({ToolSearchExecutionType? execution, String? description, EmptyModelParam? parameters, }) { return ToolToolSearch(ToolSearchToolParam(execution: execution, description: description, parameters: parameters)); }
 
 /// Build the `web_search_preview` variant.
-factory Tool.webSearchPreview({ApproximateLocation? userLocation, SearchContextSize? searchContextSize, List<SearchContentType>? searchContentTypes, }) { return ToolWebSearchPreview(WebSearchPreviewTool(type: 'web_search_preview', userLocation: userLocation, searchContextSize: searchContextSize, searchContentTypes: searchContentTypes)); }
+factory Tool.webSearchPreview({ApproximateLocation? userLocation, SearchContextSize? searchContextSize, List<SearchContentType>? searchContentTypes, }) { return ToolWebSearchPreview(WebSearchPreviewTool(userLocation: userLocation, searchContextSize: searchContextSize, searchContentTypes: searchContentTypes)); }
 
 /// The discriminator value identifying this variant.
 String get type;

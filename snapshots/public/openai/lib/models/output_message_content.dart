@@ -10,10 +10,10 @@ factory OutputMessageContent.fromJson(Map<String, dynamic> json) { return switch
 }; }
 
 /// Build the `output_text` variant.
-factory OutputMessageContent.outputText({required String text, required List<Annotation> annotations, required List<LogProb> logprobs, }) { return OutputMessageContentOutputText(OutputTextContent(type: 'output_text', text: text, annotations: annotations, logprobs: logprobs)); }
+factory OutputMessageContent.outputText({required String text, required List<Annotation> annotations, required List<LogProb> logprobs, }) { return OutputMessageContentOutputText(OutputTextContent(text: text, annotations: annotations, logprobs: logprobs)); }
 
 /// Build the `refusal` variant.
-factory OutputMessageContent.refusal({required String refusal}) { return OutputMessageContentRefusal(RefusalContent(type: 'refusal', refusal: refusal)); }
+factory OutputMessageContent.refusal({required String refusal}) { return OutputMessageContentRefusal(RefusalContent(refusal: refusal)); }
 
 /// The discriminator value identifying this variant.
 String get type;

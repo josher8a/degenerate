@@ -17,25 +17,25 @@ factory ComputerAction.fromJson(Map<String, dynamic> json) { return switch (json
 }; }
 
 /// Build the `click` variant.
-factory ComputerAction.click({required ClickButtonType button, required int x, required int y, }) { return ComputerActionClick(ClickParam(type: 'click', button: button, x: x, y: y)); }
+factory ComputerAction.click({required ClickButtonType button, required int x, required int y, }) { return ComputerActionClick(ClickParam(button: button, x: x, y: y)); }
 
 /// Build the `double_click` variant.
-factory ComputerAction.doubleClick({required int x, required int y, }) { return ComputerActionDoubleClick(DoubleClickAction(type: 'double_click', x: x, y: y)); }
+factory ComputerAction.doubleClick({required int x, required int y, }) { return ComputerActionDoubleClick(DoubleClickAction(x: x, y: y)); }
 
 /// Build the `drag` variant.
-factory ComputerAction.drag({required List<CoordParam> path}) { return ComputerActionDrag(DragParam(type: 'drag', path: path)); }
+factory ComputerAction.drag({required List<CoordParam> path}) { return ComputerActionDrag(DragParam(path: path)); }
 
 /// Build the `keypress` variant.
-factory ComputerAction.keypress({required List<String> keys}) { return ComputerActionKeypress(KeyPressAction(type: 'keypress', keys: keys)); }
+factory ComputerAction.keypress({required List<String> keys}) { return ComputerActionKeypress(KeyPressAction(keys: keys)); }
 
 /// Build the `move` variant.
-factory ComputerAction.move({required int x, required int y, }) { return ComputerActionMove(MoveParam(type: 'move', x: x, y: y)); }
+factory ComputerAction.move({required int x, required int y, }) { return ComputerActionMove(MoveParam(x: x, y: y)); }
 
 /// Build the `scroll` variant.
-factory ComputerAction.scroll({required int x, required int y, required int scrollX, required int scrollY, }) { return ComputerActionScroll(ScrollParam(type: 'scroll', x: x, y: y, scrollX: scrollX, scrollY: scrollY)); }
+factory ComputerAction.scroll({required int x, required int y, required int scrollX, required int scrollY, }) { return ComputerActionScroll(ScrollParam(x: x, y: y, scrollX: scrollX, scrollY: scrollY)); }
 
 /// Build the `type` variant.
-factory ComputerAction.type({required String text}) { return ComputerActionType(TypeParam(type: 'type', text: text)); }
+factory ComputerAction.type({required String text}) { return ComputerActionType(TypeParam(text: text)); }
 
 /// The discriminator value identifying this variant.
 String get type;

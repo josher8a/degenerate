@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_text_content_param/input_text_content_param_type.dart';import 'package:pub_openai/models/user_message_input_text.dart';import 'package:pub_openai/models/user_message_quoted_text.dart';/// Content blocks that comprise a user message.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/user_message_input_text.dart';import 'package:pub_openai/models/user_message_quoted_text.dart';/// Content blocks that comprise a user message.
 sealed class UserMessageItemContent {const UserMessageItemContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -11,10 +11,10 @@ factory UserMessageItemContent.fromJson(Map<String, dynamic> json) { return swit
 }; }
 
 /// Build the `input_text` variant.
-factory UserMessageItemContent.inputText({required String text}) { return UserMessageItemContentInputText(UserMessageInputText(type: InputTextContentParamType.fromJson('input_text'), text: text)); }
+factory UserMessageItemContent.inputText({required String text}) { return UserMessageItemContentInputText(UserMessageInputText(text: text)); }
 
 /// Build the `quoted_text` variant.
-factory UserMessageItemContent.quotedText({required String text}) { return UserMessageItemContentQuotedText(UserMessageQuotedText(type: UserMessageQuotedTextType.fromJson('quoted_text'), text: text)); }
+factory UserMessageItemContent.quotedText({required String text}) { return UserMessageItemContentQuotedText(UserMessageQuotedText(text: text)); }
 
 /// The discriminator value identifying this variant.
 String get type;

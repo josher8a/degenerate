@@ -11,13 +11,13 @@ factory OutputContent.fromJson(Map<String, dynamic> json) { return switch (json[
 }; }
 
 /// Build the `output_text` variant.
-factory OutputContent.outputText({required String text, required List<Annotation> annotations, required List<LogProb> logprobs, }) { return OutputContentOutputText(OutputTextContent(type: 'output_text', text: text, annotations: annotations, logprobs: logprobs)); }
+factory OutputContent.outputText({required String text, required List<Annotation> annotations, required List<LogProb> logprobs, }) { return OutputContentOutputText(OutputTextContent(text: text, annotations: annotations, logprobs: logprobs)); }
 
 /// Build the `refusal` variant.
-factory OutputContent.refusal({required String refusal}) { return OutputContentRefusal(RefusalContent(type: 'refusal', refusal: refusal)); }
+factory OutputContent.refusal({required String refusal}) { return OutputContentRefusal(RefusalContent(refusal: refusal)); }
 
 /// Build the `reasoning_text` variant.
-factory OutputContent.reasoningText({required String text}) { return OutputContentReasoningText(ReasoningTextContent(type: 'reasoning_text', text: text)); }
+factory OutputContent.reasoningText({required String text}) { return OutputContentReasoningText(ReasoningTextContent(text: text)); }
 
 /// The discriminator value identifying this variant.
 String get type;

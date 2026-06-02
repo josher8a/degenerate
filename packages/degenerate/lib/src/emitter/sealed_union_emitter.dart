@@ -271,7 +271,14 @@ class DiscriminatedUnionEmitter {
     return null;
   }
 
-
+  String? _payloadDiscDefault(IrType variantType) {
+    final obj = _resolveToObject(variantType);
+    if (obj == null) return null;
+    for (final f in obj.fields) {
+      if (f.originalName == _discJsonKey) return f.defaultValue as String?;
+    }
+    return null;
+  }
 
   /// The Dart expression for the discriminator value, given the payload's
   /// discriminator field [discFieldType]. A `String` literal type-checks only
@@ -374,12 +381,15 @@ class DiscriminatedUnionEmitter {
     final String body;
     if (variantType is IrTypeRef) {
       final payload = irTypeName(variantType);
-      // Set the discriminator only when the payload actually has that field
-      // (some `$ref` payloads omit it — it lives only in the union envelope).
+      // Set the discriminator only when the payload has that field and its
+      // default doesn't already match the variant's value.
       final discField = _payloadDiscFieldType(variantType);
+      final discDefault = _payloadDiscDefault(variantType);
+      final discArg = discField != null && discDefault != discValue
+          ? '$_discDartName: ${_discValueExpr(discField, discValue)}'
+          : null;
       final parts = [
-        if (discField != null)
-          '$_discDartName: ${_discValueExpr(discField, discValue)}',
+        ?discArg,
         ...args,
       ];
       body = 'return $variantClass($payload(${parts.join(', ')}));';

@@ -11,7 +11,7 @@ factory AutoCodeInterpreterToolParamNetworkPolicy.fromJson(Map<String, dynamic> 
 }; }
 
 /// Build the `allowlist` variant.
-factory AutoCodeInterpreterToolParamNetworkPolicy.allowlist({required List<String> allowedDomains, List<ContainerNetworkPolicyDomainSecretParam>? domainSecrets, }) { return AutoCodeInterpreterToolParamNetworkPolicyAllowlist(ContainerNetworkPolicyAllowlistParam(type: ContainerNetworkPolicyAllowlistParamType.fromJson('allowlist'), allowedDomains: allowedDomains, domainSecrets: domainSecrets)); }
+factory AutoCodeInterpreterToolParamNetworkPolicy.allowlist({required List<String> allowedDomains, List<ContainerNetworkPolicyDomainSecretParam>? domainSecrets, }) { return AutoCodeInterpreterToolParamNetworkPolicyAllowlist(ContainerNetworkPolicyAllowlistParam(allowedDomains: allowedDomains, domainSecrets: domainSecrets)); }
 
 /// The discriminator value identifying this variant.
 String get type;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/annotation.dart';import 'package:pub_openai/models/computer_screenshot_content.dart';import 'package:pub_openai/models/computer_screenshot_content/computer_screenshot_content_type.dart';import 'package:pub_openai/models/custom_text_format_param/custom_text_format_param_type.dart';import 'package:pub_openai/models/image_detail.dart';import 'package:pub_openai/models/input_file_content.dart';import 'package:pub_openai/models/input_image_content.dart';import 'package:pub_openai/models/input_text_content.dart';import 'package:pub_openai/models/log_prob.dart';import 'package:pub_openai/models/output_text_content.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/refusal_content.dart';import 'package:pub_openai/models/summary_text_content.dart';import 'package:pub_openai/models/summary_text_content/summary_text_content_type.dart';import 'package:pub_openai/models/text_content.dart';/// A content part that makes up an input or output item.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/annotation.dart';import 'package:pub_openai/models/computer_screenshot_content.dart';import 'package:pub_openai/models/image_detail.dart';import 'package:pub_openai/models/input_file_content.dart';import 'package:pub_openai/models/input_image_content.dart';import 'package:pub_openai/models/input_text_content.dart';import 'package:pub_openai/models/log_prob.dart';import 'package:pub_openai/models/output_text_content.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/refusal_content.dart';import 'package:pub_openai/models/summary_text_content.dart';import 'package:pub_openai/models/text_content.dart';/// A content part that makes up an input or output item.
 sealed class MessageContent {const MessageContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -18,31 +18,31 @@ factory MessageContent.fromJson(Map<String, dynamic> json) { return switch (json
 }; }
 
 /// Build the `input_text` variant.
-factory MessageContent.inputText({required String text}) { return MessageContentInputText(InputTextContent(type: 'input_text', text: text)); }
+factory MessageContent.inputText({required String text}) { return MessageContentInputText(InputTextContent(text: text)); }
 
 /// Build the `output_text` variant.
-factory MessageContent.outputText({required String text, required List<Annotation> annotations, required List<LogProb> logprobs, }) { return MessageContentOutputText(OutputTextContent(type: 'output_text', text: text, annotations: annotations, logprobs: logprobs)); }
+factory MessageContent.outputText({required String text, required List<Annotation> annotations, required List<LogProb> logprobs, }) { return MessageContentOutputText(OutputTextContent(text: text, annotations: annotations, logprobs: logprobs)); }
 
 /// Build the `text` variant.
-factory MessageContent.text({required String text}) { return MessageContentText(TextContent(type: CustomTextFormatParamType.fromJson('text'), text: text)); }
+factory MessageContent.text({required String text}) { return MessageContentText(TextContent(text: text)); }
 
 /// Build the `summary_text` variant.
-factory MessageContent.summaryText({required String text}) { return MessageContentSummaryText(SummaryTextContent(type: SummaryTextContentType.fromJson('summary_text'), text: text)); }
+factory MessageContent.summaryText({required String text}) { return MessageContentSummaryText(SummaryTextContent(text: text)); }
 
 /// Build the `reasoning_text` variant.
-factory MessageContent.reasoningText({required String text}) { return MessageContentReasoningText(ReasoningTextContent(type: 'reasoning_text', text: text)); }
+factory MessageContent.reasoningText({required String text}) { return MessageContentReasoningText(ReasoningTextContent(text: text)); }
 
 /// Build the `refusal` variant.
-factory MessageContent.refusal({required String refusal}) { return MessageContentRefusal(RefusalContent(type: 'refusal', refusal: refusal)); }
+factory MessageContent.refusal({required String refusal}) { return MessageContentRefusal(RefusalContent(refusal: refusal)); }
 
 /// Build the `input_image` variant.
-factory MessageContent.inputImage({required ImageDetail detail, String? imageUrl, String? fileId, }) { return MessageContentInputImage(InputImageContent(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory MessageContent.inputImage({required ImageDetail detail, String? imageUrl, String? fileId, }) { return MessageContentInputImage(InputImageContent(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `computer_screenshot` variant.
-factory MessageContent.computerScreenshot({required String? imageUrl, required String? fileId, required ImageDetail detail, }) { return MessageContentComputerScreenshot(ComputerScreenshotContent(type: ComputerScreenshotContentType.fromJson('computer_screenshot'), imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory MessageContent.computerScreenshot({required String? imageUrl, required String? fileId, required ImageDetail detail, }) { return MessageContentComputerScreenshot(ComputerScreenshotContent(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
-factory MessageContent.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return MessageContentInputFile(InputFileContent(type: 'input_file', fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+factory MessageContent.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return MessageContentInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
 String get type;

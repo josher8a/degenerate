@@ -711,7 +711,11 @@ class FileEmitter {
         names.add(name);
       case IrTypeRef(:final name):
         names.add(name);
-      case IrDiscriminatedUnion(:final name, :final mapping):
+      case IrDiscriminatedUnion(
+        :final name,
+        :final mapping,
+        :final discriminatorProperty,
+      ):
         names.add(name);
         for (final variant in mapping.values) {
           // Discriminated union files only reference variant types by name,
@@ -730,13 +734,20 @@ class FileEmitter {
         // typedef field only needs the typedef's own file). Resolving the
         // variant payloads needs the registry.
         if (typeRegistry != null) {
-          for (final variant in mapping.values) {
-            var resolved = variant;
+          for (final entry in mapping.entries) {
+            var resolved = entry.value;
             if (resolved is IrTypeRef) {
               resolved = typeRegistry[resolved.name] ?? resolved;
             }
             if (resolved is IrObject) {
               for (final f in resolved.fields) {
+                // Skip the discriminator field's type when its default
+                // matches the variant value — the factory omits the arg,
+                // so the type isn't referenced.
+                if (f.originalName == discriminatorProperty &&
+                    f.defaultValue == entry.key) {
+                  continue;
+                }
                 _collectTopLevelTypeName(f.type, names);
                 if (isBytesType(f.type)) needsTypedData = true;
               }

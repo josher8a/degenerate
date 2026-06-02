@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_file/chat_completion_request_message_content_part_file_type.dart';import 'package:pub_openai/models/file_annotation.dart';import 'package:pub_openai/models/file_annotation_source.dart';import 'package:pub_openai/models/url_annotation.dart';import 'package:pub_openai/models/url_annotation_source.dart';import 'package:pub_openai/models/url_annotation_source/url_annotation_source_type.dart';/// Annotation object describing a cited source.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_annotation.dart';import 'package:pub_openai/models/file_annotation_source.dart';import 'package:pub_openai/models/url_annotation.dart';import 'package:pub_openai/models/url_annotation_source.dart';/// Annotation object describing a cited source.
 sealed class ResponseOutputTextAnnotations {const ResponseOutputTextAnnotations();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -11,10 +11,10 @@ factory ResponseOutputTextAnnotations.fromJson(Map<String, dynamic> json) { retu
 }; }
 
 /// Build the `file` variant.
-factory ResponseOutputTextAnnotations.file({required FileAnnotationSource source}) { return ResponseOutputTextAnnotationsFile(FileAnnotation(type: ChatCompletionRequestMessageContentPartFileType.fromJson('file'), source: source)); }
+factory ResponseOutputTextAnnotations.file({required FileAnnotationSource source}) { return ResponseOutputTextAnnotationsFile(FileAnnotation(source: source)); }
 
 /// Build the `url` variant.
-factory ResponseOutputTextAnnotations.url({required UrlAnnotationSource source}) { return ResponseOutputTextAnnotationsUrl(UrlAnnotation(type: UrlAnnotationSourceType.fromJson('url'), source: source)); }
+factory ResponseOutputTextAnnotations.url({required UrlAnnotationSource source}) { return ResponseOutputTextAnnotationsUrl(UrlAnnotation(source: source)); }
 
 /// The discriminator value identifying this variant.
 String get type;

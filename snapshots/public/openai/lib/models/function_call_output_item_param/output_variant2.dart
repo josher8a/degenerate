@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_item_input_image/eval_item_input_image_type.dart';import 'package:pub_openai/models/input_file_content_param.dart';import 'package:pub_openai/models/input_image_content_param_auto_param.dart';import 'package:pub_openai/models/input_text_content_param.dart';import 'package:pub_openai/models/input_text_content_param/input_text_content_param_type.dart';/// A piece of message content, such as text, an image, or a file.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_file_content_param.dart';import 'package:pub_openai/models/input_image_content_param_auto_param.dart';import 'package:pub_openai/models/input_text_content_param.dart';/// A piece of message content, such as text, an image, or a file.
 sealed class OutputVariant2 {const OutputVariant2();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -12,13 +12,13 @@ factory OutputVariant2.fromJson(Map<String, dynamic> json) { return switch (json
 }; }
 
 /// Build the `input_text` variant.
-factory OutputVariant2.inputText({required String text}) { return OutputVariant2InputText(InputTextContentParam(type: InputTextContentParamType.fromJson('input_text'), text: text)); }
+factory OutputVariant2.inputText({required String text}) { return OutputVariant2InputText(InputTextContentParam(text: text)); }
 
 /// Build the `input_image` variant.
-factory OutputVariant2.inputImage({String? imageUrl, String? fileId, DetailEnum? detail, }) { return OutputVariant2InputImage(InputImageContentParamAutoParam(type: EvalItemInputImageType.fromJson('input_image'), imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory OutputVariant2.inputImage({String? imageUrl, String? fileId, DetailEnum? detail, }) { return OutputVariant2InputImage(InputImageContentParamAutoParam(imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
-factory OutputVariant2.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileDetailEnum? detail, }) { return OutputVariant2InputFile(InputFileContentParam(type: InputFileContentParamType.fromJson('input_file'), fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+factory OutputVariant2.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileDetailEnum? detail, }) { return OutputVariant2InputFile(InputFileContentParam(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
 String get type;

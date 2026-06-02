@@ -21,7 +21,7 @@ sealed class StatusDetail {
 
   /// Build the `ended` variant.
   factory StatusDetail.ended({required EndReason reason}) {
-    return StatusDetailEnded(EndedDetail(type: 'ended', reason: reason));
+    return StatusDetailEnded(EndedDetail(reason: reason));
   }
 
   /// The discriminator value identifying this variant.

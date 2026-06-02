@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_param.dart';import 'package:pub_openai/models/container_reference_param/container_reference_param_type.dart';import 'package:pub_openai/models/local_environment_param.dart';import 'package:pub_openai/models/local_environment_param/local_environment_param_type.dart';import 'package:pub_openai/models/local_skill_param.dart';/// The environment to execute the shell commands in.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_param.dart';import 'package:pub_openai/models/local_environment_param.dart';import 'package:pub_openai/models/local_skill_param.dart';/// The environment to execute the shell commands in.
 sealed class FunctionShellCallItemParamEnvironment {const FunctionShellCallItemParamEnvironment();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -11,10 +11,10 @@ factory FunctionShellCallItemParamEnvironment.fromJson(Map<String, dynamic> json
 }; }
 
 /// Build the `local` variant.
-factory FunctionShellCallItemParamEnvironment.local({List<LocalSkillParam>? skills}) { return FunctionShellCallItemParamEnvironmentLocal(LocalEnvironmentParam(type: LocalEnvironmentParamType.fromJson('local'), skills: skills)); }
+factory FunctionShellCallItemParamEnvironment.local({List<LocalSkillParam>? skills}) { return FunctionShellCallItemParamEnvironmentLocal(LocalEnvironmentParam(skills: skills)); }
 
 /// Build the `container_reference` variant.
-factory FunctionShellCallItemParamEnvironment.containerReference({required String containerId}) { return FunctionShellCallItemParamEnvironmentContainerReference(ContainerReferenceParam(type: ContainerReferenceParamType.fromJson('container_reference'), containerId: containerId)); }
+factory FunctionShellCallItemParamEnvironment.containerReference({required String containerId}) { return FunctionShellCallItemParamEnvironmentContainerReference(ContainerReferenceParam(containerId: containerId)); }
 
 /// The discriminator value identifying this variant.
 String get type;

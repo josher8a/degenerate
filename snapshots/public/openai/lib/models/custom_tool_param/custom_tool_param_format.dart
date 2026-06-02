@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_grammar_format_param.dart';import 'package:pub_openai/models/custom_grammar_format_param/custom_grammar_format_param_type.dart';import 'package:pub_openai/models/custom_text_format_param.dart';import 'package:pub_openai/models/custom_text_format_param/custom_text_format_param_type.dart';/// The input format for the custom tool. Default is unconstrained text.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_grammar_format_param.dart';import 'package:pub_openai/models/custom_text_format_param.dart';/// The input format for the custom tool. Default is unconstrained text.
 sealed class CustomToolParamFormat {const CustomToolParamFormat();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -11,7 +11,7 @@ factory CustomToolParamFormat.fromJson(Map<String, dynamic> json) { return switc
 }; }
 
 /// Build the `grammar` variant.
-factory CustomToolParamFormat.grammar({required GrammarSyntax1 syntax, required String definition, }) { return CustomToolParamFormatGrammar(CustomGrammarFormatParam(type: CustomGrammarFormatParamType.fromJson('grammar'), syntax: syntax, definition: definition)); }
+factory CustomToolParamFormat.grammar({required GrammarSyntax1 syntax, required String definition, }) { return CustomToolParamFormatGrammar(CustomGrammarFormatParam(syntax: syntax, definition: definition)); }
 
 /// The discriminator value identifying this variant.
 String get type;
