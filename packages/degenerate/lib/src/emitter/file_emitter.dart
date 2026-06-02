@@ -299,6 +299,27 @@ class FileEmitter {
       errorUnionFiles: errorUnionFileStems,
     );
 
+    // Emit per-API-group mini-barrels (e.g. wallets.dart, beneficiaries.dart).
+    if (apis.length > 1) {
+      final typeDeps = _buildTypeDeps(types);
+      for (final api in apis) {
+        final analysis = _analyzeApi(
+          api, typeRegistry, unwrapFields, errorUnionMap,
+        );
+        final reachable = _transitiveTypes(analysis.referencedTypes, typeDeps);
+        final apiFileName = toSnakeCase(api.name);
+        files['$apiFileName.dart'] = _emitApiBarrelFile(
+          api: api,
+          reachableTypes: reachable,
+          packageName: packageName,
+          typeToFile: typeToFile,
+          inlinedTypes: inlinedInto.keys.toSet(),
+          errorUnionFiles: errorUnionFileStems,
+          errorUnionMap: errorUnionMap,
+        );
+      }
+    }
+
     // Emit the round-trip fixtures registry (test scaffolding, opt-in).
     if (emitRoundtripFixtures) {
       files['roundtrip_fixtures.dart'] = RoundtripEmitter(
@@ -850,6 +871,124 @@ class FileEmitter {
         'models/$fileStem.dart',
       for (final name in apis.map((a) => a.name).toSet().toList()..sort())
         'apis/${toSnakeCase(name)}.dart',
+    ]..sort();
+
+    final exports = <Directive>[
+      Directive.export('package:degenerate_runtime/degenerate_runtime.dart'),
+      ...relativeExports.map(Directive.export),
+    ];
+
+    final library = Library((b) {
+      b.comments.addAll(_header);
+      b.directives.addAll(exports);
+    });
+    return emitRaw(library);
+  }
+
+  /// Build a dependency graph: type name → set of type names it references.
+  Map<String, Set<String>> _buildTypeDeps(List<IrType> types) {
+    final deps = <String, Set<String>>{};
+    for (final type in types) {
+      final name = _typeName(type);
+      if (name == null) continue;
+      final refs = <String>{};
+      _collectTypeRefsFromType(type, refs);
+      refs.remove(name);
+      deps[name] = refs;
+    }
+    return deps;
+  }
+
+  /// Compute the transitive closure of type names reachable from [seeds].
+  Set<String> _transitiveTypes(
+    Set<String> seeds,
+    Map<String, Set<String>> deps,
+  ) {
+    final reachable = Set<String>.from(seeds);
+    final queue = seeds.toList();
+    while (queue.isNotEmpty) {
+      final name = queue.removeLast();
+      final typeDeps = deps[name];
+      if (typeDeps == null) continue;
+      for (final dep in typeDeps) {
+        if (reachable.add(dep)) queue.add(dep);
+      }
+    }
+    return reachable;
+  }
+
+  /// Collect all type names referenced by [type] (recursive into fields,
+  /// variants, list/map items).
+  static void _collectTypeRefsFromType(IrType type, Set<String> names) {
+    switch (type) {
+      case IrObject(:final name, :final fields):
+        if (name.isNotEmpty) names.add(name);
+        for (final f in fields) {
+          _collectTypeRefsFromType(f.type, names);
+        }
+      case IrEnum(:final name):
+        if (name.isNotEmpty) names.add(name);
+      case IrTypeRef(:final name):
+        names.add(name);
+      case IrExtensionType(:final name):
+        if (name.isNotEmpty) names.add(name);
+      case IrDiscriminatedUnion(:final name, :final mapping):
+        if (name.isNotEmpty) names.add(name);
+        for (final v in mapping.values) {
+          _collectTypeRefsFromType(v, names);
+        }
+      case IrUntaggedUnion(:final name, :final variants):
+        if (name.isNotEmpty) names.add(name);
+        for (final v in variants) {
+          _collectTypeRefsFromType(v, names);
+        }
+      case IrAnyOf(:final name, :final variants):
+        if (name.isNotEmpty) names.add(name);
+        for (final v in variants) {
+          _collectTypeRefsFromType(v, names);
+        }
+      case IrList(:final items):
+        _collectTypeRefsFromType(items, names);
+      case IrMap(:final values):
+        _collectTypeRefsFromType(values, names);
+      case IrPrimitive():
+        break;
+    }
+  }
+
+  String _emitApiBarrelFile({
+    required IrApi api,
+    required Set<String> reachableTypes,
+    required String packageName,
+    Map<String, String> typeToFile = const {},
+    Set<String> inlinedTypes = const {},
+    Set<String> errorUnionFiles = const {},
+    Map<String, ErrorUnionInfo> errorUnionMap = const {},
+  }) {
+    final apiFileName = toSnakeCase(api.name);
+
+    // Collect error union file stems used by this API's operations.
+    final usedErrorStems = <String>{};
+    for (final op in api.operations) {
+      final info = errorUnionMap[op.operationId];
+      if (info != null) {
+        final target = info.isAlias ? info.aliasTarget! : info.className;
+        usedErrorStems.add('errors/${toSnakeCase(target)}');
+      }
+    }
+
+    final modelExports = <String>{
+      for (final name
+          in reachableTypes
+              .where((name) => !inlinedTypes.contains(name))
+              .where(typeToFile.containsKey))
+        'models/${typeToFile[name]!}.dart',
+      for (final fileStem in errorUnionFiles.where(usedErrorStems.contains))
+        'models/$fileStem.dart',
+    };
+    final relativeExports = <String>[
+      'apis/$apiFileName.dart',
+      ...modelExports,
     ]..sort();
 
     final exports = <Directive>[

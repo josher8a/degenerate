@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+export 'package:degenerate_runtime/degenerate_runtime.dart';export 'apis/interactions_api.dart';export 'models/errors/activity_list_stargazers_for_repo_error.dart';export 'models/interaction_group.dart';export 'models/interaction_limit.dart';export 'models/interaction_limit_response.dart';export 'models/interactions_get_restrictions_for_authenticated_user_response.dart';export 'models/interactions_get_restrictions_for_authenticated_user_response/interactions_get_restrictions_for_authenticated_user_response_variant2.dart';export 'models/interactions_get_restrictions_for_org_response.dart';export 'models/interactions_get_restrictions_for_repo_response.dart';
