@@ -43,17 +43,22 @@ void main() {
     await generator.generate();
 
     final outDir = config.resolvedOutputDir!;
-    File(p.join(outDir, 'pubspec.yaml')).writeAsStringSync(
-      'name: $name\n'
-      'publish_to: none\n'
-      'environment:\n'
-      '  sdk: ^3.8.0\n'
-      'dependencies:\n'
-      '  degenerate_runtime: ^0.1.0\n'
-      'dependency_overrides:\n'
-      '  degenerate_runtime:\n'
-      '    path: $runtimeDir\n',
-    );
+    final deps = StringBuffer()
+      ..writeln('name: $name')
+      ..writeln('publish_to: none')
+      ..writeln('environment:')
+      ..writeln('  sdk: ^3.8.0')
+      ..writeln('dependencies:')
+      ..writeln('  degenerate_runtime: ^0.1.0')
+      ..writeln('dependency_overrides:')
+      ..writeln('  degenerate_runtime:')
+      ..writeln('    path: $runtimeDir');
+    if (roundtrip) {
+      deps
+        ..writeln('dev_dependencies:')
+        ..writeln('  test: ^1.25.6');
+    }
+    File(p.join(outDir, 'pubspec.yaml')).writeAsStringSync(deps.toString());
 
     final pubGet = Process.runSync(
       'dart',
@@ -71,7 +76,22 @@ void main() {
     if (analyze.exitCode != 0) {
       fail('dart analyze failed:\n${analyze.stdout}\n${analyze.stderr}');
     }
+
+    if (roundtrip) {
+      _writeRoundtripTest(outDir, name);
+      final testResult = Process.runSync(
+        'dart',
+        ['test', 'test/roundtrip_test.dart'],
+        workingDirectory: outDir,
+      );
+      if (testResult.exitCode != 0) {
+        fail(
+          'round-trip test failed:\n${testResult.stdout}\n${testResult.stderr}',
+        );
+      }
+    }
   }
+
 
   // ─── Adversarial field/schema names ─────────────────────
 
@@ -743,4 +763,24 @@ Map<String, dynamic> _randomAllOf(
       _randomObject(rng, existingTypes, depth + 1),
     ],
   };
+}
+
+void _writeRoundtripTest(String outDir, String packageName) {
+  final testDir = Directory(p.join(outDir, 'test'));
+  testDir.createSync(recursive: true);
+  File(p.join(testDir.path, 'roundtrip_test.dart')).writeAsStringSync(
+    "import 'package:$packageName/roundtrip_fixtures.dart';\n"
+    "import 'package:test/test.dart';\n"
+    '\n'
+    'void main() {\n'
+    "  test('has fixtures', () => expect(roundtripFixtures, isNotEmpty));\n"
+    '  for (final f in roundtripFixtures) {\n'
+    "    test('roundtrip: \${f.schemaName}', () {\n"
+    '      final reencoded = f.encode(f.decode(f.sample));\n'
+    '      expect(reencoded, equals(f.sample),\n'
+    "          reason: '\${f.schemaName}: re-encoded JSON != sample');\n"
+    '    });\n'
+    '  }\n'
+    '}\n',
+  );
 }
