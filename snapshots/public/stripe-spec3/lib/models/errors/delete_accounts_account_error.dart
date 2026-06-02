@@ -1,1190 +1,601 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/error_model.dart';sealed class DeleteAccountsAccountError {const DeleteAccountsAccountError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_stripe_spec3/models/error_model.dart';
-
-sealed class DeleteAccountsAccountError {
-  const DeleteAccountsAccountError();
-
-  int get statusCode;
-
-  factory DeleteAccountsAccountError.fromResponse(ApiResponse response) {
-    try {
+factory DeleteAccountsAccountError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         _ => DeleteAccountsAccountError$ErrorModel(ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
       };
     } on Object {
       rethrow;
-    }
-  }
-}
+    } }
 
-final class DeleteAccountsAccountError$ErrorModel extends DeleteAccountsAccountError {
-  const DeleteAccountsAccountError$ErrorModel(this.error, this.statusCode);
-  final ErrorModel error;
-  @override
-  final int statusCode;
-}
+int get statusCode;
+ }
+final class DeleteAccountsAccountError$ErrorModel extends DeleteAccountsAccountError {const DeleteAccountsAccountError$ErrorModel(this.error, this.statusCode, );
 
+final ErrorModel error;
 
+@override final int statusCode;
+
+ }
 typedef DeleteAccountsAccountBankAccountsIdError = DeleteAccountsAccountError;
-
 typedef DeleteAccountsAccountExternalAccountsIdError = DeleteAccountsAccountError;
-
 typedef DeleteAccountsAccountPeoplePersonError = DeleteAccountsAccountError;
-
 typedef DeleteAccountsAccountPersonsPersonError = DeleteAccountsAccountError;
-
 typedef DeleteApplePayDomainsDomainError = DeleteAccountsAccountError;
-
 typedef DeleteCouponsCouponError = DeleteAccountsAccountError;
-
 typedef DeleteCustomersCustomerError = DeleteAccountsAccountError;
-
 typedef DeleteCustomersCustomerBankAccountsIdError = DeleteAccountsAccountError;
-
 typedef DeleteCustomersCustomerCardsIdError = DeleteAccountsAccountError;
-
 typedef DeleteCustomersCustomerDiscountError = DeleteAccountsAccountError;
-
 typedef DeleteCustomersCustomerSourcesIdError = DeleteAccountsAccountError;
-
 typedef DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdError = DeleteAccountsAccountError;
-
 typedef DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountError = DeleteAccountsAccountError;
-
 typedef DeleteCustomersCustomerTaxIdsIdError = DeleteAccountsAccountError;
-
 typedef DeleteEphemeralKeysKeyError = DeleteAccountsAccountError;
-
 typedef DeleteInvoiceitemsInvoiceitemError = DeleteAccountsAccountError;
-
 typedef DeleteInvoicesInvoiceError = DeleteAccountsAccountError;
-
 typedef DeletePlansPlanError = DeleteAccountsAccountError;
-
 typedef DeleteProductsIdError = DeleteAccountsAccountError;
-
 typedef DeleteProductsProductFeaturesIdError = DeleteAccountsAccountError;
-
 typedef DeleteRadarValueListItemsItemError = DeleteAccountsAccountError;
-
 typedef DeleteRadarValueListsValueListError = DeleteAccountsAccountError;
-
 typedef DeleteSubscriptionItemsItemError = DeleteAccountsAccountError;
-
 typedef DeleteSubscriptionsSubscriptionExposedIdError = DeleteAccountsAccountError;
-
 typedef DeleteSubscriptionsSubscriptionExposedIdDiscountError = DeleteAccountsAccountError;
-
 typedef DeleteTaxIdsIdError = DeleteAccountsAccountError;
-
 typedef DeleteTerminalConfigurationsConfigurationError = DeleteAccountsAccountError;
-
 typedef DeleteTerminalLocationsLocationError = DeleteAccountsAccountError;
-
 typedef DeleteTerminalReadersReaderError = DeleteAccountsAccountError;
-
 typedef DeleteTestHelpersTestClocksTestClockError = DeleteAccountsAccountError;
-
 typedef DeleteWebhookEndpointsWebhookEndpointError = DeleteAccountsAccountError;
-
 typedef GetAccountError = DeleteAccountsAccountError;
-
 typedef GetAccountsError = DeleteAccountsAccountError;
-
 typedef GetAccountsAccountError = DeleteAccountsAccountError;
-
 typedef GetAccountsAccountBankAccountsIdError = DeleteAccountsAccountError;
-
 typedef GetAccountsAccountCapabilitiesError = DeleteAccountsAccountError;
-
 typedef GetAccountsAccountCapabilitiesCapabilityError = DeleteAccountsAccountError;
-
 typedef GetAccountsAccountExternalAccountsError = DeleteAccountsAccountError;
-
 typedef GetAccountsAccountExternalAccountsIdError = DeleteAccountsAccountError;
-
 typedef GetAccountsAccountPeopleError = DeleteAccountsAccountError;
-
 typedef GetAccountsAccountPeoplePersonError = DeleteAccountsAccountError;
-
 typedef GetAccountsAccountPersonsError = DeleteAccountsAccountError;
-
 typedef GetAccountsAccountPersonsPersonError = DeleteAccountsAccountError;
-
 typedef GetApplePayDomainsError = DeleteAccountsAccountError;
-
 typedef GetApplePayDomainsDomainError = DeleteAccountsAccountError;
-
 typedef GetApplicationFeesError = DeleteAccountsAccountError;
-
 typedef GetApplicationFeesFeeRefundsIdError = DeleteAccountsAccountError;
-
 typedef GetApplicationFeesIdError = DeleteAccountsAccountError;
-
 typedef GetApplicationFeesIdRefundsError = DeleteAccountsAccountError;
-
 typedef GetAppsSecretsError = DeleteAccountsAccountError;
-
 typedef GetAppsSecretsFindError = DeleteAccountsAccountError;
-
 typedef GetBalanceError = DeleteAccountsAccountError;
-
 typedef GetBalanceHistoryError = DeleteAccountsAccountError;
-
 typedef GetBalanceHistoryIdError = DeleteAccountsAccountError;
-
 typedef GetBalanceSettingsError = DeleteAccountsAccountError;
-
 typedef GetBalanceTransactionsError = DeleteAccountsAccountError;
-
 typedef GetBalanceTransactionsIdError = DeleteAccountsAccountError;
-
 typedef GetBillingAlertsError = DeleteAccountsAccountError;
-
 typedef GetBillingAlertsIdError = DeleteAccountsAccountError;
-
 typedef GetBillingCreditBalanceSummaryError = DeleteAccountsAccountError;
-
 typedef GetBillingCreditBalanceTransactionsError = DeleteAccountsAccountError;
-
 typedef GetBillingCreditBalanceTransactionsIdError = DeleteAccountsAccountError;
-
 typedef GetBillingCreditGrantsError = DeleteAccountsAccountError;
-
 typedef GetBillingCreditGrantsIdError = DeleteAccountsAccountError;
-
 typedef GetBillingMetersError = DeleteAccountsAccountError;
-
 typedef GetBillingMetersIdError = DeleteAccountsAccountError;
-
 typedef GetBillingMetersIdEventSummariesError = DeleteAccountsAccountError;
-
 typedef GetBillingPortalConfigurationsError = DeleteAccountsAccountError;
-
 typedef GetBillingPortalConfigurationsConfigurationError = DeleteAccountsAccountError;
-
 typedef GetChargesError = DeleteAccountsAccountError;
-
 typedef GetChargesChargeError = DeleteAccountsAccountError;
-
 typedef GetChargesChargeDisputeError = DeleteAccountsAccountError;
-
 typedef GetChargesChargeRefundsError = DeleteAccountsAccountError;
-
 typedef GetChargesChargeRefundsRefundError = DeleteAccountsAccountError;
-
 typedef GetChargesSearchError = DeleteAccountsAccountError;
-
 typedef GetCheckoutSessionsError = DeleteAccountsAccountError;
-
 typedef GetCheckoutSessionsSessionError = DeleteAccountsAccountError;
-
 typedef GetCheckoutSessionsSessionLineItemsError = DeleteAccountsAccountError;
-
 typedef GetClimateOrdersError = DeleteAccountsAccountError;
-
 typedef GetClimateOrdersOrderError = DeleteAccountsAccountError;
-
 typedef GetClimateProductsError = DeleteAccountsAccountError;
-
 typedef GetClimateProductsProductError = DeleteAccountsAccountError;
-
 typedef GetClimateSuppliersError = DeleteAccountsAccountError;
-
 typedef GetClimateSuppliersSupplierError = DeleteAccountsAccountError;
-
 typedef GetConfirmationTokensConfirmationTokenError = DeleteAccountsAccountError;
-
 typedef GetCountrySpecsError = DeleteAccountsAccountError;
-
 typedef GetCountrySpecsCountryError = DeleteAccountsAccountError;
-
 typedef GetCouponsError = DeleteAccountsAccountError;
-
 typedef GetCouponsCouponError = DeleteAccountsAccountError;
-
 typedef GetCreditNotesError = DeleteAccountsAccountError;
-
 typedef GetCreditNotesCreditNoteLinesError = DeleteAccountsAccountError;
-
 typedef GetCreditNotesIdError = DeleteAccountsAccountError;
-
 typedef GetCreditNotesPreviewError = DeleteAccountsAccountError;
-
 typedef GetCreditNotesPreviewLinesError = DeleteAccountsAccountError;
-
 typedef GetCustomersError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerBalanceTransactionsError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerBalanceTransactionsTransactionError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerCashBalanceError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerCashBalanceTransactionsError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerCashBalanceTransactionsTransactionError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerDiscountError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerPaymentMethodsError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerPaymentMethodsPaymentMethodError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerSourcesError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerSourcesIdError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerSubscriptionsError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerSubscriptionsSubscriptionExposedIdError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscountError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerTaxIdsError = DeleteAccountsAccountError;
-
 typedef GetCustomersCustomerTaxIdsIdError = DeleteAccountsAccountError;
-
 typedef GetCustomersSearchError = DeleteAccountsAccountError;
-
 typedef GetDisputesError = DeleteAccountsAccountError;
-
 typedef GetDisputesDisputeError = DeleteAccountsAccountError;
-
 typedef GetEntitlementsActiveEntitlementsError = DeleteAccountsAccountError;
-
 typedef GetEntitlementsActiveEntitlementsIdError = DeleteAccountsAccountError;
-
 typedef GetEntitlementsFeaturesError = DeleteAccountsAccountError;
-
 typedef GetEntitlementsFeaturesIdError = DeleteAccountsAccountError;
-
 typedef GetEventsError = DeleteAccountsAccountError;
-
 typedef GetEventsIdError = DeleteAccountsAccountError;
-
 typedef GetExchangeRatesError = DeleteAccountsAccountError;
-
 typedef GetExchangeRatesRateIdError = DeleteAccountsAccountError;
-
 typedef GetFileLinksError = DeleteAccountsAccountError;
-
 typedef GetFileLinksLinkError = DeleteAccountsAccountError;
-
 typedef GetFilesError = DeleteAccountsAccountError;
-
 typedef GetFilesFileError = DeleteAccountsAccountError;
-
 typedef GetFinancialConnectionsAccountsError = DeleteAccountsAccountError;
-
 typedef GetFinancialConnectionsAccountsAccountError = DeleteAccountsAccountError;
-
 typedef GetFinancialConnectionsAccountsAccountOwnersError = DeleteAccountsAccountError;
-
 typedef GetFinancialConnectionsSessionsSessionError = DeleteAccountsAccountError;
-
 typedef GetFinancialConnectionsTransactionsError = DeleteAccountsAccountError;
-
 typedef GetFinancialConnectionsTransactionsTransactionError = DeleteAccountsAccountError;
-
 typedef GetForwardingRequestsError = DeleteAccountsAccountError;
-
 typedef GetForwardingRequestsIdError = DeleteAccountsAccountError;
-
 typedef GetIdentityVerificationReportsError = DeleteAccountsAccountError;
-
 typedef GetIdentityVerificationReportsReportError = DeleteAccountsAccountError;
-
 typedef GetIdentityVerificationSessionsError = DeleteAccountsAccountError;
-
 typedef GetIdentityVerificationSessionsSessionError = DeleteAccountsAccountError;
-
 typedef GetInvoicePaymentsError = DeleteAccountsAccountError;
-
 typedef GetInvoicePaymentsInvoicePaymentError = DeleteAccountsAccountError;
-
 typedef GetInvoiceRenderingTemplatesError = DeleteAccountsAccountError;
-
 typedef GetInvoiceRenderingTemplatesTemplateError = DeleteAccountsAccountError;
-
 typedef GetInvoiceitemsError = DeleteAccountsAccountError;
-
 typedef GetInvoiceitemsInvoiceitemError = DeleteAccountsAccountError;
-
 typedef GetInvoicesError = DeleteAccountsAccountError;
-
 typedef GetInvoicesInvoiceError = DeleteAccountsAccountError;
-
 typedef GetInvoicesInvoiceLinesError = DeleteAccountsAccountError;
-
 typedef GetInvoicesSearchError = DeleteAccountsAccountError;
-
 typedef GetIssuingAuthorizationsError = DeleteAccountsAccountError;
-
 typedef GetIssuingAuthorizationsAuthorizationError = DeleteAccountsAccountError;
-
 typedef GetIssuingCardholdersError = DeleteAccountsAccountError;
-
 typedef GetIssuingCardholdersCardholderError = DeleteAccountsAccountError;
-
 typedef GetIssuingCardsError = DeleteAccountsAccountError;
-
 typedef GetIssuingCardsCardError = DeleteAccountsAccountError;
-
 typedef GetIssuingDisputesError = DeleteAccountsAccountError;
-
 typedef GetIssuingDisputesDisputeError = DeleteAccountsAccountError;
-
 typedef GetIssuingPersonalizationDesignsError = DeleteAccountsAccountError;
-
 typedef GetIssuingPersonalizationDesignsPersonalizationDesignError = DeleteAccountsAccountError;
-
 typedef GetIssuingPhysicalBundlesError = DeleteAccountsAccountError;
-
 typedef GetIssuingPhysicalBundlesPhysicalBundleError = DeleteAccountsAccountError;
-
 typedef GetIssuingSettlementsSettlementError = DeleteAccountsAccountError;
-
 typedef GetIssuingTokensError = DeleteAccountsAccountError;
-
 typedef GetIssuingTokensTokenError = DeleteAccountsAccountError;
-
 typedef GetIssuingTransactionsError = DeleteAccountsAccountError;
-
 typedef GetIssuingTransactionsTransactionError = DeleteAccountsAccountError;
-
 typedef GetLinkAccountSessionsSessionError = DeleteAccountsAccountError;
-
 typedef GetLinkedAccountsError = DeleteAccountsAccountError;
-
 typedef GetLinkedAccountsAccountError = DeleteAccountsAccountError;
-
 typedef GetLinkedAccountsAccountOwnersError = DeleteAccountsAccountError;
-
 typedef GetMandatesMandateError = DeleteAccountsAccountError;
-
 typedef GetPaymentAttemptRecordsError = DeleteAccountsAccountError;
-
 typedef GetPaymentAttemptRecordsIdError = DeleteAccountsAccountError;
-
 typedef GetPaymentIntentsError = DeleteAccountsAccountError;
-
 typedef GetPaymentIntentsIntentError = DeleteAccountsAccountError;
-
 typedef GetPaymentIntentsIntentAmountDetailsLineItemsError = DeleteAccountsAccountError;
-
 typedef GetPaymentIntentsSearchError = DeleteAccountsAccountError;
-
 typedef GetPaymentLinksError = DeleteAccountsAccountError;
-
 typedef GetPaymentLinksPaymentLinkError = DeleteAccountsAccountError;
-
 typedef GetPaymentLinksPaymentLinkLineItemsError = DeleteAccountsAccountError;
-
 typedef GetPaymentMethodConfigurationsError = DeleteAccountsAccountError;
-
 typedef GetPaymentMethodConfigurationsConfigurationError = DeleteAccountsAccountError;
-
 typedef GetPaymentMethodDomainsError = DeleteAccountsAccountError;
-
 typedef GetPaymentMethodDomainsPaymentMethodDomainError = DeleteAccountsAccountError;
-
 typedef GetPaymentMethodsError = DeleteAccountsAccountError;
-
 typedef GetPaymentMethodsPaymentMethodError = DeleteAccountsAccountError;
-
 typedef GetPaymentRecordsIdError = DeleteAccountsAccountError;
-
 typedef GetPayoutsError = DeleteAccountsAccountError;
-
 typedef GetPayoutsPayoutError = DeleteAccountsAccountError;
-
 typedef GetPlansError = DeleteAccountsAccountError;
-
 typedef GetPlansPlanError = DeleteAccountsAccountError;
-
 typedef GetPricesError = DeleteAccountsAccountError;
-
 typedef GetPricesPriceError = DeleteAccountsAccountError;
-
 typedef GetPricesSearchError = DeleteAccountsAccountError;
-
 typedef GetProductsError = DeleteAccountsAccountError;
-
 typedef GetProductsIdError = DeleteAccountsAccountError;
-
 typedef GetProductsProductFeaturesError = DeleteAccountsAccountError;
-
 typedef GetProductsProductFeaturesIdError = DeleteAccountsAccountError;
-
 typedef GetProductsSearchError = DeleteAccountsAccountError;
-
 typedef GetPromotionCodesError = DeleteAccountsAccountError;
-
 typedef GetPromotionCodesPromotionCodeError = DeleteAccountsAccountError;
-
 typedef GetQuotesError = DeleteAccountsAccountError;
-
 typedef GetQuotesQuoteError = DeleteAccountsAccountError;
-
 typedef GetQuotesQuoteComputedUpfrontLineItemsError = DeleteAccountsAccountError;
-
 typedef GetQuotesQuoteLineItemsError = DeleteAccountsAccountError;
-
 typedef GetQuotesQuotePdfError = DeleteAccountsAccountError;
-
 typedef GetRadarEarlyFraudWarningsError = DeleteAccountsAccountError;
-
 typedef GetRadarEarlyFraudWarningsEarlyFraudWarningError = DeleteAccountsAccountError;
-
 typedef GetRadarValueListItemsError = DeleteAccountsAccountError;
-
 typedef GetRadarValueListItemsItemError = DeleteAccountsAccountError;
-
 typedef GetRadarValueListsError = DeleteAccountsAccountError;
-
 typedef GetRadarValueListsValueListError = DeleteAccountsAccountError;
-
 typedef GetRefundsError = DeleteAccountsAccountError;
-
 typedef GetRefundsRefundError = DeleteAccountsAccountError;
-
 typedef GetReportingReportRunsError = DeleteAccountsAccountError;
-
 typedef GetReportingReportRunsReportRunError = DeleteAccountsAccountError;
-
 typedef GetReportingReportTypesError = DeleteAccountsAccountError;
-
 typedef GetReportingReportTypesReportTypeError = DeleteAccountsAccountError;
-
 typedef GetReviewsError = DeleteAccountsAccountError;
-
 typedef GetReviewsReviewError = DeleteAccountsAccountError;
-
 typedef GetSetupAttemptsError = DeleteAccountsAccountError;
-
 typedef GetSetupIntentsError = DeleteAccountsAccountError;
-
 typedef GetSetupIntentsIntentError = DeleteAccountsAccountError;
-
 typedef GetShippingRatesError = DeleteAccountsAccountError;
-
 typedef GetShippingRatesShippingRateTokenError = DeleteAccountsAccountError;
-
 typedef GetSigmaScheduledQueryRunsError = DeleteAccountsAccountError;
-
 typedef GetSigmaScheduledQueryRunsScheduledQueryRunError = DeleteAccountsAccountError;
-
 typedef GetSourcesSourceError = DeleteAccountsAccountError;
-
 typedef GetSourcesSourceMandateNotificationsMandateNotificationError = DeleteAccountsAccountError;
-
 typedef GetSourcesSourceSourceTransactionsError = DeleteAccountsAccountError;
-
 typedef GetSourcesSourceSourceTransactionsSourceTransactionError = DeleteAccountsAccountError;
-
 typedef GetSubscriptionItemsError = DeleteAccountsAccountError;
-
 typedef GetSubscriptionItemsItemError = DeleteAccountsAccountError;
-
 typedef GetSubscriptionSchedulesError = DeleteAccountsAccountError;
-
 typedef GetSubscriptionSchedulesScheduleError = DeleteAccountsAccountError;
-
 typedef GetSubscriptionsError = DeleteAccountsAccountError;
-
 typedef GetSubscriptionsSearchError = DeleteAccountsAccountError;
-
 typedef GetSubscriptionsSubscriptionExposedIdError = DeleteAccountsAccountError;
-
 typedef GetTaxAssociationsFindError = DeleteAccountsAccountError;
-
 typedef GetTaxCalculationsCalculationError = DeleteAccountsAccountError;
-
 typedef GetTaxCalculationsCalculationLineItemsError = DeleteAccountsAccountError;
-
 typedef GetTaxCodesError = DeleteAccountsAccountError;
-
 typedef GetTaxCodesIdError = DeleteAccountsAccountError;
-
 typedef GetTaxIdsError = DeleteAccountsAccountError;
-
 typedef GetTaxIdsIdError = DeleteAccountsAccountError;
-
 typedef GetTaxRatesError = DeleteAccountsAccountError;
-
 typedef GetTaxRatesTaxRateError = DeleteAccountsAccountError;
-
 typedef GetTaxRegistrationsError = DeleteAccountsAccountError;
-
 typedef GetTaxRegistrationsIdError = DeleteAccountsAccountError;
-
 typedef GetTaxSettingsError = DeleteAccountsAccountError;
-
 typedef GetTaxTransactionsTransactionError = DeleteAccountsAccountError;
-
 typedef GetTaxTransactionsTransactionLineItemsError = DeleteAccountsAccountError;
-
 typedef GetTerminalConfigurationsError = DeleteAccountsAccountError;
-
 typedef GetTerminalConfigurationsConfigurationError = DeleteAccountsAccountError;
-
 typedef GetTerminalLocationsError = DeleteAccountsAccountError;
-
 typedef GetTerminalLocationsLocationError = DeleteAccountsAccountError;
-
 typedef GetTerminalReadersError = DeleteAccountsAccountError;
-
 typedef GetTerminalReadersReaderError = DeleteAccountsAccountError;
-
 typedef GetTestHelpersTestClocksError = DeleteAccountsAccountError;
-
 typedef GetTestHelpersTestClocksTestClockError = DeleteAccountsAccountError;
-
 typedef GetTokensTokenError = DeleteAccountsAccountError;
-
 typedef GetTopupsError = DeleteAccountsAccountError;
-
 typedef GetTopupsTopupError = DeleteAccountsAccountError;
-
 typedef GetTransfersError = DeleteAccountsAccountError;
-
 typedef GetTransfersIdReversalsError = DeleteAccountsAccountError;
-
 typedef GetTransfersTransferError = DeleteAccountsAccountError;
-
 typedef GetTransfersTransferReversalsIdError = DeleteAccountsAccountError;
-
 typedef GetTreasuryCreditReversalsError = DeleteAccountsAccountError;
-
 typedef GetTreasuryCreditReversalsCreditReversalError = DeleteAccountsAccountError;
-
 typedef GetTreasuryDebitReversalsError = DeleteAccountsAccountError;
-
 typedef GetTreasuryDebitReversalsDebitReversalError = DeleteAccountsAccountError;
-
 typedef GetTreasuryFinancialAccountsError = DeleteAccountsAccountError;
-
 typedef GetTreasuryFinancialAccountsFinancialAccountError = DeleteAccountsAccountError;
-
 typedef GetTreasuryFinancialAccountsFinancialAccountFeaturesError = DeleteAccountsAccountError;
-
 typedef GetTreasuryInboundTransfersError = DeleteAccountsAccountError;
-
 typedef GetTreasuryInboundTransfersIdError = DeleteAccountsAccountError;
-
 typedef GetTreasuryOutboundPaymentsError = DeleteAccountsAccountError;
-
 typedef GetTreasuryOutboundPaymentsIdError = DeleteAccountsAccountError;
-
 typedef GetTreasuryOutboundTransfersError = DeleteAccountsAccountError;
-
 typedef GetTreasuryOutboundTransfersOutboundTransferError = DeleteAccountsAccountError;
-
 typedef GetTreasuryReceivedCreditsError = DeleteAccountsAccountError;
-
 typedef GetTreasuryReceivedCreditsIdError = DeleteAccountsAccountError;
-
 typedef GetTreasuryReceivedDebitsError = DeleteAccountsAccountError;
-
 typedef GetTreasuryReceivedDebitsIdError = DeleteAccountsAccountError;
-
 typedef GetTreasuryTransactionEntriesError = DeleteAccountsAccountError;
-
 typedef GetTreasuryTransactionEntriesIdError = DeleteAccountsAccountError;
-
 typedef GetTreasuryTransactionsError = DeleteAccountsAccountError;
-
 typedef GetTreasuryTransactionsIdError = DeleteAccountsAccountError;
-
 typedef GetWebhookEndpointsError = DeleteAccountsAccountError;
-
 typedef GetWebhookEndpointsWebhookEndpointError = DeleteAccountsAccountError;
-
 typedef PostAccountLinksError = DeleteAccountsAccountError;
-
 typedef PostAccountSessionsError = DeleteAccountsAccountError;
-
 typedef PostAccountsError = DeleteAccountsAccountError;
-
 typedef PostAccountsAccountError = DeleteAccountsAccountError;
-
 typedef PostAccountsAccountBankAccountsError = DeleteAccountsAccountError;
-
 typedef PostAccountsAccountBankAccountsIdError = DeleteAccountsAccountError;
-
 typedef PostAccountsAccountCapabilitiesCapabilityError = DeleteAccountsAccountError;
-
 typedef PostAccountsAccountExternalAccountsError = DeleteAccountsAccountError;
-
 typedef PostAccountsAccountExternalAccountsIdError = DeleteAccountsAccountError;
-
 typedef PostAccountsAccountLoginLinksError = DeleteAccountsAccountError;
-
 typedef PostAccountsAccountPeopleError = DeleteAccountsAccountError;
-
 typedef PostAccountsAccountPeoplePersonError = DeleteAccountsAccountError;
-
 typedef PostAccountsAccountPersonsError = DeleteAccountsAccountError;
-
 typedef PostAccountsAccountPersonsPersonError = DeleteAccountsAccountError;
-
 typedef PostAccountsAccountRejectError = DeleteAccountsAccountError;
-
 typedef PostApplePayDomainsError = DeleteAccountsAccountError;
-
 typedef PostApplicationFeesFeeRefundsIdError = DeleteAccountsAccountError;
-
 typedef PostApplicationFeesIdRefundError = DeleteAccountsAccountError;
-
 typedef PostApplicationFeesIdRefundsError = DeleteAccountsAccountError;
-
 typedef PostAppsSecretsError = DeleteAccountsAccountError;
-
 typedef PostAppsSecretsDeleteError = DeleteAccountsAccountError;
-
 typedef PostBalanceSettingsError = DeleteAccountsAccountError;
-
 typedef PostBillingAlertsError = DeleteAccountsAccountError;
-
 typedef PostBillingAlertsIdActivateError = DeleteAccountsAccountError;
-
 typedef PostBillingAlertsIdArchiveError = DeleteAccountsAccountError;
-
 typedef PostBillingAlertsIdDeactivateError = DeleteAccountsAccountError;
-
 typedef PostBillingCreditGrantsError = DeleteAccountsAccountError;
-
 typedef PostBillingCreditGrantsIdError = DeleteAccountsAccountError;
-
 typedef PostBillingCreditGrantsIdExpireError = DeleteAccountsAccountError;
-
 typedef PostBillingCreditGrantsIdVoidError = DeleteAccountsAccountError;
-
 typedef PostBillingMeterEventAdjustmentsError = DeleteAccountsAccountError;
-
 typedef PostBillingMeterEventsError = DeleteAccountsAccountError;
-
 typedef PostBillingMetersError = DeleteAccountsAccountError;
-
 typedef PostBillingMetersIdError = DeleteAccountsAccountError;
-
 typedef PostBillingMetersIdDeactivateError = DeleteAccountsAccountError;
-
 typedef PostBillingMetersIdReactivateError = DeleteAccountsAccountError;
-
 typedef PostBillingPortalConfigurationsError = DeleteAccountsAccountError;
-
 typedef PostBillingPortalConfigurationsConfigurationError = DeleteAccountsAccountError;
-
 typedef PostBillingPortalSessionsError = DeleteAccountsAccountError;
-
 typedef PostChargesError = DeleteAccountsAccountError;
-
 typedef PostChargesChargeError = DeleteAccountsAccountError;
-
 typedef PostChargesChargeCaptureError = DeleteAccountsAccountError;
-
 typedef PostChargesChargeDisputeError = DeleteAccountsAccountError;
-
 typedef PostChargesChargeDisputeCloseError = DeleteAccountsAccountError;
-
 typedef PostChargesChargeRefundError = DeleteAccountsAccountError;
-
 typedef PostChargesChargeRefundsError = DeleteAccountsAccountError;
-
 typedef PostChargesChargeRefundsRefundError = DeleteAccountsAccountError;
-
 typedef PostCheckoutSessionsError = DeleteAccountsAccountError;
-
 typedef PostCheckoutSessionsSessionError = DeleteAccountsAccountError;
-
 typedef PostCheckoutSessionsSessionExpireError = DeleteAccountsAccountError;
-
 typedef PostClimateOrdersError = DeleteAccountsAccountError;
-
 typedef PostClimateOrdersOrderError = DeleteAccountsAccountError;
-
 typedef PostClimateOrdersOrderCancelError = DeleteAccountsAccountError;
-
 typedef PostCouponsError = DeleteAccountsAccountError;
-
 typedef PostCouponsCouponError = DeleteAccountsAccountError;
-
 typedef PostCreditNotesError = DeleteAccountsAccountError;
-
 typedef PostCreditNotesIdError = DeleteAccountsAccountError;
-
 typedef PostCreditNotesIdVoidError = DeleteAccountsAccountError;
-
 typedef PostCustomerSessionsError = DeleteAccountsAccountError;
-
 typedef PostCustomersError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerBalanceTransactionsError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerBalanceTransactionsTransactionError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerBankAccountsError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerBankAccountsIdError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerBankAccountsIdVerifyError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerCardsError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerCardsIdError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerCashBalanceError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerFundingInstructionsError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerSourcesError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerSourcesIdError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerSourcesIdVerifyError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerSubscriptionsError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerSubscriptionsSubscriptionExposedIdError = DeleteAccountsAccountError;
-
 typedef PostCustomersCustomerTaxIdsError = DeleteAccountsAccountError;
-
 typedef PostDisputesDisputeError = DeleteAccountsAccountError;
-
 typedef PostDisputesDisputeCloseError = DeleteAccountsAccountError;
-
 typedef PostEntitlementsFeaturesError = DeleteAccountsAccountError;
-
 typedef PostEntitlementsFeaturesIdError = DeleteAccountsAccountError;
-
 typedef PostEphemeralKeysError = DeleteAccountsAccountError;
-
 typedef PostExternalAccountsIdError = DeleteAccountsAccountError;
-
 typedef PostFileLinksError = DeleteAccountsAccountError;
-
 typedef PostFileLinksLinkError = DeleteAccountsAccountError;
-
 typedef PostFilesError = DeleteAccountsAccountError;
-
 typedef PostFinancialConnectionsAccountsAccountDisconnectError = DeleteAccountsAccountError;
-
 typedef PostFinancialConnectionsAccountsAccountRefreshError = DeleteAccountsAccountError;
-
 typedef PostFinancialConnectionsAccountsAccountSubscribeError = DeleteAccountsAccountError;
-
 typedef PostFinancialConnectionsAccountsAccountUnsubscribeError = DeleteAccountsAccountError;
-
 typedef PostFinancialConnectionsSessionsError = DeleteAccountsAccountError;
-
 typedef PostForwardingRequestsError = DeleteAccountsAccountError;
-
 typedef PostIdentityVerificationSessionsError = DeleteAccountsAccountError;
-
 typedef PostIdentityVerificationSessionsSessionError = DeleteAccountsAccountError;
-
 typedef PostIdentityVerificationSessionsSessionCancelError = DeleteAccountsAccountError;
-
 typedef PostIdentityVerificationSessionsSessionRedactError = DeleteAccountsAccountError;
-
 typedef PostInvoiceRenderingTemplatesTemplateArchiveError = DeleteAccountsAccountError;
-
 typedef PostInvoiceRenderingTemplatesTemplateUnarchiveError = DeleteAccountsAccountError;
-
 typedef PostInvoiceitemsError = DeleteAccountsAccountError;
-
 typedef PostInvoiceitemsInvoiceitemError = DeleteAccountsAccountError;
-
 typedef PostInvoicesError = DeleteAccountsAccountError;
-
 typedef PostInvoicesCreatePreviewError = DeleteAccountsAccountError;
-
 typedef PostInvoicesInvoiceError = DeleteAccountsAccountError;
-
 typedef PostInvoicesInvoiceAddLinesError = DeleteAccountsAccountError;
-
 typedef PostInvoicesInvoiceAttachPaymentError = DeleteAccountsAccountError;
-
 typedef PostInvoicesInvoiceFinalizeError = DeleteAccountsAccountError;
-
 typedef PostInvoicesInvoiceLinesLineItemIdError = DeleteAccountsAccountError;
-
 typedef PostInvoicesInvoiceMarkUncollectibleError = DeleteAccountsAccountError;
-
 typedef PostInvoicesInvoicePayError = DeleteAccountsAccountError;
-
 typedef PostInvoicesInvoiceRemoveLinesError = DeleteAccountsAccountError;
-
 typedef PostInvoicesInvoiceSendError = DeleteAccountsAccountError;
-
 typedef PostInvoicesInvoiceUpdateLinesError = DeleteAccountsAccountError;
-
 typedef PostInvoicesInvoiceVoidError = DeleteAccountsAccountError;
-
 typedef PostIssuingAuthorizationsAuthorizationError = DeleteAccountsAccountError;
-
 typedef PostIssuingCardholdersError = DeleteAccountsAccountError;
-
 typedef PostIssuingCardholdersCardholderError = DeleteAccountsAccountError;
-
 typedef PostIssuingCardsError = DeleteAccountsAccountError;
-
 typedef PostIssuingCardsCardError = DeleteAccountsAccountError;
-
 typedef PostIssuingDisputesError = DeleteAccountsAccountError;
-
 typedef PostIssuingDisputesDisputeError = DeleteAccountsAccountError;
-
 typedef PostIssuingDisputesDisputeSubmitError = DeleteAccountsAccountError;
-
 typedef PostIssuingPersonalizationDesignsError = DeleteAccountsAccountError;
-
 typedef PostIssuingPersonalizationDesignsPersonalizationDesignError = DeleteAccountsAccountError;
-
 typedef PostIssuingSettlementsSettlementError = DeleteAccountsAccountError;
-
 typedef PostIssuingTokensTokenError = DeleteAccountsAccountError;
-
 typedef PostIssuingTransactionsTransactionError = DeleteAccountsAccountError;
-
 typedef PostLinkAccountSessionsError = DeleteAccountsAccountError;
-
 typedef PostLinkedAccountsAccountDisconnectError = DeleteAccountsAccountError;
-
 typedef PostLinkedAccountsAccountRefreshError = DeleteAccountsAccountError;
-
 typedef PostPaymentIntentsError = DeleteAccountsAccountError;
-
 typedef PostPaymentIntentsIntentError = DeleteAccountsAccountError;
-
 typedef PostPaymentIntentsIntentApplyCustomerBalanceError = DeleteAccountsAccountError;
-
 typedef PostPaymentIntentsIntentCancelError = DeleteAccountsAccountError;
-
 typedef PostPaymentIntentsIntentCaptureError = DeleteAccountsAccountError;
-
 typedef PostPaymentIntentsIntentConfirmError = DeleteAccountsAccountError;
-
 typedef PostPaymentIntentsIntentIncrementAuthorizationError = DeleteAccountsAccountError;
-
 typedef PostPaymentIntentsIntentVerifyMicrodepositsError = DeleteAccountsAccountError;
-
 typedef PostPaymentLinksError = DeleteAccountsAccountError;
-
 typedef PostPaymentLinksPaymentLinkError = DeleteAccountsAccountError;
-
 typedef PostPaymentMethodConfigurationsError = DeleteAccountsAccountError;
-
 typedef PostPaymentMethodConfigurationsConfigurationError = DeleteAccountsAccountError;
-
 typedef PostPaymentMethodDomainsError = DeleteAccountsAccountError;
-
 typedef PostPaymentMethodDomainsPaymentMethodDomainError = DeleteAccountsAccountError;
-
 typedef PostPaymentMethodDomainsPaymentMethodDomainValidateError = DeleteAccountsAccountError;
-
 typedef PostPaymentMethodsError = DeleteAccountsAccountError;
-
 typedef PostPaymentMethodsPaymentMethodError = DeleteAccountsAccountError;
-
 typedef PostPaymentMethodsPaymentMethodAttachError = DeleteAccountsAccountError;
-
 typedef PostPaymentMethodsPaymentMethodDetachError = DeleteAccountsAccountError;
-
 typedef PostPaymentRecordsIdReportPaymentAttemptError = DeleteAccountsAccountError;
-
 typedef PostPaymentRecordsIdReportPaymentAttemptCanceledError = DeleteAccountsAccountError;
-
 typedef PostPaymentRecordsIdReportPaymentAttemptFailedError = DeleteAccountsAccountError;
-
 typedef PostPaymentRecordsIdReportPaymentAttemptGuaranteedError = DeleteAccountsAccountError;
-
 typedef PostPaymentRecordsIdReportPaymentAttemptInformationalError = DeleteAccountsAccountError;
-
 typedef PostPaymentRecordsIdReportRefundError = DeleteAccountsAccountError;
-
 typedef PostPaymentRecordsReportPaymentError = DeleteAccountsAccountError;
-
 typedef PostPayoutsError = DeleteAccountsAccountError;
-
 typedef PostPayoutsPayoutError = DeleteAccountsAccountError;
-
 typedef PostPayoutsPayoutCancelError = DeleteAccountsAccountError;
-
 typedef PostPayoutsPayoutReverseError = DeleteAccountsAccountError;
-
 typedef PostPlansError = DeleteAccountsAccountError;
-
 typedef PostPlansPlanError = DeleteAccountsAccountError;
-
 typedef PostPricesError = DeleteAccountsAccountError;
-
 typedef PostPricesPriceError = DeleteAccountsAccountError;
-
 typedef PostProductsError = DeleteAccountsAccountError;
-
 typedef PostProductsIdError = DeleteAccountsAccountError;
-
 typedef PostProductsProductFeaturesError = DeleteAccountsAccountError;
-
 typedef PostPromotionCodesError = DeleteAccountsAccountError;
-
 typedef PostPromotionCodesPromotionCodeError = DeleteAccountsAccountError;
-
 typedef PostQuotesError = DeleteAccountsAccountError;
-
 typedef PostQuotesQuoteError = DeleteAccountsAccountError;
-
 typedef PostQuotesQuoteAcceptError = DeleteAccountsAccountError;
-
 typedef PostQuotesQuoteCancelError = DeleteAccountsAccountError;
-
 typedef PostQuotesQuoteFinalizeError = DeleteAccountsAccountError;
-
 typedef PostRadarPaymentEvaluationsError = DeleteAccountsAccountError;
-
 typedef PostRadarValueListItemsError = DeleteAccountsAccountError;
-
 typedef PostRadarValueListsError = DeleteAccountsAccountError;
-
 typedef PostRadarValueListsValueListError = DeleteAccountsAccountError;
-
 typedef PostRefundsError = DeleteAccountsAccountError;
-
 typedef PostRefundsRefundError = DeleteAccountsAccountError;
-
 typedef PostRefundsRefundCancelError = DeleteAccountsAccountError;
-
 typedef PostReportingReportRunsError = DeleteAccountsAccountError;
-
 typedef PostReviewsReviewApproveError = DeleteAccountsAccountError;
-
 typedef PostSetupIntentsError = DeleteAccountsAccountError;
-
 typedef PostSetupIntentsIntentError = DeleteAccountsAccountError;
-
 typedef PostSetupIntentsIntentCancelError = DeleteAccountsAccountError;
-
 typedef PostSetupIntentsIntentConfirmError = DeleteAccountsAccountError;
-
 typedef PostSetupIntentsIntentVerifyMicrodepositsError = DeleteAccountsAccountError;
-
 typedef PostShippingRatesError = DeleteAccountsAccountError;
-
 typedef PostShippingRatesShippingRateTokenError = DeleteAccountsAccountError;
-
 typedef PostSigmaSavedQueriesIdError = DeleteAccountsAccountError;
-
 typedef PostSourcesError = DeleteAccountsAccountError;
-
 typedef PostSourcesSourceError = DeleteAccountsAccountError;
-
 typedef PostSourcesSourceVerifyError = DeleteAccountsAccountError;
-
 typedef PostSubscriptionItemsError = DeleteAccountsAccountError;
-
 typedef PostSubscriptionItemsItemError = DeleteAccountsAccountError;
-
 typedef PostSubscriptionSchedulesError = DeleteAccountsAccountError;
-
 typedef PostSubscriptionSchedulesScheduleError = DeleteAccountsAccountError;
-
 typedef PostSubscriptionSchedulesScheduleCancelError = DeleteAccountsAccountError;
-
 typedef PostSubscriptionSchedulesScheduleReleaseError = DeleteAccountsAccountError;
-
 typedef PostSubscriptionsError = DeleteAccountsAccountError;
-
 typedef PostSubscriptionsSubscriptionExposedIdError = DeleteAccountsAccountError;
-
 typedef PostSubscriptionsSubscriptionMigrateError = DeleteAccountsAccountError;
-
 typedef PostSubscriptionsSubscriptionResumeError = DeleteAccountsAccountError;
-
 typedef PostTaxCalculationsError = DeleteAccountsAccountError;
-
 typedef PostTaxIdsError = DeleteAccountsAccountError;
-
 typedef PostTaxRatesError = DeleteAccountsAccountError;
-
 typedef PostTaxRatesTaxRateError = DeleteAccountsAccountError;
-
 typedef PostTaxRegistrationsError = DeleteAccountsAccountError;
-
 typedef PostTaxRegistrationsIdError = DeleteAccountsAccountError;
-
 typedef PostTaxSettingsError = DeleteAccountsAccountError;
-
 typedef PostTaxTransactionsCreateFromCalculationError = DeleteAccountsAccountError;
-
 typedef PostTaxTransactionsCreateReversalError = DeleteAccountsAccountError;
-
 typedef PostTerminalConfigurationsError = DeleteAccountsAccountError;
-
 typedef PostTerminalConfigurationsConfigurationError = DeleteAccountsAccountError;
-
 typedef PostTerminalConnectionTokensError = DeleteAccountsAccountError;
-
 typedef PostTerminalLocationsError = DeleteAccountsAccountError;
-
 typedef PostTerminalLocationsLocationError = DeleteAccountsAccountError;
-
 typedef PostTerminalOnboardingLinksError = DeleteAccountsAccountError;
-
 typedef PostTerminalReadersError = DeleteAccountsAccountError;
-
 typedef PostTerminalReadersReaderError = DeleteAccountsAccountError;
-
 typedef PostTerminalReadersReaderCancelActionError = DeleteAccountsAccountError;
-
 typedef PostTerminalReadersReaderCollectInputsError = DeleteAccountsAccountError;
-
 typedef PostTerminalReadersReaderCollectPaymentMethodError = DeleteAccountsAccountError;
-
 typedef PostTerminalReadersReaderConfirmPaymentIntentError = DeleteAccountsAccountError;
-
 typedef PostTerminalReadersReaderProcessPaymentIntentError = DeleteAccountsAccountError;
-
 typedef PostTerminalReadersReaderProcessSetupIntentError = DeleteAccountsAccountError;
-
 typedef PostTerminalReadersReaderRefundPaymentError = DeleteAccountsAccountError;
-
 typedef PostTerminalReadersReaderSetReaderDisplayError = DeleteAccountsAccountError;
-
 typedef PostTerminalRefundsError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersConfirmationTokensError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersCustomersCustomerFundCashBalanceError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingAuthorizationsError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingAuthorizationsAuthorizationCaptureError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingAuthorizationsAuthorizationExpireError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingAuthorizationsAuthorizationIncrementError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingAuthorizationsAuthorizationReverseError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingCardsCardShippingDeliverError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingCardsCardShippingFailError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingCardsCardShippingReturnError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingCardsCardShippingShipError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingCardsCardShippingSubmitError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivateError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivateError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingSettlementsError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingSettlementsSettlementCompleteError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingTransactionsCreateForceCaptureError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingTransactionsCreateUnlinkedRefundError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersIssuingTransactionsTransactionRefundError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersRefundsRefundExpireError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTerminalReadersReaderPresentPaymentMethodError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTerminalReadersReaderSucceedInputCollectionError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTerminalReadersReaderTimeoutInputCollectionError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTestClocksError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTestClocksTestClockAdvanceError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryInboundTransfersIdFailError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryInboundTransfersIdReturnError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryInboundTransfersIdSucceedError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryOutboundPaymentsIdError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryOutboundPaymentsIdFailError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryOutboundPaymentsIdPostError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryOutboundPaymentsIdReturnError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryOutboundTransfersOutboundTransferError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryOutboundTransfersOutboundTransferFailError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryOutboundTransfersOutboundTransferPostError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryReceivedCreditsError = DeleteAccountsAccountError;
-
 typedef PostTestHelpersTreasuryReceivedDebitsError = DeleteAccountsAccountError;
-
 typedef PostTokensError = DeleteAccountsAccountError;
-
 typedef PostTopupsError = DeleteAccountsAccountError;
-
 typedef PostTopupsTopupError = DeleteAccountsAccountError;
-
 typedef PostTopupsTopupCancelError = DeleteAccountsAccountError;
-
 typedef PostTransfersError = DeleteAccountsAccountError;
-
 typedef PostTransfersIdReversalsError = DeleteAccountsAccountError;
-
 typedef PostTransfersTransferError = DeleteAccountsAccountError;
-
 typedef PostTransfersTransferReversalsIdError = DeleteAccountsAccountError;
-
 typedef PostTreasuryCreditReversalsError = DeleteAccountsAccountError;
-
 typedef PostTreasuryDebitReversalsError = DeleteAccountsAccountError;
-
 typedef PostTreasuryFinancialAccountsError = DeleteAccountsAccountError;
-
 typedef PostTreasuryFinancialAccountsFinancialAccountError = DeleteAccountsAccountError;
-
 typedef PostTreasuryFinancialAccountsFinancialAccountCloseError = DeleteAccountsAccountError;
-
 typedef PostTreasuryFinancialAccountsFinancialAccountFeaturesError = DeleteAccountsAccountError;
-
 typedef PostTreasuryInboundTransfersError = DeleteAccountsAccountError;
-
 typedef PostTreasuryInboundTransfersInboundTransferCancelError = DeleteAccountsAccountError;
-
 typedef PostTreasuryOutboundPaymentsError = DeleteAccountsAccountError;
-
 typedef PostTreasuryOutboundPaymentsIdCancelError = DeleteAccountsAccountError;
-
 typedef PostTreasuryOutboundTransfersError = DeleteAccountsAccountError;
-
 typedef PostTreasuryOutboundTransfersOutboundTransferCancelError = DeleteAccountsAccountError;
-
 typedef PostWebhookEndpointsError = DeleteAccountsAccountError;
-
 typedef PostWebhookEndpointsWebhookEndpointError = DeleteAccountsAccountError;

@@ -1,18 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/update_servers_response400.dart';import 'package:pub_cloudflare/models/update_servers_response404.dart';sealed class UpdateServersError {const UpdateServersError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/update_servers_response400.dart';
-import 'package:pub_cloudflare/models/update_servers_response404.dart';
-
-sealed class UpdateServersError {
-  const UpdateServersError();
-
-  int get statusCode;
-
-  factory UpdateServersError.fromResponse(ApiResponse response) {
-    try {
+factory UpdateServersError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => UpdateServersError$400(UpdateServersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         404 => UpdateServersError$404(UpdateServersResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -20,27 +10,26 @@ sealed class UpdateServersError {
       };
     } on Object {
       return UpdateServersError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class UpdateServersError$400 extends UpdateServersError {
-  const UpdateServersError$400(this.error);
-  final UpdateServersResponse400 error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class UpdateServersError$400 extends UpdateServersError {const UpdateServersError$400(this.error);
 
-final class UpdateServersError$404 extends UpdateServersError {
-  const UpdateServersError$404(this.error);
-  final UpdateServersResponse404 error;
-  @override
-  int get statusCode => 404;
-}
+final UpdateServersResponse400 error;
 
-final class UpdateServersError$Unknown extends UpdateServersError {
-  const UpdateServersError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+@override int get statusCode { return 400; } 
+ }
+final class UpdateServersError$404 extends UpdateServersError {const UpdateServersError$404(this.error);
+
+final UpdateServersResponse404 error;
+
+@override int get statusCode { return 404; } 
+ }
+final class UpdateServersError$Unknown extends UpdateServersError {const UpdateServersError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

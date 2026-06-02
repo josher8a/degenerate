@@ -1,18 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/search_users_response503.dart';import 'package:pub_github_rest_3_1/models/validation_error.dart';sealed class SearchUsersError {const SearchUsersError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_github_rest_3_1/models/search_users_response503.dart';
-import 'package:pub_github_rest_3_1/models/validation_error.dart';
-
-sealed class SearchUsersError {
-  const SearchUsersError();
-
-  int get statusCode;
-
-  factory SearchUsersError.fromResponse(ApiResponse response) {
-    try {
+factory SearchUsersError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         422 => SearchUsersError$422(ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         503 => SearchUsersError$503(SearchUsersResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -20,27 +10,26 @@ sealed class SearchUsersError {
       };
     } on Object {
       return SearchUsersError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class SearchUsersError$422 extends SearchUsersError {
-  const SearchUsersError$422(this.error);
-  final ValidationError error;
-  @override
-  int get statusCode => 422;
-}
+int get statusCode;
+ }
+final class SearchUsersError$422 extends SearchUsersError {const SearchUsersError$422(this.error);
 
-final class SearchUsersError$503 extends SearchUsersError {
-  const SearchUsersError$503(this.error);
-  final SearchUsersResponse503 error;
-  @override
-  int get statusCode => 503;
-}
+final ValidationError error;
 
-final class SearchUsersError$Unknown extends SearchUsersError {
-  const SearchUsersError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+@override int get statusCode { return 422; } 
+ }
+final class SearchUsersError$503 extends SearchUsersError {const SearchUsersError$503(this.error);
+
+final SearchUsersResponse503 error;
+
+@override int get statusCode { return 503; } 
+ }
+final class SearchUsersError$Unknown extends SearchUsersError {const SearchUsersError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

@@ -1,267 +1,143 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';sealed class ActionsGetArtifactAndLogRetentionSettingsRepositoryError {const ActionsGetArtifactAndLogRetentionSettingsRepositoryError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_github_rest_3_1/models/basic_error.dart';
-
-sealed class ActionsGetArtifactAndLogRetentionSettingsRepositoryError {
-  const ActionsGetArtifactAndLogRetentionSettingsRepositoryError();
-
-  int get statusCode;
-
-  factory ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(ApiResponse response) {
-    try {
+factory ActionsGetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         404 => ActionsGetArtifactAndLogRetentionSettingsRepositoryError$404(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         _ => ActionsGetArtifactAndLogRetentionSettingsRepositoryError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return ActionsGetArtifactAndLogRetentionSettingsRepositoryError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class ActionsGetArtifactAndLogRetentionSettingsRepositoryError$404 extends ActionsGetArtifactAndLogRetentionSettingsRepositoryError {
-  const ActionsGetArtifactAndLogRetentionSettingsRepositoryError$404(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 404;
-}
+int get statusCode;
+ }
+final class ActionsGetArtifactAndLogRetentionSettingsRepositoryError$404 extends ActionsGetArtifactAndLogRetentionSettingsRepositoryError {const ActionsGetArtifactAndLogRetentionSettingsRepositoryError$404(this.error);
 
-final class ActionsGetArtifactAndLogRetentionSettingsRepositoryError$Unknown extends ActionsGetArtifactAndLogRetentionSettingsRepositoryError {
-  const ActionsGetArtifactAndLogRetentionSettingsRepositoryError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final BasicError error;
 
+@override int get statusCode { return 404; } 
+ }
+final class ActionsGetArtifactAndLogRetentionSettingsRepositoryError$Unknown extends ActionsGetArtifactAndLogRetentionSettingsRepositoryError {const ActionsGetArtifactAndLogRetentionSettingsRepositoryError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }
 typedef ActionsGetForkPrContributorApprovalPermissionsOrganizationError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ActionsGetForkPrContributorApprovalPermissionsRepositoryError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ActionsListJobsForWorkflowRunAttemptError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ActionsListLabelsForSelfHostedRunnerForOrgError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ActionsListLabelsForSelfHostedRunnerForRepoError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrgError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef AppsDeleteInstallationError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef AppsGetInstallationError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef AppsGetRepoInstallationError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef AppsSuspendInstallationError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef AppsUnsuspendInstallationError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ClassroomGetAClassroomError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ClassroomGetAnAssignmentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ClassroomGetAssignmentGradesError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef CodesOfConductGetConductCodeError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef CodespacesDeleteOrgSecretError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef CodespacesGetExportDetailsForAuthenticatedUserError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef CodespacesListSelectedReposForOrgSecretError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef CodespacesSetSelectedReposForOrgSecretError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef GistsUpdateCommentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef IssuesCheckUserCanBeAssignedError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef IssuesCheckUserCanBeAssignedToIssueError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef IssuesDeleteMilestoneError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef IssuesGetCommentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef IssuesGetLabelError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef IssuesGetMilestoneError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef IssuesListAssigneesError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef IssuesListForAuthenticatedUserError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef IssuesListForOrgError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef IssuesListLabelsForRepoError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef IssuesListMilestonesError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef LicensesGetForRepoError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef MetaGetAllVersionsError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef MigrationsDeleteArchiveForOrgError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef MigrationsDownloadArchiveForOrgError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef MigrationsGetStatusForOrgError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef MigrationsListReposForAuthenticatedUserError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef MigrationsListReposForOrgError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef MigrationsUnlockRepoForOrgError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsCheckBlockedUserError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsConvertMemberToOutsideCollaboratorError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsDeleteAttestationsBulkError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsDeleteAttestationsBySubjectDigestError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsDeleteWebhookError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsGetError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsGetWebhookError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsListFailedInvitationsError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsListInvitationTeamsError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsListIssueTypesError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsListPendingInvitationsError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsListWebhooksError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef OrgsPingWebhookError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef PrivateRegistriesGetOrgPrivateRegistryError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef PrivateRegistriesGetOrgPublicKeyError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef PullsCreateReplyForReviewCommentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef PullsDeleteReviewCommentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef PullsGetReviewError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef PullsGetReviewCommentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef PullsListCommentsForReviewError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef RateLimitGetError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReactionsListForCommitCommentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReactionsListForIssueCommentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReactionsListForPullRequestReviewCommentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReactionsListForReleaseError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposCancelPagesDeploymentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposCreateCommitSignatureProtectionError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposDeleteAdminBranchProtectionError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposDeleteAutolinkError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposDeleteCommitCommentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposDeleteCommitSignatureProtectionError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposDeletePullRequestReviewProtectionError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposDeleteWebhookError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGenerateReleaseNotesError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetAccessRestrictionsError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetAllStatusCheckContextsError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetAllTopicsError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetAppsWithAccessToProtectedBranchError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetAutolinkError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetBranchError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetBranchProtectionError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetCollaboratorPermissionLevelError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetCombinedStatusForRefError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetCommitCommentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetCommitSignatureProtectionError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetDeployKeyError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetDeploymentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetDeploymentStatusError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetPagesError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetPagesDeploymentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetPagesHealthCheckError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetParticipationStatsError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetReleaseAssetError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetReleaseByTagError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetStatusChecksProtectionError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetTeamsWithAccessToProtectedBranchError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetUsersWithAccessToProtectedBranchError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposGetWebhookError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposListBranchesError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposListCollaboratorsError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposListDeploymentStatusesError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposListReleasesError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposListTeamsError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposListWebhooksError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposPingWebhookError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposTestPushWebhookError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposUpdateCommitCommentError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef ReposUpdateReleaseError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef SecurityAdvisoriesGetGlobalAdvisoryError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef TeamsGetByNameError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef UsersDeleteAttestationsBulkError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef UsersDeleteAttestationsBySubjectDigestError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef UsersGetByIdError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef UsersGetByUsernameError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;
-
 typedef UsersListAttestationsError = ActionsGetArtifactAndLogRetentionSettingsRepositoryError;

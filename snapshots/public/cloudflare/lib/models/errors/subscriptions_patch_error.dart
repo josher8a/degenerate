@@ -1,17 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/failure.dart';sealed class SubscriptionsPatchError {const SubscriptionsPatchError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/failure.dart';
-
-sealed class SubscriptionsPatchError {
-  const SubscriptionsPatchError();
-
-  int get statusCode;
-
-  factory SubscriptionsPatchError.fromResponse(ApiResponse response) {
-    try {
+factory SubscriptionsPatchError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => SubscriptionsPatchError$400(Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         404 => SubscriptionsPatchError$404(Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -19,27 +10,26 @@ sealed class SubscriptionsPatchError {
       };
     } on Object {
       return SubscriptionsPatchError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class SubscriptionsPatchError$400 extends SubscriptionsPatchError {
-  const SubscriptionsPatchError$400(this.error);
-  final Failure error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class SubscriptionsPatchError$400 extends SubscriptionsPatchError {const SubscriptionsPatchError$400(this.error);
 
-final class SubscriptionsPatchError$404 extends SubscriptionsPatchError {
-  const SubscriptionsPatchError$404(this.error);
-  final Failure error;
-  @override
-  int get statusCode => 404;
-}
+final Failure error;
 
-final class SubscriptionsPatchError$Unknown extends SubscriptionsPatchError {
-  const SubscriptionsPatchError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+@override int get statusCode { return 400; } 
+ }
+final class SubscriptionsPatchError$404 extends SubscriptionsPatchError {const SubscriptionsPatchError$404(this.error);
+
+final Failure error;
+
+@override int get statusCode { return 404; } 
+ }
+final class SubscriptionsPatchError$Unknown extends SubscriptionsPatchError {const SubscriptionsPatchError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

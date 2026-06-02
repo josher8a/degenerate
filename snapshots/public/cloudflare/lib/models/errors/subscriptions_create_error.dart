@@ -1,17 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/failure.dart';sealed class SubscriptionsCreateError {const SubscriptionsCreateError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/failure.dart';
-
-sealed class SubscriptionsCreateError {
-  const SubscriptionsCreateError();
-
-  int get statusCode;
-
-  factory SubscriptionsCreateError.fromResponse(ApiResponse response) {
-    try {
+factory SubscriptionsCreateError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => SubscriptionsCreateError$400(Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         404 => SubscriptionsCreateError$404(Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -20,34 +11,32 @@ sealed class SubscriptionsCreateError {
       };
     } on Object {
       return SubscriptionsCreateError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class SubscriptionsCreateError$400 extends SubscriptionsCreateError {
-  const SubscriptionsCreateError$400(this.error);
-  final Failure error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class SubscriptionsCreateError$400 extends SubscriptionsCreateError {const SubscriptionsCreateError$400(this.error);
 
-final class SubscriptionsCreateError$404 extends SubscriptionsCreateError {
-  const SubscriptionsCreateError$404(this.error);
-  final Failure error;
-  @override
-  int get statusCode => 404;
-}
+final Failure error;
 
-final class SubscriptionsCreateError$405 extends SubscriptionsCreateError {
-  const SubscriptionsCreateError$405(this.error);
-  final Failure error;
-  @override
-  int get statusCode => 405;
-}
+@override int get statusCode { return 400; } 
+ }
+final class SubscriptionsCreateError$404 extends SubscriptionsCreateError {const SubscriptionsCreateError$404(this.error);
 
-final class SubscriptionsCreateError$Unknown extends SubscriptionsCreateError {
-  const SubscriptionsCreateError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final Failure error;
+
+@override int get statusCode { return 404; } 
+ }
+final class SubscriptionsCreateError$405 extends SubscriptionsCreateError {const SubscriptionsCreateError$405(this.error);
+
+final Failure error;
+
+@override int get statusCode { return 405; } 
+ }
+final class SubscriptionsCreateError$Unknown extends SubscriptionsCreateError {const SubscriptionsCreateError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

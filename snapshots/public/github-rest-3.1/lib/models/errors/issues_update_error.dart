@@ -1,19 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/issues_update_response503.dart';import 'package:pub_github_rest_3_1/models/validation_error.dart';sealed class IssuesUpdateError {const IssuesUpdateError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_github_rest_3_1/models/basic_error.dart';
-import 'package:pub_github_rest_3_1/models/issues_update_response503.dart';
-import 'package:pub_github_rest_3_1/models/validation_error.dart';
-
-sealed class IssuesUpdateError {
-  const IssuesUpdateError();
-
-  int get statusCode;
-
-  factory IssuesUpdateError.fromResponse(ApiResponse response) {
-    try {
+factory IssuesUpdateError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         403 => IssuesUpdateError$403(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         404 => IssuesUpdateError$404(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -24,48 +13,44 @@ sealed class IssuesUpdateError {
       };
     } on Object {
       return IssuesUpdateError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class IssuesUpdateError$403 extends IssuesUpdateError {
-  const IssuesUpdateError$403(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 403;
-}
+int get statusCode;
+ }
+final class IssuesUpdateError$403 extends IssuesUpdateError {const IssuesUpdateError$403(this.error);
 
-final class IssuesUpdateError$404 extends IssuesUpdateError {
-  const IssuesUpdateError$404(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 404;
-}
+final BasicError error;
 
-final class IssuesUpdateError$410 extends IssuesUpdateError {
-  const IssuesUpdateError$410(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 410;
-}
+@override int get statusCode { return 403; } 
+ }
+final class IssuesUpdateError$404 extends IssuesUpdateError {const IssuesUpdateError$404(this.error);
 
-final class IssuesUpdateError$422 extends IssuesUpdateError {
-  const IssuesUpdateError$422(this.error);
-  final ValidationError error;
-  @override
-  int get statusCode => 422;
-}
+final BasicError error;
 
-final class IssuesUpdateError$503 extends IssuesUpdateError {
-  const IssuesUpdateError$503(this.error);
-  final IssuesUpdateResponse503 error;
-  @override
-  int get statusCode => 503;
-}
+@override int get statusCode { return 404; } 
+ }
+final class IssuesUpdateError$410 extends IssuesUpdateError {const IssuesUpdateError$410(this.error);
 
-final class IssuesUpdateError$Unknown extends IssuesUpdateError {
-  const IssuesUpdateError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final BasicError error;
+
+@override int get statusCode { return 410; } 
+ }
+final class IssuesUpdateError$422 extends IssuesUpdateError {const IssuesUpdateError$422(this.error);
+
+final ValidationError error;
+
+@override int get statusCode { return 422; } 
+ }
+final class IssuesUpdateError$503 extends IssuesUpdateError {const IssuesUpdateError$503(this.error);
+
+final IssuesUpdateResponse503 error;
+
+@override int get statusCode { return 503; } 
+ }
+final class IssuesUpdateError$Unknown extends IssuesUpdateError {const IssuesUpdateError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

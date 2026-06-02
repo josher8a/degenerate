@@ -1,14 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'dart:convert';
-
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_totem_mobile/models/error_response_schema.dart';
 
 sealed class GetLivekitTokenError {
   const GetLivekitTokenError();
-
-  int get statusCode;
 
   factory GetLivekitTokenError.fromResponse(ApiResponse response) {
     try {
@@ -34,33 +31,49 @@ sealed class GetLivekitTokenError {
       return GetLivekitTokenError$Unknown(response.statusCode, response.body);
     }
   }
+
+  int get statusCode;
 }
 
 final class GetLivekitTokenError$403 extends GetLivekitTokenError {
   const GetLivekitTokenError$403(this.error);
+
   final ErrorResponseSchema error;
+
   @override
-  int get statusCode => 403;
+  int get statusCode {
+    return 403;
+  }
 }
 
 final class GetLivekitTokenError$404 extends GetLivekitTokenError {
   const GetLivekitTokenError$404(this.error);
+
   final ErrorResponseSchema error;
+
   @override
-  int get statusCode => 404;
+  int get statusCode {
+    return 404;
+  }
 }
 
 final class GetLivekitTokenError$500 extends GetLivekitTokenError {
   const GetLivekitTokenError$500(this.error);
+
   final ErrorResponseSchema error;
+
   @override
-  int get statusCode => 500;
+  int get statusCode {
+    return 500;
+  }
 }
 
 final class GetLivekitTokenError$Unknown extends GetLivekitTokenError {
   const GetLivekitTokenError$Unknown(this.statusCode, this.rawBody);
+
   @override
   final int statusCode;
+
   final String? rawBody;
 }
 

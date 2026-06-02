@@ -1,18 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/gists_get_response403.dart';sealed class GistsGetError {const GistsGetError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_github_rest_3_1/models/basic_error.dart';
-import 'package:pub_github_rest_3_1/models/gists_get_response403.dart';
-
-sealed class GistsGetError {
-  const GistsGetError();
-
-  int get statusCode;
-
-  factory GistsGetError.fromResponse(ApiResponse response) {
-    try {
+factory GistsGetError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         403 => GistsGetError$403(GistsGetResponse403.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         404 => GistsGetError$404(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -20,27 +10,26 @@ sealed class GistsGetError {
       };
     } on Object {
       return GistsGetError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class GistsGetError$403 extends GistsGetError {
-  const GistsGetError$403(this.error);
-  final GistsGetResponse403 error;
-  @override
-  int get statusCode => 403;
-}
+int get statusCode;
+ }
+final class GistsGetError$403 extends GistsGetError {const GistsGetError$403(this.error);
 
-final class GistsGetError$404 extends GistsGetError {
-  const GistsGetError$404(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 404;
-}
+final GistsGetResponse403 error;
 
-final class GistsGetError$Unknown extends GistsGetError {
-  const GistsGetError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+@override int get statusCode { return 403; } 
+ }
+final class GistsGetError$404 extends GistsGetError {const GistsGetError$404(this.error);
+
+final BasicError error;
+
+@override int get statusCode { return 404; } 
+ }
+final class GistsGetError$Unknown extends GistsGetError {const GistsGetError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

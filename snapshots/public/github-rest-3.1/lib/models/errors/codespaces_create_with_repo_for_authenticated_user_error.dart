@@ -1,18 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/codespaces_create_with_repo_for_authenticated_user_response503.dart';sealed class CodespacesCreateWithRepoForAuthenticatedUserError {const CodespacesCreateWithRepoForAuthenticatedUserError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_github_rest_3_1/models/basic_error.dart';
-import 'package:pub_github_rest_3_1/models/codespaces_create_with_repo_for_authenticated_user_response503.dart';
-
-sealed class CodespacesCreateWithRepoForAuthenticatedUserError {
-  const CodespacesCreateWithRepoForAuthenticatedUserError();
-
-  int get statusCode;
-
-  factory CodespacesCreateWithRepoForAuthenticatedUserError.fromResponse(ApiResponse response) {
-    try {
+factory CodespacesCreateWithRepoForAuthenticatedUserError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => CodespacesCreateWithRepoForAuthenticatedUserError$400(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         401 => CodespacesCreateWithRepoForAuthenticatedUserError$401(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -23,48 +13,44 @@ sealed class CodespacesCreateWithRepoForAuthenticatedUserError {
       };
     } on Object {
       return CodespacesCreateWithRepoForAuthenticatedUserError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class CodespacesCreateWithRepoForAuthenticatedUserError$400 extends CodespacesCreateWithRepoForAuthenticatedUserError {
-  const CodespacesCreateWithRepoForAuthenticatedUserError$400(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class CodespacesCreateWithRepoForAuthenticatedUserError$400 extends CodespacesCreateWithRepoForAuthenticatedUserError {const CodespacesCreateWithRepoForAuthenticatedUserError$400(this.error);
 
-final class CodespacesCreateWithRepoForAuthenticatedUserError$401 extends CodespacesCreateWithRepoForAuthenticatedUserError {
-  const CodespacesCreateWithRepoForAuthenticatedUserError$401(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 401;
-}
+final BasicError error;
 
-final class CodespacesCreateWithRepoForAuthenticatedUserError$403 extends CodespacesCreateWithRepoForAuthenticatedUserError {
-  const CodespacesCreateWithRepoForAuthenticatedUserError$403(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 403;
-}
+@override int get statusCode { return 400; } 
+ }
+final class CodespacesCreateWithRepoForAuthenticatedUserError$401 extends CodespacesCreateWithRepoForAuthenticatedUserError {const CodespacesCreateWithRepoForAuthenticatedUserError$401(this.error);
 
-final class CodespacesCreateWithRepoForAuthenticatedUserError$404 extends CodespacesCreateWithRepoForAuthenticatedUserError {
-  const CodespacesCreateWithRepoForAuthenticatedUserError$404(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 404;
-}
+final BasicError error;
 
-final class CodespacesCreateWithRepoForAuthenticatedUserError$503 extends CodespacesCreateWithRepoForAuthenticatedUserError {
-  const CodespacesCreateWithRepoForAuthenticatedUserError$503(this.error);
-  final CodespacesCreateWithRepoForAuthenticatedUserResponse503 error;
-  @override
-  int get statusCode => 503;
-}
+@override int get statusCode { return 401; } 
+ }
+final class CodespacesCreateWithRepoForAuthenticatedUserError$403 extends CodespacesCreateWithRepoForAuthenticatedUserError {const CodespacesCreateWithRepoForAuthenticatedUserError$403(this.error);
 
-final class CodespacesCreateWithRepoForAuthenticatedUserError$Unknown extends CodespacesCreateWithRepoForAuthenticatedUserError {
-  const CodespacesCreateWithRepoForAuthenticatedUserError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final BasicError error;
+
+@override int get statusCode { return 403; } 
+ }
+final class CodespacesCreateWithRepoForAuthenticatedUserError$404 extends CodespacesCreateWithRepoForAuthenticatedUserError {const CodespacesCreateWithRepoForAuthenticatedUserError$404(this.error);
+
+final BasicError error;
+
+@override int get statusCode { return 404; } 
+ }
+final class CodespacesCreateWithRepoForAuthenticatedUserError$503 extends CodespacesCreateWithRepoForAuthenticatedUserError {const CodespacesCreateWithRepoForAuthenticatedUserError$503(this.error);
+
+final CodespacesCreateWithRepoForAuthenticatedUserResponse503 error;
+
+@override int get statusCode { return 503; } 
+ }
+final class CodespacesCreateWithRepoForAuthenticatedUserError$Unknown extends CodespacesCreateWithRepoForAuthenticatedUserError {const CodespacesCreateWithRepoForAuthenticatedUserError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

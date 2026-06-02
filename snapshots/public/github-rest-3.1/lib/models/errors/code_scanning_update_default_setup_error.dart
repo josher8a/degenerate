@@ -1,18 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/code_scanning_update_default_setup_response503.dart';sealed class CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_github_rest_3_1/models/basic_error.dart';
-import 'package:pub_github_rest_3_1/models/code_scanning_update_default_setup_response503.dart';
-
-sealed class CodeScanningUpdateDefaultSetupError {
-  const CodeScanningUpdateDefaultSetupError();
-
-  int get statusCode;
-
-  factory CodeScanningUpdateDefaultSetupError.fromResponse(ApiResponse response) {
-    try {
+factory CodeScanningUpdateDefaultSetupError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         403 => CodeScanningUpdateDefaultSetupError$403(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         404 => CodeScanningUpdateDefaultSetupError$404(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -23,48 +13,44 @@ sealed class CodeScanningUpdateDefaultSetupError {
       };
     } on Object {
       return CodeScanningUpdateDefaultSetupError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class CodeScanningUpdateDefaultSetupError$403 extends CodeScanningUpdateDefaultSetupError {
-  const CodeScanningUpdateDefaultSetupError$403(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 403;
-}
+int get statusCode;
+ }
+final class CodeScanningUpdateDefaultSetupError$403 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$403(this.error);
 
-final class CodeScanningUpdateDefaultSetupError$404 extends CodeScanningUpdateDefaultSetupError {
-  const CodeScanningUpdateDefaultSetupError$404(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 404;
-}
+final BasicError error;
 
-final class CodeScanningUpdateDefaultSetupError$409 extends CodeScanningUpdateDefaultSetupError {
-  const CodeScanningUpdateDefaultSetupError$409(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 409;
-}
+@override int get statusCode { return 403; } 
+ }
+final class CodeScanningUpdateDefaultSetupError$404 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$404(this.error);
 
-final class CodeScanningUpdateDefaultSetupError$422 extends CodeScanningUpdateDefaultSetupError {
-  const CodeScanningUpdateDefaultSetupError$422(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 422;
-}
+final BasicError error;
 
-final class CodeScanningUpdateDefaultSetupError$503 extends CodeScanningUpdateDefaultSetupError {
-  const CodeScanningUpdateDefaultSetupError$503(this.error);
-  final CodeScanningUpdateDefaultSetupResponse503 error;
-  @override
-  int get statusCode => 503;
-}
+@override int get statusCode { return 404; } 
+ }
+final class CodeScanningUpdateDefaultSetupError$409 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$409(this.error);
 
-final class CodeScanningUpdateDefaultSetupError$Unknown extends CodeScanningUpdateDefaultSetupError {
-  const CodeScanningUpdateDefaultSetupError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final BasicError error;
+
+@override int get statusCode { return 409; } 
+ }
+final class CodeScanningUpdateDefaultSetupError$422 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$422(this.error);
+
+final BasicError error;
+
+@override int get statusCode { return 422; } 
+ }
+final class CodeScanningUpdateDefaultSetupError$503 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$503(this.error);
+
+final CodeScanningUpdateDefaultSetupResponse503 error;
+
+@override int get statusCode { return 503; } 
+ }
+final class CodeScanningUpdateDefaultSetupError$Unknown extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

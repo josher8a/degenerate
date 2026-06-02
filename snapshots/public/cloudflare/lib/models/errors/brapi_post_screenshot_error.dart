@@ -1,20 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_screenshot_response400.dart';import 'package:pub_cloudflare/models/brapi_post_screenshot_response422.dart';import 'package:pub_cloudflare/models/brapi_post_screenshot_response429.dart';import 'package:pub_cloudflare/models/brapi_post_screenshot_response500.dart';sealed class BrapiPostScreenshotError {const BrapiPostScreenshotError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/brapi_post_screenshot_response400.dart';
-import 'package:pub_cloudflare/models/brapi_post_screenshot_response422.dart';
-import 'package:pub_cloudflare/models/brapi_post_screenshot_response429.dart';
-import 'package:pub_cloudflare/models/brapi_post_screenshot_response500.dart';
-
-sealed class BrapiPostScreenshotError {
-  const BrapiPostScreenshotError();
-
-  int get statusCode;
-
-  factory BrapiPostScreenshotError.fromResponse(ApiResponse response) {
-    try {
+factory BrapiPostScreenshotError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => BrapiPostScreenshotError$400(BrapiPostScreenshotResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         422 => BrapiPostScreenshotError$422(BrapiPostScreenshotResponse422.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -24,41 +12,38 @@ sealed class BrapiPostScreenshotError {
       };
     } on Object {
       return BrapiPostScreenshotError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class BrapiPostScreenshotError$400 extends BrapiPostScreenshotError {
-  const BrapiPostScreenshotError$400(this.error);
-  final BrapiPostScreenshotResponse400 error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class BrapiPostScreenshotError$400 extends BrapiPostScreenshotError {const BrapiPostScreenshotError$400(this.error);
 
-final class BrapiPostScreenshotError$422 extends BrapiPostScreenshotError {
-  const BrapiPostScreenshotError$422(this.error);
-  final BrapiPostScreenshotResponse422 error;
-  @override
-  int get statusCode => 422;
-}
+final BrapiPostScreenshotResponse400 error;
 
-final class BrapiPostScreenshotError$429 extends BrapiPostScreenshotError {
-  const BrapiPostScreenshotError$429(this.error);
-  final BrapiPostScreenshotResponse429 error;
-  @override
-  int get statusCode => 429;
-}
+@override int get statusCode { return 400; } 
+ }
+final class BrapiPostScreenshotError$422 extends BrapiPostScreenshotError {const BrapiPostScreenshotError$422(this.error);
 
-final class BrapiPostScreenshotError$500 extends BrapiPostScreenshotError {
-  const BrapiPostScreenshotError$500(this.error);
-  final BrapiPostScreenshotResponse500 error;
-  @override
-  int get statusCode => 500;
-}
+final BrapiPostScreenshotResponse422 error;
 
-final class BrapiPostScreenshotError$Unknown extends BrapiPostScreenshotError {
-  const BrapiPostScreenshotError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+@override int get statusCode { return 422; } 
+ }
+final class BrapiPostScreenshotError$429 extends BrapiPostScreenshotError {const BrapiPostScreenshotError$429(this.error);
+
+final BrapiPostScreenshotResponse429 error;
+
+@override int get statusCode { return 429; } 
+ }
+final class BrapiPostScreenshotError$500 extends BrapiPostScreenshotError {const BrapiPostScreenshotError$500(this.error);
+
+final BrapiPostScreenshotResponse500 error;
+
+@override int get statusCode { return 500; } 
+ }
+final class BrapiPostScreenshotError$Unknown extends BrapiPostScreenshotError {const BrapiPostScreenshotError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

@@ -1,37 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/patch_category_update_response400.dart';sealed class PatchCategoryUpdateError {const PatchCategoryUpdateError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/patch_category_update_response400.dart';
-
-sealed class PatchCategoryUpdateError {
-  const PatchCategoryUpdateError();
-
-  int get statusCode;
-
-  factory PatchCategoryUpdateError.fromResponse(ApiResponse response) {
-    try {
+factory PatchCategoryUpdateError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => PatchCategoryUpdateError$400(PatchCategoryUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         _ => PatchCategoryUpdateError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return PatchCategoryUpdateError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class PatchCategoryUpdateError$400 extends PatchCategoryUpdateError {
-  const PatchCategoryUpdateError$400(this.error);
-  final PatchCategoryUpdateResponse400 error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class PatchCategoryUpdateError$400 extends PatchCategoryUpdateError {const PatchCategoryUpdateError$400(this.error);
 
-final class PatchCategoryUpdateError$Unknown extends PatchCategoryUpdateError {
-  const PatchCategoryUpdateError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final PatchCategoryUpdateResponse400 error;
+
+@override int get statusCode { return 400; } 
+ }
+final class PatchCategoryUpdateError$Unknown extends PatchCategoryUpdateError {const PatchCategoryUpdateError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

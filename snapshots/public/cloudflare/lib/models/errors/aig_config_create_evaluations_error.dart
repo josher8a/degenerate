@@ -1,37 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_evaluations_response400.dart';sealed class AigConfigCreateEvaluationsError {const AigConfigCreateEvaluationsError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/aig_config_create_evaluations_response400.dart';
-
-sealed class AigConfigCreateEvaluationsError {
-  const AigConfigCreateEvaluationsError();
-
-  int get statusCode;
-
-  factory AigConfigCreateEvaluationsError.fromResponse(ApiResponse response) {
-    try {
+factory AigConfigCreateEvaluationsError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => AigConfigCreateEvaluationsError$400(AigConfigCreateEvaluationsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         _ => AigConfigCreateEvaluationsError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return AigConfigCreateEvaluationsError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class AigConfigCreateEvaluationsError$400 extends AigConfigCreateEvaluationsError {
-  const AigConfigCreateEvaluationsError$400(this.error);
-  final AigConfigCreateEvaluationsResponse400 error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class AigConfigCreateEvaluationsError$400 extends AigConfigCreateEvaluationsError {const AigConfigCreateEvaluationsError$400(this.error);
 
-final class AigConfigCreateEvaluationsError$Unknown extends AigConfigCreateEvaluationsError {
-  const AigConfigCreateEvaluationsError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final AigConfigCreateEvaluationsResponse400 error;
+
+@override int get statusCode { return 400; } 
+ }
+final class AigConfigCreateEvaluationsError$Unknown extends AigConfigCreateEvaluationsError {const AigConfigCreateEvaluationsError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

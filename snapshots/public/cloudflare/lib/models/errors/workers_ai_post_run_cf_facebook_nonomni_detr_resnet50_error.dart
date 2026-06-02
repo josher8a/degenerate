@@ -1,37 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_nonomni_detr_resnet50_response400.dart';sealed class WorkersAiPostRunCfFacebookNonomniDetrResnet50Error {const WorkersAiPostRunCfFacebookNonomniDetrResnet50Error();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_nonomni_detr_resnet50_response400.dart';
-
-sealed class WorkersAiPostRunCfFacebookNonomniDetrResnet50Error {
-  const WorkersAiPostRunCfFacebookNonomniDetrResnet50Error();
-
-  int get statusCode;
-
-  factory WorkersAiPostRunCfFacebookNonomniDetrResnet50Error.fromResponse(ApiResponse response) {
-    try {
+factory WorkersAiPostRunCfFacebookNonomniDetrResnet50Error.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$400(WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         _ => WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$400 extends WorkersAiPostRunCfFacebookNonomniDetrResnet50Error {
-  const WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$400(this.error);
-  final WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400 error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$400 extends WorkersAiPostRunCfFacebookNonomniDetrResnet50Error {const WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$400(this.error);
 
-final class WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$Unknown extends WorkersAiPostRunCfFacebookNonomniDetrResnet50Error {
-  const WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400 error;
+
+@override int get statusCode { return 400; } 
+ }
+final class WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$Unknown extends WorkersAiPostRunCfFacebookNonomniDetrResnet50Error {const WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

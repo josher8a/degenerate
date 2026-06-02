@@ -1,17 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';sealed class ActivityCheckRepoIsStarredByAuthenticatedUserError {const ActivityCheckRepoIsStarredByAuthenticatedUserError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_github_rest_3_1/models/basic_error.dart';
-
-sealed class ActivityCheckRepoIsStarredByAuthenticatedUserError {
-  const ActivityCheckRepoIsStarredByAuthenticatedUserError();
-
-  int get statusCode;
-
-  factory ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(ApiResponse response) {
-    try {
+factory ActivityCheckRepoIsStarredByAuthenticatedUserError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         401 => ActivityCheckRepoIsStarredByAuthenticatedUserError$401(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         403 => ActivityCheckRepoIsStarredByAuthenticatedUserError$403(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -20,116 +11,73 @@ sealed class ActivityCheckRepoIsStarredByAuthenticatedUserError {
       };
     } on Object {
       return ActivityCheckRepoIsStarredByAuthenticatedUserError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class ActivityCheckRepoIsStarredByAuthenticatedUserError$401 extends ActivityCheckRepoIsStarredByAuthenticatedUserError {
-  const ActivityCheckRepoIsStarredByAuthenticatedUserError$401(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 401;
-}
+int get statusCode;
+ }
+final class ActivityCheckRepoIsStarredByAuthenticatedUserError$401 extends ActivityCheckRepoIsStarredByAuthenticatedUserError {const ActivityCheckRepoIsStarredByAuthenticatedUserError$401(this.error);
 
-final class ActivityCheckRepoIsStarredByAuthenticatedUserError$403 extends ActivityCheckRepoIsStarredByAuthenticatedUserError {
-  const ActivityCheckRepoIsStarredByAuthenticatedUserError$403(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 403;
-}
+final BasicError error;
 
-final class ActivityCheckRepoIsStarredByAuthenticatedUserError$404 extends ActivityCheckRepoIsStarredByAuthenticatedUserError {
-  const ActivityCheckRepoIsStarredByAuthenticatedUserError$404(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 404;
-}
+@override int get statusCode { return 401; } 
+ }
+final class ActivityCheckRepoIsStarredByAuthenticatedUserError$403 extends ActivityCheckRepoIsStarredByAuthenticatedUserError {const ActivityCheckRepoIsStarredByAuthenticatedUserError$403(this.error);
 
-final class ActivityCheckRepoIsStarredByAuthenticatedUserError$Unknown extends ActivityCheckRepoIsStarredByAuthenticatedUserError {
-  const ActivityCheckRepoIsStarredByAuthenticatedUserError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final BasicError error;
 
+@override int get statusCode { return 403; } 
+ }
+final class ActivityCheckRepoIsStarredByAuthenticatedUserError$404 extends ActivityCheckRepoIsStarredByAuthenticatedUserError {const ActivityCheckRepoIsStarredByAuthenticatedUserError$404(this.error);
+
+final BasicError error;
+
+@override int get statusCode { return 404; } 
+ }
+final class ActivityCheckRepoIsStarredByAuthenticatedUserError$Unknown extends ActivityCheckRepoIsStarredByAuthenticatedUserError {const ActivityCheckRepoIsStarredByAuthenticatedUserError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }
 typedef ActivityStarRepoForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef ActivityUnstarRepoForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef CodespacesPreFlightWithRepoForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef CodespacesUpdateForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef MigrationsDeleteArchiveForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef MigrationsGetStatusForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef MigrationsUnlockRepoForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesDeletePackageForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesDeletePackageForOrgError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesDeletePackageForUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesDeletePackageVersionForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesDeletePackageVersionForOrgError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesDeletePackageVersionForUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesGetAllPackageVersionsForPackageOwnedByOrgError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesGetAllPackageVersionsForPackageOwnedByUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesRestorePackageForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesRestorePackageForOrgError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesRestorePackageForUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesRestorePackageVersionForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesRestorePackageVersionForOrgError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef PackagesRestorePackageVersionForUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef ProjectsListViewItemsForOrgError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef ProjectsListViewItemsForUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef ReposListInvitationsForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersCheckBlockedError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersCheckPersonIsFollowedByAuthenticatedError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersDeletePublicSshKeyForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersDeleteSshSigningKeyForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersGetGpgKeyForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersGetPublicSshKeyForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersGetSshSigningKeyForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersListBlockedByAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersListEmailsForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersListGpgKeysForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersListPublicEmailsForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersListPublicSshKeysForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersListSocialAccountsForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersListSshSigningKeysForAuthenticatedUserError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersUnblockError = ActivityCheckRepoIsStarredByAuthenticatedUserError;
-
 typedef UsersUnfollowError = ActivityCheckRepoIsStarredByAuthenticatedUserError;

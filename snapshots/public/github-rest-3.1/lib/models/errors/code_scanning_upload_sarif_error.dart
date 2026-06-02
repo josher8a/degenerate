@@ -1,18 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/code_scanning_upload_sarif_response503.dart';sealed class CodeScanningUploadSarifError {const CodeScanningUploadSarifError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_github_rest_3_1/models/basic_error.dart';
-import 'package:pub_github_rest_3_1/models/code_scanning_upload_sarif_response503.dart';
-
-sealed class CodeScanningUploadSarifError {
-  const CodeScanningUploadSarifError();
-
-  int get statusCode;
-
-  factory CodeScanningUploadSarifError.fromResponse(ApiResponse response) {
-    try {
+factory CodeScanningUploadSarifError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         403 => CodeScanningUploadSarifError$403(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         404 => CodeScanningUploadSarifError$404(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -21,34 +11,32 @@ sealed class CodeScanningUploadSarifError {
       };
     } on Object {
       return CodeScanningUploadSarifError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class CodeScanningUploadSarifError$403 extends CodeScanningUploadSarifError {
-  const CodeScanningUploadSarifError$403(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 403;
-}
+int get statusCode;
+ }
+final class CodeScanningUploadSarifError$403 extends CodeScanningUploadSarifError {const CodeScanningUploadSarifError$403(this.error);
 
-final class CodeScanningUploadSarifError$404 extends CodeScanningUploadSarifError {
-  const CodeScanningUploadSarifError$404(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 404;
-}
+final BasicError error;
 
-final class CodeScanningUploadSarifError$503 extends CodeScanningUploadSarifError {
-  const CodeScanningUploadSarifError$503(this.error);
-  final CodeScanningUploadSarifResponse503 error;
-  @override
-  int get statusCode => 503;
-}
+@override int get statusCode { return 403; } 
+ }
+final class CodeScanningUploadSarifError$404 extends CodeScanningUploadSarifError {const CodeScanningUploadSarifError$404(this.error);
 
-final class CodeScanningUploadSarifError$Unknown extends CodeScanningUploadSarifError {
-  const CodeScanningUploadSarifError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final BasicError error;
+
+@override int get statusCode { return 404; } 
+ }
+final class CodeScanningUploadSarifError$503 extends CodeScanningUploadSarifError {const CodeScanningUploadSarifError$503(this.error);
+
+final CodeScanningUploadSarifResponse503 error;
+
+@override int get statusCode { return 503; } 
+ }
+final class CodeScanningUploadSarifError$Unknown extends CodeScanningUploadSarifError {const CodeScanningUploadSarifError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

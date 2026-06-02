@@ -1,17 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';sealed class ReposListCommitsError {const ReposListCommitsError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_github_rest_3_1/models/basic_error.dart';
-
-sealed class ReposListCommitsError {
-  const ReposListCommitsError();
-
-  int get statusCode;
-
-  factory ReposListCommitsError.fromResponse(ApiResponse response) {
-    try {
+factory ReposListCommitsError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => ReposListCommitsError$400(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         404 => ReposListCommitsError$404(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -21,41 +12,38 @@ sealed class ReposListCommitsError {
       };
     } on Object {
       return ReposListCommitsError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class ReposListCommitsError$400 extends ReposListCommitsError {
-  const ReposListCommitsError$400(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class ReposListCommitsError$400 extends ReposListCommitsError {const ReposListCommitsError$400(this.error);
 
-final class ReposListCommitsError$404 extends ReposListCommitsError {
-  const ReposListCommitsError$404(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 404;
-}
+final BasicError error;
 
-final class ReposListCommitsError$409 extends ReposListCommitsError {
-  const ReposListCommitsError$409(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 409;
-}
+@override int get statusCode { return 400; } 
+ }
+final class ReposListCommitsError$404 extends ReposListCommitsError {const ReposListCommitsError$404(this.error);
 
-final class ReposListCommitsError$500 extends ReposListCommitsError {
-  const ReposListCommitsError$500(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 500;
-}
+final BasicError error;
 
-final class ReposListCommitsError$Unknown extends ReposListCommitsError {
-  const ReposListCommitsError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+@override int get statusCode { return 404; } 
+ }
+final class ReposListCommitsError$409 extends ReposListCommitsError {const ReposListCommitsError$409(this.error);
+
+final BasicError error;
+
+@override int get statusCode { return 409; } 
+ }
+final class ReposListCommitsError$500 extends ReposListCommitsError {const ReposListCommitsError$500(this.error);
+
+final BasicError error;
+
+@override int get statusCode { return 500; } 
+ }
+final class ReposListCommitsError$Unknown extends ReposListCommitsError {const ReposListCommitsError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

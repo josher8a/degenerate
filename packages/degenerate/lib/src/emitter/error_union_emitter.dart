@@ -1,3 +1,4 @@
+import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
@@ -53,10 +54,8 @@ Map<String, ErrorUnionInfo> buildErrorUnionMap(
 
   // Group operations by error-set signature (sorted status -> typeName pairs).
   final groups = <String, List<String>>{};
-  final sigOf = <String, String>{};
   for (final entry in opErrors.entries) {
     final sig = _errorSetSignature(entry.value);
-    sigOf[entry.key] = sig;
     (groups[sig] ??= []).add(entry.key);
   }
 
@@ -88,7 +87,8 @@ Map<String, ErrorUnionInfo> buildErrorUnionMap(
 }
 
 String _errorSetSignature(Map<int, (String, IrType)> errors) {
-  final entries = errors.entries.toList()..sort((a, b) => a.key.compareTo(b.key));
+  final entries = errors.entries.toList()
+    ..sort((a, b) => a.key.compareTo(b.key));
   return entries.map((e) => '${e.key}:${e.value.$1}').join('|');
 }
 
@@ -96,11 +96,8 @@ String _errorClassName(String dartMethodName) {
   return '${toPascalCase(dartMethodName)}Error';
 }
 
-/// Emit a sealed error union class as raw Dart source.
-///
-/// Generates the sealed base, one `$Variant` subclass per status code,
-/// a `$Unknown` catch-all, and a `fromResponse` factory.
-String emitErrorUnion({
+/// Emit a sealed error union as a code_builder [Library].
+Library emitErrorUnionLibrary({
   required String className,
   required Map<int, (String, IrType)> statusErrors,
   required Map<String, IrType> typeRegistry,
@@ -110,40 +107,78 @@ String emitErrorUnion({
 }) {
   final sortedEntries = statusErrors.entries.toList()
     ..sort((a, b) => a.key.compareTo(b.key));
+  final hasDefaultEntry = sortedEntries.any((e) => e.key == -1);
 
   final importedTypes = <String>{};
   for (final entry in sortedEntries) {
     _collectTypeRefs(entry.value.$2, importedTypes, typeRegistry);
   }
-  final imports = <String>{};
-  for (final name in importedTypes) {
-    final file = typeToFile[name];
-    if (file != null) {
-      imports.add("import 'package:$packageName/models/$file.dart';");
+
+  return Library((lib) {
+    lib.comments.add('GENERATED CODE - DO NOT MODIFY BY HAND');
+    lib.directives.add(Directive.import('dart:convert'));
+    lib.directives.add(
+      Directive.import('package:degenerate_runtime/degenerate_runtime.dart'),
+    );
+    for (final name in importedTypes.toList()..sort()) {
+      final file = typeToFile[name];
+      if (file != null) {
+        lib.directives.add(
+          Directive.import('package:$packageName/models/$file.dart'),
+        );
+      }
     }
-  }
 
-  final buf = StringBuffer();
-  buf.writeln('// GENERATED CODE - DO NOT MODIFY BY HAND');
-  buf.writeln();
-  buf.writeln("import 'dart:convert';");
-  buf.writeln();
-  buf.writeln("import 'package:degenerate_runtime/degenerate_runtime.dart';");
-  (imports.toList()..sort()).forEach(buf.writeln);
-  buf.writeln();
+    lib.body.add(_buildSealedBase(
+      className,
+      sortedEntries,
+      hasDefaultEntry,
+      typeRegistry,
+    ));
 
-  // Sealed base class
-  buf.writeln('sealed class $className {');
-  buf.writeln('  const $className();');
-  buf.writeln();
-  buf.writeln('  int get statusCode;');
-  buf.writeln();
+    for (final entry in sortedEntries) {
+      lib.body.add(_buildVariantClass(className, entry, typeRegistry));
+    }
 
-  final hasDefaultEntry = sortedEntries.any((e) => e.key == -1);
+    if (!hasDefaultEntry) {
+      lib.body.add(_buildUnknownClass(className));
+    }
 
-  buf.writeln('  factory $className.fromResponse(ApiResponse response) {');
-  buf.writeln('    try {');
-  buf.writeln('      return switch (response.statusCode) {');
+    for (final alias in aliases) {
+      lib.body.add(Code('typedef $alias = $className;\n'));
+    }
+  });
+}
+
+Class _buildSealedBase(
+  String className,
+  List<MapEntry<int, (String, IrType)>> sortedEntries,
+  bool hasDefaultEntry,
+  Map<String, IrType> typeRegistry,
+) {
+  return Class((b) => b
+    ..name = className
+    ..sealed = true
+    ..constructors.add(Constructor((c) => c..constant = true))
+    ..methods.add(Method((m) => m
+      ..name = 'statusCode'
+      ..type = MethodType.getter
+      ..returns = refer('int')))
+    ..constructors.add(_buildFromResponse(
+      className,
+      sortedEntries,
+      hasDefaultEntry,
+      typeRegistry,
+    )));
+}
+
+Constructor _buildFromResponse(
+  String className,
+  List<MapEntry<int, (String, IrType)>> sortedEntries,
+  bool hasDefaultEntry,
+  Map<String, IrType> typeRegistry,
+) {
+  final cases = StringBuffer();
   for (final entry in sortedEntries) {
     final code = entry.key;
     final typeName = entry.value.$1;
@@ -154,70 +189,109 @@ String emitErrorUnion({
       typeRegistry: typeRegistry,
     );
     if (code == -1) {
-      buf.writeln('        _ => $className$variantSuffix($deserialize, response.statusCode),');
+      cases.writeln(
+        '        _ => $className$variantSuffix($deserialize, response.statusCode),',
+      );
     } else {
-      buf.writeln('        $code => $className$variantSuffix($deserialize),');
+      cases.writeln(
+        '        $code => $className$variantSuffix($deserialize),',
+      );
     }
   }
   if (!hasDefaultEntry) {
-    buf.writeln(
+    cases.writeln(
       '        _ => $className\$Unknown(response.statusCode, response.body),',
     );
   }
-  buf.writeln('      };');
-  buf.writeln('    } on Object {');
-  if (hasDefaultEntry) {
-    buf.writeln('      rethrow;');
-  } else {
-    buf.writeln(
-      '      return $className\$Unknown(response.statusCode, response.body);',
-    );
-  }
-  buf.writeln('    }');
-  buf.writeln('  }');
-  buf.writeln('}');
-  buf.writeln();
 
-  // Per-status variant subclasses
-  for (final entry in sortedEntries) {
-    final code = entry.key;
-    final typeName = entry.value.$1;
-    final variantSuffix = code == -1 ? '\$$typeName' : '\$$code';
-    buf.writeln(
-      'final class $className$variantSuffix extends $className {',
-    );
+  final catchBody = hasDefaultEntry
+      ? '      rethrow;'
+      : '      return $className\$Unknown(response.statusCode, response.body);';
+
+  return Constructor((c) => c
+    ..factory = true
+    ..name = 'fromResponse'
+    ..requiredParameters.add(Parameter((p) => p
+      ..name = 'response'
+      ..type = refer('ApiResponse')))
+    ..body = Code(
+      '    try {\n'
+      '      return switch (response.statusCode) {\n'
+      '$cases'
+      '      };\n'
+      '    } on Object {\n'
+      '$catchBody\n'
+      '    }',
+    ));
+}
+
+Class _buildVariantClass(
+  String className,
+  MapEntry<int, (String, IrType)> entry,
+  Map<String, IrType> typeRegistry,
+) {
+  final code = entry.key;
+  final typeName = entry.value.$1;
+  final variantSuffix = code == -1 ? '\$$typeName' : '\$$code';
+
+  return Class((b) {
+    b
+      ..name = '$className$variantSuffix'
+      ..modifier = ClassModifier.final$
+      ..extend = refer(className)
+      ..fields.add(Field((f) => f
+        ..name = 'error'
+        ..modifier = FieldModifier.final$
+        ..type = refer(typeName)));
+
     if (code == -1) {
-      buf.writeln('  const $className$variantSuffix(this.error, this.statusCode);');
-      buf.writeln('  final $typeName error;');
-      buf.writeln('  @override');
-      buf.writeln('  final int statusCode;');
+      b.constructors.add(Constructor((c) => c
+        ..constant = true
+        ..requiredParameters.addAll([
+          Parameter((p) => p..name = 'this.error'),
+          Parameter((p) => p..name = 'this.statusCode'),
+        ])));
+      b.fields.add(Field((f) => f
+        ..name = 'statusCode'
+        ..modifier = FieldModifier.final$
+        ..type = refer('int')
+        ..annotations.add(refer('override'))));
     } else {
-      buf.writeln('  const $className$variantSuffix(this.error);');
-      buf.writeln('  final $typeName error;');
-      buf.writeln('  @override');
-      buf.writeln('  int get statusCode => $code;');
+      b.constructors.add(Constructor((c) => c
+        ..constant = true
+        ..requiredParameters.add(Parameter((p) => p..name = 'this.error'))));
+      b.methods.add(Method((m) => m
+        ..name = 'statusCode'
+        ..type = MethodType.getter
+        ..annotations.add(refer('override'))
+        ..returns = refer('int')
+        ..body = Code('return $code;')));
     }
-    buf.writeln('}');
-    buf.writeln();
-  }
+  });
+}
 
-  if (!hasDefaultEntry) {
-    buf.writeln('final class $className\$Unknown extends $className {');
-    buf.writeln(
-      '  const $className\$Unknown(this.statusCode, this.rawBody);',
-    );
-    buf.writeln('  @override');
-    buf.writeln('  final int statusCode;');
-    buf.writeln('  final String? rawBody;');
-    buf.writeln('}');
-  }
-
-  for (final alias in aliases) {
-    buf.writeln();
-    buf.writeln('typedef $alias = $className;');
-  }
-
-  return buf.toString();
+Class _buildUnknownClass(String className) {
+  return Class((b) => b
+    ..name = '$className\$Unknown'
+    ..modifier = ClassModifier.final$
+    ..extend = refer(className)
+    ..constructors.add(Constructor((c) => c
+      ..constant = true
+      ..requiredParameters.addAll([
+        Parameter((p) => p..name = 'this.statusCode'),
+        Parameter((p) => p..name = 'this.rawBody'),
+      ])))
+    ..fields.addAll([
+      Field((f) => f
+        ..name = 'statusCode'
+        ..modifier = FieldModifier.final$
+        ..type = refer('int')
+        ..annotations.add(refer('override'))),
+      Field((f) => f
+        ..name = 'rawBody'
+        ..modifier = FieldModifier.final$
+        ..type = refer('String?')),
+    ]));
 }
 
 void _collectTypeRefs(

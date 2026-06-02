@@ -1,17 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/base_error_response.dart';sealed class PublicListApplicationsError {const PublicListApplicationsError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/base_error_response.dart';
-
-sealed class PublicListApplicationsError {
-  const PublicListApplicationsError();
-
-  int get statusCode;
-
-  factory PublicListApplicationsError.fromResponse(ApiResponse response) {
-    try {
+factory PublicListApplicationsError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         401 => PublicListApplicationsError$401(BaseErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         500 => PublicListApplicationsError$500(BaseErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -19,27 +10,26 @@ sealed class PublicListApplicationsError {
       };
     } on Object {
       return PublicListApplicationsError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class PublicListApplicationsError$401 extends PublicListApplicationsError {
-  const PublicListApplicationsError$401(this.error);
-  final BaseErrorResponse error;
-  @override
-  int get statusCode => 401;
-}
+int get statusCode;
+ }
+final class PublicListApplicationsError$401 extends PublicListApplicationsError {const PublicListApplicationsError$401(this.error);
 
-final class PublicListApplicationsError$500 extends PublicListApplicationsError {
-  const PublicListApplicationsError$500(this.error);
-  final BaseErrorResponse error;
-  @override
-  int get statusCode => 500;
-}
+final BaseErrorResponse error;
 
-final class PublicListApplicationsError$Unknown extends PublicListApplicationsError {
-  const PublicListApplicationsError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+@override int get statusCode { return 401; } 
+ }
+final class PublicListApplicationsError$500 extends PublicListApplicationsError {const PublicListApplicationsError$500(this.error);
+
+final BaseErrorResponse error;
+
+@override int get statusCode { return 500; } 
+ }
+final class PublicListApplicationsError$Unknown extends PublicListApplicationsError {const PublicListApplicationsError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

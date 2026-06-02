@@ -1,14 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'dart:convert';
-
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_totem_mobile/models/error_response_schema.dart';
 
 sealed class AcceptTotemEndpointError {
   const AcceptTotemEndpointError();
-
-  int get statusCode;
 
   factory AcceptTotemEndpointError.fromResponse(ApiResponse response) {
     try {
@@ -45,53 +42,67 @@ sealed class AcceptTotemEndpointError {
       );
     }
   }
+
+  int get statusCode;
 }
 
 final class AcceptTotemEndpointError$400 extends AcceptTotemEndpointError {
   const AcceptTotemEndpointError$400(this.error);
+
   final ErrorResponseSchema error;
+
   @override
-  int get statusCode => 400;
+  int get statusCode {
+    return 400;
+  }
 }
 
 final class AcceptTotemEndpointError$403 extends AcceptTotemEndpointError {
   const AcceptTotemEndpointError$403(this.error);
+
   final ErrorResponseSchema error;
+
   @override
-  int get statusCode => 403;
+  int get statusCode {
+    return 403;
+  }
 }
 
 final class AcceptTotemEndpointError$404 extends AcceptTotemEndpointError {
   const AcceptTotemEndpointError$404(this.error);
+
   final ErrorResponseSchema error;
+
   @override
-  int get statusCode => 404;
+  int get statusCode {
+    return 404;
+  }
 }
 
 final class AcceptTotemEndpointError$500 extends AcceptTotemEndpointError {
   const AcceptTotemEndpointError$500(this.error);
+
   final ErrorResponseSchema error;
+
   @override
-  int get statusCode => 500;
+  int get statusCode {
+    return 500;
+  }
 }
 
 final class AcceptTotemEndpointError$Unknown extends AcceptTotemEndpointError {
   const AcceptTotemEndpointError$Unknown(this.statusCode, this.rawBody);
+
   @override
   final int statusCode;
+
   final String? rawBody;
 }
 
 typedef EndRoomEndpointError = AcceptTotemEndpointError;
-
 typedef MuteAllParticipantsEndpointError = AcceptTotemEndpointError;
-
 typedef MuteParticipantEndpointError = AcceptTotemEndpointError;
-
 typedef PassTotemEndpointError = AcceptTotemEndpointError;
-
 typedef RemoveParticipantEndpointError = AcceptTotemEndpointError;
-
 typedef ReorderParticipantsEndpointError = AcceptTotemEndpointError;
-
 typedef StartRoomEndpointError = AcceptTotemEndpointError;

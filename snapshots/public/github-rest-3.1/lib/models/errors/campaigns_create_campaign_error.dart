@@ -1,18 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/campaigns_create_campaign_response503.dart';sealed class CampaignsCreateCampaignError {const CampaignsCreateCampaignError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_github_rest_3_1/models/basic_error.dart';
-import 'package:pub_github_rest_3_1/models/campaigns_create_campaign_response503.dart';
-
-sealed class CampaignsCreateCampaignError {
-  const CampaignsCreateCampaignError();
-
-  int get statusCode;
-
-  factory CampaignsCreateCampaignError.fromResponse(ApiResponse response) {
-    try {
+factory CampaignsCreateCampaignError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => CampaignsCreateCampaignError$400(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         404 => CampaignsCreateCampaignError$404(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -22,41 +12,38 @@ sealed class CampaignsCreateCampaignError {
       };
     } on Object {
       return CampaignsCreateCampaignError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class CampaignsCreateCampaignError$400 extends CampaignsCreateCampaignError {
-  const CampaignsCreateCampaignError$400(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class CampaignsCreateCampaignError$400 extends CampaignsCreateCampaignError {const CampaignsCreateCampaignError$400(this.error);
 
-final class CampaignsCreateCampaignError$404 extends CampaignsCreateCampaignError {
-  const CampaignsCreateCampaignError$404(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 404;
-}
+final BasicError error;
 
-final class CampaignsCreateCampaignError$422 extends CampaignsCreateCampaignError {
-  const CampaignsCreateCampaignError$422(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 422;
-}
+@override int get statusCode { return 400; } 
+ }
+final class CampaignsCreateCampaignError$404 extends CampaignsCreateCampaignError {const CampaignsCreateCampaignError$404(this.error);
 
-final class CampaignsCreateCampaignError$503 extends CampaignsCreateCampaignError {
-  const CampaignsCreateCampaignError$503(this.error);
-  final CampaignsCreateCampaignResponse503 error;
-  @override
-  int get statusCode => 503;
-}
+final BasicError error;
 
-final class CampaignsCreateCampaignError$Unknown extends CampaignsCreateCampaignError {
-  const CampaignsCreateCampaignError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+@override int get statusCode { return 404; } 
+ }
+final class CampaignsCreateCampaignError$422 extends CampaignsCreateCampaignError {const CampaignsCreateCampaignError$422(this.error);
+
+final BasicError error;
+
+@override int get statusCode { return 422; } 
+ }
+final class CampaignsCreateCampaignError$503 extends CampaignsCreateCampaignError {const CampaignsCreateCampaignError$503(this.error);
+
+final CampaignsCreateCampaignResponse503 error;
+
+@override int get statusCode { return 503; } 
+ }
+final class CampaignsCreateCampaignError$Unknown extends CampaignsCreateCampaignError {const CampaignsCreateCampaignError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

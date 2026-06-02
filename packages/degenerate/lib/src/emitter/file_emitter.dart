@@ -189,7 +189,7 @@ class FileEmitter {
 
     // Build per-operation error unions (deduped across all APIs).
     final errorUnionMap = buildErrorUnionMap(apis, typeRegistry);
-    final errorUnionFiles = <String, String>{};
+    final errorUnionFileStems = <String>{};
     final aliasesPerClass = <String, List<String>>{};
     for (final info in errorUnionMap.values) {
       if (info.isAlias) {
@@ -203,7 +203,8 @@ class FileEmitter {
       if (info.isAlias || !emittedErrorClasses.add(info.className)) continue;
       final fileStem = 'errors/${toSnakeCase(info.className)}';
       typeToFile[info.className] = fileStem;
-      errorUnionFiles[fileStem] = emitErrorUnion(
+      errorUnionFileStems.add(fileStem);
+      final library = emitErrorUnionLibrary(
         className: info.className,
         statusErrors: info.statusErrors,
         typeRegistry: typeRegistry,
@@ -211,9 +212,7 @@ class FileEmitter {
         typeToFile: typeToFile,
         aliases: aliasesPerClass[info.className] ?? const [],
       );
-    }
-    for (final entry in errorUnionFiles.entries) {
-      files['models/${entry.key}.dart'] = entry.value;
+      files['models/$fileStem.dart'] = emitRaw(library);
     }
 
     // Emit API files
@@ -296,7 +295,7 @@ class FileEmitter {
       typeToFile: typeToFile,
       inlinedTypes: inlinedInto.keys.toSet(),
       hasSecurityFile: securitySchemes.isNotEmpty || globalSecurity != null,
-      errorUnionFiles: errorUnionFiles.keys.toSet(),
+      errorUnionFiles: errorUnionFileStems,
     );
 
     // Emit the round-trip fixtures registry (test scaffolding, opt-in).

@@ -1,18 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/validation_error_simple.dart';sealed class SecurityAdvisoriesListGlobalAdvisoriesError {const SecurityAdvisoriesListGlobalAdvisoriesError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_github_rest_3_1/models/basic_error.dart';
-import 'package:pub_github_rest_3_1/models/validation_error_simple.dart';
-
-sealed class SecurityAdvisoriesListGlobalAdvisoriesError {
-  const SecurityAdvisoriesListGlobalAdvisoriesError();
-
-  int get statusCode;
-
-  factory SecurityAdvisoriesListGlobalAdvisoriesError.fromResponse(ApiResponse response) {
-    try {
+factory SecurityAdvisoriesListGlobalAdvisoriesError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         422 => SecurityAdvisoriesListGlobalAdvisoriesError$422(ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         429 => SecurityAdvisoriesListGlobalAdvisoriesError$429(BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -20,27 +10,26 @@ sealed class SecurityAdvisoriesListGlobalAdvisoriesError {
       };
     } on Object {
       return SecurityAdvisoriesListGlobalAdvisoriesError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class SecurityAdvisoriesListGlobalAdvisoriesError$422 extends SecurityAdvisoriesListGlobalAdvisoriesError {
-  const SecurityAdvisoriesListGlobalAdvisoriesError$422(this.error);
-  final ValidationErrorSimple error;
-  @override
-  int get statusCode => 422;
-}
+int get statusCode;
+ }
+final class SecurityAdvisoriesListGlobalAdvisoriesError$422 extends SecurityAdvisoriesListGlobalAdvisoriesError {const SecurityAdvisoriesListGlobalAdvisoriesError$422(this.error);
 
-final class SecurityAdvisoriesListGlobalAdvisoriesError$429 extends SecurityAdvisoriesListGlobalAdvisoriesError {
-  const SecurityAdvisoriesListGlobalAdvisoriesError$429(this.error);
-  final BasicError error;
-  @override
-  int get statusCode => 429;
-}
+final ValidationErrorSimple error;
 
-final class SecurityAdvisoriesListGlobalAdvisoriesError$Unknown extends SecurityAdvisoriesListGlobalAdvisoriesError {
-  const SecurityAdvisoriesListGlobalAdvisoriesError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+@override int get statusCode { return 422; } 
+ }
+final class SecurityAdvisoriesListGlobalAdvisoriesError$429 extends SecurityAdvisoriesListGlobalAdvisoriesError {const SecurityAdvisoriesListGlobalAdvisoriesError$429(this.error);
+
+final BasicError error;
+
+@override int get statusCode { return 429; } 
+ }
+final class SecurityAdvisoriesListGlobalAdvisoriesError$Unknown extends SecurityAdvisoriesListGlobalAdvisoriesError {const SecurityAdvisoriesListGlobalAdvisoriesError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

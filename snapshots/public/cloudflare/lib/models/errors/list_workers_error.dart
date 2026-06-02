@@ -1,17 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common_failure82.dart';sealed class ListWorkersError {const ListWorkersError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/response_common_failure82.dart';
-
-sealed class ListWorkersError {
-  const ListWorkersError();
-
-  int get statusCode;
-
-  factory ListWorkersError.fromResponse(ApiResponse response) {
-    try {
+factory ListWorkersError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         401 => ListWorkersError$401(ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         500 => ListWorkersError$500(ResponseCommonFailure82.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -19,27 +10,26 @@ sealed class ListWorkersError {
       };
     } on Object {
       return ListWorkersError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class ListWorkersError$401 extends ListWorkersError {
-  const ListWorkersError$401(this.error);
-  final ResponseCommonFailure82 error;
-  @override
-  int get statusCode => 401;
-}
+int get statusCode;
+ }
+final class ListWorkersError$401 extends ListWorkersError {const ListWorkersError$401(this.error);
 
-final class ListWorkersError$500 extends ListWorkersError {
-  const ListWorkersError$500(this.error);
-  final ResponseCommonFailure82 error;
-  @override
-  int get statusCode => 500;
-}
+final ResponseCommonFailure82 error;
 
-final class ListWorkersError$Unknown extends ListWorkersError {
-  const ListWorkersError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+@override int get statusCode { return 401; } 
+ }
+final class ListWorkersError$500 extends ListWorkersError {const ListWorkersError$500(this.error);
+
+final ResponseCommonFailure82 error;
+
+@override int get statusCode { return 500; } 
+ }
+final class ListWorkersError$Unknown extends ListWorkersError {const ListWorkersError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

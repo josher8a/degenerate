@@ -1,37 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_openai_whisper_response400.dart';sealed class WorkersAiPostRunCfOpenaiWhisperError {const WorkersAiPostRunCfOpenaiWhisperError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/workers_ai_post_run_cf_openai_whisper_response400.dart';
-
-sealed class WorkersAiPostRunCfOpenaiWhisperError {
-  const WorkersAiPostRunCfOpenaiWhisperError();
-
-  int get statusCode;
-
-  factory WorkersAiPostRunCfOpenaiWhisperError.fromResponse(ApiResponse response) {
-    try {
+factory WorkersAiPostRunCfOpenaiWhisperError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => WorkersAiPostRunCfOpenaiWhisperError$400(WorkersAiPostRunCfOpenaiWhisperResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         _ => WorkersAiPostRunCfOpenaiWhisperError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return WorkersAiPostRunCfOpenaiWhisperError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class WorkersAiPostRunCfOpenaiWhisperError$400 extends WorkersAiPostRunCfOpenaiWhisperError {
-  const WorkersAiPostRunCfOpenaiWhisperError$400(this.error);
-  final WorkersAiPostRunCfOpenaiWhisperResponse400 error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class WorkersAiPostRunCfOpenaiWhisperError$400 extends WorkersAiPostRunCfOpenaiWhisperError {const WorkersAiPostRunCfOpenaiWhisperError$400(this.error);
 
-final class WorkersAiPostRunCfOpenaiWhisperError$Unknown extends WorkersAiPostRunCfOpenaiWhisperError {
-  const WorkersAiPostRunCfOpenaiWhisperError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final WorkersAiPostRunCfOpenaiWhisperResponse400 error;
+
+@override int get statusCode { return 400; } 
+ }
+final class WorkersAiPostRunCfOpenaiWhisperError$Unknown extends WorkersAiPostRunCfOpenaiWhisperError {const WorkersAiPostRunCfOpenaiWhisperError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

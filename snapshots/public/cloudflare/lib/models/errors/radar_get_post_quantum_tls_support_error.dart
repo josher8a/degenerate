@@ -1,37 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_post_quantum_tls_support_response400.dart';sealed class RadarGetPostQuantumTlsSupportError {const RadarGetPostQuantumTlsSupportError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/radar_get_post_quantum_tls_support_response400.dart';
-
-sealed class RadarGetPostQuantumTlsSupportError {
-  const RadarGetPostQuantumTlsSupportError();
-
-  int get statusCode;
-
-  factory RadarGetPostQuantumTlsSupportError.fromResponse(ApiResponse response) {
-    try {
+factory RadarGetPostQuantumTlsSupportError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => RadarGetPostQuantumTlsSupportError$400(RadarGetPostQuantumTlsSupportResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         _ => RadarGetPostQuantumTlsSupportError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return RadarGetPostQuantumTlsSupportError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class RadarGetPostQuantumTlsSupportError$400 extends RadarGetPostQuantumTlsSupportError {
-  const RadarGetPostQuantumTlsSupportError$400(this.error);
-  final RadarGetPostQuantumTlsSupportResponse400 error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class RadarGetPostQuantumTlsSupportError$400 extends RadarGetPostQuantumTlsSupportError {const RadarGetPostQuantumTlsSupportError$400(this.error);
 
-final class RadarGetPostQuantumTlsSupportError$Unknown extends RadarGetPostQuantumTlsSupportError {
-  const RadarGetPostQuantumTlsSupportError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final RadarGetPostQuantumTlsSupportResponse400 error;
+
+@override int get statusCode { return 400; } 
+ }
+final class RadarGetPostQuantumTlsSupportError$Unknown extends RadarGetPostQuantumTlsSupportError {const RadarGetPostQuantumTlsSupportError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

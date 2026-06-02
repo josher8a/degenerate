@@ -1,37 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_m3_response400.dart';sealed class WorkersAiPostRunCfBaaiBgeM3Error {const WorkersAiPostRunCfBaaiBgeM3Error();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_m3_response400.dart';
-
-sealed class WorkersAiPostRunCfBaaiBgeM3Error {
-  const WorkersAiPostRunCfBaaiBgeM3Error();
-
-  int get statusCode;
-
-  factory WorkersAiPostRunCfBaaiBgeM3Error.fromResponse(ApiResponse response) {
-    try {
+factory WorkersAiPostRunCfBaaiBgeM3Error.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => WorkersAiPostRunCfBaaiBgeM3Error$400(WorkersAiPostRunCfBaaiBgeM3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         _ => WorkersAiPostRunCfBaaiBgeM3Error$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return WorkersAiPostRunCfBaaiBgeM3Error$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class WorkersAiPostRunCfBaaiBgeM3Error$400 extends WorkersAiPostRunCfBaaiBgeM3Error {
-  const WorkersAiPostRunCfBaaiBgeM3Error$400(this.error);
-  final WorkersAiPostRunCfBaaiBgeM3Response400 error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class WorkersAiPostRunCfBaaiBgeM3Error$400 extends WorkersAiPostRunCfBaaiBgeM3Error {const WorkersAiPostRunCfBaaiBgeM3Error$400(this.error);
 
-final class WorkersAiPostRunCfBaaiBgeM3Error$Unknown extends WorkersAiPostRunCfBaaiBgeM3Error {
-  const WorkersAiPostRunCfBaaiBgeM3Error$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final WorkersAiPostRunCfBaaiBgeM3Response400 error;
+
+@override int get statusCode { return 400; } 
+ }
+final class WorkersAiPostRunCfBaaiBgeM3Error$Unknown extends WorkersAiPostRunCfBaaiBgeM3Error {const WorkersAiPostRunCfBaaiBgeM3Error$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

@@ -1,37 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dataset_update_response400.dart';sealed class PostDatasetUpdateError {const PostDatasetUpdateError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/post_dataset_update_response400.dart';
-
-sealed class PostDatasetUpdateError {
-  const PostDatasetUpdateError();
-
-  int get statusCode;
-
-  factory PostDatasetUpdateError.fromResponse(ApiResponse response) {
-    try {
+factory PostDatasetUpdateError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => PostDatasetUpdateError$400(PostDatasetUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         _ => PostDatasetUpdateError$Unknown(response.statusCode, response.body),
       };
     } on Object {
       return PostDatasetUpdateError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class PostDatasetUpdateError$400 extends PostDatasetUpdateError {
-  const PostDatasetUpdateError$400(this.error);
-  final PostDatasetUpdateResponse400 error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class PostDatasetUpdateError$400 extends PostDatasetUpdateError {const PostDatasetUpdateError$400(this.error);
 
-final class PostDatasetUpdateError$Unknown extends PostDatasetUpdateError {
-  const PostDatasetUpdateError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final PostDatasetUpdateResponse400 error;
+
+@override int get statusCode { return 400; } 
+ }
+final class PostDatasetUpdateError$Unknown extends PostDatasetUpdateError {const PostDatasetUpdateError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

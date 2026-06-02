@@ -1,17 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_envelope.dart';sealed class MconnConnectorTelemetryEventsListError {const MconnConnectorTelemetryEventsListError();
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'package:pub_cloudflare/models/mconn_envelope.dart';
-
-sealed class MconnConnectorTelemetryEventsListError {
-  const MconnConnectorTelemetryEventsListError();
-
-  int get statusCode;
-
-  factory MconnConnectorTelemetryEventsListError.fromResponse(ApiResponse response) {
-    try {
+factory MconnConnectorTelemetryEventsListError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
         400 => MconnConnectorTelemetryEventsListError$400(MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         401 => MconnConnectorTelemetryEventsListError$401(MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
@@ -22,50 +13,45 @@ sealed class MconnConnectorTelemetryEventsListError {
       };
     } on Object {
       return MconnConnectorTelemetryEventsListError$Unknown(response.statusCode, response.body);
-    }
-  }
-}
+    } }
 
-final class MconnConnectorTelemetryEventsListError$400 extends MconnConnectorTelemetryEventsListError {
-  const MconnConnectorTelemetryEventsListError$400(this.error);
-  final MconnEnvelope error;
-  @override
-  int get statusCode => 400;
-}
+int get statusCode;
+ }
+final class MconnConnectorTelemetryEventsListError$400 extends MconnConnectorTelemetryEventsListError {const MconnConnectorTelemetryEventsListError$400(this.error);
 
-final class MconnConnectorTelemetryEventsListError$401 extends MconnConnectorTelemetryEventsListError {
-  const MconnConnectorTelemetryEventsListError$401(this.error);
-  final MconnEnvelope error;
-  @override
-  int get statusCode => 401;
-}
+final MconnEnvelope error;
 
-final class MconnConnectorTelemetryEventsListError$403 extends MconnConnectorTelemetryEventsListError {
-  const MconnConnectorTelemetryEventsListError$403(this.error);
-  final MconnEnvelope error;
-  @override
-  int get statusCode => 403;
-}
+@override int get statusCode { return 400; } 
+ }
+final class MconnConnectorTelemetryEventsListError$401 extends MconnConnectorTelemetryEventsListError {const MconnConnectorTelemetryEventsListError$401(this.error);
 
-final class MconnConnectorTelemetryEventsListError$429 extends MconnConnectorTelemetryEventsListError {
-  const MconnConnectorTelemetryEventsListError$429(this.error);
-  final MconnEnvelope error;
-  @override
-  int get statusCode => 429;
-}
+final MconnEnvelope error;
 
-final class MconnConnectorTelemetryEventsListError$500 extends MconnConnectorTelemetryEventsListError {
-  const MconnConnectorTelemetryEventsListError$500(this.error);
-  final MconnEnvelope error;
-  @override
-  int get statusCode => 500;
-}
+@override int get statusCode { return 401; } 
+ }
+final class MconnConnectorTelemetryEventsListError$403 extends MconnConnectorTelemetryEventsListError {const MconnConnectorTelemetryEventsListError$403(this.error);
 
-final class MconnConnectorTelemetryEventsListError$Unknown extends MconnConnectorTelemetryEventsListError {
-  const MconnConnectorTelemetryEventsListError$Unknown(this.statusCode, this.rawBody);
-  @override
-  final int statusCode;
-  final String? rawBody;
-}
+final MconnEnvelope error;
 
+@override int get statusCode { return 403; } 
+ }
+final class MconnConnectorTelemetryEventsListError$429 extends MconnConnectorTelemetryEventsListError {const MconnConnectorTelemetryEventsListError$429(this.error);
+
+final MconnEnvelope error;
+
+@override int get statusCode { return 429; } 
+ }
+final class MconnConnectorTelemetryEventsListError$500 extends MconnConnectorTelemetryEventsListError {const MconnConnectorTelemetryEventsListError$500(this.error);
+
+final MconnEnvelope error;
+
+@override int get statusCode { return 500; } 
+ }
+final class MconnConnectorTelemetryEventsListError$Unknown extends MconnConnectorTelemetryEventsListError {const MconnConnectorTelemetryEventsListError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }
 typedef MconnConnectorTelemetrySnapshotsListError = MconnConnectorTelemetryEventsListError;

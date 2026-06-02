@@ -1,14 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'dart:convert';
-
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_totem_mobile/models/error_response.dart';
 
 sealed class AuthRefreshTokenError {
   const AuthRefreshTokenError();
-
-  int get statusCode;
 
   factory AuthRefreshTokenError.fromResponse(ApiResponse response) {
     try {
@@ -29,26 +26,38 @@ sealed class AuthRefreshTokenError {
       return AuthRefreshTokenError$Unknown(response.statusCode, response.body);
     }
   }
+
+  int get statusCode;
 }
 
 final class AuthRefreshTokenError$400 extends AuthRefreshTokenError {
   const AuthRefreshTokenError$400(this.error);
+
   final ErrorResponse error;
+
   @override
-  int get statusCode => 400;
+  int get statusCode {
+    return 400;
+  }
 }
 
 final class AuthRefreshTokenError$429 extends AuthRefreshTokenError {
   const AuthRefreshTokenError$429(this.error);
+
   final ErrorResponse error;
+
   @override
-  int get statusCode => 429;
+  int get statusCode {
+    return 429;
+  }
 }
 
 final class AuthRefreshTokenError$Unknown extends AuthRefreshTokenError {
   const AuthRefreshTokenError$Unknown(this.statusCode, this.rawBody);
+
   @override
   final int statusCode;
+
   final String? rawBody;
 }
 
