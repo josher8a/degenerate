@@ -35,7 +35,8 @@ factory ThreadItem.chatkitTaskGroup({required String id, AssistantMessageItemObj
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ThreadItem$Unknown; } 
+bool get isUnknown => this is ThreadItem$Unknown;
+
 /// Shared by all variants of this union.
 String get id;
 /// Shared by all variants of this union.
@@ -51,7 +52,8 @@ factory ThreadItemChatkitUserMessage.fromJson(Map<String, dynamic> json) { retur
 
 final UserMessageItem userMessageItem;
 
-@override String get type { return 'chatkit.user_message'; } 
+@override String get type => 'chatkit.user_message';
+
 @override Map<String, dynamic> toJson() { return {...userMessageItem.toJson(), 'type': type}; } 
 ThreadItemChatkitUserMessage copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, List<UserMessageItemContent>? content, List<Attachment>? attachments, InferenceOptions? Function()? inferenceOptions, }) { return ThreadItemChatkitUserMessage(userMessageItem.copyWith(
   id: id,
@@ -66,10 +68,14 @@ ThreadItemChatkitUserMessage copyWith({String? id, AssistantMessageItemObject? o
     other is ThreadItemChatkitUserMessage && userMessageItem == other.userMessageItem; } 
 @override int get hashCode { return userMessageItem.hashCode; } 
 @override String toString() { return 'ThreadItem.chatkitUserMessage($userMessageItem)'; } 
-@override String get id { return userMessageItem.id; } 
-@override AssistantMessageItemObject get object { return userMessageItem.object; } 
-@override int get createdAt { return userMessageItem.createdAt; } 
-@override String get threadId { return userMessageItem.threadId; } 
+@override String get id => userMessageItem.id;
+
+@override AssistantMessageItemObject get object => userMessageItem.object;
+
+@override int get createdAt => userMessageItem.createdAt;
+
+@override String get threadId => userMessageItem.threadId;
+
  }
 @immutable final class ThreadItemChatkitAssistantMessage extends ThreadItem {const ThreadItemChatkitAssistantMessage(this.assistantMessageItem);
 
@@ -77,7 +83,8 @@ factory ThreadItemChatkitAssistantMessage.fromJson(Map<String, dynamic> json) { 
 
 final AssistantMessageItem assistantMessageItem;
 
-@override String get type { return 'chatkit.assistant_message'; } 
+@override String get type => 'chatkit.assistant_message';
+
 @override Map<String, dynamic> toJson() { return {...assistantMessageItem.toJson(), 'type': type}; } 
 ThreadItemChatkitAssistantMessage copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, List<ResponseOutputText>? content, }) { return ThreadItemChatkitAssistantMessage(assistantMessageItem.copyWith(
   id: id,
@@ -90,10 +97,14 @@ ThreadItemChatkitAssistantMessage copyWith({String? id, AssistantMessageItemObje
     other is ThreadItemChatkitAssistantMessage && assistantMessageItem == other.assistantMessageItem; } 
 @override int get hashCode { return assistantMessageItem.hashCode; } 
 @override String toString() { return 'ThreadItem.chatkitAssistantMessage($assistantMessageItem)'; } 
-@override String get id { return assistantMessageItem.id; } 
-@override AssistantMessageItemObject get object { return assistantMessageItem.object; } 
-@override int get createdAt { return assistantMessageItem.createdAt; } 
-@override String get threadId { return assistantMessageItem.threadId; } 
+@override String get id => assistantMessageItem.id;
+
+@override AssistantMessageItemObject get object => assistantMessageItem.object;
+
+@override int get createdAt => assistantMessageItem.createdAt;
+
+@override String get threadId => assistantMessageItem.threadId;
+
  }
 @immutable final class ThreadItemChatkitWidget extends ThreadItem {const ThreadItemChatkitWidget(this.widgetMessageItem);
 
@@ -101,7 +112,8 @@ factory ThreadItemChatkitWidget.fromJson(Map<String, dynamic> json) { return Thr
 
 final WidgetMessageItem widgetMessageItem;
 
-@override String get type { return 'chatkit.widget'; } 
+@override String get type => 'chatkit.widget';
+
 @override Map<String, dynamic> toJson() { return {...widgetMessageItem.toJson(), 'type': type}; } 
 ThreadItemChatkitWidget copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, String? widget, }) { return ThreadItemChatkitWidget(widgetMessageItem.copyWith(
   id: id,
@@ -114,10 +126,14 @@ ThreadItemChatkitWidget copyWith({String? id, AssistantMessageItemObject? object
     other is ThreadItemChatkitWidget && widgetMessageItem == other.widgetMessageItem; } 
 @override int get hashCode { return widgetMessageItem.hashCode; } 
 @override String toString() { return 'ThreadItem.chatkitWidget($widgetMessageItem)'; } 
-@override String get id { return widgetMessageItem.id; } 
-@override AssistantMessageItemObject get object { return widgetMessageItem.object; } 
-@override int get createdAt { return widgetMessageItem.createdAt; } 
-@override String get threadId { return widgetMessageItem.threadId; } 
+@override String get id => widgetMessageItem.id;
+
+@override AssistantMessageItemObject get object => widgetMessageItem.object;
+
+@override int get createdAt => widgetMessageItem.createdAt;
+
+@override String get threadId => widgetMessageItem.threadId;
+
  }
 @immutable final class ThreadItemChatkitClientToolCall extends ThreadItem {const ThreadItemChatkitClientToolCall(this.clientToolCallItem);
 
@@ -125,7 +141,8 @@ factory ThreadItemChatkitClientToolCall.fromJson(Map<String, dynamic> json) { re
 
 final ClientToolCallItem clientToolCallItem;
 
-@override String get type { return 'chatkit.client_tool_call'; } 
+@override String get type => 'chatkit.client_tool_call';
+
 @override Map<String, dynamic> toJson() { return {...clientToolCallItem.toJson(), 'type': type}; } 
 ThreadItemChatkitClientToolCall copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, ClientToolCallStatus? status, String? callId, String? name, String? arguments, String? Function()? output, }) { return ThreadItemChatkitClientToolCall(clientToolCallItem.copyWith(
   id: id,
@@ -142,10 +159,14 @@ ThreadItemChatkitClientToolCall copyWith({String? id, AssistantMessageItemObject
     other is ThreadItemChatkitClientToolCall && clientToolCallItem == other.clientToolCallItem; } 
 @override int get hashCode { return clientToolCallItem.hashCode; } 
 @override String toString() { return 'ThreadItem.chatkitClientToolCall($clientToolCallItem)'; } 
-@override String get id { return clientToolCallItem.id; } 
-@override AssistantMessageItemObject get object { return clientToolCallItem.object; } 
-@override int get createdAt { return clientToolCallItem.createdAt; } 
-@override String get threadId { return clientToolCallItem.threadId; } 
+@override String get id => clientToolCallItem.id;
+
+@override AssistantMessageItemObject get object => clientToolCallItem.object;
+
+@override int get createdAt => clientToolCallItem.createdAt;
+
+@override String get threadId => clientToolCallItem.threadId;
+
  }
 @immutable final class ThreadItemChatkitTask extends ThreadItem {const ThreadItemChatkitTask(this.taskItem);
 
@@ -153,7 +174,8 @@ factory ThreadItemChatkitTask.fromJson(Map<String, dynamic> json) { return Threa
 
 final TaskItem taskItem;
 
-@override String get type { return 'chatkit.task'; } 
+@override String get type => 'chatkit.task';
+
 @override Map<String, dynamic> toJson() { return {...taskItem.toJson(), 'type': type}; } 
 ThreadItemChatkitTask copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, TaskType? taskType, String? Function()? heading, String? Function()? summary, }) { return ThreadItemChatkitTask(taskItem.copyWith(
   id: id,
@@ -168,10 +190,14 @@ ThreadItemChatkitTask copyWith({String? id, AssistantMessageItemObject? object, 
     other is ThreadItemChatkitTask && taskItem == other.taskItem; } 
 @override int get hashCode { return taskItem.hashCode; } 
 @override String toString() { return 'ThreadItem.chatkitTask($taskItem)'; } 
-@override String get id { return taskItem.id; } 
-@override AssistantMessageItemObject get object { return taskItem.object; } 
-@override int get createdAt { return taskItem.createdAt; } 
-@override String get threadId { return taskItem.threadId; } 
+@override String get id => taskItem.id;
+
+@override AssistantMessageItemObject get object => taskItem.object;
+
+@override int get createdAt => taskItem.createdAt;
+
+@override String get threadId => taskItem.threadId;
+
  }
 @immutable final class ThreadItemChatkitTaskGroup extends ThreadItem {const ThreadItemChatkitTaskGroup(this.taskGroupItem);
 
@@ -179,7 +205,8 @@ factory ThreadItemChatkitTaskGroup.fromJson(Map<String, dynamic> json) { return 
 
 final TaskGroupItem taskGroupItem;
 
-@override String get type { return 'chatkit.task_group'; } 
+@override String get type => 'chatkit.task_group';
+
 @override Map<String, dynamic> toJson() { return {...taskGroupItem.toJson(), 'type': type}; } 
 ThreadItemChatkitTaskGroup copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, List<TaskGroupTask>? tasks, }) { return ThreadItemChatkitTaskGroup(taskGroupItem.copyWith(
   id: id,
@@ -192,10 +219,14 @@ ThreadItemChatkitTaskGroup copyWith({String? id, AssistantMessageItemObject? obj
     other is ThreadItemChatkitTaskGroup && taskGroupItem == other.taskGroupItem; } 
 @override int get hashCode { return taskGroupItem.hashCode; } 
 @override String toString() { return 'ThreadItem.chatkitTaskGroup($taskGroupItem)'; } 
-@override String get id { return taskGroupItem.id; } 
-@override AssistantMessageItemObject get object { return taskGroupItem.object; } 
-@override int get createdAt { return taskGroupItem.createdAt; } 
-@override String get threadId { return taskGroupItem.threadId; } 
+@override String get id => taskGroupItem.id;
+
+@override AssistantMessageItemObject get object => taskGroupItem.object;
+
+@override int get createdAt => taskGroupItem.createdAt;
+
+@override String get threadId => taskGroupItem.threadId;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -203,14 +234,19 @@ ThreadItemChatkitTaskGroup copyWith({String? id, AssistantMessageItemObject? obj
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItem$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ThreadItem.unknown($json)'; } 
-@override String get id { return json['id'] as String; } 
-@override AssistantMessageItemObject get object { return AssistantMessageItemObject.fromJson(json['object'] as String); } 
-@override int get createdAt { return (json['created_at'] as num).toInt(); } 
-@override String get threadId { return json['thread_id'] as String; } 
+@override String get id => json['id'] as String;
+
+@override AssistantMessageItemObject get object => AssistantMessageItemObject.fromJson(json['object'] as String);
+
+@override int get createdAt => (json['created_at'] as num).toInt();
+
+@override String get threadId => json['thread_id'] as String;
+
  }

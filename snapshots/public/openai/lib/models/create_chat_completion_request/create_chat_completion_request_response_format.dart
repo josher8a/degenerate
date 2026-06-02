@@ -28,7 +28,8 @@ factory CreateChatCompletionRequestResponseFormat.jsonSchema({required JsonSchem
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateChatCompletionRequestResponseFormat$Unknown; } 
+bool get isUnknown => this is CreateChatCompletionRequestResponseFormat$Unknown;
+
  }
 @immutable final class CreateChatCompletionRequestResponseFormatText extends CreateChatCompletionRequestResponseFormat {const CreateChatCompletionRequestResponseFormatText(this.responseFormatText);
 
@@ -36,7 +37,8 @@ factory CreateChatCompletionRequestResponseFormatText.fromJson(Map<String, dynam
 
 final ResponseFormatText responseFormatText;
 
-@override String get type { return 'text'; } 
+@override String get type => 'text';
+
 @override Map<String, dynamic> toJson() { return {...responseFormatText.toJson(), 'type': type}; } 
 CreateChatCompletionRequestResponseFormatText copyWith({ResponseFormatText? responseFormatText}) { return CreateChatCompletionRequestResponseFormatText(responseFormatText ?? this.responseFormatText); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -50,7 +52,8 @@ factory CreateChatCompletionRequestResponseFormatJsonSchema.fromJson(Map<String,
 
 final ResponseFormatJsonSchema responseFormatJsonSchema;
 
-@override String get type { return 'json_schema'; } 
+@override String get type => 'json_schema';
+
 @override Map<String, dynamic> toJson() { return {...responseFormatJsonSchema.toJson(), 'type': type}; } 
 CreateChatCompletionRequestResponseFormatJsonSchema copyWith({JsonSchema? jsonSchema}) { return CreateChatCompletionRequestResponseFormatJsonSchema(responseFormatJsonSchema.copyWith(
   jsonSchema: jsonSchema,
@@ -66,7 +69,8 @@ factory CreateChatCompletionRequestResponseFormatJsonObject.fromJson(Map<String,
 
 final ResponseFormatJsonObject responseFormatJsonObject;
 
-@override String get type { return 'json_object'; } 
+@override String get type => 'json_object';
+
 @override Map<String, dynamic> toJson() { return {...responseFormatJsonObject.toJson(), 'type': type}; } 
 CreateChatCompletionRequestResponseFormatJsonObject copyWith({ResponseFormatJsonObject? responseFormatJsonObject}) { return CreateChatCompletionRequestResponseFormatJsonObject(responseFormatJsonObject ?? this.responseFormatJsonObject); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -80,7 +84,8 @@ CreateChatCompletionRequestResponseFormatJsonObject copyWith({ResponseFormatJson
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateChatCompletionRequestResponseFormat$Unknown && json == other.json; } 

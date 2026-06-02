@@ -23,7 +23,8 @@ factory CreateTranscriptionResponseStreamEvent.transcriptTextDone({required Stri
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateTranscriptionResponseStreamEvent$Unknown; } 
+bool get isUnknown => this is CreateTranscriptionResponseStreamEvent$Unknown;
+
  }
 @immutable final class CreateTranscriptionResponseStreamEventTranscriptTextSegment extends CreateTranscriptionResponseStreamEvent {const CreateTranscriptionResponseStreamEventTranscriptTextSegment(this.transcriptTextSegmentEvent);
 
@@ -31,7 +32,8 @@ factory CreateTranscriptionResponseStreamEventTranscriptTextSegment.fromJson(Map
 
 final TranscriptTextSegmentEvent transcriptTextSegmentEvent;
 
-@override String get type { return 'transcript.text.segment'; } 
+@override String get type => 'transcript.text.segment';
+
 @override Map<String, dynamic> toJson() { return {...transcriptTextSegmentEvent.toJson(), 'type': type}; } 
 CreateTranscriptionResponseStreamEventTranscriptTextSegment copyWith({String? id, double? start, double? end, String? text, String? speaker, }) { return CreateTranscriptionResponseStreamEventTranscriptTextSegment(transcriptTextSegmentEvent.copyWith(
   id: id,
@@ -51,7 +53,8 @@ factory CreateTranscriptionResponseStreamEventTranscriptTextDelta.fromJson(Map<S
 
 final TranscriptTextDeltaEvent transcriptTextDeltaEvent;
 
-@override String get type { return 'transcript.text.delta'; } 
+@override String get type => 'transcript.text.delta';
+
 @override Map<String, dynamic> toJson() { return {...transcriptTextDeltaEvent.toJson(), 'type': type}; } 
 CreateTranscriptionResponseStreamEventTranscriptTextDelta copyWith({String? delta, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, String? Function()? segmentId, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDelta(transcriptTextDeltaEvent.copyWith(
   delta: delta,
@@ -69,7 +72,8 @@ factory CreateTranscriptionResponseStreamEventTranscriptTextDone.fromJson(Map<St
 
 final TranscriptTextDoneEvent transcriptTextDoneEvent;
 
-@override String get type { return 'transcript.text.done'; } 
+@override String get type => 'transcript.text.done';
+
 @override Map<String, dynamic> toJson() { return {...transcriptTextDoneEvent.toJson(), 'type': type}; } 
 CreateTranscriptionResponseStreamEventTranscriptTextDone copyWith({String? text, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, TranscriptTextUsageTokens? Function()? usage, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDone(transcriptTextDoneEvent.copyWith(
   text: text,
@@ -87,7 +91,8 @@ CreateTranscriptionResponseStreamEventTranscriptTextDone copyWith({String? text,
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseStreamEvent$Unknown && json == other.json; } 

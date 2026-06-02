@@ -19,7 +19,8 @@ factory CodeInterpreterToolCallOutputs.image({required String url}) { return Cod
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CodeInterpreterToolCallOutputs$Unknown; } 
+bool get isUnknown => this is CodeInterpreterToolCallOutputs$Unknown;
+
  }
 @immutable final class CodeInterpreterToolCallOutputsLogs extends CodeInterpreterToolCallOutputs {const CodeInterpreterToolCallOutputsLogs(this.codeInterpreterOutputLogs);
 
@@ -27,7 +28,8 @@ factory CodeInterpreterToolCallOutputsLogs.fromJson(Map<String, dynamic> json) {
 
 final CodeInterpreterOutputLogs codeInterpreterOutputLogs;
 
-@override String get type { return 'logs'; } 
+@override String get type => 'logs';
+
 @override Map<String, dynamic> toJson() { return {...codeInterpreterOutputLogs.toJson(), 'type': type}; } 
 CodeInterpreterToolCallOutputsLogs copyWith({String? logs}) { return CodeInterpreterToolCallOutputsLogs(codeInterpreterOutputLogs.copyWith(
   logs: logs,
@@ -43,7 +45,8 @@ factory CodeInterpreterToolCallOutputsImage.fromJson(Map<String, dynamic> json) 
 
 final CodeInterpreterOutputImage codeInterpreterOutputImage;
 
-@override String get type { return 'image'; } 
+@override String get type => 'image';
+
 @override Map<String, dynamic> toJson() { return {...codeInterpreterOutputImage.toJson(), 'type': type}; } 
 CodeInterpreterToolCallOutputsImage copyWith({String? url}) { return CodeInterpreterToolCallOutputsImage(codeInterpreterOutputImage.copyWith(
   url: url,
@@ -59,7 +62,8 @@ CodeInterpreterToolCallOutputsImage copyWith({String? url}) { return CodeInterpr
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CodeInterpreterToolCallOutputs$Unknown && json == other.json; } 

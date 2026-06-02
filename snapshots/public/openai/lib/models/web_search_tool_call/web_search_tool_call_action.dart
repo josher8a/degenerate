@@ -26,7 +26,8 @@ factory WebSearchToolCallAction.findInPage({required Uri url, required String pa
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WebSearchToolCallAction$Unknown; } 
+bool get isUnknown => this is WebSearchToolCallAction$Unknown;
+
  }
 @immutable final class WebSearchToolCallActionSearch extends WebSearchToolCallAction {const WebSearchToolCallActionSearch(this.webSearchActionSearch);
 
@@ -34,7 +35,8 @@ factory WebSearchToolCallActionSearch.fromJson(Map<String, dynamic> json) { retu
 
 final WebSearchActionSearch webSearchActionSearch;
 
-@override String get type { return 'search'; } 
+@override String get type => 'search';
+
 @override Map<String, dynamic> toJson() { return {...webSearchActionSearch.toJson(), 'type': type}; } 
 WebSearchToolCallActionSearch copyWith({String? query, List<String>? Function()? queries, List<Sources>? Function()? sources, }) { return WebSearchToolCallActionSearch(webSearchActionSearch.copyWith(
   query: query,
@@ -52,7 +54,8 @@ factory WebSearchToolCallActionOpenPage.fromJson(Map<String, dynamic> json) { re
 
 final WebSearchActionOpenPage webSearchActionOpenPage;
 
-@override String get type { return 'open_page'; } 
+@override String get type => 'open_page';
+
 @override Map<String, dynamic> toJson() { return {...webSearchActionOpenPage.toJson(), 'type': type}; } 
 WebSearchToolCallActionOpenPage copyWith({Uri? Function()? url}) { return WebSearchToolCallActionOpenPage(webSearchActionOpenPage.copyWith(
   url: url,
@@ -68,7 +71,8 @@ factory WebSearchToolCallActionFindInPage.fromJson(Map<String, dynamic> json) { 
 
 final WebSearchActionFind webSearchActionFind;
 
-@override String get type { return 'find_in_page'; } 
+@override String get type => 'find_in_page';
+
 @override Map<String, dynamic> toJson() { return {...webSearchActionFind.toJson(), 'type': type}; } 
 WebSearchToolCallActionFindInPage copyWith({Uri? url, String? pattern, }) { return WebSearchToolCallActionFindInPage(webSearchActionFind.copyWith(
   url: url,
@@ -85,7 +89,8 @@ WebSearchToolCallActionFindInPage copyWith({Uri? url, String? pattern, }) { retu
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WebSearchToolCallAction$Unknown && json == other.json; } 

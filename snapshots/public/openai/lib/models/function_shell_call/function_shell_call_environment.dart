@@ -16,7 +16,8 @@ factory FunctionShellCallEnvironment.containerReference({required String contain
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FunctionShellCallEnvironment$Unknown; } 
+bool get isUnknown => this is FunctionShellCallEnvironment$Unknown;
+
  }
 @immutable final class FunctionShellCallEnvironmentLocal extends FunctionShellCallEnvironment {const FunctionShellCallEnvironmentLocal(this.localEnvironmentResource);
 
@@ -24,7 +25,8 @@ factory FunctionShellCallEnvironmentLocal.fromJson(Map<String, dynamic> json) { 
 
 final LocalEnvironmentResource localEnvironmentResource;
 
-@override String get type { return 'local'; } 
+@override String get type => 'local';
+
 @override Map<String, dynamic> toJson() { return {...localEnvironmentResource.toJson(), 'type': type}; } 
 FunctionShellCallEnvironmentLocal copyWith({LocalEnvironmentResource? localEnvironmentResource}) { return FunctionShellCallEnvironmentLocal(localEnvironmentResource ?? this.localEnvironmentResource); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -38,7 +40,8 @@ factory FunctionShellCallEnvironmentContainerReference.fromJson(Map<String, dyna
 
 final ContainerReferenceResource containerReferenceResource;
 
-@override String get type { return 'container_reference'; } 
+@override String get type => 'container_reference';
+
 @override Map<String, dynamic> toJson() { return {...containerReferenceResource.toJson(), 'type': type}; } 
 FunctionShellCallEnvironmentContainerReference copyWith({String? containerId}) { return FunctionShellCallEnvironmentContainerReference(containerReferenceResource.copyWith(
   containerId: containerId,
@@ -54,7 +57,8 @@ FunctionShellCallEnvironmentContainerReference copyWith({String? containerId}) {
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallEnvironment$Unknown && json == other.json; } 

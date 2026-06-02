@@ -20,7 +20,8 @@ factory MqConsumerRequest.worker({MqQueueName? deadLetterQueue, required MqScrip
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MqConsumerRequest$Unknown; } 
+bool get isUnknown => this is MqConsumerRequest$Unknown;
+
 /// Shared by all variants of this union.
 MqQueueName? get deadLetterQueue;
  }
@@ -30,7 +31,8 @@ factory MqConsumerRequestHttpPull.fromJson(Map<String, dynamic> json) { return M
 
 final MqHttpConsumerRequest mqHttpConsumerRequest;
 
-@override String get type { return 'http_pull'; } 
+@override String get type => 'http_pull';
+
 @override Map<String, dynamic> toJson() { return {...mqHttpConsumerRequest.toJson(), 'type': type}; } 
 MqConsumerRequestHttpPull copyWith({MqQueueName? Function()? deadLetterQueue, MqHttpConsumerRequestSettings? Function()? settings, }) { return MqConsumerRequestHttpPull(mqHttpConsumerRequest.copyWith(
   deadLetterQueue: deadLetterQueue,
@@ -40,7 +42,8 @@ MqConsumerRequestHttpPull copyWith({MqQueueName? Function()? deadLetterQueue, Mq
     other is MqConsumerRequestHttpPull && mqHttpConsumerRequest == other.mqHttpConsumerRequest; } 
 @override int get hashCode { return mqHttpConsumerRequest.hashCode; } 
 @override String toString() { return 'MqConsumerRequest.httpPull($mqHttpConsumerRequest)'; } 
-@override MqQueueName? get deadLetterQueue { return mqHttpConsumerRequest.deadLetterQueue; } 
+@override MqQueueName? get deadLetterQueue => mqHttpConsumerRequest.deadLetterQueue;
+
  }
 @immutable final class MqConsumerRequestWorker extends MqConsumerRequest {const MqConsumerRequestWorker(this.mqWorkerConsumerRequest);
 
@@ -48,7 +51,8 @@ factory MqConsumerRequestWorker.fromJson(Map<String, dynamic> json) { return MqC
 
 final MqWorkerConsumerRequest mqWorkerConsumerRequest;
 
-@override String get type { return 'worker'; } 
+@override String get type => 'worker';
+
 @override Map<String, dynamic> toJson() { return {...mqWorkerConsumerRequest.toJson(), 'type': type}; } 
 MqConsumerRequestWorker copyWith({MqQueueName? Function()? deadLetterQueue, MqScriptName? scriptName, MqWorkerConsumerRequestSettings? Function()? settings, }) { return MqConsumerRequestWorker(mqWorkerConsumerRequest.copyWith(
   deadLetterQueue: deadLetterQueue,
@@ -59,7 +63,8 @@ MqConsumerRequestWorker copyWith({MqQueueName? Function()? deadLetterQueue, MqSc
     other is MqConsumerRequestWorker && mqWorkerConsumerRequest == other.mqWorkerConsumerRequest; } 
 @override int get hashCode { return mqWorkerConsumerRequest.hashCode; } 
 @override String toString() { return 'MqConsumerRequest.worker($mqWorkerConsumerRequest)'; } 
-@override MqQueueName? get deadLetterQueue { return mqWorkerConsumerRequest.deadLetterQueue; } 
+@override MqQueueName? get deadLetterQueue => mqWorkerConsumerRequest.deadLetterQueue;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -67,11 +72,13 @@ MqConsumerRequestWorker copyWith({MqQueueName? Function()? deadLetterQueue, MqSc
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MqConsumerRequest$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'MqConsumerRequest.unknown($json)'; } 
-@override MqQueueName? get deadLetterQueue { return json['dead_letter_queue'] != null ? MqQueueName.fromJson(json['dead_letter_queue'] as String) : null; } 
+@override MqQueueName? get deadLetterQueue => json['dead_letter_queue'] != null ? MqQueueName.fromJson(json['dead_letter_queue'] as String) : null;
+
  }

@@ -41,7 +41,8 @@ factory ComputerAction.type({required String text}) { return ComputerActionType(
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ComputerAction$Unknown; } 
+bool get isUnknown => this is ComputerAction$Unknown;
+
  }
 @immutable final class ComputerActionClick extends ComputerAction {const ComputerActionClick(this.clickParam);
 
@@ -49,7 +50,8 @@ factory ComputerActionClick.fromJson(Map<String, dynamic> json) { return Compute
 
 final ClickParam clickParam;
 
-@override String get type { return 'click'; } 
+@override String get type => 'click';
+
 @override Map<String, dynamic> toJson() { return {...clickParam.toJson(), 'type': type}; } 
 ComputerActionClick copyWith({ClickButtonType? button, int? x, int? y, }) { return ComputerActionClick(clickParam.copyWith(
   button: button,
@@ -67,7 +69,8 @@ factory ComputerActionDoubleClick.fromJson(Map<String, dynamic> json) { return C
 
 final DoubleClickAction doubleClickAction;
 
-@override String get type { return 'double_click'; } 
+@override String get type => 'double_click';
+
 @override Map<String, dynamic> toJson() { return {...doubleClickAction.toJson(), 'type': type}; } 
 ComputerActionDoubleClick copyWith({int? x, int? y, }) { return ComputerActionDoubleClick(doubleClickAction.copyWith(
   x: x,
@@ -84,7 +87,8 @@ factory ComputerActionDrag.fromJson(Map<String, dynamic> json) { return Computer
 
 final DragParam dragParam;
 
-@override String get type { return 'drag'; } 
+@override String get type => 'drag';
+
 @override Map<String, dynamic> toJson() { return {...dragParam.toJson(), 'type': type}; } 
 ComputerActionDrag copyWith({List<CoordParam>? path}) { return ComputerActionDrag(dragParam.copyWith(
   path: path,
@@ -100,7 +104,8 @@ factory ComputerActionKeypress.fromJson(Map<String, dynamic> json) { return Comp
 
 final KeyPressAction keyPressAction;
 
-@override String get type { return 'keypress'; } 
+@override String get type => 'keypress';
+
 @override Map<String, dynamic> toJson() { return {...keyPressAction.toJson(), 'type': type}; } 
 ComputerActionKeypress copyWith({List<String>? keys}) { return ComputerActionKeypress(keyPressAction.copyWith(
   keys: keys,
@@ -116,7 +121,8 @@ factory ComputerActionMove.fromJson(Map<String, dynamic> json) { return Computer
 
 final MoveParam moveParam;
 
-@override String get type { return 'move'; } 
+@override String get type => 'move';
+
 @override Map<String, dynamic> toJson() { return {...moveParam.toJson(), 'type': type}; } 
 ComputerActionMove copyWith({int? x, int? y, }) { return ComputerActionMove(moveParam.copyWith(
   x: x,
@@ -133,7 +139,8 @@ factory ComputerActionScreenshot.fromJson(Map<String, dynamic> json) { return Co
 
 final ScreenshotParam screenshotParam;
 
-@override String get type { return 'screenshot'; } 
+@override String get type => 'screenshot';
+
 @override Map<String, dynamic> toJson() { return {...screenshotParam.toJson(), 'type': type}; } 
 ComputerActionScreenshot copyWith({ScreenshotParam? screenshotParam}) { return ComputerActionScreenshot(screenshotParam ?? this.screenshotParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -147,7 +154,8 @@ factory ComputerActionScroll.fromJson(Map<String, dynamic> json) { return Comput
 
 final ScrollParam scrollParam;
 
-@override String get type { return 'scroll'; } 
+@override String get type => 'scroll';
+
 @override Map<String, dynamic> toJson() { return {...scrollParam.toJson(), 'type': type}; } 
 ComputerActionScroll copyWith({int? x, int? y, int? scrollX, int? scrollY, }) { return ComputerActionScroll(scrollParam.copyWith(
   x: x,
@@ -166,7 +174,8 @@ factory ComputerActionType.fromJson(Map<String, dynamic> json) { return Computer
 
 final TypeParam typeParam;
 
-@override String get type { return 'type'; } 
+@override String get type => 'type';
+
 @override Map<String, dynamic> toJson() { return {...typeParam.toJson(), 'type': type}; } 
 ComputerActionType copyWith({String? text}) { return ComputerActionType(typeParam.copyWith(
   text: text,
@@ -182,7 +191,8 @@ factory ComputerActionWait.fromJson(Map<String, dynamic> json) { return Computer
 
 final WaitParam waitParam;
 
-@override String get type { return 'wait'; } 
+@override String get type => 'wait';
+
 @override Map<String, dynamic> toJson() { return {...waitParam.toJson(), 'type': type}; } 
 ComputerActionWait copyWith({WaitParam? waitParam}) { return ComputerActionWait(waitParam ?? this.waitParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -196,7 +206,8 @@ ComputerActionWait copyWith({WaitParam? waitParam}) { return ComputerActionWait(
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerAction$Unknown && json == other.json; } 

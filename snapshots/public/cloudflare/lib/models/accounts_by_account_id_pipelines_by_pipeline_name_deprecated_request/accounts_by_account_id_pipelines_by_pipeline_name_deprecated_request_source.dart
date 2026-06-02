@@ -19,7 +19,8 @@ factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.http({
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource$Unknown; } 
+bool get isUnknown => this is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource$Unknown;
+
 /// Shared by all variants of this union.
 CloudflarePipelinesWorkersPipelinesBindingSourceFormat get format;
  }
@@ -29,7 +30,8 @@ factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding
 
 final CloudflarePipelinesWorkersPipelinesBindingSource cloudflarePipelinesWorkersPipelinesBindingSource;
 
-@override String get type { return 'binding'; } 
+@override String get type => 'binding';
+
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesWorkersPipelinesBindingSource.toJson(), 'type': type}; } 
 AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding copyWith({CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format}) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding(cloudflarePipelinesWorkersPipelinesBindingSource.copyWith(
   format: format,
@@ -38,7 +40,8 @@ AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding copyWit
     other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding && cloudflarePipelinesWorkersPipelinesBindingSource == other.cloudflarePipelinesWorkersPipelinesBindingSource; } 
 @override int get hashCode { return cloudflarePipelinesWorkersPipelinesBindingSource.hashCode; } 
 @override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.binding($cloudflarePipelinesWorkersPipelinesBindingSource)'; } 
-@override CloudflarePipelinesWorkersPipelinesBindingSourceFormat get format { return cloudflarePipelinesWorkersPipelinesBindingSource.format; } 
+@override CloudflarePipelinesWorkersPipelinesBindingSourceFormat get format => cloudflarePipelinesWorkersPipelinesBindingSource.format;
+
  }
 @immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp extends AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp(this.cloudflarePipelinesWorkersPipelinesHttpSource);
 
@@ -46,7 +49,8 @@ factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp.fr
 
 final CloudflarePipelinesWorkersPipelinesHttpSource cloudflarePipelinesWorkersPipelinesHttpSource;
 
-@override String get type { return 'http'; } 
+@override String get type => 'http';
+
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesWorkersPipelinesHttpSource.toJson(), 'type': type}; } 
 AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp copyWith({bool? Function()? authentication, Cors? Function()? cors, CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp(cloudflarePipelinesWorkersPipelinesHttpSource.copyWith(
   authentication: authentication,
@@ -57,7 +61,8 @@ AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp copyWith({
     other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp && cloudflarePipelinesWorkersPipelinesHttpSource == other.cloudflarePipelinesWorkersPipelinesHttpSource; } 
 @override int get hashCode { return cloudflarePipelinesWorkersPipelinesHttpSource.hashCode; } 
 @override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.http($cloudflarePipelinesWorkersPipelinesHttpSource)'; } 
-@override CloudflarePipelinesWorkersPipelinesBindingSourceFormat get format { return cloudflarePipelinesWorkersPipelinesHttpSource.format; } 
+@override CloudflarePipelinesWorkersPipelinesBindingSourceFormat get format => cloudflarePipelinesWorkersPipelinesHttpSource.format;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -65,11 +70,13 @@ AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp copyWith({
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.unknown($json)'; } 
-@override CloudflarePipelinesWorkersPipelinesBindingSourceFormat get format { return CloudflarePipelinesWorkersPipelinesBindingSourceFormat.fromJson(json['format'] as String); } 
+@override CloudflarePipelinesWorkersPipelinesBindingSourceFormat get format => CloudflarePipelinesWorkersPipelinesBindingSourceFormat.fromJson(json['format'] as String);
+
  }

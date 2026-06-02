@@ -13,7 +13,8 @@ factory ChecksCreateRequest.fromJson(Map<String, dynamic> json) { return switch 
 String get status;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ChecksCreateRequest$Unknown; } 
+bool get isUnknown => this is ChecksCreateRequest$Unknown;
+
  }
 @immutable final class ChecksCreateRequestCompleted$Variant extends ChecksCreateRequest {const ChecksCreateRequestCompleted$Variant(this.checksCreateRequestCompleted);
 
@@ -21,7 +22,8 @@ factory ChecksCreateRequestCompleted$Variant.fromJson(Map<String, dynamic> json)
 
 final ChecksCreateRequestCompleted checksCreateRequestCompleted;
 
-@override String get status { return 'completed'; } 
+@override String get status => 'completed';
+
 @override Map<String, dynamic> toJson() { return {...checksCreateRequestCompleted.toJson(), 'status': status}; } 
 ChecksCreateRequestCompleted$Variant copyWith({ChecksCreateRequestCompleted? checksCreateRequestCompleted}) { return ChecksCreateRequestCompleted$Variant(checksCreateRequestCompleted ?? this.checksCreateRequestCompleted); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -35,7 +37,8 @@ factory ChecksCreateRequestQueued.fromJson(Map<String, dynamic> json) { return C
 
 final ChecksCreateRequestVariant2 checksCreateRequestVariant2;
 
-@override String get status { return 'queued'; } 
+@override String get status => 'queued';
+
 @override Map<String, dynamic> toJson() { return {...checksCreateRequestVariant2.toJson(), 'status': status}; } 
 ChecksCreateRequestQueued copyWith({ChecksCreateRequestVariant2? checksCreateRequestVariant2}) { return ChecksCreateRequestQueued(checksCreateRequestVariant2 ?? this.checksCreateRequestVariant2); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -49,7 +52,8 @@ ChecksCreateRequestQueued copyWith({ChecksCreateRequestVariant2? checksCreateReq
 
 final Map<String, dynamic> json;
 
-@override String get status { return json['status'] as String? ?? ''; } 
+@override String get status => json['status'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChecksCreateRequest$Unknown && json == other.json; } 

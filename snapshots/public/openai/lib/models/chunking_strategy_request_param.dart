@@ -17,7 +17,8 @@ factory ChunkingStrategyRequestParam.$static({required StaticChunkingStrategy $s
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ChunkingStrategyRequestParam$Unknown; } 
+bool get isUnknown => this is ChunkingStrategyRequestParam$Unknown;
+
  }
 @immutable final class ChunkingStrategyRequestParamAuto extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParamAuto(this.autoChunkingStrategyRequestParam);
 
@@ -25,7 +26,8 @@ factory ChunkingStrategyRequestParamAuto.fromJson(Map<String, dynamic> json) { r
 
 final AutoChunkingStrategyRequestParam autoChunkingStrategyRequestParam;
 
-@override String get type { return 'auto'; } 
+@override String get type => 'auto';
+
 @override Map<String, dynamic> toJson() { return {...autoChunkingStrategyRequestParam.toJson(), 'type': type}; } 
 ChunkingStrategyRequestParamAuto copyWith({AutoChunkingStrategyRequestParam? autoChunkingStrategyRequestParam}) { return ChunkingStrategyRequestParamAuto(autoChunkingStrategyRequestParam ?? this.autoChunkingStrategyRequestParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -39,7 +41,8 @@ factory ChunkingStrategyRequestParamStatic.fromJson(Map<String, dynamic> json) {
 
 final StaticChunkingStrategyRequestParam staticChunkingStrategyRequestParam;
 
-@override String get type { return 'static'; } 
+@override String get type => 'static';
+
 @override Map<String, dynamic> toJson() { return {...staticChunkingStrategyRequestParam.toJson(), 'type': type}; } 
 ChunkingStrategyRequestParamStatic copyWith({StaticChunkingStrategy? $static}) { return ChunkingStrategyRequestParamStatic(staticChunkingStrategyRequestParam.copyWith(
   $static: $static,
@@ -55,7 +58,8 @@ ChunkingStrategyRequestParamStatic copyWith({StaticChunkingStrategy? $static}) {
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChunkingStrategyRequestParam$Unknown && json == other.json; } 

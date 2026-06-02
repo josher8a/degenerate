@@ -19,7 +19,8 @@ factory UsersGetAuthenticatedResponse.private({required String login, required i
 String get userViewType;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UsersGetAuthenticatedResponse$Unknown; } 
+bool get isUnknown => this is UsersGetAuthenticatedResponse$Unknown;
+
 /// Shared by all variants of this union.
 String get login;
 /// Shared by all variants of this union.
@@ -105,7 +106,8 @@ factory UsersGetAuthenticatedResponsePublic.fromJson(Map<String, dynamic> json) 
 
 final PublicUser publicUser;
 
-@override String get userViewType { return 'public'; } 
+@override String get userViewType => 'public';
+
 @override Map<String, dynamic> toJson() { return {...publicUser.toJson(), 'user_view_type': userViewType}; } 
 UsersGetAuthenticatedResponsePublic copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? notificationEmail, bool? Function()? hireable, String? Function()? bio, String? Function()? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, PrivateUserPlan? Function()? plan, int? Function()? privateGists, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, int? Function()? diskUsage, int? Function()? collaborators, }) { return UsersGetAuthenticatedResponsePublic(publicUser.copyWith(
   login: login,
@@ -152,45 +154,84 @@ UsersGetAuthenticatedResponsePublic copyWith({String? login, int? id, String? no
     other is UsersGetAuthenticatedResponsePublic && publicUser == other.publicUser; } 
 @override int get hashCode { return publicUser.hashCode; } 
 @override String toString() { return 'UsersGetAuthenticatedResponse.public($publicUser)'; } 
-@override String get login { return publicUser.login; } 
-@override int get id { return publicUser.id; } 
-@override String get nodeId { return publicUser.nodeId; } 
-@override Uri get avatarUrl { return publicUser.avatarUrl; } 
-@override String? get gravatarId { return publicUser.gravatarId; } 
-@override Uri get url { return publicUser.url; } 
-@override Uri get htmlUrl { return publicUser.htmlUrl; } 
-@override Uri get followersUrl { return publicUser.followersUrl; } 
-@override String get followingUrl { return publicUser.followingUrl; } 
-@override String get gistsUrl { return publicUser.gistsUrl; } 
-@override String get starredUrl { return publicUser.starredUrl; } 
-@override Uri get subscriptionsUrl { return publicUser.subscriptionsUrl; } 
-@override Uri get organizationsUrl { return publicUser.organizationsUrl; } 
-@override Uri get reposUrl { return publicUser.reposUrl; } 
-@override String get eventsUrl { return publicUser.eventsUrl; } 
-@override Uri get receivedEventsUrl { return publicUser.receivedEventsUrl; } 
-@override String get type { return publicUser.type; } 
-@override bool get siteAdmin { return publicUser.siteAdmin; } 
-@override String? get name { return publicUser.name; } 
-@override String? get company { return publicUser.company; } 
-@override String? get blog { return publicUser.blog; } 
-@override String? get location { return publicUser.location; } 
-@override String? get email { return publicUser.email; } 
-@override String? get notificationEmail { return publicUser.notificationEmail; } 
-@override bool? get hireable { return publicUser.hireable; } 
-@override String? get bio { return publicUser.bio; } 
-@override String? get twitterUsername { return publicUser.twitterUsername; } 
-@override int get publicRepos { return publicUser.publicRepos; } 
-@override int get publicGists { return publicUser.publicGists; } 
-@override int get followers { return publicUser.followers; } 
-@override int get following { return publicUser.following; } 
-@override DateTime get createdAt { return publicUser.createdAt; } 
-@override DateTime get updatedAt { return publicUser.updatedAt; } 
-@override PrivateUserPlan? get plan { return publicUser.plan; } 
-@override int? get privateGists { return publicUser.privateGists; } 
-@override int? get totalPrivateRepos { return publicUser.totalPrivateRepos; } 
-@override int? get ownedPrivateRepos { return publicUser.ownedPrivateRepos; } 
-@override int? get diskUsage { return publicUser.diskUsage; } 
-@override int? get collaborators { return publicUser.collaborators; } 
+@override String get login => publicUser.login;
+
+@override int get id => publicUser.id;
+
+@override String get nodeId => publicUser.nodeId;
+
+@override Uri get avatarUrl => publicUser.avatarUrl;
+
+@override String? get gravatarId => publicUser.gravatarId;
+
+@override Uri get url => publicUser.url;
+
+@override Uri get htmlUrl => publicUser.htmlUrl;
+
+@override Uri get followersUrl => publicUser.followersUrl;
+
+@override String get followingUrl => publicUser.followingUrl;
+
+@override String get gistsUrl => publicUser.gistsUrl;
+
+@override String get starredUrl => publicUser.starredUrl;
+
+@override Uri get subscriptionsUrl => publicUser.subscriptionsUrl;
+
+@override Uri get organizationsUrl => publicUser.organizationsUrl;
+
+@override Uri get reposUrl => publicUser.reposUrl;
+
+@override String get eventsUrl => publicUser.eventsUrl;
+
+@override Uri get receivedEventsUrl => publicUser.receivedEventsUrl;
+
+@override String get type => publicUser.type;
+
+@override bool get siteAdmin => publicUser.siteAdmin;
+
+@override String? get name => publicUser.name;
+
+@override String? get company => publicUser.company;
+
+@override String? get blog => publicUser.blog;
+
+@override String? get location => publicUser.location;
+
+@override String? get email => publicUser.email;
+
+@override String? get notificationEmail => publicUser.notificationEmail;
+
+@override bool? get hireable => publicUser.hireable;
+
+@override String? get bio => publicUser.bio;
+
+@override String? get twitterUsername => publicUser.twitterUsername;
+
+@override int get publicRepos => publicUser.publicRepos;
+
+@override int get publicGists => publicUser.publicGists;
+
+@override int get followers => publicUser.followers;
+
+@override int get following => publicUser.following;
+
+@override DateTime get createdAt => publicUser.createdAt;
+
+@override DateTime get updatedAt => publicUser.updatedAt;
+
+@override PrivateUserPlan? get plan => publicUser.plan;
+
+@override int? get privateGists => publicUser.privateGists;
+
+@override int? get totalPrivateRepos => publicUser.totalPrivateRepos;
+
+@override int? get ownedPrivateRepos => publicUser.ownedPrivateRepos;
+
+@override int? get diskUsage => publicUser.diskUsage;
+
+@override int? get collaborators => publicUser.collaborators;
+
  }
 @immutable final class UsersGetAuthenticatedResponsePrivate extends UsersGetAuthenticatedResponse {const UsersGetAuthenticatedResponsePrivate(this.privateUser);
 
@@ -198,7 +239,8 @@ factory UsersGetAuthenticatedResponsePrivate.fromJson(Map<String, dynamic> json)
 
 final PrivateUser privateUser;
 
-@override String get userViewType { return 'private'; } 
+@override String get userViewType => 'private';
+
 @override Map<String, dynamic> toJson() { return {...privateUser.toJson(), 'user_view_type': userViewType}; } 
 UsersGetAuthenticatedResponsePrivate copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? notificationEmail, bool? Function()? hireable, String? Function()? bio, String? Function()? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, bool? twoFactorAuthentication, PrivateUserPlan? Function()? plan, bool? Function()? businessPlus, String? Function()? ldapDn, }) { return UsersGetAuthenticatedResponsePrivate(privateUser.copyWith(
   login: login,
@@ -248,45 +290,84 @@ UsersGetAuthenticatedResponsePrivate copyWith({String? login, int? id, String? n
     other is UsersGetAuthenticatedResponsePrivate && privateUser == other.privateUser; } 
 @override int get hashCode { return privateUser.hashCode; } 
 @override String toString() { return 'UsersGetAuthenticatedResponse.private($privateUser)'; } 
-@override String get login { return privateUser.login; } 
-@override int get id { return privateUser.id; } 
-@override String get nodeId { return privateUser.nodeId; } 
-@override Uri get avatarUrl { return privateUser.avatarUrl; } 
-@override String? get gravatarId { return privateUser.gravatarId; } 
-@override Uri get url { return privateUser.url; } 
-@override Uri get htmlUrl { return privateUser.htmlUrl; } 
-@override Uri get followersUrl { return privateUser.followersUrl; } 
-@override String get followingUrl { return privateUser.followingUrl; } 
-@override String get gistsUrl { return privateUser.gistsUrl; } 
-@override String get starredUrl { return privateUser.starredUrl; } 
-@override Uri get subscriptionsUrl { return privateUser.subscriptionsUrl; } 
-@override Uri get organizationsUrl { return privateUser.organizationsUrl; } 
-@override Uri get reposUrl { return privateUser.reposUrl; } 
-@override String get eventsUrl { return privateUser.eventsUrl; } 
-@override Uri get receivedEventsUrl { return privateUser.receivedEventsUrl; } 
-@override String get type { return privateUser.type; } 
-@override bool get siteAdmin { return privateUser.siteAdmin; } 
-@override String? get name { return privateUser.name; } 
-@override String? get company { return privateUser.company; } 
-@override String? get blog { return privateUser.blog; } 
-@override String? get location { return privateUser.location; } 
-@override String? get email { return privateUser.email; } 
-@override String? get notificationEmail { return privateUser.notificationEmail; } 
-@override bool? get hireable { return privateUser.hireable; } 
-@override String? get bio { return privateUser.bio; } 
-@override String? get twitterUsername { return privateUser.twitterUsername; } 
-@override int get publicRepos { return privateUser.publicRepos; } 
-@override int get publicGists { return privateUser.publicGists; } 
-@override int get followers { return privateUser.followers; } 
-@override int get following { return privateUser.following; } 
-@override DateTime get createdAt { return privateUser.createdAt; } 
-@override DateTime get updatedAt { return privateUser.updatedAt; } 
-@override PrivateUserPlan? get plan { return privateUser.plan; } 
-@override int? get privateGists { return privateUser.privateGists; } 
-@override int? get totalPrivateRepos { return privateUser.totalPrivateRepos; } 
-@override int? get ownedPrivateRepos { return privateUser.ownedPrivateRepos; } 
-@override int? get diskUsage { return privateUser.diskUsage; } 
-@override int? get collaborators { return privateUser.collaborators; } 
+@override String get login => privateUser.login;
+
+@override int get id => privateUser.id;
+
+@override String get nodeId => privateUser.nodeId;
+
+@override Uri get avatarUrl => privateUser.avatarUrl;
+
+@override String? get gravatarId => privateUser.gravatarId;
+
+@override Uri get url => privateUser.url;
+
+@override Uri get htmlUrl => privateUser.htmlUrl;
+
+@override Uri get followersUrl => privateUser.followersUrl;
+
+@override String get followingUrl => privateUser.followingUrl;
+
+@override String get gistsUrl => privateUser.gistsUrl;
+
+@override String get starredUrl => privateUser.starredUrl;
+
+@override Uri get subscriptionsUrl => privateUser.subscriptionsUrl;
+
+@override Uri get organizationsUrl => privateUser.organizationsUrl;
+
+@override Uri get reposUrl => privateUser.reposUrl;
+
+@override String get eventsUrl => privateUser.eventsUrl;
+
+@override Uri get receivedEventsUrl => privateUser.receivedEventsUrl;
+
+@override String get type => privateUser.type;
+
+@override bool get siteAdmin => privateUser.siteAdmin;
+
+@override String? get name => privateUser.name;
+
+@override String? get company => privateUser.company;
+
+@override String? get blog => privateUser.blog;
+
+@override String? get location => privateUser.location;
+
+@override String? get email => privateUser.email;
+
+@override String? get notificationEmail => privateUser.notificationEmail;
+
+@override bool? get hireable => privateUser.hireable;
+
+@override String? get bio => privateUser.bio;
+
+@override String? get twitterUsername => privateUser.twitterUsername;
+
+@override int get publicRepos => privateUser.publicRepos;
+
+@override int get publicGists => privateUser.publicGists;
+
+@override int get followers => privateUser.followers;
+
+@override int get following => privateUser.following;
+
+@override DateTime get createdAt => privateUser.createdAt;
+
+@override DateTime get updatedAt => privateUser.updatedAt;
+
+@override PrivateUserPlan? get plan => privateUser.plan;
+
+@override int? get privateGists => privateUser.privateGists;
+
+@override int? get totalPrivateRepos => privateUser.totalPrivateRepos;
+
+@override int? get ownedPrivateRepos => privateUser.ownedPrivateRepos;
+
+@override int? get diskUsage => privateUser.diskUsage;
+
+@override int? get collaborators => privateUser.collaborators;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -294,49 +375,89 @@ UsersGetAuthenticatedResponsePrivate copyWith({String? login, int? id, String? n
 
 final Map<String, dynamic> json;
 
-@override String get userViewType { return json['user_view_type'] as String? ?? ''; } 
+@override String get userViewType => json['user_view_type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is UsersGetAuthenticatedResponse$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'UsersGetAuthenticatedResponse.unknown($json)'; } 
-@override String get login { return json['login'] as String; } 
-@override int get id { return (json['id'] as num).toInt(); } 
-@override String get nodeId { return json['node_id'] as String; } 
-@override Uri get avatarUrl { return Uri.parse(json['avatar_url'] as String); } 
-@override String? get gravatarId { return json['gravatar_id'] as String?; } 
-@override Uri get url { return Uri.parse(json['url'] as String); } 
-@override Uri get htmlUrl { return Uri.parse(json['html_url'] as String); } 
-@override Uri get followersUrl { return Uri.parse(json['followers_url'] as String); } 
-@override String get followingUrl { return json['following_url'] as String; } 
-@override String get gistsUrl { return json['gists_url'] as String; } 
-@override String get starredUrl { return json['starred_url'] as String; } 
-@override Uri get subscriptionsUrl { return Uri.parse(json['subscriptions_url'] as String); } 
-@override Uri get organizationsUrl { return Uri.parse(json['organizations_url'] as String); } 
-@override Uri get reposUrl { return Uri.parse(json['repos_url'] as String); } 
-@override String get eventsUrl { return json['events_url'] as String; } 
-@override Uri get receivedEventsUrl { return Uri.parse(json['received_events_url'] as String); } 
-@override String get type { return json['type'] as String; } 
-@override bool get siteAdmin { return json['site_admin'] as bool; } 
-@override String? get name { return json['name'] as String?; } 
-@override String? get company { return json['company'] as String?; } 
-@override String? get blog { return json['blog'] as String?; } 
-@override String? get location { return json['location'] as String?; } 
-@override String? get email { return json['email'] as String?; } 
-@override String? get notificationEmail { return json['notification_email'] as String?; } 
-@override bool? get hireable { return json['hireable'] as bool?; } 
-@override String? get bio { return json['bio'] as String?; } 
-@override String? get twitterUsername { return json['twitter_username'] as String?; } 
-@override int get publicRepos { return (json['public_repos'] as num).toInt(); } 
-@override int get publicGists { return (json['public_gists'] as num).toInt(); } 
-@override int get followers { return (json['followers'] as num).toInt(); } 
-@override int get following { return (json['following'] as num).toInt(); } 
-@override DateTime get createdAt { return DateTime.parse(json['created_at'] as String); } 
-@override DateTime get updatedAt { return DateTime.parse(json['updated_at'] as String); } 
-@override PrivateUserPlan? get plan { return json['plan'] != null ? PrivateUserPlan.fromJson(json['plan'] as Map<String, dynamic>) : null; } 
-@override int? get privateGists { return json['private_gists'] != null ? (json['private_gists'] as num).toInt() : null; } 
-@override int? get totalPrivateRepos { return json['total_private_repos'] != null ? (json['total_private_repos'] as num).toInt() : null; } 
-@override int? get ownedPrivateRepos { return json['owned_private_repos'] != null ? (json['owned_private_repos'] as num).toInt() : null; } 
-@override int? get diskUsage { return json['disk_usage'] != null ? (json['disk_usage'] as num).toInt() : null; } 
-@override int? get collaborators { return json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null; } 
+@override String get login => json['login'] as String;
+
+@override int get id => (json['id'] as num).toInt();
+
+@override String get nodeId => json['node_id'] as String;
+
+@override Uri get avatarUrl => Uri.parse(json['avatar_url'] as String);
+
+@override String? get gravatarId => json['gravatar_id'] as String?;
+
+@override Uri get url => Uri.parse(json['url'] as String);
+
+@override Uri get htmlUrl => Uri.parse(json['html_url'] as String);
+
+@override Uri get followersUrl => Uri.parse(json['followers_url'] as String);
+
+@override String get followingUrl => json['following_url'] as String;
+
+@override String get gistsUrl => json['gists_url'] as String;
+
+@override String get starredUrl => json['starred_url'] as String;
+
+@override Uri get subscriptionsUrl => Uri.parse(json['subscriptions_url'] as String);
+
+@override Uri get organizationsUrl => Uri.parse(json['organizations_url'] as String);
+
+@override Uri get reposUrl => Uri.parse(json['repos_url'] as String);
+
+@override String get eventsUrl => json['events_url'] as String;
+
+@override Uri get receivedEventsUrl => Uri.parse(json['received_events_url'] as String);
+
+@override String get type => json['type'] as String;
+
+@override bool get siteAdmin => json['site_admin'] as bool;
+
+@override String? get name => json['name'] as String?;
+
+@override String? get company => json['company'] as String?;
+
+@override String? get blog => json['blog'] as String?;
+
+@override String? get location => json['location'] as String?;
+
+@override String? get email => json['email'] as String?;
+
+@override String? get notificationEmail => json['notification_email'] as String?;
+
+@override bool? get hireable => json['hireable'] as bool?;
+
+@override String? get bio => json['bio'] as String?;
+
+@override String? get twitterUsername => json['twitter_username'] as String?;
+
+@override int get publicRepos => (json['public_repos'] as num).toInt();
+
+@override int get publicGists => (json['public_gists'] as num).toInt();
+
+@override int get followers => (json['followers'] as num).toInt();
+
+@override int get following => (json['following'] as num).toInt();
+
+@override DateTime get createdAt => DateTime.parse(json['created_at'] as String);
+
+@override DateTime get updatedAt => DateTime.parse(json['updated_at'] as String);
+
+@override PrivateUserPlan? get plan => json['plan'] != null ? PrivateUserPlan.fromJson(json['plan'] as Map<String, dynamic>) : null;
+
+@override int? get privateGists => json['private_gists'] != null ? (json['private_gists'] as num).toInt() : null;
+
+@override int? get totalPrivateRepos => json['total_private_repos'] != null ? (json['total_private_repos'] as num).toInt() : null;
+
+@override int? get ownedPrivateRepos => json['owned_private_repos'] != null ? (json['owned_private_repos'] as num).toInt() : null;
+
+@override int? get diskUsage => json['disk_usage'] != null ? (json['disk_usage'] as num).toInt() : null;
+
+@override int? get collaborators => json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null;
+
  }

@@ -29,9 +29,7 @@ sealed class StatusDetail {
   Map<String, dynamic> toJson();
 
   /// Whether this variant is unknown (not defined in the OpenAPI spec).
-  bool get isUnknown {
-    return this is StatusDetail$Unknown;
-  }
+  bool get isUnknown => this is StatusDetail$Unknown;
 }
 
 @immutable
@@ -45,9 +43,7 @@ final class StatusDetailActive extends StatusDetail {
   final ActiveDetail activeDetail;
 
   @override
-  String get type {
-    return 'active';
-  }
+  String get type => 'active';
 
   @override
   Map<String, dynamic> toJson() {
@@ -86,9 +82,7 @@ final class StatusDetailEnded extends StatusDetail {
   final EndedDetail endedDetail;
 
   @override
-  String get type {
-    return 'ended';
-  }
+  String get type => 'ended';
 
   @override
   Map<String, dynamic> toJson() {
@@ -127,9 +121,7 @@ final class StatusDetailWaitingRoom extends StatusDetail {
   final WaitingRoomDetail waitingRoomDetail;
 
   @override
-  String get type {
-    return 'waiting_room';
-  }
+  String get type => 'waiting_room';
 
   @override
   Map<String, dynamic> toJson() {
@@ -167,9 +159,7 @@ final class StatusDetail$Unknown extends StatusDetail {
   final Map<String, dynamic> json;
 
   @override
-  String get type {
-    return json['type'] as String? ?? '';
-  }
+  String get type => json['type'] as String? ?? '';
 
   @override
   Map<String, dynamic> toJson() {

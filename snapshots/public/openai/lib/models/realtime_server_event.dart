@@ -197,7 +197,8 @@ factory RealtimeServerEvent.responseMcpCallFailed({required String eventId, requ
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeServerEvent$Unknown; } 
+bool get isUnknown => this is RealtimeServerEvent$Unknown;
+
  }
 @immutable final class RealtimeServerEventConversationCreated$Variant extends RealtimeServerEvent {const RealtimeServerEventConversationCreated$Variant(this.realtimeServerEventConversationCreated);
 
@@ -205,7 +206,8 @@ factory RealtimeServerEventConversationCreated$Variant.fromJson(Map<String, dyna
 
 final RealtimeServerEventConversationCreated realtimeServerEventConversationCreated;
 
-@override String get type { return 'conversation.created'; } 
+@override String get type => 'conversation.created';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationCreated.toJson(), 'type': type}; } 
 RealtimeServerEventConversationCreated$Variant copyWith({String? eventId, RealtimeServerEventConversationCreatedConversation? conversation, }) { return RealtimeServerEventConversationCreated$Variant(realtimeServerEventConversationCreated.copyWith(
   eventId: eventId,
@@ -222,7 +224,8 @@ factory RealtimeServerEventConversationItemCreated$Variant.fromJson(Map<String, 
 
 final RealtimeServerEventConversationItemCreated realtimeServerEventConversationItemCreated;
 
-@override String get type { return 'conversation.item.created'; } 
+@override String get type => 'conversation.item.created';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemCreated.toJson(), 'type': type}; } 
 RealtimeServerEventConversationItemCreated$Variant copyWith({String? eventId, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemCreated$Variant(realtimeServerEventConversationItemCreated.copyWith(
   eventId: eventId,
@@ -240,7 +243,8 @@ factory RealtimeServerEventConversationItemDeleted$Variant.fromJson(Map<String, 
 
 final RealtimeServerEventConversationItemDeleted realtimeServerEventConversationItemDeleted;
 
-@override String get type { return 'conversation.item.deleted'; } 
+@override String get type => 'conversation.item.deleted';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemDeleted.toJson(), 'type': type}; } 
 RealtimeServerEventConversationItemDeleted$Variant copyWith({String? eventId, String? itemId, }) { return RealtimeServerEventConversationItemDeleted$Variant(realtimeServerEventConversationItemDeleted.copyWith(
   eventId: eventId,
@@ -257,7 +261,8 @@ factory RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Vari
 
 final RealtimeServerEventConversationItemInputAudioTranscriptionCompleted realtimeServerEventConversationItemInputAudioTranscriptionCompleted;
 
-@override String get type { return 'conversation.item.input_audio_transcription.completed'; } 
+@override String get type => 'conversation.item.input_audio_transcription.completed';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemInputAudioTranscriptionCompleted.toJson(), 'type': type}; } 
 RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Variant copyWith({String? eventId, String? itemId, int? contentIndex, String? transcript, List<LogProbProperties>? Function()? logprobs, CreateTranscriptionResponseJsonUsage? usage, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted$Variant(realtimeServerEventConversationItemInputAudioTranscriptionCompleted.copyWith(
   eventId: eventId,
@@ -278,7 +283,8 @@ factory RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant.
 
 final RealtimeServerEventConversationItemInputAudioTranscriptionDelta realtimeServerEventConversationItemInputAudioTranscriptionDelta;
 
-@override String get type { return 'conversation.item.input_audio_transcription.delta'; } 
+@override String get type => 'conversation.item.input_audio_transcription.delta';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemInputAudioTranscriptionDelta.toJson(), 'type': type}; } 
 RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant copyWith({String? eventId, String? itemId, int? Function()? contentIndex, String? Function()? delta, List<LogProbProperties>? Function()? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant(realtimeServerEventConversationItemInputAudioTranscriptionDelta.copyWith(
   eventId: eventId,
@@ -298,7 +304,8 @@ factory RealtimeServerEventConversationItemInputAudioTranscriptionFailed$Variant
 
 final RealtimeServerEventConversationItemInputAudioTranscriptionFailed realtimeServerEventConversationItemInputAudioTranscriptionFailed;
 
-@override String get type { return 'conversation.item.input_audio_transcription.failed'; } 
+@override String get type => 'conversation.item.input_audio_transcription.failed';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemInputAudioTranscriptionFailed.toJson(), 'type': type}; } 
 RealtimeServerEventConversationItemInputAudioTranscriptionFailed$Variant copyWith({String? eventId, String? itemId, int? contentIndex, RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError? error, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionFailed$Variant(realtimeServerEventConversationItemInputAudioTranscriptionFailed.copyWith(
   eventId: eventId,
@@ -317,7 +324,8 @@ factory RealtimeServerEventConversationItemRetrieved$Variant.fromJson(Map<String
 
 final RealtimeServerEventConversationItemRetrieved realtimeServerEventConversationItemRetrieved;
 
-@override String get type { return 'conversation.item.retrieved'; } 
+@override String get type => 'conversation.item.retrieved';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemRetrieved.toJson(), 'type': type}; } 
 RealtimeServerEventConversationItemRetrieved$Variant copyWith({String? eventId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemRetrieved$Variant(realtimeServerEventConversationItemRetrieved.copyWith(
   eventId: eventId,
@@ -334,7 +342,8 @@ factory RealtimeServerEventConversationItemTruncated$Variant.fromJson(Map<String
 
 final RealtimeServerEventConversationItemTruncated realtimeServerEventConversationItemTruncated;
 
-@override String get type { return 'conversation.item.truncated'; } 
+@override String get type => 'conversation.item.truncated';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemTruncated.toJson(), 'type': type}; } 
 RealtimeServerEventConversationItemTruncated$Variant copyWith({String? eventId, String? itemId, int? contentIndex, int? audioEndMs, }) { return RealtimeServerEventConversationItemTruncated$Variant(realtimeServerEventConversationItemTruncated.copyWith(
   eventId: eventId,
@@ -353,7 +362,8 @@ factory RealtimeServerEventError$Variant.fromJson(Map<String, dynamic> json) { r
 
 final RealtimeServerEventError realtimeServerEventError;
 
-@override String get type { return 'error'; } 
+@override String get type => 'error';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventError.toJson(), 'type': type}; } 
 RealtimeServerEventError$Variant copyWith({String? eventId, RealtimeBetaServerEventErrorError? error, }) { return RealtimeServerEventError$Variant(realtimeServerEventError.copyWith(
   eventId: eventId,
@@ -370,7 +380,8 @@ factory RealtimeServerEventInputAudioBufferCleared$Variant.fromJson(Map<String, 
 
 final RealtimeServerEventInputAudioBufferCleared realtimeServerEventInputAudioBufferCleared;
 
-@override String get type { return 'input_audio_buffer.cleared'; } 
+@override String get type => 'input_audio_buffer.cleared';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventInputAudioBufferCleared.toJson(), 'type': type}; } 
 RealtimeServerEventInputAudioBufferCleared$Variant copyWith({String? eventId}) { return RealtimeServerEventInputAudioBufferCleared$Variant(realtimeServerEventInputAudioBufferCleared.copyWith(
   eventId: eventId,
@@ -386,7 +397,8 @@ factory RealtimeServerEventInputAudioBufferCommitted$Variant.fromJson(Map<String
 
 final RealtimeServerEventInputAudioBufferCommitted realtimeServerEventInputAudioBufferCommitted;
 
-@override String get type { return 'input_audio_buffer.committed'; } 
+@override String get type => 'input_audio_buffer.committed';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventInputAudioBufferCommitted.toJson(), 'type': type}; } 
 RealtimeServerEventInputAudioBufferCommitted$Variant copyWith({String? eventId, String? Function()? previousItemId, String? itemId, }) { return RealtimeServerEventInputAudioBufferCommitted$Variant(realtimeServerEventInputAudioBufferCommitted.copyWith(
   eventId: eventId,
@@ -404,7 +416,8 @@ factory RealtimeServerEventInputAudioBufferDtmfEventReceived$Variant.fromJson(Ma
 
 final RealtimeServerEventInputAudioBufferDtmfEventReceived realtimeServerEventInputAudioBufferDtmfEventReceived;
 
-@override String get type { return 'input_audio_buffer.dtmf_event_received'; } 
+@override String get type => 'input_audio_buffer.dtmf_event_received';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventInputAudioBufferDtmfEventReceived.toJson(), 'type': type}; } 
 RealtimeServerEventInputAudioBufferDtmfEventReceived$Variant copyWith({String? event, int? receivedAt, }) { return RealtimeServerEventInputAudioBufferDtmfEventReceived$Variant(realtimeServerEventInputAudioBufferDtmfEventReceived.copyWith(
   event: event,
@@ -421,7 +434,8 @@ factory RealtimeServerEventInputAudioBufferSpeechStarted$Variant.fromJson(Map<St
 
 final RealtimeServerEventInputAudioBufferSpeechStarted realtimeServerEventInputAudioBufferSpeechStarted;
 
-@override String get type { return 'input_audio_buffer.speech_started'; } 
+@override String get type => 'input_audio_buffer.speech_started';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventInputAudioBufferSpeechStarted.toJson(), 'type': type}; } 
 RealtimeServerEventInputAudioBufferSpeechStarted$Variant copyWith({String? eventId, int? audioStartMs, String? itemId, }) { return RealtimeServerEventInputAudioBufferSpeechStarted$Variant(realtimeServerEventInputAudioBufferSpeechStarted.copyWith(
   eventId: eventId,
@@ -439,7 +453,8 @@ factory RealtimeServerEventInputAudioBufferSpeechStopped$Variant.fromJson(Map<St
 
 final RealtimeServerEventInputAudioBufferSpeechStopped realtimeServerEventInputAudioBufferSpeechStopped;
 
-@override String get type { return 'input_audio_buffer.speech_stopped'; } 
+@override String get type => 'input_audio_buffer.speech_stopped';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventInputAudioBufferSpeechStopped.toJson(), 'type': type}; } 
 RealtimeServerEventInputAudioBufferSpeechStopped$Variant copyWith({String? eventId, int? audioEndMs, String? itemId, }) { return RealtimeServerEventInputAudioBufferSpeechStopped$Variant(realtimeServerEventInputAudioBufferSpeechStopped.copyWith(
   eventId: eventId,
@@ -457,7 +472,8 @@ factory RealtimeServerEventRateLimitsUpdated$Variant.fromJson(Map<String, dynami
 
 final RealtimeServerEventRateLimitsUpdated realtimeServerEventRateLimitsUpdated;
 
-@override String get type { return 'rate_limits.updated'; } 
+@override String get type => 'rate_limits.updated';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventRateLimitsUpdated.toJson(), 'type': type}; } 
 RealtimeServerEventRateLimitsUpdated$Variant copyWith({String? eventId, List<RateLimits>? rateLimits, }) { return RealtimeServerEventRateLimitsUpdated$Variant(realtimeServerEventRateLimitsUpdated.copyWith(
   eventId: eventId,
@@ -474,7 +490,8 @@ factory RealtimeServerEventResponseOutputAudioDelta.fromJson(Map<String, dynamic
 
 final RealtimeServerEventResponseAudioDelta realtimeServerEventResponseAudioDelta;
 
-@override String get type { return 'response.output_audio.delta'; } 
+@override String get type => 'response.output_audio.delta';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseAudioDelta.toJson(), 'type': type}; } 
 RealtimeServerEventResponseOutputAudioDelta copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) { return RealtimeServerEventResponseOutputAudioDelta(realtimeServerEventResponseAudioDelta.copyWith(
   eventId: eventId,
@@ -495,7 +512,8 @@ factory RealtimeServerEventResponseOutputAudioDone.fromJson(Map<String, dynamic>
 
 final RealtimeServerEventResponseAudioDone realtimeServerEventResponseAudioDone;
 
-@override String get type { return 'response.output_audio.done'; } 
+@override String get type => 'response.output_audio.done';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseAudioDone.toJson(), 'type': type}; } 
 RealtimeServerEventResponseOutputAudioDone copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, int? contentIndex, }) { return RealtimeServerEventResponseOutputAudioDone(realtimeServerEventResponseAudioDone.copyWith(
   eventId: eventId,
@@ -515,7 +533,8 @@ factory RealtimeServerEventResponseOutputAudioTranscriptDelta.fromJson(Map<Strin
 
 final RealtimeServerEventResponseAudioTranscriptDelta realtimeServerEventResponseAudioTranscriptDelta;
 
-@override String get type { return 'response.output_audio_transcript.delta'; } 
+@override String get type => 'response.output_audio_transcript.delta';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseAudioTranscriptDelta.toJson(), 'type': type}; } 
 RealtimeServerEventResponseOutputAudioTranscriptDelta copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) { return RealtimeServerEventResponseOutputAudioTranscriptDelta(realtimeServerEventResponseAudioTranscriptDelta.copyWith(
   eventId: eventId,
@@ -536,7 +555,8 @@ factory RealtimeServerEventResponseOutputAudioTranscriptDone.fromJson(Map<String
 
 final RealtimeServerEventResponseAudioTranscriptDone realtimeServerEventResponseAudioTranscriptDone;
 
-@override String get type { return 'response.output_audio_transcript.done'; } 
+@override String get type => 'response.output_audio_transcript.done';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseAudioTranscriptDone.toJson(), 'type': type}; } 
 RealtimeServerEventResponseOutputAudioTranscriptDone copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? transcript, }) { return RealtimeServerEventResponseOutputAudioTranscriptDone(realtimeServerEventResponseAudioTranscriptDone.copyWith(
   eventId: eventId,
@@ -557,7 +577,8 @@ factory RealtimeServerEventResponseContentPartAdded$Variant.fromJson(Map<String,
 
 final RealtimeServerEventResponseContentPartAdded realtimeServerEventResponseContentPartAdded;
 
-@override String get type { return 'response.content_part.added'; } 
+@override String get type => 'response.content_part.added';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseContentPartAdded.toJson(), 'type': type}; } 
 RealtimeServerEventResponseContentPartAdded$Variant copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, int? contentIndex, RealtimeBetaServerEventResponseContentPartAddedPart? $part, }) { return RealtimeServerEventResponseContentPartAdded$Variant(realtimeServerEventResponseContentPartAdded.copyWith(
   eventId: eventId,
@@ -578,7 +599,8 @@ factory RealtimeServerEventResponseContentPartDone$Variant.fromJson(Map<String, 
 
 final RealtimeServerEventResponseContentPartDone realtimeServerEventResponseContentPartDone;
 
-@override String get type { return 'response.content_part.done'; } 
+@override String get type => 'response.content_part.done';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseContentPartDone.toJson(), 'type': type}; } 
 RealtimeServerEventResponseContentPartDone$Variant copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, int? contentIndex, RealtimeBetaServerEventResponseContentPartAddedPart? $part, }) { return RealtimeServerEventResponseContentPartDone$Variant(realtimeServerEventResponseContentPartDone.copyWith(
   eventId: eventId,
@@ -599,7 +621,8 @@ factory RealtimeServerEventResponseCreated$Variant.fromJson(Map<String, dynamic>
 
 final RealtimeServerEventResponseCreated realtimeServerEventResponseCreated;
 
-@override String get type { return 'response.created'; } 
+@override String get type => 'response.created';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseCreated.toJson(), 'type': type}; } 
 RealtimeServerEventResponseCreated$Variant copyWith({String? eventId, RealtimeResponse? response, }) { return RealtimeServerEventResponseCreated$Variant(realtimeServerEventResponseCreated.copyWith(
   eventId: eventId,
@@ -616,7 +639,8 @@ factory RealtimeServerEventResponseDone$Variant.fromJson(Map<String, dynamic> js
 
 final RealtimeServerEventResponseDone realtimeServerEventResponseDone;
 
-@override String get type { return 'response.done'; } 
+@override String get type => 'response.done';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseDone.toJson(), 'type': type}; } 
 RealtimeServerEventResponseDone$Variant copyWith({String? eventId, RealtimeResponse? response, }) { return RealtimeServerEventResponseDone$Variant(realtimeServerEventResponseDone.copyWith(
   eventId: eventId,
@@ -633,7 +657,8 @@ factory RealtimeServerEventResponseFunctionCallArgumentsDelta$Variant.fromJson(M
 
 final RealtimeServerEventResponseFunctionCallArgumentsDelta realtimeServerEventResponseFunctionCallArgumentsDelta;
 
-@override String get type { return 'response.function_call_arguments.delta'; } 
+@override String get type => 'response.function_call_arguments.delta';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseFunctionCallArgumentsDelta.toJson(), 'type': type}; } 
 RealtimeServerEventResponseFunctionCallArgumentsDelta$Variant copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, String? callId, String? delta, }) { return RealtimeServerEventResponseFunctionCallArgumentsDelta$Variant(realtimeServerEventResponseFunctionCallArgumentsDelta.copyWith(
   eventId: eventId,
@@ -654,7 +679,8 @@ factory RealtimeServerEventResponseFunctionCallArgumentsDone$Variant.fromJson(Ma
 
 final RealtimeServerEventResponseFunctionCallArgumentsDone realtimeServerEventResponseFunctionCallArgumentsDone;
 
-@override String get type { return 'response.function_call_arguments.done'; } 
+@override String get type => 'response.function_call_arguments.done';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseFunctionCallArgumentsDone.toJson(), 'type': type}; } 
 RealtimeServerEventResponseFunctionCallArgumentsDone$Variant copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, String? callId, String? name, String? arguments, }) { return RealtimeServerEventResponseFunctionCallArgumentsDone$Variant(realtimeServerEventResponseFunctionCallArgumentsDone.copyWith(
   eventId: eventId,
@@ -676,7 +702,8 @@ factory RealtimeServerEventResponseOutputItemAdded$Variant.fromJson(Map<String, 
 
 final RealtimeServerEventResponseOutputItemAdded realtimeServerEventResponseOutputItemAdded;
 
-@override String get type { return 'response.output_item.added'; } 
+@override String get type => 'response.output_item.added';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseOutputItemAdded.toJson(), 'type': type}; } 
 RealtimeServerEventResponseOutputItemAdded$Variant copyWith({String? eventId, String? responseId, int? outputIndex, RealtimeConversationItem? item, }) { return RealtimeServerEventResponseOutputItemAdded$Variant(realtimeServerEventResponseOutputItemAdded.copyWith(
   eventId: eventId,
@@ -695,7 +722,8 @@ factory RealtimeServerEventResponseOutputItemDone$Variant.fromJson(Map<String, d
 
 final RealtimeServerEventResponseOutputItemDone realtimeServerEventResponseOutputItemDone;
 
-@override String get type { return 'response.output_item.done'; } 
+@override String get type => 'response.output_item.done';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseOutputItemDone.toJson(), 'type': type}; } 
 RealtimeServerEventResponseOutputItemDone$Variant copyWith({String? eventId, String? responseId, int? outputIndex, RealtimeConversationItem? item, }) { return RealtimeServerEventResponseOutputItemDone$Variant(realtimeServerEventResponseOutputItemDone.copyWith(
   eventId: eventId,
@@ -714,7 +742,8 @@ factory RealtimeServerEventResponseOutputTextDelta.fromJson(Map<String, dynamic>
 
 final RealtimeServerEventResponseTextDelta realtimeServerEventResponseTextDelta;
 
-@override String get type { return 'response.output_text.delta'; } 
+@override String get type => 'response.output_text.delta';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseTextDelta.toJson(), 'type': type}; } 
 RealtimeServerEventResponseOutputTextDelta copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? delta, }) { return RealtimeServerEventResponseOutputTextDelta(realtimeServerEventResponseTextDelta.copyWith(
   eventId: eventId,
@@ -735,7 +764,8 @@ factory RealtimeServerEventResponseOutputTextDone.fromJson(Map<String, dynamic> 
 
 final RealtimeServerEventResponseTextDone realtimeServerEventResponseTextDone;
 
-@override String get type { return 'response.output_text.done'; } 
+@override String get type => 'response.output_text.done';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseTextDone.toJson(), 'type': type}; } 
 RealtimeServerEventResponseOutputTextDone copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, int? contentIndex, String? text, }) { return RealtimeServerEventResponseOutputTextDone(realtimeServerEventResponseTextDone.copyWith(
   eventId: eventId,
@@ -756,7 +786,8 @@ factory RealtimeServerEventSessionCreated$Variant.fromJson(Map<String, dynamic> 
 
 final RealtimeServerEventSessionCreated realtimeServerEventSessionCreated;
 
-@override String get type { return 'session.created'; } 
+@override String get type => 'session.created';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventSessionCreated.toJson(), 'type': type}; } 
 RealtimeServerEventSessionCreated$Variant copyWith({String? eventId, RealtimeClientEventSessionUpdateSession? session, }) { return RealtimeServerEventSessionCreated$Variant(realtimeServerEventSessionCreated.copyWith(
   eventId: eventId,
@@ -773,7 +804,8 @@ factory RealtimeServerEventSessionUpdated$Variant.fromJson(Map<String, dynamic> 
 
 final RealtimeServerEventSessionUpdated realtimeServerEventSessionUpdated;
 
-@override String get type { return 'session.updated'; } 
+@override String get type => 'session.updated';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventSessionUpdated.toJson(), 'type': type}; } 
 RealtimeServerEventSessionUpdated$Variant copyWith({String? eventId, RealtimeClientEventSessionUpdateSession? session, }) { return RealtimeServerEventSessionUpdated$Variant(realtimeServerEventSessionUpdated.copyWith(
   eventId: eventId,
@@ -790,7 +822,8 @@ factory RealtimeServerEventOutputAudioBufferStarted$Variant.fromJson(Map<String,
 
 final RealtimeServerEventOutputAudioBufferStarted realtimeServerEventOutputAudioBufferStarted;
 
-@override String get type { return 'output_audio_buffer.started'; } 
+@override String get type => 'output_audio_buffer.started';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventOutputAudioBufferStarted.toJson(), 'type': type}; } 
 RealtimeServerEventOutputAudioBufferStarted$Variant copyWith({String? eventId, String? responseId, }) { return RealtimeServerEventOutputAudioBufferStarted$Variant(realtimeServerEventOutputAudioBufferStarted.copyWith(
   eventId: eventId,
@@ -807,7 +840,8 @@ factory RealtimeServerEventOutputAudioBufferStopped$Variant.fromJson(Map<String,
 
 final RealtimeServerEventOutputAudioBufferStopped realtimeServerEventOutputAudioBufferStopped;
 
-@override String get type { return 'output_audio_buffer.stopped'; } 
+@override String get type => 'output_audio_buffer.stopped';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventOutputAudioBufferStopped.toJson(), 'type': type}; } 
 RealtimeServerEventOutputAudioBufferStopped$Variant copyWith({String? eventId, String? responseId, }) { return RealtimeServerEventOutputAudioBufferStopped$Variant(realtimeServerEventOutputAudioBufferStopped.copyWith(
   eventId: eventId,
@@ -824,7 +858,8 @@ factory RealtimeServerEventOutputAudioBufferCleared$Variant.fromJson(Map<String,
 
 final RealtimeServerEventOutputAudioBufferCleared realtimeServerEventOutputAudioBufferCleared;
 
-@override String get type { return 'output_audio_buffer.cleared'; } 
+@override String get type => 'output_audio_buffer.cleared';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventOutputAudioBufferCleared.toJson(), 'type': type}; } 
 RealtimeServerEventOutputAudioBufferCleared$Variant copyWith({String? eventId, String? responseId, }) { return RealtimeServerEventOutputAudioBufferCleared$Variant(realtimeServerEventOutputAudioBufferCleared.copyWith(
   eventId: eventId,
@@ -841,7 +876,8 @@ factory RealtimeServerEventConversationItemAdded$Variant.fromJson(Map<String, dy
 
 final RealtimeServerEventConversationItemAdded realtimeServerEventConversationItemAdded;
 
-@override String get type { return 'conversation.item.added'; } 
+@override String get type => 'conversation.item.added';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemAdded.toJson(), 'type': type}; } 
 RealtimeServerEventConversationItemAdded$Variant copyWith({String? eventId, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemAdded$Variant(realtimeServerEventConversationItemAdded.copyWith(
   eventId: eventId,
@@ -859,7 +895,8 @@ factory RealtimeServerEventConversationItemDone$Variant.fromJson(Map<String, dyn
 
 final RealtimeServerEventConversationItemDone realtimeServerEventConversationItemDone;
 
-@override String get type { return 'conversation.item.done'; } 
+@override String get type => 'conversation.item.done';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemDone.toJson(), 'type': type}; } 
 RealtimeServerEventConversationItemDone$Variant copyWith({String? eventId, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemDone$Variant(realtimeServerEventConversationItemDone.copyWith(
   eventId: eventId,
@@ -877,7 +914,8 @@ factory RealtimeServerEventInputAudioBufferTimeoutTriggered$Variant.fromJson(Map
 
 final RealtimeServerEventInputAudioBufferTimeoutTriggered realtimeServerEventInputAudioBufferTimeoutTriggered;
 
-@override String get type { return 'input_audio_buffer.timeout_triggered'; } 
+@override String get type => 'input_audio_buffer.timeout_triggered';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventInputAudioBufferTimeoutTriggered.toJson(), 'type': type}; } 
 RealtimeServerEventInputAudioBufferTimeoutTriggered$Variant copyWith({String? eventId, int? audioStartMs, int? audioEndMs, String? itemId, }) { return RealtimeServerEventInputAudioBufferTimeoutTriggered$Variant(realtimeServerEventInputAudioBufferTimeoutTriggered.copyWith(
   eventId: eventId,
@@ -896,7 +934,8 @@ factory RealtimeServerEventConversationItemInputAudioTranscriptionSegment$Varian
 
 final RealtimeServerEventConversationItemInputAudioTranscriptionSegment realtimeServerEventConversationItemInputAudioTranscriptionSegment;
 
-@override String get type { return 'conversation.item.input_audio_transcription.segment'; } 
+@override String get type => 'conversation.item.input_audio_transcription.segment';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemInputAudioTranscriptionSegment.toJson(), 'type': type}; } 
 RealtimeServerEventConversationItemInputAudioTranscriptionSegment$Variant copyWith({String? eventId, String? itemId, int? contentIndex, String? text, String? id, String? speaker, double? start, double? end, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionSegment$Variant(realtimeServerEventConversationItemInputAudioTranscriptionSegment.copyWith(
   eventId: eventId,
@@ -919,7 +958,8 @@ factory RealtimeServerEventMcpListToolsInProgress$Variant.fromJson(Map<String, d
 
 final RealtimeServerEventMcpListToolsInProgress realtimeServerEventMcpListToolsInProgress;
 
-@override String get type { return 'mcp_list_tools.in_progress'; } 
+@override String get type => 'mcp_list_tools.in_progress';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventMcpListToolsInProgress.toJson(), 'type': type}; } 
 RealtimeServerEventMcpListToolsInProgress$Variant copyWith({String? eventId, String? itemId, }) { return RealtimeServerEventMcpListToolsInProgress$Variant(realtimeServerEventMcpListToolsInProgress.copyWith(
   eventId: eventId,
@@ -936,7 +976,8 @@ factory RealtimeServerEventMcpListToolsCompleted$Variant.fromJson(Map<String, dy
 
 final RealtimeServerEventMcpListToolsCompleted realtimeServerEventMcpListToolsCompleted;
 
-@override String get type { return 'mcp_list_tools.completed'; } 
+@override String get type => 'mcp_list_tools.completed';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventMcpListToolsCompleted.toJson(), 'type': type}; } 
 RealtimeServerEventMcpListToolsCompleted$Variant copyWith({String? eventId, String? itemId, }) { return RealtimeServerEventMcpListToolsCompleted$Variant(realtimeServerEventMcpListToolsCompleted.copyWith(
   eventId: eventId,
@@ -953,7 +994,8 @@ factory RealtimeServerEventMcpListToolsFailed$Variant.fromJson(Map<String, dynam
 
 final RealtimeServerEventMcpListToolsFailed realtimeServerEventMcpListToolsFailed;
 
-@override String get type { return 'mcp_list_tools.failed'; } 
+@override String get type => 'mcp_list_tools.failed';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventMcpListToolsFailed.toJson(), 'type': type}; } 
 RealtimeServerEventMcpListToolsFailed$Variant copyWith({String? eventId, String? itemId, }) { return RealtimeServerEventMcpListToolsFailed$Variant(realtimeServerEventMcpListToolsFailed.copyWith(
   eventId: eventId,
@@ -970,7 +1012,8 @@ factory RealtimeServerEventResponseMcpCallArgumentsDelta$Variant.fromJson(Map<St
 
 final RealtimeServerEventResponseMcpCallArgumentsDelta realtimeServerEventResponseMcpCallArgumentsDelta;
 
-@override String get type { return 'response.mcp_call_arguments.delta'; } 
+@override String get type => 'response.mcp_call_arguments.delta';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseMcpCallArgumentsDelta.toJson(), 'type': type}; } 
 RealtimeServerEventResponseMcpCallArgumentsDelta$Variant copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, String? delta, String? Function()? obfuscation, }) { return RealtimeServerEventResponseMcpCallArgumentsDelta$Variant(realtimeServerEventResponseMcpCallArgumentsDelta.copyWith(
   eventId: eventId,
@@ -991,7 +1034,8 @@ factory RealtimeServerEventResponseMcpCallArgumentsDone$Variant.fromJson(Map<Str
 
 final RealtimeServerEventResponseMcpCallArgumentsDone realtimeServerEventResponseMcpCallArgumentsDone;
 
-@override String get type { return 'response.mcp_call_arguments.done'; } 
+@override String get type => 'response.mcp_call_arguments.done';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseMcpCallArgumentsDone.toJson(), 'type': type}; } 
 RealtimeServerEventResponseMcpCallArgumentsDone$Variant copyWith({String? eventId, String? responseId, String? itemId, int? outputIndex, String? arguments, }) { return RealtimeServerEventResponseMcpCallArgumentsDone$Variant(realtimeServerEventResponseMcpCallArgumentsDone.copyWith(
   eventId: eventId,
@@ -1011,7 +1055,8 @@ factory RealtimeServerEventResponseMcpCallInProgress$Variant.fromJson(Map<String
 
 final RealtimeServerEventResponseMcpCallInProgress realtimeServerEventResponseMcpCallInProgress;
 
-@override String get type { return 'response.mcp_call.in_progress'; } 
+@override String get type => 'response.mcp_call.in_progress';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseMcpCallInProgress.toJson(), 'type': type}; } 
 RealtimeServerEventResponseMcpCallInProgress$Variant copyWith({String? eventId, int? outputIndex, String? itemId, }) { return RealtimeServerEventResponseMcpCallInProgress$Variant(realtimeServerEventResponseMcpCallInProgress.copyWith(
   eventId: eventId,
@@ -1029,7 +1074,8 @@ factory RealtimeServerEventResponseMcpCallCompleted$Variant.fromJson(Map<String,
 
 final RealtimeServerEventResponseMcpCallCompleted realtimeServerEventResponseMcpCallCompleted;
 
-@override String get type { return 'response.mcp_call.completed'; } 
+@override String get type => 'response.mcp_call.completed';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseMcpCallCompleted.toJson(), 'type': type}; } 
 RealtimeServerEventResponseMcpCallCompleted$Variant copyWith({String? eventId, int? outputIndex, String? itemId, }) { return RealtimeServerEventResponseMcpCallCompleted$Variant(realtimeServerEventResponseMcpCallCompleted.copyWith(
   eventId: eventId,
@@ -1047,7 +1093,8 @@ factory RealtimeServerEventResponseMcpCallFailed$Variant.fromJson(Map<String, dy
 
 final RealtimeServerEventResponseMcpCallFailed realtimeServerEventResponseMcpCallFailed;
 
-@override String get type { return 'response.mcp_call.failed'; } 
+@override String get type => 'response.mcp_call.failed';
+
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventResponseMcpCallFailed.toJson(), 'type': type}; } 
 RealtimeServerEventResponseMcpCallFailed$Variant copyWith({String? eventId, int? outputIndex, String? itemId, }) { return RealtimeServerEventResponseMcpCallFailed$Variant(realtimeServerEventResponseMcpCallFailed.copyWith(
   eventId: eventId,
@@ -1065,7 +1112,8 @@ RealtimeServerEventResponseMcpCallFailed$Variant copyWith({String? eventId, int?
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeServerEvent$Unknown && json == other.json; } 

@@ -17,7 +17,8 @@ factory FunctionShellCallOutputOutcomeParam.exit({required int exitCode}) { retu
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FunctionShellCallOutputOutcomeParam$Unknown; } 
+bool get isUnknown => this is FunctionShellCallOutputOutcomeParam$Unknown;
+
  }
 @immutable final class FunctionShellCallOutputOutcomeParamTimeout extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParamTimeout(this.functionShellCallOutputTimeoutOutcomeParam);
 
@@ -25,7 +26,8 @@ factory FunctionShellCallOutputOutcomeParamTimeout.fromJson(Map<String, dynamic>
 
 final FunctionShellCallOutputTimeoutOutcomeParam functionShellCallOutputTimeoutOutcomeParam;
 
-@override String get type { return 'timeout'; } 
+@override String get type => 'timeout';
+
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutputTimeoutOutcomeParam.toJson(), 'type': type}; } 
 FunctionShellCallOutputOutcomeParamTimeout copyWith({FunctionShellCallOutputTimeoutOutcomeParam? functionShellCallOutputTimeoutOutcomeParam}) { return FunctionShellCallOutputOutcomeParamTimeout(functionShellCallOutputTimeoutOutcomeParam ?? this.functionShellCallOutputTimeoutOutcomeParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -39,7 +41,8 @@ factory FunctionShellCallOutputOutcomeParamExit.fromJson(Map<String, dynamic> js
 
 final FunctionShellCallOutputExitOutcomeParam functionShellCallOutputExitOutcomeParam;
 
-@override String get type { return 'exit'; } 
+@override String get type => 'exit';
+
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutputExitOutcomeParam.toJson(), 'type': type}; } 
 FunctionShellCallOutputOutcomeParamExit copyWith({int? exitCode}) { return FunctionShellCallOutputOutcomeParamExit(functionShellCallOutputExitOutcomeParam.copyWith(
   exitCode: exitCode,
@@ -55,7 +58,8 @@ FunctionShellCallOutputOutcomeParamExit copyWith({int? exitCode}) { return Funct
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallOutputOutcomeParam$Unknown && json == other.json; } 

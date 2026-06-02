@@ -23,7 +23,8 @@ factory FunctionShellToolParamEnvironment.containerReference({required String co
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FunctionShellToolParamEnvironment$Unknown; } 
+bool get isUnknown => this is FunctionShellToolParamEnvironment$Unknown;
+
  }
 @immutable final class FunctionShellToolParamEnvironmentContainerAuto extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironmentContainerAuto(this.containerAutoParam);
 
@@ -31,7 +32,8 @@ factory FunctionShellToolParamEnvironmentContainerAuto.fromJson(Map<String, dyna
 
 final ContainerAutoParam containerAutoParam;
 
-@override String get type { return 'container_auto'; } 
+@override String get type => 'container_auto';
+
 @override Map<String, dynamic> toJson() { return {...containerAutoParam.toJson(), 'type': type}; } 
 FunctionShellToolParamEnvironmentContainerAuto copyWith({List<String>? Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, List<Skills>? Function()? skills, }) { return FunctionShellToolParamEnvironmentContainerAuto(containerAutoParam.copyWith(
   fileIds: fileIds,
@@ -50,7 +52,8 @@ factory FunctionShellToolParamEnvironmentLocal.fromJson(Map<String, dynamic> jso
 
 final LocalEnvironmentParam localEnvironmentParam;
 
-@override String get type { return 'local'; } 
+@override String get type => 'local';
+
 @override Map<String, dynamic> toJson() { return {...localEnvironmentParam.toJson(), 'type': type}; } 
 FunctionShellToolParamEnvironmentLocal copyWith({List<LocalSkillParam>? Function()? skills}) { return FunctionShellToolParamEnvironmentLocal(localEnvironmentParam.copyWith(
   skills: skills,
@@ -66,7 +69,8 @@ factory FunctionShellToolParamEnvironmentContainerReference.fromJson(Map<String,
 
 final ContainerReferenceParam containerReferenceParam;
 
-@override String get type { return 'container_reference'; } 
+@override String get type => 'container_reference';
+
 @override Map<String, dynamic> toJson() { return {...containerReferenceParam.toJson(), 'type': type}; } 
 FunctionShellToolParamEnvironmentContainerReference copyWith({String? containerId}) { return FunctionShellToolParamEnvironmentContainerReference(containerReferenceParam.copyWith(
   containerId: containerId,
@@ -82,7 +86,8 @@ FunctionShellToolParamEnvironmentContainerReference copyWith({String? containerI
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellToolParamEnvironment$Unknown && json == other.json; } 

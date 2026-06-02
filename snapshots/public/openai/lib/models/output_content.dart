@@ -23,7 +23,8 @@ factory OutputContent.reasoningText({required String text}) { return OutputConte
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OutputContent$Unknown; } 
+bool get isUnknown => this is OutputContent$Unknown;
+
  }
 @immutable final class OutputContentOutputText extends OutputContent {const OutputContentOutputText(this.outputTextContent);
 
@@ -31,7 +32,8 @@ factory OutputContentOutputText.fromJson(Map<String, dynamic> json) { return Out
 
 final OutputTextContent outputTextContent;
 
-@override String get type { return 'output_text'; } 
+@override String get type => 'output_text';
+
 @override Map<String, dynamic> toJson() { return {...outputTextContent.toJson(), 'type': type}; } 
 OutputContentOutputText copyWith({String? text, List<Annotation>? annotations, List<LogProb>? logprobs, }) { return OutputContentOutputText(outputTextContent.copyWith(
   text: text,
@@ -49,7 +51,8 @@ factory OutputContentRefusal.fromJson(Map<String, dynamic> json) { return Output
 
 final RefusalContent refusalContent;
 
-@override String get type { return 'refusal'; } 
+@override String get type => 'refusal';
+
 @override Map<String, dynamic> toJson() { return {...refusalContent.toJson(), 'type': type}; } 
 OutputContentRefusal copyWith({String? refusal}) { return OutputContentRefusal(refusalContent.copyWith(
   refusal: refusal,
@@ -65,7 +68,8 @@ factory OutputContentReasoningText.fromJson(Map<String, dynamic> json) { return 
 
 final ReasoningTextContent reasoningTextContent;
 
-@override String get type { return 'reasoning_text'; } 
+@override String get type => 'reasoning_text';
+
 @override Map<String, dynamic> toJson() { return {...reasoningTextContent.toJson(), 'type': type}; } 
 OutputContentReasoningText copyWith({String? text}) { return OutputContentReasoningText(reasoningTextContent.copyWith(
   text: text,
@@ -81,7 +85,8 @@ OutputContentReasoningText copyWith({String? text}) { return OutputContentReason
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputContent$Unknown && json == other.json; } 

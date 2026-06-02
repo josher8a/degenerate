@@ -16,7 +16,8 @@ factory HyperdriveHyperdriveCaching.$false({int? maxAge, int? staleWhileRevalida
 String get disabled;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is HyperdriveHyperdriveCaching$Unknown; } 
+bool get isUnknown => this is HyperdriveHyperdriveCaching$Unknown;
+
  }
 @immutable final class HyperdriveHyperdriveCachingFalse extends HyperdriveHyperdriveCaching {const HyperdriveHyperdriveCachingFalse(this.hyperdriveHyperdriveCachingEnabled);
 
@@ -24,7 +25,8 @@ factory HyperdriveHyperdriveCachingFalse.fromJson(Map<String, dynamic> json) { r
 
 final HyperdriveHyperdriveCachingEnabled hyperdriveHyperdriveCachingEnabled;
 
-@override String get disabled { return 'false'; } 
+@override String get disabled => 'false';
+
 @override Map<String, dynamic> toJson() { return {...hyperdriveHyperdriveCachingEnabled.toJson(), 'disabled': disabled}; } 
 HyperdriveHyperdriveCachingFalse copyWith({int? Function()? maxAge, int? Function()? staleWhileRevalidate, }) { return HyperdriveHyperdriveCachingFalse(hyperdriveHyperdriveCachingEnabled.copyWith(
   maxAge: maxAge,
@@ -41,7 +43,8 @@ factory HyperdriveHyperdriveCachingTrue.fromJson(Map<String, dynamic> json) { re
 
 final HyperdriveHyperdriveCachingCommon hyperdriveHyperdriveCachingCommon;
 
-@override String get disabled { return 'true'; } 
+@override String get disabled => 'true';
+
 @override Map<String, dynamic> toJson() { return {...hyperdriveHyperdriveCachingCommon.toJson(), 'disabled': disabled}; } 
 HyperdriveHyperdriveCachingTrue copyWith({HyperdriveHyperdriveCachingCommon? hyperdriveHyperdriveCachingCommon}) { return HyperdriveHyperdriveCachingTrue(hyperdriveHyperdriveCachingCommon ?? this.hyperdriveHyperdriveCachingCommon); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -55,7 +58,8 @@ HyperdriveHyperdriveCachingTrue copyWith({HyperdriveHyperdriveCachingCommon? hyp
 
 final Map<String, dynamic> json;
 
-@override String get disabled { return json['disabled'] as String? ?? ''; } 
+@override String get disabled => json['disabled'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is HyperdriveHyperdriveCaching$Unknown && json == other.json; } 

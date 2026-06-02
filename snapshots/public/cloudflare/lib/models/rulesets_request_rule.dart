@@ -91,7 +91,8 @@ factory RulesetsRequestRule.skip({Map<String,dynamic> actionParameters = const {
 String get action;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RulesetsRequestRule$Unknown; } 
+bool get isUnknown => this is RulesetsRequestRule$Unknown;
+
 /// Shared by all variants of this union.
 Map<String,dynamic>? get actionParameters;
 /// Shared by all variants of this union.
@@ -123,7 +124,8 @@ factory RulesetsRequestRuleBlock.fromJson(Map<String, dynamic> json) { return Ru
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'block'; } 
+@override String get action => 'block';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleBlock copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleBlock(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -143,18 +145,30 @@ RulesetsRequestRuleBlock copyWith({Map<String, dynamic> Function()? actionParame
     other is RulesetsRequestRuleBlock && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.block($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleChallenge extends RulesetsRequestRule {const RulesetsRequestRuleChallenge(this.rulesetsRule);
 
@@ -162,7 +176,8 @@ factory RulesetsRequestRuleChallenge.fromJson(Map<String, dynamic> json) { retur
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'challenge'; } 
+@override String get action => 'challenge';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleChallenge(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -182,18 +197,30 @@ RulesetsRequestRuleChallenge copyWith({Map<String, dynamic> Function()? actionPa
     other is RulesetsRequestRuleChallenge && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.challenge($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleCompressResponse extends RulesetsRequestRule {const RulesetsRequestRuleCompressResponse(this.rulesetsRule);
 
@@ -201,7 +228,8 @@ factory RulesetsRequestRuleCompressResponse.fromJson(Map<String, dynamic> json) 
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'compress_response'; } 
+@override String get action => 'compress_response';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleCompressResponse copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleCompressResponse(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -221,18 +249,30 @@ RulesetsRequestRuleCompressResponse copyWith({Map<String, dynamic> Function()? a
     other is RulesetsRequestRuleCompressResponse && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.compressResponse($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleDdosDynamic extends RulesetsRequestRule {const RulesetsRequestRuleDdosDynamic(this.rulesetsRule);
 
@@ -240,7 +280,8 @@ factory RulesetsRequestRuleDdosDynamic.fromJson(Map<String, dynamic> json) { ret
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'ddos_dynamic'; } 
+@override String get action => 'ddos_dynamic';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleDdosDynamic copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleDdosDynamic(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -260,18 +301,30 @@ RulesetsRequestRuleDdosDynamic copyWith({Map<String, dynamic> Function()? action
     other is RulesetsRequestRuleDdosDynamic && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.ddosDynamic($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleExecute extends RulesetsRequestRule {const RulesetsRequestRuleExecute(this.rulesetsRule);
 
@@ -279,7 +332,8 @@ factory RulesetsRequestRuleExecute.fromJson(Map<String, dynamic> json) { return 
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'execute'; } 
+@override String get action => 'execute';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleExecute copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleExecute(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -299,18 +353,30 @@ RulesetsRequestRuleExecute copyWith({Map<String, dynamic> Function()? actionPara
     other is RulesetsRequestRuleExecute && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.execute($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleForceConnectionClose extends RulesetsRequestRule {const RulesetsRequestRuleForceConnectionClose(this.rulesetsRule);
 
@@ -318,7 +384,8 @@ factory RulesetsRequestRuleForceConnectionClose.fromJson(Map<String, dynamic> js
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'force_connection_close'; } 
+@override String get action => 'force_connection_close';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleForceConnectionClose copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleForceConnectionClose(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -338,18 +405,30 @@ RulesetsRequestRuleForceConnectionClose copyWith({Map<String, dynamic> Function(
     other is RulesetsRequestRuleForceConnectionClose && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.forceConnectionClose($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleJsChallenge extends RulesetsRequestRule {const RulesetsRequestRuleJsChallenge(this.rulesetsRule);
 
@@ -357,7 +436,8 @@ factory RulesetsRequestRuleJsChallenge.fromJson(Map<String, dynamic> json) { ret
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'js_challenge'; } 
+@override String get action => 'js_challenge';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleJsChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleJsChallenge(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -377,18 +457,30 @@ RulesetsRequestRuleJsChallenge copyWith({Map<String, dynamic> Function()? action
     other is RulesetsRequestRuleJsChallenge && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.jsChallenge($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleLog extends RulesetsRequestRule {const RulesetsRequestRuleLog(this.rulesetsRule);
 
@@ -396,7 +488,8 @@ factory RulesetsRequestRuleLog.fromJson(Map<String, dynamic> json) { return Rule
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'log'; } 
+@override String get action => 'log';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleLog copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleLog(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -416,18 +509,30 @@ RulesetsRequestRuleLog copyWith({Map<String, dynamic> Function()? actionParamete
     other is RulesetsRequestRuleLog && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.log($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleLogCustomField extends RulesetsRequestRule {const RulesetsRequestRuleLogCustomField(this.rulesetsRule);
 
@@ -435,7 +540,8 @@ factory RulesetsRequestRuleLogCustomField.fromJson(Map<String, dynamic> json) { 
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'log_custom_field'; } 
+@override String get action => 'log_custom_field';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleLogCustomField copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleLogCustomField(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -455,18 +561,30 @@ RulesetsRequestRuleLogCustomField copyWith({Map<String, dynamic> Function()? act
     other is RulesetsRequestRuleLogCustomField && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.logCustomField($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleManagedChallenge extends RulesetsRequestRule {const RulesetsRequestRuleManagedChallenge(this.rulesetsRule);
 
@@ -474,7 +592,8 @@ factory RulesetsRequestRuleManagedChallenge.fromJson(Map<String, dynamic> json) 
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'managed_challenge'; } 
+@override String get action => 'managed_challenge';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleManagedChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleManagedChallenge(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -494,18 +613,30 @@ RulesetsRequestRuleManagedChallenge copyWith({Map<String, dynamic> Function()? a
     other is RulesetsRequestRuleManagedChallenge && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.managedChallenge($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleRedirect extends RulesetsRequestRule {const RulesetsRequestRuleRedirect(this.rulesetsRule);
 
@@ -513,7 +644,8 @@ factory RulesetsRequestRuleRedirect.fromJson(Map<String, dynamic> json) { return
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'redirect'; } 
+@override String get action => 'redirect';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleRedirect copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleRedirect(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -533,18 +665,30 @@ RulesetsRequestRuleRedirect copyWith({Map<String, dynamic> Function()? actionPar
     other is RulesetsRequestRuleRedirect && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.redirect($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleRewrite extends RulesetsRequestRule {const RulesetsRequestRuleRewrite(this.rulesetsRule);
 
@@ -552,7 +696,8 @@ factory RulesetsRequestRuleRewrite.fromJson(Map<String, dynamic> json) { return 
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'rewrite'; } 
+@override String get action => 'rewrite';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleRewrite copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleRewrite(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -572,18 +717,30 @@ RulesetsRequestRuleRewrite copyWith({Map<String, dynamic> Function()? actionPara
     other is RulesetsRequestRuleRewrite && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.rewrite($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleRoute extends RulesetsRequestRule {const RulesetsRequestRuleRoute(this.rulesetsRule);
 
@@ -591,7 +748,8 @@ factory RulesetsRequestRuleRoute.fromJson(Map<String, dynamic> json) { return Ru
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'route'; } 
+@override String get action => 'route';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleRoute copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleRoute(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -611,18 +769,30 @@ RulesetsRequestRuleRoute copyWith({Map<String, dynamic> Function()? actionParame
     other is RulesetsRequestRuleRoute && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.route($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleScore extends RulesetsRequestRule {const RulesetsRequestRuleScore(this.rulesetsRule);
 
@@ -630,7 +800,8 @@ factory RulesetsRequestRuleScore.fromJson(Map<String, dynamic> json) { return Ru
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'score'; } 
+@override String get action => 'score';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleScore copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleScore(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -650,18 +821,30 @@ RulesetsRequestRuleScore copyWith({Map<String, dynamic> Function()? actionParame
     other is RulesetsRequestRuleScore && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.score($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleServeError extends RulesetsRequestRule {const RulesetsRequestRuleServeError(this.rulesetsRule);
 
@@ -669,7 +852,8 @@ factory RulesetsRequestRuleServeError.fromJson(Map<String, dynamic> json) { retu
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'serve_error'; } 
+@override String get action => 'serve_error';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleServeError copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleServeError(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -689,18 +873,30 @@ RulesetsRequestRuleServeError copyWith({Map<String, dynamic> Function()? actionP
     other is RulesetsRequestRuleServeError && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.serveError($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleSetCacheControl extends RulesetsRequestRule {const RulesetsRequestRuleSetCacheControl(this.rulesetsRule);
 
@@ -708,7 +904,8 @@ factory RulesetsRequestRuleSetCacheControl.fromJson(Map<String, dynamic> json) {
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'set_cache_control'; } 
+@override String get action => 'set_cache_control';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleSetCacheControl copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSetCacheControl(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -728,18 +925,30 @@ RulesetsRequestRuleSetCacheControl copyWith({Map<String, dynamic> Function()? ac
     other is RulesetsRequestRuleSetCacheControl && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.setCacheControl($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleSetCacheSettings extends RulesetsRequestRule {const RulesetsRequestRuleSetCacheSettings(this.rulesetsRule);
 
@@ -747,7 +956,8 @@ factory RulesetsRequestRuleSetCacheSettings.fromJson(Map<String, dynamic> json) 
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'set_cache_settings'; } 
+@override String get action => 'set_cache_settings';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleSetCacheSettings copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSetCacheSettings(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -767,18 +977,30 @@ RulesetsRequestRuleSetCacheSettings copyWith({Map<String, dynamic> Function()? a
     other is RulesetsRequestRuleSetCacheSettings && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.setCacheSettings($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleSetCacheTags extends RulesetsRequestRule {const RulesetsRequestRuleSetCacheTags(this.rulesetsRule);
 
@@ -786,7 +1008,8 @@ factory RulesetsRequestRuleSetCacheTags.fromJson(Map<String, dynamic> json) { re
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'set_cache_tags'; } 
+@override String get action => 'set_cache_tags';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleSetCacheTags copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSetCacheTags(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -806,18 +1029,30 @@ RulesetsRequestRuleSetCacheTags copyWith({Map<String, dynamic> Function()? actio
     other is RulesetsRequestRuleSetCacheTags && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.setCacheTags($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleSetConfig extends RulesetsRequestRule {const RulesetsRequestRuleSetConfig(this.rulesetsRule);
 
@@ -825,7 +1060,8 @@ factory RulesetsRequestRuleSetConfig.fromJson(Map<String, dynamic> json) { retur
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'set_config'; } 
+@override String get action => 'set_config';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleSetConfig copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSetConfig(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -845,18 +1081,30 @@ RulesetsRequestRuleSetConfig copyWith({Map<String, dynamic> Function()? actionPa
     other is RulesetsRequestRuleSetConfig && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.setConfig($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 @immutable final class RulesetsRequestRuleSkip extends RulesetsRequestRule {const RulesetsRequestRuleSkip(this.rulesetsRule);
 
@@ -864,7 +1112,8 @@ factory RulesetsRequestRuleSkip.fromJson(Map<String, dynamic> json) { return Rul
 
 final RulesetsRule rulesetsRule;
 
-@override String get action { return 'skip'; } 
+@override String get action => 'skip';
+
 @override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 RulesetsRequestRuleSkip copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSkip(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -884,18 +1133,30 @@ RulesetsRequestRuleSkip copyWith({Map<String, dynamic> Function()? actionParamet
     other is RulesetsRequestRuleSkip && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.skip($rulesetsRule)'; } 
-@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
-@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
-@override String? get description { return rulesetsRule.description; } 
-@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
-@override String? get expression { return rulesetsRule.expression; } 
-@override RulesetsRuleId? get id { return rulesetsRule.id; } 
-@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
-@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
-@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
-@override String? get ref { return rulesetsRule.ref; } 
-@override String get version { return rulesetsRule.version; } 
+@override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
+
+@override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
+
+@override String? get description => rulesetsRule.description;
+
+@override RulesetsRuleEnabled? get enabled => rulesetsRule.enabled;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => rulesetsRule.exposedCredentialCheck;
+
+@override String? get expression => rulesetsRule.expression;
+
+@override RulesetsRuleId? get id => rulesetsRule.id;
+
+@override DateTime get lastUpdated => rulesetsRule.lastUpdated;
+
+@override RulesetsRuleLogging? get logging => rulesetsRule.logging;
+
+@override RulesetsRuleRatelimit? get ratelimit => rulesetsRule.ratelimit;
+
+@override String? get ref => rulesetsRule.ref;
+
+@override String get version => rulesetsRule.version;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -903,22 +1164,35 @@ RulesetsRequestRuleSkip copyWith({Map<String, dynamic> Function()? actionParamet
 
 final Map<String, dynamic> json;
 
-@override String get action { return json['action'] as String? ?? ''; } 
+@override String get action => json['action'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRule$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.unknown($json)'; } 
-@override Map<String,dynamic>? get actionParameters { return json['action_parameters'] as Map<String, dynamic>?; } 
-@override List<RulesetsRuleCategory>? get categories { return (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList(); } 
-@override String? get description { return json['description'] as String?; } 
-@override RulesetsRuleEnabled? get enabled { return json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null; } 
-@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return json['exposed_credential_check'] != null ? RulesetsRuleExposedCredentialCheck.fromJson(json['exposed_credential_check'] as Map<String, dynamic>) : null; } 
-@override String? get expression { return json['expression'] as String?; } 
-@override RulesetsRuleId? get id { return json['id'] != null ? RulesetsRuleId.fromJson(json['id'] as String) : null; } 
-@override DateTime get lastUpdated { return DateTime.parse(json['last_updated'] as String); } 
-@override RulesetsRuleLogging? get logging { return json['logging'] != null ? RulesetsRuleLogging.fromJson(json['logging'] as Map<String, dynamic>) : null; } 
-@override RulesetsRuleRatelimit? get ratelimit { return json['ratelimit'] != null ? RulesetsRuleRatelimit.fromJson(json['ratelimit'] as Map<String, dynamic>) : null; } 
-@override String? get ref { return json['ref'] as String?; } 
-@override String get version { return json['version'] as String; } 
+@override Map<String,dynamic>? get actionParameters => json['action_parameters'] as Map<String, dynamic>?;
+
+@override List<RulesetsRuleCategory>? get categories => (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList();
+
+@override String? get description => json['description'] as String?;
+
+@override RulesetsRuleEnabled? get enabled => json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null;
+
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck => json['exposed_credential_check'] != null ? RulesetsRuleExposedCredentialCheck.fromJson(json['exposed_credential_check'] as Map<String, dynamic>) : null;
+
+@override String? get expression => json['expression'] as String?;
+
+@override RulesetsRuleId? get id => json['id'] != null ? RulesetsRuleId.fromJson(json['id'] as String) : null;
+
+@override DateTime get lastUpdated => DateTime.parse(json['last_updated'] as String);
+
+@override RulesetsRuleLogging? get logging => json['logging'] != null ? RulesetsRuleLogging.fromJson(json['logging'] as Map<String, dynamic>) : null;
+
+@override RulesetsRuleRatelimit? get ratelimit => json['ratelimit'] != null ? RulesetsRuleRatelimit.fromJson(json['ratelimit'] as Map<String, dynamic>) : null;
+
+@override String? get ref => json['ref'] as String?;
+
+@override String get version => json['version'] as String;
+
  }

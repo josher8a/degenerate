@@ -14,7 +14,8 @@ factory ResponsesServerEvent.fromJson(Map<String, dynamic> json) { return switch
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResponsesServerEvent$Unknown; } 
+bool get isUnknown => this is ResponsesServerEvent$Unknown;
+
  }
 @immutable final class ResponsesServerEventResponseStreamEvent extends ResponsesServerEvent {const ResponsesServerEventResponseStreamEvent(this.responseStreamEvent);
 
@@ -22,7 +23,8 @@ factory ResponsesServerEventResponseStreamEvent.fromJson(Map<String, dynamic> js
 
 final ResponseStreamEvent responseStreamEvent;
 
-@override String get type { return 'ResponseStreamEvent'; } 
+@override String get type => 'ResponseStreamEvent';
+
 @override Map<String, dynamic> toJson() { return {...responseStreamEvent.toJson(), 'type': type}; } 
 ResponsesServerEventResponseStreamEvent copyWith({ResponseStreamEvent? responseStreamEvent}) { return ResponsesServerEventResponseStreamEvent(responseStreamEvent ?? this.responseStreamEvent); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -36,7 +38,8 @@ ResponsesServerEventResponseStreamEvent copyWith({ResponseStreamEvent? responseS
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponsesServerEvent$Unknown && json == other.json; } 

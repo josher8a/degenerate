@@ -20,7 +20,8 @@ factory WorkersSecret.secretText({required WorkersBindingName name, required Str
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is WorkersSecret$Unknown; } 
+bool get isUnknown => this is WorkersSecret$Unknown;
+
 /// Shared by all variants of this union.
 WorkersBindingName get name;
  }
@@ -30,7 +31,8 @@ factory WorkersSecretSecretKey.fromJson(Map<String, dynamic> json) { return Work
 
 final WorkersBindingKindSecretKey workersBindingKindSecretKey;
 
-@override String get type { return 'secret_key'; } 
+@override String get type => 'secret_key';
+
 @override Map<String, dynamic> toJson() { return {...workersBindingKindSecretKey.toJson(), 'type': type}; } 
 WorkersSecretSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String? Function()? keyBase64, Map<String, dynamic>? Function()? keyJwk, WorkersBindingName? name, List<Usages>? usages, }) { return WorkersSecretSecretKey(workersBindingKindSecretKey.copyWith(
   algorithm: algorithm,
@@ -44,7 +46,8 @@ WorkersSecretSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingK
     other is WorkersSecretSecretKey && workersBindingKindSecretKey == other.workersBindingKindSecretKey; } 
 @override int get hashCode { return workersBindingKindSecretKey.hashCode; } 
 @override String toString() { return 'WorkersSecret.secretKey($workersBindingKindSecretKey)'; } 
-@override WorkersBindingName get name { return workersBindingKindSecretKey.name; } 
+@override WorkersBindingName get name => workersBindingKindSecretKey.name;
+
  }
 @immutable final class WorkersSecretSecretText extends WorkersSecret {const WorkersSecretSecretText(this.workersBindingKindSecretText);
 
@@ -52,7 +55,8 @@ factory WorkersSecretSecretText.fromJson(Map<String, dynamic> json) { return Wor
 
 final WorkersBindingKindSecretText workersBindingKindSecretText;
 
-@override String get type { return 'secret_text'; } 
+@override String get type => 'secret_text';
+
 @override Map<String, dynamic> toJson() { return {...workersBindingKindSecretText.toJson(), 'type': type}; } 
 WorkersSecretSecretText copyWith({WorkersBindingName? name, String? text, }) { return WorkersSecretSecretText(workersBindingKindSecretText.copyWith(
   name: name,
@@ -62,7 +66,8 @@ WorkersSecretSecretText copyWith({WorkersBindingName? name, String? text, }) { r
     other is WorkersSecretSecretText && workersBindingKindSecretText == other.workersBindingKindSecretText; } 
 @override int get hashCode { return workersBindingKindSecretText.hashCode; } 
 @override String toString() { return 'WorkersSecret.secretText($workersBindingKindSecretText)'; } 
-@override WorkersBindingName get name { return workersBindingKindSecretText.name; } 
+@override WorkersBindingName get name => workersBindingKindSecretText.name;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -70,11 +75,13 @@ WorkersSecretSecretText copyWith({WorkersBindingName? name, String? text, }) { r
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersSecret$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'WorkersSecret.unknown($json)'; } 
-@override WorkersBindingName get name { return WorkersBindingName.fromJson(json['name'] as String); } 
+@override WorkersBindingName get name => WorkersBindingName.fromJson(json['name'] as String);
+
  }

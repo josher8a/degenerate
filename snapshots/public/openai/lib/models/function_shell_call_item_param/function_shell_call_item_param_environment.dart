@@ -20,7 +20,8 @@ factory FunctionShellCallItemParamEnvironment.containerReference({required Strin
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FunctionShellCallItemParamEnvironment$Unknown; } 
+bool get isUnknown => this is FunctionShellCallItemParamEnvironment$Unknown;
+
  }
 @immutable final class FunctionShellCallItemParamEnvironmentLocal extends FunctionShellCallItemParamEnvironment {const FunctionShellCallItemParamEnvironmentLocal(this.localEnvironmentParam);
 
@@ -28,7 +29,8 @@ factory FunctionShellCallItemParamEnvironmentLocal.fromJson(Map<String, dynamic>
 
 final LocalEnvironmentParam localEnvironmentParam;
 
-@override String get type { return 'local'; } 
+@override String get type => 'local';
+
 @override Map<String, dynamic> toJson() { return {...localEnvironmentParam.toJson(), 'type': type}; } 
 FunctionShellCallItemParamEnvironmentLocal copyWith({List<LocalSkillParam>? Function()? skills}) { return FunctionShellCallItemParamEnvironmentLocal(localEnvironmentParam.copyWith(
   skills: skills,
@@ -44,7 +46,8 @@ factory FunctionShellCallItemParamEnvironmentContainerReference.fromJson(Map<Str
 
 final ContainerReferenceParam containerReferenceParam;
 
-@override String get type { return 'container_reference'; } 
+@override String get type => 'container_reference';
+
 @override Map<String, dynamic> toJson() { return {...containerReferenceParam.toJson(), 'type': type}; } 
 FunctionShellCallItemParamEnvironmentContainerReference copyWith({String? containerId}) { return FunctionShellCallItemParamEnvironmentContainerReference(containerReferenceParam.copyWith(
   containerId: containerId,
@@ -60,7 +63,8 @@ FunctionShellCallItemParamEnvironmentContainerReference copyWith({String? contai
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallItemParamEnvironment$Unknown && json == other.json; } 

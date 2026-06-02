@@ -20,7 +20,8 @@ factory CreateTranscriptionResponseDiarizedJsonUsage.duration({required double s
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateTranscriptionResponseDiarizedJsonUsage$Unknown; } 
+bool get isUnknown => this is CreateTranscriptionResponseDiarizedJsonUsage$Unknown;
+
  }
 @immutable final class CreateTranscriptionResponseDiarizedJsonUsageTokens extends CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsageTokens(this.transcriptTextUsageTokens);
 
@@ -28,7 +29,8 @@ factory CreateTranscriptionResponseDiarizedJsonUsageTokens.fromJson(Map<String, 
 
 final TranscriptTextUsageTokens transcriptTextUsageTokens;
 
-@override String get type { return 'tokens'; } 
+@override String get type => 'tokens';
+
 @override Map<String, dynamic> toJson() { return {...transcriptTextUsageTokens.toJson(), 'type': type}; } 
 CreateTranscriptionResponseDiarizedJsonUsageTokens copyWith({int? inputTokens, TranscriptTextUsageTokensInputTokenDetails? Function()? inputTokenDetails, int? outputTokens, int? totalTokens, }) { return CreateTranscriptionResponseDiarizedJsonUsageTokens(transcriptTextUsageTokens.copyWith(
   inputTokens: inputTokens,
@@ -47,7 +49,8 @@ factory CreateTranscriptionResponseDiarizedJsonUsageDuration.fromJson(Map<String
 
 final TranscriptTextUsageDuration transcriptTextUsageDuration;
 
-@override String get type { return 'duration'; } 
+@override String get type => 'duration';
+
 @override Map<String, dynamic> toJson() { return {...transcriptTextUsageDuration.toJson(), 'type': type}; } 
 CreateTranscriptionResponseDiarizedJsonUsageDuration copyWith({double? seconds}) { return CreateTranscriptionResponseDiarizedJsonUsageDuration(transcriptTextUsageDuration.copyWith(
   seconds: seconds,
@@ -63,7 +66,8 @@ CreateTranscriptionResponseDiarizedJsonUsageDuration copyWith({double? seconds})
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseDiarizedJsonUsage$Unknown && json == other.json; } 

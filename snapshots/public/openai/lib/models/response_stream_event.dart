@@ -223,7 +223,8 @@ factory ResponseStreamEvent.responseCustomToolCallInputDone({required int sequen
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResponseStreamEvent$Unknown; } 
+bool get isUnknown => this is ResponseStreamEvent$Unknown;
+
 /// Shared by all variants of this union.
 int get sequenceNumber;
  }
@@ -233,7 +234,8 @@ factory ResponseStreamEventResponseAudioDelta.fromJson(Map<String, dynamic> json
 
 final ResponseAudioDeltaEvent responseAudioDeltaEvent;
 
-@override String get type { return 'response.audio.delta'; } 
+@override String get type => 'response.audio.delta';
+
 @override Map<String, dynamic> toJson() { return {...responseAudioDeltaEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseAudioDelta copyWith({int? sequenceNumber, String? delta, }) { return ResponseStreamEventResponseAudioDelta(responseAudioDeltaEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -243,7 +245,8 @@ ResponseStreamEventResponseAudioDelta copyWith({int? sequenceNumber, String? del
     other is ResponseStreamEventResponseAudioDelta && responseAudioDeltaEvent == other.responseAudioDeltaEvent; } 
 @override int get hashCode { return responseAudioDeltaEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseAudioDelta($responseAudioDeltaEvent)'; } 
-@override int get sequenceNumber { return responseAudioDeltaEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseAudioDeltaEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseAudioDone extends ResponseStreamEvent {const ResponseStreamEventResponseAudioDone(this.responseAudioDoneEvent);
 
@@ -251,7 +254,8 @@ factory ResponseStreamEventResponseAudioDone.fromJson(Map<String, dynamic> json)
 
 final ResponseAudioDoneEvent responseAudioDoneEvent;
 
-@override String get type { return 'response.audio.done'; } 
+@override String get type => 'response.audio.done';
+
 @override Map<String, dynamic> toJson() { return {...responseAudioDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseAudioDone copyWith({int? sequenceNumber}) { return ResponseStreamEventResponseAudioDone(responseAudioDoneEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -260,7 +264,8 @@ ResponseStreamEventResponseAudioDone copyWith({int? sequenceNumber}) { return Re
     other is ResponseStreamEventResponseAudioDone && responseAudioDoneEvent == other.responseAudioDoneEvent; } 
 @override int get hashCode { return responseAudioDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseAudioDone($responseAudioDoneEvent)'; } 
-@override int get sequenceNumber { return responseAudioDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseAudioDoneEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseAudioTranscriptDelta extends ResponseStreamEvent {const ResponseStreamEventResponseAudioTranscriptDelta(this.responseAudioTranscriptDeltaEvent);
 
@@ -268,7 +273,8 @@ factory ResponseStreamEventResponseAudioTranscriptDelta.fromJson(Map<String, dyn
 
 final ResponseAudioTranscriptDeltaEvent responseAudioTranscriptDeltaEvent;
 
-@override String get type { return 'response.audio.transcript.delta'; } 
+@override String get type => 'response.audio.transcript.delta';
+
 @override Map<String, dynamic> toJson() { return {...responseAudioTranscriptDeltaEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseAudioTranscriptDelta copyWith({String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseAudioTranscriptDelta(responseAudioTranscriptDeltaEvent.copyWith(
   delta: delta,
@@ -278,7 +284,8 @@ ResponseStreamEventResponseAudioTranscriptDelta copyWith({String? delta, int? se
     other is ResponseStreamEventResponseAudioTranscriptDelta && responseAudioTranscriptDeltaEvent == other.responseAudioTranscriptDeltaEvent; } 
 @override int get hashCode { return responseAudioTranscriptDeltaEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseAudioTranscriptDelta($responseAudioTranscriptDeltaEvent)'; } 
-@override int get sequenceNumber { return responseAudioTranscriptDeltaEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseAudioTranscriptDeltaEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseAudioTranscriptDone extends ResponseStreamEvent {const ResponseStreamEventResponseAudioTranscriptDone(this.responseAudioTranscriptDoneEvent);
 
@@ -286,7 +293,8 @@ factory ResponseStreamEventResponseAudioTranscriptDone.fromJson(Map<String, dyna
 
 final ResponseAudioTranscriptDoneEvent responseAudioTranscriptDoneEvent;
 
-@override String get type { return 'response.audio.transcript.done'; } 
+@override String get type => 'response.audio.transcript.done';
+
 @override Map<String, dynamic> toJson() { return {...responseAudioTranscriptDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseAudioTranscriptDone copyWith({int? sequenceNumber}) { return ResponseStreamEventResponseAudioTranscriptDone(responseAudioTranscriptDoneEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -295,7 +303,8 @@ ResponseStreamEventResponseAudioTranscriptDone copyWith({int? sequenceNumber}) {
     other is ResponseStreamEventResponseAudioTranscriptDone && responseAudioTranscriptDoneEvent == other.responseAudioTranscriptDoneEvent; } 
 @override int get hashCode { return responseAudioTranscriptDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseAudioTranscriptDone($responseAudioTranscriptDoneEvent)'; } 
-@override int get sequenceNumber { return responseAudioTranscriptDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseAudioTranscriptDoneEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseCodeInterpreterCallCodeDelta extends ResponseStreamEvent {const ResponseStreamEventResponseCodeInterpreterCallCodeDelta(this.responseCodeInterpreterCallCodeDeltaEvent);
 
@@ -303,7 +312,8 @@ factory ResponseStreamEventResponseCodeInterpreterCallCodeDelta.fromJson(Map<Str
 
 final ResponseCodeInterpreterCallCodeDeltaEvent responseCodeInterpreterCallCodeDeltaEvent;
 
-@override String get type { return 'response.code_interpreter_call_code.delta'; } 
+@override String get type => 'response.code_interpreter_call_code.delta';
+
 @override Map<String, dynamic> toJson() { return {...responseCodeInterpreterCallCodeDeltaEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseCodeInterpreterCallCodeDelta copyWith({int? outputIndex, String? itemId, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallCodeDelta(responseCodeInterpreterCallCodeDeltaEvent.copyWith(
   outputIndex: outputIndex,
@@ -315,7 +325,8 @@ ResponseStreamEventResponseCodeInterpreterCallCodeDelta copyWith({int? outputInd
     other is ResponseStreamEventResponseCodeInterpreterCallCodeDelta && responseCodeInterpreterCallCodeDeltaEvent == other.responseCodeInterpreterCallCodeDeltaEvent; } 
 @override int get hashCode { return responseCodeInterpreterCallCodeDeltaEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallCodeDelta($responseCodeInterpreterCallCodeDeltaEvent)'; } 
-@override int get sequenceNumber { return responseCodeInterpreterCallCodeDeltaEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseCodeInterpreterCallCodeDeltaEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseCodeInterpreterCallCodeDone extends ResponseStreamEvent {const ResponseStreamEventResponseCodeInterpreterCallCodeDone(this.responseCodeInterpreterCallCodeDoneEvent);
 
@@ -323,7 +334,8 @@ factory ResponseStreamEventResponseCodeInterpreterCallCodeDone.fromJson(Map<Stri
 
 final ResponseCodeInterpreterCallCodeDoneEvent responseCodeInterpreterCallCodeDoneEvent;
 
-@override String get type { return 'response.code_interpreter_call_code.done'; } 
+@override String get type => 'response.code_interpreter_call_code.done';
+
 @override Map<String, dynamic> toJson() { return {...responseCodeInterpreterCallCodeDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseCodeInterpreterCallCodeDone copyWith({int? outputIndex, String? itemId, String? code, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallCodeDone(responseCodeInterpreterCallCodeDoneEvent.copyWith(
   outputIndex: outputIndex,
@@ -335,7 +347,8 @@ ResponseStreamEventResponseCodeInterpreterCallCodeDone copyWith({int? outputInde
     other is ResponseStreamEventResponseCodeInterpreterCallCodeDone && responseCodeInterpreterCallCodeDoneEvent == other.responseCodeInterpreterCallCodeDoneEvent; } 
 @override int get hashCode { return responseCodeInterpreterCallCodeDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallCodeDone($responseCodeInterpreterCallCodeDoneEvent)'; } 
-@override int get sequenceNumber { return responseCodeInterpreterCallCodeDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseCodeInterpreterCallCodeDoneEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseCodeInterpreterCallCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseCodeInterpreterCallCompleted(this.responseCodeInterpreterCallCompletedEvent);
 
@@ -343,7 +356,8 @@ factory ResponseStreamEventResponseCodeInterpreterCallCompleted.fromJson(Map<Str
 
 final ResponseCodeInterpreterCallCompletedEvent responseCodeInterpreterCallCompletedEvent;
 
-@override String get type { return 'response.code_interpreter_call.completed'; } 
+@override String get type => 'response.code_interpreter_call.completed';
+
 @override Map<String, dynamic> toJson() { return {...responseCodeInterpreterCallCompletedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseCodeInterpreterCallCompleted copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallCompleted(responseCodeInterpreterCallCompletedEvent.copyWith(
   outputIndex: outputIndex,
@@ -354,7 +368,8 @@ ResponseStreamEventResponseCodeInterpreterCallCompleted copyWith({int? outputInd
     other is ResponseStreamEventResponseCodeInterpreterCallCompleted && responseCodeInterpreterCallCompletedEvent == other.responseCodeInterpreterCallCompletedEvent; } 
 @override int get hashCode { return responseCodeInterpreterCallCompletedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallCompleted($responseCodeInterpreterCallCompletedEvent)'; } 
-@override int get sequenceNumber { return responseCodeInterpreterCallCompletedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseCodeInterpreterCallCompletedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseCodeInterpreterCallInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseCodeInterpreterCallInProgress(this.responseCodeInterpreterCallInProgressEvent);
 
@@ -362,7 +377,8 @@ factory ResponseStreamEventResponseCodeInterpreterCallInProgress.fromJson(Map<St
 
 final ResponseCodeInterpreterCallInProgressEvent responseCodeInterpreterCallInProgressEvent;
 
-@override String get type { return 'response.code_interpreter_call.in_progress'; } 
+@override String get type => 'response.code_interpreter_call.in_progress';
+
 @override Map<String, dynamic> toJson() { return {...responseCodeInterpreterCallInProgressEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseCodeInterpreterCallInProgress copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallInProgress(responseCodeInterpreterCallInProgressEvent.copyWith(
   outputIndex: outputIndex,
@@ -373,7 +389,8 @@ ResponseStreamEventResponseCodeInterpreterCallInProgress copyWith({int? outputIn
     other is ResponseStreamEventResponseCodeInterpreterCallInProgress && responseCodeInterpreterCallInProgressEvent == other.responseCodeInterpreterCallInProgressEvent; } 
 @override int get hashCode { return responseCodeInterpreterCallInProgressEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallInProgress($responseCodeInterpreterCallInProgressEvent)'; } 
-@override int get sequenceNumber { return responseCodeInterpreterCallInProgressEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseCodeInterpreterCallInProgressEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseCodeInterpreterCallInterpreting extends ResponseStreamEvent {const ResponseStreamEventResponseCodeInterpreterCallInterpreting(this.responseCodeInterpreterCallInterpretingEvent);
 
@@ -381,7 +398,8 @@ factory ResponseStreamEventResponseCodeInterpreterCallInterpreting.fromJson(Map<
 
 final ResponseCodeInterpreterCallInterpretingEvent responseCodeInterpreterCallInterpretingEvent;
 
-@override String get type { return 'response.code_interpreter_call.interpreting'; } 
+@override String get type => 'response.code_interpreter_call.interpreting';
+
 @override Map<String, dynamic> toJson() { return {...responseCodeInterpreterCallInterpretingEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseCodeInterpreterCallInterpreting copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallInterpreting(responseCodeInterpreterCallInterpretingEvent.copyWith(
   outputIndex: outputIndex,
@@ -392,7 +410,8 @@ ResponseStreamEventResponseCodeInterpreterCallInterpreting copyWith({int? output
     other is ResponseStreamEventResponseCodeInterpreterCallInterpreting && responseCodeInterpreterCallInterpretingEvent == other.responseCodeInterpreterCallInterpretingEvent; } 
 @override int get hashCode { return responseCodeInterpreterCallInterpretingEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallInterpreting($responseCodeInterpreterCallInterpretingEvent)'; } 
-@override int get sequenceNumber { return responseCodeInterpreterCallInterpretingEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseCodeInterpreterCallInterpretingEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseCompleted(this.responseCompletedEvent);
 
@@ -400,7 +419,8 @@ factory ResponseStreamEventResponseCompleted.fromJson(Map<String, dynamic> json)
 
 final ResponseCompletedEvent responseCompletedEvent;
 
-@override String get type { return 'response.completed'; } 
+@override String get type => 'response.completed';
+
 @override Map<String, dynamic> toJson() { return {...responseCompletedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseCompleted copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseCompleted(responseCompletedEvent.copyWith(
   response: response,
@@ -410,7 +430,8 @@ ResponseStreamEventResponseCompleted copyWith({Response? response, int? sequence
     other is ResponseStreamEventResponseCompleted && responseCompletedEvent == other.responseCompletedEvent; } 
 @override int get hashCode { return responseCompletedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseCompleted($responseCompletedEvent)'; } 
-@override int get sequenceNumber { return responseCompletedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseCompletedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseContentPartAdded extends ResponseStreamEvent {const ResponseStreamEventResponseContentPartAdded(this.responseContentPartAddedEvent);
 
@@ -418,7 +439,8 @@ factory ResponseStreamEventResponseContentPartAdded.fromJson(Map<String, dynamic
 
 final ResponseContentPartAddedEvent responseContentPartAddedEvent;
 
-@override String get type { return 'response.content_part.added'; } 
+@override String get type => 'response.content_part.added';
+
 @override Map<String, dynamic> toJson() { return {...responseContentPartAddedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseContentPartAdded copyWith({String? itemId, int? outputIndex, int? contentIndex, OutputContent? $part, int? sequenceNumber, }) { return ResponseStreamEventResponseContentPartAdded(responseContentPartAddedEvent.copyWith(
   itemId: itemId,
@@ -431,7 +453,8 @@ ResponseStreamEventResponseContentPartAdded copyWith({String? itemId, int? outpu
     other is ResponseStreamEventResponseContentPartAdded && responseContentPartAddedEvent == other.responseContentPartAddedEvent; } 
 @override int get hashCode { return responseContentPartAddedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseContentPartAdded($responseContentPartAddedEvent)'; } 
-@override int get sequenceNumber { return responseContentPartAddedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseContentPartAddedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseContentPartDone extends ResponseStreamEvent {const ResponseStreamEventResponseContentPartDone(this.responseContentPartDoneEvent);
 
@@ -439,7 +462,8 @@ factory ResponseStreamEventResponseContentPartDone.fromJson(Map<String, dynamic>
 
 final ResponseContentPartDoneEvent responseContentPartDoneEvent;
 
-@override String get type { return 'response.content_part.done'; } 
+@override String get type => 'response.content_part.done';
+
 @override Map<String, dynamic> toJson() { return {...responseContentPartDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseContentPartDone copyWith({String? itemId, int? outputIndex, int? contentIndex, int? sequenceNumber, OutputContent? $part, }) { return ResponseStreamEventResponseContentPartDone(responseContentPartDoneEvent.copyWith(
   itemId: itemId,
@@ -452,7 +476,8 @@ ResponseStreamEventResponseContentPartDone copyWith({String? itemId, int? output
     other is ResponseStreamEventResponseContentPartDone && responseContentPartDoneEvent == other.responseContentPartDoneEvent; } 
 @override int get hashCode { return responseContentPartDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseContentPartDone($responseContentPartDoneEvent)'; } 
-@override int get sequenceNumber { return responseContentPartDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseContentPartDoneEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseCreated extends ResponseStreamEvent {const ResponseStreamEventResponseCreated(this.responseCreatedEvent);
 
@@ -460,7 +485,8 @@ factory ResponseStreamEventResponseCreated.fromJson(Map<String, dynamic> json) {
 
 final ResponseCreatedEvent responseCreatedEvent;
 
-@override String get type { return 'response.created'; } 
+@override String get type => 'response.created';
+
 @override Map<String, dynamic> toJson() { return {...responseCreatedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseCreated copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseCreated(responseCreatedEvent.copyWith(
   response: response,
@@ -470,7 +496,8 @@ ResponseStreamEventResponseCreated copyWith({Response? response, int? sequenceNu
     other is ResponseStreamEventResponseCreated && responseCreatedEvent == other.responseCreatedEvent; } 
 @override int get hashCode { return responseCreatedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseCreated($responseCreatedEvent)'; } 
-@override int get sequenceNumber { return responseCreatedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseCreatedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventError extends ResponseStreamEvent {const ResponseStreamEventError(this.responseErrorEvent);
 
@@ -478,7 +505,8 @@ factory ResponseStreamEventError.fromJson(Map<String, dynamic> json) { return Re
 
 final ResponseErrorEvent responseErrorEvent;
 
-@override String get type { return 'error'; } 
+@override String get type => 'error';
+
 @override Map<String, dynamic> toJson() { return {...responseErrorEvent.toJson(), 'type': type}; } 
 ResponseStreamEventError copyWith({String? Function()? code, String? message, String? Function()? param, int? sequenceNumber, }) { return ResponseStreamEventError(responseErrorEvent.copyWith(
   code: code,
@@ -490,7 +518,8 @@ ResponseStreamEventError copyWith({String? Function()? code, String? message, St
     other is ResponseStreamEventError && responseErrorEvent == other.responseErrorEvent; } 
 @override int get hashCode { return responseErrorEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.error($responseErrorEvent)'; } 
-@override int get sequenceNumber { return responseErrorEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseErrorEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseFileSearchCallCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseFileSearchCallCompleted(this.responseFileSearchCallCompletedEvent);
 
@@ -498,7 +527,8 @@ factory ResponseStreamEventResponseFileSearchCallCompleted.fromJson(Map<String, 
 
 final ResponseFileSearchCallCompletedEvent responseFileSearchCallCompletedEvent;
 
-@override String get type { return 'response.file_search_call.completed'; } 
+@override String get type => 'response.file_search_call.completed';
+
 @override Map<String, dynamic> toJson() { return {...responseFileSearchCallCompletedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseFileSearchCallCompleted copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseFileSearchCallCompleted(responseFileSearchCallCompletedEvent.copyWith(
   outputIndex: outputIndex,
@@ -509,7 +539,8 @@ ResponseStreamEventResponseFileSearchCallCompleted copyWith({int? outputIndex, S
     other is ResponseStreamEventResponseFileSearchCallCompleted && responseFileSearchCallCompletedEvent == other.responseFileSearchCallCompletedEvent; } 
 @override int get hashCode { return responseFileSearchCallCompletedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseFileSearchCallCompleted($responseFileSearchCallCompletedEvent)'; } 
-@override int get sequenceNumber { return responseFileSearchCallCompletedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseFileSearchCallCompletedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseFileSearchCallInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseFileSearchCallInProgress(this.responseFileSearchCallInProgressEvent);
 
@@ -517,7 +548,8 @@ factory ResponseStreamEventResponseFileSearchCallInProgress.fromJson(Map<String,
 
 final ResponseFileSearchCallInProgressEvent responseFileSearchCallInProgressEvent;
 
-@override String get type { return 'response.file_search_call.in_progress'; } 
+@override String get type => 'response.file_search_call.in_progress';
+
 @override Map<String, dynamic> toJson() { return {...responseFileSearchCallInProgressEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseFileSearchCallInProgress copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseFileSearchCallInProgress(responseFileSearchCallInProgressEvent.copyWith(
   outputIndex: outputIndex,
@@ -528,7 +560,8 @@ ResponseStreamEventResponseFileSearchCallInProgress copyWith({int? outputIndex, 
     other is ResponseStreamEventResponseFileSearchCallInProgress && responseFileSearchCallInProgressEvent == other.responseFileSearchCallInProgressEvent; } 
 @override int get hashCode { return responseFileSearchCallInProgressEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseFileSearchCallInProgress($responseFileSearchCallInProgressEvent)'; } 
-@override int get sequenceNumber { return responseFileSearchCallInProgressEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseFileSearchCallInProgressEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseFileSearchCallSearching extends ResponseStreamEvent {const ResponseStreamEventResponseFileSearchCallSearching(this.responseFileSearchCallSearchingEvent);
 
@@ -536,7 +569,8 @@ factory ResponseStreamEventResponseFileSearchCallSearching.fromJson(Map<String, 
 
 final ResponseFileSearchCallSearchingEvent responseFileSearchCallSearchingEvent;
 
-@override String get type { return 'response.file_search_call.searching'; } 
+@override String get type => 'response.file_search_call.searching';
+
 @override Map<String, dynamic> toJson() { return {...responseFileSearchCallSearchingEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseFileSearchCallSearching copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseFileSearchCallSearching(responseFileSearchCallSearchingEvent.copyWith(
   outputIndex: outputIndex,
@@ -547,7 +581,8 @@ ResponseStreamEventResponseFileSearchCallSearching copyWith({int? outputIndex, S
     other is ResponseStreamEventResponseFileSearchCallSearching && responseFileSearchCallSearchingEvent == other.responseFileSearchCallSearchingEvent; } 
 @override int get hashCode { return responseFileSearchCallSearchingEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseFileSearchCallSearching($responseFileSearchCallSearchingEvent)'; } 
-@override int get sequenceNumber { return responseFileSearchCallSearchingEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseFileSearchCallSearchingEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseFunctionCallArgumentsDelta extends ResponseStreamEvent {const ResponseStreamEventResponseFunctionCallArgumentsDelta(this.responseFunctionCallArgumentsDeltaEvent);
 
@@ -555,7 +590,8 @@ factory ResponseStreamEventResponseFunctionCallArgumentsDelta.fromJson(Map<Strin
 
 final ResponseFunctionCallArgumentsDeltaEvent responseFunctionCallArgumentsDeltaEvent;
 
-@override String get type { return 'response.function_call_arguments.delta'; } 
+@override String get type => 'response.function_call_arguments.delta';
+
 @override Map<String, dynamic> toJson() { return {...responseFunctionCallArgumentsDeltaEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseFunctionCallArgumentsDelta copyWith({String? itemId, int? outputIndex, int? sequenceNumber, String? delta, }) { return ResponseStreamEventResponseFunctionCallArgumentsDelta(responseFunctionCallArgumentsDeltaEvent.copyWith(
   itemId: itemId,
@@ -567,7 +603,8 @@ ResponseStreamEventResponseFunctionCallArgumentsDelta copyWith({String? itemId, 
     other is ResponseStreamEventResponseFunctionCallArgumentsDelta && responseFunctionCallArgumentsDeltaEvent == other.responseFunctionCallArgumentsDeltaEvent; } 
 @override int get hashCode { return responseFunctionCallArgumentsDeltaEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseFunctionCallArgumentsDelta($responseFunctionCallArgumentsDeltaEvent)'; } 
-@override int get sequenceNumber { return responseFunctionCallArgumentsDeltaEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseFunctionCallArgumentsDeltaEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseFunctionCallArgumentsDone extends ResponseStreamEvent {const ResponseStreamEventResponseFunctionCallArgumentsDone(this.responseFunctionCallArgumentsDoneEvent);
 
@@ -575,7 +612,8 @@ factory ResponseStreamEventResponseFunctionCallArgumentsDone.fromJson(Map<String
 
 final ResponseFunctionCallArgumentsDoneEvent responseFunctionCallArgumentsDoneEvent;
 
-@override String get type { return 'response.function_call_arguments.done'; } 
+@override String get type => 'response.function_call_arguments.done';
+
 @override Map<String, dynamic> toJson() { return {...responseFunctionCallArgumentsDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseFunctionCallArgumentsDone copyWith({String? itemId, String? name, int? outputIndex, int? sequenceNumber, String? arguments, }) { return ResponseStreamEventResponseFunctionCallArgumentsDone(responseFunctionCallArgumentsDoneEvent.copyWith(
   itemId: itemId,
@@ -588,7 +626,8 @@ ResponseStreamEventResponseFunctionCallArgumentsDone copyWith({String? itemId, S
     other is ResponseStreamEventResponseFunctionCallArgumentsDone && responseFunctionCallArgumentsDoneEvent == other.responseFunctionCallArgumentsDoneEvent; } 
 @override int get hashCode { return responseFunctionCallArgumentsDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseFunctionCallArgumentsDone($responseFunctionCallArgumentsDoneEvent)'; } 
-@override int get sequenceNumber { return responseFunctionCallArgumentsDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseFunctionCallArgumentsDoneEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseInProgress(this.responseInProgressEvent);
 
@@ -596,7 +635,8 @@ factory ResponseStreamEventResponseInProgress.fromJson(Map<String, dynamic> json
 
 final ResponseInProgressEvent responseInProgressEvent;
 
-@override String get type { return 'response.in_progress'; } 
+@override String get type => 'response.in_progress';
+
 @override Map<String, dynamic> toJson() { return {...responseInProgressEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseInProgress copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseInProgress(responseInProgressEvent.copyWith(
   response: response,
@@ -606,7 +646,8 @@ ResponseStreamEventResponseInProgress copyWith({Response? response, int? sequenc
     other is ResponseStreamEventResponseInProgress && responseInProgressEvent == other.responseInProgressEvent; } 
 @override int get hashCode { return responseInProgressEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseInProgress($responseInProgressEvent)'; } 
-@override int get sequenceNumber { return responseInProgressEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseInProgressEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseFailed extends ResponseStreamEvent {const ResponseStreamEventResponseFailed(this.responseFailedEvent);
 
@@ -614,7 +655,8 @@ factory ResponseStreamEventResponseFailed.fromJson(Map<String, dynamic> json) { 
 
 final ResponseFailedEvent responseFailedEvent;
 
-@override String get type { return 'response.failed'; } 
+@override String get type => 'response.failed';
+
 @override Map<String, dynamic> toJson() { return {...responseFailedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseFailed copyWith({int? sequenceNumber, Response? response, }) { return ResponseStreamEventResponseFailed(responseFailedEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -624,7 +666,8 @@ ResponseStreamEventResponseFailed copyWith({int? sequenceNumber, Response? respo
     other is ResponseStreamEventResponseFailed && responseFailedEvent == other.responseFailedEvent; } 
 @override int get hashCode { return responseFailedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseFailed($responseFailedEvent)'; } 
-@override int get sequenceNumber { return responseFailedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseFailedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseIncomplete extends ResponseStreamEvent {const ResponseStreamEventResponseIncomplete(this.responseIncompleteEvent);
 
@@ -632,7 +675,8 @@ factory ResponseStreamEventResponseIncomplete.fromJson(Map<String, dynamic> json
 
 final ResponseIncompleteEvent responseIncompleteEvent;
 
-@override String get type { return 'response.incomplete'; } 
+@override String get type => 'response.incomplete';
+
 @override Map<String, dynamic> toJson() { return {...responseIncompleteEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseIncomplete copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseIncomplete(responseIncompleteEvent.copyWith(
   response: response,
@@ -642,7 +686,8 @@ ResponseStreamEventResponseIncomplete copyWith({Response? response, int? sequenc
     other is ResponseStreamEventResponseIncomplete && responseIncompleteEvent == other.responseIncompleteEvent; } 
 @override int get hashCode { return responseIncompleteEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseIncomplete($responseIncompleteEvent)'; } 
-@override int get sequenceNumber { return responseIncompleteEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseIncompleteEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseOutputItemAdded extends ResponseStreamEvent {const ResponseStreamEventResponseOutputItemAdded(this.responseOutputItemAddedEvent);
 
@@ -650,7 +695,8 @@ factory ResponseStreamEventResponseOutputItemAdded.fromJson(Map<String, dynamic>
 
 final ResponseOutputItemAddedEvent responseOutputItemAddedEvent;
 
-@override String get type { return 'response.output_item.added'; } 
+@override String get type => 'response.output_item.added';
+
 @override Map<String, dynamic> toJson() { return {...responseOutputItemAddedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseOutputItemAdded copyWith({int? outputIndex, int? sequenceNumber, OutputItem? item, }) { return ResponseStreamEventResponseOutputItemAdded(responseOutputItemAddedEvent.copyWith(
   outputIndex: outputIndex,
@@ -661,7 +707,8 @@ ResponseStreamEventResponseOutputItemAdded copyWith({int? outputIndex, int? sequ
     other is ResponseStreamEventResponseOutputItemAdded && responseOutputItemAddedEvent == other.responseOutputItemAddedEvent; } 
 @override int get hashCode { return responseOutputItemAddedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseOutputItemAdded($responseOutputItemAddedEvent)'; } 
-@override int get sequenceNumber { return responseOutputItemAddedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseOutputItemAddedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseOutputItemDone extends ResponseStreamEvent {const ResponseStreamEventResponseOutputItemDone(this.responseOutputItemDoneEvent);
 
@@ -669,7 +716,8 @@ factory ResponseStreamEventResponseOutputItemDone.fromJson(Map<String, dynamic> 
 
 final ResponseOutputItemDoneEvent responseOutputItemDoneEvent;
 
-@override String get type { return 'response.output_item.done'; } 
+@override String get type => 'response.output_item.done';
+
 @override Map<String, dynamic> toJson() { return {...responseOutputItemDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseOutputItemDone copyWith({int? outputIndex, int? sequenceNumber, OutputItem? item, }) { return ResponseStreamEventResponseOutputItemDone(responseOutputItemDoneEvent.copyWith(
   outputIndex: outputIndex,
@@ -680,7 +728,8 @@ ResponseStreamEventResponseOutputItemDone copyWith({int? outputIndex, int? seque
     other is ResponseStreamEventResponseOutputItemDone && responseOutputItemDoneEvent == other.responseOutputItemDoneEvent; } 
 @override int get hashCode { return responseOutputItemDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseOutputItemDone($responseOutputItemDoneEvent)'; } 
-@override int get sequenceNumber { return responseOutputItemDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseOutputItemDoneEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseReasoningSummaryPartAdded extends ResponseStreamEvent {const ResponseStreamEventResponseReasoningSummaryPartAdded(this.responseReasoningSummaryPartAddedEvent);
 
@@ -688,7 +737,8 @@ factory ResponseStreamEventResponseReasoningSummaryPartAdded.fromJson(Map<String
 
 final ResponseReasoningSummaryPartAddedEvent responseReasoningSummaryPartAddedEvent;
 
-@override String get type { return 'response.reasoning_summary_part.added'; } 
+@override String get type => 'response.reasoning_summary_part.added';
+
 @override Map<String, dynamic> toJson() { return {...responseReasoningSummaryPartAddedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseReasoningSummaryPartAdded copyWith({String? itemId, int? outputIndex, int? summaryIndex, int? sequenceNumber, ResponseReasoningSummaryPartAddedEventPart? $part, }) { return ResponseStreamEventResponseReasoningSummaryPartAdded(responseReasoningSummaryPartAddedEvent.copyWith(
   itemId: itemId,
@@ -701,7 +751,8 @@ ResponseStreamEventResponseReasoningSummaryPartAdded copyWith({String? itemId, i
     other is ResponseStreamEventResponseReasoningSummaryPartAdded && responseReasoningSummaryPartAddedEvent == other.responseReasoningSummaryPartAddedEvent; } 
 @override int get hashCode { return responseReasoningSummaryPartAddedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseReasoningSummaryPartAdded($responseReasoningSummaryPartAddedEvent)'; } 
-@override int get sequenceNumber { return responseReasoningSummaryPartAddedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseReasoningSummaryPartAddedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseReasoningSummaryPartDone extends ResponseStreamEvent {const ResponseStreamEventResponseReasoningSummaryPartDone(this.responseReasoningSummaryPartDoneEvent);
 
@@ -709,7 +760,8 @@ factory ResponseStreamEventResponseReasoningSummaryPartDone.fromJson(Map<String,
 
 final ResponseReasoningSummaryPartDoneEvent responseReasoningSummaryPartDoneEvent;
 
-@override String get type { return 'response.reasoning_summary_part.done'; } 
+@override String get type => 'response.reasoning_summary_part.done';
+
 @override Map<String, dynamic> toJson() { return {...responseReasoningSummaryPartDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseReasoningSummaryPartDone copyWith({String? itemId, int? outputIndex, int? summaryIndex, int? sequenceNumber, ResponseReasoningSummaryPartAddedEventPart? $part, }) { return ResponseStreamEventResponseReasoningSummaryPartDone(responseReasoningSummaryPartDoneEvent.copyWith(
   itemId: itemId,
@@ -722,7 +774,8 @@ ResponseStreamEventResponseReasoningSummaryPartDone copyWith({String? itemId, in
     other is ResponseStreamEventResponseReasoningSummaryPartDone && responseReasoningSummaryPartDoneEvent == other.responseReasoningSummaryPartDoneEvent; } 
 @override int get hashCode { return responseReasoningSummaryPartDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseReasoningSummaryPartDone($responseReasoningSummaryPartDoneEvent)'; } 
-@override int get sequenceNumber { return responseReasoningSummaryPartDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseReasoningSummaryPartDoneEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseReasoningSummaryTextDelta extends ResponseStreamEvent {const ResponseStreamEventResponseReasoningSummaryTextDelta(this.responseReasoningSummaryTextDeltaEvent);
 
@@ -730,7 +783,8 @@ factory ResponseStreamEventResponseReasoningSummaryTextDelta.fromJson(Map<String
 
 final ResponseReasoningSummaryTextDeltaEvent responseReasoningSummaryTextDeltaEvent;
 
-@override String get type { return 'response.reasoning_summary_text.delta'; } 
+@override String get type => 'response.reasoning_summary_text.delta';
+
 @override Map<String, dynamic> toJson() { return {...responseReasoningSummaryTextDeltaEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseReasoningSummaryTextDelta copyWith({String? itemId, int? outputIndex, int? summaryIndex, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseReasoningSummaryTextDelta(responseReasoningSummaryTextDeltaEvent.copyWith(
   itemId: itemId,
@@ -743,7 +797,8 @@ ResponseStreamEventResponseReasoningSummaryTextDelta copyWith({String? itemId, i
     other is ResponseStreamEventResponseReasoningSummaryTextDelta && responseReasoningSummaryTextDeltaEvent == other.responseReasoningSummaryTextDeltaEvent; } 
 @override int get hashCode { return responseReasoningSummaryTextDeltaEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseReasoningSummaryTextDelta($responseReasoningSummaryTextDeltaEvent)'; } 
-@override int get sequenceNumber { return responseReasoningSummaryTextDeltaEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseReasoningSummaryTextDeltaEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseReasoningSummaryTextDone extends ResponseStreamEvent {const ResponseStreamEventResponseReasoningSummaryTextDone(this.responseReasoningSummaryTextDoneEvent);
 
@@ -751,7 +806,8 @@ factory ResponseStreamEventResponseReasoningSummaryTextDone.fromJson(Map<String,
 
 final ResponseReasoningSummaryTextDoneEvent responseReasoningSummaryTextDoneEvent;
 
-@override String get type { return 'response.reasoning_summary_text.done'; } 
+@override String get type => 'response.reasoning_summary_text.done';
+
 @override Map<String, dynamic> toJson() { return {...responseReasoningSummaryTextDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseReasoningSummaryTextDone copyWith({String? itemId, int? outputIndex, int? summaryIndex, String? text, int? sequenceNumber, }) { return ResponseStreamEventResponseReasoningSummaryTextDone(responseReasoningSummaryTextDoneEvent.copyWith(
   itemId: itemId,
@@ -764,7 +820,8 @@ ResponseStreamEventResponseReasoningSummaryTextDone copyWith({String? itemId, in
     other is ResponseStreamEventResponseReasoningSummaryTextDone && responseReasoningSummaryTextDoneEvent == other.responseReasoningSummaryTextDoneEvent; } 
 @override int get hashCode { return responseReasoningSummaryTextDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseReasoningSummaryTextDone($responseReasoningSummaryTextDoneEvent)'; } 
-@override int get sequenceNumber { return responseReasoningSummaryTextDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseReasoningSummaryTextDoneEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseReasoningTextDelta extends ResponseStreamEvent {const ResponseStreamEventResponseReasoningTextDelta(this.responseReasoningTextDeltaEvent);
 
@@ -772,7 +829,8 @@ factory ResponseStreamEventResponseReasoningTextDelta.fromJson(Map<String, dynam
 
 final ResponseReasoningTextDeltaEvent responseReasoningTextDeltaEvent;
 
-@override String get type { return 'response.reasoning_text.delta'; } 
+@override String get type => 'response.reasoning_text.delta';
+
 @override Map<String, dynamic> toJson() { return {...responseReasoningTextDeltaEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseReasoningTextDelta copyWith({String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseReasoningTextDelta(responseReasoningTextDeltaEvent.copyWith(
   itemId: itemId,
@@ -785,7 +843,8 @@ ResponseStreamEventResponseReasoningTextDelta copyWith({String? itemId, int? out
     other is ResponseStreamEventResponseReasoningTextDelta && responseReasoningTextDeltaEvent == other.responseReasoningTextDeltaEvent; } 
 @override int get hashCode { return responseReasoningTextDeltaEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseReasoningTextDelta($responseReasoningTextDeltaEvent)'; } 
-@override int get sequenceNumber { return responseReasoningTextDeltaEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseReasoningTextDeltaEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseReasoningTextDone extends ResponseStreamEvent {const ResponseStreamEventResponseReasoningTextDone(this.responseReasoningTextDoneEvent);
 
@@ -793,7 +852,8 @@ factory ResponseStreamEventResponseReasoningTextDone.fromJson(Map<String, dynami
 
 final ResponseReasoningTextDoneEvent responseReasoningTextDoneEvent;
 
-@override String get type { return 'response.reasoning_text.done'; } 
+@override String get type => 'response.reasoning_text.done';
+
 @override Map<String, dynamic> toJson() { return {...responseReasoningTextDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseReasoningTextDone copyWith({String? itemId, int? outputIndex, int? contentIndex, String? text, int? sequenceNumber, }) { return ResponseStreamEventResponseReasoningTextDone(responseReasoningTextDoneEvent.copyWith(
   itemId: itemId,
@@ -806,7 +866,8 @@ ResponseStreamEventResponseReasoningTextDone copyWith({String? itemId, int? outp
     other is ResponseStreamEventResponseReasoningTextDone && responseReasoningTextDoneEvent == other.responseReasoningTextDoneEvent; } 
 @override int get hashCode { return responseReasoningTextDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseReasoningTextDone($responseReasoningTextDoneEvent)'; } 
-@override int get sequenceNumber { return responseReasoningTextDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseReasoningTextDoneEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseRefusalDelta extends ResponseStreamEvent {const ResponseStreamEventResponseRefusalDelta(this.responseRefusalDeltaEvent);
 
@@ -814,7 +875,8 @@ factory ResponseStreamEventResponseRefusalDelta.fromJson(Map<String, dynamic> js
 
 final ResponseRefusalDeltaEvent responseRefusalDeltaEvent;
 
-@override String get type { return 'response.refusal.delta'; } 
+@override String get type => 'response.refusal.delta';
+
 @override Map<String, dynamic> toJson() { return {...responseRefusalDeltaEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseRefusalDelta copyWith({String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseRefusalDelta(responseRefusalDeltaEvent.copyWith(
   itemId: itemId,
@@ -827,7 +889,8 @@ ResponseStreamEventResponseRefusalDelta copyWith({String? itemId, int? outputInd
     other is ResponseStreamEventResponseRefusalDelta && responseRefusalDeltaEvent == other.responseRefusalDeltaEvent; } 
 @override int get hashCode { return responseRefusalDeltaEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseRefusalDelta($responseRefusalDeltaEvent)'; } 
-@override int get sequenceNumber { return responseRefusalDeltaEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseRefusalDeltaEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseRefusalDone extends ResponseStreamEvent {const ResponseStreamEventResponseRefusalDone(this.responseRefusalDoneEvent);
 
@@ -835,7 +898,8 @@ factory ResponseStreamEventResponseRefusalDone.fromJson(Map<String, dynamic> jso
 
 final ResponseRefusalDoneEvent responseRefusalDoneEvent;
 
-@override String get type { return 'response.refusal.done'; } 
+@override String get type => 'response.refusal.done';
+
 @override Map<String, dynamic> toJson() { return {...responseRefusalDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseRefusalDone copyWith({String? itemId, int? outputIndex, int? contentIndex, String? refusal, int? sequenceNumber, }) { return ResponseStreamEventResponseRefusalDone(responseRefusalDoneEvent.copyWith(
   itemId: itemId,
@@ -848,7 +912,8 @@ ResponseStreamEventResponseRefusalDone copyWith({String? itemId, int? outputInde
     other is ResponseStreamEventResponseRefusalDone && responseRefusalDoneEvent == other.responseRefusalDoneEvent; } 
 @override int get hashCode { return responseRefusalDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseRefusalDone($responseRefusalDoneEvent)'; } 
-@override int get sequenceNumber { return responseRefusalDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseRefusalDoneEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseOutputTextDelta extends ResponseStreamEvent {const ResponseStreamEventResponseOutputTextDelta(this.responseTextDeltaEvent);
 
@@ -856,7 +921,8 @@ factory ResponseStreamEventResponseOutputTextDelta.fromJson(Map<String, dynamic>
 
 final ResponseTextDeltaEvent responseTextDeltaEvent;
 
-@override String get type { return 'response.output_text.delta'; } 
+@override String get type => 'response.output_text.delta';
+
 @override Map<String, dynamic> toJson() { return {...responseTextDeltaEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseOutputTextDelta copyWith({String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, List<ResponseLogProb>? logprobs, }) { return ResponseStreamEventResponseOutputTextDelta(responseTextDeltaEvent.copyWith(
   itemId: itemId,
@@ -870,7 +936,8 @@ ResponseStreamEventResponseOutputTextDelta copyWith({String? itemId, int? output
     other is ResponseStreamEventResponseOutputTextDelta && responseTextDeltaEvent == other.responseTextDeltaEvent; } 
 @override int get hashCode { return responseTextDeltaEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseOutputTextDelta($responseTextDeltaEvent)'; } 
-@override int get sequenceNumber { return responseTextDeltaEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseTextDeltaEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseOutputTextDone extends ResponseStreamEvent {const ResponseStreamEventResponseOutputTextDone(this.responseTextDoneEvent);
 
@@ -878,7 +945,8 @@ factory ResponseStreamEventResponseOutputTextDone.fromJson(Map<String, dynamic> 
 
 final ResponseTextDoneEvent responseTextDoneEvent;
 
-@override String get type { return 'response.output_text.done'; } 
+@override String get type => 'response.output_text.done';
+
 @override Map<String, dynamic> toJson() { return {...responseTextDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseOutputTextDone copyWith({String? itemId, int? outputIndex, int? contentIndex, String? text, int? sequenceNumber, List<ResponseLogProb>? logprobs, }) { return ResponseStreamEventResponseOutputTextDone(responseTextDoneEvent.copyWith(
   itemId: itemId,
@@ -892,7 +960,8 @@ ResponseStreamEventResponseOutputTextDone copyWith({String? itemId, int? outputI
     other is ResponseStreamEventResponseOutputTextDone && responseTextDoneEvent == other.responseTextDoneEvent; } 
 @override int get hashCode { return responseTextDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseOutputTextDone($responseTextDoneEvent)'; } 
-@override int get sequenceNumber { return responseTextDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseTextDoneEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseWebSearchCallCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseWebSearchCallCompleted(this.responseWebSearchCallCompletedEvent);
 
@@ -900,7 +969,8 @@ factory ResponseStreamEventResponseWebSearchCallCompleted.fromJson(Map<String, d
 
 final ResponseWebSearchCallCompletedEvent responseWebSearchCallCompletedEvent;
 
-@override String get type { return 'response.web_search_call.completed'; } 
+@override String get type => 'response.web_search_call.completed';
+
 @override Map<String, dynamic> toJson() { return {...responseWebSearchCallCompletedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseWebSearchCallCompleted copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseWebSearchCallCompleted(responseWebSearchCallCompletedEvent.copyWith(
   outputIndex: outputIndex,
@@ -911,7 +981,8 @@ ResponseStreamEventResponseWebSearchCallCompleted copyWith({int? outputIndex, St
     other is ResponseStreamEventResponseWebSearchCallCompleted && responseWebSearchCallCompletedEvent == other.responseWebSearchCallCompletedEvent; } 
 @override int get hashCode { return responseWebSearchCallCompletedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseWebSearchCallCompleted($responseWebSearchCallCompletedEvent)'; } 
-@override int get sequenceNumber { return responseWebSearchCallCompletedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseWebSearchCallCompletedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseWebSearchCallInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseWebSearchCallInProgress(this.responseWebSearchCallInProgressEvent);
 
@@ -919,7 +990,8 @@ factory ResponseStreamEventResponseWebSearchCallInProgress.fromJson(Map<String, 
 
 final ResponseWebSearchCallInProgressEvent responseWebSearchCallInProgressEvent;
 
-@override String get type { return 'response.web_search_call.in_progress'; } 
+@override String get type => 'response.web_search_call.in_progress';
+
 @override Map<String, dynamic> toJson() { return {...responseWebSearchCallInProgressEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseWebSearchCallInProgress copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseWebSearchCallInProgress(responseWebSearchCallInProgressEvent.copyWith(
   outputIndex: outputIndex,
@@ -930,7 +1002,8 @@ ResponseStreamEventResponseWebSearchCallInProgress copyWith({int? outputIndex, S
     other is ResponseStreamEventResponseWebSearchCallInProgress && responseWebSearchCallInProgressEvent == other.responseWebSearchCallInProgressEvent; } 
 @override int get hashCode { return responseWebSearchCallInProgressEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseWebSearchCallInProgress($responseWebSearchCallInProgressEvent)'; } 
-@override int get sequenceNumber { return responseWebSearchCallInProgressEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseWebSearchCallInProgressEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseWebSearchCallSearching extends ResponseStreamEvent {const ResponseStreamEventResponseWebSearchCallSearching(this.responseWebSearchCallSearchingEvent);
 
@@ -938,7 +1011,8 @@ factory ResponseStreamEventResponseWebSearchCallSearching.fromJson(Map<String, d
 
 final ResponseWebSearchCallSearchingEvent responseWebSearchCallSearchingEvent;
 
-@override String get type { return 'response.web_search_call.searching'; } 
+@override String get type => 'response.web_search_call.searching';
+
 @override Map<String, dynamic> toJson() { return {...responseWebSearchCallSearchingEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseWebSearchCallSearching copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseWebSearchCallSearching(responseWebSearchCallSearchingEvent.copyWith(
   outputIndex: outputIndex,
@@ -949,7 +1023,8 @@ ResponseStreamEventResponseWebSearchCallSearching copyWith({int? outputIndex, St
     other is ResponseStreamEventResponseWebSearchCallSearching && responseWebSearchCallSearchingEvent == other.responseWebSearchCallSearchingEvent; } 
 @override int get hashCode { return responseWebSearchCallSearchingEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseWebSearchCallSearching($responseWebSearchCallSearchingEvent)'; } 
-@override int get sequenceNumber { return responseWebSearchCallSearchingEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseWebSearchCallSearchingEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseImageGenerationCallCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseImageGenerationCallCompleted(this.responseImageGenCallCompletedEvent);
 
@@ -957,7 +1032,8 @@ factory ResponseStreamEventResponseImageGenerationCallCompleted.fromJson(Map<Str
 
 final ResponseImageGenCallCompletedEvent responseImageGenCallCompletedEvent;
 
-@override String get type { return 'response.image_generation_call.completed'; } 
+@override String get type => 'response.image_generation_call.completed';
+
 @override Map<String, dynamic> toJson() { return {...responseImageGenCallCompletedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseImageGenerationCallCompleted copyWith({int? outputIndex, int? sequenceNumber, String? itemId, }) { return ResponseStreamEventResponseImageGenerationCallCompleted(responseImageGenCallCompletedEvent.copyWith(
   outputIndex: outputIndex,
@@ -968,7 +1044,8 @@ ResponseStreamEventResponseImageGenerationCallCompleted copyWith({int? outputInd
     other is ResponseStreamEventResponseImageGenerationCallCompleted && responseImageGenCallCompletedEvent == other.responseImageGenCallCompletedEvent; } 
 @override int get hashCode { return responseImageGenCallCompletedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseImageGenerationCallCompleted($responseImageGenCallCompletedEvent)'; } 
-@override int get sequenceNumber { return responseImageGenCallCompletedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseImageGenCallCompletedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseImageGenerationCallGenerating extends ResponseStreamEvent {const ResponseStreamEventResponseImageGenerationCallGenerating(this.responseImageGenCallGeneratingEvent);
 
@@ -976,7 +1053,8 @@ factory ResponseStreamEventResponseImageGenerationCallGenerating.fromJson(Map<St
 
 final ResponseImageGenCallGeneratingEvent responseImageGenCallGeneratingEvent;
 
-@override String get type { return 'response.image_generation_call.generating'; } 
+@override String get type => 'response.image_generation_call.generating';
+
 @override Map<String, dynamic> toJson() { return {...responseImageGenCallGeneratingEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseImageGenerationCallGenerating copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseImageGenerationCallGenerating(responseImageGenCallGeneratingEvent.copyWith(
   outputIndex: outputIndex,
@@ -987,7 +1065,8 @@ ResponseStreamEventResponseImageGenerationCallGenerating copyWith({int? outputIn
     other is ResponseStreamEventResponseImageGenerationCallGenerating && responseImageGenCallGeneratingEvent == other.responseImageGenCallGeneratingEvent; } 
 @override int get hashCode { return responseImageGenCallGeneratingEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseImageGenerationCallGenerating($responseImageGenCallGeneratingEvent)'; } 
-@override int get sequenceNumber { return responseImageGenCallGeneratingEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseImageGenCallGeneratingEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseImageGenerationCallInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseImageGenerationCallInProgress(this.responseImageGenCallInProgressEvent);
 
@@ -995,7 +1074,8 @@ factory ResponseStreamEventResponseImageGenerationCallInProgress.fromJson(Map<St
 
 final ResponseImageGenCallInProgressEvent responseImageGenCallInProgressEvent;
 
-@override String get type { return 'response.image_generation_call.in_progress'; } 
+@override String get type => 'response.image_generation_call.in_progress';
+
 @override Map<String, dynamic> toJson() { return {...responseImageGenCallInProgressEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseImageGenerationCallInProgress copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseImageGenerationCallInProgress(responseImageGenCallInProgressEvent.copyWith(
   outputIndex: outputIndex,
@@ -1006,7 +1086,8 @@ ResponseStreamEventResponseImageGenerationCallInProgress copyWith({int? outputIn
     other is ResponseStreamEventResponseImageGenerationCallInProgress && responseImageGenCallInProgressEvent == other.responseImageGenCallInProgressEvent; } 
 @override int get hashCode { return responseImageGenCallInProgressEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseImageGenerationCallInProgress($responseImageGenCallInProgressEvent)'; } 
-@override int get sequenceNumber { return responseImageGenCallInProgressEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseImageGenCallInProgressEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseImageGenerationCallPartialImage extends ResponseStreamEvent {const ResponseStreamEventResponseImageGenerationCallPartialImage(this.responseImageGenCallPartialImageEvent);
 
@@ -1014,7 +1095,8 @@ factory ResponseStreamEventResponseImageGenerationCallPartialImage.fromJson(Map<
 
 final ResponseImageGenCallPartialImageEvent responseImageGenCallPartialImageEvent;
 
-@override String get type { return 'response.image_generation_call.partial_image'; } 
+@override String get type => 'response.image_generation_call.partial_image';
+
 @override Map<String, dynamic> toJson() { return {...responseImageGenCallPartialImageEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseImageGenerationCallPartialImage copyWith({int? outputIndex, String? itemId, int? sequenceNumber, int? partialImageIndex, String? partialImageB64, }) { return ResponseStreamEventResponseImageGenerationCallPartialImage(responseImageGenCallPartialImageEvent.copyWith(
   outputIndex: outputIndex,
@@ -1027,7 +1109,8 @@ ResponseStreamEventResponseImageGenerationCallPartialImage copyWith({int? output
     other is ResponseStreamEventResponseImageGenerationCallPartialImage && responseImageGenCallPartialImageEvent == other.responseImageGenCallPartialImageEvent; } 
 @override int get hashCode { return responseImageGenCallPartialImageEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseImageGenerationCallPartialImage($responseImageGenCallPartialImageEvent)'; } 
-@override int get sequenceNumber { return responseImageGenCallPartialImageEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseImageGenCallPartialImageEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseMcpCallArgumentsDelta extends ResponseStreamEvent {const ResponseStreamEventResponseMcpCallArgumentsDelta(this.responseMcpCallArgumentsDeltaEvent);
 
@@ -1035,7 +1118,8 @@ factory ResponseStreamEventResponseMcpCallArgumentsDelta.fromJson(Map<String, dy
 
 final ResponseMcpCallArgumentsDeltaEvent responseMcpCallArgumentsDeltaEvent;
 
-@override String get type { return 'response.mcp_call_arguments.delta'; } 
+@override String get type => 'response.mcp_call_arguments.delta';
+
 @override Map<String, dynamic> toJson() { return {...responseMcpCallArgumentsDeltaEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseMcpCallArgumentsDelta copyWith({int? outputIndex, String? itemId, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpCallArgumentsDelta(responseMcpCallArgumentsDeltaEvent.copyWith(
   outputIndex: outputIndex,
@@ -1047,7 +1131,8 @@ ResponseStreamEventResponseMcpCallArgumentsDelta copyWith({int? outputIndex, Str
     other is ResponseStreamEventResponseMcpCallArgumentsDelta && responseMcpCallArgumentsDeltaEvent == other.responseMcpCallArgumentsDeltaEvent; } 
 @override int get hashCode { return responseMcpCallArgumentsDeltaEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseMcpCallArgumentsDelta($responseMcpCallArgumentsDeltaEvent)'; } 
-@override int get sequenceNumber { return responseMcpCallArgumentsDeltaEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseMcpCallArgumentsDeltaEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseMcpCallArgumentsDone extends ResponseStreamEvent {const ResponseStreamEventResponseMcpCallArgumentsDone(this.responseMcpCallArgumentsDoneEvent);
 
@@ -1055,7 +1140,8 @@ factory ResponseStreamEventResponseMcpCallArgumentsDone.fromJson(Map<String, dyn
 
 final ResponseMcpCallArgumentsDoneEvent responseMcpCallArgumentsDoneEvent;
 
-@override String get type { return 'response.mcp_call_arguments.done'; } 
+@override String get type => 'response.mcp_call_arguments.done';
+
 @override Map<String, dynamic> toJson() { return {...responseMcpCallArgumentsDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseMcpCallArgumentsDone copyWith({int? outputIndex, String? itemId, String? arguments, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpCallArgumentsDone(responseMcpCallArgumentsDoneEvent.copyWith(
   outputIndex: outputIndex,
@@ -1067,7 +1153,8 @@ ResponseStreamEventResponseMcpCallArgumentsDone copyWith({int? outputIndex, Stri
     other is ResponseStreamEventResponseMcpCallArgumentsDone && responseMcpCallArgumentsDoneEvent == other.responseMcpCallArgumentsDoneEvent; } 
 @override int get hashCode { return responseMcpCallArgumentsDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseMcpCallArgumentsDone($responseMcpCallArgumentsDoneEvent)'; } 
-@override int get sequenceNumber { return responseMcpCallArgumentsDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseMcpCallArgumentsDoneEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseMcpCallCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseMcpCallCompleted(this.responseMcpCallCompletedEvent);
 
@@ -1075,7 +1162,8 @@ factory ResponseStreamEventResponseMcpCallCompleted.fromJson(Map<String, dynamic
 
 final ResponseMcpCallCompletedEvent responseMcpCallCompletedEvent;
 
-@override String get type { return 'response.mcp_call.completed'; } 
+@override String get type => 'response.mcp_call.completed';
+
 @override Map<String, dynamic> toJson() { return {...responseMcpCallCompletedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseMcpCallCompleted copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpCallCompleted(responseMcpCallCompletedEvent.copyWith(
   itemId: itemId,
@@ -1086,7 +1174,8 @@ ResponseStreamEventResponseMcpCallCompleted copyWith({String? itemId, int? outpu
     other is ResponseStreamEventResponseMcpCallCompleted && responseMcpCallCompletedEvent == other.responseMcpCallCompletedEvent; } 
 @override int get hashCode { return responseMcpCallCompletedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseMcpCallCompleted($responseMcpCallCompletedEvent)'; } 
-@override int get sequenceNumber { return responseMcpCallCompletedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseMcpCallCompletedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseMcpCallFailed extends ResponseStreamEvent {const ResponseStreamEventResponseMcpCallFailed(this.responseMcpCallFailedEvent);
 
@@ -1094,7 +1183,8 @@ factory ResponseStreamEventResponseMcpCallFailed.fromJson(Map<String, dynamic> j
 
 final ResponseMcpCallFailedEvent responseMcpCallFailedEvent;
 
-@override String get type { return 'response.mcp_call.failed'; } 
+@override String get type => 'response.mcp_call.failed';
+
 @override Map<String, dynamic> toJson() { return {...responseMcpCallFailedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseMcpCallFailed copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpCallFailed(responseMcpCallFailedEvent.copyWith(
   itemId: itemId,
@@ -1105,7 +1195,8 @@ ResponseStreamEventResponseMcpCallFailed copyWith({String? itemId, int? outputIn
     other is ResponseStreamEventResponseMcpCallFailed && responseMcpCallFailedEvent == other.responseMcpCallFailedEvent; } 
 @override int get hashCode { return responseMcpCallFailedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseMcpCallFailed($responseMcpCallFailedEvent)'; } 
-@override int get sequenceNumber { return responseMcpCallFailedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseMcpCallFailedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseMcpCallInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseMcpCallInProgress(this.responseMcpCallInProgressEvent);
 
@@ -1113,7 +1204,8 @@ factory ResponseStreamEventResponseMcpCallInProgress.fromJson(Map<String, dynami
 
 final ResponseMcpCallInProgressEvent responseMcpCallInProgressEvent;
 
-@override String get type { return 'response.mcp_call.in_progress'; } 
+@override String get type => 'response.mcp_call.in_progress';
+
 @override Map<String, dynamic> toJson() { return {...responseMcpCallInProgressEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseMcpCallInProgress copyWith({int? sequenceNumber, int? outputIndex, String? itemId, }) { return ResponseStreamEventResponseMcpCallInProgress(responseMcpCallInProgressEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -1124,7 +1216,8 @@ ResponseStreamEventResponseMcpCallInProgress copyWith({int? sequenceNumber, int?
     other is ResponseStreamEventResponseMcpCallInProgress && responseMcpCallInProgressEvent == other.responseMcpCallInProgressEvent; } 
 @override int get hashCode { return responseMcpCallInProgressEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseMcpCallInProgress($responseMcpCallInProgressEvent)'; } 
-@override int get sequenceNumber { return responseMcpCallInProgressEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseMcpCallInProgressEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseMcpListToolsCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseMcpListToolsCompleted(this.responseMcpListToolsCompletedEvent);
 
@@ -1132,7 +1225,8 @@ factory ResponseStreamEventResponseMcpListToolsCompleted.fromJson(Map<String, dy
 
 final ResponseMcpListToolsCompletedEvent responseMcpListToolsCompletedEvent;
 
-@override String get type { return 'response.mcp_list_tools.completed'; } 
+@override String get type => 'response.mcp_list_tools.completed';
+
 @override Map<String, dynamic> toJson() { return {...responseMcpListToolsCompletedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseMcpListToolsCompleted copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpListToolsCompleted(responseMcpListToolsCompletedEvent.copyWith(
   itemId: itemId,
@@ -1143,7 +1237,8 @@ ResponseStreamEventResponseMcpListToolsCompleted copyWith({String? itemId, int? 
     other is ResponseStreamEventResponseMcpListToolsCompleted && responseMcpListToolsCompletedEvent == other.responseMcpListToolsCompletedEvent; } 
 @override int get hashCode { return responseMcpListToolsCompletedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseMcpListToolsCompleted($responseMcpListToolsCompletedEvent)'; } 
-@override int get sequenceNumber { return responseMcpListToolsCompletedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseMcpListToolsCompletedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseMcpListToolsFailed extends ResponseStreamEvent {const ResponseStreamEventResponseMcpListToolsFailed(this.responseMcpListToolsFailedEvent);
 
@@ -1151,7 +1246,8 @@ factory ResponseStreamEventResponseMcpListToolsFailed.fromJson(Map<String, dynam
 
 final ResponseMcpListToolsFailedEvent responseMcpListToolsFailedEvent;
 
-@override String get type { return 'response.mcp_list_tools.failed'; } 
+@override String get type => 'response.mcp_list_tools.failed';
+
 @override Map<String, dynamic> toJson() { return {...responseMcpListToolsFailedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseMcpListToolsFailed copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpListToolsFailed(responseMcpListToolsFailedEvent.copyWith(
   itemId: itemId,
@@ -1162,7 +1258,8 @@ ResponseStreamEventResponseMcpListToolsFailed copyWith({String? itemId, int? out
     other is ResponseStreamEventResponseMcpListToolsFailed && responseMcpListToolsFailedEvent == other.responseMcpListToolsFailedEvent; } 
 @override int get hashCode { return responseMcpListToolsFailedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseMcpListToolsFailed($responseMcpListToolsFailedEvent)'; } 
-@override int get sequenceNumber { return responseMcpListToolsFailedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseMcpListToolsFailedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseMcpListToolsInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseMcpListToolsInProgress(this.responseMcpListToolsInProgressEvent);
 
@@ -1170,7 +1267,8 @@ factory ResponseStreamEventResponseMcpListToolsInProgress.fromJson(Map<String, d
 
 final ResponseMcpListToolsInProgressEvent responseMcpListToolsInProgressEvent;
 
-@override String get type { return 'response.mcp_list_tools.in_progress'; } 
+@override String get type => 'response.mcp_list_tools.in_progress';
+
 @override Map<String, dynamic> toJson() { return {...responseMcpListToolsInProgressEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseMcpListToolsInProgress copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpListToolsInProgress(responseMcpListToolsInProgressEvent.copyWith(
   itemId: itemId,
@@ -1181,7 +1279,8 @@ ResponseStreamEventResponseMcpListToolsInProgress copyWith({String? itemId, int?
     other is ResponseStreamEventResponseMcpListToolsInProgress && responseMcpListToolsInProgressEvent == other.responseMcpListToolsInProgressEvent; } 
 @override int get hashCode { return responseMcpListToolsInProgressEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseMcpListToolsInProgress($responseMcpListToolsInProgressEvent)'; } 
-@override int get sequenceNumber { return responseMcpListToolsInProgressEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseMcpListToolsInProgressEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseOutputTextAnnotationAdded extends ResponseStreamEvent {const ResponseStreamEventResponseOutputTextAnnotationAdded(this.responseOutputTextAnnotationAddedEvent);
 
@@ -1189,7 +1288,8 @@ factory ResponseStreamEventResponseOutputTextAnnotationAdded.fromJson(Map<String
 
 final ResponseOutputTextAnnotationAddedEvent responseOutputTextAnnotationAddedEvent;
 
-@override String get type { return 'response.output_text.annotation.added'; } 
+@override String get type => 'response.output_text.annotation.added';
+
 @override Map<String, dynamic> toJson() { return {...responseOutputTextAnnotationAddedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseOutputTextAnnotationAdded copyWith({String? itemId, int? outputIndex, int? contentIndex, int? annotationIndex, int? sequenceNumber, Map<String,dynamic>? annotation, }) { return ResponseStreamEventResponseOutputTextAnnotationAdded(responseOutputTextAnnotationAddedEvent.copyWith(
   itemId: itemId,
@@ -1203,7 +1303,8 @@ ResponseStreamEventResponseOutputTextAnnotationAdded copyWith({String? itemId, i
     other is ResponseStreamEventResponseOutputTextAnnotationAdded && responseOutputTextAnnotationAddedEvent == other.responseOutputTextAnnotationAddedEvent; } 
 @override int get hashCode { return responseOutputTextAnnotationAddedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseOutputTextAnnotationAdded($responseOutputTextAnnotationAddedEvent)'; } 
-@override int get sequenceNumber { return responseOutputTextAnnotationAddedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseOutputTextAnnotationAddedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseQueued extends ResponseStreamEvent {const ResponseStreamEventResponseQueued(this.responseQueuedEvent);
 
@@ -1211,7 +1312,8 @@ factory ResponseStreamEventResponseQueued.fromJson(Map<String, dynamic> json) { 
 
 final ResponseQueuedEvent responseQueuedEvent;
 
-@override String get type { return 'response.queued'; } 
+@override String get type => 'response.queued';
+
 @override Map<String, dynamic> toJson() { return {...responseQueuedEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseQueued copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseQueued(responseQueuedEvent.copyWith(
   response: response,
@@ -1221,7 +1323,8 @@ ResponseStreamEventResponseQueued copyWith({Response? response, int? sequenceNum
     other is ResponseStreamEventResponseQueued && responseQueuedEvent == other.responseQueuedEvent; } 
 @override int get hashCode { return responseQueuedEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseQueued($responseQueuedEvent)'; } 
-@override int get sequenceNumber { return responseQueuedEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseQueuedEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseCustomToolCallInputDelta extends ResponseStreamEvent {const ResponseStreamEventResponseCustomToolCallInputDelta(this.responseCustomToolCallInputDeltaEvent);
 
@@ -1229,7 +1332,8 @@ factory ResponseStreamEventResponseCustomToolCallInputDelta.fromJson(Map<String,
 
 final ResponseCustomToolCallInputDeltaEvent responseCustomToolCallInputDeltaEvent;
 
-@override String get type { return 'response.custom_tool_call_input.delta'; } 
+@override String get type => 'response.custom_tool_call_input.delta';
+
 @override Map<String, dynamic> toJson() { return {...responseCustomToolCallInputDeltaEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseCustomToolCallInputDelta copyWith({int? sequenceNumber, int? outputIndex, String? itemId, String? delta, }) { return ResponseStreamEventResponseCustomToolCallInputDelta(responseCustomToolCallInputDeltaEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -1241,7 +1345,8 @@ ResponseStreamEventResponseCustomToolCallInputDelta copyWith({int? sequenceNumbe
     other is ResponseStreamEventResponseCustomToolCallInputDelta && responseCustomToolCallInputDeltaEvent == other.responseCustomToolCallInputDeltaEvent; } 
 @override int get hashCode { return responseCustomToolCallInputDeltaEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseCustomToolCallInputDelta($responseCustomToolCallInputDeltaEvent)'; } 
-@override int get sequenceNumber { return responseCustomToolCallInputDeltaEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseCustomToolCallInputDeltaEvent.sequenceNumber;
+
  }
 @immutable final class ResponseStreamEventResponseCustomToolCallInputDone extends ResponseStreamEvent {const ResponseStreamEventResponseCustomToolCallInputDone(this.responseCustomToolCallInputDoneEvent);
 
@@ -1249,7 +1354,8 @@ factory ResponseStreamEventResponseCustomToolCallInputDone.fromJson(Map<String, 
 
 final ResponseCustomToolCallInputDoneEvent responseCustomToolCallInputDoneEvent;
 
-@override String get type { return 'response.custom_tool_call_input.done'; } 
+@override String get type => 'response.custom_tool_call_input.done';
+
 @override Map<String, dynamic> toJson() { return {...responseCustomToolCallInputDoneEvent.toJson(), 'type': type}; } 
 ResponseStreamEventResponseCustomToolCallInputDone copyWith({int? sequenceNumber, int? outputIndex, String? itemId, String? input, }) { return ResponseStreamEventResponseCustomToolCallInputDone(responseCustomToolCallInputDoneEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -1261,7 +1367,8 @@ ResponseStreamEventResponseCustomToolCallInputDone copyWith({int? sequenceNumber
     other is ResponseStreamEventResponseCustomToolCallInputDone && responseCustomToolCallInputDoneEvent == other.responseCustomToolCallInputDoneEvent; } 
 @override int get hashCode { return responseCustomToolCallInputDoneEvent.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.responseCustomToolCallInputDone($responseCustomToolCallInputDoneEvent)'; } 
-@override int get sequenceNumber { return responseCustomToolCallInputDoneEvent.sequenceNumber; } 
+@override int get sequenceNumber => responseCustomToolCallInputDoneEvent.sequenceNumber;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -1269,11 +1376,13 @@ ResponseStreamEventResponseCustomToolCallInputDone copyWith({int? sequenceNumber
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEvent$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ResponseStreamEvent.unknown($json)'; } 
-@override int get sequenceNumber { return (json['sequence_number'] as num).toInt(); } 
+@override int get sequenceNumber => (json['sequence_number'] as num).toInt();
+
  }

@@ -17,7 +17,8 @@ factory Outcome.exit({required int exitCode}) { return OutcomeExit(FunctionShell
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Outcome$Unknown; } 
+bool get isUnknown => this is Outcome$Unknown;
+
  }
 @immutable final class OutcomeTimeout extends Outcome {const OutcomeTimeout(this.functionShellCallOutputTimeoutOutcome);
 
@@ -25,7 +26,8 @@ factory OutcomeTimeout.fromJson(Map<String, dynamic> json) { return OutcomeTimeo
 
 final FunctionShellCallOutputTimeoutOutcome functionShellCallOutputTimeoutOutcome;
 
-@override String get type { return 'timeout'; } 
+@override String get type => 'timeout';
+
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutputTimeoutOutcome.toJson(), 'type': type}; } 
 OutcomeTimeout copyWith({FunctionShellCallOutputTimeoutOutcome? functionShellCallOutputTimeoutOutcome}) { return OutcomeTimeout(functionShellCallOutputTimeoutOutcome ?? this.functionShellCallOutputTimeoutOutcome); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -39,7 +41,8 @@ factory OutcomeExit.fromJson(Map<String, dynamic> json) { return OutcomeExit(Fun
 
 final FunctionShellCallOutputExitOutcome functionShellCallOutputExitOutcome;
 
-@override String get type { return 'exit'; } 
+@override String get type => 'exit';
+
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutputExitOutcome.toJson(), 'type': type}; } 
 OutcomeExit copyWith({int? exitCode}) { return OutcomeExit(functionShellCallOutputExitOutcome.copyWith(
   exitCode: exitCode,
@@ -55,7 +58,8 @@ OutcomeExit copyWith({int? exitCode}) { return OutcomeExit(functionShellCallOutp
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is Outcome$Unknown && json == other.json; } 

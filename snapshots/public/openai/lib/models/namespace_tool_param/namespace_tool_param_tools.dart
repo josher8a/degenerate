@@ -20,7 +20,8 @@ factory NamespaceToolParamTools.custom({required String name, String? descriptio
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is NamespaceToolParamTools$Unknown; } 
+bool get isUnknown => this is NamespaceToolParamTools$Unknown;
+
 /// Shared by all variants of this union.
 String get name;
 /// Shared by all variants of this union.
@@ -32,7 +33,8 @@ factory NamespaceToolParamToolsFunction.fromJson(Map<String, dynamic> json) { re
 
 final FunctionToolParam functionToolParam;
 
-@override String get type { return 'function'; } 
+@override String get type => 'function';
+
 @override Map<String, dynamic> toJson() { return {...functionToolParam.toJson(), 'type': type}; } 
 NamespaceToolParamToolsFunction copyWith({String? name, String? Function()? description, EmptyModelParam? Function()? parameters, bool? Function()? strict, }) { return NamespaceToolParamToolsFunction(functionToolParam.copyWith(
   name: name,
@@ -44,8 +46,10 @@ NamespaceToolParamToolsFunction copyWith({String? name, String? Function()? desc
     other is NamespaceToolParamToolsFunction && functionToolParam == other.functionToolParam; } 
 @override int get hashCode { return functionToolParam.hashCode; } 
 @override String toString() { return 'NamespaceToolParamTools.function($functionToolParam)'; } 
-@override String get name { return functionToolParam.name; } 
-@override String? get description { return functionToolParam.description; } 
+@override String get name => functionToolParam.name;
+
+@override String? get description => functionToolParam.description;
+
  }
 @immutable final class NamespaceToolParamToolsCustom extends NamespaceToolParamTools {const NamespaceToolParamToolsCustom(this.customToolParam);
 
@@ -53,7 +57,8 @@ factory NamespaceToolParamToolsCustom.fromJson(Map<String, dynamic> json) { retu
 
 final CustomToolParam customToolParam;
 
-@override String get type { return 'custom'; } 
+@override String get type => 'custom';
+
 @override Map<String, dynamic> toJson() { return {...customToolParam.toJson(), 'type': type}; } 
 NamespaceToolParamToolsCustom copyWith({String? name, String? Function()? description, CustomToolParamFormat? Function()? format, bool? Function()? deferLoading, }) { return NamespaceToolParamToolsCustom(customToolParam.copyWith(
   name: name,
@@ -65,8 +70,10 @@ NamespaceToolParamToolsCustom copyWith({String? name, String? Function()? descri
     other is NamespaceToolParamToolsCustom && customToolParam == other.customToolParam; } 
 @override int get hashCode { return customToolParam.hashCode; } 
 @override String toString() { return 'NamespaceToolParamTools.custom($customToolParam)'; } 
-@override String get name { return customToolParam.name; } 
-@override String? get description { return customToolParam.description; } 
+@override String get name => customToolParam.name;
+
+@override String? get description => customToolParam.description;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -74,12 +81,15 @@ NamespaceToolParamToolsCustom copyWith({String? name, String? Function()? descri
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NamespaceToolParamTools$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'NamespaceToolParamTools.unknown($json)'; } 
-@override String get name { return json['name'] as String; } 
-@override String? get description { return json['description'] as String?; } 
+@override String get name => json['name'] as String;
+
+@override String? get description => json['description'] as String?;
+
  }

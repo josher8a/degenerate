@@ -23,7 +23,8 @@ factory McnProviderInitialSetupResponseResult.mcnGcpSetup({required String integ
 String get itemType;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is McnProviderInitialSetupResponseResult$Unknown; } 
+bool get isUnknown => this is McnProviderInitialSetupResponseResult$Unknown;
+
  }
 @immutable final class McnProviderInitialSetupResponseResultMcnAwsTrustPolicy extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(this.mcnAwsTrustPolicy);
 
@@ -31,7 +32,8 @@ factory McnProviderInitialSetupResponseResultMcnAwsTrustPolicy.fromJson(Map<Stri
 
 final McnAwsTrustPolicy mcnAwsTrustPolicy;
 
-@override String get itemType { return 'mcn_aws_trust_policy'; } 
+@override String get itemType => 'mcn_aws_trust_policy';
+
 @override Map<String, dynamic> toJson() { return {...mcnAwsTrustPolicy.toJson(), 'item_type': itemType}; } 
 McnProviderInitialSetupResponseResultMcnAwsTrustPolicy copyWith({String? awsTrustPolicy}) { return McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(mcnAwsTrustPolicy.copyWith(
   awsTrustPolicy: awsTrustPolicy,
@@ -47,7 +49,8 @@ factory McnProviderInitialSetupResponseResultMcnAzureSetup.fromJson(Map<String, 
 
 final McnAzureSetup mcnAzureSetup;
 
-@override String get itemType { return 'mcn_azure_setup'; } 
+@override String get itemType => 'mcn_azure_setup';
+
 @override Map<String, dynamic> toJson() { return {...mcnAzureSetup.toJson(), 'item_type': itemType}; } 
 McnProviderInitialSetupResponseResultMcnAzureSetup copyWith({String? azureConsentUrl, String? integrationIdentityTag, String? tagCliCommand, }) { return McnProviderInitialSetupResponseResultMcnAzureSetup(mcnAzureSetup.copyWith(
   azureConsentUrl: azureConsentUrl,
@@ -65,7 +68,8 @@ factory McnProviderInitialSetupResponseResultMcnGcpSetup.fromJson(Map<String, dy
 
 final McnGcpSetup mcnGcpSetup;
 
-@override String get itemType { return 'mcn_gcp_setup'; } 
+@override String get itemType => 'mcn_gcp_setup';
+
 @override Map<String, dynamic> toJson() { return {...mcnGcpSetup.toJson(), 'item_type': itemType}; } 
 McnProviderInitialSetupResponseResultMcnGcpSetup copyWith({String? integrationIdentityTag, String? tagCliCommand, }) { return McnProviderInitialSetupResponseResultMcnGcpSetup(mcnGcpSetup.copyWith(
   integrationIdentityTag: integrationIdentityTag,
@@ -82,7 +86,8 @@ McnProviderInitialSetupResponseResultMcnGcpSetup copyWith({String? integrationId
 
 final Map<String, dynamic> json;
 
-@override String get itemType { return json['item_type'] as String? ?? ''; } 
+@override String get itemType => json['item_type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnProviderInitialSetupResponseResult$Unknown && json == other.json; } 

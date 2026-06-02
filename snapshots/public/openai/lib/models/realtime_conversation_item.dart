@@ -40,7 +40,8 @@ factory RealtimeConversationItem.mcpApprovalRequest({required String id, require
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeConversationItem$Unknown; } 
+bool get isUnknown => this is RealtimeConversationItem$Unknown;
+
 /// Shared by all variants of this union.
 String? get id;
  }
@@ -50,7 +51,8 @@ factory RealtimeConversationItemMessage.fromJson(Map<String, dynamic> json) { re
 
 final RealtimeConversationItemMessageAssistant realtimeConversationItemMessageAssistant;
 
-@override String get type { return 'message'; } 
+@override String get type => 'message';
+
 @override Map<String, dynamic> toJson() { return {...realtimeConversationItemMessageAssistant.toJson(), 'type': type}; } 
 RealtimeConversationItemMessage copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputStatus? Function()? status, ChatCompletionResponseMessageRole? role, List<RealtimeConversationItemMessageAssistantContent>? content, }) { return RealtimeConversationItemMessage(realtimeConversationItemMessageAssistant.copyWith(
   id: id,
@@ -63,7 +65,8 @@ RealtimeConversationItemMessage copyWith({String? Function()? id, RealtimeConver
     other is RealtimeConversationItemMessage && realtimeConversationItemMessageAssistant == other.realtimeConversationItemMessageAssistant; } 
 @override int get hashCode { return realtimeConversationItemMessageAssistant.hashCode; } 
 @override String toString() { return 'RealtimeConversationItem.message($realtimeConversationItemMessageAssistant)'; } 
-@override String? get id { return realtimeConversationItemMessageAssistant.id; } 
+@override String? get id => realtimeConversationItemMessageAssistant.id;
+
  }
 @immutable final class RealtimeConversationItemFunctionCall$Variant extends RealtimeConversationItem {const RealtimeConversationItemFunctionCall$Variant(this.realtimeConversationItemFunctionCall);
 
@@ -71,7 +74,8 @@ factory RealtimeConversationItemFunctionCall$Variant.fromJson(Map<String, dynami
 
 final RealtimeConversationItemFunctionCall realtimeConversationItemFunctionCall;
 
-@override String get type { return 'function_call'; } 
+@override String get type => 'function_call';
+
 @override Map<String, dynamic> toJson() { return {...realtimeConversationItemFunctionCall.toJson(), 'type': type}; } 
 RealtimeConversationItemFunctionCall$Variant copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputStatus? Function()? status, String? Function()? callId, String? name, String? arguments, }) { return RealtimeConversationItemFunctionCall$Variant(realtimeConversationItemFunctionCall.copyWith(
   id: id,
@@ -85,7 +89,8 @@ RealtimeConversationItemFunctionCall$Variant copyWith({String? Function()? id, R
     other is RealtimeConversationItemFunctionCall$Variant && realtimeConversationItemFunctionCall == other.realtimeConversationItemFunctionCall; } 
 @override int get hashCode { return realtimeConversationItemFunctionCall.hashCode; } 
 @override String toString() { return 'RealtimeConversationItem.functionCall($realtimeConversationItemFunctionCall)'; } 
-@override String? get id { return realtimeConversationItemFunctionCall.id; } 
+@override String? get id => realtimeConversationItemFunctionCall.id;
+
  }
 @immutable final class RealtimeConversationItemFunctionCallOutput$Variant extends RealtimeConversationItem {const RealtimeConversationItemFunctionCallOutput$Variant(this.realtimeConversationItemFunctionCallOutput);
 
@@ -93,7 +98,8 @@ factory RealtimeConversationItemFunctionCallOutput$Variant.fromJson(Map<String, 
 
 final RealtimeConversationItemFunctionCallOutput realtimeConversationItemFunctionCallOutput;
 
-@override String get type { return 'function_call_output'; } 
+@override String get type => 'function_call_output';
+
 @override Map<String, dynamic> toJson() { return {...realtimeConversationItemFunctionCallOutput.toJson(), 'type': type}; } 
 RealtimeConversationItemFunctionCallOutput$Variant copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputStatus? Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput$Variant(realtimeConversationItemFunctionCallOutput.copyWith(
   id: id,
@@ -106,7 +112,8 @@ RealtimeConversationItemFunctionCallOutput$Variant copyWith({String? Function()?
     other is RealtimeConversationItemFunctionCallOutput$Variant && realtimeConversationItemFunctionCallOutput == other.realtimeConversationItemFunctionCallOutput; } 
 @override int get hashCode { return realtimeConversationItemFunctionCallOutput.hashCode; } 
 @override String toString() { return 'RealtimeConversationItem.functionCallOutput($realtimeConversationItemFunctionCallOutput)'; } 
-@override String? get id { return realtimeConversationItemFunctionCallOutput.id; } 
+@override String? get id => realtimeConversationItemFunctionCallOutput.id;
+
  }
 @immutable final class RealtimeConversationItemMcpApprovalResponse extends RealtimeConversationItem {const RealtimeConversationItemMcpApprovalResponse(this.realtimeMcpApprovalResponse);
 
@@ -114,7 +121,8 @@ factory RealtimeConversationItemMcpApprovalResponse.fromJson(Map<String, dynamic
 
 final RealtimeMcpApprovalResponse realtimeMcpApprovalResponse;
 
-@override String get type { return 'mcp_approval_response'; } 
+@override String get type => 'mcp_approval_response';
+
 @override Map<String, dynamic> toJson() { return {...realtimeMcpApprovalResponse.toJson(), 'type': type}; } 
 RealtimeConversationItemMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return RealtimeConversationItemMcpApprovalResponse(realtimeMcpApprovalResponse.copyWith(
   id: id,
@@ -126,7 +134,8 @@ RealtimeConversationItemMcpApprovalResponse copyWith({String? id, String? approv
     other is RealtimeConversationItemMcpApprovalResponse && realtimeMcpApprovalResponse == other.realtimeMcpApprovalResponse; } 
 @override int get hashCode { return realtimeMcpApprovalResponse.hashCode; } 
 @override String toString() { return 'RealtimeConversationItem.mcpApprovalResponse($realtimeMcpApprovalResponse)'; } 
-@override String? get id { return realtimeMcpApprovalResponse.id; } 
+@override String? get id => realtimeMcpApprovalResponse.id;
+
  }
 @immutable final class RealtimeConversationItemMcpListTools extends RealtimeConversationItem {const RealtimeConversationItemMcpListTools(this.realtimeMcpListTools);
 
@@ -134,7 +143,8 @@ factory RealtimeConversationItemMcpListTools.fromJson(Map<String, dynamic> json)
 
 final RealtimeMcpListTools realtimeMcpListTools;
 
-@override String get type { return 'mcp_list_tools'; } 
+@override String get type => 'mcp_list_tools';
+
 @override Map<String, dynamic> toJson() { return {...realtimeMcpListTools.toJson(), 'type': type}; } 
 RealtimeConversationItemMcpListTools copyWith({String? Function()? id, String? serverLabel, List<McpListToolsTool>? tools, }) { return RealtimeConversationItemMcpListTools(realtimeMcpListTools.copyWith(
   id: id,
@@ -145,7 +155,8 @@ RealtimeConversationItemMcpListTools copyWith({String? Function()? id, String? s
     other is RealtimeConversationItemMcpListTools && realtimeMcpListTools == other.realtimeMcpListTools; } 
 @override int get hashCode { return realtimeMcpListTools.hashCode; } 
 @override String toString() { return 'RealtimeConversationItem.mcpListTools($realtimeMcpListTools)'; } 
-@override String? get id { return realtimeMcpListTools.id; } 
+@override String? get id => realtimeMcpListTools.id;
+
  }
 @immutable final class RealtimeConversationItemMcpCall extends RealtimeConversationItem {const RealtimeConversationItemMcpCall(this.realtimeMcpToolCall);
 
@@ -153,7 +164,8 @@ factory RealtimeConversationItemMcpCall.fromJson(Map<String, dynamic> json) { re
 
 final RealtimeMcpToolCall realtimeMcpToolCall;
 
-@override String get type { return 'mcp_call'; } 
+@override String get type => 'mcp_call';
+
 @override Map<String, dynamic> toJson() { return {...realtimeMcpToolCall.toJson(), 'type': type}; } 
 RealtimeConversationItemMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? approvalRequestId, String? Function()? output, RealtimeMcpToolCallError? Function()? error, }) { return RealtimeConversationItemMcpCall(realtimeMcpToolCall.copyWith(
   id: id,
@@ -168,7 +180,8 @@ RealtimeConversationItemMcpCall copyWith({String? id, String? serverLabel, Strin
     other is RealtimeConversationItemMcpCall && realtimeMcpToolCall == other.realtimeMcpToolCall; } 
 @override int get hashCode { return realtimeMcpToolCall.hashCode; } 
 @override String toString() { return 'RealtimeConversationItem.mcpCall($realtimeMcpToolCall)'; } 
-@override String? get id { return realtimeMcpToolCall.id; } 
+@override String? get id => realtimeMcpToolCall.id;
+
  }
 @immutable final class RealtimeConversationItemMcpApprovalRequest extends RealtimeConversationItem {const RealtimeConversationItemMcpApprovalRequest(this.realtimeMcpApprovalRequest);
 
@@ -176,7 +189,8 @@ factory RealtimeConversationItemMcpApprovalRequest.fromJson(Map<String, dynamic>
 
 final RealtimeMcpApprovalRequest realtimeMcpApprovalRequest;
 
-@override String get type { return 'mcp_approval_request'; } 
+@override String get type => 'mcp_approval_request';
+
 @override Map<String, dynamic> toJson() { return {...realtimeMcpApprovalRequest.toJson(), 'type': type}; } 
 RealtimeConversationItemMcpApprovalRequest copyWith({String? id, String? serverLabel, String? name, String? arguments, }) { return RealtimeConversationItemMcpApprovalRequest(realtimeMcpApprovalRequest.copyWith(
   id: id,
@@ -188,7 +202,8 @@ RealtimeConversationItemMcpApprovalRequest copyWith({String? id, String? serverL
     other is RealtimeConversationItemMcpApprovalRequest && realtimeMcpApprovalRequest == other.realtimeMcpApprovalRequest; } 
 @override int get hashCode { return realtimeMcpApprovalRequest.hashCode; } 
 @override String toString() { return 'RealtimeConversationItem.mcpApprovalRequest($realtimeMcpApprovalRequest)'; } 
-@override String? get id { return realtimeMcpApprovalRequest.id; } 
+@override String? get id => realtimeMcpApprovalRequest.id;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -196,11 +211,13 @@ RealtimeConversationItemMcpApprovalRequest copyWith({String? id, String? serverL
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeConversationItem$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'RealtimeConversationItem.unknown($json)'; } 
-@override String? get id { return json['id'] as String?; } 
+@override String? get id => json['id'] as String?;
+
  }

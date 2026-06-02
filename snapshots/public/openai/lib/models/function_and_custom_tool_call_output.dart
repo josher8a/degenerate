@@ -23,7 +23,8 @@ factory FunctionAndCustomToolCallOutput.inputFile({String? fileId, String? filen
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is FunctionAndCustomToolCallOutput$Unknown; } 
+bool get isUnknown => this is FunctionAndCustomToolCallOutput$Unknown;
+
  }
 @immutable final class FunctionAndCustomToolCallOutputInputText extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputText(this.inputTextContent);
 
@@ -31,7 +32,8 @@ factory FunctionAndCustomToolCallOutputInputText.fromJson(Map<String, dynamic> j
 
 final InputTextContent inputTextContent;
 
-@override String get type { return 'input_text'; } 
+@override String get type => 'input_text';
+
 @override Map<String, dynamic> toJson() { return {...inputTextContent.toJson(), 'type': type}; } 
 FunctionAndCustomToolCallOutputInputText copyWith({String? text}) { return FunctionAndCustomToolCallOutputInputText(inputTextContent.copyWith(
   text: text,
@@ -47,7 +49,8 @@ factory FunctionAndCustomToolCallOutputInputImage.fromJson(Map<String, dynamic> 
 
 final InputImageContent inputImageContent;
 
-@override String get type { return 'input_image'; } 
+@override String get type => 'input_image';
+
 @override Map<String, dynamic> toJson() { return {...inputImageContent.toJson(), 'type': type}; } 
 FunctionAndCustomToolCallOutputInputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return FunctionAndCustomToolCallOutputInputImage(inputImageContent.copyWith(
   imageUrl: imageUrl,
@@ -65,7 +68,8 @@ factory FunctionAndCustomToolCallOutputInputFile.fromJson(Map<String, dynamic> j
 
 final InputFileContent inputFileContent;
 
-@override String get type { return 'input_file'; } 
+@override String get type => 'input_file';
+
 @override Map<String, dynamic> toJson() { return {...inputFileContent.toJson(), 'type': type}; } 
 FunctionAndCustomToolCallOutputInputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return FunctionAndCustomToolCallOutputInputFile(inputFileContent.copyWith(
   fileId: fileId,
@@ -85,7 +89,8 @@ FunctionAndCustomToolCallOutputInputFile copyWith({String? Function()? fileId, S
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionAndCustomToolCallOutput$Unknown && json == other.json; } 

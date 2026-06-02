@@ -21,7 +21,8 @@ factory ThreadResourceStatus.closed({required String? reason}) { return ThreadRe
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ThreadResourceStatus$Unknown; } 
+bool get isUnknown => this is ThreadResourceStatus$Unknown;
+
  }
 @immutable final class ThreadResourceStatusActive extends ThreadResourceStatus {const ThreadResourceStatusActive(this.activeStatus);
 
@@ -29,7 +30,8 @@ factory ThreadResourceStatusActive.fromJson(Map<String, dynamic> json) { return 
 
 final ActiveStatus activeStatus;
 
-@override String get type { return 'active'; } 
+@override String get type => 'active';
+
 @override Map<String, dynamic> toJson() { return {...activeStatus.toJson(), 'type': type}; } 
 ThreadResourceStatusActive copyWith({ActiveStatus? activeStatus}) { return ThreadResourceStatusActive(activeStatus ?? this.activeStatus); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -43,7 +45,8 @@ factory ThreadResourceStatusLocked.fromJson(Map<String, dynamic> json) { return 
 
 final LockedStatus lockedStatus;
 
-@override String get type { return 'locked'; } 
+@override String get type => 'locked';
+
 @override Map<String, dynamic> toJson() { return {...lockedStatus.toJson(), 'type': type}; } 
 ThreadResourceStatusLocked copyWith({String? Function()? reason}) { return ThreadResourceStatusLocked(lockedStatus.copyWith(
   reason: reason,
@@ -59,7 +62,8 @@ factory ThreadResourceStatusClosed.fromJson(Map<String, dynamic> json) { return 
 
 final ClosedStatus closedStatus;
 
-@override String get type { return 'closed'; } 
+@override String get type => 'closed';
+
 @override Map<String, dynamic> toJson() { return {...closedStatus.toJson(), 'type': type}; } 
 ThreadResourceStatusClosed copyWith({String? Function()? reason}) { return ThreadResourceStatusClosed(closedStatus.copyWith(
   reason: reason,
@@ -75,7 +79,8 @@ ThreadResourceStatusClosed copyWith({String? Function()? reason}) { return Threa
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadResourceStatus$Unknown && json == other.json; } 

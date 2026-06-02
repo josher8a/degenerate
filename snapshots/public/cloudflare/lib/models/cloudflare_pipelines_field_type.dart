@@ -31,7 +31,8 @@ factory CloudflarePipelinesFieldType.list({required CloudflarePipelinesSourceFie
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CloudflarePipelinesFieldType$Unknown; } 
+bool get isUnknown => this is CloudflarePipelinesFieldType$Unknown;
+
  }
 @immutable final class CloudflarePipelinesFieldTypeInt32 extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeInt32(this.int32);
 
@@ -39,7 +40,8 @@ factory CloudflarePipelinesFieldTypeInt32.fromJson(Map<String, dynamic> json) { 
 
 final Int32 int32;
 
-@override String get type { return 'int32'; } 
+@override String get type => 'int32';
+
 @override Map<String, dynamic> toJson() { return {...int32.toJson(), 'type': type}; } 
 CloudflarePipelinesFieldTypeInt32 copyWith({Int32? int32}) { return CloudflarePipelinesFieldTypeInt32(int32 ?? this.int32); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -53,7 +55,8 @@ factory CloudflarePipelinesFieldTypeInt64.fromJson(Map<String, dynamic> json) { 
 
 final Int64 int64;
 
-@override String get type { return 'int64'; } 
+@override String get type => 'int64';
+
 @override Map<String, dynamic> toJson() { return {...int64.toJson(), 'type': type}; } 
 CloudflarePipelinesFieldTypeInt64 copyWith({Int64? int64}) { return CloudflarePipelinesFieldTypeInt64(int64 ?? this.int64); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -67,7 +70,8 @@ factory CloudflarePipelinesFieldTypeFloat32.fromJson(Map<String, dynamic> json) 
 
 final Float32 float32;
 
-@override String get type { return 'float32'; } 
+@override String get type => 'float32';
+
 @override Map<String, dynamic> toJson() { return {...float32.toJson(), 'type': type}; } 
 CloudflarePipelinesFieldTypeFloat32 copyWith({Float32? float32}) { return CloudflarePipelinesFieldTypeFloat32(float32 ?? this.float32); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -81,7 +85,8 @@ factory CloudflarePipelinesFieldTypeFloat64.fromJson(Map<String, dynamic> json) 
 
 final Float64 float64;
 
-@override String get type { return 'float64'; } 
+@override String get type => 'float64';
+
 @override Map<String, dynamic> toJson() { return {...float64.toJson(), 'type': type}; } 
 CloudflarePipelinesFieldTypeFloat64 copyWith({Float64? float64}) { return CloudflarePipelinesFieldTypeFloat64(float64 ?? this.float64); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -95,7 +100,8 @@ factory CloudflarePipelinesFieldTypeBool.fromJson(Map<String, dynamic> json) { r
 
 final Bool $bool;
 
-@override String get type { return 'bool'; } 
+@override String get type => 'bool';
+
 @override Map<String, dynamic> toJson() { return {...$bool.toJson(), 'type': type}; } 
 CloudflarePipelinesFieldTypeBool copyWith({Bool? $bool}) { return CloudflarePipelinesFieldTypeBool($bool ?? this.$bool); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -109,7 +115,8 @@ factory CloudflarePipelinesFieldTypeString.fromJson(Map<String, dynamic> json) {
 
 final StringModel stringModel;
 
-@override String get type { return 'string'; } 
+@override String get type => 'string';
+
 @override Map<String, dynamic> toJson() { return {...stringModel.toJson(), 'type': type}; } 
 CloudflarePipelinesFieldTypeString copyWith({StringModel? stringModel}) { return CloudflarePipelinesFieldTypeString(stringModel ?? this.stringModel); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -123,7 +130,8 @@ factory CloudflarePipelinesFieldTypeBinary.fromJson(Map<String, dynamic> json) {
 
 final Binary binary;
 
-@override String get type { return 'binary'; } 
+@override String get type => 'binary';
+
 @override Map<String, dynamic> toJson() { return {...binary.toJson(), 'type': type}; } 
 CloudflarePipelinesFieldTypeBinary copyWith({Binary? binary}) { return CloudflarePipelinesFieldTypeBinary(binary ?? this.binary); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -137,7 +145,8 @@ factory CloudflarePipelinesFieldTypeTimestamp.fromJson(Map<String, dynamic> json
 
 final CloudflarePipelinesTimestampField cloudflarePipelinesTimestampField;
 
-@override String get type { return 'Timestamp'; } 
+@override String get type => 'Timestamp';
+
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesTimestampField.toJson(), 'type': type}; } 
 CloudflarePipelinesFieldTypeTimestamp copyWith({CloudflarePipelinesTimestampUnit? Function()? unit}) { return CloudflarePipelinesFieldTypeTimestamp(cloudflarePipelinesTimestampField.copyWith(
   unit: unit,
@@ -153,7 +162,8 @@ factory CloudflarePipelinesFieldTypeJson.fromJson(Map<String, dynamic> json) { r
 
 final Json json;
 
-@override String get type { return 'json'; } 
+@override String get type => 'json';
+
 @override Map<String, dynamic> toJson() { return {...json.toJson(), 'type': type}; } 
 CloudflarePipelinesFieldTypeJson copyWith({Json? json}) { return CloudflarePipelinesFieldTypeJson(json ?? this.json); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -167,7 +177,8 @@ factory CloudflarePipelinesFieldTypeStruct.fromJson(Map<String, dynamic> json) {
 
 final CloudflarePipelinesStructField cloudflarePipelinesStructField;
 
-@override String get type { return 'Struct'; } 
+@override String get type => 'Struct';
+
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesStructField.toJson(), 'type': type}; } 
 CloudflarePipelinesFieldTypeStruct copyWith({List<CloudflarePipelinesSourceField>? fields, String? Function()? name, }) { return CloudflarePipelinesFieldTypeStruct(cloudflarePipelinesStructField.copyWith(
   fields: fields,
@@ -184,7 +195,8 @@ factory CloudflarePipelinesFieldTypeList.fromJson(Map<String, dynamic> json) { r
 
 final CloudflarePipelinesListField cloudflarePipelinesListField;
 
-@override String get type { return 'List'; } 
+@override String get type => 'List';
+
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesListField.toJson(), 'type': type}; } 
 CloudflarePipelinesFieldTypeList copyWith({CloudflarePipelinesSourceField? items}) { return CloudflarePipelinesFieldTypeList(cloudflarePipelinesListField.copyWith(
   items: items,
@@ -200,7 +212,8 @@ CloudflarePipelinesFieldTypeList copyWith({CloudflarePipelinesSourceField? items
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldType$Unknown && json == other.json; } 

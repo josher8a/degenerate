@@ -19,7 +19,8 @@ factory CloudflarePipelinesFormat.parquet({CloudflarePipelinesParquetCompression
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CloudflarePipelinesFormat$Unknown; } 
+bool get isUnknown => this is CloudflarePipelinesFormat$Unknown;
+
  }
 @immutable final class CloudflarePipelinesFormatJson extends CloudflarePipelinesFormat {const CloudflarePipelinesFormatJson(this.cloudflarePipelinesJsonFormat);
 
@@ -27,7 +28,8 @@ factory CloudflarePipelinesFormatJson.fromJson(Map<String, dynamic> json) { retu
 
 final CloudflarePipelinesJsonFormat cloudflarePipelinesJsonFormat;
 
-@override String get type { return 'Json'; } 
+@override String get type => 'Json';
+
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesJsonFormat.toJson(), 'type': type}; } 
 CloudflarePipelinesFormatJson copyWith({CloudflarePipelinesDecimalEncoding? Function()? decimalEncoding, CloudflarePipelinesTimestampFormat? Function()? timestampFormat, bool? Function()? unstructured, }) { return CloudflarePipelinesFormatJson(cloudflarePipelinesJsonFormat.copyWith(
   decimalEncoding: decimalEncoding,
@@ -45,7 +47,8 @@ factory CloudflarePipelinesFormatParquet.fromJson(Map<String, dynamic> json) { r
 
 final CloudflarePipelinesParquetFormat cloudflarePipelinesParquetFormat;
 
-@override String get type { return 'Parquet'; } 
+@override String get type => 'Parquet';
+
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesParquetFormat.toJson(), 'type': type}; } 
 CloudflarePipelinesFormatParquet copyWith({CloudflarePipelinesParquetCompression? Function()? compression, int? Function()? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(cloudflarePipelinesParquetFormat.copyWith(
   compression: compression,
@@ -62,7 +65,8 @@ CloudflarePipelinesFormatParquet copyWith({CloudflarePipelinesParquetCompression
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFormat$Unknown && json == other.json; } 

@@ -108,7 +108,8 @@ factory ConversationItem.customToolCallOutput({String? id, required String callI
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ConversationItem$Unknown; } 
+bool get isUnknown => this is ConversationItem$Unknown;
+
 /// Shared by all variants of this union.
 String? get id;
  }
@@ -118,7 +119,8 @@ factory ConversationItemMessage.fromJson(Map<String, dynamic> json) { return Con
 
 final Message message;
 
-@override String get type { return 'message'; } 
+@override String get type => 'message';
+
 @override Map<String, dynamic> toJson() { return {...message.toJson(), 'type': type}; } 
 ConversationItemMessage copyWith({String? id, MessageStatus? status, MessageRole? role, List<MessageContent>? content, }) { return ConversationItemMessage(message.copyWith(
   id: id,
@@ -130,7 +132,8 @@ ConversationItemMessage copyWith({String? id, MessageStatus? status, MessageRole
     other is ConversationItemMessage && message == other.message; } 
 @override int get hashCode { return message.hashCode; } 
 @override String toString() { return 'ConversationItem.message($message)'; } 
-@override String? get id { return message.id; } 
+@override String? get id => message.id;
+
  }
 @immutable final class ConversationItemFunctionToolCallResource extends ConversationItem {const ConversationItemFunctionToolCallResource(this.functionToolCall);
 
@@ -138,7 +141,8 @@ factory ConversationItemFunctionToolCallResource.fromJson(Map<String, dynamic> j
 
 final FunctionToolCall functionToolCall;
 
-@override String get type { return 'FunctionToolCallResource'; } 
+@override String get type => 'FunctionToolCallResource';
+
 @override Map<String, dynamic> toJson() { return {...functionToolCall.toJson(), 'type': type}; } 
 ConversationItemFunctionToolCallResource copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputStatus? Function()? status, }) { return ConversationItemFunctionToolCallResource(functionToolCall.copyWith(
   id: id,
@@ -152,7 +156,8 @@ ConversationItemFunctionToolCallResource copyWith({String? Function()? id, Strin
     other is ConversationItemFunctionToolCallResource && functionToolCall == other.functionToolCall; } 
 @override int get hashCode { return functionToolCall.hashCode; } 
 @override String toString() { return 'ConversationItem.functionToolCallResource($functionToolCall)'; } 
-@override String? get id { return functionToolCall.id; } 
+@override String? get id => functionToolCall.id;
+
  }
 @immutable final class ConversationItemFunctionToolCallOutputResource extends ConversationItem {const ConversationItemFunctionToolCallOutputResource(this.functionToolCallOutput);
 
@@ -160,7 +165,8 @@ factory ConversationItemFunctionToolCallOutputResource.fromJson(Map<String, dyna
 
 final FunctionToolCallOutput functionToolCallOutput;
 
-@override String get type { return 'FunctionToolCallOutputResource'; } 
+@override String get type => 'FunctionToolCallOutputResource';
+
 @override Map<String, dynamic> toJson() { return {...functionToolCallOutput.toJson(), 'type': type}; } 
 ConversationItemFunctionToolCallOutputResource copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputStatus? Function()? status, }) { return ConversationItemFunctionToolCallOutputResource(functionToolCallOutput.copyWith(
   id: id,
@@ -172,7 +178,8 @@ ConversationItemFunctionToolCallOutputResource copyWith({String? Function()? id,
     other is ConversationItemFunctionToolCallOutputResource && functionToolCallOutput == other.functionToolCallOutput; } 
 @override int get hashCode { return functionToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItem.functionToolCallOutputResource($functionToolCallOutput)'; } 
-@override String? get id { return functionToolCallOutput.id; } 
+@override String? get id => functionToolCallOutput.id;
+
  }
 @immutable final class ConversationItemFileSearchCall extends ConversationItem {const ConversationItemFileSearchCall(this.fileSearchToolCall);
 
@@ -180,7 +187,8 @@ factory ConversationItemFileSearchCall.fromJson(Map<String, dynamic> json) { ret
 
 final FileSearchToolCall fileSearchToolCall;
 
-@override String get type { return 'file_search_call'; } 
+@override String get type => 'file_search_call';
+
 @override Map<String, dynamic> toJson() { return {...fileSearchToolCall.toJson(), 'type': type}; } 
 ConversationItemFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<String>? queries, List<FileSearchToolCallResults>? Function()? results, }) { return ConversationItemFileSearchCall(fileSearchToolCall.copyWith(
   id: id,
@@ -192,7 +200,8 @@ ConversationItemFileSearchCall copyWith({String? id, FileSearchToolCallStatus? s
     other is ConversationItemFileSearchCall && fileSearchToolCall == other.fileSearchToolCall; } 
 @override int get hashCode { return fileSearchToolCall.hashCode; } 
 @override String toString() { return 'ConversationItem.fileSearchCall($fileSearchToolCall)'; } 
-@override String? get id { return fileSearchToolCall.id; } 
+@override String? get id => fileSearchToolCall.id;
+
  }
 @immutable final class ConversationItemWebSearchCall extends ConversationItem {const ConversationItemWebSearchCall(this.webSearchToolCall);
 
@@ -200,7 +209,8 @@ factory ConversationItemWebSearchCall.fromJson(Map<String, dynamic> json) { retu
 
 final WebSearchToolCall webSearchToolCall;
 
-@override String get type { return 'web_search_call'; } 
+@override String get type => 'web_search_call';
+
 @override Map<String, dynamic> toJson() { return {...webSearchToolCall.toJson(), 'type': type}; } 
 ConversationItemWebSearchCall copyWith({String? id, WebSearchToolCallStatus? status, WebSearchToolCallAction? action, }) { return ConversationItemWebSearchCall(webSearchToolCall.copyWith(
   id: id,
@@ -211,7 +221,8 @@ ConversationItemWebSearchCall copyWith({String? id, WebSearchToolCallStatus? sta
     other is ConversationItemWebSearchCall && webSearchToolCall == other.webSearchToolCall; } 
 @override int get hashCode { return webSearchToolCall.hashCode; } 
 @override String toString() { return 'ConversationItem.webSearchCall($webSearchToolCall)'; } 
-@override String? get id { return webSearchToolCall.id; } 
+@override String? get id => webSearchToolCall.id;
+
  }
 @immutable final class ConversationItemImageGenerationCall extends ConversationItem {const ConversationItemImageGenerationCall(this.imageGenToolCall);
 
@@ -219,7 +230,8 @@ factory ConversationItemImageGenerationCall.fromJson(Map<String, dynamic> json) 
 
 final ImageGenToolCall imageGenToolCall;
 
-@override String get type { return 'image_generation_call'; } 
+@override String get type => 'image_generation_call';
+
 @override Map<String, dynamic> toJson() { return {...imageGenToolCall.toJson(), 'type': type}; } 
 ConversationItemImageGenerationCall copyWith({String? id, ImageGenToolCallStatus? status, String? Function()? result, }) { return ConversationItemImageGenerationCall(imageGenToolCall.copyWith(
   id: id,
@@ -230,7 +242,8 @@ ConversationItemImageGenerationCall copyWith({String? id, ImageGenToolCallStatus
     other is ConversationItemImageGenerationCall && imageGenToolCall == other.imageGenToolCall; } 
 @override int get hashCode { return imageGenToolCall.hashCode; } 
 @override String toString() { return 'ConversationItem.imageGenerationCall($imageGenToolCall)'; } 
-@override String? get id { return imageGenToolCall.id; } 
+@override String? get id => imageGenToolCall.id;
+
  }
 @immutable final class ConversationItemComputerCall extends ConversationItem {const ConversationItemComputerCall(this.computerToolCall);
 
@@ -238,7 +251,8 @@ factory ConversationItemComputerCall.fromJson(Map<String, dynamic> json) { retur
 
 final ComputerToolCall computerToolCall;
 
-@override String get type { return 'computer_call'; } 
+@override String get type => 'computer_call';
+
 @override Map<String, dynamic> toJson() { return {...computerToolCall.toJson(), 'type': type}; } 
 ConversationItemComputerCall copyWith({String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ConversationItemComputerCall(computerToolCall.copyWith(
   id: id,
@@ -252,7 +266,8 @@ ConversationItemComputerCall copyWith({String? id, String? callId, ComputerActio
     other is ConversationItemComputerCall && computerToolCall == other.computerToolCall; } 
 @override int get hashCode { return computerToolCall.hashCode; } 
 @override String toString() { return 'ConversationItem.computerCall($computerToolCall)'; } 
-@override String? get id { return computerToolCall.id; } 
+@override String? get id => computerToolCall.id;
+
  }
 @immutable final class ConversationItemComputerToolCallOutputResource extends ConversationItem {const ConversationItemComputerToolCallOutputResource(this.computerToolCallOutput);
 
@@ -260,7 +275,8 @@ factory ConversationItemComputerToolCallOutputResource.fromJson(Map<String, dyna
 
 final ComputerToolCallOutput computerToolCallOutput;
 
-@override String get type { return 'ComputerToolCallOutputResource'; } 
+@override String get type => 'ComputerToolCallOutputResource';
+
 @override Map<String, dynamic> toJson() { return {...computerToolCallOutput.toJson(), 'type': type}; } 
 ConversationItemComputerToolCallOutputResource copyWith({String? Function()? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputStatus? Function()? status, }) { return ConversationItemComputerToolCallOutputResource(computerToolCallOutput.copyWith(
   id: id,
@@ -273,7 +289,8 @@ ConversationItemComputerToolCallOutputResource copyWith({String? Function()? id,
     other is ConversationItemComputerToolCallOutputResource && computerToolCallOutput == other.computerToolCallOutput; } 
 @override int get hashCode { return computerToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItem.computerToolCallOutputResource($computerToolCallOutput)'; } 
-@override String? get id { return computerToolCallOutput.id; } 
+@override String? get id => computerToolCallOutput.id;
+
  }
 @immutable final class ConversationItemToolSearchCall extends ConversationItem {const ConversationItemToolSearchCall(this.toolSearchCall);
 
@@ -281,7 +298,8 @@ factory ConversationItemToolSearchCall.fromJson(Map<String, dynamic> json) { ret
 
 final ToolSearchCall toolSearchCall;
 
-@override String get type { return 'tool_search_call'; } 
+@override String get type => 'tool_search_call';
+
 @override Map<String, dynamic> toJson() { return {...toolSearchCall.toJson(), 'type': type}; } 
 ConversationItemToolSearchCall copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, dynamic Function()? arguments, FunctionCallStatus? status, String? Function()? createdBy, }) { return ConversationItemToolSearchCall(toolSearchCall.copyWith(
   id: id,
@@ -295,7 +313,8 @@ ConversationItemToolSearchCall copyWith({String? id, String? Function()? callId,
     other is ConversationItemToolSearchCall && toolSearchCall == other.toolSearchCall; } 
 @override int get hashCode { return toolSearchCall.hashCode; } 
 @override String toString() { return 'ConversationItem.toolSearchCall($toolSearchCall)'; } 
-@override String? get id { return toolSearchCall.id; } 
+@override String? get id => toolSearchCall.id;
+
  }
 @immutable final class ConversationItemToolSearchOutput extends ConversationItem {const ConversationItemToolSearchOutput(this.toolSearchOutput);
 
@@ -303,7 +322,8 @@ factory ConversationItemToolSearchOutput.fromJson(Map<String, dynamic> json) { r
 
 final ToolSearchOutput toolSearchOutput;
 
-@override String get type { return 'tool_search_output'; } 
+@override String get type => 'tool_search_output';
+
 @override Map<String, dynamic> toJson() { return {...toolSearchOutput.toJson(), 'type': type}; } 
 ConversationItemToolSearchOutput copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String? Function()? createdBy, }) { return ConversationItemToolSearchOutput(toolSearchOutput.copyWith(
   id: id,
@@ -317,7 +337,8 @@ ConversationItemToolSearchOutput copyWith({String? id, String? Function()? callI
     other is ConversationItemToolSearchOutput && toolSearchOutput == other.toolSearchOutput; } 
 @override int get hashCode { return toolSearchOutput.hashCode; } 
 @override String toString() { return 'ConversationItem.toolSearchOutput($toolSearchOutput)'; } 
-@override String? get id { return toolSearchOutput.id; } 
+@override String? get id => toolSearchOutput.id;
+
  }
 @immutable final class ConversationItemReasoning extends ConversationItem {const ConversationItemReasoning(this.reasoningItem);
 
@@ -325,7 +346,8 @@ factory ConversationItemReasoning.fromJson(Map<String, dynamic> json) { return C
 
 final ReasoningItem reasoningItem;
 
-@override String get type { return 'reasoning'; } 
+@override String get type => 'reasoning';
+
 @override Map<String, dynamic> toJson() { return {...reasoningItem.toJson(), 'type': type}; } 
 ConversationItemReasoning copyWith({String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputStatus? Function()? status, }) { return ConversationItemReasoning(reasoningItem.copyWith(
   id: id,
@@ -338,7 +360,8 @@ ConversationItemReasoning copyWith({String? id, String? Function()? encryptedCon
     other is ConversationItemReasoning && reasoningItem == other.reasoningItem; } 
 @override int get hashCode { return reasoningItem.hashCode; } 
 @override String toString() { return 'ConversationItem.reasoning($reasoningItem)'; } 
-@override String? get id { return reasoningItem.id; } 
+@override String? get id => reasoningItem.id;
+
  }
 @immutable final class ConversationItemCodeInterpreterCall extends ConversationItem {const ConversationItemCodeInterpreterCall(this.codeInterpreterToolCall);
 
@@ -346,7 +369,8 @@ factory ConversationItemCodeInterpreterCall.fromJson(Map<String, dynamic> json) 
 
 final CodeInterpreterToolCall codeInterpreterToolCall;
 
-@override String get type { return 'code_interpreter_call'; } 
+@override String get type => 'code_interpreter_call';
+
 @override Map<String, dynamic> toJson() { return {...codeInterpreterToolCall.toJson(), 'type': type}; } 
 ConversationItemCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCallStatus? status, String? containerId, String? Function()? code, List<CodeInterpreterToolCallOutputs>? Function()? outputs, }) { return ConversationItemCodeInterpreterCall(codeInterpreterToolCall.copyWith(
   id: id,
@@ -359,7 +383,8 @@ ConversationItemCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCal
     other is ConversationItemCodeInterpreterCall && codeInterpreterToolCall == other.codeInterpreterToolCall; } 
 @override int get hashCode { return codeInterpreterToolCall.hashCode; } 
 @override String toString() { return 'ConversationItem.codeInterpreterCall($codeInterpreterToolCall)'; } 
-@override String? get id { return codeInterpreterToolCall.id; } 
+@override String? get id => codeInterpreterToolCall.id;
+
  }
 @immutable final class ConversationItemLocalShellCall extends ConversationItem {const ConversationItemLocalShellCall(this.localShellToolCall);
 
@@ -367,7 +392,8 @@ factory ConversationItemLocalShellCall.fromJson(Map<String, dynamic> json) { ret
 
 final LocalShellToolCall localShellToolCall;
 
-@override String get type { return 'local_shell_call'; } 
+@override String get type => 'local_shell_call';
+
 @override Map<String, dynamic> toJson() { return {...localShellToolCall.toJson(), 'type': type}; } 
 ConversationItemLocalShellCall copyWith({String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputStatus? status, }) { return ConversationItemLocalShellCall(localShellToolCall.copyWith(
   id: id,
@@ -379,7 +405,8 @@ ConversationItemLocalShellCall copyWith({String? id, String? callId, LocalShellE
     other is ConversationItemLocalShellCall && localShellToolCall == other.localShellToolCall; } 
 @override int get hashCode { return localShellToolCall.hashCode; } 
 @override String toString() { return 'ConversationItem.localShellCall($localShellToolCall)'; } 
-@override String? get id { return localShellToolCall.id; } 
+@override String? get id => localShellToolCall.id;
+
  }
 @immutable final class ConversationItemLocalShellCallOutput extends ConversationItem {const ConversationItemLocalShellCallOutput(this.localShellToolCallOutput);
 
@@ -387,7 +414,8 @@ factory ConversationItemLocalShellCallOutput.fromJson(Map<String, dynamic> json)
 
 final LocalShellToolCallOutput localShellToolCallOutput;
 
-@override String get type { return 'local_shell_call_output'; } 
+@override String get type => 'local_shell_call_output';
+
 @override Map<String, dynamic> toJson() { return {...localShellToolCallOutput.toJson(), 'type': type}; } 
 ConversationItemLocalShellCallOutput copyWith({String? id, String? output, LocalShellToolCallOutputStatus? Function()? status, }) { return ConversationItemLocalShellCallOutput(localShellToolCallOutput.copyWith(
   id: id,
@@ -398,7 +426,8 @@ ConversationItemLocalShellCallOutput copyWith({String? id, String? output, Local
     other is ConversationItemLocalShellCallOutput && localShellToolCallOutput == other.localShellToolCallOutput; } 
 @override int get hashCode { return localShellToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItem.localShellCallOutput($localShellToolCallOutput)'; } 
-@override String? get id { return localShellToolCallOutput.id; } 
+@override String? get id => localShellToolCallOutput.id;
+
  }
 @immutable final class ConversationItemShellCall extends ConversationItem {const ConversationItemShellCall(this.functionShellCall);
 
@@ -406,7 +435,8 @@ factory ConversationItemShellCall.fromJson(Map<String, dynamic> json) { return C
 
 final FunctionShellCall functionShellCall;
 
-@override String get type { return 'shell_call'; } 
+@override String get type => 'shell_call';
+
 @override Map<String, dynamic> toJson() { return {...functionShellCall.toJson(), 'type': type}; } 
 ConversationItemShellCall copyWith({String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String? Function()? createdBy, }) { return ConversationItemShellCall(functionShellCall.copyWith(
   id: id,
@@ -420,7 +450,8 @@ ConversationItemShellCall copyWith({String? id, String? callId, FunctionShellAct
     other is ConversationItemShellCall && functionShellCall == other.functionShellCall; } 
 @override int get hashCode { return functionShellCall.hashCode; } 
 @override String toString() { return 'ConversationItem.shellCall($functionShellCall)'; } 
-@override String? get id { return functionShellCall.id; } 
+@override String? get id => functionShellCall.id;
+
  }
 @immutable final class ConversationItemShellCallOutput extends ConversationItem {const ConversationItemShellCallOutput(this.functionShellCallOutput);
 
@@ -428,7 +459,8 @@ factory ConversationItemShellCallOutput.fromJson(Map<String, dynamic> json) { re
 
 final FunctionShellCallOutput functionShellCallOutput;
 
-@override String get type { return 'shell_call_output'; } 
+@override String get type => 'shell_call_output';
+
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutput.toJson(), 'type': type}; } 
 ConversationItemShellCallOutput copyWith({String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String? Function()? createdBy, }) { return ConversationItemShellCallOutput(functionShellCallOutput.copyWith(
   id: id,
@@ -442,7 +474,8 @@ ConversationItemShellCallOutput copyWith({String? id, String? callId, LocalShell
     other is ConversationItemShellCallOutput && functionShellCallOutput == other.functionShellCallOutput; } 
 @override int get hashCode { return functionShellCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItem.shellCallOutput($functionShellCallOutput)'; } 
-@override String? get id { return functionShellCallOutput.id; } 
+@override String? get id => functionShellCallOutput.id;
+
  }
 @immutable final class ConversationItemApplyPatchCall extends ConversationItem {const ConversationItemApplyPatchCall(this.applyPatchToolCall);
 
@@ -450,7 +483,8 @@ factory ConversationItemApplyPatchCall.fromJson(Map<String, dynamic> json) { ret
 
 final ApplyPatchToolCall applyPatchToolCall;
 
-@override String get type { return 'apply_patch_call'; } 
+@override String get type => 'apply_patch_call';
+
 @override Map<String, dynamic> toJson() { return {...applyPatchToolCall.toJson(), 'type': type}; } 
 ConversationItemApplyPatchCall copyWith({String? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchToolCallOperation? operation, String? Function()? createdBy, }) { return ConversationItemApplyPatchCall(applyPatchToolCall.copyWith(
   id: id,
@@ -463,7 +497,8 @@ ConversationItemApplyPatchCall copyWith({String? id, String? callId, ApplyPatchC
     other is ConversationItemApplyPatchCall && applyPatchToolCall == other.applyPatchToolCall; } 
 @override int get hashCode { return applyPatchToolCall.hashCode; } 
 @override String toString() { return 'ConversationItem.applyPatchCall($applyPatchToolCall)'; } 
-@override String? get id { return applyPatchToolCall.id; } 
+@override String? get id => applyPatchToolCall.id;
+
  }
 @immutable final class ConversationItemApplyPatchCallOutput extends ConversationItem {const ConversationItemApplyPatchCallOutput(this.applyPatchToolCallOutput);
 
@@ -471,7 +506,8 @@ factory ConversationItemApplyPatchCallOutput.fromJson(Map<String, dynamic> json)
 
 final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 
-@override String get type { return 'apply_patch_call_output'; } 
+@override String get type => 'apply_patch_call_output';
+
 @override Map<String, dynamic> toJson() { return {...applyPatchToolCallOutput.toJson(), 'type': type}; } 
 ConversationItemApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCallOutputStatus? status, String? Function()? output, String? Function()? createdBy, }) { return ConversationItemApplyPatchCallOutput(applyPatchToolCallOutput.copyWith(
   id: id,
@@ -484,7 +520,8 @@ ConversationItemApplyPatchCallOutput copyWith({String? id, String? callId, Apply
     other is ConversationItemApplyPatchCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput; } 
 @override int get hashCode { return applyPatchToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItem.applyPatchCallOutput($applyPatchToolCallOutput)'; } 
-@override String? get id { return applyPatchToolCallOutput.id; } 
+@override String? get id => applyPatchToolCallOutput.id;
+
  }
 @immutable final class ConversationItemMcpListTools extends ConversationItem {const ConversationItemMcpListTools(this.mcpListTools);
 
@@ -492,7 +529,8 @@ factory ConversationItemMcpListTools.fromJson(Map<String, dynamic> json) { retur
 
 final McpListTools mcpListTools;
 
-@override String get type { return 'mcp_list_tools'; } 
+@override String get type => 'mcp_list_tools';
+
 @override Map<String, dynamic> toJson() { return {...mcpListTools.toJson(), 'type': type}; } 
 ConversationItemMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsTool>? tools, String? Function()? error, }) { return ConversationItemMcpListTools(mcpListTools.copyWith(
   id: id,
@@ -504,7 +542,8 @@ ConversationItemMcpListTools copyWith({String? id, String? serverLabel, List<Mcp
     other is ConversationItemMcpListTools && mcpListTools == other.mcpListTools; } 
 @override int get hashCode { return mcpListTools.hashCode; } 
 @override String toString() { return 'ConversationItem.mcpListTools($mcpListTools)'; } 
-@override String? get id { return mcpListTools.id; } 
+@override String? get id => mcpListTools.id;
+
  }
 @immutable final class ConversationItemMcpApprovalRequest extends ConversationItem {const ConversationItemMcpApprovalRequest(this.mcpApprovalRequest);
 
@@ -512,7 +551,8 @@ factory ConversationItemMcpApprovalRequest.fromJson(Map<String, dynamic> json) {
 
 final McpApprovalRequest mcpApprovalRequest;
 
-@override String get type { return 'mcp_approval_request'; } 
+@override String get type => 'mcp_approval_request';
+
 @override Map<String, dynamic> toJson() { return {...mcpApprovalRequest.toJson(), 'type': type}; } 
 ConversationItemMcpApprovalRequest copyWith({String? id, String? serverLabel, String? name, String? arguments, }) { return ConversationItemMcpApprovalRequest(mcpApprovalRequest.copyWith(
   id: id,
@@ -524,7 +564,8 @@ ConversationItemMcpApprovalRequest copyWith({String? id, String? serverLabel, St
     other is ConversationItemMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest; } 
 @override int get hashCode { return mcpApprovalRequest.hashCode; } 
 @override String toString() { return 'ConversationItem.mcpApprovalRequest($mcpApprovalRequest)'; } 
-@override String? get id { return mcpApprovalRequest.id; } 
+@override String? get id => mcpApprovalRequest.id;
+
  }
 @immutable final class ConversationItemMcpApprovalResponse extends ConversationItem {const ConversationItemMcpApprovalResponse(this.mcpApprovalResponseResource);
 
@@ -532,7 +573,8 @@ factory ConversationItemMcpApprovalResponse.fromJson(Map<String, dynamic> json) 
 
 final McpApprovalResponseResource mcpApprovalResponseResource;
 
-@override String get type { return 'mcp_approval_response'; } 
+@override String get type => 'mcp_approval_response';
+
 @override Map<String, dynamic> toJson() { return {...mcpApprovalResponseResource.toJson(), 'type': type}; } 
 ConversationItemMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return ConversationItemMcpApprovalResponse(mcpApprovalResponseResource.copyWith(
   id: id,
@@ -544,7 +586,8 @@ ConversationItemMcpApprovalResponse copyWith({String? id, String? approvalReques
     other is ConversationItemMcpApprovalResponse && mcpApprovalResponseResource == other.mcpApprovalResponseResource; } 
 @override int get hashCode { return mcpApprovalResponseResource.hashCode; } 
 @override String toString() { return 'ConversationItem.mcpApprovalResponse($mcpApprovalResponseResource)'; } 
-@override String? get id { return mcpApprovalResponseResource.id; } 
+@override String? get id => mcpApprovalResponseResource.id;
+
  }
 @immutable final class ConversationItemMcpCall extends ConversationItem {const ConversationItemMcpCall(this.mcpToolCall);
 
@@ -552,7 +595,8 @@ factory ConversationItemMcpCall.fromJson(Map<String, dynamic> json) { return Con
 
 final McpToolCall mcpToolCall;
 
-@override String get type { return 'mcp_call'; } 
+@override String get type => 'mcp_call';
+
 @override Map<String, dynamic> toJson() { return {...mcpToolCall.toJson(), 'type': type}; } 
 ConversationItemMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? output, String? Function()? error, McpToolCallStatus? Function()? status, String? Function()? approvalRequestId, }) { return ConversationItemMcpCall(mcpToolCall.copyWith(
   id: id,
@@ -568,7 +612,8 @@ ConversationItemMcpCall copyWith({String? id, String? serverLabel, String? name,
     other is ConversationItemMcpCall && mcpToolCall == other.mcpToolCall; } 
 @override int get hashCode { return mcpToolCall.hashCode; } 
 @override String toString() { return 'ConversationItem.mcpCall($mcpToolCall)'; } 
-@override String? get id { return mcpToolCall.id; } 
+@override String? get id => mcpToolCall.id;
+
  }
 @immutable final class ConversationItemCustomToolCall extends ConversationItem {const ConversationItemCustomToolCall(this.customToolCall);
 
@@ -576,7 +621,8 @@ factory ConversationItemCustomToolCall.fromJson(Map<String, dynamic> json) { ret
 
 final CustomToolCall customToolCall;
 
-@override String get type { return 'custom_tool_call'; } 
+@override String get type => 'custom_tool_call';
+
 @override Map<String, dynamic> toJson() { return {...customToolCall.toJson(), 'type': type}; } 
 ConversationItemCustomToolCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? input, }) { return ConversationItemCustomToolCall(customToolCall.copyWith(
   id: id,
@@ -589,7 +635,8 @@ ConversationItemCustomToolCall copyWith({String? Function()? id, String? callId,
     other is ConversationItemCustomToolCall && customToolCall == other.customToolCall; } 
 @override int get hashCode { return customToolCall.hashCode; } 
 @override String toString() { return 'ConversationItem.customToolCall($customToolCall)'; } 
-@override String? get id { return customToolCall.id; } 
+@override String? get id => customToolCall.id;
+
  }
 @immutable final class ConversationItemCustomToolCallOutput extends ConversationItem {const ConversationItemCustomToolCallOutput(this.customToolCallOutput);
 
@@ -597,7 +644,8 @@ factory ConversationItemCustomToolCallOutput.fromJson(Map<String, dynamic> json)
 
 final CustomToolCallOutput customToolCallOutput;
 
-@override String get type { return 'custom_tool_call_output'; } 
+@override String get type => 'custom_tool_call_output';
+
 @override Map<String, dynamic> toJson() { return {...customToolCallOutput.toJson(), 'type': type}; } 
 ConversationItemCustomToolCallOutput copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, }) { return ConversationItemCustomToolCallOutput(customToolCallOutput.copyWith(
   id: id,
@@ -608,7 +656,8 @@ ConversationItemCustomToolCallOutput copyWith({String? Function()? id, String? c
     other is ConversationItemCustomToolCallOutput && customToolCallOutput == other.customToolCallOutput; } 
 @override int get hashCode { return customToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItem.customToolCallOutput($customToolCallOutput)'; } 
-@override String? get id { return customToolCallOutput.id; } 
+@override String? get id => customToolCallOutput.id;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -616,11 +665,13 @@ ConversationItemCustomToolCallOutput copyWith({String? Function()? id, String? c
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItem$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ConversationItem.unknown($json)'; } 
-@override String? get id { return json['id'] as String?; } 
+@override String? get id => json['id'] as String?;
+
  }

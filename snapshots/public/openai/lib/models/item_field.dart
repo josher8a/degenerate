@@ -112,7 +112,8 @@ factory ItemField.customToolCallOutput({String? id, required String callId, requ
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ItemField$Unknown; } 
+bool get isUnknown => this is ItemField$Unknown;
+
 /// Shared by all variants of this union.
 String? get id;
  }
@@ -122,7 +123,8 @@ factory ItemFieldMessage.fromJson(Map<String, dynamic> json) { return ItemFieldM
 
 final Message message;
 
-@override String get type { return 'message'; } 
+@override String get type => 'message';
+
 @override Map<String, dynamic> toJson() { return {...message.toJson(), 'type': type}; } 
 ItemFieldMessage copyWith({String? id, MessageStatus? status, MessageRole? role, List<MessageContent>? content, }) { return ItemFieldMessage(message.copyWith(
   id: id,
@@ -134,7 +136,8 @@ ItemFieldMessage copyWith({String? id, MessageStatus? status, MessageRole? role,
     other is ItemFieldMessage && message == other.message; } 
 @override int get hashCode { return message.hashCode; } 
 @override String toString() { return 'ItemField.message($message)'; } 
-@override String? get id { return message.id; } 
+@override String? get id => message.id;
+
  }
 @immutable final class ItemFieldFunctionCall extends ItemField {const ItemFieldFunctionCall(this.functionToolCall);
 
@@ -142,7 +145,8 @@ factory ItemFieldFunctionCall.fromJson(Map<String, dynamic> json) { return ItemF
 
 final FunctionToolCall functionToolCall;
 
-@override String get type { return 'function_call'; } 
+@override String get type => 'function_call';
+
 @override Map<String, dynamic> toJson() { return {...functionToolCall.toJson(), 'type': type}; } 
 ItemFieldFunctionCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFieldFunctionCall(functionToolCall.copyWith(
   id: id,
@@ -156,7 +160,8 @@ ItemFieldFunctionCall copyWith({String? Function()? id, String? callId, String? 
     other is ItemFieldFunctionCall && functionToolCall == other.functionToolCall; } 
 @override int get hashCode { return functionToolCall.hashCode; } 
 @override String toString() { return 'ItemField.functionCall($functionToolCall)'; } 
-@override String? get id { return functionToolCall.id; } 
+@override String? get id => functionToolCall.id;
+
  }
 @immutable final class ItemFieldToolSearchCall extends ItemField {const ItemFieldToolSearchCall(this.toolSearchCall);
 
@@ -164,7 +169,8 @@ factory ItemFieldToolSearchCall.fromJson(Map<String, dynamic> json) { return Ite
 
 final ToolSearchCall toolSearchCall;
 
-@override String get type { return 'tool_search_call'; } 
+@override String get type => 'tool_search_call';
+
 @override Map<String, dynamic> toJson() { return {...toolSearchCall.toJson(), 'type': type}; } 
 ItemFieldToolSearchCall copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, dynamic Function()? arguments, FunctionCallStatus? status, String? Function()? createdBy, }) { return ItemFieldToolSearchCall(toolSearchCall.copyWith(
   id: id,
@@ -178,7 +184,8 @@ ItemFieldToolSearchCall copyWith({String? id, String? Function()? callId, ToolSe
     other is ItemFieldToolSearchCall && toolSearchCall == other.toolSearchCall; } 
 @override int get hashCode { return toolSearchCall.hashCode; } 
 @override String toString() { return 'ItemField.toolSearchCall($toolSearchCall)'; } 
-@override String? get id { return toolSearchCall.id; } 
+@override String? get id => toolSearchCall.id;
+
  }
 @immutable final class ItemFieldToolSearchOutput extends ItemField {const ItemFieldToolSearchOutput(this.toolSearchOutput);
 
@@ -186,7 +193,8 @@ factory ItemFieldToolSearchOutput.fromJson(Map<String, dynamic> json) { return I
 
 final ToolSearchOutput toolSearchOutput;
 
-@override String get type { return 'tool_search_output'; } 
+@override String get type => 'tool_search_output';
+
 @override Map<String, dynamic> toJson() { return {...toolSearchOutput.toJson(), 'type': type}; } 
 ItemFieldToolSearchOutput copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String? Function()? createdBy, }) { return ItemFieldToolSearchOutput(toolSearchOutput.copyWith(
   id: id,
@@ -200,7 +208,8 @@ ItemFieldToolSearchOutput copyWith({String? id, String? Function()? callId, Tool
     other is ItemFieldToolSearchOutput && toolSearchOutput == other.toolSearchOutput; } 
 @override int get hashCode { return toolSearchOutput.hashCode; } 
 @override String toString() { return 'ItemField.toolSearchOutput($toolSearchOutput)'; } 
-@override String? get id { return toolSearchOutput.id; } 
+@override String? get id => toolSearchOutput.id;
+
  }
 @immutable final class ItemFieldFunctionCallOutput extends ItemField {const ItemFieldFunctionCallOutput(this.functionToolCallOutput);
 
@@ -208,7 +217,8 @@ factory ItemFieldFunctionCallOutput.fromJson(Map<String, dynamic> json) { return
 
 final FunctionToolCallOutput functionToolCallOutput;
 
-@override String get type { return 'function_call_output'; } 
+@override String get type => 'function_call_output';
+
 @override Map<String, dynamic> toJson() { return {...functionToolCallOutput.toJson(), 'type': type}; } 
 ItemFieldFunctionCallOutput copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFieldFunctionCallOutput(functionToolCallOutput.copyWith(
   id: id,
@@ -220,7 +230,8 @@ ItemFieldFunctionCallOutput copyWith({String? Function()? id, String? callId, Cu
     other is ItemFieldFunctionCallOutput && functionToolCallOutput == other.functionToolCallOutput; } 
 @override int get hashCode { return functionToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemField.functionCallOutput($functionToolCallOutput)'; } 
-@override String? get id { return functionToolCallOutput.id; } 
+@override String? get id => functionToolCallOutput.id;
+
  }
 @immutable final class ItemFieldFileSearchCall extends ItemField {const ItemFieldFileSearchCall(this.fileSearchToolCall);
 
@@ -228,7 +239,8 @@ factory ItemFieldFileSearchCall.fromJson(Map<String, dynamic> json) { return Ite
 
 final FileSearchToolCall fileSearchToolCall;
 
-@override String get type { return 'file_search_call'; } 
+@override String get type => 'file_search_call';
+
 @override Map<String, dynamic> toJson() { return {...fileSearchToolCall.toJson(), 'type': type}; } 
 ItemFieldFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<String>? queries, List<FileSearchToolCallResults>? Function()? results, }) { return ItemFieldFileSearchCall(fileSearchToolCall.copyWith(
   id: id,
@@ -240,7 +252,8 @@ ItemFieldFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, 
     other is ItemFieldFileSearchCall && fileSearchToolCall == other.fileSearchToolCall; } 
 @override int get hashCode { return fileSearchToolCall.hashCode; } 
 @override String toString() { return 'ItemField.fileSearchCall($fileSearchToolCall)'; } 
-@override String? get id { return fileSearchToolCall.id; } 
+@override String? get id => fileSearchToolCall.id;
+
  }
 @immutable final class ItemFieldWebSearchCall extends ItemField {const ItemFieldWebSearchCall(this.webSearchToolCall);
 
@@ -248,7 +261,8 @@ factory ItemFieldWebSearchCall.fromJson(Map<String, dynamic> json) { return Item
 
 final WebSearchToolCall webSearchToolCall;
 
-@override String get type { return 'web_search_call'; } 
+@override String get type => 'web_search_call';
+
 @override Map<String, dynamic> toJson() { return {...webSearchToolCall.toJson(), 'type': type}; } 
 ItemFieldWebSearchCall copyWith({String? id, WebSearchToolCallStatus? status, WebSearchToolCallAction? action, }) { return ItemFieldWebSearchCall(webSearchToolCall.copyWith(
   id: id,
@@ -259,7 +273,8 @@ ItemFieldWebSearchCall copyWith({String? id, WebSearchToolCallStatus? status, We
     other is ItemFieldWebSearchCall && webSearchToolCall == other.webSearchToolCall; } 
 @override int get hashCode { return webSearchToolCall.hashCode; } 
 @override String toString() { return 'ItemField.webSearchCall($webSearchToolCall)'; } 
-@override String? get id { return webSearchToolCall.id; } 
+@override String? get id => webSearchToolCall.id;
+
  }
 @immutable final class ItemFieldImageGenerationCall extends ItemField {const ItemFieldImageGenerationCall(this.imageGenToolCall);
 
@@ -267,7 +282,8 @@ factory ItemFieldImageGenerationCall.fromJson(Map<String, dynamic> json) { retur
 
 final ImageGenToolCall imageGenToolCall;
 
-@override String get type { return 'image_generation_call'; } 
+@override String get type => 'image_generation_call';
+
 @override Map<String, dynamic> toJson() { return {...imageGenToolCall.toJson(), 'type': type}; } 
 ItemFieldImageGenerationCall copyWith({String? id, ImageGenToolCallStatus? status, String? Function()? result, }) { return ItemFieldImageGenerationCall(imageGenToolCall.copyWith(
   id: id,
@@ -278,7 +294,8 @@ ItemFieldImageGenerationCall copyWith({String? id, ImageGenToolCallStatus? statu
     other is ItemFieldImageGenerationCall && imageGenToolCall == other.imageGenToolCall; } 
 @override int get hashCode { return imageGenToolCall.hashCode; } 
 @override String toString() { return 'ItemField.imageGenerationCall($imageGenToolCall)'; } 
-@override String? get id { return imageGenToolCall.id; } 
+@override String? get id => imageGenToolCall.id;
+
  }
 @immutable final class ItemFieldComputerCall extends ItemField {const ItemFieldComputerCall(this.computerToolCall);
 
@@ -286,7 +303,8 @@ factory ItemFieldComputerCall.fromJson(Map<String, dynamic> json) { return ItemF
 
 final ComputerToolCall computerToolCall;
 
-@override String get type { return 'computer_call'; } 
+@override String get type => 'computer_call';
+
 @override Map<String, dynamic> toJson() { return {...computerToolCall.toJson(), 'type': type}; } 
 ItemFieldComputerCall copyWith({String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ItemFieldComputerCall(computerToolCall.copyWith(
   id: id,
@@ -300,7 +318,8 @@ ItemFieldComputerCall copyWith({String? id, String? callId, ComputerAction? Func
     other is ItemFieldComputerCall && computerToolCall == other.computerToolCall; } 
 @override int get hashCode { return computerToolCall.hashCode; } 
 @override String toString() { return 'ItemField.computerCall($computerToolCall)'; } 
-@override String? get id { return computerToolCall.id; } 
+@override String? get id => computerToolCall.id;
+
  }
 @immutable final class ItemFieldComputerToolCallOutputResource extends ItemField {const ItemFieldComputerToolCallOutputResource(this.computerToolCallOutput);
 
@@ -308,7 +327,8 @@ factory ItemFieldComputerToolCallOutputResource.fromJson(Map<String, dynamic> js
 
 final ComputerToolCallOutput computerToolCallOutput;
 
-@override String get type { return 'ComputerToolCallOutputResource'; } 
+@override String get type => 'ComputerToolCallOutputResource';
+
 @override Map<String, dynamic> toJson() { return {...computerToolCallOutput.toJson(), 'type': type}; } 
 ItemFieldComputerToolCallOutputResource copyWith({String? Function()? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFieldComputerToolCallOutputResource(computerToolCallOutput.copyWith(
   id: id,
@@ -321,7 +341,8 @@ ItemFieldComputerToolCallOutputResource copyWith({String? Function()? id, String
     other is ItemFieldComputerToolCallOutputResource && computerToolCallOutput == other.computerToolCallOutput; } 
 @override int get hashCode { return computerToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemField.computerToolCallOutputResource($computerToolCallOutput)'; } 
-@override String? get id { return computerToolCallOutput.id; } 
+@override String? get id => computerToolCallOutput.id;
+
  }
 @immutable final class ItemFieldReasoning extends ItemField {const ItemFieldReasoning(this.reasoningItem);
 
@@ -329,7 +350,8 @@ factory ItemFieldReasoning.fromJson(Map<String, dynamic> json) { return ItemFiel
 
 final ReasoningItem reasoningItem;
 
-@override String get type { return 'reasoning'; } 
+@override String get type => 'reasoning';
+
 @override Map<String, dynamic> toJson() { return {...reasoningItem.toJson(), 'type': type}; } 
 ItemFieldReasoning copyWith({String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFieldReasoning(reasoningItem.copyWith(
   id: id,
@@ -342,7 +364,8 @@ ItemFieldReasoning copyWith({String? id, String? Function()? encryptedContent, L
     other is ItemFieldReasoning && reasoningItem == other.reasoningItem; } 
 @override int get hashCode { return reasoningItem.hashCode; } 
 @override String toString() { return 'ItemField.reasoning($reasoningItem)'; } 
-@override String? get id { return reasoningItem.id; } 
+@override String? get id => reasoningItem.id;
+
  }
 @immutable final class ItemFieldCompaction extends ItemField {const ItemFieldCompaction(this.compactionBody);
 
@@ -350,7 +373,8 @@ factory ItemFieldCompaction.fromJson(Map<String, dynamic> json) { return ItemFie
 
 final CompactionBody compactionBody;
 
-@override String get type { return 'compaction'; } 
+@override String get type => 'compaction';
+
 @override Map<String, dynamic> toJson() { return {...compactionBody.toJson(), 'type': type}; } 
 ItemFieldCompaction copyWith({String? id, String? encryptedContent, String? Function()? createdBy, }) { return ItemFieldCompaction(compactionBody.copyWith(
   id: id,
@@ -361,7 +385,8 @@ ItemFieldCompaction copyWith({String? id, String? encryptedContent, String? Func
     other is ItemFieldCompaction && compactionBody == other.compactionBody; } 
 @override int get hashCode { return compactionBody.hashCode; } 
 @override String toString() { return 'ItemField.compaction($compactionBody)'; } 
-@override String? get id { return compactionBody.id; } 
+@override String? get id => compactionBody.id;
+
  }
 @immutable final class ItemFieldCodeInterpreterCall extends ItemField {const ItemFieldCodeInterpreterCall(this.codeInterpreterToolCall);
 
@@ -369,7 +394,8 @@ factory ItemFieldCodeInterpreterCall.fromJson(Map<String, dynamic> json) { retur
 
 final CodeInterpreterToolCall codeInterpreterToolCall;
 
-@override String get type { return 'code_interpreter_call'; } 
+@override String get type => 'code_interpreter_call';
+
 @override Map<String, dynamic> toJson() { return {...codeInterpreterToolCall.toJson(), 'type': type}; } 
 ItemFieldCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCallStatus? status, String? containerId, String? Function()? code, List<CodeInterpreterToolCallOutputs>? Function()? outputs, }) { return ItemFieldCodeInterpreterCall(codeInterpreterToolCall.copyWith(
   id: id,
@@ -382,7 +408,8 @@ ItemFieldCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCallStatus
     other is ItemFieldCodeInterpreterCall && codeInterpreterToolCall == other.codeInterpreterToolCall; } 
 @override int get hashCode { return codeInterpreterToolCall.hashCode; } 
 @override String toString() { return 'ItemField.codeInterpreterCall($codeInterpreterToolCall)'; } 
-@override String? get id { return codeInterpreterToolCall.id; } 
+@override String? get id => codeInterpreterToolCall.id;
+
  }
 @immutable final class ItemFieldLocalShellCall extends ItemField {const ItemFieldLocalShellCall(this.localShellToolCall);
 
@@ -390,7 +417,8 @@ factory ItemFieldLocalShellCall.fromJson(Map<String, dynamic> json) { return Ite
 
 final LocalShellToolCall localShellToolCall;
 
-@override String get type { return 'local_shell_call'; } 
+@override String get type => 'local_shell_call';
+
 @override Map<String, dynamic> toJson() { return {...localShellToolCall.toJson(), 'type': type}; } 
 ItemFieldLocalShellCall copyWith({String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputStatus? status, }) { return ItemFieldLocalShellCall(localShellToolCall.copyWith(
   id: id,
@@ -402,7 +430,8 @@ ItemFieldLocalShellCall copyWith({String? id, String? callId, LocalShellExecActi
     other is ItemFieldLocalShellCall && localShellToolCall == other.localShellToolCall; } 
 @override int get hashCode { return localShellToolCall.hashCode; } 
 @override String toString() { return 'ItemField.localShellCall($localShellToolCall)'; } 
-@override String? get id { return localShellToolCall.id; } 
+@override String? get id => localShellToolCall.id;
+
  }
 @immutable final class ItemFieldLocalShellCallOutput extends ItemField {const ItemFieldLocalShellCallOutput(this.localShellToolCallOutput);
 
@@ -410,7 +439,8 @@ factory ItemFieldLocalShellCallOutput.fromJson(Map<String, dynamic> json) { retu
 
 final LocalShellToolCallOutput localShellToolCallOutput;
 
-@override String get type { return 'local_shell_call_output'; } 
+@override String get type => 'local_shell_call_output';
+
 @override Map<String, dynamic> toJson() { return {...localShellToolCallOutput.toJson(), 'type': type}; } 
 ItemFieldLocalShellCallOutput copyWith({String? id, String? output, LocalShellToolCallOutputStatus? Function()? status, }) { return ItemFieldLocalShellCallOutput(localShellToolCallOutput.copyWith(
   id: id,
@@ -421,7 +451,8 @@ ItemFieldLocalShellCallOutput copyWith({String? id, String? output, LocalShellTo
     other is ItemFieldLocalShellCallOutput && localShellToolCallOutput == other.localShellToolCallOutput; } 
 @override int get hashCode { return localShellToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemField.localShellCallOutput($localShellToolCallOutput)'; } 
-@override String? get id { return localShellToolCallOutput.id; } 
+@override String? get id => localShellToolCallOutput.id;
+
  }
 @immutable final class ItemFieldShellCall extends ItemField {const ItemFieldShellCall(this.functionShellCall);
 
@@ -429,7 +460,8 @@ factory ItemFieldShellCall.fromJson(Map<String, dynamic> json) { return ItemFiel
 
 final FunctionShellCall functionShellCall;
 
-@override String get type { return 'shell_call'; } 
+@override String get type => 'shell_call';
+
 @override Map<String, dynamic> toJson() { return {...functionShellCall.toJson(), 'type': type}; } 
 ItemFieldShellCall copyWith({String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String? Function()? createdBy, }) { return ItemFieldShellCall(functionShellCall.copyWith(
   id: id,
@@ -443,7 +475,8 @@ ItemFieldShellCall copyWith({String? id, String? callId, FunctionShellAction? ac
     other is ItemFieldShellCall && functionShellCall == other.functionShellCall; } 
 @override int get hashCode { return functionShellCall.hashCode; } 
 @override String toString() { return 'ItemField.shellCall($functionShellCall)'; } 
-@override String? get id { return functionShellCall.id; } 
+@override String? get id => functionShellCall.id;
+
  }
 @immutable final class ItemFieldShellCallOutput extends ItemField {const ItemFieldShellCallOutput(this.functionShellCallOutput);
 
@@ -451,7 +484,8 @@ factory ItemFieldShellCallOutput.fromJson(Map<String, dynamic> json) { return It
 
 final FunctionShellCallOutput functionShellCallOutput;
 
-@override String get type { return 'shell_call_output'; } 
+@override String get type => 'shell_call_output';
+
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutput.toJson(), 'type': type}; } 
 ItemFieldShellCallOutput copyWith({String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String? Function()? createdBy, }) { return ItemFieldShellCallOutput(functionShellCallOutput.copyWith(
   id: id,
@@ -465,7 +499,8 @@ ItemFieldShellCallOutput copyWith({String? id, String? callId, LocalShellCallOut
     other is ItemFieldShellCallOutput && functionShellCallOutput == other.functionShellCallOutput; } 
 @override int get hashCode { return functionShellCallOutput.hashCode; } 
 @override String toString() { return 'ItemField.shellCallOutput($functionShellCallOutput)'; } 
-@override String? get id { return functionShellCallOutput.id; } 
+@override String? get id => functionShellCallOutput.id;
+
  }
 @immutable final class ItemFieldApplyPatchCall extends ItemField {const ItemFieldApplyPatchCall(this.applyPatchToolCall);
 
@@ -473,7 +508,8 @@ factory ItemFieldApplyPatchCall.fromJson(Map<String, dynamic> json) { return Ite
 
 final ApplyPatchToolCall applyPatchToolCall;
 
-@override String get type { return 'apply_patch_call'; } 
+@override String get type => 'apply_patch_call';
+
 @override Map<String, dynamic> toJson() { return {...applyPatchToolCall.toJson(), 'type': type}; } 
 ItemFieldApplyPatchCall copyWith({String? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchToolCallOperation? operation, String? Function()? createdBy, }) { return ItemFieldApplyPatchCall(applyPatchToolCall.copyWith(
   id: id,
@@ -486,7 +522,8 @@ ItemFieldApplyPatchCall copyWith({String? id, String? callId, ApplyPatchCallStat
     other is ItemFieldApplyPatchCall && applyPatchToolCall == other.applyPatchToolCall; } 
 @override int get hashCode { return applyPatchToolCall.hashCode; } 
 @override String toString() { return 'ItemField.applyPatchCall($applyPatchToolCall)'; } 
-@override String? get id { return applyPatchToolCall.id; } 
+@override String? get id => applyPatchToolCall.id;
+
  }
 @immutable final class ItemFieldApplyPatchCallOutput extends ItemField {const ItemFieldApplyPatchCallOutput(this.applyPatchToolCallOutput);
 
@@ -494,7 +531,8 @@ factory ItemFieldApplyPatchCallOutput.fromJson(Map<String, dynamic> json) { retu
 
 final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 
-@override String get type { return 'apply_patch_call_output'; } 
+@override String get type => 'apply_patch_call_output';
+
 @override Map<String, dynamic> toJson() { return {...applyPatchToolCallOutput.toJson(), 'type': type}; } 
 ItemFieldApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCallOutputStatus? status, String? Function()? output, String? Function()? createdBy, }) { return ItemFieldApplyPatchCallOutput(applyPatchToolCallOutput.copyWith(
   id: id,
@@ -507,7 +545,8 @@ ItemFieldApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCa
     other is ItemFieldApplyPatchCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput; } 
 @override int get hashCode { return applyPatchToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemField.applyPatchCallOutput($applyPatchToolCallOutput)'; } 
-@override String? get id { return applyPatchToolCallOutput.id; } 
+@override String? get id => applyPatchToolCallOutput.id;
+
  }
 @immutable final class ItemFieldMcpListTools extends ItemField {const ItemFieldMcpListTools(this.mcpListTools);
 
@@ -515,7 +554,8 @@ factory ItemFieldMcpListTools.fromJson(Map<String, dynamic> json) { return ItemF
 
 final McpListTools mcpListTools;
 
-@override String get type { return 'mcp_list_tools'; } 
+@override String get type => 'mcp_list_tools';
+
 @override Map<String, dynamic> toJson() { return {...mcpListTools.toJson(), 'type': type}; } 
 ItemFieldMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsTool>? tools, String? Function()? error, }) { return ItemFieldMcpListTools(mcpListTools.copyWith(
   id: id,
@@ -527,7 +567,8 @@ ItemFieldMcpListTools copyWith({String? id, String? serverLabel, List<McpListToo
     other is ItemFieldMcpListTools && mcpListTools == other.mcpListTools; } 
 @override int get hashCode { return mcpListTools.hashCode; } 
 @override String toString() { return 'ItemField.mcpListTools($mcpListTools)'; } 
-@override String? get id { return mcpListTools.id; } 
+@override String? get id => mcpListTools.id;
+
  }
 @immutable final class ItemFieldMcpApprovalRequest extends ItemField {const ItemFieldMcpApprovalRequest(this.mcpApprovalRequest);
 
@@ -535,7 +576,8 @@ factory ItemFieldMcpApprovalRequest.fromJson(Map<String, dynamic> json) { return
 
 final McpApprovalRequest mcpApprovalRequest;
 
-@override String get type { return 'mcp_approval_request'; } 
+@override String get type => 'mcp_approval_request';
+
 @override Map<String, dynamic> toJson() { return {...mcpApprovalRequest.toJson(), 'type': type}; } 
 ItemFieldMcpApprovalRequest copyWith({String? id, String? serverLabel, String? name, String? arguments, }) { return ItemFieldMcpApprovalRequest(mcpApprovalRequest.copyWith(
   id: id,
@@ -547,7 +589,8 @@ ItemFieldMcpApprovalRequest copyWith({String? id, String? serverLabel, String? n
     other is ItemFieldMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest; } 
 @override int get hashCode { return mcpApprovalRequest.hashCode; } 
 @override String toString() { return 'ItemField.mcpApprovalRequest($mcpApprovalRequest)'; } 
-@override String? get id { return mcpApprovalRequest.id; } 
+@override String? get id => mcpApprovalRequest.id;
+
  }
 @immutable final class ItemFieldMcpApprovalResponse extends ItemField {const ItemFieldMcpApprovalResponse(this.mcpApprovalResponseResource);
 
@@ -555,7 +598,8 @@ factory ItemFieldMcpApprovalResponse.fromJson(Map<String, dynamic> json) { retur
 
 final McpApprovalResponseResource mcpApprovalResponseResource;
 
-@override String get type { return 'mcp_approval_response'; } 
+@override String get type => 'mcp_approval_response';
+
 @override Map<String, dynamic> toJson() { return {...mcpApprovalResponseResource.toJson(), 'type': type}; } 
 ItemFieldMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return ItemFieldMcpApprovalResponse(mcpApprovalResponseResource.copyWith(
   id: id,
@@ -567,7 +611,8 @@ ItemFieldMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bo
     other is ItemFieldMcpApprovalResponse && mcpApprovalResponseResource == other.mcpApprovalResponseResource; } 
 @override int get hashCode { return mcpApprovalResponseResource.hashCode; } 
 @override String toString() { return 'ItemField.mcpApprovalResponse($mcpApprovalResponseResource)'; } 
-@override String? get id { return mcpApprovalResponseResource.id; } 
+@override String? get id => mcpApprovalResponseResource.id;
+
  }
 @immutable final class ItemFieldMcpCall extends ItemField {const ItemFieldMcpCall(this.mcpToolCall);
 
@@ -575,7 +620,8 @@ factory ItemFieldMcpCall.fromJson(Map<String, dynamic> json) { return ItemFieldM
 
 final McpToolCall mcpToolCall;
 
-@override String get type { return 'mcp_call'; } 
+@override String get type => 'mcp_call';
+
 @override Map<String, dynamic> toJson() { return {...mcpToolCall.toJson(), 'type': type}; } 
 ItemFieldMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? output, String? Function()? error, McpToolCallStatus? Function()? status, String? Function()? approvalRequestId, }) { return ItemFieldMcpCall(mcpToolCall.copyWith(
   id: id,
@@ -591,7 +637,8 @@ ItemFieldMcpCall copyWith({String? id, String? serverLabel, String? name, String
     other is ItemFieldMcpCall && mcpToolCall == other.mcpToolCall; } 
 @override int get hashCode { return mcpToolCall.hashCode; } 
 @override String toString() { return 'ItemField.mcpCall($mcpToolCall)'; } 
-@override String? get id { return mcpToolCall.id; } 
+@override String? get id => mcpToolCall.id;
+
  }
 @immutable final class ItemFieldCustomToolCall extends ItemField {const ItemFieldCustomToolCall(this.customToolCall);
 
@@ -599,7 +646,8 @@ factory ItemFieldCustomToolCall.fromJson(Map<String, dynamic> json) { return Ite
 
 final CustomToolCall customToolCall;
 
-@override String get type { return 'custom_tool_call'; } 
+@override String get type => 'custom_tool_call';
+
 @override Map<String, dynamic> toJson() { return {...customToolCall.toJson(), 'type': type}; } 
 ItemFieldCustomToolCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? input, }) { return ItemFieldCustomToolCall(customToolCall.copyWith(
   id: id,
@@ -612,7 +660,8 @@ ItemFieldCustomToolCall copyWith({String? Function()? id, String? callId, String
     other is ItemFieldCustomToolCall && customToolCall == other.customToolCall; } 
 @override int get hashCode { return customToolCall.hashCode; } 
 @override String toString() { return 'ItemField.customToolCall($customToolCall)'; } 
-@override String? get id { return customToolCall.id; } 
+@override String? get id => customToolCall.id;
+
  }
 @immutable final class ItemFieldCustomToolCallOutput extends ItemField {const ItemFieldCustomToolCallOutput(this.customToolCallOutput);
 
@@ -620,7 +669,8 @@ factory ItemFieldCustomToolCallOutput.fromJson(Map<String, dynamic> json) { retu
 
 final CustomToolCallOutput customToolCallOutput;
 
-@override String get type { return 'custom_tool_call_output'; } 
+@override String get type => 'custom_tool_call_output';
+
 @override Map<String, dynamic> toJson() { return {...customToolCallOutput.toJson(), 'type': type}; } 
 ItemFieldCustomToolCallOutput copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, }) { return ItemFieldCustomToolCallOutput(customToolCallOutput.copyWith(
   id: id,
@@ -631,7 +681,8 @@ ItemFieldCustomToolCallOutput copyWith({String? Function()? id, String? callId, 
     other is ItemFieldCustomToolCallOutput && customToolCallOutput == other.customToolCallOutput; } 
 @override int get hashCode { return customToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemField.customToolCallOutput($customToolCallOutput)'; } 
-@override String? get id { return customToolCallOutput.id; } 
+@override String? get id => customToolCallOutput.id;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -639,11 +690,13 @@ ItemFieldCustomToolCallOutput copyWith({String? Function()? id, String? callId, 
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ItemField$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ItemField.unknown($json)'; } 
-@override String? get id { return json['id'] as String?; } 
+@override String? get id => json['id'] as String?;
+
  }

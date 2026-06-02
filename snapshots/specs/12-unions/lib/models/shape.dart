@@ -23,7 +23,8 @@ factory Shape.triangle({required double base, required double height, List<doubl
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Shape$Unknown; } 
+bool get isUnknown => this is Shape$Unknown;
+
  }
 @immutable final class ShapeCircle extends Shape {const ShapeCircle(this.circle);
 
@@ -31,7 +32,8 @@ factory ShapeCircle.fromJson(Map<String, dynamic> json) { return ShapeCircle(Cir
 
 final Circle circle;
 
-@override String get type { return 'circle'; } 
+@override String get type => 'circle';
+
 @override Map<String, dynamic> toJson() { return {...circle.toJson(), 'type': type}; } 
 ShapeCircle copyWith({double? radius, String? Function()? color, }) { return ShapeCircle(circle.copyWith(
   radius: radius,
@@ -48,7 +50,8 @@ factory ShapeRectangle.fromJson(Map<String, dynamic> json) { return ShapeRectang
 
 final Rectangle rectangle;
 
-@override String get type { return 'rectangle'; } 
+@override String get type => 'rectangle';
+
 @override Map<String, dynamic> toJson() { return {...rectangle.toJson(), 'type': type}; } 
 ShapeRectangle copyWith({double? width, double? height, String? Function()? color, }) { return ShapeRectangle(rectangle.copyWith(
   width: width,
@@ -66,7 +69,8 @@ factory ShapeTriangle.fromJson(Map<String, dynamic> json) { return ShapeTriangle
 
 final Triangle triangle;
 
-@override String get type { return 'triangle'; } 
+@override String get type => 'triangle';
+
 @override Map<String, dynamic> toJson() { return {...triangle.toJson(), 'type': type}; } 
 ShapeTriangle copyWith({double? base, double? height, List<double>? Function()? angles, }) { return ShapeTriangle(triangle.copyWith(
   base: base,
@@ -84,7 +88,8 @@ ShapeTriangle copyWith({double? base, double? height, List<double>? Function()? 
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is Shape$Unknown && json == other.json; } 

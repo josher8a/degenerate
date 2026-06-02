@@ -25,7 +25,8 @@ factory RealtimeTurnDetection.semanticVad({Eagerness eagerness = Eagerness.auto,
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeTurnDetection$Unknown; } 
+bool get isUnknown => this is RealtimeTurnDetection$Unknown;
+
 /// Shared by all variants of this union.
 bool? get createResponse;
 /// Shared by all variants of this union.
@@ -37,7 +38,8 @@ factory RealtimeTurnDetectionServerVad.fromJson(Map<String, dynamic> json) { ret
 
 final ServerVad serverVad;
 
-@override String get type { return 'ServerVad'; } 
+@override String get type => 'ServerVad';
+
 @override Map<String, dynamic> toJson() { return {...serverVad.toJson(), 'type': type}; } 
 RealtimeTurnDetectionServerVad copyWith({double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, int? Function()? idleTimeoutMs, }) { return RealtimeTurnDetectionServerVad(serverVad.copyWith(
   threshold: threshold,
@@ -51,8 +53,10 @@ RealtimeTurnDetectionServerVad copyWith({double? Function()? threshold, int? Fun
     other is RealtimeTurnDetectionServerVad && serverVad == other.serverVad; } 
 @override int get hashCode { return serverVad.hashCode; } 
 @override String toString() { return 'RealtimeTurnDetection.serverVad($serverVad)'; } 
-@override bool? get createResponse { return serverVad.createResponse; } 
-@override bool? get interruptResponse { return serverVad.interruptResponse; } 
+@override bool? get createResponse => serverVad.createResponse;
+
+@override bool? get interruptResponse => serverVad.interruptResponse;
+
  }
 @immutable final class RealtimeTurnDetectionSemanticVad extends RealtimeTurnDetection {const RealtimeTurnDetectionSemanticVad(this.semanticVad);
 
@@ -60,7 +64,8 @@ factory RealtimeTurnDetectionSemanticVad.fromJson(Map<String, dynamic> json) { r
 
 final SemanticVad semanticVad;
 
-@override String get type { return 'SemanticVad'; } 
+@override String get type => 'SemanticVad';
+
 @override Map<String, dynamic> toJson() { return {...semanticVad.toJson(), 'type': type}; } 
 RealtimeTurnDetectionSemanticVad copyWith({Eagerness Function()? eagerness, bool Function()? createResponse, bool Function()? interruptResponse, }) { return RealtimeTurnDetectionSemanticVad(semanticVad.copyWith(
   eagerness: eagerness,
@@ -71,8 +76,10 @@ RealtimeTurnDetectionSemanticVad copyWith({Eagerness Function()? eagerness, bool
     other is RealtimeTurnDetectionSemanticVad && semanticVad == other.semanticVad; } 
 @override int get hashCode { return semanticVad.hashCode; } 
 @override String toString() { return 'RealtimeTurnDetection.semanticVad($semanticVad)'; } 
-@override bool? get createResponse { return semanticVad.createResponse; } 
-@override bool? get interruptResponse { return semanticVad.interruptResponse; } 
+@override bool? get createResponse => semanticVad.createResponse;
+
+@override bool? get interruptResponse => semanticVad.interruptResponse;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -80,12 +87,15 @@ RealtimeTurnDetectionSemanticVad copyWith({Eagerness Function()? eagerness, bool
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeTurnDetection$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'RealtimeTurnDetection.unknown($json)'; } 
-@override bool? get createResponse { return json['create_response'] as bool?; } 
-@override bool? get interruptResponse { return json['interrupt_response'] as bool?; } 
+@override bool? get createResponse => json['create_response'] as bool?;
+
+@override bool? get interruptResponse => json['interrupt_response'] as bool?;
+
  }

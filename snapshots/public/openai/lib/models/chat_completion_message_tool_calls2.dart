@@ -19,7 +19,8 @@ factory ChatCompletionMessageToolCalls2.custom({required String id, required Cha
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ChatCompletionMessageToolCalls2$Unknown; } 
+bool get isUnknown => this is ChatCompletionMessageToolCalls2$Unknown;
+
 /// Shared by all variants of this union.
 String get id;
  }
@@ -29,7 +30,8 @@ factory ChatCompletionMessageToolCalls2Function.fromJson(Map<String, dynamic> js
 
 final ChatCompletionMessageToolCall chatCompletionMessageToolCall;
 
-@override String get type { return 'function'; } 
+@override String get type => 'function';
+
 @override Map<String, dynamic> toJson() { return {...chatCompletionMessageToolCall.toJson(), 'type': type}; } 
 ChatCompletionMessageToolCalls2Function copyWith({String? id, ChatCompletionMessageToolCallFunction? function, }) { return ChatCompletionMessageToolCalls2Function(chatCompletionMessageToolCall.copyWith(
   id: id,
@@ -39,7 +41,8 @@ ChatCompletionMessageToolCalls2Function copyWith({String? id, ChatCompletionMess
     other is ChatCompletionMessageToolCalls2Function && chatCompletionMessageToolCall == other.chatCompletionMessageToolCall; } 
 @override int get hashCode { return chatCompletionMessageToolCall.hashCode; } 
 @override String toString() { return 'ChatCompletionMessageToolCalls2.function($chatCompletionMessageToolCall)'; } 
-@override String get id { return chatCompletionMessageToolCall.id; } 
+@override String get id => chatCompletionMessageToolCall.id;
+
  }
 @immutable final class ChatCompletionMessageToolCalls2Custom extends ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2Custom(this.chatCompletionMessageCustomToolCall);
 
@@ -47,7 +50,8 @@ factory ChatCompletionMessageToolCalls2Custom.fromJson(Map<String, dynamic> json
 
 final ChatCompletionMessageCustomToolCall chatCompletionMessageCustomToolCall;
 
-@override String get type { return 'custom'; } 
+@override String get type => 'custom';
+
 @override Map<String, dynamic> toJson() { return {...chatCompletionMessageCustomToolCall.toJson(), 'type': type}; } 
 ChatCompletionMessageToolCalls2Custom copyWith({String? id, ChatCompletionMessageCustomToolCallCustom? custom, }) { return ChatCompletionMessageToolCalls2Custom(chatCompletionMessageCustomToolCall.copyWith(
   id: id,
@@ -57,7 +61,8 @@ ChatCompletionMessageToolCalls2Custom copyWith({String? id, ChatCompletionMessag
     other is ChatCompletionMessageToolCalls2Custom && chatCompletionMessageCustomToolCall == other.chatCompletionMessageCustomToolCall; } 
 @override int get hashCode { return chatCompletionMessageCustomToolCall.hashCode; } 
 @override String toString() { return 'ChatCompletionMessageToolCalls2.custom($chatCompletionMessageCustomToolCall)'; } 
-@override String get id { return chatCompletionMessageCustomToolCall.id; } 
+@override String get id => chatCompletionMessageCustomToolCall.id;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -65,11 +70,13 @@ ChatCompletionMessageToolCalls2Custom copyWith({String? id, ChatCompletionMessag
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionMessageToolCalls2$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ChatCompletionMessageToolCalls2.unknown($json)'; } 
-@override String get id { return json['id'] as String; } 
+@override String get id => json['id'] as String;
+
  }

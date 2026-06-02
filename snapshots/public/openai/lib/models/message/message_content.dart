@@ -48,7 +48,8 @@ factory MessageContent.inputFile({String? fileId, String? filename, String? file
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MessageContent$Unknown; } 
+bool get isUnknown => this is MessageContent$Unknown;
+
  }
 @immutable final class MessageContentInputText extends MessageContent {const MessageContentInputText(this.inputTextContent);
 
@@ -56,7 +57,8 @@ factory MessageContentInputText.fromJson(Map<String, dynamic> json) { return Mes
 
 final InputTextContent inputTextContent;
 
-@override String get type { return 'input_text'; } 
+@override String get type => 'input_text';
+
 @override Map<String, dynamic> toJson() { return {...inputTextContent.toJson(), 'type': type}; } 
 MessageContentInputText copyWith({String? text}) { return MessageContentInputText(inputTextContent.copyWith(
   text: text,
@@ -72,7 +74,8 @@ factory MessageContentOutputText.fromJson(Map<String, dynamic> json) { return Me
 
 final OutputTextContent outputTextContent;
 
-@override String get type { return 'output_text'; } 
+@override String get type => 'output_text';
+
 @override Map<String, dynamic> toJson() { return {...outputTextContent.toJson(), 'type': type}; } 
 MessageContentOutputText copyWith({String? text, List<Annotation>? annotations, List<LogProb>? logprobs, }) { return MessageContentOutputText(outputTextContent.copyWith(
   text: text,
@@ -90,7 +93,8 @@ factory MessageContentText.fromJson(Map<String, dynamic> json) { return MessageC
 
 final TextContent textContent;
 
-@override String get type { return 'text'; } 
+@override String get type => 'text';
+
 @override Map<String, dynamic> toJson() { return {...textContent.toJson(), 'type': type}; } 
 MessageContentText copyWith({String? text}) { return MessageContentText(textContent.copyWith(
   text: text,
@@ -106,7 +110,8 @@ factory MessageContentSummaryText.fromJson(Map<String, dynamic> json) { return M
 
 final SummaryTextContent summaryTextContent;
 
-@override String get type { return 'summary_text'; } 
+@override String get type => 'summary_text';
+
 @override Map<String, dynamic> toJson() { return {...summaryTextContent.toJson(), 'type': type}; } 
 MessageContentSummaryText copyWith({String? text}) { return MessageContentSummaryText(summaryTextContent.copyWith(
   text: text,
@@ -122,7 +127,8 @@ factory MessageContentReasoningText.fromJson(Map<String, dynamic> json) { return
 
 final ReasoningTextContent reasoningTextContent;
 
-@override String get type { return 'reasoning_text'; } 
+@override String get type => 'reasoning_text';
+
 @override Map<String, dynamic> toJson() { return {...reasoningTextContent.toJson(), 'type': type}; } 
 MessageContentReasoningText copyWith({String? text}) { return MessageContentReasoningText(reasoningTextContent.copyWith(
   text: text,
@@ -138,7 +144,8 @@ factory MessageContentRefusal.fromJson(Map<String, dynamic> json) { return Messa
 
 final RefusalContent refusalContent;
 
-@override String get type { return 'refusal'; } 
+@override String get type => 'refusal';
+
 @override Map<String, dynamic> toJson() { return {...refusalContent.toJson(), 'type': type}; } 
 MessageContentRefusal copyWith({String? refusal}) { return MessageContentRefusal(refusalContent.copyWith(
   refusal: refusal,
@@ -154,7 +161,8 @@ factory MessageContentInputImage.fromJson(Map<String, dynamic> json) { return Me
 
 final InputImageContent inputImageContent;
 
-@override String get type { return 'input_image'; } 
+@override String get type => 'input_image';
+
 @override Map<String, dynamic> toJson() { return {...inputImageContent.toJson(), 'type': type}; } 
 MessageContentInputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return MessageContentInputImage(inputImageContent.copyWith(
   imageUrl: imageUrl,
@@ -172,7 +180,8 @@ factory MessageContentComputerScreenshot.fromJson(Map<String, dynamic> json) { r
 
 final ComputerScreenshotContent computerScreenshotContent;
 
-@override String get type { return 'computer_screenshot'; } 
+@override String get type => 'computer_screenshot';
+
 @override Map<String, dynamic> toJson() { return {...computerScreenshotContent.toJson(), 'type': type}; } 
 MessageContentComputerScreenshot copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return MessageContentComputerScreenshot(computerScreenshotContent.copyWith(
   imageUrl: imageUrl,
@@ -190,7 +199,8 @@ factory MessageContentInputFile.fromJson(Map<String, dynamic> json) { return Mes
 
 final InputFileContent inputFileContent;
 
-@override String get type { return 'input_file'; } 
+@override String get type => 'input_file';
+
 @override Map<String, dynamic> toJson() { return {...inputFileContent.toJson(), 'type': type}; } 
 MessageContentInputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return MessageContentInputFile(inputFileContent.copyWith(
   fileId: fileId,
@@ -210,7 +220,8 @@ MessageContentInputFile copyWith({String? Function()? fileId, String? Function()
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContent$Unknown && json == other.json; } 

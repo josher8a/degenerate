@@ -64,7 +64,8 @@ factory Tool.webSearchPreview({ApproximateLocation? userLocation, SearchContextS
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Tool$Unknown; } 
+bool get isUnknown => this is Tool$Unknown;
+
  }
 @immutable final class ToolFunction extends Tool {const ToolFunction(this.functionTool);
 
@@ -72,7 +73,8 @@ factory ToolFunction.fromJson(Map<String, dynamic> json) { return ToolFunction(F
 
 final FunctionTool functionTool;
 
-@override String get type { return 'function'; } 
+@override String get type => 'function';
+
 @override Map<String, dynamic> toJson() { return {...functionTool.toJson(), 'type': type}; } 
 ToolFunction copyWith({String? name, String? Function()? description, Map<String, dynamic>? Function()? parameters, bool? Function()? strict, bool? Function()? deferLoading, }) { return ToolFunction(functionTool.copyWith(
   name: name,
@@ -92,7 +94,8 @@ factory ToolFileSearch.fromJson(Map<String, dynamic> json) { return ToolFileSear
 
 final FileSearchTool fileSearchTool;
 
-@override String get type { return 'file_search'; } 
+@override String get type => 'file_search';
+
 @override Map<String, dynamic> toJson() { return {...fileSearchTool.toJson(), 'type': type}; } 
 ToolFileSearch copyWith({List<String>? vectorStoreIds, int? Function()? maxNumResults, RankingOptions? Function()? rankingOptions, Filters? Function()? filters, }) { return ToolFileSearch(fileSearchTool.copyWith(
   vectorStoreIds: vectorStoreIds,
@@ -111,7 +114,8 @@ factory ToolComputer.fromJson(Map<String, dynamic> json) { return ToolComputer(C
 
 final ComputerTool computerTool;
 
-@override String get type { return 'computer'; } 
+@override String get type => 'computer';
+
 @override Map<String, dynamic> toJson() { return {...computerTool.toJson(), 'type': type}; } 
 ToolComputer copyWith({ComputerTool? computerTool}) { return ToolComputer(computerTool ?? this.computerTool); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -125,7 +129,8 @@ factory ToolComputerUsePreview.fromJson(Map<String, dynamic> json) { return Tool
 
 final ComputerUsePreviewTool computerUsePreviewTool;
 
-@override String get type { return 'computer_use_preview'; } 
+@override String get type => 'computer_use_preview';
+
 @override Map<String, dynamic> toJson() { return {...computerUsePreviewTool.toJson(), 'type': type}; } 
 ToolComputerUsePreview copyWith({ComputerEnvironment? environment, int? displayWidth, int? displayHeight, }) { return ToolComputerUsePreview(computerUsePreviewTool.copyWith(
   environment: environment,
@@ -143,7 +148,8 @@ factory ToolWebSearch.fromJson(Map<String, dynamic> json) { return ToolWebSearch
 
 final WebSearchTool webSearchTool;
 
-@override String get type { return 'web_search'; } 
+@override String get type => 'web_search';
+
 @override Map<String, dynamic> toJson() { return {...webSearchTool.toJson(), 'type': type}; } 
 ToolWebSearch copyWith({WebSearchToolFilters? Function()? filters, WebSearchApproximateLocation? Function()? userLocation, WebSearchToolSearchContextSize Function()? searchContextSize, }) { return ToolWebSearch(webSearchTool.copyWith(
   filters: filters,
@@ -161,7 +167,8 @@ factory ToolMcp.fromJson(Map<String, dynamic> json) { return ToolMcp(McpTool.fro
 
 final McpTool mcpTool;
 
-@override String get type { return 'mcp'; } 
+@override String get type => 'mcp';
+
 @override Map<String, dynamic> toJson() { return {...mcpTool.toJson(), 'type': type}; } 
 ToolMcp copyWith({String? serverLabel, String? Function()? serverUrl, ConnectorId? Function()? connectorId, String? Function()? authorization, String? Function()? serverDescription, Map<String, String>? Function()? headers, AllowedTools? Function()? allowedTools, RequireApproval? Function()? requireApproval, bool? Function()? deferLoading, }) { return ToolMcp(mcpTool.copyWith(
   serverLabel: serverLabel,
@@ -185,7 +192,8 @@ factory ToolCodeInterpreter.fromJson(Map<String, dynamic> json) { return ToolCod
 
 final CodeInterpreterTool codeInterpreterTool;
 
-@override String get type { return 'code_interpreter'; } 
+@override String get type => 'code_interpreter';
+
 @override Map<String, dynamic> toJson() { return {...codeInterpreterTool.toJson(), 'type': type}; } 
 ToolCodeInterpreter copyWith({CodeInterpreterToolContainer? container}) { return ToolCodeInterpreter(codeInterpreterTool.copyWith(
   container: container,
@@ -201,7 +209,8 @@ factory ToolImageGeneration.fromJson(Map<String, dynamic> json) { return ToolIma
 
 final ImageGenTool imageGenTool;
 
-@override String get type { return 'image_generation'; } 
+@override String get type => 'image_generation';
+
 @override Map<String, dynamic> toJson() { return {...imageGenTool.toJson(), 'type': type}; } 
 ToolImageGeneration copyWith({ImageGenToolModel? Function()? model, ImageEditCompletedEventQuality Function()? quality, ImageEditCompletedEventSize Function()? size, ImageEditCompletedEventOutputFormat Function()? outputFormat, int Function()? outputCompression, ImageGenToolModeration Function()? moderation, ImageEditCompletedEventBackground Function()? background, InputFidelity? Function()? inputFidelity, InputImageMask? Function()? inputImageMask, int Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ToolImageGeneration(imageGenTool.copyWith(
   model: model,
@@ -227,7 +236,8 @@ factory ToolLocalShell.fromJson(Map<String, dynamic> json) { return ToolLocalShe
 
 final LocalShellToolParam localShellToolParam;
 
-@override String get type { return 'local_shell'; } 
+@override String get type => 'local_shell';
+
 @override Map<String, dynamic> toJson() { return {...localShellToolParam.toJson(), 'type': type}; } 
 ToolLocalShell copyWith({LocalShellToolParam? localShellToolParam}) { return ToolLocalShell(localShellToolParam ?? this.localShellToolParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -241,7 +251,8 @@ factory ToolShell.fromJson(Map<String, dynamic> json) { return ToolShell(Functio
 
 final FunctionShellToolParam functionShellToolParam;
 
-@override String get type { return 'shell'; } 
+@override String get type => 'shell';
+
 @override Map<String, dynamic> toJson() { return {...functionShellToolParam.toJson(), 'type': type}; } 
 ToolShell copyWith({FunctionShellToolParamEnvironment? Function()? environment}) { return ToolShell(functionShellToolParam.copyWith(
   environment: environment,
@@ -257,7 +268,8 @@ factory ToolCustom.fromJson(Map<String, dynamic> json) { return ToolCustom(Custo
 
 final CustomToolParam customToolParam;
 
-@override String get type { return 'custom'; } 
+@override String get type => 'custom';
+
 @override Map<String, dynamic> toJson() { return {...customToolParam.toJson(), 'type': type}; } 
 ToolCustom copyWith({String? name, String? Function()? description, CustomToolParamFormat? Function()? format, bool? Function()? deferLoading, }) { return ToolCustom(customToolParam.copyWith(
   name: name,
@@ -276,7 +288,8 @@ factory ToolNamespace.fromJson(Map<String, dynamic> json) { return ToolNamespace
 
 final NamespaceToolParam namespaceToolParam;
 
-@override String get type { return 'namespace'; } 
+@override String get type => 'namespace';
+
 @override Map<String, dynamic> toJson() { return {...namespaceToolParam.toJson(), 'type': type}; } 
 ToolNamespace copyWith({String? name, String? description, List<NamespaceToolParamTools>? tools, }) { return ToolNamespace(namespaceToolParam.copyWith(
   name: name,
@@ -294,7 +307,8 @@ factory ToolToolSearch.fromJson(Map<String, dynamic> json) { return ToolToolSear
 
 final ToolSearchToolParam toolSearchToolParam;
 
-@override String get type { return 'tool_search'; } 
+@override String get type => 'tool_search';
+
 @override Map<String, dynamic> toJson() { return {...toolSearchToolParam.toJson(), 'type': type}; } 
 ToolToolSearch copyWith({ToolSearchExecutionType? Function()? execution, String? Function()? description, EmptyModelParam? Function()? parameters, }) { return ToolToolSearch(toolSearchToolParam.copyWith(
   execution: execution,
@@ -312,7 +326,8 @@ factory ToolWebSearchPreview.fromJson(Map<String, dynamic> json) { return ToolWe
 
 final WebSearchPreviewTool webSearchPreviewTool;
 
-@override String get type { return 'web_search_preview'; } 
+@override String get type => 'web_search_preview';
+
 @override Map<String, dynamic> toJson() { return {...webSearchPreviewTool.toJson(), 'type': type}; } 
 ToolWebSearchPreview copyWith({ApproximateLocation? Function()? userLocation, SearchContextSize? Function()? searchContextSize, List<SearchContentType>? Function()? searchContentTypes, }) { return ToolWebSearchPreview(webSearchPreviewTool.copyWith(
   userLocation: userLocation,
@@ -330,7 +345,8 @@ factory ToolApplyPatch.fromJson(Map<String, dynamic> json) { return ToolApplyPat
 
 final ApplyPatchToolParam applyPatchToolParam;
 
-@override String get type { return 'apply_patch'; } 
+@override String get type => 'apply_patch';
+
 @override Map<String, dynamic> toJson() { return {...applyPatchToolParam.toJson(), 'type': type}; } 
 ToolApplyPatch copyWith({ApplyPatchToolParam? applyPatchToolParam}) { return ToolApplyPatch(applyPatchToolParam ?? this.applyPatchToolParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -344,7 +360,8 @@ ToolApplyPatch copyWith({ApplyPatchToolParam? applyPatchToolParam}) { return Too
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is Tool$Unknown && json == other.json; } 

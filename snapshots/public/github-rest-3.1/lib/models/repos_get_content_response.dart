@@ -24,7 +24,8 @@ factory ReposGetContentResponse.submodule({required Uri submoduleGitUrl, require
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ReposGetContentResponse$Unknown; } 
+bool get isUnknown => this is ReposGetContentResponse$Unknown;
+
  }
 @immutable final class ReposGetContentResponseArray extends ReposGetContentResponse {const ReposGetContentResponseArray(this.listContentDirectory2);
 
@@ -32,7 +33,8 @@ factory ReposGetContentResponseArray.fromJson(Map<String, dynamic> json) { retur
 
 final List<ContentDirectory2> listContentDirectory2;
 
-@override String get type { return 'array'; } 
+@override String get type => 'array';
+
 @override Map<String, dynamic> toJson() { return {'type': type, 'data': listContentDirectory2.map((e) => e.toJson()).toList()}; } 
 ReposGetContentResponseArray copyWith({List<ContentDirectory2>? listContentDirectory2}) { return ReposGetContentResponseArray(listContentDirectory2 ?? this.listContentDirectory2); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -46,7 +48,8 @@ factory ReposGetContentResponseFile.fromJson(Map<String, dynamic> json) { return
 
 final ContentFile contentFile;
 
-@override String get type { return 'file'; } 
+@override String get type => 'file';
+
 @override Map<String, dynamic> toJson() { return {...contentFile.toJson(), 'type': type}; } 
 ReposGetContentResponseFile copyWith({String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, String? Function()? target, String? Function()? submoduleGitUrl, }) { return ReposGetContentResponseFile(contentFile.copyWith(
   encoding: encoding,
@@ -74,7 +77,8 @@ factory ReposGetContentResponseSymlink.fromJson(Map<String, dynamic> json) { ret
 
 final ContentSymlink contentSymlink;
 
-@override String get type { return 'symlink'; } 
+@override String get type => 'symlink';
+
 @override Map<String, dynamic> toJson() { return {...contentSymlink.toJson(), 'type': type}; } 
 ReposGetContentResponseSymlink copyWith({String? target, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, }) { return ReposGetContentResponseSymlink(contentSymlink.copyWith(
   target: target,
@@ -99,7 +103,8 @@ factory ReposGetContentResponseSubmodule.fromJson(Map<String, dynamic> json) { r
 
 final ContentSubmodule contentSubmodule;
 
-@override String get type { return 'submodule'; } 
+@override String get type => 'submodule';
+
 @override Map<String, dynamic> toJson() { return {...contentSubmodule.toJson(), 'type': type}; } 
 ReposGetContentResponseSubmodule copyWith({Uri? submoduleGitUrl, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, }) { return ReposGetContentResponseSubmodule(contentSubmodule.copyWith(
   submoduleGitUrl: submoduleGitUrl,
@@ -124,7 +129,8 @@ ReposGetContentResponseSubmodule copyWith({Uri? submoduleGitUrl, int? size, Stri
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ReposGetContentResponse$Unknown && json == other.json; } 

@@ -20,7 +20,8 @@ factory ResponseOutputTextAnnotations.url({required UrlAnnotationSource source})
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResponseOutputTextAnnotations$Unknown; } 
+bool get isUnknown => this is ResponseOutputTextAnnotations$Unknown;
+
  }
 @immutable final class ResponseOutputTextAnnotationsFile extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotationsFile(this.fileAnnotation);
 
@@ -28,7 +29,8 @@ factory ResponseOutputTextAnnotationsFile.fromJson(Map<String, dynamic> json) { 
 
 final FileAnnotation fileAnnotation;
 
-@override String get type { return 'file'; } 
+@override String get type => 'file';
+
 @override Map<String, dynamic> toJson() { return {...fileAnnotation.toJson(), 'type': type}; } 
 ResponseOutputTextAnnotationsFile copyWith({FileAnnotationSource? source}) { return ResponseOutputTextAnnotationsFile(fileAnnotation.copyWith(
   source: source,
@@ -44,7 +46,8 @@ factory ResponseOutputTextAnnotationsUrl.fromJson(Map<String, dynamic> json) { r
 
 final UrlAnnotation urlAnnotation;
 
-@override String get type { return 'url'; } 
+@override String get type => 'url';
+
 @override Map<String, dynamic> toJson() { return {...urlAnnotation.toJson(), 'type': type}; } 
 ResponseOutputTextAnnotationsUrl copyWith({UrlAnnotationSource? source}) { return ResponseOutputTextAnnotationsUrl(urlAnnotation.copyWith(
   source: source,
@@ -60,7 +63,8 @@ ResponseOutputTextAnnotationsUrl copyWith({UrlAnnotationSource? source}) { retur
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseOutputTextAnnotations$Unknown && json == other.json; } 

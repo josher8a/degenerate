@@ -19,7 +19,8 @@ factory NscInterconnectCreate.gcpPartner({required String account, required Band
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is NscInterconnectCreate$Unknown; } 
+bool get isUnknown => this is NscInterconnectCreate$Unknown;
+
 /// Shared by all variants of this union.
 String get account;
  }
@@ -29,7 +30,8 @@ factory NscInterconnectCreateDirect.fromJson(Map<String, dynamic> json) { return
 
 final NscInterconnectCreatePhysicalBody nscInterconnectCreatePhysicalBody;
 
-@override String get type { return 'direct'; } 
+@override String get type => 'direct';
+
 @override Map<String, dynamic> toJson() { return {...nscInterconnectCreatePhysicalBody.toJson(), 'type': type}; } 
 NscInterconnectCreateDirect copyWith({String? account, String? slotId, String? Function()? speed, }) { return NscInterconnectCreateDirect(nscInterconnectCreatePhysicalBody.copyWith(
   account: account,
@@ -40,7 +42,8 @@ NscInterconnectCreateDirect copyWith({String? account, String? slotId, String? F
     other is NscInterconnectCreateDirect && nscInterconnectCreatePhysicalBody == other.nscInterconnectCreatePhysicalBody; } 
 @override int get hashCode { return nscInterconnectCreatePhysicalBody.hashCode; } 
 @override String toString() { return 'NscInterconnectCreate.direct($nscInterconnectCreatePhysicalBody)'; } 
-@override String get account { return nscInterconnectCreatePhysicalBody.account; } 
+@override String get account => nscInterconnectCreatePhysicalBody.account;
+
  }
 @immutable final class NscInterconnectCreateGcpPartner extends NscInterconnectCreate {const NscInterconnectCreateGcpPartner(this.nscInterconnectCreateGcpPartnerBody);
 
@@ -48,7 +51,8 @@ factory NscInterconnectCreateGcpPartner.fromJson(Map<String, dynamic> json) { re
 
 final NscInterconnectCreateGcpPartnerBody nscInterconnectCreateGcpPartnerBody;
 
-@override String get type { return 'gcp_partner'; } 
+@override String get type => 'gcp_partner';
+
 @override Map<String, dynamic> toJson() { return {...nscInterconnectCreateGcpPartnerBody.toJson(), 'type': type}; } 
 NscInterconnectCreateGcpPartner copyWith({String? account, Bandwidth? bandwidth, String? pairingKey, }) { return NscInterconnectCreateGcpPartner(nscInterconnectCreateGcpPartnerBody.copyWith(
   account: account,
@@ -59,7 +63,8 @@ NscInterconnectCreateGcpPartner copyWith({String? account, Bandwidth? bandwidth,
     other is NscInterconnectCreateGcpPartner && nscInterconnectCreateGcpPartnerBody == other.nscInterconnectCreateGcpPartnerBody; } 
 @override int get hashCode { return nscInterconnectCreateGcpPartnerBody.hashCode; } 
 @override String toString() { return 'NscInterconnectCreate.gcpPartner($nscInterconnectCreateGcpPartnerBody)'; } 
-@override String get account { return nscInterconnectCreateGcpPartnerBody.account; } 
+@override String get account => nscInterconnectCreateGcpPartnerBody.account;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -67,11 +72,13 @@ NscInterconnectCreateGcpPartner copyWith({String? account, Bandwidth? bandwidth,
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscInterconnectCreate$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'NscInterconnectCreate.unknown($json)'; } 
-@override String get account { return json['account'] as String; } 
+@override String get account => json['account'] as String;
+
  }

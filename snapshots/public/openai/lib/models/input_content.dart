@@ -23,7 +23,8 @@ factory InputContent.inputFile({String? fileId, String? filename, String? fileDa
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InputContent$Unknown; } 
+bool get isUnknown => this is InputContent$Unknown;
+
  }
 @immutable final class InputContentInputText extends InputContent {const InputContentInputText(this.inputTextContent);
 
@@ -31,7 +32,8 @@ factory InputContentInputText.fromJson(Map<String, dynamic> json) { return Input
 
 final InputTextContent inputTextContent;
 
-@override String get type { return 'input_text'; } 
+@override String get type => 'input_text';
+
 @override Map<String, dynamic> toJson() { return {...inputTextContent.toJson(), 'type': type}; } 
 InputContentInputText copyWith({String? text}) { return InputContentInputText(inputTextContent.copyWith(
   text: text,
@@ -47,7 +49,8 @@ factory InputContentInputImage.fromJson(Map<String, dynamic> json) { return Inpu
 
 final InputImageContent inputImageContent;
 
-@override String get type { return 'input_image'; } 
+@override String get type => 'input_image';
+
 @override Map<String, dynamic> toJson() { return {...inputImageContent.toJson(), 'type': type}; } 
 InputContentInputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return InputContentInputImage(inputImageContent.copyWith(
   imageUrl: imageUrl,
@@ -65,7 +68,8 @@ factory InputContentInputFile.fromJson(Map<String, dynamic> json) { return Input
 
 final InputFileContent inputFileContent;
 
-@override String get type { return 'input_file'; } 
+@override String get type => 'input_file';
+
 @override Map<String, dynamic> toJson() { return {...inputFileContent.toJson(), 'type': type}; } 
 InputContentInputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return InputContentInputFile(inputFileContent.copyWith(
   fileId: fileId,
@@ -85,7 +89,8 @@ InputContentInputFile copyWith({String? Function()? fileId, String? Function()? 
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputContent$Unknown && json == other.json; } 

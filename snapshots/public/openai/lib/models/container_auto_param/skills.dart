@@ -19,7 +19,8 @@ factory Skills.inline({required String name, required String description, requir
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Skills$Unknown; } 
+bool get isUnknown => this is Skills$Unknown;
+
  }
 @immutable final class SkillsSkillReference extends Skills {const SkillsSkillReference(this.skillReferenceParam);
 
@@ -27,7 +28,8 @@ factory SkillsSkillReference.fromJson(Map<String, dynamic> json) { return Skills
 
 final SkillReferenceParam skillReferenceParam;
 
-@override String get type { return 'skill_reference'; } 
+@override String get type => 'skill_reference';
+
 @override Map<String, dynamic> toJson() { return {...skillReferenceParam.toJson(), 'type': type}; } 
 SkillsSkillReference copyWith({String? skillId, String? Function()? version, }) { return SkillsSkillReference(skillReferenceParam.copyWith(
   skillId: skillId,
@@ -44,7 +46,8 @@ factory SkillsInline.fromJson(Map<String, dynamic> json) { return SkillsInline(I
 
 final InlineSkillParam inlineSkillParam;
 
-@override String get type { return 'inline'; } 
+@override String get type => 'inline';
+
 @override Map<String, dynamic> toJson() { return {...inlineSkillParam.toJson(), 'type': type}; } 
 SkillsInline copyWith({String? name, String? description, InlineSkillSourceParam? source, }) { return SkillsInline(inlineSkillParam.copyWith(
   name: name,
@@ -62,7 +65,8 @@ SkillsInline copyWith({String? name, String? description, InlineSkillSourceParam
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is Skills$Unknown && json == other.json; } 

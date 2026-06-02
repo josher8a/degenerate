@@ -21,7 +21,8 @@ factory RealtimeCreateClientSecretResponseSession.transcription({required String
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is RealtimeCreateClientSecretResponseSession$Unknown; } 
+bool get isUnknown => this is RealtimeCreateClientSecretResponseSession$Unknown;
+
 /// Shared by all variants of this union.
 List<Include>? get include;
  }
@@ -31,7 +32,8 @@ factory RealtimeCreateClientSecretResponseSessionRealtime.fromJson(Map<String, d
 
 final RealtimeSessionCreateResponseGa realtimeSessionCreateResponseGa;
 
-@override String get type { return 'realtime'; } 
+@override String get type => 'realtime';
+
 @override Map<String, dynamic> toJson() { return {...realtimeSessionCreateResponseGa.toJson(), 'type': type}; } 
 RealtimeCreateClientSecretResponseSessionRealtime copyWith({ClientSecret? clientSecret, List<OutputModalities>? Function()? outputModalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, RealtimeSessionCreateResponseGaAudio? Function()? audio, List<Include>? Function()? include, RealtimeSessionCreateRequestGaTracing? Function()? tracing, List<RealtimeResponseCreateParamsTools>? Function()? tools, RealtimeBetaResponseCreateParamsToolChoice? Function()? toolChoice, MaxOutputTokens? Function()? maxOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeCreateClientSecretResponseSessionRealtime(realtimeSessionCreateResponseGa.copyWith(
   clientSecret: clientSecret,
@@ -51,7 +53,8 @@ RealtimeCreateClientSecretResponseSessionRealtime copyWith({ClientSecret? client
     other is RealtimeCreateClientSecretResponseSessionRealtime && realtimeSessionCreateResponseGa == other.realtimeSessionCreateResponseGa; } 
 @override int get hashCode { return realtimeSessionCreateResponseGa.hashCode; } 
 @override String toString() { return 'RealtimeCreateClientSecretResponseSession.realtime($realtimeSessionCreateResponseGa)'; } 
-@override List<Include>? get include { return realtimeSessionCreateResponseGa.include; } 
+@override List<Include>? get include => realtimeSessionCreateResponseGa.include;
+
  }
 @immutable final class RealtimeCreateClientSecretResponseSessionTranscription extends RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSessionTranscription(this.realtimeTranscriptionSessionCreateResponseGa);
 
@@ -59,7 +62,8 @@ factory RealtimeCreateClientSecretResponseSessionTranscription.fromJson(Map<Stri
 
 final RealtimeTranscriptionSessionCreateResponseGa realtimeTranscriptionSessionCreateResponseGa;
 
-@override String get type { return 'transcription'; } 
+@override String get type => 'transcription';
+
 @override Map<String, dynamic> toJson() { return {...realtimeTranscriptionSessionCreateResponseGa.toJson(), 'type': type}; } 
 RealtimeCreateClientSecretResponseSessionTranscription copyWith({String? id, String? object, int? Function()? expiresAt, List<Include>? Function()? include, RealtimeTranscriptionSessionCreateResponseGaAudio? Function()? audio, }) { return RealtimeCreateClientSecretResponseSessionTranscription(realtimeTranscriptionSessionCreateResponseGa.copyWith(
   id: id,
@@ -72,7 +76,8 @@ RealtimeCreateClientSecretResponseSessionTranscription copyWith({String? id, Str
     other is RealtimeCreateClientSecretResponseSessionTranscription && realtimeTranscriptionSessionCreateResponseGa == other.realtimeTranscriptionSessionCreateResponseGa; } 
 @override int get hashCode { return realtimeTranscriptionSessionCreateResponseGa.hashCode; } 
 @override String toString() { return 'RealtimeCreateClientSecretResponseSession.transcription($realtimeTranscriptionSessionCreateResponseGa)'; } 
-@override List<Include>? get include { return realtimeTranscriptionSessionCreateResponseGa.include; } 
+@override List<Include>? get include => realtimeTranscriptionSessionCreateResponseGa.include;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -80,11 +85,13 @@ RealtimeCreateClientSecretResponseSessionTranscription copyWith({String? id, Str
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeCreateClientSecretResponseSession$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'RealtimeCreateClientSecretResponseSession.unknown($json)'; } 
-@override List<Include>? get include { return (json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList(); } 
+@override List<Include>? get include => (json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList();
+
  }

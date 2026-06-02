@@ -17,7 +17,8 @@ factory ResponsesClientEvent.responseCreate({InputParam? input, List<IncludeEnum
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ResponsesClientEvent$Unknown; } 
+bool get isUnknown => this is ResponsesClientEvent$Unknown;
+
  }
 @immutable final class ResponsesClientEventResponseCreate extends ResponsesClientEvent {const ResponsesClientEventResponseCreate(this.createResponse);
 
@@ -25,7 +26,8 @@ factory ResponsesClientEventResponseCreate.fromJson(Map<String, dynamic> json) {
 
 final CreateResponse createResponse;
 
-@override String get type { return 'response.create'; } 
+@override String get type => 'response.create';
+
 @override Map<String, dynamic> toJson() { return {...createResponse.toJson(), 'type': type}; } 
 ResponsesClientEventResponseCreate copyWith({InputParam? Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions? Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return ResponsesClientEventResponseCreate(createResponse.copyWith(
   input: input,
@@ -49,7 +51,8 @@ ResponsesClientEventResponseCreate copyWith({InputParam? Function()? input, List
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponsesClientEvent$Unknown && json == other.json; } 

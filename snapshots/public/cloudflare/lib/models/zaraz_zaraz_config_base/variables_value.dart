@@ -23,7 +23,8 @@ factory VariablesValue.worker({required String name, required ZarazWorkerVariabl
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is VariablesValue$Unknown; } 
+bool get isUnknown => this is VariablesValue$Unknown;
+
 /// Shared by all variants of this union.
 String get name;
  }
@@ -33,7 +34,8 @@ factory VariablesValueSecret.fromJson(Map<String, dynamic> json) { return Variab
 
 final ZarazSecretVariable zarazSecretVariable;
 
-@override String get type { return 'secret'; } 
+@override String get type => 'secret';
+
 @override Map<String, dynamic> toJson() { return {...zarazSecretVariable.toJson(), 'type': type}; } 
 VariablesValueSecret copyWith({String? name, String? value, }) { return VariablesValueSecret(zarazSecretVariable.copyWith(
   name: name,
@@ -43,7 +45,8 @@ VariablesValueSecret copyWith({String? name, String? value, }) { return Variable
     other is VariablesValueSecret && zarazSecretVariable == other.zarazSecretVariable; } 
 @override int get hashCode { return zarazSecretVariable.hashCode; } 
 @override String toString() { return 'VariablesValue.secret($zarazSecretVariable)'; } 
-@override String get name { return zarazSecretVariable.name; } 
+@override String get name => zarazSecretVariable.name;
+
  }
 @immutable final class VariablesValueString extends VariablesValue {const VariablesValueString(this.zarazStringVariable);
 
@@ -51,7 +54,8 @@ factory VariablesValueString.fromJson(Map<String, dynamic> json) { return Variab
 
 final ZarazStringVariable zarazStringVariable;
 
-@override String get type { return 'string'; } 
+@override String get type => 'string';
+
 @override Map<String, dynamic> toJson() { return {...zarazStringVariable.toJson(), 'type': type}; } 
 VariablesValueString copyWith({String? name, String? value, }) { return VariablesValueString(zarazStringVariable.copyWith(
   name: name,
@@ -61,7 +65,8 @@ VariablesValueString copyWith({String? name, String? value, }) { return Variable
     other is VariablesValueString && zarazStringVariable == other.zarazStringVariable; } 
 @override int get hashCode { return zarazStringVariable.hashCode; } 
 @override String toString() { return 'VariablesValue.string($zarazStringVariable)'; } 
-@override String get name { return zarazStringVariable.name; } 
+@override String get name => zarazStringVariable.name;
+
  }
 @immutable final class VariablesValueWorker extends VariablesValue {const VariablesValueWorker(this.zarazWorkerVariable);
 
@@ -69,7 +74,8 @@ factory VariablesValueWorker.fromJson(Map<String, dynamic> json) { return Variab
 
 final ZarazWorkerVariable zarazWorkerVariable;
 
-@override String get type { return 'worker'; } 
+@override String get type => 'worker';
+
 @override Map<String, dynamic> toJson() { return {...zarazWorkerVariable.toJson(), 'type': type}; } 
 VariablesValueWorker copyWith({String? name, ZarazWorkerVariableValue? value, }) { return VariablesValueWorker(zarazWorkerVariable.copyWith(
   name: name,
@@ -79,7 +85,8 @@ VariablesValueWorker copyWith({String? name, ZarazWorkerVariableValue? value, })
     other is VariablesValueWorker && zarazWorkerVariable == other.zarazWorkerVariable; } 
 @override int get hashCode { return zarazWorkerVariable.hashCode; } 
 @override String toString() { return 'VariablesValue.worker($zarazWorkerVariable)'; } 
-@override String get name { return zarazWorkerVariable.name; } 
+@override String get name => zarazWorkerVariable.name;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -87,11 +94,13 @@ VariablesValueWorker copyWith({String? name, ZarazWorkerVariableValue? value, })
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is VariablesValue$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'VariablesValue.unknown($json)'; } 
-@override String get name { return json['name'] as String; } 
+@override String get name => json['name'] as String;
+
  }

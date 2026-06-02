@@ -87,9 +87,7 @@ sealed class Self {
   Map<String, dynamic> toJson();
 
   /// Whether this variant is unknown (not defined in the OpenAPI spec).
-  bool get isUnknown {
-    return this is Self$Unknown;
-  }
+  bool get isUnknown => this is Self$Unknown;
 }
 
 @immutable
@@ -103,9 +101,7 @@ final class SelfType extends Self {
   final True $true;
 
   @override
-  String get type {
-    return 'type';
-  }
+  String get type => 'type';
 
   @override
   Map<String, dynamic> toJson() {
@@ -169,9 +165,7 @@ final class SelfProto extends Self {
   final Proto proto;
 
   @override
-  String get type {
-    return '__proto__';
-  }
+  String get type => '__proto__';
 
   @override
   Map<String, dynamic> toJson() {
@@ -221,9 +215,7 @@ final class SelfString extends Self {
   final StringModel stringModel;
 
   @override
-  String get type {
-    return 'String';
-  }
+  String get type => 'String';
 
   @override
   Map<String, dynamic> toJson() {
@@ -272,9 +264,7 @@ final class Self$Unknown extends Self {
   final Map<String, dynamic> json;
 
   @override
-  String get type {
-    return json['type'] as String? ?? '';
-  }
+  String get type => json['type'] as String? ?? '';
 
   @override
   Map<String, dynamic> toJson() {

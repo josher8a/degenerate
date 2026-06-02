@@ -19,7 +19,8 @@ factory NscInterconnect.gcpPartner({required String account, required String nam
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is NscInterconnect$Unknown; } 
+bool get isUnknown => this is NscInterconnect$Unknown;
+
 /// Shared by all variants of this union.
 String get account;
 /// Shared by all variants of this union.
@@ -33,7 +34,8 @@ factory NscInterconnectDirect.fromJson(Map<String, dynamic> json) { return NscIn
 
 final NscInterconnectPhysicalBody nscInterconnectPhysicalBody;
 
-@override String get type { return 'direct'; } 
+@override String get type => 'direct';
+
 @override Map<String, dynamic> toJson() { return {...nscInterconnectPhysicalBody.toJson(), 'type': type}; } 
 NscInterconnectDirect copyWith({String? account, String? name, String? Function()? owner, NscFacilityInfo? facility, NscCloudflareSite? site, String? slotId, String? speed, }) { return NscInterconnectDirect(nscInterconnectPhysicalBody.copyWith(
   account: account,
@@ -48,9 +50,12 @@ NscInterconnectDirect copyWith({String? account, String? name, String? Function(
     other is NscInterconnectDirect && nscInterconnectPhysicalBody == other.nscInterconnectPhysicalBody; } 
 @override int get hashCode { return nscInterconnectPhysicalBody.hashCode; } 
 @override String toString() { return 'NscInterconnect.direct($nscInterconnectPhysicalBody)'; } 
-@override String get account { return nscInterconnectPhysicalBody.account; } 
-@override String get name { return nscInterconnectPhysicalBody.name; } 
-@override String? get owner { return nscInterconnectPhysicalBody.owner; } 
+@override String get account => nscInterconnectPhysicalBody.account;
+
+@override String get name => nscInterconnectPhysicalBody.name;
+
+@override String? get owner => nscInterconnectPhysicalBody.owner;
+
  }
 @immutable final class NscInterconnectGcpPartner extends NscInterconnect {const NscInterconnectGcpPartner(this.nscInterconnectGcpPartnerBody);
 
@@ -58,7 +63,8 @@ factory NscInterconnectGcpPartner.fromJson(Map<String, dynamic> json) { return N
 
 final NscInterconnectGcpPartnerBody nscInterconnectGcpPartnerBody;
 
-@override String get type { return 'gcp_partner'; } 
+@override String get type => 'gcp_partner';
+
 @override Map<String, dynamic> toJson() { return {...nscInterconnectGcpPartnerBody.toJson(), 'type': type}; } 
 NscInterconnectGcpPartner copyWith({String? account, String? name, String? Function()? owner, String? region, Bandwidth? Function()? speed, }) { return NscInterconnectGcpPartner(nscInterconnectGcpPartnerBody.copyWith(
   account: account,
@@ -71,9 +77,12 @@ NscInterconnectGcpPartner copyWith({String? account, String? name, String? Funct
     other is NscInterconnectGcpPartner && nscInterconnectGcpPartnerBody == other.nscInterconnectGcpPartnerBody; } 
 @override int get hashCode { return nscInterconnectGcpPartnerBody.hashCode; } 
 @override String toString() { return 'NscInterconnect.gcpPartner($nscInterconnectGcpPartnerBody)'; } 
-@override String get account { return nscInterconnectGcpPartnerBody.account; } 
-@override String get name { return nscInterconnectGcpPartnerBody.name; } 
-@override String? get owner { return nscInterconnectGcpPartnerBody.owner; } 
+@override String get account => nscInterconnectGcpPartnerBody.account;
+
+@override String get name => nscInterconnectGcpPartnerBody.name;
+
+@override String? get owner => nscInterconnectGcpPartnerBody.owner;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -81,13 +90,17 @@ NscInterconnectGcpPartner copyWith({String? account, String? name, String? Funct
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscInterconnect$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'NscInterconnect.unknown($json)'; } 
-@override String get account { return json['account'] as String; } 
-@override String get name { return json['name'] as String; } 
-@override String? get owner { return json['owner'] as String?; } 
+@override String get account => json['account'] as String;
+
+@override String get name => json['name'] as String;
+
+@override String? get owner => json['owner'] as String?;
+
  }

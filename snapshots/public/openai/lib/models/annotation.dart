@@ -28,7 +28,8 @@ factory Annotation.filePath({required String fileId, required int index, }) { re
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is Annotation$Unknown; } 
+bool get isUnknown => this is Annotation$Unknown;
+
  }
 @immutable final class AnnotationFileCitation extends Annotation {const AnnotationFileCitation(this.fileCitationBody);
 
@@ -36,7 +37,8 @@ factory AnnotationFileCitation.fromJson(Map<String, dynamic> json) { return Anno
 
 final FileCitationBody fileCitationBody;
 
-@override String get type { return 'file_citation'; } 
+@override String get type => 'file_citation';
+
 @override Map<String, dynamic> toJson() { return {...fileCitationBody.toJson(), 'type': type}; } 
 AnnotationFileCitation copyWith({String? fileId, int? index, String? filename, }) { return AnnotationFileCitation(fileCitationBody.copyWith(
   fileId: fileId,
@@ -54,7 +56,8 @@ factory AnnotationUrlCitation.fromJson(Map<String, dynamic> json) { return Annot
 
 final UrlCitationBody urlCitationBody;
 
-@override String get type { return 'url_citation'; } 
+@override String get type => 'url_citation';
+
 @override Map<String, dynamic> toJson() { return {...urlCitationBody.toJson(), 'type': type}; } 
 AnnotationUrlCitation copyWith({String? url, int? startIndex, int? endIndex, String? title, }) { return AnnotationUrlCitation(urlCitationBody.copyWith(
   url: url,
@@ -73,7 +76,8 @@ factory AnnotationContainerFileCitation.fromJson(Map<String, dynamic> json) { re
 
 final ContainerFileCitationBody containerFileCitationBody;
 
-@override String get type { return 'container_file_citation'; } 
+@override String get type => 'container_file_citation';
+
 @override Map<String, dynamic> toJson() { return {...containerFileCitationBody.toJson(), 'type': type}; } 
 AnnotationContainerFileCitation copyWith({String? containerId, String? fileId, int? startIndex, int? endIndex, String? filename, }) { return AnnotationContainerFileCitation(containerFileCitationBody.copyWith(
   containerId: containerId,
@@ -93,7 +97,8 @@ factory AnnotationFilePath.fromJson(Map<String, dynamic> json) { return Annotati
 
 final FilePath filePath;
 
-@override String get type { return 'file_path'; } 
+@override String get type => 'file_path';
+
 @override Map<String, dynamic> toJson() { return {...filePath.toJson(), 'type': type}; } 
 AnnotationFilePath copyWith({String? fileId, int? index, }) { return AnnotationFilePath(filePath.copyWith(
   fileId: fileId,
@@ -110,7 +115,8 @@ AnnotationFilePath copyWith({String? fileId, int? index, }) { return AnnotationF
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is Annotation$Unknown && json == other.json; } 

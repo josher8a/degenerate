@@ -24,7 +24,8 @@ factory ApplyPatchOperationParam.updateFile({required String path, required Stri
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ApplyPatchOperationParam$Unknown; } 
+bool get isUnknown => this is ApplyPatchOperationParam$Unknown;
+
 /// Shared by all variants of this union.
 String get path;
  }
@@ -34,7 +35,8 @@ factory ApplyPatchOperationParamCreateFile.fromJson(Map<String, dynamic> json) {
 
 final ApplyPatchCreateFileOperationParam applyPatchCreateFileOperationParam;
 
-@override String get type { return 'create_file'; } 
+@override String get type => 'create_file';
+
 @override Map<String, dynamic> toJson() { return {...applyPatchCreateFileOperationParam.toJson(), 'type': type}; } 
 ApplyPatchOperationParamCreateFile copyWith({String? path, String? diff, }) { return ApplyPatchOperationParamCreateFile(applyPatchCreateFileOperationParam.copyWith(
   path: path,
@@ -44,7 +46,8 @@ ApplyPatchOperationParamCreateFile copyWith({String? path, String? diff, }) { re
     other is ApplyPatchOperationParamCreateFile && applyPatchCreateFileOperationParam == other.applyPatchCreateFileOperationParam; } 
 @override int get hashCode { return applyPatchCreateFileOperationParam.hashCode; } 
 @override String toString() { return 'ApplyPatchOperationParam.createFile($applyPatchCreateFileOperationParam)'; } 
-@override String get path { return applyPatchCreateFileOperationParam.path; } 
+@override String get path => applyPatchCreateFileOperationParam.path;
+
  }
 @immutable final class ApplyPatchOperationParamDeleteFile extends ApplyPatchOperationParam {const ApplyPatchOperationParamDeleteFile(this.applyPatchDeleteFileOperationParam);
 
@@ -52,7 +55,8 @@ factory ApplyPatchOperationParamDeleteFile.fromJson(Map<String, dynamic> json) {
 
 final ApplyPatchDeleteFileOperationParam applyPatchDeleteFileOperationParam;
 
-@override String get type { return 'delete_file'; } 
+@override String get type => 'delete_file';
+
 @override Map<String, dynamic> toJson() { return {...applyPatchDeleteFileOperationParam.toJson(), 'type': type}; } 
 ApplyPatchOperationParamDeleteFile copyWith({String? path}) { return ApplyPatchOperationParamDeleteFile(applyPatchDeleteFileOperationParam.copyWith(
   path: path,
@@ -61,7 +65,8 @@ ApplyPatchOperationParamDeleteFile copyWith({String? path}) { return ApplyPatchO
     other is ApplyPatchOperationParamDeleteFile && applyPatchDeleteFileOperationParam == other.applyPatchDeleteFileOperationParam; } 
 @override int get hashCode { return applyPatchDeleteFileOperationParam.hashCode; } 
 @override String toString() { return 'ApplyPatchOperationParam.deleteFile($applyPatchDeleteFileOperationParam)'; } 
-@override String get path { return applyPatchDeleteFileOperationParam.path; } 
+@override String get path => applyPatchDeleteFileOperationParam.path;
+
  }
 @immutable final class ApplyPatchOperationParamUpdateFile extends ApplyPatchOperationParam {const ApplyPatchOperationParamUpdateFile(this.applyPatchUpdateFileOperationParam);
 
@@ -69,7 +74,8 @@ factory ApplyPatchOperationParamUpdateFile.fromJson(Map<String, dynamic> json) {
 
 final ApplyPatchUpdateFileOperationParam applyPatchUpdateFileOperationParam;
 
-@override String get type { return 'update_file'; } 
+@override String get type => 'update_file';
+
 @override Map<String, dynamic> toJson() { return {...applyPatchUpdateFileOperationParam.toJson(), 'type': type}; } 
 ApplyPatchOperationParamUpdateFile copyWith({String? path, String? diff, }) { return ApplyPatchOperationParamUpdateFile(applyPatchUpdateFileOperationParam.copyWith(
   path: path,
@@ -79,7 +85,8 @@ ApplyPatchOperationParamUpdateFile copyWith({String? path, String? diff, }) { re
     other is ApplyPatchOperationParamUpdateFile && applyPatchUpdateFileOperationParam == other.applyPatchUpdateFileOperationParam; } 
 @override int get hashCode { return applyPatchUpdateFileOperationParam.hashCode; } 
 @override String toString() { return 'ApplyPatchOperationParam.updateFile($applyPatchUpdateFileOperationParam)'; } 
-@override String get path { return applyPatchUpdateFileOperationParam.path; } 
+@override String get path => applyPatchUpdateFileOperationParam.path;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -87,11 +94,13 @@ ApplyPatchOperationParamUpdateFile copyWith({String? path, String? diff, }) { re
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ApplyPatchOperationParam$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ApplyPatchOperationParam.unknown($json)'; } 
-@override String get path { return json['path'] as String; } 
+@override String get path => json['path'] as String;
+
  }

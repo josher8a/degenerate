@@ -20,7 +20,8 @@ factory UserMessageItemContent.quotedText({required String text}) { return UserM
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is UserMessageItemContent$Unknown; } 
+bool get isUnknown => this is UserMessageItemContent$Unknown;
+
 /// Shared by all variants of this union.
 String get text;
  }
@@ -30,7 +31,8 @@ factory UserMessageItemContentInputText.fromJson(Map<String, dynamic> json) { re
 
 final UserMessageInputText userMessageInputText;
 
-@override String get type { return 'input_text'; } 
+@override String get type => 'input_text';
+
 @override Map<String, dynamic> toJson() { return {...userMessageInputText.toJson(), 'type': type}; } 
 UserMessageItemContentInputText copyWith({String? text}) { return UserMessageItemContentInputText(userMessageInputText.copyWith(
   text: text,
@@ -39,7 +41,8 @@ UserMessageItemContentInputText copyWith({String? text}) { return UserMessageIte
     other is UserMessageItemContentInputText && userMessageInputText == other.userMessageInputText; } 
 @override int get hashCode { return userMessageInputText.hashCode; } 
 @override String toString() { return 'UserMessageItemContent.inputText($userMessageInputText)'; } 
-@override String get text { return userMessageInputText.text; } 
+@override String get text => userMessageInputText.text;
+
  }
 @immutable final class UserMessageItemContentQuotedText extends UserMessageItemContent {const UserMessageItemContentQuotedText(this.userMessageQuotedText);
 
@@ -47,7 +50,8 @@ factory UserMessageItemContentQuotedText.fromJson(Map<String, dynamic> json) { r
 
 final UserMessageQuotedText userMessageQuotedText;
 
-@override String get type { return 'quoted_text'; } 
+@override String get type => 'quoted_text';
+
 @override Map<String, dynamic> toJson() { return {...userMessageQuotedText.toJson(), 'type': type}; } 
 UserMessageItemContentQuotedText copyWith({String? text}) { return UserMessageItemContentQuotedText(userMessageQuotedText.copyWith(
   text: text,
@@ -56,7 +60,8 @@ UserMessageItemContentQuotedText copyWith({String? text}) { return UserMessageIt
     other is UserMessageItemContentQuotedText && userMessageQuotedText == other.userMessageQuotedText; } 
 @override int get hashCode { return userMessageQuotedText.hashCode; } 
 @override String toString() { return 'UserMessageItemContent.quotedText($userMessageQuotedText)'; } 
-@override String get text { return userMessageQuotedText.text; } 
+@override String get text => userMessageQuotedText.text;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -64,11 +69,13 @@ UserMessageItemContentQuotedText copyWith({String? text}) { return UserMessageIt
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is UserMessageItemContent$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'UserMessageItemContent.unknown($json)'; } 
-@override String get text { return json['text'] as String; } 
+@override String get text => json['text'] as String;
+
  }

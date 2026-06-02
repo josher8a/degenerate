@@ -21,7 +21,8 @@ factory NscStatusInfo.unhealthy({String? reason}) { return NscStatusInfoUnhealth
 String get state;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is NscStatusInfo$Unknown; } 
+bool get isUnknown => this is NscStatusInfo$Unknown;
+
  }
 @immutable final class NscStatusInfoPending extends NscStatusInfo {const NscStatusInfoPending(this.pending);
 
@@ -29,7 +30,8 @@ factory NscStatusInfoPending.fromJson(Map<String, dynamic> json) { return NscSta
 
 final Pending pending;
 
-@override String get state { return 'Pending'; } 
+@override String get state => 'Pending';
+
 @override Map<String, dynamic> toJson() { return {...pending.toJson(), 'state': state}; } 
 NscStatusInfoPending copyWith({Pending? pending}) { return NscStatusInfoPending(pending ?? this.pending); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -43,7 +45,8 @@ factory NscStatusInfoDown.fromJson(Map<String, dynamic> json) { return NscStatus
 
 final Down down;
 
-@override String get state { return 'Down'; } 
+@override String get state => 'Down';
+
 @override Map<String, dynamic> toJson() { return {...down.toJson(), 'state': state}; } 
 NscStatusInfoDown copyWith({String? Function()? reason}) { return NscStatusInfoDown(down.copyWith(
   reason: reason,
@@ -59,7 +62,8 @@ factory NscStatusInfoUnhealthy.fromJson(Map<String, dynamic> json) { return NscS
 
 final Unhealthy unhealthy;
 
-@override String get state { return 'Unhealthy'; } 
+@override String get state => 'Unhealthy';
+
 @override Map<String, dynamic> toJson() { return {...unhealthy.toJson(), 'state': state}; } 
 NscStatusInfoUnhealthy copyWith({String? Function()? reason}) { return NscStatusInfoUnhealthy(unhealthy.copyWith(
   reason: reason,
@@ -75,7 +79,8 @@ factory NscStatusInfoHealthy.fromJson(Map<String, dynamic> json) { return NscSta
 
 final Healthy healthy;
 
-@override String get state { return 'Healthy'; } 
+@override String get state => 'Healthy';
+
 @override Map<String, dynamic> toJson() { return {...healthy.toJson(), 'state': state}; } 
 NscStatusInfoHealthy copyWith({Healthy? healthy}) { return NscStatusInfoHealthy(healthy ?? this.healthy); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -89,7 +94,8 @@ NscStatusInfoHealthy copyWith({Healthy? healthy}) { return NscStatusInfoHealthy(
 
 final Map<String, dynamic> json;
 
-@override String get state { return json['state'] as String? ?? ''; } 
+@override String get state => json['state'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfo$Unknown && json == other.json; } 

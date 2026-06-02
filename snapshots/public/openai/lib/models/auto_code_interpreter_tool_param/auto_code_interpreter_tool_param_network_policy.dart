@@ -17,7 +17,8 @@ factory AutoCodeInterpreterToolParamNetworkPolicy.allowlist({required List<Strin
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is AutoCodeInterpreterToolParamNetworkPolicy$Unknown; } 
+bool get isUnknown => this is AutoCodeInterpreterToolParamNetworkPolicy$Unknown;
+
  }
 @immutable final class AutoCodeInterpreterToolParamNetworkPolicyDisabled extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicyDisabled(this.containerNetworkPolicyDisabledParam);
 
@@ -25,7 +26,8 @@ factory AutoCodeInterpreterToolParamNetworkPolicyDisabled.fromJson(Map<String, d
 
 final ContainerNetworkPolicyDisabledParam containerNetworkPolicyDisabledParam;
 
-@override String get type { return 'disabled'; } 
+@override String get type => 'disabled';
+
 @override Map<String, dynamic> toJson() { return {...containerNetworkPolicyDisabledParam.toJson(), 'type': type}; } 
 AutoCodeInterpreterToolParamNetworkPolicyDisabled copyWith({ContainerNetworkPolicyDisabledParam? containerNetworkPolicyDisabledParam}) { return AutoCodeInterpreterToolParamNetworkPolicyDisabled(containerNetworkPolicyDisabledParam ?? this.containerNetworkPolicyDisabledParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -39,7 +41,8 @@ factory AutoCodeInterpreterToolParamNetworkPolicyAllowlist.fromJson(Map<String, 
 
 final ContainerNetworkPolicyAllowlistParam containerNetworkPolicyAllowlistParam;
 
-@override String get type { return 'allowlist'; } 
+@override String get type => 'allowlist';
+
 @override Map<String, dynamic> toJson() { return {...containerNetworkPolicyAllowlistParam.toJson(), 'type': type}; } 
 AutoCodeInterpreterToolParamNetworkPolicyAllowlist copyWith({List<String>? allowedDomains, List<ContainerNetworkPolicyDomainSecretParam>? Function()? domainSecrets, }) { return AutoCodeInterpreterToolParamNetworkPolicyAllowlist(containerNetworkPolicyAllowlistParam.copyWith(
   allowedDomains: allowedDomains,
@@ -56,7 +59,8 @@ AutoCodeInterpreterToolParamNetworkPolicyAllowlist copyWith({List<String>? allow
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AutoCodeInterpreterToolParamNetworkPolicy$Unknown && json == other.json; } 

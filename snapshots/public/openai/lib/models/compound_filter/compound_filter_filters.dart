@@ -15,7 +15,8 @@ factory CompoundFilterFilters.eq({required String key, required ComparisonFilter
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CompoundFilterFilters$Unknown; } 
+bool get isUnknown => this is CompoundFilterFilters$Unknown;
+
  }
 @immutable final class CompoundFilterFiltersEq extends CompoundFilterFilters {const CompoundFilterFiltersEq(this.comparisonFilter);
 
@@ -23,7 +24,8 @@ factory CompoundFilterFiltersEq.fromJson(Map<String, dynamic> json) { return Com
 
 final ComparisonFilter comparisonFilter;
 
-@override String get type { return 'eq'; } 
+@override String get type => 'eq';
+
 @override Map<String, dynamic> toJson() { return {...comparisonFilter.toJson(), 'type': type}; } 
 CompoundFilterFiltersEq copyWith({String? key, ComparisonFilterValue? value, }) { return CompoundFilterFiltersEq(comparisonFilter.copyWith(
   key: key,
@@ -40,7 +42,8 @@ CompoundFilterFiltersEq copyWith({String? key, ComparisonFilterValue? value, }) 
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CompoundFilterFilters$Unknown && json == other.json; } 

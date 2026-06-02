@@ -31,7 +31,8 @@ factory McnResourceDetailsSectionItemValue.mcnListItem({required List<McnListIte
 String get itemType;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is McnResourceDetailsSectionItemValue$Unknown; } 
+bool get isUnknown => this is McnResourceDetailsSectionItemValue$Unknown;
+
  }
 @immutable final class McnResourceDetailsSectionItemValueMcnStringItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnStringItem(this.mcnStringItem);
 
@@ -39,7 +40,8 @@ factory McnResourceDetailsSectionItemValueMcnStringItem.fromJson(Map<String, dyn
 
 final McnStringItem mcnStringItem;
 
-@override String get itemType { return 'mcn_string_item'; } 
+@override String get itemType => 'mcn_string_item';
+
 @override Map<String, dynamic> toJson() { return {...mcnStringItem.toJson(), 'item_type': itemType}; } 
 McnResourceDetailsSectionItemValueMcnStringItem copyWith({String? string}) { return McnResourceDetailsSectionItemValueMcnStringItem(mcnStringItem.copyWith(
   string: string,
@@ -55,7 +57,8 @@ factory McnResourceDetailsSectionItemValueMcnYamlItem.fromJson(Map<String, dynam
 
 final McnYamlItem mcnYamlItem;
 
-@override String get itemType { return 'mcn_yaml_item'; } 
+@override String get itemType => 'mcn_yaml_item';
+
 @override Map<String, dynamic> toJson() { return {...mcnYamlItem.toJson(), 'item_type': itemType}; } 
 McnResourceDetailsSectionItemValueMcnYamlItem copyWith({String? yaml}) { return McnResourceDetailsSectionItemValueMcnYamlItem(mcnYamlItem.copyWith(
   yaml: yaml,
@@ -71,7 +74,8 @@ factory McnResourceDetailsSectionItemValueMcnYamlDiffItem.fromJson(Map<String, d
 
 final McnYamlDiffItem mcnYamlDiffItem;
 
-@override String get itemType { return 'mcn_yaml_diff_item'; } 
+@override String get itemType => 'mcn_yaml_diff_item';
+
 @override Map<String, dynamic> toJson() { return {...mcnYamlDiffItem.toJson(), 'item_type': itemType}; } 
 McnResourceDetailsSectionItemValueMcnYamlDiffItem copyWith({McnYamlDiff? yamlDiff}) { return McnResourceDetailsSectionItemValueMcnYamlDiffItem(mcnYamlDiffItem.copyWith(
   yamlDiff: yamlDiff,
@@ -87,7 +91,8 @@ factory McnResourceDetailsSectionItemValueMcnResourcePreviewItem.fromJson(Map<St
 
 final McnResourcePreviewItem mcnResourcePreviewItem;
 
-@override String get itemType { return 'mcn_resource_preview_item'; } 
+@override String get itemType => 'mcn_resource_preview_item';
+
 @override Map<String, dynamic> toJson() { return {...mcnResourcePreviewItem.toJson(), 'item_type': itemType}; } 
 McnResourceDetailsSectionItemValueMcnResourcePreviewItem copyWith({McnResourcePreview? resourcePreview}) { return McnResourceDetailsSectionItemValueMcnResourcePreviewItem(mcnResourcePreviewItem.copyWith(
   resourcePreview: resourcePreview,
@@ -103,7 +108,8 @@ factory McnResourceDetailsSectionItemValueMcnListItem.fromJson(Map<String, dynam
 
 final McnListItem mcnListItem;
 
-@override String get itemType { return 'mcn_list_item'; } 
+@override String get itemType => 'mcn_list_item';
+
 @override Map<String, dynamic> toJson() { return {...mcnListItem.toJson(), 'item_type': itemType}; } 
 McnResourceDetailsSectionItemValueMcnListItem copyWith({List<McnListItemList>? list}) { return McnResourceDetailsSectionItemValueMcnListItem(mcnListItem.copyWith(
   list: list,
@@ -119,7 +125,8 @@ McnResourceDetailsSectionItemValueMcnListItem copyWith({List<McnListItemList>? l
 
 final Map<String, dynamic> json;
 
-@override String get itemType { return json['item_type'] as String? ?? ''; } 
+@override String get itemType => json['item_type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnResourceDetailsSectionItemValue$Unknown && json == other.json; } 

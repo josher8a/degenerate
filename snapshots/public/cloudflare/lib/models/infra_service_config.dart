@@ -15,7 +15,8 @@ factory InfraServiceConfig.http({DateTime? createdAt, required InfraServiceHost 
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InfraServiceConfig$Unknown; } 
+bool get isUnknown => this is InfraServiceConfig$Unknown;
+
  }
 @immutable final class InfraServiceConfigHttp extends InfraServiceConfig {const InfraServiceConfigHttp(this.infraServiceCommon);
 
@@ -23,7 +24,8 @@ factory InfraServiceConfigHttp.fromJson(Map<String, dynamic> json) { return Infr
 
 final InfraServiceCommon infraServiceCommon;
 
-@override String get type { return 'http'; } 
+@override String get type => 'http';
+
 @override Map<String, dynamic> toJson() { return {...infraServiceCommon.toJson(), 'type': type}; } 
 InfraServiceConfigHttp copyWith({DateTime? Function()? createdAt, InfraServiceHost? host, String? name, String? Function()? serviceId, DateTime? Function()? updatedAt, }) { return InfraServiceConfigHttp(infraServiceCommon.copyWith(
   createdAt: createdAt,
@@ -43,7 +45,8 @@ InfraServiceConfigHttp copyWith({DateTime? Function()? createdAt, InfraServiceHo
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InfraServiceConfig$Unknown && json == other.json; } 

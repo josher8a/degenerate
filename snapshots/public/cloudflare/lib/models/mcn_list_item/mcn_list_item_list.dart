@@ -19,7 +19,8 @@ factory McnListItemList.mcnResourcePreviewItem({required McnResourcePreview reso
 String get itemType;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is McnListItemList$Unknown; } 
+bool get isUnknown => this is McnListItemList$Unknown;
+
  }
 @immutable final class McnListItemListMcnStringItem extends McnListItemList {const McnListItemListMcnStringItem(this.mcnStringItem);
 
@@ -27,7 +28,8 @@ factory McnListItemListMcnStringItem.fromJson(Map<String, dynamic> json) { retur
 
 final McnStringItem mcnStringItem;
 
-@override String get itemType { return 'mcn_string_item'; } 
+@override String get itemType => 'mcn_string_item';
+
 @override Map<String, dynamic> toJson() { return {...mcnStringItem.toJson(), 'item_type': itemType}; } 
 McnListItemListMcnStringItem copyWith({String? string}) { return McnListItemListMcnStringItem(mcnStringItem.copyWith(
   string: string,
@@ -43,7 +45,8 @@ factory McnListItemListMcnResourcePreviewItem.fromJson(Map<String, dynamic> json
 
 final McnResourcePreviewItem mcnResourcePreviewItem;
 
-@override String get itemType { return 'mcn_resource_preview_item'; } 
+@override String get itemType => 'mcn_resource_preview_item';
+
 @override Map<String, dynamic> toJson() { return {...mcnResourcePreviewItem.toJson(), 'item_type': itemType}; } 
 McnListItemListMcnResourcePreviewItem copyWith({McnResourcePreview? resourcePreview}) { return McnListItemListMcnResourcePreviewItem(mcnResourcePreviewItem.copyWith(
   resourcePreview: resourcePreview,
@@ -59,7 +62,8 @@ McnListItemListMcnResourcePreviewItem copyWith({McnResourcePreview? resourcePrev
 
 final Map<String, dynamic> json;
 
-@override String get itemType { return json['item_type'] as String? ?? ''; } 
+@override String get itemType => json['item_type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnListItemList$Unknown && json == other.json; } 

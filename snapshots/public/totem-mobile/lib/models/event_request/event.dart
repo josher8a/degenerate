@@ -66,9 +66,7 @@ sealed class Event {
   Map<String, dynamic> toJson();
 
   /// Whether this variant is unknown (not defined in the OpenAPI spec).
-  bool get isUnknown {
-    return this is Event$Unknown;
-  }
+  bool get isUnknown => this is Event$Unknown;
 }
 
 @immutable
@@ -82,9 +80,7 @@ final class EventAcceptStick extends Event {
   final AcceptStickEvent acceptStickEvent;
 
   @override
-  String get type {
-    return 'accept_stick';
-  }
+  String get type => 'accept_stick';
 
   @override
   Map<String, dynamic> toJson() {
@@ -123,9 +119,7 @@ final class EventBanParticipant extends Event {
   final BanParticipantEvent banParticipantEvent;
 
   @override
-  String get type {
-    return 'ban_participant';
-  }
+  String get type => 'ban_participant';
 
   @override
   Map<String, dynamic> toJson() {
@@ -167,9 +161,7 @@ final class EventEndRoom extends Event {
   final EndRoomEvent endRoomEvent;
 
   @override
-  String get type {
-    return 'end_room';
-  }
+  String get type => 'end_room';
 
   @override
   Map<String, dynamic> toJson() {
@@ -208,9 +200,7 @@ final class EventForcePassStick extends Event {
   final ForcePassStickEvent forcePassStickEvent;
 
   @override
-  String get type {
-    return 'force_pass_stick';
-  }
+  String get type => 'force_pass_stick';
 
   @override
   Map<String, dynamic> toJson() {
@@ -250,9 +240,7 @@ final class EventPassStick extends Event {
   final PassStickEvent passStickEvent;
 
   @override
-  String get type {
-    return 'pass_stick';
-  }
+  String get type => 'pass_stick';
 
   @override
   Map<String, dynamic> toJson() {
@@ -291,9 +279,7 @@ final class EventReorder extends Event {
   final ReorderEvent reorderEvent;
 
   @override
-  String get type {
-    return 'reorder';
-  }
+  String get type => 'reorder';
 
   @override
   Map<String, dynamic> toJson() {
@@ -332,9 +318,7 @@ final class EventStartRoom extends Event {
   final StartRoomEvent startRoomEvent;
 
   @override
-  String get type {
-    return 'start_room';
-  }
+  String get type => 'start_room';
 
   @override
   Map<String, dynamic> toJson() {
@@ -373,9 +357,7 @@ final class EventUnbanParticipant extends Event {
   final UnbanParticipantEvent unbanParticipantEvent;
 
   @override
-  String get type {
-    return 'unban_participant';
-  }
+  String get type => 'unban_participant';
 
   @override
   Map<String, dynamic> toJson() {
@@ -415,9 +397,7 @@ final class Event$Unknown extends Event {
   final Map<String, dynamic> json;
 
   @override
-  String get type {
-    return json['type'] as String? ?? '';
-  }
+  String get type => json['type'] as String? ?? '';
 
   @override
   Map<String, dynamic> toJson() {

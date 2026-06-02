@@ -20,7 +20,8 @@ factory InputItem.itemReferenceParam({required String id}) { return InputItemIte
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is InputItem$Unknown; } 
+bool get isUnknown => this is InputItem$Unknown;
+
  }
 @immutable final class InputItemMessage extends InputItem {const InputItemMessage(this.easyInputMessage);
 
@@ -28,7 +29,8 @@ factory InputItemMessage.fromJson(Map<String, dynamic> json) { return InputItemM
 
 final EasyInputMessage easyInputMessage;
 
-@override String get type { return 'message'; } 
+@override String get type => 'message';
+
 @override Map<String, dynamic> toJson() { return {...easyInputMessage.toJson(), 'type': type}; } 
 InputItemMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? content, MessagePhase? Function()? phase, }) { return InputItemMessage(easyInputMessage.copyWith(
   role: role,
@@ -46,7 +48,8 @@ factory InputItemItem.fromJson(Map<String, dynamic> json) { return InputItemItem
 
 final Item item;
 
-@override String get type { return 'Item'; } 
+@override String get type => 'Item';
+
 @override Map<String, dynamic> toJson() { return {...item.toJson(), 'type': type}; } 
 InputItemItem copyWith({Item? item}) { return InputItemItem(item ?? this.item); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -60,7 +63,8 @@ factory InputItemItemReferenceParam.fromJson(Map<String, dynamic> json) { return
 
 final ItemReferenceParam itemReferenceParam;
 
-@override String get type { return 'ItemReferenceParam'; } 
+@override String get type => 'ItemReferenceParam';
+
 @override Map<String, dynamic> toJson() { return {...itemReferenceParam.toJson(), 'type': type}; } 
 InputItemItemReferenceParam copyWith({String? id}) { return InputItemItemReferenceParam(itemReferenceParam.copyWith(
   id: id,
@@ -76,7 +80,8 @@ InputItemItemReferenceParam copyWith({String? id}) { return InputItemItemReferen
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputItem$Unknown && json == other.json; } 

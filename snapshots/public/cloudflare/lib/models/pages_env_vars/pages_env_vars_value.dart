@@ -19,7 +19,8 @@ factory PagesEnvVarsValue.secretText({required String value}) { return PagesEnvV
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is PagesEnvVarsValue$Unknown; } 
+bool get isUnknown => this is PagesEnvVarsValue$Unknown;
+
 /// Shared by all variants of this union.
 String get value;
  }
@@ -29,7 +30,8 @@ factory PagesEnvVarsValuePlainText.fromJson(Map<String, dynamic> json) { return 
 
 final PagesPlainTextEnvVar pagesPlainTextEnvVar;
 
-@override String get type { return 'plain_text'; } 
+@override String get type => 'plain_text';
+
 @override Map<String, dynamic> toJson() { return {...pagesPlainTextEnvVar.toJson(), 'type': type}; } 
 PagesEnvVarsValuePlainText copyWith({String? value}) { return PagesEnvVarsValuePlainText(pagesPlainTextEnvVar.copyWith(
   value: value,
@@ -38,7 +40,8 @@ PagesEnvVarsValuePlainText copyWith({String? value}) { return PagesEnvVarsValueP
     other is PagesEnvVarsValuePlainText && pagesPlainTextEnvVar == other.pagesPlainTextEnvVar; } 
 @override int get hashCode { return pagesPlainTextEnvVar.hashCode; } 
 @override String toString() { return 'PagesEnvVarsValue.plainText($pagesPlainTextEnvVar)'; } 
-@override String get value { return pagesPlainTextEnvVar.value; } 
+@override String get value => pagesPlainTextEnvVar.value;
+
  }
 @immutable final class PagesEnvVarsValueSecretText extends PagesEnvVarsValue {const PagesEnvVarsValueSecretText(this.pagesSecretTextEnvVar);
 
@@ -46,7 +49,8 @@ factory PagesEnvVarsValueSecretText.fromJson(Map<String, dynamic> json) { return
 
 final PagesSecretTextEnvVar pagesSecretTextEnvVar;
 
-@override String get type { return 'secret_text'; } 
+@override String get type => 'secret_text';
+
 @override Map<String, dynamic> toJson() { return {...pagesSecretTextEnvVar.toJson(), 'type': type}; } 
 PagesEnvVarsValueSecretText copyWith({String? value}) { return PagesEnvVarsValueSecretText(pagesSecretTextEnvVar.copyWith(
   value: value,
@@ -55,7 +59,8 @@ PagesEnvVarsValueSecretText copyWith({String? value}) { return PagesEnvVarsValue
     other is PagesEnvVarsValueSecretText && pagesSecretTextEnvVar == other.pagesSecretTextEnvVar; } 
 @override int get hashCode { return pagesSecretTextEnvVar.hashCode; } 
 @override String toString() { return 'PagesEnvVarsValue.secretText($pagesSecretTextEnvVar)'; } 
-@override String get value { return pagesSecretTextEnvVar.value; } 
+@override String get value => pagesSecretTextEnvVar.value;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -63,11 +68,13 @@ PagesEnvVarsValueSecretText copyWith({String? value}) { return PagesEnvVarsValue
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is PagesEnvVarsValue$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'PagesEnvVarsValue.unknown($json)'; } 
-@override String get value { return json['value'] as String; } 
+@override String get value => json['value'] as String;
+
  }

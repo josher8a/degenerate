@@ -35,7 +35,8 @@ factory ChatCompletionRequestMessage.function({required String? content, require
 String get role;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ChatCompletionRequestMessage$Unknown; } 
+bool get isUnknown => this is ChatCompletionRequestMessage$Unknown;
+
  }
 @immutable final class ChatCompletionRequestMessageDeveloper extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageDeveloper(this.chatCompletionRequestDeveloperMessage);
 
@@ -43,7 +44,8 @@ factory ChatCompletionRequestMessageDeveloper.fromJson(Map<String, dynamic> json
 
 final ChatCompletionRequestDeveloperMessage chatCompletionRequestDeveloperMessage;
 
-@override String get role { return 'developer'; } 
+@override String get role => 'developer';
+
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestDeveloperMessage.toJson(), 'role': role}; } 
 ChatCompletionRequestMessageDeveloper copyWith({ChatCompletionRequestDeveloperMessageContent? content, String? Function()? name, }) { return ChatCompletionRequestMessageDeveloper(chatCompletionRequestDeveloperMessage.copyWith(
   content: content,
@@ -60,7 +62,8 @@ factory ChatCompletionRequestMessageSystem.fromJson(Map<String, dynamic> json) {
 
 final ChatCompletionRequestSystemMessage chatCompletionRequestSystemMessage;
 
-@override String get role { return 'system'; } 
+@override String get role => 'system';
+
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestSystemMessage.toJson(), 'role': role}; } 
 ChatCompletionRequestMessageSystem copyWith({ChatCompletionRequestSystemMessageContent? content, String? Function()? name, }) { return ChatCompletionRequestMessageSystem(chatCompletionRequestSystemMessage.copyWith(
   content: content,
@@ -77,7 +80,8 @@ factory ChatCompletionRequestMessageUser.fromJson(Map<String, dynamic> json) { r
 
 final ChatCompletionRequestUserMessage chatCompletionRequestUserMessage;
 
-@override String get role { return 'user'; } 
+@override String get role => 'user';
+
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestUserMessage.toJson(), 'role': role}; } 
 ChatCompletionRequestMessageUser copyWith({ChatCompletionRequestUserMessageContent? content, String? Function()? name, }) { return ChatCompletionRequestMessageUser(chatCompletionRequestUserMessage.copyWith(
   content: content,
@@ -94,7 +98,8 @@ factory ChatCompletionRequestMessageAssistant.fromJson(Map<String, dynamic> json
 
 final ChatCompletionRequestAssistantMessage chatCompletionRequestAssistantMessage;
 
-@override String get role { return 'assistant'; } 
+@override String get role => 'assistant';
+
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestAssistantMessage.toJson(), 'role': role}; } 
 ChatCompletionRequestMessageAssistant copyWith({ChatCompletionRequestAssistantMessageContent? Function()? content, String? Function()? refusal, String? Function()? name, ChatCompletionRequestAssistantMessageAudio? Function()? audio, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, ChatCompletionRequestAssistantMessageFunctionCall? Function()? functionCall, }) { return ChatCompletionRequestMessageAssistant(chatCompletionRequestAssistantMessage.copyWith(
   content: content,
@@ -115,7 +120,8 @@ factory ChatCompletionRequestMessageTool.fromJson(Map<String, dynamic> json) { r
 
 final ChatCompletionRequestToolMessage chatCompletionRequestToolMessage;
 
-@override String get role { return 'tool'; } 
+@override String get role => 'tool';
+
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestToolMessage.toJson(), 'role': role}; } 
 ChatCompletionRequestMessageTool copyWith({ChatCompletionRequestToolMessageContent? content, String? toolCallId, }) { return ChatCompletionRequestMessageTool(chatCompletionRequestToolMessage.copyWith(
   content: content,
@@ -132,7 +138,8 @@ factory ChatCompletionRequestMessageFunction.fromJson(Map<String, dynamic> json)
 
 final ChatCompletionRequestFunctionMessage chatCompletionRequestFunctionMessage;
 
-@override String get role { return 'function'; } 
+@override String get role => 'function';
+
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestFunctionMessage.toJson(), 'role': role}; } 
 ChatCompletionRequestMessageFunction copyWith({String? Function()? content, String? name, }) { return ChatCompletionRequestMessageFunction(chatCompletionRequestFunctionMessage.copyWith(
   content: content,
@@ -149,7 +156,8 @@ ChatCompletionRequestMessageFunction copyWith({String? Function()? content, Stri
 
 final Map<String, dynamic> json;
 
-@override String get role { return json['role'] as String? ?? ''; } 
+@override String get role => json['role'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessage$Unknown && json == other.json; } 

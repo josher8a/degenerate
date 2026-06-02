@@ -144,7 +144,8 @@ class DiscriminatedUnionEmitter {
                 ..docs.add(
                   '/// Whether this variant is unknown (not defined in the OpenAPI spec).',
                 )
-                ..body = Code('return this is $unknownClassName;'),
+                ..lambda = true
+                ..body = Code('this is $unknownClassName'),
             ),
           )
           ..methods.addAll(commonFields.map(_baseCommonGetter)),
@@ -185,9 +186,10 @@ class DiscriminatedUnionEmitter {
     (m) => m
       ..name = f.name
       ..type = MethodType.getter
+      ..lambda = true
       ..annotations.add(refer('override'))
       ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
-      ..body = Code('return $payloadField.${f.name};'),
+      ..body = Code('$payloadField.${f.name}'),
   );
 
   /// Override getter for a hoisted field on the unknown variant, read from the
@@ -197,10 +199,11 @@ class DiscriminatedUnionEmitter {
     (m) => m
       ..name = f.name
       ..type = MethodType.getter
+      ..lambda = true
       ..annotations.add(refer('override'))
       ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
       ..body = Code(
-        'return ${buildFromJsonCode(f.type, 'json[${dartStringLiteral(f.originalName)}]', isOptional: !f.isRequired)};',
+        buildFromJsonCode(f.type, 'json[${dartStringLiteral(f.originalName)}]', isOptional: !f.isRequired),
       ),
   );
 
@@ -449,9 +452,10 @@ class DiscriminatedUnionEmitter {
             (m) => m
               ..name = _discDartName
               ..type = MethodType.getter
+              ..lambda = true
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code('return json[${dartStringLiteral(_discJsonKey)}] as String? ?? ${dartStringLiteral('')};'),
+              ..body = Code('json[${dartStringLiteral(_discJsonKey)}] as String? ?? ${dartStringLiteral('')}'),
           ),
         )
         ..methods.add(
@@ -590,9 +594,10 @@ class DiscriminatedUnionEmitter {
             (m) => m
               ..name = _discDartName
               ..type = MethodType.getter
+              ..lambda = true
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code("return '$discValue';"),
+              ..body = Code("'$discValue'"),
           ),
         )
         ..methods.add(
@@ -685,9 +690,10 @@ class DiscriminatedUnionEmitter {
             (m) => m
               ..name = _discDartName
               ..type = MethodType.getter
+              ..lambda = true
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code("return '$discValue';"),
+              ..body = Code("'$discValue'"),
           ),
         )
         ..methods.add(

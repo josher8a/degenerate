@@ -20,7 +20,8 @@ factory MqConsumerResponse.worker({MqIdentifier? consumerId, DateTime? createdOn
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is MqConsumerResponse$Unknown; } 
+bool get isUnknown => this is MqConsumerResponse$Unknown;
+
 /// Shared by all variants of this union.
 MqIdentifier? get consumerId;
 /// Shared by all variants of this union.
@@ -36,7 +37,8 @@ factory MqConsumerResponseHttpPull.fromJson(Map<String, dynamic> json) { return 
 
 final MqHttpConsumerResponse mqHttpConsumerResponse;
 
-@override String get type { return 'http_pull'; } 
+@override String get type => 'http_pull';
+
 @override Map<String, dynamic> toJson() { return {...mqHttpConsumerResponse.toJson(), 'type': type}; } 
 MqConsumerResponseHttpPull copyWith({MqIdentifier? Function()? consumerId, DateTime? Function()? createdOn, String? Function()? deadLetterQueue, MqQueueName? Function()? queueName, MqHttpConsumerRequestSettings? Function()? settings, }) { return MqConsumerResponseHttpPull(mqHttpConsumerResponse.copyWith(
   consumerId: consumerId,
@@ -49,10 +51,14 @@ MqConsumerResponseHttpPull copyWith({MqIdentifier? Function()? consumerId, DateT
     other is MqConsumerResponseHttpPull && mqHttpConsumerResponse == other.mqHttpConsumerResponse; } 
 @override int get hashCode { return mqHttpConsumerResponse.hashCode; } 
 @override String toString() { return 'MqConsumerResponse.httpPull($mqHttpConsumerResponse)'; } 
-@override MqIdentifier? get consumerId { return mqHttpConsumerResponse.consumerId; } 
-@override DateTime? get createdOn { return mqHttpConsumerResponse.createdOn; } 
-@override String? get deadLetterQueue { return mqHttpConsumerResponse.deadLetterQueue; } 
-@override MqQueueName? get queueName { return mqHttpConsumerResponse.queueName; } 
+@override MqIdentifier? get consumerId => mqHttpConsumerResponse.consumerId;
+
+@override DateTime? get createdOn => mqHttpConsumerResponse.createdOn;
+
+@override String? get deadLetterQueue => mqHttpConsumerResponse.deadLetterQueue;
+
+@override MqQueueName? get queueName => mqHttpConsumerResponse.queueName;
+
  }
 @immutable final class MqConsumerResponseWorker extends MqConsumerResponse {const MqConsumerResponseWorker(this.mqWorkerConsumerResponse);
 
@@ -60,7 +66,8 @@ factory MqConsumerResponseWorker.fromJson(Map<String, dynamic> json) { return Mq
 
 final MqWorkerConsumerResponse mqWorkerConsumerResponse;
 
-@override String get type { return 'worker'; } 
+@override String get type => 'worker';
+
 @override Map<String, dynamic> toJson() { return {...mqWorkerConsumerResponse.toJson(), 'type': type}; } 
 MqConsumerResponseWorker copyWith({MqIdentifier? Function()? consumerId, DateTime? Function()? createdOn, String? Function()? deadLetterQueue, MqQueueName? Function()? queueName, MqScriptName? Function()? scriptName, MqWorkerConsumerRequestSettings? Function()? settings, }) { return MqConsumerResponseWorker(mqWorkerConsumerResponse.copyWith(
   consumerId: consumerId,
@@ -74,10 +81,14 @@ MqConsumerResponseWorker copyWith({MqIdentifier? Function()? consumerId, DateTim
     other is MqConsumerResponseWorker && mqWorkerConsumerResponse == other.mqWorkerConsumerResponse; } 
 @override int get hashCode { return mqWorkerConsumerResponse.hashCode; } 
 @override String toString() { return 'MqConsumerResponse.worker($mqWorkerConsumerResponse)'; } 
-@override MqIdentifier? get consumerId { return mqWorkerConsumerResponse.consumerId; } 
-@override DateTime? get createdOn { return mqWorkerConsumerResponse.createdOn; } 
-@override String? get deadLetterQueue { return mqWorkerConsumerResponse.deadLetterQueue; } 
-@override MqQueueName? get queueName { return mqWorkerConsumerResponse.queueName; } 
+@override MqIdentifier? get consumerId => mqWorkerConsumerResponse.consumerId;
+
+@override DateTime? get createdOn => mqWorkerConsumerResponse.createdOn;
+
+@override String? get deadLetterQueue => mqWorkerConsumerResponse.deadLetterQueue;
+
+@override MqQueueName? get queueName => mqWorkerConsumerResponse.queueName;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -85,14 +96,19 @@ MqConsumerResponseWorker copyWith({MqIdentifier? Function()? consumerId, DateTim
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MqConsumerResponse$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'MqConsumerResponse.unknown($json)'; } 
-@override MqIdentifier? get consumerId { return json['consumer_id'] != null ? MqIdentifier.fromJson(json['consumer_id'] as String) : null; } 
-@override DateTime? get createdOn { return json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null; } 
-@override String? get deadLetterQueue { return json['dead_letter_queue'] as String?; } 
-@override MqQueueName? get queueName { return json['queue_name'] != null ? MqQueueName.fromJson(json['queue_name'] as String) : null; } 
+@override MqIdentifier? get consumerId => json['consumer_id'] != null ? MqIdentifier.fromJson(json['consumer_id'] as String) : null;
+
+@override DateTime? get createdOn => json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null;
+
+@override String? get deadLetterQueue => json['dead_letter_queue'] as String?;
+
+@override MqQueueName? get queueName => json['queue_name'] != null ? MqQueueName.fromJson(json['queue_name'] as String) : null;
+
  }

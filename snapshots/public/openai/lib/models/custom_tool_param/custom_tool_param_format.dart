@@ -17,7 +17,8 @@ factory CustomToolParamFormat.grammar({required GrammarSyntax1 syntax, required 
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CustomToolParamFormat$Unknown; } 
+bool get isUnknown => this is CustomToolParamFormat$Unknown;
+
  }
 @immutable final class CustomToolParamFormatText extends CustomToolParamFormat {const CustomToolParamFormatText(this.customTextFormatParam);
 
@@ -25,7 +26,8 @@ factory CustomToolParamFormatText.fromJson(Map<String, dynamic> json) { return C
 
 final CustomTextFormatParam customTextFormatParam;
 
-@override String get type { return 'text'; } 
+@override String get type => 'text';
+
 @override Map<String, dynamic> toJson() { return {...customTextFormatParam.toJson(), 'type': type}; } 
 CustomToolParamFormatText copyWith({CustomTextFormatParam? customTextFormatParam}) { return CustomToolParamFormatText(customTextFormatParam ?? this.customTextFormatParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -39,7 +41,8 @@ factory CustomToolParamFormatGrammar.fromJson(Map<String, dynamic> json) { retur
 
 final CustomGrammarFormatParam customGrammarFormatParam;
 
-@override String get type { return 'grammar'; } 
+@override String get type => 'grammar';
+
 @override Map<String, dynamic> toJson() { return {...customGrammarFormatParam.toJson(), 'type': type}; } 
 CustomToolParamFormatGrammar copyWith({GrammarSyntax1? syntax, String? definition, }) { return CustomToolParamFormatGrammar(customGrammarFormatParam.copyWith(
   syntax: syntax,
@@ -56,7 +59,8 @@ CustomToolParamFormatGrammar copyWith({GrammarSyntax1? syntax, String? definitio
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CustomToolParamFormat$Unknown && json == other.json; } 

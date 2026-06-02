@@ -19,7 +19,8 @@ factory OutputMessageContent.refusal({required String refusal}) { return OutputM
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is OutputMessageContent$Unknown; } 
+bool get isUnknown => this is OutputMessageContent$Unknown;
+
  }
 @immutable final class OutputMessageContentOutputText extends OutputMessageContent {const OutputMessageContentOutputText(this.outputTextContent);
 
@@ -27,7 +28,8 @@ factory OutputMessageContentOutputText.fromJson(Map<String, dynamic> json) { ret
 
 final OutputTextContent outputTextContent;
 
-@override String get type { return 'output_text'; } 
+@override String get type => 'output_text';
+
 @override Map<String, dynamic> toJson() { return {...outputTextContent.toJson(), 'type': type}; } 
 OutputMessageContentOutputText copyWith({String? text, List<Annotation>? annotations, List<LogProb>? logprobs, }) { return OutputMessageContentOutputText(outputTextContent.copyWith(
   text: text,
@@ -45,7 +47,8 @@ factory OutputMessageContentRefusal.fromJson(Map<String, dynamic> json) { return
 
 final RefusalContent refusalContent;
 
-@override String get type { return 'refusal'; } 
+@override String get type => 'refusal';
+
 @override Map<String, dynamic> toJson() { return {...refusalContent.toJson(), 'type': type}; } 
 OutputMessageContentRefusal copyWith({String? refusal}) { return OutputMessageContentRefusal(refusalContent.copyWith(
   refusal: refusal,
@@ -61,7 +64,8 @@ OutputMessageContentRefusal copyWith({String? refusal}) { return OutputMessageCo
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputMessageContent$Unknown && json == other.json; } 

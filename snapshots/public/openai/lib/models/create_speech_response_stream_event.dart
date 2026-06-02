@@ -19,7 +19,8 @@ factory CreateSpeechResponseStreamEvent.speechAudioDone({required SpeechAudioDon
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CreateSpeechResponseStreamEvent$Unknown; } 
+bool get isUnknown => this is CreateSpeechResponseStreamEvent$Unknown;
+
  }
 @immutable final class CreateSpeechResponseStreamEventSpeechAudioDelta extends CreateSpeechResponseStreamEvent {const CreateSpeechResponseStreamEventSpeechAudioDelta(this.speechAudioDeltaEvent);
 
@@ -27,7 +28,8 @@ factory CreateSpeechResponseStreamEventSpeechAudioDelta.fromJson(Map<String, dyn
 
 final SpeechAudioDeltaEvent speechAudioDeltaEvent;
 
-@override String get type { return 'speech.audio.delta'; } 
+@override String get type => 'speech.audio.delta';
+
 @override Map<String, dynamic> toJson() { return {...speechAudioDeltaEvent.toJson(), 'type': type}; } 
 CreateSpeechResponseStreamEventSpeechAudioDelta copyWith({String? audio}) { return CreateSpeechResponseStreamEventSpeechAudioDelta(speechAudioDeltaEvent.copyWith(
   audio: audio,
@@ -43,7 +45,8 @@ factory CreateSpeechResponseStreamEventSpeechAudioDone.fromJson(Map<String, dyna
 
 final SpeechAudioDoneEvent speechAudioDoneEvent;
 
-@override String get type { return 'speech.audio.done'; } 
+@override String get type => 'speech.audio.done';
+
 @override Map<String, dynamic> toJson() { return {...speechAudioDoneEvent.toJson(), 'type': type}; } 
 CreateSpeechResponseStreamEventSpeechAudioDone copyWith({SpeechAudioDoneEventUsage? usage}) { return CreateSpeechResponseStreamEventSpeechAudioDone(speechAudioDoneEvent.copyWith(
   usage: usage,
@@ -59,7 +62,8 @@ CreateSpeechResponseStreamEventSpeechAudioDone copyWith({SpeechAudioDoneEventUsa
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateSpeechResponseStreamEvent$Unknown && json == other.json; } 

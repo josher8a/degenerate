@@ -19,7 +19,8 @@ factory ImageEditStreamEvent.imageEditCompleted({required String b64Json, requir
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is ImageEditStreamEvent$Unknown; } 
+bool get isUnknown => this is ImageEditStreamEvent$Unknown;
+
 /// Shared by all variants of this union.
 String get b64Json;
 /// Shared by all variants of this union.
@@ -39,7 +40,8 @@ factory ImageEditStreamEventImageEditPartialImage.fromJson(Map<String, dynamic> 
 
 final ImageEditPartialImageEvent imageEditPartialImageEvent;
 
-@override String get type { return 'image_edit.partial_image'; } 
+@override String get type => 'image_edit.partial_image';
+
 @override Map<String, dynamic> toJson() { return {...imageEditPartialImageEvent.toJson(), 'type': type}; } 
 ImageEditStreamEventImageEditPartialImage copyWith({String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, int? partialImageIndex, }) { return ImageEditStreamEventImageEditPartialImage(imageEditPartialImageEvent.copyWith(
   b64Json: b64Json,
@@ -54,12 +56,18 @@ ImageEditStreamEventImageEditPartialImage copyWith({String? b64Json, int? create
     other is ImageEditStreamEventImageEditPartialImage && imageEditPartialImageEvent == other.imageEditPartialImageEvent; } 
 @override int get hashCode { return imageEditPartialImageEvent.hashCode; } 
 @override String toString() { return 'ImageEditStreamEvent.imageEditPartialImage($imageEditPartialImageEvent)'; } 
-@override String get b64Json { return imageEditPartialImageEvent.b64Json; } 
-@override int get createdAt { return imageEditPartialImageEvent.createdAt; } 
-@override ImageEditCompletedEventSize get size { return imageEditPartialImageEvent.size; } 
-@override ImageEditCompletedEventQuality get quality { return imageEditPartialImageEvent.quality; } 
-@override ImageEditCompletedEventBackground get background { return imageEditPartialImageEvent.background; } 
-@override ImageEditCompletedEventOutputFormat get outputFormat { return imageEditPartialImageEvent.outputFormat; } 
+@override String get b64Json => imageEditPartialImageEvent.b64Json;
+
+@override int get createdAt => imageEditPartialImageEvent.createdAt;
+
+@override ImageEditCompletedEventSize get size => imageEditPartialImageEvent.size;
+
+@override ImageEditCompletedEventQuality get quality => imageEditPartialImageEvent.quality;
+
+@override ImageEditCompletedEventBackground get background => imageEditPartialImageEvent.background;
+
+@override ImageEditCompletedEventOutputFormat get outputFormat => imageEditPartialImageEvent.outputFormat;
+
  }
 @immutable final class ImageEditStreamEventImageEditCompleted extends ImageEditStreamEvent {const ImageEditStreamEventImageEditCompleted(this.imageEditCompletedEvent);
 
@@ -67,7 +75,8 @@ factory ImageEditStreamEventImageEditCompleted.fromJson(Map<String, dynamic> jso
 
 final ImageEditCompletedEvent imageEditCompletedEvent;
 
-@override String get type { return 'image_edit.completed'; } 
+@override String get type => 'image_edit.completed';
+
 @override Map<String, dynamic> toJson() { return {...imageEditCompletedEvent.toJson(), 'type': type}; } 
 ImageEditStreamEventImageEditCompleted copyWith({String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, ImagesUsage? usage, }) { return ImageEditStreamEventImageEditCompleted(imageEditCompletedEvent.copyWith(
   b64Json: b64Json,
@@ -82,12 +91,18 @@ ImageEditStreamEventImageEditCompleted copyWith({String? b64Json, int? createdAt
     other is ImageEditStreamEventImageEditCompleted && imageEditCompletedEvent == other.imageEditCompletedEvent; } 
 @override int get hashCode { return imageEditCompletedEvent.hashCode; } 
 @override String toString() { return 'ImageEditStreamEvent.imageEditCompleted($imageEditCompletedEvent)'; } 
-@override String get b64Json { return imageEditCompletedEvent.b64Json; } 
-@override int get createdAt { return imageEditCompletedEvent.createdAt; } 
-@override ImageEditCompletedEventSize get size { return imageEditCompletedEvent.size; } 
-@override ImageEditCompletedEventQuality get quality { return imageEditCompletedEvent.quality; } 
-@override ImageEditCompletedEventBackground get background { return imageEditCompletedEvent.background; } 
-@override ImageEditCompletedEventOutputFormat get outputFormat { return imageEditCompletedEvent.outputFormat; } 
+@override String get b64Json => imageEditCompletedEvent.b64Json;
+
+@override int get createdAt => imageEditCompletedEvent.createdAt;
+
+@override ImageEditCompletedEventSize get size => imageEditCompletedEvent.size;
+
+@override ImageEditCompletedEventQuality get quality => imageEditCompletedEvent.quality;
+
+@override ImageEditCompletedEventBackground get background => imageEditCompletedEvent.background;
+
+@override ImageEditCompletedEventOutputFormat get outputFormat => imageEditCompletedEvent.outputFormat;
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -95,16 +110,23 @@ ImageEditStreamEventImageEditCompleted copyWith({String? b64Json, int? createdAt
 
 final Map<String, dynamic> json;
 
-@override String get type { return json['type'] as String? ?? ''; } 
+@override String get type => json['type'] as String? ?? '';
+
 @override Map<String, dynamic> toJson() { return json; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ImageEditStreamEvent$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ImageEditStreamEvent.unknown($json)'; } 
-@override String get b64Json { return json['b64_json'] as String; } 
-@override int get createdAt { return (json['created_at'] as num).toInt(); } 
-@override ImageEditCompletedEventSize get size { return ImageEditCompletedEventSize.fromJson(json['size'] as String); } 
-@override ImageEditCompletedEventQuality get quality { return ImageEditCompletedEventQuality.fromJson(json['quality'] as String); } 
-@override ImageEditCompletedEventBackground get background { return ImageEditCompletedEventBackground.fromJson(json['background'] as String); } 
-@override ImageEditCompletedEventOutputFormat get outputFormat { return ImageEditCompletedEventOutputFormat.fromJson(json['output_format'] as String); } 
+@override String get b64Json => json['b64_json'] as String;
+
+@override int get createdAt => (json['created_at'] as num).toInt();
+
+@override ImageEditCompletedEventSize get size => ImageEditCompletedEventSize.fromJson(json['size'] as String);
+
+@override ImageEditCompletedEventQuality get quality => ImageEditCompletedEventQuality.fromJson(json['quality'] as String);
+
+@override ImageEditCompletedEventBackground get background => ImageEditCompletedEventBackground.fromJson(json['background'] as String);
+
+@override ImageEditCompletedEventOutputFormat get outputFormat => ImageEditCompletedEventOutputFormat.fromJson(json['output_format'] as String);
+
  }
