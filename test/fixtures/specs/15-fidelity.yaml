@@ -15,6 +15,35 @@ paths:
               schema:
                 $ref: "#/components/schemas/BasicObject"
 
+  /events:
+    get:
+      operationId: streamEvents
+      responses:
+        "200":
+          description: SSE stream of BasicObject events
+          content:
+            text/event-stream:
+              schema:
+                type: string
+              itemSchema:
+                $ref: "#/components/schemas/BasicObject"
+
+  /lines:
+    get:
+      operationId: streamLines
+      responses:
+        "200":
+          description: JSONL stream with inline event type
+          content:
+            application/x-ndjson:
+              itemSchema:
+                type: object
+                properties:
+                  seq:
+                    type: integer
+                  data:
+                    type: string
+
 components:
   schemas:
     # ─── Required + Nullable combinations ────────────────────

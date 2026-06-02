@@ -53,11 +53,13 @@ IrField _findField(IrObject obj, String name) =>
 
 void main() {
   late List<IrType> types;
+  late List<IrApi> apis;
   late IrMapper irMapper;
 
   setUpAll(() {
     final result = _lower();
     types = result.types;
+    apis = result.apis;
     irMapper = result.irMapper;
   });
 
@@ -321,6 +323,55 @@ void main() {
       final type = irMapper.typeRegistry['TypedMap'];
       expect(type, isNotNull);
       expect(type, isA<IrMap>());
+    });
+  });
+
+  // ─── Streaming (itemSchema) ─────────────────────────────
+
+  group('Streaming', () {
+    IrOperation _findOp(String operationId) {
+      for (final api in apis) {
+        for (final op in api.operations) {
+          if (op.operationId == operationId) return op;
+        }
+      }
+      throw StateError('Operation $operationId not found');
+    }
+
+    test('SSE endpoint preserves itemSchema with \$ref', () {
+      final op = _findOp('streamEvents');
+      final resp = op.responses[200]!;
+      final sse = resp.content['text/event-stream']!;
+
+      expect(sse.schema, isNotNull);
+      expect(sse.itemSchema, isNotNull,
+          reason: 'itemSchema must survive lowering');
+      expect(sse.itemSchema, isA<IrTypeRef>(),
+          reason: 'itemSchema \$ref to emittable type stays as IrTypeRef');
+      expect((sse.itemSchema as IrTypeRef).name, equals('BasicObject'));
+    });
+
+    test('JSONL endpoint preserves inline itemSchema', () {
+      final op = _findOp('streamLines');
+      final resp = op.responses[200]!;
+      final jsonl = resp.content['application/x-ndjson']!;
+
+      expect(jsonl.itemSchema, isNotNull,
+          reason: 'inline itemSchema must survive lowering');
+      final item = jsonl.itemSchema!;
+      final obj = item is IrTypeRef
+          ? irMapper.typeRegistry[item.name]! as IrObject
+          : item as IrObject;
+      expect(obj.fields.any((f) => f.originalName == 'seq'), isTrue);
+      expect(obj.fields.any((f) => f.originalName == 'data'), isTrue);
+    });
+
+    test('itemSchema survives ref resolution', () {
+      final op = _findOp('streamEvents');
+      final sse = op.responses[200]!.content['text/event-stream']!;
+      expect(sse.itemSchema, isNotNull,
+          reason: 'itemSchema must not be dropped by TypeRefResolver');
+      expect((sse.itemSchema as IrTypeRef).name, equals('BasicObject'));
     });
   });
 }

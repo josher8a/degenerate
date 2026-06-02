@@ -20,13 +20,14 @@ class IrMapper {
     : _usedNames = context.usedNames,
       _nameMapping = context.nameMapping,
       _discriminatorProperties = context.discriminatorProperties,
-      warnings = context.warnings;
+      _warnings = context.warnings;
 
   final bool emitTypedFormats;
   final Set<String> _usedNames;
 
-  /// Maps Dart type names to their IR types.
-  final Map<String, IrType> typeRegistry = {};
+  /// Maps Dart type names to their IR types (read-only view for consumers).
+  Map<String, IrType> get typeRegistry => _typeRegistry;
+  final Map<String, IrType> _typeRegistry = {};
 
   /// Maps each generated type name → the ordered PascalCase path segments it
   /// was built from (parent type + field/variant segment per nesting level).
@@ -34,13 +35,12 @@ class IrMapper {
   /// additive metadata used by the shortest-unique-suffix name resolver.
   /// Types lowered without path context (e.g. operation-inline) fall back to a
   /// single segment equal to their flat name.
-  final Map<String, List<String>> namePaths = {};
+  Map<String, List<String>> get namePaths => _namePaths;
+  final Map<String, List<String>> _namePaths = {};
 
-  /// Record the segment path for [name] (first writer wins; shared `$ref`
-  /// targets and re-registered inline types keep their first-seen path).
   void _recordPath(String? name, List<String>? path) {
     if (name == null || name.isEmpty) return;
-    namePaths.putIfAbsent(name, () => path ?? [name]);
+    _namePaths.putIfAbsent(name, () => path ?? [name]);
   }
 
   /// Path for a union variant whose hint is [hint]. When the hint is the
@@ -77,13 +77,14 @@ class IrMapper {
   final Map<String, String> _discriminatorProperties;
 
   /// Warnings collected during lowering (e.g., unknown schema fallbacks).
-  final List<String> warnings;
+  List<String> get warnings => _warnings;
+  final List<String> _warnings;
 
   /// Raw OpenAPI schemas for resolving $ref targets during allOf expansion.
   Map<String, dynamic> _rawSchemas = {};
 
   /// Resolver for IrTypeRef nodes, created lazily over typeRegistry.
-  late final TypeRefResolver _resolver = TypeRefResolver(typeRegistry);
+  late final TypeRefResolver _resolver = TypeRefResolver(_typeRegistry);
 
   /// Lower all named schemas from `components.schemas`.
   ///
@@ -115,7 +116,7 @@ class IrMapper {
         .whereType<String>()
         .toSet();
 
-    for (final entry in typeRegistry.entries) {
+    for (final entry in _typeRegistry.entries) {
       final regType = entry.value;
       final regName = regType.emittableName;
       if (regName != null && resultNames.add(regName)) {
@@ -157,7 +158,7 @@ class IrMapper {
         isNullable: irType.isNullable,
       );
     }
-    typeRegistry[dartName] = irType;
+    _typeRegistry[dartName] = irType;
     return irType;
   }
 
@@ -207,10 +208,10 @@ class IrMapper {
     if (resolved is IrObject) {
       final objName = resolved.name;
       resolved = _resolver.resolve(resolved);
-      typeRegistry[objName] = resolved;
+      _typeRegistry[objName] = resolved;
       _inlineTypes.add(resolved);
     } else if (resolved is IrEnum) {
-      typeRegistry[resolved.name] = resolved;
+      _typeRegistry[resolved.name] = resolved;
       _inlineTypes.add(resolved);
     } else if (resolved is IrDiscriminatedUnion ||
         resolved is IrUntaggedUnion ||
@@ -222,7 +223,7 @@ class IrMapper {
         _ => null,
       };
       if (name != null) {
-        typeRegistry[name] = resolved;
+        _typeRegistry[name] = resolved;
         _inlineTypes.add(resolved);
       }
     }
@@ -237,7 +238,7 @@ class IrMapper {
     if (schema is bool) {
       return _lowerBooleanSchema(schema, nameHint: nameHint);
     }
-    warnings.add(
+    _warnings.add(
       'Encountered invalid non-object schema; defaulting to dynamic.',
     );
     return const IrPrimitive(PrimitiveKind.dynamic_);
@@ -343,54 +344,15 @@ class IrMapper {
     // Flatten allOf before further processing.
     final flattened = _flattener.flatten(schema);
 
-    // After flattening, check for $ref surfaced from allOf (e.g. allOf: [{$ref:
-    // ...}]).
+    // After flattening, check for $ref surfaced from allOf.
     if (flattened.containsKey(r'$ref')) {
-      final refPath = flattened[r'$ref'] as String;
-      final rawRefName = _extractRefName(refPath);
-      final refName = _dartRefName(rawRefName);
-
-      // Check if the allOf added properties beyond what the $ref target has.
-      // If so, merge the ref's properties and treat as a full object.
-      final refSchema = _rawSchemas[rawRefName];
-      final refPropKeys = refSchema is Map<String, dynamic>
-          ? (refSchema['properties'] as Map<String, dynamic>?)?.keys.toSet() ??
-                <String>{}
-          : <String>{};
-      final flatProps = flattened['properties'] as Map<String, dynamic>? ?? {};
-      final hasExtraProperties = flatProps.keys
-          .toSet()
-          .difference(refPropKeys)
-          .isNotEmpty;
-
-      // Don't expand discriminator variants — they should stay as refs so
-      // the sealed union emitter can wrap them correctly.
-      final isDiscriminatorVariant = discriminatorProperty != null;
-      if (hasExtraProperties &&
-          !isDiscriminatorVariant &&
-          refSchema is Map<String, dynamic>) {
-        // Merge ref target's properties into the flattened schema.
-        final refProps = refSchema['properties'] as Map<String, dynamic>? ?? {};
-        flattened['properties'] = <String, dynamic>{
-          ...refProps,
-          ...flatProps,
-        };
-        final refReq = (refSchema['required'] as List?)?.cast<String>() ?? [];
-        final localReq = (flattened['required'] as List?)?.cast<String>() ?? [];
-        flattened['required'] = {...refReq, ...localReq}.toList();
-        flattened.remove(r'$ref');
-        // Falls through to object handling below.
-      } else {
-        // Pure ref alias or ref + description only — return type reference.
-        final flatDescription =
-            flattened['description'] as String? ?? description;
-        final flatNullable = _isNullable(flattened) || nullable;
-        return IrTypeRef(
-          refName,
-          description: flatDescription,
-          isNullable: flatNullable,
-        );
-      }
+      final resolved = _resolveAllOfRef(
+        flattened,
+        description: description,
+        nullable: nullable,
+        isDiscriminatorVariant: discriminatorProperty != null,
+      );
+      if (resolved != null) return resolved;
     }
 
     // After flattening, check again for resolved refs (allOf may have surfaced
@@ -462,7 +424,7 @@ class IrMapper {
             .whereType<String>()
             .toList();
         final matchName = toTypeName(title);
-        final existing = typeRegistry[matchName];
+        final existing = _typeRegistry[matchName];
         if (existing is IrEnum && _listEquals(existing.values, enumValues)) {
           return IrTypeRef(existing.name, isNullable: nullable);
         }
@@ -604,10 +566,10 @@ class IrMapper {
     if (prim.kind != PrimitiveKind.string) return prim;
     final typeName = _formatTypeNames[prim.format];
     if (typeName == null) return prim;
-    if (!typeRegistry.containsKey(typeName)) {
+    if (!_typeRegistry.containsKey(typeName)) {
       const inner = IrPrimitive(PrimitiveKind.string);
       final ext = IrExtensionType(typeName, inner);
-      typeRegistry[typeName] = ext;
+      _typeRegistry[typeName] = ext;
       _inlineTypes.add(ext);
       _recordPath(typeName, [typeName]);
     }
@@ -619,7 +581,7 @@ class IrMapper {
   }
 
   IrType _lowerBooleanSchema(bool schema, {String? nameHint}) {
-    warnings.add(
+    _warnings.add(
       'Boolean schema'
       '${nameHint != null ? ' for $nameHint' : ''}'
       ' lowered as dynamic fallback.',
@@ -741,117 +703,15 @@ class IrMapper {
     final properties =
         schema['properties'] as Map<String, dynamic>? ?? <String, dynamic>{};
     final fields = <IrField>[];
-
     for (final entry in properties.entries) {
-      final fieldOriginalName = entry.key;
-      final fieldDartName = sanitizeFieldName(toCamelCase(fieldOriginalName));
-      // Property values can be boolean schemas (true/false) in JSON Schema.
-      // Treat boolean schemas as unconstrained (true) or impossible (false).
-      if (entry.value is! Map<String, dynamic>) {
-        // true/false boolean schema → accept anything via dynamic fallback.
-        // false → nothing valid, but we still emit the field
-        const fieldType = IrPrimitive(
-          PrimitiveKind.dynamic_,
-          isNullable: true,
-        );
-        fields.add(
-          IrField(
-            fieldDartName,
-            fieldOriginalName,
-            fieldType,
-            isRequired: requiredSet.contains(fieldOriginalName),
-          ),
-        );
-        continue;
-      }
-      final fieldSchema = entry.value as Map<String, dynamic>;
-      final fieldDescription = fieldSchema['description'] as String?;
-      final fieldDefault = fieldSchema['default'];
-      final fieldExample = fieldSchema['example'];
-      final isRequired = requiredSet.contains(fieldOriginalName);
-      final fieldNullable = _isNullable(fieldSchema);
-
-      // For inline enums in fields, generate a proper name.
-      // If this field is a discriminator property, just use String instead of
-      // enum.
-      String? inlineEnumName;
-      final fieldSchemaType = _extractType(fieldSchema);
-      final isEnumCandidate =
-          fieldSchema.containsKey('enum') &&
-          (fieldSchemaType == 'string' ||
-              fieldSchemaType == 'integer' ||
-              fieldSchemaType == 'number');
-      if (isEnumCandidate) {
-        if (discriminatorProperty != null &&
-            fieldOriginalName == discriminatorProperty) {
-          // This is a discriminator field - emit as plain String.
-          // Override the schema to remove the enum so it lowers as a primitive.
-        } else {
-          // Non-discriminator inline enum - generate a named enum.
-          inlineEnumName = '$objectName${toPascalCase(fieldOriginalName)}';
-        }
-      }
-
-      // The path for any named type this field produces: parent + field name.
-      final fieldPath = [...objectPath, toPascalCase(fieldOriginalName)];
-
-      IrType fieldType;
-      if (discriminatorProperty != null &&
-          fieldOriginalName == discriminatorProperty &&
-          isEnumCandidate) {
-        // Discriminator field: emit as plain String.
-        fieldType = IrPrimitive(
-          PrimitiveKind.string,
-          isNullable: fieldNullable,
-        );
-      } else if (inlineEnumName != null) {
-        // Inline enum: lower with the generated name and register it.
-        fieldType = _lowerEnum(
-          inlineEnumName,
-          fieldSchema,
-          namePath: fieldPath,
-        );
-        typeRegistry[inlineEnumName] = fieldType;
-      } else {
-        // Generate a name hint based on the parent object and field name.
-        final fieldNameHint = '$objectName${toPascalCase(fieldOriginalName)}';
-        // Use lowerInlineSchema to properly register any named types
-        // (objects, enums, unions) that need separate files.
-        fieldType = lowerInlineSchema(
-          fieldSchema,
-          nameHint: fieldNameHint,
-          namePath: fieldPath,
-        );
-      }
-
-      // Apply nullability: if nullable is explicitly set on the field schema,
-      // and the lowered type doesn't already reflect it, wrap appropriately.
-      // For IrTypeRef we need to re-create with the nullable flag.
-      if (fieldNullable && !fieldType.isNullable) {
-        fieldType = fieldType.copyAsNullable();
-      }
-
-      // Merge type-level description (e.g. "One of: String, int" from
-      // collapsed unions) into the field description for doc comments.
-      final effectiveDescription =
-          fieldType.description != null &&
-              fieldType.description != fieldDescription
-          ? fieldDescription != null
-                ? '$fieldDescription\n\n${fieldType.description}'
-                : fieldType.description
-          : fieldDescription;
-
-      fields.add(
-        IrField(
-          fieldDartName,
-          fieldOriginalName,
-          fieldType,
-          isRequired: isRequired,
-          defaultValue: fieldDefault,
-          description: effectiveDescription,
-          example: fieldExample,
-        ),
-      );
+      fields.add(_lowerField(
+        entry.key,
+        entry.value as Object,
+        objectName,
+        objectPath,
+        requiredSet,
+        discriminatorProperty,
+      ));
     }
 
     // additionalProperties: typed overflow map for extra keys.
@@ -881,6 +741,90 @@ class IrMapper {
       additionalProperties: additionalPropsType,
       description: _withExample(description, schema['example']),
       isNullable: nullable,
+    );
+  }
+
+  // ─── Discriminated Union ──────────────────────────────────────
+
+  IrField _lowerField(
+    String fieldOriginalName,
+    Object fieldValue,
+    String objectName,
+    List<String> objectPath,
+    Set<String> requiredSet,
+    String? discriminatorProperty,
+  ) {
+    final fieldDartName = sanitizeFieldName(toCamelCase(fieldOriginalName));
+    final isRequired = requiredSet.contains(fieldOriginalName);
+
+    if (fieldValue is! Map<String, dynamic>) {
+      return IrField(
+        fieldDartName,
+        fieldOriginalName,
+        const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true),
+        isRequired: isRequired,
+      );
+    }
+
+    final fieldSchema = fieldValue;
+    final fieldDescription = fieldSchema['description'] as String?;
+    final fieldDefault = fieldSchema['default'];
+    final fieldExample = fieldSchema['example'];
+    final fieldNullable = _isNullable(fieldSchema);
+    final fieldPath = [...objectPath, toPascalCase(fieldOriginalName)];
+
+    final fieldSchemaType = _extractType(fieldSchema);
+    final isEnumCandidate =
+        fieldSchema.containsKey('enum') &&
+        (fieldSchemaType == 'string' ||
+            fieldSchemaType == 'integer' ||
+            fieldSchemaType == 'number');
+    final isDiscriminatorField = discriminatorProperty != null &&
+        fieldOriginalName == discriminatorProperty;
+
+    IrType fieldType;
+    if (isDiscriminatorField && isEnumCandidate) {
+      fieldType = IrPrimitive(
+        PrimitiveKind.string,
+        isNullable: fieldNullable,
+      );
+    } else if (isEnumCandidate && !isDiscriminatorField) {
+      final inlineEnumName = '$objectName${toPascalCase(fieldOriginalName)}';
+      fieldType = _lowerEnum(
+        inlineEnumName,
+        fieldSchema,
+        namePath: fieldPath,
+      );
+      _typeRegistry[inlineEnumName] = fieldType;
+    } else {
+      final fieldNameHint = '$objectName${toPascalCase(fieldOriginalName)}';
+      fieldType = lowerInlineSchema(
+        fieldSchema,
+        nameHint: fieldNameHint,
+        namePath: fieldPath,
+      );
+    }
+
+    if (fieldNullable && !fieldType.isNullable) {
+      fieldType = fieldType.copyAsNullable();
+    }
+
+    final effectiveDescription =
+        fieldType.description != null &&
+                fieldType.description != fieldDescription
+            ? fieldDescription != null
+                ? '$fieldDescription\n\n${fieldType.description}'
+                : fieldType.description
+            : fieldDescription;
+
+    return IrField(
+      fieldDartName,
+      fieldOriginalName,
+      fieldType,
+      isRequired: isRequired,
+      defaultValue: fieldDefault,
+      description: effectiveDescription,
+      example: fieldExample,
     );
   }
 
@@ -1093,6 +1037,50 @@ class IrMapper {
   }
 
   // ─── Utilities ────────────────────────────────────────────────
+
+  /// Handle a `$ref` surfaced from allOf flattening. Returns an [IrTypeRef]
+  /// if the result is a pure ref alias; returns `null` (and mutates
+  /// [flattened] to merge properties) if extra properties need object
+  /// lowering.
+  IrType? _resolveAllOfRef(
+    Map<String, dynamic> flattened, {
+    required String? description,
+    required bool nullable,
+    required bool isDiscriminatorVariant,
+  }) {
+    final refPath = flattened[r'$ref'] as String;
+    final rawRefName = _extractRefName(refPath);
+    final refName = _dartRefName(rawRefName);
+
+    final refSchema = _rawSchemas[rawRefName];
+    final refPropKeys = refSchema is Map<String, dynamic>
+        ? (refSchema['properties'] as Map<String, dynamic>?)?.keys.toSet() ??
+            <String>{}
+        : <String>{};
+    final flatProps = flattened['properties'] as Map<String, dynamic>? ?? {};
+    final hasExtraProperties =
+        flatProps.keys.toSet().difference(refPropKeys).isNotEmpty;
+
+    if (hasExtraProperties &&
+        !isDiscriminatorVariant &&
+        refSchema is Map<String, dynamic>) {
+      final refProps = refSchema['properties'] as Map<String, dynamic>? ?? {};
+      flattened['properties'] = <String, dynamic>{...refProps, ...flatProps};
+      final refReq = (refSchema['required'] as List?)?.cast<String>() ?? [];
+      final localReq = (flattened['required'] as List?)?.cast<String>() ?? [];
+      flattened['required'] = {...refReq, ...localReq}.toList();
+      flattened.remove(r'$ref');
+      return null;
+    }
+
+    final flatDescription = flattened['description'] as String? ?? description;
+    final flatNullable = _isNullable(flattened) || nullable;
+    return IrTypeRef(
+      refName,
+      description: flatDescription,
+      isNullable: flatNullable,
+    );
+  }
 
   /// Detects anyOf/oneOf where every variant is a single-value string enum,
   /// Remove duplicate variants that resolve to the same Dart type name.
