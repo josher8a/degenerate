@@ -129,9 +129,7 @@ String emitErrorUnion({
   buf.writeln("import 'dart:convert';");
   buf.writeln();
   buf.writeln("import 'package:degenerate_runtime/degenerate_runtime.dart';");
-  for (final imp in imports.toList()..sort()) {
-    buf.writeln(imp);
-  }
+  (imports.toList()..sort()).forEach(buf.writeln);
   buf.writeln();
 
   // Sealed base class
@@ -153,7 +151,6 @@ String emitErrorUnion({
     final deserialize = buildFromJsonCode(
       entry.value.$2,
       'jsonDecode(response.body)',
-      paramIsMap: false,
       typeRegistry: typeRegistry,
     );
     if (code == -1) {

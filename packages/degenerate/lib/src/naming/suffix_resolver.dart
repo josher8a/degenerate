@@ -121,12 +121,15 @@ bool _isValidTypeName(String s) => _validTypeName.hasMatch(s);
 /// neither can collide with a (camelCase) field name.
 String _typeCase(String s) {
   if (s.isEmpty) return s;
-  if (s.length >= 2 && s.codeUnitAt(0) == 0x24 /* $ */ && _isLowerAlpha(s[1])) {
-    s = s.substring(1);
+  var input = s;
+  if (input.length >= 2 &&
+      input.codeUnitAt(0) == 0x24 /* $ */ &&
+      _isLowerAlpha(input[1])) {
+    input = input.substring(1);
   }
-  final first = s[0];
+  final first = input[0];
   final upper = first.toUpperCase();
-  return upper == first ? s : '$upper${s.substring(1)}';
+  return upper == first ? input : '$upper${input.substring(1)}';
 }
 
 bool _isLowerAlpha(String c) {

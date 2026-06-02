@@ -804,5 +804,20 @@ enum PrimitiveKind {
   duration,
 
   /// Binary data (byte array).
-  bytes,
+  bytes;
+
+  /// The Dart type name for this primitive kind.
+  String get dartName => switch (this) {
+        dynamic_ => 'dynamic',
+        string => 'String',
+        int => 'int',
+        double => 'double',
+        num => 'num',
+        bool => 'bool',
+        dateTime => 'DateTime',
+        uri => 'Uri',
+        bigInt => 'BigInt',
+        duration => 'Duration',
+        bytes => 'Uint8List',
+      };
 }

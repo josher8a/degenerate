@@ -347,7 +347,7 @@ class DiscriminatedUnionEmitter {
       final discField = _payloadDiscFieldType(variantType);
       final parts = [
         if (discField != null)
-          "$_discDartName: ${_discValueExpr(discField, discValue)}",
+          '$_discDartName: ${_discValueExpr(discField, discValue)}',
         ...args,
       ];
       body = 'return $variantClass($payload(${parts.join(', ')}));';

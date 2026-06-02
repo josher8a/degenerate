@@ -1143,26 +1143,10 @@ class IrMapper {
   String _descriptionWithVariants(String? description, List<IrType> variants) {
     final typeNames = variants
         .whereType<IrPrimitive>()
-        .map((p) => _dartTypeName(p.kind))
+        .map((p) => p.kind.dartName)
         .join(', ');
     final suffix = 'One of: $typeNames';
     return description != null ? '$description\n\n$suffix' : suffix;
-  }
-
-  static String _dartTypeName(PrimitiveKind kind) {
-    return switch (kind) {
-      PrimitiveKind.dynamic_ => 'dynamic',
-      PrimitiveKind.string => 'String',
-      PrimitiveKind.int => 'int',
-      PrimitiveKind.double => 'double',
-      PrimitiveKind.num => 'num',
-      PrimitiveKind.bool => 'bool',
-      PrimitiveKind.dateTime => 'DateTime',
-      PrimitiveKind.uri => 'Uri',
-      PrimitiveKind.bigInt => 'BigInt',
-      PrimitiveKind.duration => 'Duration',
-      PrimitiveKind.bytes => 'Uint8List',
-    };
   }
 
   /// The Dart type name for a raw `$ref` name: the resolved rename if known,

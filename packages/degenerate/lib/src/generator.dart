@@ -283,34 +283,36 @@ class Generator {
   }
 
   List<IrApi> _filterOperations(List<IrApi> irApis, List<IrType> irTypes) {
+    var apis = irApis;
+
     if (!config.includeDeprecated) {
       final filtered = <IrApi>[];
-      for (final api in irApis) {
+      for (final api in apis) {
         final ops = api.operations.where((op) => !op.isDeprecated).toList();
         if (ops.isNotEmpty) {
           filtered.add(IrApi(api.name, ops));
         }
       }
-      irApis = filtered;
+      apis = filtered;
     }
 
     if (config.tags.isNotEmpty) {
       String normalize(String s) =>
           s.toLowerCase().replaceAll(RegExp(r'[\s_\-]+'), '');
       final normalTags = config.tags.map(normalize).toList();
-      irApis = irApis.where((api) {
+      apis = apis.where((api) {
         final apiNorm = normalize(api.name);
         return normalTags.any(apiNorm.contains);
       }).toList();
       _log(
-        '  Filtered to ${irApis.length} API groups'
+        '  Filtered to ${apis.length} API groups'
         ' matching tags: ${config.tags}',
       );
     }
 
     if (config.paths.isNotEmpty) {
       final filtered = <IrApi>[];
-      for (final api in irApis) {
+      for (final api in apis) {
         final ops = api.operations.where((op) {
           return config.paths.any((prefix) => op.path.startsWith(prefix));
         }).toList();
@@ -318,15 +320,15 @@ class Generator {
           filtered.add(IrApi(api.name, ops));
         }
       }
-      irApis = filtered;
+      apis = filtered;
       _log(
-        '  Filtered to ${irApis.length} API groups'
+        '  Filtered to ${apis.length} API groups'
         ' matching paths: ${config.paths}',
       );
     }
 
     if (config.tags.isNotEmpty || config.paths.isNotEmpty) {
-      final reachable = _collectReachableTypes(irApis, irTypes);
+      final reachable = _collectReachableTypes(apis, irTypes);
       final before = irTypes.length;
       irTypes.retainWhere((t) {
         final name = t.emittableName;
@@ -335,7 +337,7 @@ class Generator {
       _log('  Tree-shook types: $before → ${irTypes.length}');
     }
 
-    return irApis;
+    return apis;
   }
 
   (Map<String, String>, String) _emitFiles(

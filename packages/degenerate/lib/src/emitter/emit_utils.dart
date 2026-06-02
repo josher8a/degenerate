@@ -53,19 +53,7 @@ Reference irTypeToReference(
 }
 
 /// The Dart type name for a [PrimitiveKind].
-String primitiveKindName(PrimitiveKind kind) => switch (kind) {
-  PrimitiveKind.dynamic_ => 'dynamic',
-  PrimitiveKind.string => 'String',
-  PrimitiveKind.int => 'int',
-  PrimitiveKind.double => 'double',
-  PrimitiveKind.num => 'num',
-  PrimitiveKind.bool => 'bool',
-  PrimitiveKind.dateTime => 'DateTime',
-  PrimitiveKind.uri => 'Uri',
-  PrimitiveKind.bigInt => 'BigInt',
-  PrimitiveKind.duration => 'Duration',
-  PrimitiveKind.bytes => 'Uint8List',
-};
+String primitiveKindName(PrimitiveKind kind) => kind.dartName;
 
 Reference _primitiveRef(PrimitiveKind kind, bool nullable) {
   if (kind == PrimitiveKind.dynamic_) return refer('dynamic');
