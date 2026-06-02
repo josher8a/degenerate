@@ -26,7 +26,7 @@ final TunnelResultInfo? resultInfo;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': ?result,
+  'result': result,
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 

@@ -57,12 +57,12 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'issue_url': issueUrl.toString(),
   'node_id': nodeId,
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
+  'performed_via_github_app': performedViaGithubApp != null ? performedViaGithubApp?.toJson() : null,
   'reactions': reactions.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   if (pin != null) 'pin': pin?.toJson(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user != null ? user?.toJson() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&

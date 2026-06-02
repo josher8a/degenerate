@@ -63,9 +63,9 @@ Map<String, dynamic> toJson() { return {
   'status': status,
   'status_code': statusCode,
   'event': event,
-  'action': ?action,
-  'installation_id': ?installationId,
-  'repository_id': ?repositoryId,
+  'action': action,
+  'installation_id': installationId,
+  'repository_id': repositoryId,
   if (throttledAt != null) 'throttled_at': throttledAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&

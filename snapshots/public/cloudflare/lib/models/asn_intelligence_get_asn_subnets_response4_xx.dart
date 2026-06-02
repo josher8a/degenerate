@@ -47,7 +47,7 @@ final List<String>? subnets;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': ?result,
+  'result': result,
   'success': success,
   if (asn != null) 'asn': asn?.toJson(),
   if (count != null) 'count': count?.toJson(),

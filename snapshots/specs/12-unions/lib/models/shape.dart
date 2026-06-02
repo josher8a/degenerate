@@ -40,7 +40,7 @@ ShapeCircle copyWith({double? radius, String? Function()? color, }) { return Sha
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ShapeCircle && circle == other.circle; } 
 @override int get hashCode { return circle.hashCode; } 
-@override String toString() { return 'ShapeCircle(circle: $circle)'; } 
+@override String toString() { return 'Shape.circle($circle)'; } 
  }
 @immutable final class ShapeRectangle extends Shape {const ShapeRectangle(this.rectangle);
 
@@ -58,7 +58,7 @@ ShapeRectangle copyWith({double? width, double? height, String? Function()? colo
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ShapeRectangle && rectangle == other.rectangle; } 
 @override int get hashCode { return rectangle.hashCode; } 
-@override String toString() { return 'ShapeRectangle(rectangle: $rectangle)'; } 
+@override String toString() { return 'Shape.rectangle($rectangle)'; } 
  }
 @immutable final class ShapeTriangle extends Shape {const ShapeTriangle(this.triangle);
 
@@ -76,7 +76,7 @@ ShapeTriangle copyWith({double? base, double? height, List<double>? Function()? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ShapeTriangle && triangle == other.triangle; } 
 @override int get hashCode { return triangle.hashCode; } 
-@override String toString() { return 'ShapeTriangle(triangle: $triangle)'; } 
+@override String toString() { return 'Shape.triangle($triangle)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

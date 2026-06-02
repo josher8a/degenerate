@@ -39,7 +39,7 @@ MqConsumerRequestHttpPull copyWith({MqQueueName? Function()? deadLetterQueue, Mq
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MqConsumerRequestHttpPull && mqHttpConsumerRequest == other.mqHttpConsumerRequest; } 
 @override int get hashCode { return mqHttpConsumerRequest.hashCode; } 
-@override String toString() { return 'MqConsumerRequestHttpPull(mqHttpConsumerRequest: $mqHttpConsumerRequest)'; } 
+@override String toString() { return 'MqConsumerRequest.httpPull($mqHttpConsumerRequest)'; } 
 @override MqQueueName? get deadLetterQueue { return mqHttpConsumerRequest.deadLetterQueue; } 
  }
 @immutable final class MqConsumerRequestWorker extends MqConsumerRequest {const MqConsumerRequestWorker(this.mqWorkerConsumerRequest);
@@ -58,7 +58,7 @@ MqConsumerRequestWorker copyWith({MqQueueName? Function()? deadLetterQueue, MqSc
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MqConsumerRequestWorker && mqWorkerConsumerRequest == other.mqWorkerConsumerRequest; } 
 @override int get hashCode { return mqWorkerConsumerRequest.hashCode; } 
-@override String toString() { return 'MqConsumerRequestWorker(mqWorkerConsumerRequest: $mqWorkerConsumerRequest)'; } 
+@override String toString() { return 'MqConsumerRequest.worker($mqWorkerConsumerRequest)'; } 
 @override MqQueueName? get deadLetterQueue { return mqWorkerConsumerRequest.deadLetterQueue; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

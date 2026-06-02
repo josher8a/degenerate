@@ -116,7 +116,7 @@ Map<String, dynamic> toJson() { return {
   if (baseRole != null) 'base_role': baseRole?.toJson(),
   if (source != null) 'source': source?.toJson(),
   'permissions': permissions,
-  if (organization != null) 'organization': organization?.toJson(),
+  'organization': organization != null ? organization?.toJson() : null,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
 }; } 

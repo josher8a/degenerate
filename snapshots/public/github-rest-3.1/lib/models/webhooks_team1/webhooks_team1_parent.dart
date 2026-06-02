@@ -60,7 +60,7 @@ final int? organizationId;
 final int? enterpriseId;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
+  'description': description,
   'html_url': htmlUrl.toString(),
   'id': id,
   'members_url': membersUrl,

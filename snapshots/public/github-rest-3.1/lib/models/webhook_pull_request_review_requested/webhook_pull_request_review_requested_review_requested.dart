@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'pull_request': pullRequest.toJson(),
   'repository': repository.toJson(),
-  if (requestedReviewer != null) 'requested_reviewer': requestedReviewer?.toJson(),
+  'requested_reviewer': requestedReviewer != null ? requestedReviewer?.toJson() : null,
   'sender': sender.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&

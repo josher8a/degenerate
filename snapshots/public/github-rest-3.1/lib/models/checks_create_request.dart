@@ -27,7 +27,7 @@ ChecksCreateRequestCompleted$Variant copyWith({ChecksCreateRequestCompleted? che
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChecksCreateRequestCompleted$Variant && checksCreateRequestCompleted == other.checksCreateRequestCompleted; } 
 @override int get hashCode { return checksCreateRequestCompleted.hashCode; } 
-@override String toString() { return 'ChecksCreateRequestCompleted\$Variant(checksCreateRequestCompleted: $checksCreateRequestCompleted)'; } 
+@override String toString() { return 'ChecksCreateRequest.completed($checksCreateRequestCompleted)'; } 
  }
 @immutable final class ChecksCreateRequestQueued extends ChecksCreateRequest {const ChecksCreateRequestQueued(this.checksCreateRequestVariant2);
 
@@ -41,7 +41,7 @@ ChecksCreateRequestQueued copyWith({ChecksCreateRequestVariant2? checksCreateReq
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChecksCreateRequestQueued && checksCreateRequestVariant2 == other.checksCreateRequestVariant2; } 
 @override int get hashCode { return checksCreateRequestVariant2.hashCode; } 
-@override String toString() { return 'ChecksCreateRequestQueued(checksCreateRequestVariant2: $checksCreateRequestVariant2)'; } 
+@override String toString() { return 'ChecksCreateRequest.queued($checksCreateRequestVariant2)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

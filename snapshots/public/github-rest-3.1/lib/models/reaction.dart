@@ -25,7 +25,7 @@ final DateTime createdAt;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
-  if (user != null) 'user': user?.toJson(),
+  'user': user != null ? user?.toJson() : null,
   'content': content.toJson(),
   'created_at': createdAt.toIso8601String(),
 }; } 

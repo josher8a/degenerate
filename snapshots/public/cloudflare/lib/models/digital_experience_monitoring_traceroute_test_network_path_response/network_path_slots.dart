@@ -29,9 +29,9 @@ final DigitalExperienceMonitoringUuid id;
 final String timestamp;
 
 Map<String, dynamic> toJson() { return {
-  'clientToAppRttMs': ?clientToAppRttMs,
-  'clientToCfEgressRttMs': ?clientToCfEgressRttMs,
-  'clientToCfIngressRttMs': ?clientToCfIngressRttMs,
+  'clientToAppRttMs': clientToAppRttMs,
+  'clientToCfEgressRttMs': clientToCfEgressRttMs,
+  'clientToCfIngressRttMs': clientToCfIngressRttMs,
   'clientToIspRttMs': ?clientToIspRttMs,
   'id': id.toJson(),
   'timestamp': timestamp,

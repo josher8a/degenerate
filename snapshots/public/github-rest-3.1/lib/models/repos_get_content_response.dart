@@ -38,7 +38,7 @@ ReposGetContentResponseArray copyWith({List<ContentDirectory2>? listContentDirec
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ReposGetContentResponseArray && listContentDirectory2 == other.listContentDirectory2; } 
 @override int get hashCode { return listContentDirectory2.hashCode; } 
-@override String toString() { return 'ReposGetContentResponseArray(listContentDirectory2: $listContentDirectory2)'; } 
+@override String toString() { return 'ReposGetContentResponse.array($listContentDirectory2)'; } 
  }
 @immutable final class ReposGetContentResponseFile extends ReposGetContentResponse {const ReposGetContentResponseFile(this.contentFile);
 
@@ -66,7 +66,7 @@ ReposGetContentResponseFile copyWith({String? encoding, int? size, String? name,
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ReposGetContentResponseFile && contentFile == other.contentFile; } 
 @override int get hashCode { return contentFile.hashCode; } 
-@override String toString() { return 'ReposGetContentResponseFile(contentFile: $contentFile)'; } 
+@override String toString() { return 'ReposGetContentResponse.file($contentFile)'; } 
  }
 @immutable final class ReposGetContentResponseSymlink extends ReposGetContentResponse {const ReposGetContentResponseSymlink(this.contentSymlink);
 
@@ -91,7 +91,7 @@ ReposGetContentResponseSymlink copyWith({String? target, int? size, String? name
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ReposGetContentResponseSymlink && contentSymlink == other.contentSymlink; } 
 @override int get hashCode { return contentSymlink.hashCode; } 
-@override String toString() { return 'ReposGetContentResponseSymlink(contentSymlink: $contentSymlink)'; } 
+@override String toString() { return 'ReposGetContentResponse.symlink($contentSymlink)'; } 
  }
 @immutable final class ReposGetContentResponseSubmodule extends ReposGetContentResponse {const ReposGetContentResponseSubmodule(this.contentSubmodule);
 
@@ -116,7 +116,7 @@ ReposGetContentResponseSubmodule copyWith({Uri? submoduleGitUrl, int? size, Stri
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ReposGetContentResponseSubmodule && contentSubmodule == other.contentSubmodule; } 
 @override int get hashCode { return contentSubmodule.hashCode; } 
-@override String toString() { return 'ReposGetContentResponseSubmodule(contentSubmodule: $contentSubmodule)'; } 
+@override String toString() { return 'ReposGetContentResponse.submodule($contentSubmodule)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

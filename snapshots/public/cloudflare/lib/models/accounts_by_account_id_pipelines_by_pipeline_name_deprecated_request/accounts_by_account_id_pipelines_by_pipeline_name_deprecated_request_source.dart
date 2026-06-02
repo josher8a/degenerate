@@ -37,7 +37,7 @@ AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding copyWit
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding && cloudflarePipelinesWorkersPipelinesBindingSource == other.cloudflarePipelinesWorkersPipelinesBindingSource; } 
 @override int get hashCode { return cloudflarePipelinesWorkersPipelinesBindingSource.hashCode; } 
-@override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding(cloudflarePipelinesWorkersPipelinesBindingSource: $cloudflarePipelinesWorkersPipelinesBindingSource)'; } 
+@override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.binding($cloudflarePipelinesWorkersPipelinesBindingSource)'; } 
 @override CloudflarePipelinesWorkersPipelinesBindingSourceFormat get format { return cloudflarePipelinesWorkersPipelinesBindingSource.format; } 
  }
 @immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp extends AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp(this.cloudflarePipelinesWorkersPipelinesHttpSource);
@@ -56,7 +56,7 @@ AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp copyWith({
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp && cloudflarePipelinesWorkersPipelinesHttpSource == other.cloudflarePipelinesWorkersPipelinesHttpSource; } 
 @override int get hashCode { return cloudflarePipelinesWorkersPipelinesHttpSource.hashCode; } 
-@override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp(cloudflarePipelinesWorkersPipelinesHttpSource: $cloudflarePipelinesWorkersPipelinesHttpSource)'; } 
+@override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.http($cloudflarePipelinesWorkersPipelinesHttpSource)'; } 
 @override CloudflarePipelinesWorkersPipelinesBindingSourceFormat get format { return cloudflarePipelinesWorkersPipelinesHttpSource.format; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

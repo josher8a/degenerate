@@ -233,6 +233,35 @@ components:
       additionalProperties:
         $ref: "#/components/schemas/BasicObject"
 
+    # ─── Required-but-nullable fields ──────────────────────
+    RequiredNullable:
+      type: object
+      required:
+        - alwaysPresent
+        - nullableString
+        - nullableList
+        - nullableObject
+      properties:
+        alwaysPresent:
+          type: string
+        nullableString:
+          type:
+            - string
+            - "null"
+        nullableList:
+          type:
+            - array
+            - "null"
+          items:
+            type: string
+        nullableObject:
+          type:
+            - object
+            - "null"
+          properties:
+            inner:
+              type: string
+
     # ─── Adversarial field names ─────────────────────────────
     AdversarialKeys:
       type: object

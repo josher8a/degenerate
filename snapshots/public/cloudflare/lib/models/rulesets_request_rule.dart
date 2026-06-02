@@ -142,7 +142,7 @@ RulesetsRequestRuleBlock copyWith({Map<String, dynamic> Function()? actionParame
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleBlock && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleBlock(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.block($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -181,7 +181,7 @@ RulesetsRequestRuleChallenge copyWith({Map<String, dynamic> Function()? actionPa
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleChallenge && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleChallenge(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.challenge($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -220,7 +220,7 @@ RulesetsRequestRuleCompressResponse copyWith({Map<String, dynamic> Function()? a
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleCompressResponse && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleCompressResponse(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.compressResponse($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -259,7 +259,7 @@ RulesetsRequestRuleDdosDynamic copyWith({Map<String, dynamic> Function()? action
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleDdosDynamic && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleDdosDynamic(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.ddosDynamic($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -298,7 +298,7 @@ RulesetsRequestRuleExecute copyWith({Map<String, dynamic> Function()? actionPara
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleExecute && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleExecute(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.execute($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -337,7 +337,7 @@ RulesetsRequestRuleForceConnectionClose copyWith({Map<String, dynamic> Function(
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleForceConnectionClose && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleForceConnectionClose(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.forceConnectionClose($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -376,7 +376,7 @@ RulesetsRequestRuleJsChallenge copyWith({Map<String, dynamic> Function()? action
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleJsChallenge && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleJsChallenge(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.jsChallenge($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -415,7 +415,7 @@ RulesetsRequestRuleLog copyWith({Map<String, dynamic> Function()? actionParamete
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleLog && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleLog(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.log($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -454,7 +454,7 @@ RulesetsRequestRuleLogCustomField copyWith({Map<String, dynamic> Function()? act
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleLogCustomField && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleLogCustomField(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.logCustomField($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -493,7 +493,7 @@ RulesetsRequestRuleManagedChallenge copyWith({Map<String, dynamic> Function()? a
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleManagedChallenge && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleManagedChallenge(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.managedChallenge($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -532,7 +532,7 @@ RulesetsRequestRuleRedirect copyWith({Map<String, dynamic> Function()? actionPar
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleRedirect && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleRedirect(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.redirect($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -571,7 +571,7 @@ RulesetsRequestRuleRewrite copyWith({Map<String, dynamic> Function()? actionPara
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleRewrite && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleRewrite(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.rewrite($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -610,7 +610,7 @@ RulesetsRequestRuleRoute copyWith({Map<String, dynamic> Function()? actionParame
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleRoute && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleRoute(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.route($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -649,7 +649,7 @@ RulesetsRequestRuleScore copyWith({Map<String, dynamic> Function()? actionParame
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleScore && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleScore(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.score($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -688,7 +688,7 @@ RulesetsRequestRuleServeError copyWith({Map<String, dynamic> Function()? actionP
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleServeError && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleServeError(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.serveError($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -727,7 +727,7 @@ RulesetsRequestRuleSetCacheControl copyWith({Map<String, dynamic> Function()? ac
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleSetCacheControl && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleSetCacheControl(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.setCacheControl($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -766,7 +766,7 @@ RulesetsRequestRuleSetCacheSettings copyWith({Map<String, dynamic> Function()? a
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleSetCacheSettings && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleSetCacheSettings(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.setCacheSettings($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -805,7 +805,7 @@ RulesetsRequestRuleSetCacheTags copyWith({Map<String, dynamic> Function()? actio
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleSetCacheTags && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleSetCacheTags(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.setCacheTags($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -844,7 +844,7 @@ RulesetsRequestRuleSetConfig copyWith({Map<String, dynamic> Function()? actionPa
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleSetConfig && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleSetConfig(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.setConfig($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 
@@ -883,7 +883,7 @@ RulesetsRequestRuleSkip copyWith({Map<String, dynamic> Function()? actionParamet
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleSkip && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRuleSkip(rulesetsRule: $rulesetsRule)'; } 
+@override String toString() { return 'RulesetsRequestRule.skip($rulesetsRule)'; } 
 @override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
 @override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
 @override String? get description { return rulesetsRule.description; } 

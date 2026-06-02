@@ -81,7 +81,7 @@ final String updatedAt;
 final String version;
 
 Map<String, dynamic> toJson() { return {
-  if (author != null) 'author': author?.toJson(),
+  'author': author != null ? author?.toJson() : null,
   'body': body,
   'body_html': bodyHtml,
   'created_at': createdAt,

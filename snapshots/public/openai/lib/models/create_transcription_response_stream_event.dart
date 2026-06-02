@@ -43,7 +43,7 @@ CreateTranscriptionResponseStreamEventTranscriptTextSegment copyWith({String? id
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseStreamEventTranscriptTextSegment && transcriptTextSegmentEvent == other.transcriptTextSegmentEvent; } 
 @override int get hashCode { return transcriptTextSegmentEvent.hashCode; } 
-@override String toString() { return 'CreateTranscriptionResponseStreamEventTranscriptTextSegment(transcriptTextSegmentEvent: $transcriptTextSegmentEvent)'; } 
+@override String toString() { return 'CreateTranscriptionResponseStreamEvent.transcriptTextSegment($transcriptTextSegmentEvent)'; } 
  }
 @immutable final class CreateTranscriptionResponseStreamEventTranscriptTextDelta extends CreateTranscriptionResponseStreamEvent {const CreateTranscriptionResponseStreamEventTranscriptTextDelta(this.transcriptTextDeltaEvent);
 
@@ -61,7 +61,7 @@ CreateTranscriptionResponseStreamEventTranscriptTextDelta copyWith({String? delt
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseStreamEventTranscriptTextDelta && transcriptTextDeltaEvent == other.transcriptTextDeltaEvent; } 
 @override int get hashCode { return transcriptTextDeltaEvent.hashCode; } 
-@override String toString() { return 'CreateTranscriptionResponseStreamEventTranscriptTextDelta(transcriptTextDeltaEvent: $transcriptTextDeltaEvent)'; } 
+@override String toString() { return 'CreateTranscriptionResponseStreamEvent.transcriptTextDelta($transcriptTextDeltaEvent)'; } 
  }
 @immutable final class CreateTranscriptionResponseStreamEventTranscriptTextDone extends CreateTranscriptionResponseStreamEvent {const CreateTranscriptionResponseStreamEventTranscriptTextDone(this.transcriptTextDoneEvent);
 
@@ -79,7 +79,7 @@ CreateTranscriptionResponseStreamEventTranscriptTextDone copyWith({String? text,
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseStreamEventTranscriptTextDone && transcriptTextDoneEvent == other.transcriptTextDoneEvent; } 
 @override int get hashCode { return transcriptTextDoneEvent.hashCode; } 
-@override String toString() { return 'CreateTranscriptionResponseStreamEventTranscriptTextDone(transcriptTextDoneEvent: $transcriptTextDoneEvent)'; } 
+@override String toString() { return 'CreateTranscriptionResponseStreamEvent.transcriptTextDone($transcriptTextDoneEvent)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

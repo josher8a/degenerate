@@ -148,7 +148,7 @@ WorkersBindingItemAi copyWith({WorkersBindingName? name}) { return WorkersBindin
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemAi && workersBindingKindAi == other.workersBindingKindAi; } 
 @override int get hashCode { return workersBindingKindAi.hashCode; } 
-@override String toString() { return 'WorkersBindingItemAi(workersBindingKindAi: $workersBindingKindAi)'; } 
+@override String toString() { return 'WorkersBindingItem.ai($workersBindingKindAi)'; } 
  }
 @immutable final class WorkersBindingItemAnalyticsEngine extends WorkersBindingItem {const WorkersBindingItemAnalyticsEngine(this.workersBindingKindAnalyticsEngine);
 
@@ -165,7 +165,7 @@ WorkersBindingItemAnalyticsEngine copyWith({String? dataset, WorkersBindingName?
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemAnalyticsEngine && workersBindingKindAnalyticsEngine == other.workersBindingKindAnalyticsEngine; } 
 @override int get hashCode { return workersBindingKindAnalyticsEngine.hashCode; } 
-@override String toString() { return 'WorkersBindingItemAnalyticsEngine(workersBindingKindAnalyticsEngine: $workersBindingKindAnalyticsEngine)'; } 
+@override String toString() { return 'WorkersBindingItem.analyticsEngine($workersBindingKindAnalyticsEngine)'; } 
  }
 @immutable final class WorkersBindingItemAssets extends WorkersBindingItem {const WorkersBindingItemAssets(this.workersBindingKindAssets);
 
@@ -181,7 +181,7 @@ WorkersBindingItemAssets copyWith({WorkersBindingName? name}) { return WorkersBi
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemAssets && workersBindingKindAssets == other.workersBindingKindAssets; } 
 @override int get hashCode { return workersBindingKindAssets.hashCode; } 
-@override String toString() { return 'WorkersBindingItemAssets(workersBindingKindAssets: $workersBindingKindAssets)'; } 
+@override String toString() { return 'WorkersBindingItem.assets($workersBindingKindAssets)'; } 
  }
 @immutable final class WorkersBindingItemBrowser extends WorkersBindingItem {const WorkersBindingItemBrowser(this.workersBindingKindBrowser);
 
@@ -197,7 +197,7 @@ WorkersBindingItemBrowser copyWith({WorkersBindingName? name}) { return WorkersB
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemBrowser && workersBindingKindBrowser == other.workersBindingKindBrowser; } 
 @override int get hashCode { return workersBindingKindBrowser.hashCode; } 
-@override String toString() { return 'WorkersBindingItemBrowser(workersBindingKindBrowser: $workersBindingKindBrowser)'; } 
+@override String toString() { return 'WorkersBindingItem.browser($workersBindingKindBrowser)'; } 
  }
 @immutable final class WorkersBindingItemD1 extends WorkersBindingItem {const WorkersBindingItemD1(this.workersBindingKindD1);
 
@@ -214,7 +214,7 @@ WorkersBindingItemD1 copyWith({String? id, WorkersBindingName? name, }) { return
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemD1 && workersBindingKindD1 == other.workersBindingKindD1; } 
 @override int get hashCode { return workersBindingKindD1.hashCode; } 
-@override String toString() { return 'WorkersBindingItemD1(workersBindingKindD1: $workersBindingKindD1)'; } 
+@override String toString() { return 'WorkersBindingItem.d1($workersBindingKindD1)'; } 
  }
 @immutable final class WorkersBindingItemDataBlob extends WorkersBindingItem {const WorkersBindingItemDataBlob(this.workersBindingKindDataBlob);
 
@@ -231,7 +231,7 @@ WorkersBindingItemDataBlob copyWith({WorkersBindingName? name, String? $part, })
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemDataBlob && workersBindingKindDataBlob == other.workersBindingKindDataBlob; } 
 @override int get hashCode { return workersBindingKindDataBlob.hashCode; } 
-@override String toString() { return 'WorkersBindingItemDataBlob(workersBindingKindDataBlob: $workersBindingKindDataBlob)'; } 
+@override String toString() { return 'WorkersBindingItem.dataBlob($workersBindingKindDataBlob)'; } 
  }
 @immutable final class WorkersBindingItemDispatchNamespace extends WorkersBindingItem {const WorkersBindingItemDispatchNamespace(this.workersBindingKindDispatchNamespace);
 
@@ -249,7 +249,7 @@ WorkersBindingItemDispatchNamespace copyWith({WorkersBindingName? name, String? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemDispatchNamespace && workersBindingKindDispatchNamespace == other.workersBindingKindDispatchNamespace; } 
 @override int get hashCode { return workersBindingKindDispatchNamespace.hashCode; } 
-@override String toString() { return 'WorkersBindingItemDispatchNamespace(workersBindingKindDispatchNamespace: $workersBindingKindDispatchNamespace)'; } 
+@override String toString() { return 'WorkersBindingItem.dispatchNamespace($workersBindingKindDispatchNamespace)'; } 
  }
 @immutable final class WorkersBindingItemDurableObjectNamespace extends WorkersBindingItem {const WorkersBindingItemDurableObjectNamespace(this.workersBindingKindDurableObjectNamespace);
 
@@ -270,7 +270,7 @@ WorkersBindingItemDurableObjectNamespace copyWith({String? Function()? className
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemDurableObjectNamespace && workersBindingKindDurableObjectNamespace == other.workersBindingKindDurableObjectNamespace; } 
 @override int get hashCode { return workersBindingKindDurableObjectNamespace.hashCode; } 
-@override String toString() { return 'WorkersBindingItemDurableObjectNamespace(workersBindingKindDurableObjectNamespace: $workersBindingKindDurableObjectNamespace)'; } 
+@override String toString() { return 'WorkersBindingItem.durableObjectNamespace($workersBindingKindDurableObjectNamespace)'; } 
  }
 @immutable final class WorkersBindingItemHyperdrive extends WorkersBindingItem {const WorkersBindingItemHyperdrive(this.workersBindingKindHyperdrive);
 
@@ -287,7 +287,7 @@ WorkersBindingItemHyperdrive copyWith({String? id, WorkersBindingName? name, }) 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemHyperdrive && workersBindingKindHyperdrive == other.workersBindingKindHyperdrive; } 
 @override int get hashCode { return workersBindingKindHyperdrive.hashCode; } 
-@override String toString() { return 'WorkersBindingItemHyperdrive(workersBindingKindHyperdrive: $workersBindingKindHyperdrive)'; } 
+@override String toString() { return 'WorkersBindingItem.hyperdrive($workersBindingKindHyperdrive)'; } 
  }
 @immutable final class WorkersBindingItemImages extends WorkersBindingItem {const WorkersBindingItemImages(this.workersBindingKindImages);
 
@@ -303,7 +303,7 @@ WorkersBindingItemImages copyWith({WorkersBindingName? name}) { return WorkersBi
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemImages && workersBindingKindImages == other.workersBindingKindImages; } 
 @override int get hashCode { return workersBindingKindImages.hashCode; } 
-@override String toString() { return 'WorkersBindingItemImages(workersBindingKindImages: $workersBindingKindImages)'; } 
+@override String toString() { return 'WorkersBindingItem.images($workersBindingKindImages)'; } 
  }
 @immutable final class WorkersBindingItemInherit extends WorkersBindingItem {const WorkersBindingItemInherit(this.workersBindingKindInherit);
 
@@ -321,7 +321,7 @@ WorkersBindingItemInherit copyWith({String? name, String? Function()? oldName, S
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemInherit && workersBindingKindInherit == other.workersBindingKindInherit; } 
 @override int get hashCode { return workersBindingKindInherit.hashCode; } 
-@override String toString() { return 'WorkersBindingItemInherit(workersBindingKindInherit: $workersBindingKindInherit)'; } 
+@override String toString() { return 'WorkersBindingItem.inherit($workersBindingKindInherit)'; } 
  }
 @immutable final class WorkersBindingItemJson extends WorkersBindingItem {const WorkersBindingItemJson(this.workersBindingKindJson);
 
@@ -338,7 +338,7 @@ WorkersBindingItemJson copyWith({Map<String,dynamic>? json, WorkersBindingName? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemJson && workersBindingKindJson == other.workersBindingKindJson; } 
 @override int get hashCode { return workersBindingKindJson.hashCode; } 
-@override String toString() { return 'WorkersBindingItemJson(workersBindingKindJson: $workersBindingKindJson)'; } 
+@override String toString() { return 'WorkersBindingItem.json($workersBindingKindJson)'; } 
  }
 @immutable final class WorkersBindingItemKvNamespace extends WorkersBindingItem {const WorkersBindingItemKvNamespace(this.workersBindingKindKvNamespace);
 
@@ -355,7 +355,7 @@ WorkersBindingItemKvNamespace copyWith({WorkersBindingName? name, WorkersNamespa
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemKvNamespace && workersBindingKindKvNamespace == other.workersBindingKindKvNamespace; } 
 @override int get hashCode { return workersBindingKindKvNamespace.hashCode; } 
-@override String toString() { return 'WorkersBindingItemKvNamespace(workersBindingKindKvNamespace: $workersBindingKindKvNamespace)'; } 
+@override String toString() { return 'WorkersBindingItem.kvNamespace($workersBindingKindKvNamespace)'; } 
  }
 @immutable final class WorkersBindingItemMtlsCertificate extends WorkersBindingItem {const WorkersBindingItemMtlsCertificate(this.workersBindingKindMtlsCertificate);
 
@@ -372,7 +372,7 @@ WorkersBindingItemMtlsCertificate copyWith({String? certificateId, WorkersBindin
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemMtlsCertificate && workersBindingKindMtlsCertificate == other.workersBindingKindMtlsCertificate; } 
 @override int get hashCode { return workersBindingKindMtlsCertificate.hashCode; } 
-@override String toString() { return 'WorkersBindingItemMtlsCertificate(workersBindingKindMtlsCertificate: $workersBindingKindMtlsCertificate)'; } 
+@override String toString() { return 'WorkersBindingItem.mtlsCertificate($workersBindingKindMtlsCertificate)'; } 
  }
 @immutable final class WorkersBindingItemPipelines extends WorkersBindingItem {const WorkersBindingItemPipelines(this.workersBindingKindPipelines);
 
@@ -389,7 +389,7 @@ WorkersBindingItemPipelines copyWith({WorkersBindingName? name, String? pipeline
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemPipelines && workersBindingKindPipelines == other.workersBindingKindPipelines; } 
 @override int get hashCode { return workersBindingKindPipelines.hashCode; } 
-@override String toString() { return 'WorkersBindingItemPipelines(workersBindingKindPipelines: $workersBindingKindPipelines)'; } 
+@override String toString() { return 'WorkersBindingItem.pipelines($workersBindingKindPipelines)'; } 
  }
 @immutable final class WorkersBindingItemPlainText extends WorkersBindingItem {const WorkersBindingItemPlainText(this.workersBindingKindPlainText);
 
@@ -406,7 +406,7 @@ WorkersBindingItemPlainText copyWith({WorkersBindingName? name, String? text, })
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemPlainText && workersBindingKindPlainText == other.workersBindingKindPlainText; } 
 @override int get hashCode { return workersBindingKindPlainText.hashCode; } 
-@override String toString() { return 'WorkersBindingItemPlainText(workersBindingKindPlainText: $workersBindingKindPlainText)'; } 
+@override String toString() { return 'WorkersBindingItem.plainText($workersBindingKindPlainText)'; } 
  }
 @immutable final class WorkersBindingItemQueue extends WorkersBindingItem {const WorkersBindingItemQueue(this.workersBindingKindQueue);
 
@@ -423,7 +423,7 @@ WorkersBindingItemQueue copyWith({WorkersBindingName? name, String? queueName, }
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemQueue && workersBindingKindQueue == other.workersBindingKindQueue; } 
 @override int get hashCode { return workersBindingKindQueue.hashCode; } 
-@override String toString() { return 'WorkersBindingItemQueue(workersBindingKindQueue: $workersBindingKindQueue)'; } 
+@override String toString() { return 'WorkersBindingItem.queue($workersBindingKindQueue)'; } 
  }
 @immutable final class WorkersBindingItemR2Bucket extends WorkersBindingItem {const WorkersBindingItemR2Bucket(this.workersBindingKindR2Bucket);
 
@@ -441,7 +441,7 @@ WorkersBindingItemR2Bucket copyWith({String? bucketName, Jurisdiction? Function(
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemR2Bucket && workersBindingKindR2Bucket == other.workersBindingKindR2Bucket; } 
 @override int get hashCode { return workersBindingKindR2Bucket.hashCode; } 
-@override String toString() { return 'WorkersBindingItemR2Bucket(workersBindingKindR2Bucket: $workersBindingKindR2Bucket)'; } 
+@override String toString() { return 'WorkersBindingItem.r2Bucket($workersBindingKindR2Bucket)'; } 
  }
 @immutable final class WorkersBindingItemRatelimit extends WorkersBindingItem {const WorkersBindingItemRatelimit(this.workersBindingKindRatelimit);
 
@@ -459,7 +459,7 @@ WorkersBindingItemRatelimit copyWith({WorkersBindingName? name, String? namespac
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemRatelimit && workersBindingKindRatelimit == other.workersBindingKindRatelimit; } 
 @override int get hashCode { return workersBindingKindRatelimit.hashCode; } 
-@override String toString() { return 'WorkersBindingItemRatelimit(workersBindingKindRatelimit: $workersBindingKindRatelimit)'; } 
+@override String toString() { return 'WorkersBindingItem.ratelimit($workersBindingKindRatelimit)'; } 
  }
 @immutable final class WorkersBindingItemSecretKey extends WorkersBindingItem {const WorkersBindingItemSecretKey(this.workersBindingKindSecretKey);
 
@@ -480,7 +480,7 @@ WorkersBindingItemSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBin
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemSecretKey && workersBindingKindSecretKey == other.workersBindingKindSecretKey; } 
 @override int get hashCode { return workersBindingKindSecretKey.hashCode; } 
-@override String toString() { return 'WorkersBindingItemSecretKey(workersBindingKindSecretKey: $workersBindingKindSecretKey)'; } 
+@override String toString() { return 'WorkersBindingItem.secretKey($workersBindingKindSecretKey)'; } 
  }
 @immutable final class WorkersBindingItemSecretText extends WorkersBindingItem {const WorkersBindingItemSecretText(this.workersBindingKindSecretText);
 
@@ -497,7 +497,7 @@ WorkersBindingItemSecretText copyWith({WorkersBindingName? name, String? text, }
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemSecretText && workersBindingKindSecretText == other.workersBindingKindSecretText; } 
 @override int get hashCode { return workersBindingKindSecretText.hashCode; } 
-@override String toString() { return 'WorkersBindingItemSecretText(workersBindingKindSecretText: $workersBindingKindSecretText)'; } 
+@override String toString() { return 'WorkersBindingItem.secretText($workersBindingKindSecretText)'; } 
  }
 @immutable final class WorkersBindingItemSecretsStoreSecret extends WorkersBindingItem {const WorkersBindingItemSecretsStoreSecret(this.workersBindingKindSecretsStoreSecret);
 
@@ -515,7 +515,7 @@ WorkersBindingItemSecretsStoreSecret copyWith({WorkersBindingName? name, String?
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemSecretsStoreSecret && workersBindingKindSecretsStoreSecret == other.workersBindingKindSecretsStoreSecret; } 
 @override int get hashCode { return workersBindingKindSecretsStoreSecret.hashCode; } 
-@override String toString() { return 'WorkersBindingItemSecretsStoreSecret(workersBindingKindSecretsStoreSecret: $workersBindingKindSecretsStoreSecret)'; } 
+@override String toString() { return 'WorkersBindingItem.secretsStoreSecret($workersBindingKindSecretsStoreSecret)'; } 
  }
 @immutable final class WorkersBindingItemSendEmail extends WorkersBindingItem {const WorkersBindingItemSendEmail(this.workersBindingKindSendEmail);
 
@@ -534,7 +534,7 @@ WorkersBindingItemSendEmail copyWith({List<String>? Function()? allowedDestinati
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemSendEmail && workersBindingKindSendEmail == other.workersBindingKindSendEmail; } 
 @override int get hashCode { return workersBindingKindSendEmail.hashCode; } 
-@override String toString() { return 'WorkersBindingItemSendEmail(workersBindingKindSendEmail: $workersBindingKindSendEmail)'; } 
+@override String toString() { return 'WorkersBindingItem.sendEmail($workersBindingKindSendEmail)'; } 
  }
 @immutable final class WorkersBindingItemService extends WorkersBindingItem {const WorkersBindingItemService(this.workersBindingKindService);
 
@@ -553,7 +553,7 @@ WorkersBindingItemService copyWith({String? Function()? entrypoint, String Funct
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemService && workersBindingKindService == other.workersBindingKindService; } 
 @override int get hashCode { return workersBindingKindService.hashCode; } 
-@override String toString() { return 'WorkersBindingItemService(workersBindingKindService: $workersBindingKindService)'; } 
+@override String toString() { return 'WorkersBindingItem.service($workersBindingKindService)'; } 
  }
 @immutable final class WorkersBindingItemTextBlob extends WorkersBindingItem {const WorkersBindingItemTextBlob(this.workersBindingKindTextBlob);
 
@@ -570,7 +570,7 @@ WorkersBindingItemTextBlob copyWith({WorkersBindingName? name, String? $part, })
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemTextBlob && workersBindingKindTextBlob == other.workersBindingKindTextBlob; } 
 @override int get hashCode { return workersBindingKindTextBlob.hashCode; } 
-@override String toString() { return 'WorkersBindingItemTextBlob(workersBindingKindTextBlob: $workersBindingKindTextBlob)'; } 
+@override String toString() { return 'WorkersBindingItem.textBlob($workersBindingKindTextBlob)'; } 
  }
 @immutable final class WorkersBindingItemVectorize extends WorkersBindingItem {const WorkersBindingItemVectorize(this.workersBindingKindVectorize);
 
@@ -587,7 +587,7 @@ WorkersBindingItemVectorize copyWith({String? indexName, WorkersBindingName? nam
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemVectorize && workersBindingKindVectorize == other.workersBindingKindVectorize; } 
 @override int get hashCode { return workersBindingKindVectorize.hashCode; } 
-@override String toString() { return 'WorkersBindingItemVectorize(workersBindingKindVectorize: $workersBindingKindVectorize)'; } 
+@override String toString() { return 'WorkersBindingItem.vectorize($workersBindingKindVectorize)'; } 
  }
 @immutable final class WorkersBindingItemVersionMetadata extends WorkersBindingItem {const WorkersBindingItemVersionMetadata(this.workersBindingKindVersionMetadata);
 
@@ -603,7 +603,7 @@ WorkersBindingItemVersionMetadata copyWith({WorkersBindingName? name}) { return 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemVersionMetadata && workersBindingKindVersionMetadata == other.workersBindingKindVersionMetadata; } 
 @override int get hashCode { return workersBindingKindVersionMetadata.hashCode; } 
-@override String toString() { return 'WorkersBindingItemVersionMetadata(workersBindingKindVersionMetadata: $workersBindingKindVersionMetadata)'; } 
+@override String toString() { return 'WorkersBindingItem.versionMetadata($workersBindingKindVersionMetadata)'; } 
  }
 @immutable final class WorkersBindingItemVpcService extends WorkersBindingItem {const WorkersBindingItemVpcService(this.workersBindingKindVpcService);
 
@@ -620,7 +620,7 @@ WorkersBindingItemVpcService copyWith({WorkersBindingName? name, String? service
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemVpcService && workersBindingKindVpcService == other.workersBindingKindVpcService; } 
 @override int get hashCode { return workersBindingKindVpcService.hashCode; } 
-@override String toString() { return 'WorkersBindingItemVpcService(workersBindingKindVpcService: $workersBindingKindVpcService)'; } 
+@override String toString() { return 'WorkersBindingItem.vpcService($workersBindingKindVpcService)'; } 
  }
 @immutable final class WorkersBindingItemWasmModule extends WorkersBindingItem {const WorkersBindingItemWasmModule(this.workersBindingKindWasmModule);
 
@@ -637,7 +637,7 @@ WorkersBindingItemWasmModule copyWith({WorkersBindingName? name, String? $part, 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemWasmModule && workersBindingKindWasmModule == other.workersBindingKindWasmModule; } 
 @override int get hashCode { return workersBindingKindWasmModule.hashCode; } 
-@override String toString() { return 'WorkersBindingItemWasmModule(workersBindingKindWasmModule: $workersBindingKindWasmModule)'; } 
+@override String toString() { return 'WorkersBindingItem.wasmModule($workersBindingKindWasmModule)'; } 
  }
 @immutable final class WorkersBindingItemWorkflow extends WorkersBindingItem {const WorkersBindingItemWorkflow(this.workersBindingKindWorkflow);
 
@@ -656,7 +656,7 @@ WorkersBindingItemWorkflow copyWith({String? Function()? className, WorkersBindi
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersBindingItemWorkflow && workersBindingKindWorkflow == other.workersBindingKindWorkflow; } 
 @override int get hashCode { return workersBindingKindWorkflow.hashCode; } 
-@override String toString() { return 'WorkersBindingItemWorkflow(workersBindingKindWorkflow: $workersBindingKindWorkflow)'; } 
+@override String toString() { return 'WorkersBindingItem.workflow($workersBindingKindWorkflow)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

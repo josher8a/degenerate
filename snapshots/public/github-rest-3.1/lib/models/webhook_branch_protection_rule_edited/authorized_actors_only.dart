@@ -9,7 +9,7 @@ factory AuthorizedActorsOnly.fromJson(Map<String, dynamic> json) { return Author
 final bool? from;
 
 Map<String, dynamic> toJson() { return {
-  'from': ?from,
+  'from': from,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is bool; } 
 AuthorizedActorsOnly copyWith({bool? Function()? from}) { return AuthorizedActorsOnly(

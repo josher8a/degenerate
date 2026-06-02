@@ -71,7 +71,7 @@ final SimpleUser? sender;
 
 Map<String, dynamic> toJson() { return {
   'after': after,
-  if (baseRef != null) 'base_ref': baseRef?.toJson(),
+  'base_ref': baseRef != null ? baseRef?.toJson() : null,
   'before': before,
   'commits': commits.map((e) => e.toJson()).toList(),
   'compare': compare,
@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'deleted': deleted,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'forced': forced,
-  if (headCommit != null) 'head_commit': headCommit?.toJson(),
+  'head_commit': headCommit != null ? headCommit?.toJson() : null,
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'pusher': pusher.toJson(),

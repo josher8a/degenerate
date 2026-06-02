@@ -38,7 +38,7 @@ final DateTime updatedAt;
 Map<String, dynamic> toJson() { return {
   'content': content,
   'created_at': createdAt.toIso8601String(),
-  if (disposition != null) 'disposition': disposition?.toJson(),
+  'disposition': disposition != null ? disposition?.toJson() : null,
   'fields': fields.toJson(),
   'id': id,
   'priority': priority,

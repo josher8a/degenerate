@@ -117,7 +117,7 @@ final String? bodyText;
 
 Map<String, dynamic> toJson() { return {
   'url': url,
-  'pull_request_review_id': ?pullRequestReviewId,
+  'pull_request_review_id': pullRequestReviewId,
   'id': id,
   'node_id': nodeId,
   'diff_hunk': diffHunk,
@@ -127,7 +127,7 @@ Map<String, dynamic> toJson() { return {
   'commit_id': commitId,
   'original_commit_id': originalCommitId,
   'in_reply_to_id': ?inReplyToId,
-  if (user != null) 'user': user?.toJson(),
+  'user': user != null ? user?.toJson() : null,
   'body': body,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),

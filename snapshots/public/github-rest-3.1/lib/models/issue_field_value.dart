@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   'issue_field_id': issueFieldId,
   'node_id': nodeId,
   'data_type': dataType.toJson(),
-  'value': ?value,
+  'value': value,
   if (singleSelectOption != null) 'single_select_option': singleSelectOption?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('issue_field_id') && json['issue_field_id'] is num &&

@@ -22,11 +22,11 @@ final String sha;
 final DiscussionUser? user;
 
 Map<String, dynamic> toJson() { return {
-  'label': ?label,
+  'label': label,
   'ref': ref,
   'repo': repo.toJson(),
   'sha': sha,
-  if (user != null) 'user': user?.toJson(),
+  'user': user != null ? user?.toJson() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String &&
       json.containsKey('ref') && json['ref'] is String &&

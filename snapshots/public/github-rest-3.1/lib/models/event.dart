@@ -32,13 +32,13 @@ final DateTime? createdAt;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  'type': ?type,
+  'type': type,
   'actor': actor.toJson(),
   'repo': repo.toJson(),
   if (org != null) 'org': org?.toJson(),
   'payload': payload.toJson(),
   'public': public,
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
+  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('type') && json['type'] is String &&

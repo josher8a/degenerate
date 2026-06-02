@@ -24,7 +24,7 @@ final bool success;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages,
-  'result': ?result,
+  'result': result,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
   'success': success,
 }; } 

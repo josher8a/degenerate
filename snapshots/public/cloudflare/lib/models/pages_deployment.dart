@@ -114,11 +114,11 @@ final String url;
 final bool? usesFunctions;
 
 Map<String, dynamic> toJson() { return {
-  'aliases': ?aliases,
+  'aliases': aliases,
   'build_config': buildConfig.toJson(),
   'created_on': createdOn.toIso8601String(),
   'deployment_trigger': deploymentTrigger.toJson(),
-  if (envVars != null) 'env_vars': envVars?.map((k, v) => MapEntry(k, v?.toJson())),
+  'env_vars': envVars != null ? envVars?.map((k, v) => MapEntry(k, v?.toJson())) : null,
   'environment': environment.toJson(),
   'id': id,
   'is_skipped': isSkipped,

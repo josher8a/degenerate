@@ -76,9 +76,9 @@ Map<String, dynamic> toJson() { return {
   'content': ?content,
   'sha': sha,
   'url': url.toString(),
-  if (gitUrl != null) 'git_url': gitUrl?.toString(),
-  if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
-  if (downloadUrl != null) 'download_url': downloadUrl?.toString(),
+  'git_url': gitUrl != null ? gitUrl?.toString() : null,
+  'html_url': htmlUrl != null ? htmlUrl?.toString() : null,
+  'download_url': downloadUrl != null ? downloadUrl?.toString() : null,
   '_links': links.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&

@@ -29,9 +29,9 @@ final int unitCount;
 Map<String, dynamic> toJson() { return {
   'account': account.toJson(),
   'billing_cycle': billingCycle,
-  'free_trial_ends_on': ?freeTrialEndsOn,
+  'free_trial_ends_on': freeTrialEndsOn,
   'next_billing_date': ?nextBillingDate,
-  'on_free_trial': ?onFreeTrial,
+  'on_free_trial': onFreeTrial,
   'plan': plan.toJson(),
   'unit_count': unitCount,
 }; } 

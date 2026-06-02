@@ -24,7 +24,7 @@ final DateTime committedAt;
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
   'version': version,
-  if (user != null) 'user': user?.toJson(),
+  'user': user != null ? user?.toJson() : null,
   'change_status': changeStatus.toJson(),
   'committed_at': committedAt.toIso8601String(),
 }; } 

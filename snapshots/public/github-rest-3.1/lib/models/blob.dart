@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'encoding': encoding,
   'url': url.toString(),
   'sha': sha,
-  'size': ?size,
+  'size': size,
   'node_id': nodeId,
   'highlighted_content': ?highlightedContent,
 }; } 

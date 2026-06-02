@@ -256,7 +256,7 @@ Map<String, dynamic> toJson() { return {
   'members_url': membersUrl,
   'public_members_url': publicMembersUrl,
   'avatar_url': avatarUrl,
-  'description': ?description,
+  'description': description,
   'name': ?name,
   'company': ?company,
   if (blog != null) 'blog': blog?.toString(),
@@ -310,7 +310,7 @@ Map<String, dynamic> toJson() { return {
   'secret_scanning_push_protection_custom_link': ?secretScanningPushProtectionCustomLink,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (archivedAt != null) 'archived_at': archivedAt?.toIso8601String(),
+  'archived_at': archivedAt != null ? archivedAt?.toIso8601String() : null,
   'deploy_keys_enabled_for_repositories': ?deployKeysEnabledForRepositories,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&

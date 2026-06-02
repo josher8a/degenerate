@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'color': color,
   'default': $default,
-  'description': ?description,
+  'description': description,
   'score': score,
   if (textMatches != null) 'text_matches': textMatches?.map((e) => e.toJson()).toList(),
 }; } 

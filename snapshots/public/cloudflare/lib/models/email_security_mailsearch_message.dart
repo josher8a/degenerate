@@ -145,7 +145,7 @@ final EmailSecurityMailsearchMessageValidation? validation;
 final String id;
 
 Map<String, dynamic> toJson() { return {
-  'action_log': ?actionLog,
+  'action_log': actionLog,
   'alert_id': ?alertId,
   'client_recipients': clientRecipients,
   if (deliveryMode != null) 'delivery_mode': deliveryMode?.toJson(),

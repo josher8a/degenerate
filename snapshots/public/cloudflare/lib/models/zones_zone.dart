@@ -165,7 +165,7 @@ final String? verificationKey;
 
 Map<String, dynamic> toJson() { return {
   'account': account.toJson(),
-  if (activatedOn != null) 'activated_on': activatedOn?.toIso8601String(),
+  'activated_on': activatedOn != null ? activatedOn?.toIso8601String() : null,
   'cname_suffix': ?cnameSuffix,
   'created_on': createdOn.toIso8601String(),
   'development_mode': developmentMode,
@@ -174,9 +174,9 @@ Map<String, dynamic> toJson() { return {
   'modified_on': modifiedOn.toIso8601String(),
   'name': name,
   'name_servers': nameServers,
-  'original_dnshost': ?originalDnshost,
-  'original_name_servers': ?originalNameServers,
-  'original_registrar': ?originalRegistrar,
+  'original_dnshost': originalDnshost,
+  'original_name_servers': originalNameServers,
+  'original_registrar': originalRegistrar,
   'owner': owner.toJson(),
   if (paused != null) 'paused': paused?.toJson(),
   'permissions': ?permissions,

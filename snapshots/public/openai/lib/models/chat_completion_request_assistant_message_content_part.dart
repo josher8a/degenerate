@@ -35,7 +35,7 @@ ChatCompletionRequestAssistantMessageContentPartText copyWith({String? text}) { 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestAssistantMessageContentPartText && chatCompletionRequestMessageContentPartText == other.chatCompletionRequestMessageContentPartText; } 
 @override int get hashCode { return chatCompletionRequestMessageContentPartText.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestAssistantMessageContentPartText(chatCompletionRequestMessageContentPartText: $chatCompletionRequestMessageContentPartText)'; } 
+@override String toString() { return 'ChatCompletionRequestAssistantMessageContentPart.text($chatCompletionRequestMessageContentPartText)'; } 
  }
 @immutable final class ChatCompletionRequestAssistantMessageContentPartRefusal extends ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPartRefusal(this.chatCompletionRequestMessageContentPartRefusal);
 
@@ -51,7 +51,7 @@ ChatCompletionRequestAssistantMessageContentPartRefusal copyWith({String? refusa
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestAssistantMessageContentPartRefusal && chatCompletionRequestMessageContentPartRefusal == other.chatCompletionRequestMessageContentPartRefusal; } 
 @override int get hashCode { return chatCompletionRequestMessageContentPartRefusal.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestAssistantMessageContentPartRefusal(chatCompletionRequestMessageContentPartRefusal: $chatCompletionRequestMessageContentPartRefusal)'; } 
+@override String toString() { return 'ChatCompletionRequestAssistantMessageContentPart.refusal($chatCompletionRequestMessageContentPartRefusal)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

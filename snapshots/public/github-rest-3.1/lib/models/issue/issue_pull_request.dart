@@ -22,10 +22,10 @@ final Uri? url;
 
 Map<String, dynamic> toJson() { return {
   if (mergedAt != null) 'merged_at': mergedAt?.toIso8601String(),
-  if (diffUrl != null) 'diff_url': diffUrl?.toString(),
-  if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
-  if (patchUrl != null) 'patch_url': patchUrl?.toString(),
-  if (url != null) 'url': url?.toString(),
+  'diff_url': diffUrl != null ? diffUrl?.toString() : null,
+  'html_url': htmlUrl != null ? htmlUrl?.toString() : null,
+  'patch_url': patchUrl != null ? patchUrl?.toString() : null,
+  'url': url != null ? url?.toString() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('diff_url') && json['diff_url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&

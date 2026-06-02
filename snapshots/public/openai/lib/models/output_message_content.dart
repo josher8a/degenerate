@@ -37,7 +37,7 @@ OutputMessageContentOutputText copyWith({String? text, List<Annotation>? annotat
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputMessageContentOutputText && outputTextContent == other.outputTextContent; } 
 @override int get hashCode { return outputTextContent.hashCode; } 
-@override String toString() { return 'OutputMessageContentOutputText(outputTextContent: $outputTextContent)'; } 
+@override String toString() { return 'OutputMessageContent.outputText($outputTextContent)'; } 
  }
 @immutable final class OutputMessageContentRefusal extends OutputMessageContent {const OutputMessageContentRefusal(this.refusalContent);
 
@@ -53,7 +53,7 @@ OutputMessageContentRefusal copyWith({String? refusal}) { return OutputMessageCo
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputMessageContentRefusal && refusalContent == other.refusalContent; } 
 @override int get hashCode { return refusalContent.hashCode; } 
-@override String toString() { return 'OutputMessageContentRefusal(refusalContent: $refusalContent)'; } 
+@override String toString() { return 'OutputMessageContent.refusal($refusalContent)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

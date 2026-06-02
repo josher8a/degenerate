@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'summary': summary,
   'updated_at': updatedAt,
   'vulnerabilities': vulnerabilities.map((e) => e.toJson()).toList(),
-  'withdrawn_at': ?withdrawnAt,
+  'withdrawn_at': withdrawnAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cvss') &&
       json.containsKey('cwes') &&

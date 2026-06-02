@@ -48,7 +48,7 @@ MqConsumerResponseHttpPull copyWith({MqIdentifier? Function()? consumerId, DateT
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MqConsumerResponseHttpPull && mqHttpConsumerResponse == other.mqHttpConsumerResponse; } 
 @override int get hashCode { return mqHttpConsumerResponse.hashCode; } 
-@override String toString() { return 'MqConsumerResponseHttpPull(mqHttpConsumerResponse: $mqHttpConsumerResponse)'; } 
+@override String toString() { return 'MqConsumerResponse.httpPull($mqHttpConsumerResponse)'; } 
 @override MqIdentifier? get consumerId { return mqHttpConsumerResponse.consumerId; } 
 @override DateTime? get createdOn { return mqHttpConsumerResponse.createdOn; } 
 @override String? get deadLetterQueue { return mqHttpConsumerResponse.deadLetterQueue; } 
@@ -73,7 +73,7 @@ MqConsumerResponseWorker copyWith({MqIdentifier? Function()? consumerId, DateTim
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MqConsumerResponseWorker && mqWorkerConsumerResponse == other.mqWorkerConsumerResponse; } 
 @override int get hashCode { return mqWorkerConsumerResponse.hashCode; } 
-@override String toString() { return 'MqConsumerResponseWorker(mqWorkerConsumerResponse: $mqWorkerConsumerResponse)'; } 
+@override String toString() { return 'MqConsumerResponse.worker($mqWorkerConsumerResponse)'; } 
 @override MqIdentifier? get consumerId { return mqWorkerConsumerResponse.consumerId; } 
 @override DateTime? get createdOn { return mqWorkerConsumerResponse.createdOn; } 
 @override String? get deadLetterQueue { return mqWorkerConsumerResponse.deadLetterQueue; } 

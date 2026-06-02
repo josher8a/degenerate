@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'ends_at': endsAt.toIso8601String(),
   if (closedAt != null) 'closed_at': closedAt?.toIso8601String(),
   'state': state.toJson(),
-  if (contactLink != null) 'contact_link': contactLink?.toString(),
+  'contact_link': contactLink != null ? contactLink?.toString() : null,
   if (alertStats != null) 'alert_stats': alertStats?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('number') && json['number'] is num &&

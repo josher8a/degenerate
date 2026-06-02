@@ -26,7 +26,7 @@ final IntelResultInfo? resultInfo;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
+  'result': result != null ? result?.map((e) => e.toJson()).toList() : null,
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 

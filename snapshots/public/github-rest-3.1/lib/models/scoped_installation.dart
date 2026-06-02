@@ -30,7 +30,7 @@ final SimpleUser account;
 Map<String, dynamic> toJson() { return {
   'permissions': permissions.toJson(),
   'repository_selection': repositorySelection.toJson(),
-  'single_file_name': ?singleFileName,
+  'single_file_name': singleFileName,
   'has_multiple_single_files': ?hasMultipleSingleFiles,
   'single_file_paths': ?singleFilePaths,
   'repositories_url': repositoriesUrl.toString(),

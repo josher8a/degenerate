@@ -39,7 +39,7 @@ InputContentInputText copyWith({String? text}) { return InputContentInputText(in
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputContentInputText && inputTextContent == other.inputTextContent; } 
 @override int get hashCode { return inputTextContent.hashCode; } 
-@override String toString() { return 'InputContentInputText(inputTextContent: $inputTextContent)'; } 
+@override String toString() { return 'InputContent.inputText($inputTextContent)'; } 
  }
 @immutable final class InputContentInputImage extends InputContent {const InputContentInputImage(this.inputImageContent);
 
@@ -57,7 +57,7 @@ InputContentInputImage copyWith({String? Function()? imageUrl, String? Function(
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputContentInputImage && inputImageContent == other.inputImageContent; } 
 @override int get hashCode { return inputImageContent.hashCode; } 
-@override String toString() { return 'InputContentInputImage(inputImageContent: $inputImageContent)'; } 
+@override String toString() { return 'InputContent.inputImage($inputImageContent)'; } 
  }
 @immutable final class InputContentInputFile extends InputContent {const InputContentInputFile(this.inputFileContent);
 
@@ -77,7 +77,7 @@ InputContentInputFile copyWith({String? Function()? fileId, String? Function()? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputContentInputFile && inputFileContent == other.inputFileContent; } 
 @override int get hashCode { return inputFileContent.hashCode; } 
-@override String toString() { return 'InputContentInputFile(inputFileContent: $inputFileContent)'; } 
+@override String toString() { return 'InputContent.inputFile($inputFileContent)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

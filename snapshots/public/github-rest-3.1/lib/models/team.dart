@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'name': name,
   'slug': slug,
-  'description': ?description,
+  'description': description,
   'privacy': ?privacy,
   'notification_setting': ?notificationSetting,
   'permission': permission,
@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'organization_id': ?organizationId,
   'enterprise_id': ?enterpriseId,
-  if (parent != null) 'parent': parent?.toJson(),
+  'parent': parent != null ? parent?.toJson() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&

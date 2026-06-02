@@ -55,7 +55,7 @@ final String? tokenLastUsedAt;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  'reason': ?reason,
+  'reason': reason,
   'owner': owner.toJson(),
   'repository_selection': repositorySelection.toJson(),
   'repositories_url': repositoriesUrl,
@@ -64,8 +64,8 @@ Map<String, dynamic> toJson() { return {
   'token_id': tokenId,
   'token_name': tokenName,
   'token_expired': tokenExpired,
-  'token_expires_at': ?tokenExpiresAt,
-  'token_last_used_at': ?tokenLastUsedAt,
+  'token_expires_at': tokenExpiresAt,
+  'token_last_used_at': tokenLastUsedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('reason') && json['reason'] is String &&

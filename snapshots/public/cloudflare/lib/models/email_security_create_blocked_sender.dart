@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   'comments': ?comments,
   'is_regex': isRegex,
   'pattern': pattern,
-  if (patternType != null) 'pattern_type': patternType?.toJson(),
+  'pattern_type': patternType != null ? patternType?.toJson() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('pattern') && json['pattern'] is String &&

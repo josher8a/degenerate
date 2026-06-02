@@ -80,8 +80,8 @@ Map<String, dynamic> toJson() { return {
   'status_code': ?statusCode,
   'step': ?step,
   'success': success,
-  'tokens_in': ?tokensIn,
-  'tokens_out': ?tokensOut,
+  'tokens_in': tokensIn,
+  'tokens_out': tokensOut,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cached') && json['cached'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&

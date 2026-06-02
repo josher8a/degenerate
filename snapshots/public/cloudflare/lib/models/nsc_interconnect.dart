@@ -47,7 +47,7 @@ NscInterconnectDirect copyWith({String? account, String? name, String? Function(
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscInterconnectDirect && nscInterconnectPhysicalBody == other.nscInterconnectPhysicalBody; } 
 @override int get hashCode { return nscInterconnectPhysicalBody.hashCode; } 
-@override String toString() { return 'NscInterconnectDirect(nscInterconnectPhysicalBody: $nscInterconnectPhysicalBody)'; } 
+@override String toString() { return 'NscInterconnect.direct($nscInterconnectPhysicalBody)'; } 
 @override String get account { return nscInterconnectPhysicalBody.account; } 
 @override String get name { return nscInterconnectPhysicalBody.name; } 
 @override String? get owner { return nscInterconnectPhysicalBody.owner; } 
@@ -70,7 +70,7 @@ NscInterconnectGcpPartner copyWith({String? account, String? name, String? Funct
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscInterconnectGcpPartner && nscInterconnectGcpPartnerBody == other.nscInterconnectGcpPartnerBody; } 
 @override int get hashCode { return nscInterconnectGcpPartnerBody.hashCode; } 
-@override String toString() { return 'NscInterconnectGcpPartner(nscInterconnectGcpPartnerBody: $nscInterconnectGcpPartnerBody)'; } 
+@override String toString() { return 'NscInterconnect.gcpPartner($nscInterconnectGcpPartnerBody)'; } 
 @override String get account { return nscInterconnectGcpPartnerBody.account; } 
 @override String get name { return nscInterconnectGcpPartnerBody.name; } 
 @override String? get owner { return nscInterconnectGcpPartnerBody.owner; } 

@@ -24,11 +24,11 @@ final String? startedAt;
 final CheckRunWithSimpleCheckSuiteStatus status;
 
 Map<String, dynamic> toJson() { return {
-  'completed_at': ?completedAt,
-  if (conclusion != null) 'conclusion': conclusion?.toJson(),
+  'completed_at': completedAt,
+  'conclusion': conclusion != null ? conclusion?.toJson() : null,
   'name': name,
   'number': number,
-  'started_at': ?startedAt,
+  'started_at': startedAt,
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_at') && json['completed_at'] is String &&

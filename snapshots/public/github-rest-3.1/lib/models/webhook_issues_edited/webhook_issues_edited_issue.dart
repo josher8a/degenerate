@@ -119,12 +119,12 @@ final Uri url;
 final WebhooksIssueCommentUser? user;
 
 Map<String, dynamic> toJson() { return {
-  if (activeLockReason != null) 'active_lock_reason': activeLockReason?.toJson(),
+  'active_lock_reason': activeLockReason != null ? activeLockReason?.toJson() : null,
   if (assignee != null) 'assignee': assignee?.toJson(),
   'assignees': assignees.map((e) => e?.toJson()).toList(),
   'author_association': authorAssociation.toJson(),
-  'body': ?body,
-  if (closedAt != null) 'closed_at': closedAt?.toIso8601String(),
+  'body': body,
+  'closed_at': closedAt != null ? closedAt?.toIso8601String() : null,
   'comments': comments,
   'comments_url': commentsUrl.toString(),
   'created_at': createdAt.toIso8601String(),
@@ -135,7 +135,7 @@ Map<String, dynamic> toJson() { return {
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
   'labels_url': labelsUrl,
   'locked': ?locked,
-  if (milestone != null) 'milestone': milestone?.toJson(),
+  'milestone': milestone != null ? milestone?.toJson() : null,
   'node_id': nodeId,
   'number': number,
   if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
@@ -153,7 +153,7 @@ Map<String, dynamic> toJson() { return {
   'title': title,
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user != null ? user?.toJson() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') &&
       json.containsKey('assignees') &&

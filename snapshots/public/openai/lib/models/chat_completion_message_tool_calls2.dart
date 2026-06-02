@@ -38,7 +38,7 @@ ChatCompletionMessageToolCalls2Function copyWith({String? id, ChatCompletionMess
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionMessageToolCalls2Function && chatCompletionMessageToolCall == other.chatCompletionMessageToolCall; } 
 @override int get hashCode { return chatCompletionMessageToolCall.hashCode; } 
-@override String toString() { return 'ChatCompletionMessageToolCalls2Function(chatCompletionMessageToolCall: $chatCompletionMessageToolCall)'; } 
+@override String toString() { return 'ChatCompletionMessageToolCalls2.function($chatCompletionMessageToolCall)'; } 
 @override String get id { return chatCompletionMessageToolCall.id; } 
  }
 @immutable final class ChatCompletionMessageToolCalls2Custom extends ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2Custom(this.chatCompletionMessageCustomToolCall);
@@ -56,7 +56,7 @@ ChatCompletionMessageToolCalls2Custom copyWith({String? id, ChatCompletionMessag
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionMessageToolCalls2Custom && chatCompletionMessageCustomToolCall == other.chatCompletionMessageCustomToolCall; } 
 @override int get hashCode { return chatCompletionMessageCustomToolCall.hashCode; } 
-@override String toString() { return 'ChatCompletionMessageToolCalls2Custom(chatCompletionMessageCustomToolCall: $chatCompletionMessageCustomToolCall)'; } 
+@override String toString() { return 'ChatCompletionMessageToolCalls2.custom($chatCompletionMessageCustomToolCall)'; } 
 @override String get id { return chatCompletionMessageCustomToolCall.id; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

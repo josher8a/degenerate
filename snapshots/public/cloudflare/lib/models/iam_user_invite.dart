@@ -90,7 +90,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (invitedBy != null) 'invited_by': invitedBy?.toJson(),
   if (invitedMemberEmail != null) 'invited_member_email': invitedMemberEmail?.toJson(),
-  'invited_member_id': ?invitedMemberId,
+  'invited_member_id': invitedMemberId,
   if (invitedOn != null) 'invited_on': invitedOn?.toJson(),
   'organization_id': organizationId,
   'organization_is_enforcing_twofactor': ?organizationIsEnforcingTwofactor,

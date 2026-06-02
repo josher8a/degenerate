@@ -44,7 +44,7 @@ WebSearchToolCallActionSearch copyWith({String? query, List<String>? Function()?
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WebSearchToolCallActionSearch && webSearchActionSearch == other.webSearchActionSearch; } 
 @override int get hashCode { return webSearchActionSearch.hashCode; } 
-@override String toString() { return 'WebSearchToolCallActionSearch(webSearchActionSearch: $webSearchActionSearch)'; } 
+@override String toString() { return 'WebSearchToolCallAction.search($webSearchActionSearch)'; } 
  }
 @immutable final class WebSearchToolCallActionOpenPage extends WebSearchToolCallAction {const WebSearchToolCallActionOpenPage(this.webSearchActionOpenPage);
 
@@ -60,7 +60,7 @@ WebSearchToolCallActionOpenPage copyWith({Uri? Function()? url}) { return WebSea
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WebSearchToolCallActionOpenPage && webSearchActionOpenPage == other.webSearchActionOpenPage; } 
 @override int get hashCode { return webSearchActionOpenPage.hashCode; } 
-@override String toString() { return 'WebSearchToolCallActionOpenPage(webSearchActionOpenPage: $webSearchActionOpenPage)'; } 
+@override String toString() { return 'WebSearchToolCallAction.openPage($webSearchActionOpenPage)'; } 
  }
 @immutable final class WebSearchToolCallActionFindInPage extends WebSearchToolCallAction {const WebSearchToolCallActionFindInPage(this.webSearchActionFind);
 
@@ -77,7 +77,7 @@ WebSearchToolCallActionFindInPage copyWith({Uri? url, String? pattern, }) { retu
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WebSearchToolCallActionFindInPage && webSearchActionFind == other.webSearchActionFind; } 
 @override int get hashCode { return webSearchActionFind.hashCode; } 
-@override String toString() { return 'WebSearchToolCallActionFindInPage(webSearchActionFind: $webSearchActionFind)'; } 
+@override String toString() { return 'WebSearchToolCallAction.findInPage($webSearchActionFind)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

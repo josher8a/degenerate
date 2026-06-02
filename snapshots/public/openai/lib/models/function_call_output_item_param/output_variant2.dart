@@ -40,7 +40,7 @@ OutputVariant2InputText copyWith({String? text}) { return OutputVariant2InputTex
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputVariant2InputText && inputTextContentParam == other.inputTextContentParam; } 
 @override int get hashCode { return inputTextContentParam.hashCode; } 
-@override String toString() { return 'OutputVariant2InputText(inputTextContentParam: $inputTextContentParam)'; } 
+@override String toString() { return 'OutputVariant2.inputText($inputTextContentParam)'; } 
  }
 @immutable final class OutputVariant2InputImage extends OutputVariant2 {const OutputVariant2InputImage(this.inputImageContentParamAutoParam);
 
@@ -58,7 +58,7 @@ OutputVariant2InputImage copyWith({String? Function()? imageUrl, String? Functio
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputVariant2InputImage && inputImageContentParamAutoParam == other.inputImageContentParamAutoParam; } 
 @override int get hashCode { return inputImageContentParamAutoParam.hashCode; } 
-@override String toString() { return 'OutputVariant2InputImage(inputImageContentParamAutoParam: $inputImageContentParamAutoParam)'; } 
+@override String toString() { return 'OutputVariant2.inputImage($inputImageContentParamAutoParam)'; } 
  }
 @immutable final class OutputVariant2InputFile extends OutputVariant2 {const OutputVariant2InputFile(this.inputFileContentParam);
 
@@ -78,7 +78,7 @@ OutputVariant2InputFile copyWith({String? Function()? fileId, String? Function()
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputVariant2InputFile && inputFileContentParam == other.inputFileContentParam; } 
 @override int get hashCode { return inputFileContentParam.hashCode; } 
-@override String toString() { return 'OutputVariant2InputFile(inputFileContentParam: $inputFileContentParam)'; } 
+@override String toString() { return 'OutputVariant2.inputFile($inputFileContentParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

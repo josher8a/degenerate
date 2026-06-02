@@ -110,7 +110,7 @@ ResourceTaggingSetTagsRequestAccountLevelAccessApplication copyWith({ResourceTag
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelAccessApplication && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelAccessApplication(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.accessApplication($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelAccessGroup extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelAccessGroup(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -127,7 +127,7 @@ ResourceTaggingSetTagsRequestAccountLevelAccessGroup copyWith({ResourceTaggingRe
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelAccessGroup && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelAccessGroup(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.accessGroup($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelAccount extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelAccount(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -144,7 +144,7 @@ ResourceTaggingSetTagsRequestAccountLevelAccount copyWith({ResourceTaggingResour
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelAccount && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelAccount(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.account($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelAiGateway extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelAiGateway(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -161,7 +161,7 @@ ResourceTaggingSetTagsRequestAccountLevelAiGateway copyWith({ResourceTaggingReso
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelAiGateway && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelAiGateway(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.aiGateway($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -178,7 +178,7 @@ ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy copyWith({ResourceTaggin
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.alertingPolicy($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -195,7 +195,7 @@ ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook copyWith({ResourceTaggi
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.alertingWebhook($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -212,7 +212,7 @@ ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel copyWith({ResourceTag
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.cloudflaredTunnel($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelD1Database extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelD1Database(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -229,7 +229,7 @@ ResourceTaggingSetTagsRequestAccountLevelD1Database copyWith({ResourceTaggingRes
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelD1Database && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelD1Database(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.d1Database($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -246,7 +246,7 @@ ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace copyWith({Resour
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.durableObjectNamespace($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelGatewayList extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelGatewayList(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -263,7 +263,7 @@ ResourceTaggingSetTagsRequestAccountLevelGatewayList copyWith({ResourceTaggingRe
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelGatewayList && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelGatewayList(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.gatewayList($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelGatewayRule extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelGatewayRule(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -280,7 +280,7 @@ ResourceTaggingSetTagsRequestAccountLevelGatewayRule copyWith({ResourceTaggingRe
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelGatewayRule && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelGatewayRule(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.gatewayRule($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelImage extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelImage(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -297,7 +297,7 @@ ResourceTaggingSetTagsRequestAccountLevelImage copyWith({ResourceTaggingResource
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelImage && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelImage(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.image($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelKvNamespace extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelKvNamespace(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -314,7 +314,7 @@ ResourceTaggingSetTagsRequestAccountLevelKvNamespace copyWith({ResourceTaggingRe
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelKvNamespace && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelKvNamespace(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.kvNamespace($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelQueue extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelQueue(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -331,7 +331,7 @@ ResourceTaggingSetTagsRequestAccountLevelQueue copyWith({ResourceTaggingResource
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelQueue && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelQueue(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.queue($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelR2Bucket extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelR2Bucket(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -348,7 +348,7 @@ ResourceTaggingSetTagsRequestAccountLevelR2Bucket copyWith({ResourceTaggingResou
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelR2Bucket && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelR2Bucket(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.r2Bucket($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelResourceShare extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelResourceShare(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -365,7 +365,7 @@ ResourceTaggingSetTagsRequestAccountLevelResourceShare copyWith({ResourceTagging
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelResourceShare && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelResourceShare(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.resourceShare($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -382,7 +382,7 @@ ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput copyWith({ResourceTaggi
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.streamLiveInput($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelStreamVideo extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelStreamVideo(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -399,7 +399,7 @@ ResourceTaggingSetTagsRequestAccountLevelStreamVideo copyWith({ResourceTaggingRe
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelStreamVideo && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelStreamVideo(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.streamVideo($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelWorker extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelWorker(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -416,7 +416,7 @@ ResourceTaggingSetTagsRequestAccountLevelWorker copyWith({ResourceTaggingResourc
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelWorker && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelWorker(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.worker($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingSetTagsRequestAccountLevelWorkerVersion extends ResourceTaggingSetTagsRequestAccountLevel {const ResourceTaggingSetTagsRequestAccountLevelWorkerVersion(this.resourceTaggingDeleteTagsRequestAccountLevelBase);
@@ -433,7 +433,7 @@ ResourceTaggingSetTagsRequestAccountLevelWorkerVersion copyWith({ResourceTagging
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingSetTagsRequestAccountLevelWorkerVersion && resourceTaggingDeleteTagsRequestAccountLevelBase == other.resourceTaggingDeleteTagsRequestAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestAccountLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevelWorkerVersion(resourceTaggingDeleteTagsRequestAccountLevelBase: $resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingSetTagsRequestAccountLevel.workerVersion($resourceTaggingDeleteTagsRequestAccountLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestAccountLevelBase.resourceId; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

@@ -31,7 +31,7 @@ final int optWithDefault;
 
 Map<String, dynamic> toJson() { return {
   'reqNonNull': reqNonNull,
-  'reqNullable': ?reqNullable,
+  'reqNullable': reqNullable,
   'optNonNull': ?optNonNull,
   'optNullable': ?optNullable,
   'reqWithDefault': reqWithDefault,

@@ -54,7 +54,7 @@ final String? rawKey;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'name': ?name,
-  'primary_key_id': ?primaryKeyId,
+  'primary_key_id': primaryKeyId,
   'key_id': keyId,
   'public_key': publicKey,
   'emails': emails.map((e) => e.toJson()).toList(),
@@ -64,9 +64,9 @@ Map<String, dynamic> toJson() { return {
   'can_encrypt_storage': canEncryptStorage,
   'can_certify': canCertify,
   'created_at': createdAt.toIso8601String(),
-  if (expiresAt != null) 'expires_at': expiresAt?.toIso8601String(),
+  'expires_at': expiresAt != null ? expiresAt?.toIso8601String() : null,
   'revoked': revoked,
-  'raw_key': ?rawKey,
+  'raw_key': rawKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('primary_key_id') && json['primary_key_id'] is num &&

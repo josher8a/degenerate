@@ -76,7 +76,7 @@ final WebhooksIssueCommentUser? user;
 Map<String, dynamic> toJson() { return {
   '_links': links.toJson(),
   'author_association': authorAssociation.toJson(),
-  'body': ?body,
+  'body': body,
   'commit_id': commitId,
   'html_url': htmlUrl.toString(),
   'id': id,
@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
   'submitted_at': submittedAt.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user != null ? user?.toJson() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
       json.containsKey('author_association') &&

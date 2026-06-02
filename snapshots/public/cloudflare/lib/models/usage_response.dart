@@ -25,8 +25,8 @@ final List<UsageRecord> result;
 final bool success;
 
 Map<String, dynamic> toJson() { return {
-  if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
-  if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
+  'errors': errors != null ? errors?.map((e) => e.toJson()).toList() : null,
+  'messages': messages != null ? messages?.map((e) => e.toJson()).toList() : null,
   'result': result.map((e) => e.toJson()).toList(),
   'success': success,
 }; } 

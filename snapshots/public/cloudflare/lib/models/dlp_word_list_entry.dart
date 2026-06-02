@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'profile_id': ?profileId,
   'updated_at': updatedAt.toIso8601String(),
-  'word_list': ?wordList,
+  'word_list': wordList,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('enabled') && json['enabled'] is bool &&

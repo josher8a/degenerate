@@ -42,7 +42,7 @@ VariablesValueSecret copyWith({String? name, String? value, }) { return Variable
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is VariablesValueSecret && zarazSecretVariable == other.zarazSecretVariable; } 
 @override int get hashCode { return zarazSecretVariable.hashCode; } 
-@override String toString() { return 'VariablesValueSecret(zarazSecretVariable: $zarazSecretVariable)'; } 
+@override String toString() { return 'VariablesValue.secret($zarazSecretVariable)'; } 
 @override String get name { return zarazSecretVariable.name; } 
  }
 @immutable final class VariablesValueString extends VariablesValue {const VariablesValueString(this.zarazStringVariable);
@@ -60,7 +60,7 @@ VariablesValueString copyWith({String? name, String? value, }) { return Variable
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is VariablesValueString && zarazStringVariable == other.zarazStringVariable; } 
 @override int get hashCode { return zarazStringVariable.hashCode; } 
-@override String toString() { return 'VariablesValueString(zarazStringVariable: $zarazStringVariable)'; } 
+@override String toString() { return 'VariablesValue.string($zarazStringVariable)'; } 
 @override String get name { return zarazStringVariable.name; } 
  }
 @immutable final class VariablesValueWorker extends VariablesValue {const VariablesValueWorker(this.zarazWorkerVariable);
@@ -78,7 +78,7 @@ VariablesValueWorker copyWith({String? name, ZarazWorkerVariableValue? value, })
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is VariablesValueWorker && zarazWorkerVariable == other.zarazWorkerVariable; } 
 @override int get hashCode { return zarazWorkerVariable.hashCode; } 
-@override String toString() { return 'VariablesValueWorker(zarazWorkerVariable: $zarazWorkerVariable)'; } 
+@override String toString() { return 'VariablesValue.worker($zarazWorkerVariable)'; } 
 @override String get name { return zarazWorkerVariable.name; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

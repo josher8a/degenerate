@@ -41,7 +41,7 @@ final List<TracerouteStatsByColo>? tracerouteStatsByColo;
 Map<String, dynamic> toJson() { return {
   'host': host,
   'interval': interval,
-  'kind': ?kind,
+  'kind': kind,
   'name': name,
   if (targetPolicies != null) 'target_policies': targetPolicies?.map((e) => e.toJson()).toList(),
   'targeted': ?targeted,

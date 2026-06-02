@@ -154,7 +154,7 @@ final class SelfType extends Self {
 
   @override
   String toString() {
-    return 'SelfType(\$true: ${$true})';
+    return 'Self.type(${$true})';
   }
 }
 
@@ -206,7 +206,7 @@ final class SelfProto extends Self {
 
   @override
   String toString() {
-    return 'SelfProto(proto: $proto)';
+    return 'Self.proto($proto)';
   }
 }
 
@@ -259,7 +259,7 @@ final class SelfString extends Self {
 
   @override
   String toString() {
-    return 'SelfString(stringModel: $stringModel)';
+    return 'Self.string($stringModel)';
   }
 }
 

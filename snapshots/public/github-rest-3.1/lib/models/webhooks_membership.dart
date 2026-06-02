@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'enterprise_teams_providing_indirect_membership': ?enterpriseTeamsProvidingIndirectMembership,
   'state': state,
   'url': url.toString(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user != null ? user?.toJson() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('organization_url') && json['organization_url'] is String &&
       json.containsKey('role') && json['role'] is String &&

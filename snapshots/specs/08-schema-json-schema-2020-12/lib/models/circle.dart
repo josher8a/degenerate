@@ -15,7 +15,7 @@ final double radius;
 final String? color;
 
 Map<String, dynamic> toJson() { return {
-  'kind': ?kind,
+  'kind': kind,
   'radius': radius,
   'color': ?color,
 }; } 

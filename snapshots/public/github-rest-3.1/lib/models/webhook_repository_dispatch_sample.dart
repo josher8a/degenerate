@@ -34,7 +34,7 @@ final SimpleUser sender;
 Map<String, dynamic> toJson() { return {
   'action': action,
   'branch': branch,
-  'client_payload': ?clientPayload,
+  'client_payload': clientPayload,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'installation': installation.toJson(),
   if (organization != null) 'organization': organization?.toJson(),

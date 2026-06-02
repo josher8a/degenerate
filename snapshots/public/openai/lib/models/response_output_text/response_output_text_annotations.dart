@@ -36,7 +36,7 @@ ResponseOutputTextAnnotationsFile copyWith({FileAnnotationSource? source}) { ret
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseOutputTextAnnotationsFile && fileAnnotation == other.fileAnnotation; } 
 @override int get hashCode { return fileAnnotation.hashCode; } 
-@override String toString() { return 'ResponseOutputTextAnnotationsFile(fileAnnotation: $fileAnnotation)'; } 
+@override String toString() { return 'ResponseOutputTextAnnotations.file($fileAnnotation)'; } 
  }
 @immutable final class ResponseOutputTextAnnotationsUrl extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotationsUrl(this.urlAnnotation);
 
@@ -52,7 +52,7 @@ ResponseOutputTextAnnotationsUrl copyWith({UrlAnnotationSource? source}) { retur
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseOutputTextAnnotationsUrl && urlAnnotation == other.urlAnnotation; } 
 @override int get hashCode { return urlAnnotation.hashCode; } 
-@override String toString() { return 'ResponseOutputTextAnnotationsUrl(urlAnnotation: $urlAnnotation)'; } 
+@override String toString() { return 'ResponseOutputTextAnnotations.url($urlAnnotation)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

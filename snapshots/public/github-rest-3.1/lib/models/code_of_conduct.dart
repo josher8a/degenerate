@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'url': url.toString(),
   'body': ?body,
-  if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
+  'html_url': htmlUrl != null ? htmlUrl?.toString() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('name') && json['name'] is String &&

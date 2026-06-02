@@ -41,7 +41,7 @@ OutputContentOutputText copyWith({String? text, List<Annotation>? annotations, L
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputContentOutputText && outputTextContent == other.outputTextContent; } 
 @override int get hashCode { return outputTextContent.hashCode; } 
-@override String toString() { return 'OutputContentOutputText(outputTextContent: $outputTextContent)'; } 
+@override String toString() { return 'OutputContent.outputText($outputTextContent)'; } 
  }
 @immutable final class OutputContentRefusal extends OutputContent {const OutputContentRefusal(this.refusalContent);
 
@@ -57,7 +57,7 @@ OutputContentRefusal copyWith({String? refusal}) { return OutputContentRefusal(r
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputContentRefusal && refusalContent == other.refusalContent; } 
 @override int get hashCode { return refusalContent.hashCode; } 
-@override String toString() { return 'OutputContentRefusal(refusalContent: $refusalContent)'; } 
+@override String toString() { return 'OutputContent.refusal($refusalContent)'; } 
  }
 @immutable final class OutputContentReasoningText extends OutputContent {const OutputContentReasoningText(this.reasoningTextContent);
 
@@ -73,7 +73,7 @@ OutputContentReasoningText copyWith({String? text}) { return OutputContentReason
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputContentReasoningText && reasoningTextContent == other.reasoningTextContent; } 
 @override int get hashCode { return reasoningTextContent.hashCode; } 
-@override String toString() { return 'OutputContentReasoningText(reasoningTextContent: $reasoningTextContent)'; } 
+@override String toString() { return 'OutputContent.reasoningText($reasoningTextContent)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'object': object.toJson(),
   'created_at': createdAt,
-  'title': ?title,
+  'title': title,
   'status': status.toJson(),
   'user': user,
 }; } 

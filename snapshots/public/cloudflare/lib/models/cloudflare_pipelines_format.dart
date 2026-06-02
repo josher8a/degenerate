@@ -37,7 +37,7 @@ CloudflarePipelinesFormatJson copyWith({CloudflarePipelinesDecimalEncoding? Func
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFormatJson && cloudflarePipelinesJsonFormat == other.cloudflarePipelinesJsonFormat; } 
 @override int get hashCode { return cloudflarePipelinesJsonFormat.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFormatJson(cloudflarePipelinesJsonFormat: $cloudflarePipelinesJsonFormat)'; } 
+@override String toString() { return 'CloudflarePipelinesFormat.json($cloudflarePipelinesJsonFormat)'; } 
  }
 @immutable final class CloudflarePipelinesFormatParquet extends CloudflarePipelinesFormat {const CloudflarePipelinesFormatParquet(this.cloudflarePipelinesParquetFormat);
 
@@ -54,7 +54,7 @@ CloudflarePipelinesFormatParquet copyWith({CloudflarePipelinesParquetCompression
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFormatParquet && cloudflarePipelinesParquetFormat == other.cloudflarePipelinesParquetFormat; } 
 @override int get hashCode { return cloudflarePipelinesParquetFormat.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFormatParquet(cloudflarePipelinesParquetFormat: $cloudflarePipelinesParquetFormat)'; } 
+@override String toString() { return 'CloudflarePipelinesFormat.parquet($cloudflarePipelinesParquetFormat)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

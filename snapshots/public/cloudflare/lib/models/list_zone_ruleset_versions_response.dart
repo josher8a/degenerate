@@ -23,10 +23,10 @@ final dynamic success;
 final RulesetsResultInfo? resultInfo;
 
 Map<String, dynamic> toJson() { return {
-  'errors': ?errors,
+  'errors': errors,
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
-  'success': ?success,
+  'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&

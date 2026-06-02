@@ -266,10 +266,10 @@ final bool parallelToolCalls;
 final Conversation2? conversation;
 
 Map<String, dynamic> toJson() { return {
-  'metadata': ?metadata,
+  'metadata': metadata,
   'top_logprobs': ?topLogprobs,
-  'temperature': ?temperature,
-  'top_p': ?topP,
+  'temperature': temperature,
+  'top_p': topP,
   'user': ?user,
   'safety_identifier': ?safetyIdentifier,
   'prompt_cache_key': ?promptCacheKey,
@@ -281,9 +281,9 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'completed_at': ?completedAt,
   'error': error.toJson(),
-  if (incompleteDetails != null) 'incomplete_details': incompleteDetails?.toJson(),
+  'incomplete_details': incompleteDetails != null ? incompleteDetails?.toJson() : null,
   'output': output.map((e) => e.toJson()).toList(),
-  if (instructions != null) 'instructions': instructions?.toJson(),
+  'instructions': instructions != null ? instructions?.toJson() : null,
   'output_text': ?outputText,
   if (usage != null) 'usage': usage?.toJson(),
   'parallel_tool_calls': parallelToolCalls,

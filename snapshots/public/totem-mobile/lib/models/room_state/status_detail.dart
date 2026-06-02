@@ -71,7 +71,7 @@ final class StatusDetailActive extends StatusDetail {
 
   @override
   String toString() {
-    return 'StatusDetailActive(activeDetail: $activeDetail)';
+    return 'StatusDetail.active($activeDetail)';
   }
 }
 
@@ -112,7 +112,7 @@ final class StatusDetailEnded extends StatusDetail {
 
   @override
   String toString() {
-    return 'StatusDetailEnded(endedDetail: $endedDetail)';
+    return 'StatusDetail.ended($endedDetail)';
   }
 }
 
@@ -154,7 +154,7 @@ final class StatusDetailWaitingRoom extends StatusDetail {
 
   @override
   String toString() {
-    return 'StatusDetailWaitingRoom(waitingRoomDetail: $waitingRoomDetail)';
+    return 'StatusDetail.waitingRoom($waitingRoomDetail)';
   }
 }
 

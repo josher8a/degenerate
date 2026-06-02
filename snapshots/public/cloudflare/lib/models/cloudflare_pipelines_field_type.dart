@@ -45,7 +45,7 @@ CloudflarePipelinesFieldTypeInt32 copyWith({Int32? int32}) { return CloudflarePi
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeInt32 && int32 == other.int32; } 
 @override int get hashCode { return int32.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeInt32(int32: $int32)'; } 
+@override String toString() { return 'CloudflarePipelinesFieldType.int32($int32)'; } 
  }
 @immutable final class CloudflarePipelinesFieldTypeInt64 extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeInt64(this.int64);
 
@@ -59,7 +59,7 @@ CloudflarePipelinesFieldTypeInt64 copyWith({Int64? int64}) { return CloudflarePi
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeInt64 && int64 == other.int64; } 
 @override int get hashCode { return int64.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeInt64(int64: $int64)'; } 
+@override String toString() { return 'CloudflarePipelinesFieldType.int64($int64)'; } 
  }
 @immutable final class CloudflarePipelinesFieldTypeFloat32 extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeFloat32(this.float32);
 
@@ -73,7 +73,7 @@ CloudflarePipelinesFieldTypeFloat32 copyWith({Float32? float32}) { return Cloudf
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeFloat32 && float32 == other.float32; } 
 @override int get hashCode { return float32.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeFloat32(float32: $float32)'; } 
+@override String toString() { return 'CloudflarePipelinesFieldType.float32($float32)'; } 
  }
 @immutable final class CloudflarePipelinesFieldTypeFloat64 extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeFloat64(this.float64);
 
@@ -87,7 +87,7 @@ CloudflarePipelinesFieldTypeFloat64 copyWith({Float64? float64}) { return Cloudf
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeFloat64 && float64 == other.float64; } 
 @override int get hashCode { return float64.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeFloat64(float64: $float64)'; } 
+@override String toString() { return 'CloudflarePipelinesFieldType.float64($float64)'; } 
  }
 @immutable final class CloudflarePipelinesFieldTypeBool extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeBool(this.$bool);
 
@@ -101,7 +101,7 @@ CloudflarePipelinesFieldTypeBool copyWith({Bool? $bool}) { return CloudflarePipe
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeBool && $bool == other.$bool; } 
 @override int get hashCode { return $bool.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeBool(\$bool: ${$bool})'; } 
+@override String toString() { return 'CloudflarePipelinesFieldType.\$bool(${$bool})'; } 
  }
 @immutable final class CloudflarePipelinesFieldTypeString extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeString(this.stringModel);
 
@@ -115,7 +115,7 @@ CloudflarePipelinesFieldTypeString copyWith({StringModel? stringModel}) { return
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeString && stringModel == other.stringModel; } 
 @override int get hashCode { return stringModel.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeString(stringModel: $stringModel)'; } 
+@override String toString() { return 'CloudflarePipelinesFieldType.string($stringModel)'; } 
  }
 @immutable final class CloudflarePipelinesFieldTypeBinary extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeBinary(this.binary);
 
@@ -129,7 +129,7 @@ CloudflarePipelinesFieldTypeBinary copyWith({Binary? binary}) { return Cloudflar
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeBinary && binary == other.binary; } 
 @override int get hashCode { return binary.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeBinary(binary: $binary)'; } 
+@override String toString() { return 'CloudflarePipelinesFieldType.binary($binary)'; } 
  }
 @immutable final class CloudflarePipelinesFieldTypeTimestamp extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeTimestamp(this.cloudflarePipelinesTimestampField);
 
@@ -145,7 +145,7 @@ CloudflarePipelinesFieldTypeTimestamp copyWith({CloudflarePipelinesTimestampUnit
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeTimestamp && cloudflarePipelinesTimestampField == other.cloudflarePipelinesTimestampField; } 
 @override int get hashCode { return cloudflarePipelinesTimestampField.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeTimestamp(cloudflarePipelinesTimestampField: $cloudflarePipelinesTimestampField)'; } 
+@override String toString() { return 'CloudflarePipelinesFieldType.timestamp($cloudflarePipelinesTimestampField)'; } 
  }
 @immutable final class CloudflarePipelinesFieldTypeJson extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeJson(this.json);
 
@@ -159,7 +159,7 @@ CloudflarePipelinesFieldTypeJson copyWith({Json? json}) { return CloudflarePipel
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeJson && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeJson(json: $json)'; } 
+@override String toString() { return 'CloudflarePipelinesFieldType.json($json)'; } 
  }
 @immutable final class CloudflarePipelinesFieldTypeStruct extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeStruct(this.cloudflarePipelinesStructField);
 
@@ -176,7 +176,7 @@ CloudflarePipelinesFieldTypeStruct copyWith({List<CloudflarePipelinesSourceField
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeStruct && cloudflarePipelinesStructField == other.cloudflarePipelinesStructField; } 
 @override int get hashCode { return cloudflarePipelinesStructField.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeStruct(cloudflarePipelinesStructField: $cloudflarePipelinesStructField)'; } 
+@override String toString() { return 'CloudflarePipelinesFieldType.struct($cloudflarePipelinesStructField)'; } 
  }
 @immutable final class CloudflarePipelinesFieldTypeList extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeList(this.cloudflarePipelinesListField);
 
@@ -192,7 +192,7 @@ CloudflarePipelinesFieldTypeList copyWith({CloudflarePipelinesSourceField? items
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeList && cloudflarePipelinesListField == other.cloudflarePipelinesListField; } 
 @override int get hashCode { return cloudflarePipelinesListField.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeList(cloudflarePipelinesListField: $cloudflarePipelinesListField)'; } 
+@override String toString() { return 'CloudflarePipelinesFieldType.list($cloudflarePipelinesListField)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

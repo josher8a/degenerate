@@ -39,7 +39,7 @@ CreateTranscriptionResponseDiarizedJsonUsageTokens copyWith({int? inputTokens, T
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseDiarizedJsonUsageTokens && transcriptTextUsageTokens == other.transcriptTextUsageTokens; } 
 @override int get hashCode { return transcriptTextUsageTokens.hashCode; } 
-@override String toString() { return 'CreateTranscriptionResponseDiarizedJsonUsageTokens(transcriptTextUsageTokens: $transcriptTextUsageTokens)'; } 
+@override String toString() { return 'CreateTranscriptionResponseDiarizedJsonUsage.tokens($transcriptTextUsageTokens)'; } 
  }
 @immutable final class CreateTranscriptionResponseDiarizedJsonUsageDuration extends CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsageDuration(this.transcriptTextUsageDuration);
 
@@ -55,7 +55,7 @@ CreateTranscriptionResponseDiarizedJsonUsageDuration copyWith({double? seconds})
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseDiarizedJsonUsageDuration && transcriptTextUsageDuration == other.transcriptTextUsageDuration; } 
 @override int get hashCode { return transcriptTextUsageDuration.hashCode; } 
-@override String toString() { return 'CreateTranscriptionResponseDiarizedJsonUsageDuration(transcriptTextUsageDuration: $transcriptTextUsageDuration)'; } 
+@override String toString() { return 'CreateTranscriptionResponseDiarizedJsonUsage.duration($transcriptTextUsageDuration)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

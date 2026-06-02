@@ -49,7 +49,7 @@ ZeroTrustGatewayProxyEndpointsIdentity copyWith({ZeroTrustGatewayReadOnlyTimesta
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZeroTrustGatewayProxyEndpointsIdentity && zeroTrustGatewayProxyEndpointIdentity == other.zeroTrustGatewayProxyEndpointIdentity; } 
 @override int get hashCode { return zeroTrustGatewayProxyEndpointIdentity.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointsIdentity(zeroTrustGatewayProxyEndpointIdentity: $zeroTrustGatewayProxyEndpointIdentity)'; } 
+@override String toString() { return 'ZeroTrustGatewayProxyEndpoints.identity($zeroTrustGatewayProxyEndpointIdentity)'; } 
 @override ZeroTrustGatewayReadOnlyTimestamp? get createdAt { return zeroTrustGatewayProxyEndpointIdentity.createdAt; } 
 @override ZeroTrustGatewayComponentsSchemasUuid? get id { return zeroTrustGatewayProxyEndpointIdentity.id; } 
 @override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name { return zeroTrustGatewayProxyEndpointIdentity.name; } 
@@ -75,7 +75,7 @@ ZeroTrustGatewayProxyEndpointsIp copyWith({ZeroTrustGatewayReadOnlyTimestamp? Fu
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZeroTrustGatewayProxyEndpointsIp && zeroTrustGatewayProxyEndpointIp == other.zeroTrustGatewayProxyEndpointIp; } 
 @override int get hashCode { return zeroTrustGatewayProxyEndpointIp.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointsIp(zeroTrustGatewayProxyEndpointIp: $zeroTrustGatewayProxyEndpointIp)'; } 
+@override String toString() { return 'ZeroTrustGatewayProxyEndpoints.ip($zeroTrustGatewayProxyEndpointIp)'; } 
 @override ZeroTrustGatewayReadOnlyTimestamp? get createdAt { return zeroTrustGatewayProxyEndpointIp.createdAt; } 
 @override ZeroTrustGatewayComponentsSchemasUuid? get id { return zeroTrustGatewayProxyEndpointIp.id; } 
 @override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name { return zeroTrustGatewayProxyEndpointIp.name; } 

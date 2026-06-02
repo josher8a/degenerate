@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
   'name': name,
-  'description': ?description,
+  'description': description,
   if (color != null) 'color': color?.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),

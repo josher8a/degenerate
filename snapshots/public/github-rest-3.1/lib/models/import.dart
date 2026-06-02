@@ -143,7 +143,7 @@ final Uri repositoryUrl;
 final String? svnRoot;
 
 Map<String, dynamic> toJson() { return {
-  'vcs': ?vcs,
+  'vcs': vcs,
   'use_lfs': ?useLfs,
   'vcs_url': vcsUrl,
   'svc_root': ?svcRoot,

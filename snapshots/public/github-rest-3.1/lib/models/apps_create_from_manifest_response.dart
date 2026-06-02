@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
   'client_id': clientId,
   'owner': owner.toJson(),
   'name': name,
-  'description': ?description,
+  'description': description,
   'external_url': externalUrl.toString(),
   'html_url': htmlUrl.toString(),
   'created_at': createdAt.toIso8601String(),
@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
   'events': events,
   'installations_count': ?installationsCount,
   'client_secret': clientSecret,
-  'webhook_secret': ?webhookSecret,
+  'webhook_secret': webhookSecret,
   'pem': pem,
   ...additionalProperties,
 }; } 

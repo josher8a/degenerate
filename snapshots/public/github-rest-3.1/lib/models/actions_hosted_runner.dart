@@ -90,7 +90,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'name': name,
   'runner_group_id': ?runnerGroupId,
-  if (imageDetails != null) 'image_details': imageDetails?.toJson(),
+  'image_details': imageDetails != null ? imageDetails?.toJson() : null,
   'machine_size_details': machineSizeDetails.toJson(),
   'status': status.toJson(),
   'platform': platform,

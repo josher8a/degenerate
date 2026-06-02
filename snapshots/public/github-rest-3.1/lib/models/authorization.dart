@@ -55,19 +55,19 @@ final DateTime? expiresAt;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'url': url.toString(),
-  'scopes': ?scopes,
+  'scopes': scopes,
   'token': token,
-  'token_last_eight': ?tokenLastEight,
-  'hashed_token': ?hashedToken,
+  'token_last_eight': tokenLastEight,
+  'hashed_token': hashedToken,
   'app': app.toJson(),
-  'note': ?note,
-  if (noteUrl != null) 'note_url': noteUrl?.toString(),
+  'note': note,
+  'note_url': noteUrl != null ? noteUrl?.toString() : null,
   'updated_at': updatedAt.toIso8601String(),
   'created_at': createdAt.toIso8601String(),
-  'fingerprint': ?fingerprint,
+  'fingerprint': fingerprint,
   if (user != null) 'user': user?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
-  if (expiresAt != null) 'expires_at': expiresAt?.toIso8601String(),
+  'expires_at': expiresAt != null ? expiresAt?.toIso8601String() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('url') && json['url'] is String &&

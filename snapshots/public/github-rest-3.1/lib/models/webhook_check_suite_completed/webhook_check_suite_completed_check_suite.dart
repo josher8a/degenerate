@@ -105,13 +105,13 @@ final DateTime updatedAt;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  'after': ?after,
+  'after': after,
   'app': app.toJson(),
-  'before': ?before,
+  'before': before,
   'check_runs_url': checkRunsUrl.toString(),
-  if (conclusion != null) 'conclusion': conclusion?.toJson(),
+  'conclusion': conclusion != null ? conclusion?.toJson() : null,
   'created_at': createdAt.toIso8601String(),
-  'head_branch': ?headBranch,
+  'head_branch': headBranch,
   'head_commit': headCommit.toJson(),
   'head_sha': headSha,
   'id': id,
@@ -120,7 +120,7 @@ Map<String, dynamic> toJson() { return {
   'pull_requests': pullRequests.map((e) => e.toJson()).toList(),
   'rerequestable': ?rerequestable,
   'runs_rerequestable': ?runsRerequestable,
-  if (status != null) 'status': status?.toJson(),
+  'status': status != null ? status?.toJson() : null,
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
 }; } 

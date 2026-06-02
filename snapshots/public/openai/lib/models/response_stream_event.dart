@@ -242,7 +242,7 @@ ResponseStreamEventResponseAudioDelta copyWith({int? sequenceNumber, String? del
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseAudioDelta && responseAudioDeltaEvent == other.responseAudioDeltaEvent; } 
 @override int get hashCode { return responseAudioDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseAudioDelta(responseAudioDeltaEvent: $responseAudioDeltaEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseAudioDelta($responseAudioDeltaEvent)'; } 
 @override int get sequenceNumber { return responseAudioDeltaEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseAudioDone extends ResponseStreamEvent {const ResponseStreamEventResponseAudioDone(this.responseAudioDoneEvent);
@@ -259,7 +259,7 @@ ResponseStreamEventResponseAudioDone copyWith({int? sequenceNumber}) { return Re
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseAudioDone && responseAudioDoneEvent == other.responseAudioDoneEvent; } 
 @override int get hashCode { return responseAudioDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseAudioDone(responseAudioDoneEvent: $responseAudioDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseAudioDone($responseAudioDoneEvent)'; } 
 @override int get sequenceNumber { return responseAudioDoneEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseAudioTranscriptDelta extends ResponseStreamEvent {const ResponseStreamEventResponseAudioTranscriptDelta(this.responseAudioTranscriptDeltaEvent);
@@ -277,7 +277,7 @@ ResponseStreamEventResponseAudioTranscriptDelta copyWith({String? delta, int? se
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseAudioTranscriptDelta && responseAudioTranscriptDeltaEvent == other.responseAudioTranscriptDeltaEvent; } 
 @override int get hashCode { return responseAudioTranscriptDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseAudioTranscriptDelta(responseAudioTranscriptDeltaEvent: $responseAudioTranscriptDeltaEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseAudioTranscriptDelta($responseAudioTranscriptDeltaEvent)'; } 
 @override int get sequenceNumber { return responseAudioTranscriptDeltaEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseAudioTranscriptDone extends ResponseStreamEvent {const ResponseStreamEventResponseAudioTranscriptDone(this.responseAudioTranscriptDoneEvent);
@@ -294,7 +294,7 @@ ResponseStreamEventResponseAudioTranscriptDone copyWith({int? sequenceNumber}) {
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseAudioTranscriptDone && responseAudioTranscriptDoneEvent == other.responseAudioTranscriptDoneEvent; } 
 @override int get hashCode { return responseAudioTranscriptDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseAudioTranscriptDone(responseAudioTranscriptDoneEvent: $responseAudioTranscriptDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseAudioTranscriptDone($responseAudioTranscriptDoneEvent)'; } 
 @override int get sequenceNumber { return responseAudioTranscriptDoneEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseCodeInterpreterCallCodeDelta extends ResponseStreamEvent {const ResponseStreamEventResponseCodeInterpreterCallCodeDelta(this.responseCodeInterpreterCallCodeDeltaEvent);
@@ -314,7 +314,7 @@ ResponseStreamEventResponseCodeInterpreterCallCodeDelta copyWith({int? outputInd
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseCodeInterpreterCallCodeDelta && responseCodeInterpreterCallCodeDeltaEvent == other.responseCodeInterpreterCallCodeDeltaEvent; } 
 @override int get hashCode { return responseCodeInterpreterCallCodeDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseCodeInterpreterCallCodeDelta(responseCodeInterpreterCallCodeDeltaEvent: $responseCodeInterpreterCallCodeDeltaEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallCodeDelta($responseCodeInterpreterCallCodeDeltaEvent)'; } 
 @override int get sequenceNumber { return responseCodeInterpreterCallCodeDeltaEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseCodeInterpreterCallCodeDone extends ResponseStreamEvent {const ResponseStreamEventResponseCodeInterpreterCallCodeDone(this.responseCodeInterpreterCallCodeDoneEvent);
@@ -334,7 +334,7 @@ ResponseStreamEventResponseCodeInterpreterCallCodeDone copyWith({int? outputInde
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseCodeInterpreterCallCodeDone && responseCodeInterpreterCallCodeDoneEvent == other.responseCodeInterpreterCallCodeDoneEvent; } 
 @override int get hashCode { return responseCodeInterpreterCallCodeDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseCodeInterpreterCallCodeDone(responseCodeInterpreterCallCodeDoneEvent: $responseCodeInterpreterCallCodeDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallCodeDone($responseCodeInterpreterCallCodeDoneEvent)'; } 
 @override int get sequenceNumber { return responseCodeInterpreterCallCodeDoneEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseCodeInterpreterCallCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseCodeInterpreterCallCompleted(this.responseCodeInterpreterCallCompletedEvent);
@@ -353,7 +353,7 @@ ResponseStreamEventResponseCodeInterpreterCallCompleted copyWith({int? outputInd
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseCodeInterpreterCallCompleted && responseCodeInterpreterCallCompletedEvent == other.responseCodeInterpreterCallCompletedEvent; } 
 @override int get hashCode { return responseCodeInterpreterCallCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseCodeInterpreterCallCompleted(responseCodeInterpreterCallCompletedEvent: $responseCodeInterpreterCallCompletedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallCompleted($responseCodeInterpreterCallCompletedEvent)'; } 
 @override int get sequenceNumber { return responseCodeInterpreterCallCompletedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseCodeInterpreterCallInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseCodeInterpreterCallInProgress(this.responseCodeInterpreterCallInProgressEvent);
@@ -372,7 +372,7 @@ ResponseStreamEventResponseCodeInterpreterCallInProgress copyWith({int? outputIn
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseCodeInterpreterCallInProgress && responseCodeInterpreterCallInProgressEvent == other.responseCodeInterpreterCallInProgressEvent; } 
 @override int get hashCode { return responseCodeInterpreterCallInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseCodeInterpreterCallInProgress(responseCodeInterpreterCallInProgressEvent: $responseCodeInterpreterCallInProgressEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallInProgress($responseCodeInterpreterCallInProgressEvent)'; } 
 @override int get sequenceNumber { return responseCodeInterpreterCallInProgressEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseCodeInterpreterCallInterpreting extends ResponseStreamEvent {const ResponseStreamEventResponseCodeInterpreterCallInterpreting(this.responseCodeInterpreterCallInterpretingEvent);
@@ -391,7 +391,7 @@ ResponseStreamEventResponseCodeInterpreterCallInterpreting copyWith({int? output
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseCodeInterpreterCallInterpreting && responseCodeInterpreterCallInterpretingEvent == other.responseCodeInterpreterCallInterpretingEvent; } 
 @override int get hashCode { return responseCodeInterpreterCallInterpretingEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseCodeInterpreterCallInterpreting(responseCodeInterpreterCallInterpretingEvent: $responseCodeInterpreterCallInterpretingEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallInterpreting($responseCodeInterpreterCallInterpretingEvent)'; } 
 @override int get sequenceNumber { return responseCodeInterpreterCallInterpretingEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseCompleted(this.responseCompletedEvent);
@@ -409,7 +409,7 @@ ResponseStreamEventResponseCompleted copyWith({Response? response, int? sequence
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseCompleted && responseCompletedEvent == other.responseCompletedEvent; } 
 @override int get hashCode { return responseCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseCompleted(responseCompletedEvent: $responseCompletedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseCompleted($responseCompletedEvent)'; } 
 @override int get sequenceNumber { return responseCompletedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseContentPartAdded extends ResponseStreamEvent {const ResponseStreamEventResponseContentPartAdded(this.responseContentPartAddedEvent);
@@ -430,7 +430,7 @@ ResponseStreamEventResponseContentPartAdded copyWith({String? itemId, int? outpu
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseContentPartAdded && responseContentPartAddedEvent == other.responseContentPartAddedEvent; } 
 @override int get hashCode { return responseContentPartAddedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseContentPartAdded(responseContentPartAddedEvent: $responseContentPartAddedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseContentPartAdded($responseContentPartAddedEvent)'; } 
 @override int get sequenceNumber { return responseContentPartAddedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseContentPartDone extends ResponseStreamEvent {const ResponseStreamEventResponseContentPartDone(this.responseContentPartDoneEvent);
@@ -451,7 +451,7 @@ ResponseStreamEventResponseContentPartDone copyWith({String? itemId, int? output
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseContentPartDone && responseContentPartDoneEvent == other.responseContentPartDoneEvent; } 
 @override int get hashCode { return responseContentPartDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseContentPartDone(responseContentPartDoneEvent: $responseContentPartDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseContentPartDone($responseContentPartDoneEvent)'; } 
 @override int get sequenceNumber { return responseContentPartDoneEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseCreated extends ResponseStreamEvent {const ResponseStreamEventResponseCreated(this.responseCreatedEvent);
@@ -469,7 +469,7 @@ ResponseStreamEventResponseCreated copyWith({Response? response, int? sequenceNu
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseCreated && responseCreatedEvent == other.responseCreatedEvent; } 
 @override int get hashCode { return responseCreatedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseCreated(responseCreatedEvent: $responseCreatedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseCreated($responseCreatedEvent)'; } 
 @override int get sequenceNumber { return responseCreatedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventError extends ResponseStreamEvent {const ResponseStreamEventError(this.responseErrorEvent);
@@ -489,7 +489,7 @@ ResponseStreamEventError copyWith({String? Function()? code, String? message, St
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventError && responseErrorEvent == other.responseErrorEvent; } 
 @override int get hashCode { return responseErrorEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventError(responseErrorEvent: $responseErrorEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.error($responseErrorEvent)'; } 
 @override int get sequenceNumber { return responseErrorEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseFileSearchCallCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseFileSearchCallCompleted(this.responseFileSearchCallCompletedEvent);
@@ -508,7 +508,7 @@ ResponseStreamEventResponseFileSearchCallCompleted copyWith({int? outputIndex, S
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseFileSearchCallCompleted && responseFileSearchCallCompletedEvent == other.responseFileSearchCallCompletedEvent; } 
 @override int get hashCode { return responseFileSearchCallCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseFileSearchCallCompleted(responseFileSearchCallCompletedEvent: $responseFileSearchCallCompletedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseFileSearchCallCompleted($responseFileSearchCallCompletedEvent)'; } 
 @override int get sequenceNumber { return responseFileSearchCallCompletedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseFileSearchCallInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseFileSearchCallInProgress(this.responseFileSearchCallInProgressEvent);
@@ -527,7 +527,7 @@ ResponseStreamEventResponseFileSearchCallInProgress copyWith({int? outputIndex, 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseFileSearchCallInProgress && responseFileSearchCallInProgressEvent == other.responseFileSearchCallInProgressEvent; } 
 @override int get hashCode { return responseFileSearchCallInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseFileSearchCallInProgress(responseFileSearchCallInProgressEvent: $responseFileSearchCallInProgressEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseFileSearchCallInProgress($responseFileSearchCallInProgressEvent)'; } 
 @override int get sequenceNumber { return responseFileSearchCallInProgressEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseFileSearchCallSearching extends ResponseStreamEvent {const ResponseStreamEventResponseFileSearchCallSearching(this.responseFileSearchCallSearchingEvent);
@@ -546,7 +546,7 @@ ResponseStreamEventResponseFileSearchCallSearching copyWith({int? outputIndex, S
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseFileSearchCallSearching && responseFileSearchCallSearchingEvent == other.responseFileSearchCallSearchingEvent; } 
 @override int get hashCode { return responseFileSearchCallSearchingEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseFileSearchCallSearching(responseFileSearchCallSearchingEvent: $responseFileSearchCallSearchingEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseFileSearchCallSearching($responseFileSearchCallSearchingEvent)'; } 
 @override int get sequenceNumber { return responseFileSearchCallSearchingEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseFunctionCallArgumentsDelta extends ResponseStreamEvent {const ResponseStreamEventResponseFunctionCallArgumentsDelta(this.responseFunctionCallArgumentsDeltaEvent);
@@ -566,7 +566,7 @@ ResponseStreamEventResponseFunctionCallArgumentsDelta copyWith({String? itemId, 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseFunctionCallArgumentsDelta && responseFunctionCallArgumentsDeltaEvent == other.responseFunctionCallArgumentsDeltaEvent; } 
 @override int get hashCode { return responseFunctionCallArgumentsDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseFunctionCallArgumentsDelta(responseFunctionCallArgumentsDeltaEvent: $responseFunctionCallArgumentsDeltaEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseFunctionCallArgumentsDelta($responseFunctionCallArgumentsDeltaEvent)'; } 
 @override int get sequenceNumber { return responseFunctionCallArgumentsDeltaEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseFunctionCallArgumentsDone extends ResponseStreamEvent {const ResponseStreamEventResponseFunctionCallArgumentsDone(this.responseFunctionCallArgumentsDoneEvent);
@@ -587,7 +587,7 @@ ResponseStreamEventResponseFunctionCallArgumentsDone copyWith({String? itemId, S
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseFunctionCallArgumentsDone && responseFunctionCallArgumentsDoneEvent == other.responseFunctionCallArgumentsDoneEvent; } 
 @override int get hashCode { return responseFunctionCallArgumentsDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseFunctionCallArgumentsDone(responseFunctionCallArgumentsDoneEvent: $responseFunctionCallArgumentsDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseFunctionCallArgumentsDone($responseFunctionCallArgumentsDoneEvent)'; } 
 @override int get sequenceNumber { return responseFunctionCallArgumentsDoneEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseInProgress(this.responseInProgressEvent);
@@ -605,7 +605,7 @@ ResponseStreamEventResponseInProgress copyWith({Response? response, int? sequenc
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseInProgress && responseInProgressEvent == other.responseInProgressEvent; } 
 @override int get hashCode { return responseInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseInProgress(responseInProgressEvent: $responseInProgressEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseInProgress($responseInProgressEvent)'; } 
 @override int get sequenceNumber { return responseInProgressEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseFailed extends ResponseStreamEvent {const ResponseStreamEventResponseFailed(this.responseFailedEvent);
@@ -623,7 +623,7 @@ ResponseStreamEventResponseFailed copyWith({int? sequenceNumber, Response? respo
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseFailed && responseFailedEvent == other.responseFailedEvent; } 
 @override int get hashCode { return responseFailedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseFailed(responseFailedEvent: $responseFailedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseFailed($responseFailedEvent)'; } 
 @override int get sequenceNumber { return responseFailedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseIncomplete extends ResponseStreamEvent {const ResponseStreamEventResponseIncomplete(this.responseIncompleteEvent);
@@ -641,7 +641,7 @@ ResponseStreamEventResponseIncomplete copyWith({Response? response, int? sequenc
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseIncomplete && responseIncompleteEvent == other.responseIncompleteEvent; } 
 @override int get hashCode { return responseIncompleteEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseIncomplete(responseIncompleteEvent: $responseIncompleteEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseIncomplete($responseIncompleteEvent)'; } 
 @override int get sequenceNumber { return responseIncompleteEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseOutputItemAdded extends ResponseStreamEvent {const ResponseStreamEventResponseOutputItemAdded(this.responseOutputItemAddedEvent);
@@ -660,7 +660,7 @@ ResponseStreamEventResponseOutputItemAdded copyWith({int? outputIndex, int? sequ
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseOutputItemAdded && responseOutputItemAddedEvent == other.responseOutputItemAddedEvent; } 
 @override int get hashCode { return responseOutputItemAddedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseOutputItemAdded(responseOutputItemAddedEvent: $responseOutputItemAddedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseOutputItemAdded($responseOutputItemAddedEvent)'; } 
 @override int get sequenceNumber { return responseOutputItemAddedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseOutputItemDone extends ResponseStreamEvent {const ResponseStreamEventResponseOutputItemDone(this.responseOutputItemDoneEvent);
@@ -679,7 +679,7 @@ ResponseStreamEventResponseOutputItemDone copyWith({int? outputIndex, int? seque
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseOutputItemDone && responseOutputItemDoneEvent == other.responseOutputItemDoneEvent; } 
 @override int get hashCode { return responseOutputItemDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseOutputItemDone(responseOutputItemDoneEvent: $responseOutputItemDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseOutputItemDone($responseOutputItemDoneEvent)'; } 
 @override int get sequenceNumber { return responseOutputItemDoneEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseReasoningSummaryPartAdded extends ResponseStreamEvent {const ResponseStreamEventResponseReasoningSummaryPartAdded(this.responseReasoningSummaryPartAddedEvent);
@@ -700,7 +700,7 @@ ResponseStreamEventResponseReasoningSummaryPartAdded copyWith({String? itemId, i
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseReasoningSummaryPartAdded && responseReasoningSummaryPartAddedEvent == other.responseReasoningSummaryPartAddedEvent; } 
 @override int get hashCode { return responseReasoningSummaryPartAddedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseReasoningSummaryPartAdded(responseReasoningSummaryPartAddedEvent: $responseReasoningSummaryPartAddedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseReasoningSummaryPartAdded($responseReasoningSummaryPartAddedEvent)'; } 
 @override int get sequenceNumber { return responseReasoningSummaryPartAddedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseReasoningSummaryPartDone extends ResponseStreamEvent {const ResponseStreamEventResponseReasoningSummaryPartDone(this.responseReasoningSummaryPartDoneEvent);
@@ -721,7 +721,7 @@ ResponseStreamEventResponseReasoningSummaryPartDone copyWith({String? itemId, in
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseReasoningSummaryPartDone && responseReasoningSummaryPartDoneEvent == other.responseReasoningSummaryPartDoneEvent; } 
 @override int get hashCode { return responseReasoningSummaryPartDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseReasoningSummaryPartDone(responseReasoningSummaryPartDoneEvent: $responseReasoningSummaryPartDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseReasoningSummaryPartDone($responseReasoningSummaryPartDoneEvent)'; } 
 @override int get sequenceNumber { return responseReasoningSummaryPartDoneEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseReasoningSummaryTextDelta extends ResponseStreamEvent {const ResponseStreamEventResponseReasoningSummaryTextDelta(this.responseReasoningSummaryTextDeltaEvent);
@@ -742,7 +742,7 @@ ResponseStreamEventResponseReasoningSummaryTextDelta copyWith({String? itemId, i
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseReasoningSummaryTextDelta && responseReasoningSummaryTextDeltaEvent == other.responseReasoningSummaryTextDeltaEvent; } 
 @override int get hashCode { return responseReasoningSummaryTextDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseReasoningSummaryTextDelta(responseReasoningSummaryTextDeltaEvent: $responseReasoningSummaryTextDeltaEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseReasoningSummaryTextDelta($responseReasoningSummaryTextDeltaEvent)'; } 
 @override int get sequenceNumber { return responseReasoningSummaryTextDeltaEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseReasoningSummaryTextDone extends ResponseStreamEvent {const ResponseStreamEventResponseReasoningSummaryTextDone(this.responseReasoningSummaryTextDoneEvent);
@@ -763,7 +763,7 @@ ResponseStreamEventResponseReasoningSummaryTextDone copyWith({String? itemId, in
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseReasoningSummaryTextDone && responseReasoningSummaryTextDoneEvent == other.responseReasoningSummaryTextDoneEvent; } 
 @override int get hashCode { return responseReasoningSummaryTextDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseReasoningSummaryTextDone(responseReasoningSummaryTextDoneEvent: $responseReasoningSummaryTextDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseReasoningSummaryTextDone($responseReasoningSummaryTextDoneEvent)'; } 
 @override int get sequenceNumber { return responseReasoningSummaryTextDoneEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseReasoningTextDelta extends ResponseStreamEvent {const ResponseStreamEventResponseReasoningTextDelta(this.responseReasoningTextDeltaEvent);
@@ -784,7 +784,7 @@ ResponseStreamEventResponseReasoningTextDelta copyWith({String? itemId, int? out
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseReasoningTextDelta && responseReasoningTextDeltaEvent == other.responseReasoningTextDeltaEvent; } 
 @override int get hashCode { return responseReasoningTextDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseReasoningTextDelta(responseReasoningTextDeltaEvent: $responseReasoningTextDeltaEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseReasoningTextDelta($responseReasoningTextDeltaEvent)'; } 
 @override int get sequenceNumber { return responseReasoningTextDeltaEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseReasoningTextDone extends ResponseStreamEvent {const ResponseStreamEventResponseReasoningTextDone(this.responseReasoningTextDoneEvent);
@@ -805,7 +805,7 @@ ResponseStreamEventResponseReasoningTextDone copyWith({String? itemId, int? outp
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseReasoningTextDone && responseReasoningTextDoneEvent == other.responseReasoningTextDoneEvent; } 
 @override int get hashCode { return responseReasoningTextDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseReasoningTextDone(responseReasoningTextDoneEvent: $responseReasoningTextDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseReasoningTextDone($responseReasoningTextDoneEvent)'; } 
 @override int get sequenceNumber { return responseReasoningTextDoneEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseRefusalDelta extends ResponseStreamEvent {const ResponseStreamEventResponseRefusalDelta(this.responseRefusalDeltaEvent);
@@ -826,7 +826,7 @@ ResponseStreamEventResponseRefusalDelta copyWith({String? itemId, int? outputInd
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseRefusalDelta && responseRefusalDeltaEvent == other.responseRefusalDeltaEvent; } 
 @override int get hashCode { return responseRefusalDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseRefusalDelta(responseRefusalDeltaEvent: $responseRefusalDeltaEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseRefusalDelta($responseRefusalDeltaEvent)'; } 
 @override int get sequenceNumber { return responseRefusalDeltaEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseRefusalDone extends ResponseStreamEvent {const ResponseStreamEventResponseRefusalDone(this.responseRefusalDoneEvent);
@@ -847,7 +847,7 @@ ResponseStreamEventResponseRefusalDone copyWith({String? itemId, int? outputInde
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseRefusalDone && responseRefusalDoneEvent == other.responseRefusalDoneEvent; } 
 @override int get hashCode { return responseRefusalDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseRefusalDone(responseRefusalDoneEvent: $responseRefusalDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseRefusalDone($responseRefusalDoneEvent)'; } 
 @override int get sequenceNumber { return responseRefusalDoneEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseOutputTextDelta extends ResponseStreamEvent {const ResponseStreamEventResponseOutputTextDelta(this.responseTextDeltaEvent);
@@ -869,7 +869,7 @@ ResponseStreamEventResponseOutputTextDelta copyWith({String? itemId, int? output
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseOutputTextDelta && responseTextDeltaEvent == other.responseTextDeltaEvent; } 
 @override int get hashCode { return responseTextDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseOutputTextDelta(responseTextDeltaEvent: $responseTextDeltaEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseOutputTextDelta($responseTextDeltaEvent)'; } 
 @override int get sequenceNumber { return responseTextDeltaEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseOutputTextDone extends ResponseStreamEvent {const ResponseStreamEventResponseOutputTextDone(this.responseTextDoneEvent);
@@ -891,7 +891,7 @@ ResponseStreamEventResponseOutputTextDone copyWith({String? itemId, int? outputI
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseOutputTextDone && responseTextDoneEvent == other.responseTextDoneEvent; } 
 @override int get hashCode { return responseTextDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseOutputTextDone(responseTextDoneEvent: $responseTextDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseOutputTextDone($responseTextDoneEvent)'; } 
 @override int get sequenceNumber { return responseTextDoneEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseWebSearchCallCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseWebSearchCallCompleted(this.responseWebSearchCallCompletedEvent);
@@ -910,7 +910,7 @@ ResponseStreamEventResponseWebSearchCallCompleted copyWith({int? outputIndex, St
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseWebSearchCallCompleted && responseWebSearchCallCompletedEvent == other.responseWebSearchCallCompletedEvent; } 
 @override int get hashCode { return responseWebSearchCallCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseWebSearchCallCompleted(responseWebSearchCallCompletedEvent: $responseWebSearchCallCompletedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseWebSearchCallCompleted($responseWebSearchCallCompletedEvent)'; } 
 @override int get sequenceNumber { return responseWebSearchCallCompletedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseWebSearchCallInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseWebSearchCallInProgress(this.responseWebSearchCallInProgressEvent);
@@ -929,7 +929,7 @@ ResponseStreamEventResponseWebSearchCallInProgress copyWith({int? outputIndex, S
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseWebSearchCallInProgress && responseWebSearchCallInProgressEvent == other.responseWebSearchCallInProgressEvent; } 
 @override int get hashCode { return responseWebSearchCallInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseWebSearchCallInProgress(responseWebSearchCallInProgressEvent: $responseWebSearchCallInProgressEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseWebSearchCallInProgress($responseWebSearchCallInProgressEvent)'; } 
 @override int get sequenceNumber { return responseWebSearchCallInProgressEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseWebSearchCallSearching extends ResponseStreamEvent {const ResponseStreamEventResponseWebSearchCallSearching(this.responseWebSearchCallSearchingEvent);
@@ -948,7 +948,7 @@ ResponseStreamEventResponseWebSearchCallSearching copyWith({int? outputIndex, St
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseWebSearchCallSearching && responseWebSearchCallSearchingEvent == other.responseWebSearchCallSearchingEvent; } 
 @override int get hashCode { return responseWebSearchCallSearchingEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseWebSearchCallSearching(responseWebSearchCallSearchingEvent: $responseWebSearchCallSearchingEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseWebSearchCallSearching($responseWebSearchCallSearchingEvent)'; } 
 @override int get sequenceNumber { return responseWebSearchCallSearchingEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseImageGenerationCallCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseImageGenerationCallCompleted(this.responseImageGenCallCompletedEvent);
@@ -967,7 +967,7 @@ ResponseStreamEventResponseImageGenerationCallCompleted copyWith({int? outputInd
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseImageGenerationCallCompleted && responseImageGenCallCompletedEvent == other.responseImageGenCallCompletedEvent; } 
 @override int get hashCode { return responseImageGenCallCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseImageGenerationCallCompleted(responseImageGenCallCompletedEvent: $responseImageGenCallCompletedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseImageGenerationCallCompleted($responseImageGenCallCompletedEvent)'; } 
 @override int get sequenceNumber { return responseImageGenCallCompletedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseImageGenerationCallGenerating extends ResponseStreamEvent {const ResponseStreamEventResponseImageGenerationCallGenerating(this.responseImageGenCallGeneratingEvent);
@@ -986,7 +986,7 @@ ResponseStreamEventResponseImageGenerationCallGenerating copyWith({int? outputIn
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseImageGenerationCallGenerating && responseImageGenCallGeneratingEvent == other.responseImageGenCallGeneratingEvent; } 
 @override int get hashCode { return responseImageGenCallGeneratingEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseImageGenerationCallGenerating(responseImageGenCallGeneratingEvent: $responseImageGenCallGeneratingEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseImageGenerationCallGenerating($responseImageGenCallGeneratingEvent)'; } 
 @override int get sequenceNumber { return responseImageGenCallGeneratingEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseImageGenerationCallInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseImageGenerationCallInProgress(this.responseImageGenCallInProgressEvent);
@@ -1005,7 +1005,7 @@ ResponseStreamEventResponseImageGenerationCallInProgress copyWith({int? outputIn
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseImageGenerationCallInProgress && responseImageGenCallInProgressEvent == other.responseImageGenCallInProgressEvent; } 
 @override int get hashCode { return responseImageGenCallInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseImageGenerationCallInProgress(responseImageGenCallInProgressEvent: $responseImageGenCallInProgressEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseImageGenerationCallInProgress($responseImageGenCallInProgressEvent)'; } 
 @override int get sequenceNumber { return responseImageGenCallInProgressEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseImageGenerationCallPartialImage extends ResponseStreamEvent {const ResponseStreamEventResponseImageGenerationCallPartialImage(this.responseImageGenCallPartialImageEvent);
@@ -1026,7 +1026,7 @@ ResponseStreamEventResponseImageGenerationCallPartialImage copyWith({int? output
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseImageGenerationCallPartialImage && responseImageGenCallPartialImageEvent == other.responseImageGenCallPartialImageEvent; } 
 @override int get hashCode { return responseImageGenCallPartialImageEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseImageGenerationCallPartialImage(responseImageGenCallPartialImageEvent: $responseImageGenCallPartialImageEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseImageGenerationCallPartialImage($responseImageGenCallPartialImageEvent)'; } 
 @override int get sequenceNumber { return responseImageGenCallPartialImageEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseMcpCallArgumentsDelta extends ResponseStreamEvent {const ResponseStreamEventResponseMcpCallArgumentsDelta(this.responseMcpCallArgumentsDeltaEvent);
@@ -1046,7 +1046,7 @@ ResponseStreamEventResponseMcpCallArgumentsDelta copyWith({int? outputIndex, Str
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseMcpCallArgumentsDelta && responseMcpCallArgumentsDeltaEvent == other.responseMcpCallArgumentsDeltaEvent; } 
 @override int get hashCode { return responseMcpCallArgumentsDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseMcpCallArgumentsDelta(responseMcpCallArgumentsDeltaEvent: $responseMcpCallArgumentsDeltaEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseMcpCallArgumentsDelta($responseMcpCallArgumentsDeltaEvent)'; } 
 @override int get sequenceNumber { return responseMcpCallArgumentsDeltaEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseMcpCallArgumentsDone extends ResponseStreamEvent {const ResponseStreamEventResponseMcpCallArgumentsDone(this.responseMcpCallArgumentsDoneEvent);
@@ -1066,7 +1066,7 @@ ResponseStreamEventResponseMcpCallArgumentsDone copyWith({int? outputIndex, Stri
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseMcpCallArgumentsDone && responseMcpCallArgumentsDoneEvent == other.responseMcpCallArgumentsDoneEvent; } 
 @override int get hashCode { return responseMcpCallArgumentsDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseMcpCallArgumentsDone(responseMcpCallArgumentsDoneEvent: $responseMcpCallArgumentsDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseMcpCallArgumentsDone($responseMcpCallArgumentsDoneEvent)'; } 
 @override int get sequenceNumber { return responseMcpCallArgumentsDoneEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseMcpCallCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseMcpCallCompleted(this.responseMcpCallCompletedEvent);
@@ -1085,7 +1085,7 @@ ResponseStreamEventResponseMcpCallCompleted copyWith({String? itemId, int? outpu
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseMcpCallCompleted && responseMcpCallCompletedEvent == other.responseMcpCallCompletedEvent; } 
 @override int get hashCode { return responseMcpCallCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseMcpCallCompleted(responseMcpCallCompletedEvent: $responseMcpCallCompletedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseMcpCallCompleted($responseMcpCallCompletedEvent)'; } 
 @override int get sequenceNumber { return responseMcpCallCompletedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseMcpCallFailed extends ResponseStreamEvent {const ResponseStreamEventResponseMcpCallFailed(this.responseMcpCallFailedEvent);
@@ -1104,7 +1104,7 @@ ResponseStreamEventResponseMcpCallFailed copyWith({String? itemId, int? outputIn
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseMcpCallFailed && responseMcpCallFailedEvent == other.responseMcpCallFailedEvent; } 
 @override int get hashCode { return responseMcpCallFailedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseMcpCallFailed(responseMcpCallFailedEvent: $responseMcpCallFailedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseMcpCallFailed($responseMcpCallFailedEvent)'; } 
 @override int get sequenceNumber { return responseMcpCallFailedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseMcpCallInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseMcpCallInProgress(this.responseMcpCallInProgressEvent);
@@ -1123,7 +1123,7 @@ ResponseStreamEventResponseMcpCallInProgress copyWith({int? sequenceNumber, int?
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseMcpCallInProgress && responseMcpCallInProgressEvent == other.responseMcpCallInProgressEvent; } 
 @override int get hashCode { return responseMcpCallInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseMcpCallInProgress(responseMcpCallInProgressEvent: $responseMcpCallInProgressEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseMcpCallInProgress($responseMcpCallInProgressEvent)'; } 
 @override int get sequenceNumber { return responseMcpCallInProgressEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseMcpListToolsCompleted extends ResponseStreamEvent {const ResponseStreamEventResponseMcpListToolsCompleted(this.responseMcpListToolsCompletedEvent);
@@ -1142,7 +1142,7 @@ ResponseStreamEventResponseMcpListToolsCompleted copyWith({String? itemId, int? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseMcpListToolsCompleted && responseMcpListToolsCompletedEvent == other.responseMcpListToolsCompletedEvent; } 
 @override int get hashCode { return responseMcpListToolsCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseMcpListToolsCompleted(responseMcpListToolsCompletedEvent: $responseMcpListToolsCompletedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseMcpListToolsCompleted($responseMcpListToolsCompletedEvent)'; } 
 @override int get sequenceNumber { return responseMcpListToolsCompletedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseMcpListToolsFailed extends ResponseStreamEvent {const ResponseStreamEventResponseMcpListToolsFailed(this.responseMcpListToolsFailedEvent);
@@ -1161,7 +1161,7 @@ ResponseStreamEventResponseMcpListToolsFailed copyWith({String? itemId, int? out
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseMcpListToolsFailed && responseMcpListToolsFailedEvent == other.responseMcpListToolsFailedEvent; } 
 @override int get hashCode { return responseMcpListToolsFailedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseMcpListToolsFailed(responseMcpListToolsFailedEvent: $responseMcpListToolsFailedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseMcpListToolsFailed($responseMcpListToolsFailedEvent)'; } 
 @override int get sequenceNumber { return responseMcpListToolsFailedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseMcpListToolsInProgress extends ResponseStreamEvent {const ResponseStreamEventResponseMcpListToolsInProgress(this.responseMcpListToolsInProgressEvent);
@@ -1180,7 +1180,7 @@ ResponseStreamEventResponseMcpListToolsInProgress copyWith({String? itemId, int?
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseMcpListToolsInProgress && responseMcpListToolsInProgressEvent == other.responseMcpListToolsInProgressEvent; } 
 @override int get hashCode { return responseMcpListToolsInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseMcpListToolsInProgress(responseMcpListToolsInProgressEvent: $responseMcpListToolsInProgressEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseMcpListToolsInProgress($responseMcpListToolsInProgressEvent)'; } 
 @override int get sequenceNumber { return responseMcpListToolsInProgressEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseOutputTextAnnotationAdded extends ResponseStreamEvent {const ResponseStreamEventResponseOutputTextAnnotationAdded(this.responseOutputTextAnnotationAddedEvent);
@@ -1202,7 +1202,7 @@ ResponseStreamEventResponseOutputTextAnnotationAdded copyWith({String? itemId, i
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseOutputTextAnnotationAdded && responseOutputTextAnnotationAddedEvent == other.responseOutputTextAnnotationAddedEvent; } 
 @override int get hashCode { return responseOutputTextAnnotationAddedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseOutputTextAnnotationAdded(responseOutputTextAnnotationAddedEvent: $responseOutputTextAnnotationAddedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseOutputTextAnnotationAdded($responseOutputTextAnnotationAddedEvent)'; } 
 @override int get sequenceNumber { return responseOutputTextAnnotationAddedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseQueued extends ResponseStreamEvent {const ResponseStreamEventResponseQueued(this.responseQueuedEvent);
@@ -1220,7 +1220,7 @@ ResponseStreamEventResponseQueued copyWith({Response? response, int? sequenceNum
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseQueued && responseQueuedEvent == other.responseQueuedEvent; } 
 @override int get hashCode { return responseQueuedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseQueued(responseQueuedEvent: $responseQueuedEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseQueued($responseQueuedEvent)'; } 
 @override int get sequenceNumber { return responseQueuedEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseCustomToolCallInputDelta extends ResponseStreamEvent {const ResponseStreamEventResponseCustomToolCallInputDelta(this.responseCustomToolCallInputDeltaEvent);
@@ -1240,7 +1240,7 @@ ResponseStreamEventResponseCustomToolCallInputDelta copyWith({int? sequenceNumbe
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseCustomToolCallInputDelta && responseCustomToolCallInputDeltaEvent == other.responseCustomToolCallInputDeltaEvent; } 
 @override int get hashCode { return responseCustomToolCallInputDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseCustomToolCallInputDelta(responseCustomToolCallInputDeltaEvent: $responseCustomToolCallInputDeltaEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseCustomToolCallInputDelta($responseCustomToolCallInputDeltaEvent)'; } 
 @override int get sequenceNumber { return responseCustomToolCallInputDeltaEvent.sequenceNumber; } 
  }
 @immutable final class ResponseStreamEventResponseCustomToolCallInputDone extends ResponseStreamEvent {const ResponseStreamEventResponseCustomToolCallInputDone(this.responseCustomToolCallInputDoneEvent);
@@ -1260,7 +1260,7 @@ ResponseStreamEventResponseCustomToolCallInputDone copyWith({int? sequenceNumber
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseStreamEventResponseCustomToolCallInputDone && responseCustomToolCallInputDoneEvent == other.responseCustomToolCallInputDoneEvent; } 
 @override int get hashCode { return responseCustomToolCallInputDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEventResponseCustomToolCallInputDone(responseCustomToolCallInputDoneEvent: $responseCustomToolCallInputDoneEvent)'; } 
+@override String toString() { return 'ResponseStreamEvent.responseCustomToolCallInputDone($responseCustomToolCallInputDoneEvent)'; } 
 @override int get sequenceNumber { return responseCustomToolCallInputDoneEvent.sequenceNumber; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

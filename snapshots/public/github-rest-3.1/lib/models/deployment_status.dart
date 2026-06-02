@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
   'state': state.toJson(),
-  if (creator != null) 'creator': creator?.toJson(),
+  'creator': creator != null ? creator?.toJson() : null,
   'description': description,
   'environment': environment,
   'target_url': targetUrl.toString(),

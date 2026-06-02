@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (creator != null) 'creator': creator?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (archivedAt != null) 'archived_at': archivedAt?.toIso8601String(),
+  'archived_at': archivedAt != null ? archivedAt?.toIso8601String() : null,
   if (projectUrl != null) 'project_url': projectUrl?.toString(),
   if (itemUrl != null) 'item_url': itemUrl?.toString(),
 }; } 

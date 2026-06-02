@@ -43,7 +43,7 @@ ApplyPatchToolCallOperationCreateFile copyWith({String? path, String? diff, }) {
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ApplyPatchToolCallOperationCreateFile && applyPatchCreateFileOperation == other.applyPatchCreateFileOperation; } 
 @override int get hashCode { return applyPatchCreateFileOperation.hashCode; } 
-@override String toString() { return 'ApplyPatchToolCallOperationCreateFile(applyPatchCreateFileOperation: $applyPatchCreateFileOperation)'; } 
+@override String toString() { return 'ApplyPatchToolCallOperation.createFile($applyPatchCreateFileOperation)'; } 
 @override String get path { return applyPatchCreateFileOperation.path; } 
  }
 @immutable final class ApplyPatchToolCallOperationDeleteFile extends ApplyPatchToolCallOperation {const ApplyPatchToolCallOperationDeleteFile(this.applyPatchDeleteFileOperation);
@@ -60,7 +60,7 @@ ApplyPatchToolCallOperationDeleteFile copyWith({String? path}) { return ApplyPat
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ApplyPatchToolCallOperationDeleteFile && applyPatchDeleteFileOperation == other.applyPatchDeleteFileOperation; } 
 @override int get hashCode { return applyPatchDeleteFileOperation.hashCode; } 
-@override String toString() { return 'ApplyPatchToolCallOperationDeleteFile(applyPatchDeleteFileOperation: $applyPatchDeleteFileOperation)'; } 
+@override String toString() { return 'ApplyPatchToolCallOperation.deleteFile($applyPatchDeleteFileOperation)'; } 
 @override String get path { return applyPatchDeleteFileOperation.path; } 
  }
 @immutable final class ApplyPatchToolCallOperationUpdateFile extends ApplyPatchToolCallOperation {const ApplyPatchToolCallOperationUpdateFile(this.applyPatchUpdateFileOperation);
@@ -78,7 +78,7 @@ ApplyPatchToolCallOperationUpdateFile copyWith({String? path, String? diff, }) {
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ApplyPatchToolCallOperationUpdateFile && applyPatchUpdateFileOperation == other.applyPatchUpdateFileOperation; } 
 @override int get hashCode { return applyPatchUpdateFileOperation.hashCode; } 
-@override String toString() { return 'ApplyPatchToolCallOperationUpdateFile(applyPatchUpdateFileOperation: $applyPatchUpdateFileOperation)'; } 
+@override String toString() { return 'ApplyPatchToolCallOperation.updateFile($applyPatchUpdateFileOperation)'; } 
 @override String get path { return applyPatchUpdateFileOperation.path; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

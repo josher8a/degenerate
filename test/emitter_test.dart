@@ -327,6 +327,43 @@ void main() {
         // name is required and non-nullable — should use non-nullable cast
         expect(source, contains("json['name'] as String"));
       });
+
+      test('toJson always emits key for required + nullable field', () {
+        const model = IrObject(
+          'NullablePayload',
+          [
+            IrField(
+              'id',
+              'id',
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
+            IrField(
+              'label',
+              'label',
+              IrPrimitive(PrimitiveKind.string, isNullable: true),
+              isRequired: true,
+            ),
+            IrField(
+              'tag',
+              'tag',
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: false,
+            ),
+          ],
+          requiredFields: ['id', 'label'],
+        );
+        final specs = const ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        final source = emitRaw(library);
+
+        // Required + non-nullable: always present
+        expect(source, contains("'id': id"));
+        // Required + nullable: always emits the key (value may be null)
+        expect(source, contains("'label': label"));
+        // Optional: uses null-aware element to omit when null
+        expect(source, contains("'tag': ?tag"));
+      });
     });
 
     group('ErrorModel model', () {

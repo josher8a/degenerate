@@ -148,7 +148,7 @@ final MagicVisibilityMnmMnmRuleZscoreSensitivity? zscoreSensitivity;
 final MagicVisibilityMnmMnmRuleZscoreTarget? zscoreTarget;
 
 Map<String, dynamic> toJson() { return {
-  if (automaticAdvertisement != null) 'automatic_advertisement': automaticAdvertisement?.toJson(),
+  'automatic_advertisement': automaticAdvertisement != null ? automaticAdvertisement?.toJson() : null,
   if (bandwidthThreshold != null) 'bandwidth_threshold': bandwidthThreshold?.toJson(),
   if (duration != null) 'duration': duration?.toJson(),
   if (id != null) 'id': id?.toJson(),

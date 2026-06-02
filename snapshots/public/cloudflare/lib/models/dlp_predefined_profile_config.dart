@@ -40,7 +40,7 @@ final bool? openAccess;
 Map<String, dynamic> toJson() { return {
   'ai_context_enabled': aiContextEnabled,
   'allowed_match_count': allowedMatchCount,
-  'confidence_threshold': ?confidenceThreshold,
+  'confidence_threshold': confidenceThreshold,
   'enabled_entries': enabledEntries,
   'entries': entries.map((e) => e.toJson()).toList(),
   'id': id,

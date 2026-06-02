@@ -84,7 +84,7 @@ ToolFunction copyWith({String? name, String? Function()? description, Map<String
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolFunction && functionTool == other.functionTool; } 
 @override int get hashCode { return functionTool.hashCode; } 
-@override String toString() { return 'ToolFunction(functionTool: $functionTool)'; } 
+@override String toString() { return 'Tool.function($functionTool)'; } 
  }
 @immutable final class ToolFileSearch extends Tool {const ToolFileSearch(this.fileSearchTool);
 
@@ -103,7 +103,7 @@ ToolFileSearch copyWith({List<String>? vectorStoreIds, int? Function()? maxNumRe
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolFileSearch && fileSearchTool == other.fileSearchTool; } 
 @override int get hashCode { return fileSearchTool.hashCode; } 
-@override String toString() { return 'ToolFileSearch(fileSearchTool: $fileSearchTool)'; } 
+@override String toString() { return 'Tool.fileSearch($fileSearchTool)'; } 
  }
 @immutable final class ToolComputer extends Tool {const ToolComputer(this.computerTool);
 
@@ -117,7 +117,7 @@ ToolComputer copyWith({ComputerTool? computerTool}) { return ToolComputer(comput
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolComputer && computerTool == other.computerTool; } 
 @override int get hashCode { return computerTool.hashCode; } 
-@override String toString() { return 'ToolComputer(computerTool: $computerTool)'; } 
+@override String toString() { return 'Tool.computer($computerTool)'; } 
  }
 @immutable final class ToolComputerUsePreview extends Tool {const ToolComputerUsePreview(this.computerUsePreviewTool);
 
@@ -135,7 +135,7 @@ ToolComputerUsePreview copyWith({ComputerEnvironment? environment, int? displayW
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolComputerUsePreview && computerUsePreviewTool == other.computerUsePreviewTool; } 
 @override int get hashCode { return computerUsePreviewTool.hashCode; } 
-@override String toString() { return 'ToolComputerUsePreview(computerUsePreviewTool: $computerUsePreviewTool)'; } 
+@override String toString() { return 'Tool.computerUsePreview($computerUsePreviewTool)'; } 
  }
 @immutable final class ToolWebSearch extends Tool {const ToolWebSearch(this.webSearchTool);
 
@@ -153,7 +153,7 @@ ToolWebSearch copyWith({WebSearchToolFilters? Function()? filters, WebSearchAppr
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolWebSearch && webSearchTool == other.webSearchTool; } 
 @override int get hashCode { return webSearchTool.hashCode; } 
-@override String toString() { return 'ToolWebSearch(webSearchTool: $webSearchTool)'; } 
+@override String toString() { return 'Tool.webSearch($webSearchTool)'; } 
  }
 @immutable final class ToolMcp extends Tool {const ToolMcp(this.mcpTool);
 
@@ -177,7 +177,7 @@ ToolMcp copyWith({String? serverLabel, String? Function()? serverUrl, ConnectorI
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolMcp && mcpTool == other.mcpTool; } 
 @override int get hashCode { return mcpTool.hashCode; } 
-@override String toString() { return 'ToolMcp(mcpTool: $mcpTool)'; } 
+@override String toString() { return 'Tool.mcp($mcpTool)'; } 
  }
 @immutable final class ToolCodeInterpreter extends Tool {const ToolCodeInterpreter(this.codeInterpreterTool);
 
@@ -193,7 +193,7 @@ ToolCodeInterpreter copyWith({CodeInterpreterToolContainer? container}) { return
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolCodeInterpreter && codeInterpreterTool == other.codeInterpreterTool; } 
 @override int get hashCode { return codeInterpreterTool.hashCode; } 
-@override String toString() { return 'ToolCodeInterpreter(codeInterpreterTool: $codeInterpreterTool)'; } 
+@override String toString() { return 'Tool.codeInterpreter($codeInterpreterTool)'; } 
  }
 @immutable final class ToolImageGeneration extends Tool {const ToolImageGeneration(this.imageGenTool);
 
@@ -219,7 +219,7 @@ ToolImageGeneration copyWith({ImageGenToolModel? Function()? model, ImageEditCom
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolImageGeneration && imageGenTool == other.imageGenTool; } 
 @override int get hashCode { return imageGenTool.hashCode; } 
-@override String toString() { return 'ToolImageGeneration(imageGenTool: $imageGenTool)'; } 
+@override String toString() { return 'Tool.imageGeneration($imageGenTool)'; } 
  }
 @immutable final class ToolLocalShell extends Tool {const ToolLocalShell(this.localShellToolParam);
 
@@ -233,7 +233,7 @@ ToolLocalShell copyWith({LocalShellToolParam? localShellToolParam}) { return Too
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolLocalShell && localShellToolParam == other.localShellToolParam; } 
 @override int get hashCode { return localShellToolParam.hashCode; } 
-@override String toString() { return 'ToolLocalShell(localShellToolParam: $localShellToolParam)'; } 
+@override String toString() { return 'Tool.localShell($localShellToolParam)'; } 
  }
 @immutable final class ToolShell extends Tool {const ToolShell(this.functionShellToolParam);
 
@@ -249,7 +249,7 @@ ToolShell copyWith({FunctionShellToolParamEnvironment? Function()? environment})
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolShell && functionShellToolParam == other.functionShellToolParam; } 
 @override int get hashCode { return functionShellToolParam.hashCode; } 
-@override String toString() { return 'ToolShell(functionShellToolParam: $functionShellToolParam)'; } 
+@override String toString() { return 'Tool.shell($functionShellToolParam)'; } 
  }
 @immutable final class ToolCustom extends Tool {const ToolCustom(this.customToolParam);
 
@@ -268,7 +268,7 @@ ToolCustom copyWith({String? name, String? Function()? description, CustomToolPa
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolCustom && customToolParam == other.customToolParam; } 
 @override int get hashCode { return customToolParam.hashCode; } 
-@override String toString() { return 'ToolCustom(customToolParam: $customToolParam)'; } 
+@override String toString() { return 'Tool.custom($customToolParam)'; } 
  }
 @immutable final class ToolNamespace extends Tool {const ToolNamespace(this.namespaceToolParam);
 
@@ -286,7 +286,7 @@ ToolNamespace copyWith({String? name, String? description, List<NamespaceToolPar
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolNamespace && namespaceToolParam == other.namespaceToolParam; } 
 @override int get hashCode { return namespaceToolParam.hashCode; } 
-@override String toString() { return 'ToolNamespace(namespaceToolParam: $namespaceToolParam)'; } 
+@override String toString() { return 'Tool.namespace($namespaceToolParam)'; } 
  }
 @immutable final class ToolToolSearch extends Tool {const ToolToolSearch(this.toolSearchToolParam);
 
@@ -304,7 +304,7 @@ ToolToolSearch copyWith({ToolSearchExecutionType? Function()? execution, String?
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolToolSearch && toolSearchToolParam == other.toolSearchToolParam; } 
 @override int get hashCode { return toolSearchToolParam.hashCode; } 
-@override String toString() { return 'ToolToolSearch(toolSearchToolParam: $toolSearchToolParam)'; } 
+@override String toString() { return 'Tool.toolSearch($toolSearchToolParam)'; } 
  }
 @immutable final class ToolWebSearchPreview extends Tool {const ToolWebSearchPreview(this.webSearchPreviewTool);
 
@@ -322,7 +322,7 @@ ToolWebSearchPreview copyWith({ApproximateLocation? Function()? userLocation, Se
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolWebSearchPreview && webSearchPreviewTool == other.webSearchPreviewTool; } 
 @override int get hashCode { return webSearchPreviewTool.hashCode; } 
-@override String toString() { return 'ToolWebSearchPreview(webSearchPreviewTool: $webSearchPreviewTool)'; } 
+@override String toString() { return 'Tool.webSearchPreview($webSearchPreviewTool)'; } 
  }
 @immutable final class ToolApplyPatch extends Tool {const ToolApplyPatch(this.applyPatchToolParam);
 
@@ -336,7 +336,7 @@ ToolApplyPatch copyWith({ApplyPatchToolParam? applyPatchToolParam}) { return Too
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolApplyPatch && applyPatchToolParam == other.applyPatchToolParam; } 
 @override int get hashCode { return applyPatchToolParam.hashCode; } 
-@override String toString() { return 'ToolApplyPatch(applyPatchToolParam: $applyPatchToolParam)'; } 
+@override String toString() { return 'Tool.applyPatch($applyPatchToolParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

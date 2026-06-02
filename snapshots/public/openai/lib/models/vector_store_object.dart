@@ -114,8 +114,8 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
   if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
   'expires_at': ?expiresAt,
-  'last_active_at': ?lastActiveAt,
-  'metadata': ?metadata,
+  'last_active_at': lastActiveAt,
+  'metadata': metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&

@@ -38,11 +38,11 @@ final SimpleUser sender;
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
   'alert': alert.toJson(),
-  'commit_oid': ?commitOid,
+  'commit_oid': commitOid,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
-  'ref': ?ref,
+  'ref': ref,
   'repository': repository.toJson(),
   'sender': sender.toJson(),
 }; } 

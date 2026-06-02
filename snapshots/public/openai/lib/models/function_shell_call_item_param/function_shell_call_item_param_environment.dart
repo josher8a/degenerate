@@ -36,7 +36,7 @@ FunctionShellCallItemParamEnvironmentLocal copyWith({List<LocalSkillParam>? Func
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallItemParamEnvironmentLocal && localEnvironmentParam == other.localEnvironmentParam; } 
 @override int get hashCode { return localEnvironmentParam.hashCode; } 
-@override String toString() { return 'FunctionShellCallItemParamEnvironmentLocal(localEnvironmentParam: $localEnvironmentParam)'; } 
+@override String toString() { return 'FunctionShellCallItemParamEnvironment.local($localEnvironmentParam)'; } 
  }
 @immutable final class FunctionShellCallItemParamEnvironmentContainerReference extends FunctionShellCallItemParamEnvironment {const FunctionShellCallItemParamEnvironmentContainerReference(this.containerReferenceParam);
 
@@ -52,7 +52,7 @@ FunctionShellCallItemParamEnvironmentContainerReference copyWith({String? contai
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallItemParamEnvironmentContainerReference && containerReferenceParam == other.containerReferenceParam; } 
 @override int get hashCode { return containerReferenceParam.hashCode; } 
-@override String toString() { return 'FunctionShellCallItemParamEnvironmentContainerReference(containerReferenceParam: $containerReferenceParam)'; } 
+@override String toString() { return 'FunctionShellCallItemParamEnvironment.containerReference($containerReferenceParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

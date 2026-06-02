@@ -38,7 +38,7 @@ final List<WafManagedRulesMode>? allowedModes;
 final WafManagedRulesMode mode;
 
 Map<String, dynamic> toJson() { return {
-  if (description != null) 'description': description?.toJson(),
+  'description': description != null ? description?.toJson() : null,
   'id': id.toJson(),
   if (modifiedRulesCount != null) 'modified_rules_count': modifiedRulesCount?.toJson(),
   'name': name.toJson(),

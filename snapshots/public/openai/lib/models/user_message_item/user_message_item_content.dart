@@ -38,7 +38,7 @@ UserMessageItemContentInputText copyWith({String? text}) { return UserMessageIte
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is UserMessageItemContentInputText && userMessageInputText == other.userMessageInputText; } 
 @override int get hashCode { return userMessageInputText.hashCode; } 
-@override String toString() { return 'UserMessageItemContentInputText(userMessageInputText: $userMessageInputText)'; } 
+@override String toString() { return 'UserMessageItemContent.inputText($userMessageInputText)'; } 
 @override String get text { return userMessageInputText.text; } 
  }
 @immutable final class UserMessageItemContentQuotedText extends UserMessageItemContent {const UserMessageItemContentQuotedText(this.userMessageQuotedText);
@@ -55,7 +55,7 @@ UserMessageItemContentQuotedText copyWith({String? text}) { return UserMessageIt
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is UserMessageItemContentQuotedText && userMessageQuotedText == other.userMessageQuotedText; } 
 @override int get hashCode { return userMessageQuotedText.hashCode; } 
-@override String toString() { return 'UserMessageItemContentQuotedText(userMessageQuotedText: $userMessageQuotedText)'; } 
+@override String toString() { return 'UserMessageItemContent.quotedText($userMessageQuotedText)'; } 
 @override String get text { return userMessageQuotedText.text; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

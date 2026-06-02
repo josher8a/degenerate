@@ -20,7 +20,7 @@ final String? dismissalCommitId;
 Map<String, dynamic> toJson() { return {
   'state': state,
   'review_id': reviewId,
-  'dismissal_message': ?dismissalMessage,
+  'dismissal_message': dismissalMessage,
   'dismissal_commit_id': ?dismissalCommitId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') && json['state'] is String &&

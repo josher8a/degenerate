@@ -64,7 +64,7 @@ final List<String>? exclude;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  if (owner != null) 'owner': owner?.toJson(),
+  'owner': owner != null ? owner?.toJson() : null,
   'guid': guid,
   'state': state,
   'lock_repositories': lockRepositories,

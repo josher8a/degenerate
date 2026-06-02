@@ -138,8 +138,9 @@ void main() {
       final model = NullabilityCombos.fromJson(json);
       expect(model.requiredNullable, isNull);
       expect(model.optionalNonNullable, isNull);
-      // Optionals that were absent must not reappear in toJson.
-      expect(model.toJson(), equals({'requiredNonNullable': 'a'}));
+      // Required-but-nullable key is always present (even when value is null).
+      // Optionals that were absent must not reappear.
+      expect(model.toJson(), equals({'requiredNonNullable': 'a', 'requiredNullable': null}));
     });
 
     test('copyWith clears any Dart-nullable field via a null-returning thunk',

@@ -58,7 +58,7 @@ ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy copyWith({Resou
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.accessApplicationPolicy($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
@@ -75,7 +75,7 @@ ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation copyWith({ResourceTagg
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.apiGatewayOperation($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
@@ -92,7 +92,7 @@ ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate copyWith({ResourceTag
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.customCertificate($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
@@ -109,7 +109,7 @@ ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname copyWith({ResourceTaggin
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.customHostname($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
@@ -126,7 +126,7 @@ ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord copyWith({ResourceTaggingReso
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.dnsRecord($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
@@ -143,7 +143,7 @@ ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate copyWith({Reso
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.managedClientCertificate($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelZone extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelZone(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
@@ -160,7 +160,7 @@ ResourceTaggingDeleteTagsRequestZoneLevelZone copyWith({ResourceTaggingResourceI
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingDeleteTagsRequestZoneLevelZone && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelZone(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.zone($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
 @override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

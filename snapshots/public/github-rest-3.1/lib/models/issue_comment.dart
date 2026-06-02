@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'body_text': ?bodyText,
   'body_html': ?bodyHtml,
   'html_url': htmlUrl.toString(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user != null ? user?.toJson() : null,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'issue_url': issueUrl.toString(),

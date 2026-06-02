@@ -88,7 +88,7 @@ AbuseReportsSubmitReportRequestAbuseChildren copyWith({String? Function()? comme
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseChildren && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequestAbuseChildren(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
+@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseChildren($abuseReportsBaseReportFields)'; } 
 @override String? get comments { return abuseReportsBaseReportFields.comments; } 
 @override String? get company { return abuseReportsBaseReportFields.company; } 
 @override String get email { return abuseReportsBaseReportFields.email; } 
@@ -123,7 +123,7 @@ AbuseReportsSubmitReportRequestAbuseDmca copyWith({String? Function()? comments,
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseDmca && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequestAbuseDmca(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
+@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseDmca($abuseReportsBaseReportFields)'; } 
 @override String? get comments { return abuseReportsBaseReportFields.comments; } 
 @override String? get company { return abuseReportsBaseReportFields.company; } 
 @override String get email { return abuseReportsBaseReportFields.email; } 
@@ -158,7 +158,7 @@ AbuseReportsSubmitReportRequestAbuseGeneral copyWith({String? Function()? commen
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseGeneral && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequestAbuseGeneral(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
+@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseGeneral($abuseReportsBaseReportFields)'; } 
 @override String? get comments { return abuseReportsBaseReportFields.comments; } 
 @override String? get company { return abuseReportsBaseReportFields.company; } 
 @override String get email { return abuseReportsBaseReportFields.email; } 
@@ -193,7 +193,7 @@ AbuseReportsSubmitReportRequestAbuseNcsei copyWith({String? Function()? comments
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseNcsei && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequestAbuseNcsei(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
+@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseNcsei($abuseReportsBaseReportFields)'; } 
 @override String? get comments { return abuseReportsBaseReportFields.comments; } 
 @override String? get company { return abuseReportsBaseReportFields.company; } 
 @override String get email { return abuseReportsBaseReportFields.email; } 
@@ -228,7 +228,7 @@ AbuseReportsSubmitReportRequestAbusePhishing copyWith({String? Function()? comme
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbusePhishing && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequestAbusePhishing(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
+@override String toString() { return 'AbuseReportsSubmitReportRequest.abusePhishing($abuseReportsBaseReportFields)'; } 
 @override String? get comments { return abuseReportsBaseReportFields.comments; } 
 @override String? get company { return abuseReportsBaseReportFields.company; } 
 @override String get email { return abuseReportsBaseReportFields.email; } 
@@ -263,7 +263,7 @@ AbuseReportsSubmitReportRequestAbuseRegistrarWhois copyWith({String? Function()?
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseRegistrarWhois && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequestAbuseRegistrarWhois(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
+@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseRegistrarWhois($abuseReportsBaseReportFields)'; } 
 @override String? get comments { return abuseReportsBaseReportFields.comments; } 
 @override String? get company { return abuseReportsBaseReportFields.company; } 
 @override String get email { return abuseReportsBaseReportFields.email; } 
@@ -298,7 +298,7 @@ AbuseReportsSubmitReportRequestAbuseThreat copyWith({String? Function()? comment
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseThreat && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequestAbuseThreat(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
+@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseThreat($abuseReportsBaseReportFields)'; } 
 @override String? get comments { return abuseReportsBaseReportFields.comments; } 
 @override String? get company { return abuseReportsBaseReportFields.company; } 
 @override String get email { return abuseReportsBaseReportFields.email; } 
@@ -333,7 +333,7 @@ AbuseReportsSubmitReportRequestAbuseTrademark copyWith({String? Function()? comm
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseTrademark && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequestAbuseTrademark(abuseReportsBaseReportFields: $abuseReportsBaseReportFields)'; } 
+@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseTrademark($abuseReportsBaseReportFields)'; } 
 @override String? get comments { return abuseReportsBaseReportFields.comments; } 
 @override String? get company { return abuseReportsBaseReportFields.company; } 
 @override String get email { return abuseReportsBaseReportFields.email; } 

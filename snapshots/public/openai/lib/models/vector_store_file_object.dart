@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'vector_store_id': vectorStoreId,
   'status': status.toJson(),
-  if (lastError != null) 'last_error': lastError?.toJson(),
+  'last_error': lastError != null ? lastError?.toJson() : null,
   if (chunkingStrategy != null) 'chunking_strategy': chunkingStrategy?.toJson(),
   'attributes': ?attributes,
 }; } 

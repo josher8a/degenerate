@@ -62,7 +62,7 @@ RealtimeConversationItemMessage copyWith({String? Function()? id, RealtimeConver
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeConversationItemMessage && realtimeConversationItemMessageAssistant == other.realtimeConversationItemMessageAssistant; } 
 @override int get hashCode { return realtimeConversationItemMessageAssistant.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessage(realtimeConversationItemMessageAssistant: $realtimeConversationItemMessageAssistant)'; } 
+@override String toString() { return 'RealtimeConversationItem.message($realtimeConversationItemMessageAssistant)'; } 
 @override String? get id { return realtimeConversationItemMessageAssistant.id; } 
  }
 @immutable final class RealtimeConversationItemFunctionCall$Variant extends RealtimeConversationItem {const RealtimeConversationItemFunctionCall$Variant(this.realtimeConversationItemFunctionCall);
@@ -84,7 +84,7 @@ RealtimeConversationItemFunctionCall$Variant copyWith({String? Function()? id, R
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeConversationItemFunctionCall$Variant && realtimeConversationItemFunctionCall == other.realtimeConversationItemFunctionCall; } 
 @override int get hashCode { return realtimeConversationItemFunctionCall.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemFunctionCall\$Variant(realtimeConversationItemFunctionCall: $realtimeConversationItemFunctionCall)'; } 
+@override String toString() { return 'RealtimeConversationItem.functionCall($realtimeConversationItemFunctionCall)'; } 
 @override String? get id { return realtimeConversationItemFunctionCall.id; } 
  }
 @immutable final class RealtimeConversationItemFunctionCallOutput$Variant extends RealtimeConversationItem {const RealtimeConversationItemFunctionCallOutput$Variant(this.realtimeConversationItemFunctionCallOutput);
@@ -105,7 +105,7 @@ RealtimeConversationItemFunctionCallOutput$Variant copyWith({String? Function()?
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeConversationItemFunctionCallOutput$Variant && realtimeConversationItemFunctionCallOutput == other.realtimeConversationItemFunctionCallOutput; } 
 @override int get hashCode { return realtimeConversationItemFunctionCallOutput.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemFunctionCallOutput\$Variant(realtimeConversationItemFunctionCallOutput: $realtimeConversationItemFunctionCallOutput)'; } 
+@override String toString() { return 'RealtimeConversationItem.functionCallOutput($realtimeConversationItemFunctionCallOutput)'; } 
 @override String? get id { return realtimeConversationItemFunctionCallOutput.id; } 
  }
 @immutable final class RealtimeConversationItemMcpApprovalResponse extends RealtimeConversationItem {const RealtimeConversationItemMcpApprovalResponse(this.realtimeMcpApprovalResponse);
@@ -125,7 +125,7 @@ RealtimeConversationItemMcpApprovalResponse copyWith({String? id, String? approv
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeConversationItemMcpApprovalResponse && realtimeMcpApprovalResponse == other.realtimeMcpApprovalResponse; } 
 @override int get hashCode { return realtimeMcpApprovalResponse.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMcpApprovalResponse(realtimeMcpApprovalResponse: $realtimeMcpApprovalResponse)'; } 
+@override String toString() { return 'RealtimeConversationItem.mcpApprovalResponse($realtimeMcpApprovalResponse)'; } 
 @override String? get id { return realtimeMcpApprovalResponse.id; } 
  }
 @immutable final class RealtimeConversationItemMcpListTools extends RealtimeConversationItem {const RealtimeConversationItemMcpListTools(this.realtimeMcpListTools);
@@ -144,7 +144,7 @@ RealtimeConversationItemMcpListTools copyWith({String? Function()? id, String? s
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeConversationItemMcpListTools && realtimeMcpListTools == other.realtimeMcpListTools; } 
 @override int get hashCode { return realtimeMcpListTools.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMcpListTools(realtimeMcpListTools: $realtimeMcpListTools)'; } 
+@override String toString() { return 'RealtimeConversationItem.mcpListTools($realtimeMcpListTools)'; } 
 @override String? get id { return realtimeMcpListTools.id; } 
  }
 @immutable final class RealtimeConversationItemMcpCall extends RealtimeConversationItem {const RealtimeConversationItemMcpCall(this.realtimeMcpToolCall);
@@ -167,7 +167,7 @@ RealtimeConversationItemMcpCall copyWith({String? id, String? serverLabel, Strin
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeConversationItemMcpCall && realtimeMcpToolCall == other.realtimeMcpToolCall; } 
 @override int get hashCode { return realtimeMcpToolCall.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMcpCall(realtimeMcpToolCall: $realtimeMcpToolCall)'; } 
+@override String toString() { return 'RealtimeConversationItem.mcpCall($realtimeMcpToolCall)'; } 
 @override String? get id { return realtimeMcpToolCall.id; } 
  }
 @immutable final class RealtimeConversationItemMcpApprovalRequest extends RealtimeConversationItem {const RealtimeConversationItemMcpApprovalRequest(this.realtimeMcpApprovalRequest);
@@ -187,7 +187,7 @@ RealtimeConversationItemMcpApprovalRequest copyWith({String? id, String? serverL
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeConversationItemMcpApprovalRequest && realtimeMcpApprovalRequest == other.realtimeMcpApprovalRequest; } 
 @override int get hashCode { return realtimeMcpApprovalRequest.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMcpApprovalRequest(realtimeMcpApprovalRequest: $realtimeMcpApprovalRequest)'; } 
+@override String toString() { return 'RealtimeConversationItem.mcpApprovalRequest($realtimeMcpApprovalRequest)'; } 
 @override String? get id { return realtimeMcpApprovalRequest.id; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

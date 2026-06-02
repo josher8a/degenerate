@@ -36,7 +36,7 @@ SkillsSkillReference copyWith({String? skillId, String? Function()? version, }) 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is SkillsSkillReference && skillReferenceParam == other.skillReferenceParam; } 
 @override int get hashCode { return skillReferenceParam.hashCode; } 
-@override String toString() { return 'SkillsSkillReference(skillReferenceParam: $skillReferenceParam)'; } 
+@override String toString() { return 'Skills.skillReference($skillReferenceParam)'; } 
  }
 @immutable final class SkillsInline extends Skills {const SkillsInline(this.inlineSkillParam);
 
@@ -54,7 +54,7 @@ SkillsInline copyWith({String? name, String? description, InlineSkillSourceParam
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is SkillsInline && inlineSkillParam == other.inlineSkillParam; } 
 @override int get hashCode { return inlineSkillParam.hashCode; } 
-@override String toString() { return 'SkillsInline(inlineSkillParam: $inlineSkillParam)'; } 
+@override String toString() { return 'Skills.inline($inlineSkillParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

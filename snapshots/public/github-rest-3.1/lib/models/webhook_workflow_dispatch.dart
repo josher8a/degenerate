@@ -31,7 +31,7 @@ final String workflow;
 
 Map<String, dynamic> toJson() { return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
-  'inputs': ?inputs,
+  'inputs': inputs,
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'ref': ref,

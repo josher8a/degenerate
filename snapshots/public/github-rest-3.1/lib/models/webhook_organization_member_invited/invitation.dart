@@ -44,13 +44,13 @@ final String? invitationSource;
 
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
-  'email': ?email,
-  if (failedAt != null) 'failed_at': failedAt?.toIso8601String(),
-  'failed_reason': ?failedReason,
+  'email': email,
+  'failed_at': failedAt != null ? failedAt?.toIso8601String() : null,
+  'failed_reason': failedReason,
   'id': id,
   'invitation_teams_url': invitationTeamsUrl.toString(),
-  if (inviter != null) 'inviter': inviter?.toJson(),
-  'login': ?login,
+  'inviter': inviter != null ? inviter?.toJson() : null,
+  'login': login,
   'node_id': nodeId,
   'role': role,
   'team_count': teamCount,

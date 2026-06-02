@@ -37,7 +37,7 @@ PagesEnvVarsValuePlainText copyWith({String? value}) { return PagesEnvVarsValueP
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is PagesEnvVarsValuePlainText && pagesPlainTextEnvVar == other.pagesPlainTextEnvVar; } 
 @override int get hashCode { return pagesPlainTextEnvVar.hashCode; } 
-@override String toString() { return 'PagesEnvVarsValuePlainText(pagesPlainTextEnvVar: $pagesPlainTextEnvVar)'; } 
+@override String toString() { return 'PagesEnvVarsValue.plainText($pagesPlainTextEnvVar)'; } 
 @override String get value { return pagesPlainTextEnvVar.value; } 
  }
 @immutable final class PagesEnvVarsValueSecretText extends PagesEnvVarsValue {const PagesEnvVarsValueSecretText(this.pagesSecretTextEnvVar);
@@ -54,7 +54,7 @@ PagesEnvVarsValueSecretText copyWith({String? value}) { return PagesEnvVarsValue
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is PagesEnvVarsValueSecretText && pagesSecretTextEnvVar == other.pagesSecretTextEnvVar; } 
 @override int get hashCode { return pagesSecretTextEnvVar.hashCode; } 
-@override String toString() { return 'PagesEnvVarsValueSecretText(pagesSecretTextEnvVar: $pagesSecretTextEnvVar)'; } 
+@override String toString() { return 'PagesEnvVarsValue.secretText($pagesSecretTextEnvVar)'; } 
 @override String get value { return pagesSecretTextEnvVar.value; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

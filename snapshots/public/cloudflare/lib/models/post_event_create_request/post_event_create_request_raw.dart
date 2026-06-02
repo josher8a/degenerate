@@ -17,7 +17,7 @@ final String? source;
 final String? tlp;
 
 Map<String, dynamic> toJson() { return {
-  'data': ?data,
+  'data': data,
   'source': ?source,
   'tlp': ?tlp,
 }; } 

@@ -49,16 +49,16 @@ final DiscussionUser? user;
 Map<String, dynamic> toJson() { return {
   '_links': links.toJson(),
   'author_association': authorAssociation.toJson(),
-  'body': ?body,
+  'body': body,
   'commit_id': commitId,
   'html_url': htmlUrl.toString(),
   'id': id,
   'node_id': nodeId,
   'pull_request_url': pullRequestUrl.toString(),
   'state': state,
-  if (submittedAt != null) 'submitted_at': submittedAt?.toIso8601String(),
+  'submitted_at': submittedAt != null ? submittedAt?.toIso8601String() : null,
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user != null ? user?.toJson() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
       json.containsKey('author_association') &&

@@ -89,7 +89,7 @@ Map<String, dynamic> toJson() { return {
   'dismissed_at': ?dismissedAt,
   if (dismisser != null) 'dismisser': dismisser?.toJson(),
   'external_identifier': externalIdentifier,
-  if (externalReference != null) 'external_reference': externalReference?.toString(),
+  'external_reference': externalReference != null ? externalReference?.toString() : null,
   'fix_reason': ?fixReason,
   if (fixedAt != null) 'fixed_at': fixedAt?.toIso8601String(),
   'fixed_in': ?fixedIn,

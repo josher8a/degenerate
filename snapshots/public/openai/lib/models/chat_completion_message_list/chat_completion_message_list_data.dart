@@ -47,8 +47,8 @@ final String id;
 final List<ContentParts>? contentParts;
 
 Map<String, dynamic> toJson() { return {
-  'content': ?content,
-  'refusal': ?refusal,
+  'content': content,
+  'refusal': refusal,
   if (toolCalls != null) 'tool_calls': toolCalls?.map((e) => e.toJson()).toList(),
   if (annotations != null) 'annotations': annotations?.map((e) => e.toJson()).toList(),
   'role': role.toJson(),

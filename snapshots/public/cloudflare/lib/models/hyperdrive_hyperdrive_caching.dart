@@ -33,7 +33,7 @@ HyperdriveHyperdriveCachingFalse copyWith({int? Function()? maxAge, int? Functio
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is HyperdriveHyperdriveCachingFalse && hyperdriveHyperdriveCachingEnabled == other.hyperdriveHyperdriveCachingEnabled; } 
 @override int get hashCode { return hyperdriveHyperdriveCachingEnabled.hashCode; } 
-@override String toString() { return 'HyperdriveHyperdriveCachingFalse(hyperdriveHyperdriveCachingEnabled: $hyperdriveHyperdriveCachingEnabled)'; } 
+@override String toString() { return 'HyperdriveHyperdriveCaching.\$false($hyperdriveHyperdriveCachingEnabled)'; } 
  }
 @immutable final class HyperdriveHyperdriveCachingTrue extends HyperdriveHyperdriveCaching {const HyperdriveHyperdriveCachingTrue(this.hyperdriveHyperdriveCachingCommon);
 
@@ -47,7 +47,7 @@ HyperdriveHyperdriveCachingTrue copyWith({HyperdriveHyperdriveCachingCommon? hyp
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is HyperdriveHyperdriveCachingTrue && hyperdriveHyperdriveCachingCommon == other.hyperdriveHyperdriveCachingCommon; } 
 @override int get hashCode { return hyperdriveHyperdriveCachingCommon.hashCode; } 
-@override String toString() { return 'HyperdriveHyperdriveCachingTrue(hyperdriveHyperdriveCachingCommon: $hyperdriveHyperdriveCachingCommon)'; } 
+@override String toString() { return 'HyperdriveHyperdriveCaching.\$true($hyperdriveHyperdriveCachingCommon)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

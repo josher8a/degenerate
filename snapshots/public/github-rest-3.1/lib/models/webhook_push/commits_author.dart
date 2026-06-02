@@ -21,7 +21,7 @@ final String? username;
 
 Map<String, dynamic> toJson() { return {
   if (date != null) 'date': date?.toIso8601String(),
-  'email': ?email,
+  'email': email,
   'name': name,
   'username': ?username,
 }; } 

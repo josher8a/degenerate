@@ -9,7 +9,7 @@ factory RequireLastPushApproval.fromJson(Map<String, dynamic> json) { return Req
 final bool? from;
 
 Map<String, dynamic> toJson() { return {
-  'from': ?from,
+  'from': from,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is bool; } 
 RequireLastPushApproval copyWith({bool? Function()? from}) { return RequireLastPushApproval(

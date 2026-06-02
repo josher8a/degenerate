@@ -29,7 +29,7 @@ final DateTime? updatedAt;
 
 Map<String, dynamic> toJson() { return {
   'binding_status': ?bindingStatus,
-  'enabled': ?enabled,
+  'enabled': enabled,
   'id': ?id,
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
 }; } 

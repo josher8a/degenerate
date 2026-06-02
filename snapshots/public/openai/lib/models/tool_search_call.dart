@@ -63,9 +63,9 @@ final String? createdBy;
 Map<String, dynamic> toJson() { return {
   'type': type,
   'id': id,
-  'call_id': ?callId,
+  'call_id': callId,
   'execution': execution.toJson(),
-  'arguments': ?arguments,
+  'arguments': arguments,
   'status': status.toJson(),
   'created_by': ?createdBy,
 }; } 

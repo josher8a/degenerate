@@ -59,7 +59,7 @@ ComputerActionClick copyWith({ClickButtonType? button, int? x, int? y, }) { retu
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionClick && clickParam == other.clickParam; } 
 @override int get hashCode { return clickParam.hashCode; } 
-@override String toString() { return 'ComputerActionClick(clickParam: $clickParam)'; } 
+@override String toString() { return 'ComputerAction.click($clickParam)'; } 
  }
 @immutable final class ComputerActionDoubleClick extends ComputerAction {const ComputerActionDoubleClick(this.doubleClickAction);
 
@@ -76,7 +76,7 @@ ComputerActionDoubleClick copyWith({int? x, int? y, }) { return ComputerActionDo
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionDoubleClick && doubleClickAction == other.doubleClickAction; } 
 @override int get hashCode { return doubleClickAction.hashCode; } 
-@override String toString() { return 'ComputerActionDoubleClick(doubleClickAction: $doubleClickAction)'; } 
+@override String toString() { return 'ComputerAction.doubleClick($doubleClickAction)'; } 
  }
 @immutable final class ComputerActionDrag extends ComputerAction {const ComputerActionDrag(this.dragParam);
 
@@ -92,7 +92,7 @@ ComputerActionDrag copyWith({List<CoordParam>? path}) { return ComputerActionDra
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionDrag && dragParam == other.dragParam; } 
 @override int get hashCode { return dragParam.hashCode; } 
-@override String toString() { return 'ComputerActionDrag(dragParam: $dragParam)'; } 
+@override String toString() { return 'ComputerAction.drag($dragParam)'; } 
  }
 @immutable final class ComputerActionKeypress extends ComputerAction {const ComputerActionKeypress(this.keyPressAction);
 
@@ -108,7 +108,7 @@ ComputerActionKeypress copyWith({List<String>? keys}) { return ComputerActionKey
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionKeypress && keyPressAction == other.keyPressAction; } 
 @override int get hashCode { return keyPressAction.hashCode; } 
-@override String toString() { return 'ComputerActionKeypress(keyPressAction: $keyPressAction)'; } 
+@override String toString() { return 'ComputerAction.keypress($keyPressAction)'; } 
  }
 @immutable final class ComputerActionMove extends ComputerAction {const ComputerActionMove(this.moveParam);
 
@@ -125,7 +125,7 @@ ComputerActionMove copyWith({int? x, int? y, }) { return ComputerActionMove(move
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionMove && moveParam == other.moveParam; } 
 @override int get hashCode { return moveParam.hashCode; } 
-@override String toString() { return 'ComputerActionMove(moveParam: $moveParam)'; } 
+@override String toString() { return 'ComputerAction.move($moveParam)'; } 
  }
 @immutable final class ComputerActionScreenshot extends ComputerAction {const ComputerActionScreenshot(this.screenshotParam);
 
@@ -139,7 +139,7 @@ ComputerActionScreenshot copyWith({ScreenshotParam? screenshotParam}) { return C
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionScreenshot && screenshotParam == other.screenshotParam; } 
 @override int get hashCode { return screenshotParam.hashCode; } 
-@override String toString() { return 'ComputerActionScreenshot(screenshotParam: $screenshotParam)'; } 
+@override String toString() { return 'ComputerAction.screenshot($screenshotParam)'; } 
  }
 @immutable final class ComputerActionScroll extends ComputerAction {const ComputerActionScroll(this.scrollParam);
 
@@ -158,7 +158,7 @@ ComputerActionScroll copyWith({int? x, int? y, int? scrollX, int? scrollY, }) { 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionScroll && scrollParam == other.scrollParam; } 
 @override int get hashCode { return scrollParam.hashCode; } 
-@override String toString() { return 'ComputerActionScroll(scrollParam: $scrollParam)'; } 
+@override String toString() { return 'ComputerAction.scroll($scrollParam)'; } 
  }
 @immutable final class ComputerActionType extends ComputerAction {const ComputerActionType(this.typeParam);
 
@@ -174,7 +174,7 @@ ComputerActionType copyWith({String? text}) { return ComputerActionType(typePara
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionType && typeParam == other.typeParam; } 
 @override int get hashCode { return typeParam.hashCode; } 
-@override String toString() { return 'ComputerActionType(typeParam: $typeParam)'; } 
+@override String toString() { return 'ComputerAction.type($typeParam)'; } 
  }
 @immutable final class ComputerActionWait extends ComputerAction {const ComputerActionWait(this.waitParam);
 
@@ -188,7 +188,7 @@ ComputerActionWait copyWith({WaitParam? waitParam}) { return ComputerActionWait(
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionWait && waitParam == other.waitParam; } 
 @override int get hashCode { return waitParam.hashCode; } 
-@override String toString() { return 'ComputerActionWait(waitParam: $waitParam)'; } 
+@override String toString() { return 'ComputerAction.wait($waitParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

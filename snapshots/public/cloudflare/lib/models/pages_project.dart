@@ -82,21 +82,21 @@ final bool? usesFunctions;
 
 Map<String, dynamic> toJson() { return {
   if (buildConfig != null) 'build_config': buildConfig?.toJson(),
-  if (canonicalDeployment != null) 'canonical_deployment': canonicalDeployment?.toJson(),
+  'canonical_deployment': canonicalDeployment != null ? canonicalDeployment?.toJson() : null,
   'created_on': createdOn.toIso8601String(),
   'deployment_configs': deploymentConfigs.toJson(),
   'domains': ?domains,
   'framework': framework,
   'framework_version': frameworkVersion,
   'id': id,
-  if (latestDeployment != null) 'latest_deployment': latestDeployment?.toJson(),
+  'latest_deployment': latestDeployment != null ? latestDeployment?.toJson() : null,
   'name': name.toJson(),
   'preview_script_name': previewScriptName,
   'production_branch': productionBranch,
   'production_script_name': productionScriptName,
   if (source != null) 'source': source?.toJson(),
   'subdomain': ?subdomain,
-  'uses_functions': ?usesFunctions,
+  'uses_functions': usesFunctions,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('canonical_deployment') &&
       json.containsKey('created_on') && json['created_on'] is String &&

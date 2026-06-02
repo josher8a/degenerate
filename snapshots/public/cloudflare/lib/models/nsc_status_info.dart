@@ -35,7 +35,7 @@ NscStatusInfoPending copyWith({Pending? pending}) { return NscStatusInfoPending(
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfoPending && pending == other.pending; } 
 @override int get hashCode { return pending.hashCode; } 
-@override String toString() { return 'NscStatusInfoPending(pending: $pending)'; } 
+@override String toString() { return 'NscStatusInfo.pending($pending)'; } 
  }
 @immutable final class NscStatusInfoDown extends NscStatusInfo {const NscStatusInfoDown(this.down);
 
@@ -51,7 +51,7 @@ NscStatusInfoDown copyWith({String? Function()? reason}) { return NscStatusInfoD
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfoDown && down == other.down; } 
 @override int get hashCode { return down.hashCode; } 
-@override String toString() { return 'NscStatusInfoDown(down: $down)'; } 
+@override String toString() { return 'NscStatusInfo.down($down)'; } 
  }
 @immutable final class NscStatusInfoUnhealthy extends NscStatusInfo {const NscStatusInfoUnhealthy(this.unhealthy);
 
@@ -67,7 +67,7 @@ NscStatusInfoUnhealthy copyWith({String? Function()? reason}) { return NscStatus
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfoUnhealthy && unhealthy == other.unhealthy; } 
 @override int get hashCode { return unhealthy.hashCode; } 
-@override String toString() { return 'NscStatusInfoUnhealthy(unhealthy: $unhealthy)'; } 
+@override String toString() { return 'NscStatusInfo.unhealthy($unhealthy)'; } 
  }
 @immutable final class NscStatusInfoHealthy extends NscStatusInfo {const NscStatusInfoHealthy(this.healthy);
 
@@ -81,7 +81,7 @@ NscStatusInfoHealthy copyWith({Healthy? healthy}) { return NscStatusInfoHealthy(
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfoHealthy && healthy == other.healthy; } 
 @override int get hashCode { return healthy.hashCode; } 
-@override String toString() { return 'NscStatusInfoHealthy(healthy: $healthy)'; } 
+@override String toString() { return 'NscStatusInfo.healthy($healthy)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

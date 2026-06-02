@@ -54,9 +54,9 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'archive_download_url': archiveDownloadUrl,
   'expired': expired,
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
-  if (expiresAt != null) 'expires_at': expiresAt?.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
+  'expires_at': expiresAt != null ? expiresAt?.toIso8601String() : null,
+  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
   'digest': ?digest,
   if (workflowRun != null) 'workflow_run': workflowRun?.toJson(),
 }; } 

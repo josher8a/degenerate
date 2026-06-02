@@ -38,7 +38,7 @@ InputItemMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputItemMessage && easyInputMessage == other.easyInputMessage; } 
 @override int get hashCode { return easyInputMessage.hashCode; } 
-@override String toString() { return 'InputItemMessage(easyInputMessage: $easyInputMessage)'; } 
+@override String toString() { return 'InputItem.message($easyInputMessage)'; } 
  }
 @immutable final class InputItemItem extends InputItem {const InputItemItem(this.item);
 
@@ -52,7 +52,7 @@ InputItemItem copyWith({Item? item}) { return InputItemItem(item ?? this.item); 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputItemItem && item == other.item; } 
 @override int get hashCode { return item.hashCode; } 
-@override String toString() { return 'InputItemItem(item: $item)'; } 
+@override String toString() { return 'InputItem.item($item)'; } 
  }
 @immutable final class InputItemItemReferenceParam extends InputItem {const InputItemItemReferenceParam(this.itemReferenceParam);
 
@@ -68,7 +68,7 @@ InputItemItemReferenceParam copyWith({String? id}) { return InputItemItemReferen
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputItemItemReferenceParam && itemReferenceParam == other.itemReferenceParam; } 
 @override int get hashCode { return itemReferenceParam.hashCode; } 
-@override String toString() { return 'InputItemItemReferenceParam(itemReferenceParam: $itemReferenceParam)'; } 
+@override String toString() { return 'InputItem.itemReferenceParam($itemReferenceParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

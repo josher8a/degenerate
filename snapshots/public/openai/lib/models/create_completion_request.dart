@@ -133,7 +133,7 @@ final String? user;
 
 Map<String, dynamic> toJson() { return {
   'model': model.toJson(),
-  if (prompt != null) 'prompt': prompt?.toJson(),
+  'prompt': prompt != null ? prompt?.toJson() : null,
   'best_of': ?bestOf,
   'echo': ?echo,
   'frequency_penalty': ?frequencyPenalty,

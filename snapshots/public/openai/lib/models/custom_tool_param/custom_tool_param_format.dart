@@ -31,7 +31,7 @@ CustomToolParamFormatText copyWith({CustomTextFormatParam? customTextFormatParam
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CustomToolParamFormatText && customTextFormatParam == other.customTextFormatParam; } 
 @override int get hashCode { return customTextFormatParam.hashCode; } 
-@override String toString() { return 'CustomToolParamFormatText(customTextFormatParam: $customTextFormatParam)'; } 
+@override String toString() { return 'CustomToolParamFormat.text($customTextFormatParam)'; } 
  }
 @immutable final class CustomToolParamFormatGrammar extends CustomToolParamFormat {const CustomToolParamFormatGrammar(this.customGrammarFormatParam);
 
@@ -48,7 +48,7 @@ CustomToolParamFormatGrammar copyWith({GrammarSyntax1? syntax, String? definitio
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CustomToolParamFormatGrammar && customGrammarFormatParam == other.customGrammarFormatParam; } 
 @override int get hashCode { return customGrammarFormatParam.hashCode; } 
-@override String toString() { return 'CustomToolParamFormatGrammar(customGrammarFormatParam: $customGrammarFormatParam)'; } 
+@override String toString() { return 'CustomToolParamFormat.grammar($customGrammarFormatParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

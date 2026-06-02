@@ -77,7 +77,7 @@ RealtimeClientEventConversationItemCreate$Variant copyWith({String? Function()? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeClientEventConversationItemCreate$Variant && realtimeClientEventConversationItemCreate == other.realtimeClientEventConversationItemCreate; } 
 @override int get hashCode { return realtimeClientEventConversationItemCreate.hashCode; } 
-@override String toString() { return 'RealtimeClientEventConversationItemCreate\$Variant(realtimeClientEventConversationItemCreate: $realtimeClientEventConversationItemCreate)'; } 
+@override String toString() { return 'RealtimeClientEvent.conversationItemCreate($realtimeClientEventConversationItemCreate)'; } 
 @override String? get eventId { return realtimeClientEventConversationItemCreate.eventId; } 
  }
 @immutable final class RealtimeClientEventConversationItemDelete$Variant extends RealtimeClientEvent {const RealtimeClientEventConversationItemDelete$Variant(this.realtimeClientEventConversationItemDelete);
@@ -95,7 +95,7 @@ RealtimeClientEventConversationItemDelete$Variant copyWith({String? Function()? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeClientEventConversationItemDelete$Variant && realtimeClientEventConversationItemDelete == other.realtimeClientEventConversationItemDelete; } 
 @override int get hashCode { return realtimeClientEventConversationItemDelete.hashCode; } 
-@override String toString() { return 'RealtimeClientEventConversationItemDelete\$Variant(realtimeClientEventConversationItemDelete: $realtimeClientEventConversationItemDelete)'; } 
+@override String toString() { return 'RealtimeClientEvent.conversationItemDelete($realtimeClientEventConversationItemDelete)'; } 
 @override String? get eventId { return realtimeClientEventConversationItemDelete.eventId; } 
  }
 @immutable final class RealtimeClientEventConversationItemRetrieve$Variant extends RealtimeClientEvent {const RealtimeClientEventConversationItemRetrieve$Variant(this.realtimeClientEventConversationItemRetrieve);
@@ -113,7 +113,7 @@ RealtimeClientEventConversationItemRetrieve$Variant copyWith({String? Function()
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeClientEventConversationItemRetrieve$Variant && realtimeClientEventConversationItemRetrieve == other.realtimeClientEventConversationItemRetrieve; } 
 @override int get hashCode { return realtimeClientEventConversationItemRetrieve.hashCode; } 
-@override String toString() { return 'RealtimeClientEventConversationItemRetrieve\$Variant(realtimeClientEventConversationItemRetrieve: $realtimeClientEventConversationItemRetrieve)'; } 
+@override String toString() { return 'RealtimeClientEvent.conversationItemRetrieve($realtimeClientEventConversationItemRetrieve)'; } 
 @override String? get eventId { return realtimeClientEventConversationItemRetrieve.eventId; } 
  }
 @immutable final class RealtimeClientEventConversationItemTruncate$Variant extends RealtimeClientEvent {const RealtimeClientEventConversationItemTruncate$Variant(this.realtimeClientEventConversationItemTruncate);
@@ -133,7 +133,7 @@ RealtimeClientEventConversationItemTruncate$Variant copyWith({String? Function()
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeClientEventConversationItemTruncate$Variant && realtimeClientEventConversationItemTruncate == other.realtimeClientEventConversationItemTruncate; } 
 @override int get hashCode { return realtimeClientEventConversationItemTruncate.hashCode; } 
-@override String toString() { return 'RealtimeClientEventConversationItemTruncate\$Variant(realtimeClientEventConversationItemTruncate: $realtimeClientEventConversationItemTruncate)'; } 
+@override String toString() { return 'RealtimeClientEvent.conversationItemTruncate($realtimeClientEventConversationItemTruncate)'; } 
 @override String? get eventId { return realtimeClientEventConversationItemTruncate.eventId; } 
  }
 @immutable final class RealtimeClientEventInputAudioBufferAppend$Variant extends RealtimeClientEvent {const RealtimeClientEventInputAudioBufferAppend$Variant(this.realtimeClientEventInputAudioBufferAppend);
@@ -151,7 +151,7 @@ RealtimeClientEventInputAudioBufferAppend$Variant copyWith({String? Function()? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeClientEventInputAudioBufferAppend$Variant && realtimeClientEventInputAudioBufferAppend == other.realtimeClientEventInputAudioBufferAppend; } 
 @override int get hashCode { return realtimeClientEventInputAudioBufferAppend.hashCode; } 
-@override String toString() { return 'RealtimeClientEventInputAudioBufferAppend\$Variant(realtimeClientEventInputAudioBufferAppend: $realtimeClientEventInputAudioBufferAppend)'; } 
+@override String toString() { return 'RealtimeClientEvent.inputAudioBufferAppend($realtimeClientEventInputAudioBufferAppend)'; } 
 @override String? get eventId { return realtimeClientEventInputAudioBufferAppend.eventId; } 
  }
 @immutable final class RealtimeClientEventInputAudioBufferClear$Variant extends RealtimeClientEvent {const RealtimeClientEventInputAudioBufferClear$Variant(this.realtimeClientEventInputAudioBufferClear);
@@ -168,7 +168,7 @@ RealtimeClientEventInputAudioBufferClear$Variant copyWith({String? Function()? e
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeClientEventInputAudioBufferClear$Variant && realtimeClientEventInputAudioBufferClear == other.realtimeClientEventInputAudioBufferClear; } 
 @override int get hashCode { return realtimeClientEventInputAudioBufferClear.hashCode; } 
-@override String toString() { return 'RealtimeClientEventInputAudioBufferClear\$Variant(realtimeClientEventInputAudioBufferClear: $realtimeClientEventInputAudioBufferClear)'; } 
+@override String toString() { return 'RealtimeClientEvent.inputAudioBufferClear($realtimeClientEventInputAudioBufferClear)'; } 
 @override String? get eventId { return realtimeClientEventInputAudioBufferClear.eventId; } 
  }
 @immutable final class RealtimeClientEventOutputAudioBufferClear$Variant extends RealtimeClientEvent {const RealtimeClientEventOutputAudioBufferClear$Variant(this.realtimeClientEventOutputAudioBufferClear);
@@ -185,7 +185,7 @@ RealtimeClientEventOutputAudioBufferClear$Variant copyWith({String? Function()? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeClientEventOutputAudioBufferClear$Variant && realtimeClientEventOutputAudioBufferClear == other.realtimeClientEventOutputAudioBufferClear; } 
 @override int get hashCode { return realtimeClientEventOutputAudioBufferClear.hashCode; } 
-@override String toString() { return 'RealtimeClientEventOutputAudioBufferClear\$Variant(realtimeClientEventOutputAudioBufferClear: $realtimeClientEventOutputAudioBufferClear)'; } 
+@override String toString() { return 'RealtimeClientEvent.outputAudioBufferClear($realtimeClientEventOutputAudioBufferClear)'; } 
 @override String? get eventId { return realtimeClientEventOutputAudioBufferClear.eventId; } 
  }
 @immutable final class RealtimeClientEventInputAudioBufferCommit$Variant extends RealtimeClientEvent {const RealtimeClientEventInputAudioBufferCommit$Variant(this.realtimeClientEventInputAudioBufferCommit);
@@ -202,7 +202,7 @@ RealtimeClientEventInputAudioBufferCommit$Variant copyWith({String? Function()? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeClientEventInputAudioBufferCommit$Variant && realtimeClientEventInputAudioBufferCommit == other.realtimeClientEventInputAudioBufferCommit; } 
 @override int get hashCode { return realtimeClientEventInputAudioBufferCommit.hashCode; } 
-@override String toString() { return 'RealtimeClientEventInputAudioBufferCommit\$Variant(realtimeClientEventInputAudioBufferCommit: $realtimeClientEventInputAudioBufferCommit)'; } 
+@override String toString() { return 'RealtimeClientEvent.inputAudioBufferCommit($realtimeClientEventInputAudioBufferCommit)'; } 
 @override String? get eventId { return realtimeClientEventInputAudioBufferCommit.eventId; } 
  }
 @immutable final class RealtimeClientEventResponseCancel$Variant extends RealtimeClientEvent {const RealtimeClientEventResponseCancel$Variant(this.realtimeClientEventResponseCancel);
@@ -220,7 +220,7 @@ RealtimeClientEventResponseCancel$Variant copyWith({String? Function()? eventId,
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeClientEventResponseCancel$Variant && realtimeClientEventResponseCancel == other.realtimeClientEventResponseCancel; } 
 @override int get hashCode { return realtimeClientEventResponseCancel.hashCode; } 
-@override String toString() { return 'RealtimeClientEventResponseCancel\$Variant(realtimeClientEventResponseCancel: $realtimeClientEventResponseCancel)'; } 
+@override String toString() { return 'RealtimeClientEvent.responseCancel($realtimeClientEventResponseCancel)'; } 
 @override String? get eventId { return realtimeClientEventResponseCancel.eventId; } 
  }
 @immutable final class RealtimeClientEventResponseCreate$Variant extends RealtimeClientEvent {const RealtimeClientEventResponseCreate$Variant(this.realtimeClientEventResponseCreate);
@@ -238,7 +238,7 @@ RealtimeClientEventResponseCreate$Variant copyWith({String? Function()? eventId,
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeClientEventResponseCreate$Variant && realtimeClientEventResponseCreate == other.realtimeClientEventResponseCreate; } 
 @override int get hashCode { return realtimeClientEventResponseCreate.hashCode; } 
-@override String toString() { return 'RealtimeClientEventResponseCreate\$Variant(realtimeClientEventResponseCreate: $realtimeClientEventResponseCreate)'; } 
+@override String toString() { return 'RealtimeClientEvent.responseCreate($realtimeClientEventResponseCreate)'; } 
 @override String? get eventId { return realtimeClientEventResponseCreate.eventId; } 
  }
 @immutable final class RealtimeClientEventSessionUpdate$Variant extends RealtimeClientEvent {const RealtimeClientEventSessionUpdate$Variant(this.realtimeClientEventSessionUpdate);
@@ -256,7 +256,7 @@ RealtimeClientEventSessionUpdate$Variant copyWith({String? Function()? eventId, 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeClientEventSessionUpdate$Variant && realtimeClientEventSessionUpdate == other.realtimeClientEventSessionUpdate; } 
 @override int get hashCode { return realtimeClientEventSessionUpdate.hashCode; } 
-@override String toString() { return 'RealtimeClientEventSessionUpdate\$Variant(realtimeClientEventSessionUpdate: $realtimeClientEventSessionUpdate)'; } 
+@override String toString() { return 'RealtimeClientEvent.sessionUpdate($realtimeClientEventSessionUpdate)'; } 
 @override String? get eventId { return realtimeClientEventSessionUpdate.eventId; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

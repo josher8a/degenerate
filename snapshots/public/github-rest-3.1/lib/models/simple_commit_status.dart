@@ -39,14 +39,14 @@ final DateTime createdAt;
 final DateTime updatedAt;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
+  'description': description,
   'id': id,
   'node_id': nodeId,
   'state': state,
   'context': context,
-  if (targetUrl != null) 'target_url': targetUrl?.toString(),
+  'target_url': targetUrl != null ? targetUrl?.toString() : null,
   'required': ?$required,
-  if (avatarUrl != null) 'avatar_url': avatarUrl?.toString(),
+  'avatar_url': avatarUrl != null ? avatarUrl?.toString() : null,
   'url': url.toString(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),

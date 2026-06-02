@@ -41,7 +41,7 @@ final RepositoryWebhooks repository;
 final SimpleUser sender;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
+  'description': description,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'master_branch': masterBranch,

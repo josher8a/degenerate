@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'call_id': callId,
   'action': action.toJson(),
   'status': status.toJson(),
-  if (environment != null) 'environment': environment?.toJson(),
+  'environment': environment != null ? environment?.toJson() : null,
   'created_by': ?createdBy,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&

@@ -74,7 +74,7 @@ final String? contactEmail;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  if (account != null) 'account': account?.toJson(),
+  'account': account != null ? account?.toJson() : null,
   'repository_selection': repositorySelection.toJson(),
   'access_tokens_url': accessTokensUrl.toString(),
   'repositories_url': repositoriesUrl.toString(),
@@ -87,12 +87,12 @@ Map<String, dynamic> toJson() { return {
   'events': events,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  'single_file_name': ?singleFileName,
+  'single_file_name': singleFileName,
   'has_multiple_single_files': ?hasMultipleSingleFiles,
   'single_file_paths': ?singleFilePaths,
   'app_slug': appSlug,
-  if (suspendedBy != null) 'suspended_by': suspendedBy?.toJson(),
-  if (suspendedAt != null) 'suspended_at': suspendedAt?.toIso8601String(),
+  'suspended_by': suspendedBy != null ? suspendedBy?.toJson() : null,
+  'suspended_at': suspendedAt != null ? suspendedAt?.toIso8601String() : null,
   'contact_email': ?contactEmail,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&

@@ -34,8 +34,8 @@ Map<String, dynamic> toJson() { return {
   'type': type,
   'name': name,
   'description': ?description,
-  'parameters': ?parameters,
-  'strict': ?strict,
+  'parameters': parameters,
+  'strict': strict,
   'defer_loading': ?deferLoading,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&

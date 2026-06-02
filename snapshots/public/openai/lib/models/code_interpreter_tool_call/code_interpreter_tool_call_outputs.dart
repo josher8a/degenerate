@@ -35,7 +35,7 @@ CodeInterpreterToolCallOutputsLogs copyWith({String? logs}) { return CodeInterpr
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CodeInterpreterToolCallOutputsLogs && codeInterpreterOutputLogs == other.codeInterpreterOutputLogs; } 
 @override int get hashCode { return codeInterpreterOutputLogs.hashCode; } 
-@override String toString() { return 'CodeInterpreterToolCallOutputsLogs(codeInterpreterOutputLogs: $codeInterpreterOutputLogs)'; } 
+@override String toString() { return 'CodeInterpreterToolCallOutputs.logs($codeInterpreterOutputLogs)'; } 
  }
 @immutable final class CodeInterpreterToolCallOutputsImage extends CodeInterpreterToolCallOutputs {const CodeInterpreterToolCallOutputsImage(this.codeInterpreterOutputImage);
 
@@ -51,7 +51,7 @@ CodeInterpreterToolCallOutputsImage copyWith({String? url}) { return CodeInterpr
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CodeInterpreterToolCallOutputsImage && codeInterpreterOutputImage == other.codeInterpreterOutputImage; } 
 @override int get hashCode { return codeInterpreterOutputImage.hashCode; } 
-@override String toString() { return 'CodeInterpreterToolCallOutputsImage(codeInterpreterOutputImage: $codeInterpreterOutputImage)'; } 
+@override String toString() { return 'CodeInterpreterToolCallOutputs.image($codeInterpreterOutputImage)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

@@ -46,7 +46,7 @@ final Uri url;
 
 Map<String, dynamic> toJson() { return {
   'avatar_url': avatarUrl.toString(),
-  'description': ?description,
+  'description': description,
   'events_url': eventsUrl.toString(),
   'hooks_url': hooksUrl.toString(),
   if (htmlUrl != null) 'html_url': htmlUrl?.toString(),

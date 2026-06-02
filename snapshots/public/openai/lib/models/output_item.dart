@@ -113,7 +113,7 @@ OutputItemMessage copyWith({String? id, ChatCompletionResponseMessageRole? role,
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemMessage && outputMessage == other.outputMessage; } 
 @override int get hashCode { return outputMessage.hashCode; } 
-@override String toString() { return 'OutputItemMessage(outputMessage: $outputMessage)'; } 
+@override String toString() { return 'OutputItem.message($outputMessage)'; } 
 @override String? get id { return outputMessage.id; } 
  }
 @immutable final class OutputItemFileSearchCall extends OutputItem {const OutputItemFileSearchCall(this.fileSearchToolCall);
@@ -133,7 +133,7 @@ OutputItemFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status,
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemFileSearchCall && fileSearchToolCall == other.fileSearchToolCall; } 
 @override int get hashCode { return fileSearchToolCall.hashCode; } 
-@override String toString() { return 'OutputItemFileSearchCall(fileSearchToolCall: $fileSearchToolCall)'; } 
+@override String toString() { return 'OutputItem.fileSearchCall($fileSearchToolCall)'; } 
 @override String? get id { return fileSearchToolCall.id; } 
  }
 @immutable final class OutputItemFunctionCall extends OutputItem {const OutputItemFunctionCall(this.functionToolCall);
@@ -155,7 +155,7 @@ OutputItemFunctionCall copyWith({String? Function()? id, String? callId, String?
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemFunctionCall && functionToolCall == other.functionToolCall; } 
 @override int get hashCode { return functionToolCall.hashCode; } 
-@override String toString() { return 'OutputItemFunctionCall(functionToolCall: $functionToolCall)'; } 
+@override String toString() { return 'OutputItem.functionCall($functionToolCall)'; } 
 @override String? get id { return functionToolCall.id; } 
  }
 @immutable final class OutputItemWebSearchCall extends OutputItem {const OutputItemWebSearchCall(this.webSearchToolCall);
@@ -174,7 +174,7 @@ OutputItemWebSearchCall copyWith({String? id, WebSearchToolCallStatus? status, W
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemWebSearchCall && webSearchToolCall == other.webSearchToolCall; } 
 @override int get hashCode { return webSearchToolCall.hashCode; } 
-@override String toString() { return 'OutputItemWebSearchCall(webSearchToolCall: $webSearchToolCall)'; } 
+@override String toString() { return 'OutputItem.webSearchCall($webSearchToolCall)'; } 
 @override String? get id { return webSearchToolCall.id; } 
  }
 @immutable final class OutputItemComputerCall extends OutputItem {const OutputItemComputerCall(this.computerToolCall);
@@ -196,7 +196,7 @@ OutputItemComputerCall copyWith({String? id, String? callId, ComputerAction? Fun
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemComputerCall && computerToolCall == other.computerToolCall; } 
 @override int get hashCode { return computerToolCall.hashCode; } 
-@override String toString() { return 'OutputItemComputerCall(computerToolCall: $computerToolCall)'; } 
+@override String toString() { return 'OutputItem.computerCall($computerToolCall)'; } 
 @override String? get id { return computerToolCall.id; } 
  }
 @immutable final class OutputItemReasoning extends OutputItem {const OutputItemReasoning(this.reasoningItem);
@@ -217,7 +217,7 @@ OutputItemReasoning copyWith({String? id, String? Function()? encryptedContent, 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemReasoning && reasoningItem == other.reasoningItem; } 
 @override int get hashCode { return reasoningItem.hashCode; } 
-@override String toString() { return 'OutputItemReasoning(reasoningItem: $reasoningItem)'; } 
+@override String toString() { return 'OutputItem.reasoning($reasoningItem)'; } 
 @override String? get id { return reasoningItem.id; } 
  }
 @immutable final class OutputItemToolSearchCall extends OutputItem {const OutputItemToolSearchCall(this.toolSearchCall);
@@ -239,7 +239,7 @@ OutputItemToolSearchCall copyWith({String? id, String? Function()? callId, ToolS
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemToolSearchCall && toolSearchCall == other.toolSearchCall; } 
 @override int get hashCode { return toolSearchCall.hashCode; } 
-@override String toString() { return 'OutputItemToolSearchCall(toolSearchCall: $toolSearchCall)'; } 
+@override String toString() { return 'OutputItem.toolSearchCall($toolSearchCall)'; } 
 @override String? get id { return toolSearchCall.id; } 
  }
 @immutable final class OutputItemToolSearchOutput extends OutputItem {const OutputItemToolSearchOutput(this.toolSearchOutput);
@@ -261,7 +261,7 @@ OutputItemToolSearchOutput copyWith({String? id, String? Function()? callId, Too
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemToolSearchOutput && toolSearchOutput == other.toolSearchOutput; } 
 @override int get hashCode { return toolSearchOutput.hashCode; } 
-@override String toString() { return 'OutputItemToolSearchOutput(toolSearchOutput: $toolSearchOutput)'; } 
+@override String toString() { return 'OutputItem.toolSearchOutput($toolSearchOutput)'; } 
 @override String? get id { return toolSearchOutput.id; } 
  }
 @immutable final class OutputItemCompaction extends OutputItem {const OutputItemCompaction(this.compactionBody);
@@ -280,7 +280,7 @@ OutputItemCompaction copyWith({String? id, String? encryptedContent, String? Fun
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemCompaction && compactionBody == other.compactionBody; } 
 @override int get hashCode { return compactionBody.hashCode; } 
-@override String toString() { return 'OutputItemCompaction(compactionBody: $compactionBody)'; } 
+@override String toString() { return 'OutputItem.compaction($compactionBody)'; } 
 @override String? get id { return compactionBody.id; } 
  }
 @immutable final class OutputItemImageGenerationCall extends OutputItem {const OutputItemImageGenerationCall(this.imageGenToolCall);
@@ -299,7 +299,7 @@ OutputItemImageGenerationCall copyWith({String? id, ImageGenToolCallStatus? stat
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemImageGenerationCall && imageGenToolCall == other.imageGenToolCall; } 
 @override int get hashCode { return imageGenToolCall.hashCode; } 
-@override String toString() { return 'OutputItemImageGenerationCall(imageGenToolCall: $imageGenToolCall)'; } 
+@override String toString() { return 'OutputItem.imageGenerationCall($imageGenToolCall)'; } 
 @override String? get id { return imageGenToolCall.id; } 
  }
 @immutable final class OutputItemCodeInterpreterCall extends OutputItem {const OutputItemCodeInterpreterCall(this.codeInterpreterToolCall);
@@ -320,7 +320,7 @@ OutputItemCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCallStatu
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemCodeInterpreterCall && codeInterpreterToolCall == other.codeInterpreterToolCall; } 
 @override int get hashCode { return codeInterpreterToolCall.hashCode; } 
-@override String toString() { return 'OutputItemCodeInterpreterCall(codeInterpreterToolCall: $codeInterpreterToolCall)'; } 
+@override String toString() { return 'OutputItem.codeInterpreterCall($codeInterpreterToolCall)'; } 
 @override String? get id { return codeInterpreterToolCall.id; } 
  }
 @immutable final class OutputItemLocalShellCall extends OutputItem {const OutputItemLocalShellCall(this.localShellToolCall);
@@ -340,7 +340,7 @@ OutputItemLocalShellCall copyWith({String? id, String? callId, LocalShellExecAct
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemLocalShellCall && localShellToolCall == other.localShellToolCall; } 
 @override int get hashCode { return localShellToolCall.hashCode; } 
-@override String toString() { return 'OutputItemLocalShellCall(localShellToolCall: $localShellToolCall)'; } 
+@override String toString() { return 'OutputItem.localShellCall($localShellToolCall)'; } 
 @override String? get id { return localShellToolCall.id; } 
  }
 @immutable final class OutputItemShellCall extends OutputItem {const OutputItemShellCall(this.functionShellCall);
@@ -362,7 +362,7 @@ OutputItemShellCall copyWith({String? id, String? callId, FunctionShellAction? a
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemShellCall && functionShellCall == other.functionShellCall; } 
 @override int get hashCode { return functionShellCall.hashCode; } 
-@override String toString() { return 'OutputItemShellCall(functionShellCall: $functionShellCall)'; } 
+@override String toString() { return 'OutputItem.shellCall($functionShellCall)'; } 
 @override String? get id { return functionShellCall.id; } 
  }
 @immutable final class OutputItemShellCallOutput extends OutputItem {const OutputItemShellCallOutput(this.functionShellCallOutput);
@@ -384,7 +384,7 @@ OutputItemShellCallOutput copyWith({String? id, String? callId, LocalShellCallOu
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemShellCallOutput && functionShellCallOutput == other.functionShellCallOutput; } 
 @override int get hashCode { return functionShellCallOutput.hashCode; } 
-@override String toString() { return 'OutputItemShellCallOutput(functionShellCallOutput: $functionShellCallOutput)'; } 
+@override String toString() { return 'OutputItem.shellCallOutput($functionShellCallOutput)'; } 
 @override String? get id { return functionShellCallOutput.id; } 
  }
 @immutable final class OutputItemApplyPatchCall extends OutputItem {const OutputItemApplyPatchCall(this.applyPatchToolCall);
@@ -405,7 +405,7 @@ OutputItemApplyPatchCall copyWith({String? id, String? callId, ApplyPatchCallSta
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemApplyPatchCall && applyPatchToolCall == other.applyPatchToolCall; } 
 @override int get hashCode { return applyPatchToolCall.hashCode; } 
-@override String toString() { return 'OutputItemApplyPatchCall(applyPatchToolCall: $applyPatchToolCall)'; } 
+@override String toString() { return 'OutputItem.applyPatchCall($applyPatchToolCall)'; } 
 @override String? get id { return applyPatchToolCall.id; } 
  }
 @immutable final class OutputItemApplyPatchCallOutput extends OutputItem {const OutputItemApplyPatchCallOutput(this.applyPatchToolCallOutput);
@@ -426,7 +426,7 @@ OutputItemApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchC
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemApplyPatchCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput; } 
 @override int get hashCode { return applyPatchToolCallOutput.hashCode; } 
-@override String toString() { return 'OutputItemApplyPatchCallOutput(applyPatchToolCallOutput: $applyPatchToolCallOutput)'; } 
+@override String toString() { return 'OutputItem.applyPatchCallOutput($applyPatchToolCallOutput)'; } 
 @override String? get id { return applyPatchToolCallOutput.id; } 
  }
 @immutable final class OutputItemMcpCall extends OutputItem {const OutputItemMcpCall(this.mcpToolCall);
@@ -450,7 +450,7 @@ OutputItemMcpCall copyWith({String? id, String? serverLabel, String? name, Strin
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemMcpCall && mcpToolCall == other.mcpToolCall; } 
 @override int get hashCode { return mcpToolCall.hashCode; } 
-@override String toString() { return 'OutputItemMcpCall(mcpToolCall: $mcpToolCall)'; } 
+@override String toString() { return 'OutputItem.mcpCall($mcpToolCall)'; } 
 @override String? get id { return mcpToolCall.id; } 
  }
 @immutable final class OutputItemMcpListTools extends OutputItem {const OutputItemMcpListTools(this.mcpListTools);
@@ -470,7 +470,7 @@ OutputItemMcpListTools copyWith({String? id, String? serverLabel, List<McpListTo
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemMcpListTools && mcpListTools == other.mcpListTools; } 
 @override int get hashCode { return mcpListTools.hashCode; } 
-@override String toString() { return 'OutputItemMcpListTools(mcpListTools: $mcpListTools)'; } 
+@override String toString() { return 'OutputItem.mcpListTools($mcpListTools)'; } 
 @override String? get id { return mcpListTools.id; } 
  }
 @immutable final class OutputItemMcpApprovalRequest extends OutputItem {const OutputItemMcpApprovalRequest(this.mcpApprovalRequest);
@@ -490,7 +490,7 @@ OutputItemMcpApprovalRequest copyWith({String? id, String? serverLabel, String? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest; } 
 @override int get hashCode { return mcpApprovalRequest.hashCode; } 
-@override String toString() { return 'OutputItemMcpApprovalRequest(mcpApprovalRequest: $mcpApprovalRequest)'; } 
+@override String toString() { return 'OutputItem.mcpApprovalRequest($mcpApprovalRequest)'; } 
 @override String? get id { return mcpApprovalRequest.id; } 
  }
 @immutable final class OutputItemCustomToolCall extends OutputItem {const OutputItemCustomToolCall(this.customToolCall);
@@ -511,7 +511,7 @@ OutputItemCustomToolCall copyWith({String? Function()? id, String? callId, Strin
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputItemCustomToolCall && customToolCall == other.customToolCall; } 
 @override int get hashCode { return customToolCall.hashCode; } 
-@override String toString() { return 'OutputItemCustomToolCall(customToolCall: $customToolCall)'; } 
+@override String toString() { return 'OutputItem.customToolCall($customToolCall)'; } 
 @override String? get id { return customToolCall.id; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
   'sync_to_organizations': ?syncToOrganizations,
   'organization_selection_type': ?organizationSelectionType,
-  'group_id': ?groupId,
+  'group_id': groupId,
   'group_name': ?groupName,
   'html_url': htmlUrl.toString(),
   'members_url': membersUrl,

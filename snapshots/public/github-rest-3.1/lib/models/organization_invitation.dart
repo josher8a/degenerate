@@ -44,8 +44,8 @@ final String? invitationSource;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  'login': ?login,
-  'email': ?email,
+  'login': login,
+  'email': email,
   'role': role,
   'created_at': createdAt,
   'failed_at': ?failedAt,

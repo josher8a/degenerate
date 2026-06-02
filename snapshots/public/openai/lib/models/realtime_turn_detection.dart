@@ -50,7 +50,7 @@ RealtimeTurnDetectionServerVad copyWith({double? Function()? threshold, int? Fun
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeTurnDetectionServerVad && serverVad == other.serverVad; } 
 @override int get hashCode { return serverVad.hashCode; } 
-@override String toString() { return 'RealtimeTurnDetectionServerVad(serverVad: $serverVad)'; } 
+@override String toString() { return 'RealtimeTurnDetection.serverVad($serverVad)'; } 
 @override bool? get createResponse { return serverVad.createResponse; } 
 @override bool? get interruptResponse { return serverVad.interruptResponse; } 
  }
@@ -70,7 +70,7 @@ RealtimeTurnDetectionSemanticVad copyWith({Eagerness Function()? eagerness, bool
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeTurnDetectionSemanticVad && semanticVad == other.semanticVad; } 
 @override int get hashCode { return semanticVad.hashCode; } 
-@override String toString() { return 'RealtimeTurnDetectionSemanticVad(semanticVad: $semanticVad)'; } 
+@override String toString() { return 'RealtimeTurnDetection.semanticVad($semanticVad)'; } 
 @override bool? get createResponse { return semanticVad.createResponse; } 
 @override bool? get interruptResponse { return semanticVad.interruptResponse; } 
  }

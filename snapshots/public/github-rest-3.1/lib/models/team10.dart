@@ -52,7 +52,7 @@ final Uri url;
 
 Map<String, dynamic> toJson() { return {
   'deleted': ?deleted,
-  'description': ?description,
+  'description': description,
   'html_url': htmlUrl.toString(),
   'id': id,
   'members_url': membersUrl,

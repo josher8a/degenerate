@@ -45,16 +45,16 @@ final String updatedAt;
 final String url;
 
 Map<String, dynamic> toJson() { return {
-  'after_id': ?afterId,
+  'after_id': afterId,
   'archived': archived,
   'column_id': columnId,
   'column_url': columnUrl,
   if (contentUrl != null) 'content_url': contentUrl?.toString(),
   'created_at': createdAt,
-  if (creator != null) 'creator': creator?.toJson(),
+  'creator': creator != null ? creator?.toJson() : null,
   'id': id,
   'node_id': nodeId,
-  'note': ?note,
+  'note': note,
   'project_url': projectUrl,
   'updated_at': updatedAt,
   'url': url,

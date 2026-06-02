@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'commit': commit.toJson(),
   'context': context,
   'created_at': createdAt,
-  'description': ?description,
+  'description': description,
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   'id': id,
   if (installation != null) 'installation': installation?.toJson(),
@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   'sender': sender.toJson(),
   'sha': sha,
   'state': state.toJson(),
-  'target_url': ?targetUrl,
+  'target_url': targetUrl,
   'updated_at': updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('branches') &&

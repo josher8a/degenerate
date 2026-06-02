@@ -47,8 +47,8 @@ final SimpleCheckSuiteStatus status;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  if (completedAt != null) 'completed_at': completedAt?.toIso8601String(),
-  if (conclusion != null) 'conclusion': conclusion?.toJson(),
+  'completed_at': completedAt != null ? completedAt?.toIso8601String() : null,
+  'conclusion': conclusion != null ? conclusion?.toJson() : null,
   'details_url': detailsUrl.toString(),
   'external_id': externalId,
   'head_sha': headSha,

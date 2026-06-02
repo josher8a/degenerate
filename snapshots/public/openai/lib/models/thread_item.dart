@@ -65,7 +65,7 @@ ThreadItemChatkitUserMessage copyWith({String? id, AssistantMessageItemObject? o
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItemChatkitUserMessage && userMessageItem == other.userMessageItem; } 
 @override int get hashCode { return userMessageItem.hashCode; } 
-@override String toString() { return 'ThreadItemChatkitUserMessage(userMessageItem: $userMessageItem)'; } 
+@override String toString() { return 'ThreadItem.chatkitUserMessage($userMessageItem)'; } 
 @override String get id { return userMessageItem.id; } 
 @override AssistantMessageItemObject get object { return userMessageItem.object; } 
 @override int get createdAt { return userMessageItem.createdAt; } 
@@ -89,7 +89,7 @@ ThreadItemChatkitAssistantMessage copyWith({String? id, AssistantMessageItemObje
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItemChatkitAssistantMessage && assistantMessageItem == other.assistantMessageItem; } 
 @override int get hashCode { return assistantMessageItem.hashCode; } 
-@override String toString() { return 'ThreadItemChatkitAssistantMessage(assistantMessageItem: $assistantMessageItem)'; } 
+@override String toString() { return 'ThreadItem.chatkitAssistantMessage($assistantMessageItem)'; } 
 @override String get id { return assistantMessageItem.id; } 
 @override AssistantMessageItemObject get object { return assistantMessageItem.object; } 
 @override int get createdAt { return assistantMessageItem.createdAt; } 
@@ -113,7 +113,7 @@ ThreadItemChatkitWidget copyWith({String? id, AssistantMessageItemObject? object
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItemChatkitWidget && widgetMessageItem == other.widgetMessageItem; } 
 @override int get hashCode { return widgetMessageItem.hashCode; } 
-@override String toString() { return 'ThreadItemChatkitWidget(widgetMessageItem: $widgetMessageItem)'; } 
+@override String toString() { return 'ThreadItem.chatkitWidget($widgetMessageItem)'; } 
 @override String get id { return widgetMessageItem.id; } 
 @override AssistantMessageItemObject get object { return widgetMessageItem.object; } 
 @override int get createdAt { return widgetMessageItem.createdAt; } 
@@ -141,7 +141,7 @@ ThreadItemChatkitClientToolCall copyWith({String? id, AssistantMessageItemObject
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItemChatkitClientToolCall && clientToolCallItem == other.clientToolCallItem; } 
 @override int get hashCode { return clientToolCallItem.hashCode; } 
-@override String toString() { return 'ThreadItemChatkitClientToolCall(clientToolCallItem: $clientToolCallItem)'; } 
+@override String toString() { return 'ThreadItem.chatkitClientToolCall($clientToolCallItem)'; } 
 @override String get id { return clientToolCallItem.id; } 
 @override AssistantMessageItemObject get object { return clientToolCallItem.object; } 
 @override int get createdAt { return clientToolCallItem.createdAt; } 
@@ -167,7 +167,7 @@ ThreadItemChatkitTask copyWith({String? id, AssistantMessageItemObject? object, 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItemChatkitTask && taskItem == other.taskItem; } 
 @override int get hashCode { return taskItem.hashCode; } 
-@override String toString() { return 'ThreadItemChatkitTask(taskItem: $taskItem)'; } 
+@override String toString() { return 'ThreadItem.chatkitTask($taskItem)'; } 
 @override String get id { return taskItem.id; } 
 @override AssistantMessageItemObject get object { return taskItem.object; } 
 @override int get createdAt { return taskItem.createdAt; } 
@@ -191,7 +191,7 @@ ThreadItemChatkitTaskGroup copyWith({String? id, AssistantMessageItemObject? obj
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItemChatkitTaskGroup && taskGroupItem == other.taskGroupItem; } 
 @override int get hashCode { return taskGroupItem.hashCode; } 
-@override String toString() { return 'ThreadItemChatkitTaskGroup(taskGroupItem: $taskGroupItem)'; } 
+@override String toString() { return 'ThreadItem.chatkitTaskGroup($taskGroupItem)'; } 
 @override String get id { return taskGroupItem.id; } 
 @override AssistantMessageItemObject get object { return taskGroupItem.object; } 
 @override int get createdAt { return taskGroupItem.createdAt; } 

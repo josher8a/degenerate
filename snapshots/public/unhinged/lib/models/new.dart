@@ -158,7 +158,7 @@ final class New {
   Map<String, dynamic> toJson() {
     return {
       'false': $false,
-      'none': ?none,
+      'none': none,
       'null': $null.toJson(),
       '0': $0.toJson(),
       '': $empty,

@@ -53,7 +53,7 @@ ImageGenStreamEventImageGenerationPartialImage copyWith({String? b64Json, int? c
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ImageGenStreamEventImageGenerationPartialImage && imageGenPartialImageEvent == other.imageGenPartialImageEvent; } 
 @override int get hashCode { return imageGenPartialImageEvent.hashCode; } 
-@override String toString() { return 'ImageGenStreamEventImageGenerationPartialImage(imageGenPartialImageEvent: $imageGenPartialImageEvent)'; } 
+@override String toString() { return 'ImageGenStreamEvent.imageGenerationPartialImage($imageGenPartialImageEvent)'; } 
 @override String get b64Json { return imageGenPartialImageEvent.b64Json; } 
 @override int get createdAt { return imageGenPartialImageEvent.createdAt; } 
 @override ImageEditCompletedEventSize get size { return imageGenPartialImageEvent.size; } 
@@ -81,7 +81,7 @@ ImageGenStreamEventImageGenerationCompleted copyWith({String? b64Json, int? crea
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ImageGenStreamEventImageGenerationCompleted && imageGenCompletedEvent == other.imageGenCompletedEvent; } 
 @override int get hashCode { return imageGenCompletedEvent.hashCode; } 
-@override String toString() { return 'ImageGenStreamEventImageGenerationCompleted(imageGenCompletedEvent: $imageGenCompletedEvent)'; } 
+@override String toString() { return 'ImageGenStreamEvent.imageGenerationCompleted($imageGenCompletedEvent)'; } 
 @override String get b64Json { return imageGenCompletedEvent.b64Json; } 
 @override int get createdAt { return imageGenCompletedEvent.createdAt; } 
 @override ImageEditCompletedEventSize get size { return imageGenCompletedEvent.size; } 

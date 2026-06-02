@@ -19,7 +19,7 @@ final String? optionalNullable;
 
 Map<String, dynamic> toJson() { return {
   'requiredNonNullable': requiredNonNullable,
-  'requiredNullable': ?requiredNullable,
+  'requiredNullable': requiredNullable,
   'optionalNonNullable': ?optionalNonNullable,
   'optionalNullable': ?optionalNullable,
 }; } 

@@ -112,12 +112,12 @@ final String url;
 final WebhookIssueCommentDeletedIssueUser user;
 
 Map<String, dynamic> toJson() { return {
-  'active_lock_reason': ?activeLockReason,
+  'active_lock_reason': activeLockReason,
   'assignee': ?assignee,
   'assignees': assignees.map((e) => e).toList(),
   'author_association': authorAssociation,
-  'body': ?body,
-  'closed_at': ?closedAt,
+  'body': body,
+  'closed_at': closedAt,
   'comments': comments,
   'comments_url': commentsUrl,
   'created_at': createdAt,
@@ -128,7 +128,7 @@ Map<String, dynamic> toJson() { return {
   if (labels != null) 'labels': labels?.map((e) => e).toList(),
   'labels_url': labelsUrl,
   'locked': ?locked,
-  'milestone': ?milestone,
+  'milestone': milestone,
   'node_id': nodeId,
   'number': number,
   'performed_via_github_app': ?performedViaGithubApp,

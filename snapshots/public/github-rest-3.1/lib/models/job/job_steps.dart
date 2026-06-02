@@ -30,7 +30,7 @@ final DateTime? completedAt;
 
 Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
-  'conclusion': ?conclusion,
+  'conclusion': conclusion,
   'name': name,
   'number': number,
   if (startedAt != null) 'started_at': startedAt?.toIso8601String(),

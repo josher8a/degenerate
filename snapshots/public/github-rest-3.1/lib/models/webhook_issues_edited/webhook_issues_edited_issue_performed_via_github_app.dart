@@ -210,18 +210,18 @@ final String? slug;
 final DateTime? updatedAt;
 
 Map<String, dynamic> toJson() { return {
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
-  'description': ?description,
+  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
+  'description': description,
   if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
-  if (externalUrl != null) 'external_url': externalUrl?.toString(),
+  'external_url': externalUrl != null ? externalUrl?.toString() : null,
   'html_url': htmlUrl.toString(),
-  'id': ?id,
+  'id': id,
   'name': name,
   'node_id': nodeId,
-  if (owner != null) 'owner': owner?.toJson(),
+  'owner': owner != null ? owner?.toJson() : null,
   if (permissions != null) 'permissions': permissions?.toJson(),
   'slug': ?slug,
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('description') && json['description'] is String &&

@@ -31,7 +31,7 @@ ChunkingStrategyRequestParamAuto copyWith({AutoChunkingStrategyRequestParam? aut
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChunkingStrategyRequestParamAuto && autoChunkingStrategyRequestParam == other.autoChunkingStrategyRequestParam; } 
 @override int get hashCode { return autoChunkingStrategyRequestParam.hashCode; } 
-@override String toString() { return 'ChunkingStrategyRequestParamAuto(autoChunkingStrategyRequestParam: $autoChunkingStrategyRequestParam)'; } 
+@override String toString() { return 'ChunkingStrategyRequestParam.auto($autoChunkingStrategyRequestParam)'; } 
  }
 @immutable final class ChunkingStrategyRequestParamStatic extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParamStatic(this.staticChunkingStrategyRequestParam);
 
@@ -47,7 +47,7 @@ ChunkingStrategyRequestParamStatic copyWith({StaticChunkingStrategy? $static}) {
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChunkingStrategyRequestParamStatic && staticChunkingStrategyRequestParam == other.staticChunkingStrategyRequestParam; } 
 @override int get hashCode { return staticChunkingStrategyRequestParam.hashCode; } 
-@override String toString() { return 'ChunkingStrategyRequestParamStatic(staticChunkingStrategyRequestParam: $staticChunkingStrategyRequestParam)'; } 
+@override String toString() { return 'ChunkingStrategyRequestParam.\$static($staticChunkingStrategyRequestParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

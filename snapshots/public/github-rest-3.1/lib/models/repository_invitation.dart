@@ -43,8 +43,8 @@ final String nodeId;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'repository': repository.toJson(),
-  if (invitee != null) 'invitee': invitee?.toJson(),
-  if (inviter != null) 'inviter': inviter?.toJson(),
+  'invitee': invitee != null ? invitee?.toJson() : null,
+  'inviter': inviter != null ? inviter?.toJson() : null,
   'permissions': permissions.toJson(),
   'created_at': createdAt.toIso8601String(),
   'expired': ?expired,

@@ -146,7 +146,7 @@ ZonesActions2AlwaysUseHttps copyWith({ZonesAlwaysUseHttps? zonesAlwaysUseHttps})
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2AlwaysUseHttps && zonesAlwaysUseHttps == other.zonesAlwaysUseHttps; } 
 @override int get hashCode { return zonesAlwaysUseHttps.hashCode; } 
-@override String toString() { return 'ZonesActions2AlwaysUseHttps(zonesAlwaysUseHttps: $zonesAlwaysUseHttps)'; } 
+@override String toString() { return 'ZonesActions2.alwaysUseHttps($zonesAlwaysUseHttps)'; } 
  }
 @immutable final class ZonesActions2AutomaticHttpsRewrites extends ZonesActions2 {const ZonesActions2AutomaticHttpsRewrites(this.zonesAutomaticHttpsRewrites);
 
@@ -162,7 +162,7 @@ ZonesActions2AutomaticHttpsRewrites copyWith({ZonesAutomaticHttpsRewritesValue? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2AutomaticHttpsRewrites && zonesAutomaticHttpsRewrites == other.zonesAutomaticHttpsRewrites; } 
 @override int get hashCode { return zonesAutomaticHttpsRewrites.hashCode; } 
-@override String toString() { return 'ZonesActions2AutomaticHttpsRewrites(zonesAutomaticHttpsRewrites: $zonesAutomaticHttpsRewrites)'; } 
+@override String toString() { return 'ZonesActions2.automaticHttpsRewrites($zonesAutomaticHttpsRewrites)'; } 
  }
 @immutable final class ZonesActions2BrowserCacheTtl extends ZonesActions2 {const ZonesActions2BrowserCacheTtl(this.zonesBrowserCacheTtl);
 
@@ -178,7 +178,7 @@ ZonesActions2BrowserCacheTtl copyWith({int? Function()? value}) { return ZonesAc
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2BrowserCacheTtl && zonesBrowserCacheTtl == other.zonesBrowserCacheTtl; } 
 @override int get hashCode { return zonesBrowserCacheTtl.hashCode; } 
-@override String toString() { return 'ZonesActions2BrowserCacheTtl(zonesBrowserCacheTtl: $zonesBrowserCacheTtl)'; } 
+@override String toString() { return 'ZonesActions2.browserCacheTtl($zonesBrowserCacheTtl)'; } 
  }
 @immutable final class ZonesActions2BrowserCheck extends ZonesActions2 {const ZonesActions2BrowserCheck(this.zonesBrowserCheck);
 
@@ -194,7 +194,7 @@ ZonesActions2BrowserCheck copyWith({ZonesBrowserCheckValue? Function()? value}) 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2BrowserCheck && zonesBrowserCheck == other.zonesBrowserCheck; } 
 @override int get hashCode { return zonesBrowserCheck.hashCode; } 
-@override String toString() { return 'ZonesActions2BrowserCheck(zonesBrowserCheck: $zonesBrowserCheck)'; } 
+@override String toString() { return 'ZonesActions2.browserCheck($zonesBrowserCheck)'; } 
  }
 @immutable final class ZonesActions2BypassCacheOnCookie extends ZonesActions2 {const ZonesActions2BypassCacheOnCookie(this.zonesBypassCacheOnCookie);
 
@@ -210,7 +210,7 @@ ZonesActions2BypassCacheOnCookie copyWith({String? Function()? value}) { return 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2BypassCacheOnCookie && zonesBypassCacheOnCookie == other.zonesBypassCacheOnCookie; } 
 @override int get hashCode { return zonesBypassCacheOnCookie.hashCode; } 
-@override String toString() { return 'ZonesActions2BypassCacheOnCookie(zonesBypassCacheOnCookie: $zonesBypassCacheOnCookie)'; } 
+@override String toString() { return 'ZonesActions2.bypassCacheOnCookie($zonesBypassCacheOnCookie)'; } 
  }
 @immutable final class ZonesActions2CacheByDeviceType extends ZonesActions2 {const ZonesActions2CacheByDeviceType(this.zonesCacheByDeviceType);
 
@@ -226,7 +226,7 @@ ZonesActions2CacheByDeviceType copyWith({CacheRulesSmartTieredCachePatchValue? F
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2CacheByDeviceType && zonesCacheByDeviceType == other.zonesCacheByDeviceType; } 
 @override int get hashCode { return zonesCacheByDeviceType.hashCode; } 
-@override String toString() { return 'ZonesActions2CacheByDeviceType(zonesCacheByDeviceType: $zonesCacheByDeviceType)'; } 
+@override String toString() { return 'ZonesActions2.cacheByDeviceType($zonesCacheByDeviceType)'; } 
  }
 @immutable final class ZonesActions2CacheDeceptionArmor extends ZonesActions2 {const ZonesActions2CacheDeceptionArmor(this.zonesCacheDeceptionArmor);
 
@@ -242,7 +242,7 @@ ZonesActions2CacheDeceptionArmor copyWith({CacheRulesSmartTieredCachePatchValue?
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2CacheDeceptionArmor && zonesCacheDeceptionArmor == other.zonesCacheDeceptionArmor; } 
 @override int get hashCode { return zonesCacheDeceptionArmor.hashCode; } 
-@override String toString() { return 'ZonesActions2CacheDeceptionArmor(zonesCacheDeceptionArmor: $zonesCacheDeceptionArmor)'; } 
+@override String toString() { return 'ZonesActions2.cacheDeceptionArmor($zonesCacheDeceptionArmor)'; } 
  }
 @immutable final class ZonesActions2CacheKeyFields extends ZonesActions2 {const ZonesActions2CacheKeyFields(this.zonesCacheKeyFields);
 
@@ -258,7 +258,7 @@ ZonesActions2CacheKeyFields copyWith({ZonesCacheKeyFieldsValue? Function()? valu
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2CacheKeyFields && zonesCacheKeyFields == other.zonesCacheKeyFields; } 
 @override int get hashCode { return zonesCacheKeyFields.hashCode; } 
-@override String toString() { return 'ZonesActions2CacheKeyFields(zonesCacheKeyFields: $zonesCacheKeyFields)'; } 
+@override String toString() { return 'ZonesActions2.cacheKeyFields($zonesCacheKeyFields)'; } 
  }
 @immutable final class ZonesActions2CacheLevel extends ZonesActions2 {const ZonesActions2CacheLevel(this.zonesCacheLevel);
 
@@ -274,7 +274,7 @@ ZonesActions2CacheLevel copyWith({ZonesCacheLevelValue? Function()? value}) { re
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2CacheLevel && zonesCacheLevel == other.zonesCacheLevel; } 
 @override int get hashCode { return zonesCacheLevel.hashCode; } 
-@override String toString() { return 'ZonesActions2CacheLevel(zonesCacheLevel: $zonesCacheLevel)'; } 
+@override String toString() { return 'ZonesActions2.cacheLevel($zonesCacheLevel)'; } 
  }
 @immutable final class ZonesActions2CacheOnCookie extends ZonesActions2 {const ZonesActions2CacheOnCookie(this.zonesCacheOnCookie);
 
@@ -290,7 +290,7 @@ ZonesActions2CacheOnCookie copyWith({String? Function()? value}) { return ZonesA
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2CacheOnCookie && zonesCacheOnCookie == other.zonesCacheOnCookie; } 
 @override int get hashCode { return zonesCacheOnCookie.hashCode; } 
-@override String toString() { return 'ZonesActions2CacheOnCookie(zonesCacheOnCookie: $zonesCacheOnCookie)'; } 
+@override String toString() { return 'ZonesActions2.cacheOnCookie($zonesCacheOnCookie)'; } 
  }
 @immutable final class ZonesActions2CacheTtlByStatus extends ZonesActions2 {const ZonesActions2CacheTtlByStatus(this.zonesCacheTtlByStatus);
 
@@ -306,7 +306,7 @@ ZonesActions2CacheTtlByStatus copyWith({Map<String, ValueValue>? Function()? val
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2CacheTtlByStatus && zonesCacheTtlByStatus == other.zonesCacheTtlByStatus; } 
 @override int get hashCode { return zonesCacheTtlByStatus.hashCode; } 
-@override String toString() { return 'ZonesActions2CacheTtlByStatus(zonesCacheTtlByStatus: $zonesCacheTtlByStatus)'; } 
+@override String toString() { return 'ZonesActions2.cacheTtlByStatus($zonesCacheTtlByStatus)'; } 
  }
 @immutable final class ZonesActions2DisableApps extends ZonesActions2 {const ZonesActions2DisableApps(this.zonesDisableApps);
 
@@ -320,7 +320,7 @@ ZonesActions2DisableApps copyWith({ZonesDisableApps? zonesDisableApps}) { return
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2DisableApps && zonesDisableApps == other.zonesDisableApps; } 
 @override int get hashCode { return zonesDisableApps.hashCode; } 
-@override String toString() { return 'ZonesActions2DisableApps(zonesDisableApps: $zonesDisableApps)'; } 
+@override String toString() { return 'ZonesActions2.disableApps($zonesDisableApps)'; } 
  }
 @immutable final class ZonesActions2DisablePerformance extends ZonesActions2 {const ZonesActions2DisablePerformance(this.zonesDisablePerformance);
 
@@ -334,7 +334,7 @@ ZonesActions2DisablePerformance copyWith({ZonesDisablePerformance? zonesDisableP
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2DisablePerformance && zonesDisablePerformance == other.zonesDisablePerformance; } 
 @override int get hashCode { return zonesDisablePerformance.hashCode; } 
-@override String toString() { return 'ZonesActions2DisablePerformance(zonesDisablePerformance: $zonesDisablePerformance)'; } 
+@override String toString() { return 'ZonesActions2.disablePerformance($zonesDisablePerformance)'; } 
  }
 @immutable final class ZonesActions2DisableSecurity extends ZonesActions2 {const ZonesActions2DisableSecurity(this.zonesDisableSecurity);
 
@@ -348,7 +348,7 @@ ZonesActions2DisableSecurity copyWith({ZonesDisableSecurity? zonesDisableSecurit
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2DisableSecurity && zonesDisableSecurity == other.zonesDisableSecurity; } 
 @override int get hashCode { return zonesDisableSecurity.hashCode; } 
-@override String toString() { return 'ZonesActions2DisableSecurity(zonesDisableSecurity: $zonesDisableSecurity)'; } 
+@override String toString() { return 'ZonesActions2.disableSecurity($zonesDisableSecurity)'; } 
  }
 @immutable final class ZonesActions2DisableZaraz extends ZonesActions2 {const ZonesActions2DisableZaraz(this.zonesDisableZaraz);
 
@@ -362,7 +362,7 @@ ZonesActions2DisableZaraz copyWith({ZonesDisableZaraz? zonesDisableZaraz}) { ret
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2DisableZaraz && zonesDisableZaraz == other.zonesDisableZaraz; } 
 @override int get hashCode { return zonesDisableZaraz.hashCode; } 
-@override String toString() { return 'ZonesActions2DisableZaraz(zonesDisableZaraz: $zonesDisableZaraz)'; } 
+@override String toString() { return 'ZonesActions2.disableZaraz($zonesDisableZaraz)'; } 
  }
 @immutable final class ZonesActions2EdgeCacheTtl extends ZonesActions2 {const ZonesActions2EdgeCacheTtl(this.zonesEdgeCacheTtl);
 
@@ -378,7 +378,7 @@ ZonesActions2EdgeCacheTtl copyWith({int? Function()? value}) { return ZonesActio
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2EdgeCacheTtl && zonesEdgeCacheTtl == other.zonesEdgeCacheTtl; } 
 @override int get hashCode { return zonesEdgeCacheTtl.hashCode; } 
-@override String toString() { return 'ZonesActions2EdgeCacheTtl(zonesEdgeCacheTtl: $zonesEdgeCacheTtl)'; } 
+@override String toString() { return 'ZonesActions2.edgeCacheTtl($zonesEdgeCacheTtl)'; } 
  }
 @immutable final class ZonesActions2EmailObfuscation extends ZonesActions2 {const ZonesActions2EmailObfuscation(this.zonesEmailObfuscation);
 
@@ -394,7 +394,7 @@ ZonesActions2EmailObfuscation copyWith({ZonesEmailObfuscationValue? Function()? 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2EmailObfuscation && zonesEmailObfuscation == other.zonesEmailObfuscation; } 
 @override int get hashCode { return zonesEmailObfuscation.hashCode; } 
-@override String toString() { return 'ZonesActions2EmailObfuscation(zonesEmailObfuscation: $zonesEmailObfuscation)'; } 
+@override String toString() { return 'ZonesActions2.emailObfuscation($zonesEmailObfuscation)'; } 
  }
 @immutable final class ZonesActions2ExplicitCacheControl extends ZonesActions2 {const ZonesActions2ExplicitCacheControl(this.zonesExplicitCacheControl);
 
@@ -410,7 +410,7 @@ ZonesActions2ExplicitCacheControl copyWith({CacheRulesSmartTieredCachePatchValue
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ExplicitCacheControl && zonesExplicitCacheControl == other.zonesExplicitCacheControl; } 
 @override int get hashCode { return zonesExplicitCacheControl.hashCode; } 
-@override String toString() { return 'ZonesActions2ExplicitCacheControl(zonesExplicitCacheControl: $zonesExplicitCacheControl)'; } 
+@override String toString() { return 'ZonesActions2.explicitCacheControl($zonesExplicitCacheControl)'; } 
  }
 @immutable final class ZonesActions2ForwardingUrl extends ZonesActions2 {const ZonesActions2ForwardingUrl(this.zonesForwardingUrl);
 
@@ -426,7 +426,7 @@ ZonesActions2ForwardingUrl copyWith({ZonesForwardingUrlValue? Function()? value}
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ForwardingUrl && zonesForwardingUrl == other.zonesForwardingUrl; } 
 @override int get hashCode { return zonesForwardingUrl.hashCode; } 
-@override String toString() { return 'ZonesActions2ForwardingUrl(zonesForwardingUrl: $zonesForwardingUrl)'; } 
+@override String toString() { return 'ZonesActions2.forwardingUrl($zonesForwardingUrl)'; } 
  }
 @immutable final class ZonesActions2HostHeaderOverride extends ZonesActions2 {const ZonesActions2HostHeaderOverride(this.zonesHostHeaderOverride);
 
@@ -442,7 +442,7 @@ ZonesActions2HostHeaderOverride copyWith({String? Function()? value}) { return Z
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2HostHeaderOverride && zonesHostHeaderOverride == other.zonesHostHeaderOverride; } 
 @override int get hashCode { return zonesHostHeaderOverride.hashCode; } 
-@override String toString() { return 'ZonesActions2HostHeaderOverride(zonesHostHeaderOverride: $zonesHostHeaderOverride)'; } 
+@override String toString() { return 'ZonesActions2.hostHeaderOverride($zonesHostHeaderOverride)'; } 
  }
 @immutable final class ZonesActions2IpGeolocation extends ZonesActions2 {const ZonesActions2IpGeolocation(this.zonesIpGeolocation);
 
@@ -458,7 +458,7 @@ ZonesActions2IpGeolocation copyWith({ZonesIpGeolocationValue? Function()? value}
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2IpGeolocation && zonesIpGeolocation == other.zonesIpGeolocation; } 
 @override int get hashCode { return zonesIpGeolocation.hashCode; } 
-@override String toString() { return 'ZonesActions2IpGeolocation(zonesIpGeolocation: $zonesIpGeolocation)'; } 
+@override String toString() { return 'ZonesActions2.ipGeolocation($zonesIpGeolocation)'; } 
  }
 @immutable final class ZonesActions2Mirage extends ZonesActions2 {const ZonesActions2Mirage(this.zonesMirage);
 
@@ -474,7 +474,7 @@ ZonesActions2Mirage copyWith({ZonesMirageValue? Function()? value}) { return Zon
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2Mirage && zonesMirage == other.zonesMirage; } 
 @override int get hashCode { return zonesMirage.hashCode; } 
-@override String toString() { return 'ZonesActions2Mirage(zonesMirage: $zonesMirage)'; } 
+@override String toString() { return 'ZonesActions2.mirage($zonesMirage)'; } 
  }
 @immutable final class ZonesActions2OpportunisticEncryption extends ZonesActions2 {const ZonesActions2OpportunisticEncryption(this.zonesOpportunisticEncryption);
 
@@ -490,7 +490,7 @@ ZonesActions2OpportunisticEncryption copyWith({ZonesOpportunisticEncryptionValue
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2OpportunisticEncryption && zonesOpportunisticEncryption == other.zonesOpportunisticEncryption; } 
 @override int get hashCode { return zonesOpportunisticEncryption.hashCode; } 
-@override String toString() { return 'ZonesActions2OpportunisticEncryption(zonesOpportunisticEncryption: $zonesOpportunisticEncryption)'; } 
+@override String toString() { return 'ZonesActions2.opportunisticEncryption($zonesOpportunisticEncryption)'; } 
  }
 @immutable final class ZonesActions2OriginErrorPagePassThru extends ZonesActions2 {const ZonesActions2OriginErrorPagePassThru(this.zonesOriginErrorPagePassThru);
 
@@ -506,7 +506,7 @@ ZonesActions2OriginErrorPagePassThru copyWith({ZonesOriginErrorPagePassThruValue
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2OriginErrorPagePassThru && zonesOriginErrorPagePassThru == other.zonesOriginErrorPagePassThru; } 
 @override int get hashCode { return zonesOriginErrorPagePassThru.hashCode; } 
-@override String toString() { return 'ZonesActions2OriginErrorPagePassThru(zonesOriginErrorPagePassThru: $zonesOriginErrorPagePassThru)'; } 
+@override String toString() { return 'ZonesActions2.originErrorPagePassThru($zonesOriginErrorPagePassThru)'; } 
  }
 @immutable final class ZonesActions2Polish extends ZonesActions2 {const ZonesActions2Polish(this.zonesPolish);
 
@@ -522,7 +522,7 @@ ZonesActions2Polish copyWith({ZonesPolishValue? Function()? value}) { return Zon
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2Polish && zonesPolish == other.zonesPolish; } 
 @override int get hashCode { return zonesPolish.hashCode; } 
-@override String toString() { return 'ZonesActions2Polish(zonesPolish: $zonesPolish)'; } 
+@override String toString() { return 'ZonesActions2.polish($zonesPolish)'; } 
  }
 @immutable final class ZonesActions2ResolveOverride extends ZonesActions2 {const ZonesActions2ResolveOverride(this.zonesResolveOverride);
 
@@ -538,7 +538,7 @@ ZonesActions2ResolveOverride copyWith({String? Function()? value}) { return Zone
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ResolveOverride && zonesResolveOverride == other.zonesResolveOverride; } 
 @override int get hashCode { return zonesResolveOverride.hashCode; } 
-@override String toString() { return 'ZonesActions2ResolveOverride(zonesResolveOverride: $zonesResolveOverride)'; } 
+@override String toString() { return 'ZonesActions2.resolveOverride($zonesResolveOverride)'; } 
  }
 @immutable final class ZonesActions2RespectStrongEtag extends ZonesActions2 {const ZonesActions2RespectStrongEtag(this.zonesRespectStrongEtag);
 
@@ -554,7 +554,7 @@ ZonesActions2RespectStrongEtag copyWith({CacheRulesSmartTieredCachePatchValue? F
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2RespectStrongEtag && zonesRespectStrongEtag == other.zonesRespectStrongEtag; } 
 @override int get hashCode { return zonesRespectStrongEtag.hashCode; } 
-@override String toString() { return 'ZonesActions2RespectStrongEtag(zonesRespectStrongEtag: $zonesRespectStrongEtag)'; } 
+@override String toString() { return 'ZonesActions2.respectStrongEtag($zonesRespectStrongEtag)'; } 
  }
 @immutable final class ZonesActions2ResponseBuffering extends ZonesActions2 {const ZonesActions2ResponseBuffering(this.zonesResponseBuffering);
 
@@ -570,7 +570,7 @@ ZonesActions2ResponseBuffering copyWith({ZonesResponseBufferingValue? Function()
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ResponseBuffering && zonesResponseBuffering == other.zonesResponseBuffering; } 
 @override int get hashCode { return zonesResponseBuffering.hashCode; } 
-@override String toString() { return 'ZonesActions2ResponseBuffering(zonesResponseBuffering: $zonesResponseBuffering)'; } 
+@override String toString() { return 'ZonesActions2.responseBuffering($zonesResponseBuffering)'; } 
  }
 @immutable final class ZonesActions2RocketLoader extends ZonesActions2 {const ZonesActions2RocketLoader(this.zonesRocketLoader);
 
@@ -586,7 +586,7 @@ ZonesActions2RocketLoader copyWith({ZonesRocketLoaderValue? Function()? value}) 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2RocketLoader && zonesRocketLoader == other.zonesRocketLoader; } 
 @override int get hashCode { return zonesRocketLoader.hashCode; } 
-@override String toString() { return 'ZonesActions2RocketLoader(zonesRocketLoader: $zonesRocketLoader)'; } 
+@override String toString() { return 'ZonesActions2.rocketLoader($zonesRocketLoader)'; } 
  }
 @immutable final class ZonesActions2SecurityLevel extends ZonesActions2 {const ZonesActions2SecurityLevel(this.zonesSecurityLevel);
 
@@ -602,7 +602,7 @@ ZonesActions2SecurityLevel copyWith({ZonesSecurityLevelValue? Function()? value}
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2SecurityLevel && zonesSecurityLevel == other.zonesSecurityLevel; } 
 @override int get hashCode { return zonesSecurityLevel.hashCode; } 
-@override String toString() { return 'ZonesActions2SecurityLevel(zonesSecurityLevel: $zonesSecurityLevel)'; } 
+@override String toString() { return 'ZonesActions2.securityLevel($zonesSecurityLevel)'; } 
  }
 @immutable final class ZonesActions2SortQueryStringForCache extends ZonesActions2 {const ZonesActions2SortQueryStringForCache(this.zonesSortQueryStringForCache);
 
@@ -618,7 +618,7 @@ ZonesActions2SortQueryStringForCache copyWith({ZonesSortQueryStringForCacheValue
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2SortQueryStringForCache && zonesSortQueryStringForCache == other.zonesSortQueryStringForCache; } 
 @override int get hashCode { return zonesSortQueryStringForCache.hashCode; } 
-@override String toString() { return 'ZonesActions2SortQueryStringForCache(zonesSortQueryStringForCache: $zonesSortQueryStringForCache)'; } 
+@override String toString() { return 'ZonesActions2.sortQueryStringForCache($zonesSortQueryStringForCache)'; } 
  }
 @immutable final class ZonesActions2Ssl extends ZonesActions2 {const ZonesActions2Ssl(this.zonesSsl);
 
@@ -634,7 +634,7 @@ ZonesActions2Ssl copyWith({ZonesSslValue? Function()? value}) { return ZonesActi
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2Ssl && zonesSsl == other.zonesSsl; } 
 @override int get hashCode { return zonesSsl.hashCode; } 
-@override String toString() { return 'ZonesActions2Ssl(zonesSsl: $zonesSsl)'; } 
+@override String toString() { return 'ZonesActions2.ssl($zonesSsl)'; } 
  }
 @immutable final class ZonesActions2TrueClientIpHeader extends ZonesActions2 {const ZonesActions2TrueClientIpHeader(this.zonesTrueClientIpHeader);
 
@@ -650,7 +650,7 @@ ZonesActions2TrueClientIpHeader copyWith({ZonesTrueClientIpHeaderValue? Function
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2TrueClientIpHeader && zonesTrueClientIpHeader == other.zonesTrueClientIpHeader; } 
 @override int get hashCode { return zonesTrueClientIpHeader.hashCode; } 
-@override String toString() { return 'ZonesActions2TrueClientIpHeader(zonesTrueClientIpHeader: $zonesTrueClientIpHeader)'; } 
+@override String toString() { return 'ZonesActions2.trueClientIpHeader($zonesTrueClientIpHeader)'; } 
  }
 @immutable final class ZonesActions2Waf extends ZonesActions2 {const ZonesActions2Waf(this.zonesWaf);
 
@@ -666,7 +666,7 @@ ZonesActions2Waf copyWith({ZonesWafValue? Function()? value}) { return ZonesActi
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2Waf && zonesWaf == other.zonesWaf; } 
 @override int get hashCode { return zonesWaf.hashCode; } 
-@override String toString() { return 'ZonesActions2Waf(zonesWaf: $zonesWaf)'; } 
+@override String toString() { return 'ZonesActions2.waf($zonesWaf)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

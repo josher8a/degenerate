@@ -31,7 +31,7 @@ AutoCodeInterpreterToolParamNetworkPolicyDisabled copyWith({ContainerNetworkPoli
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AutoCodeInterpreterToolParamNetworkPolicyDisabled && containerNetworkPolicyDisabledParam == other.containerNetworkPolicyDisabledParam; } 
 @override int get hashCode { return containerNetworkPolicyDisabledParam.hashCode; } 
-@override String toString() { return 'AutoCodeInterpreterToolParamNetworkPolicyDisabled(containerNetworkPolicyDisabledParam: $containerNetworkPolicyDisabledParam)'; } 
+@override String toString() { return 'AutoCodeInterpreterToolParamNetworkPolicy.disabled($containerNetworkPolicyDisabledParam)'; } 
  }
 @immutable final class AutoCodeInterpreterToolParamNetworkPolicyAllowlist extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicyAllowlist(this.containerNetworkPolicyAllowlistParam);
 
@@ -48,7 +48,7 @@ AutoCodeInterpreterToolParamNetworkPolicyAllowlist copyWith({List<String>? allow
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AutoCodeInterpreterToolParamNetworkPolicyAllowlist && containerNetworkPolicyAllowlistParam == other.containerNetworkPolicyAllowlistParam; } 
 @override int get hashCode { return containerNetworkPolicyAllowlistParam.hashCode; } 
-@override String toString() { return 'AutoCodeInterpreterToolParamNetworkPolicyAllowlist(containerNetworkPolicyAllowlistParam: $containerNetworkPolicyAllowlistParam)'; } 
+@override String toString() { return 'AutoCodeInterpreterToolParamNetworkPolicy.allowlist($containerNetworkPolicyAllowlistParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

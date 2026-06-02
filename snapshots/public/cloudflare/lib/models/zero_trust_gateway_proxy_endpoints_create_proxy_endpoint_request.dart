@@ -37,7 +37,7 @@ ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity copyWith({ZeroT
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity && zeroTrustGatewayProxyEndpointIdentityCreate == other.zeroTrustGatewayProxyEndpointIdentityCreate; } 
 @override int get hashCode { return zeroTrustGatewayProxyEndpointIdentityCreate.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(zeroTrustGatewayProxyEndpointIdentityCreate: $zeroTrustGatewayProxyEndpointIdentityCreate)'; } 
+@override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.identity($zeroTrustGatewayProxyEndpointIdentityCreate)'; } 
 @override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name { return zeroTrustGatewayProxyEndpointIdentityCreate.name; } 
  }
 @immutable final class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp extends ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(this.zeroTrustGatewayProxyEndpointIpCreate);
@@ -54,7 +54,7 @@ ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp copyWith({ZeroTrustGa
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp && zeroTrustGatewayProxyEndpointIpCreate == other.zeroTrustGatewayProxyEndpointIpCreate; } 
 @override int get hashCode { return zeroTrustGatewayProxyEndpointIpCreate.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(zeroTrustGatewayProxyEndpointIpCreate: $zeroTrustGatewayProxyEndpointIpCreate)'; } 
+@override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.ip($zeroTrustGatewayProxyEndpointIpCreate)'; } 
 @override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name { return zeroTrustGatewayProxyEndpointIpCreate.name; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

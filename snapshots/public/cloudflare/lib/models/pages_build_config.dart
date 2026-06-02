@@ -47,8 +47,8 @@ Map<String, dynamic> toJson() { return {
   'build_command': ?buildCommand,
   'destination_dir': ?destinationDir,
   'root_dir': ?rootDir,
-  'web_analytics_tag': ?webAnalyticsTag,
-  'web_analytics_token': ?webAnalyticsToken,
+  'web_analytics_tag': webAnalyticsTag,
+  'web_analytics_token': webAnalyticsToken,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('web_analytics_tag') && json['web_analytics_tag'] is String &&
       json.containsKey('web_analytics_token') && json['web_analytics_token'] is String; } 

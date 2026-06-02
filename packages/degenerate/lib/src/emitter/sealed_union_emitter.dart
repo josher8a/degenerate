@@ -609,7 +609,7 @@ class DiscriminatedUnionEmitter {
         ..methods.add(buildHashCodeOverride(hashBody))
         ..methods.add(
           buildToStringOverride(
-            "return '${escapeNameForString(className)}($toStrFields)';",
+            "return '${escapeNameForString(union.name)}.${escapeNameForString(_variantCtorName(discValue))}($toStrFields)';",
           ),
         ),
     );
@@ -710,13 +710,12 @@ class DiscriminatedUnionEmitter {
         ..methods.add(() {
           final String fieldStr;
           if (fieldName.startsWith(r'$')) {
-            final escaped = fieldName.replaceAll(r'$', r'\$');
-            fieldStr = '$escaped: \${$fieldName}';
+            fieldStr = '\${$fieldName}';
           } else {
-            fieldStr = '$fieldName: \$$fieldName';
+            fieldStr = '\$$fieldName';
           }
           return buildToStringOverride(
-            "return '${escapeNameForString(className)}($fieldStr)';",
+            "return '${escapeNameForString(union.name)}.${escapeNameForString(_variantCtorName(discValue))}($fieldStr)';",
           );
         }())
         ..methods.addAll(

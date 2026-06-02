@@ -91,18 +91,18 @@ final RealtimekitRecordingStatus status;
 final DateTime? stoppedTime;
 
 Map<String, dynamic> toJson() { return {
-  if (audioDownloadUrl != null) 'audio_download_url': audioDownloadUrl?.toString(),
-  if (downloadUrl != null) 'download_url': downloadUrl?.toString(),
-  if (downloadUrlExpiry != null) 'download_url_expiry': downloadUrlExpiry?.toIso8601String(),
-  'file_size': ?fileSize,
+  'audio_download_url': audioDownloadUrl != null ? audioDownloadUrl?.toString() : null,
+  'download_url': downloadUrl != null ? downloadUrl?.toString() : null,
+  'download_url_expiry': downloadUrlExpiry != null ? downloadUrlExpiry?.toIso8601String() : null,
+  'file_size': fileSize,
   'id': id,
   'invoked_time': invokedTime.toIso8601String(),
   'output_file_name': outputFileName,
   'recording_duration': ?recordingDuration,
-  'session_id': ?sessionId,
-  if (startedTime != null) 'started_time': startedTime?.toIso8601String(),
+  'session_id': sessionId,
+  'started_time': startedTime != null ? startedTime?.toIso8601String() : null,
   'status': status.toJson(),
-  if (stoppedTime != null) 'stopped_time': stoppedTime?.toIso8601String(),
+  'stopped_time': stoppedTime != null ? stoppedTime?.toIso8601String() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio_download_url') && json['audio_download_url'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&

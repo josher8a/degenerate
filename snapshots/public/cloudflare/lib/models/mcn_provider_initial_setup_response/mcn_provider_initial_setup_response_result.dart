@@ -39,7 +39,7 @@ McnProviderInitialSetupResponseResultMcnAwsTrustPolicy copyWith({String? awsTrus
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnProviderInitialSetupResponseResultMcnAwsTrustPolicy && mcnAwsTrustPolicy == other.mcnAwsTrustPolicy; } 
 @override int get hashCode { return mcnAwsTrustPolicy.hashCode; } 
-@override String toString() { return 'McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(mcnAwsTrustPolicy: $mcnAwsTrustPolicy)'; } 
+@override String toString() { return 'McnProviderInitialSetupResponseResult.mcnAwsTrustPolicy($mcnAwsTrustPolicy)'; } 
  }
 @immutable final class McnProviderInitialSetupResponseResultMcnAzureSetup extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnAzureSetup(this.mcnAzureSetup);
 
@@ -57,7 +57,7 @@ McnProviderInitialSetupResponseResultMcnAzureSetup copyWith({String? azureConsen
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnProviderInitialSetupResponseResultMcnAzureSetup && mcnAzureSetup == other.mcnAzureSetup; } 
 @override int get hashCode { return mcnAzureSetup.hashCode; } 
-@override String toString() { return 'McnProviderInitialSetupResponseResultMcnAzureSetup(mcnAzureSetup: $mcnAzureSetup)'; } 
+@override String toString() { return 'McnProviderInitialSetupResponseResult.mcnAzureSetup($mcnAzureSetup)'; } 
  }
 @immutable final class McnProviderInitialSetupResponseResultMcnGcpSetup extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnGcpSetup(this.mcnGcpSetup);
 
@@ -74,7 +74,7 @@ McnProviderInitialSetupResponseResultMcnGcpSetup copyWith({String? integrationId
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnProviderInitialSetupResponseResultMcnGcpSetup && mcnGcpSetup == other.mcnGcpSetup; } 
 @override int get hashCode { return mcnGcpSetup.hashCode; } 
-@override String toString() { return 'McnProviderInitialSetupResponseResultMcnGcpSetup(mcnGcpSetup: $mcnGcpSetup)'; } 
+@override String toString() { return 'McnProviderInitialSetupResponseResult.mcnGcpSetup($mcnGcpSetup)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

@@ -151,10 +151,10 @@ final DiscussionUser? user;
 final List<Label>? labels;
 
 Map<String, dynamic> toJson() { return {
-  'active_lock_reason': ?activeLockReason,
-  'answer_chosen_at': ?answerChosenAt,
-  if (answerChosenBy != null) 'answer_chosen_by': answerChosenBy?.toJson(),
-  'answer_html_url': ?answerHtmlUrl,
+  'active_lock_reason': activeLockReason,
+  'answer_chosen_at': answerChosenAt,
+  'answer_chosen_by': answerChosenBy != null ? answerChosenBy?.toJson() : null,
+  'answer_html_url': answerHtmlUrl,
   if (authorAssociation != null) 'author_association': authorAssociation?.toJson(),
   'body': body,
   'category': category.toJson(),
@@ -168,11 +168,11 @@ Map<String, dynamic> toJson() { return {
   if (reactions != null) 'reactions': reactions?.toJson(),
   'repository_url': repositoryUrl,
   'state': state.toJson(),
-  if (stateReason != null) 'state_reason': stateReason?.toJson(),
+  'state_reason': stateReason != null ? stateReason?.toJson() : null,
   'timeline_url': ?timelineUrl,
   'title': title,
   'updated_at': updatedAt.toIso8601String(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user != null ? user?.toJson() : null,
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') && json['active_lock_reason'] is String &&

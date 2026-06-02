@@ -43,7 +43,7 @@ WorkersSecretSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingK
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersSecretSecretKey && workersBindingKindSecretKey == other.workersBindingKindSecretKey; } 
 @override int get hashCode { return workersBindingKindSecretKey.hashCode; } 
-@override String toString() { return 'WorkersSecretSecretKey(workersBindingKindSecretKey: $workersBindingKindSecretKey)'; } 
+@override String toString() { return 'WorkersSecret.secretKey($workersBindingKindSecretKey)'; } 
 @override WorkersBindingName get name { return workersBindingKindSecretKey.name; } 
  }
 @immutable final class WorkersSecretSecretText extends WorkersSecret {const WorkersSecretSecretText(this.workersBindingKindSecretText);
@@ -61,7 +61,7 @@ WorkersSecretSecretText copyWith({WorkersBindingName? name, String? text, }) { r
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersSecretSecretText && workersBindingKindSecretText == other.workersBindingKindSecretText; } 
 @override int get hashCode { return workersBindingKindSecretText.hashCode; } 
-@override String toString() { return 'WorkersSecretSecretText(workersBindingKindSecretText: $workersBindingKindSecretText)'; } 
+@override String toString() { return 'WorkersSecret.secretText($workersBindingKindSecretText)'; } 
 @override WorkersBindingName get name { return workersBindingKindSecretText.name; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'editable': ?editable,
   'id': id,
   if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
-  'value': ?value,
+  'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('value'); } 

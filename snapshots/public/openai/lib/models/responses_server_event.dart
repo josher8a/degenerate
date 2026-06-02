@@ -28,7 +28,7 @@ ResponsesServerEventResponseStreamEvent copyWith({ResponseStreamEvent? responseS
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponsesServerEventResponseStreamEvent && responseStreamEvent == other.responseStreamEvent; } 
 @override int get hashCode { return responseStreamEvent.hashCode; } 
-@override String toString() { return 'ResponsesServerEventResponseStreamEvent(responseStreamEvent: $responseStreamEvent)'; } 
+@override String toString() { return 'ResponsesServerEvent.responseStreamEvent($responseStreamEvent)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

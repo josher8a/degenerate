@@ -47,7 +47,7 @@ McnResourceDetailsSectionItemValueMcnStringItem copyWith({String? string}) { ret
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnStringItem && mcnStringItem == other.mcnStringItem; } 
 @override int get hashCode { return mcnStringItem.hashCode; } 
-@override String toString() { return 'McnResourceDetailsSectionItemValueMcnStringItem(mcnStringItem: $mcnStringItem)'; } 
+@override String toString() { return 'McnResourceDetailsSectionItemValue.mcnStringItem($mcnStringItem)'; } 
  }
 @immutable final class McnResourceDetailsSectionItemValueMcnYamlItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnYamlItem(this.mcnYamlItem);
 
@@ -63,7 +63,7 @@ McnResourceDetailsSectionItemValueMcnYamlItem copyWith({String? yaml}) { return 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnYamlItem && mcnYamlItem == other.mcnYamlItem; } 
 @override int get hashCode { return mcnYamlItem.hashCode; } 
-@override String toString() { return 'McnResourceDetailsSectionItemValueMcnYamlItem(mcnYamlItem: $mcnYamlItem)'; } 
+@override String toString() { return 'McnResourceDetailsSectionItemValue.mcnYamlItem($mcnYamlItem)'; } 
  }
 @immutable final class McnResourceDetailsSectionItemValueMcnYamlDiffItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnYamlDiffItem(this.mcnYamlDiffItem);
 
@@ -79,7 +79,7 @@ McnResourceDetailsSectionItemValueMcnYamlDiffItem copyWith({McnYamlDiff? yamlDif
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnYamlDiffItem && mcnYamlDiffItem == other.mcnYamlDiffItem; } 
 @override int get hashCode { return mcnYamlDiffItem.hashCode; } 
-@override String toString() { return 'McnResourceDetailsSectionItemValueMcnYamlDiffItem(mcnYamlDiffItem: $mcnYamlDiffItem)'; } 
+@override String toString() { return 'McnResourceDetailsSectionItemValue.mcnYamlDiffItem($mcnYamlDiffItem)'; } 
  }
 @immutable final class McnResourceDetailsSectionItemValueMcnResourcePreviewItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnResourcePreviewItem(this.mcnResourcePreviewItem);
 
@@ -95,7 +95,7 @@ McnResourceDetailsSectionItemValueMcnResourcePreviewItem copyWith({McnResourcePr
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnResourcePreviewItem && mcnResourcePreviewItem == other.mcnResourcePreviewItem; } 
 @override int get hashCode { return mcnResourcePreviewItem.hashCode; } 
-@override String toString() { return 'McnResourceDetailsSectionItemValueMcnResourcePreviewItem(mcnResourcePreviewItem: $mcnResourcePreviewItem)'; } 
+@override String toString() { return 'McnResourceDetailsSectionItemValue.mcnResourcePreviewItem($mcnResourcePreviewItem)'; } 
  }
 @immutable final class McnResourceDetailsSectionItemValueMcnListItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnListItem(this.mcnListItem);
 
@@ -111,7 +111,7 @@ McnResourceDetailsSectionItemValueMcnListItem copyWith({List<McnListItemList>? l
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnListItem && mcnListItem == other.mcnListItem; } 
 @override int get hashCode { return mcnListItem.hashCode; } 
-@override String toString() { return 'McnResourceDetailsSectionItemValueMcnListItem(mcnListItem: $mcnListItem)'; } 
+@override String toString() { return 'McnResourceDetailsSectionItemValue.mcnListItem($mcnListItem)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

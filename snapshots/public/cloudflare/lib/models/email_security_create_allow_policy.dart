@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   'is_spoof': ?isSpoof,
   'is_trusted_sender': isTrustedSender,
   'pattern': pattern,
-  if (patternType != null) 'pattern_type': patternType?.toJson(),
+  'pattern_type': patternType != null ? patternType?.toJson() : null,
   'verify_sender': verifySender,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_acceptable_sender') && json['is_acceptable_sender'] is bool &&

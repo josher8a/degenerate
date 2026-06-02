@@ -43,7 +43,7 @@ NamespaceToolParamToolsFunction copyWith({String? name, String? Function()? desc
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NamespaceToolParamToolsFunction && functionToolParam == other.functionToolParam; } 
 @override int get hashCode { return functionToolParam.hashCode; } 
-@override String toString() { return 'NamespaceToolParamToolsFunction(functionToolParam: $functionToolParam)'; } 
+@override String toString() { return 'NamespaceToolParamTools.function($functionToolParam)'; } 
 @override String get name { return functionToolParam.name; } 
 @override String? get description { return functionToolParam.description; } 
  }
@@ -64,7 +64,7 @@ NamespaceToolParamToolsCustom copyWith({String? name, String? Function()? descri
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NamespaceToolParamToolsCustom && customToolParam == other.customToolParam; } 
 @override int get hashCode { return customToolParam.hashCode; } 
-@override String toString() { return 'NamespaceToolParamToolsCustom(customToolParam: $customToolParam)'; } 
+@override String toString() { return 'NamespaceToolParamTools.custom($customToolParam)'; } 
 @override String get name { return customToolParam.name; } 
 @override String? get description { return customToolParam.description; } 
  }

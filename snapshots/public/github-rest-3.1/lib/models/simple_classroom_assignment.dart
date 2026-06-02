@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
   'submitted': submitted,
   'passing': passing,
   'language': language,
-  if (deadline != null) 'deadline': deadline?.toIso8601String(),
+  'deadline': deadline != null ? deadline?.toIso8601String() : null,
   'classroom': classroom.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&

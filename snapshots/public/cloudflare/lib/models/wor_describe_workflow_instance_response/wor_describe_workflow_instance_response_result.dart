@@ -43,16 +43,16 @@ final ResultTrigger trigger;
 final String versionId;
 
 Map<String, dynamic> toJson() { return {
-  if (end != null) 'end': end?.toIso8601String(),
-  if (error != null) 'error': error?.toJson(),
+  'end': end != null ? end?.toIso8601String() : null,
+  'error': error != null ? error?.toJson() : null,
   'output': output,
   'params': params,
   'queued': queued.toIso8601String(),
-  if (start != null) 'start': start?.toIso8601String(),
+  'start': start != null ? start?.toIso8601String() : null,
   'status': status.toJson(),
   'step_count': stepCount,
   'steps': steps.map((e) => e.toJson()).toList(),
-  'success': ?success,
+  'success': success,
   'trigger': trigger.toJson(),
   'versionId': versionId,
 }; } 

@@ -42,7 +42,7 @@ CreateChatCompletionRequestResponseFormatText copyWith({ResponseFormatText? resp
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateChatCompletionRequestResponseFormatText && responseFormatText == other.responseFormatText; } 
 @override int get hashCode { return responseFormatText.hashCode; } 
-@override String toString() { return 'CreateChatCompletionRequestResponseFormatText(responseFormatText: $responseFormatText)'; } 
+@override String toString() { return 'CreateChatCompletionRequestResponseFormat.text($responseFormatText)'; } 
  }
 @immutable final class CreateChatCompletionRequestResponseFormatJsonSchema extends CreateChatCompletionRequestResponseFormat {const CreateChatCompletionRequestResponseFormatJsonSchema(this.responseFormatJsonSchema);
 
@@ -58,7 +58,7 @@ CreateChatCompletionRequestResponseFormatJsonSchema copyWith({JsonSchema? jsonSc
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateChatCompletionRequestResponseFormatJsonSchema && responseFormatJsonSchema == other.responseFormatJsonSchema; } 
 @override int get hashCode { return responseFormatJsonSchema.hashCode; } 
-@override String toString() { return 'CreateChatCompletionRequestResponseFormatJsonSchema(responseFormatJsonSchema: $responseFormatJsonSchema)'; } 
+@override String toString() { return 'CreateChatCompletionRequestResponseFormat.jsonSchema($responseFormatJsonSchema)'; } 
  }
 @immutable final class CreateChatCompletionRequestResponseFormatJsonObject extends CreateChatCompletionRequestResponseFormat {const CreateChatCompletionRequestResponseFormatJsonObject(this.responseFormatJsonObject);
 
@@ -72,7 +72,7 @@ CreateChatCompletionRequestResponseFormatJsonObject copyWith({ResponseFormatJson
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateChatCompletionRequestResponseFormatJsonObject && responseFormatJsonObject == other.responseFormatJsonObject; } 
 @override int get hashCode { return responseFormatJsonObject.hashCode; } 
-@override String toString() { return 'CreateChatCompletionRequestResponseFormatJsonObject(responseFormatJsonObject: $responseFormatJsonObject)'; } 
+@override String toString() { return 'CreateChatCompletionRequestResponseFormat.jsonObject($responseFormatJsonObject)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

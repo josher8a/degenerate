@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'comments': ?comments,
   'is_regex': isRegex,
   'pattern': pattern,
-  if (patternType != null) 'pattern_type': patternType?.toJson(),
+  'pattern_type': patternType != null ? patternType?.toJson() : null,
   'created_at': createdAt.toIso8601String(),
   'id': id.toJson(),
   'last_modified': lastModified.toIso8601String(),

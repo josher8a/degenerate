@@ -35,7 +35,7 @@ InfraServiceConfigHttp copyWith({DateTime? Function()? createdAt, InfraServiceHo
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InfraServiceConfigHttp && infraServiceCommon == other.infraServiceCommon; } 
 @override int get hashCode { return infraServiceCommon.hashCode; } 
-@override String toString() { return 'InfraServiceConfigHttp(infraServiceCommon: $infraServiceCommon)'; } 
+@override String toString() { return 'InfraServiceConfig.http($infraServiceCommon)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

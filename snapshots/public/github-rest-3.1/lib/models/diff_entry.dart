@@ -79,7 +79,7 @@ final String? patch;
 final String? previousFilename;
 
 Map<String, dynamic> toJson() { return {
-  'sha': ?sha,
+  'sha': sha,
   'filename': filename,
   'status': status.toJson(),
   'additions': additions,

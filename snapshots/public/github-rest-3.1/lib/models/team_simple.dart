@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
   'members_url': membersUrl,
   'name': name,
-  'description': ?description,
+  'description': description,
   'permission': permission,
   'privacy': ?privacy,
   'notification_setting': ?notificationSetting,

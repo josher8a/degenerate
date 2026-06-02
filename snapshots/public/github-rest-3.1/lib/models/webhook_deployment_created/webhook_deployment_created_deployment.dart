@@ -63,8 +63,8 @@ final Uri url;
 
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
-  if (creator != null) 'creator': creator?.toJson(),
-  'description': ?description,
+  'creator': creator != null ? creator?.toJson() : null,
+  'description': description,
   'environment': environment,
   'id': id,
   'node_id': nodeId,

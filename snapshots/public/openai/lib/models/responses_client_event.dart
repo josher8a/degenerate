@@ -41,7 +41,7 @@ ResponsesClientEventResponseCreate copyWith({InputParam? Function()? input, List
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponsesClientEventResponseCreate && createResponse == other.createResponse; } 
 @override int get hashCode { return createResponse.hashCode; } 
-@override String toString() { return 'ResponsesClientEventResponseCreate(createResponse: $createResponse)'; } 
+@override String toString() { return 'ResponsesClientEvent.responseCreate($createResponse)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

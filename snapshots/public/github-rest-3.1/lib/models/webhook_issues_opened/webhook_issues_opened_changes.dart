@@ -14,7 +14,7 @@ final OldIssue? oldIssue;
 final OldRepository oldRepository;
 
 Map<String, dynamic> toJson() { return {
-  if (oldIssue != null) 'old_issue': oldIssue?.toJson(),
+  'old_issue': oldIssue != null ? oldIssue?.toJson() : null,
   'old_repository': oldRepository.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('old_issue') &&

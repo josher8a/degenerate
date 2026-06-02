@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'name': name,
   'slug': slug,
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'created_at': createdAt != null ? createdAt?.toIso8601String() : null,
+  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
   'avatar_url': avatarUrl.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('html_url') && json['html_url'] is String &&

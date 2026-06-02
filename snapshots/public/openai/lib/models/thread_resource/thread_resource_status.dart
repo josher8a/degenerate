@@ -35,7 +35,7 @@ ThreadResourceStatusActive copyWith({ActiveStatus? activeStatus}) { return Threa
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadResourceStatusActive && activeStatus == other.activeStatus; } 
 @override int get hashCode { return activeStatus.hashCode; } 
-@override String toString() { return 'ThreadResourceStatusActive(activeStatus: $activeStatus)'; } 
+@override String toString() { return 'ThreadResourceStatus.active($activeStatus)'; } 
  }
 @immutable final class ThreadResourceStatusLocked extends ThreadResourceStatus {const ThreadResourceStatusLocked(this.lockedStatus);
 
@@ -51,7 +51,7 @@ ThreadResourceStatusLocked copyWith({String? Function()? reason}) { return Threa
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadResourceStatusLocked && lockedStatus == other.lockedStatus; } 
 @override int get hashCode { return lockedStatus.hashCode; } 
-@override String toString() { return 'ThreadResourceStatusLocked(lockedStatus: $lockedStatus)'; } 
+@override String toString() { return 'ThreadResourceStatus.locked($lockedStatus)'; } 
  }
 @immutable final class ThreadResourceStatusClosed extends ThreadResourceStatus {const ThreadResourceStatusClosed(this.closedStatus);
 
@@ -67,7 +67,7 @@ ThreadResourceStatusClosed copyWith({String? Function()? reason}) { return Threa
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadResourceStatusClosed && closedStatus == other.closedStatus; } 
 @override int get hashCode { return closedStatus.hashCode; } 
-@override String toString() { return 'ThreadResourceStatusClosed(closedStatus: $closedStatus)'; } 
+@override String toString() { return 'ThreadResourceStatus.closed($closedStatus)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

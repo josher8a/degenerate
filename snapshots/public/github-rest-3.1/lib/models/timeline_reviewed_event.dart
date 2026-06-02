@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
   'user': user.toJson(),
-  'body': ?body,
+  'body': body,
   'state': state,
   'html_url': htmlUrl.toString(),
   'pull_request_url': pullRequestUrl.toString(),

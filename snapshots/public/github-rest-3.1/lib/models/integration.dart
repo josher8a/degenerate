@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'client_id': ?clientId,
   'owner': owner.toJson(),
   'name': name,
-  'description': ?description,
+  'description': description,
   'external_url': externalUrl.toString(),
   'html_url': htmlUrl.toString(),
   'created_at': createdAt.toIso8601String(),

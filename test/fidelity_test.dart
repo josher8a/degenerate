@@ -375,6 +375,32 @@ void main() {
     });
   });
 
+  // ─── Required-but-nullable fields ───────────────────────
+
+  group('Required-but-nullable', () {
+    test('required + nullable fields are required in IR and nullable in type', () {
+      final obj = _findType(types, 'RequiredNullable') as IrObject;
+      final nullableString = _findField(obj, 'nullableString');
+      expect(nullableString.isRequired, isTrue);
+      expect(nullableString.type.isNullable, isTrue);
+    });
+
+    test('required + nullable list is required with nullable IrList', () {
+      final obj = _findType(types, 'RequiredNullable') as IrObject;
+      final nullableList = _findField(obj, 'nullableList');
+      expect(nullableList.isRequired, isTrue);
+      expect(nullableList.type, isA<IrList>());
+      expect(nullableList.type.isNullable, isTrue);
+    });
+
+    test('required + nullable object is required with nullable type', () {
+      final obj = _findType(types, 'RequiredNullable') as IrObject;
+      final nullableObject = _findField(obj, 'nullableObject');
+      expect(nullableObject.isRequired, isTrue);
+      expect(nullableObject.type.isNullable, isTrue);
+    });
+  });
+
   // ─── Adversarial field names ────────────────────────────
 
   group('Adversarial keys', () {

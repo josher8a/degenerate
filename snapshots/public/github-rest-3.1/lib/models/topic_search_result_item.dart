@@ -56,11 +56,11 @@ final List<Aliases>? aliases;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
-  'display_name': ?displayName,
-  'short_description': ?shortDescription,
-  'description': ?description,
-  'created_by': ?createdBy,
-  'released': ?released,
+  'display_name': displayName,
+  'short_description': shortDescription,
+  'description': description,
+  'created_by': createdBy,
+  'released': released,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'featured': featured,

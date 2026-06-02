@@ -65,7 +65,7 @@ final int index;
 Map<String, dynamic> toJson() { return {
   'delta': delta.toJson(),
   if (logprobs != null) 'logprobs': logprobs?.toJson(),
-  if (finishReason != null) 'finish_reason': finishReason?.toJson(),
+  'finish_reason': finishReason != null ? finishReason?.toJson() : null,
   'index': index,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('delta') &&

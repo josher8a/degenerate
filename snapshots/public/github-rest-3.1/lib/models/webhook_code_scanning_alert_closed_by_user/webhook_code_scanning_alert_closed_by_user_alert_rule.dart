@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'help_uri': ?helpUri,
   'id': id,
   'name': ?name,
-  if (severity != null) 'severity': severity?.toJson(),
+  'severity': severity != null ? severity?.toJson() : null,
   'tags': ?tags,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&

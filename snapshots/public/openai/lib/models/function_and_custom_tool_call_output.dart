@@ -39,7 +39,7 @@ FunctionAndCustomToolCallOutputInputText copyWith({String? text}) { return Funct
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionAndCustomToolCallOutputInputText && inputTextContent == other.inputTextContent; } 
 @override int get hashCode { return inputTextContent.hashCode; } 
-@override String toString() { return 'FunctionAndCustomToolCallOutputInputText(inputTextContent: $inputTextContent)'; } 
+@override String toString() { return 'FunctionAndCustomToolCallOutput.inputText($inputTextContent)'; } 
  }
 @immutable final class FunctionAndCustomToolCallOutputInputImage extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputImage(this.inputImageContent);
 
@@ -57,7 +57,7 @@ FunctionAndCustomToolCallOutputInputImage copyWith({String? Function()? imageUrl
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionAndCustomToolCallOutputInputImage && inputImageContent == other.inputImageContent; } 
 @override int get hashCode { return inputImageContent.hashCode; } 
-@override String toString() { return 'FunctionAndCustomToolCallOutputInputImage(inputImageContent: $inputImageContent)'; } 
+@override String toString() { return 'FunctionAndCustomToolCallOutput.inputImage($inputImageContent)'; } 
  }
 @immutable final class FunctionAndCustomToolCallOutputInputFile extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputFile(this.inputFileContent);
 
@@ -77,7 +77,7 @@ FunctionAndCustomToolCallOutputInputFile copyWith({String? Function()? fileId, S
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionAndCustomToolCallOutputInputFile && inputFileContent == other.inputFileContent; } 
 @override int get hashCode { return inputFileContent.hashCode; } 
-@override String toString() { return 'FunctionAndCustomToolCallOutputInputFile(inputFileContent: $inputFileContent)'; } 
+@override String toString() { return 'FunctionAndCustomToolCallOutput.inputFile($inputFileContent)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

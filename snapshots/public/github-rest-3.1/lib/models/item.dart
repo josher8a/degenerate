@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   if (creator != null) 'creator': creator?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (archivedAt != null) 'archived_at': archivedAt?.toIso8601String(),
+  'archived_at': archivedAt != null ? archivedAt?.toIso8601String() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('content_node_id') && json['content_node_id'] is String &&

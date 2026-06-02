@@ -96,7 +96,7 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toString(),
   'name': name,
   'slug': slug,
-  'description': ?description,
+  'description': description,
   if (privacy != null) 'privacy': privacy?.toJson(),
   if (notificationSetting != null) 'notification_setting': notificationSetting?.toJson(),
   'permission': permission,

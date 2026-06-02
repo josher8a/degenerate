@@ -30,7 +30,7 @@ final String type;
 
 Map<String, dynamic> toJson() { return {
   'app_launcher_visible': ?appLauncherVisible,
-  'domain': ?domain,
+  'domain': domain,
   if (logoUrl != null) 'logo_url': logoUrl?.toJson(),
   if (name != null) 'name': name?.toJson(),
   'type': type,

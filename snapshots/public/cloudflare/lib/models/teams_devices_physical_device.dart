@@ -119,7 +119,7 @@ Map<String, dynamic> toJson() { return {
   'device_type': ?deviceType,
   'hardware_id': ?hardwareId,
   'id': id,
-  'last_seen_at': ?lastSeenAt,
+  'last_seen_at': lastSeenAt,
   if (lastSeenRegistration != null) 'last_seen_registration': lastSeenRegistration?.toJson(),
   if (lastSeenUser != null) 'last_seen_user': lastSeenUser?.toJson(),
   'mac_address': ?macAddress,

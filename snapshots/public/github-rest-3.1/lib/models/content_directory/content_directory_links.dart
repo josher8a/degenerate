@@ -15,8 +15,8 @@ final Uri? html;
 final Uri self;
 
 Map<String, dynamic> toJson() { return {
-  if (git != null) 'git': git?.toString(),
-  if (html != null) 'html': html?.toString(),
+  'git': git != null ? git?.toString() : null,
+  'html': html != null ? html?.toString() : null,
   'self': self.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('git') && json['git'] is String &&

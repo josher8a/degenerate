@@ -35,7 +35,7 @@ McnListItemListMcnStringItem copyWith({String? string}) { return McnListItemList
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnListItemListMcnStringItem && mcnStringItem == other.mcnStringItem; } 
 @override int get hashCode { return mcnStringItem.hashCode; } 
-@override String toString() { return 'McnListItemListMcnStringItem(mcnStringItem: $mcnStringItem)'; } 
+@override String toString() { return 'McnListItemList.mcnStringItem($mcnStringItem)'; } 
  }
 @immutable final class McnListItemListMcnResourcePreviewItem extends McnListItemList {const McnListItemListMcnResourcePreviewItem(this.mcnResourcePreviewItem);
 
@@ -51,7 +51,7 @@ McnListItemListMcnResourcePreviewItem copyWith({McnResourcePreview? resourcePrev
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnListItemListMcnResourcePreviewItem && mcnResourcePreviewItem == other.mcnResourcePreviewItem; } 
 @override int get hashCode { return mcnResourcePreviewItem.hashCode; } 
-@override String toString() { return 'McnListItemListMcnResourcePreviewItem(mcnResourcePreviewItem: $mcnResourcePreviewItem)'; } 
+@override String toString() { return 'McnListItemList.mcnResourcePreviewItem($mcnResourcePreviewItem)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

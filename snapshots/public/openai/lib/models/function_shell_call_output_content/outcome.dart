@@ -31,7 +31,7 @@ OutcomeTimeout copyWith({FunctionShellCallOutputTimeoutOutcome? functionShellCal
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutcomeTimeout && functionShellCallOutputTimeoutOutcome == other.functionShellCallOutputTimeoutOutcome; } 
 @override int get hashCode { return functionShellCallOutputTimeoutOutcome.hashCode; } 
-@override String toString() { return 'OutcomeTimeout(functionShellCallOutputTimeoutOutcome: $functionShellCallOutputTimeoutOutcome)'; } 
+@override String toString() { return 'Outcome.timeout($functionShellCallOutputTimeoutOutcome)'; } 
  }
 @immutable final class OutcomeExit extends Outcome {const OutcomeExit(this.functionShellCallOutputExitOutcome);
 
@@ -47,7 +47,7 @@ OutcomeExit copyWith({int? exitCode}) { return OutcomeExit(functionShellCallOutp
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutcomeExit && functionShellCallOutputExitOutcome == other.functionShellCallOutputExitOutcome; } 
 @override int get hashCode { return functionShellCallOutputExitOutcome.hashCode; } 
-@override String toString() { return 'OutcomeExit(functionShellCallOutputExitOutcome: $functionShellCallOutputExitOutcome)'; } 
+@override String toString() { return 'Outcome.exit($functionShellCallOutputExitOutcome)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

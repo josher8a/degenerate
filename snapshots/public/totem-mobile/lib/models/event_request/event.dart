@@ -108,7 +108,7 @@ final class EventAcceptStick extends Event {
 
   @override
   String toString() {
-    return 'EventAcceptStick(acceptStickEvent: $acceptStickEvent)';
+    return 'Event.acceptStick($acceptStickEvent)';
   }
 }
 
@@ -152,7 +152,7 @@ final class EventBanParticipant extends Event {
 
   @override
   String toString() {
-    return 'EventBanParticipant(banParticipantEvent: $banParticipantEvent)';
+    return 'Event.banParticipant($banParticipantEvent)';
   }
 }
 
@@ -193,7 +193,7 @@ final class EventEndRoom extends Event {
 
   @override
   String toString() {
-    return 'EventEndRoom(endRoomEvent: $endRoomEvent)';
+    return 'Event.endRoom($endRoomEvent)';
   }
 }
 
@@ -235,7 +235,7 @@ final class EventForcePassStick extends Event {
 
   @override
   String toString() {
-    return 'EventForcePassStick(forcePassStickEvent: $forcePassStickEvent)';
+    return 'Event.forcePassStick($forcePassStickEvent)';
   }
 }
 
@@ -276,7 +276,7 @@ final class EventPassStick extends Event {
 
   @override
   String toString() {
-    return 'EventPassStick(passStickEvent: $passStickEvent)';
+    return 'Event.passStick($passStickEvent)';
   }
 }
 
@@ -317,7 +317,7 @@ final class EventReorder extends Event {
 
   @override
   String toString() {
-    return 'EventReorder(reorderEvent: $reorderEvent)';
+    return 'Event.reorder($reorderEvent)';
   }
 }
 
@@ -358,7 +358,7 @@ final class EventStartRoom extends Event {
 
   @override
   String toString() {
-    return 'EventStartRoom(startRoomEvent: $startRoomEvent)';
+    return 'Event.startRoom($startRoomEvent)';
   }
 }
 
@@ -402,7 +402,7 @@ final class EventUnbanParticipant extends Event {
 
   @override
   String toString() {
-    return 'EventUnbanParticipant(unbanParticipantEvent: $unbanParticipantEvent)';
+    return 'Event.unbanParticipant($unbanParticipantEvent)';
   }
 }
 

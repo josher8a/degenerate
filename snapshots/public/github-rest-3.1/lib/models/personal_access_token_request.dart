@@ -68,14 +68,14 @@ Map<String, dynamic> toJson() { return {
   'permissions_upgraded': permissionsUpgraded.toJson(),
   'permissions_result': permissionsResult.toJson(),
   'repository_selection': repositorySelection.toJson(),
-  'repository_count': ?repositoryCount,
-  if (repositories != null) 'repositories': repositories?.map((e) => e.toJson()).toList(),
+  'repository_count': repositoryCount,
+  'repositories': repositories != null ? repositories?.map((e) => e.toJson()).toList() : null,
   'created_at': createdAt,
   'token_id': tokenId,
   'token_name': tokenName,
   'token_expired': tokenExpired,
-  'token_expires_at': ?tokenExpiresAt,
-  'token_last_used_at': ?tokenLastUsedAt,
+  'token_expires_at': tokenExpiresAt,
+  'token_last_used_at': tokenLastUsedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('owner') &&

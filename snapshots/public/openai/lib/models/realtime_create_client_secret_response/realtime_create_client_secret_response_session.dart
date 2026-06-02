@@ -50,7 +50,7 @@ RealtimeCreateClientSecretResponseSessionRealtime copyWith({ClientSecret? client
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeCreateClientSecretResponseSessionRealtime && realtimeSessionCreateResponseGa == other.realtimeSessionCreateResponseGa; } 
 @override int get hashCode { return realtimeSessionCreateResponseGa.hashCode; } 
-@override String toString() { return 'RealtimeCreateClientSecretResponseSessionRealtime(realtimeSessionCreateResponseGa: $realtimeSessionCreateResponseGa)'; } 
+@override String toString() { return 'RealtimeCreateClientSecretResponseSession.realtime($realtimeSessionCreateResponseGa)'; } 
 @override List<Include>? get include { return realtimeSessionCreateResponseGa.include; } 
  }
 @immutable final class RealtimeCreateClientSecretResponseSessionTranscription extends RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSessionTranscription(this.realtimeTranscriptionSessionCreateResponseGa);
@@ -71,7 +71,7 @@ RealtimeCreateClientSecretResponseSessionTranscription copyWith({String? id, Str
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeCreateClientSecretResponseSessionTranscription && realtimeTranscriptionSessionCreateResponseGa == other.realtimeTranscriptionSessionCreateResponseGa; } 
 @override int get hashCode { return realtimeTranscriptionSessionCreateResponseGa.hashCode; } 
-@override String toString() { return 'RealtimeCreateClientSecretResponseSessionTranscription(realtimeTranscriptionSessionCreateResponseGa: $realtimeTranscriptionSessionCreateResponseGa)'; } 
+@override String toString() { return 'RealtimeCreateClientSecretResponseSession.transcription($realtimeTranscriptionSessionCreateResponseGa)'; } 
 @override List<Include>? get include { return realtimeTranscriptionSessionCreateResponseGa.include; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

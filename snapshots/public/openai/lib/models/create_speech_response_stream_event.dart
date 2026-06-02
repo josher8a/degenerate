@@ -35,7 +35,7 @@ CreateSpeechResponseStreamEventSpeechAudioDelta copyWith({String? audio}) { retu
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateSpeechResponseStreamEventSpeechAudioDelta && speechAudioDeltaEvent == other.speechAudioDeltaEvent; } 
 @override int get hashCode { return speechAudioDeltaEvent.hashCode; } 
-@override String toString() { return 'CreateSpeechResponseStreamEventSpeechAudioDelta(speechAudioDeltaEvent: $speechAudioDeltaEvent)'; } 
+@override String toString() { return 'CreateSpeechResponseStreamEvent.speechAudioDelta($speechAudioDeltaEvent)'; } 
  }
 @immutable final class CreateSpeechResponseStreamEventSpeechAudioDone extends CreateSpeechResponseStreamEvent {const CreateSpeechResponseStreamEventSpeechAudioDone(this.speechAudioDoneEvent);
 
@@ -51,7 +51,7 @@ CreateSpeechResponseStreamEventSpeechAudioDone copyWith({SpeechAudioDoneEventUsa
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateSpeechResponseStreamEventSpeechAudioDone && speechAudioDoneEvent == other.speechAudioDoneEvent; } 
 @override int get hashCode { return speechAudioDoneEvent.hashCode; } 
-@override String toString() { return 'CreateSpeechResponseStreamEventSpeechAudioDone(speechAudioDoneEvent: $speechAudioDoneEvent)'; } 
+@override String toString() { return 'CreateSpeechResponseStreamEvent.speechAudioDone($speechAudioDoneEvent)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

@@ -46,7 +46,7 @@ AnnotationFileCitation copyWith({String? fileId, int? index, String? filename, }
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationFileCitation && fileCitationBody == other.fileCitationBody; } 
 @override int get hashCode { return fileCitationBody.hashCode; } 
-@override String toString() { return 'AnnotationFileCitation(fileCitationBody: $fileCitationBody)'; } 
+@override String toString() { return 'Annotation.fileCitation($fileCitationBody)'; } 
  }
 @immutable final class AnnotationUrlCitation extends Annotation {const AnnotationUrlCitation(this.urlCitationBody);
 
@@ -65,7 +65,7 @@ AnnotationUrlCitation copyWith({String? url, int? startIndex, int? endIndex, Str
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationUrlCitation && urlCitationBody == other.urlCitationBody; } 
 @override int get hashCode { return urlCitationBody.hashCode; } 
-@override String toString() { return 'AnnotationUrlCitation(urlCitationBody: $urlCitationBody)'; } 
+@override String toString() { return 'Annotation.urlCitation($urlCitationBody)'; } 
  }
 @immutable final class AnnotationContainerFileCitation extends Annotation {const AnnotationContainerFileCitation(this.containerFileCitationBody);
 
@@ -85,7 +85,7 @@ AnnotationContainerFileCitation copyWith({String? containerId, String? fileId, i
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationContainerFileCitation && containerFileCitationBody == other.containerFileCitationBody; } 
 @override int get hashCode { return containerFileCitationBody.hashCode; } 
-@override String toString() { return 'AnnotationContainerFileCitation(containerFileCitationBody: $containerFileCitationBody)'; } 
+@override String toString() { return 'Annotation.containerFileCitation($containerFileCitationBody)'; } 
  }
 @immutable final class AnnotationFilePath extends Annotation {const AnnotationFilePath(this.filePath);
 
@@ -102,7 +102,7 @@ AnnotationFilePath copyWith({String? fileId, int? index, }) { return AnnotationF
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationFilePath && filePath == other.filePath; } 
 @override int get hashCode { return filePath.hashCode; } 
-@override String toString() { return 'AnnotationFilePath(filePath: $filePath)'; } 
+@override String toString() { return 'Annotation.filePath($filePath)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

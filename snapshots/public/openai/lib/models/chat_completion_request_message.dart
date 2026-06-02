@@ -52,7 +52,7 @@ ChatCompletionRequestMessageDeveloper copyWith({ChatCompletionRequestDeveloperMe
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageDeveloper && chatCompletionRequestDeveloperMessage == other.chatCompletionRequestDeveloperMessage; } 
 @override int get hashCode { return chatCompletionRequestDeveloperMessage.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageDeveloper(chatCompletionRequestDeveloperMessage: $chatCompletionRequestDeveloperMessage)'; } 
+@override String toString() { return 'ChatCompletionRequestMessage.developer($chatCompletionRequestDeveloperMessage)'; } 
  }
 @immutable final class ChatCompletionRequestMessageSystem extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageSystem(this.chatCompletionRequestSystemMessage);
 
@@ -69,7 +69,7 @@ ChatCompletionRequestMessageSystem copyWith({ChatCompletionRequestSystemMessageC
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageSystem && chatCompletionRequestSystemMessage == other.chatCompletionRequestSystemMessage; } 
 @override int get hashCode { return chatCompletionRequestSystemMessage.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageSystem(chatCompletionRequestSystemMessage: $chatCompletionRequestSystemMessage)'; } 
+@override String toString() { return 'ChatCompletionRequestMessage.system($chatCompletionRequestSystemMessage)'; } 
  }
 @immutable final class ChatCompletionRequestMessageUser extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageUser(this.chatCompletionRequestUserMessage);
 
@@ -86,7 +86,7 @@ ChatCompletionRequestMessageUser copyWith({ChatCompletionRequestUserMessageConte
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageUser && chatCompletionRequestUserMessage == other.chatCompletionRequestUserMessage; } 
 @override int get hashCode { return chatCompletionRequestUserMessage.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageUser(chatCompletionRequestUserMessage: $chatCompletionRequestUserMessage)'; } 
+@override String toString() { return 'ChatCompletionRequestMessage.user($chatCompletionRequestUserMessage)'; } 
  }
 @immutable final class ChatCompletionRequestMessageAssistant extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageAssistant(this.chatCompletionRequestAssistantMessage);
 
@@ -107,7 +107,7 @@ ChatCompletionRequestMessageAssistant copyWith({ChatCompletionRequestAssistantMe
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageAssistant && chatCompletionRequestAssistantMessage == other.chatCompletionRequestAssistantMessage; } 
 @override int get hashCode { return chatCompletionRequestAssistantMessage.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageAssistant(chatCompletionRequestAssistantMessage: $chatCompletionRequestAssistantMessage)'; } 
+@override String toString() { return 'ChatCompletionRequestMessage.assistant($chatCompletionRequestAssistantMessage)'; } 
  }
 @immutable final class ChatCompletionRequestMessageTool extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageTool(this.chatCompletionRequestToolMessage);
 
@@ -124,7 +124,7 @@ ChatCompletionRequestMessageTool copyWith({ChatCompletionRequestToolMessageConte
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageTool && chatCompletionRequestToolMessage == other.chatCompletionRequestToolMessage; } 
 @override int get hashCode { return chatCompletionRequestToolMessage.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageTool(chatCompletionRequestToolMessage: $chatCompletionRequestToolMessage)'; } 
+@override String toString() { return 'ChatCompletionRequestMessage.tool($chatCompletionRequestToolMessage)'; } 
  }
 @immutable final class ChatCompletionRequestMessageFunction extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageFunction(this.chatCompletionRequestFunctionMessage);
 
@@ -141,7 +141,7 @@ ChatCompletionRequestMessageFunction copyWith({String? Function()? content, Stri
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageFunction && chatCompletionRequestFunctionMessage == other.chatCompletionRequestFunctionMessage; } 
 @override int get hashCode { return chatCompletionRequestFunctionMessage.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageFunction(chatCompletionRequestFunctionMessage: $chatCompletionRequestFunctionMessage)'; } 
+@override String toString() { return 'ChatCompletionRequestMessage.function($chatCompletionRequestFunctionMessage)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

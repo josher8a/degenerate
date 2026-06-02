@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'node_id': nodeId,
   'avatar_url': avatarUrl.toString(),
-  'gravatar_id': ?gravatarId,
+  'gravatar_id': gravatarId,
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
   'followers_url': followersUrl.toString(),

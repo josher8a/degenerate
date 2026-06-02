@@ -64,7 +64,7 @@ MessageContentInputText copyWith({String? text}) { return MessageContentInputTex
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentInputText && inputTextContent == other.inputTextContent; } 
 @override int get hashCode { return inputTextContent.hashCode; } 
-@override String toString() { return 'MessageContentInputText(inputTextContent: $inputTextContent)'; } 
+@override String toString() { return 'MessageContent.inputText($inputTextContent)'; } 
  }
 @immutable final class MessageContentOutputText extends MessageContent {const MessageContentOutputText(this.outputTextContent);
 
@@ -82,7 +82,7 @@ MessageContentOutputText copyWith({String? text, List<Annotation>? annotations, 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentOutputText && outputTextContent == other.outputTextContent; } 
 @override int get hashCode { return outputTextContent.hashCode; } 
-@override String toString() { return 'MessageContentOutputText(outputTextContent: $outputTextContent)'; } 
+@override String toString() { return 'MessageContent.outputText($outputTextContent)'; } 
  }
 @immutable final class MessageContentText extends MessageContent {const MessageContentText(this.textContent);
 
@@ -98,7 +98,7 @@ MessageContentText copyWith({String? text}) { return MessageContentText(textCont
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentText && textContent == other.textContent; } 
 @override int get hashCode { return textContent.hashCode; } 
-@override String toString() { return 'MessageContentText(textContent: $textContent)'; } 
+@override String toString() { return 'MessageContent.text($textContent)'; } 
  }
 @immutable final class MessageContentSummaryText extends MessageContent {const MessageContentSummaryText(this.summaryTextContent);
 
@@ -114,7 +114,7 @@ MessageContentSummaryText copyWith({String? text}) { return MessageContentSummar
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentSummaryText && summaryTextContent == other.summaryTextContent; } 
 @override int get hashCode { return summaryTextContent.hashCode; } 
-@override String toString() { return 'MessageContentSummaryText(summaryTextContent: $summaryTextContent)'; } 
+@override String toString() { return 'MessageContent.summaryText($summaryTextContent)'; } 
  }
 @immutable final class MessageContentReasoningText extends MessageContent {const MessageContentReasoningText(this.reasoningTextContent);
 
@@ -130,7 +130,7 @@ MessageContentReasoningText copyWith({String? text}) { return MessageContentReas
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentReasoningText && reasoningTextContent == other.reasoningTextContent; } 
 @override int get hashCode { return reasoningTextContent.hashCode; } 
-@override String toString() { return 'MessageContentReasoningText(reasoningTextContent: $reasoningTextContent)'; } 
+@override String toString() { return 'MessageContent.reasoningText($reasoningTextContent)'; } 
  }
 @immutable final class MessageContentRefusal extends MessageContent {const MessageContentRefusal(this.refusalContent);
 
@@ -146,7 +146,7 @@ MessageContentRefusal copyWith({String? refusal}) { return MessageContentRefusal
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentRefusal && refusalContent == other.refusalContent; } 
 @override int get hashCode { return refusalContent.hashCode; } 
-@override String toString() { return 'MessageContentRefusal(refusalContent: $refusalContent)'; } 
+@override String toString() { return 'MessageContent.refusal($refusalContent)'; } 
  }
 @immutable final class MessageContentInputImage extends MessageContent {const MessageContentInputImage(this.inputImageContent);
 
@@ -164,7 +164,7 @@ MessageContentInputImage copyWith({String? Function()? imageUrl, String? Functio
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentInputImage && inputImageContent == other.inputImageContent; } 
 @override int get hashCode { return inputImageContent.hashCode; } 
-@override String toString() { return 'MessageContentInputImage(inputImageContent: $inputImageContent)'; } 
+@override String toString() { return 'MessageContent.inputImage($inputImageContent)'; } 
  }
 @immutable final class MessageContentComputerScreenshot extends MessageContent {const MessageContentComputerScreenshot(this.computerScreenshotContent);
 
@@ -182,7 +182,7 @@ MessageContentComputerScreenshot copyWith({String? Function()? imageUrl, String?
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentComputerScreenshot && computerScreenshotContent == other.computerScreenshotContent; } 
 @override int get hashCode { return computerScreenshotContent.hashCode; } 
-@override String toString() { return 'MessageContentComputerScreenshot(computerScreenshotContent: $computerScreenshotContent)'; } 
+@override String toString() { return 'MessageContent.computerScreenshot($computerScreenshotContent)'; } 
  }
 @immutable final class MessageContentInputFile extends MessageContent {const MessageContentInputFile(this.inputFileContent);
 
@@ -202,7 +202,7 @@ MessageContentInputFile copyWith({String? Function()? fileId, String? Function()
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentInputFile && inputFileContent == other.inputFileContent; } 
 @override int get hashCode { return inputFileContent.hashCode; } 
-@override String toString() { return 'MessageContentInputFile(inputFileContent: $inputFileContent)'; } 
+@override String toString() { return 'MessageContent.inputFile($inputFileContent)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

@@ -50,10 +50,10 @@ final bool lockBranch;
 final bool allowForkSyncing;
 
 Map<String, dynamic> toJson() { return {
-  if (requiredStatusChecks != null) 'required_status_checks': requiredStatusChecks?.toJson(),
-  'enforce_admins': ?enforceAdmins,
-  if (requiredPullRequestReviews != null) 'required_pull_request_reviews': requiredPullRequestReviews?.toJson(),
-  if (restrictions != null) 'restrictions': restrictions?.toJson(),
+  'required_status_checks': requiredStatusChecks != null ? requiredStatusChecks?.toJson() : null,
+  'enforce_admins': enforceAdmins,
+  'required_pull_request_reviews': requiredPullRequestReviews != null ? requiredPullRequestReviews?.toJson() : null,
+  'restrictions': restrictions != null ? restrictions?.toJson() : null,
   'required_linear_history': ?requiredLinearHistory,
   'allow_force_pushes': ?allowForcePushes,
   'allow_deletions': ?allowDeletions,

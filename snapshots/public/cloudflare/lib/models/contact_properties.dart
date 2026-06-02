@@ -143,16 +143,16 @@ Map<String, dynamic> toJson() { return {
   'address': address.toJson(),
   if (address2 != null) 'address2': address2?.toJson(),
   'city': city.toJson(),
-  if (country != null) 'country': country?.toJson(),
+  'country': country != null ? country?.toJson() : null,
   if (email != null) 'email': email?.toJson(),
   if (fax != null) 'fax': fax?.toJson(),
-  if (firstName != null) 'first_name': firstName?.toJson(),
+  'first_name': firstName != null ? firstName?.toJson() : null,
   if (id != null) 'id': id?.toJson(),
-  if (lastName != null) 'last_name': lastName?.toJson(),
+  'last_name': lastName != null ? lastName?.toJson() : null,
   'organization': organization.toJson(),
-  if (phone != null) 'phone': phone?.toJson(),
+  'phone': phone != null ? phone?.toJson() : null,
   'state': state.toJson(),
-  if (zip != null) 'zip': zip?.toJson(),
+  'zip': zip != null ? zip?.toJson() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('city') &&

@@ -162,7 +162,7 @@ Map<String, dynamic> toJson() { return {
   'compatibility_flags': compatibilityFlags,
   if (d1Databases != null) 'd1_databases': d1Databases?.map((k, v) => MapEntry(k, v.toJson())),
   if (durableObjectNamespaces != null) 'durable_object_namespaces': durableObjectNamespaces?.map((k, v) => MapEntry(k, v.toJson())),
-  if (envVars != null) 'env_vars': envVars?.map((k, v) => MapEntry(k, v?.toJson())),
+  'env_vars': envVars != null ? envVars?.map((k, v) => MapEntry(k, v?.toJson())) : null,
   'fail_open': failOpen,
   if (hyperdriveBindings != null) 'hyperdrive_bindings': hyperdriveBindings?.map((k, v) => MapEntry(k, v.toJson())),
   if (kvNamespaces != null) 'kv_namespaces': kvNamespaces?.map((k, v) => MapEntry(k, v.toJson())),

@@ -66,7 +66,7 @@ final DateTime? withdrawnAt;
 
 Map<String, dynamic> toJson() { return {
   'ghsa_id': ghsaId,
-  'cve_id': ?cveId,
+  'cve_id': cveId,
   'summary': summary,
   'description': description,
   'vulnerabilities': vulnerabilities.map((e) => e.toJson()).toList(),
@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'references': references.map((e) => e.toJson()).toList(),
   'published_at': publishedAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (withdrawnAt != null) 'withdrawn_at': withdrawnAt?.toIso8601String(),
+  'withdrawn_at': withdrawnAt != null ? withdrawnAt?.toIso8601String() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_id') && json['ghsa_id'] is String &&
       json.containsKey('cve_id') && json['cve_id'] is String &&

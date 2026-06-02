@@ -156,13 +156,13 @@ final int workflowId;
 final String? workflowUrl;
 
 Map<String, dynamic> toJson() { return {
-  if (actor != null) 'actor': actor?.toJson(),
+  'actor': actor != null ? actor?.toJson() : null,
   'artifacts_url': ?artifactsUrl,
   'cancel_url': ?cancelUrl,
   'check_suite_id': checkSuiteId,
   'check_suite_node_id': checkSuiteNodeId,
   'check_suite_url': ?checkSuiteUrl,
-  if (conclusion != null) 'conclusion': conclusion?.toJson(),
+  'conclusion': conclusion != null ? conclusion?.toJson() : null,
   'created_at': createdAt.toIso8601String(),
   'display_title': displayTitle,
   'event': event,
@@ -186,7 +186,7 @@ Map<String, dynamic> toJson() { return {
   'run_number': runNumber,
   'run_started_at': runStartedAt.toIso8601String(),
   'status': status.toJson(),
-  if (triggeringActor != null) 'triggering_actor': triggeringActor?.toJson(),
+  'triggering_actor': triggeringActor != null ? triggeringActor?.toJson() : null,
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   'workflow_id': workflowId,

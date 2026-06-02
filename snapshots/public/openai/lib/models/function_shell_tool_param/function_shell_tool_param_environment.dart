@@ -42,7 +42,7 @@ FunctionShellToolParamEnvironmentContainerAuto copyWith({List<String>? Function(
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellToolParamEnvironmentContainerAuto && containerAutoParam == other.containerAutoParam; } 
 @override int get hashCode { return containerAutoParam.hashCode; } 
-@override String toString() { return 'FunctionShellToolParamEnvironmentContainerAuto(containerAutoParam: $containerAutoParam)'; } 
+@override String toString() { return 'FunctionShellToolParamEnvironment.containerAuto($containerAutoParam)'; } 
  }
 @immutable final class FunctionShellToolParamEnvironmentLocal extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironmentLocal(this.localEnvironmentParam);
 
@@ -58,7 +58,7 @@ FunctionShellToolParamEnvironmentLocal copyWith({List<LocalSkillParam>? Function
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellToolParamEnvironmentLocal && localEnvironmentParam == other.localEnvironmentParam; } 
 @override int get hashCode { return localEnvironmentParam.hashCode; } 
-@override String toString() { return 'FunctionShellToolParamEnvironmentLocal(localEnvironmentParam: $localEnvironmentParam)'; } 
+@override String toString() { return 'FunctionShellToolParamEnvironment.local($localEnvironmentParam)'; } 
  }
 @immutable final class FunctionShellToolParamEnvironmentContainerReference extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironmentContainerReference(this.containerReferenceParam);
 
@@ -74,7 +74,7 @@ FunctionShellToolParamEnvironmentContainerReference copyWith({String? containerI
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellToolParamEnvironmentContainerReference && containerReferenceParam == other.containerReferenceParam; } 
 @override int get hashCode { return containerReferenceParam.hashCode; } 
-@override String toString() { return 'FunctionShellToolParamEnvironmentContainerReference(containerReferenceParam: $containerReferenceParam)'; } 
+@override String toString() { return 'FunctionShellToolParamEnvironment.containerReference($containerReferenceParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

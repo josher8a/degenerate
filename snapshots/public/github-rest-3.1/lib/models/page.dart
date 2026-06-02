@@ -144,8 +144,8 @@ final bool? httpsEnforced;
 
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
-  if (status != null) 'status': status?.toJson(),
-  'cname': ?cname,
+  'status': status != null ? status?.toJson() : null,
+  'cname': cname,
   if (protectedDomainState != null) 'protected_domain_state': protectedDomainState?.toJson(),
   if (pendingDomainUnverifiedAt != null) 'pending_domain_unverified_at': pendingDomainUnverifiedAt?.toIso8601String(),
   'custom_404': custom404,

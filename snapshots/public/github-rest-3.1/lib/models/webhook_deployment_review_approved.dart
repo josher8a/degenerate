@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   'since': since,
   if (workflowJobRun != null) 'workflow_job_run': workflowJobRun?.toJson(),
   if (workflowJobRuns != null) 'workflow_job_runs': workflowJobRuns?.map((e) => e.toJson()).toList(),
-  if (workflowRun != null) 'workflow_run': workflowRun?.toJson(),
+  'workflow_run': workflowRun != null ? workflowRun?.toJson() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('organization') &&

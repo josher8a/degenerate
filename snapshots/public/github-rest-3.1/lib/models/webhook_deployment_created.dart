@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'sender': sender.toJson(),
   'workflow': workflow.toJson(),
-  if (workflowRun != null) 'workflow_run': workflowRun?.toJson(),
+  'workflow_run': workflowRun != null ? workflowRun?.toJson() : null,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('deployment') &&

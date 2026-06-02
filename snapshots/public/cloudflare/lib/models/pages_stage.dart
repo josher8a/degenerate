@@ -99,9 +99,9 @@ final DateTime? startedOn;
 final PagesStageStatus status;
 
 Map<String, dynamic> toJson() { return {
-  if (endedOn != null) 'ended_on': endedOn?.toIso8601String(),
+  'ended_on': endedOn != null ? endedOn?.toIso8601String() : null,
   'name': name.toJson(),
-  if (startedOn != null) 'started_on': startedOn?.toIso8601String(),
+  'started_on': startedOn != null ? startedOn?.toIso8601String() : null,
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ended_on') && json['ended_on'] is String &&

@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   'redacted_value': redactedValue,
   'value': ?value,
   'created_at': createdAt,
-  'last_used_at': ?lastUsedAt,
+  'last_used_at': lastUsedAt,
   'owner': owner.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') && json['object'] is String &&

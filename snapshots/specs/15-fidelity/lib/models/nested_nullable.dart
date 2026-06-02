@@ -24,7 +24,7 @@ final List<String>? optionalList;
 Map<String, dynamic> toJson() { return {
   'tags': tags,
   'scores': scores,
-  'nullableList': ?nullableList,
+  'nullableList': nullableList,
   'optionalList': ?optionalList,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tags') &&

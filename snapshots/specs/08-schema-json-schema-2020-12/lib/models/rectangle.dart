@@ -18,7 +18,7 @@ final double height;
 final dynamic meta;
 
 Map<String, dynamic> toJson() { return {
-  'kind': ?kind,
+  'kind': kind,
   'width': width,
   'height': height,
   'meta': ?meta,

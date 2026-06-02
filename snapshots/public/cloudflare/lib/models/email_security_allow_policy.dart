@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'is_spoof': ?isSpoof,
   'is_trusted_sender': isTrustedSender,
   'pattern': pattern,
-  if (patternType != null) 'pattern_type': patternType?.toJson(),
+  'pattern_type': patternType != null ? patternType?.toJson() : null,
   'verify_sender': verifySender,
   'created_at': createdAt.toIso8601String(),
   'id': id.toJson(),

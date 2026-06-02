@@ -32,7 +32,7 @@ CompoundFilterFiltersEq copyWith({String? key, ComparisonFilterValue? value, }) 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CompoundFilterFiltersEq && comparisonFilter == other.comparisonFilter; } 
 @override int get hashCode { return comparisonFilter.hashCode; } 
-@override String toString() { return 'CompoundFilterFiltersEq(comparisonFilter: $comparisonFilter)'; } 
+@override String toString() { return 'CompoundFilterFilters.eq($comparisonFilter)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

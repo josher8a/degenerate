@@ -16,7 +16,7 @@ final int total;
 final List<Weeks> weeks;
 
 Map<String, dynamic> toJson() { return {
-  if (author != null) 'author': author?.toJson(),
+  'author': author != null ? author?.toJson() : null,
   'total': total,
   'weeks': weeks.map((e) => e.toJson()).toList(),
 }; } 

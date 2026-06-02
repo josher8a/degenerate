@@ -39,7 +39,7 @@ NscInterconnectCreateDirect copyWith({String? account, String? slotId, String? F
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscInterconnectCreateDirect && nscInterconnectCreatePhysicalBody == other.nscInterconnectCreatePhysicalBody; } 
 @override int get hashCode { return nscInterconnectCreatePhysicalBody.hashCode; } 
-@override String toString() { return 'NscInterconnectCreateDirect(nscInterconnectCreatePhysicalBody: $nscInterconnectCreatePhysicalBody)'; } 
+@override String toString() { return 'NscInterconnectCreate.direct($nscInterconnectCreatePhysicalBody)'; } 
 @override String get account { return nscInterconnectCreatePhysicalBody.account; } 
  }
 @immutable final class NscInterconnectCreateGcpPartner extends NscInterconnectCreate {const NscInterconnectCreateGcpPartner(this.nscInterconnectCreateGcpPartnerBody);
@@ -58,7 +58,7 @@ NscInterconnectCreateGcpPartner copyWith({String? account, Bandwidth? bandwidth,
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscInterconnectCreateGcpPartner && nscInterconnectCreateGcpPartnerBody == other.nscInterconnectCreateGcpPartnerBody; } 
 @override int get hashCode { return nscInterconnectCreateGcpPartnerBody.hashCode; } 
-@override String toString() { return 'NscInterconnectCreateGcpPartner(nscInterconnectCreateGcpPartnerBody: $nscInterconnectCreateGcpPartnerBody)'; } 
+@override String toString() { return 'NscInterconnectCreate.gcpPartner($nscInterconnectCreateGcpPartnerBody)'; } 
 @override String get account { return nscInterconnectCreateGcpPartnerBody.account; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.

@@ -30,7 +30,7 @@ FunctionShellCallEnvironmentLocal copyWith({LocalEnvironmentResource? localEnvir
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallEnvironmentLocal && localEnvironmentResource == other.localEnvironmentResource; } 
 @override int get hashCode { return localEnvironmentResource.hashCode; } 
-@override String toString() { return 'FunctionShellCallEnvironmentLocal(localEnvironmentResource: $localEnvironmentResource)'; } 
+@override String toString() { return 'FunctionShellCallEnvironment.local($localEnvironmentResource)'; } 
  }
 @immutable final class FunctionShellCallEnvironmentContainerReference extends FunctionShellCallEnvironment {const FunctionShellCallEnvironmentContainerReference(this.containerReferenceResource);
 
@@ -46,7 +46,7 @@ FunctionShellCallEnvironmentContainerReference copyWith({String? containerId}) {
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallEnvironmentContainerReference && containerReferenceResource == other.containerReferenceResource; } 
 @override int get hashCode { return containerReferenceResource.hashCode; } 
-@override String toString() { return 'FunctionShellCallEnvironmentContainerReference(containerReferenceResource: $containerReferenceResource)'; } 
+@override String toString() { return 'FunctionShellCallEnvironment.containerReference($containerReferenceResource)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

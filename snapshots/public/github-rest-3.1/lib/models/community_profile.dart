@@ -26,10 +26,10 @@ final bool? contentReportsEnabled;
 
 Map<String, dynamic> toJson() { return {
   'health_percentage': healthPercentage,
-  'description': ?description,
-  'documentation': ?documentation,
+  'description': description,
+  'documentation': documentation,
   'files': files.toJson(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'updated_at': updatedAt != null ? updatedAt?.toIso8601String() : null,
   'content_reports_enabled': ?contentReportsEnabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('health_percentage') && json['health_percentage'] is num &&

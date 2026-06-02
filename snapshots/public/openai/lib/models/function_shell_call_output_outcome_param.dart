@@ -31,7 +31,7 @@ FunctionShellCallOutputOutcomeParamTimeout copyWith({FunctionShellCallOutputTime
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallOutputOutcomeParamTimeout && functionShellCallOutputTimeoutOutcomeParam == other.functionShellCallOutputTimeoutOutcomeParam; } 
 @override int get hashCode { return functionShellCallOutputTimeoutOutcomeParam.hashCode; } 
-@override String toString() { return 'FunctionShellCallOutputOutcomeParamTimeout(functionShellCallOutputTimeoutOutcomeParam: $functionShellCallOutputTimeoutOutcomeParam)'; } 
+@override String toString() { return 'FunctionShellCallOutputOutcomeParam.timeout($functionShellCallOutputTimeoutOutcomeParam)'; } 
  }
 @immutable final class FunctionShellCallOutputOutcomeParamExit extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParamExit(this.functionShellCallOutputExitOutcomeParam);
 
@@ -47,7 +47,7 @@ FunctionShellCallOutputOutcomeParamExit copyWith({int? exitCode}) { return Funct
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallOutputOutcomeParamExit && functionShellCallOutputExitOutcomeParam == other.functionShellCallOutputExitOutcomeParam; } 
 @override int get hashCode { return functionShellCallOutputExitOutcomeParam.hashCode; } 
-@override String toString() { return 'FunctionShellCallOutputOutcomeParamExit(functionShellCallOutputExitOutcomeParam: $functionShellCallOutputExitOutcomeParam)'; } 
+@override String toString() { return 'FunctionShellCallOutputOutcomeParam.exit($functionShellCallOutputExitOutcomeParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

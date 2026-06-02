@@ -118,8 +118,8 @@ final String url;
 Map<String, dynamic> toJson() { return {
   'app': app.toJson(),
   'check_suite': checkSuite.toJson(),
-  if (completedAt != null) 'completed_at': completedAt?.toIso8601String(),
-  if (conclusion != null) 'conclusion': conclusion?.toJson(),
+  'completed_at': completedAt != null ? completedAt?.toIso8601String() : null,
+  'conclusion': conclusion != null ? conclusion?.toJson() : null,
   if (deployment != null) 'deployment': deployment?.toJson(),
   'details_url': detailsUrl,
   'external_id': externalId,

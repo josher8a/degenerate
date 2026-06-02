@@ -151,7 +151,7 @@ UsersGetAuthenticatedResponsePublic copyWith({String? login, int? id, String? no
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is UsersGetAuthenticatedResponsePublic && publicUser == other.publicUser; } 
 @override int get hashCode { return publicUser.hashCode; } 
-@override String toString() { return 'UsersGetAuthenticatedResponsePublic(publicUser: $publicUser)'; } 
+@override String toString() { return 'UsersGetAuthenticatedResponse.public($publicUser)'; } 
 @override String get login { return publicUser.login; } 
 @override int get id { return publicUser.id; } 
 @override String get nodeId { return publicUser.nodeId; } 
@@ -247,7 +247,7 @@ UsersGetAuthenticatedResponsePrivate copyWith({String? login, int? id, String? n
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is UsersGetAuthenticatedResponsePrivate && privateUser == other.privateUser; } 
 @override int get hashCode { return privateUser.hashCode; } 
-@override String toString() { return 'UsersGetAuthenticatedResponsePrivate(privateUser: $privateUser)'; } 
+@override String toString() { return 'UsersGetAuthenticatedResponse.private($privateUser)'; } 
 @override String get login { return privateUser.login; } 
 @override int get id { return privateUser.id; } 
 @override String get nodeId { return privateUser.nodeId; } 
