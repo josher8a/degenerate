@@ -93,6 +93,131 @@ void main() {
   }
 
 
+  /// Generate the same spec twice and verify byte-identical output.
+  Future<void> verifyDeterminism(Map<String, dynamic> spec,
+      {String name = 'det_test'}) async {
+    final specJson = jsonEncode(spec);
+
+    Future<Map<String, String>> generateOnce(String suffix) async {
+      final dir =
+          Directory(p.join(tempDir.path, suffix)).path;
+      Directory(dir).createSync();
+      final specFile = File(p.join(dir, 'spec.json'));
+      specFile.writeAsStringSync(specJson);
+      final config = GeneratorConfig(
+        inputPath: specFile.path,
+        outputDir: dir,
+        packageName: name,
+        workspace: true,
+        quiet: true,
+        emitRoundtripFixtures: true,
+      );
+      final generator = Generator(config);
+      final files = await generator.generate();
+      return files;
+    }
+
+    final run1 = await generateOnce('run1');
+    final run2 = await generateOnce('run2');
+
+    expect(run1.keys.toSet(), equals(run2.keys.toSet()),
+        reason: 'File sets differ between runs');
+    for (final path in run1.keys) {
+      expect(run2[path], equals(run1[path]),
+          reason: 'Content differs for $path');
+    }
+  }
+
+  /// Generate code, write a test that feeds malformed JSON to fromJson,
+  /// and verify it doesn't crash with an unhandled exception.
+  Future<void> verifyDefensiveParsing(
+    Map<String, dynamic> spec, {
+    String name = 'def_test',
+    required Map<String, String> schemaPayloads,
+  }) async {
+    final specFile = File(p.join(tempDir.path, 'spec.json'));
+    specFile.writeAsStringSync(jsonEncode(spec));
+
+    final config = GeneratorConfig(
+      inputPath: specFile.path,
+      outputDir: tempDir.path,
+      packageName: name,
+      workspace: true,
+      quiet: true,
+    );
+
+    final generator = Generator(config);
+    await generator.generate();
+
+    final outDir = config.resolvedOutputDir!;
+    File(p.join(outDir, 'pubspec.yaml')).writeAsStringSync(
+      'name: $name\n'
+      'publish_to: none\n'
+      'environment:\n'
+      '  sdk: ^3.8.0\n'
+      'dependencies:\n'
+      '  degenerate_runtime: ^0.1.0\n'
+      'dev_dependencies:\n'
+      '  test: ^1.25.6\n'
+      'dependency_overrides:\n'
+      '  degenerate_runtime:\n'
+      '    path: $runtimeDir\n',
+    );
+
+    final testDir = Directory(p.join(outDir, 'test'));
+    testDir.createSync(recursive: true);
+
+    final imports = schemaPayloads.keys
+        .map((n) => "import 'package:$name/models/${_toSnake(n)}.dart';")
+        .join('\n');
+
+    final tests = StringBuffer();
+    for (final entry in schemaPayloads.entries) {
+      final schema = entry.key;
+      final validPayload = entry.value;
+      tests.writeln("  group('$schema', () {");
+      tests.writeln("    test('rejects missing required fields', () {");
+      tests.writeln('      expect(() => $schema.fromJson(<String, dynamic>{}), throwsA(isA<Object>()));');
+      tests.writeln('    });');
+      tests.writeln("    test('accepts valid payload with extra fields', () {");
+      tests.writeln("      final json = <String, dynamic>{...$validPayload, '_extra_': 1};");
+      tests.writeln('      expect(() => $schema.fromJson(json), returnsNormally);');
+      tests.writeln('    });');
+      tests.writeln("    test('round-trips valid payload', () {");
+      tests.writeln('      final obj = $schema.fromJson($validPayload);');
+      tests.writeln('      expect($schema.fromJson(obj.toJson()).toJson(), equals(obj.toJson()));');
+      tests.writeln('    });');
+      tests.writeln("    test('rejects wrong types', () {");
+      tests.writeln('      try {');
+      tests.writeln("        $schema.fromJson(<String, dynamic>{'_garbage_': true});");
+      tests.writeln('      } on Object {');
+      tests.writeln('        // Expected — TypeError or CastError. Must not crash process.');
+      tests.writeln('      }');
+      tests.writeln('    });');
+      tests.writeln('  });');
+    }
+
+    File(p.join(testDir.path, 'defensive_test.dart')).writeAsStringSync(
+      "$imports\nimport 'package:test/test.dart';\n\n"
+      'void main() {\n$tests}\n',
+    );
+
+    final pubGet = Process.runSync(
+      'dart', ['pub', 'get'],
+      workingDirectory: outDir,
+    );
+    expect(pubGet.exitCode, equals(0),
+        reason: 'dart pub get failed:\n${pubGet.stderr}');
+
+    final testResult = Process.runSync(
+      'dart', ['test', 'test/defensive_test.dart'],
+      workingDirectory: outDir,
+    );
+    if (testResult.exitCode != 0) {
+      fail('defensive parsing test failed:\n${testResult.stdout}\n${testResult.stderr}');
+    }
+  }
+
   // ─── Adversarial field/schema names ─────────────────────
 
   test('adversarial property names compile', () async {
@@ -746,6 +871,148 @@ void main() {
       }, name: 'seed_ops_$seed', roundtrip: true);
     }, timeout: const Timeout(Duration(minutes: 2)));
   }
+
+  // ─── Determinism ────────────────────────────────────────
+
+  test('generation is deterministic (same input → identical output)', () async {
+    await verifyDeterminism({
+      'openapi': '3.1.0',
+      'info': {'title': 'Det', 'version': '1.0.0'},
+      'paths': {
+        '/items/{id}': {
+          'get': {
+            'operationId': 'getItem',
+            'parameters': [
+              {
+                'name': 'id',
+                'in': 'path',
+                'required': true,
+                'schema': {'type': 'string'},
+              },
+            ],
+            'responses': {
+              '200': {
+                'description': 'OK',
+                'content': {
+                  'application/json': {
+                    'schema': {r'$ref': '#/components/schemas/Item'},
+                  },
+                },
+              },
+              '400': {
+                'description': 'Error',
+                'content': {
+                  'application/json': {
+                    'schema': {r'$ref': '#/components/schemas/ErrorResp'},
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      'components': {
+        'schemas': {
+          'Item': {
+            'type': 'object',
+            'required': ['id'],
+            'properties': {
+              'id': {'type': 'string'},
+              'name': {'type': ['string', 'null']},
+              'tags': {
+                'type': 'array',
+                'items': {'type': 'string'},
+              },
+              'meta': {
+                'type': 'object',
+                'additionalProperties': {'type': 'string'},
+              },
+            },
+          },
+          'ErrorResp': {
+            'type': 'object',
+            'properties': {
+              'message': {'type': 'string'},
+              'code': {'type': 'integer'},
+            },
+          },
+          'Status': {
+            'type': 'string',
+            'enum': ['active', 'inactive'],
+          },
+          'Animal': {
+            'oneOf': [
+              {r'$ref': '#/components/schemas/Item'},
+              {r'$ref': '#/components/schemas/ErrorResp'},
+            ],
+          },
+        },
+      },
+    });
+  });
+
+  test('randomized spec determinism (seed 42)', () async {
+    final rng = Random(42);
+    final schemas = <String, Map<String, dynamic>>{};
+    for (var i = 0; i < 15; i++) {
+      schemas['Type$i'] = _randomSchema(rng, schemas.keys.toList(), depth: 0);
+    }
+    await verifyDeterminism(_specWith(schemas), name: 'det_rng');
+  }, timeout: const Timeout(Duration(minutes: 2)));
+
+  // ─── Defensive parsing ──────────────────────────────────
+
+  test('generated models handle malformed JSON correctly', () async {
+    await verifyDefensiveParsing(
+      _specWith({
+        'Account': {
+          'type': 'object',
+          'required': ['id', 'balance'],
+          'properties': {
+            'id': {'type': 'string'},
+            'balance': {'type': 'number'},
+            'currency': {'type': 'string', 'default': 'USD'},
+            'owner': {'type': ['string', 'null']},
+            'tags': {
+              'type': 'array',
+              'items': {'type': 'string'},
+            },
+          },
+        },
+        'Transaction': {
+          'type': 'object',
+          'required': ['amount'],
+          'properties': {
+            'amount': {'type': 'number'},
+            'from': {r'$ref': '#/components/schemas/Account'},
+            'to': {r'$ref': '#/components/schemas/Account'},
+            'memo': {'type': ['string', 'null']},
+          },
+        },
+      }),
+      name: 'def_bank',
+      schemaPayloads: {
+        'Account': "<String, dynamic>{'id': 'acc-1', 'balance': 100.0}",
+        'Transaction': "<String, dynamic>{'amount': 50.0}",
+      },
+    );
+  });
+
+  // ─── Stress test ────────────────────────────────────────
+
+  test('large spec (50 schemas) compiles + roundtrips', () async {
+    final rng = Random(314);
+    final schemas = <String, Map<String, dynamic>>{};
+    for (var i = 0; i < 50; i++) {
+      schemas['Schema$i'] =
+          _randomSchema(rng, schemas.keys.toList(), depth: 0);
+    }
+    await generateAndAnalyze(
+      _specWith(schemas),
+      name: 'stress',
+      roundtrip: true,
+    );
+  }, timeout: const Timeout(Duration(minutes: 3)));
 }
 
 Map<String, dynamic> _specWith(Map<String, dynamic> schemas) => {
@@ -905,4 +1172,16 @@ void _writeRoundtripTest(String outDir, String packageName) {
     '  }\n'
     '}\n',
   );
+}
+
+String _toSnake(String input) {
+  final buf = StringBuffer();
+  for (var i = 0; i < input.length; i++) {
+    final c = input[i];
+    if (c == c.toUpperCase() && c != c.toLowerCase() && i > 0) {
+      buf.write('_');
+    }
+    buf.write(c.toLowerCase());
+  }
+  return buf.toString();
 }
