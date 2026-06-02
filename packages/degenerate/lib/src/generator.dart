@@ -9,6 +9,7 @@ import 'dart:io';
 import 'package:degenerate/src/emitter/file_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
+import 'package:degenerate/src/lowering/ir_validator.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
 import 'package:degenerate/src/naming/ir_rewriter.dart';
@@ -148,6 +149,20 @@ class Generator {
     }
 
     irApis = _filterOperations(irApis, irTypes);
+
+    try {
+      final irWarnings = IrValidator(irTypes, irApis).validate();
+      if (irWarnings.isNotEmpty && config.verbose) {
+        for (final w in irWarnings) {
+          _log('  IR validation warning: $w');
+        }
+      }
+    } on IrValidationException catch (e) {
+      for (final err in e.errors) {
+        _log('  IR validation error: $err');
+      }
+      throw GeneratorException(e.toString());
+    }
 
     if (config.verbose) {
       _log('  ${irApis.length} API groups');

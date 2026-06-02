@@ -1,4 +1,4 @@
-.PHONY: test update_snapshots update_example release publish
+.PHONY: test check update_snapshots update_example release publish
 
 test:
 	dart analyze packages/*
@@ -13,6 +13,9 @@ test:
 	dart analyze test
 	dart analyze test/wire/*
 	dart analyze snapshots/public/*
+
+check:
+	dart run scripts/check.dart $(ARGS)
 
 release:
 	dart run scripts/release.dart $(ARGS)

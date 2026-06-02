@@ -6,6 +6,7 @@ import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/extension_type_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
+import 'package:degenerate/src/emitter/negative_fixture_emitter.dart';
 import 'package:degenerate/src/emitter/roundtrip_emitter.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/emitter/variant_overlap.dart';
@@ -304,6 +305,13 @@ class FileEmitter {
         types,
         packageName,
       ).emit();
+      final negativeContent = NegativeFixtureEmitter(
+        types,
+        packageName,
+      ).emit();
+      if (negativeContent != null) {
+        files['negative_fixtures.dart'] = negativeContent;
+      }
     }
 
     // Emit pubspec.yaml only in workspace mode
