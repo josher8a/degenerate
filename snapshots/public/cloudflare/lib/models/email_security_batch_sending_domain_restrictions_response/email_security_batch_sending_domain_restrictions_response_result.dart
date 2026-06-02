@@ -18,6 +18,6 @@ EmailSecurityBatchSendingDomainRestrictionsResponseResult copyWith({List<Deletes
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EmailSecurityBatchSendingDomainRestrictionsResponseResult &&
           listEquals(deletes, other.deletes); } 
-@override int get hashCode { return Object.hashAll(deletes).hashCode; } 
+@override int get hashCode { return Object.hashAll(deletes); } 
 @override String toString() { return 'EmailSecurityBatchSendingDomainRestrictionsResponseResult(deletes: $deletes)'; } 
  }

@@ -162,10 +162,7 @@ class DiscriminatedUnionEmitter {
     return specs;
   }
 
-  List<String> _buildDocs() {
-    if (union.description == null) return [];
-    return formatDocComment(union.description!);
-  }
+  List<String> _buildDocs() => docCommentLines(union.description);
 
   /// Fields shared by every variant, hoisted onto the sealed base as nullable
   /// getters so common data can be read without pattern-matching.
@@ -523,7 +520,7 @@ class DiscriminatedUnionEmitter {
     final fromJsonArgs = fields
         .map((f) {
           final accessor = "json['${f.originalName}']";
-          final isOptional = !f.isRequired;
+          final isOptional = fieldIsNullableInDart(f);
           return '  ${f.name}: ${buildFromJsonCode(f.type, accessor, isOptional: isOptional)},';
         })
         .join('\n');
@@ -531,7 +528,7 @@ class DiscriminatedUnionEmitter {
     final toJsonEntries = <String>[
       "  '$_discJsonKey': $_discDartName,",
       ...fields.map(
-        (f) => toJsonEntry(f, "'${f.originalName}'", isNullable: !f.isRequired),
+        (f) => toJsonEntry(f, "'${f.originalName}'", isNullable: fieldIsNullableInDart(f)),
       ),
     ];
 
@@ -1042,18 +1039,14 @@ class AnyOfEmitter {
   }
 
 
-  /// Check if a type resolves to a OneOf-eligible union typedef
-  /// (excluding self-referencing types which can't be Dart typedefs).
   bool _isOneOfType(IrType type) {
     final resolved = _resolveType(type);
     return switch (resolved) {
       IrUntaggedUnion(:final name, :final variants)
-          when isOneOfEligible(variants) &&
-              !isSelfReferencingUnion(name, variants) =>
+          when isOneOfTypedef(name, variants) =>
         true,
       IrAnyOf(:final name, :final variants)
-          when isOneOfEligible(variants) &&
-              !isSelfReferencingUnion(name, variants) =>
+          when isOneOfTypedef(name, variants) =>
         true,
       _ => false,
     };
@@ -1126,10 +1119,7 @@ class AnyOfEmitter {
     ];
   }
 
-  List<String> _buildDocs() {
-    if (anyOf.description == null) return [];
-    return formatDocComment(anyOf.description!);
-  }
+  List<String> _buildDocs() => docCommentLines(anyOf.description);
 
   Constructor _buildFromJson(
     List<({String name, IrType type, String typeName})> fields,

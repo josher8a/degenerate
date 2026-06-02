@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Permission($value)'; } 
  }
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "bucket": "example-bucket",
 ///   "objects": [
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 ///   ],
 ///   "ttlSeconds": 3600
 /// }
-/// ```text
+/// ```
 @immutable final class R2TempAccessCredsRequest {const R2TempAccessCredsRequest({required this.bucket, required this.parentAccessKeyId, required this.permission, this.objects, this.prefixes, this.ttlSeconds = 900.0, });
 
 factory R2TempAccessCredsRequest.fromJson(Map<String, dynamic> json) { return R2TempAccessCredsRequest(

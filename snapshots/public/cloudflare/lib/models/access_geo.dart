@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "country": "US"
 /// }
-/// ```text
+/// ```
 @immutable final class AccessGeo {const AccessGeo({this.country});
 
 factory AccessGeo.fromJson(Map<String, dynamic> json) { return AccessGeo(

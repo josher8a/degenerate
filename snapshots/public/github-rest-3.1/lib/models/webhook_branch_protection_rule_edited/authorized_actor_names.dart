@@ -18,6 +18,6 @@ AuthorizedActorNames copyWith({List<String>? from}) { return AuthorizedActorName
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AuthorizedActorNames &&
           listEquals(from, other.from); } 
-@override int get hashCode { return Object.hashAll(from).hashCode; } 
+@override int get hashCode { return Object.hashAll(from); } 
 @override String toString() { return 'AuthorizedActorNames(from: $from)'; } 
  }

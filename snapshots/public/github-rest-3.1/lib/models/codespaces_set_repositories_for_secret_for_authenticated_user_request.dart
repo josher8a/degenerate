@@ -19,6 +19,6 @@ CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest copyWith({List<int
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest &&
           listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds).hashCode; } 
+@override int get hashCode { return Object.hashAll(selectedRepositoryIds); } 
 @override String toString() { return 'CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
  }

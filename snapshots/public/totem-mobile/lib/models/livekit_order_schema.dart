@@ -34,7 +34,7 @@ final class LivekitOrderSchema {
 
   @override
   int get hashCode {
-    return Object.hashAll(order).hashCode;
+    return Object.hashAll(order);
   }
 
   @override

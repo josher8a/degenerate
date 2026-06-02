@@ -94,11 +94,11 @@ final Map<String,PagesDeploymentConfigValuesDurableObjectNamespacesValue>? kvNam
 /// Limits for Pages Functions.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "cpu_ms": 100
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{cpu_ms: 100}`
 final PagesDeploymentConfigValuesLimits? limits;
@@ -113,11 +113,11 @@ final Map<String,PagesDeploymentConfigValuesMtlsCertificatesValue>? mtlsCertific
 /// Placement setting used for Pages Functions.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "mode": "smart"
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{mode: smart}`
 final Placement? placement;

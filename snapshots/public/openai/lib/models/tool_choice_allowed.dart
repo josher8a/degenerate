@@ -25,13 +25,13 @@ final Mode mode;
 /// A list of tool definitions that the model should be allowed to call.
 /// 
 /// For the Responses API, the list of tool definitions might look like:
-/// ```json`
+/// ```json
 /// [
 ///   { "type": "function", "name": "get_weather" },
 ///   { "type": "mcp", "server_label": "deepwiki" },
 ///   { "type": "image_generation" }
 /// ]
-/// ```text
+/// ```
 /// 
 final List<Map<String,dynamic>> tools;
 

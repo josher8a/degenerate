@@ -18,6 +18,6 @@ CardRestrictions copyWith({List<BrandsBlocked>? Function()? brandsBlocked}) { re
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CardRestrictions &&
           listEquals(brandsBlocked, other.brandsBlocked); } 
-@override int get hashCode { return Object.hashAll(brandsBlocked ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(brandsBlocked ?? const []); } 
 @override String toString() { return 'CardRestrictions(brandsBlocked: $brandsBlocked)'; } 
  }

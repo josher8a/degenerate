@@ -19,6 +19,6 @@ ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest copyWith({List<int>? sel
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest &&
           listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds).hashCode; } 
+@override int get hashCode { return Object.hashAll(selectedRepositoryIds); } 
 @override String toString() { return 'ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
  }

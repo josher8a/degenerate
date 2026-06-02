@@ -19,6 +19,6 @@ ImageClassificationVariant2 copyWith({List<double>? image}) { return ImageClassi
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ImageClassificationVariant2 &&
           listEquals(image, other.image); } 
-@override int get hashCode { return Object.hashAll(image).hashCode; } 
+@override int get hashCode { return Object.hashAll(image); } 
 @override String toString() { return 'ImageClassificationVariant2(image: $image)'; } 
  }

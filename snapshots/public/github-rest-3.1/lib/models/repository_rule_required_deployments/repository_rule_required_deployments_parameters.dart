@@ -19,6 +19,6 @@ RepositoryRuleRequiredDeploymentsParameters copyWith({List<String>? requiredDepl
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RepositoryRuleRequiredDeploymentsParameters &&
           listEquals(requiredDeploymentEnvironments, other.requiredDeploymentEnvironments); } 
-@override int get hashCode { return Object.hashAll(requiredDeploymentEnvironments).hashCode; } 
+@override int get hashCode { return Object.hashAll(requiredDeploymentEnvironments); } 
 @override String toString() { return 'RepositoryRuleRequiredDeploymentsParameters(requiredDeploymentEnvironments: $requiredDeploymentEnvironments)'; } 
  }

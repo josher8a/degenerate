@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "raw": "MIME-Version: 1.0\nContent-Type: text/plain; charset=\"utf-8\"\n\nFrom: sender@example.com\nTo: recipient@example.com\nSubject: Test Email\n\nThis is a test email."
 /// }
-/// ```text
+/// ```
 @immutable final class EmailSecurityGetMessageRawResponseResult {const EmailSecurityGetMessageRawResponseResult({required this.raw});
 
 factory EmailSecurityGetMessageRawResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageRawResponseResult(

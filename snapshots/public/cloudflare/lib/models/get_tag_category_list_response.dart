@@ -18,6 +18,6 @@ GetTagCategoryListResponse copyWith({List<GetTagCategoryListResponseCategories>?
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is GetTagCategoryListResponse &&
           listEquals(categories, other.categories); } 
-@override int get hashCode { return Object.hashAll(categories).hashCode; } 
+@override int get hashCode { return Object.hashAll(categories); } 
 @override String toString() { return 'GetTagCategoryListResponse(categories: $categories)'; } 
  }

@@ -11,12 +11,12 @@ factory RadarGetAttacksLayer7SummaryByIpVersionResponseResult.fromJson(Map<Strin
 final RadarGetAiBotsSummaryByUserAgentResponseResultMeta meta;
 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "IPv4": "99.935733",
 ///   "IPv6": "0.064267"
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{IPv4: 99.935733, IPv6: 0.064267}`
 final RadarGetAttacksLayer7SummaryByIpVersionResponseResultSummary0 summary0;

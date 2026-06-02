@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An operation schema object containing a response.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "parameters": [
 ///     {
@@ -20,7 +20,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// An operation sch
 ///   ],
 ///   "responses": null
 /// }
-/// ```text
+/// ```
 @immutable final class ShieldParameterSchemasDefinition {const ShieldParameterSchemasDefinition({this.parameters, this.responses, });
 
 factory ShieldParameterSchemasDefinition.fromJson(Map<String, dynamic> json) { return ShieldParameterSchemasDefinition(

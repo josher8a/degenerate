@@ -20,6 +20,6 @@ PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions copyWith({List<B
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions &&
           listEquals(brandsBlocked, other.brandsBlocked); } 
-@override int get hashCode { return Object.hashAll(brandsBlocked ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(brandsBlocked ?? const []); } 
 @override String toString() { return 'PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions(brandsBlocked: $brandsBlocked)'; } 
  }

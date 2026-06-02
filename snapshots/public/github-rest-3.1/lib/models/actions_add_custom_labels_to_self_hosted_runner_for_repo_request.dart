@@ -24,6 +24,6 @@ ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest copyWith({List<String>? l
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest &&
           listEquals(labels, other.labels); } 
-@override int get hashCode { return Object.hashAll(labels).hashCode; } 
+@override int get hashCode { return Object.hashAll(labels); } 
 @override String toString() { return 'ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest(labels: $labels)'; } 
  }

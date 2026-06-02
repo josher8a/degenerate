@@ -18,6 +18,6 @@ GetGetOpenPortsResponseResult copyWith({List<Port>? $1111}) { return GetGetOpenP
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is GetGetOpenPortsResponseResult &&
           listEquals($1111, other.$1111); } 
-@override int get hashCode { return Object.hashAll($1111).hashCode; } 
+@override int get hashCode { return Object.hashAll($1111); } 
 @override String toString() { return 'GetGetOpenPortsResponseResult(\$1111: ${$1111})'; } 
  }

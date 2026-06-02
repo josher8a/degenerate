@@ -20,6 +20,6 @@ NodeSelector copyWith({List<NodeSelectorTerm>? nodeSelectorTerms}) { return Node
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is NodeSelector &&
           listEquals(nodeSelectorTerms, other.nodeSelectorTerms); } 
-@override int get hashCode { return Object.hashAll(nodeSelectorTerms).hashCode; } 
+@override int get hashCode { return Object.hashAll(nodeSelectorTerms); } 
 @override String toString() { return 'NodeSelector(nodeSelectorTerms: $nodeSelectorTerms)'; } 
  }

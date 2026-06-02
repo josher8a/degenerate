@@ -19,6 +19,6 @@ LoadBalancingSearch copyWith({List<LoadBalancingResourceReference>? Function()? 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is LoadBalancingSearch &&
           listEquals(resources, other.resources); } 
-@override int get hashCode { return Object.hashAll(resources ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(resources ?? const []); } 
 @override String toString() { return 'LoadBalancingSearch(resources: $resources)'; } 
  }

@@ -18,6 +18,6 @@ WorkersAiPostToMarkdownRequest copyWith({List<Uint8List>? files}) { return Worke
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WorkersAiPostToMarkdownRequest &&
           listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files).hashCode; } 
+@override int get hashCode { return Object.hashAll(files); } 
 @override String toString() { return 'WorkersAiPostToMarkdownRequest(files: $files)'; } 
  }

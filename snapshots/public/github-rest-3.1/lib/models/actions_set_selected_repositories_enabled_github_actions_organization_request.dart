@@ -19,6 +19,6 @@ ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest copyWith({
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest &&
           listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds).hashCode; } 
+@override int get hashCode { return Object.hashAll(selectedRepositoryIds); } 
 @override String toString() { return 'ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
  }

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_mechanisms/aaa_mechanisms_email.dart';import 'package:pub_cloudflare/models/aaa_mechanisms/pagerduty.dart';import 'package:pub_cloudflare/models/aaa_mechanisms/webhooks.dart';/// List of IDs that will be used when dispatching a notification. IDs for email type will be the email address.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "email": [
 ///     {
@@ -21,7 +21,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///     }
 ///   ]
 /// }
-/// ```text
+/// ```
 @immutable final class AaaMechanisms {const AaaMechanisms({this.email, this.pagerduty, this.webhooks, });
 
 factory AaaMechanisms.fromJson(Map<String, dynamic> json) { return AaaMechanisms(

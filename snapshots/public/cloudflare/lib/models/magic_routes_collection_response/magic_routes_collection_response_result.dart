@@ -18,6 +18,6 @@ MagicRoutesCollectionResponseResult copyWith({List<MagicRoute>? Function()? rout
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MagicRoutesCollectionResponseResult &&
           listEquals(routes, other.routes); } 
-@override int get hashCode { return Object.hashAll(routes ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(routes ?? const []); } 
 @override String toString() { return 'MagicRoutesCollectionResponseResult(routes: $routes)'; } 
  }

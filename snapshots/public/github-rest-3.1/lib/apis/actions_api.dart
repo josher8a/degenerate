@@ -1629,7 +1629,7 @@ return execute(
 /// 
 /// ```text
 /// ./config.sh --url https://github.com/octo-org --token TOKEN
-/// ```text
+/// ```
 /// 
 /// Authenticated users must have admin access to the organization to use this endpoint.
 /// 
@@ -1660,7 +1660,7 @@ return execute(
 /// 
 /// ```text
 /// ./config.sh remove --token TOKEN
-/// ```text
+/// ```
 /// 
 /// Authenticated users must have admin access to the organization to use this endpoint.
 /// 
@@ -3341,7 +3341,7 @@ return execute(
 /// 
 /// ```text
 /// ./config.sh --url https://github.com/octo-org --token TOKEN
-/// ```text
+/// ```
 /// 
 /// Authenticated users must have admin access to the repository to use this endpoint.
 /// 
@@ -3372,7 +3372,7 @@ return execute(
 /// 
 /// ```text
 /// ./config.sh remove --token TOKEN
-/// ```text
+/// ```
 /// 
 /// Authenticated users must have admin access to the repository to use this endpoint.
 /// 

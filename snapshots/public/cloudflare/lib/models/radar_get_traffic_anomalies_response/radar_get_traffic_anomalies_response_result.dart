@@ -18,6 +18,6 @@ RadarGetTrafficAnomaliesResponseResult copyWith({List<RadarGetTrafficAnomaliesRe
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RadarGetTrafficAnomaliesResponseResult &&
           listEquals(trafficAnomalies, other.trafficAnomalies); } 
-@override int get hashCode { return Object.hashAll(trafficAnomalies).hashCode; } 
+@override int get hashCode { return Object.hashAll(trafficAnomalies); } 
 @override String toString() { return 'RadarGetTrafficAnomaliesResponseResult(trafficAnomalies: $trafficAnomalies)'; } 
  }

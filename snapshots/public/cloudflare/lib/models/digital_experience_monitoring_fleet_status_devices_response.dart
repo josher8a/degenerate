@@ -18,6 +18,6 @@ DigitalExperienceMonitoringFleetStatusDevicesResponse copyWith({List<DigitalExpe
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DigitalExperienceMonitoringFleetStatusDevicesResponse &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'DigitalExperienceMonitoringFleetStatusDevicesResponse(result: $result)'; } 
  }

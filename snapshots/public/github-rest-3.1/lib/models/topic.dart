@@ -19,6 +19,6 @@ Topic copyWith({List<String>? names}) { return Topic(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Topic &&
           listEquals(names, other.names); } 
-@override int get hashCode { return Object.hashAll(names).hashCode; } 
+@override int get hashCode { return Object.hashAll(names); } 
 @override String toString() { return 'Topic(names: $names)'; } 
  }

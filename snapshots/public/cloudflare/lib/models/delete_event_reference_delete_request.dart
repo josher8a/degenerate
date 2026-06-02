@@ -18,6 +18,6 @@ DeleteEventReferenceDeleteRequest copyWith({List<String>? events}) { return Dele
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DeleteEventReferenceDeleteRequest &&
           listEquals(events, other.events); } 
-@override int get hashCode { return Object.hashAll(events).hashCode; } 
+@override int get hashCode { return Object.hashAll(events); } 
 @override String toString() { return 'DeleteEventReferenceDeleteRequest(events: $events)'; } 
  }

@@ -24,6 +24,6 @@ CredentialsRevokeRequest copyWith({List<String>? credentials}) { return Credenti
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CredentialsRevokeRequest &&
           listEquals(credentials, other.credentials); } 
-@override int get hashCode { return Object.hashAll(credentials).hashCode; } 
+@override int get hashCode { return Object.hashAll(credentials); } 
 @override String toString() { return 'CredentialsRevokeRequest(credentials: $credentials)'; } 
  }

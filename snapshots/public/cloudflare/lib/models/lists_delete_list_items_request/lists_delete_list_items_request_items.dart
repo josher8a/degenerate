@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "id": "34b12448945f11eaa1b71c4d701ab86e"
 /// }
-/// ```text
+/// ```
 @immutable final class ListsDeleteListItemsRequestItems {const ListsDeleteListItemsRequestItems({required this.id});
 
 factory ListsDeleteListItemsRequestItems.fromJson(Map<String, dynamic> json) { return ListsDeleteListItemsRequestItems(

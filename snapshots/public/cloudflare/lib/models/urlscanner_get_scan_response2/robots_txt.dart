@@ -18,6 +18,6 @@ RobotsTxt copyWith({List<RobotsTxtData>? data}) { return RobotsTxt(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RobotsTxt &&
           listEquals(data, other.data); } 
-@override int get hashCode { return Object.hashAll(data).hashCode; } 
+@override int get hashCode { return Object.hashAll(data); } 
 @override String toString() { return 'RobotsTxt(data: $data)'; } 
  }

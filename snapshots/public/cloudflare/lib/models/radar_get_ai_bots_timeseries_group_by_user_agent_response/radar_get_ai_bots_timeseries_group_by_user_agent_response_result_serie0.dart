@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "facebookexternalhit": [
 ///     "0.862022"
@@ -10,7 +10,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 ///     "2024-07-30T03:00:00Z"
 ///   ]
 /// }
-/// ```text
+/// ```
 @immutable final class RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultSerie0 {const RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
 
 factory RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultSerie0(

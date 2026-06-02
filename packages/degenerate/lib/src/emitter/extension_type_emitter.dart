@@ -57,9 +57,7 @@ class ExtensionTypeEmitter {
         : _fromJsonBody(type.inner, name);
 
     final ext = ExtensionType((b) {
-      if (type.description != null) {
-        b.docs.addAll(formatDocComment(type.description!));
-      }
+      b.docs.addAll(docCommentLines(type.description));
       b
         ..name = name
         ..constant = _canBeConst(type.inner.kind)

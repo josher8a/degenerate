@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Resource limits for the Worker.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "cpu_ms": 50
 /// }
-/// ```text
+/// ```
 @immutable final class ScriptRuntimeLimits {const ScriptRuntimeLimits({this.cpuMs});
 
 factory ScriptRuntimeLimits.fromJson(Map<String, dynamic> json) { return ScriptRuntimeLimits(

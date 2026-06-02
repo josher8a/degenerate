@@ -24,6 +24,6 @@ CreateConversationItemsRequest copyWith({List<InputItem>? items}) { return Creat
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreateConversationItemsRequest &&
           listEquals(items, other.items); } 
-@override int get hashCode { return Object.hashAll(items).hashCode; } 
+@override int get hashCode { return Object.hashAll(items); } 
 @override String toString() { return 'CreateConversationItemsRequest(items: $items)'; } 
  }

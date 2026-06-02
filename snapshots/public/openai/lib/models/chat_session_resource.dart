@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Represents a ChatKit session and its resolved configuration.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "id": "cksess_123",
 ///   "object": "chatkit.session",
@@ -83,7 +83,7 @@ bool get isUnknown { return !values.contains(this); }
 ///     }
 ///   }
 /// }
-/// ```text
+/// ```
 @immutable final class ChatSessionResource {const ChatSessionResource({required this.id, required this.expiresAt, required this.clientSecret, required this.workflow, required this.user, required this.rateLimits, required this.maxRequestsPer1Minute, required this.status, required this.chatkitConfiguration, this.object = ChatSessionResourceObject.chatkitSession, });
 
 factory ChatSessionResource.fromJson(Map<String, dynamic> json) { return ChatSessionResource(

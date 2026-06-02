@@ -20,6 +20,6 @@ OidcCustomSub copyWith({List<String>? includeClaimKeys}) { return OidcCustomSub(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is OidcCustomSub &&
           listEquals(includeClaimKeys, other.includeClaimKeys); } 
-@override int get hashCode { return Object.hashAll(includeClaimKeys).hashCode; } 
+@override int get hashCode { return Object.hashAll(includeClaimKeys); } 
 @override String toString() { return 'OidcCustomSub(includeClaimKeys: $includeClaimKeys)'; } 
  }

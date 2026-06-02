@@ -19,6 +19,6 @@ EnterpriseTeamOrganizationsBulkRemoveRequest copyWith({List<String>? organizatio
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EnterpriseTeamOrganizationsBulkRemoveRequest &&
           listEquals(organizationSlugs, other.organizationSlugs); } 
-@override int get hashCode { return Object.hashAll(organizationSlugs).hashCode; } 
+@override int get hashCode { return Object.hashAll(organizationSlugs); } 
 @override String toString() { return 'EnterpriseTeamOrganizationsBulkRemoveRequest(organizationSlugs: $organizationSlugs)'; } 
  }

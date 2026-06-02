@@ -24,6 +24,6 @@ OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest copyWit
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest &&
           listEquals(properties, other.properties); } 
-@override int get hashCode { return Object.hashAll(properties).hashCode; } 
+@override int get hashCode { return Object.hashAll(properties); } 
 @override String toString() { return 'OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest(properties: $properties)'; } 
  }

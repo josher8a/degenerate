@@ -18,6 +18,6 @@ RadarGetEntitiesLocationsResponseResult copyWith({List<ResultLocations>? locatio
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RadarGetEntitiesLocationsResponseResult &&
           listEquals(locations, other.locations); } 
-@override int get hashCode { return Object.hashAll(locations).hashCode; } 
+@override int get hashCode { return Object.hashAll(locations); } 
 @override String toString() { return 'RadarGetEntitiesLocationsResponseResult(locations: $locations)'; } 
  }

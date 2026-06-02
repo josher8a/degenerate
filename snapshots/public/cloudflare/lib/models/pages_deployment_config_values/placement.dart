@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Placement setting used for Pages Functions.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "mode": "smart"
 /// }
-/// ```text
+/// ```
 @immutable final class Placement {const Placement({required this.mode});
 
 factory Placement.fromJson(Map<String, dynamic> json) { return Placement(

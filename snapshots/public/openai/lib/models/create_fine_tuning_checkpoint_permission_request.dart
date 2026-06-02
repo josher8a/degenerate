@@ -19,6 +19,6 @@ CreateFineTuningCheckpointPermissionRequest copyWith({List<String>? projectIds})
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreateFineTuningCheckpointPermissionRequest &&
           listEquals(projectIds, other.projectIds); } 
-@override int get hashCode { return Object.hashAll(projectIds).hashCode; } 
+@override int get hashCode { return Object.hashAll(projectIds); } 
 @override String toString() { return 'CreateFineTuningCheckpointPermissionRequest(projectIds: $projectIds)'; } 
  }

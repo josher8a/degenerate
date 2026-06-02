@@ -18,6 +18,6 @@ SecretsStoreStoresResponseCollection copyWith({List<SecretsStoreStoreObject>? Fu
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SecretsStoreStoresResponseCollection &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'SecretsStoreStoresResponseCollection(result: $result)'; } 
  }

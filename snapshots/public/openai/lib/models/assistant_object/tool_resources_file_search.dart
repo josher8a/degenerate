@@ -27,6 +27,6 @@ ToolResourcesFileSearch copyWith({List<String>? Function()? vectorStoreIds}) { r
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ToolResourcesFileSearch &&
           listEquals(vectorStoreIds, other.vectorStoreIds); } 
-@override int get hashCode { return Object.hashAll(vectorStoreIds ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(vectorStoreIds ?? const []); } 
 @override String toString() { return 'ToolResourcesFileSearch(vectorStoreIds: $vectorStoreIds)'; } 
  }

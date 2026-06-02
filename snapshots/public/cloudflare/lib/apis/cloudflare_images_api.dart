@@ -181,24 +181,24 @@ return execute(
 /// # List all images
 /// /images/v2
 /// 
-/// # Filter by metadata `[eq]`
-/// /images/v2?meta.status`[eq:string]`=active
+/// # Filter by metadata [eq]
+/// /images/v2?meta.status[eq:string]=active
 /// 
-/// # Filter by metadata `[in]`
-/// /images/v2?meta.status`[in]`=pending|deleted|flagged
+/// # Filter by metadata [in]
+/// /images/v2?meta.status[in]=pending|deleted|flagged
 /// 
-/// # Filter by metadata `[in:number]`
-/// /images/v2?meta.ratings`[in:number]`=4|5
+/// # Filter by metadata [in:number]
+/// /images/v2?meta.ratings[in:number]=4|5
 /// 
 /// # Filter by nested metadata
-/// /images/v2?meta.region.name`[eq]`=eu-west
+/// /images/v2?meta.region.name[eq]=eu-west
 /// 
 /// # Combine metadata filters with creator
-/// /images/v2?meta.status`[eq]`=active&creator=user123
+/// /images/v2?meta.status[eq]=active&creator=user123
 /// 
 /// # Multiple metadata filters (AND logic)
-/// /images/v2?meta.status`[eq]`=active&meta.priority`[eq:number]`=5
-/// ```text
+/// /images/v2?meta.status[eq]=active&meta.priority[eq:number]=5
+/// ```
 /// 
 ///
 /// `GET /accounts/{account_id}/images/v2`

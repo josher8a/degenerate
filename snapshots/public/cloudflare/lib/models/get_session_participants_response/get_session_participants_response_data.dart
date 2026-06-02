@@ -18,6 +18,6 @@ GetSessionParticipantsResponseData copyWith({List<RealtimekitParticipantsList>? 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is GetSessionParticipantsResponseData &&
           listEquals(participants, other.participants); } 
-@override int get hashCode { return Object.hashAll(participants ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(participants ?? const []); } 
 @override String toString() { return 'GetSessionParticipantsResponseData(participants: $participants)'; } 
  }

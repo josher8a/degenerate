@@ -18,9 +18,9 @@ final bool authentication;
 /// Specifies the CORS options for the HTTP endpoint.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {}
-/// ```text
+/// ```
 /// 
 /// Example: `{}`
 final Cors? cors;

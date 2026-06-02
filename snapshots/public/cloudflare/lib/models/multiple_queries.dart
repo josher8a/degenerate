@@ -18,6 +18,6 @@ MultipleQueries copyWith({List<D1SingleQuery>? batch}) { return MultipleQueries(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MultipleQueries &&
           listEquals(batch, other.batch); } 
-@override int get hashCode { return Object.hashAll(batch).hashCode; } 
+@override int get hashCode { return Object.hashAll(batch); } 
 @override String toString() { return 'MultipleQueries(batch: $batch)'; } 
  }

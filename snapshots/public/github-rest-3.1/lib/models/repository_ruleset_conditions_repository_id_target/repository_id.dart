@@ -19,6 +19,6 @@ RepositoryId copyWith({List<int>? Function()? repositoryIds}) { return Repositor
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RepositoryId &&
           listEquals(repositoryIds, other.repositoryIds); } 
-@override int get hashCode { return Object.hashAll(repositoryIds ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(repositoryIds ?? const []); } 
 @override String toString() { return 'RepositoryId(repositoryIds: $repositoryIds)'; } 
  }

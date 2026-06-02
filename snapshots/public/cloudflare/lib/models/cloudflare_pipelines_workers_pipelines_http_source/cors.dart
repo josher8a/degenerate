@@ -28,6 +28,6 @@ Cors copyWith({List<String>? Function()? origins}) { return Cors(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Cors &&
           listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hashAll(origins ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(origins ?? const []); } 
 @override String toString() { return 'Cors(origins: $origins)'; } 
  }

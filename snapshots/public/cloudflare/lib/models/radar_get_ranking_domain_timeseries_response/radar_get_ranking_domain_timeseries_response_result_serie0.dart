@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "Google": [
 ///     2
@@ -10,7 +10,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 ///     "2022-09-02"
 ///   ]
 /// }
-/// ```text
+/// ```
 @immutable final class RadarGetRankingDomainTimeseriesResponseResultSerie0 {const RadarGetRankingDomainTimeseriesResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
 
 factory RadarGetRankingDomainTimeseriesResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetRankingDomainTimeseriesResponseResultSerie0(

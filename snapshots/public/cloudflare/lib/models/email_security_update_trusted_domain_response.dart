@@ -19,7 +19,7 @@ final List<EmailSecurityMessage> messages;
 final bool success;
 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "comments": null,
 ///   "created_at": "2023-11-14T22:13:20Z",
@@ -30,7 +30,7 @@ final bool success;
 ///   "last_modified": "2023-11-14T22:13:20Z",
 ///   "pattern": "example.com"
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{comments: null, created_at: 2023-11-14T22:13:20Z, id: 2401, is_recent: true, is_regex: false, is_similarity: false, last_modified: 2023-11-14T22:13:20Z, pattern: example.com}`
 final EmailSecurityGetTrustedDomainResponseResult result;

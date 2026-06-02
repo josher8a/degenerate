@@ -19,6 +19,6 @@ WorkersAiPostRunCfMetaM2m10012bRequestVariant2 copyWith({List<WorkersAiPostRunCf
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WorkersAiPostRunCfMetaM2m10012bRequestVariant2 &&
           listEquals(requests, other.requests); } 
-@override int get hashCode { return Object.hashAll(requests).hashCode; } 
+@override int get hashCode { return Object.hashAll(requests); } 
 @override String toString() { return 'WorkersAiPostRunCfMetaM2m10012bRequestVariant2(requests: $requests)'; } 
  }

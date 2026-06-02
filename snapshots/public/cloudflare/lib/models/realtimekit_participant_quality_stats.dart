@@ -18,6 +18,6 @@ RealtimekitParticipantQualityStats copyWith({List<RealtimekitParticipantQualityS
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RealtimekitParticipantQualityStats &&
           listEquals(qualityStats, other.qualityStats); } 
-@override int get hashCode { return Object.hashAll(qualityStats ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(qualityStats ?? const []); } 
 @override String toString() { return 'RealtimekitParticipantQualityStats(qualityStats: $qualityStats)'; } 
  }

@@ -18,6 +18,6 @@ PageShieldListZoneCookiesResponse copyWith({List<PageShieldCookie>? result}) { r
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PageShieldListZoneCookiesResponse &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result).hashCode; } 
+@override int get hashCode { return Object.hashAll(result); } 
 @override String toString() { return 'PageShieldListZoneCookiesResponse(result: $result)'; } 
  }

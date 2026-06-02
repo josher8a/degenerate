@@ -18,6 +18,6 @@ RadarGetSearchGlobalResponseResult copyWith({List<Search>? search}) { return Rad
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RadarGetSearchGlobalResponseResult &&
           listEquals(search, other.search); } 
-@override int get hashCode { return Object.hashAll(search).hashCode; } 
+@override int get hashCode { return Object.hashAll(search); } 
 @override String toString() { return 'RadarGetSearchGlobalResponseResult(search: $search)'; } 
  }

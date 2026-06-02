@@ -21,6 +21,6 @@ ShieldRequestExpressionTemplatesFallthrough copyWith({List<String>? hosts}) { re
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldRequestExpressionTemplatesFallthrough &&
           listEquals(hosts, other.hosts); } 
-@override int get hashCode { return Object.hashAll(hosts).hashCode; } 
+@override int get hashCode { return Object.hashAll(hosts); } 
 @override String toString() { return 'ShieldRequestExpressionTemplatesFallthrough(hosts: $hosts)'; } 
  }

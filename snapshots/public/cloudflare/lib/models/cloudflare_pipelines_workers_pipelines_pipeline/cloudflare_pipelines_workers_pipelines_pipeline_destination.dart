@@ -18,12 +18,12 @@ final CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression compress
 final CloudflarePipelinesWorkersPipelinesBindingSourceFormat format;
 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "bucket": "bucket",
 ///   "prefix": "base"
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{bucket: bucket, prefix: base}`
 final DestinationPath path;

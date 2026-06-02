@@ -21,6 +21,6 @@ CachePurgeSingleFile copyWith({List<String>? Function()? files}) { return CacheP
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CachePurgeSingleFile &&
           listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(files ?? const []); } 
 @override String toString() { return 'CachePurgeSingleFile(files: $files)'; } 
  }

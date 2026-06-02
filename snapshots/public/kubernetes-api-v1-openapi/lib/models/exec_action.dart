@@ -20,6 +20,6 @@ ExecAction copyWith({List<String>? Function()? command}) { return ExecAction(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ExecAction &&
           listEquals(command, other.command); } 
-@override int get hashCode { return Object.hashAll(command ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(command ?? const []); } 
 @override String toString() { return 'ExecAction(command: $command)'; } 
  }

@@ -328,16 +328,14 @@ class FileEmitter {
         typeRegistry: typeRegistry,
       ).emit(),
       IrUntaggedUnion(:final variants)
-          when isOneOfEligible(variants) &&
-              !isSelfReferencingUnion(type.name, variants) =>
+          when isOneOfTypedef(type.name, variants) =>
         _emitOneOfTypedef(type.name, variants, type.description, typeRegistry),
       IrUntaggedUnion() => UntaggedUnionEmitter(
         type,
         typeRegistry: typeRegistry,
       ).emit(),
       IrAnyOf(:final variants)
-          when isOneOfEligible(variants) &&
-              !isSelfReferencingUnion(type.name, variants) =>
+          when isOneOfTypedef(type.name, variants) =>
         _emitOneOfTypedef(type.name, variants, type.description, typeRegistry),
       IrAnyOf() => AnyOfEmitter(type, typeRegistry: typeRegistry).emit(),
       // IrList, IrMap, IrPrimitive, IrTypeRef are not top-level emittable types
@@ -536,12 +534,10 @@ class FileEmitter {
             typeRegistry != null &&
             switch (typeRegistry[name]) {
               IrUntaggedUnion(:final variants)
-                  when isOneOfEligible(variants) &&
-                      !isSelfReferencingUnion(name, variants) =>
+                  when isOneOfTypedef(name, variants) =>
                 true,
               IrAnyOf(:final variants)
-                  when isOneOfEligible(variants) &&
-                      !isSelfReferencingUnion(name, variants) =>
+                  when isOneOfTypedef(name, variants) =>
                 true,
               _ => false,
             };
@@ -781,7 +777,7 @@ class FileEmitter {
         }
       case IrAnyOf(:final name, :final variants):
         names.add(name);
-        if (isOneOfEligible(variants) && !isSelfReferencingUnion(name, variants)) {
+        if (isOneOfTypedef(name, variants)) {
           // OneOf typedef: only direct variant types needed.
           // Typedef files don't contain base64 code, so only needsTypedData.
           needsOneOf = true;

@@ -20,6 +20,6 @@ LimitRangeSpec copyWith({List<LimitRangeItem>? limits}) { return LimitRangeSpec(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is LimitRangeSpec &&
           listEquals(limits, other.limits); } 
-@override int get hashCode { return Object.hashAll(limits).hashCode; } 
+@override int get hashCode { return Object.hashAll(limits); } 
 @override String toString() { return 'LimitRangeSpec(limits: $limits)'; } 
  }

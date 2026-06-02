@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_operation_feature_confidence_intervals/shield_operation_feature_confidence_intervals_confidence_intervals.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "confidence_intervals": {
 ///     "last_updated": "2014-01-01T05:20:00.12345Z",
@@ -24,7 +24,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///     }
 ///   }
 /// }
-/// ```text
+/// ```
 @immutable final class ShieldOperationFeatureConfidenceIntervals {const ShieldOperationFeatureConfidenceIntervals({this.confidenceIntervals});
 
 factory ShieldOperationFeatureConfidenceIntervals.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureConfidenceIntervals(

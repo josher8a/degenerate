@@ -19,6 +19,6 @@ AbuseReportsMitigationAppealRequest copyWith({List<AbuseReportsMitigationAppeal>
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AbuseReportsMitigationAppealRequest &&
           listEquals(appeals, other.appeals); } 
-@override int get hashCode { return Object.hashAll(appeals).hashCode; } 
+@override int get hashCode { return Object.hashAll(appeals); } 
 @override String toString() { return 'AbuseReportsMitigationAppealRequest(appeals: $appeals)'; } 
  }

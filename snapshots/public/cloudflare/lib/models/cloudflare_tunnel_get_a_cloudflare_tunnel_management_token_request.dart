@@ -40,6 +40,6 @@ CloudflareTunnelGetACloudflareTunnelManagementTokenRequest copyWith({List<Tunnel
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CloudflareTunnelGetACloudflareTunnelManagementTokenRequest &&
           listEquals(resources, other.resources); } 
-@override int get hashCode { return Object.hashAll(resources).hashCode; } 
+@override int get hashCode { return Object.hashAll(resources); } 
 @override String toString() { return 'CloudflareTunnelGetACloudflareTunnelManagementTokenRequest(resources: $resources)'; } 
  }

@@ -18,6 +18,6 @@ ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest copyWith
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest &&
           listEquals(settings, other.settings); } 
-@override int get hashCode { return Object.hashAll(settings).hashCode; } 
+@override int get hashCode { return Object.hashAll(settings); } 
 @override String toString() { return 'ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest(settings: $settings)'; } 
  }

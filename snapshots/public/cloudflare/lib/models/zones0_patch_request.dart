@@ -36,11 +36,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Zones0PatchRequestType($value)'; } 
  }
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "paused": true
 /// }
-/// ```text
+/// ```
 @immutable final class Zones0PatchRequest {const Zones0PatchRequest({this.paused, this.plan, this.type, this.vanityNameServers, });
 
 factory Zones0PatchRequest.fromJson(Map<String, dynamic> json) { return Zones0PatchRequest(

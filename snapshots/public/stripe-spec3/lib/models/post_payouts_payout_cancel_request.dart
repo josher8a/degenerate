@@ -19,6 +19,6 @@ PostPayoutsPayoutCancelRequest copyWith({List<String>? Function()? expand}) { re
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PostPayoutsPayoutCancelRequest &&
           listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hashAll(expand ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(expand ?? const []); } 
 @override String toString() { return 'PostPayoutsPayoutCancelRequest(expand: $expand)'; } 
  }

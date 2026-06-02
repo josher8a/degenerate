@@ -19,6 +19,6 @@ AccessAppRespEmbeddedTargetCriteriaInfra copyWith({List<AccessTargetCriteriaInfr
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccessAppRespEmbeddedTargetCriteriaInfra &&
           listEquals(targetCriteria, other.targetCriteria); } 
-@override int get hashCode { return Object.hashAll(targetCriteria ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(targetCriteria ?? const []); } 
 @override String toString() { return 'AccessAppRespEmbeddedTargetCriteriaInfra(targetCriteria: $targetCriteria)'; } 
  }

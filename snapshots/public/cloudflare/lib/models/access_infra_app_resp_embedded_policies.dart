@@ -19,6 +19,6 @@ AccessInfraAppRespEmbeddedPolicies copyWith({List<AccessInfraPolicyResp>? Functi
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccessInfraAppRespEmbeddedPolicies &&
           listEquals(policies, other.policies); } 
-@override int get hashCode { return Object.hashAll(policies ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(policies ?? const []); } 
 @override String toString() { return 'AccessInfraAppRespEmbeddedPolicies(policies: $policies)'; } 
  }

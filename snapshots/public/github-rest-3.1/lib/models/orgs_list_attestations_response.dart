@@ -18,6 +18,6 @@ OrgsListAttestationsResponse copyWith({List<OrgsListAttestationsResponseAttestat
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is OrgsListAttestationsResponse &&
           listEquals(attestations, other.attestations); } 
-@override int get hashCode { return Object.hashAll(attestations ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(attestations ?? const []); } 
 @override String toString() { return 'OrgsListAttestationsResponse(attestations: $attestations)'; } 
  }

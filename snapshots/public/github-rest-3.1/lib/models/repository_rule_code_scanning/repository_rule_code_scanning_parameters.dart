@@ -19,6 +19,6 @@ RepositoryRuleCodeScanningParameters copyWith({List<RepositoryRuleParamsCodeScan
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RepositoryRuleCodeScanningParameters &&
           listEquals(codeScanningTools, other.codeScanningTools); } 
-@override int get hashCode { return Object.hashAll(codeScanningTools).hashCode; } 
+@override int get hashCode { return Object.hashAll(codeScanningTools); } 
 @override String toString() { return 'RepositoryRuleCodeScanningParameters(codeScanningTools: $codeScanningTools)'; } 
  }

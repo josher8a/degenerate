@@ -345,6 +345,20 @@ String deduplicateName(String name, Set<String> existing) {
   }
 }
 
+/// Convert a raw schema name to a unique PascalCase Dart type name, avoiding
+/// dart:core shadows, and appending a numeric suffix if [usedNames] already
+/// contains the candidate. Adds the chosen name to [usedNames].
+String uniqueTypeName(String rawName, Set<String> usedNames) {
+  final pascal = toPascalCase(rawName);
+  final sanitized = sanitizeDartName(pascal);
+  final candidate = dartCoreTypeNames.contains(sanitized)
+      ? '${sanitized}Model'
+      : sanitized;
+  final unique = deduplicateName(candidate, usedNames);
+  usedNames.add(unique);
+  return unique;
+}
+
 /// Converts an OpenAPI operationId to a camelCase Dart method name.
 ///
 /// Strips path prefixes and version segments, then converts to camelCase.

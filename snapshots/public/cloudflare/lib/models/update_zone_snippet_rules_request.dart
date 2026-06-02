@@ -20,6 +20,6 @@ UpdateZoneSnippetRulesRequest copyWith({List<SnippetsSnippetRules2>? rules}) { r
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is UpdateZoneSnippetRulesRequest &&
           listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hashAll(rules).hashCode; } 
+@override int get hashCode { return Object.hashAll(rules); } 
 @override String toString() { return 'UpdateZoneSnippetRulesRequest(rules: $rules)'; } 
  }

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_list_metadata_index_response/metadata_indexes.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "metadataIndexes": [
 ///     {
@@ -18,7 +18,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///     }
 ///   ]
 /// }
-/// ```text
+/// ```
 @immutable final class VectorizeListMetadataIndexResponse {const VectorizeListMetadataIndexResponse({this.metadataIndexes});
 
 factory VectorizeListMetadataIndexResponse.fromJson(Map<String, dynamic> json) { return VectorizeListMetadataIndexResponse(
@@ -38,6 +38,6 @@ VectorizeListMetadataIndexResponse copyWith({List<MetadataIndexes>? Function()? 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is VectorizeListMetadataIndexResponse &&
           listEquals(metadataIndexes, other.metadataIndexes); } 
-@override int get hashCode { return Object.hashAll(metadataIndexes ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(metadataIndexes ?? const []); } 
 @override String toString() { return 'VectorizeListMetadataIndexResponse(metadataIndexes: $metadataIndexes)'; } 
  }

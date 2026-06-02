@@ -20,6 +20,6 @@ LoadBalancingSchemasHeader copyWith({List<String>? Function()? host}) { return L
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is LoadBalancingSchemasHeader &&
           listEquals(host, other.host); } 
-@override int get hashCode { return Object.hashAll(host ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(host ?? const []); } 
 @override String toString() { return 'LoadBalancingSchemasHeader(host: $host)'; } 
  }

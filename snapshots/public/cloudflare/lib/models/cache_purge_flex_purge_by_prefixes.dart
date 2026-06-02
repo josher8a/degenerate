@@ -21,6 +21,6 @@ CachePurgeFlexPurgeByPrefixes copyWith({List<String>? Function()? prefixes}) { r
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CachePurgeFlexPurgeByPrefixes &&
           listEquals(prefixes, other.prefixes); } 
-@override int get hashCode { return Object.hashAll(prefixes ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(prefixes ?? const []); } 
 @override String toString() { return 'CachePurgeFlexPurgeByPrefixes(prefixes: $prefixes)'; } 
  }

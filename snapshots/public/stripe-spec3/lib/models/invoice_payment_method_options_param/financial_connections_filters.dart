@@ -18,6 +18,6 @@ FinancialConnectionsFilters copyWith({List<InvoicePaymentMethodOptionsUsBankAcco
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is FinancialConnectionsFilters &&
           listEquals(accountSubcategories, other.accountSubcategories); } 
-@override int get hashCode { return Object.hashAll(accountSubcategories ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(accountSubcategories ?? const []); } 
 @override String toString() { return 'FinancialConnectionsFilters(accountSubcategories: $accountSubcategories)'; } 
  }

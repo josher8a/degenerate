@@ -18,6 +18,6 @@ ValueVariant3 copyWith({List<String>? ifNoneMatch}) { return ValueVariant3(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ValueVariant3 &&
           listEquals(ifNoneMatch, other.ifNoneMatch); } 
-@override int get hashCode { return Object.hashAll(ifNoneMatch).hashCode; } 
+@override int get hashCode { return Object.hashAll(ifNoneMatch); } 
 @override String toString() { return 'ValueVariant3(ifNoneMatch: $ifNoneMatch)'; } 
  }

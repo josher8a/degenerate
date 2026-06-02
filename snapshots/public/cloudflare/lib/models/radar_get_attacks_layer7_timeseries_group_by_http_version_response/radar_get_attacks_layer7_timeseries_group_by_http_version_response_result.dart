@@ -11,7 +11,7 @@ factory RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResult.fromJson
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta meta;
 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "HTTP/1.x": [
 ///     "50.338734"
@@ -26,7 +26,7 @@ final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta meta;
 ///     "2023-10-01T00:00:00Z"
 ///   ]
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{HTTP/1.x: [50.338734], HTTP/2: [48.661266], HTTP/3: [1.22108], timestamps: [2023-10-01T00:00:00Z]}`
 final RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResultSerie0 serie0;

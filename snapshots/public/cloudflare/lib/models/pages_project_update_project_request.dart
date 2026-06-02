@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/build_config.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/pages_project_create_project_request_deployment_configs.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/pages_project_create_project_request_source.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "deployment_configs": {
 ///     "production": {
@@ -22,7 +22,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///     }
 ///   }
 /// }
-/// ```text
+/// ```
 @immutable final class PagesProjectUpdateProjectRequest {const PagesProjectUpdateProjectRequest({this.buildConfig, this.deploymentConfigs, this.name, this.productionBranch, this.source, });
 
 factory PagesProjectUpdateProjectRequest.fromJson(Map<String, dynamic> json) { return PagesProjectUpdateProjectRequest(

@@ -17,7 +17,7 @@ final String type;
 ///   { x: 100, y: 200 },
 ///   { x: 200, y: 300 }
 /// ]
-/// ```text
+/// ```
 final List<CoordParam> path;
 
 Map<String, dynamic> toJson() { return {

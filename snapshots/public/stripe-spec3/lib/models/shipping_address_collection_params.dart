@@ -18,6 +18,6 @@ ShippingAddressCollectionParams copyWith({List<AllowedCountries>? allowedCountri
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShippingAddressCollectionParams &&
           listEquals(allowedCountries, other.allowedCountries); } 
-@override int get hashCode { return Object.hashAll(allowedCountries).hashCode; } 
+@override int get hashCode { return Object.hashAll(allowedCountries); } 
 @override String toString() { return 'ShippingAddressCollectionParams(allowedCountries: $allowedCountries)'; } 
  }

@@ -20,6 +20,6 @@ NamespaceSpec copyWith({List<String>? Function()? finalizers}) { return Namespac
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is NamespaceSpec &&
           listEquals(finalizers, other.finalizers); } 
-@override int get hashCode { return Object.hashAll(finalizers ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(finalizers ?? const []); } 
 @override String toString() { return 'NamespaceSpec(finalizers: $finalizers)'; } 
  }

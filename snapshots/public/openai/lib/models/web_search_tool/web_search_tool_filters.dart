@@ -25,6 +25,6 @@ WebSearchToolFilters copyWith({List<String>? Function()? allowedDomains}) { retu
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WebSearchToolFilters &&
           listEquals(allowedDomains, other.allowedDomains); } 
-@override int get hashCode { return Object.hashAll(allowedDomains ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(allowedDomains ?? const []); } 
 @override String toString() { return 'WebSearchToolFilters(allowedDomains: $allowedDomains)'; } 
  }

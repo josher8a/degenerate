@@ -19,6 +19,6 @@ DeleteEphemeralKeysKeyRequest copyWith({List<String>? Function()? expand}) { ret
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DeleteEphemeralKeysKeyRequest &&
           listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hashAll(expand ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(expand ?? const []); } 
 @override String toString() { return 'DeleteEphemeralKeysKeyRequest(expand: $expand)'; } 
  }

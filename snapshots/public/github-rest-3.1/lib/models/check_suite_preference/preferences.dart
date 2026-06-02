@@ -18,6 +18,6 @@ Preferences copyWith({List<AutoTriggerChecks>? Function()? autoTriggerChecks}) {
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Preferences &&
           listEquals(autoTriggerChecks, other.autoTriggerChecks); } 
-@override int get hashCode { return Object.hashAll(autoTriggerChecks ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(autoTriggerChecks ?? const []); } 
 @override String toString() { return 'Preferences(autoTriggerChecks: $autoTriggerChecks)'; } 
  }

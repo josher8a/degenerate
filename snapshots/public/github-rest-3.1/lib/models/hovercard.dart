@@ -19,6 +19,6 @@ Hovercard copyWith({List<Contexts>? contexts}) { return Hovercard(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Hovercard &&
           listEquals(contexts, other.contexts); } 
-@override int get hashCode { return Object.hashAll(contexts).hashCode; } 
+@override int get hashCode { return Object.hashAll(contexts); } 
 @override String toString() { return 'Hovercard(contexts: $contexts)'; } 
  }

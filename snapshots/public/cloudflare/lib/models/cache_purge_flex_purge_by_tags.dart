@@ -21,6 +21,6 @@ CachePurgeFlexPurgeByTags copyWith({List<String>? Function()? tags}) { return Ca
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CachePurgeFlexPurgeByTags &&
           listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hashAll(tags ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(tags ?? const []); } 
 @override String toString() { return 'CachePurgeFlexPurgeByTags(tags: $tags)'; } 
  }

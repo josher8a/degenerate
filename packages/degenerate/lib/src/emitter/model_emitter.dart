@@ -60,10 +60,7 @@ class ModelEmitter {
     ];
   }
 
-  List<String> _buildDocs() {
-    if (model.description == null) return [];
-    return formatDocComment(model.description!);
-  }
+  List<String> _buildDocs() => docCommentLines(model.description);
 
   List<String> _fieldDocs(IrField f) {
     final parts = <String>[];
@@ -85,7 +82,7 @@ class ModelEmitter {
           ..modifier = FieldModifier.final$
           ..type = irTypeToReference(
             f.type,
-            forceNullable: !f.isRequired && !_hasDefault(f),
+            forceNullable: !f.isRequired && !fieldHasDefault(f),
           )
           ..docs.addAll(_fieldDocs(f)),
       ),
@@ -109,8 +106,8 @@ class ModelEmitter {
           ..name = f.name
           ..named = true
           ..toThis = true
-          ..required = f.isRequired && !_hasDefault(f)
-          ..defaultTo = _defaultCode(f),
+          ..required = f.isRequired && !fieldHasDefault(f)
+          ..defaultTo = fieldDefaultCode(f),
       );
     }).toList();
     // Sort required named parameters before optional ones.
@@ -153,10 +150,10 @@ class ModelEmitter {
             isOptional: isOptional,
             typeRegistry: typeRegistry,
           );
-          if (!f.isRequired && _hasDefault(f)) {
+          if (!f.isRequired && fieldHasDefault(f)) {
             // Optional with default: use null-safe extraction or skip entirely.
             // The constructor default handles missing values.
-            final defaultCode = _defaultCode(f);
+            final defaultCode = fieldDefaultCode(f);
             final defaultStr = defaultCode?.toString() ?? 'null';
             return '  ${f.name}: json.containsKey(${dartStringLiteral(f.originalName)}) ? $code : $defaultStr,';
           }
@@ -523,7 +520,10 @@ class ModelEmitter {
     if (fieldExprs.isEmpty) {
       body = 'return runtimeType.hashCode;';
     } else if (fieldExprs.length == 1) {
-      body = 'return ${fieldExprs.first}.hashCode;';
+      final expr = fieldExprs.first;
+      body = expr.startsWith('Object.')
+          ? 'return $expr;'
+          : 'return $expr.hashCode;';
     } else if (fieldExprs.length <= 20) {
       body = 'return Object.hash(${fieldExprs.join(', ')});';
     } else {
@@ -545,9 +545,4 @@ class ModelEmitter {
     );
   }
 
-  // Constructor-parameter defaults are shared with the sealed-union variant
-  // factories so their parameter lists stay in sync. See emit_utils.dart.
-  bool _hasDefault(IrField f) => fieldHasDefault(f);
-
-  Code? _defaultCode(IrField f) => fieldDefaultCode(f);
 }

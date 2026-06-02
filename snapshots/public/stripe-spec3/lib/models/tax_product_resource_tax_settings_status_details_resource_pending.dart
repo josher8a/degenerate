@@ -20,6 +20,6 @@ TaxProductResourceTaxSettingsStatusDetailsResourcePending copyWith({List<String>
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TaxProductResourceTaxSettingsStatusDetailsResourcePending &&
           listEquals(missingFields, other.missingFields); } 
-@override int get hashCode { return Object.hashAll(missingFields ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(missingFields ?? const []); } 
 @override String toString() { return 'TaxProductResourceTaxSettingsStatusDetailsResourcePending(missingFields: $missingFields)'; } 
  }

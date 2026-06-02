@@ -18,6 +18,6 @@ ZeroTrustGatewaySchemasResponseCollection copyWith({List<ZeroTrustGatewayLists>?
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ZeroTrustGatewaySchemasResponseCollection &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'ZeroTrustGatewaySchemasResponseCollection(result: $result)'; } 
  }

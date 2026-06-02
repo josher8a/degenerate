@@ -18,6 +18,6 @@ RadarGetReportsDatasetsResponseResult copyWith({List<RadarGetReportsDatasetsResp
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RadarGetReportsDatasetsResponseResult &&
           listEquals(datasets, other.datasets); } 
-@override int get hashCode { return Object.hashAll(datasets).hashCode; } 
+@override int get hashCode { return Object.hashAll(datasets); } 
 @override String toString() { return 'RadarGetReportsDatasetsResponseResult(datasets: $datasets)'; } 
  }

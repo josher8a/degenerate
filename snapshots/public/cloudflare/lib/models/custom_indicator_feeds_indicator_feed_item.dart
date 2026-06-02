@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_description.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_id.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_is_attributable.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_is_downloadable.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_is_public.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_name.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "created_on": "2023-05-12T12:21:56.777653Z",
 ///   "description": "example feed description",
@@ -12,7 +12,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   "modified_on": "2023-06-18T03:13:34.123321Z",
 ///   "name": "example_feed_1"
 /// }
-/// ```text
+/// ```
 @immutable final class CustomIndicatorFeedsIndicatorFeedItem {const CustomIndicatorFeedsIndicatorFeedItem({this.createdOn, this.description, this.id, this.isAttributable, this.isDownloadable, this.isPublic, this.modifiedOn, this.name, });
 
 factory CustomIndicatorFeedsIndicatorFeedItem.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsIndicatorFeedItem(

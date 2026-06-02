@@ -18,6 +18,6 @@ ChangesExclude copyWith({List<String>? Function()? from}) { return ChangesExclud
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ChangesExclude &&
           listEquals(from, other.from); } 
-@override int get hashCode { return Object.hashAll(from ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(from ?? const []); } 
 @override String toString() { return 'ChangesExclude(from: $from)'; } 
  }

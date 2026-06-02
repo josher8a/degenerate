@@ -50,12 +50,12 @@ final DateTime updatedAt;
 /// The set of permissions for the GitHub app
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "issues": "read",
 ///   "deployments": "write"
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{issues: read, deployments: write}`
 final AppsCreateFromManifestResponsePermissions permissions;

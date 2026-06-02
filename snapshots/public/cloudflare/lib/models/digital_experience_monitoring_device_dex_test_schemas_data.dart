@@ -25,13 +25,13 @@ bool get isUnknown { return !values.contains(this); }
 /// The configuration object which contains the details for the WARP client to conduct the test.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "host": "https://dash.cloudflare.com",
 ///   "kind": "http",
 ///   "method": "GET"
 /// }
-/// ```text
+/// ```
 @immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasData {const DigitalExperienceMonitoringDeviceDexTestSchemasData({required this.host, required this.kind, this.method, });
 
 factory DigitalExperienceMonitoringDeviceDexTestSchemasData.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDeviceDexTestSchemasData(

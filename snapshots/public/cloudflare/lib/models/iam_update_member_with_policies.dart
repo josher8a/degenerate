@@ -19,6 +19,6 @@ IamUpdateMemberWithPolicies copyWith({List<IamCreateMemberPolicy>? policies}) { 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IamUpdateMemberWithPolicies &&
           listEquals(policies, other.policies); } 
-@override int get hashCode { return Object.hashAll(policies).hashCode; } 
+@override int get hashCode { return Object.hashAll(policies); } 
 @override String toString() { return 'IamUpdateMemberWithPolicies(policies: $policies)'; } 
  }

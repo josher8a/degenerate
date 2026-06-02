@@ -18,6 +18,6 @@ ProcessorsDns copyWith({List<DnsData>? data}) { return ProcessorsDns(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ProcessorsDns &&
           listEquals(data, other.data); } 
-@override int get hashCode { return Object.hashAll(data).hashCode; } 
+@override int get hashCode { return Object.hashAll(data); } 
 @override String toString() { return 'ProcessorsDns(data: $data)'; } 
  }

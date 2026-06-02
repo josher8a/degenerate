@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_bucket_location.dart';import 'package:pub_cloudflare/models/r2_bucket_name.dart';import 'package:pub_cloudflare/models/r2_storage_class.dart';/// Example:
-/// ```json`
+/// ```json
 /// {"name": "example-bucket"}
-/// ```text
+/// ```
 @immutable final class R2CreateBucketRequest {const R2CreateBucketRequest({required this.name, this.locationHint, this.storageClass, });
 
 factory R2CreateBucketRequest.fromJson(Map<String, dynamic> json) { return R2CreateBucketRequest(

@@ -19,6 +19,6 @@ WorkersPlacementRegionsResponse copyWith({List<WorkersPlacementProvider>? provid
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WorkersPlacementRegionsResponse &&
           listEquals(providers, other.providers); } 
-@override int get hashCode { return Object.hashAll(providers).hashCode; } 
+@override int get hashCode { return Object.hashAll(providers); } 
 @override String toString() { return 'WorkersPlacementRegionsResponse(providers: $providers)'; } 
  }

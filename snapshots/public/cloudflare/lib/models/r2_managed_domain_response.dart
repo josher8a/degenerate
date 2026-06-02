@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "bucketId": "0113a9e4549cf9b1ff1bf56e04da0cef",
 ///   "domain": "pub-0113a9e4549cf9b1ff1bf56e04da0cef.r2.dev",
 ///   "enabled": true
 /// }
-/// ```text
+/// ```
 @immutable final class R2ManagedDomainResponse {const R2ManagedDomainResponse({required this.bucketId, required this.domain, required this.enabled, });
 
 factory R2ManagedDomainResponse.fromJson(Map<String, dynamic> json) { return R2ManagedDomainResponse(

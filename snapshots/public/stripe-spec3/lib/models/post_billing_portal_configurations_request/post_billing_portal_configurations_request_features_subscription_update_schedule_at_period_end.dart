@@ -18,6 +18,6 @@ PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriod
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd &&
           listEquals(conditions, other.conditions); } 
-@override int get hashCode { return Object.hashAll(conditions ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(conditions ?? const []); } 
 @override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd(conditions: $conditions)'; } 
  }

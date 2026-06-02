@@ -18,6 +18,6 @@ R2PutBucketLifecycleConfigurationRequest copyWith({List<R2LifecycleRule>? Functi
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is R2PutBucketLifecycleConfigurationRequest &&
           listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hashAll(rules ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(rules ?? const []); } 
 @override String toString() { return 'R2PutBucketLifecycleConfigurationRequest(rules: $rules)'; } 
  }

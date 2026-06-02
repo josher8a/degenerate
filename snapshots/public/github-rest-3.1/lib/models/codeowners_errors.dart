@@ -19,6 +19,6 @@ CodeownersErrors copyWith({List<CodeownersErrorsErrors>? errors}) { return Codeo
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CodeownersErrors &&
           listEquals(errors, other.errors); } 
-@override int get hashCode { return Object.hashAll(errors).hashCode; } 
+@override int get hashCode { return Object.hashAll(errors); } 
 @override String toString() { return 'CodeownersErrors(errors: $errors)'; } 
  }

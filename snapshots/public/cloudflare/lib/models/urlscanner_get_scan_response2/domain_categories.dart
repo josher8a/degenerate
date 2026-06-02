@@ -18,6 +18,6 @@ DomainCategories copyWith({List<DomainCategoriesData>? data}) { return DomainCat
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DomainCategories &&
           listEquals(data, other.data); } 
-@override int get hashCode { return Object.hashAll(data).hashCode; } 
+@override int get hashCode { return Object.hashAll(data); } 
 @override String toString() { return 'DomainCategories(data: $data)'; } 
  }

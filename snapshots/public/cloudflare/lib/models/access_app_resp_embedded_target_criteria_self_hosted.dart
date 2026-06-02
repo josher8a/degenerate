@@ -19,6 +19,6 @@ AccessAppRespEmbeddedTargetCriteriaSelfHosted copyWith({List<AccessTargetCriteri
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccessAppRespEmbeddedTargetCriteriaSelfHosted &&
           listEquals(targetCriteria, other.targetCriteria); } 
-@override int get hashCode { return Object.hashAll(targetCriteria ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(targetCriteria ?? const []); } 
 @override String toString() { return 'AccessAppRespEmbeddedTargetCriteriaSelfHosted(targetCriteria: $targetCriteria)'; } 
  }

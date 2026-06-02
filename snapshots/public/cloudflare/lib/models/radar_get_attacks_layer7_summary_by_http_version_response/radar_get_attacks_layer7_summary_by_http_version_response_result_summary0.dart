@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "HTTP/1.x": "21.722365",
 ///   "HTTP/2": "77.056555",
 ///   "HTTP/3": "1.22108"
 /// }
-/// ```text
+/// ```
 @immutable final class RadarGetAttacksLayer7SummaryByHttpVersionResponseResultSummary0 {const RadarGetAttacksLayer7SummaryByHttpVersionResponseResultSummary0({required this.http1X, required this.http2, required this.http3, });
 
 factory RadarGetAttacksLayer7SummaryByHttpVersionResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByHttpVersionResponseResultSummary0(

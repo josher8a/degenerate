@@ -18,6 +18,6 @@ ProcessorsAsn copyWith({List<ProcessorsAsnData>? data}) { return ProcessorsAsn(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ProcessorsAsn &&
           listEquals(data, other.data); } 
-@override int get hashCode { return Object.hashAll(data).hashCode; } 
+@override int get hashCode { return Object.hashAll(data); } 
 @override String toString() { return 'ProcessorsAsn(data: $data)'; } 
  }

@@ -19,6 +19,6 @@ ActionsSetSelectedReposForOrgSecretRequest copyWith({List<int>? selectedReposito
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ActionsSetSelectedReposForOrgSecretRequest &&
           listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds).hashCode; } 
+@override int get hashCode { return Object.hashAll(selectedRepositoryIds); } 
 @override String toString() { return 'ActionsSetSelectedReposForOrgSecretRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
  }

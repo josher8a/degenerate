@@ -18,6 +18,6 @@ MagicWansCollectionResponse copyWith({List<MagicWan>? Function()? result}) { ret
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MagicWansCollectionResponse &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'MagicWansCollectionResponse(result: $result)'; } 
  }

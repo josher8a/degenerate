@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The set of permissions for the GitHub app
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "issues": "read",
 ///   "deployments": "write"
 /// }
-/// ```text
+/// ```
 @immutable final class AppsCreateFromManifestResponsePermissions {const AppsCreateFromManifestResponsePermissions({this.issues, this.checks, this.metadata, this.contents, this.deployments, this.additionalProperties = const {}, });
 
 factory AppsCreateFromManifestResponsePermissions.fromJson(Map<String, dynamic> json) { return AppsCreateFromManifestResponsePermissions(

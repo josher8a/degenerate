@@ -18,6 +18,6 @@ Web3CollectionResponse copyWith({List<Web3Web3Hostname>? Function()? result}) { 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Web3CollectionResponse &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'Web3CollectionResponse(result: $result)'; } 
  }

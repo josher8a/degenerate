@@ -19,6 +19,6 @@ ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest copyWith({Lis
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest &&
           listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds).hashCode; } 
+@override int get hashCode { return Object.hashAll(selectedRepositoryIds); } 
 @override String toString() { return 'ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
  }

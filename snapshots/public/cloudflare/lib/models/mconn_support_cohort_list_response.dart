@@ -18,6 +18,6 @@ MconnSupportCohortListResponse copyWith({List<MconnSupportCohort>? Function()? r
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MconnSupportCohortListResponse &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'MconnSupportCohortListResponse(result: $result)'; } 
  }

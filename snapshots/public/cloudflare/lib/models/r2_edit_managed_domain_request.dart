@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "enabled": true
 /// }
-/// ```text
+/// ```
 @immutable final class R2EditManagedDomainRequest {const R2EditManagedDomainRequest({required this.enabled});
 
 factory R2EditManagedDomainRequest.fromJson(Map<String, dynamic> json) { return R2EditManagedDomainRequest(

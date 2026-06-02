@@ -19,6 +19,6 @@ RepositoryRuleFileExtensionRestrictionParameters copyWith({List<String>? restric
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RepositoryRuleFileExtensionRestrictionParameters &&
           listEquals(restrictedFileExtensions, other.restrictedFileExtensions); } 
-@override int get hashCode { return Object.hashAll(restrictedFileExtensions).hashCode; } 
+@override int get hashCode { return Object.hashAll(restrictedFileExtensions); } 
 @override String toString() { return 'RepositoryRuleFileExtensionRestrictionParameters(restrictedFileExtensions: $restrictedFileExtensions)'; } 
  }

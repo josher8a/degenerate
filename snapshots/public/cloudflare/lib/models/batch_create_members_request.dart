@@ -22,6 +22,6 @@ BatchCreateMembersRequest copyWith({List<CreateSingleMember>? members}) { return
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is BatchCreateMembersRequest &&
           listEquals(members, other.members); } 
-@override int get hashCode { return Object.hashAll(members).hashCode; } 
+@override int get hashCode { return Object.hashAll(members); } 
 @override String toString() { return 'BatchCreateMembersRequest(members: $members)'; } 
  }

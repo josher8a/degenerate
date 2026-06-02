@@ -19,6 +19,6 @@ AppliesTo copyWith({List<String>? Function()? products}) { return AppliesTo(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AppliesTo &&
           listEquals(products, other.products); } 
-@override int get hashCode { return Object.hashAll(products ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(products ?? const []); } 
 @override String toString() { return 'AppliesTo(products: $products)'; } 
  }

@@ -18,6 +18,6 @@ PostEventTagCreateRequest copyWith({List<String>? tags}) { return PostEventTagCr
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PostEventTagCreateRequest &&
           listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hashAll(tags).hashCode; } 
+@override int get hashCode { return Object.hashAll(tags); } 
 @override String toString() { return 'PostEventTagCreateRequest(tags: $tags)'; } 
  }

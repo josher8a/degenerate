@@ -20,6 +20,6 @@ CouponAppliesTo copyWith({List<String>? products}) { return CouponAppliesTo(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CouponAppliesTo &&
           listEquals(products, other.products); } 
-@override int get hashCode { return Object.hashAll(products).hashCode; } 
+@override int get hashCode { return Object.hashAll(products); } 
 @override String toString() { return 'CouponAppliesTo(products: $products)'; } 
  }

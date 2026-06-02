@@ -18,6 +18,6 @@ DlpEntryWithSharedProfiles copyWith({List<DlpEntryProfile>? profiles}) { return 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DlpEntryWithSharedProfiles &&
           listEquals(profiles, other.profiles); } 
-@override int get hashCode { return Object.hashAll(profiles).hashCode; } 
+@override int get hashCode { return Object.hashAll(profiles); } 
 @override String toString() { return 'DlpEntryWithSharedProfiles(profiles: $profiles)'; } 
  }

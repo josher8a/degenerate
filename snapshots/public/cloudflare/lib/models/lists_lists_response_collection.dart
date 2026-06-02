@@ -18,6 +18,6 @@ ListsListsResponseCollection copyWith({List<ListsList>? Function()? result}) { r
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ListsListsResponseCollection &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'ListsListsResponseCollection(result: $result)'; } 
  }

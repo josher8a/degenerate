@@ -21,6 +21,6 @@ VectorizeIndexGetVectorsByIdRequest copyWith({List<VectorizeVectorIdentifier>? F
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is VectorizeIndexGetVectorsByIdRequest &&
           listEquals(ids, other.ids); } 
-@override int get hashCode { return Object.hashAll(ids ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(ids ?? const []); } 
 @override String toString() { return 'VectorizeIndexGetVectorsByIdRequest(ids: $ids)'; } 
  }

@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseStatus($value)'; } 
  }
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "id": "resp_67ccd3a9da748190baa7f1570fe91ac604becb25c45c1d41",
 ///   "object": "response",
@@ -121,7 +121,7 @@ bool get isUnknown { return !values.contains(this); }
 ///   "user": null,
 ///   "metadata": {}
 /// }
-/// ```text
+/// ```
 @immutable final class Response {const Response({required this.metadata, required this.temperature, required this.topP, required this.id, required this.object, required this.createdAt, required this.error, required this.incompleteDetails, required this.output, required this.instructions, this.topLogprobs, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, this.status, this.completedAt, this.outputText, this.usage, this.parallelToolCalls = true, this.conversation, });
 
 factory Response.fromJson(Map<String, dynamic> json) { return Response(

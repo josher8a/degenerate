@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "repository_ids_to_add": [
 ///     123,
@@ -11,7 +11,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 ///     789
 ///   ]
 /// }
-/// ```text
+/// ```
 @immutable final class DependabotUpdateRepositoryAccessForOrgRequest {const DependabotUpdateRepositoryAccessForOrgRequest({this.repositoryIdsToAdd, this.repositoryIdsToRemove, });
 
 factory DependabotUpdateRepositoryAccessForOrgRequest.fromJson(Map<String, dynamic> json) { return DependabotUpdateRepositoryAccessForOrgRequest(

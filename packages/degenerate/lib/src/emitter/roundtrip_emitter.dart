@@ -251,7 +251,7 @@ class RoundtripEmitter {
     // inline `OneOf.parse`. Self-referencing unions are emitted as sealed
     // classes whose `fromJson` expects a Map and dispatches via `canParse` —
     // not synthesizable here.
-    if (!isOneOfEligible(variants) || isSelfReferencingUnion(name, variants)) {
+    if (!isOneOfTypedef(name, variants)) {
       return null;
     }
     // As a nested/field value, sample the first toJson-safe variant (spec
@@ -365,8 +365,8 @@ class RoundtripEmitter {
       IrAnyOf(:final variants) => variants,
       _ => null,
     };
-    if (variants == null || !isOneOfEligible(variants)) return false;
-    return !isSelfReferencingUnion(type.emittableName!, variants);
+    if (variants == null) return false;
+    return isOneOfTypedef(type.emittableName!, variants);
   }
 
 

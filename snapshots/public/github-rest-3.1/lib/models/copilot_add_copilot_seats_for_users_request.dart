@@ -23,6 +23,6 @@ CopilotAddCopilotSeatsForUsersRequest copyWith({List<String>? selectedUsernames}
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CopilotAddCopilotSeatsForUsersRequest &&
           listEquals(selectedUsernames, other.selectedUsernames); } 
-@override int get hashCode { return Object.hashAll(selectedUsernames).hashCode; } 
+@override int get hashCode { return Object.hashAll(selectedUsernames); } 
 @override String toString() { return 'CopilotAddCopilotSeatsForUsersRequest(selectedUsernames: $selectedUsernames)'; } 
  }

@@ -575,6 +575,25 @@ final class IrOperation {
 
   /// Operation-level security requirements.
   final List<IrSecurityRequirement>? securityRequirements;
+
+  IrOperation copyWith({
+    List<IrParameter>? parameters,
+    IrRequestBody? requestBody,
+    Map<int, IrResponse>? responses,
+    IrResponse? defaultResponse,
+  }) =>
+      IrOperation(
+        operationId, dartMethodName, method, path,
+        customMethod: customMethod,
+        summary: summary,
+        description: description,
+        parameters: parameters ?? this.parameters,
+        requestBody: requestBody ?? this.requestBody,
+        responses: responses ?? this.responses,
+        defaultResponse: defaultResponse ?? this.defaultResponse,
+        isDeprecated: isDeprecated,
+        securityRequirements: securityRequirements,
+      );
 }
 
 /// A single operation parameter.
@@ -618,6 +637,15 @@ final class IrParameter {
 
   /// The default value from the spec.
   final Object? defaultValue;
+
+  IrParameter withType(IrType newType) => IrParameter(
+        name, dartName, location, newType,
+        isRequired: isRequired,
+        style: style,
+        explode: explode,
+        allowReserved: allowReserved,
+        defaultValue: defaultValue,
+      );
 }
 
 /// A request body definition.
@@ -670,6 +698,16 @@ final class IrResponse {
 
   /// Response headers.
   final List<IrField> headers;
+
+  IrResponse copyWith({
+    Map<String, IrMediaType>? content,
+    List<IrField>? headers,
+  }) =>
+      IrResponse(
+        description: description,
+        content: content ?? this.content,
+        headers: headers ?? this.headers,
+      );
 }
 
 /// Standard HTTP methods plus custom.

@@ -18,6 +18,6 @@ RadarGetOriginsResponseResult copyWith({List<ResultOrigins>? origins}) { return 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RadarGetOriginsResponseResult &&
           listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hashAll(origins).hashCode; } 
+@override int get hashCode { return Object.hashAll(origins); } 
 @override String toString() { return 'RadarGetOriginsResponseResult(origins: $origins)'; } 
  }

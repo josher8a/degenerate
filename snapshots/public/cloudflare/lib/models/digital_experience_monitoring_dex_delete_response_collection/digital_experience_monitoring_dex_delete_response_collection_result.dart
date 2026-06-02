@@ -18,6 +18,6 @@ DigitalExperienceMonitoringDexDeleteResponseCollectionResult copyWith({List<Digi
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DigitalExperienceMonitoringDexDeleteResponseCollectionResult &&
           listEquals(dexTests, other.dexTests); } 
-@override int get hashCode { return Object.hashAll(dexTests ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(dexTests ?? const []); } 
 @override String toString() { return 'DigitalExperienceMonitoringDexDeleteResponseCollectionResult(dexTests: $dexTests)'; } 
  }

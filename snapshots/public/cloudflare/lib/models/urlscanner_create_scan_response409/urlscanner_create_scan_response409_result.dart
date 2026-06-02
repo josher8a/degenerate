@@ -18,6 +18,6 @@ UrlscannerCreateScanResponse409Result copyWith({List<UrlscannerCreateScanRespons
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is UrlscannerCreateScanResponse409Result &&
           listEquals(tasks, other.tasks); } 
-@override int get hashCode { return Object.hashAll(tasks).hashCode; } 
+@override int get hashCode { return Object.hashAll(tasks); } 
 @override String toString() { return 'UrlscannerCreateScanResponse409Result(tasks: $tasks)'; } 
  }

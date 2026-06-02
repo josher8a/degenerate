@@ -18,6 +18,6 @@ Js copyWith({List<Variables>? variables}) { return Js(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Js &&
           listEquals(variables, other.variables); } 
-@override int get hashCode { return Object.hashAll(variables).hashCode; } 
+@override int get hashCode { return Object.hashAll(variables); } 
 @override String toString() { return 'Js(variables: $variables)'; } 
  }

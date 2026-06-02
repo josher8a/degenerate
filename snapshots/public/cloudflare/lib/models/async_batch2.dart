@@ -18,6 +18,6 @@ AsyncBatch2 copyWith({List<AsyncBatch2Requests>? Function()? requests}) { return
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AsyncBatch2 &&
           listEquals(requests, other.requests); } 
-@override int get hashCode { return Object.hashAll(requests ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(requests ?? const []); } 
 @override String toString() { return 'AsyncBatch2(requests: $requests)'; } 
  }

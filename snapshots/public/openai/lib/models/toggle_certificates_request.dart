@@ -23,6 +23,6 @@ ToggleCertificatesRequest copyWith({List<String>? certificateIds}) { return Togg
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ToggleCertificatesRequest &&
           listEquals(certificateIds, other.certificateIds); } 
-@override int get hashCode { return Object.hashAll(certificateIds).hashCode; } 
+@override int get hashCode { return Object.hashAll(certificateIds); } 
 @override String toString() { return 'ToggleCertificatesRequest(certificateIds: $certificateIds)'; } 
  }

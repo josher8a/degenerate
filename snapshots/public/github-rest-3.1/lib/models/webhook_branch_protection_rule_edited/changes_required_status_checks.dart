@@ -18,6 +18,6 @@ ChangesRequiredStatusChecks copyWith({List<String>? from}) { return ChangesRequi
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ChangesRequiredStatusChecks &&
           listEquals(from, other.from); } 
-@override int get hashCode { return Object.hashAll(from).hashCode; } 
+@override int get hashCode { return Object.hashAll(from); } 
 @override String toString() { return 'ChangesRequiredStatusChecks(from: $from)'; } 
  }

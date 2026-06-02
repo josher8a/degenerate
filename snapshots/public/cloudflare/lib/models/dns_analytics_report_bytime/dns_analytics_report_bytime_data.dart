@@ -19,6 +19,6 @@ DnsAnalyticsReportBytimeData copyWith({List<List<double>>? metrics}) { return Dn
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DnsAnalyticsReportBytimeData &&
           listEquals(metrics, other.metrics); } 
-@override int get hashCode { return Object.hashAll(metrics).hashCode; } 
+@override int get hashCode { return Object.hashAll(metrics); } 
 @override String toString() { return 'DnsAnalyticsReportBytimeData(metrics: $metrics)'; } 
  }

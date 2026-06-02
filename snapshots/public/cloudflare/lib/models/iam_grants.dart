@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "read": true,
 ///   "write": false
 /// }
-/// ```text
+/// ```
 @immutable final class IamGrants {const IamGrants({this.read, this.write, });
 
 factory IamGrants.fromJson(Map<String, dynamic> json) { return IamGrants(

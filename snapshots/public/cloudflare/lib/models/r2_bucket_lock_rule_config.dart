@@ -18,6 +18,6 @@ R2BucketLockRuleConfig copyWith({List<R2BucketLockRule>? Function()? rules}) { r
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is R2BucketLockRuleConfig &&
           listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hashAll(rules ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(rules ?? const []); } 
 @override String toString() { return 'R2BucketLockRuleConfig(rules: $rules)'; } 
  }

@@ -27,7 +27,7 @@ class EnumEmitter {
     final usedNames = <String>{};
     final result = <(String, String)>[];
     for (final v in irEnum.values) {
-      var name = _valueName(v);
+      var name = enumValueName(v);
       name = deduplicateName(name, usedNames);
       usedNames.add(name);
       result.add((v, name));
@@ -112,10 +112,7 @@ class EnumEmitter {
     ];
   }
 
-  List<String> _buildDocs() {
-    if (irEnum.description == null) return [];
-    return formatDocComment(irEnum.description!);
-  }
+  List<String> _buildDocs() => docCommentLines(irEnum.description);
 
   Constructor _buildFromJson(String className, List<(String, String)> deduped) {
     final isString = irEnum.valueKind == PrimitiveKind.string;
@@ -188,5 +185,4 @@ class EnumEmitter {
     "return '${escapeNameForString(className)}(\$value)';",
   );
 
-  String _valueName(String value) => enumValueName(value);
 }

@@ -19,6 +19,6 @@ DeleteCustomersCustomerBankAccountsIdRequest copyWith({List<String>? Function()?
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DeleteCustomersCustomerBankAccountsIdRequest &&
           listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hashAll(expand ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(expand ?? const []); } 
 @override String toString() { return 'DeleteCustomersCustomerBankAccountsIdRequest(expand: $expand)'; } 
  }

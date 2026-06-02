@@ -19,12 +19,12 @@ final String id;
 /// Attributes associated to the permission group.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "label": "load_balancer_admin",
 ///   "scopes": "com.cloudflare.api.account"
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{label: load_balancer_admin, scopes: com.cloudflare.api.account}`
 final IamPermissionGroupMeta? meta;

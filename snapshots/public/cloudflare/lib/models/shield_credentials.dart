@@ -23,6 +23,6 @@ ShieldCredentials copyWith({List<ShieldCredentialsJwtKey>? keys}) { return Shiel
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldCredentials &&
           listEquals(keys, other.keys); } 
-@override int get hashCode { return Object.hashAll(keys).hashCode; } 
+@override int get hashCode { return Object.hashAll(keys); } 
 @override String toString() { return 'ShieldCredentials(keys: $keys)'; } 
  }

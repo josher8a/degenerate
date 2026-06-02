@@ -21,6 +21,6 @@ PaymentPagesCheckoutSessionShippingAddressCollection copyWith({List<AllowedCount
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentPagesCheckoutSessionShippingAddressCollection &&
           listEquals(allowedCountries, other.allowedCountries); } 
-@override int get hashCode { return Object.hashAll(allowedCountries).hashCode; } 
+@override int get hashCode { return Object.hashAll(allowedCountries); } 
 @override String toString() { return 'PaymentPagesCheckoutSessionShippingAddressCollection(allowedCountries: $allowedCountries)'; } 
  }

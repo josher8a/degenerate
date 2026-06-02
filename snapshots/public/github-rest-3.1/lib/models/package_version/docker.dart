@@ -18,6 +18,6 @@ Docker copyWith({List<String>? Function()? tag}) { return Docker(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Docker &&
           listEquals(tag, other.tag); } 
-@override int get hashCode { return Object.hashAll(tag ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(tag ?? const []); } 
 @override String toString() { return 'Docker(tag: $tag)'; } 
  }

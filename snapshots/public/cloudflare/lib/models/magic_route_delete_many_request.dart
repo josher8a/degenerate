@@ -18,6 +18,6 @@ MagicRouteDeleteManyRequest copyWith({List<MagicRouteDeleteId>? routes}) { retur
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MagicRouteDeleteManyRequest &&
           listEquals(routes, other.routes); } 
-@override int get hashCode { return Object.hashAll(routes).hashCode; } 
+@override int get hashCode { return Object.hashAll(routes); } 
 @override String toString() { return 'MagicRouteDeleteManyRequest(routes: $routes)'; } 
  }

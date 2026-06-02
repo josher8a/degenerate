@@ -47,6 +47,6 @@ TreasuryFinancialAccountsResourceClosedStatusDetails copyWith({List<Reasons>? re
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TreasuryFinancialAccountsResourceClosedStatusDetails &&
           listEquals(reasons, other.reasons); } 
-@override int get hashCode { return Object.hashAll(reasons).hashCode; } 
+@override int get hashCode { return Object.hashAll(reasons); } 
 @override String toString() { return 'TreasuryFinancialAccountsResourceClosedStatusDetails(reasons: $reasons)'; } 
  }

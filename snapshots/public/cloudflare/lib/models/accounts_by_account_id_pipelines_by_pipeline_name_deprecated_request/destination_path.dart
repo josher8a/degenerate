@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "bucket": "bucket",
 ///   "prefix": "base"
 /// }
-/// ```text
+/// ```
 @immutable final class DestinationPath {const DestinationPath({required this.bucket, this.filename, this.filepath, this.prefix, });
 
 factory DestinationPath.fromJson(Map<String, dynamic> json) { return DestinationPath(

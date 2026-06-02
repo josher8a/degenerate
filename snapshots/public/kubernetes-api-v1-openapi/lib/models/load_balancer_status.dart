@@ -20,6 +20,6 @@ LoadBalancerStatus copyWith({List<LoadBalancerIngress>? Function()? ingress}) { 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is LoadBalancerStatus &&
           listEquals(ingress, other.ingress); } 
-@override int get hashCode { return Object.hashAll(ingress ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(ingress ?? const []); } 
 @override String toString() { return 'LoadBalancerStatus(ingress: $ingress)'; } 
  }

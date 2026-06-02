@@ -18,6 +18,6 @@ DeleteEventTagDeleteRequest copyWith({List<String>? tags}) { return DeleteEventT
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DeleteEventTagDeleteRequest &&
           listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hashAll(tags).hashCode; } 
+@override int get hashCode { return Object.hashAll(tags); } 
 @override String toString() { return 'DeleteEventTagDeleteRequest(tags: $tags)'; } 
  }

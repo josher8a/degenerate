@@ -18,6 +18,6 @@ ListMitigationsResponseResult copyWith({List<AbuseReportsMitigationListItem>? mi
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ListMitigationsResponseResult &&
           listEquals(mitigations, other.mitigations); } 
-@override int get hashCode { return Object.hashAll(mitigations).hashCode; } 
+@override int get hashCode { return Object.hashAll(mitigations); } 
 @override String toString() { return 'ListMitigationsResponseResult(mitigations: $mitigations)'; } 
  }

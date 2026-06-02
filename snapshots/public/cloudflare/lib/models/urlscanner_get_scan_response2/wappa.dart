@@ -18,6 +18,6 @@ Wappa copyWith({List<WappaData>? data}) { return Wappa(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Wappa &&
           listEquals(data, other.data); } 
-@override int get hashCode { return Object.hashAll(data).hashCode; } 
+@override int get hashCode { return Object.hashAll(data); } 
 @override String toString() { return 'Wappa(data: $data)'; } 
  }

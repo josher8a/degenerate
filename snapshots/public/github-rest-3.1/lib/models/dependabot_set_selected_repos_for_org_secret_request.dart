@@ -19,6 +19,6 @@ DependabotSetSelectedReposForOrgSecretRequest copyWith({List<int>? selectedRepos
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DependabotSetSelectedReposForOrgSecretRequest &&
           listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds).hashCode; } 
+@override int get hashCode { return Object.hashAll(selectedRepositoryIds); } 
 @override String toString() { return 'DependabotSetSelectedReposForOrgSecretRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
  }

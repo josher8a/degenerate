@@ -18,6 +18,6 @@ WorkerCronTriggerGetCronTriggersResponseResult copyWith({List<WorkersSchedule>? 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WorkerCronTriggerGetCronTriggersResponseResult &&
           listEquals(schedules, other.schedules); } 
-@override int get hashCode { return Object.hashAll(schedules).hashCode; } 
+@override int get hashCode { return Object.hashAll(schedules); } 
 @override String toString() { return 'WorkerCronTriggerGetCronTriggersResponseResult(schedules: $schedules)'; } 
  }

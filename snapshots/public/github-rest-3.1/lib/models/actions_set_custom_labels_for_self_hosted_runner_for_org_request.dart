@@ -24,6 +24,6 @@ ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest copyWith({List<String>? l
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest &&
           listEquals(labels, other.labels); } 
-@override int get hashCode { return Object.hashAll(labels).hashCode; } 
+@override int get hashCode { return Object.hashAll(labels); } 
 @override String toString() { return 'ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest(labels: $labels)'; } 
  }

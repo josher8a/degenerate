@@ -19,6 +19,6 @@ RuntimeConstraints copyWith({List<String>? Function()? allowedPortPrivacySetting
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RuntimeConstraints &&
           listEquals(allowedPortPrivacySettings, other.allowedPortPrivacySettings); } 
-@override int get hashCode { return Object.hashAll(allowedPortPrivacySettings ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(allowedPortPrivacySettings ?? const []); } 
 @override String toString() { return 'RuntimeConstraints(allowedPortPrivacySettings: $allowedPortPrivacySettings)'; } 
  }

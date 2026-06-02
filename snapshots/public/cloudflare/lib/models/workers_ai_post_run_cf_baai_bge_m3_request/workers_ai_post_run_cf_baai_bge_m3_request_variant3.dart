@@ -19,6 +19,6 @@ WorkersAiPostRunCfBaaiBgeM3RequestVariant3 copyWith({List<Variant3Requests>? req
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WorkersAiPostRunCfBaaiBgeM3RequestVariant3 &&
           listEquals(requests, other.requests); } 
-@override int get hashCode { return Object.hashAll(requests).hashCode; } 
+@override int get hashCode { return Object.hashAll(requests); } 
 @override String toString() { return 'WorkersAiPostRunCfBaaiBgeM3RequestVariant3(requests: $requests)'; } 
  }

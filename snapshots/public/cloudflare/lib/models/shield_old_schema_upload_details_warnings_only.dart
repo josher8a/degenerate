@@ -19,6 +19,6 @@ ShieldOldSchemaUploadDetailsWarningsOnly copyWith({List<ShieldOldSchemaUploadLog
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldOldSchemaUploadDetailsWarningsOnly &&
           listEquals(warnings, other.warnings); } 
-@override int get hashCode { return Object.hashAll(warnings ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(warnings ?? const []); } 
 @override String toString() { return 'ShieldOldSchemaUploadDetailsWarningsOnly(warnings: $warnings)'; } 
  }

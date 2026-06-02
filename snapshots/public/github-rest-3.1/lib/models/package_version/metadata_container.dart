@@ -18,6 +18,6 @@ MetadataContainer copyWith({List<String>? tags}) { return MetadataContainer(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MetadataContainer &&
           listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hashAll(tags).hashCode; } 
+@override int get hashCode { return Object.hashAll(tags); } 
 @override String toString() { return 'MetadataContainer(tags: $tags)'; } 
  }

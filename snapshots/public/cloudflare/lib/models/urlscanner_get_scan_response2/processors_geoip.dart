@@ -18,6 +18,6 @@ ProcessorsGeoip copyWith({List<GeoipData>? data}) { return ProcessorsGeoip(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ProcessorsGeoip &&
           listEquals(data, other.data); } 
-@override int get hashCode { return Object.hashAll(data).hashCode; } 
+@override int get hashCode { return Object.hashAll(data); } 
 @override String toString() { return 'ProcessorsGeoip(data: $data)'; } 
  }

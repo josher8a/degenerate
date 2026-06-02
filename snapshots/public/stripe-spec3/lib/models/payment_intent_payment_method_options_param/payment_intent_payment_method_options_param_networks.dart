@@ -42,6 +42,6 @@ PaymentIntentPaymentMethodOptionsParamNetworks copyWith({List<Requested>? Functi
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParamNetworks &&
           listEquals(requested, other.requested); } 
-@override int get hashCode { return Object.hashAll(requested ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(requested ?? const []); } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParamNetworks(requested: $requested)'; } 
  }

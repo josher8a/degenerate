@@ -126,12 +126,12 @@ return execute(
 /// Unauthorized users will not see the existence of this endpoint.
 /// 
 /// **Example request body:**
-/// ```json`
+/// ```json
 /// {
-///   "repository_ids_to_add": `[123, 456]`,
-///   "repository_ids_to_remove": `[789]`
+///   "repository_ids_to_add": [123, 456],
+///   "repository_ids_to_remove": [789]
 /// }
-/// ```text
+/// ```
 ///
 /// `PATCH /organizations/{org}/dependabot/repository-access`
 Future<ApiResult<void, ActionsApproveWorkflowRunError>> dependabotUpdateRepositoryAccessForOrg({required String org, required DependabotUpdateRepositoryAccessForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};

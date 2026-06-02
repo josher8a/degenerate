@@ -18,6 +18,6 @@ AccessIdentityProvidersComponentsSchemasResponseCollection copyWith({List<Access
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccessIdentityProvidersComponentsSchemasResponseCollection &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'AccessIdentityProvidersComponentsSchemasResponseCollection(result: $result)'; } 
  }

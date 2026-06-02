@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CompactResourceObject($value)'; } 
  }
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "id": "resp_001",
 ///   "object": "response.compaction",
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
 ///     "total_tokens": 54912
 ///   }
 /// }
-/// ```text
+/// ```
 @immutable final class CompactResource {const CompactResource({required this.id, required this.output, required this.createdAt, required this.usage, this.object = CompactResourceObject.responseCompaction, });
 
 factory CompactResource.fromJson(Map<String, dynamic> json) { return CompactResource(

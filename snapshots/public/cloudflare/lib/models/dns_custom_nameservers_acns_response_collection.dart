@@ -18,6 +18,6 @@ DnsCustomNameserversAcnsResponseCollection copyWith({List<DnsCustomNameserversCu
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DnsCustomNameserversAcnsResponseCollection &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'DnsCustomNameserversAcnsResponseCollection(result: $result)'; } 
  }

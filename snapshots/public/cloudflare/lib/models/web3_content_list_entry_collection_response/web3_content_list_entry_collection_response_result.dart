@@ -19,6 +19,6 @@ Web3ContentListEntryCollectionResponseResult copyWith({List<Web3ContentListEntry
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Web3ContentListEntryCollectionResponseResult &&
           listEquals(entries, other.entries); } 
-@override int get hashCode { return Object.hashAll(entries ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(entries ?? const []); } 
 @override String toString() { return 'Web3ContentListEntryCollectionResponseResult(entries: $entries)'; } 
  }

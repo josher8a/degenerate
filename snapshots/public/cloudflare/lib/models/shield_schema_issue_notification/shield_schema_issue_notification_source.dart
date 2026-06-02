@@ -19,6 +19,6 @@ ShieldSchemaIssueNotificationSource copyWith({List<String>? Function()? location
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldSchemaIssueNotificationSource &&
           listEquals(locations, other.locations); } 
-@override int get hashCode { return Object.hashAll(locations ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(locations ?? const []); } 
 @override String toString() { return 'ShieldSchemaIssueNotificationSource(locations: $locations)'; } 
  }

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_add_custom_domain_request/min_tls.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "domain": "prefix.example-domain.com",
 ///   "enabled": true,
 ///   "zoneId": "36ca64a6d92827b8a6b90be344bb1bfd"
 /// }
-/// ```text
+/// ```
 @immutable final class R2AddCustomDomainRequest {const R2AddCustomDomainRequest({required this.domain, required this.enabled, required this.zoneId, this.ciphers, this.minTls, });
 
 factory R2AddCustomDomainRequest.fromJson(Map<String, dynamic> json) { return R2AddCustomDomainRequest(

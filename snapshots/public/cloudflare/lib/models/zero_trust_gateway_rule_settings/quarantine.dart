@@ -77,6 +77,6 @@ Quarantine copyWith({List<FileTypes>? Function()? fileTypes}) { return Quarantin
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Quarantine &&
           listEquals(fileTypes, other.fileTypes); } 
-@override int get hashCode { return Object.hashAll(fileTypes ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(fileTypes ?? const []); } 
 @override String toString() { return 'Quarantine(fileTypes: $fileTypes)'; } 
  }

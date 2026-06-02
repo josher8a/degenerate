@@ -18,6 +18,6 @@ RadarGetCertificateLogsResponseResult copyWith({List<CertificateLogs>? certifica
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RadarGetCertificateLogsResponseResult &&
           listEquals(certificateLogs, other.certificateLogs); } 
-@override int get hashCode { return Object.hashAll(certificateLogs).hashCode; } 
+@override int get hashCode { return Object.hashAll(certificateLogs); } 
 @override String toString() { return 'RadarGetCertificateLogsResponseResult(certificateLogs: $certificateLogs)'; } 
  }

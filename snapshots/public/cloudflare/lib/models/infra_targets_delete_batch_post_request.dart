@@ -19,6 +19,6 @@ InfraTargetsDeleteBatchPostRequest copyWith({List<InfraTargetId>? targetIds}) { 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InfraTargetsDeleteBatchPostRequest &&
           listEquals(targetIds, other.targetIds); } 
-@override int get hashCode { return Object.hashAll(targetIds).hashCode; } 
+@override int get hashCode { return Object.hashAll(targetIds); } 
 @override String toString() { return 'InfraTargetsDeleteBatchPostRequest(targetIds: $targetIds)'; } 
  }

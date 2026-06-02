@@ -111,7 +111,7 @@ void main() {
         },
       };
 
-      final result = flattener.flattenAll(schemas);
+      final result = schemas.map((k, v) => MapEntry(k, flattener.flatten(v)));
       expect(result, contains('Combined'));
       expect(result, contains('Simple'));
 

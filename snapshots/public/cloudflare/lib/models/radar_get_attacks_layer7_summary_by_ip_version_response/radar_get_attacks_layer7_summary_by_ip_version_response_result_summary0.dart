@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "IPv4": "99.935733",
 ///   "IPv6": "0.064267"
 /// }
-/// ```text
+/// ```
 @immutable final class RadarGetAttacksLayer7SummaryByIpVersionResponseResultSummary0 {const RadarGetAttacksLayer7SummaryByIpVersionResponseResultSummary0({required this.iPv4, required this.iPv6, });
 
 factory RadarGetAttacksLayer7SummaryByIpVersionResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByIpVersionResponseResultSummary0(

@@ -19,6 +19,6 @@ DigitalExperienceMonitoringCommandsDevicesResponse copyWith({List<Devices>? Func
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DigitalExperienceMonitoringCommandsDevicesResponse &&
           listEquals(devices, other.devices); } 
-@override int get hashCode { return Object.hashAll(devices ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(devices ?? const []); } 
 @override String toString() { return 'DigitalExperienceMonitoringCommandsDevicesResponse(devices: $devices)'; } 
  }

@@ -18,6 +18,6 @@ RadarRank copyWith({List<RadarRankData>? data}) { return RadarRank(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RadarRank &&
           listEquals(data, other.data); } 
-@override int get hashCode { return Object.hashAll(data).hashCode; } 
+@override int get hashCode { return Object.hashAll(data); } 
 @override String toString() { return 'RadarRank(data: $data)'; } 
  }

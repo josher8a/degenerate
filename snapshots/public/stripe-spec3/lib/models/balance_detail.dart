@@ -20,6 +20,6 @@ BalanceDetail copyWith({List<BalanceAmount>? available}) { return BalanceDetail(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is BalanceDetail &&
           listEquals(available, other.available); } 
-@override int get hashCode { return Object.hashAll(available).hashCode; } 
+@override int get hashCode { return Object.hashAll(available); } 
 @override String toString() { return 'BalanceDetail(available: $available)'; } 
  }

@@ -21,6 +21,6 @@ CachePurgeFlexPurgeByHostnames copyWith({List<String>? Function()? hosts}) { ret
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CachePurgeFlexPurgeByHostnames &&
           listEquals(hosts, other.hosts); } 
-@override int get hashCode { return Object.hashAll(hosts ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(hosts ?? const []); } 
 @override String toString() { return 'CachePurgeFlexPurgeByHostnames(hosts: $hosts)'; } 
  }

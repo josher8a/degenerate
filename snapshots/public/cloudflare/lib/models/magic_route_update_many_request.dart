@@ -18,6 +18,6 @@ MagicRouteUpdateManyRequest copyWith({List<MagicRouteUpdateSingleRequest>? route
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MagicRouteUpdateManyRequest &&
           listEquals(routes, other.routes); } 
-@override int get hashCode { return Object.hashAll(routes).hashCode; } 
+@override int get hashCode { return Object.hashAll(routes); } 
 @override String toString() { return 'MagicRouteUpdateManyRequest(routes: $routes)'; } 
  }

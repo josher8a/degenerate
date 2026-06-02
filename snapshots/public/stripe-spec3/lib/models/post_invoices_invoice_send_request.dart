@@ -19,6 +19,6 @@ PostInvoicesInvoiceSendRequest copyWith({List<String>? Function()? expand}) { re
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PostInvoicesInvoiceSendRequest &&
           listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hashAll(expand ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(expand ?? const []); } 
 @override String toString() { return 'PostInvoicesInvoiceSendRequest(expand: $expand)'; } 
  }

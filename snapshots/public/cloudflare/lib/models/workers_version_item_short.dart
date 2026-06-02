@@ -14,7 +14,7 @@ factory WorkersVersionItemShort.fromJson(Map<String, dynamic> json) { return Wor
 final String? id;
 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "author_email": "user@example.com",
 ///   "author_id": "408cbcdfd4dda4617efef40b04d168a1",
@@ -22,7 +22,7 @@ final String? id;
 ///   "modified_on": "2022-11-08T17:19:29.176266Z",
 ///   "source": "api"
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{author_email: user@example.com, author_id: 408cbcdfd4dda4617efef40b04d168a1, created_on: 2022-11-08T17:19:29.176266Z, modified_on: 2022-11-08T17:19:29.176266Z, source: api}`
 final WorkersVersionItemFullMetadata? metadata;

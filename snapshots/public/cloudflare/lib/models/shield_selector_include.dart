@@ -21,6 +21,6 @@ ShieldSelectorInclude copyWith({List<ShieldHost>? Function()? host}) { return Sh
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldSelectorInclude &&
           listEquals(host, other.host); } 
-@override int get hashCode { return Object.hashAll(host ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(host ?? const []); } 
 @override String toString() { return 'ShieldSelectorInclude(host: $host)'; } 
  }

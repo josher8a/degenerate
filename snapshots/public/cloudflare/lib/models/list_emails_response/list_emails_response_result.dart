@@ -18,6 +18,6 @@ ListEmailsResponseResult copyWith({List<AbuseReportsEmailListItem>? emails}) { r
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ListEmailsResponseResult &&
           listEquals(emails, other.emails); } 
-@override int get hashCode { return Object.hashAll(emails).hashCode; } 
+@override int get hashCode { return Object.hashAll(emails); } 
 @override String toString() { return 'ListEmailsResponseResult(emails: $emails)'; } 
  }

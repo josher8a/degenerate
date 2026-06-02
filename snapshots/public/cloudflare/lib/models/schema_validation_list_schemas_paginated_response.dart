@@ -18,6 +18,6 @@ SchemaValidationListSchemasPaginatedResponse copyWith({List<ShieldPublicSchema>?
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SchemaValidationListSchemasPaginatedResponse &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result).hashCode; } 
+@override int get hashCode { return Object.hashAll(result); } 
 @override String toString() { return 'SchemaValidationListSchemasPaginatedResponse(result: $result)'; } 
  }

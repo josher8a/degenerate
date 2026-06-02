@@ -19,6 +19,6 @@ PostCheckoutSessionsSessionExpireRequest copyWith({List<String>? Function()? exp
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PostCheckoutSessionsSessionExpireRequest &&
           listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hashAll(expand ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(expand ?? const []); } 
 @override String toString() { return 'PostCheckoutSessionsSessionExpireRequest(expand: $expand)'; } 
  }

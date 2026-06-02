@@ -20,6 +20,6 @@ ProrationDetails copyWith({List<DiscountsResourceDiscountAmount>? discountAmount
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ProrationDetails &&
           listEquals(discountAmounts, other.discountAmounts); } 
-@override int get hashCode { return Object.hashAll(discountAmounts).hashCode; } 
+@override int get hashCode { return Object.hashAll(discountAmounts); } 
 @override String toString() { return 'ProrationDetails(discountAmounts: $discountAmounts)'; } 
  }

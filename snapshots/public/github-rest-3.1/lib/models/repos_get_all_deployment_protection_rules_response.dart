@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_protection_rule.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "$ref": "#/components/examples/deployment-protection-rules"
 /// }
-/// ```text
+/// ```
 @immutable final class ReposGetAllDeploymentProtectionRulesResponse {const ReposGetAllDeploymentProtectionRulesResponse({this.totalCount, this.customDeploymentProtectionRules, });
 
 factory ReposGetAllDeploymentProtectionRulesResponse.fromJson(Map<String, dynamic> json) { return ReposGetAllDeploymentProtectionRulesResponse(

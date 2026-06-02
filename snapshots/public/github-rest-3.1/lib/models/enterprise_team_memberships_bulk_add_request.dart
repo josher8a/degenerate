@@ -19,6 +19,6 @@ EnterpriseTeamMembershipsBulkAddRequest copyWith({List<String>? usernames}) { re
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EnterpriseTeamMembershipsBulkAddRequest &&
           listEquals(usernames, other.usernames); } 
-@override int get hashCode { return Object.hashAll(usernames).hashCode; } 
+@override int get hashCode { return Object.hashAll(usernames); } 
 @override String toString() { return 'EnterpriseTeamMembershipsBulkAddRequest(usernames: $usernames)'; } 
  }

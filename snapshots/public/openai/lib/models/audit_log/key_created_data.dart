@@ -20,6 +20,6 @@ KeyCreatedData copyWith({List<String>? Function()? scopes}) { return KeyCreatedD
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is KeyCreatedData &&
           listEquals(scopes, other.scopes); } 
-@override int get hashCode { return Object.hashAll(scopes ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(scopes ?? const []); } 
 @override String toString() { return 'KeyCreatedData(scopes: $scopes)'; } 
  }

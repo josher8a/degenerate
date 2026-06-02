@@ -18,6 +18,6 @@ GetSessionsResponseData copyWith({List<RealtimekitActiveSession>? Function()? se
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is GetSessionsResponseData &&
           listEquals(sessions, other.sessions); } 
-@override int get hashCode { return Object.hashAll(sessions ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(sessions ?? const []); } 
 @override String toString() { return 'GetSessionsResponseData(sessions: $sessions)'; } 
  }

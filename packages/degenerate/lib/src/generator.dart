@@ -581,34 +581,12 @@ class Generator {
           : rewriteTypeNames(m.itemSchema!, rename),
       encoding: m.encoding,
     );
-    IrResponse resp(IrResponse r) => IrResponse(
-      description: r.description,
-      content: {for (final e in r.content.entries) e.key: mt(e.value)},
-      headers: r.headers,
-    );
     final ops = [
       for (final op in api.operations)
-        IrOperation(
-          op.operationId,
-          op.dartMethodName,
-          op.method,
-          op.path,
-          customMethod: op.customMethod,
-          summary: op.summary,
-          description: op.description,
+        op.copyWith(
           parameters: [
             for (final p in op.parameters)
-              IrParameter(
-                p.name,
-                p.dartName,
-                p.location,
-                rewriteTypeNames(p.type, rename),
-                isRequired: p.isRequired,
-                style: p.style,
-                explode: p.explode,
-                allowReserved: p.allowReserved,
-                defaultValue: p.defaultValue,
-              ),
+              p.withType(rewriteTypeNames(p.type, rename)),
           ],
           requestBody: op.requestBody == null
               ? null
@@ -620,13 +598,15 @@ class Generator {
                   isRequired: op.requestBody!.isRequired,
                 ),
           responses: {
-            for (final e in op.responses.entries) e.key: resp(e.value),
+            for (final e in op.responses.entries)
+              e.key: e.value.copyWith(content: {
+                for (final c in e.value.content.entries) c.key: mt(c.value),
+              }),
           },
-          defaultResponse: op.defaultResponse == null
-              ? null
-              : resp(op.defaultResponse!),
-          isDeprecated: op.isDeprecated,
-          securityRequirements: op.securityRequirements,
+          defaultResponse: op.defaultResponse?.copyWith(content: {
+            for (final e in op.defaultResponse!.content.entries)
+              e.key: mt(e.value),
+          }),
         ),
     ];
     return IrApi(api.name, ops);
@@ -645,17 +625,7 @@ class Generator {
           final resolved = resolver.resolve(p.type);
           if (identical(resolved, p.type)) return p;
           opChanged = true;
-          return IrParameter(
-            p.name,
-            p.dartName,
-            p.location,
-            resolved,
-            isRequired: p.isRequired,
-            style: p.style,
-            explode: p.explode,
-            allowReserved: p.allowReserved,
-            defaultValue: p.defaultValue,
-          );
+          return p.withType(resolved);
         }).toList();
 
         IrRequestBody? reqBody;
@@ -672,53 +642,34 @@ class Generator {
         final responses = <int, IrResponse>{};
         var respChanged = false;
         for (final entry in op.responses.entries) {
-          final resp = entry.value;
           final (newContent, changed) =
-              _resolveContentMap(resolver, resp.content);
+              _resolveContentMap(resolver, entry.value.content);
           if (changed) {
             respChanged = true;
-            responses[entry.key] = IrResponse(
-              description: resp.description,
-              content: newContent,
-              headers: resp.headers,
-            );
+            responses[entry.key] = entry.value.copyWith(content: newContent);
           } else {
-            responses[entry.key] = resp;
+            responses[entry.key] = entry.value;
           }
         }
         if (respChanged) opChanged = true;
 
         IrResponse? defaultResp;
         if (op.defaultResponse != null) {
-          final resp = op.defaultResponse!;
           final (newContent, changed) =
-              _resolveContentMap(resolver, resp.content);
+              _resolveContentMap(resolver, op.defaultResponse!.content);
           if (changed) {
             opChanged = true;
-            defaultResp = IrResponse(
-              description: resp.description,
-              content: newContent,
-              headers: resp.headers,
-            );
+            defaultResp = op.defaultResponse!.copyWith(content: newContent);
           }
         }
 
         if (!opChanged) return op;
         apiChanged = true;
-        return IrOperation(
-          op.operationId,
-          op.dartMethodName,
-          op.method,
-          op.path,
-          customMethod: op.customMethod,
-          summary: op.summary,
-          description: op.description,
+        return op.copyWith(
           parameters: params,
           requestBody: reqBody ?? op.requestBody,
           responses: responses,
           defaultResponse: defaultResp ?? op.defaultResponse,
-          isDeprecated: op.isDeprecated,
-          securityRequirements: op.securityRequirements,
         );
       }).toList();
       if (!apiChanged) return api;
@@ -733,9 +684,19 @@ class Generator {
     var changed = false;
     final result = <String, IrMediaType>{};
     for (final entry in content.entries) {
-      final resolved = resolver.resolve(entry.value.schema);
-      if (!identical(resolved, entry.value.schema)) changed = true;
-      result[entry.key] = IrMediaType(resolved);
+      final mt = entry.value;
+      final resolved = resolver.resolve(mt.schema);
+      final resolvedItem =
+          mt.itemSchema == null ? null : resolver.resolve(mt.itemSchema!);
+      if (!identical(resolved, mt.schema) ||
+          (resolvedItem != null && !identical(resolvedItem, mt.itemSchema))) {
+        changed = true;
+      }
+      result[entry.key] = IrMediaType(
+        resolved,
+        itemSchema: resolvedItem ?? mt.itemSchema,
+        encoding: mt.encoding,
+      );
     }
     return (result, changed);
   }

@@ -18,6 +18,6 @@ MagicSchemasTunnelsCollectionResponseResult copyWith({List<MagicIpsecTunnel>? Fu
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MagicSchemasTunnelsCollectionResponseResult &&
           listEquals(ipsecTunnels, other.ipsecTunnels); } 
-@override int get hashCode { return Object.hashAll(ipsecTunnels ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(ipsecTunnels ?? const []); } 
 @override String toString() { return 'MagicSchemasTunnelsCollectionResponseResult(ipsecTunnels: $ipsecTunnels)'; } 
  }

@@ -110,11 +110,4 @@ class AllOfFlattener {
 
     return result;
   }
-
-  /// Apply [flatten] to every schema in [schemas].
-  Map<String, Map<String, dynamic>> flattenAll(
-    Map<String, Map<String, dynamic>> schemas,
-  ) {
-    return schemas.map((key, value) => MapEntry(key, flatten(value)));
-  }
 }

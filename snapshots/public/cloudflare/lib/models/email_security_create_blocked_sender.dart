@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "comments": "block sender with email test@example.com",
 ///   "is_regex": false,
 ///   "pattern": "test@example.com",
 ///   "pattern_type": "EMAIL"
 /// }
-/// ```text
+/// ```
 @immutable final class EmailSecurityCreateBlockedSender {const EmailSecurityCreateBlockedSender({required this.isRegex, required this.pattern, required this.patternType, this.comments, });
 
 factory EmailSecurityCreateBlockedSender.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateBlockedSender(

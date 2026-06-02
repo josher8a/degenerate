@@ -11,7 +11,7 @@ factory RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(Map<Stri
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta meta;
 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "facebookexternalhit": [
 ///     "0.862022"
@@ -20,7 +20,7 @@ final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta meta;
 ///     "2024-07-30T03:00:00Z"
 ///   ]
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{facebookexternalhit: [0.862022], timestamps: [2024-07-30T03:00:00Z]}`
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultSerie0 serie0;

@@ -1668,7 +1668,7 @@ return execute(
 /// 
 /// ```text
 /// Cannot assign {member} permission of {role name}
-/// ```text
+/// ```
 /// 
 /// Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 /// 

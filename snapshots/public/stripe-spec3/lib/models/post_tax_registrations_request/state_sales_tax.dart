@@ -18,6 +18,6 @@ StateSalesTax copyWith({List<Elections>? elections}) { return StateSalesTax(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is StateSalesTax &&
           listEquals(elections, other.elections); } 
-@override int get hashCode { return Object.hashAll(elections).hashCode; } 
+@override int get hashCode { return Object.hashAll(elections); } 
 @override String toString() { return 'StateSalesTax(elections: $elections)'; } 
  }

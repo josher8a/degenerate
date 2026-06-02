@@ -19,6 +19,6 @@ OrgsSetImmutableReleasesSettingsRepositoriesRequest copyWith({List<int>? selecte
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is OrgsSetImmutableReleasesSettingsRepositoriesRequest &&
           listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds).hashCode; } 
+@override int get hashCode { return Object.hashAll(selectedRepositoryIds); } 
 @override String toString() { return 'OrgsSetImmutableReleasesSettingsRepositoriesRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
  }

@@ -19,6 +19,6 @@ ProjectsUpdateItemForOrgRequest copyWith({List<Fields>? fields}) { return Projec
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ProjectsUpdateItemForOrgRequest &&
           listEquals(fields, other.fields); } 
-@override int get hashCode { return Object.hashAll(fields).hashCode; } 
+@override int get hashCode { return Object.hashAll(fields); } 
 @override String toString() { return 'ProjectsUpdateItemForOrgRequest(fields: $fields)'; } 
  }

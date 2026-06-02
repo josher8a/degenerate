@@ -18,6 +18,6 @@ RadarGetBgpTopAsesResponseResultMeta copyWith({List<MetaDateRange>? dateRange}) 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RadarGetBgpTopAsesResponseResultMeta &&
           listEquals(dateRange, other.dateRange); } 
-@override int get hashCode { return Object.hashAll(dateRange).hashCode; } 
+@override int get hashCode { return Object.hashAll(dateRange); } 
 @override String toString() { return 'RadarGetBgpTopAsesResponseResultMeta(dateRange: $dateRange)'; } 
  }

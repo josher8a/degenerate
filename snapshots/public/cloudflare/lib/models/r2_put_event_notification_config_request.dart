@@ -23,6 +23,6 @@ R2PutEventNotificationConfigRequest copyWith({List<R2Rule>? rules}) { return R2P
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is R2PutEventNotificationConfigRequest &&
           listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hashAll(rules).hashCode; } 
+@override int get hashCode { return Object.hashAll(rules); } 
 @override String toString() { return 'R2PutEventNotificationConfigRequest(rules: $rules)'; } 
  }

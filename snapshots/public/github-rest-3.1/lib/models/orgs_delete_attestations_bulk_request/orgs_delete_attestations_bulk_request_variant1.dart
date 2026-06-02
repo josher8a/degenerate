@@ -24,6 +24,6 @@ OrgsDeleteAttestationsBulkRequestVariant1 copyWith({List<String>? subjectDigests
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is OrgsDeleteAttestationsBulkRequestVariant1 &&
           listEquals(subjectDigests, other.subjectDigests); } 
-@override int get hashCode { return Object.hashAll(subjectDigests).hashCode; } 
+@override int get hashCode { return Object.hashAll(subjectDigests); } 
 @override String toString() { return 'OrgsDeleteAttestationsBulkRequestVariant1(subjectDigests: $subjectDigests)'; } 
  }

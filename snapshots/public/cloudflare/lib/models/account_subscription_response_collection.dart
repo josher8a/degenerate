@@ -18,6 +18,6 @@ AccountSubscriptionResponseCollection copyWith({List<Subscription2>? Function()?
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountSubscriptionResponseCollection &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'AccountSubscriptionResponseCollection(result: $result)'; } 
  }

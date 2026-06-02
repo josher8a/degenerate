@@ -19,6 +19,6 @@ CertificatesDeactivated copyWith({List<Certificates>? Function()? certificates})
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CertificatesDeactivated &&
           listEquals(certificates, other.certificates); } 
-@override int get hashCode { return Object.hashAll(certificates ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(certificates ?? const []); } 
 @override String toString() { return 'CertificatesDeactivated(certificates: $certificates)'; } 
  }

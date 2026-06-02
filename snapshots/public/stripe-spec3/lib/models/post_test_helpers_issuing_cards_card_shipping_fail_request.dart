@@ -19,6 +19,6 @@ PostTestHelpersIssuingCardsCardShippingFailRequest copyWith({List<String>? Funct
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PostTestHelpersIssuingCardsCardShippingFailRequest &&
           listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hashAll(expand ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(expand ?? const []); } 
 @override String toString() { return 'PostTestHelpersIssuingCardsCardShippingFailRequest(expand: $expand)'; } 
  }

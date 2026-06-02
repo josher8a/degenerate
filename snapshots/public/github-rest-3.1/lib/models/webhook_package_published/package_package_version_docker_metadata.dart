@@ -18,6 +18,6 @@ PackagePackageVersionDockerMetadata copyWith({List<String>? Function()? tags}) {
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PackagePackageVersionDockerMetadata &&
           listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hashAll(tags ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(tags ?? const []); } 
 @override String toString() { return 'PackagePackageVersionDockerMetadata(tags: $tags)'; } 
  }

@@ -11,13 +11,13 @@ factory RadarGetAttacksLayer7SummaryByHttpVersionResponseResult.fromJson(Map<Str
 final RadarGetAiBotsSummaryByUserAgentResponseResultMeta meta;
 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "HTTP/1.x": "21.722365",
 ///   "HTTP/2": "77.056555",
 ///   "HTTP/3": "1.22108"
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{HTTP/1.x: 21.722365, HTTP/2: 77.056555, HTTP/3: 1.22108}`
 final RadarGetAttacksLayer7SummaryByHttpVersionResponseResultSummary0 summary0;

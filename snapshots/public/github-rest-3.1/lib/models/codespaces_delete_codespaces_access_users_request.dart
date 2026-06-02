@@ -23,6 +23,6 @@ CodespacesDeleteCodespacesAccessUsersRequest copyWith({List<String>? selectedUse
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CodespacesDeleteCodespacesAccessUsersRequest &&
           listEquals(selectedUsernames, other.selectedUsernames); } 
-@override int get hashCode { return Object.hashAll(selectedUsernames).hashCode; } 
+@override int get hashCode { return Object.hashAll(selectedUsernames); } 
 @override String toString() { return 'CodespacesDeleteCodespacesAccessUsersRequest(selectedUsernames: $selectedUsernames)'; } 
  }

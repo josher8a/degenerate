@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_script_response/named_handlers.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "etag": "13a3240e8fb414561b0366813b0b8f42b3e6cfa0d9e70e99835dae83d0d8a794",
 ///   "handlers": [
@@ -17,7 +17,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///     }
 ///   ]
 /// }
-/// ```text
+/// ```
 @immutable final class Script {const Script({this.etag, this.handlers, this.lastDeployedFrom, this.namedHandlers, });
 
 factory Script.fromJson(Map<String, dynamic> json) { return Script(

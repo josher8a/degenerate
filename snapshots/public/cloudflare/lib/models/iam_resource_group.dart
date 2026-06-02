@@ -20,11 +20,11 @@ final String id;
 /// Attributes associated to the resource group.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "editable": "false"
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{editable: false}`
 final IamPermissionGroupMeta? meta;

@@ -55,6 +55,6 @@ AccessUserRiskScoreRuleUserRiskScore copyWith({List<UserRiskScoreUserRiskScore>?
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccessUserRiskScoreRuleUserRiskScore &&
           listEquals(userRiskScore, other.userRiskScore); } 
-@override int get hashCode { return Object.hashAll(userRiskScore).hashCode; } 
+@override int get hashCode { return Object.hashAll(userRiskScore); } 
 @override String toString() { return 'AccessUserRiskScoreRuleUserRiskScore(userRiskScore: $userRiskScore)'; } 
  }

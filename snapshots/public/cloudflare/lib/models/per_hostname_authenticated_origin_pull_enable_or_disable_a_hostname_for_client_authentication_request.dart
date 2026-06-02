@@ -18,6 +18,6 @@ PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticatio
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest &&
           listEquals(config, other.config); } 
-@override int get hashCode { return Object.hashAll(config).hashCode; } 
+@override int get hashCode { return Object.hashAll(config); } 
 @override String toString() { return 'PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest(config: $config)'; } 
  }

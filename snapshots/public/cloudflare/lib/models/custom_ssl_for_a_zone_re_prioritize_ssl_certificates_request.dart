@@ -21,6 +21,6 @@ CustomSslForAZoneRePrioritizeSslCertificatesRequest copyWith({List<CustomSslForA
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CustomSslForAZoneRePrioritizeSslCertificatesRequest &&
           listEquals(certificates, other.certificates); } 
-@override int get hashCode { return Object.hashAll(certificates).hashCode; } 
+@override int get hashCode { return Object.hashAll(certificates); } 
 @override String toString() { return 'CustomSslForAZoneRePrioritizeSslCertificatesRequest(certificates: $certificates)'; } 
  }

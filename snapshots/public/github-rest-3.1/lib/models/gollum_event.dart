@@ -18,6 +18,6 @@ GollumEvent copyWith({List<GollumEventPages>? pages}) { return GollumEvent(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is GollumEvent &&
           listEquals(pages, other.pages); } 
-@override int get hashCode { return Object.hashAll(pages).hashCode; } 
+@override int get hashCode { return Object.hashAll(pages); } 
 @override String toString() { return 'GollumEvent(pages: $pages)'; } 
  }

@@ -18,6 +18,6 @@ HealthchecksResponseCollection copyWith({List<HealthchecksHealthchecks>? Functio
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is HealthchecksResponseCollection &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'HealthchecksResponseCollection(result: $result)'; } 
  }

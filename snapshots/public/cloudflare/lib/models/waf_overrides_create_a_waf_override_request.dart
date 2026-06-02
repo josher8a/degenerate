@@ -19,6 +19,6 @@ WafOverridesCreateAWafOverrideRequest copyWith({List<String>? urls}) { return Wa
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WafOverridesCreateAWafOverrideRequest &&
           listEquals(urls, other.urls); } 
-@override int get hashCode { return Object.hashAll(urls).hashCode; } 
+@override int get hashCode { return Object.hashAll(urls); } 
 @override String toString() { return 'WafOverridesCreateAWafOverrideRequest(urls: $urls)'; } 
  }

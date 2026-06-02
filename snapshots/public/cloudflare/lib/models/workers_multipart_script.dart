@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_multipart_script/workers_multipart_script_metadata.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "files": [
 ///     "export default {\n  async fetch(request, env, ctx) {\n    return new Response(\"Hello, world!\");\n  }\n};"
@@ -14,7 +14,7 @@ import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtim
 ///     "main_module": "worker.js"
 ///   }
 /// }
-/// ```text
+/// ```
 @immutable final class WorkersMultipartScript {const WorkersMultipartScript({required this.metadata, this.files, });
 
 factory WorkersMultipartScript.fromJson(Map<String, dynamic> json) { return WorkersMultipartScript(

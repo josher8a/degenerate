@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MetadataSource($value)'; } 
  }
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "author_email": "user@example.com",
 ///   "author_id": "408cbcdfd4dda4617efef40b04d168a1",
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 ///   "modified_on": "2022-11-08T17:19:29.176266Z",
 ///   "source": "api"
 /// }
-/// ```text
+/// ```
 @immutable final class WorkersVersionItemFullMetadata {const WorkersVersionItemFullMetadata({this.authorEmail, this.authorId, this.createdOn, this.hasPreview, this.modifiedOn, this.source, });
 
 factory WorkersVersionItemFullMetadata.fromJson(Map<String, dynamic> json) { return WorkersVersionItemFullMetadata(

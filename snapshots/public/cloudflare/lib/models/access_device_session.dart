@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "last_authenticated": 1638832687.0
 /// }
-/// ```text
+/// ```
 @immutable final class AccessDeviceSession {const AccessDeviceSession({this.lastAuthenticated});
 
 factory AccessDeviceSession.fromJson(Map<String, dynamic> json) { return AccessDeviceSession(

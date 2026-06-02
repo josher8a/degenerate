@@ -13,6 +13,7 @@ import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
+import 'package:degenerate/src/lowering/type_ref_resolver.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:test/test.dart';
@@ -2196,9 +2197,9 @@ void main() {
       final opLowerer = OperationLowerer(tl, doc: doc);
       final irApis = opLowerer.lowerPaths(doc.paths);
 
-      // Resolve type refs
+      final resolver = TypeRefResolver(tl.typeRegistry);
       for (var i = 0; i < irTypes.length; i++) {
-        irTypes[i] = tl.resolveTypeRefs(irTypes[i]);
+        irTypes[i] = resolver.resolve(irTypes[i]);
       }
 
       files = FileEmitter().emitAll(

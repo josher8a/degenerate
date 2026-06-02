@@ -18,6 +18,6 @@ WorkersVersionsListResponseResult copyWith({List<WorkersVersionItemShort>? Funct
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WorkersVersionsListResponseResult &&
           listEquals(items, other.items); } 
-@override int get hashCode { return Object.hashAll(items ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(items ?? const []); } 
 @override String toString() { return 'WorkersVersionsListResponseResult(items: $items)'; } 
  }

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_grants.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "analytics": {
 ///     "read": true,
@@ -12,7 +12,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///     "write": true
 ///   }
 /// }
-/// ```text
+/// ```
 @immutable final class IamPermissions {const IamPermissions({this.analytics, this.billing, this.cachePurge, this.dns, this.dnsRecords, this.lb, this.logs, this.organization, this.ssl, this.waf, this.zoneSettings, this.zones, });
 
 factory IamPermissions.fromJson(Map<String, dynamic> json) { return IamPermissions(

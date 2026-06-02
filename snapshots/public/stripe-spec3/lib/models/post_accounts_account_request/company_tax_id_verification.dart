@@ -18,6 +18,6 @@ CompanyTaxIdVerification copyWith({List<String>? Function()? files}) { return Co
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CompanyTaxIdVerification &&
           listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(files ?? const []); } 
 @override String toString() { return 'CompanyTaxIdVerification(files: $files)'; } 
  }

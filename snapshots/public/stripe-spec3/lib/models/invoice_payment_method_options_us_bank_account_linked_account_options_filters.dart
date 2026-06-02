@@ -20,6 +20,6 @@ InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters copyWith({Li
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters &&
           listEquals(accountSubcategories, other.accountSubcategories); } 
-@override int get hashCode { return Object.hashAll(accountSubcategories ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(accountSubcategories ?? const []); } 
 @override String toString() { return 'InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters(accountSubcategories: $accountSubcategories)'; } 
  }

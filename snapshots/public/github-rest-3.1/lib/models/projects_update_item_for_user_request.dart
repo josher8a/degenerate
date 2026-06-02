@@ -19,6 +19,6 @@ ProjectsUpdateItemForUserRequest copyWith({List<Fields>? fields}) { return Proje
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ProjectsUpdateItemForUserRequest &&
           listEquals(fields, other.fields); } 
-@override int get hashCode { return Object.hashAll(fields).hashCode; } 
+@override int get hashCode { return Object.hashAll(fields); } 
 @override String toString() { return 'ProjectsUpdateItemForUserRequest(fields: $fields)'; } 
  }

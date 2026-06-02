@@ -18,6 +18,6 @@ RadarGetAnnotationsResponseResult copyWith({List<RadarGetAnnotationsResponseResu
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RadarGetAnnotationsResponseResult &&
           listEquals(annotations, other.annotations); } 
-@override int get hashCode { return Object.hashAll(annotations).hashCode; } 
+@override int get hashCode { return Object.hashAll(annotations); } 
 @override String toString() { return 'RadarGetAnnotationsResponseResult(annotations: $annotations)'; } 
  }

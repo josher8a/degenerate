@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "apps": [
 ///     "my-app"
 ///   ]
 /// }
-/// ```text
+/// ```
 @immutable final class ReposAddAppAccessRestrictionsRequest {const ReposAddAppAccessRestrictionsRequest({required this.apps});
 
 factory ReposAddAppAccessRestrictionsRequest.fromJson(Map<String, dynamic> json) { return ReposAddAppAccessRestrictionsRequest(
@@ -27,6 +27,6 @@ ReposAddAppAccessRestrictionsRequest copyWith({List<String>? apps}) { return Rep
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ReposAddAppAccessRestrictionsRequest &&
           listEquals(apps, other.apps); } 
-@override int get hashCode { return Object.hashAll(apps).hashCode; } 
+@override int get hashCode { return Object.hashAll(apps); } 
 @override String toString() { return 'ReposAddAppAccessRestrictionsRequest(apps: $apps)'; } 
  }

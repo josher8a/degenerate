@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_delivery_mode.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_domain/authorization.dart';import 'package:pub_cloudflare/models/email_security_domain/dmarc_status.dart';import 'package:pub_cloudflare/models/email_security_domain/email_security_domain_regions.dart';import 'package:pub_cloudflare/models/email_security_domain/emails_processed.dart';import 'package:pub_cloudflare/models/email_security_domain/inbox_provider.dart';import 'package:pub_cloudflare/models/email_security_domain/spf_status.dart';import 'package:pub_cloudflare/models/email_security_scannable_folder.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "allowed_delivery_modes": [
 ///     "API"
@@ -31,7 +31,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   "spf_status": "good",
 ///   "transport": "example.com"
 /// }
-/// ```text
+/// ```
 @immutable final class EmailSecurityGetDomainResponseResult {const EmailSecurityGetDomainResponseResult({required this.allowedDeliveryModes, required this.createdAt, required this.domain, required this.dropDispositions, required this.id, required this.ipRestrictions, required this.lastModified, required this.lookbackHops, required this.regions, required this.transport, this.authorization, this.dmarcStatus, this.emailsProcessed, this.folder, this.inboxProvider, this.integrationId, this.o365TenantId, this.requireTlsInbound, this.requireTlsOutbound, this.spfStatus, });
 
 factory EmailSecurityGetDomainResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityGetDomainResponseResult(

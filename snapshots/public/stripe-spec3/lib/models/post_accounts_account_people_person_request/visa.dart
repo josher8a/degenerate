@@ -18,6 +18,6 @@ Visa copyWith({List<Files>? Function()? files}) { return Visa(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Visa &&
           listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(files ?? const []); } 
 @override String toString() { return 'Visa(files: $files)'; } 
  }

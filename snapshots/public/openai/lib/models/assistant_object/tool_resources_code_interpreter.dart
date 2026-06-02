@@ -24,6 +24,6 @@ ToolResourcesCodeInterpreter copyWith({List<String> Function()? fileIds}) { retu
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ToolResourcesCodeInterpreter &&
           listEquals(fileIds, other.fileIds); } 
-@override int get hashCode { return Object.hashAll(fileIds).hashCode; } 
+@override int get hashCode { return Object.hashAll(fileIds); } 
 @override String toString() { return 'ToolResourcesCodeInterpreter(fileIds: $fileIds)'; } 
  }

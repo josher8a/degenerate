@@ -20,6 +20,6 @@ PortalResourceScheduleUpdateAtPeriodEnd copyWith({List<PortalResourceScheduleUpd
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PortalResourceScheduleUpdateAtPeriodEnd &&
           listEquals(conditions, other.conditions); } 
-@override int get hashCode { return Object.hashAll(conditions).hashCode; } 
+@override int get hashCode { return Object.hashAll(conditions); } 
 @override String toString() { return 'PortalResourceScheduleUpdateAtPeriodEnd(conditions: $conditions)'; } 
  }

@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "account_urls": [
 ///     "https://www.linkedin.com/company/github/",
 ///     "https://twitter.com/github"
 ///   ]
 /// }
-/// ```text
+/// ```
 @immutable final class UsersAddSocialAccountForAuthenticatedUserRequest {const UsersAddSocialAccountForAuthenticatedUserRequest({required this.accountUrls});
 
 factory UsersAddSocialAccountForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return UsersAddSocialAccountForAuthenticatedUserRequest(
@@ -28,6 +28,6 @@ UsersAddSocialAccountForAuthenticatedUserRequest copyWith({List<String>? account
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is UsersAddSocialAccountForAuthenticatedUserRequest &&
           listEquals(accountUrls, other.accountUrls); } 
-@override int get hashCode { return Object.hashAll(accountUrls).hashCode; } 
+@override int get hashCode { return Object.hashAll(accountUrls); } 
 @override String toString() { return 'UsersAddSocialAccountForAuthenticatedUserRequest(accountUrls: $accountUrls)'; } 
  }

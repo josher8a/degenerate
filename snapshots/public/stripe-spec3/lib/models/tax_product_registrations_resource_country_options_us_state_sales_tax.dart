@@ -20,6 +20,6 @@ TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax copyWith({List<TaxP
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax &&
           listEquals(elections, other.elections); } 
-@override int get hashCode { return Object.hashAll(elections ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(elections ?? const []); } 
 @override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax(elections: $elections)'; } 
  }

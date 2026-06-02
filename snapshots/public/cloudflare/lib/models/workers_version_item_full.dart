@@ -15,7 +15,7 @@ factory WorkersVersionItemFull.fromJson(Map<String, dynamic> json) { return Work
 final String? id;
 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "author_email": "user@example.com",
 ///   "author_id": "408cbcdfd4dda4617efef40b04d168a1",
@@ -23,7 +23,7 @@ final String? id;
 ///   "modified_on": "2022-11-08T17:19:29.176266Z",
 ///   "source": "api"
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{author_email: user@example.com, author_id: 408cbcdfd4dda4617efef40b04d168a1, created_on: 2022-11-08T17:19:29.176266Z, modified_on: 2022-11-08T17:19:29.176266Z, source: api}`
 final WorkersVersionItemFullMetadata? metadata;
@@ -34,7 +34,7 @@ final WorkersVersionItemFullMetadata? metadata;
 final double? number;
 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "bindings": [
 ///     {
@@ -54,7 +54,7 @@ final double? number;
 ///     "usage_model": "standard"
 ///   }
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{bindings: [{json: example_binding, name: JSON_VAR, type: json}], script: {etag: 13a3240e8fb414561b0366813b0b8f42b3e6cfa0d9e70e99835dae83d0d8a794, handlers: [fetch], last_deployed_from: api}, script_runtime: {usage_model: standard}}`
 final Resources resources;

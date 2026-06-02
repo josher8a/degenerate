@@ -23,6 +23,6 @@ PostCommandsRequest copyWith({List<PostCommandsRequestCommands>? commands}) { re
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PostCommandsRequest &&
           listEquals(commands, other.commands); } 
-@override int get hashCode { return Object.hashAll(commands).hashCode; } 
+@override int get hashCode { return Object.hashAll(commands); } 
 @override String toString() { return 'PostCommandsRequest(commands: $commands)'; } 
  }

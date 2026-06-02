@@ -18,6 +18,6 @@ BankAccountOwnershipVerification copyWith({List<String>? Function()? files}) { r
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is BankAccountOwnershipVerification &&
           listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(files ?? const []); } 
 @override String toString() { return 'BankAccountOwnershipVerification(files: $files)'; } 
  }

@@ -23,6 +23,6 @@ CopilotCancelCopilotSeatAssignmentForTeamsRequest copyWith({List<String>? select
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CopilotCancelCopilotSeatAssignmentForTeamsRequest &&
           listEquals(selectedTeams, other.selectedTeams); } 
-@override int get hashCode { return Object.hashAll(selectedTeams).hashCode; } 
+@override int get hashCode { return Object.hashAll(selectedTeams); } 
 @override String toString() { return 'CopilotCancelCopilotSeatAssignmentForTeamsRequest(selectedTeams: $selectedTeams)'; } 
  }

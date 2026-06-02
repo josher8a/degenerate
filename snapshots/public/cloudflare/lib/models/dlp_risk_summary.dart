@@ -18,6 +18,6 @@ DlpRiskSummary copyWith({List<DlpUserRiskInfo>? users}) { return DlpRiskSummary(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DlpRiskSummary &&
           listEquals(users, other.users); } 
-@override int get hashCode { return Object.hashAll(users).hashCode; } 
+@override int get hashCode { return Object.hashAll(users); } 
 @override String toString() { return 'DlpRiskSummary(users: $users)'; } 
  }

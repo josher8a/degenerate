@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_deployment_log/pages_deployment_log_data.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "data": [
 ///     {
@@ -128,7 +128,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   "includes_container_logs": true,
 ///   "total": 30
 /// }
-/// ```text
+/// ```
 @immutable final class PagesDeploymentLog {const PagesDeploymentLog({required this.data, required this.includesContainerLogs, required this.total, });
 
 factory PagesDeploymentLog.fromJson(Map<String, dynamic> json) { return PagesDeploymentLog(

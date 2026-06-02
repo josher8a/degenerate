@@ -19,11 +19,11 @@ final List<EmailSecurityMessage> messages;
 final bool success;
 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "raw": "MIME-Version: 1.0\nContent-Type: text/plain; charset=\"utf-8\"\n\nFrom: sender@example.com\nTo: recipient@example.com\nSubject: Test Email\n\nThis is a test email."
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{raw: MIME-Version: 1.0`
 /// Content-Type: text/plain; charset="utf-8"

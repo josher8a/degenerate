@@ -18,6 +18,6 @@ MetadataSecretScanning copyWith({List<BypassPlaceholders>? Function()? bypassPla
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MetadataSecretScanning &&
           listEquals(bypassPlaceholders, other.bypassPlaceholders); } 
-@override int get hashCode { return Object.hashAll(bypassPlaceholders ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(bypassPlaceholders ?? const []); } 
 @override String toString() { return 'MetadataSecretScanning(bypassPlaceholders: $bypassPlaceholders)'; } 
  }

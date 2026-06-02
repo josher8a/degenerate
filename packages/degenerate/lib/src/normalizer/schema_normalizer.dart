@@ -84,7 +84,7 @@ class SchemaNormalizer {
     // of declaration order.
     for (final entry in schemas.entries) {
       if (entry.value is! Map<String, dynamic>) continue;
-      final dartName = _uniqueTypeName(entry.key, usedNames);
+      final dartName = uniqueTypeName(entry.key, usedNames);
       nameMapping[entry.key] = dartName;
     }
 
@@ -95,14 +95,4 @@ class SchemaNormalizer {
     );
   }
 
-  static String _uniqueTypeName(String rawName, Set<String> usedNames) {
-    final pascal = toPascalCase(rawName);
-    final sanitized = sanitizeDartName(pascal);
-    final candidate = dartCoreTypeNames.contains(sanitized)
-        ? '${sanitized}Model'
-        : sanitized;
-    final unique = deduplicateName(candidate, usedNames);
-    usedNames.add(unique);
-    return unique;
-  }
 }

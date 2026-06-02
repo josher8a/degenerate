@@ -19,6 +19,6 @@ RepositoryRuleFilePathRestrictionParameters copyWith({List<String>? restrictedFi
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RepositoryRuleFilePathRestrictionParameters &&
           listEquals(restrictedFilePaths, other.restrictedFilePaths); } 
-@override int get hashCode { return Object.hashAll(restrictedFilePaths).hashCode; } 
+@override int get hashCode { return Object.hashAll(restrictedFilePaths); } 
 @override String toString() { return 'RepositoryRuleFilePathRestrictionParameters(restrictedFilePaths: $restrictedFilePaths)'; } 
  }

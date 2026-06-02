@@ -20,6 +20,6 @@ RuleSuiteRequiredStatusChecks copyWith({List<RuleSuiteRequiredStatusChecksChecks
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RuleSuiteRequiredStatusChecks &&
           listEquals(checks, other.checks); } 
-@override int get hashCode { return Object.hashAll(checks ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(checks ?? const []); } 
 @override String toString() { return 'RuleSuiteRequiredStatusChecks(checks: $checks)'; } 
  }

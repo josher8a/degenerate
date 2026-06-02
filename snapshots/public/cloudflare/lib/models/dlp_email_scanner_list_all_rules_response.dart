@@ -18,6 +18,6 @@ DlpEmailScannerListAllRulesResponse copyWith({List<DlpEmailRule>? Function()? re
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DlpEmailScannerListAllRulesResponse &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'DlpEmailScannerListAllRulesResponse(result: $result)'; } 
  }

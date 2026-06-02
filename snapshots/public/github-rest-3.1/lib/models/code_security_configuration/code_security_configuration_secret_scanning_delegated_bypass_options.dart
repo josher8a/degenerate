@@ -20,6 +20,6 @@ CodeSecurityConfigurationSecretScanningDelegatedBypassOptions copyWith({List<Cod
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CodeSecurityConfigurationSecretScanningDelegatedBypassOptions &&
           listEquals(reviewers, other.reviewers); } 
-@override int get hashCode { return Object.hashAll(reviewers ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(reviewers ?? const []); } 
 @override String toString() { return 'CodeSecurityConfigurationSecretScanningDelegatedBypassOptions(reviewers: $reviewers)'; } 
  }

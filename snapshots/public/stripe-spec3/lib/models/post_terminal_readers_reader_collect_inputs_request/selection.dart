@@ -18,6 +18,6 @@ Selection copyWith({List<Choices>? choices}) { return Selection(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Selection &&
           listEquals(choices, other.choices); } 
-@override int get hashCode { return Object.hashAll(choices).hashCode; } 
+@override int get hashCode { return Object.hashAll(choices); } 
 @override String toString() { return 'Selection(choices: $choices)'; } 
  }

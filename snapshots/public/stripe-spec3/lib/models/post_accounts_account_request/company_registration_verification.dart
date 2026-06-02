@@ -18,6 +18,6 @@ CompanyRegistrationVerification copyWith({List<String>? Function()? files}) { re
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CompanyRegistrationVerification &&
           listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(files ?? const []); } 
 @override String toString() { return 'CompanyRegistrationVerification(files: $files)'; } 
  }

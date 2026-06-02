@@ -126,10 +126,6 @@ class IrMapper {
     return results;
   }
 
-  /// Public entry point for resolving type refs in a type tree.
-  /// Used by the generator for a final resolution pass.
-  IrType resolveTypeRefs(IrType type) => _resolver.resolve(type);
-
   /// Dart names of the top-level `components/schemas` types. These are the
   /// intentional public API and are never shortened by the suffix resolver.
   Set<String> get topLevelNames => _nameMapping.values.toSet();
@@ -1007,25 +1003,47 @@ class IrMapper {
     );
   }
 
-  // ─── Untagged Union ───────────────────────────────────────────
+  // ─── Untagged Union / AnyOf ─────────────────────────────────
 
   IrType _lowerUntaggedUnion(
     String? name,
     Map<String, dynamic> schema, {
     bool isInline = false,
     List<String>? namePath,
+  }) =>
+      _lowerVariantUnion(name, schema, 'oneOf', 'InlineUnion',
+          IrUntaggedUnion.new, isInline: isInline, namePath: namePath);
+
+  IrType _lowerAnyOf(
+    String? name,
+    Map<String, dynamic> schema, {
+    bool isInline = false,
+    List<String>? namePath,
+  }) =>
+      _lowerVariantUnion(name, schema, 'anyOf', 'InlineAnyOf', IrAnyOf.new,
+          isInline: isInline, namePath: namePath);
+
+  IrType _lowerVariantUnion(
+    String? name,
+    Map<String, dynamic> schema,
+    String schemaKey,
+    String fallbackName,
+    IrType Function(String, List<IrType>,
+            {String? description, bool isNullable})
+        constructor, {
+    bool isInline = false,
+    List<String>? namePath,
   }) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
-    final unionName = name ?? _uniqueTypeName('InlineUnion');
+    final unionName = name ?? _uniqueTypeName(fallbackName);
     final unionPath = namePath ?? [unionName];
     _recordPath(unionName, unionPath);
 
-    final oneOf = schema['oneOf'] as List;
+    final items = schema[schemaKey] as List;
 
     // Collapse anyOf/oneOf of single-value string enums into one enum.
-    // e.g. oneOf: [{enum: [High]}, {enum: [Medium]}, {enum: [Low]}]
-    final collapsed = _trySingleValueEnumCollapse(oneOf);
+    final collapsed = _trySingleValueEnumCollapse(items);
     if (collapsed != null) {
       return IrEnum(
         unionName,
@@ -1036,93 +1054,15 @@ class IrMapper {
     }
 
     final variants = <IrType>[];
-    for (var i = 0; i < oneOf.length; i++) {
-      final variant = oneOf[i];
+    for (var i = 0; i < items.length; i++) {
+      final variant = items[i];
       if (variant is Map<String, dynamic>) {
-        // Use lowerInlineSchema for inline variants so they get registered
-        // in the type registry and emitted as separate files.
         final hint = _variantHint(unionName, variant, i);
         variants.add(
           lowerInlineSchema(
             variant,
             nameHint: hint,
             namePath: _variantPath(unionName, unionPath, hint),
-          ),
-        );
-      }
-    }
-
-    // Collapse inline primitive-only unions to dynamic - generating sealed
-    // wrapper types for oneOf: [string, number, bool] adds ceremony without
-    // value. Named schemas (name was passed in) are kept as unions since the
-    // spec author intentionally defined them.
-    if (isInline && _allPrimitives(variants)) {
-      return IrPrimitive(
-        PrimitiveKind.dynamic_,
-        description: _descriptionWithVariants(description, variants),
-        isNullable: nullable,
-      );
-    }
-
-    // Deduplicate variants that resolve to the same Dart type.
-    final deduped = _deduplicateVariants(variants);
-
-    // If dedup collapsed to a single variant and this is an inline union,
-    // return the variant directly. Named unions keep their identity since
-    // other schemas may reference them by name.
-    if (deduped.length == 1 && isInline) {
-      return deduped.first.isNullable == nullable
-          ? deduped.first
-          : (nullable ? deduped.first.copyAsNullable() : deduped.first);
-    }
-
-    return IrUntaggedUnion(
-      unionName,
-      deduped.length >= 2 ? deduped : variants,
-      description: description,
-      isNullable: nullable,
-    );
-  }
-
-  // ─── AnyOf ────────────────────────────────────────────────────
-
-  IrType _lowerAnyOf(
-    String? name,
-    Map<String, dynamic> schema, {
-    bool isInline = false,
-    List<String>? namePath,
-  }) {
-    final description = schema['description'] as String?;
-    final nullable = _isNullable(schema);
-    final anyOfName = name ?? _uniqueTypeName('InlineAnyOf');
-    final anyOfPath = namePath ?? [anyOfName];
-    _recordPath(anyOfName, anyOfPath);
-
-    final anyOf = schema['anyOf'] as List;
-
-    // Collapse anyOf of single-value string enums into one enum.
-    final collapsed = _trySingleValueEnumCollapse(anyOf);
-    if (collapsed != null) {
-      return IrEnum(
-        anyOfName,
-        collapsed,
-        description: description,
-        isNullable: nullable,
-      );
-    }
-
-    final variants = <IrType>[];
-    for (var i = 0; i < anyOf.length; i++) {
-      final variant = anyOf[i];
-      if (variant is Map<String, dynamic>) {
-        // Use lowerInlineSchema for inline variants so they get registered
-        // in the type registry and emitted as separate files.
-        final hint = _variantHint(anyOfName, variant, i);
-        variants.add(
-          lowerInlineSchema(
-            variant,
-            nameHint: hint,
-            namePath: _variantPath(anyOfName, anyOfPath, hint),
           ),
         );
       }
@@ -1144,8 +1084,8 @@ class IrMapper {
           : (nullable ? deduped.first.copyAsNullable() : deduped.first);
     }
 
-    return IrAnyOf(
-      anyOfName,
+    return constructor(
+      unionName,
       deduped.length >= 2 ? deduped : variants,
       description: description,
       isNullable: nullable,
@@ -1273,17 +1213,8 @@ class IrMapper {
     return null;
   }
 
-  String _uniqueTypeName(String rawName) {
-    final pascal = toPascalCase(rawName);
-    final sanitized = sanitizeDartName(pascal);
-    // Avoid shadowing dart:core types
-    final candidate = dartCoreTypeNames.contains(sanitized)
-        ? '${sanitized}Model'
-        : sanitized;
-    final unique = deduplicateName(candidate, _usedNames);
-    _usedNames.add(unique);
-    return unique;
-  }
+  String _uniqueTypeName(String rawName) =>
+      uniqueTypeName(rawName, _usedNames);
 
   bool _isNullable(Map<String, dynamic> schema) {
     // OpenAPI 3.1 uses `nullable: true` or type array including 'null'.

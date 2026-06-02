@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_allow_policy_id.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "comments": "Trust all messages send from test@example.com",
 ///   "created_at": "2023-11-14T22:13:20Z",
@@ -18,7 +18,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   "pattern_type": "EMAIL",
 ///   "verify_sender": true
 /// }
-/// ```text
+/// ```
 @immutable final class EmailSecurityCreateAllowPolicyResponseResult {const EmailSecurityCreateAllowPolicyResponseResult({required this.isAcceptableSender, required this.isExemptRecipient, required this.isRegex, required this.isTrustedSender, required this.pattern, required this.patternType, required this.verifySender, required this.createdAt, required this.id, required this.lastModified, this.comments, this.isRecipient, this.isSender, this.isSpoof, });
 
 factory EmailSecurityCreateAllowPolicyResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateAllowPolicyResponseResult(

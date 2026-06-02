@@ -19,6 +19,6 @@ ObjectDetectionVariant2 copyWith({List<double>? Function()? image}) { return Obj
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ObjectDetectionVariant2 &&
           listEquals(image, other.image); } 
-@override int get hashCode { return Object.hashAll(image ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(image ?? const []); } 
 @override String toString() { return 'ObjectDetectionVariant2(image: $image)'; } 
  }

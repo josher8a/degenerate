@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_attachment.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_get_message_detections_response/result_validation.dart';import 'package:pub_cloudflare/models/email_security_get_message_detections_response/sender_info.dart';import 'package:pub_cloudflare/models/email_security_link.dart';import 'package:pub_cloudflare/models/email_security_message_header.dart';import 'package:pub_cloudflare/models/email_security_threat_category.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "action": "QUARANTINED",
 ///   "attachments": [],
@@ -9,7 +9,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   "headers": [
 ///     {
 ///       "name": "From",
-///       "value": "Sender Name `<d1994@example.com>`"
+///       "value": "Sender Name <d1994@example.com>"
 ///     },
 ///     {
 ///       "name": "Subject",
@@ -43,7 +43,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///     "spf": "fail"
 ///   }
 /// }
-/// ```text
+/// ```
 @immutable final class EmailSecurityGetMessageDetectionsResponseResult {const EmailSecurityGetMessageDetectionsResponseResult({required this.action, required this.attachments, required this.headers, required this.links, required this.senderInfo, required this.threatCategories, required this.validation, this.finalDisposition, });
 
 factory EmailSecurityGetMessageDetectionsResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageDetectionsResponseResult(

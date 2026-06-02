@@ -20,6 +20,6 @@ IpAllowlistConfigDeactivated copyWith({List<Configs>? Function()? configs}) { re
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IpAllowlistConfigDeactivated &&
           listEquals(configs, other.configs); } 
-@override int get hashCode { return Object.hashAll(configs ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(configs ?? const []); } 
 @override String toString() { return 'IpAllowlistConfigDeactivated(configs: $configs)'; } 
  }

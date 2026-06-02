@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/routing/routing_routing.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "api_routing": {
 ///     "last_updated": "2014-01-01T05:20:00.12345Z",
 ///     "route": "https://api.example.com/api/service"
 ///   }
 /// }
-/// ```text
+/// ```
 @immutable final class Routing {const Routing({this.apiRouting});
 
 factory Routing.fromJson(Map<String, dynamic> json) { return Routing(

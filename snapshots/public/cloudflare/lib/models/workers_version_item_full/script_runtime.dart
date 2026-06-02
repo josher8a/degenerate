@@ -24,11 +24,11 @@ final List<String>? compatibilityFlags;
 /// Resource limits for the Worker.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "cpu_ms": 50
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{cpu_ms: 50}`
 final ScriptRuntimeLimits? limits;

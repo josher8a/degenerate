@@ -18,6 +18,6 @@ WorkerDeploymentsListDeploymentsResponseResult copyWith({List<WorkersDeployment>
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WorkerDeploymentsListDeploymentsResponseResult &&
           listEquals(deployments, other.deployments); } 
-@override int get hashCode { return Object.hashAll(deployments).hashCode; } 
+@override int get hashCode { return Object.hashAll(deployments); } 
 @override String toString() { return 'WorkerDeploymentsListDeploymentsResponseResult(deployments: $deployments)'; } 
  }

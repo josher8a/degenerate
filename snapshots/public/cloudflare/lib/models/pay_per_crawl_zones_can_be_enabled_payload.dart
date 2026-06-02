@@ -18,6 +18,6 @@ PayPerCrawlZonesCanBeEnabledPayload copyWith({List<PayPerCrawlDaricZoneCanBeEnab
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PayPerCrawlZonesCanBeEnabledPayload &&
           listEquals(zones, other.zones); } 
-@override int get hashCode { return Object.hashAll(zones ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(zones ?? const []); } 
 @override String toString() { return 'PayPerCrawlZonesCanBeEnabledPayload(zones: $zones)'; } 
  }

@@ -54,13 +54,13 @@ bool get isUnknown { return !values.contains(this); }
 /// Optional filters that allow you to be alerted only on a subset of events for that alert type based on some criteria. This is only available for select alert types. See alert type documentation for more details.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "slo": [
 ///     "99.9"
 ///   ]
 /// }
-/// ```text
+/// ```
 @immutable final class AaaFilters {const AaaFilters({this.incidentImpact, this.affectedAsns, this.affectedComponents, this.affectedLocations, this.airportCode, this.alertTriggerPreferences, this.alertTriggerPreferencesValue, this.enabled, this.environment, this.event, this.eventSource, this.eventType, this.groupBy, this.healthCheckId, this.actions, this.inputId, this.insightClass, this.limit, this.logoTag, this.megabitsPerSecond, this.newHealth, this.newStatus, this.packetsPerSecond, this.poolId, this.popNames, this.product, this.projectId, this.protocol, this.zones, this.requestsPerSecond, this.selectors, this.services, this.slo, this.status, this.targetHostname, this.targetIp, this.targetZoneName, this.trafficExclusions, this.tunnelId, this.tunnelName, this.type, this.where, this.queryTag, });
 
 factory AaaFilters.fromJson(Map<String, dynamic> json) { return AaaFilters(

@@ -20,6 +20,6 @@ R2DataCatalogCatalogList copyWith({List<R2DataCatalogCatalog>? warehouses}) { re
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is R2DataCatalogCatalogList &&
           listEquals(warehouses, other.warehouses); } 
-@override int get hashCode { return Object.hashAll(warehouses).hashCode; } 
+@override int get hashCode { return Object.hashAll(warehouses); } 
 @override String toString() { return 'R2DataCatalogCatalogList(warehouses: $warehouses)'; } 
  }

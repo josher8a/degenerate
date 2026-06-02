@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_description.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_name.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "description": "example feed description",
 ///   "name": "example_feed_1"
 /// }
-/// ```text
+/// ```
 @immutable final class CustomIndicatorFeedsCreateFeed {const CustomIndicatorFeedsCreateFeed({this.description, this.name, });
 
 factory CustomIndicatorFeedsCreateFeed.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsCreateFeed(

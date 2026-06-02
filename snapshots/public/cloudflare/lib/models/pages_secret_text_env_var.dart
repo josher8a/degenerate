@@ -24,12 +24,12 @@ bool get isUnknown { return !values.contains(this); }
 /// An encrypted environment variable.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "type": "secret_text",
 ///   "value": ""
 /// }
-/// ```text
+/// ```
 @immutable final class PagesSecretTextEnvVar {const PagesSecretTextEnvVar({required this.type, required this.value, });
 
 factory PagesSecretTextEnvVar.fromJson(Map<String, dynamic> json) { return PagesSecretTextEnvVar(

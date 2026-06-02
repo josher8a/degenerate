@@ -18,6 +18,6 @@ AccessPolicyInitReq copyWith({List<AccessPolicyInitReqPolicies>? Function()? pol
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccessPolicyInitReq &&
           listEquals(policies, other.policies); } 
-@override int get hashCode { return Object.hashAll(policies ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(policies ?? const []); } 
 @override String toString() { return 'AccessPolicyInitReq(policies: $policies)'; } 
  }

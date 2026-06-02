@@ -18,6 +18,6 @@ QueryBulk copyWith({List<Map<String, dynamic>>? Function()? queries}) { return Q
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is QueryBulk &&
           listEquals(queries, other.queries); } 
-@override int get hashCode { return Object.hashAll(queries ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(queries ?? const []); } 
 @override String toString() { return 'QueryBulk(queries: $queries)'; } 
  }

@@ -18,6 +18,6 @@ Include copyWith({List<String>? Function()? from}) { return Include(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Include &&
           listEquals(from, other.from); } 
-@override int get hashCode { return Object.hashAll(from ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(from ?? const []); } 
 @override String toString() { return 'Include(from: $from)'; } 
  }

@@ -19,6 +19,6 @@ PostTestHelpersRefundsRefundExpireRequest copyWith({List<String>? Function()? ex
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PostTestHelpersRefundsRefundExpireRequest &&
           listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hashAll(expand ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(expand ?? const []); } 
 @override String toString() { return 'PostTestHelpersRefundsRefundExpireRequest(expand: $expand)'; } 
  }

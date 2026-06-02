@@ -23,6 +23,6 @@ ShieldConfiguration copyWith({List<ShieldAuthIdCharacteristics2>? authIdCharacte
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldConfiguration &&
           listEquals(authIdCharacteristics, other.authIdCharacteristics); } 
-@override int get hashCode { return Object.hashAll(authIdCharacteristics).hashCode; } 
+@override int get hashCode { return Object.hashAll(authIdCharacteristics); } 
 @override String toString() { return 'ShieldConfiguration(authIdCharacteristics: $authIdCharacteristics)'; } 
  }

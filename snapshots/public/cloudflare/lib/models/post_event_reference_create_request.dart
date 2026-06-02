@@ -18,6 +18,6 @@ PostEventReferenceCreateRequest copyWith({List<String>? events}) { return PostEv
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PostEventReferenceCreateRequest &&
           listEquals(events, other.events); } 
-@override int get hashCode { return Object.hashAll(events).hashCode; } 
+@override int get hashCode { return Object.hashAll(events); } 
 @override String toString() { return 'PostEventReferenceCreateRequest(events: $events)'; } 
  }

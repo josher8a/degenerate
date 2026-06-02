@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Attributes associated to the permission group.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "label": "load_balancer_admin",
 ///   "scopes": "com.cloudflare.api.account"
 /// }
-/// ```text
+/// ```
 @immutable final class IamPermissionGroupMeta {const IamPermissionGroupMeta({this.key, this.value, });
 
 factory IamPermissionGroupMeta.fromJson(Map<String, dynamic> json) { return IamPermissionGroupMeta(

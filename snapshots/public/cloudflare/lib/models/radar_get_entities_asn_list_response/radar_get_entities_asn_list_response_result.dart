@@ -18,6 +18,6 @@ RadarGetEntitiesAsnListResponseResult copyWith({List<RadarGetEntitiesAsnListResp
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RadarGetEntitiesAsnListResponseResult &&
           listEquals(asns, other.asns); } 
-@override int get hashCode { return Object.hashAll(asns).hashCode; } 
+@override int get hashCode { return Object.hashAll(asns); } 
 @override String toString() { return 'RadarGetEntitiesAsnListResponseResult(asns: $asns)'; } 
  }

@@ -27,6 +27,6 @@ CodeSecurityDetachConfigurationRequest copyWith({List<int>? Function()? selected
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CodeSecurityDetachConfigurationRequest &&
           listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(selectedRepositoryIds ?? const []); } 
 @override String toString() { return 'CodeSecurityDetachConfigurationRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
  }

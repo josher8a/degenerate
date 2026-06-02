@@ -20,6 +20,6 @@ ScopeSelector copyWith({List<ScopedResourceSelectorRequirement>? Function()? mat
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ScopeSelector &&
           listEquals(matchExpressions, other.matchExpressions); } 
-@override int get hashCode { return Object.hashAll(matchExpressions ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(matchExpressions ?? const []); } 
 @override String toString() { return 'ScopeSelector(matchExpressions: $matchExpressions)'; } 
  }

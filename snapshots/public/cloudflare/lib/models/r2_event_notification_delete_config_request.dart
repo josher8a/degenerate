@@ -19,6 +19,6 @@ R2EventNotificationDeleteConfigRequest copyWith({List<String>? Function()? ruleI
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is R2EventNotificationDeleteConfigRequest &&
           listEquals(ruleIds, other.ruleIds); } 
-@override int get hashCode { return Object.hashAll(ruleIds ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(ruleIds ?? const []); } 
 @override String toString() { return 'R2EventNotificationDeleteConfigRequest(ruleIds: $ruleIds)'; } 
  }

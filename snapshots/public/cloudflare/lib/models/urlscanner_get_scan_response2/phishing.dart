@@ -18,6 +18,6 @@ Phishing copyWith({List<String>? data}) { return Phishing(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Phishing &&
           listEquals(data, other.data); } 
-@override int get hashCode { return Object.hashAll(data).hashCode; } 
+@override int get hashCode { return Object.hashAll(data); } 
 @override String toString() { return 'Phishing(data: $data)'; } 
  }

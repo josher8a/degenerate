@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration object which contains the details for the WARP client to conduct the test.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "host": "https://dash.cloudflare.com",
 ///   "kind": "http",
 ///   "method": "GET"
 /// }
-/// ```text
+/// ```
 @immutable final class TeamsDevicesDeviceDexTestSchemasData {const TeamsDevicesDeviceDexTestSchemasData({this.host, this.kind, this.method, });
 
 factory TeamsDevicesDeviceDexTestSchemasData.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceDexTestSchemasData(

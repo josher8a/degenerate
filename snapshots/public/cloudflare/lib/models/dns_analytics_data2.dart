@@ -19,6 +19,6 @@ DnsAnalyticsData2 copyWith({List<String>? dimensions}) { return DnsAnalyticsData
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DnsAnalyticsData2 &&
           listEquals(dimensions, other.dimensions); } 
-@override int get hashCode { return Object.hashAll(dimensions).hashCode; } 
+@override int get hashCode { return Object.hashAll(dimensions); } 
 @override String toString() { return 'DnsAnalyticsData2(dimensions: $dimensions)'; } 
  }

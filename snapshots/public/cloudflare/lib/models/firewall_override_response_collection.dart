@@ -18,6 +18,6 @@ FirewallOverrideResponseCollection copyWith({List<FirewallOverride>? result}) { 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is FirewallOverrideResponseCollection &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result).hashCode; } 
+@override int get hashCode { return Object.hashAll(result); } 
 @override String toString() { return 'FirewallOverrideResponseCollection(result: $result)'; } 
  }

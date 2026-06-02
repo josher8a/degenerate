@@ -18,6 +18,6 @@ AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest copyWith({List<Ac
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest &&
           listEquals(settings, other.settings); } 
-@override int get hashCode { return Object.hashAll(settings).hashCode; } 
+@override int get hashCode { return Object.hashAll(settings); } 
 @override String toString() { return 'AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest(settings: $settings)'; } 
  }

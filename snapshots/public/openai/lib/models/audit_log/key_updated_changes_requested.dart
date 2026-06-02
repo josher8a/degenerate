@@ -20,6 +20,6 @@ KeyUpdatedChangesRequested copyWith({List<String>? Function()? scopes}) { return
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is KeyUpdatedChangesRequested &&
           listEquals(scopes, other.scopes); } 
-@override int get hashCode { return Object.hashAll(scopes ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(scopes ?? const []); } 
 @override String toString() { return 'KeyUpdatedChangesRequested(scopes: $scopes)'; } 
  }

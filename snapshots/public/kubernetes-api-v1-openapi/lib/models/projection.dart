@@ -20,6 +20,6 @@ Projection copyWith({List<VolumeFile>? Function()? items}) { return Projection(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Projection &&
           listEquals(items, other.items); } 
-@override int get hashCode { return Object.hashAll(items ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(items ?? const []); } 
 @override String toString() { return 'Projection(items: $items)'; } 
  }

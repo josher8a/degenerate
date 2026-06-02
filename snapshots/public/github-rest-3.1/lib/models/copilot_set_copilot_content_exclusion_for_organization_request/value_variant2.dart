@@ -18,6 +18,6 @@ ValueVariant2 copyWith({List<String>? ifAnyMatch}) { return ValueVariant2(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ValueVariant2 &&
           listEquals(ifAnyMatch, other.ifAnyMatch); } 
-@override int get hashCode { return Object.hashAll(ifAnyMatch).hashCode; } 
+@override int get hashCode { return Object.hashAll(ifAnyMatch); } 
 @override String toString() { return 'ValueVariant2(ifAnyMatch: $ifAnyMatch)'; } 
  }

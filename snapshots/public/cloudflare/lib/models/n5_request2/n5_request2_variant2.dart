@@ -19,6 +19,6 @@ $5Request2Variant2 copyWith({List<$5Request2Variant2Requests>? requests}) { retu
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is $5Request2Variant2 &&
           listEquals(requests, other.requests); } 
-@override int get hashCode { return Object.hashAll(requests).hashCode; } 
+@override int get hashCode { return Object.hashAll(requests); } 
 @override String toString() { return '\$5Request2Variant2(requests: $requests)'; } 
  }

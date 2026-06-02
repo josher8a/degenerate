@@ -18,6 +18,6 @@ RadarGetTldsResponseResult copyWith({List<Tlds>? tlds}) { return RadarGetTldsRes
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RadarGetTldsResponseResult &&
           listEquals(tlds, other.tlds); } 
-@override int get hashCode { return Object.hashAll(tlds).hashCode; } 
+@override int get hashCode { return Object.hashAll(tlds); } 
 @override String toString() { return 'RadarGetTldsResponseResult(tlds: $tlds)'; } 
  }

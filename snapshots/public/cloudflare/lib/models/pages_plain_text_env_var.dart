@@ -24,12 +24,12 @@ bool get isUnknown { return !values.contains(this); }
 /// A plaintext environment variable.
 /// 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "type": "plain_text",
 ///   "value": "hello world"
 /// }
-/// ```text
+/// ```
 @immutable final class PagesPlainTextEnvVar {const PagesPlainTextEnvVar({required this.type, required this.value, });
 
 factory PagesPlainTextEnvVar.fromJson(Map<String, dynamic> json) { return PagesPlainTextEnvVar(

@@ -18,6 +18,6 @@ ZeroTrustGatewayPacfilesComponentsSchemasResponseCollection copyWith({List<ZeroT
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ZeroTrustGatewayPacfilesComponentsSchemasResponseCollection &&
           listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(result ?? const []); } 
 @override String toString() { return 'ZeroTrustGatewayPacfilesComponentsSchemasResponseCollection(result: $result)'; } 
  }

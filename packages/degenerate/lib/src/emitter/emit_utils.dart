@@ -157,12 +157,10 @@ IrType _resolveOneOfRef(
   if (target == null) return type;
   return switch (target) {
     IrUntaggedUnion(:final variants)
-        when isOneOfEligible(variants) &&
-            !isSelfReferencingUnion(type.name, variants) =>
+        when isOneOfTypedef(type.name, variants) =>
       target,
     IrAnyOf(:final variants)
-        when isOneOfEligible(variants) &&
-            !isSelfReferencingUnion(type.name, variants) =>
+        when isOneOfTypedef(type.name, variants) =>
       target,
     _ => type,
   };
@@ -374,14 +372,9 @@ bool _isOneOfInRegistry(String name, Map<String, IrType> registry) {
   final target = registry[name];
   if (target == null) return false;
   return switch (target) {
-    IrUntaggedUnion(:final variants)
-        when isOneOfEligible(variants) &&
-            !isSelfReferencingUnion(name, variants) =>
+    IrUntaggedUnion(:final variants) when isOneOfTypedef(name, variants) =>
       true,
-    IrAnyOf(:final variants)
-        when isOneOfEligible(variants) &&
-            !isSelfReferencingUnion(name, variants) =>
-      true,
+    IrAnyOf(:final variants) when isOneOfTypedef(name, variants) => true,
     _ => false,
   };
 }
@@ -397,6 +390,11 @@ const _oneOfLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 /// instead of a sealed class hierarchy.
 bool isOneOfEligible(List<IrType> variants) =>
     variants.length >= 2 && variants.length <= 9;
+
+/// Whether a named union should become a `typedef` (eligible for OneOf and
+/// not self-referencing through its variants).
+bool isOneOfTypedef(String name, List<IrType> variants) =>
+    isOneOfEligible(variants) && !isSelfReferencingUnion(name, variants);
 
 /// Build the `OneOfN<A, B, ...>` type reference for a union's variants.
 ///
@@ -569,21 +567,33 @@ String escapeDocComment(String line) {
   return buf.toString();
 }
 
-/// Regex matching a fenced code block opening without a language specifier.
-final _bareCodeFence = RegExp(r'^(`{3,})$');
+/// Regex matching a fenced code block delimiter with optional language hint.
+final _codeFence = RegExp(r'^(`{3,})(\w*)$');
 
 /// Format a description string as `///` doc comment lines.
 ///
+/// Returns `///` doc-comment lines for [description], or `[]` if null.
+List<String> docCommentLines(String? description) =>
+    description == null ? const [] : formatDocComment(description);
+
 /// Splits on newlines, trims trailing whitespace, and escapes HTML-like tags.
-/// Adds a `text` language hint to fenced code blocks that lack one.
+/// Code fence interiors are passed through verbatim; bare opening fences get
+/// a `text` language hint so dartdoc doesn't treat them as Dart.
 List<String> formatDocComment(String description) {
+  var inCodeBlock = false;
   return description.split('\n').map((l) {
     final trimmed = l.trimRight();
-    // Add language to bare fenced code blocks (``` or ```` without language).
-    final fenceMatch = _bareCodeFence.firstMatch(trimmed);
+    final fenceMatch = _codeFence.firstMatch(trimmed);
     if (fenceMatch != null) {
-      return '/// ${fenceMatch[1]!}text';
+      if (inCodeBlock) {
+        inCodeBlock = false;
+        return '/// ${fenceMatch[1]!}';
+      }
+      inCodeBlock = true;
+      final lang = fenceMatch[2]!;
+      return lang.isEmpty ? '/// ${fenceMatch[1]!}text' : '/// $trimmed';
     }
+    if (inCodeBlock) return '/// $trimmed';
     return '/// ${escapeDocComment(trimmed)}';
   }).toList();
 }

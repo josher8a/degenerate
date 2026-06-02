@@ -18,6 +18,6 @@ McnMagicWanAddressSpace copyWith({List<McnCidrPrefix>? prefixes}) { return McnMa
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is McnMagicWanAddressSpace &&
           listEquals(prefixes, other.prefixes); } 
-@override int get hashCode { return Object.hashAll(prefixes).hashCode; } 
+@override int get hashCode { return Object.hashAll(prefixes); } 
 @override String toString() { return 'McnMagicWanAddressSpace(prefixes: $prefixes)'; } 
  }

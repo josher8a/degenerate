@@ -18,6 +18,6 @@ RadarGetGeolocationsResponseResult copyWith({List<Geolocations>? geolocations}) 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RadarGetGeolocationsResponseResult &&
           listEquals(geolocations, other.geolocations); } 
-@override int get hashCode { return Object.hashAll(geolocations).hashCode; } 
+@override int get hashCode { return Object.hashAll(geolocations); } 
 @override String toString() { return 'RadarGetGeolocationsResponseResult(geolocations: $geolocations)'; } 
  }

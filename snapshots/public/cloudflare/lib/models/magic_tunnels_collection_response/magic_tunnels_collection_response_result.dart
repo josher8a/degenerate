@@ -18,6 +18,6 @@ MagicTunnelsCollectionResponseResult copyWith({List<MagicGreTunnel>? Function()?
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MagicTunnelsCollectionResponseResult &&
           listEquals(greTunnels, other.greTunnels); } 
-@override int get hashCode { return Object.hashAll(greTunnels ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(greTunnels ?? const []); } 
 @override String toString() { return 'MagicTunnelsCollectionResponseResult(greTunnels: $greTunnels)'; } 
  }

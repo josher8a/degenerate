@@ -21,6 +21,6 @@ ShieldSelectorExclude copyWith({List<ShieldUuid>? Function()? operationIds}) { r
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldSelectorExclude &&
           listEquals(operationIds, other.operationIds); } 
-@override int get hashCode { return Object.hashAll(operationIds ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(operationIds ?? const []); } 
 @override String toString() { return 'ShieldSelectorExclude(operationIds: $operationIds)'; } 
  }

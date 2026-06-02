@@ -18,6 +18,6 @@ Topics copyWith({List<String>? Function()? from}) { return Topics(
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Topics &&
           listEquals(from, other.from); } 
-@override int get hashCode { return Object.hashAll(from ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(from ?? const []); } 
 @override String toString() { return 'Topics(from: $from)'; } 
  }

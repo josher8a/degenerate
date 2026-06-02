@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "DigiCert": [
 ///     "10.274394"
@@ -16,7 +16,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 ///     "2023-08-08T10:15:00Z"
 ///   ]
 /// }
-/// ```text
+/// ```
 @immutable final class Serie0Variant1 {const Serie0Variant1({required this.timestamps, this.additionalProperties = const {}, });
 
 factory Serie0Variant1.fromJson(Map<String, dynamic> json) { return Serie0Variant1(

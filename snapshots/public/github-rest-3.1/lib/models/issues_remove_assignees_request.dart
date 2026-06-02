@@ -19,6 +19,6 @@ IssuesRemoveAssigneesRequest copyWith({List<String>? Function()? assignees}) { r
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuesRemoveAssigneesRequest &&
           listEquals(assignees, other.assignees); } 
-@override int get hashCode { return Object.hashAll(assignees ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(assignees ?? const []); } 
 @override String toString() { return 'IssuesRemoveAssigneesRequest(assignees: $assignees)'; } 
  }

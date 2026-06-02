@@ -19,6 +19,6 @@ ActionsSetSelfHostedRunnersInGroupForOrgRequest copyWith({List<int>? runners}) {
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ActionsSetSelfHostedRunnersInGroupForOrgRequest &&
           listEquals(runners, other.runners); } 
-@override int get hashCode { return Object.hashAll(runners).hashCode; } 
+@override int get hashCode { return Object.hashAll(runners); } 
 @override String toString() { return 'ActionsSetSelfHostedRunnersInGroupForOrgRequest(runners: $runners)'; } 
  }

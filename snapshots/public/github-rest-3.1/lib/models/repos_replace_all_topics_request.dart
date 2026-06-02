@@ -19,6 +19,6 @@ ReposReplaceAllTopicsRequest copyWith({List<String>? names}) { return ReposRepla
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ReposReplaceAllTopicsRequest &&
           listEquals(names, other.names); } 
-@override int get hashCode { return Object.hashAll(names).hashCode; } 
+@override int get hashCode { return Object.hashAll(names); } 
 @override String toString() { return 'ReposReplaceAllTopicsRequest(names: $names)'; } 
  }

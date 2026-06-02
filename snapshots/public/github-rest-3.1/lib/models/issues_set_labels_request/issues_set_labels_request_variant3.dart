@@ -25,6 +25,6 @@ IssuesSetLabelsRequestVariant3 copyWith({List<Variant3Labels>? Function()? label
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuesSetLabelsRequestVariant3 &&
           listEquals(labels, other.labels); } 
-@override int get hashCode { return Object.hashAll(labels ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(labels ?? const []); } 
 @override String toString() { return 'IssuesSetLabelsRequestVariant3(labels: $labels)'; } 
  }

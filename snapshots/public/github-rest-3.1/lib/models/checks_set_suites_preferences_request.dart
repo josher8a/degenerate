@@ -19,6 +19,6 @@ ChecksSetSuitesPreferencesRequest copyWith({List<AutoTriggerChecks>? Function()?
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ChecksSetSuitesPreferencesRequest &&
           listEquals(autoTriggerChecks, other.autoTriggerChecks); } 
-@override int get hashCode { return Object.hashAll(autoTriggerChecks ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(autoTriggerChecks ?? const []); } 
 @override String toString() { return 'ChecksSetSuitesPreferencesRequest(autoTriggerChecks: $autoTriggerChecks)'; } 
  }

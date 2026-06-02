@@ -18,6 +18,6 @@ R2LifecycleConfig copyWith({List<R2LifecycleRule>? Function()? rules}) { return 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is R2LifecycleConfig &&
           listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hashAll(rules ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(rules ?? const []); } 
 @override String toString() { return 'R2LifecycleConfig(rules: $rules)'; } 
  }

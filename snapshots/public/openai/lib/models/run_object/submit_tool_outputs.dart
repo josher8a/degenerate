@@ -20,6 +20,6 @@ SubmitToolOutputs copyWith({List<RunToolCallObject>? toolCalls}) { return Submit
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SubmitToolOutputs &&
           listEquals(toolCalls, other.toolCalls); } 
-@override int get hashCode { return Object.hashAll(toolCalls).hashCode; } 
+@override int get hashCode { return Object.hashAll(toolCalls); } 
 @override String toString() { return 'SubmitToolOutputs(toolCalls: $toolCalls)'; } 
  }

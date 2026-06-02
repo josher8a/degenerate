@@ -19,7 +19,7 @@ final List<EmailSecurityMessage> messages;
 final bool success;
 
 /// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "action": "QUARANTINED",
 ///   "attachments": [],
@@ -27,7 +27,7 @@ final bool success;
 ///   "headers": [
 ///     {
 ///       "name": "From",
-///       "value": "Sender Name `<d1994@example.com>`"
+///       "value": "Sender Name <d1994@example.com>"
 ///     },
 ///     {
 ///       "name": "Subject",
@@ -61,7 +61,7 @@ final bool success;
 ///     "spf": "fail"
 ///   }
 /// }
-/// ```text
+/// ```
 /// 
 /// Example: `{action: QUARANTINED, attachments: [], final_disposition: MALICIOUS, headers: [{name: From, value: Sender Name <d1994@example.com>}, {name: Subject, value: listen, I highly recommend u to read that email, just to ensure not a thing will take place}], links: [{href: https://example.com, text: Click here!}], sender_info: {as_name: AS0, as_number: 0, geo: US/-/-, ip: 127.0.0.1, pld: example.com}, threat_categories: [{description: null, id: 1234, name: IP Reputation}], validation: {comment: null, dkim: pass, dmarc: none, spf: fail}}`
 final EmailSecurityGetMessageDetectionsResponseResult result;

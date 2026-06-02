@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_list_custom_domains_response/r2_list_custom_domains_response_domains.dart';/// Example:
-/// ```json`
+/// ```json
 /// {
 ///   "domains": [
 ///     {
@@ -25,7 +25,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///     }
 ///   ]
 /// }
-/// ```text
+/// ```
 @immutable final class R2ListCustomDomainsResponse {const R2ListCustomDomainsResponse({required this.domains});
 
 factory R2ListCustomDomainsResponse.fromJson(Map<String, dynamic> json) { return R2ListCustomDomainsResponse(
@@ -44,6 +44,6 @@ R2ListCustomDomainsResponse copyWith({List<R2ListCustomDomainsResponseDomains>? 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is R2ListCustomDomainsResponse &&
           listEquals(domains, other.domains); } 
-@override int get hashCode { return Object.hashAll(domains).hashCode; } 
+@override int get hashCode { return Object.hashAll(domains); } 
 @override String toString() { return 'R2ListCustomDomainsResponse(domains: $domains)'; } 
  }

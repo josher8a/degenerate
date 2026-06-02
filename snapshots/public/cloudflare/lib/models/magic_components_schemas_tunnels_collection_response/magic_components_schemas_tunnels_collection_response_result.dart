@@ -18,6 +18,6 @@ MagicComponentsSchemasTunnelsCollectionResponseResult copyWith({List<MagicInterc
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MagicComponentsSchemasTunnelsCollectionResponseResult &&
           listEquals(interconnects, other.interconnects); } 
-@override int get hashCode { return Object.hashAll(interconnects ?? const []).hashCode; } 
+@override int get hashCode { return Object.hashAll(interconnects ?? const []); } 
 @override String toString() { return 'MagicComponentsSchemasTunnelsCollectionResponseResult(interconnects: $interconnects)'; } 
  }
