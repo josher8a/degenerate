@@ -9,11 +9,27 @@ factory WorkersVersionItemShort.fromJson(Map<String, dynamic> json) { return Wor
 ); }
 
 /// Unique identifier for the version.
+/// 
+/// Example: `'18f97339-c287-4872-9bdd-e2135c07ec12'`
 final String? id;
 
+/// Example:
+/// ```json`
+/// {
+///   "author_email": "user@example.com",
+///   "author_id": "408cbcdfd4dda4617efef40b04d168a1",
+///   "created_on": "2022-11-08T17:19:29.176266Z",
+///   "modified_on": "2022-11-08T17:19:29.176266Z",
+///   "source": "api"
+/// }
+/// ```text
+/// 
+/// Example: `{author_email: user@example.com, author_id: 408cbcdfd4dda4617efef40b04d168a1, created_on: 2022-11-08T17:19:29.176266Z, modified_on: 2022-11-08T17:19:29.176266Z, source: api}`
 final WorkersVersionItemFullMetadata? metadata;
 
 /// Sequential version number.
+/// 
+/// Example: `1`
 final double? number;
 
 Map<String, dynamic> toJson() { return {

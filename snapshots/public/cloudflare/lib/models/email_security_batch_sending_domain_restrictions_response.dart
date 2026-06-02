@@ -9,10 +9,13 @@ factory EmailSecurityBatchSendingDomainRestrictionsResponse.fromJson(Map<String,
   result: EmailSecurityBatchSendingDomainRestrictionsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
 final EmailSecurityBatchSendingDomainRestrictionsResponseResult result;

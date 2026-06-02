@@ -9,14 +9,20 @@ factory RumCreateRuleRequest.fromJson(Map<String, dynamic> json) { return RumCre
   paths: (json['paths'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// Example: `'example.com'`
 final String? host;
 
 /// Whether the rule includes or excludes traffic from being measured.
+/// 
+/// Example: `true`
 final bool? inclusive;
 
 /// Whether the rule is paused or not.
+/// 
+/// Example: `false`
 final bool? isPaused;
 
+/// Example: `[*]`
 final List<String>? paths;
 
 Map<String, dynamic> toJson() { return {

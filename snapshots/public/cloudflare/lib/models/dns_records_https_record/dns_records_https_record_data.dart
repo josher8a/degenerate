@@ -10,12 +10,18 @@ factory DnsRecordsHttpsRecordData.fromJson(Map<String, dynamic> json) { return D
 ); }
 
 /// Priority.
+/// 
+/// Example: `1`
 final double? priority;
 
 /// Target.
+/// 
+/// Example: `'.'`
 final String? target;
 
 /// Value.
+/// 
+/// Example: `'alpn="h3,h2" ipv4hint="127.0.0.1" ipv6hint="::1"'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

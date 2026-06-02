@@ -9,6 +9,7 @@ factory IndicatorTypes.fromJson(Map<String, dynamic> json) { return IndicatorTyp
 
 final AttackersProperties properties;
 
+/// Example: `'object'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

@@ -8,10 +8,13 @@ factory LogpushGetOwnershipResponseResult.fromJson(Map<String, dynamic> json) { 
   valid: json['valid'] as bool?,
 ); }
 
+/// Example: `'logs/challenge-filename.txt'`
 final String? filename;
 
+/// Example: `''`
 final String? message;
 
+/// Example: `true`
 final bool? valid;
 
 Map<String, dynamic> toJson() { return {

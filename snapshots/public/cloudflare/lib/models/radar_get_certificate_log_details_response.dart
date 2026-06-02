@@ -9,6 +9,7 @@ factory RadarGetCertificateLogDetailsResponse.fromJson(Map<String, dynamic> json
 
 final RadarGetCertificateLogDetailsResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

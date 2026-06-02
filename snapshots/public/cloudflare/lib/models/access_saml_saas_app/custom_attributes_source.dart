@@ -8,6 +8,8 @@ factory CustomAttributesSource.fromJson(Map<String, dynamic> json) { return Cust
 ); }
 
 /// The name of the IdP attribute.
+/// 
+/// Example: `'last_name'`
 final String? name;
 
 /// A mapping from IdP ID to attribute name.

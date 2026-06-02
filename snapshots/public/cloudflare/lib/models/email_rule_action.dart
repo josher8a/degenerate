@@ -9,6 +9,8 @@ factory EmailRuleAction.fromJson(Map<String, dynamic> json) { return EmailRuleAc
 ); }
 
 /// Type of supported action.
+/// 
+/// Example: `'forward'`
 final EmailRuleActionType type;
 
 final List<String>? value;

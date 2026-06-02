@@ -9,12 +9,16 @@ factory AppsValue.fromJson(Map<String, dynamic> json) { return AppsValue(
   uid: json['uid'] as String?,
 ); }
 
+/// Example: `'test.example.com'`
 final String? hostname;
 
+/// Example: `'app name'`
 final String? name;
 
+/// Example: `'self_hosted'`
 final String? type;
 
+/// Example: `'cc2a8145-0128-4429-87f3-872c4d380c4e'`
 final String? uid;
 
 Map<String, dynamic> toJson() { return {

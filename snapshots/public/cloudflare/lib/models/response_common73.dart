@@ -13,6 +13,8 @@ final List<WafManagedRulesMessages2> errors;
 final List<WafManagedRulesMessages2> messages;
 
 /// Defines whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

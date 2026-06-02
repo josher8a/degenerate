@@ -24,6 +24,8 @@ factory CustomProfile.fromJson(Map<String, dynamic> json) { return CustomProfile
 final bool aiContextEnabled;
 
 /// Related DLP policies will trigger when the match count exceeds the number set.
+/// 
+/// Example: `5`
 final int allowedMatchCount;
 
 final DlpConfidence confidenceThreshold;

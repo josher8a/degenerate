@@ -9,6 +9,7 @@ factory RadarGetAttacksLayer3TimeseriesByBytesResponse.fromJson(Map<String, dyna
 
 final RadarGetAiBotsTimeseriesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

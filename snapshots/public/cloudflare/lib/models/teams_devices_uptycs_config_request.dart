@@ -10,15 +10,23 @@ factory TeamsDevicesUptycsConfigRequest.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// The Uptycs API URL.
+/// 
+/// Example: `'rnd.uptycs.io'`
 final String apiUrl;
 
 /// The Uptycs client secret.
+/// 
+/// Example: `'example client key'`
 final String clientKey;
 
 /// The Uptycs client secret.
+/// 
+/// Example: `'example client secret'`
 final String clientSecret;
 
 /// The Uptycs customer ID.
+/// 
+/// Example: `'example customer id'`
 final String customerId;
 
 Map<String, dynamic> toJson() { return {

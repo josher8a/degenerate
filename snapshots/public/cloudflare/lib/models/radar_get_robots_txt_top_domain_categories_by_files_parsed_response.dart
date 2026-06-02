@@ -9,6 +9,7 @@ factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse.fromJson(Map<S
 
 final RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

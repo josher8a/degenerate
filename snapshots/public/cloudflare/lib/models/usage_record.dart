@@ -18,36 +18,58 @@ factory UsageRecord.fromJson(Map<String, dynamic> json) { return UsageRecord(
 ); }
 
 /// Specifies the billing currency code (ISO 4217).
+/// 
+/// Example: `'USD'`
 final String billingCurrency;
 
 /// Indicates the start of the billing period.
+/// 
+/// Example: `'2025-02-01T00:00:00Z'`
 final DateTime billingPeriodStart;
 
 /// Indicates the end of the charge period.
+/// 
+/// Example: `'2025-02-02T00:00:00Z'`
 final DateTime chargePeriodEnd;
 
 /// Indicates the start of the charge period.
+/// 
+/// Example: `'2025-02-01T00:00:00Z'`
 final DateTime chargePeriodStart;
 
 /// Specifies the quantity consumed during this charge period.
+/// 
+/// Example: `150000`
 final double consumedQuantity;
 
 /// Specifies the unit of measurement for consumed quantity.
+/// 
+/// Example: `'Requests'`
 final String consumedUnit;
 
 /// Specifies the cost for this charge period in the billing currency.
+/// 
+/// Example: `0.75`
 final double contractedCost;
 
 /// Specifies the cumulated cost for the billing period in the billing currency.
+/// 
+/// Example: `2.25`
 final double cumulatedContractedCost;
 
 /// Specifies the cumulated pricing quantity for the billing period.
+/// 
+/// Example: `4500000.0`
 final int cumulatedPricingQuantity;
 
 /// Specifies the pricing quantity for this charge period.
+/// 
+/// Example: `150000`
 final int pricingQuantity;
 
 /// Identifies the Cloudflare service.
+/// 
+/// Example: `'Workers Standard'`
 final String serviceName;
 
 Map<String, dynamic> toJson() { return {

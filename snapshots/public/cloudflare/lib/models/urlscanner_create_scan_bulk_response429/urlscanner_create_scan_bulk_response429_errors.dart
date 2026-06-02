@@ -8,10 +8,13 @@ factory UrlscannerCreateScanBulkResponse429Errors.fromJson(Map<String, dynamic> 
   title: json['title'] as String,
 ); }
 
+/// Example: `'DNS Error - Could not resolve domain.'`
 final String detail;
 
+/// Example: `400`
 final double status;
 
+/// Example: `'DNS Error - Could not resolve domain.'`
 final String title;
 
 Map<String, dynamic> toJson() { return {

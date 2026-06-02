@@ -8,9 +8,13 @@ factory R2ResultInfo.fromJson(Map<String, dynamic> json) { return R2ResultInfo(
 ); }
 
 /// A continuation token that should be used to fetch the next page of results.
+/// 
+/// Example: `'1-JTdCJTIydiUyMiUzQTElMkMlMjJzdGFydEFmdGVyJTIyJTNBJTIyZGF2aWRwdWJsaWMlMjIlN0Q='`
 final String? cursor;
 
 /// Maximum number of results on this page.
+/// 
+/// Example: `20`
 final double? perPage;
 
 Map<String, dynamic> toJson() { return {

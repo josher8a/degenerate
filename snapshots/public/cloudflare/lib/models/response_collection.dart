@@ -14,6 +14,8 @@ final List<AaaComponentsSchemasMessages2> errors;
 final List<AaaComponentsSchemasMessages2> messages;
 
 /// Whether the API call was successful
+/// 
+/// Example: `true`
 final bool success;
 
 final AaaSchemasResultInfo? resultInfo;

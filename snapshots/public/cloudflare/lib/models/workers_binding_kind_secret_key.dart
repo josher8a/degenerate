@@ -89,6 +89,8 @@ factory WorkersBindingKindSecretKey.fromJson(Map<String, dynamic> json) { return
 final Map<String,dynamic> algorithm;
 
 /// Data format of the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#format).
+/// 
+/// Example: `'raw'`
 final WorkersBindingKindSecretKeyFormat format;
 
 /// Base64-encoded key data. Required if `format` is "raw", "pkcs8", or "spki".
@@ -103,6 +105,8 @@ final WorkersBindingName name;
 final String type;
 
 /// Allowed operations with the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#keyUsages).
+/// 
+/// Example: `[encrypt, decrypt]`
 final List<Usages> usages;
 
 Map<String, dynamic> toJson() { return {

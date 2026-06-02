@@ -11,15 +11,21 @@ factory DnsRecordsDsRecordData.fromJson(Map<String, dynamic> json) { return DnsR
 ); }
 
 /// Algorithm.
+/// 
+/// Example: `3`
 final double? algorithm;
 
 /// Digest.
 final String? digest;
 
 /// Digest Type.
+/// 
+/// Example: `1`
 final double? digestType;
 
 /// Key Tag.
+/// 
+/// Example: `1`
 final double? keyTag;
 
 Map<String, dynamic> toJson() { return {

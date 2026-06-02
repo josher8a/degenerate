@@ -9,6 +9,7 @@ factory RadarGetGeolocationDetailsResponse.fromJson(Map<String, dynamic> json) {
 
 final RadarGetGeolocationDetailsResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

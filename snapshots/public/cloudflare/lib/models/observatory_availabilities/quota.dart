@@ -11,15 +11,21 @@ factory Quota.fromJson(Map<String, dynamic> json) { return Quota(
 ); }
 
 /// Cloudflare plan.
+/// 
+/// Example: `'free'`
 final String? plan;
 
 /// The number of tests available per plan.
 final QuotasPerPlan? quotasPerPlan;
 
 /// The number of remaining schedules available.
+/// 
+/// Example: `1`
 final double? remainingSchedules;
 
 /// The number of remaining tests available.
+/// 
+/// Example: `30`
 final double? remainingTests;
 
 /// The number of schedules available per plan.

@@ -17,6 +17,8 @@ final int? botScore;
 final Geoloc? geoloc;
 
 /// Whether to skip any challenges for tracing request (e.g.: captcha)
+/// 
+/// Example: `true`
 final bool? skipChallenge;
 
 /// Threat score used for evaluating tracing request processing

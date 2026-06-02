@@ -7,9 +7,12 @@ factory RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResultTop0.fromJs
   value: json['value'] as String,
 ); }
 
+/// Example: `'Search'`
 final String botCategory;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

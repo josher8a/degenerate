@@ -16,26 +16,38 @@ factory CloudforceOneRequestsRequestList.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// Retrieve requests completed after this time.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final CloudforceOneRequestsTime? completedAfter;
 
 /// Retrieve requests completed before this time.
+/// 
+/// Example: `'2024-01-01T00:00:00Z'`
 final CloudforceOneRequestsTime? completedBefore;
 
 /// Retrieve requests created after this time.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final CloudforceOneRequestsTime? createdAfter;
 
 /// Retrieve requests created before this time.
+/// 
+/// Example: `'2024-01-01T00:00:00Z'`
 final CloudforceOneRequestsTime? createdBefore;
 
 /// Page number of results.
 final int page;
 
 /// Number of results per page.
+/// 
+/// Example: `10`
 final int perPage;
 
 final CloudforceOneRequestsRequestType? requestType;
 
 /// Field to sort results by.
+/// 
+/// Example: `'created'`
 final String? sortBy;
 
 /// Sort order (asc or desc).

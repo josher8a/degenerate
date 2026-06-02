@@ -7,6 +7,8 @@ factory ShieldSelectorInclude.fromJson(Map<String, dynamic> json) { return Shiel
 ); }
 
 /// Included hostnames.
+/// 
+/// Example: `[v1.example.com, v2.example.com]`
 final List<ShieldHost>? host;
 
 Map<String, dynamic> toJson() { return {

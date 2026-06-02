@@ -11,18 +11,28 @@ factory MagicNetflowConfigRequest.fromJson(Map<String, dynamic> json) { return M
 ); }
 
 /// Timeout in seconds for active flows.
+/// 
+/// Example: `30`
 final int? activeTimeout;
 
 /// IPv4 address of the NetFlow collector.
+/// 
+/// Example: `'162.159.65.1'`
 final String? collectorIp;
 
 /// UDP port of the NetFlow collector.
+/// 
+/// Example: `2055`
 final int? collectorPort;
 
 /// Timeout in seconds for inactive flows.
+/// 
+/// Example: `15`
 final int? inactiveTimeout;
 
 /// Sampling rate for NetFlow records (1 = every packet).
+/// 
+/// Example: `100`
 final int? samplingRate;
 
 Map<String, dynamic> toJson() { return {

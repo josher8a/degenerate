@@ -12,12 +12,16 @@ factory TechCategories.fromJson(Map<String, dynamic> json) { return TechCategori
 
 final List<int> groups;
 
+/// Example: `63`
 final int id;
 
+/// Example: `'IAAS'`
 final String name;
 
+/// Example: `8`
 final int priority;
 
+/// Example: `'iaas'`
 final String slug;
 
 Map<String, dynamic> toJson() { return {

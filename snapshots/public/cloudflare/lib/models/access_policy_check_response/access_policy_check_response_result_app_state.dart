@@ -13,14 +13,19 @@ factory AccessPolicyCheckResponseResultAppState.fromJson(Map<String, dynamic> js
 
 final AccessUuid? appUid;
 
+/// Example: `'737646a56ab1df6ec9bddc7e5ca84eaf3b0768850f3ffb5d74f1534911fe389'`
 final String? aud;
 
+/// Example: `'test.com'`
 final String? hostname;
 
+/// Example: `'Test App'`
 final String? name;
 
+/// Example: `[{decision: allow, exclude: [], include: [{_type: email, email: testuser@gmail.com}], precedence: 1, require: [], status: Success}]`
 final List<Map<String,dynamic>>? policies;
 
+/// Example: `'Success'`
 final String? status;
 
 Map<String, dynamic> toJson() { return {

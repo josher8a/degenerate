@@ -11,6 +11,8 @@ factory RoutingRouting.fromJson(Map<String, dynamic> json) { return RoutingRouti
 final ShieldTimestamp? lastUpdated;
 
 /// Target route.
+/// 
+/// Example: `'https://api.example.com/api/service'`
 final String? route;
 
 Map<String, dynamic> toJson() { return {

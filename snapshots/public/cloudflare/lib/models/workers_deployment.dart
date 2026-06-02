@@ -41,6 +41,7 @@ final DateTime createdOn;
 
 final String id;
 
+/// Example: `'api'`
 final String source;
 
 final WorkersDeploymentStrategy strategy;

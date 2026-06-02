@@ -51,6 +51,7 @@ IrType rewriteTypeNames(IrType type, String Function(String) rename) {
               isRequired: f.isRequired,
               defaultValue: f.defaultValue,
               description: f.description,
+              example: f.example,
             ),
         ],
         requiredFields: type.requiredFields,

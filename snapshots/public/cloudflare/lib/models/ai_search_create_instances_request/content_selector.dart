@@ -8,9 +8,13 @@ factory ContentSelector.fromJson(Map<String, dynamic> json) { return ContentSele
 ); }
 
 /// Glob pattern to match against the page URL path. Uses standard glob syntax: * matches within a segment, ** crosses directories.
+/// 
+/// Example: `'**/article/**'`
 final String path;
 
 /// CSS selector to extract content from pages matching the path pattern. Supports standard CSS selectors including class, ID, element, and attribute selectors.
+/// 
+/// Example: `'article .post-body'`
 final String selector;
 
 Map<String, dynamic> toJson() { return {

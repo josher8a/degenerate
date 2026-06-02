@@ -18,30 +18,40 @@ factory PageCookies.fromJson(Map<String, dynamic> json) { return PageCookies(
   value: json['value'] as String,
 ); }
 
+/// Example: `'rkmod.somee.com'`
 final String domain;
 
+/// Example: `-1`
 final double expires;
 
 final bool httpOnly;
 
+/// Example: `'b'`
 final String name;
 
+/// Example: `'/'`
 final String path;
 
+/// Example: `'Medium'`
 final String? priority;
 
 final bool sameParty;
 
 final bool secure;
 
+/// Example: `true`
 final bool session;
 
+/// Example: `2`
 final double size;
 
+/// Example: `443`
 final double sourcePort;
 
+/// Example: `'Secure'`
 final String sourceScheme;
 
+/// Example: `'b'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

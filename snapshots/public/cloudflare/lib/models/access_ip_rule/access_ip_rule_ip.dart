@@ -7,6 +7,8 @@ factory AccessIpRuleIp.fromJson(Map<String, dynamic> json) { return AccessIpRule
 ); }
 
 /// An IPv4 or IPv6 CIDR block.
+/// 
+/// Example: `'2400:cb00:21:10a::/64'`
 final String ip;
 
 Map<String, dynamic> toJson() { return {

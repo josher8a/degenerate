@@ -10,12 +10,18 @@ factory MagicVisibilityMnmMnmConfigWarpDevice.fromJson(Map<String, dynamic> json
 ); }
 
 /// Unique identifier for the warp device.
+/// 
+/// Example: `'5360368d-b351-4791-abe1-93550dabd351'`
 final String id;
 
 /// Name of the warp device.
+/// 
+/// Example: `'My warp device'`
 final String name;
 
 /// IPv4 CIDR of the router sourcing flow data associated with this warp device. Only /32 addresses are currently supported.
+/// 
+/// Example: `'203.0.113.1'`
 final String routerIp;
 
 Map<String, dynamic> toJson() { return {

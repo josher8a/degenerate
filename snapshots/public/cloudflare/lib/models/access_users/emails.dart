@@ -9,12 +9,18 @@ factory Emails.fromJson(Map<String, dynamic> json) { return Emails(
 ); }
 
 /// Indicates if the email address is the primary email belonging to the SCIM User resource.
+/// 
+/// Example: `true`
 final bool? primary;
 
 /// Indicates the type of the email address.
+/// 
+/// Example: `'work'`
 final String? type;
 
 /// The email address of the SCIM User resource.
+/// 
+/// Example: `'john.smith@example.com'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

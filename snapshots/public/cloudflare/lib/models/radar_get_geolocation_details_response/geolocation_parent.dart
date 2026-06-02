@@ -12,16 +12,23 @@ factory GeolocationParent.fromJson(Map<String, dynamic> json) { return Geolocati
   type: GeolocationType.fromJson(json['type'] as String),
 ); }
 
+/// Example: `'PT'`
 final String? code;
 
+/// Example: `'2264397'`
 final String geoId;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String latitude;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String longitude;
 
+/// Example: `'Portugal'`
 final String name;
 
 final ParentParent parent;

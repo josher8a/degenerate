@@ -14,21 +14,28 @@ factory EvidencePatterns.fromJson(Map<String, dynamic> json) { return EvidencePa
   version: json['version'] as String,
 ); }
 
+/// Example: `100`
 final int confidence;
 
 final List<String> excludes;
 
 final List<String> implies;
 
+/// Example: `'ECS'`
 final String match;
 
 /// Header or Cookie name when set
+/// 
+/// Example: `'server'`
 final String name;
 
+/// Example: `'^ECS'`
 final String regex;
 
+/// Example: `'headers'`
 final String type;
 
+/// Example: `'ECS (dcb/7EEE)'`
 final String value;
 
 final String version;

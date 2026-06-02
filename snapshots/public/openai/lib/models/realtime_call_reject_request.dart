@@ -9,6 +9,8 @@ factory RealtimeCallRejectRequest.fromJson(Map<String, dynamic> json) { return R
 
 /// SIP response code to send back to the caller. Defaults to `603` (Decline)
 /// when omitted.
+/// 
+/// Example: `486`
 final int? statusCode;
 
 Map<String, dynamic> toJson() { return {

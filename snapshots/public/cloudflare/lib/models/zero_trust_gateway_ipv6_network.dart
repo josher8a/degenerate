@@ -7,6 +7,8 @@ factory ZeroTrustGatewayIpv6Network.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// Specify the IPv6 address or IPv6 CIDR.
+/// 
+/// Example: `'2001:85a3::/64'`
 final String network;
 
 Map<String, dynamic> toJson() { return {

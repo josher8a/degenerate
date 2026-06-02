@@ -15,6 +15,7 @@ final List<AaaMessages2>? messages;
 
 final List<AaaAuditLogs>? result;
 
+/// Example: `true`
 final bool? success;
 
 Map<String, dynamic> toJson() { return {

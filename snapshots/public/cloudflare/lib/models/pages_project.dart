@@ -27,12 +27,16 @@ final PagesBuildConfig? buildConfig;
 final PagesDeployment? canonicalDeployment;
 
 /// When the project was created.
+/// 
+/// Example: `'2017-01-01T00:00:00Z'`
 final DateTime createdOn;
 
 /// Configs for deployments in a project.
 final PagesProjectDeploymentConfigs deploymentConfigs;
 
 /// A list of associated custom domains for the project.
+/// 
+/// Example: `[customdomain.com, customdomain.org]`
 final List<String>? domains;
 
 /// Framework the project is using.
@@ -42,6 +46,8 @@ final String framework;
 final String frameworkVersion;
 
 /// ID of the project.
+/// 
+/// Example: `'7b162ea7-7367-4d67-bcde-1160995d5'`
 final String id;
 
 /// Most recent deployment of the project.
@@ -50,17 +56,25 @@ final PagesDeployment? latestDeployment;
 final PagesProjectName name;
 
 /// Name of the preview script.
+/// 
+/// Example: `'pages-worker--1234567-preview'`
 final String previewScriptName;
 
 /// Production branch of the project. Used to identify production deployments.
+/// 
+/// Example: `'main'`
 final String productionBranch;
 
 /// Name of the production script.
+/// 
+/// Example: `'pages-worker--1234567-production'`
 final String productionScriptName;
 
 final PagesSource? source;
 
 /// The Cloudflare subdomain associated with the project.
+/// 
+/// Example: `'helloworld.pages.dev'`
 final String? subdomain;
 
 /// Whether the project uses functions.

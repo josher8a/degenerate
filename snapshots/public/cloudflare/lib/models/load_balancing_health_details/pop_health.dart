@@ -9,6 +9,8 @@ factory PopHealth.fromJson(Map<String, dynamic> json) { return PopHealth(
 ); }
 
 /// Whether health check in region is healthy.
+/// 
+/// Example: `true`
 final bool? healthy;
 
 final List<LoadBalancingOriginHealth>? origins;

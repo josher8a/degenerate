@@ -6,6 +6,7 @@ factory RadarGetHttpTopAsesByBrowserFamilyResponse404.fromJson(Map<String, dynam
   error: json['error'] as String,
 ); }
 
+/// Example: `'Not Found.'`
 final String error;
 
 Map<String, dynamic> toJson() { return {

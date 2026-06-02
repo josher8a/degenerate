@@ -14,6 +14,8 @@ final List<RequestTracerMessages2> errors;
 final List<RequestTracerMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 /// Trace result with an origin status code

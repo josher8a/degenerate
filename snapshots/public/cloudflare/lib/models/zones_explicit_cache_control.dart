@@ -38,6 +38,8 @@ final ZonesExplicitCacheControlId? id;
 
 /// The status of Origin Cache Control.
 /// 
+/// 
+/// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {

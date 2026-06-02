@@ -14,9 +14,13 @@ factory R2DataCatalogSnapshotExpirationConfig.fromJson(Map<String, dynamic> json
 /// Examples: "7d" (7 days), "48h" (48 hours), "2880m" (2,880 minutes).
 /// Defaults to "7d".
 /// 
+/// 
+/// Example: `'7d'`
 final String maxSnapshotAge;
 
 /// Specifies the minimum number of snapshots to retain. Defaults to 100.
+/// 
+/// Example: `100`
 final int minSnapshotsToKeep;
 
 /// Specifies the state of maintenance operations.

@@ -30,6 +30,8 @@ final AccessAppsComponentsSchemasName? name;
 final AccessSchemasSaasPropsSaasApp? saasApp;
 
 /// The application type.
+/// 
+/// Example: `'saas'`
 final String? type;
 
 Map<String, dynamic> toJson() { return {

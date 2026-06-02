@@ -32,10 +32,14 @@ factory ZonesOriginErrorPagePassThru.fromJson(Map<String, dynamic> json) { retur
 
 /// Turn on or off Cloudflare error pages generated from issues sent from the origin server. If enabled, this setting triggers error pages issued by the origin.
 /// 
+/// 
+/// Example: `'origin_error_page_pass_thru'`
 final ZonesOriginErrorPagePassThruId? id;
 
 /// The status of Origin Error Page Passthru.
 /// 
+/// 
+/// Example: `'on'`
 final ZonesOriginErrorPagePassThruValue? value;
 
 Map<String, dynamic> toJson() { return {

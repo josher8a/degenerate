@@ -15,9 +15,13 @@ final List<ResourceTaggingMessages2> errors;
 final List<ResourceTaggingMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 /// Contains an array of distinct tag keys.
+/// 
+/// Example: `[environment, team, region]`
 final List<String>? result;
 
 final ResourceTaggingCursorResultInfo? resultInfo;

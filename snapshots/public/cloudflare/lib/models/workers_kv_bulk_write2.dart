@@ -23,6 +23,8 @@ final WorkersKvKeyNameBulk key;
 final WorkersKvAny? metadata;
 
 /// A UTF-8 encoded string to be stored, up to 25 MiB in length.
+/// 
+/// Example: `'Some string'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

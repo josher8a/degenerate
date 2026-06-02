@@ -21,11 +21,15 @@ final List<R2DataCatalogTableIdentifier> identifiers;
 /// Use this opaque token to fetch the next page of results.
 /// A null or absent value indicates the last page.
 /// 
+/// 
+/// Example: `'MSYxNzU5NzU2MTI4NTU2Njk2JjAxOTliOWEzLTkxMmUtN2ZhMS05YzllLTg5MTAxMGQzYTg0MQ'`
 final String? nextPageToken;
 
 /// Contains UUIDs for each table when return_uuids is true.
 /// The order corresponds to the identifiers array.
 /// 
+/// 
+/// Example: `[0199b9a1-28a0-71e0-a73e-b0fc32c8468e, 0199b9a1-3c74-7731-bf53-d8c67ead079d]`
 final List<String>? tableUuids;
 
 Map<String, dynamic> toJson() { return {

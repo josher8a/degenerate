@@ -9,6 +9,7 @@ factory RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponse.fromJson(Map<Str
 
 final RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

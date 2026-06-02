@@ -9,6 +9,7 @@ factory RadarGetAttacksLayer3TimeseriesGroupByProtocolResponse.fromJson(Map<Stri
 
 final RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

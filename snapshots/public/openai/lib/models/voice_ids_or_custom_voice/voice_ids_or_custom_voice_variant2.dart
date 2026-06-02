@@ -8,6 +8,8 @@ factory VoiceIdsOrCustomVoiceVariant2.fromJson(Map<String, dynamic> json) { retu
 ); }
 
 /// The custom voice ID, e.g. `voice_1234`.
+/// 
+/// Example: `'voice_1234'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

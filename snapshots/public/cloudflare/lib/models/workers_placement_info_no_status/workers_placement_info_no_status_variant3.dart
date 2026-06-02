@@ -7,6 +7,8 @@ factory WorkersPlacementInfoNoStatusVariant3.fromJson(Map<String, dynamic> json)
 ); }
 
 /// HTTP hostname for targeted placement.
+/// 
+/// Example: `'api.example.com'`
 final String hostname;
 
 Map<String, dynamic> toJson() { return {

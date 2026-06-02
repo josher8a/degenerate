@@ -24,16 +24,21 @@ final List<int> asns;
 
 final List<AsnsDetails> asnsDetails;
 
+/// Example: `'ALL'`
 final String dataSource;
 
+/// Example: `'example'`
 final String? description;
 
 final DateTime? endDate;
 
+/// Example: `'OUTAGE'`
 final String eventType;
 
+/// Example: `'550'`
 final String id;
 
+/// Example: `'http://example.com'`
 final String? linkedUrl;
 
 final List<String> locations;
@@ -46,6 +51,7 @@ final List<OriginsDetails> originsDetails;
 
 final Outage outage;
 
+/// Example: `'Colima, Michoacán, México'`
 final String? scope;
 
 final DateTime startDate;

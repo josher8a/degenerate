@@ -9,13 +9,17 @@ factory ResponseCommonFailure77.fromJson(Map<String, dynamic> json) { return Res
   success: json['success'] as bool,
 ); }
 
+/// Example: `[{code: 10100, message: Unknown error occured, please try again}]`
 final List<BundleMessages2> errors;
 
+/// Example: `[]`
 final List<BundleMessages2> messages;
 
 final Map<String,dynamic>? result;
 
 /// Defines whether the API call was successful.
+/// 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

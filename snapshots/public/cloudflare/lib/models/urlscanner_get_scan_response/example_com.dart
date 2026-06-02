@@ -14,10 +14,12 @@ final ExampleComCategories categories;
 
 final List<ExampleComDns> dns;
 
+/// Example: `'example.com'`
 final String name;
 
 final Rank rank;
 
+/// Example: `'Apex domain'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

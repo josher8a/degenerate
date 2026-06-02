@@ -9,6 +9,7 @@ factory PostTagCategoryCreateRequest.fromJson(Map<String, dynamic> json) { retur
 
 final String? description;
 
+/// Example: `'Actor'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

@@ -9,6 +9,8 @@ factory Datacenters2.fromJson(Map<String, dynamic> json) { return Datacenters2(
 ); }
 
 /// The airport code identifer for the co-location.
+/// 
+/// Example: `'SFO'`
 final String? coloId;
 
 final List<TimeseriesByColo2>? timeseries;

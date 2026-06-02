@@ -7,6 +7,7 @@ factory WorkersDeploymentVersions.fromJson(Map<String, dynamic> json) { return W
   versionId: json['version_id'] as String,
 ); }
 
+/// Example: `100`
 final double percentage;
 
 final String versionId;

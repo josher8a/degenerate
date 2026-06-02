@@ -9,6 +9,7 @@ factory RadarGetDnsTopAsesResponse.fromJson(Map<String, dynamic> json) { return 
 
 final RadarGetDnsTopAsesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

@@ -11,17 +11,23 @@ factory WorkersBindingKindWorkflow.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// Class name of the Workflow. Should only be provided if the Workflow belongs to this script.
+/// 
+/// Example: `'my-workflow'`
 final String? className;
 
 final WorkersBindingName name;
 
 /// Script name that contains the Workflow. If not provided, defaults to this script name.
+/// 
+/// Example: `'my-workflow'`
 final String? scriptName;
 
 /// The kind of resource that the binding provides.
 final String type;
 
 /// Name of the Workflow to bind to.
+/// 
+/// Example: `'my-workflow'`
 final String workflowName;
 
 Map<String, dynamic> toJson() { return {

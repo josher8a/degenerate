@@ -10,6 +10,7 @@ factory RadarGetAttacksLayer3SummaryResponseResult.fromJson(Map<String, dynamic>
 /// Metadata for the results.
 final RadarGetAiBotsSummaryByUserAgentResponseResultMeta meta;
 
+/// Example: `{IPv4: 50.168733, IPv6: 25.084366}`
 final Map<String,String> summary0;
 
 Map<String, dynamic> toJson() { return {

@@ -11,18 +11,28 @@ factory TeamsDevicesFileInputRequest.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Whether or not file exists.
+/// 
+/// Example: `true`
 final bool? exists;
 
 /// Operating system.
+/// 
+/// Example: `'mac'`
 final InputRequestOperatingSystem operatingSystem;
 
 /// File path.
+/// 
+/// Example: `'/bin/cat'`
 final String path;
 
 /// SHA-256.
+/// 
+/// Example: `'https://api.us-2.crowdstrike.com'`
 final String? sha256;
 
 /// Signing certificate thumbprint.
+/// 
+/// Example: `'0aabab210bdb998e9cf45da2c9ce352977ab531c681b74cf1e487be1bbe9fe6e'`
 final String? thumbprint;
 
 Map<String, dynamic> toJson() { return {

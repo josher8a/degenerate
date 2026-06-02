@@ -8,10 +8,13 @@ factory BotnetThreatFeedGetDayReportResponseResult.fromJson(Map<String, dynamic>
   offenseCount: json['offense_count'] != null ? (json['offense_count'] as num).toInt() : null,
 ); }
 
+/// Example: `'1.1.1.1/32'`
 final String? cidr;
 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? date;
 
+/// Example: `1000`
 final int? offenseCount;
 
 Map<String, dynamic> toJson() { return {

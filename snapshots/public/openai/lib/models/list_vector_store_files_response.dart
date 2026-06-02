@@ -10,14 +10,18 @@ factory ListVectorStoreFilesResponse.fromJson(Map<String, dynamic> json) { retur
   hasMore: json['has_more'] as bool,
 ); }
 
+/// Example: `'list'`
 final String object;
 
 final List<VectorStoreFileObject> data;
 
+/// Example: `'file-abc123'`
 final String firstId;
 
+/// Example: `'file-abc456'`
 final String lastId;
 
+/// Example: `false`
 final bool hasMore;
 
 Map<String, dynamic> toJson() { return {

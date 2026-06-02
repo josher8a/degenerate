@@ -48,9 +48,13 @@ final List<String>? tags;
 final DnsRecordsTtl? ttl;
 
 /// Domain name pointing to the address.
+/// 
+/// Example: `'example.com'`
 final String? content;
 
 /// Record type.
+/// 
+/// Example: `'PTR'`
 final DnsRecordsPtrRecordType? type;
 
 Map<String, dynamic> toJson() { return {

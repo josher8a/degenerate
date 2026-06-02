@@ -18,6 +18,21 @@ final ChatCompletionMessageCustomToolCallType type;
 /// The json schema for the run data source items.
 /// Learn how to build JSON schemas [here](https://json-schema.org/).
 /// 
+/// 
+/// Example: `'{`
+///   "type": "object",
+///   "properties": {
+///     "item": {
+///       "type": "object",
+///       "properties": {
+///         "label": {"type": "string"},
+///       },
+///       "required": `["label"]`
+///     }
+///   },
+///   "required": `["item"]`
+/// }
+/// '``
 final Map<String,dynamic> schema;
 
 Map<String, dynamic> toJson() { return {

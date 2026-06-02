@@ -7,6 +7,8 @@ factory StreamWatermarkAtUpload2.fromJson(Map<String, dynamic> json) { return St
 ); }
 
 /// The unique identifier for the watermark profile.
+/// 
+/// Example: `'ea95132c15732412d22c1476fa83f27a'`
 final String? uid;
 
 Map<String, dynamic> toJson() { return {

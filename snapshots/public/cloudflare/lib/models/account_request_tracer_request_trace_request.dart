@@ -19,21 +19,31 @@ final Body? body;
 final AccountRequestTracerRequestTraceRequestContext? context;
 
 /// Cookies added to tracing request
+/// 
+/// Example: `{cookie_name_1: cookie_value_1, cookie_name_2: cookie_value_2}`
 final Map<String,String>? cookies;
 
 /// Headers added to tracing request
+/// 
+/// Example: `{header_name_1: header_value_1, header_name_2: header_value_2}`
 final Map<String,String>? headers;
 
 /// HTTP Method of tracing request
+/// 
+/// Example: `'PUT'`
 final String method;
 
 /// HTTP Protocol of tracing request
+/// 
+/// Example: `'HTTP/1.1'`
 final String? protocol;
 
 /// Skip sending the request to the Origin server after all rules evaluation
 final bool? skipResponse;
 
 /// URL to which perform tracing request
+/// 
+/// Example: `'https://some.zone/some_path'`
 final String url;
 
 Map<String, dynamic> toJson() { return {

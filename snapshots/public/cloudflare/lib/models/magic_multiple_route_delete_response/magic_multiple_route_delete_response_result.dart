@@ -7,6 +7,7 @@ factory MagicMultipleRouteDeleteResponseResult.fromJson(Map<String, dynamic> jso
   deletedRoutes: (json['deleted_routes'] as List<dynamic>?)?.map((e) => MagicRoute.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Example: `true`
 final bool? deleted;
 
 final List<MagicRoute>? deletedRoutes;

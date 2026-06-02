@@ -41,18 +41,24 @@ factory AccessScimConfigMapping.fromJson(Map<String, dynamic> json) { return Acc
 final bool? enabled;
 
 /// A [SCIM filter expression](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.2) that matches resources that should be provisioned to this application.
+/// 
+/// Example: `'title pr or userType eq "Intern"'`
 final String? filter;
 
 /// Whether or not this mapping applies to creates, updates, or deletes.
 final AccessScimConfigMappingOperations? operations;
 
 /// Which SCIM resource type this mapping applies to.
+/// 
+/// Example: `'urn:ietf:params:scim:schemas:core:2.0:User'`
 final String schema;
 
 /// The level of adherence to outbound resource schemas when provisioning to this mapping. ‘Strict’ removes unknown values, while ‘passthrough’ passes unknown values to the target.
 final Strictness? strictness;
 
 /// A [JSONata](https://jsonata.org/) expression that transforms the resource before provisioning it in the application.
+/// 
+/// Example: `'$merge([$, {'userName': $substringBefore($.userName, '@') & '+test@' & $substringAfter($.userName, '@')}])'`
 final String? transformJsonata;
 
 Map<String, dynamic> toJson() { return {

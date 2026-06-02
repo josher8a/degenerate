@@ -16,6 +16,8 @@ final IamMembershipComponentsSchemasIdentifier? id;
 final List<IamRole>? roles;
 
 /// A member's status in the account.
+/// 
+/// Example: `'accepted'`
 final dynamic status;
 
 /// Details of the user associated to the membership.

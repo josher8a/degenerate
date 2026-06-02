@@ -20,6 +20,8 @@ final SmartshieldSmartShieldSettingsGetResponseSmartRouting smartRouting;
 final SmartshieldSmartShieldSettingsGetResponseSmartTieredCache smartTieredCache;
 
 /// The total number of health checks associated with the zone.
+/// 
+/// Example: `5`
 final int healthchecksCount;
 
 Map<String, dynamic> toJson() { return {

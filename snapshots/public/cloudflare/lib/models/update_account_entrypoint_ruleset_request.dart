@@ -12,15 +12,21 @@ factory UpdateAccountEntrypointRulesetRequest.fromJson(Map<String, dynamic> json
 ); }
 
 /// An informative description of the ruleset.
+/// 
+/// Example: `'A description for my ruleset.'`
 final String description;
 
 /// The unique ID of the ruleset.
 final RulesetsRulesetId id;
 
 /// The timestamp of when the ruleset was last modified.
+/// 
+/// Example: `'2000-01-01T00:00:00.000000Z'`
 final DateTime lastUpdated;
 
 /// The human-readable name of the ruleset.
+/// 
+/// Example: `'My ruleset'`
 final String? name;
 
 /// The version of the ruleset.

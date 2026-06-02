@@ -22,12 +22,16 @@ final LocationDetails? locationDetails;
 
 final OriginDetails? originDetails;
 
+/// Example: `'2023-08-02T23:15:00Z'`
 final String startDate;
 
+/// Example: `'UNVERIFIED'`
 final String status;
 
+/// Example: `'LOCATION'`
 final String type;
 
+/// Example: `'55a57f33-8bc0-4984-b4df-fdaff72df39d'`
 final String uuid;
 
 final List<String>? visibleInDataSources;

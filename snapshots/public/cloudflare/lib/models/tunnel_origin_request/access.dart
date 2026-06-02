@@ -13,8 +13,11 @@ factory Access.fromJson(Map<String, dynamic> json) { return Access(
 final List<String> audTag;
 
 /// Deny traffic that has not fulfilled Access authorization.
+/// 
+/// Example: `false`
 final bool? $required;
 
+/// Example: `'zero-trust-organization-name'`
 final String teamName;
 
 Map<String, dynamic> toJson() { return {

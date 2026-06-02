@@ -37,8 +37,10 @@ final String? attributionConfidence;
 
 final String? attributionOrganization;
 
+/// Example: `'Nation State'`
 final String? categoryName;
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String? categoryUuid;
 
 final List<String>? externalReferenceLinks;
@@ -55,8 +57,10 @@ final double? priority;
 
 final String? sophisticationLevel;
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
+/// Example: `'APT28'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

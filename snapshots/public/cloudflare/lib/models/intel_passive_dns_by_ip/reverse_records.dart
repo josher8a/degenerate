@@ -9,12 +9,16 @@ factory ReverseRecords.fromJson(Map<String, dynamic> json) { return ReverseRecor
 ); }
 
 /// First seen date of the DNS record during the time period.
+/// 
+/// Example: `'2021-04-01'`
 final String? firstSeen;
 
 /// Hostname that the IP was observed resolving to.
 final String? hostname;
 
 /// Last seen date of the DNS record during the time period.
+/// 
+/// Example: `'2021-04-30'`
 final String? lastSeen;
 
 Map<String, dynamic> toJson() { return {

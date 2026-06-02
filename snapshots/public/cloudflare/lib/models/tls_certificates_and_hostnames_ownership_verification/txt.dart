@@ -31,12 +31,18 @@ factory Txt.fromJson(Map<String, dynamic> json) { return Txt(
 ); }
 
 /// DNS Name for record.
+/// 
+/// Example: `'_cf-custom-hostname.app.example.com'`
 final String? name;
 
 /// DNS Record type.
+/// 
+/// Example: `'txt'`
 final TxtType? type;
 
 /// Content for the record.
+/// 
+/// Example: `'5cc07c04-ea62-4a5a-95f0-419334a875a4'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

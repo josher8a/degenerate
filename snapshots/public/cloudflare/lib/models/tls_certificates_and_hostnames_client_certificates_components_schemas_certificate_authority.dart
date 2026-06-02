@@ -8,8 +8,10 @@ factory TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificat
   name: json['name'] as String?,
 ); }
 
+/// Example: `'568b6b74-7b0c-4755-8840-4e3b8c24adeb'`
 final String? id;
 
+/// Example: `'Cloudflare Managed CA for account'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,8 @@ factory WaitingroomRulePositionVariant2.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// Places the rule before rule `<RULE_ID>`. Use this argument with an empty rule ID value ("") to set the rule as the first rule in the ruleset.
+/// 
+/// Example: `'<RULE_ID>'`
 final String? before;
 
 Map<String, dynamic> toJson() { return {

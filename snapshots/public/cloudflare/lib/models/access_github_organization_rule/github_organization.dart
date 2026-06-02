@@ -9,12 +9,18 @@ factory GithubOrganization.fromJson(Map<String, dynamic> json) { return GithubOr
 ); }
 
 /// The ID of your Github identity provider.
+/// 
+/// Example: `'ea85612a-29c8-46c2-bacb-669d65136971'`
 final String identityProviderId;
 
 /// The name of the organization.
+/// 
+/// Example: `'cloudflare'`
 final String name;
 
 /// The name of the team
+/// 
+/// Example: `'api-team'`
 final String? team;
 
 Map<String, dynamic> toJson() { return {

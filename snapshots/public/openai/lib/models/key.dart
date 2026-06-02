@@ -15,21 +15,33 @@ factory Key.fromJson(Map<String, dynamic> json) { return Key(
 ); }
 
 /// The object type, which is always `organization.admin_api_key`
+/// 
+/// Example: `'organization.admin_api_key'`
 final String object;
 
 /// The identifier, which can be referenced in API endpoints
+/// 
+/// Example: `'key_abc'`
 final String id;
 
 /// The name of the API key
+/// 
+/// Example: `'Administration Key'`
 final String name;
 
 /// The redacted value of the API key
+/// 
+/// Example: `'sk-admin...def'`
 final String redactedValue;
 
 /// The value of the API key. Only shown on create.
+/// 
+/// Example: `'sk-admin-1234abcd'`
 final String? value;
 
 /// The Unix timestamp (in seconds) of when the API key was created
+/// 
+/// Example: `1711471533`
 final int createdAt;
 
 /// The Unix timestamp (in seconds) of when the API key was last used

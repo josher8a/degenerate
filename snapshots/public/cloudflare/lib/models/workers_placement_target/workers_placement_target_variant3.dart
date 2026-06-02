@@ -7,6 +7,8 @@ factory WorkersPlacementTargetVariant3.fromJson(Map<String, dynamic> json) { ret
 ); }
 
 /// TCP host:port for targeted placement.
+/// 
+/// Example: `'db.example.com:5432'`
 final String host;
 
 Map<String, dynamic> toJson() { return {

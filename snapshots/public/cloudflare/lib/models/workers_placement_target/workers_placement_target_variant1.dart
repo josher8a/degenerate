@@ -7,6 +7,8 @@ factory WorkersPlacementTargetVariant1.fromJson(Map<String, dynamic> json) { ret
 ); }
 
 /// Cloud region in format 'provider:region'.
+/// 
+/// Example: `'aws:us-east-1'`
 final String region;
 
 Map<String, dynamic> toJson() { return {

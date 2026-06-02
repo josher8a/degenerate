@@ -13,6 +13,11 @@ factory CreateEvalStoredCompletionsDataSourceConfig.fromJson(Map<String, dynamic
 final CreateEvalStoredCompletionsDataSourceConfigType type;
 
 /// Metadata filters for the stored completions data source.
+/// 
+/// Example: `'{`
+///   "use_case": "customer_support_agent"
+/// }
+/// '``
 final Map<String,dynamic>? metadata;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,8 @@ factory Cors.fromJson(Map<String, dynamic> json) { return Cors(
 ); }
 
 /// Specifies allowed origins to allow Cross Origin HTTP Requests.
+/// 
+/// Example: `[*]`
 final List<String>? origins;
 
 Map<String, dynamic> toJson() { return {

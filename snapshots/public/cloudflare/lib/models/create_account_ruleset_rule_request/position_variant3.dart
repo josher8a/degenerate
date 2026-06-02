@@ -7,6 +7,8 @@ factory PositionVariant3.fromJson(Map<String, dynamic> json) { return PositionVa
 ); }
 
 /// An index at which to place the rule, where index 1 is the first rule.
+/// 
+/// Example: `1`
 final int? index;
 
 Map<String, dynamic> toJson() { return {

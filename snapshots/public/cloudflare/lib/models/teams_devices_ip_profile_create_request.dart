@@ -12,9 +12,13 @@ factory TeamsDevicesIpProfileCreateRequest.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// An optional description of the Device IP profile.
+/// 
+/// Example: `'example comment'`
 final String? description;
 
 /// Whether the Device IP profile will be applied to matching devices.
+/// 
+/// Example: `true`
 final bool enabled;
 
 final TeamsDevicesIpProfileMatch match;

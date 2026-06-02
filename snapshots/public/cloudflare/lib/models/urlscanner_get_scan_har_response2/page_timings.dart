@@ -7,8 +7,10 @@ factory PageTimings.fromJson(Map<String, dynamic> json) { return PageTimings(
   onLoad: (json['onLoad'] as num).toDouble(),
 ); }
 
+/// Example: `305.408`
 final double onContentLoad;
 
+/// Example: `305.169`
 final double onLoad;
 
 Map<String, dynamic> toJson() { return {

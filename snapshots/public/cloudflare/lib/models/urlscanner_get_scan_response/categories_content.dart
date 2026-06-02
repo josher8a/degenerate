@@ -10,6 +10,7 @@ factory CategoriesContent.fromJson(Map<String, dynamic> json) { return Categorie
 
 final int id;
 
+/// Example: `'Technology'`
 final String name;
 
 final int? superCategoryId;

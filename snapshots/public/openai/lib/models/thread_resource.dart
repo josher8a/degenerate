@@ -23,6 +23,20 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreadResourceObject($value)'; } 
  }
 /// Represents a ChatKit thread and its current status.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "id": "cthr_def456",
+///   "object": "chatkit.thread",
+///   "created_at": 1712345600,
+///   "title": "Demo feedback",
+///   "status": {
+///     "type": "active"
+///   },
+///   "user": "user_456"
+/// }
+/// ```text
 @immutable final class ThreadResource {const ThreadResource({required this.id, required this.createdAt, required this.title, required this.status, required this.user, this.object = ThreadResourceObject.chatkitThread, });
 
 factory ThreadResource.fromJson(Map<String, dynamic> json) { return ThreadResource(

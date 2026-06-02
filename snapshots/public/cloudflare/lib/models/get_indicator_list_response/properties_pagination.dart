@@ -9,6 +9,7 @@ factory PropertiesPagination.fromJson(Map<String, dynamic> json) { return Proper
 
 final PaginationProperties properties;
 
+/// Example: `'object'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

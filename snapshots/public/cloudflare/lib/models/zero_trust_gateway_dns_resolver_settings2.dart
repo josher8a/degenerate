@@ -10,15 +10,23 @@ factory ZeroTrustGatewayDnsResolverSettings2.fromJson(Map<String, dynamic> json)
 ); }
 
 /// Specify the IPv6 address of the upstream resolver.
+/// 
+/// Example: `'2001:DB8::'`
 final String ip;
 
 /// Specify a port number to use for the upstream resolver. Defaults to 53 if unspecified.
+/// 
+/// Example: `5053`
 final int? port;
 
 /// Indicate whether to connect to this resolver over a private network. Must set when vnet_id set.
+/// 
+/// Example: `true`
 final bool? routeThroughPrivateNetwork;
 
 /// Specify an optional virtual network for this resolver. Uses default virtual network id if omitted.
+/// 
+/// Example: `'f174e90a-fafe-4643-bbbc-4a0ed4fc8415'`
 final String? vnetId;
 
 Map<String, dynamic> toJson() { return {

@@ -9,12 +9,15 @@ factory Pages.fromJson(Map<String, dynamic> json) { return Pages(
   title: json['title'] as String,
 ); }
 
+/// Example: `'page_1'`
 final String id;
 
 final PageTimings pageTimings;
 
+/// Example: `'2023-05-03T17:05:13.195Z'`
 final String startedDateTime;
 
+/// Example: `'http://example.com/'`
 final String title;
 
 Map<String, dynamic> toJson() { return {

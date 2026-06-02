@@ -34,6 +34,7 @@ factory ZonesSecurityLevel.fromJson(Map<String, dynamic> json) { return ZonesSec
 /// 
 final ZonesSecurityLevelId? id;
 
+/// Example: `'under_attack'`
 final ZonesSecurityLevelValue? value;
 
 Map<String, dynamic> toJson() { return {

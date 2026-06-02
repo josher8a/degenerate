@@ -12,12 +12,16 @@ factory Zones0HoldPatchRequest.fromJson(Map<String, dynamic> json) { return Zone
 /// in this RFC3339-formatted timestamp. A past-dated `hold_after` value will have
 /// no effect on an existing, enabled hold. Providing an empty string will set its value
 /// to the current time.
+/// 
+/// Example: `'2023-01-31T15:56:36+00:00'`
 final String holdAfter;
 
 /// If `true`, the zone hold will extend to block any subdomain of the given zone, as well
 /// as SSL4SaaS Custom Hostnames. For example, a zone hold on a zone with the hostname
 /// 'example.com' and include_subdomains=true will block 'example.com',
 /// 'staging.example.com', 'api.staging.example.com', etc.
+/// 
+/// Example: `true`
 final bool includeSubdomains;
 
 Map<String, dynamic> toJson() { return {

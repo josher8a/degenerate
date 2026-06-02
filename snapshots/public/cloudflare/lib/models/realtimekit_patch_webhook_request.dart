@@ -18,6 +18,8 @@ final List<RealtimekitPatchWebhookRequestEvents>? events;
 final String? name;
 
 /// URL the webhook will send events to
+/// 
+/// Example: `'https://webhook.site/b23a5bbd-c7b0-4ced-a9e2-78ae7889897e'`
 final Uri? url;
 
 Map<String, dynamic> toJson() { return {

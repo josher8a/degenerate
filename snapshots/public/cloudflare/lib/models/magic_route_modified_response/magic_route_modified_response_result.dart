@@ -7,6 +7,7 @@ factory MagicRouteModifiedResponseResult.fromJson(Map<String, dynamic> json) { r
   modifiedRoute: json['modified_route'] != null ? MagicRoute.fromJson(json['modified_route'] as Map<String, dynamic>) : null,
 ); }
 
+/// Example: `true`
 final bool? modified;
 
 final MagicRoute? modifiedRoute;

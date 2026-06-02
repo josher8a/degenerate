@@ -10,6 +10,7 @@ factory ExampleComCategoriesRisks.fromJson(Map<String, dynamic> json) { return E
 
 final int id;
 
+/// Example: `'Technology'`
 final String name;
 
 final int? superCategoryId;

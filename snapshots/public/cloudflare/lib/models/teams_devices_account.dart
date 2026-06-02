@@ -13,6 +13,8 @@ final String? accountType;
 final String? id;
 
 /// The name of the enrolled account.
+/// 
+/// Example: `'Company'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

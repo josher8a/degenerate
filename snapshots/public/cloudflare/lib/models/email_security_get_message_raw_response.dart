@@ -9,12 +9,30 @@ factory EmailSecurityGetMessageRawResponse.fromJson(Map<String, dynamic> json) {
   result: EmailSecurityGetMessageRawResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
+/// Example:
+/// ```json`
+/// {
+///   "raw": "MIME-Version: 1.0\nContent-Type: text/plain; charset=\"utf-8\"\n\nFrom: sender@example.com\nTo: recipient@example.com\nSubject: Test Email\n\nThis is a test email."
+/// }
+/// ```text
+/// 
+/// Example: `{raw: MIME-Version: 1.0`
+/// Content-Type: text/plain; charset="utf-8"
+/// 
+/// From: sender@example.com
+/// To: recipient@example.com
+/// Subject: Test Email
+/// 
+/// This is a test email.}``
 final EmailSecurityGetMessageRawResponseResult result;
 
 Map<String, dynamic> toJson() { return {

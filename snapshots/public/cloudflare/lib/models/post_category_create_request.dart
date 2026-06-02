@@ -13,8 +13,10 @@ final double killChain;
 
 final List<String>? mitreAttack;
 
+/// Example: `'name'`
 final String name;
 
+/// Example: `'shortname'`
 final String? shortname;
 
 Map<String, dynamic> toJson() { return {

@@ -8,6 +8,8 @@ factory PagesDeploymentConfigValuesRequestD1DatabasesValue.fromJson(Map<String, 
 ); }
 
 /// UUID of the D1 database.
+/// 
+/// Example: `'445e2955-951a-43f8-a35b-a4d0c8138f63'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

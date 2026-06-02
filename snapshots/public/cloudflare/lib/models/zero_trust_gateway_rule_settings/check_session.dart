@@ -9,9 +9,13 @@ factory CheckSession.fromJson(Map<String, dynamic> json) { return CheckSession(
 ); }
 
 /// Sets the required session freshness threshold. The API returns a normalized version of this value.
+/// 
+/// Example: `'300s'`
 final String? duration;
 
 /// Enable session enforcement.
+/// 
+/// Example: `true`
 final bool? enforce;
 
 Map<String, dynamic> toJson() { return {

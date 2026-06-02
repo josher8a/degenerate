@@ -6,6 +6,7 @@ factory WorkersSchemasSubdomain.fromJson(Map<String, dynamic> json) { return Wor
   subdomain: json['subdomain'] as String,
 ); }
 
+/// Example: `'my-subdomain'`
 final String subdomain;
 
 Map<String, dynamic> toJson() { return {

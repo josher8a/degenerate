@@ -8,6 +8,8 @@ factory IamMemberResourceGroup.fromJson(Map<String, dynamic> json) { return IamM
 ); }
 
 /// Identifier of the group.
+/// 
+/// Example: `'6d7f2f5f5b1d4a0e9081fdc98d432fd1'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

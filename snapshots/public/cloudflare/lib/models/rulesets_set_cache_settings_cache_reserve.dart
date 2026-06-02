@@ -9,9 +9,13 @@ factory RulesetsSetCacheSettingsCacheReserve.fromJson(Map<String, dynamic> json)
 ); }
 
 /// Whether Cache Reserve is enabled. If this is true and a request meets eligibility criteria, Cloudflare will write the resource to Cache Reserve.
+/// 
+/// Example: `true`
 final bool eligible;
 
 /// The minimum file size eligible for storage in Cache Reserve.
+/// 
+/// Example: `1024`
 final int? minimumFileSize;
 
 Map<String, dynamic> toJson() { return {

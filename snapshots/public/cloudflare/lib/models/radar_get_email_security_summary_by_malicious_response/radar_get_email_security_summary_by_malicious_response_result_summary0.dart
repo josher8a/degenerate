@@ -8,9 +8,13 @@ factory RadarGetEmailSecuritySummaryByMaliciousResponseResultSummary0.fromJson(M
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String malicious;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String notMalicious;
 
 Map<String, dynamic> toJson() { return {

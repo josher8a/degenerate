@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
 import 'package:degenerate/src/naming.dart';
@@ -769,6 +771,7 @@ class IrMapper {
       final fieldSchema = entry.value as Map<String, dynamic>;
       final fieldDescription = fieldSchema['description'] as String?;
       final fieldDefault = fieldSchema['default'];
+      final fieldExample = fieldSchema['example'];
       final isRequired = requiredSet.contains(fieldOriginalName);
       final fieldNullable = _isNullable(fieldSchema);
 
@@ -850,6 +853,7 @@ class IrMapper {
           isRequired: isRequired,
           defaultValue: fieldDefault,
           description: effectiveDescription,
+          example: fieldExample,
         ),
       );
     }
@@ -879,7 +883,7 @@ class IrMapper {
       fields,
       requiredFields: requiredList,
       additionalProperties: additionalPropsType,
-      description: description,
+      description: _withExample(description, schema['example']),
       isNullable: nullable,
     );
   }
@@ -1315,5 +1319,26 @@ class IrMapper {
       if (a[i] != b[i]) return false;
     }
     return true;
+  }
+
+  static String? _withExample(String? description, Object? example) {
+    if (example == null) return description;
+    final json = _formatExample(example);
+    if (json == null) return description;
+    final block = 'Example:\n```json\n$json\n```';
+    return description != null ? '$description\n\n$block' : block;
+  }
+
+  static String? _formatExample(Object? example) {
+    if (example == null) return null;
+    if (example is Map || example is List) {
+      try {
+        const encoder = JsonEncoder.withIndent('  ');
+        return encoder.convert(example);
+      } on Object {
+        return example.toString();
+      }
+    }
+    return example.toString();
   }
 }

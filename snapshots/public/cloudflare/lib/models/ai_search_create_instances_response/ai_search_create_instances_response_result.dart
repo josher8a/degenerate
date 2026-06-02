@@ -66,6 +66,8 @@ final FusionMethod fusionMethod;
 final bool hybridSearchEnabled;
 
 /// Use your AI Search ID.
+/// 
+/// Example: `'my-ai-search'`
 final String id;
 
 final DateTime? lastActivity;

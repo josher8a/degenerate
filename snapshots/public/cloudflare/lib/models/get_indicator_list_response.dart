@@ -9,6 +9,7 @@ factory GetIndicatorListResponse.fromJson(Map<String, dynamic> json) { return Ge
 
 final GetIndicatorListResponseProperties properties;
 
+/// Example: `'object'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

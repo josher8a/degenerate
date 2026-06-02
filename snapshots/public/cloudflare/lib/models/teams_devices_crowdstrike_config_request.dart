@@ -10,15 +10,23 @@ factory TeamsDevicesCrowdstrikeConfigRequest.fromJson(Map<String, dynamic> json)
 ); }
 
 /// The Crowdstrike API URL.
+/// 
+/// Example: `'https://api.us-2.crowdstrike.com'`
 final String apiUrl;
 
 /// The Crowdstrike client ID.
+/// 
+/// Example: `'example client id'`
 final String clientId;
 
 /// The Crowdstrike client secret.
+/// 
+/// Example: `'example client secret'`
 final String clientSecret;
 
 /// The Crowdstrike customer ID.
+/// 
+/// Example: `'example customer id'`
 final String customerId;
 
 Map<String, dynamic> toJson() { return {

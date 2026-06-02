@@ -1,6 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityTrustedDomain {const EmailSecurityTrustedDomain({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, required this.createdAt, required this.id, required this.lastModified, this.comments, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
+/// ```json`
+/// {
+///   "comments": null,
+///   "created_at": "2023-11-14T22:13:20Z",
+///   "id": 2401,
+///   "is_recent": true,
+///   "is_regex": false,
+///   "is_similarity": false,
+///   "last_modified": "2023-11-14T22:13:20Z",
+///   "pattern": "example.com"
+/// }
+/// ```text
+@immutable final class EmailSecurityTrustedDomain {const EmailSecurityTrustedDomain({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, required this.createdAt, required this.id, required this.lastModified, this.comments, });
 
 factory EmailSecurityTrustedDomain.fromJson(Map<String, dynamic> json) { return EmailSecurityTrustedDomain(
   comments: json['comments'] as String?,
@@ -31,6 +44,8 @@ final String pattern;
 final DateTime createdAt;
 
 /// The unique identifier for the trusted domain.
+/// 
+/// Example: `2401`
 final int id;
 
 final DateTime lastModified;

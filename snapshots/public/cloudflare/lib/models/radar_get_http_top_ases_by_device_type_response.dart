@@ -9,6 +9,7 @@ factory RadarGetHttpTopAsesByDeviceTypeResponse.fromJson(Map<String, dynamic> js
 
 final RadarGetDnsTopAsesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

@@ -24,6 +24,7 @@ final IntelPage? page;
 /// Number of results per page of results.
 final IntelPerPage? perPage;
 
+/// Example: `[192.0.2.0/24, 2001:DB8::/32]`
 final List<String>? subnets;
 
 Map<String, dynamic> toJson() { return {

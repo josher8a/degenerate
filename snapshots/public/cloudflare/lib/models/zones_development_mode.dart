@@ -15,15 +15,21 @@ factory ZonesDevelopmentMode.fromJson(Map<String, dynamic> json) { return ZonesD
 final bool editable;
 
 /// ID of the zone setting.
+/// 
+/// Example: `'development_mode'`
 final dynamic id;
 
 /// last time this setting was modified.
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? modifiedOn;
 
 final ZonesDevelopmentModeValue value;
 
 /// Value of the zone setting.
 /// Notes: The interval (in seconds) from when development mode expires (positive integer) or last expired (negative integer) for the domain. If development mode has never been enabled, this value is false.
+/// 
+/// Example: `3600`
 final double? timeRemaining;
 
 Map<String, dynamic> toJson() { return {

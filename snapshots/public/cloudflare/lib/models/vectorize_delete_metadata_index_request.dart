@@ -7,6 +7,8 @@ factory VectorizeDeleteMetadataIndexRequest.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// Specifies the metadata property for which the index must be deleted.
+/// 
+/// Example: `'random_metadata_property'`
 final String propertyName;
 
 Map<String, dynamic> toJson() { return {

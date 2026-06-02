@@ -11,9 +11,13 @@ factory SourceParams.fromJson(Map<String, dynamic> json) { return SourceParams(
 ); }
 
 /// List of path patterns to exclude. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /admin/** matches /admin/users and /admin/settings/advanced)
+/// 
+/// Example: `[/admin/**, /private/**, **\temp\**]`
 final List<String>? excludeItems;
 
 /// List of path patterns to include. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /blog/** matches /blog/post and /blog/2024/post)
+/// 
+/// Example: `[/blog/**, /docs/**/*.html, **\blog\**.html]`
 final List<String>? includeItems;
 
 final String? prefix;

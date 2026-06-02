@@ -6,6 +6,7 @@ factory RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponse404.fromJson(Map<
   error: json['error'] as String,
 ); }
 
+/// Example: `'Not Found.'`
 final String error;
 
 Map<String, dynamic> toJson() { return {

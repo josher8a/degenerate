@@ -9,6 +9,7 @@ factory RadarGetHttpSummaryByOperatingSystemResponse.fromJson(Map<String, dynami
 
 final RadarGetHttpSummaryByOperatingSystemResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

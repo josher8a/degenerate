@@ -9,6 +9,7 @@ factory RadarGetEmailSecuritySummaryByMaliciousResponse.fromJson(Map<String, dyn
 
 final RadarGetEmailSecuritySummaryByMaliciousResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

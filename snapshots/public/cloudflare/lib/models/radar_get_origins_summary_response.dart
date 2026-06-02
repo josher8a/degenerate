@@ -9,6 +9,7 @@ factory RadarGetOriginsSummaryResponse.fromJson(Map<String, dynamic> json) { ret
 
 final RadarGetAiBotsSummaryByUserAgentResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

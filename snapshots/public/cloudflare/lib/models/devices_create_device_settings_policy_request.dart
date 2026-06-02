@@ -49,6 +49,8 @@ final TeamsDevicesSchemasDescription? description;
 final TeamsDevicesDisableAutoFallback? disableAutoFallback;
 
 /// Whether the policy will be applied to matching devices.
+/// 
+/// Example: `true`
 final bool enabled;
 
 /// List of routes excluded in the WARP client's tunnel. Both 'exclude' and 'include' cannot be set in the same request.
@@ -70,6 +72,8 @@ final TeamsDevicesLanAllowSubnetSize? lanAllowSubnetSize;
 final TeamsDevicesSchemasMatch match;
 
 /// The name of the device settings profile.
+/// 
+/// Example: `'Allow Developers'`
 final String name;
 
 /// The precedence of the policy. Lower values indicate higher precedence. Policies will be evaluated in ascending order of this field.

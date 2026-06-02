@@ -62,8 +62,10 @@ factory GetEventListGetSearch.fromJson(Map<String, dynamic> json) { return GetEv
   value: json['value'] != null ? OneOf3.parse(json['value'], fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => (v as List<dynamic>).map((e) => e).toList(),) : null,
 ); }
 
+/// Example: `'attackerCountry'`
 final String? field;
 
+/// Example: `'equals'`
 final GetEventListGetSearchOp? op;
 
 final GetEventListGetSearchValue? value;

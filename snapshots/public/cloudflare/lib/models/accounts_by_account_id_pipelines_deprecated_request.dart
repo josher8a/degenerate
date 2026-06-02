@@ -11,6 +11,8 @@ factory AccountsByAccountIdPipelinesDeprecatedRequest.fromJson(Map<String, dynam
 final AccountsByAccountIdPipelinesDeprecatedRequestDestination destination;
 
 /// Defines the name of the pipeline.
+/// 
+/// Example: `'sample_pipeline'`
 final String name;
 
 final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource> source;

@@ -10,13 +10,17 @@ factory CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResp
   id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,
 ); }
 
+/// Example: `[{code: 7003, message: No route for the URI}]`
 final List<TlsCertificatesAndHostnamesMessages2> errors;
 
+/// Example: `[]`
 final List<TlsCertificatesAndHostnamesMessages2> messages;
 
 final Map<String,dynamic>? result;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `false`
 final bool success;
 
 /// Identifier.

@@ -12,18 +12,28 @@ factory MagicVisibilityPcapsPcapsFilter.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// The destination IP address of the packet.
+/// 
+/// Example: `'1.2.3.4'`
 final String? destinationAddress;
 
 /// The destination port of the packet.
+/// 
+/// Example: `80`
 final double? destinationPort;
 
 /// The protocol number of the packet.
+/// 
+/// Example: `6`
 final double? protocol;
 
 /// The source IP address of the packet.
+/// 
+/// Example: `'1.2.3.4'`
 final String? sourceAddress;
 
 /// The source port of the packet.
+/// 
+/// Example: `123`
 final double? sourcePort;
 
 Map<String, dynamic> toJson() { return {

@@ -8,9 +8,13 @@ factory RadarGetHttpSummaryByOperatingSystemResponseResultSummary0.fromJson(Map<
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String android;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String ios;
 
 Map<String, dynamic> toJson() { return {

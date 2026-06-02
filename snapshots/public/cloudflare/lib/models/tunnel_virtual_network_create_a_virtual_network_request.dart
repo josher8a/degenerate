@@ -13,6 +13,8 @@ factory TunnelVirtualNetworkCreateAVirtualNetworkRequest.fromJson(Map<String, dy
 final TunnelVirtualNetworkComment? comment;
 
 /// If `true`, this virtual network is the default for the account.
+/// 
+/// Example: `true`
 final bool? isDefault;
 
 /// If `true`, this virtual network is the default for the account.

@@ -9,12 +9,15 @@ factory UrlscannerCreateScanResponse4092.fromJson(Map<String, dynamic> json) { r
   status: (json['status'] as num).toDouble(),
 ); }
 
+/// Example: `'Scan request denied: hostname was recently scanned'`
 final String? description;
 
 final List<UrlscannerCreateScanBulkResponse429Errors> errors;
 
+/// Example: `'Scan prevented ...'`
 final String message;
 
+/// Example: `409`
 final double status;
 
 Map<String, dynamic> toJson() { return {

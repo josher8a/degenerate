@@ -14,6 +14,8 @@ final List<LoadBalancingMessages2> errors;
 final List<LoadBalancingMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final ResponseSingle30Result result;

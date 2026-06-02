@@ -9,9 +9,13 @@ factory MagicSiteLocation.fromJson(Map<String, dynamic> json) { return MagicSite
 ); }
 
 /// Latitude
+/// 
+/// Example: `37.6192`
 final String? lat;
 
 /// Longitude
+/// 
+/// Example: `122.3816`
 final String? lon;
 
 Map<String, dynamic> toJson() { return {

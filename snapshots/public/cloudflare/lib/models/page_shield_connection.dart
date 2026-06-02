@@ -18,30 +18,42 @@ factory PageShieldConnection.fromJson(Map<String, dynamic> json) { return PageSh
   urlReportedMalicious: json['url_reported_malicious'] as bool?,
 ); }
 
+/// Example: `'2021-08-18T10:51:10.09615Z'`
 final DateTime addedAt;
 
+/// Example: `false`
 final bool? domainReportedMalicious;
 
+/// Example: `'blog.cloudflare.com/page'`
 final String? firstPageUrl;
 
+/// Example: `'2021-08-18T10:51:08Z'`
 final DateTime firstSeenAt;
 
+/// Example: `'blog.cloudflare.com'`
 final String host;
 
 final PageShieldId id;
 
+/// Example: `'2021-09-02T09:57:54Z'`
 final DateTime lastSeenAt;
 
+/// Example: `[Malware]`
 final List<String>? maliciousDomainCategories;
 
+/// Example: `[Malware]`
 final List<String>? maliciousUrlCategories;
 
+/// Example: `[blog.cloudflare.com/page1, blog.cloudflare.com/page2]`
 final List<String>? pageUrls;
 
+/// Example: `'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js'`
 final String url;
 
+/// Example: `false`
 final bool urlContainsCdnCgiPath;
 
+/// Example: `false`
 final bool? urlReportedMalicious;
 
 Map<String, dynamic> toJson() { return {

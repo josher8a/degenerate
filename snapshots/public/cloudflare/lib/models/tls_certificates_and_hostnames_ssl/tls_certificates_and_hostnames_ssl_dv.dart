@@ -108,53 +108,113 @@ factory TlsCertificatesAndHostnamesSslDv.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
+/// 
+/// Example: `'ubiquitous'`
 final BundleMethod bundleMethod;
 
 /// The Certificate Authority that will issue the certificate
 final TlsCertificatesAndHostnamesCertificateAuthority? certificateAuthority;
 
 /// If a custom uploaded certificate is used.
+/// 
+/// Example: `'-----BEGIN CERTIFICATE-----`
+/// MIIFJDCCBAygAwIBAgIQD0ifmj/Yi5NP/2gdUySbfzANBgkqhkiG9w0BAQsFADBN
+/// MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMScwJQYDVQQDEx5E...SzSHfXp5lnu/3V08I72q1QNzOCgY1XeL4GKVcj4or6cT6tX6oJH7ePPmfrBfqI/O
+/// OeH8gMJ+FuwtXYEPa4hBf38M5eU5xWG7
+/// -----END CERTIFICATE-----
+/// '``
 final String? customCertificate;
 
 /// The identifier for the Custom CSR that was used.
+/// 
+/// Example: `'7b163417-1d2b-4c84-a38a-2fb7a0cd7752'`
 final String? customCsrId;
 
 /// The key for a custom uploaded certificate.
+/// 
+/// Example: `'-----BEGIN RSA PRIVATE KEY-----`
+/// MIIEowIBAAKCAQEAwQHoetcl9+5ikGzV6cMzWtWPJHqXT3wpbEkRU9Yz7lgvddmG
+/// dtcGbg/1CGZu0jJGkMoppoUo4c3dts3iwqRYmBikUP77wwY2QGmDZw2FvkJCJlKn
+/// abIRuGvBKwzESIXgKk2016aTP6/dAjEHyo6SeoK8lkIySUvK0fyOVlsiEsCmOpid
+/// tnKX/a+50GjB79CJH4ER2lLVZnhePFR/zUOyPxZQQ4naHf7yu/b5jhO0f8fwt+py
+/// FxIXjbEIdZliWRkRMtzrHOJIhrmJ2A1J7iOrirbbwillwjjNVUWPf3IJ3M12S9pE
+/// ewooaeO2izNTERcG9HzAacbVRn2Y2SWIyT/18QIDAQABAoIBACbhTYXBZYKmYPCb
+/// HBR1IBlCQA2nLGf0qRuJNJZg5iEzXows/6tc8YymZkQE7nolapWsQ+upk2y5Xdp/
+/// axiuprIs9JzkYK8Ox0r+dlwCG1kSW+UAbX0bQ/qUqlsTvU6muVuMP8vZYHxJ3wmb
+/// +ufRBKztPTQ/rYWaYQcgC0RWI20HTFBMxlTAyNxYNWzX7RKFkGVVyB9RsAtmcc8g
+/// +j4OdosbfNoJPS0HeIfNpAznDfHKdxDk2Yc1tV6RHBrC1ynyLE9+TaflIAdo2MVv
+/// KLMLq51GqYKtgJFIlBRPQqKoyXdz3fGvXrTkf/WY9QNq0J1Vk5ERePZ54mN8iZB7
+/// 9lwy/AkCgYEA6FXzosxswaJ2wQLeoYc7ceaweX/SwTvxHgXzRyJIIT0eJWgx13Wo
+/// /WA3Iziimsjf6qE+SI/8laxPp2A86VMaIt3Z3mJN/CqSVGw8LK2AQst+OwdPyDMu
+/// iacE8lj/IFGC8mwNUAb9CzGU3JpU4PxxGFjS/eMtGeRXCWkK4NE+G08CgYEA1Kp9
+/// N2JrVlqUz+gAX+LPmE9OEMAS9WQSQsfCHGogIFDGGcNf7+uwBM7GAaSJIP01zcoe
+/// VAgWdzXCv3FLhsaZoJ6RyLOLay5phbu1iaTr4UNYm5WtYTzMzqh8l1+MFFDl9xDB
+/// vULuCIIrglM5MeS/qnSg1uMoH2oVPj9TVst/ir8CgYEAxrI7Ws9Zc4Bt70N1As+U
+/// lySjaEVZCMkqvHJ6TCuVZFfQoE0r0whdLdRLU2PsLFP+q7qaeZQqgBaNSKeVcDYR
+/// 9B+nY/jOmQoPewPVsp/vQTCnE/R81spu0mp0YI6cIheT1Z9zAy322svcc43JaWB7
+/// mEbeqyLOP4Z4qSOcmghZBSECgYACvR9Xs0DGn+wCsW4vze/2ei77MD4OQvepPIFX
+/// dFZtlBy5ADcgE9z0cuVB6CiL8DbdK5kwY9pGNr8HUCI03iHkW6Zs+0L0YmihfEVe
+/// PG19PSzK9CaDdhD9KFZSbLyVFmWfxOt50H7YRTTiPMgjyFpfi5j2q348yVT0tEQS
+/// fhRqaQKBgAcWPokmJ7EbYQGeMbS7HC8eWO/RyamlnSffdCdSc7ue3zdVJxpAkQ8W
+/// qu80pEIF6raIQfAf8MXiiZ7auFOSnHQTXUbhCpvDLKi0Mwq3G8Pl07l+2s6dQG6T
+/// lv6XTQaMyf6n1yjzL+fzDrH3qXMxHMO/b13EePXpDMpY7HQpoLDi
+/// -----END RSA PRIVATE KEY-----
+/// '``
 final String? customKey;
 
 /// DCV Delegation records for domain validation.
 final List<TlsCertificatesAndHostnamesValidationRecord>? dcvDelegationRecords;
 
 /// The time the custom certificate expires on.
+/// 
+/// Example: `'2021-02-06T18:11:23.531995Z'`
 final DateTime? expiresOn;
 
 /// A list of Hostnames on a custom uploaded certificate.
+/// 
+/// Example: `[app.example.com, *.app.example.com]`
 final List<String>? hosts;
 
 /// Custom hostname SSL identifier tag.
+/// 
+/// Example: `'0d89c70d-ad9f-4843-b99f-6cc0252067e9'`
 final String? id;
 
 /// The issuer on a custom uploaded certificate.
+/// 
+/// Example: `'DigiCertInc'`
 final String? issuer;
 
 /// Domain control validation (DCV) method used for this hostname.
+/// 
+/// Example: `'txt'`
 final DvMethod? method;
 
 /// The serial number on a custom uploaded certificate.
+/// 
+/// Example: `'6743787633689793699141714808227354901'`
 final String? serialNumber;
 
 final TlsCertificatesAndHostnamesSslsettings? settings;
 
 /// The signature on a custom uploaded certificate.
+/// 
+/// Example: `'SHA256WithRSA'`
 final String? signature;
 
 /// Status of the hostname's SSL certificates.
+/// 
+/// Example: `'pending_validation'`
 final DvStatus? status;
 
 /// Level of validation to be used for this hostname. Domain validation (dv) must be used.
+/// 
+/// Example: `'dv'`
 final DvType? type;
 
 /// The time the custom certificate was uploaded.
+/// 
+/// Example: `'2020-02-06T18:11:23.531995Z'`
 final DateTime? uploadedOn;
 
 /// Domain validation errors that have been received by the certificate authority (CA).
@@ -163,6 +223,8 @@ final List<ValidationErrors>? validationErrors;
 final List<TlsCertificatesAndHostnamesValidationRecord>? validationRecords;
 
 /// Indicates whether the certificate covers a wildcard.
+/// 
+/// Example: `false`
 final bool? wildcard;
 
 Map<String, dynamic> toJson() { return {

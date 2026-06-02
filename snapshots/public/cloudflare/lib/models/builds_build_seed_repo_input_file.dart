@@ -9,8 +9,12 @@ factory BuildsBuildSeedRepoInputFile.fromJson(Map<String, dynamic> json) { retur
   replace: json['replace'] as String?,
 ); }
 
+/// Example: `'name = "my-worker"`
+/// main = "src/index.js"
+/// '``
 final String content;
 
+/// Example: `'wrangler.toml'`
 final String filename;
 
 final bool isBase64;

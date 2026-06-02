@@ -12,6 +12,8 @@ factory WorkersBindingKindDispatchNamespace.fromJson(Map<String, dynamic> json) 
 final WorkersBindingName name;
 
 /// The name of the dispatch namespace.
+/// 
+/// Example: `'my-namespace'`
 final String namespace;
 
 /// Outbound worker.

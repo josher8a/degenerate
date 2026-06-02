@@ -43,6 +43,8 @@ factory ShieldGlobalSettingChangeBase.fromJson(Map<String, dynamic> json) { retu
 ///   - `"block"` - deny access to the site when request does not conform to schema
 ///   - `"none"` - skip running schema validation
 /// 
+/// 
+/// Example: `'block'`
 final ValidationDefaultMitigationAction? validationDefaultMitigationAction;
 
 /// When set, this overrides both zone level and operation level mitigation actions.

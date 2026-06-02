@@ -55,6 +55,8 @@ final String? content;
 final DnsRecordsDsRecordData? data;
 
 /// Record type.
+/// 
+/// Example: `'DS'`
 final DnsRecordsDsRecordType? type;
 
 Map<String, dynamic> toJson() { return {

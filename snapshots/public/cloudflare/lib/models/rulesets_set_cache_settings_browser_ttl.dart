@@ -40,9 +40,13 @@ factory RulesetsSetCacheSettingsBrowserTtl.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// The browser TTL (in seconds) if you choose the "override_origin" mode.
+/// 
+/// Example: `60`
 final int? $default;
 
 /// The browser TTL mode.
+/// 
+/// Example: `'override_origin'`
 final RulesetsSetCacheSettingsBrowserTtlMode mode;
 
 Map<String, dynamic> toJson() { return {

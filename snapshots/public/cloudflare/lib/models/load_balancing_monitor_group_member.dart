@@ -12,20 +12,30 @@ factory LoadBalancingMonitorGroupMember.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// The timestamp of when the monitor was added to the group
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? createdAt;
 
 /// Whether this monitor is enabled in the group
+/// 
+/// Example: `true`
 final bool enabled;
 
 final LoadBalancingMonitorId monitorId;
 
 /// Whether this monitor is used for monitoring only (does not affect pool health)
+/// 
+/// Example: `false`
 final bool monitoringOnly;
 
 /// Whether this monitor must be healthy for the pool to be considered healthy
+/// 
+/// Example: `true`
 final bool mustBeHealthy;
 
 /// The timestamp of when the monitor group member was last updated
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? updatedAt;
 
 Map<String, dynamic> toJson() { return {

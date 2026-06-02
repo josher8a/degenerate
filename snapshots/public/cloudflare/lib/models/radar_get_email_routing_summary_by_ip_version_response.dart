@@ -9,6 +9,7 @@ factory RadarGetEmailRoutingSummaryByIpVersionResponse.fromJson(Map<String, dyna
 
 final RadarGetAttacksLayer3SummaryByIpVersionResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,7 @@ factory MagicSchemasTunnelModifiedResponseResult.fromJson(Map<String, dynamic> j
   modifiedIpsecTunnel: json['modified_ipsec_tunnel'] != null ? MagicIpsecTunnel.fromJson(json['modified_ipsec_tunnel'] as Map<String, dynamic>) : null,
 ); }
 
+/// Example: `true`
 final bool? modified;
 
 final MagicIpsecTunnel? modifiedIpsecTunnel;

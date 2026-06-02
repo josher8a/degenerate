@@ -9,6 +9,7 @@ factory RadarGetEmailRoutingSummaryByDmarcResponse.fromJson(Map<String, dynamic>
 
 final RadarGetEmailRoutingSummaryByArcResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

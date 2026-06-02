@@ -15,6 +15,8 @@ final String comment;
 final bool excluded;
 
 /// The prefix to add in CIDR format.
+/// 
+/// Example: `'192.0.2.0/24'`
 final String prefix;
 
 Map<String, dynamic> toJson() { return {

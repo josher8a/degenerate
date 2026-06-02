@@ -13,6 +13,8 @@ final List<DnsCustomNameserversMessages2> errors;
 final List<DnsCustomNameserversMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

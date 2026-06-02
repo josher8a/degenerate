@@ -30,6 +30,8 @@ factory EmailRuleCatchallMatcher.fromJson(Map<String, dynamic> json) { return Em
 ); }
 
 /// Type of matcher. Default is 'all'.
+/// 
+/// Example: `'all'`
 final EmailRuleCatchallMatcherType type;
 
 Map<String, dynamic> toJson() { return {

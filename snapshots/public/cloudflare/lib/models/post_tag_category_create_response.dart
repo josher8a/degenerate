@@ -14,10 +14,12 @@ final String? createdAt;
 
 final String? description;
 
+/// Example: `'Actor'`
 final String name;
 
 final String? updatedAt;
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
 Map<String, dynamic> toJson() { return {

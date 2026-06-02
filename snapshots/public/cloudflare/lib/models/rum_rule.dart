@@ -15,19 +15,28 @@ factory RumRule.fromJson(Map<String, dynamic> json) { return RumRule(
 final RumTimestamp? created;
 
 /// The hostname the rule will be applied to.
+/// 
+/// Example: `'example.com'`
 final String? host;
 
 final RumRuleIdentifier? id;
 
 /// Whether the rule includes or excludes traffic from being measured.
+/// 
+/// Example: `true`
 final bool? inclusive;
 
 /// Whether the rule is paused or not.
+/// 
+/// Example: `false`
 final bool? isPaused;
 
 /// The paths the rule will be applied to.
+/// 
+/// Example: `[*]`
 final List<String>? paths;
 
+/// Example: `1000`
 final double? priority;
 
 Map<String, dynamic> toJson() { return {

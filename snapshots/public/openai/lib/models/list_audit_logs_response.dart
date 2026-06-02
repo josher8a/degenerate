@@ -14,8 +14,10 @@ final ChatCompletionListObject object;
 
 final List<AuditLog> data;
 
+/// Example: `'audit_log-defb456h8dks'`
 final String firstId;
 
+/// Example: `'audit_log-hnbkd8s93s'`
 final String lastId;
 
 final bool hasMore;

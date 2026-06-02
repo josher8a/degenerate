@@ -40,6 +40,8 @@ factory DeploymentTrigger.fromJson(Map<String, dynamic> json) { return Deploymen
 final DeploymentTriggerMetadata metadata;
 
 /// What caused the deployment.
+/// 
+/// Example: `'ad_hoc'`
 final DeploymentTriggerType type;
 
 Map<String, dynamic> toJson() { return {

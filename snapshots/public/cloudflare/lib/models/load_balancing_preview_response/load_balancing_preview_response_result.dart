@@ -8,6 +8,8 @@ factory LoadBalancingPreviewResponseResult.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// Monitored pool IDs mapped to their respective names.
+/// 
+/// Example: `{abwlnp5jbqn45ecgxd03erbgtxtqai0d: WNAM Datacenter, ve8h9lrcip5n5bbga9yqmdws28ay5d0l: EEU Datacenter}`
 final Map<String,String>? pools;
 
 final LoadBalancingIdentifier? previewId;

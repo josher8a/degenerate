@@ -17,9 +17,13 @@ final BuildConfig? buildConfig;
 final PagesProjectCreateProjectRequestDeploymentConfigs? deploymentConfigs;
 
 /// Name of the project.
+/// 
+/// Example: `'my-pages-app'`
 final String name;
 
 /// Production branch of the project. Used to identify production deployments.
+/// 
+/// Example: `'main'`
 final String productionBranch;
 
 /// Configs for the project source control.

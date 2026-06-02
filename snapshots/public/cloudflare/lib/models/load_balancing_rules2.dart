@@ -14,6 +14,8 @@ factory LoadBalancingRules2.fromJson(Map<String, dynamic> json) { return LoadBal
 ); }
 
 /// The condition expressions to evaluate. If the condition evaluates to true, the overrides or fixed_response in this rule will be applied. An empty condition is always true. For more details on condition expressions, please see https://developers.cloudflare.com/load-balancing/understand-basics/load-balancing-rules/expressions.
+/// 
+/// Example: `'http.request.uri.path contains "/testing"'`
 final String? condition;
 
 /// Disable this specific rule. It will no longer be evaluated by this load balancer.
@@ -23,6 +25,8 @@ final bool disabled;
 final FixedResponse? fixedResponse;
 
 /// Name of this rule. Only used for human readability.
+/// 
+/// Example: `'route the path /testing to testing datacenter.'`
 final String? name;
 
 /// A collection of overrides to apply to the load balancer when this rule's condition is true. All fields are optional.

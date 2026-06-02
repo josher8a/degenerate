@@ -9,9 +9,13 @@ factory ManagedBy.fromJson(Map<String, dynamic> json) { return ManagedBy(
 ); }
 
 /// ID of the parent Organization, if one exists
+/// 
+/// Example: `'4536bcfad5faccb111b47003c79917fa'`
 final String? parentOrgId;
 
 /// Name of the parent Organization, if one exists
+/// 
+/// Example: `'Demo Parent Organization'`
 final String? parentOrgName;
 
 Map<String, dynamic> toJson() { return {

@@ -13,6 +13,8 @@ factory AccessSchemasBookmarkProps.fromJson(Map<String, dynamic> json) { return 
 final dynamic appLauncherVisible;
 
 /// The URL or domain of the bookmark.
+/// 
+/// Example: `'https://mybookmark.com'`
 final dynamic domain;
 
 /// The image URL for the logo shown in the App Launcher dashboard.
@@ -22,6 +24,8 @@ final AccessLogoUrl? logoUrl;
 final AccessAppsComponentsSchemasName? name;
 
 /// The application type.
+/// 
+/// Example: `'bookmark'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

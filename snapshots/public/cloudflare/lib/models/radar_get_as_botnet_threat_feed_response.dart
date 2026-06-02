@@ -9,6 +9,7 @@ factory RadarGetAsBotnetThreatFeedResponse.fromJson(Map<String, dynamic> json) {
 
 final RadarGetAsBotnetThreatFeedResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

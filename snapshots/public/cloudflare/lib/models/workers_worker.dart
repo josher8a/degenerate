@@ -23,12 +23,16 @@ final DateTime createdOn;
 final DateTime? deployedOn;
 
 /// Immutable ID of the Worker.
+/// 
+/// Example: `'e8f70fdbc8b1fb0b8ddb1af166186758'`
 final String id;
 
 /// Whether logpush is enabled for the Worker.
 final bool logpush;
 
 /// Name of the Worker.
+/// 
+/// Example: `'my-worker'`
 final String name;
 
 /// Observability settings for the Worker.
@@ -41,6 +45,8 @@ final References references;
 final Subdomain subdomain;
 
 /// Tags associated with the Worker.
+/// 
+/// Example: `[my-team, my-public-api]`
 final List<String> tags;
 
 /// Other Workers that should consume logs from the Worker.

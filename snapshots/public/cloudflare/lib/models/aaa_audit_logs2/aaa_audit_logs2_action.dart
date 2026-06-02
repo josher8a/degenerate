@@ -11,15 +11,23 @@ factory AaaAuditLogs2Action.fromJson(Map<String, dynamic> json) { return AaaAudi
 ); }
 
 /// A short description of the action performed.
+/// 
+/// Example: `'Add Member'`
 final String? description;
 
 /// The result of the action, indicating success or failure.
+/// 
+/// Example: `'success'`
 final String? result;
 
 /// A timestamp indicating when the action was logged.
+/// 
+/// Example: `'2024-04-26T17:31:07Z'`
 final DateTime? time;
 
 /// A short string that describes the action that was performed.
+/// 
+/// Example: `'create'`
 final String? type;
 
 Map<String, dynamic> toJson() { return {

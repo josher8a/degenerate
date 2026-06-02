@@ -8,9 +8,13 @@ factory StreamPlayback.fromJson(Map<String, dynamic> json) { return StreamPlayba
 ); }
 
 /// DASH Media Presentation Description for the video.
+/// 
+/// Example: `'https://customer-m033z5x00ks6nunl.cloudflarestream.com/ea95132c15732412d22c1476fa83f27a/manifest/video.mpd'`
 final String? dash;
 
 /// The HLS manifest for the video.
+/// 
+/// Example: `'https://customer-m033z5x00ks6nunl.cloudflarestream.com/ea95132c15732412d22c1476fa83f27a/manifest/video.m3u8'`
 final String? hls;
 
 Map<String, dynamic> toJson() { return {

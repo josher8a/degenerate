@@ -8,10 +8,13 @@ factory PostPermissionCreateRequest.fromJson(Map<String, dynamic> json) { return
   subjectType: SubjectType.fromJson(json['subjectType'] as String),
 ); }
 
+/// Example: `'read'`
 final GetPermissionListResponseRole role;
 
+/// Example: `'123'`
 final String subjectId;
 
+/// Example: `'account'`
 final SubjectType subjectType;
 
 Map<String, dynamic> toJson() { return {

@@ -8,6 +8,8 @@ factory R2DataCatalogCatalogCredentialRequest.fromJson(Map<String, dynamic> json
 ); }
 
 /// Provides the Cloudflare API token for accessing R2.
+/// 
+/// Example: `'your-cloudflare-api-token-here'`
 final String token;
 
 Map<String, dynamic> toJson() { return {

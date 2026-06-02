@@ -12,21 +12,33 @@ factory KeyOwner.fromJson(Map<String, dynamic> json) { return KeyOwner(
 ); }
 
 /// Always `user`
+/// 
+/// Example: `'user'`
 final String? type;
 
 /// The object type, which is always organization.user
+/// 
+/// Example: `'organization.user'`
 final String? object;
 
 /// The identifier, which can be referenced in API endpoints
+/// 
+/// Example: `'sa_456'`
 final String? id;
 
 /// The name of the user
+/// 
+/// Example: `'My Service Account'`
 final String? name;
 
 /// The Unix timestamp (in seconds) of when the user was created
+/// 
+/// Example: `1711471533`
 final int? createdAt;
 
 /// Always `owner`
+/// 
+/// Example: `'owner'`
 final String? role;
 
 Map<String, dynamic> toJson() { return {

@@ -16,6 +16,8 @@ final List<ListsMessages2> messages;
 final ResponseCommon41Result result;
 
 /// Defines whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

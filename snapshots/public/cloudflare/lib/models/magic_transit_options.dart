@@ -62,6 +62,13 @@ factory MagicTransitWaitTime.fromJson(num json) => MagicTransitWaitTime(json.toI
 num toJson() => value;
 
 }
+/// Example:
+/// ```json`
+/// {
+///   "max_ttl": 15,
+///   "packet_type": "icmp"
+/// }
+/// ```text
 @immutable final class MagicTransitOptions {const MagicTransitOptions({this.maxTtl, this.packetType, this.packetsPerTtl, this.port, this.waitTime, });
 
 factory MagicTransitOptions.fromJson(Map<String, dynamic> json) { return MagicTransitOptions(

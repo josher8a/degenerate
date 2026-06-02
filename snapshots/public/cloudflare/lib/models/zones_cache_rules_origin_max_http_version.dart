@@ -10,9 +10,13 @@ factory ZonesCacheRulesOriginMaxHttpVersion.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// Value of the zone setting.
+/// 
+/// Example: `'origin_max_http_version'`
 final CacheRulesOriginMaxHttpVersionId id;
 
 /// Last time this setting was modified.
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? modifiedOn;
 
 final ZonesCacheRulesOriginMaxHttpVersionValue? value;

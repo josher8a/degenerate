@@ -13,6 +13,7 @@ final BelongsToRef? belongsToRef;
 
 final IntelIp? ip;
 
+/// Example: `[{id: 131, name: Phishing, super_category_id: 21}]`
 final List<RiskTypes>? riskTypes;
 
 Map<String, dynamic> toJson() { return {

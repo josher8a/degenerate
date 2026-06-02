@@ -1,6 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_filter_options.dart';/// Filter pool and origin health notifications by resource type or health status. Use null to reset.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "origin": {
+///     "disable": true
+///   },
+///   "pool": {
+///     "healthy": false
+///   }
+/// }
+/// ```text
 @immutable final class LoadBalancingNotificationFilter {const LoadBalancingNotificationFilter({this.origin, this.pool, });
 
 factory LoadBalancingNotificationFilter.fromJson(Map<String, dynamic> json) { return LoadBalancingNotificationFilter(

@@ -11,15 +11,23 @@ factory AccessSchemasSamlSaasAppCustomAttributes.fromJson(Map<String, dynamic> j
 ); }
 
 /// The SAML FriendlyName of the attribute.
+/// 
+/// Example: `'Last Name'`
 final String? friendlyName;
 
 /// The name of the attribute.
+/// 
+/// Example: `'family_name'`
 final String? name;
 
 /// A globally unique name for an identity or service provider.
+/// 
+/// Example: `'urn:oasis:names:tc:SAML:2.0:attrname-format:basic'`
 final NameFormat? nameFormat;
 
 /// If the attribute is required when building a SAML assertion.
+/// 
+/// Example: `true`
 final bool? $required;
 
 final CustomClaimsSource? source;

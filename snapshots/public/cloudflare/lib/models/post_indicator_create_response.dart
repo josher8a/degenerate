@@ -13,21 +13,28 @@ factory PostIndicatorCreateResponse.fromJson(Map<String, dynamic> json) { return
   value: json['value'] as String,
 ); }
 
+/// Example: `'2022-04-01T00:00:00Z'`
 final DateTime createdAt;
 
 /// The dataset ID this indicator belongs to. Included in list responses.
+/// 
+/// Example: `'dataset-uuid-123'`
 final String? datasetId;
 
+/// Example: `'domain'`
 final String indicatorType;
 
 final List<RelatedEvents>? relatedEvents;
 
 final List<GetIndicatorReadResponseTags>? tags;
 
+/// Example: `'2022-04-01T00:00:00Z'`
 final DateTime updatedAt;
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
+/// Example: `'malicious-domain.com'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

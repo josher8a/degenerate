@@ -9,12 +9,18 @@ factory DigitalExperienceMonitoringColosResponse2.fromJson(Map<String, dynamic> 
 ); }
 
 /// Airport code
+/// 
+/// Example: `'SFO'`
 final String airportCode;
 
 /// City
+/// 
+/// Example: `'San Francisco'`
 final String city;
 
 /// Country code
+/// 
+/// Example: `'US'`
 final String countryCode;
 
 Map<String, dynamic> toJson() { return {

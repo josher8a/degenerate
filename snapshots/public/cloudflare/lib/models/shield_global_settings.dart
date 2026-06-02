@@ -40,6 +40,8 @@ factory ShieldGlobalSettings.fromJson(Map<String, dynamic> json) { return Shield
 ///   - `block` - deny access to the site when request does not conform to schema
 ///   - `none` - skip running schema validation
 /// 
+/// 
+/// Example: `'block'`
 final ValidationDefaultMitigationAction validationDefaultMitigationAction;
 
 /// When not null, this overrides global both zone level and operation level mitigation actions. This can serve as a quick way to disable schema validation for the whole zone.

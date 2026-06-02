@@ -42,6 +42,8 @@ factory BoostBy.fromJson(Map<String, dynamic> json) { return BoostBy(
 final BoostByDirection? direction;
 
 /// Metadata field name to boost by. Use 'timestamp' for document freshness, or any custom_metadata field. Numeric fields support asc/desc directions; text/boolean fields support exists/not_exists.
+/// 
+/// Example: `'timestamp'`
 final String field;
 
 Map<String, dynamic> toJson() { return {

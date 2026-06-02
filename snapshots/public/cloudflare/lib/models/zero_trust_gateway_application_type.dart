@@ -12,6 +12,8 @@ factory ZeroTrustGatewayApplicationType.fromJson(Map<String, dynamic> json) { re
 final ZeroTrustGatewayTimestamp? createdAt;
 
 /// Provide a short summary of applications with this type.
+/// 
+/// Example: `'Applications used to communicate or collaborate in a business setting.'`
 final String? description;
 
 /// Identify the type of this application. Multiple applications can share the same type. Refers to the `id` of a returned application type.

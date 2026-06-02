@@ -7,6 +7,8 @@ factory EmailSecurityDeleteDomainsRequest.fromJson(Map<String, dynamic> json) { 
 ); }
 
 /// The unique identifier for the domain.
+/// 
+/// Example: `2400`
 final int id;
 
 Map<String, dynamic> toJson() { return {

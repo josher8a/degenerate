@@ -15,6 +15,7 @@ final List<String> messages;
 
 final Map<String,dynamic>? result;
 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

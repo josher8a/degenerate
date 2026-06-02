@@ -12,6 +12,8 @@ factory IamAccount.fromJson(Map<String, dynamic> json) { return IamAccount(
 ); }
 
 /// Timestamp for the creation of the account
+/// 
+/// Example: `'2014-03-01T12:21:02.0000Z'`
 final DateTime? createdOn;
 
 final IamCommonComponentsSchemasIdentifier id;
@@ -20,6 +22,8 @@ final IamCommonComponentsSchemasIdentifier id;
 final ManagedBy? managedBy;
 
 /// Account name
+/// 
+/// Example: `'Demo Account'`
 final String name;
 
 /// Account settings

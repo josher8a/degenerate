@@ -10,15 +10,23 @@ factory TeamsDevicesSentineloneInputRequest.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// Operating system.
+/// 
+/// Example: `'mac'`
 final InputRequestOperatingSystem operatingSystem;
 
 /// File path.
+/// 
+/// Example: `'/bin/cat'`
 final String path;
 
 /// SHA-256.
+/// 
+/// Example: `'b5bb9d8014a0f9b1d61e21e796d78dccdf1352f23cd32812f4850b878ae4944c'`
 final String? sha256;
 
 /// Signing certificate thumbprint.
+/// 
+/// Example: `'0aabab210bdb998e9cf45da2c9ce352977ab531c681b74cf1e487be1bbe9fe6e'`
 final String? thumbprint;
 
 Map<String, dynamic> toJson() { return {

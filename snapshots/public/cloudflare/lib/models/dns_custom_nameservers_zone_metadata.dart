@@ -8,9 +8,13 @@ factory DnsCustomNameserversZoneMetadata.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// Whether zone uses account-level custom nameservers.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 /// The number of the name server set to assign to the zone.
+/// 
+/// Example: `1`
 final double nsSet;
 
 Map<String, dynamic> toJson() { return {

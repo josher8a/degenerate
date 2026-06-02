@@ -17,32 +17,50 @@ factory RequestTracerTrace2.fromJson(Map<String, dynamic> json) { return Request
 ); }
 
 /// If step type is rule, then action performed by this rule
+/// 
+/// Example: `'execute'`
 final String? action;
 
 /// If step type is rule, then action parameters of this rule as JSON
+/// 
+/// Example: `{id: 4814384a9e5d4991b9815dcfc25d2f1f}`
 final Map<String,dynamic>? actionParameters;
 
 /// If step type is rule or ruleset, the description of this entity
+/// 
+/// Example: `'some rule'`
 final String? description;
 
 /// If step type is rule, then expression used to match for this rule
+/// 
+/// Example: `'ip.src ne 1.1.1.1'`
 final String? expression;
 
 /// If step type is ruleset, then kind of this ruleset
+/// 
+/// Example: `'zone'`
 final String? kind;
 
 /// Whether tracing step affected tracing request/response
+/// 
+/// Example: `true`
 final bool? matched;
 
 /// If step type is ruleset, then name of this ruleset
+/// 
+/// Example: `'some ruleset name'`
 final String? name;
 
 /// Tracing step identifying name
+/// 
+/// Example: `'rule_id01'`
 final String? stepName;
 
 final List<RequestTracerTrace2>? trace;
 
 /// Tracing step type
+/// 
+/// Example: `'rule'`
 final String? type;
 
 Map<String, dynamic> toJson() { return {

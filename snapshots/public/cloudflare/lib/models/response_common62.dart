@@ -16,6 +16,8 @@ final List<SmartshieldMessages2> messages;
 final ResponseCommon33Result result;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

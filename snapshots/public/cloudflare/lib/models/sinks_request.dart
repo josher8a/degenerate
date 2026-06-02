@@ -16,11 +16,15 @@ final SinksRequestConfig? config;
 final CloudflarePipelinesFormat? format;
 
 /// Defines the name of the Sink.
+/// 
+/// Example: `'my_sink'`
 final String name;
 
 final CloudflarePipelinesConnectionSchema? schema;
 
 /// Specifies the type of sink.
+/// 
+/// Example: `'r2'`
 final SinksRequestType type;
 
 Map<String, dynamic> toJson() { return {

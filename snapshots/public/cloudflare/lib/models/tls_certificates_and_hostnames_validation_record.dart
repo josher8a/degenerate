@@ -15,27 +15,43 @@ factory TlsCertificatesAndHostnamesValidationRecord.fromJson(Map<String, dynamic
 ); }
 
 /// The CNAME record hostname for DCV delegation.
+/// 
+/// Example: `'_acme-challenge.example.com'`
 final String? cname;
 
 /// The CNAME record target value for DCV delegation.
+/// 
+/// Example: `'dcv.cloudflare.com'`
 final String? cnameTarget;
 
 /// The set of email addresses that the certificate authority (CA) will use to complete domain validation.
+/// 
+/// Example: `[administrator@example.com, webmaster@example.com]`
 final List<String>? emails;
 
 /// The content that the certificate authority (CA) will expect to find at the http_url during the domain validation.
+/// 
+/// Example: `'ca3-574923932a82475cb8592200f1a2a23d'`
 final String? httpBody;
 
 /// The url that will be checked during domain validation.
+/// 
+/// Example: `'http://app.example.com/.well-known/pki-validation/ca3-da12a1c25e7b48cf80408c6c1763b8a2.txt'`
 final String? httpUrl;
 
 /// Status of the validation record.
+/// 
+/// Example: `'pending'`
 final String? status;
 
 /// The hostname that the certificate authority (CA) will check for a TXT record during domain validation .
+/// 
+/// Example: `'_acme-challenge.app.example.com'`
 final String? txtName;
 
 /// The TXT record that the certificate authority (CA) will check during domain validation.
+/// 
+/// Example: `'810b7d5f01154524b961ba0cd578acc2'`
 final String? txtValue;
 
 Map<String, dynamic> toJson() { return {

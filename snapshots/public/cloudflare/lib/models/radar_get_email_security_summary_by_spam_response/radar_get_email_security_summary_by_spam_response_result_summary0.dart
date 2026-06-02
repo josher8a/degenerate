@@ -8,9 +8,13 @@ factory RadarGetEmailSecuritySummaryBySpamResponseResultSummary0.fromJson(Map<St
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String notSpam;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String spam;
 
 Map<String, dynamic> toJson() { return {

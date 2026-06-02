@@ -34,12 +34,16 @@ factory Caller.fromJson(Map<String, dynamic> json) { return Caller(
 ); }
 
 /// Name of the user who started the recording.
+/// 
+/// Example: `'RealtimeKit_test'`
 final String? name;
 
 /// The type can be an App or a user. If the type is `user`, then only the `user_Id` and `name` are returned.
 final CallerType? type;
 
 /// The user ID of the person who started the recording.
+/// 
+/// Example: `'d61f6956-e68f-4375-bf10-c38a704d1bec'`
 final String? userId;
 
 Map<String, dynamic> toJson() { return {

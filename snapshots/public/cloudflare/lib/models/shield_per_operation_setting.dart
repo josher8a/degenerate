@@ -46,6 +46,8 @@ factory ShieldPerOperationSetting.fromJson(Map<String, dynamic> json) { return S
 ///   - `"block"` - deny access to the site when request does not conform to schema for this operation
 ///   - `"none"` - will skip mitigation for this operation
 /// 
+/// 
+/// Example: `'block'`
 final ShieldPerOperationSettingMitigationAction mitigationAction;
 
 final ShieldUuid operationId;

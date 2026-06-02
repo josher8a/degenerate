@@ -7,6 +7,8 @@ factory CustomSslForAZoneRePrioritizeSslCertificatesRequest.fromJson(Map<String,
 ); }
 
 /// Array of ordered certificates.
+/// 
+/// Example: `[{id: 5a7805061c76ada191ed06f989cc3dac, priority: 2}, {id: 9a7806061c88ada191ed06f989cc3dac, priority: 1}]`
 final List<CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates> certificates;
 
 Map<String, dynamic> toJson() { return {

@@ -14,8 +14,11 @@ final List<StreamMessages2> errors;
 final List<StreamMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
+/// Example: `''`
 final String? result;
 
 Map<String, dynamic> toJson() { return {

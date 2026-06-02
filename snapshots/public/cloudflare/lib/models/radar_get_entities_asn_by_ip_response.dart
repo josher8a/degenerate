@@ -9,6 +9,7 @@ factory RadarGetEntitiesAsnByIpResponse.fromJson(Map<String, dynamic> json) { re
 
 final RadarGetEntitiesAsnByIpResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

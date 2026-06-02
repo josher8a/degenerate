@@ -171,21 +171,33 @@ factory TransferIn.fromJson(Map<String, dynamic> json) { return TransferIn(
 ); }
 
 /// Form of authorization has been accepted by the registrant.
+/// 
+/// Example: `'needed'`
 final AcceptFoa? acceptFoa;
 
 /// Shows transfer status with the registry.
+/// 
+/// Example: `'unknown'`
 final ApproveTransfer? approveTransfer;
 
 /// Indicates if cancellation is still possible.
+/// 
+/// Example: `true`
 final bool? canCancelTransfer;
 
 /// Privacy guards are disabled at the foreign registrar.
+/// 
+/// Example: `'ok'`
 final DisablePrivacy? disablePrivacy;
 
 /// Auth code has been entered and verified.
+/// 
+/// Example: `'needed'`
 final EnterAuthCode? enterAuthCode;
 
 /// Domain is unlocked at the foreign registrar.
+/// 
+/// Example: `'ok'`
 final UnlockDomain? unlockDomain;
 
 Map<String, dynamic> toJson() { return {

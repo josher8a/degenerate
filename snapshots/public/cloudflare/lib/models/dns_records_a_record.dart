@@ -48,9 +48,13 @@ final List<String>? tags;
 final DnsRecordsTtl? ttl;
 
 /// A valid IPv4 address.
+/// 
+/// Example: `'198.51.100.4'`
 final String? content;
 
 /// Record type.
+/// 
+/// Example: `'A'`
 final DnsRecordsARecordType? type;
 
 Map<String, dynamic> toJson() { return {

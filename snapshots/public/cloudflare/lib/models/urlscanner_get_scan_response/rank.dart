@@ -8,8 +8,10 @@ factory Rank.fromJson(Map<String, dynamic> json) { return Rank(
   rank: json['rank'] != null ? (json['rank'] as num).toInt() : null,
 ); }
 
+/// Example: `'500'`
 final String bucket;
 
+/// Example: `'example.com'`
 final String name;
 
 /// Rank in the Global Radar Rank, if set. See more at https://blog.cloudflare.com/radar-domain-rankings/

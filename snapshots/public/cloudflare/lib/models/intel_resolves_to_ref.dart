@@ -17,6 +17,8 @@ factory IntelResolvesToRef.fromJson(Map<String, dynamic> json) { return IntelRes
 final IntelStixIdentifier? id;
 
 /// IP address or domain name.
+/// 
+/// Example: `'192.0.2.0'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

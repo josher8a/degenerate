@@ -13,21 +13,33 @@ factory Bots.fromJson(Map<String, dynamic> json) { return Bots(
 ); }
 
 /// The category of the bot.
+/// 
+/// Example: `'AI_CRAWLER'`
 final String category;
 
 /// A summary for the bot (e.g., purpose).
+/// 
+/// Example: `'OpenAI/ChatGPT's web crawler'`
 final String description;
 
 /// The kind of the bot.
+/// 
+/// Example: `'AGENT'`
 final String kind;
 
 /// The name of the bot.
+/// 
+/// Example: `'GPTBot'`
 final String name;
 
 /// The organization that owns and operates the bot.
+/// 
+/// Example: `'OpenAI'`
 final String $operator;
 
 /// A kebab-case identifier derived from the bot name.
+/// 
+/// Example: `'gptbot'`
 final String slug;
 
 final List<String> userAgentPatterns;

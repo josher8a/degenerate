@@ -8,9 +8,13 @@ factory ImagesImageDirectUploadResponseResult.fromJson(Map<String, dynamic> json
 ); }
 
 /// Image unique identifier.
+/// 
+/// Example: `'e22e9e6b-c02b-42fd-c405-6c32af5fe600'`
 final String? id;
 
 /// The URL the unauthenticated upload can be performed to using a single HTTP POST (multipart/form-data) request.
+/// 
+/// Example: `'https://upload.imagedelivery.net/FxUufywByo0m2v3xhKSiU8/e22e9e6b-c02b-42fd-c405-6c32af5fe600'`
 final String? uploadUrl;
 
 Map<String, dynamic> toJson() { return {

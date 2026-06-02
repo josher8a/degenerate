@@ -43,14 +43,18 @@ factory BuildsConfigAutofillResponse.fromJson(Map<String, dynamic> json) { retur
   scripts: (json['scripts'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 
+/// Example: `'wrangler.toml'`
 final String? configFile;
 
+/// Example: `'my-worker'`
 final String? defaultWorkerName;
 
+/// Example: `{production: my-worker-prod, staging: my-worker-staging}`
 final Map<String,String>? envWorkerNames;
 
 final BuildsPackageManager? packageManager;
 
+/// Example: `{build: npm run build, test: npm test}`
 final Map<String,String>? scripts;
 
 Map<String, dynamic> toJson() { return {

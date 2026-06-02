@@ -20,6 +20,15 @@ final DestinationCredentials credentials;
 /// Specifies the format of data to deliver.
 final CloudflarePipelinesWorkersPipelinesBindingSourceFormat format;
 
+/// Example:
+/// ```json`
+/// {
+///   "bucket": "bucket",
+///   "prefix": "base"
+/// }
+/// ```text
+/// 
+/// Example: `{bucket: bucket, prefix: base}`
 final DestinationPath path;
 
 /// Specifies the type of destination.

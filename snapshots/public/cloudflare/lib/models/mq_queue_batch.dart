@@ -8,6 +8,8 @@ factory MqQueueBatch.fromJson(Map<String, dynamic> json) { return MqQueueBatch(
 ); }
 
 /// The number of seconds to wait for attempting to deliver this batch to consumers
+/// 
+/// Example: `'text'`
 final double? delaySeconds;
 
 final List<MqQueueMessage>? messages;

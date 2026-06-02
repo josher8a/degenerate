@@ -9,9 +9,13 @@ factory StatusCodeRange.fromJson(Map<String, dynamic> json) { return StatusCodeR
 ); }
 
 /// The lower bound of the range.
+/// 
+/// Example: `200`
 final int? from;
 
 /// The upper bound of the range.
+/// 
+/// Example: `299`
 final int? to;
 
 Map<String, dynamic> toJson() { return {

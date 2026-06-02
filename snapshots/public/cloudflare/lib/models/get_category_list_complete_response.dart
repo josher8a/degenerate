@@ -14,10 +14,13 @@ final double killChain;
 
 final List<String>? mitreAttack;
 
+/// Example: `'name'`
 final String name;
 
+/// Example: `'shortname'`
 final String? shortname;
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
 Map<String, dynamic> toJson() { return {

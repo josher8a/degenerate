@@ -12,9 +12,13 @@ factory WorkersRoute.fromJson(Map<String, dynamic> json) { return WorkersRoute(
 final WorkersIdentifier id;
 
 /// Pattern to match incoming requests against. [Learn more](https://developers.cloudflare.com/workers/configuration/routing/routes/#matching-behavior).
+/// 
+/// Example: `'example.com/*'`
 final String pattern;
 
 /// Name of the script to run if the route matches.
+/// 
+/// Example: `'my-workers-script'`
 final String? script;
 
 Map<String, dynamic> toJson() { return {

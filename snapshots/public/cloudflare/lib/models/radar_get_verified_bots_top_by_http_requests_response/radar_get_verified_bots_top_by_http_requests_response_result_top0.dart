@@ -9,13 +9,18 @@ factory RadarGetVerifiedBotsTopByHttpRequestsResponseResultTop0.fromJson(Map<Str
   value: json['value'] as String,
 ); }
 
+/// Example: `'Search Engine Crawler'`
 final String botCategory;
 
+/// Example: `'GoogleBot'`
 final String botName;
 
+/// Example: `'Google'`
 final String botOwner;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

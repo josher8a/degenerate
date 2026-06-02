@@ -9,6 +9,8 @@ factory WorkersBindingKindVectorize.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// Name of the Vectorize index to bind to.
+/// 
+/// Example: `'my-index-name'`
 final String indexName;
 
 final WorkersBindingName name;

@@ -9,6 +9,7 @@ factory PropertiesCategories.fromJson(Map<String, dynamic> json) { return Proper
 
 final AttackersProperties properties;
 
+/// Example: `'object'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

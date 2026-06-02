@@ -10,6 +10,8 @@ factory RealtimeCallReferRequest.fromJson(Map<String, dynamic> json) { return Re
 
 /// URI that should appear in the SIP Refer-To header. Supports values like
 /// `tel:+14155550123` or `sip:agent@example.com`.
+/// 
+/// Example: `'tel:+14155550123'`
 final String targetUri;
 
 Map<String, dynamic> toJson() { return {

@@ -33,9 +33,13 @@ factory ZeroTrustGatewayRuleSettings.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Add custom headers to allowed requests as key-value pairs. Use header names as keys that map to arrays of header values. Settable only for `http` rules with the action set to `allow`.
+/// 
+/// Example: `{My-Next-Header: [foo, bar], X-Custom-Header-Name: [somecustomvalue]}`
 final Map<String,List<String>>? addHeaders;
 
 /// Set to enable MSP children to bypass this rule. Only parent MSP accounts can set this. this rule. Settable for all types of rules.
+/// 
+/// Example: `false`
 final bool? allowChildBypass;
 
 /// Define the settings for the Audit SSH action. Settable only for `l4` rules with `audit_ssh` action.
@@ -48,12 +52,18 @@ final BisoAdminControls? bisoAdminControls;
 final BlockPage? blockPage;
 
 /// Enable the custom block page. Settable only for `dns` rules with action `block`.
+/// 
+/// Example: `true`
 final bool? blockPageEnabled;
 
 /// Explain why the rule blocks the request. The custom block page shows this text (if enabled). Settable only for `dns`, `l4`, and `http` rules when the action set to `block`.
+/// 
+/// Example: `'This website is a security risk'`
 final String? blockReason;
 
 /// Set to enable MSP accounts to bypass their parent's rules. Only MSP child accounts can set this. Settable for all types of rules.
+/// 
+/// Example: `false`
 final bool? bypassParentRule;
 
 /// Configure session check behavior. Settable only for `l4` and `http` rules with the action set to `allow`.
@@ -69,15 +79,23 @@ final Egress? egress;
 final ForensicCopy? forensicCopy;
 
 /// Ignore category matches at CNAME domains in a response. When off, evaluate categories in this rule against all CNAME domain categories in the response. Settable only for `dns` and `dns_resolver` rules.
+/// 
+/// Example: `true`
 final bool? ignoreCnameCategoryMatches;
 
 /// Specify whether to disable DNSSEC validation (for Allow actions) `[INSECURE]`. Settable only for `dns` rules.
+/// 
+/// Example: `false`
 final bool? insecureDisableDnssecValidation;
 
 /// Enable IPs in DNS resolver category blocks. The system blocks only domain name categories unless you enable this setting. Settable only for `dns` and `dns_resolver` rules.
+/// 
+/// Example: `true`
 final bool? ipCategories;
 
 /// Indicates whether to include IPs in DNS resolver indicator feed blocks. Default, indicator feeds block only domain names. Settable only for `dns` and `dns_resolver` rules.
+/// 
+/// Example: `true`
 final bool? ipIndicatorFeeds;
 
 /// Send matching traffic to the supplied destination IP address and port. Settable only for `l4` rules with the action set to `l4_override`.
@@ -87,9 +105,13 @@ final L4override? l4override;
 final NotificationSettings? notificationSettings;
 
 /// Defines a hostname for override, for the matching DNS queries. Settable only for `dns` rules with the action set to `override`.
+/// 
+/// Example: `'example.com'`
 final String? overrideHost;
 
 /// Defines a an IP or set of IPs for overriding matched DNS queries. Settable only for `dns` rules with the action set to `override`.
+/// 
+/// Example: `[1.1.1.1, 2.2.2.2]`
 final List<String>? overrideIps;
 
 /// Configure DLP payload logging. Settable only for `http` rules.
@@ -105,6 +127,8 @@ final Redirect? redirect;
 final ResolveDnsInternally? resolveDnsInternally;
 
 /// Enable to send queries that match the policy to Cloudflare's default 1.1.1.1 DNS resolver. Cannot set when 'dns_resolvers' specified or 'resolve_dns_internally' is set. Only valid when a rule's action set to 'resolve'. Settable only for `dns_resolver` rules.
+/// 
+/// Example: `true`
 final bool? resolveDnsThroughCloudflare;
 
 /// Configure behavior when an upstream certificate is invalid or an SSL error occurs. Settable only for `http` rules with the action set to `allow`.

@@ -11,6 +11,8 @@ factory StreamCopyAudioTrack.fromJson(Map<String, dynamic> json) { return Stream
 final StreamAudioLabel label;
 
 /// An audio track URL. The server must be publicly routable and support `HTTP HEAD` requests and `HTTP GET` range requests. The server should respond to `HTTP HEAD` requests with a `content-range` header that includes the size of the file.
+/// 
+/// Example: `'https://www.examplestorage.com/audio_file.mp3'`
 final Uri? url;
 
 Map<String, dynamic> toJson() { return {

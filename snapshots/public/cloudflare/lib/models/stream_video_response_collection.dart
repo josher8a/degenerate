@@ -16,14 +16,20 @@ final List<StreamMessages2> errors;
 final List<StreamMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final List<StreamVideos>? result;
 
 /// The total number of remaining videos based on cursor position.
+/// 
+/// Example: `1000`
 final int? range;
 
 /// The total number of videos that match the provided filters.
+/// 
+/// Example: `35586`
 final int? total;
 
 Map<String, dynamic> toJson() { return {

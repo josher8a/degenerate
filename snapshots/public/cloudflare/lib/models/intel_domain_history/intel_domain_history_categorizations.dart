@@ -8,10 +8,13 @@ factory IntelDomainHistoryCategorizations.fromJson(Map<String, dynamic> json) { 
   start: json['start'] as String?,
 ); }
 
+/// Example: `[{id: 155, name: Technology}]`
 final List<CategorizationsCategories>? categories;
 
+/// Example: `'2021-04-30'`
 final String? end;
 
+/// Example: `'2021-04-01'`
 final String? start;
 
 Map<String, dynamic> toJson() { return {

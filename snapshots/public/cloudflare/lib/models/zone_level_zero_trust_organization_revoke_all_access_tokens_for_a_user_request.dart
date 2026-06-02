@@ -7,6 +7,8 @@ factory ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest.fromJ
 ); }
 
 /// The email of the user to revoke.
+/// 
+/// Example: `'test@example.com'`
 final String email;
 
 Map<String, dynamic> toJson() { return {

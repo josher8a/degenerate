@@ -9,6 +9,7 @@ factory RadarGetRankingInternetServicesTimeseriesResponse.fromJson(Map<String, d
 
 final RadarGetRankingDomainTimeseriesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

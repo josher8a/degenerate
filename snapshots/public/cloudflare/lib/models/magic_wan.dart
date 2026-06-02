@@ -42,6 +42,8 @@ factory MagicWan.fromJson(Map<String, dynamic> json) { return MagicWan(
 ); }
 
 /// Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
+/// 
+/// Example: `'low'`
 final HealthCheckRate healthCheckRate;
 
 /// Identifier

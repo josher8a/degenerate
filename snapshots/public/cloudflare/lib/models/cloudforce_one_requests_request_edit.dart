@@ -14,6 +14,8 @@ factory CloudforceOneRequestsRequestEdit.fromJson(Map<String, dynamic> json) { r
 final CloudforceOneRequestsRequestContent? content;
 
 /// Priority for analyzing the request.
+/// 
+/// Example: `'routine'`
 final String? priority;
 
 final CloudforceOneRequestsRequestType? requestType;

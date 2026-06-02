@@ -1,6 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResultSerie0 {const RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResultSerie0({required this.http1X, required this.http2, required this.http3, required this.timestamps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
+/// ```json`
+/// {
+///   "HTTP/1.x": [
+///     "50.338734"
+///   ],
+///   "HTTP/2": [
+///     "48.661266"
+///   ],
+///   "HTTP/3": [
+///     "1.22108"
+///   ],
+///   "timestamps": [
+///     "2023-10-01T00:00:00Z"
+///   ]
+/// }
+/// ```text
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResultSerie0 {const RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResultSerie0({required this.http1X, required this.http2, required this.http3, required this.timestamps, });
 
 factory RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResultSerie0(
   http1X: (json['HTTP/1.x'] as List<dynamic>).map((e) => e as String).toList(),

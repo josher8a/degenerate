@@ -68,6 +68,8 @@ final Map<String,String>? setExtraHttpHeaders;
 final bool? setJavaScriptEnabled;
 
 /// URL to navigate to, eg. `https://example.com`.
+/// 
+/// Example: `'https://example.com/'`
 final Uri url;
 
 final String userAgent;

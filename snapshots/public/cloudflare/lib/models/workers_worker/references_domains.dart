@@ -14,15 +14,23 @@ factory ReferencesDomains.fromJson(Map<String, dynamic> json) { return Reference
 final String certificateId;
 
 /// Full hostname of the custom domain, including the zone name.
+/// 
+/// Example: `'my-worker.example.com'`
 final String hostname;
 
 /// ID of the custom domain.
+/// 
+/// Example: `'e8f70fdbc8b1fb0b8ddb1af166186758'`
 final String id;
 
 /// ID of the zone.
+/// 
+/// Example: `'e8f70fdbc8b1fb0b8ddb1af166186758'`
 final String zoneId;
 
 /// Name of the zone.
+/// 
+/// Example: `'example.com'`
 final String zoneName;
 
 Map<String, dynamic> toJson() { return {

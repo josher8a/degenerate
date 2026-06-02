@@ -11,10 +11,12 @@ factory UrlscannerSearchScansResponse2Results.fromJson(Map<String, dynamic> json
   verdicts: ResultsVerdicts.fromJson(json['verdicts'] as Map<String, dynamic>),
 ); }
 
+/// Example: `'9626f773-9ffb-4cfb-89d3-30b120fc8011'`
 final String id;
 
 final ResultsPage page;
 
+/// Example: `'https://radar.clouflare.com/scan/9626f773-9ffb-4cfb-89d3-30b120fc8011'`
 final String result;
 
 final ResultsStats stats;

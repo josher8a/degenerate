@@ -11,18 +11,28 @@ factory QueuesListResponseResultInfo.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Total number of queues
+/// 
+/// Example: `1`
 final double? count;
 
 /// Current page within paginated list of queues
+/// 
+/// Example: `1`
 final double? page;
 
 /// Number of queues per page
+/// 
+/// Example: `20`
 final double? perPage;
 
 /// Total queues available without any search parameters
+/// 
+/// Example: `2000`
 final double? totalCount;
 
 /// Total pages available without any search parameters
+/// 
+/// Example: `100`
 final double? totalPages;
 
 Map<String, dynamic> toJson() { return {

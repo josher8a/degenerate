@@ -13,20 +13,28 @@ factory ResultIp.fromJson(Map<String, dynamic> json) { return ResultIp(
   locationName: json['locationName'] as String,
 ); }
 
+/// Example: `'15169'`
 final String asn;
 
+/// Example: `'US'`
 final String asnLocation;
 
+/// Example: `'GOOGLE'`
 final String asnName;
 
+/// Example: `'Google LLC'`
 final String asnOrgName;
 
+/// Example: `'8.8.8.8'`
 final String ip;
 
+/// Example: `'IPv4'`
 final String ipVersion;
 
+/// Example: `'GB'`
 final String location;
 
+/// Example: `'United Kingdom'`
 final String locationName;
 
 Map<String, dynamic> toJson() { return {

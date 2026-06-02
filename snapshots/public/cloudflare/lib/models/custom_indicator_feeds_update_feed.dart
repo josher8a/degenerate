@@ -9,12 +9,18 @@ factory CustomIndicatorFeedsUpdateFeed.fromJson(Map<String, dynamic> json) { ret
 ); }
 
 /// Feed id
+/// 
+/// Example: `1`
 final int? fileId;
 
 /// Name of the file unified in our system
+/// 
+/// Example: `'snapshot_file.unified'`
 final String? filename;
 
 /// Current status of upload, should be unified
+/// 
+/// Example: `'unified'`
 final String? status;
 
 Map<String, dynamic> toJson() { return {

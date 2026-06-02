@@ -8,9 +8,13 @@ factory HyperdriveInternetOrigin.fromJson(Map<String, dynamic> json) { return Hy
 ); }
 
 /// Defines the host (hostname or IP) of your origin database.
+/// 
+/// Example: `'database.example.com'`
 final String host;
 
 /// Defines the port of your origin database. Defaults to 5432 for PostgreSQL or 3306 for MySQL if not specified.
+/// 
+/// Example: `5432`
 final int port;
 
 Map<String, dynamic> toJson() { return {

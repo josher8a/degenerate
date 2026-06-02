@@ -8,11 +8,15 @@ factory RadarGetNetflowsTopAsesResponseResultTop0.fromJson(Map<String, dynamic> 
   value: json['value'] as String,
 ); }
 
+/// Example: `16509`
 final double clientAsn;
 
+/// Example: `'AMAZON-02'`
 final String clientAsName;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

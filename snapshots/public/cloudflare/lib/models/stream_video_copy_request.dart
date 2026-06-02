@@ -32,6 +32,8 @@ final StreamScheduledDeletion? scheduledDeletion;
 final StreamThumbnailTimestampPct? thumbnailTimestampPct;
 
 /// A video's URL. The server must be publicly routable and support `HTTP HEAD` requests and `HTTP GET` range requests. The server should respond to `HTTP HEAD` requests with a `content-range` header that includes the size of the file.
+/// 
+/// Example: `'https://example.com/myvideo.mp4'`
 final Uri url;
 
 final StreamWatermarkAtUpload? watermark;

@@ -7,6 +7,8 @@ factory WorkersPlacementRegion.fromJson(Map<String, dynamic> json) { return Work
 ); }
 
 /// The region identifier.
+/// 
+/// Example: `'us-east-1'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

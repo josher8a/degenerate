@@ -8,6 +8,8 @@ factory CacheRulesSmartTieredCachePatch.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// Enable or disable the Smart Tiered Cache.
+/// 
+/// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue value;
 
 Map<String, dynamic> toJson() { return {

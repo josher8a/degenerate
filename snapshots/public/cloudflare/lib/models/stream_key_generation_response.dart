@@ -14,6 +14,8 @@ final List<StreamMessages2> errors;
 final List<StreamMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final StreamKeys? result;

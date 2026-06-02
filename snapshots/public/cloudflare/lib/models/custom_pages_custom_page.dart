@@ -21,14 +21,18 @@ factory CustomPagesCustomPage.fromJson(Map<String, dynamic> json) { return Custo
 
 final CustomPagesTimestamp? createdOn;
 
+/// Example: `'Basic Challenge'`
 final String? description;
 
+/// Example: `'basic_challenge'`
 final String? id;
 
 final CustomPagesTimestamp? modifiedOn;
 
+/// Example: `'block:basic-sec-captcha'`
 final String? previewTarget;
 
+/// Example: `[::CAPTCHA_BOX::]`
 final List<String>? requiredTokens;
 
 final CustomPagesState? state;

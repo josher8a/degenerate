@@ -8,6 +8,8 @@ factory ConversationParam2.fromJson(Map<String, dynamic> json) { return Conversa
 ); }
 
 /// The unique ID of the conversation.
+/// 
+/// Example: `'conv_123'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

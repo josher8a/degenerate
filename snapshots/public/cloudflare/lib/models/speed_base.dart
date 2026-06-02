@@ -13,12 +13,18 @@ factory SpeedBase.fromJson(Map<String, dynamic> json) { return SpeedBase(
 final bool editable;
 
 /// Identifier of the zone setting.
+/// 
+/// Example: `'development_mode'`
 final String? id;
 
 /// last time this setting was modified.
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? modifiedOn;
 
 /// Current value of the zone setting.
+/// 
+/// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {

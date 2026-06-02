@@ -12,21 +12,33 @@ factory ZonesAutomaticPlatformOptimization.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// Indicates whether or not [cache by device type](https://developers.cloudflare.com/automatic-platform-optimization/reference/cache-device-type/) is enabled.
+/// 
+/// Example: `false`
 final bool cacheByDeviceType;
 
 /// Indicates whether or not Cloudflare proxy is enabled.
+/// 
+/// Example: `true`
 final bool cf;
 
 /// Indicates whether or not Automatic Platform Optimization is enabled.
+/// 
+/// Example: `true`
 final bool enabled;
 
 /// An array of hostnames where Automatic Platform Optimization for WordPress is activated.
+/// 
+/// Example: `[www.example.com, example.com, shop.example.com]`
 final List<String> hostnames;
 
 /// Indicates whether or not site is powered by WordPress.
+/// 
+/// Example: `true`
 final bool wordpress;
 
 /// Indicates whether or not [Cloudflare for WordPress plugin](https://wordpress.org/plugins/cloudflare/) is installed.
+/// 
+/// Example: `true`
 final bool wpPlugin;
 
 Map<String, dynamic> toJson() { return {

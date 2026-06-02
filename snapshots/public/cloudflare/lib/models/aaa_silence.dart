@@ -12,9 +12,13 @@ factory AaaSilence.fromJson(Map<String, dynamic> json) { return AaaSilence(
 ); }
 
 /// When the silence was created.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final String? createdAt;
 
 /// When the silence ends.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final String? endTime;
 
 final AaaSilenceId? id;
@@ -23,9 +27,13 @@ final AaaSilenceId? id;
 final AaaPolicyId? policyId;
 
 /// When the silence starts.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final String? startTime;
 
 /// When the silence was modified.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final String? updatedAt;
 
 Map<String, dynamic> toJson() { return {

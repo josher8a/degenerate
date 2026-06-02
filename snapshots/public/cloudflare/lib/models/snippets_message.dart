@@ -9,9 +9,13 @@ factory SnippetsMessage.fromJson(Map<String, dynamic> json) { return SnippetsMes
 ); }
 
 /// Identify the message code.
+/// 
+/// Example: `10000`
 final int? code;
 
 /// Describes the message text.
+/// 
+/// Example: `'something bad happened'`
 final String message;
 
 Map<String, dynamic> toJson() { return {

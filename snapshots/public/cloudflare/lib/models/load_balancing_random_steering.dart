@@ -12,9 +12,13 @@ factory LoadBalancingRandomSteering.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// The default weight for pools in the load balancer that are not specified in the pool_weights map.
+/// 
+/// Example: `0.2`
 final double defaultWeight;
 
 /// A mapping of pool IDs to custom weights. The weight is relative to other pools in the load balancer.
+/// 
+/// Example: `{9290f38c5d07c2e2f4df57b1f61d4196: 0.5, de90f38ced07c2e2f4df50b1f61d4194: 0.3}`
 final Map<String,double>? poolWeights;
 
 Map<String, dynamic> toJson() { return {

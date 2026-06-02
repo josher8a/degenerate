@@ -11,16 +11,20 @@ factory RadarGetReportsDatasetsResponseResultDatasets.fromJson(Map<String, dynam
   type: json['type'] as String,
 ); }
 
+/// Example: `'This dataset contains a list of the op 20000 domains globally'`
 final String description;
 
+/// Example: `3`
 final int id;
 
 final Map<String,dynamic> meta;
 
 final List<String> tags;
 
+/// Example: `'Top bucket 20000 domains'`
 final String title;
 
+/// Example: `'RANKING_BUCKET'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

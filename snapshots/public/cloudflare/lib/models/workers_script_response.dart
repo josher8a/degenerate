@@ -39,6 +39,8 @@ final WorkersCreatedOn? createdOn;
 final WorkersEtag? etag;
 
 /// The names of handlers exported as part of the default export.
+/// 
+/// Example: `[fetch, scheduled]`
 final List<String>? handlers;
 
 /// Whether a Worker contains assets.
@@ -48,15 +50,21 @@ final WorkersHasAssets? hasAssets;
 final WorkersHasModules? hasModules;
 
 /// The name used to identify the script.
+/// 
+/// Example: `'my-workers-script'`
 final String? id;
 
 /// The client most recently used to deploy this Worker.
+/// 
+/// Example: `'wrangler'`
 final String? lastDeployedFrom;
 
 /// Whether Logpush is turned on for the Worker.
 final WorkersLogpush? logpush;
 
 /// The tag of the Durable Object migration that was most recently applied for this Worker.
+/// 
+/// Example: `'v1'`
 final String? migrationTag;
 
 /// When the script was last modified.
@@ -76,6 +84,8 @@ final WorkersPlacementMode? placementMode;
 final WorkersPlacementStatus? placementStatus;
 
 /// The immutable ID of the script.
+/// 
+/// Example: `'e8f70fdbc8b1fb0b8ddb1af166186758'`
 final String? tag;
 
 final List<WorkersTag>? tags;

@@ -36,6 +36,8 @@ final ZonesRocketLoaderId? id;
 
 /// The status of Rocket Loader
 /// 
+/// 
+/// Example: `'on'`
 final ZonesRocketLoaderValue? value;
 
 Map<String, dynamic> toJson() { return {

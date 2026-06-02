@@ -25,6 +25,7 @@ final int? clientToIspRttMs;
 
 final DigitalExperienceMonitoringUuid id;
 
+/// Example: `'2023-07-16 15:00:00+00'`
 final String timestamp;
 
 Map<String, dynamic> toJson() { return {

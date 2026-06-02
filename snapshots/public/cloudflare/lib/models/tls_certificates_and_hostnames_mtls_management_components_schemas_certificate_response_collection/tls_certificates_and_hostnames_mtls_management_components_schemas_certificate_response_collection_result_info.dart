@@ -10,15 +10,21 @@ factory TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateRes
   totalPages: json['total_pages'] != null ? (json['total_pages'] as num).toDouble() : null,
 ); }
 
+/// Example: `1`
 final dynamic count;
 
+/// Example: `1`
 final dynamic page;
 
+/// Example: `50`
 final dynamic perPage;
 
+/// Example: `1`
 final dynamic totalCount;
 
 /// Total pages available of results
+/// 
+/// Example: `1`
 final double? totalPages;
 
 Map<String, dynamic> toJson() { return {

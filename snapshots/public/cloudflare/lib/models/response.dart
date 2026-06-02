@@ -18,6 +18,7 @@ final Map<String,dynamic>? result;
 
 final BuildsPaginationInfo? resultInfo;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,8 @@ factory WorkersKvBulkGetResult.fromJson(Map<String, dynamic> json) { return Work
 ); }
 
 /// Requested keys are paired with their values in an object.
+/// 
+/// Example: `{key1: value1, key2: value2}`
 final Map<String,WorkersKvBulkGetResultValuesValue>? values;
 
 Map<String, dynamic> toJson() { return {

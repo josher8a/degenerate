@@ -154,26 +154,36 @@ final String? billingReferralUrl;
 
 final String? billingStreet;
 
+/// Example: `'2009-02-17T22:07:54.000Z'`
 final DateTime? createdDate;
 
+/// Example: `'2009-02-17T22:07:54Z'`
 final String? createdDateRaw;
 
+/// Example: `true`
 final bool dnssec;
 
 final CloudforceOneWhoisDomainName domain;
 
+/// Example: `'2033-02-17T22:07:54.000Z'`
 final DateTime? expirationDate;
 
+/// Example: `'2033-02-17T22:07:54Z'`
 final String? expirationDateRaw;
 
+/// Example: `'com'`
 final String $extension;
 
+/// Example: `true`
 final bool found;
 
+/// Example: `'1542998887_DOMAIN_COM-VRSN'`
 final String? id;
 
+/// Example: `[ns3.cloudflare.com, ns4.cloudflare.com, ns5.cloudflare.com, ns6.cloudflare.com, ns7.cloudflare.com]`
 final List<String> nameservers;
 
+/// Example: `'cloudflare.com'`
 final String punycode;
 
 final String registrant;
@@ -206,6 +216,7 @@ final String? registrantReferralUrl;
 
 final String? registrantStreet;
 
+/// Example: `'Cloudflare, Inc.'`
 final String registrar;
 
 final String? registrarCity;
@@ -236,6 +247,7 @@ final String? registrarReferralUrl;
 
 final String? registrarStreet;
 
+/// Example: `[clientdeleteprohibited, clienttransferprohibited, clientupdateprohibited, serverdeleteprohibited, servertransferprohibited, serverupdateprohibited]`
 final List<String>? status;
 
 final String? technicalCity;
@@ -266,10 +278,13 @@ final String? technicalReferralUrl;
 
 final String? technicalStreet;
 
+/// Example: `'2024-01-09T16:45:28.000Z'`
 final DateTime? updatedDate;
 
+/// Example: `'2024-01-09T16:45:28Z'`
 final String? updatedDateRaw;
 
+/// Example: `'whois.cloudflare.com'`
 final String? whoisServer;
 
 Map<String, dynamic> toJson() { return {

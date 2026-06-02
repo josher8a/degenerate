@@ -9,6 +9,7 @@ factory RadarGetLeakedCredentialChecksSummaryByCompromisedResponse.fromJson(Map<
 
 final RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

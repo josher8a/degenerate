@@ -13,11 +13,15 @@ factory VectorizeCreateIndexResponse.fromJson(Map<String, dynamic> json) { retur
 final VectorizeIndexDimensionConfiguration? config;
 
 /// Specifies the timestamp the resource was created as an ISO8601 string.
+/// 
+/// Example: `'2022-11-15T18:25:44.442097Z'`
 final DateTime? createdOn;
 
 final VectorizeIndexDescription? description;
 
 /// Specifies the timestamp the resource was modified as an ISO8601 string.
+/// 
+/// Example: `'2022-11-15T18:25:44.442097Z'`
 final DateTime? modifiedOn;
 
 final VectorizeIndexName? name;

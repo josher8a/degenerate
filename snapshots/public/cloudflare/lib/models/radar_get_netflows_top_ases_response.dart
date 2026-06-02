@@ -9,6 +9,7 @@ factory RadarGetNetflowsTopAsesResponse.fromJson(Map<String, dynamic> json) { re
 
 final RadarGetNetflowsTopAsesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

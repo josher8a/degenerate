@@ -9,6 +9,7 @@ factory PatchEventRawUpdateResponse.fromJson(Map<String, dynamic> json) { return
 
 final Map<String,dynamic> data;
 
+/// Example: `'1234'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

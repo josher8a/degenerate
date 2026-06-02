@@ -14,6 +14,8 @@ final List<CallsMessages2> errors;
 final List<CallsMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final List<CallsTurnKeyObject>? result;

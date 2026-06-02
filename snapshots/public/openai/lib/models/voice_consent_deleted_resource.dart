@@ -9,6 +9,8 @@ factory VoiceConsentDeletedResource.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// The consent recording identifier.
+/// 
+/// Example: `'cons_1234'`
 final String id;
 
 final VoiceConsentDeletedResourceObject object;

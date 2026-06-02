@@ -24,6 +24,8 @@ final DeleteObjectsTransition? deleteObjectsTransition;
 final bool enabled;
 
 /// Unique identifier for this rule.
+/// 
+/// Example: `'Expire all objects older than 24 hours'`
 final String id;
 
 /// Transitions to change the storage class of objects.

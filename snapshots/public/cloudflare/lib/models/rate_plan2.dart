@@ -14,24 +14,38 @@ factory RatePlan2.fromJson(Map<String, dynamic> json) { return RatePlan2(
 ); }
 
 /// The currency applied to the rate plan subscription.
+/// 
+/// Example: `'USD'`
 final String? currency;
 
 /// Whether this rate plan is managed externally from Cloudflare.
+/// 
+/// Example: `false`
 final bool? externallyManaged;
 
 /// The ID of the rate plan.
+/// 
+/// Example: `'free'`
 final String? id;
 
 /// Whether a rate plan is enterprise-based (or newly adopted term contract).
+/// 
+/// Example: `false`
 final bool? isContract;
 
 /// The full name of the rate plan.
+/// 
+/// Example: `'Business Plan'`
 final String? publicName;
 
 /// The scope that this rate plan applies to.
+/// 
+/// Example: `'zone'`
 final String? scope;
 
 /// The list of sets this rate plan applies to. Returns array of strings.
+/// 
+/// Example: `[]`
 final List<String>? sets;
 
 Map<String, dynamic> toJson() { return {

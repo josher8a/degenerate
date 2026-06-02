@@ -32,10 +32,14 @@ factory ZonesPolish.fromJson(Map<String, dynamic> json) { return ZonesPolish(
 
 /// Apply options from the Polish feature of the Cloudflare Speed app.
 /// 
+/// 
+/// Example: `'polish'`
 final ZonesPolishId? id;
 
 /// The level of Polish you want applied to your origin.
 /// 
+/// 
+/// Example: `'lossless'`
 final ZonesPolishValue? value;
 
 Map<String, dynamic> toJson() { return {

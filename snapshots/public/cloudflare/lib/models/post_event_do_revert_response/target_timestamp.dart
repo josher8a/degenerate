@@ -6,6 +6,7 @@ factory TargetTimestamp.fromJson(Map<String, dynamic> json) { return TargetTimes
   type: json['type'] as String,
 ); }
 
+/// Example: `'string'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

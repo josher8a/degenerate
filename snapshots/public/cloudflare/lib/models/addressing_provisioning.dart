@@ -35,6 +35,8 @@ factory AddressingProvisioning.fromJson(Map<String, dynamic> json) { return Addr
 
 /// When a binding has been deployed to a majority of Cloudflare datacenters, the binding will become active and can be used with its associated service.
 /// 
+/// 
+/// Example: `'provisioning'`
 final AddressingProvisioningState? state;
 
 Map<String, dynamic> toJson() { return {

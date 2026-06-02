@@ -9,6 +9,8 @@ factory L4override.fromJson(Map<String, dynamic> json) { return L4override(
 ); }
 
 /// Defines the IPv4 or IPv6 address.
+/// 
+/// Example: `'1.1.1.1'`
 final String? ip;
 
 /// Defines a port number to use for TCP/UDP overrides.

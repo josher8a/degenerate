@@ -14,8 +14,11 @@ final List<WorkersMessages2> errors;
 final List<WorkersMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
+/// Example: `[my-tag]`
 final List<WorkersTag> result;
 
 Map<String, dynamic> toJson() { return {

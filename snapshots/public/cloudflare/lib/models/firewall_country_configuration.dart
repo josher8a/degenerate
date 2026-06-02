@@ -30,9 +30,13 @@ factory FirewallCountryConfiguration.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// The configuration target. You must set the target to `country` when specifying a country code in the rule.
+/// 
+/// Example: `'country'`
 final FirewallCountryConfigurationTarget? target;
 
 /// The two-letter ISO-3166-1 alpha-2 code to match. For more information, refer to [IP Access rules: Parameters](https://developers.cloudflare.com/waf/tools/ip-access-rules/parameters/#country).
+/// 
+/// Example: `'US'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

@@ -13,12 +13,18 @@ factory RealtimekitWebhookRequest.fromJson(Map<String, dynamic> json) { return R
 final bool enabled;
 
 /// Events that this webhook will get triggered by
+/// 
+/// Example: `[meeting.started, meeting.ended, meeting.participantJoined, meeting.participantLeft, meeting.chatSynced, recording.statusUpdate, livestreaming.statusUpdate, meeting.transcript, meeting.summary]`
 final List<RealtimekitPatchWebhookRequestEvents> events;
 
 /// Name of the webhook
+/// 
+/// Example: `'All events webhook'`
 final String name;
 
 /// URL this webhook will send events to
+/// 
+/// Example: `'https://webhook.site/b23a5bbd-c7b0-4ced-a9e2-78ae7889897e'`
 final Uri url;
 
 Map<String, dynamic> toJson() { return {

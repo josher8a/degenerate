@@ -28,6 +28,8 @@ final bool recordOnStart;
 final double sessionKeepAliveTimeInSecs;
 
 /// Whether the meeting is `ACTIVE` or `INACTIVE`. Users will not be able to join an `INACTIVE` meeting.
+/// 
+/// Example: `'INACTIVE'`
 final RealtimekitMeetingStatus? status;
 
 /// Automatically generate summary of meetings using transcripts. Requires Transcriptions to be enabled, and can be retrieved via Webhooks or summary API.

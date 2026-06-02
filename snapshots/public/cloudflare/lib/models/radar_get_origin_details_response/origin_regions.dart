@@ -7,6 +7,8 @@ factory OriginRegions.fromJson(Map<String, dynamic> json) { return OriginRegions
 ); }
 
 /// The region code.
+/// 
+/// Example: `'us-east-1'`
 final String region;
 
 Map<String, dynamic> toJson() { return {

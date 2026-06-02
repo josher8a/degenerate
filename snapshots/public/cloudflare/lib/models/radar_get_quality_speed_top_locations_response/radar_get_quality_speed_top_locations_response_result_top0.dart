@@ -15,24 +15,34 @@ factory RadarGetQualitySpeedTopLocationsResponseResultTop0.fromJson(Map<String, 
   rankPower: (json['rankPower'] as num).toDouble(),
 ); }
 
+/// Example: `'295.886073'`
 final String bandwidthDownload;
 
+/// Example: `'158.85269'`
 final String bandwidthUpload;
 
+/// Example: `'IS'`
 final String clientCountryAlpha2;
 
+/// Example: `'Iceland'`
 final String clientCountryName;
 
+/// Example: `'9.640685'`
 final String jitterIdle;
 
+/// Example: `'46.480023'`
 final String jitterLoaded;
 
+/// Example: `'15.208124'`
 final String latencyIdle;
 
+/// Example: `'114.758887'`
 final String latencyLoaded;
 
+/// Example: `13123`
 final double numTests;
 
+/// Example: `0.77`
 final double rankPower;
 
 Map<String, dynamic> toJson() { return {

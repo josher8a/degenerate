@@ -38,9 +38,13 @@ factory RulesetsSetCacheSettingsEdgeTtl.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// The edge TTL (in seconds) if you choose the "override_origin" mode.
+/// 
+/// Example: `60`
 final int? $default;
 
 /// The edge TTL mode.
+/// 
+/// Example: `'override_origin'`
 final RulesetsSetCacheSettingsEdgeTtlMode mode;
 
 final List<RulesetsSetCacheSettingsStatusCodeTtl2>? statusCodeTtl;

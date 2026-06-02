@@ -14,6 +14,8 @@ final List<MagicTransitMessages2> errors;
 final List<MagicTransitMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final MagicTransitEndpointHealthCheckResponse? result;

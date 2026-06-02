@@ -15,9 +15,13 @@ final ShieldTimestamp? createdAt;
 final ShieldUuid? id;
 
 /// True if schema is Cloudflare-provided.
+/// 
+/// Example: `true`
 final bool? isLearned;
 
 /// Schema file name.
+/// 
+/// Example: `'api-endpoints-8694824bf5c04d019edcbf399c03c103-api-discovery.example.com-thresholds.json'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

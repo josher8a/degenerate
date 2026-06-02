@@ -8,6 +8,8 @@ factory QueuesPullMessagesResponseResult.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// The number of unacknowledged messages in the queue
+/// 
+/// Example: `5`
 final double? messageBacklogCount;
 
 final List<MqQueuePullBatch2>? messages;

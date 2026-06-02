@@ -40,6 +40,8 @@ final ZonesCacheDeceptionArmorId? id;
 
 /// The status of Cache Deception Armor.
 /// 
+/// 
+/// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {

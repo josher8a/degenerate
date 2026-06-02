@@ -10,8 +10,10 @@ factory ListDevicesResponse.fromJson(Map<String, dynamic> json) { return ListDev
   success: json['success'] as bool,
 ); }
 
+/// Example: `[]`
 final List<ResponseMessage> errors;
 
+/// Example: `[]`
 final List<ResponseMessage> messages;
 
 final List<TeamsDevicesPhysicalDevice> result;

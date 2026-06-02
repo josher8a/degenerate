@@ -8,9 +8,13 @@ factory CustomIndicatorFeedsPermissionsRequest.fromJson(Map<String, dynamic> jso
 ); }
 
 /// The Cloudflare account tag of the account to change permissions on
+/// 
+/// Example: `'823f45f16fd2f7e21e1e054aga4d2859'`
 final String? accountTag;
 
 /// The ID of the feed to add/remove permissions on
+/// 
+/// Example: `1`
 final int? feedId;
 
 Map<String, dynamic> toJson() { return {

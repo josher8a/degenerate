@@ -8,9 +8,13 @@ factory Okta.fromJson(Map<String, dynamic> json) { return Okta(
 ); }
 
 /// The ID of your Okta identity provider.
+/// 
+/// Example: `'ea85612a-29c8-46c2-bacb-669d65136971'`
 final String identityProviderId;
 
 /// The name of the Okta group.
+/// 
+/// Example: `'devs'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

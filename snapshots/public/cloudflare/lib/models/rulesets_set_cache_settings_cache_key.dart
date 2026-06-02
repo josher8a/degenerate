@@ -11,14 +11,20 @@ factory RulesetsSetCacheSettingsCacheKey.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// Whether to separate cached content based on the visitor's device type.
+/// 
+/// Example: `true`
 final bool? cacheByDeviceType;
 
 /// Whether to protect from web cache deception attacks, while allowing static assets to be cached.
+/// 
+/// Example: `true`
 final bool? cacheDeceptionArmor;
 
 final RulesetsSetCacheSettingsCustomCacheKey? customKey;
 
 /// Whether to treat requests with the same query parameters the same, regardless of the order those query parameters are in.
+/// 
+/// Example: `true`
 final bool? ignoreQueryStringsOrder;
 
 Map<String, dynamic> toJson() { return {

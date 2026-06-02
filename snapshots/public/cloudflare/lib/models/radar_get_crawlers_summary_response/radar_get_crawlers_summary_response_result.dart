@@ -10,6 +10,7 @@ factory RadarGetCrawlersSummaryResponseResult.fromJson(Map<String, dynamic> json
 /// Metadata for the results.
 final RadarGetAiBotsSummaryByUserAgentResponseResultMeta meta;
 
+/// Example: `{Claude: 63.40249, DuckDuckGo: 10.274394, Google: 8.381743}`
 final Map<String,String> summary0;
 
 Map<String, dynamic> toJson() { return {

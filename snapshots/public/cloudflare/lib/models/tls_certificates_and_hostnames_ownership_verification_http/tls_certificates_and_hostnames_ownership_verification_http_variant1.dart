@@ -8,9 +8,13 @@ factory TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1.fromJson(Ma
 ); }
 
 /// Token to be served.
+/// 
+/// Example: `'5cc07c04-ea62-4a5a-95f0-419334a875a4'`
 final String? httpBody;
 
 /// The HTTP URL that will be checked during custom hostname verification and where the customer should host the token.
+/// 
+/// Example: `'http://custom.test.com/.well-known/cf-custom-hostname-challenge/0d89c70d-ad9f-4843-b99f-6cc0252067e9'`
 final String? httpUrl;
 
 Map<String, dynamic> toJson() { return {

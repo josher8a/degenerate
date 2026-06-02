@@ -68,14 +68,21 @@ factory LoadBalancingResourceReference.fromJson(Map<String, dynamic> json) { ret
 final LoadBalancingResourceReferenceReferenceType? referenceType;
 
 /// A list of references to (referrer) or from (referral) this resource.
+/// 
+/// Example: `[{reference_type: referrer, resource_id: 699d98642c564d2e855e9661899b7252, resource_name: www.example.com, resource_type: load_balancer}, {reference_type: referral, resource_id: f1aba936b94213e5b8dca0c0dbf1f9cc, resource_name: Login page monitor, resource_type: monitor}]`
 final List<Map<String,dynamic>>? references;
 
+/// Example: `'17b5962d775c646f3f9725cbc7a53df4'`
 final String? resourceId;
 
 /// The human-identifiable name of the resource.
+/// 
+/// Example: `'primary-dc-1'`
 final String? resourceName;
 
 /// The type of the resource.
+/// 
+/// Example: `'pool'`
 final LoadBalancingResourceReferenceResourceType? resourceType;
 
 Map<String, dynamic> toJson() { return {

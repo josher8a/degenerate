@@ -15,6 +15,8 @@ factory Wandb.fromJson(Map<String, dynamic> json) { return Wandb(
 
 /// The name of the project that the new run will be created under.
 /// 
+/// 
+/// Example: `'my-wandb-project'`
 final String project;
 
 /// A display name to set for the run. If not set, we will use the Job ID as the name.

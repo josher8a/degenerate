@@ -16,6 +16,8 @@ final List<MagicMessages2> messages;
 final Map<String,dynamic>? result;
 
 /// Whether the API call was successful
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

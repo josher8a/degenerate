@@ -8,6 +8,8 @@ factory IntelAdditionalInformation.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// Suspected DGA malware family.
+/// 
+/// Example: `''`
 final String? suspectedMalwareFamily;
 
 Map<String, dynamic> toJson() { return {

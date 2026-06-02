@@ -87,9 +87,13 @@ final String? batchSuffix;
 final String? fieldDelimiter;
 
 /// List of field names to be included in the Logpush output. For the moment, there is no option to add all fields at once, so you must specify all the fields names you are interested in.
+/// 
+/// Example: `[ClientIP, EdgeStartTimestamp, RayID]`
 final List<String>? fieldNames;
 
 /// Specifies the output type, such as `ndjson` or `csv`. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.
+/// 
+/// Example: `'ndjson'`
 final OutputType? outputType;
 
 /// String to be inserted in-between the records as separator.

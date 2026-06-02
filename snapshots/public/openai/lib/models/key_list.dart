@@ -10,14 +10,18 @@ factory KeyList.fromJson(Map<String, dynamic> json) { return KeyList(
   lastId: json['last_id'] as String?,
 ); }
 
+/// Example: `'list'`
 final String? object;
 
 final List<Key>? data;
 
+/// Example: `false`
 final bool? hasMore;
 
+/// Example: `'key_abc'`
 final String? firstId;
 
+/// Example: `'key_xyz'`
 final String? lastId;
 
 Map<String, dynamic> toJson() { return {

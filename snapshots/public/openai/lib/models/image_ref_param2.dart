@@ -10,6 +10,7 @@ factory ImageRefParam2.fromJson(Map<String, dynamic> json) { return ImageRefPara
 /// A fully qualified URL or base64-encoded data URL.
 final String? imageUrl;
 
+/// Example: `'file-123'`
 final String? fileId;
 
 Map<String, dynamic> toJson() { return {

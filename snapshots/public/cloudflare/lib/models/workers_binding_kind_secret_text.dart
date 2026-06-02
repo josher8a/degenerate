@@ -11,6 +11,8 @@ factory WorkersBindingKindSecretText.fromJson(Map<String, dynamic> json) { retur
 final WorkersBindingName name;
 
 /// The secret value to use.
+/// 
+/// Example: `'My secret.'`
 final String text;
 
 /// The kind of resource that the binding provides.

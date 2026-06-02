@@ -22,6 +22,14 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PagesSecretTextEnvVarType($value)'; } 
  }
 /// An encrypted environment variable.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "type": "secret_text",
+///   "value": ""
+/// }
+/// ```text
 @immutable final class PagesSecretTextEnvVar {const PagesSecretTextEnvVar({required this.type, required this.value, });
 
 factory PagesSecretTextEnvVar.fromJson(Map<String, dynamic> json) { return PagesSecretTextEnvVar(

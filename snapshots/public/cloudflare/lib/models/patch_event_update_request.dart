@@ -19,32 +19,45 @@ factory PatchEventUpdateRequest.fromJson(Map<String, dynamic> json) { return Pat
   tlp: json['tlp'] as String?,
 ); }
 
+/// Example: `'Flying Yeti'`
 final String? attacker;
 
+/// Example: `'CN'`
 final String? attackerCountry;
 
+/// Example: `'Domain Resolution'`
 final String? category;
 
+/// Example: `'2025-12-19T00:00:00Z'`
 final DateTime? createdAt;
 
+/// Example: `'9b769969-a211-466c-8ac3-cb91266a066a'`
 final String? datasetId;
 
+/// Example: `'2022-04-01T00:00:00Z'`
 final DateTime? date;
 
+/// Example: `'An attacker registered the domain domain.com'`
 final String? event;
 
+/// Example: `'domain2.com'`
 final String? indicator;
 
+/// Example: `'domain'`
 final String? indicatorType;
 
+/// Example: `'new insight'`
 final String? insight;
 
 final PatchEventUpdateRequestRaw? raw;
 
+/// Example: `'US'`
 final String? targetCountry;
 
+/// Example: `'Insurance'`
 final String? targetIndustry;
 
+/// Example: `'amber'`
 final String? tlp;
 
 Map<String, dynamic> toJson() { return {

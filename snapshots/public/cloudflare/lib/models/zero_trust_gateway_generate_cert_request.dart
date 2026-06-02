@@ -7,6 +7,8 @@ factory ZeroTrustGatewayGenerateCertRequest.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// Sets the certificate validity period in days (range: 1-10,950 days / ~30 years). Defaults to 1,825 days (5 years). **Important**: This field is only settable during the certificate creation.  Certificates becomes immutable after creation - use the `/activate` and `/deactivate` endpoints to manage certificate lifecycle.
+/// 
+/// Example: `1826`
 final int? validityPeriodDays;
 
 Map<String, dynamic> toJson() { return {

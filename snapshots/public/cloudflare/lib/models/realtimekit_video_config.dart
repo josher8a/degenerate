@@ -42,12 +42,16 @@ final RealtimekitVideoConfigCodec codec;
 final bool exportFile;
 
 /// Height of the recording video in pixels
+/// 
+/// Example: `720`
 final int height;
 
 /// Watermark to be added to the recording
 final Watermark? watermark;
 
 /// Width of the recording video in pixels
+/// 
+/// Example: `1280`
 final int width;
 
 Map<String, dynamic> toJson() { return {

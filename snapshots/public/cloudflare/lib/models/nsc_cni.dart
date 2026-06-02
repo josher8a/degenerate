@@ -20,6 +20,8 @@ final NscBgpControl? bgp;
 /// Customer end of the point-to-point link
 /// 
 /// This should always be inside the same prefix as `p2p_ip`.
+/// 
+/// Example: `'192.168.3.4/31'`
 final String custIp;
 
 final String id;
@@ -30,6 +32,8 @@ final String interconnect;
 final NscMagicSettings magic;
 
 /// Cloudflare end of the point-to-point link
+/// 
+/// Example: `'192.168.3.4/31'`
 final String p2pIp;
 
 Map<String, dynamic> toJson() { return {

@@ -8,6 +8,8 @@ factory AuditSsh.fromJson(Map<String, dynamic> json) { return AuditSsh(
 ); }
 
 /// Enable SSH command logging.
+/// 
+/// Example: `false`
 final bool? commandLogging;
 
 Map<String, dynamic> toJson() { return {

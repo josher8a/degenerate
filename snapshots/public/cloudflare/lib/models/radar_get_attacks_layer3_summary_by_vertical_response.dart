@@ -9,6 +9,7 @@ factory RadarGetAttacksLayer3SummaryByVerticalResponse.fromJson(Map<String, dyna
 
 final RadarGetAiBotsSummaryByUserAgentResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

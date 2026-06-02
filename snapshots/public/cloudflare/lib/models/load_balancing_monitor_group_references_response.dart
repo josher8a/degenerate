@@ -14,9 +14,13 @@ final List<LoadBalancingMessages2> errors;
 final List<LoadBalancingMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 /// List of resources that reference a given monitor group.
+/// 
+/// Example: `[{reference_type: referrer, resource_id: 17b5962d775c646f3f9725cbc7a53df4, resource_name: primary-dc-1, resource_type: pool}]`
 final List<LoadBalancingMonitorGroupReferencesResponseResult> result;
 
 Map<String, dynamic> toJson() { return {

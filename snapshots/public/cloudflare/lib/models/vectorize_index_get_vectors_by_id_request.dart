@@ -7,6 +7,8 @@ factory VectorizeIndexGetVectorsByIdRequest.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// A list of vector identifiers to retrieve from the index indicated by the path.
+/// 
+/// Example: `[5121db81354a40c6aedc3fe1ace51c59, f90eb49c2107486abdfd78c67e853430]`
 final List<VectorizeVectorIdentifier>? ids;
 
 Map<String, dynamic> toJson() { return {

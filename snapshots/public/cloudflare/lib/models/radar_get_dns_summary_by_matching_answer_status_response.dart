@@ -9,6 +9,7 @@ factory RadarGetDnsSummaryByMatchingAnswerStatusResponse.fromJson(Map<String, dy
 
 final RadarGetDnsSummaryByCacheHitStatusResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

@@ -9,9 +9,13 @@ factory ZeroTrustGatewayBrowserIsolationSettings.fromJson(Map<String, dynamic> j
 ); }
 
 /// Specify whether to enable non-identity onramp support for Browser Isolation.
+/// 
+/// Example: `true`
 final bool? nonIdentityEnabled;
 
 /// Specify whether to enable Clientless Browser Isolation.
+/// 
+/// Example: `true`
 final bool? urlBrowserIsolationEnabled;
 
 Map<String, dynamic> toJson() { return {

@@ -18,36 +18,58 @@ factory CacheRulesVariantsValue.fromJson(Map<String, dynamic> json) { return Cac
 ); }
 
 /// List of strings with the MIME types of all the variants that should be served for avif.
+/// 
+/// Example: `[image/webp, image/jpeg]`
 final List<String>? avif;
 
 /// List of strings with the MIME types of all the variants that should be served for bmp.
+/// 
+/// Example: `[image/webp, image/jpeg]`
 final List<String>? bmp;
 
 /// List of strings with the MIME types of all the variants that should be served for gif.
+/// 
+/// Example: `[image/webp, image/jpeg]`
 final List<String>? gif;
 
 /// List of strings with the MIME types of all the variants that should be served for jp2.
+/// 
+/// Example: `[image/webp, image/avif]`
 final List<String>? jp2;
 
 /// List of strings with the MIME types of all the variants that should be served for jpeg.
+/// 
+/// Example: `[image/webp, image/avif]`
 final List<String>? jpeg;
 
 /// List of strings with the MIME types of all the variants that should be served for jpg.
+/// 
+/// Example: `[image/webp, image/avif]`
 final List<String>? jpg;
 
 /// List of strings with the MIME types of all the variants that should be served for jpg2.
+/// 
+/// Example: `[image/webp, image/avif]`
 final List<String>? jpg2;
 
 /// List of strings with the MIME types of all the variants that should be served for png.
+/// 
+/// Example: `[image/webp, image/avif]`
 final List<String>? png;
 
 /// List of strings with the MIME types of all the variants that should be served for tif.
+/// 
+/// Example: `[image/webp, image/avif]`
 final List<String>? tif;
 
 /// List of strings with the MIME types of all the variants that should be served for tiff.
+/// 
+/// Example: `[image/webp, image/avif]`
 final List<String>? tiff;
 
 /// List of strings with the MIME types of all the variants that should be served for webp.
+/// 
+/// Example: `[image/jpeg, image/avif]`
 final List<String>? webp;
 
 Map<String, dynamic> toJson() { return {

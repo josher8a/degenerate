@@ -9,9 +9,13 @@ factory NamespaceWorkerPutScriptContentRequestMetadata.fromJson(Map<String, dyna
 ); }
 
 /// Name of the part in the multipart request that contains the script (e.g. the file adding a listener to the `fetch` event). Indicates a `service worker syntax` Worker.
+/// 
+/// Example: `'worker.js'`
 final String? bodyPart;
 
 /// Name of the part in the multipart request that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker.
+/// 
+/// Example: `'worker.js'`
 final String? mainModule;
 
 Map<String, dynamic> toJson() { return {

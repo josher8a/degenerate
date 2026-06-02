@@ -9,10 +9,13 @@ factory EmailSecurityCreateTrustedDomainResponse.fromJson(Map<String, dynamic> j
   result: OneOf2.parse(json['result'], fromA: (v) => EmailSecurityTrustedDomain.fromJson(v as Map<String, dynamic>), fromB: (v) => (v as List<dynamic>).map((e) => EmailSecurityTrustedDomain.fromJson(e as Map<String, dynamic>)).toList(),),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
 final EmailSecurityCreateTrustedDomainResponseResult result;

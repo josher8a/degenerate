@@ -9,6 +9,7 @@ factory RadarGetBgpPfx2asResponse.fromJson(Map<String, dynamic> json) { return R
 
 final RadarGetBgpPfx2asResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

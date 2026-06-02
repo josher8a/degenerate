@@ -9,12 +9,18 @@ factory SmartshieldSmartShieldSettingsGetResponseRegionalTieredCache.fromJson(Ma
 ); }
 
 /// Whether the setting is editable.
+/// 
+/// Example: `true`
 final bool? editable;
 
 /// The id of the Regional Tiered Cache setting.
+/// 
+/// Example: `'regional_tiered_cache'`
 final String? id;
 
 /// Specifies the enablement value of Cache Reserve.
+/// 
+/// Example: `'off'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {

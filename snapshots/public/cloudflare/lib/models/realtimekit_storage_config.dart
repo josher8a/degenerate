@@ -105,6 +105,8 @@ final double? port;
 final String? privateKey;
 
 /// Region of the storage medium.
+/// 
+/// Example: `'us-east-1'`
 final String? region;
 
 /// Secret key of the storage medium. Similar to `access_key`, it is only writeable by clients, not readable.

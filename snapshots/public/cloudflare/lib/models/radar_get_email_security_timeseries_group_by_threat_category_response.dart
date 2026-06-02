@@ -9,6 +9,7 @@ factory RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponse.fromJson(Ma
 
 final RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

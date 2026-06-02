@@ -1,6 +1,82 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/analytics.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/consent.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/triggers_value.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/variables_value.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/zaraz_zaraz_config_base_settings.dart';/// Zaraz configuration
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "consent": {
+///     "cookieName": "zaraz-consent",
+///     "customIntroDisclaimerDismissed": true,
+///     "enabled": false
+///   },
+///   "dataLayer": true,
+///   "debugKey": "my-debug-key",
+///   "settings": {
+///     "autoInjectScript": true,
+///     "ecommerce": true,
+///     "initPath": "/i"
+///   },
+///   "tools": {
+///     "aJvt": {
+///       "actions": {
+///         "hrnc": {
+///           "actionType": "pageview",
+///           "blockingTriggers": [],
+///           "data": {
+///             "__zaraz_setting_name": "Page view",
+///             "ev": "PageView"
+///           },
+///           "firingTriggers": [
+///             "Pageview"
+///           ]
+///         }
+///       },
+///       "component": "facebook-pixel",
+///       "defaultFields": {
+///         "testKey": "TEST123456"
+///       },
+///       "enabled": true,
+///       "name": "Facebook Pixel",
+///       "permissions": [
+///         "access_client_kv"
+///       ],
+///       "settings": {
+///         "accessToken": "ABcdEFg",
+///         "ecommerce": true,
+///         "property": "12345"
+///       },
+///       "type": "component"
+///     }
+///   },
+///   "triggers": {
+///     "ktBn": {
+///       "Pageview": {
+///         "clientRules": [],
+///         "description": "All page loads",
+///         "excludeRules": [],
+///         "loadRules": [
+///           {
+///             "match": "{{ client.__zarazTrack }}",
+///             "op": "EQUALS",
+///             "value": "Pageview"
+///           }
+///         ],
+///         "name": "Pageview",
+///         "system": "pageload"
+///       }
+///     }
+///   },
+///   "variables": {
+///     "Autd": {
+///       "name": "ip",
+///       "type": "string",
+///       "value": "{{ system.device.ip }}"
+///     }
+///   },
+///   "zarazVersion": 43
+/// }
+/// ```text
 @immutable final class ZarazZarazConfigBase {const ZarazZarazConfigBase({required this.dataLayer, required this.debugKey, required this.settings, required this.triggers, required this.variables, required this.zarazVersion, this.analytics, this.consent, this.historyChange, });
 
 factory ZarazZarazConfigBase.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBase(

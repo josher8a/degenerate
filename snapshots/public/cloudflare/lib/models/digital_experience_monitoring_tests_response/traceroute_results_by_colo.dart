@@ -8,6 +8,8 @@ factory TracerouteResultsByColo.fromJson(Map<String, dynamic> json) { return Tra
 ); }
 
 /// Cloudflare colo
+/// 
+/// Example: `'SJC'`
 final String colo;
 
 final DigitalExperienceMonitoringTimingAggregates roundTripTime;

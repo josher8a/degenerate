@@ -12,21 +12,33 @@ factory RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0.fromJson(Ma
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String $1HourTo3Hours;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String $10MinsTo20Mins;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String $20MinsTo40Mins;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String $40MinsTo1Hour;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String over3Hours;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String under10Mins;
 
 Map<String, dynamic> toJson() { return {

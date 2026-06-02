@@ -57,12 +57,18 @@ factory EmailRuleMatcher.fromJson(Map<String, dynamic> json) { return EmailRuleM
 ); }
 
 /// Field for type matcher.
+/// 
+/// Example: `'to'`
 final Field? field;
 
 /// Type of matcher.
+/// 
+/// Example: `'literal'`
 final EmailRuleMatcherType type;
 
 /// Value for matcher.
+/// 
+/// Example: `'test@example.com'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

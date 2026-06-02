@@ -18,24 +18,38 @@ factory RulesetsRuleRatelimit.fromJson(Map<String, dynamic> json) { return Rules
 final List<String> characteristics;
 
 /// An expression that defines when the rate limit counter should be incremented. It defaults to the same as the rule's expression.
+/// 
+/// Example: `'http.request.body.raw eq "abcd"'`
 final String? countingExpression;
 
 /// Period of time in seconds after which the action will be disabled following its first execution.
+/// 
+/// Example: `600`
 final int? mitigationTimeout;
 
 /// Period in seconds over which the counter is being incremented.
+/// 
+/// Example: `60`
 final int period;
 
 /// The threshold of requests per period after which the action will be executed for the first time.
+/// 
+/// Example: `1000`
 final int? requestsPerPeriod;
 
 /// Whether counting is only performed when an origin is reached.
+/// 
+/// Example: `true`
 final bool requestsToOrigin;
 
 /// The score threshold per period for which the action will be executed the first time.
+/// 
+/// Example: `400`
 final int? scorePerPeriod;
 
 /// A response header name provided by the origin, which contains the score to increment rate limit counter with.
+/// 
+/// Example: `'my-score'`
 final String? scoreResponseHeaderName;
 
 Map<String, dynamic> toJson() { return {

@@ -10,9 +10,13 @@ factory WorkersObservability.fromJson(Map<String, dynamic> json) { return Worker
 ); }
 
 /// Whether observability is enabled for the Worker.
+/// 
+/// Example: `true`
 final bool enabled;
 
 /// The sampling rate for incoming requests. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+/// 
+/// Example: `0.1`
 final double? headSamplingRate;
 
 /// Log settings for the Worker.

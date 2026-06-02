@@ -13,6 +13,8 @@ factory ShieldPerOperationSettingChangeBase.fromJson(Map<String, dynamic> json) 
 ///   - `"none"` - will skip mitigation for this operation
 ///   - `null` - clears any mitigation action
 /// 
+/// 
+/// Example: `'block'`
 final ShieldPerOperationSettingChangeBaseMitigationAction? mitigationAction;
 
 Map<String, dynamic> toJson() { return {

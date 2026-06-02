@@ -12,9 +12,13 @@ factory HyperdriveHyperdriveCachingEnabled.fromJson(Map<String, dynamic> json) {
 final bool? disabled;
 
 /// Specify the maximum duration (in seconds) items should persist in the cache. Defaults to 60 seconds if not specified.
+/// 
+/// Example: `60`
 final int? maxAge;
 
 /// Specify the number of seconds the cache may serve a stale response. Defaults to 15 seconds if not specified.
+/// 
+/// Example: `15`
 final int? staleWhileRevalidate;
 
 Map<String, dynamic> toJson() { return {

@@ -8,11 +8,15 @@ factory RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0.fromJson(Map<Stri
   value: json['value'] as String,
 ); }
 
+/// Example: `'US'`
 final String clientCountryAlpha2;
 
+/// Example: `'United States'`
 final String clientCountryName;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

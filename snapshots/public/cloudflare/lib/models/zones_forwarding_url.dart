@@ -34,6 +34,8 @@ factory ZonesForwardingUrl.fromJson(Map<String, dynamic> json) { return ZonesFor
 /// Redirects one URL to another using an `HTTP 301/302` redirect. Refer
 /// to [Wildcard matching and referencing](https://developers.cloudflare.com/rules/page-rules/reference/wildcard-matching/).
 /// 
+/// 
+/// Example: `'forwarding_url'`
 final ZonesForwardingUrlId? id;
 
 final ZonesForwardingUrlValue? value;

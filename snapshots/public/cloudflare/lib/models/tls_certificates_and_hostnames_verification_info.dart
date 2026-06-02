@@ -71,9 +71,13 @@ factory TlsCertificatesAndHostnamesVerificationInfo.fromJson(Map<String, dynamic
 ); }
 
 /// Name of CNAME record.
+/// 
+/// Example: `'b3b90cfedd89a3e487d3e383c56c4267.example.com'`
 final RecordName? recordName;
 
 /// Target of CNAME record.
+/// 
+/// Example: `'6979be7e4cfc9e5c603e31df7efac9cc60fee82d.comodoca.com'`
 final RecordTarget? recordTarget;
 
 Map<String, dynamic> toJson() { return {

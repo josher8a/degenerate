@@ -55,6 +55,8 @@ final String? content;
 final DnsRecordsCaaRecordData? data;
 
 /// Record type.
+/// 
+/// Example: `'CAA'`
 final DnsRecordsCaaRecordType? type;
 
 Map<String, dynamic> toJson() { return {

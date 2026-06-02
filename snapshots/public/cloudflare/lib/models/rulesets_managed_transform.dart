@@ -21,9 +21,13 @@ factory RulesetsManagedTransform.fromJson(Map<String, dynamic> json) { return Ru
 final List<RulesetsManagedTransformId>? conflictsWith;
 
 /// Whether the Managed Transform is enabled.
+/// 
+/// Example: `true`
 final bool enabled;
 
 /// Whether the Managed Transform conflicts with the currently-enabled Managed Transforms.
+/// 
+/// Example: `false`
 final bool hasConflict;
 
 final RulesetsManagedTransformId id;

@@ -16,6 +16,8 @@ factory AbuseReportsAbuseReport.fromJson(Map<String, dynamic> json) { return Abu
 ); }
 
 /// Creation date of report. Time in RFC 3339 format (https://www.rfc-editor.org/rfc/rfc3339.html)
+/// 
+/// Example: `'2009-11-10T23:00:00Z'`
 final String cdate;
 
 /// Domain that relates to the report.

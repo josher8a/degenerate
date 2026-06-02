@@ -13,9 +13,13 @@ factory IamUserGroupMember.fromJson(Map<String, dynamic> json) { return IamUserG
 final IamEmail? email;
 
 /// Account member identifier.
+/// 
+/// Example: `'4f5f0c14a2a41d5063dd301b2f829f04'`
 final String id;
 
 /// The member's status in the account.
+/// 
+/// Example: `'accepted'`
 final dynamic status;
 
 Map<String, dynamic> toJson() { return {

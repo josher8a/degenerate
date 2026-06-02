@@ -12,14 +12,20 @@ factory IamUserGroup.fromJson(Map<String, dynamic> json) { return IamUserGroup(
 ); }
 
 /// Timestamp for the creation of the user group
+/// 
+/// Example: `'2024-03-01T12:21:02.0000Z'`
 final DateTime createdOn;
 
 final IamCommonComponentsSchemasIdentifier id;
 
 /// Last time the user group was modified.
+/// 
+/// Example: `'2024-03-01T12:21:02.0000Z'`
 final DateTime modifiedOn;
 
 /// Name of the user group.
+/// 
+/// Example: `'My New User Group'`
 final String name;
 
 /// Policies attached to the User group

@@ -17,6 +17,8 @@ final AccessSchemasAppCount? appCount;
 final AccessTimestamp? createdAt;
 
 /// Custom page HTML.
+/// 
+/// Example: `'<html><body><h1>Access Denied</h1></body></html>'`
 final String customHtml;
 
 /// Custom page name.

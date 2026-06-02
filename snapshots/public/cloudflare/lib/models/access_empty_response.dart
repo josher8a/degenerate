@@ -7,8 +7,10 @@ factory AccessEmptyResponse.fromJson(Map<String, dynamic> json) { return AccessE
   success: json['success'] as bool?,
 ); }
 
+/// Example: `true`
 final bool? result;
 
+/// Example: `true`
 final bool? success;
 
 Map<String, dynamic> toJson() { return {

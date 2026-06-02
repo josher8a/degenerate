@@ -9,8 +9,10 @@ factory BaseErrorResponse.fromJson(Map<String, dynamic> json) { return BaseError
   success: json['success'] as bool,
 ); }
 
+/// Example: `[{code: 7003, message: No route for the URI}]`
 final List<CcMessages2> errors;
 
+/// Example: `[]`
 final List<CcMessages2> messages;
 
 final Map<String,dynamic>? result;

@@ -1,6 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersDeleteSocialAccountForAuthenticatedUserRequest {const UsersDeleteSocialAccountForAuthenticatedUserRequest({required this.accountUrls});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
+/// ```json`
+/// {
+///   "account_urls": [
+///     "https://www.linkedin.com/company/github/",
+///     "https://twitter.com/github"
+///   ]
+/// }
+/// ```text
+@immutable final class UsersDeleteSocialAccountForAuthenticatedUserRequest {const UsersDeleteSocialAccountForAuthenticatedUserRequest({required this.accountUrls});
 
 factory UsersDeleteSocialAccountForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return UsersDeleteSocialAccountForAuthenticatedUserRequest(
   accountUrls: (json['account_urls'] as List<dynamic>).map((e) => e as String).toList(),

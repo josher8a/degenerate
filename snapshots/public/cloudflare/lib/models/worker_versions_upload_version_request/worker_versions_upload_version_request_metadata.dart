@@ -28,6 +28,8 @@ final List<WorkersCompatibilityFlag>? compatibilityFlags;
 final List<String>? keepBindings;
 
 /// Name of the uploaded file that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker, which is required for Version Upload.
+/// 
+/// Example: `'worker.js'`
 final String mainModule;
 
 /// Usage model for the Worker invocations.

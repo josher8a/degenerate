@@ -18,9 +18,13 @@ final int? all;
 final int? cached;
 
 /// Key/value pairs where the key is a two-digit country code and the value is the number of requests served to that country.
+/// 
+/// Example: `{AG: 37298, GI: 293846, US: 4181364.0}`
 final Map<String,dynamic>? country;
 
 /// A variable list of key/value pairs where the key is a HTTP status code and the value is the number of requests with that code served.
+/// 
+/// Example: `{200: 13496983.0, 301: 283, 400: 187936, 402: 1828, 404: 1293}`
 final Map<String,dynamic>? httpStatus;
 
 /// Total number of requests served from the origin.

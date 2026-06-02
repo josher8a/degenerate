@@ -11,17 +11,22 @@ factory MqQueuePullBatch2.fromJson(Map<String, dynamic> json) { return MqQueuePu
   timestampMs: json['timestamp_ms'] != null ? (json['timestamp_ms'] as num).toDouble() : null,
 ); }
 
+/// Example: `1`
 final double? attempts;
 
+/// Example: `'hello world'`
 final String? body;
 
+/// Example: `'b01b5594f784d0165c2985833f5660dd'`
 final String? id;
 
 /// An ID that represents an "in-flight" message that has been pulled from a Queue. You must hold on to this ID and use it to acknowledge this message.
 final MqLeaseId? leaseId;
 
+/// Example: `{CF-Content-Type: text, CF-sourceMessageSource: dash}`
 final Map<String,dynamic>? metadata;
 
+/// Example: `1710950954154.0`
 final double? timestampMs;
 
 Map<String, dynamic> toJson() { return {

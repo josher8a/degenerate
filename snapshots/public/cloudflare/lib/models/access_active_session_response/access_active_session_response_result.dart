@@ -24,42 +24,56 @@ factory AccessActiveSessionResponseResult.fromJson(Map<String, dynamic> json) { 
   isActive: json['isActive'] as bool?,
 ); }
 
+/// Example: `'1234567890'`
 final String? accountId;
 
+/// Example: `'NONE'`
 final String? authStatus;
 
+/// Example: `''`
 final String? commonName;
 
+/// Example: `''`
 final String? deviceId;
 
 final Map<String,AccessDeviceSession>? deviceSessions;
 
 final Map<String,AccessSchemasDevicePostureRule>? devicePosture;
 
+/// Example: `'test@cloudflare.com'`
 final String? email;
 
 final AccessGeo? geo;
 
+/// Example: `1694791905.0`
 final double? iat;
 
 final Idp? idp;
 
+/// Example: `'127.0.0.0'`
 final String? ip;
 
+/// Example: `false`
 final bool? isGateway;
 
+/// Example: `false`
 final bool? isWarp;
 
 final MtlsAuth? mtlsAuth;
 
+/// Example: `''`
 final String? serviceTokenId;
 
+/// Example: `false`
 final bool? serviceTokenStatus;
 
+/// Example: `'57cf8cf2-f55a-4588-9ac9-f5e41e9f09b4'`
 final String? userUuid;
 
+/// Example: `2`
 final double? version;
 
+/// Example: `true`
 final bool? isActive;
 
 Map<String, dynamic> toJson() { return {

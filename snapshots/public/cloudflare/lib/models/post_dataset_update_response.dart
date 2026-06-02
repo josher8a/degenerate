@@ -8,10 +8,13 @@ factory PostDatasetUpdateResponse.fromJson(Map<String, dynamic> json) { return P
   uuid: json['uuid'] as String,
 ); }
 
+/// Example: `true`
 final bool isPublic;
 
+/// Example: `'friendly dataset name'`
 final String name;
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
 Map<String, dynamic> toJson() { return {

@@ -17,6 +17,8 @@ factory StreamsByStreamIdResponse2Result.fromJson(Map<String, dynamic> json) { r
 final DateTime createdAt;
 
 /// Indicates the endpoint URL of this stream.
+/// 
+/// Example: `'https://01234567890123457689012345678901.ingest.cloudflare.com/v1'`
 final Uri? endpoint;
 
 final CloudflarePipelinesFormat? format;
@@ -24,14 +26,20 @@ final CloudflarePipelinesFormat? format;
 final Http http;
 
 /// Indicates a unique identifier for this stream.
+/// 
+/// Example: `'01234567890123457689012345678901'`
 final String id;
 
 final DateTime modifiedAt;
 
 /// Indicates the name of the Stream.
+/// 
+/// Example: `'my_stream'`
 final String name;
 
 /// Indicates the current version of this stream.
+/// 
+/// Example: `3`
 final int version;
 
 final WorkerBinding workerBinding;

@@ -14,14 +14,20 @@ factory PipelinesResponse2Result.fromJson(Map<String, dynamic> json) { return Pi
 final String createdAt;
 
 /// Indicates a unique identifier for this pipeline.
+/// 
+/// Example: `'01234567890123457689012345678901'`
 final String id;
 
 final String modifiedAt;
 
 /// Indicates the name of the Pipeline.
+/// 
+/// Example: `'my_pipeline'`
 final String name;
 
 /// Specifies SQL for the Pipeline processing flow.
+/// 
+/// Example: `'insert into sink select * from source;'`
 final String sql;
 
 /// Indicates the current status of the Pipeline.

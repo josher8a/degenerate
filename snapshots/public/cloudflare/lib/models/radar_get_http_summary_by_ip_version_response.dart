@@ -9,6 +9,7 @@ factory RadarGetHttpSummaryByIpVersionResponse.fromJson(Map<String, dynamic> jso
 
 final RadarGetAttacksLayer3SummaryByIpVersionResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

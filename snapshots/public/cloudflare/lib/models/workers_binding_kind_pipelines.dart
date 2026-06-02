@@ -11,6 +11,8 @@ factory WorkersBindingKindPipelines.fromJson(Map<String, dynamic> json) { return
 final WorkersBindingName name;
 
 /// Name of the Pipeline to bind to.
+/// 
+/// Example: `'my-pipeline'`
 final String pipeline;
 
 /// The kind of resource that the binding provides.

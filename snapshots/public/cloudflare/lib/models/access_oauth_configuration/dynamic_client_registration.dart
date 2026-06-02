@@ -18,6 +18,8 @@ final bool? allowAnyOnLoopback;
 
 /// The URIs that are allowed as redirect URIs for dynamically registered clients. Must use the `https` protocol. Paths may end in `/*` to match all sub-paths.
 /// 
+/// 
+/// Example: `[https://example.com/callback]`
 final List<String>? allowedUris;
 
 /// Whether dynamic client registration is enabled.

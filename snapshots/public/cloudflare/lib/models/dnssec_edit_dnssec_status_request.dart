@@ -60,6 +60,8 @@ final DnssecDnssecPresigned? dnssecPresigned;
 final DnssecDnssecUseNsec3? dnssecUseNsec3;
 
 /// Status of DNSSEC, based on user-desired state and presence of necessary records.
+/// 
+/// Example: `'active'`
 final DnssecEditDnssecStatusRequestStatus? status;
 
 Map<String, dynamic> toJson() { return {

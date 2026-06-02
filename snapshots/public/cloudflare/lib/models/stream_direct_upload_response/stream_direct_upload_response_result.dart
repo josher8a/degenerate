@@ -14,6 +14,8 @@ final StreamScheduledDeletion? scheduledDeletion;
 final StreamIdentifier? uid;
 
 /// The URL an unauthenticated upload can use for a single `HTTP POST multipart/form-data` request.
+/// 
+/// Example: `'www.example.com/samplepath'`
 final String? uploadUrl;
 
 final StreamWatermarks? watermark;

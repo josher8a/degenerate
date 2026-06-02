@@ -6,6 +6,7 @@ factory StreamDeletedResponse.fromJson(Map<String, dynamic> json) { return Strea
   result: json['result'] as String?,
 ); }
 
+/// Example: `'ok'`
 final String? result;
 
 Map<String, dynamic> toJson() { return {

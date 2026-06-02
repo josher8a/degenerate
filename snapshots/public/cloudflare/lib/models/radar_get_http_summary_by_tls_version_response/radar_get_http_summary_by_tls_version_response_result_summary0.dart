@@ -11,18 +11,28 @@ factory RadarGetHttpSummaryByTlsVersionResponseResultSummary0.fromJson(Map<Strin
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String tls10;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String tls11;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String tls12;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String tls13;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String tlsQuic;
 
 Map<String, dynamic> toJson() { return {

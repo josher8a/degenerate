@@ -9,12 +9,16 @@ factory ResultsTask.fromJson(Map<String, dynamic> json) { return ResultsTask(
   visibility: json['visibility'] as String,
 ); }
 
+/// Example: `'2024-09-30T23:54:02.881000+00:00'`
 final String time;
 
+/// Example: `'https://example.com'`
 final String url;
 
+/// Example: `'9626f773-9ffb-4cfb-89d3-30b120fc8011'`
 final String uuid;
 
+/// Example: `'public'`
 final String visibility;
 
 Map<String, dynamic> toJson() { return {

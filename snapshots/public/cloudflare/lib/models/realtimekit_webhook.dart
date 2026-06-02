@@ -13,24 +13,36 @@ factory RealtimekitWebhook.fromJson(Map<String, dynamic> json) { return Realtime
 ); }
 
 /// Timestamp when this webhook was created
+/// 
+/// Example: `'2022-05-28T07:01:53.075Z'`
 final DateTime createdAt;
 
 /// Set to true if the webhook is active
 final bool enabled;
 
 /// Events this webhook will send updates for
+/// 
+/// Example: `[meeting.started, meeting.ended, meeting.participantJoined, meeting.participantLeft, meeting.chatSynced, recording.statusUpdate, livestreaming.statusUpdate, meeting.transcript, meeting.summary]`
 final List<RealtimekitPatchWebhookRequestEvents> events;
 
 /// ID of the webhook
+/// 
+/// Example: `'0d1f069d-43bb-489a-ad8c-7eb95592ba8e'`
 final String id;
 
 /// Name of the webhook
+/// 
+/// Example: `'All events webhook'`
 final String name;
 
 /// Timestamp when this webhook was updated
+/// 
+/// Example: `'2022-05-28T07:01:53.075Z'`
 final DateTime updatedAt;
 
 /// URL the webhook will send events to
+/// 
+/// Example: `'https://webhook.site/b23a5bbd-c7b0-4ced-a9e2-78ae7889897e'`
 final Uri url;
 
 Map<String, dynamic> toJson() { return {

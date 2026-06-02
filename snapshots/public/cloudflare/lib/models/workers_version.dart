@@ -49,6 +49,8 @@ final String id;
 final PagesDeploymentConfigValuesLimits? limits;
 
 /// The name of the main module in the `modules` array (e.g. the name of the module that exports a `fetch` handler).
+/// 
+/// Example: `'index.js'`
 final String? mainModule;
 
 /// Migrations for Durable Objects associated with the version. Migrations are applied when the version is deployed.
@@ -69,15 +71,23 @@ final int number;
 final WorkersPlacementInfoNoStatus? placement;
 
 /// The client used to create the version.
+/// 
+/// Example: `'wrangler'`
 final String? source;
 
 /// Time in milliseconds spent on [Worker startup](https://developers.cloudflare.com/workers/platform/limits/#worker-startup-time).
+/// 
+/// Example: `10`
 final int? startupTimeMs;
 
 /// All routable URLs that always point to this version. Does not include alias URLs, since aliases can be updated to point to a different version.
+/// 
+/// Example: `[https://9387e76d-my-worker.my-subdomain.workers.dev]`
 final List<Uri> urls;
 
 /// Usage model for the version.
+/// 
+/// Example: `'standard'`
 final UsageModel usageModel;
 
 Map<String, dynamic> toJson() { return {

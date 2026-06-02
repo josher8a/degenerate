@@ -8,6 +8,8 @@ factory ZeroTrustGatewayActivityLogSettings.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// Specify whether to log activity.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 Map<String, dynamic> toJson() { return {

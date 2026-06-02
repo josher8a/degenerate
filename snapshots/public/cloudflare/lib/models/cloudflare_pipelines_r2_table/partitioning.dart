@@ -8,6 +8,8 @@ factory Partitioning.fromJson(Map<String, dynamic> json) { return Partitioning(
 ); }
 
 /// The pattern of the date string
+/// 
+/// Example: `'year=%Y/month=%m/day=%d/hour=%H'`
 final String? timePattern;
 
 Map<String, dynamic> toJson() { return {

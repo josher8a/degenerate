@@ -10,12 +10,18 @@ factory RulesetsSetConfigAutominify.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// Whether to minify CSS files.
+/// 
+/// Example: `true`
 final bool css;
 
 /// Whether to minify HTML files.
+/// 
+/// Example: `true`
 final bool html;
 
 /// Whether to minify JavaScript files.
+/// 
+/// Example: `true`
 final bool js;
 
 Map<String, dynamic> toJson() { return {

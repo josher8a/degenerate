@@ -12,6 +12,7 @@ factory DigitalExperienceMonitoringDexRule.fromJson(Map<String, dynamic> json) {
   updatedAt: json['updated_at'] as String?,
 ); }
 
+/// Example: `'2023-07-16 15:00:00+00'`
 final String createdAt;
 
 final String? description;
@@ -24,6 +25,7 @@ final String name;
 
 final List<DigitalExperienceMonitoringDexTargetedTest>? targetedTests;
 
+/// Example: `'2023-07-16 15:00:00+00'`
 final String? updatedAt;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,8 @@ factory ScannedFrom.fromJson(Map<String, dynamic> json) { return ScannedFrom(
 ); }
 
 /// IATA code of Cloudflare datacenter
+/// 
+/// Example: `'MAD'`
 final String colo;
 
 Map<String, dynamic> toJson() { return {

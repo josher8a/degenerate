@@ -9,12 +9,18 @@ factory RadarGetHttpSummaryByDeviceTypeResponseResultSummary0.fromJson(Map<Strin
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String desktop;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String mobile;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String other;
 
 Map<String, dynamic> toJson() { return {

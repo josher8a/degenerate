@@ -9,12 +9,16 @@ factory RadarGetAttacksLayer7TopOriginAsResponseResultTop0.fromJson(Map<String, 
   value: json['value'] as String,
 ); }
 
+/// Example: `'55836'`
 final String originAsn;
 
+/// Example: `'RELIANCEJIO-IN Reliance Jio Infocomm Limited'`
 final String originAsnName;
 
+/// Example: `1`
 final double rank;
 
+/// Example: `'4.323214'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

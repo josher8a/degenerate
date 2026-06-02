@@ -16,6 +16,8 @@ final CreateModerationRequestInput input;
 /// [the moderation guide](/docs/guides/moderation), and learn about
 /// available models [here](/docs/models#moderation).
 /// 
+/// 
+/// Example: `'omni-moderation-2024-09-26'`
 final CreateModerationRequestModel? model;
 
 Map<String, dynamic> toJson() { return {

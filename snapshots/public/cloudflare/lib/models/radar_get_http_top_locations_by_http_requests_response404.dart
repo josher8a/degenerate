@@ -6,6 +6,7 @@ factory RadarGetHttpTopLocationsByHttpRequestsResponse404.fromJson(Map<String, d
   error: json['error'] as String,
 ); }
 
+/// Example: `'Not Found.'`
 final String error;
 
 Map<String, dynamic> toJson() { return {

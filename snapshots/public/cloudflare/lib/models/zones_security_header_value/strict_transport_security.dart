@@ -12,18 +12,28 @@ factory StrictTransportSecurity.fromJson(Map<String, dynamic> json) { return Str
 ); }
 
 /// Whether or not strict transport security is enabled.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 /// Include all subdomains for strict transport security.
+/// 
+/// Example: `true`
 final bool? includeSubdomains;
 
 /// Max age in seconds of the strict transport security.
+/// 
+/// Example: `86400`
 final double? maxAge;
 
 /// Whether or not to include 'X-Content-Type-Options: nosniff' header.
+/// 
+/// Example: `true`
 final bool? nosniff;
 
 /// Enable automatic preload of the HSTS configuration.
+/// 
+/// Example: `true`
 final bool? preload;
 
 Map<String, dynamic> toJson() { return {

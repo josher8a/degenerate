@@ -9,6 +9,7 @@ factory RadarGetHttpSummaryByHttpProtocolResponse.fromJson(Map<String, dynamic> 
 
 final RadarGetHttpSummaryByHttpProtocolResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

@@ -6,6 +6,7 @@ factory RevertBookmark.fromJson(Map<String, dynamic> json) { return RevertBookma
   type: json['type'] as String,
 ); }
 
+/// Example: `'string'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

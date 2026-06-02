@@ -8,9 +8,13 @@ factory AaaAuditLogsResource.fromJson(Map<String, dynamic> json) { return AaaAud
 ); }
 
 /// An identifier for the resource that was affected by the action.
+/// 
+/// Example: `'023e105f4ecef8ad9ca31a8372d0c353'`
 final String? id;
 
 /// A short string that describes the resource that was affected by the action.
+/// 
+/// Example: `'zone'`
 final String? type;
 
 Map<String, dynamic> toJson() { return {

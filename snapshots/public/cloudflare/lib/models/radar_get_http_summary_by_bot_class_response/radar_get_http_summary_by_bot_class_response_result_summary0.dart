@@ -8,9 +8,13 @@ factory RadarGetHttpSummaryByBotClassResponseResultSummary0.fromJson(Map<String,
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String bot;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String human;
 
 Map<String, dynamic> toJson() { return {

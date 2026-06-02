@@ -31,6 +31,8 @@ final String? screenshotDownloadSignature;
 final String? screenshotPath;
 
 /// URL that was submitted.
+/// 
+/// Example: `'https://www.cloudflare.com'`
 final String? url;
 
 Map<String, dynamic> toJson() { return {

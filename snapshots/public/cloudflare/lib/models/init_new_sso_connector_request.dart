@@ -9,9 +9,13 @@ factory InitNewSsoConnectorRequest.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// Begin the verification process after creation
+/// 
+/// Example: `true`
 final bool beginVerification;
 
 /// Email domain of the new SSO connector
+/// 
+/// Example: `'example.com'`
 final String emailDomain;
 
 /// Controls the display of FedRAMP language to the user during SSO login

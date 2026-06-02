@@ -8,6 +8,8 @@ factory Unit.fromJson(Map<String, dynamic> json) { return Unit(
 ); }
 
 /// Tenant unit ID
+/// 
+/// Example: `'f267e341f3dd4697bd3b9f71dd96247f'`
 final String? id;
 
 Map<String, dynamic> toJson() { return {

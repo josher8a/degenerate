@@ -8,6 +8,8 @@ factory IamMemberPermissionGroup.fromJson(Map<String, dynamic> json) { return Ia
 ); }
 
 /// Identifier of the group.
+/// 
+/// Example: `'c8fed203ed3043cba015a93ad1616f1f'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

@@ -9,9 +9,13 @@ factory RulesetsRewriteUriPath.fromJson(Map<String, dynamic> json) { return Rule
 ); }
 
 /// An expression that evaluates to a value to rewrite the URI path to.
+/// 
+/// Example: `'regex_replace(http.request.uri.path, "/foo$", "/bar")'`
 final String? expression;
 
 /// A value to rewrite the URI path to.
+/// 
+/// Example: `'/foo'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

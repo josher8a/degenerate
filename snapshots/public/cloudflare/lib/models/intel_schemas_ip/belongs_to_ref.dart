@@ -39,13 +39,18 @@ factory BelongsToRef.fromJson(Map<String, dynamic> json) { return BelongsToRef(
   value: json['value'] as String?,
 ); }
 
+/// Example: `'US'`
 final String? country;
 
+/// Example: `'CLOUDFLARENET'`
 final String? description;
 
+/// Example: `'autonomous-system--2fa28d71-3549-5a38-af05-770b79ad6ea8'`
 final String? id;
 
 /// Infrastructure type of this ASN.
+/// 
+/// Example: `'hosting_provider'`
 final BelongsToRefType? type;
 
 final String? value;

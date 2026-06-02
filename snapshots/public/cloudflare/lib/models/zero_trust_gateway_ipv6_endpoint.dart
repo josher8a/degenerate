@@ -8,6 +8,8 @@ factory ZeroTrustGatewayIpv6Endpoint.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Indicate whether the IPV6 endpoint is enabled for this location.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 final List<ZeroTrustGatewayIpv6Network>? networks;

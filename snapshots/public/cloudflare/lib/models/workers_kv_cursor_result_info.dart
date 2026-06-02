@@ -15,6 +15,8 @@ factory WorkersKvCursorResultInfo.fromJson(Map<String, dynamic> json) { return W
 ); }
 
 /// Total results returned based on your list parameters.
+/// 
+/// Example: `1`
 final double? count;
 
 /// Opaque token indicating the position from which to continue when requesting the next set of records if the amount of list results was limited by the limit parameter. A valid value for the cursor can be obtained from the cursors object in the result_info structure.

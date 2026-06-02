@@ -36,9 +36,13 @@ factory TeamsDevicesUniqueClientIdInputRequest.fromJson(Map<String, dynamic> jso
 ); }
 
 /// List ID.
+/// 
+/// Example: `'da3de859-8f6e-47ea-a2b5-b2433858471f'`
 final String id;
 
 /// Operating System.
+/// 
+/// Example: `'android'`
 final TeamsDevicesUniqueClientIdInputRequestOperatingSystem operatingSystem;
 
 Map<String, dynamic> toJson() { return {

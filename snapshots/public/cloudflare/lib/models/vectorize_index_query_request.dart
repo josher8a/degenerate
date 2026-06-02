@@ -11,6 +11,8 @@ factory VectorizeIndexQueryRequest.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// A metadata filter expression used to limit nearest neighbor results.
+/// 
+/// Example: `{has_viewed: {$ne: true}, streaming_platform: netflix}`
 final Map<String,dynamic>? filter;
 
 /// Whether to return the metadata associated with the closest vectors.
@@ -20,9 +22,13 @@ final bool returnMetadata;
 final bool returnValues;
 
 /// The number of nearest neighbors to find.
+/// 
+/// Example: `5`
 final double topK;
 
 /// The search vector that will be used to find the nearest neighbors.
+/// 
+/// Example: `[0.5, 0.5, 0.5]`
 final List<double> vector;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,8 @@ factory EmailList.fromJson(Map<String, dynamic> json) { return EmailList(
 ); }
 
 /// The ID of a previously created email list.
+/// 
+/// Example: `'aa0a4aab-672b-4bdb-bc33-a59f1130a11f'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

@@ -13,11 +13,15 @@ factory VectorizeIndexInfoResponse.fromJson(Map<String, dynamic> json) { return 
 final VectorizeIndexDimensions? dimensions;
 
 /// Specifies the timestamp the last mutation batch was processed as an ISO8601 string.
+/// 
+/// Example: `'2024-07-22T18:25:44.442097Z'`
 final DateTime? processedUpToDatetime;
 
 final VectorizeMutationUuid? processedUpToMutation;
 
 /// Specifies the number of vectors present in the index
+/// 
+/// Example: `300000`
 final int? vectorCount;
 
 Map<String, dynamic> toJson() { return {

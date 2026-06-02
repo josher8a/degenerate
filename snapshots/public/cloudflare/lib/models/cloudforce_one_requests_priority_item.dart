@@ -21,9 +21,13 @@ final CloudforceOneRequestsUuid id;
 final List<String> labels;
 
 /// Priority.
+/// 
+/// Example: `1`
 final int priority;
 
 /// Requirement.
+/// 
+/// Example: `'DoS attacks carried out by CVEs'`
 final String requirement;
 
 final CloudforceOneRequestsTlp tlp;

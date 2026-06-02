@@ -9,6 +9,7 @@ factory RadarGetNetflowsTimeseriesResponse.fromJson(Map<String, dynamic> json) {
 
 final RadarGetAttacksLayer7TimeseriesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

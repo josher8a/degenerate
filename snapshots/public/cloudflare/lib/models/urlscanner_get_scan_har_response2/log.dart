@@ -15,6 +15,7 @@ final List<LogEntries> entries;
 
 final List<Pages> pages;
 
+/// Example: `'1.2'`
 final String version;
 
 Map<String, dynamic> toJson() { return {

@@ -10,14 +10,19 @@ factory PostGroupCreateResponse.fromJson(Map<String, dynamic> json) { return Pos
   uuid: json['uuid'] as String,
 ); }
 
+/// Example: `'2022-04-01T00:00:00Z'`
 final DateTime createdAt;
 
+/// Example: `'Cloudforce subscribers'`
 final String description;
 
+/// Example: `'loudforce-subscribers'`
 final String name;
 
+/// Example: `'2022-04-01T00:00:00Z'`
 final DateTime updatedAt;
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
 Map<String, dynamic> toJson() { return {

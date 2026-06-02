@@ -10,15 +10,23 @@ factory TeamsDevicesWorkspaceOneConfigRequest.fromJson(Map<String, dynamic> json
 ); }
 
 /// The Workspace One API URL provided in the Workspace One Admin Dashboard.
+/// 
+/// Example: `'https://as123.awmdm.com/API'`
 final String apiUrl;
 
 /// The Workspace One Authorization URL depending on your region.
+/// 
+/// Example: `'https://na.uemauth.workspaceone.com/connect/token'`
 final String authUrl;
 
 /// The Workspace One client ID provided in the Workspace One Admin Dashboard.
+/// 
+/// Example: `'example client id'`
 final String clientId;
 
 /// The Workspace One client secret provided in the Workspace One Admin Dashboard.
+/// 
+/// Example: `'example client secret'`
 final String clientSecret;
 
 Map<String, dynamic> toJson() { return {

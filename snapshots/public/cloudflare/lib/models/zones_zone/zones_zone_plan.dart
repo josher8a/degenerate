@@ -17,33 +17,51 @@ factory ZonesZonePlan.fromJson(Map<String, dynamic> json) { return ZonesZonePlan
 ); }
 
 /// States if the subscription can be activated.
+/// 
+/// Example: `false`
 final bool? canSubscribe;
 
 /// The denomination of the customer.
+/// 
+/// Example: `'USD'`
 final String? currency;
 
 /// If this Zone is managed by another company.
+/// 
+/// Example: `false`
 final bool? externallyManaged;
 
 /// How often the customer is billed.
+/// 
+/// Example: `'monthly'`
 final String? frequency;
 
 /// Identifier
 final ZonesIdentifier? id;
 
 /// States if the subscription active.
+/// 
+/// Example: `false`
 final bool? isSubscribed;
 
 /// If the legacy discount applies to this Zone.
+/// 
+/// Example: `false`
 final bool? legacyDiscount;
 
 /// The legacy name of the plan.
+/// 
+/// Example: `'free'`
 final String? legacyId;
 
 /// Name of the owner.
+/// 
+/// Example: `'Example Org'`
 final String? name;
 
 /// How much the customer is paying.
+/// 
+/// Example: `10.99`
 final double? price;
 
 Map<String, dynamic> toJson() { return {

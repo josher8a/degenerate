@@ -15,15 +15,21 @@ factory ShieldPublicSchema.fromJson(Map<String, dynamic> json) { return ShieldPu
 final ShieldTimestamp createdAt;
 
 /// The kind of the schema
+/// 
+/// Example: `'openapi_v3'`
 final SchemaValidationCreateSchemaRequestKind kind;
 
 /// A human-readable name for the schema
+/// 
+/// Example: `'petstore schema'`
 final String name;
 
 /// A unique identifier of this schema
 final ShieldUuid schemaId;
 
 /// The raw schema, e.g., the OpenAPI schema, either as JSON or YAML
+/// 
+/// Example: `'<schema file contents>'`
 final String source;
 
 /// An indicator if this schema is enabled

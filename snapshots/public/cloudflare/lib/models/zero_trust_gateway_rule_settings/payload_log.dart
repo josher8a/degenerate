@@ -8,6 +8,8 @@ factory PayloadLog.fromJson(Map<String, dynamic> json) { return PayloadLog(
 ); }
 
 /// Enable DLP payload logging for this rule.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 Map<String, dynamic> toJson() { return {

@@ -8,9 +8,13 @@ factory ShieldResponseExpressionTemplatesFallthrough.fromJson(Map<String, dynami
 ); }
 
 /// WAF Expression for fallthrough
+/// 
+/// Example: `'(cf.api_gateway.fallthrough_detected)'`
 final String expression;
 
 /// Title for the expression
+/// 
+/// Example: `'Fallthrough Expression for [zone.domain.tld]'`
 final String title;
 
 Map<String, dynamic> toJson() { return {

@@ -104,6 +104,8 @@ factory CreateImageEditRequest.fromJson(Map<String, dynamic> json) { return Crea
 final CreateImageEditRequestImage image;
 
 /// A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2`, and 32000 characters for the GPT image models.
+/// 
+/// Example: `'A cute baby sea otter wearing a beret'`
 final String prompt;
 
 /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
@@ -117,34 +119,50 @@ final Uint8List? mask;
 /// If `transparent`, the output format needs to support transparency, so it
 /// should be set to either `png` (default value) or `webp`.
 /// 
+/// 
+/// Example: `'transparent'`
 final CreateImageEditRequestBackground? background;
 
 /// The model to use for image generation. Defaults to `gpt-image-1.5`.
+/// 
+/// Example: `'gpt-image-1.5'`
 final CreateImageEditRequestModel? model;
 
 /// The number of images to generate. Must be between 1 and 10.
+/// 
+/// Example: `1`
 final int? n;
 
 /// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, and one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`.
+/// 
+/// Example: `'1024x1024'`
 final CreateImageEditRequestSize? size;
 
 /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2` (default is `url` for `dall-e-2`), as GPT image models always return base64-encoded images.
+/// 
+/// Example: `'url'`
 final CreateImageEditRequestResponseFormat? responseFormat;
 
 /// The format in which the generated images are returned. This parameter is
 /// only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.
 /// The default value is `png`.
 /// 
+/// 
+/// Example: `'png'`
 final CreateImageEditRequestOutputFormat? outputFormat;
 
 /// The compression level (0-100%) for the generated images. This parameter
 /// is only supported for the GPT image models with the `webp` or `jpeg` output
 /// formats, and defaults to 100.
 /// 
+/// 
+/// Example: `100`
 final int? outputCompression;
 
 /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).
 /// 
+/// 
+/// Example: `'user-1234'`
 final String? user;
 
 final InputFidelity? inputFidelity;
@@ -152,12 +170,16 @@ final InputFidelity? inputFidelity;
 /// Edit the image in streaming mode. Defaults to `false`. See the
 /// [Image generation guide](/docs/guides/image-generation) for more information.
 /// 
+/// 
+/// Example: `false`
 final bool? stream;
 
 final PartialImages? partialImages;
 
 /// The quality of the image that will be generated for GPT image models. Defaults to `auto`.
 /// 
+/// 
+/// Example: `'high'`
 final CreateImageEditRequestQuality? quality;
 
 Map<String, dynamic> toJson() { return {

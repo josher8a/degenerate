@@ -13,6 +13,8 @@ factory MagicAclUpdateRequest.fromJson(Map<String, dynamic> json) { return Magic
 ); }
 
 /// Description for the ACL.
+/// 
+/// Example: `'Allows local traffic between PIN pads and cash register.'`
 final String? description;
 
 final MagicForwardLocally? forwardLocally;
@@ -22,6 +24,8 @@ final MagicLanAclConfiguration? lan1;
 final MagicLanAclConfiguration? lan2;
 
 /// The name of the ACL.
+/// 
+/// Example: `'PIN Pad - Cash Register'`
 final String? name;
 
 final List<MagicAclProtocols>? protocols;

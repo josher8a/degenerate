@@ -11,6 +11,8 @@ factory CloudforceOneRequestsRequestAssetList.fromJson(Map<String, dynamic> json
 final int page;
 
 /// Number of results per page.
+/// 
+/// Example: `10`
 final int perPage;
 
 Map<String, dynamic> toJson() { return {

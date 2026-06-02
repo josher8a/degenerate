@@ -10,15 +10,23 @@ factory LoadBalancingOriginHealthIp.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// Failure reason.
+/// 
+/// Example: `'No failure reasons'`
 final String? failureReason;
 
 /// Origin health status.
+/// 
+/// Example: `true`
 final bool? healthy;
 
 /// Response code from origin health check.
+/// 
+/// Example: `200`
 final double? responseCode;
 
 /// Origin RTT (Round Trip Time) response.
+/// 
+/// Example: `'201.5ms'`
 final String? rtt;
 
 Map<String, dynamic> toJson() { return {

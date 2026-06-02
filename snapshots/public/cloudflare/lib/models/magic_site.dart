@@ -18,6 +18,8 @@ final MagicConnectorId? connectorId;
 final String? description;
 
 /// Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode.
+/// 
+/// Example: `true`
 final bool? haMode;
 
 /// Identifier

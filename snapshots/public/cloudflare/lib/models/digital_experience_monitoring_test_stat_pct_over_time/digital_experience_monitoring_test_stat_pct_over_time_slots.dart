@@ -7,6 +7,7 @@ factory DigitalExperienceMonitoringTestStatPctOverTimeSlots.fromJson(Map<String,
   value: (json['value'] as num).toDouble(),
 ); }
 
+/// Example: `'2023-07-16 15:00:00+00'`
 final String timestamp;
 
 final double value;

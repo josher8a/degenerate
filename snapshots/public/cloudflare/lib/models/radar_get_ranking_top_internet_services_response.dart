@@ -9,6 +9,7 @@ factory RadarGetRankingTopInternetServicesResponse.fromJson(Map<String, dynamic>
 
 final RadarGetRankingTopInternetServicesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

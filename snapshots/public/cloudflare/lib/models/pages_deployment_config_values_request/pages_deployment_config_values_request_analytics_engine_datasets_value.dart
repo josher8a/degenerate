@@ -8,6 +8,8 @@ factory PagesDeploymentConfigValuesRequestAnalyticsEngineDatasetsValue.fromJson(
 ); }
 
 /// Name of the dataset.
+/// 
+/// Example: `'api_analytics'`
 final String dataset;
 
 Map<String, dynamic> toJson() { return {

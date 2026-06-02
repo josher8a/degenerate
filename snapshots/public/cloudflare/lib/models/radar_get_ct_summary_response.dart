@@ -9,6 +9,7 @@ factory RadarGetCtSummaryResponse.fromJson(Map<String, dynamic> json) { return R
 
 final RadarGetCtSummaryResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

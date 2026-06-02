@@ -12,6 +12,8 @@ factory WorkersBindingKindRatelimit.fromJson(Map<String, dynamic> json) { return
 final WorkersBindingName name;
 
 /// Identifier of the rate limit namespace to bind to.
+/// 
+/// Example: `'1234'`
 final String namespaceId;
 
 /// The rate limit configuration.

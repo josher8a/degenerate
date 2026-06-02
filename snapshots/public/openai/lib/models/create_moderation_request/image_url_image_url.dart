@@ -8,6 +8,8 @@ factory ImageUrlImageUrl.fromJson(Map<String, dynamic> json) { return ImageUrlIm
 ); }
 
 /// Either a URL of the image or the base64 encoded image data.
+/// 
+/// Example: `'https://example.com/image.jpg'`
 final Uri url;
 
 Map<String, dynamic> toJson() { return {

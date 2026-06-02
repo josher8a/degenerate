@@ -12,6 +12,7 @@ final PostEventDoRevertResponseProperties properties;
 
 final List<String> $required;
 
+/// Example: `'object'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

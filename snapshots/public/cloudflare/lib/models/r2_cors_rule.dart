@@ -16,9 +16,13 @@ final Allowed allowed;
 final List<String>? exposeHeaders;
 
 /// Identifier for this rule.
+/// 
+/// Example: `'Allow Local Development'`
 final String? id;
 
 /// Specifies the amount of time (in seconds) browsers are allowed to cache CORS preflight responses. Browsers may limit this to 2 hours or less, even if the maximum value (86400) is specified.
+/// 
+/// Example: `3600`
 final double? maxAgeSeconds;
 
 Map<String, dynamic> toJson() { return {

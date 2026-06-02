@@ -8,6 +8,8 @@ factory IamCreateUserGroupBody.fromJson(Map<String, dynamic> json) { return IamC
 ); }
 
 /// Name of the User group.
+/// 
+/// Example: `'My New User Group'`
 final String name;
 
 /// Policies attached to the User group

@@ -8,6 +8,8 @@ factory HttpResultsByColo.fromJson(Map<String, dynamic> json) { return HttpResul
 ); }
 
 /// Cloudflare colo
+/// 
+/// Example: `'SJC'`
 final String colo;
 
 final DigitalExperienceMonitoringTimingAggregates resourceFetchTime;

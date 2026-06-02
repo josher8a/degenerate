@@ -7,8 +7,10 @@ factory ResultInfoCursors.fromJson(Map<String, dynamic> json) { return ResultInf
   before: json['before'] as String?,
 ); }
 
+/// Example: `'yyy'`
 final String? after;
 
+/// Example: `'xxx'`
 final String? before;
 
 Map<String, dynamic> toJson() { return {

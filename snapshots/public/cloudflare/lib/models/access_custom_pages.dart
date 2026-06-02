@@ -8,9 +8,13 @@ factory AccessCustomPages.fromJson(Map<String, dynamic> json) { return AccessCus
 ); }
 
 /// The uid of the custom page to use when a user is denied access after failing a non-identity rule.
+/// 
+/// Example: `'699d98642c564d2e855e9661899b7252'`
 final String? forbidden;
 
 /// The uid of the custom page to use when a user is denied access.
+/// 
+/// Example: `'699d98642c564d2e855e9661899b7252'`
 final String? identityDenied;
 
 Map<String, dynamic> toJson() { return {

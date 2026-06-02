@@ -7,6 +7,8 @@ factory ValidationErrors.fromJson(Map<String, dynamic> json) { return Validation
 ); }
 
 /// A domain validation error.
+/// 
+/// Example: `'SERVFAIL looking up CAA for app.example.com'`
 final String? message;
 
 Map<String, dynamic> toJson() { return {

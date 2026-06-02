@@ -9,6 +9,7 @@ factory RadarGetBgpTimeseriesResponse.fromJson(Map<String, dynamic> json) { retu
 
 final RadarGetBgpTimeseriesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

@@ -10,15 +10,21 @@ factory WorkersBindingKindInherit.fromJson(Map<String, dynamic> json) { return W
 ); }
 
 /// The name of the inherited binding.
+/// 
+/// Example: `'MY_BINDING'`
 final String name;
 
 /// The old name of the inherited binding. If set, the binding will be renamed from `old_name` to `name` in the new version. If not set, the binding will keep the same name between versions.
+/// 
+/// Example: `'MY_OLD_BINDING'`
 final String? oldName;
 
 /// The kind of resource that the binding provides.
 final String type;
 
 /// Identifier for the version to inherit the binding from, which can be the version ID or the literal "latest" to inherit from the latest version. Defaults to inheriting the binding from the latest version.
+/// 
+/// Example: `'8969331f-7192-434c-9938-6aea24ed58bf'`
 final String versionId;
 
 Map<String, dynamic> toJson() { return {

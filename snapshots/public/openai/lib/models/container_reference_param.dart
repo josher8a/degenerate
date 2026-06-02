@@ -11,6 +11,8 @@ factory ContainerReferenceParam.fromJson(Map<String, dynamic> json) { return Con
 final ContainerReferenceParamType type;
 
 /// The ID of the referenced container.
+/// 
+/// Example: `'cntr_123'`
 final String containerId;
 
 Map<String, dynamic> toJson() { return {

@@ -9,6 +9,7 @@ factory RealtimekitWebhookSuccessResponse.fromJson(Map<String, dynamic> json) { 
 
 final RealtimekitWebhook data;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

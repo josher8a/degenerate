@@ -17,6 +17,16 @@ factory CreateEvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { r
 final ChatCompletionMessageCustomToolCallType type;
 
 /// The json schema for each row in the data source.
+/// 
+/// Example: `'{`
+///   "type": "object",
+///   "properties": {
+///     "name": {"type": "string"},
+///     "age": {"type": "integer"}
+///   },
+///   "required": `["name", "age"]`
+/// }
+/// '``
 final Map<String,dynamic> itemSchema;
 
 /// Whether the eval should expect you to populate the sample namespace (ie, by generating responses off of your data source)

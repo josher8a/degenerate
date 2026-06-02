@@ -10,6 +10,8 @@ factory SuggestedThreshold.fromJson(Map<String, dynamic> json) { return Suggeste
 final SuggestedThresholdConfidenceIntervals? confidenceIntervals;
 
 /// Suggested threshold.
+/// 
+/// Example: `25.5`
 final double? mean;
 
 Map<String, dynamic> toJson() { return {

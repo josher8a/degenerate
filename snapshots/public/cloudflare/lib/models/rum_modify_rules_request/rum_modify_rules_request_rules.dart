@@ -10,14 +10,18 @@ factory RumModifyRulesRequestRules.fromJson(Map<String, dynamic> json) { return 
   paths: (json['paths'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// Example: `'example.com'`
 final String? host;
 
 final RumRuleIdentifier? id;
 
+/// Example: `true`
 final bool? inclusive;
 
+/// Example: `false`
 final bool? isPaused;
 
+/// Example: `[*]`
 final List<String>? paths;
 
 Map<String, dynamic> toJson() { return {

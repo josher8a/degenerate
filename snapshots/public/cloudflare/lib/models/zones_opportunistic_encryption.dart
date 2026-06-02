@@ -34,10 +34,14 @@ factory ZonesOpportunisticEncryption.fromJson(Map<String, dynamic> json) { retur
 /// Opportunistic Encryption allows browsers to access HTTP URIs over an encrypted TLS channel.
 /// It's not a substitute for HTTPS, but provides additional security for otherwise vulnerable requests.
 /// 
+/// 
+/// Example: `'opportunistic_encryption'`
 final ZonesOpportunisticEncryptionId? id;
 
 /// The status of Opportunistic Encryption.
 /// 
+/// 
+/// Example: `'on'`
 final ZonesOpportunisticEncryptionValue? value;
 
 Map<String, dynamic> toJson() { return {

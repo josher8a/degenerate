@@ -12,18 +12,28 @@ factory AaaAuditLogs2Raw.fromJson(Map<String, dynamic> json) { return AaaAuditLo
 ); }
 
 /// The Cloudflare Ray ID for the request.
+/// 
+/// Example: `'8e9b1c60ef9e1c9a'`
 final String? cfRayId;
 
 /// The HTTP method of the request.
+/// 
+/// Example: `'POST'`
 final String? method;
 
 /// The HTTP response status code returned by the API.
+/// 
+/// Example: `200`
 final int? statusCode;
 
 /// The URI of the request.
+/// 
+/// Example: `'/accounts/4bb334f7c94c4a29a045f03944f072e5/members'`
 final String? uri;
 
 /// The client's user agent string sent with the request.
+/// 
+/// Example: `'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Safari/605.1.15'`
 final String? userAgent;
 
 Map<String, dynamic> toJson() { return {

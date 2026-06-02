@@ -7,6 +7,8 @@ factory LoginMethod.fromJson(Map<String, dynamic> json) { return LoginMethod(
 ); }
 
 /// The ID of an identity provider.
+/// 
+/// Example: `'aa0a4aab-672b-4bdb-bc33-a59f1130a11f'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

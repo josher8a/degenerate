@@ -49,9 +49,13 @@ factory AddressingLease.fromJson(Map<String, dynamic> json) { return AddressingL
 
 /// Timestamp of the moment the lease was created.
 /// 
+/// 
+/// Example: `'2020-01-01T00:00:00Z'`
 final DateTime? activeFrom;
 
 /// CIDRs attached to the lease
+/// 
+/// Example: `[192.0.2.100/32, 192.0.2.101/32]`
 final List<AddressingSchemasCidr>? cidrs;
 
 /// Timestamp of the moment the object was created.
@@ -64,6 +68,8 @@ final AddressingModifiedAt? modifiedAt;
 final AddressingLeaseOwnerId? ownerId;
 
 /// Describes the purpose of the addresses.
+/// 
+/// Example: `'Spectrum Static IPs'`
 final String? purpose;
 
 Map<String, dynamic> toJson() { return {

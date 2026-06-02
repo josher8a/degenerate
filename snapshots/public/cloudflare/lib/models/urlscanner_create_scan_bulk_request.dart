@@ -21,6 +21,7 @@ final String? referer;
 /// Take multiple screenshots targeting different device types.
 final List<ScreenshotsResolutions>? screenshotsResolutions;
 
+/// Example: `'https://www.example.com'`
 final String url;
 
 /// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.

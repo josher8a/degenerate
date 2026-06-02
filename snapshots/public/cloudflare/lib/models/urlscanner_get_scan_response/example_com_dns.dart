@@ -9,12 +9,15 @@ factory ExampleComDns.fromJson(Map<String, dynamic> json) { return ExampleComDns
   type: json['type'] as String,
 ); }
 
+/// Example: `'93.184.216.34'`
 final String address;
 
 final bool dnssecValid;
 
+/// Example: `'example.com'`
 final String name;
 
+/// Example: `'A'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

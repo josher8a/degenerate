@@ -7,8 +7,10 @@ factory Files.fromJson(Map<String, dynamic> json) { return Files(
   url: json['url'] as String?,
 ); }
 
+/// Example: `'<HTTP header object>'`
 final Map<String,String>? headers;
 
+/// Example: `'http://www.example.com/cat_picture.jpg'`
 final String? url;
 
 Map<String, dynamic> toJson() { return {

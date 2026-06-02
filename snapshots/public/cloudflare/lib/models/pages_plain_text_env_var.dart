@@ -22,6 +22,14 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PagesPlainTextEnvVarType($value)'; } 
  }
 /// A plaintext environment variable.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "type": "plain_text",
+///   "value": "hello world"
+/// }
+/// ```text
 @immutable final class PagesPlainTextEnvVar {const PagesPlainTextEnvVar({required this.type, required this.value, });
 
 factory PagesPlainTextEnvVar.fromJson(Map<String, dynamic> json) { return PagesPlainTextEnvVar(

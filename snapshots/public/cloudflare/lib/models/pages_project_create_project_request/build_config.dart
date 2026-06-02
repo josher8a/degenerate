@@ -13,21 +13,33 @@ factory BuildConfig.fromJson(Map<String, dynamic> json) { return BuildConfig(
 ); }
 
 /// Enable build caching for the project.
+/// 
+/// Example: `true`
 final bool? buildCaching;
 
 /// Command used to build project.
+/// 
+/// Example: `'npm run build'`
 final String? buildCommand;
 
 /// Output directory of the build.
+/// 
+/// Example: `'build'`
 final String? destinationDir;
 
 /// Directory to run the command.
+/// 
+/// Example: `'/'`
 final String? rootDir;
 
 /// The classifying tag for analytics.
+/// 
+/// Example: `'cee1c73f6e4743d0b5e6bb1a0bcaabcc'`
 final String? webAnalyticsTag;
 
 /// The auth token for analytics.
+/// 
+/// Example: `'021e1057c18547eca7b79f2516f06o7x'`
 final String? webAnalyticsToken;
 
 Map<String, dynamic> toJson() { return {

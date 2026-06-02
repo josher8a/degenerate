@@ -9,12 +9,16 @@ factory ResultsStats.fromJson(Map<String, dynamic> json) { return ResultsStats(
   uniqIPs: (json['uniqIPs'] as num).toDouble(),
 ); }
 
+/// Example: `2512`
 final double dataLength;
 
+/// Example: `2`
 final double requests;
 
+/// Example: `1`
 final double uniqCountries;
 
+/// Example: `1`
 final double uniqIPs;
 
 Map<String, dynamic> toJson() { return {

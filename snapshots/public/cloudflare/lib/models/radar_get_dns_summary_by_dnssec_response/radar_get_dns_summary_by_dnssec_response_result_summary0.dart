@@ -10,15 +10,23 @@ factory RadarGetDnsSummaryByDnssecResponseResultSummary0.fromJson(Map<String, dy
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String insecure;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String invalid;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String other;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String secure;
 
 Map<String, dynamic> toJson() { return {

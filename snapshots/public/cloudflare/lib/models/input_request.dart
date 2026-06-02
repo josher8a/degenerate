@@ -37,23 +37,35 @@ factory InputRequest.fromJson(Map<String, dynamic> json) { return InputRequest(
 ); }
 
 /// UUID of Cloudflare managed certificate.
+/// 
+/// Example: `'b14ddcc4-bcd2-4df4-bd4f-eb27d5a50c30'`
 final String certificateId;
 
 /// Confirm the certificate was not imported from another device. We recommend keeping this enabled unless the certificate was deployed without a private key.
+/// 
+/// Example: `true`
 final bool checkPrivateKey;
 
 /// Certificate Common Name. This may include one or more variables in the ${ } notation. Only ${serial_number} and ${hostname} are valid variables.
+/// 
+/// Example: `'${hostname}.com.${serial_number}'`
 final String? cn;
 
 /// List of values indicating purposes for which the certificate public key can be used.
+/// 
+/// Example: `[clientAuth, emailProtection]`
 final List<TeamsDevicesExtendedKeyUsageEnum>? extendedKeyUsage;
 
 final InputRequestLocations? locations;
 
 /// Operating System.
+/// 
+/// Example: `'windows'`
 final InputRequestOperatingSystem operatingSystem;
 
 /// List of certificate Subject Alternative Names.
+/// 
+/// Example: `[example.com, sample.com]`
 final List<String>? subjectAlternativeNames;
 
 Map<String, dynamic> toJson() { return {

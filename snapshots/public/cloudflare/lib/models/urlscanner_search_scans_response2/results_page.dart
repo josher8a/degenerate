@@ -9,12 +9,16 @@ factory ResultsPage.fromJson(Map<String, dynamic> json) { return ResultsPage(
   url: json['url'] as String,
 ); }
 
+/// Example: `'AS15133'`
 final String asn;
 
+/// Example: `'US'`
 final String country;
 
+/// Example: `'93.184.215.14'`
 final String ip;
 
+/// Example: `'https://example.com'`
 final String url;
 
 Map<String, dynamic> toJson() { return {

@@ -9,12 +9,29 @@ factory EmailSecurityCreateBlockedSenderResponse.fromJson(Map<String, dynamic> j
   result: EmailSecurityCreateBlockedSenderResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
+/// Example:
+/// ```json`
+/// {
+///   "comments": "block sender with email test@example.com",
+///   "created_at": "2023-11-14T22:13:20Z",
+///   "id": 2402,
+///   "is_regex": false,
+///   "last_modified": "2023-11-14T22:13:20Z",
+///   "pattern": "test@example.com",
+///   "pattern_type": "EMAIL"
+/// }
+/// ```text
+/// 
+/// Example: `{comments: block sender with email test@example.com, created_at: 2023-11-14T22:13:20Z, id: 2402, is_regex: false, last_modified: 2023-11-14T22:13:20Z, pattern: test@example.com, pattern_type: EMAIL}`
 final EmailSecurityCreateBlockedSenderResponseResult result;
 
 Map<String, dynamic> toJson() { return {

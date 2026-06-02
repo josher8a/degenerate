@@ -37,6 +37,8 @@ final ZonesBrowserCacheTtlId? id;
 /// The number of seconds to cache resources for.
 /// Setting this to 0 enables "Respect Existing Headers".
 /// 
+/// 
+/// Example: `3600`
 final int? value;
 
 Map<String, dynamic> toJson() { return {

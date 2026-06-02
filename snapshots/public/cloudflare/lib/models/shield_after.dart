@@ -8,6 +8,8 @@ factory ShieldAfter.fromJson(Map<String, dynamic> json) { return ShieldAfter(
 ); }
 
 /// Move rule to after rule with this ID.
+/// 
+/// Example: `'0d9bf70c-92e1-4bb3-9411-34a3bcc59003'`
 final String? after;
 
 Map<String, dynamic> toJson() { return {

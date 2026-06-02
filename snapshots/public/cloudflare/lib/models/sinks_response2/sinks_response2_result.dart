@@ -20,16 +20,22 @@ final DateTime createdAt;
 final CloudflarePipelinesFormat? format;
 
 /// Indicates a unique identifier for this sink.
+/// 
+/// Example: `'01234567890123457689012345678901'`
 final String id;
 
 final DateTime modifiedAt;
 
 /// Defines the name of the Sink.
+/// 
+/// Example: `'my_sink'`
 final String name;
 
 final CloudflarePipelinesConnectionSchema? schema;
 
 /// Specifies the type of sink.
+/// 
+/// Example: `'r2'`
 final SinksRequestType type;
 
 Map<String, dynamic> toJson() { return {

@@ -9,10 +9,13 @@ factory EmailSecurityGetPhishguardReportsResponse.fromJson(Map<String, dynamic> 
   result: (json['result'] as List<dynamic>).map((e) => EmailSecurityPhishGuardReport.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
 final List<EmailSecurityPhishGuardReport> result;

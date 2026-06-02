@@ -10,12 +10,18 @@ factory TeamsDevicesRegistrationDeviceDetails.fromJson(Map<String, dynamic> json
 ); }
 
 /// Version of the WARP client.
+/// 
+/// Example: `'1.0.0'`
 final String? clientVersion;
 
 /// The ID of the device.
+/// 
+/// Example: `'32aa0404-78f1-49a4-99e0-97f575081356'`
 final String id;
 
 /// The name of the device.
+/// 
+/// Example: `'My Device'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

@@ -8,6 +8,8 @@ factory BundleStatus.fromJson(Map<String, dynamic> json) { return BundleStatus(
 ); }
 
 /// Determines whether or not Leaked Credential Checks are enabled.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 Map<String, dynamic> toJson() { return {

@@ -9,9 +9,13 @@ factory RulesetsLogCustomFieldRawResponseFields2.fromJson(Map<String, dynamic> j
 ); }
 
 /// The name of the response header.
+/// 
+/// Example: `'my-response-header'`
 final String name;
 
 /// Whether to log duplicate values of the same header.
+/// 
+/// Example: `true`
 final bool preserveDuplicates;
 
 Map<String, dynamic> toJson() { return {

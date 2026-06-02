@@ -7,6 +7,8 @@ factory ServiceToken.fromJson(Map<String, dynamic> json) { return ServiceToken(
 ); }
 
 /// The ID of a Service Token.
+/// 
+/// Example: `'aa0a4aab-672b-4bdb-bc33-a59f1130a11f'`
 final String tokenId;
 
 Map<String, dynamic> toJson() { return {

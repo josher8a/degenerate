@@ -8,9 +8,13 @@ factory MetaDateRange.fromJson(Map<String, dynamic> json) { return MetaDateRange
 ); }
 
 /// Adjusted end of date range.
+/// 
+/// Example: `'2022-09-17T10:22:57.555Z'`
 final DateTime endTime;
 
 /// Adjusted start of date range.
+/// 
+/// Example: `'2022-09-16T10:22:57.555Z'`
 final DateTime startTime;
 
 Map<String, dynamic> toJson() { return {

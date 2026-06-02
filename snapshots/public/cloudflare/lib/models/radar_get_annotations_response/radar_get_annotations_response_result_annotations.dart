@@ -24,16 +24,22 @@ final List<int> asns;
 
 final List<AsnsDetails> asnsDetails;
 
+/// Example: `'ALL'`
 final String dataSource;
 
+/// Example: `'example'`
 final String? description;
 
+/// Example: `'2022-09-08T10:00:28Z'`
 final String? endDate;
 
+/// Example: `'OUTAGE'`
 final String eventType;
 
+/// Example: `'550'`
 final String id;
 
+/// Example: `'http://example.com'`
 final String? linkedUrl;
 
 final List<String> locations;
@@ -46,8 +52,10 @@ final List<OriginsDetails> originsDetails;
 
 final Outage outage;
 
+/// Example: `'Colima, Michoacán, México'`
 final String? scope;
 
+/// Example: `'2022-09-06T10:00:28Z'`
 final String startDate;
 
 Map<String, dynamic> toJson() { return {

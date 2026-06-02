@@ -9,6 +9,7 @@ factory RadarGetAttacksLayer3SummaryByProtocolResponse.fromJson(Map<String, dyna
 
 final RadarGetAttacksLayer3SummaryByProtocolResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

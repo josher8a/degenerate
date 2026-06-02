@@ -11,6 +11,8 @@ factory PagesSource.fromJson(Map<String, dynamic> json) { return PagesSource(
 final PagesSourceConfig config;
 
 /// The source control management provider.
+/// 
+/// Example: `'github'`
 final PagesSourceType type;
 
 Map<String, dynamic> toJson() { return {

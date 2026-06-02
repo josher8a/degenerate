@@ -12,6 +12,8 @@ factory ZonesCacheRulesAegisValue.fromJson(Map<String, dynamic> json) { return Z
 final bool? enabled;
 
 /// Egress pool id which refers to a grouping of dedicated egress IPs through which Cloudflare will connect to origin.
+/// 
+/// Example: `'pool-id'`
 final String? poolId;
 
 Map<String, dynamic> toJson() { return {

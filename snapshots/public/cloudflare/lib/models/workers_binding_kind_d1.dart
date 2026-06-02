@@ -9,6 +9,8 @@ factory WorkersBindingKindD1.fromJson(Map<String, dynamic> json) { return Worker
 ); }
 
 /// Identifier of the D1 database to bind to.
+/// 
+/// Example: `'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'`
 final String id;
 
 final WorkersBindingName name;

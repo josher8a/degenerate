@@ -9,12 +9,18 @@ factory Modules.fromJson(Map<String, dynamic> json) { return Modules(
 ); }
 
 /// The base64-encoded module content.
+/// 
+/// Example: `'ZXhwb3J0IGRlZmF1bHQgewogIGFzeW5jIGZldGNoKHJlcXVlc3QsIGVudiwgY3R4KSB7CiAgICByZXR1cm4gbmV3IFJlc3BvbnNlKCdIZWxsbyBXb3JsZCEnKQogIH0KfQ=='`
 final Uint8List contentBase64;
 
 /// The content type of the module.
+/// 
+/// Example: `'application/javascript+module'`
 final String contentType;
 
 /// The name of the module.
+/// 
+/// Example: `'index.js'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

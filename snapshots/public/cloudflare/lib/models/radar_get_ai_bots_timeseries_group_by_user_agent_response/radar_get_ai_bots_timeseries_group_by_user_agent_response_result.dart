@@ -10,6 +10,19 @@ factory RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(Map<Stri
 /// Metadata for the results.
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta meta;
 
+/// Example:
+/// ```json`
+/// {
+///   "facebookexternalhit": [
+///     "0.862022"
+///   ],
+///   "timestamps": [
+///     "2024-07-30T03:00:00Z"
+///   ]
+/// }
+/// ```text
+/// 
+/// Example: `{facebookexternalhit: [0.862022], timestamps: [2024-07-30T03:00:00Z]}`
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultSerie0 serie0;
 
 Map<String, dynamic> toJson() { return {

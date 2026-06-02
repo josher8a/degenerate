@@ -7,6 +7,8 @@ factory Deletes.fromJson(Map<String, dynamic> json) { return Deletes(
 ); }
 
 /// The unique identifier for the allow policy.
+/// 
+/// Example: `2401`
 final int id;
 
 Map<String, dynamic> toJson() { return {

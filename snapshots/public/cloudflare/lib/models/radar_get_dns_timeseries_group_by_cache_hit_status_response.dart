@@ -9,6 +9,7 @@ factory RadarGetDnsTimeseriesGroupByCacheHitStatusResponse.fromJson(Map<String, 
 
 final RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

@@ -8,9 +8,13 @@ factory RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0.fromJson(Map<S
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String notSpoof;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String spoof;
 
 Map<String, dynamic> toJson() { return {

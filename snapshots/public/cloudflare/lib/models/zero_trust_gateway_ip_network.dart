@@ -7,6 +7,8 @@ factory ZeroTrustGatewayIpNetwork.fromJson(Map<String, dynamic> json) { return Z
 ); }
 
 /// Specify the IP address or IP CIDR.
+/// 
+/// Example: `'2001:85a3::/64'`
 final String network;
 
 Map<String, dynamic> toJson() { return {

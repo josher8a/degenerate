@@ -1,6 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_delivery_mode.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_domain/authorization.dart';import 'package:pub_cloudflare/models/email_security_domain/dmarc_status.dart';import 'package:pub_cloudflare/models/email_security_domain/email_security_domain_regions.dart';import 'package:pub_cloudflare/models/email_security_domain/emails_processed.dart';import 'package:pub_cloudflare/models/email_security_domain/inbox_provider.dart';import 'package:pub_cloudflare/models/email_security_domain/spf_status.dart';import 'package:pub_cloudflare/models/email_security_scannable_folder.dart';@immutable final class EmailSecurityDomain {const EmailSecurityDomain({required this.allowedDeliveryModes, required this.createdAt, required this.domain, required this.dropDispositions, required this.id, required this.ipRestrictions, required this.lastModified, required this.lookbackHops, required this.regions, required this.transport, this.authorization, this.dmarcStatus, this.emailsProcessed, this.folder, this.inboxProvider, this.integrationId, this.o365TenantId, this.requireTlsInbound, this.requireTlsOutbound, this.spfStatus, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_delivery_mode.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_domain/authorization.dart';import 'package:pub_cloudflare/models/email_security_domain/dmarc_status.dart';import 'package:pub_cloudflare/models/email_security_domain/email_security_domain_regions.dart';import 'package:pub_cloudflare/models/email_security_domain/emails_processed.dart';import 'package:pub_cloudflare/models/email_security_domain/inbox_provider.dart';import 'package:pub_cloudflare/models/email_security_domain/spf_status.dart';import 'package:pub_cloudflare/models/email_security_scannable_folder.dart';/// Example:
+/// ```json`
+/// {
+///   "allowed_delivery_modes": [
+///     "API"
+///   ],
+///   "authorization": null,
+///   "created_at": "2023-11-14T22:13:20Z",
+///   "dmarc_status": "good",
+///   "domain": "example.com",
+///   "drop_dispositions": [
+///     "MALICIOUS",
+///     "SPAM"
+///   ],
+///   "emails_processed": null,
+///   "folder": "Inbox",
+///   "id": 2400,
+///   "inbox_provider": "Microsoft",
+///   "integration_id": "a5dbb180-60ea-4578-84bb-d01a5d4e50c3",
+///   "ip_restrictions": [],
+///   "last_modified": "2023-11-14T22:13:20Z",
+///   "lookback_hops": 2,
+///   "o365_tenant_id": "c3c3239d-8858-47df-9618-0e2d9bdf6aa8",
+///   "regions": [
+///     "GLOBAL"
+///   ],
+///   "require_tls_inbound": false,
+///   "require_tls_outbound": true,
+///   "spf_status": "good",
+///   "transport": "example.com"
+/// }
+/// ```text
+@immutable final class EmailSecurityDomain {const EmailSecurityDomain({required this.allowedDeliveryModes, required this.createdAt, required this.domain, required this.dropDispositions, required this.id, required this.ipRestrictions, required this.lastModified, required this.lookbackHops, required this.regions, required this.transport, this.authorization, this.dmarcStatus, this.emailsProcessed, this.folder, this.inboxProvider, this.integrationId, this.o365TenantId, this.requireTlsInbound, this.requireTlsOutbound, this.spfStatus, });
 
 factory EmailSecurityDomain.fromJson(Map<String, dynamic> json) { return EmailSecurityDomain(
   allowedDeliveryModes: (json['allowed_delivery_modes'] as List<dynamic>).map((e) => EmailSecurityDeliveryMode.fromJson(e as String)).toList(),
@@ -42,12 +74,15 @@ final EmailsProcessed? emailsProcessed;
 final EmailSecurityScannableFolder? folder;
 
 /// The unique identifier for the domain.
+/// 
+/// Example: `2400`
 final int id;
 
 final InboxProvider? inboxProvider;
 
 final String? integrationId;
 
+/// Example: `[192.0.2.0/24, 2001:db8::/32]`
 final List<String> ipRestrictions;
 
 final DateTime lastModified;

@@ -8,9 +8,13 @@ factory TeamsDevicesServiceMode.fromJson(Map<String, dynamic> json) { return Tea
 ); }
 
 /// The mode to run the WARP client under.
+/// 
+/// Example: `'proxy'`
 final String? mode;
 
 /// The port number when used with proxy mode.
+/// 
+/// Example: `3000`
 final double? port;
 
 Map<String, dynamic> toJson() { return {

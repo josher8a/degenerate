@@ -10,12 +10,15 @@ factory ScanConfig.fromJson(Map<String, dynamic> json) { return ScanConfig(
   ports: (json['ports'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 
+/// Example: `'abcd1234abcd1234abcd1234abcd1234'`
 final String accountId;
 
 /// Defines the number of days between each scan (0 = One-off scan).
 final Frequency2 frequency;
 
 /// Defines the Config ID.
+/// 
+/// Example: `'uuid'`
 final String id;
 
 /// Defines a list of IP addresses or CIDR blocks to scan. The maximum number of total IP addresses allowed is 5000.

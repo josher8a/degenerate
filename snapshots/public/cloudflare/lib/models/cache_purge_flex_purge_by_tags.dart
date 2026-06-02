@@ -7,6 +7,8 @@ factory CachePurgeFlexPurgeByTags.fromJson(Map<String, dynamic> json) { return C
 ); }
 
 /// For more information on cache tags and purging by tags, please refer to [purge by cache-tags documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-tags/).
+/// 
+/// Example: `[a-cache-tag, another-cache-tag]`
 final List<String>? tags;
 
 Map<String, dynamic> toJson() { return {

@@ -9,6 +9,8 @@ factory EditParticipantRequest.fromJson(Map<String, dynamic> json) { return Edit
 ); }
 
 /// (Optional) Name of the participant.
+/// 
+/// Example: `'Jane Doe'`
 final String? name;
 
 /// (Optional) A URL to a picture to be used for the participant.

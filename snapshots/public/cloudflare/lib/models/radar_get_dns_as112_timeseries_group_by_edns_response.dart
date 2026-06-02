@@ -9,6 +9,7 @@ factory RadarGetDnsAs112TimeseriesGroupByEdnsResponse.fromJson(Map<String, dynam
 
 final RadarGetDnsAs112TimeseriesGroupByDnssecResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

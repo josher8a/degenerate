@@ -10,9 +10,13 @@ factory CacheRulesOriginH2MaxStreams.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Value of the zone setting.
+/// 
+/// Example: `'origin_h2_max_streams'`
 final CacheRulesOriginH2MaxStreamsId id;
 
 /// Last time this setting was modified.
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? modifiedOn;
 
 final CacheRulesOriginH2MaxStreamsValue? value;

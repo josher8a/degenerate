@@ -9,6 +9,7 @@ factory RadarGetLeakedCredentialChecksSummaryByBotClassResponse.fromJson(Map<Str
 
 final RadarGetHttpSummaryByBotClassResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

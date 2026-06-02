@@ -17,6 +17,8 @@ final List<D1Messages2> messages;
 final List<D1DatabaseResponse> result;
 
 /// Whether the API call was successful
+/// 
+/// Example: `true`
 final bool success;
 
 final D1ListDatabasesResponseResultInfo? resultInfo;

@@ -9,9 +9,13 @@ factory FirewallSchemasConfiguration.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// The configuration target for this rule. You must set the target to `ua` for User Agent Blocking rules.
+/// 
+/// Example: `'ua'`
 final String? target;
 
 /// The exact user agent string to match. This value will be compared to the received `User-Agent` HTTP header value.
+/// 
+/// Example: `'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

@@ -11,14 +11,19 @@ factory AsnsAsn.fromJson(Map<String, dynamic> json) { return AsnsAsn(
   orgName: json['org_name'] as String,
 ); }
 
+/// Example: `'15133'`
 final String asn;
 
+/// Example: `'EDGECAST'`
 final String description;
 
+/// Example: `'US'`
 final String locationAlpha2;
 
+/// Example: `'EDGECAST'`
 final String name;
 
+/// Example: `'Edgecast Inc.'`
 final String orgName;
 
 Map<String, dynamic> toJson() { return {

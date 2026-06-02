@@ -8,9 +8,13 @@ factory WorkersMigrationTagConditions.fromJson(Map<String, dynamic> json) { retu
 ); }
 
 /// Tag to set as the latest migration tag.
+/// 
+/// Example: `'v2'`
 final String? newTag;
 
 /// Tag used to verify against the latest migration tag for this Worker. If they don't match, the upload is rejected.
+/// 
+/// Example: `'v1'`
 final String? oldTag;
 
 Map<String, dynamic> toJson() { return {

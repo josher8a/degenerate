@@ -8,9 +8,13 @@ factory ReferencesWorkers.fromJson(Map<String, dynamic> json) { return Reference
 ); }
 
 /// ID of the referencing Worker.
+/// 
+/// Example: `'e8f70fdbc8b1fb0b8ddb1af166186758'`
 final String id;
 
 /// Name of the referencing Worker.
+/// 
+/// Example: `'my-worker'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

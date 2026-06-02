@@ -9,6 +9,8 @@ factory WorkersBindingKindHyperdrive.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Identifier of the Hyperdrive connection to bind to.
+/// 
+/// Example: `'57b7076f58be42419276f058a8968187'`
 final String id;
 
 final WorkersBindingName name;

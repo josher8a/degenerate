@@ -8,9 +8,13 @@ factory RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0.fromJson(M
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String iPv4;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String iPv6;
 
 Map<String, dynamic> toJson() { return {

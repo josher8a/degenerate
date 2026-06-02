@@ -14,8 +14,11 @@ final List<AaaComponentsSchemasMessages2> errors;
 final List<AaaComponentsSchemasMessages2> messages;
 
 /// Whether the API call was successful
+/// 
+/// Example: `true`
 final bool success;
 
+/// Example: `{Origin Monitoring: [{description: High levels of 5xx HTTP errors at your origin., display_name: Origin Error Rate Alert, filter_options: [{AvailableValues: null, ComparisonOperator: ==, Key: zones, Range: 1-n}, {AvailableValues: [{Description: Service-Level Objective of 99.7, ID: 99.7}, {Description: Service-Level Objective of 99.8, ID: 99.8}], ComparisonOperator: >=, Key: slo, Range: 0-1}], type: http_alert_origin_error}]}`
 final Map<String,List<AaaAlertTypes>>? result;
 
 Map<String, dynamic> toJson() { return {

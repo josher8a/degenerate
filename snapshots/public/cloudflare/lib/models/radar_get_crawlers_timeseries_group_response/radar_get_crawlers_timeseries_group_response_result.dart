@@ -10,6 +10,25 @@ factory RadarGetCrawlersTimeseriesGroupResponseResult.fromJson(Map<String, dynam
 /// Metadata for the results.
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta meta;
 
+/// Example:
+/// ```json`
+/// {
+///   "Claude": [
+///     "63.40249"
+///   ],
+///   "DuckDuckGo": [
+///     "10.274394"
+///   ],
+///   "Google": [
+///     "8.381743"
+///   ],
+///   "timestamps": [
+///     "2023-08-08T10:15:00Z"
+///   ]
+/// }
+/// ```text
+/// 
+/// Example: `{Claude: [63.40249], DuckDuckGo: [10.274394], Google: [8.381743], timestamps: [2023-08-08T10:15:00Z]}`
 final RadarGetCrawlersTimeseriesGroupResponseResultSerie0 serie0;
 
 Map<String, dynamic> toJson() { return {

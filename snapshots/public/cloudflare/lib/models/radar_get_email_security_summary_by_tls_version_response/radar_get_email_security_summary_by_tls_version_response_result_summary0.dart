@@ -10,15 +10,23 @@ factory RadarGetEmailSecuritySummaryByTlsVersionResponseResultSummary0.fromJson(
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String tls10;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String tls11;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String tls12;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String tls13;
 
 Map<String, dynamic> toJson() { return {

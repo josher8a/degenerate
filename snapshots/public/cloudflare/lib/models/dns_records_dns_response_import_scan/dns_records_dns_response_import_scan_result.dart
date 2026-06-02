@@ -8,9 +8,13 @@ factory DnsRecordsDnsResponseImportScanResult.fromJson(Map<String, dynamic> json
 ); }
 
 /// Number of DNS records added.
+/// 
+/// Example: `5`
 final double? recsAdded;
 
 /// Total number of DNS records parsed.
+/// 
+/// Example: `5`
 final double? totalRecordsParsed;
 
 Map<String, dynamic> toJson() { return {

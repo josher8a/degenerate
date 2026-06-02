@@ -9,12 +9,18 @@ factory SmartshieldSmartShieldSettingsGetResponseSmartRouting.fromJson(Map<Strin
 ); }
 
 /// Whether the setting is editable.
+/// 
+/// Example: `true`
 final bool? editable;
 
 /// The id of the Smart Routing setting.
+/// 
+/// Example: `'smart_routing'`
 final String? id;
 
 /// Specifies the enablement value of Argo Smart Routing.
+/// 
+/// Example: `'off'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {

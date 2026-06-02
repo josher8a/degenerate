@@ -17,15 +17,20 @@ factory WorkersObservabilityQuery.fromJson(Map<String, dynamic> json) { return W
 
 final String created;
 
+/// Example: `'Query description'`
 final String? description;
 
 /// ID of your environment
+/// 
+/// Example: `'my-environment'`
 final String environmentId;
 
 /// Flag for alerts automatically created
 final bool? generated;
 
 /// ID of the query
+/// 
+/// Example: `'query-1'`
 final String id;
 
 /// Query name
@@ -35,9 +40,12 @@ final TelemetryQueryRequestParameters parameters;
 
 final String updated;
 
+/// Example: `'JY2UKXLO60AEV94R'`
 final String userId;
 
 /// ID of your workspace
+/// 
+/// Example: `'my-workspace'`
 final String workspaceId;
 
 Map<String, dynamic> toJson() { return {

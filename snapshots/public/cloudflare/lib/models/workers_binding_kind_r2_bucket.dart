@@ -38,9 +38,13 @@ factory WorkersBindingKindR2Bucket.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// R2 bucket to bind to.
+/// 
+/// Example: `'my-r2-bucket'`
 final String bucketName;
 
 /// The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
+/// 
+/// Example: `'eu'`
 final Jurisdiction? jurisdiction;
 
 final WorkersBindingName name;

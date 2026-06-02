@@ -15,6 +15,7 @@ factory UrlscannerCreateScanResponse2.fromJson(Map<String, dynamic> json) { retu
 /// URL to api report.
 final String api;
 
+/// Example: `'Submission successful'`
 final String message;
 
 final UrlscannerCreateScanBulkResponseOptions? options;
@@ -29,6 +30,8 @@ final String url;
 final String uuid;
 
 /// Submitted visibility status.
+/// 
+/// Example: `'public'`
 final UrlscannerCreateScanBulkResponseVisibility visibility;
 
 Map<String, dynamic> toJson() { return {

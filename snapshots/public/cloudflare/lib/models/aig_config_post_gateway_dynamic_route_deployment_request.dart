@@ -7,8 +7,10 @@ factory AigConfigPostGatewayDynamicRouteDeploymentRequest.fromJson(Map<String, d
   versionId: json['version_id'] as String,
 ); }
 
+/// Example: `'Route Deployment Comment'`
 final String comment;
 
+/// Example: `'54442216'`
 final String versionId;
 
 Map<String, dynamic> toJson() { return {

@@ -15,8 +15,11 @@ final List<ResourceTaggingMessages2> errors;
 final List<ResourceTaggingMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
+/// Example: `[production, staging]`
 final List<String>? result;
 
 final ResourceTaggingCursorResultInfo? resultInfo;

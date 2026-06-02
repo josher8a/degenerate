@@ -8,9 +8,13 @@ factory TeamsDevicesKolideConfigRequest.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// The Kolide client ID.
+/// 
+/// Example: `'example client id'`
 final String clientId;
 
 /// The Kolide client secret.
+/// 
+/// Example: `'example client secret'`
 final String clientSecret;
 
 Map<String, dynamic> toJson() { return {

@@ -8,6 +8,8 @@ factory PagesDeploymentConfigValuesDurableObjectNamespacesValue.fromJson(Map<Str
 ); }
 
 /// ID of the Durable Object namespace.
+/// 
+/// Example: `'5eb63bbbe01eeed093cb22bb8f5acdc3'`
 final String namespaceId;
 
 Map<String, dynamic> toJson() { return {

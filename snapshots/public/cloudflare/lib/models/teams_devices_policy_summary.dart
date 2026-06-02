@@ -18,12 +18,16 @@ final bool $default;
 final bool deleted;
 
 /// The ID of the device settings profile.
+/// 
+/// Example: `'11ffb86f-3f0c-4306-b4a2-e62f872b166a'`
 final String id;
 
 /// The name of the device settings profile.
 final String name;
 
 /// The RFC3339 timestamp of when the device settings profile last changed for the registration.
+/// 
+/// Example: `'2025-02-14T13:17:00Z'`
 final String updatedAt;
 
 Map<String, dynamic> toJson() { return {

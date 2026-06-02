@@ -8,9 +8,13 @@ factory AccessGenericOauthConfig.fromJson(Map<String, dynamic> json) { return Ac
 ); }
 
 /// Your OAuth Client ID
+/// 
+/// Example: `'<your client id>'`
 final String? clientId;
 
 /// Your OAuth Client Secret
+/// 
+/// Example: `'<your client secret>'`
 final String? clientSecret;
 
 Map<String, dynamic> toJson() { return {

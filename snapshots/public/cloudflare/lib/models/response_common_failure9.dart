@@ -9,13 +9,17 @@ factory ResponseCommonFailure9.fromJson(Map<String, dynamic> json) { return Resp
   success: json['success'] as bool,
 ); }
 
+/// Example: `[{code: 7003, message: No route for the URI}]`
 final List<ArgoConfigMessages2> errors;
 
+/// Example: `[]`
 final List<ArgoConfigMessages2> messages;
 
 final Map<String,dynamic>? result;
 
 /// Describes a failed API response.
+/// 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

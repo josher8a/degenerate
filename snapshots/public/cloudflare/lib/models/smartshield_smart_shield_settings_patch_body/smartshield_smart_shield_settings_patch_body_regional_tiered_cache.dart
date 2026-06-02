@@ -7,6 +7,8 @@ factory SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCache.fromJson(Map<
 ); }
 
 /// Specifies the enablement value of Regional Tiered Cache.
+/// 
+/// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {

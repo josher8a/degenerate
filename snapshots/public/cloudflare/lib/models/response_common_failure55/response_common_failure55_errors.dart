@@ -7,8 +7,10 @@ factory ResponseCommonFailure55Errors.fromJson(Map<String, dynamic> json) { retu
   message: json['message'] as String?,
 ); }
 
+/// Example: `12000`
 final int? code;
 
+/// Example: `'Not found'`
 final String? message;
 
 Map<String, dynamic> toJson() { return {

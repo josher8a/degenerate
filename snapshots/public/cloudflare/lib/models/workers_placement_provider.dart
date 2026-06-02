@@ -8,6 +8,8 @@ factory WorkersPlacementProvider.fromJson(Map<String, dynamic> json) { return Wo
 ); }
 
 /// The cloud provider identifier.
+/// 
+/// Example: `'aws'`
 final String id;
 
 /// List of regions available for this provider.

@@ -41,6 +41,8 @@ final Uint8List file;
 final ShieldOldKind kind;
 
 /// Name of the schema
+/// 
+/// Example: `'petstore schema'`
 final String? name;
 
 /// Flag whether schema is enabled for validation.

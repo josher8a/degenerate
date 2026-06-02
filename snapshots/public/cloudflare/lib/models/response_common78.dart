@@ -17,6 +17,8 @@ final List<Web3Messages2> messages;
 final ResponseCommon33Result result;
 
 /// Specifies whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

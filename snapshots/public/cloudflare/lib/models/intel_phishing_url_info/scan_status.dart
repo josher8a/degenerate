@@ -11,6 +11,8 @@ factory ScanStatus.fromJson(Map<String, dynamic> json) { return ScanStatus(
 ); }
 
 /// Timestamp of when the submission was processed.
+/// 
+/// Example: `'Wed, 26 Oct 2022 16:04:51 GMT'`
 final String? lastProcessed;
 
 /// For internal use.

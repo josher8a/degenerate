@@ -7,6 +7,8 @@ factory WorkersPlacementTargetVariant2.fromJson(Map<String, dynamic> json) { ret
 ); }
 
 /// HTTP hostname for targeted placement.
+/// 
+/// Example: `'api.example.com'`
 final String hostname;
 
 Map<String, dynamic> toJson() { return {

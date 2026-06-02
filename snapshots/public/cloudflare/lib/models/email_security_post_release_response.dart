@@ -9,10 +9,13 @@ factory EmailSecurityPostReleaseResponse.fromJson(Map<String, dynamic> json) { r
   result: (json['result'] as List<dynamic>).map((e) => EmailSecurityReleaseResponse.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
 final List<EmailSecurityReleaseResponse> result;

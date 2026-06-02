@@ -9,6 +9,7 @@ factory RadarGetNetflowsSummaryDeprecatedResponse.fromJson(Map<String, dynamic> 
 
 final RadarGetNetflowsSummaryDeprecatedResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

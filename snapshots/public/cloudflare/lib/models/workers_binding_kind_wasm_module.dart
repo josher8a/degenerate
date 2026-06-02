@@ -11,6 +11,8 @@ factory WorkersBindingKindWasmModule.fromJson(Map<String, dynamic> json) { retur
 final WorkersBindingName name;
 
 /// The name of the file containing the WebAssembly module content. Only accepted for `service worker syntax` Workers.
+/// 
+/// Example: `'my-module.wasm'`
 final String $part;
 
 /// The kind of resource that the binding provides.

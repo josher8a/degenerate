@@ -9,6 +9,7 @@ factory PropertiesSummary.fromJson(Map<String, dynamic> json) { return Propertie
 
 final SummaryProperties properties;
 
+/// Example: `'object'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

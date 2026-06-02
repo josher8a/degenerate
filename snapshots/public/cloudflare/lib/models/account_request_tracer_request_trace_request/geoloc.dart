@@ -16,6 +16,7 @@ factory Geoloc.fromJson(Map<String, dynamic> json) { return Geoloc(
   timezone: json['timezone'] as String?,
 ); }
 
+/// Example: `'London'`
 final String? city;
 
 final String? continent;

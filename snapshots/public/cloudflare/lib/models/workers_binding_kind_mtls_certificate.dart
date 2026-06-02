@@ -9,6 +9,8 @@ factory WorkersBindingKindMtlsCertificate.fromJson(Map<String, dynamic> json) { 
 ); }
 
 /// Identifier of the certificate to bind to.
+/// 
+/// Example: `'efwu2n6s-q69d-2kr9-184j-4913e8h391k6'`
 final String certificateId;
 
 final WorkersBindingName name;

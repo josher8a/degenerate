@@ -9,9 +9,13 @@ factory RulesetsRouteOrigin.fromJson(Map<String, dynamic> json) { return Ruleset
 ); }
 
 /// A resolved host to route to.
+/// 
+/// Example: `'static.example.com'`
 final String? host;
 
 /// A destination port to route to.
+/// 
+/// Example: `80`
 final int? port;
 
 Map<String, dynamic> toJson() { return {

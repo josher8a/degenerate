@@ -32,6 +32,7 @@ final int? directoryNodeId;
 
 final String? externalDirectoryNodeId;
 
+/// Example: `2403`
 final int id;
 
 final DateTime lastModified;

@@ -9,13 +9,17 @@ factory ResponseCommonFailure20.fromJson(Map<String, dynamic> json) { return Res
   success: json['success'] as bool,
 ); }
 
+/// Example: `[{code: 7003, message: No route for the URI}]`
 final List<CloudforceOneWhoisMessages2> errors;
 
+/// Example: `[]`
 final List<CloudforceOneWhoisMessages2> messages;
 
 final Map<String,dynamic>? result;
 
 /// Returns a boolean for the success/failure of the API call.
+/// 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

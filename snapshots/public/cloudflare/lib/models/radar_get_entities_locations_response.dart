@@ -9,6 +9,7 @@ factory RadarGetEntitiesLocationsResponse.fromJson(Map<String, dynamic> json) { 
 
 final RadarGetEntitiesLocationsResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

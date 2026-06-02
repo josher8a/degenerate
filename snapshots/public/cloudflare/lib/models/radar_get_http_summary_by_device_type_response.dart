@@ -9,6 +9,7 @@ factory RadarGetHttpSummaryByDeviceTypeResponse.fromJson(Map<String, dynamic> js
 
 final RadarGetHttpSummaryByDeviceTypeResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

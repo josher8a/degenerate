@@ -30,9 +30,13 @@ factory FirewallAsnConfiguration.fromJson(Map<String, dynamic> json) { return Fi
 ); }
 
 /// The configuration target. You must set the target to `asn` when specifying an Autonomous System Number (ASN) in the rule.
+/// 
+/// Example: `'asn'`
 final FirewallAsnConfigurationTarget? target;
 
 /// The AS number to match.
+/// 
+/// Example: `'AS12345'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

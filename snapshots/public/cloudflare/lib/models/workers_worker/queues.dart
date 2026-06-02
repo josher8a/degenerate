@@ -9,12 +9,18 @@ factory Queues.fromJson(Map<String, dynamic> json) { return Queues(
 ); }
 
 /// ID of the queue consumer configuration.
+/// 
+/// Example: `'e8f70fdbc8b1fb0b8ddb1af166186758'`
 final String queueConsumerId;
 
 /// ID of the queue.
+/// 
+/// Example: `'e8f70fdbc8b1fb0b8ddb1af166186758'`
 final String queueId;
 
 /// Name of the queue.
+/// 
+/// Example: `'my-queue'`
 final String queueName;
 
 Map<String, dynamic> toJson() { return {

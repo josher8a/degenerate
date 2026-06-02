@@ -8,10 +8,13 @@ factory Details0Categories.fromJson(Map<String, dynamic> json) { return Details0
   superCategoryId: (json['superCategoryId'] as num).toInt(),
 ); }
 
+/// Example: `81`
 final int id;
 
+/// Example: `'Content Servers'`
 final String name;
 
+/// Example: `26`
 final int superCategoryId;
 
 Map<String, dynamic> toJson() { return {

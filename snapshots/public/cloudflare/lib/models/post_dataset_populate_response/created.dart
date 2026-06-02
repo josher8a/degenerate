@@ -6,6 +6,7 @@ factory Created.fromJson(Map<String, dynamic> json) { return Created(
   type: json['type'] as String,
 ); }
 
+/// Example: `'number'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

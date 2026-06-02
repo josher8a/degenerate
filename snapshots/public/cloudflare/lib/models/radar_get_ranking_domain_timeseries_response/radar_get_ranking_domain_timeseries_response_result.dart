@@ -10,6 +10,19 @@ factory RadarGetRankingDomainTimeseriesResponseResult.fromJson(Map<String, dynam
 /// Metadata for the results.
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta meta;
 
+/// Example:
+/// ```json`
+/// {
+///   "Google": [
+///     2
+///   ],
+///   "timestamps": [
+///     "2022-09-02"
+///   ]
+/// }
+/// ```text
+/// 
+/// Example: `{Google: [2], timestamps: [2022-09-02]}`
 final RadarGetRankingDomainTimeseriesResponseResultSerie0 serie0;
 
 Map<String, dynamic> toJson() { return {

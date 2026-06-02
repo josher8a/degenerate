@@ -7,6 +7,8 @@ factory NamespaceWorkerCreateRequest.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// The name of the dispatch namespace.
+/// 
+/// Example: `'my-dispatch-namespace'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

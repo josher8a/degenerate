@@ -9,6 +9,7 @@ factory RadarGetDnsTimeseriesGroupByResponseCodeResponse.fromJson(Map<String, dy
 
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

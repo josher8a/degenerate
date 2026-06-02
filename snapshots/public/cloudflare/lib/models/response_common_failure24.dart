@@ -9,13 +9,17 @@ factory ResponseCommonFailure24.fromJson(Map<String, dynamic> json) { return Res
   success: json['success'] as bool,
 ); }
 
+/// Example: `[{code: 7003, message: No route for the URI}]`
 final List<DigitalExperienceMonitoringMessages2> errors;
 
+/// Example: `[]`
 final List<DigitalExperienceMonitoringMessages2> messages;
 
 final Map<String,dynamic>? result;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

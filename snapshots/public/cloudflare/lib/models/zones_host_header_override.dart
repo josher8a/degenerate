@@ -33,6 +33,8 @@ factory ZonesHostHeaderOverride.fromJson(Map<String, dynamic> json) { return Zon
 final ZonesHostHeaderOverrideId? id;
 
 /// The hostname to use in the `Host` header
+/// 
+/// Example: `'example.com'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

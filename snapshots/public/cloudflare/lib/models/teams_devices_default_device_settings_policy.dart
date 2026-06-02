@@ -40,11 +40,15 @@ final TeamsDevicesAutoConnect? autoConnect;
 final TeamsDevicesCaptivePortal? captivePortal;
 
 /// Whether the policy will be applied to matching devices.
+/// 
+/// Example: `true`
 final bool? $default;
 
 final TeamsDevicesDisableAutoFallback? disableAutoFallback;
 
 /// Whether the policy will be applied to matching devices.
+/// 
+/// Example: `true`
 final bool enabled;
 
 final List<TeamsDevicesSplitTunnel>? exclude;

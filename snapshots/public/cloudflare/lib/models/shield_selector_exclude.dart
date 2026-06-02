@@ -7,6 +7,8 @@ factory ShieldSelectorExclude.fromJson(Map<String, dynamic> json) { return Shiel
 ); }
 
 /// Excluded operation IDs.
+/// 
+/// Example: `[f9c5615e-fe15-48ce-bec6-cfc1946f1bec, 56828eae-035a-4396-ba07-51c66d680a04]`
 final List<ShieldUuid>? operationIds;
 
 Map<String, dynamic> toJson() { return {

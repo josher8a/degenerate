@@ -11,6 +11,8 @@ factory RealtimekitErrorResponse.fromJson(Map<String, dynamic> json) { return Re
 final RealtimekitErrorResponseError error;
 
 /// Whether the operation succeeded or not
+/// 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

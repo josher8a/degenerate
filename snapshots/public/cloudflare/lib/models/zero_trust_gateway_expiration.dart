@@ -10,9 +10,13 @@ factory ZeroTrustGatewayExpiration.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// Defines the default duration a policy active in minutes. Must set in order to use the `reset_expiration` endpoint on this rule.
+/// 
+/// Example: `10`
 final int? duration;
 
 /// Indicates whether the policy is expired.
+/// 
+/// Example: `false`
 final bool? expired;
 
 /// Show the timestamp when the policy expires and stops applying.  The value must follow RFC 3339 and include a UTC offset.  The system accepts non-zero offsets but converts them to the equivalent UTC+00:00  value and returns timestamps with a trailing Z. Expiration policies ignore client  timezones and expire globally at the specified expires_at time.

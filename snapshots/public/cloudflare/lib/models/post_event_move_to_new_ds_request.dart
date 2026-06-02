@@ -7,6 +7,7 @@ factory PostEventMoveToNewDsRequest.fromJson(Map<String, dynamic> json) { return
   eventIds: (json['eventIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String destDatasetId;
 
 final List<String>? eventIds;

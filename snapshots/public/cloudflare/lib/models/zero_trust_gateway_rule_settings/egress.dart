@@ -10,12 +10,18 @@ factory Egress.fromJson(Map<String, dynamic> json) { return Egress(
 ); }
 
 /// Specify the IPv4 address to use for egress.
+/// 
+/// Example: `'192.0.2.2'`
 final String? ipv4;
 
 /// Specify the fallback IPv4 address to use for egress when the primary IPv4 fails. Set '0.0.0.0' to indicate local egress via WARP IPs.
+/// 
+/// Example: `'192.0.2.3'`
 final String? ipv4Fallback;
 
 /// Specify the IPv6 range to use for egress.
+/// 
+/// Example: `'2001:DB8::/64'`
 final String? ipv6;
 
 Map<String, dynamic> toJson() { return {

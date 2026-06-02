@@ -9,6 +9,7 @@ factory RadarGetAttacksLayer3TimeseriesGroupByBitrateResponse.fromJson(Map<Strin
 
 final RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

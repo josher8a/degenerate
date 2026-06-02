@@ -13,12 +13,14 @@ factory PostIndicatorCreateBulkRequestIndicators.fromJson(Map<String, dynamic> j
 /// If true, automatically create the indicator type if it doesn't exist. If false (default), throw an error when the indicator type doesn't exist.
 final bool? autoCreateType;
 
+/// Example: `'domain'`
 final String indicatorType;
 
 final List<RelatedEvents>? relatedEvents;
 
 final List<PatchIndicatorUpdateRequestTags>? tags;
 
+/// Example: `'malicious-domain.com'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

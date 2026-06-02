@@ -30,6 +30,8 @@ factory ZeroTrustGatewayProxyEndpointIpCreate.fromJson(Map<String, dynamic> json
 ); }
 
 /// The proxy endpoint kind
+/// 
+/// Example: `'ip'`
 final ZeroTrustGatewayProxyEndpointIpCreateKind? kind;
 
 final ZeroTrustGatewayProxyEndpointsComponentsSchemasName name;

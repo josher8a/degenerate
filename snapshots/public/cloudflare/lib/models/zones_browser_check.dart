@@ -38,6 +38,8 @@ final ZonesBrowserCheckId? id;
 
 /// The status of Browser Integrity Check.
 /// 
+/// 
+/// Example: `'on'`
 final ZonesBrowserCheckValue? value;
 
 Map<String, dynamic> toJson() { return {

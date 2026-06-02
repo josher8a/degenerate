@@ -1,6 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Client IP restrictions.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "in": [
+///     "123.123.123.0/24",
+///     "2606:4700::/32"
+///   ],
+///   "not_in": [
+///     "123.123.123.100/24",
+///     "2606:4700:4700::/48"
+///   ]
+/// }
+/// ```text
 @immutable final class IamRequestIp {const IamRequestIp({this.$in, this.notIn, });
 
 factory IamRequestIp.fromJson(Map<String, dynamic> json) { return IamRequestIp(

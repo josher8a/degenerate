@@ -6,6 +6,7 @@ factory BotnetThreatFeedDeleteAsnResponseResult.fromJson(Map<String, dynamic> js
   asn: json['asn'] != null ? (json['asn'] as num).toInt() : null,
 ); }
 
+/// Example: `13335`
 final int? asn;
 
 Map<String, dynamic> toJson() { return {

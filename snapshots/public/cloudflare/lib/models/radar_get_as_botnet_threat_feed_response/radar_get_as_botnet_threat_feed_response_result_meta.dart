@@ -8,10 +8,13 @@ factory RadarGetAsBotnetThreatFeedResponseResultMeta.fromJson(Map<String, dynami
   total: (json['total'] as num).toInt(),
 ); }
 
+/// Example: `'2026-01-28'`
 final String? compareDate;
 
+/// Example: `'2026-02-04'`
 final String date;
 
+/// Example: `50`
 final int total;
 
 Map<String, dynamic> toJson() { return {

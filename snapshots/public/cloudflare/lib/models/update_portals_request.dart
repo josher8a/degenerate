@@ -10,13 +10,18 @@ factory UpdatePortalsRequest.fromJson(Map<String, dynamic> json) { return Update
   servers: (json['servers'] as List<dynamic>?)?.map((e) => CreatePortalsRequestServers.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Example: `'This is my custom MCP Portal'`
 final String? description;
 
+/// Example: `'exmaple.com'`
 final String? hostname;
 
+/// Example: `'My MCP Portal'`
 final String? name;
 
 /// Route outbound MCP traffic through Zero Trust Secure Web Gateway
+/// 
+/// Example: `false`
 final bool? secureWebGateway;
 
 final List<CreatePortalsRequestServers>? servers;

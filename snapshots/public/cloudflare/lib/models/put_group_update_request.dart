@@ -7,8 +7,10 @@ factory PutGroupUpdateRequest.fromJson(Map<String, dynamic> json) { return PutGr
   name: json['name'] as String,
 ); }
 
+/// Example: `'Cloudforce subscribers'`
 final String description;
 
+/// Example: `'cloudforce-subscribers'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

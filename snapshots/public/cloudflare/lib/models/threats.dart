@@ -13,9 +13,13 @@ factory Threats.fromJson(Map<String, dynamic> json) { return Threats(
 final int? all;
 
 /// A list of key/value pairs where the key is a two-digit country code and the value is the number of malicious requests received from that country.
+/// 
+/// Example: `{AU: 91, CN: 523423, US: 123}`
 final Map<String,dynamic>? country;
 
 /// The list of key/value pairs where the key is a threat category and the value is the number of requests.
+/// 
+/// Example: `{hot.ban.unknown: 5324, macro.chl.captchaErr: 1341, macro.chl.jschlErr: 5323, user.ban.ip: 123}`
 final Map<String,dynamic>? type;
 
 Map<String, dynamic> toJson() { return {

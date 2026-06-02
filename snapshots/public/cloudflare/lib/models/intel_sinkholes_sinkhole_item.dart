@@ -14,6 +14,19 @@ factory IntelSinkholesName.fromJson(String json) => IntelSinkholesName(json);
 String toJson() => value;
 
 }
+/// Example:
+/// ```json`
+/// {
+///   "account_tag": "233f45e61fd1f7e21e1e154ede4q2859",
+///   "created_on": "2023-05-12T12:21:56.777653Z",
+///   "description": "user specified description 1",
+///   "id": 1,
+///   "modified_on": "2023-06-18T03:13:34.123321Z",
+///   "name": "sinkhole_1",
+///   "r2_bucket": "my_bucket",
+///   "r2_id": "`<r2_id>`"
+/// }
+/// ```text
 @immutable final class IntelSinkholesSinkholeItem {const IntelSinkholesSinkholeItem({this.accountTag, this.createdOn, this.id, this.modifiedOn, this.name, this.r2Bucket, this.r2Id, });
 
 factory IntelSinkholesSinkholeItem.fromJson(Map<String, dynamic> json) { return IntelSinkholesSinkholeItem(

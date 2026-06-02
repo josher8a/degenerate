@@ -7,6 +7,8 @@ factory CommonName.fromJson(Map<String, dynamic> json) { return CommonName(
 ); }
 
 /// The common name to match.
+/// 
+/// Example: `'james@example.com'`
 final String commonName;
 
 Map<String, dynamic> toJson() { return {

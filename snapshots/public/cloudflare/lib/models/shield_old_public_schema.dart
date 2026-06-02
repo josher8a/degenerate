@@ -17,11 +17,15 @@ final ShieldTimestamp createdAt;
 final ShieldOldKind kind;
 
 /// Name of the schema
+/// 
+/// Example: `'petstore schema'`
 final String name;
 
 final ShieldUuid schemaId;
 
 /// Source of the schema
+/// 
+/// Example: `'<schema file bytes>'`
 final String? source;
 
 final ShieldOldValidationEnabled? validationEnabled;

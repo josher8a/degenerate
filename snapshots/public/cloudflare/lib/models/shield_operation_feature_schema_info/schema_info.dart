@@ -40,9 +40,13 @@ factory SchemaInfo.fromJson(Map<String, dynamic> json) { return SchemaInfo(
 final ActiveSchema? activeSchema;
 
 /// True if a Cloudflare-provided learned schema is available for this endpoint.
+/// 
+/// Example: `true`
 final bool? learnedAvailable;
 
 /// Action taken on requests failing validation.
+/// 
+/// Example: `'block'`
 final SchemaInfoMitigationAction? mitigationAction;
 
 Map<String, dynamic> toJson() { return {

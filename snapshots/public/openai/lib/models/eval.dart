@@ -48,6 +48,8 @@ final EvalObject object;
 final String id;
 
 /// The name of the evaluation.
+/// 
+/// Example: `'Chatbot effectiveness Evaluation'`
 final String name;
 
 /// Configuration of data sources used in runs of the evaluation.

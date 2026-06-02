@@ -48,9 +48,13 @@ final List<String>? tags;
 final DnsRecordsTtl? ttl;
 
 /// A valid IPv6 address.
+/// 
+/// Example: `'2400:cb00:2049::1'`
 final String? content;
 
 /// Record type.
+/// 
+/// Example: `'AAAA'`
 final DnsRecordsAaaaRecordType? type;
 
 Map<String, dynamic> toJson() { return {

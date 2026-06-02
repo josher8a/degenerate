@@ -8,10 +8,13 @@ factory RadarGetQualityIndexSummaryResponseResultSummary0.fromJson(Map<String, d
   p75: json['p75'] as String,
 ); }
 
+/// Example: `'32.20938'`
 final String p25;
 
+/// Example: `'61.819881'`
 final String p50;
 
+/// Example: `'133.813087'`
 final String p75;
 
 Map<String, dynamic> toJson() { return {

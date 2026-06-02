@@ -9,12 +9,16 @@ factory ObservatoryResultInfo.fromJson(Map<String, dynamic> json) { return Obser
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
 ); }
 
+/// Example: `5`
 final int? count;
 
+/// Example: `1`
 final int? page;
 
+/// Example: `5`
 final int? perPage;
 
+/// Example: `3`
 final int? totalCount;
 
 Map<String, dynamic> toJson() { return {

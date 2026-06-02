@@ -6,6 +6,7 @@ factory RadarGetEntitiesIpResponse404.fromJson(Map<String, dynamic> json) { retu
   error: json['error'] as String,
 ); }
 
+/// Example: `'Not Found.'`
 final String error;
 
 Map<String, dynamic> toJson() { return {

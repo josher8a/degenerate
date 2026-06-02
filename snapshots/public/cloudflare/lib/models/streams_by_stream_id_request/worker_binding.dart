@@ -7,6 +7,8 @@ factory WorkerBinding.fromJson(Map<String, dynamic> json) { return WorkerBinding
 ); }
 
 /// Indicates that the worker binding is enabled.
+/// 
+/// Example: `true`
 final bool enabled;
 
 Map<String, dynamic> toJson() { return {

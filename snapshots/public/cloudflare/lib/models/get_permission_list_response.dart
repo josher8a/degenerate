@@ -13,21 +13,30 @@ factory GetPermissionListResponse.fromJson(Map<String, dynamic> json) { return G
   uuid: json['uuid'] as String,
 ); }
 
+/// Example: `'2022-04-01T00:00:00Z'`
 final DateTime createdAt;
 
 /// The resource ID this permission applies to account_id or group_id
+/// 
+/// Example: `'08846b9f-dba9-4410-be6f-cf883b5ea8d2'`
 final String? resourceId;
 
+/// Example: `'dataset'`
 final GetPermissionListResponseResourceType resourceType;
 
+/// Example: `'read'`
 final GetPermissionListResponseRole role;
 
+/// Example: `'123'`
 final String subjectId;
 
+/// Example: `'account'`
 final SubjectType subjectType;
 
+/// Example: `'2022-04-01T00:00:00Z'`
 final DateTime updatedAt;
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,8 @@ factory EmailSecurityDeleteAllowPolicyResponseResult.fromJson(Map<String, dynami
 ); }
 
 /// The unique identifier for the allow policy.
+/// 
+/// Example: `2401`
 final int id;
 
 Map<String, dynamic> toJson() { return {

@@ -51,6 +51,8 @@ final DnsRecordsTtl? ttl;
 final String? content;
 
 /// Record type.
+/// 
+/// Example: `'OPENPGPKEY'`
 final DnsRecordsOpenpgpkeyRecordType? type;
 
 Map<String, dynamic> toJson() { return {

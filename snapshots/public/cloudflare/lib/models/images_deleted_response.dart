@@ -6,6 +6,7 @@ factory ImagesDeletedResponse.fromJson(Map<String, dynamic> json) { return Image
   result: json['result'] as Map<String, dynamic>?,
 ); }
 
+/// Example: `{}`
 final Map<String,dynamic>? result;
 
 Map<String, dynamic> toJson() { return {

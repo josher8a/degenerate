@@ -11,6 +11,8 @@ factory WorkersBindingKindVpcService.fromJson(Map<String, dynamic> json) { retur
 final WorkersBindingName name;
 
 /// Identifier of the VPC service to bind to.
+/// 
+/// Example: `'8c8b1387108e49be85669169793e7bd2'`
 final String serviceId;
 
 /// The kind of resource that the binding provides.

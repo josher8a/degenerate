@@ -8,6 +8,8 @@ factory IamRequestUpdateResourceGroup.fromJson(Map<String, dynamic> json) { retu
 ); }
 
 /// Name of the resource group
+/// 
+/// Example: `'UpdatedResourceGroup'`
 final String? name;
 
 final IamCreateScope? scope;

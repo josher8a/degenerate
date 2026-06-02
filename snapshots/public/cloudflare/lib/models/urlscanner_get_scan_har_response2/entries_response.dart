@@ -14,22 +14,28 @@ factory EntriesResponse.fromJson(Map<String, dynamic> json) { return EntriesResp
   statusText: json['statusText'] as String,
 ); }
 
+/// Example: `1071`
 final double transferSize;
 
+/// Example: `648`
 final double bodySize;
 
 final ResponseContent content;
 
 final List<EntriesRequestHeaders> headers;
 
+/// Example: `423`
 final double headersSize;
 
+/// Example: `'http/1.1'`
 final String httpVersion;
 
 final String redirectUrl;
 
+/// Example: `200`
 final double status;
 
+/// Example: `'OK'`
 final String statusText;
 
 Map<String, dynamic> toJson() { return {

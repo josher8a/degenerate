@@ -9,12 +9,49 @@ factory EmailSecurityGetDomainResponse.fromJson(Map<String, dynamic> json) { ret
   result: EmailSecurityGetDomainResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
+/// Example:
+/// ```json`
+/// {
+///   "allowed_delivery_modes": [
+///     "API"
+///   ],
+///   "authorization": null,
+///   "created_at": "2023-11-14T22:13:20Z",
+///   "dmarc_status": "good",
+///   "domain": "example.com",
+///   "drop_dispositions": [
+///     "MALICIOUS",
+///     "SPAM"
+///   ],
+///   "emails_processed": null,
+///   "folder": "Inbox",
+///   "id": 2400,
+///   "inbox_provider": "Microsoft",
+///   "integration_id": "a5dbb180-60ea-4578-84bb-d01a5d4e50c3",
+///   "ip_restrictions": [],
+///   "last_modified": "2023-11-14T22:13:20Z",
+///   "lookback_hops": 2,
+///   "o365_tenant_id": "c3c3239d-8858-47df-9618-0e2d9bdf6aa8",
+///   "regions": [
+///     "GLOBAL"
+///   ],
+///   "require_tls_inbound": false,
+///   "require_tls_outbound": true,
+///   "spf_status": "good",
+///   "transport": "example.com"
+/// }
+/// ```text
+/// 
+/// Example: `{allowed_delivery_modes: [API], authorization: null, created_at: 2023-11-14T22:13:20Z, dmarc_status: good, domain: example.com, drop_dispositions: [MALICIOUS, SPAM], emails_processed: null, folder: Inbox, id: 2400, inbox_provider: Microsoft, integration_id: a5dbb180-60ea-4578-84bb-d01a5d4e50c3, ip_restrictions: [], last_modified: 2023-11-14T22:13:20Z, lookback_hops: 2, o365_tenant_id: c3c3239d-8858-47df-9618-0e2d9bdf6aa8, regions: [GLOBAL], require_tls_inbound: false, require_tls_outbound: true, spf_status: good, transport: example.com}`
 final EmailSecurityGetDomainResponseResult result;
 
 Map<String, dynamic> toJson() { return {

@@ -14,8 +14,11 @@ final List<CustomIndicatorFeedsSchemasMessages2> errors;
 final List<CustomIndicatorFeedsSchemasMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
+/// Example: `[{created_on: 2023-05-12T12:21:56.777653Z, description: user specified description 1, id: 1, modified_on: 2023-06-18T03:13:34.123321Z, name: user_specified_name_1}, {created_on: 2023-05-21T21:43:52.867525Z, description: User specified description 2, id: 2, modified_on: 2023-06-28T18:46:18.764425Z, name: user_specified_name_2}]`
 final List<CustomIndicatorFeedsIndicatorFeedItem>? result;
 
 Map<String, dynamic> toJson() { return {

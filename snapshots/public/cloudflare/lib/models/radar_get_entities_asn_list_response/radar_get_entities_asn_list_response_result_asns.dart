@@ -14,16 +14,21 @@ factory RadarGetEntitiesAsnListResponseResultAsns.fromJson(Map<String, dynamic> 
 
 final String? aka;
 
+/// Example: `714`
 final int asn;
 
+/// Example: `'GB'`
 final String country;
 
+/// Example: `'United Kingdom'`
 final String countryName;
 
+/// Example: `'Apple Inc.'`
 final String name;
 
 final String? orgName;
 
+/// Example: `'https://www.apple.com/support/systemstatus/'`
 final String? website;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,7 @@ factory PagesDeploymentConfigValuesRequestMtlsCertificatesValue.fromJson(Map<Str
   certificateId: json['certificate_id'] as String,
 ); }
 
+/// Example: `'d7cdd17c-916f-4cb7-aabe-585eb382ec4e'`
 final String certificateId;
 
 Map<String, dynamic> toJson() { return {

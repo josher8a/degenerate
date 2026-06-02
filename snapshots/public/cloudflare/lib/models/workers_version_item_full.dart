@@ -10,13 +10,53 @@ factory WorkersVersionItemFull.fromJson(Map<String, dynamic> json) { return Work
 ); }
 
 /// Unique identifier for the version.
+/// 
+/// Example: `'18f97339-c287-4872-9bdd-e2135c07ec12'`
 final String? id;
 
+/// Example:
+/// ```json`
+/// {
+///   "author_email": "user@example.com",
+///   "author_id": "408cbcdfd4dda4617efef40b04d168a1",
+///   "created_on": "2022-11-08T17:19:29.176266Z",
+///   "modified_on": "2022-11-08T17:19:29.176266Z",
+///   "source": "api"
+/// }
+/// ```text
+/// 
+/// Example: `{author_email: user@example.com, author_id: 408cbcdfd4dda4617efef40b04d168a1, created_on: 2022-11-08T17:19:29.176266Z, modified_on: 2022-11-08T17:19:29.176266Z, source: api}`
 final WorkersVersionItemFullMetadata? metadata;
 
 /// Sequential version number.
+/// 
+/// Example: `1`
 final double? number;
 
+/// Example:
+/// ```json`
+/// {
+///   "bindings": [
+///     {
+///       "json": "example_binding",
+///       "name": "JSON_VAR",
+///       "type": "json"
+///     }
+///   ],
+///   "script": {
+///     "etag": "13a3240e8fb414561b0366813b0b8f42b3e6cfa0d9e70e99835dae83d0d8a794",
+///     "handlers": [
+///       "fetch"
+///     ],
+///     "last_deployed_from": "api"
+///   },
+///   "script_runtime": {
+///     "usage_model": "standard"
+///   }
+/// }
+/// ```text
+/// 
+/// Example: `{bindings: [{json: example_binding, name: JSON_VAR, type: json}], script: {etag: 13a3240e8fb414561b0366813b0b8f42b3e6cfa0d9e70e99835dae83d0d8a794, handlers: [fetch], last_deployed_from: api}, script_runtime: {usage_model: standard}}`
 final Resources resources;
 
 Map<String, dynamic> toJson() { return {

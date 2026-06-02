@@ -1,6 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationPath {const DestinationPath({required this.bucket, this.filename, this.filepath, this.prefix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
+/// ```json`
+/// {
+///   "bucket": "bucket",
+///   "prefix": "base"
+/// }
+/// ```text
+@immutable final class DestinationPath {const DestinationPath({required this.bucket, this.filename, this.filepath, this.prefix, });
 
 factory DestinationPath.fromJson(Map<String, dynamic> json) { return DestinationPath(
   bucket: json['bucket'] as String,
@@ -10,15 +17,23 @@ factory DestinationPath.fromJson(Map<String, dynamic> json) { return Destination
 ); }
 
 /// Specifies the R2 Bucket to store files.
+/// 
+/// Example: `'bucket'`
 final String bucket;
 
 /// Specifies the name pattern to for individual data files.
+/// 
+/// Example: `'${slug}${extension}'`
 final String? filename;
 
 /// Specifies the name pattern for directory.
+/// 
+/// Example: `'${date}/${hour}'`
 final String? filepath;
 
 /// Specifies the base directory within the bucket.
+/// 
+/// Example: `'base'`
 final String? prefix;
 
 Map<String, dynamic> toJson() { return {

@@ -11,12 +11,18 @@ factory WorkersBindingKindSendEmail.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// List of allowed destination addresses.
+/// 
+/// Example: `[user1@example.com, user2@example.com]`
 final List<String>? allowedDestinationAddresses;
 
 /// List of allowed sender addresses.
+/// 
+/// Example: `[user1@example.com, user2@example.com]`
 final List<String>? allowedSenderAddresses;
 
 /// Destination address for the email.
+/// 
+/// Example: `'user@example.com'`
 final String? destinationAddress;
 
 final WorkersBindingName name;

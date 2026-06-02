@@ -49,12 +49,16 @@ final List<String>? tags;
 final DnsRecordsTtl? ttl;
 
 /// Priority, weight, port, and SRV target. See 'data' for setting the individual component values.
+/// 
+/// Example: `'10 IN SRV 5 8806 example.com.'`
 final String? content;
 
 /// Components of a SRV record.
 final DnsRecordsSrvRecordData? data;
 
 /// Record type.
+/// 
+/// Example: `'SRV'`
 final DnsRecordsSrvRecordType? type;
 
 Map<String, dynamic> toJson() { return {

@@ -13,6 +13,8 @@ final List<ErrorModel32>? errors;
 final List<String>? messages;
 
 /// Indicates if the API call was successful or not.
+/// 
+/// Example: `false`
 final bool? success;
 
 Map<String, dynamic> toJson() { return {

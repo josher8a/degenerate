@@ -8,6 +8,8 @@ factory ZeroTrustGatewayHostSelectorSettings.fromJson(Map<String, dynamic> json)
 ); }
 
 /// Specify whether to enable filtering via hosts for egress policies.
+/// 
+/// Example: `false`
 final bool? enabled;
 
 Map<String, dynamic> toJson() { return {

@@ -17,6 +17,8 @@ final List<TeamsDevicesMessages2> messages;
 final List<Map<String,dynamic>>? result;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final TeamsDevicesResultInfo? resultInfo;

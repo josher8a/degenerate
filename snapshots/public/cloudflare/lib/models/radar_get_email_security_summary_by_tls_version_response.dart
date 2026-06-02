@@ -9,6 +9,7 @@ factory RadarGetEmailSecuritySummaryByTlsVersionResponse.fromJson(Map<String, dy
 
 final RadarGetEmailSecuritySummaryByTlsVersionResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

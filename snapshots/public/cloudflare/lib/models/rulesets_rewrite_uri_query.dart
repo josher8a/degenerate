@@ -9,9 +9,13 @@ factory RulesetsRewriteUriQuery.fromJson(Map<String, dynamic> json) { return Rul
 ); }
 
 /// An expression that evaluates to a value to rewrite the URI query to.
+/// 
+/// Example: `'regex_replace(http.request.uri.query, "foo=bar", "")'`
 final String? expression;
 
 /// A value to rewrite the URI query to.
+/// 
+/// Example: `'foo=bar'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

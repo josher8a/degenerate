@@ -9,8 +9,11 @@ factory ListsItemHostname.fromJson(Map<String, dynamic> json) { return ListsItem
 ); }
 
 /// Only applies to wildcard hostnames (e.g., *.example.com). When true (default), only subdomains are blocked. When false, both the root domain and subdomains are blocked.
+/// 
+/// Example: `true`
 final bool? excludeExactHostname;
 
+/// Example: `'example.com'`
 final String urlHostname;
 
 Map<String, dynamic> toJson() { return {

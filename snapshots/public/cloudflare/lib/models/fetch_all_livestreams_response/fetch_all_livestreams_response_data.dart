@@ -17,34 +17,48 @@ factory FetchAllLivestreamsResponseData.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// Timestamp the object was created at. The time is returned in ISO format.
+/// 
+/// Example: `'2023-07-15T11:48:34.753Z'`
 final DateTime? createdAt;
 
 /// Specifies if the livestream was disabled.
 final String? disabled;
 
 /// The ID of the livestream.
+/// 
+/// Example: `'3fd739f4-3c41-456e-bfba-6ebd51e16d2d'`
 final String? id;
 
 /// The server URL to which the RTMP encoder sends the video and audio data.
+/// 
+/// Example: `'rtmps://live.cloudflare.com:443/live/'`
 final String? ingestServer;
 
 /// ID of the meeting.
 final String? meetingId;
 
 /// Name of the livestream.
+/// 
+/// Example: `'test'`
 final String? name;
 
 final FetchAllLivestreamsResponseDataPaging? paging;
 
 /// The web address that viewers can use to watch the livestream.
+/// 
+/// Example: `'https://customer-s8oj0c1n5ek8ah1e.cloudflarestream.com/7de6a3fec0f9c05bf1df140950d3a237/manifest/video.m3u8'`
 final String? playbackUrl;
 
 final RealtimekitLivestreamBaseStatus? status;
 
 /// Unique key for accessing each livestream.
+/// 
+/// Example: `'f26566285faca6fbe2e79a73a66rsrrsrrsr3cde23a2bb7dbc6c2c1761b98f4e4'`
 final String? streamKey;
 
 /// Timestamp the object was updated at. The time is returned in ISO format.
+/// 
+/// Example: `'2023-07-15T11:48:34.753Z'`
 final DateTime? updatedAt;
 
 Map<String, dynamic> toJson() { return {

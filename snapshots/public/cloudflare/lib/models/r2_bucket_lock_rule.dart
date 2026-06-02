@@ -15,6 +15,8 @@ final R2BucketLockRuleCondition condition;
 final bool enabled;
 
 /// Unique identifier for this rule.
+/// 
+/// Example: `'Lock all objects for 24 hours'`
 final String id;
 
 /// Rule will only apply to objects/uploads in the bucket that start with the given prefix, an empty prefix can be provided to scope rule to all objects/uploads.

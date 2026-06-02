@@ -9,12 +9,18 @@ factory TeamsDevicesCustomS2sConfigRequest.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// This id will be passed in the `CF-Access-Client-ID` header when hitting the `api_url`.
+/// 
+/// Example: `'88bf3b6d86161464f6509f7219099e57.access'`
 final String accessClientId;
 
 /// This secret will be passed in the `CF-Access-Client-Secret` header when hitting the `api_url`.
+/// 
+/// Example: `'bdd31cbc4dec990953e39163fbbb194c93313ca9f0a6e420346af9d326b1d2a5'`
 final String accessClientSecret;
 
 /// The Custom Device Posture Integration  API URL.
+/// 
+/// Example: `'https://example.custom-s2s.com'`
 final String apiUrl;
 
 Map<String, dynamic> toJson() { return {

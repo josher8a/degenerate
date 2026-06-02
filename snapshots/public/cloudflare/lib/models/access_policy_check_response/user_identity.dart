@@ -16,22 +16,29 @@ factory UserIdentity.fromJson(Map<String, dynamic> json) { return UserIdentity(
   version: json['version'] != null ? (json['version'] as num).toInt() : null,
 ); }
 
+/// Example: `'41ecfbb341f033e52b46742756aabb8b'`
 final String? accountId;
 
+/// Example: `{}`
 final Map<String,dynamic>? deviceSessions;
 
+/// Example: `'testuser@gmail.com'`
 final String? email;
 
 final UserIdentityGeo? geo;
 
 final int? iat;
 
+/// Example: `'1164449231815010287495'`
 final String? id;
 
+/// Example: `false`
 final bool? isGateway;
 
+/// Example: `false`
 final bool? isWarp;
 
+/// Example: `'Test User'`
 final String? name;
 
 final AccessUuid? userUuid;

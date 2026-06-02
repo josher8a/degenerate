@@ -36,6 +36,8 @@ final ZonesCacheByDeviceTypeId? id;
 
 /// The status of Cache By Device Type.
 /// 
+/// 
+/// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {

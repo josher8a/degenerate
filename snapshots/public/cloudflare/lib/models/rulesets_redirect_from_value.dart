@@ -44,9 +44,13 @@ factory RulesetsRedirectFromValue.fromJson(Map<String, dynamic> json) { return R
 ); }
 
 /// Whether to keep the query string of the original request.
+/// 
+/// Example: `true`
 final bool preserveQueryString;
 
 /// The status code to use for the redirect.
+/// 
+/// Example: `302`
 final RulesetsRedirectFromValueStatusCode? statusCode;
 
 /// A URL to redirect the request to.

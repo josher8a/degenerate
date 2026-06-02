@@ -11,6 +11,8 @@ factory PagesProjectCreateProjectRequestSource.fromJson(Map<String, dynamic> jso
 final SourceConfig config;
 
 /// The source control management provider.
+/// 
+/// Example: `'github'`
 final PagesSourceType type;
 
 Map<String, dynamic> toJson() { return {

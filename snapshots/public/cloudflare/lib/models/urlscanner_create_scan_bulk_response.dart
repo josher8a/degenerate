@@ -26,6 +26,8 @@ final String url;
 final String uuid;
 
 /// Submitted visibility status.
+/// 
+/// Example: `'public'`
 final UrlscannerCreateScanBulkResponseVisibility visibility;
 
 Map<String, dynamic> toJson() { return {

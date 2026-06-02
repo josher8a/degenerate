@@ -118,18 +118,28 @@ factory TlsCertificatesAndHostnamesSslsettings.fromJson(Map<String, dynamic> jso
 ); }
 
 /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
+/// 
+/// Example: `[ECDHE-RSA-AES128-GCM-SHA256, AES128-SHA]`
 final List<String>? ciphers;
 
 /// Whether or not Early Hints is enabled.
+/// 
+/// Example: `'on'`
 final EarlyHints? earlyHints;
 
 /// Whether or not HTTP2 is enabled.
+/// 
+/// Example: `'on'`
 final Http2? http2;
 
 /// The minimum TLS version supported.
+/// 
+/// Example: `'1.2'`
 final MinTlsVersion? minTlsVersion;
 
 /// Whether or not TLS 1.3 is enabled.
+/// 
+/// Example: `'on'`
 final Tls13? tls13;
 
 Map<String, dynamic> toJson() { return {

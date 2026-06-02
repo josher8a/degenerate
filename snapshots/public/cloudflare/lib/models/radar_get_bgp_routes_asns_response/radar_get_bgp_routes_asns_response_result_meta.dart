@@ -9,9 +9,13 @@ factory RadarGetBgpRoutesAsnsResponseResultMeta.fromJson(Map<String, dynamic> js
 ); }
 
 /// The timestamp of when the data is generated.
+/// 
+/// Example: `'2024-06-03T14:00:00'`
 final String dataTime;
 
 /// The timestamp of the query.
+/// 
+/// Example: `'2024-06-03T14:00:00'`
 final String queryTime;
 
 /// Total number of route collector peers used to generate this data.

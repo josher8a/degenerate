@@ -19,34 +19,52 @@ factory TeamsDevicesRegistration.fromJson(Map<String, dynamic> json) { return Te
 ); }
 
 /// The RFC3339 timestamp when the registration was created.
+/// 
+/// Example: `'2025-02-14T13:17:00Z'`
 final String createdAt;
 
 /// The RFC3339 timestamp when the registration was deleted.
+/// 
+/// Example: `'2025-02-14T13:17:00Z'`
 final String? deletedAt;
 
 final TeamsDevicesRegistrationDeviceDetails device;
 
 /// The ID of the registration.
+/// 
+/// Example: `'11ffb86f-3f0c-4306-b4a2-e62f872b166a'`
 final String id;
 
 /// The public key used to connect to the Cloudflare network.
+/// 
+/// Example: `'U+QTP50RsWfeLGHF4tlGDnmGeuwtsz46KCHr5OyhWq00Rsdfl45mgnQAuEJ6CO0YrkyTl9FUf5iB0bwYR3g4EEFEHhtu6jFaqfMrBMBSz6itv9HQXkaR9OieKQ=='`
 final String key;
 
 /// The type of encryption key used by the WARP client for the active key. Currently 'curve25519' for WireGuard and 'secp256r1' for MASQUE.
+/// 
+/// Example: `'secp256r1'`
 final String? keyType;
 
 /// The RFC3339 timestamp when the registration was last seen.
+/// 
+/// Example: `'2025-02-14T13:17:00Z'`
 final String lastSeenAt;
 
 final TeamsDevicesPolicySummary? policy;
 
 /// The RFC3339 timestamp when the registration was revoked.
+/// 
+/// Example: `'2025-02-14T13:17:00Z'`
 final String? revokedAt;
 
 /// Type of the tunnel - wireguard or masque.
+/// 
+/// Example: `'masque'`
 final String? tunnelType;
 
 /// The RFC3339 timestamp when the registration was last updated.
+/// 
+/// Example: `'2025-02-14T13:17:00Z'`
 final String updatedAt;
 
 final TeamsDevicesUser? user;

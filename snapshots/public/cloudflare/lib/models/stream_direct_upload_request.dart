@@ -21,6 +21,8 @@ final List<String>? allowedOrigins;
 final StreamCreator? creator;
 
 /// The date and time after upload when videos will not be accepted.
+/// 
+/// Example: `'2021-01-02T02:20:00Z'`
 final DateTime? expiry;
 
 final StreamMaxDurationSeconds maxDurationSeconds;

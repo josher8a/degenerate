@@ -62,6 +62,8 @@ factory TlsCertificatesAndHostnamesBase.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// When the Keyless SSL was created.
+/// 
+/// Example: `'2014-01-01T05:20:00Z'`
 final DateTime createdOn;
 
 final TlsCertificatesAndHostnamesEnabled enabled;
@@ -71,11 +73,15 @@ final TlsCertificatesAndHostnamesHost host;
 final TlsCertificatesAndHostnamesSchemasIdentifier id;
 
 /// When the Keyless SSL was last modified.
+/// 
+/// Example: `'2014-01-01T05:20:00Z'`
 final DateTime modifiedOn;
 
 final TlsCertificatesAndHostnamesName name;
 
 /// Available permissions for the Keyless SSL for the current user requesting the item.
+/// 
+/// Example: `[#ssl:read, #ssl:edit]`
 final List<String> permissions;
 
 final TlsCertificatesAndHostnamesPort port;

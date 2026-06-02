@@ -8,6 +8,8 @@ factory MagicGre.fromJson(Map<String, dynamic> json) { return MagicGre(
 ); }
 
 /// The IP address assigned to the Cloudflare side of the GRE tunnel created as part of the Interconnect.
+/// 
+/// Example: `'203.0.113.1'`
 final String? cloudflareEndpoint;
 
 Map<String, dynamic> toJson() { return {

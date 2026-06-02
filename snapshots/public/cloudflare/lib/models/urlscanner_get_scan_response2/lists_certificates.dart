@@ -11,10 +11,13 @@ factory ListsCertificates.fromJson(Map<String, dynamic> json) { return ListsCert
 
 final String issuer;
 
+/// Example: `'rkmod.somee.com'`
 final String subjectName;
 
+/// Example: `1682684400.0`
 final double validFrom;
 
+/// Example: `1696698000.0`
 final double validTo;
 
 Map<String, dynamic> toJson() { return {

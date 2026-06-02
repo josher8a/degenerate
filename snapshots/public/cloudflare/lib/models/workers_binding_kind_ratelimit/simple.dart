@@ -9,9 +9,13 @@ factory Simple.fromJson(Map<String, dynamic> json) { return Simple(
 ); }
 
 /// The limit (requests per period).
+/// 
+/// Example: `100`
 final double limit;
 
 /// The period in seconds.
+/// 
+/// Example: `60`
 final int period;
 
 Map<String, dynamic> toJson() { return {

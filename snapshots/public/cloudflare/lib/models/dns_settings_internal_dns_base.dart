@@ -8,6 +8,8 @@ factory DnsSettingsInternalDnsBase.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// The ID of the zone to fallback to.
+/// 
+/// Example: `{description: Identifier., example: 023e105f4ecef8ad9ca31a8372d0c353, maxLength: 32, type: string, x-auditable: true}`
 final String? referenceZoneId;
 
 Map<String, dynamic> toJson() { return {

@@ -46,15 +46,21 @@ final double? topP;
 /// A stable identifier for your end-users.
 /// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).
 /// 
+/// 
+/// Example: `'user-1234'`
 final String? user;
 
 /// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies.
 /// The IDs should be a string that uniquely identifies each user, with a maximum length of 64 characters. We recommend hashing their username or email address, in order to avoid sending us any identifying information. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).
 /// 
+/// 
+/// Example: `'safety-identifier-1234'`
 final String? safetyIdentifier;
 
 /// Used by OpenAI to cache responses for similar requests to optimize your cache hit rates. Replaces the `user` field. [Learn more](/docs/guides/prompt-caching).
 /// 
+/// 
+/// Example: `'prompt-cache-key-1234'`
 final String? promptCacheKey;
 
 final ServiceTier? serviceTier;

@@ -55,6 +55,8 @@ final String? content;
 final DnsRecordsSmimeaRecordData? data;
 
 /// Record type.
+/// 
+/// Example: `'TLSA'`
 final DnsRecordsTlsaRecordType? type;
 
 Map<String, dynamic> toJson() { return {

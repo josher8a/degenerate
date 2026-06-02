@@ -11,12 +11,18 @@ factory FixedResponse.fromJson(Map<String, dynamic> json) { return FixedResponse
 ); }
 
 /// The http 'Content-Type' header to include in the response.
+/// 
+/// Example: `'application/json'`
 final String? contentType;
 
 /// The http 'Location' header to include in the response.
+/// 
+/// Example: `'www.example.com'`
 final String? location;
 
 /// Text to include as the http body.
+/// 
+/// Example: `'Testing Hello'`
 final String? messageBody;
 
 /// The http status code to respond with.

@@ -9,6 +9,8 @@ factory Body.fromJson(Map<String, dynamic> json) { return Body(
 ); }
 
 /// Base64 encoded request body
+/// 
+/// Example: `'c29tZV9yZXF1ZXN0X2JvZHk='`
 final String? base64;
 
 /// Arbitrary json as request body

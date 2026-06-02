@@ -7,6 +7,8 @@ factory ValidateSqlRequest.fromJson(Map<String, dynamic> json) { return Validate
 ); }
 
 /// Specifies SQL to validate.
+/// 
+/// Example: `'insert into sink select * from source;'`
 final String sql;
 
 Map<String, dynamic> toJson() { return {

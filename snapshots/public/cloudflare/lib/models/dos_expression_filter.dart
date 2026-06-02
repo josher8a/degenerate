@@ -14,6 +14,8 @@ factory DosExpressionFilter.fromJson(Map<String, dynamic> json) { return DosExpr
 final DateTime createdOn;
 
 /// The filter expression.
+/// 
+/// Example: `'ip.dst in { 192.0.2.0/24 198.51.100.0/24 } and tcp.srcport in { 80 443 10000..65535 }'`
 final String expression;
 
 /// The unique ID of the expression filter.

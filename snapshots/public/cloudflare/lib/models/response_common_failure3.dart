@@ -11,9 +11,12 @@ factory ResponseCommonFailure3.fromJson(Map<String, dynamic> json) { return Resp
 /// A list of error messages.
 final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
+/// Example: `[]`
 final List<ResponseCommonFailure3Messages>? messages;
 
 /// Indicates whether the API call was failed
+/// 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

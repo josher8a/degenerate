@@ -11,12 +11,18 @@ factory ZeroTrustGatewayCustomCertificateSettings.fromJson(Map<String, dynamic> 
 ); }
 
 /// Indicate the internal certificate status.
+/// 
+/// Example: `'pending_deployment'`
 final String? bindingStatus;
 
 /// Specify whether to enable a custom certificate authority for signing Gateway traffic.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 /// Specify the UUID of the certificate (ID from MTLS certificate store).
+/// 
+/// Example: `'d1b364c5-1311-466e-a194-f0e943e0799f'`
 final String? id;
 
 final DateTime? updatedAt;

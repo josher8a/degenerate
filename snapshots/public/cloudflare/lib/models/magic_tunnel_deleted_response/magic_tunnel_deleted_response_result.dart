@@ -7,6 +7,7 @@ factory MagicTunnelDeletedResponseResult.fromJson(Map<String, dynamic> json) { r
   deletedGreTunnel: json['deleted_gre_tunnel'] != null ? MagicGreTunnel.fromJson(json['deleted_gre_tunnel'] as Map<String, dynamic>) : null,
 ); }
 
+/// Example: `true`
 final bool? deleted;
 
 final MagicGreTunnel? deletedGreTunnel;

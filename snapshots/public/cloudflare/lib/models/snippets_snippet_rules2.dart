@@ -13,18 +13,28 @@ factory SnippetsSnippetRules2.fromJson(Map<String, dynamic> json) { return Snipp
 ); }
 
 /// Provide an informative description of the rule.
+/// 
+/// Example: `'Execute my_snippet when IP address is 1.1.1.1.'`
 final String description;
 
 /// Indicate whether to execute the rule.
+/// 
+/// Example: `true`
 final bool enabled;
 
 /// Define the expression that determines which traffic matches the rule.
+/// 
+/// Example: `'ip.src eq 1.1.1.1'`
 final String expression;
 
 /// Specify the unique ID of the rule.
+/// 
+/// Example: `'3a03d665bac047339bb530ecb439a90d'`
 final String id;
 
 /// Specify the timestamp of when the rule was last modified.
+/// 
+/// Example: `'2000-01-01T00:00:00.000000Z'`
 final DateTime lastUpdated;
 
 /// Identify the snippet.

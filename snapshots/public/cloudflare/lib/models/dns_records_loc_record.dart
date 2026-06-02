@@ -49,12 +49,16 @@ final List<String>? tags;
 final DnsRecordsTtl? ttl;
 
 /// Formatted LOC content. See 'data' to set LOC properties.
+/// 
+/// Example: `'IN LOC 37 46 46 N 122 23 35 W 0m 100m 0m 0m'`
 final String? content;
 
 /// Components of a LOC record.
 final DnsRecordsLocRecordData? data;
 
 /// Record type.
+/// 
+/// Example: `'LOC'`
 final DnsRecordsLocRecordType? type;
 
 Map<String, dynamic> toJson() { return {

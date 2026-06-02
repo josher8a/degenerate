@@ -18,11 +18,15 @@ factory UrlscannerGetScanResponseResultScanTask.fromJson(Map<String, dynamic> js
 ); }
 
 /// Submitter location
+/// 
+/// Example: `'PT'`
 final String clientLocation;
 
 final TasksClientType clientType;
 
 /// URL of the primary request, after all HTTP redirects
+/// 
+/// Example: `'http://example.com/'`
 final String effectiveUrl;
 
 final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
@@ -31,16 +35,23 @@ final ScannedFrom scannedFrom;
 
 final TasksStatus status;
 
+/// Example: `true`
 final bool success;
 
+/// Example: `'2023-05-03T17:05:04.843Z'`
 final String time;
 
+/// Example: `'2023-05-03T17:05:19.374Z'`
 final String timeEnd;
 
 /// Submitted URL
+/// 
+/// Example: `'http://example.com'`
 final String url;
 
 /// Scan ID
+/// 
+/// Example: `'2ee568d0-bf70-4827-b922-b7088c0f056f'`
 final String uuid;
 
 final UrlscannerCreateScanBulkRequestVisibility visibility;

@@ -36,9 +36,13 @@ factory ShieldAuthIdCharacteristicJwtClaim.fromJson(Map<String, dynamic> json) {
 /// The JSONPath expression may be in dot or bracket notation, may only specify literal keys
 /// or array indexes, and must return a singleton value, which will be interpreted as a string.
 /// 
+/// 
+/// Example: `'e0de1a3a-8c2c-4f90-98d8-cbdf0a3f2cb5:$.foo.bar[0].baz'`
 final String name;
 
 /// The type of characteristic.
+/// 
+/// Example: `'jwt'`
 final ShieldAuthIdCharacteristicJwtClaimType type;
 
 Map<String, dynamic> toJson() { return {

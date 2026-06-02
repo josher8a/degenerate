@@ -10,6 +10,7 @@ factory PostEventCreateBulkRequest.fromJson(Map<String, dynamic> json) { return 
 
 final List<PostDosEventCreateBulkWithRelationshipsRequestData> data;
 
+/// Example: `'durableObjectName'`
 final String datasetId;
 
 /// When true, response includes array of created event UUIDs and shard IDs. Useful for tracking which events were created and where.

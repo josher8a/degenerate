@@ -11,18 +11,28 @@ factory McnResultInfo.fromJson(Map<String, dynamic> json) { return McnResultInfo
 ); }
 
 /// The number of items in the current result set.
+/// 
+/// Example: `1`
 final int count;
 
 /// The current page (starts from zero).
+/// 
+/// Example: `1`
 final int page;
 
 /// The maximum number of items per page.
+/// 
+/// Example: `20`
 final int perPage;
 
 /// The total number of items in the entire result set.
+/// 
+/// Example: `2000`
 final int totalCount;
 
 /// The number of total pages in the entire result set.
+/// 
+/// Example: `200`
 final int? totalPages;
 
 Map<String, dynamic> toJson() { return {

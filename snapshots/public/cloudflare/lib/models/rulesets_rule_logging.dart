@@ -8,6 +8,8 @@ factory RulesetsRuleLogging.fromJson(Map<String, dynamic> json) { return Ruleset
 ); }
 
 /// Whether to generate a log when the rule matches.
+/// 
+/// Example: `true`
 final bool enabled;
 
 Map<String, dynamic> toJson() { return {

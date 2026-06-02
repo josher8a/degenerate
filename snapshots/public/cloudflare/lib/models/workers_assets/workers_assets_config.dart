@@ -13,20 +13,35 @@ factory WorkersAssetsConfig.fromJson(Map<String, dynamic> json) { return Workers
 ); }
 
 /// The contents of a _headers file (used to attach custom headers on asset responses).
+/// 
+/// Example: `'/dashboard/*`
+/// X-Frame-Options: DENY
+/// 
+/// /static/*
+/// Access-Control-Allow-Origin: *'``
 final String? headers;
 
 /// The contents of a _redirects file (used to apply redirects or proxy paths ahead of asset serving).
+/// 
+/// Example: `'/foo /bar 301`
+/// /news/* /blog/:splat'``
 final String? redirects;
 
 /// Determines the redirects and rewrites of requests for HTML content.
+/// 
+/// Example: `'auto-trailing-slash'`
 final HtmlHandling? htmlHandling;
 
 /// Determines the response when a request does not match a static asset, and there is no Worker script.
+/// 
+/// Example: `'404-page'`
 final NotFoundHandling? notFoundHandling;
 
 final RunWorkerFirst? runWorkerFirst;
 
 /// When true and the incoming request matches an asset, that will be served instead of invoking the Worker script. When false, requests will always invoke the Worker script.
+/// 
+/// Example: `true`
 final bool? serveDirectly;
 
 Map<String, dynamic> toJson() { return {

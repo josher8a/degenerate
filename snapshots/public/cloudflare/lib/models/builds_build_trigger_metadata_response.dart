@@ -56,6 +56,7 @@ factory BuildsBuildTriggerMetadataResponse.fromJson(Map<String, dynamic> json) {
   rootDirectory: json['root_directory'] != null ? BuildsRootDirectory.fromJson(json['root_directory'] as String) : null,
 ); }
 
+/// Example: `'developer@cloudflare.com'`
 final String? author;
 
 final BuildsBranch? branch;
@@ -70,6 +71,7 @@ final BuildsBuildTriggerSource? buildTriggerSource;
 
 final BuildsCommitHash? commitHash;
 
+/// Example: `'Add new feature'`
 final String? commitMessage;
 
 final BuildsDeployCommand? deployCommand;

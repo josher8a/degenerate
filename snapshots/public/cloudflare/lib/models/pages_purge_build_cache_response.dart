@@ -14,6 +14,8 @@ final List<PagesMessages2> errors;
 final List<PagesMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final Map<String,dynamic>? result;

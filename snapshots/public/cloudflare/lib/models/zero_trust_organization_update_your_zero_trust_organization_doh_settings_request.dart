@@ -11,6 +11,8 @@ factory ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest.f
 final AccessDohJwtDuration? dohJwtDuration;
 
 /// The uuid of the service token you want to use for DoH authentication
+/// 
+/// Example: `'f174e90a-fafe-4643-bbbc-4a0ed4fc8415'`
 final String? serviceTokenId;
 
 Map<String, dynamic> toJson() { return {

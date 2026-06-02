@@ -15,6 +15,8 @@ factory DigitalExperienceMonitoringHttpDetailsResponse.fromJson(Map<String, dyna
 ); }
 
 /// The url of the HTTP synthetic application test
+/// 
+/// Example: `'http://example.com'`
 final String? host;
 
 final HttpStats? httpStats;
@@ -22,14 +24,20 @@ final HttpStats? httpStats;
 final List<HttpStatsByColo>? httpStatsByColo;
 
 /// The interval at which the HTTP synthetic application test is set to run.
+/// 
+/// Example: `'0h5m0s'`
 final String? interval;
 
 final dynamic kind;
 
 /// The HTTP method to use when running the test
+/// 
+/// Example: `'GET'`
 final String? method;
 
 /// The name of the HTTP synthetic application test
+/// 
+/// Example: `'Atlassian Sign In Page'`
 final String? name;
 
 final List<TargetPolicies>? targetPolicies;

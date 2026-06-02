@@ -8,9 +8,13 @@ factory TeamsDevicesClientCertificateInputRequest.fromJson(Map<String, dynamic> 
 ); }
 
 /// UUID of Cloudflare managed certificate.
+/// 
+/// Example: `'b14ddcc4-bcd2-4df4-bd4f-eb27d5a50c30'`
 final String certificateId;
 
 /// Common Name that is protected by the certificate.
+/// 
+/// Example: `'example.com'`
 final String cn;
 
 Map<String, dynamic> toJson() { return {

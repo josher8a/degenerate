@@ -11,9 +11,13 @@ factory TrafficStats.fromJson(Map<String, dynamic> json) { return TrafficStats(
 final ShieldTimestamp lastUpdated;
 
 /// The period in seconds these statistics were computed over
+/// 
+/// Example: `3600`
 final int periodSeconds;
 
 /// The average number of requests seen during this period
+/// 
+/// Example: `1987.06`
 final double requests;
 
 Map<String, dynamic> toJson() { return {

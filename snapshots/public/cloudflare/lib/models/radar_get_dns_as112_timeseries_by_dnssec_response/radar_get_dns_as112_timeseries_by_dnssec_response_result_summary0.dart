@@ -8,9 +8,13 @@ factory RadarGetDnsAs112TimeseriesByDnssecResponseResultSummary0.fromJson(Map<St
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String notSupported;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String supported;
 
 Map<String, dynamic> toJson() { return {

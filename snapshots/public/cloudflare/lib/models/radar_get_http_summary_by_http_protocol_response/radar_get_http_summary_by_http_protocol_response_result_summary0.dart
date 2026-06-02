@@ -8,9 +8,13 @@ factory RadarGetHttpSummaryByHttpProtocolResponseResultSummary0.fromJson(Map<Str
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String http;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String https;
 
 Map<String, dynamic> toJson() { return {

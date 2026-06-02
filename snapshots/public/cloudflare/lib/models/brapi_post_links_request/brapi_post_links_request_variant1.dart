@@ -58,6 +58,8 @@ final bool excludeExternalLinks;
 final GotoOptions? gotoOptions;
 
 /// Set the content of the page, eg: `<h1>Hello World!!</h1>`. Either `html` or `url` must be set.
+/// 
+/// Example: `'<h1>Hello World!</h1>'`
 final String html;
 
 /// Block undesired requests that match the provided regex patterns, eg. '/^.*\.(css)'.

@@ -7,6 +7,8 @@ factory CachePurgeFlexPurgeByHostnames.fromJson(Map<String, dynamic> json) { ret
 ); }
 
 /// For more information purging by hostnames, please refer to [purge by hostname documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-hostname/).
+/// 
+/// Example: `[www.example.com, images.example.com]`
 final List<String>? hosts;
 
 Map<String, dynamic> toJson() { return {

@@ -15,6 +15,8 @@ final ShieldTimestamp createdAt;
 final List<String> hosts;
 
 /// Name of the schema
+/// 
+/// Example: `'petstore schema'`
 final String name;
 
 /// A unique identifier of this schema

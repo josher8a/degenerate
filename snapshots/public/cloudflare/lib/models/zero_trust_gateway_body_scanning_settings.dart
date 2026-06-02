@@ -33,6 +33,8 @@ factory ZeroTrustGatewayBodyScanningSettings.fromJson(Map<String, dynamic> json)
 ); }
 
 /// Specify the inspection mode as either `deep` or `shallow`.
+/// 
+/// Example: `'deep'`
 final InspectionMode? inspectionMode;
 
 Map<String, dynamic> toJson() { return {

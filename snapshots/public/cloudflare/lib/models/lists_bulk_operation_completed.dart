@@ -35,6 +35,8 @@ final ListsCompleted completed;
 final ListsOperationId id;
 
 /// The current status of the asynchronous operation.
+/// 
+/// Example: `'completed'`
 final ListsBulkOperationCompletedStatus status;
 
 Map<String, dynamic> toJson() { return {

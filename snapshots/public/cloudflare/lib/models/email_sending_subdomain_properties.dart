@@ -17,12 +17,16 @@ factory EmailSendingSubdomainProperties.fromJson(Map<String, dynamic> json) { re
 final EmailCreated? created;
 
 /// The DKIM selector used for email signing.
+/// 
+/// Example: `'cf-bounce'`
 final String? emailSendingDkimSelector;
 
 /// Whether Email Sending is enabled on this subdomain.
 final bool emailSendingEnabled;
 
 /// The return-path domain used for bounce handling.
+/// 
+/// Example: `'cf-bounce.sub.example.com'`
 final String? emailSendingReturnPathDomain;
 
 /// Whether Email Routing (receiving) is enabled on this subdomain. Read-only; included for informational purposes since both services share the subdomain row.
@@ -32,6 +36,8 @@ final bool? enabled;
 final EmailModified? modified;
 
 /// The subdomain domain name.
+/// 
+/// Example: `'sub.example.com'`
 final String name;
 
 /// Sending subdomain identifier.

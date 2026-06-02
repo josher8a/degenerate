@@ -11,10 +11,13 @@ factory LoadBalancingAnalytics.fromJson(Map<String, dynamic> json) { return Load
 
 final int id;
 
+/// Example: `[{address: 198.51.100.4, changed: true, enabled: true, failure_reason: No failures, healthy: true, ip: 198.51.100.4, name: some-origin}]`
 final List<LoadBalancingOriginAnalytics>? origins;
 
+/// Example: `{changed: true, healthy: true, id: 74bc6a8b9b0dda3d651707a2928bad0c, minimum_origins: 1, name: some-pool}`
 final Map<String,dynamic>? pool;
 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? timestamp;
 
 Map<String, dynamic> toJson() { return {

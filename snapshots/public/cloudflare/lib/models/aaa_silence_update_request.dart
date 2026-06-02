@@ -9,12 +9,16 @@ factory AaaSilenceUpdateRequest.fromJson(Map<String, dynamic> json) { return Aaa
 ); }
 
 /// When the silence ends.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final String? endTime;
 
 /// Silence ID
 final AaaSilenceId? id;
 
 /// When the silence starts.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final String? startTime;
 
 Map<String, dynamic> toJson() { return {

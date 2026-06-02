@@ -542,6 +542,16 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'EnterpriseCustomPropertiesForOrganizations($value)'; } 
  }
 /// The permissions granted to the user access token.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "contents": "read",
+///   "issues": "read",
+///   "deployments": "write",
+///   "single_file": "read"
+/// }
+/// ```text
 @immutable final class AppPermissions {const AppPermissions({this.repositoryHooks, this.administration, this.artifactMetadata, this.attestations, this.checks, this.codespaces, this.contents, this.dependabotSecrets, this.deployments, this.discussions, this.environments, this.issues, this.mergeQueues, this.metadata, this.packages, this.pages, this.pullRequests, this.repositoryCustomProperties, this.actions, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.workflows, this.customPropertiesForOrganizations, this.members, this.organizationAdministration, this.organizationCustomRoles, this.organizationCustomOrgRoles, this.organizationCustomProperties, this.organizationCopilotSeatManagement, this.enterpriseCustomPropertiesForOrganizations, this.organizationEvents, this.organizationHooks, this.organizationPersonalAccessTokens, this.organizationPersonalAccessTokenRequests, this.organizationPlan, this.organizationProjects, this.organizationPackages, this.organizationSecrets, this.organizationSelfHostedRunners, this.organizationUserBlocking, this.emailAddresses, this.followers, this.gitSshKeys, this.gpgKeys, this.interactionLimits, this.profile, this.starring, this.organizationAnnouncementBanners, });
 
 factory AppPermissions.fromJson(Map<String, dynamic> json) { return AppPermissions(

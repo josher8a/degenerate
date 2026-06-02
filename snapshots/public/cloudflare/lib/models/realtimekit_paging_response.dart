@@ -12,6 +12,7 @@ final List<Map<String,dynamic>> data;
 
 final RealtimekitPagingResponsePaging paging;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

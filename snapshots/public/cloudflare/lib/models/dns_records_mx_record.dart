@@ -49,11 +49,15 @@ final List<String>? tags;
 final DnsRecordsTtl? ttl;
 
 /// A valid mail server hostname.
+/// 
+/// Example: `'mx.example.com'`
 final String? content;
 
 final DnsRecordsPriority? priority;
 
 /// Record type.
+/// 
+/// Example: `'MX'`
 final DnsRecordsMxRecordType? type;
 
 Map<String, dynamic> toJson() { return {

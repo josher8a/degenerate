@@ -9,12 +9,18 @@ factory Oidc.fromJson(Map<String, dynamic> json) { return Oidc(
 ); }
 
 /// The name of the OIDC claim.
+/// 
+/// Example: `'group'`
 final String claimName;
 
 /// The OIDC claim value to look for.
+/// 
+/// Example: `'devs@cloudflare.com'`
 final String claimValue;
 
 /// The ID of your OIDC identity provider.
+/// 
+/// Example: `'ea85612a-29c8-46c2-bacb-669d65136971'`
 final String identityProviderId;
 
 Map<String, dynamic> toJson() { return {

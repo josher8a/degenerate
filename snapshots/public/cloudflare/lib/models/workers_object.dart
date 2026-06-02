@@ -8,9 +8,13 @@ factory WorkersObject.fromJson(Map<String, dynamic> json) { return WorkersObject
 ); }
 
 /// Whether the Durable Object has stored data.
+/// 
+/// Example: `true`
 final bool? hasStoredData;
 
 /// ID of the Durable Object.
+/// 
+/// Example: `'fe7803fc55b964e09d94666545aab688d360c6bda69ba349ced1e5f28d2fc2c8'`
 final String? id;
 
 Map<String, dynamic> toJson() { return {

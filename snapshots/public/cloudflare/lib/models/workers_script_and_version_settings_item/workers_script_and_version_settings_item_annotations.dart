@@ -10,12 +10,18 @@ factory WorkersScriptAndVersionSettingsItemAnnotations.fromJson(Map<String, dyna
 ); }
 
 /// Human-readable message about the version.
+/// 
+/// Example: `'Fixed bug.'`
 final String? workersMessage;
 
 /// User-provided identifier for the version.
+/// 
+/// Example: `'v1.0.1'`
 final String? workersTag;
 
 /// Operation that triggered the creation of the version.
+/// 
+/// Example: `'upload'`
 final String? workersTriggeredBy;
 
 Map<String, dynamic> toJson() { return {

@@ -11,9 +11,13 @@ factory LoadBalancingMonitorGroup.fromJson(Map<String, dynamic> json) { return L
 ); }
 
 /// The timestamp of when the monitor group was created
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? createdAt;
 
 /// A short description of the monitor group
+/// 
+/// Example: `'Primary datacenter monitors'`
 final String description;
 
 final LoadBalancingMonitorGroupId id;
@@ -22,6 +26,8 @@ final LoadBalancingMonitorGroupId id;
 final List<LoadBalancingMonitorGroupMember> members;
 
 /// The timestamp of when the monitor group was last updated
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? updatedAt;
 
 Map<String, dynamic> toJson() { return {

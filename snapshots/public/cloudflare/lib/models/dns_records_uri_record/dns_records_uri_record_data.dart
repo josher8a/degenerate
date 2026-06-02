@@ -9,9 +9,13 @@ factory DnsRecordsUriRecordData.fromJson(Map<String, dynamic> json) { return Dns
 ); }
 
 /// The record content.
+/// 
+/// Example: `'http://example.com/example.html'`
 final String? target;
 
 /// The record weight.
+/// 
+/// Example: `20`
 final double? weight;
 
 Map<String, dynamic> toJson() { return {

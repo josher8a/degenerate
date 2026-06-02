@@ -8,6 +8,8 @@ factory RulesetsLogCustomFieldTransformedRequestFields2.fromJson(Map<String, dyn
 ); }
 
 /// The name of the header.
+/// 
+/// Example: `'my-request-header'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

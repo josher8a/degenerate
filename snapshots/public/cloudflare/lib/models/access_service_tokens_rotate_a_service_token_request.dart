@@ -7,6 +7,8 @@ factory AccessServiceTokensRotateAServiceTokenRequest.fromJson(Map<String, dynam
 ); }
 
 /// The expiration of the previous `client_secret`. If not provided, it defaults to the current timestamp in order to immediately expire the previous secret.
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? previousClientSecretExpiresAt;
 
 Map<String, dynamic> toJson() { return {

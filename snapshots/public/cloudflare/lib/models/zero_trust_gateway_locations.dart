@@ -71,9 +71,13 @@ final ZeroTrustGatewayComponentsSchemasUuid? id;
 final ZeroTrustGatewayIp? ip;
 
 /// Show the primary destination IPv4 address from the pair identified dns_destination_ips_id. This field read-only.
+/// 
+/// Example: `'172.64.36.1'`
 final String? ipv4Destination;
 
 /// Show the backup destination IPv4 address from the pair identified dns_destination_ips_id. This field read-only.
+/// 
+/// Example: `'172.64.36.2'`
 final String? ipv4DestinationBackup;
 
 final ZeroTrustGatewaySchemasName? name;

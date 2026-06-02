@@ -39,6 +39,8 @@ factory Request.fromJson(Map<String, dynamic> json) { return Request(
 ); }
 
 /// A metadata filter expression used to limit nearest neighbor results.
+/// 
+/// Example: `{has_viewed: {$ne: true}, streaming_platform: netflix}`
 final Map<String,dynamic>? filter;
 
 /// Whether to return no metadata, indexed metadata or all metadata associated with the closest vectors.
@@ -48,9 +50,13 @@ final ReturnMetadata returnMetadata;
 final bool returnValues;
 
 /// The number of nearest neighbors to find.
+/// 
+/// Example: `5`
 final double topK;
 
 /// The search vector that will be used to find the nearest neighbors.
+/// 
+/// Example: `[0.5, 0.5, 0.5]`
 final List<double> vector;
 
 Map<String, dynamic> toJson() { return {

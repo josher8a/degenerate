@@ -50,9 +50,13 @@ final DnsRecordsTtl? ttl;
 /// Text content for the record. The content must consist of quoted "character strings" (RFC 1035), each with a length of up to 255 bytes. Strings exceeding this allowed maximum length are automatically split.
 /// 
 /// Learn more at `<https://www.cloudflare.com/learning/dns/dns-records/dns-txt-record/>`.
+/// 
+/// Example: `'"v=spf1 include:example.com -all"'`
 final String? content;
 
 /// Record type.
+/// 
+/// Example: `'TXT'`
 final DnsRecordsTxtRecordType? type;
 
 Map<String, dynamic> toJson() { return {

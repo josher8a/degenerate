@@ -36,18 +36,28 @@ factory Tables.fromJson(Map<String, dynamic> json) { return Tables(
 ); }
 
 /// Unique identifier for the connection (stream or sink).
+/// 
+/// Example: `'1c9200d5872c018bb34e93e2cd8a438e'`
 final String id;
 
 /// Latest available version of the connection.
+/// 
+/// Example: `5`
 final int latest;
 
 /// Name of the connection.
+/// 
+/// Example: `'my_table'`
 final String name;
 
 /// Type of the connection.
+/// 
+/// Example: `'stream'`
 final TablesType type;
 
 /// Current version of the connection used by this pipeline.
+/// 
+/// Example: `4`
 final int version;
 
 Map<String, dynamic> toJson() { return {

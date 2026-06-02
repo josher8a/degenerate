@@ -8,6 +8,8 @@ factory IamUpdateUserGroupBody.fromJson(Map<String, dynamic> json) { return IamU
 ); }
 
 /// Name of the User group.
+/// 
+/// Example: `'My New User Group'`
 final String? name;
 
 /// Policies attached to the User group

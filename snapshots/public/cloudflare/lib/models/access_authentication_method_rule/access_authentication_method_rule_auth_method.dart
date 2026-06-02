@@ -7,6 +7,8 @@ factory AccessAuthenticationMethodRuleAuthMethod.fromJson(Map<String, dynamic> j
 ); }
 
 /// The type of authentication method https://datatracker.ietf.org/doc/html/rfc8176#section-2.
+/// 
+/// Example: `'mfa'`
 final String authMethod;
 
 Map<String, dynamic> toJson() { return {

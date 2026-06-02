@@ -14,6 +14,8 @@ final List<ZarazMessages2> errors;
 final List<ZarazMessages2> messages;
 
 /// Whether the API call was successful
+/// 
+/// Example: `true`
 final bool success;
 
 final List<ZarazZarazHistoryResponseResult> result;

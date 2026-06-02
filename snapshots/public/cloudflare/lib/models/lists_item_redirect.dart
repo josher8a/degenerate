@@ -49,12 +49,14 @@ final bool preservePathSuffix;
 
 final bool preserveQueryString;
 
+/// Example: `'example.com/arch'`
 final String sourceUrl;
 
 final ListsItemRedirectStatusCode? statusCode;
 
 final bool subpathMatching;
 
+/// Example: `'https://archlinux.org/'`
 final String targetUrl;
 
 Map<String, dynamic> toJson() { return {

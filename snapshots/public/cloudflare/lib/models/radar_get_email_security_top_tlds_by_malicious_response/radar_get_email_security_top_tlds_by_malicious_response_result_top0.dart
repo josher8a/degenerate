@@ -7,9 +7,12 @@ factory RadarGetEmailSecurityTopTldsByMaliciousResponseResultTop0.fromJson(Map<S
   value: json['value'] as String,
 ); }
 
+/// Example: `'com.'`
 final String name;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

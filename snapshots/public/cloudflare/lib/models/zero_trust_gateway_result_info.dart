@@ -10,15 +10,23 @@ factory ZeroTrustGatewayResultInfo.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// Indicate the total number of results for the requested service.
+/// 
+/// Example: `1`
 final double? count;
 
 /// Indicate the current page within a paginated list of results.
+/// 
+/// Example: `1`
 final double? page;
 
 /// Indicate the number of results per page.
+/// 
+/// Example: `20`
 final double? perPage;
 
 /// Indicate the total results available without any search parameters.
+/// 
+/// Example: `2000`
 final double? totalCount;
 
 Map<String, dynamic> toJson() { return {

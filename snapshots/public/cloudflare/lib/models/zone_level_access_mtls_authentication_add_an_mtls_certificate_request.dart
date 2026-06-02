@@ -12,6 +12,11 @@ factory ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest.fromJson(Ma
 final List<String>? associatedHostnames;
 
 /// The certificate content.
+/// 
+/// Example: `'-----BEGIN CERTIFICATE-----`
+/// MIIGAjCCA+qgAwIBAgIJAI7kymlF7CWT...N4RI7KKB7nikiuUf8vhULKy5IX10
+/// DrUtmu/B
+/// -----END CERTIFICATE-----'``
 final String certificate;
 
 /// The name of the certificate.

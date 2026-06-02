@@ -27,15 +27,23 @@ final Api api;
 final double avgThroughput;
 
 /// A brief description of the certificate log.
+/// 
+/// Example: `'Google 'Argon2024' log'`
 final String description;
 
 /// The end date and time for when the log will stop accepting certificates.
+/// 
+/// Example: `'2025-01-01T00:00:00Z'`
 final DateTime endExclusive;
 
 /// Timestamp of the most recent update to the CT log.
+/// 
+/// Example: `'2025-01-01T00:00:00Z'`
 final DateTime lastUpdate;
 
 /// The organization responsible for operating the certificate log.
+/// 
+/// Example: `'Google'`
 final String $operator;
 
 /// Log performance metrics, including averages and per-endpoint details.
@@ -45,24 +53,36 @@ final CertificateLogPerformance? performance;
 final List<CertificateLogRelated> related;
 
 /// A URL-friendly, kebab-case identifier for the certificate log.
+/// 
+/// Example: `'argon2024'`
 final String slug;
 
 /// The start date and time for when the log starts accepting certificates.
+/// 
+/// Example: `'2024-01-01T00:00:00Z'`
 final DateTime startInclusive;
 
 /// The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html
 final CertificateLogState state;
 
 /// Timestamp of when the log state was last updated.
+/// 
+/// Example: `'2025-02-01T08:53:20Z'`
 final DateTime stateTimestamp;
 
 /// Number of certificates that are eligible for inclusion to this log but have not been included yet. Based on certificates signed by trusted root CAs within the log's accepted date range.
+/// 
+/// Example: `'10'`
 final String? submittableCertCount;
 
 /// Number of certificates already included in this CT log.
+/// 
+/// Example: `'10'`
 final String? submittedCertCount;
 
 /// The URL for the certificate log.
+/// 
+/// Example: `'https://ct.googleapis.com/logs/us1/argon2024/'`
 final String url;
 
 Map<String, dynamic> toJson() { return {

@@ -16,6 +16,8 @@ final List<HyperdriveMessages2> messages;
 final Map<String,dynamic> result;
 
 /// Return the status of the API call success.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

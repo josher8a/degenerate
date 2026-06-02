@@ -262,6 +262,7 @@ final class IrField {
     this.isRequired = false,
     this.defaultValue,
     this.description,
+    this.example,
   });
 
   /// The sanitized Dart field name.
@@ -281,6 +282,9 @@ final class IrField {
 
   /// Human-readable description from the schema.
   final String? description;
+
+  /// Example value from the schema, if any.
+  final Object? example;
 }
 
 /// oneOf with discriminator - generates sealed class hierarchy.

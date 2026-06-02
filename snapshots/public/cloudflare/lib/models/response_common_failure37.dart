@@ -9,13 +9,17 @@ factory ResponseCommonFailure37.fromJson(Map<String, dynamic> json) { return Res
   success: json['success'] as bool,
 ); }
 
+/// Example: `[{code: 7003, message: No route for the URI}]`
 final List<HyperdriveMessages2> errors;
 
+/// Example: `[]`
 final List<HyperdriveMessages2> messages;
 
 final Map<String,dynamic>? result;
 
 /// Return the status of the API call success.
+/// 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

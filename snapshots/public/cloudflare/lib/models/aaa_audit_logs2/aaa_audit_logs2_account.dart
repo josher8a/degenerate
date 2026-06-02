@@ -9,9 +9,13 @@ factory AaaAuditLogs2Account.fromJson(Map<String, dynamic> json) { return AaaAud
 ); }
 
 /// A unique identifier for the account.
+/// 
+/// Example: `'4bb334f7c94c4a29a045f03944f072e5'`
 final String? id;
 
 /// A string that identifies the account name.
+/// 
+/// Example: `'Example Account'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

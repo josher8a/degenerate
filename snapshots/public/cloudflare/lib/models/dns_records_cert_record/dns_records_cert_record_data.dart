@@ -11,15 +11,21 @@ factory DnsRecordsCertRecordData.fromJson(Map<String, dynamic> json) { return Dn
 ); }
 
 /// Algorithm.
+/// 
+/// Example: `8`
 final double? algorithm;
 
 /// Certificate.
 final String? certificate;
 
 /// Key Tag.
+/// 
+/// Example: `1`
 final double? keyTag;
 
 /// Type.
+/// 
+/// Example: `9`
 final double? type;
 
 Map<String, dynamic> toJson() { return {

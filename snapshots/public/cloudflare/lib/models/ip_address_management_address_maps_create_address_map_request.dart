@@ -15,6 +15,7 @@ final AddressingSchemasDescription? description;
 /// Whether the Address Map is enabled or not. Cloudflare's DNS will not respond with IP addresses on an Address Map until the map is enabled.
 final AddressingEnabled? enabled;
 
+/// Example: `[192.0.2.1]`
 final List<AddressingIpAddress>? ips;
 
 /// Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership.

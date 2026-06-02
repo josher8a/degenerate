@@ -13,6 +13,8 @@ factory ObservabilityLogs.fromJson(Map<String, dynamic> json) { return Observabi
 final bool enabled;
 
 /// The sampling rate for logs. From 0 to 1 (1 = 100%, 0.1 = 10%).
+/// 
+/// Example: `1`
 final double headSamplingRate;
 
 /// Whether [invocation logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/#invocation-logs) are enabled for the Worker.

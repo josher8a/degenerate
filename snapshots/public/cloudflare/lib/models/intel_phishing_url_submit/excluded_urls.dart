@@ -7,6 +7,8 @@ factory ExcludedUrls.fromJson(Map<String, dynamic> json) { return ExcludedUrls(
 ); }
 
 /// URL that was excluded.
+/// 
+/// Example: `'https://developers.cloudflare.com'`
 final String? url;
 
 Map<String, dynamic> toJson() { return {

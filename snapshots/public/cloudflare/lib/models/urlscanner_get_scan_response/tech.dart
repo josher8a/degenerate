@@ -15,18 +15,23 @@ factory Tech.fromJson(Map<String, dynamic> json) { return Tech(
 
 final List<TechCategories> categories;
 
+/// Example: `100`
 final int confidence;
 
 final String? description;
 
 final Evidence evidence;
 
+/// Example: `'Amazon ECS.svg'`
 final String icon;
 
+/// Example: `'Amazon ECS'`
 final String name;
 
+/// Example: `'amazon-ecs'`
 final String slug;
 
+/// Example: `'https://aws.amazon.com/ecs/'`
 final String website;
 
 Map<String, dynamic> toJson() { return {

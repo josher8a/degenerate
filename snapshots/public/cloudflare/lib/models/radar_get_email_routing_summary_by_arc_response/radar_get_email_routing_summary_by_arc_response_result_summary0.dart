@@ -9,12 +9,18 @@ factory RadarGetEmailRoutingSummaryByArcResponseResultSummary0.fromJson(Map<Stri
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String fail;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String none;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String pass;
 
 Map<String, dynamic> toJson() { return {

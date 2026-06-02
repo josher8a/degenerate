@@ -6,6 +6,7 @@ factory DnssecDeleteDnssecResponseSingle.fromJson(Map<String, dynamic> json) { r
   result: json['result'] as String?,
 ); }
 
+/// Example: `''`
 final String? result;
 
 Map<String, dynamic> toJson() { return {

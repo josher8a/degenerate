@@ -9,12 +9,18 @@ factory Tld.fromJson(Map<String, dynamic> json) { return Tld(
 ); }
 
 /// The organization that manages the TLD.
+/// 
+/// Example: `'VeriSign Global Registry Services'`
 final String manager;
 
 /// The actual TLD.
+/// 
+/// Example: `'com'`
 final String tld;
 
 /// The type of TLD.
+/// 
+/// Example: `'GENERIC'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

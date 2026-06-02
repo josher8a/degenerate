@@ -33,9 +33,13 @@ factory TeamsDevicesFirewallInputRequest.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// Enabled.
+/// 
+/// Example: `true`
 final bool enabled;
 
 /// Operating System.
+/// 
+/// Example: `'windows'`
 final TeamsDevicesFirewallInputRequestOperatingSystem operatingSystem;
 
 Map<String, dynamic> toJson() { return {

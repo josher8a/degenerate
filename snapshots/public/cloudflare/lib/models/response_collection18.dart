@@ -17,6 +17,8 @@ final List<FirewallMessages2> messages;
 final List<Map<String,dynamic>>? result;
 
 /// Defines whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final FirewallResultInfo? resultInfo;

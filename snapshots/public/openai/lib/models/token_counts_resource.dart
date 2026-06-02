@@ -21,6 +21,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TokenCountsResourceObject($value)'; } 
  }
+/// Example:
+/// ```json`
+/// {
+///   "object": "response.input_tokens",
+///   "input_tokens": 123
+/// }
+/// ```text
 @immutable final class TokenCountsResource {const TokenCountsResource({required this.inputTokens, this.object = TokenCountsResourceObject.responseInputTokens, });
 
 factory TokenCountsResource.fromJson(Map<String, dynamic> json) { return TokenCountsResource(

@@ -14,9 +14,13 @@ final List<ZarazMessages2> errors;
 final List<ZarazMessages2> messages;
 
 /// Whether the API call was successful
+/// 
+/// Example: `true`
 final bool success;
 
 /// Object where keys are numericc onfiguration IDs
+/// 
+/// Example: `{12345: {config: {consent: {cookieName: zaraz-consent, customIntroDisclaimerDismissed: true, enabled: false}, dataLayer: true, debugKey: my-debug-key, settings: {autoInjectScript: true}, tools: {aJvt: {component: facebook-pixel, defaultFields: {testKey: TEST123456}, enabled: true, name: Facebook Pixel, neoEvents: [{actionType: pageview, blockingTriggers: [], data: {__zaraz_setting_name: Page view, ev: PageView}, firingTriggers: [Pageview]}], permissions: [access_client_kv], settings: {accessToken: ABcdEFg, ecommerce: true, property: 12345}, type: component}}, triggers: {ktBn: {Pageview: {clientRules: [], description: All page loads, excludeRules: [], loadRules: [{match: {{ client.__zarazTrack }}, op: EQUALS, value: Pageview}], name: Pageview, system: pageload}}}, variables: {Autd: {name: ip, type: string, value: {{ system.device.ip }}}}, zarazVersion: 43}, createdAt: 2023-02-23T05:05:55.155273Z, id: 12345, updatedAt: 2023-02-23T05:05:55.155273Z, userId: 278d0d0g123cd8e49d45ea64f12faa37}, 23456: null}`
 final Map<String,ZarazZarazConfigHistoryResponseResultValue?> result;
 
 Map<String, dynamic> toJson() { return {

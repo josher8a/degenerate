@@ -6,6 +6,7 @@ factory LogshareFieldsResponse.fromJson(Map<String, dynamic> json) { return Logs
   key: json['key'] as String?,
 ); }
 
+/// Example: `'value'`
 final String? key;
 
 Map<String, dynamic> toJson() { return {

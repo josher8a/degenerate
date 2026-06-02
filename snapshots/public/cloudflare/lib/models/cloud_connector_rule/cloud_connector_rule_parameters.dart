@@ -8,6 +8,8 @@ factory CloudConnectorRuleParameters.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Host to perform Cloud Connection to
+/// 
+/// Example: `'examplebucket.s3.eu-north-1.amazonaws.com'`
 final String? host;
 
 Map<String, dynamic> toJson() { return {

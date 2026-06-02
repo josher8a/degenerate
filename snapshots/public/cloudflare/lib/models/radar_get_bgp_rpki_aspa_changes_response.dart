@@ -9,6 +9,7 @@ factory RadarGetBgpRpkiAspaChangesResponse.fromJson(Map<String, dynamic> json) {
 
 final RadarGetBgpRpkiAspaChangesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

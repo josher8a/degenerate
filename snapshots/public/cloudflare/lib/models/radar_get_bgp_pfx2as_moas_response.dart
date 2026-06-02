@@ -9,6 +9,7 @@ factory RadarGetBgpPfx2asMoasResponse.fromJson(Map<String, dynamic> json) { retu
 
 final RadarGetBgpPfx2asMoasResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

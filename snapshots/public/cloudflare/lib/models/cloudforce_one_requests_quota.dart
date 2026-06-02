@@ -10,15 +10,23 @@ factory CloudforceOneRequestsQuota.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// Anniversary date is when annual quota limit is refreshed.
+/// 
+/// Example: `'2022-04-01T00:00:00Z'`
 final CloudforceOneRequestsTime? anniversaryDate;
 
 /// Quarter anniversary date is when quota limit is refreshed each quarter.
+/// 
+/// Example: `'2022-04-01T00:00:00Z'`
 final CloudforceOneRequestsTime? quarterAnniversaryDate;
 
 /// Tokens for the quarter.
+/// 
+/// Example: `120`
 final int? quota;
 
 /// Tokens remaining for the quarter.
+/// 
+/// Example: `64`
 final int? remaining;
 
 Map<String, dynamic> toJson() { return {

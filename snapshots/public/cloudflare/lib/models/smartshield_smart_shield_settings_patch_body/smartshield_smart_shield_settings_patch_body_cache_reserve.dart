@@ -7,6 +7,8 @@ factory SmartshieldSmartShieldSettingsPatchBodyCacheReserve.fromJson(Map<String,
 ); }
 
 /// Specifies the enablement value of Cache Reserve.
+/// 
+/// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {

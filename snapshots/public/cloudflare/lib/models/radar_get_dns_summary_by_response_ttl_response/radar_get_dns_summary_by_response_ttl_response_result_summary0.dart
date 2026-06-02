@@ -13,24 +13,38 @@ factory RadarGetDnsSummaryByResponseTtlResponseResultSummary0.fromJson(Map<Strin
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String gt1dLte1w;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String gt1hLte1d;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String gt1mLte5m;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String gt1w;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String gt5mLte15m;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String gt15mLte1h;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String lte1m;
 
 Map<String, dynamic> toJson() { return {

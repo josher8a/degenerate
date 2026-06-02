@@ -8,11 +8,14 @@ factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404.fromJson
   success: CloudflarePipelinesWorkerPipelinesCommonSuccess.fromJson(json['success'] as bool),
 ); }
 
+/// Example: `[]`
 final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> errors;
 
 final Map<String,dynamic>? results;
 
 /// Indicates whether the API call was successful.
+/// 
+/// Example: `false`
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
 Map<String, dynamic> toJson() { return {

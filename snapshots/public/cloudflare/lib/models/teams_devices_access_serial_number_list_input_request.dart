@@ -7,6 +7,8 @@ factory TeamsDevicesAccessSerialNumberListInputRequest.fromJson(Map<String, dyna
 ); }
 
 /// UUID of Access List.
+/// 
+/// Example: `'f174e90a-fafe-4643-bbbc-4a0ed4fc8415'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

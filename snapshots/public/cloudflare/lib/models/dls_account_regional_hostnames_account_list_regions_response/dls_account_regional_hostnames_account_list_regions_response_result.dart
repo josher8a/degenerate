@@ -11,6 +11,8 @@ factory DlsAccountRegionalHostnamesAccountListRegionsResponseResult.fromJson(Map
 final DlsRegionKey? key;
 
 /// Human-readable text label for the region
+/// 
+/// Example: `'Canada'`
 final String? label;
 
 Map<String, dynamic> toJson() { return {

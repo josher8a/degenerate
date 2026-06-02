@@ -9,12 +9,18 @@ factory Saml.fromJson(Map<String, dynamic> json) { return Saml(
 ); }
 
 /// The name of the SAML attribute.
+/// 
+/// Example: `'group'`
 final String attributeName;
 
 /// The SAML attribute value to look for.
+/// 
+/// Example: `'devs@cloudflare.com'`
 final String attributeValue;
 
 /// The ID of your SAML identity provider.
+/// 
+/// Example: `'ea85612a-29c8-46c2-bacb-669d65136971'`
 final String identityProviderId;
 
 Map<String, dynamic> toJson() { return {

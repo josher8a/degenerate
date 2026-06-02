@@ -11,11 +11,15 @@ factory AsnRelated.fromJson(Map<String, dynamic> json) { return AsnRelated(
 
 final String? aka;
 
+/// Example: `174`
 final int asn;
 
 /// Total estimated users.
+/// 
+/// Example: `65345`
 final int? estimatedUsers;
 
+/// Example: `'Cogent-174'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

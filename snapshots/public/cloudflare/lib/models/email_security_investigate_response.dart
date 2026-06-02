@@ -10,10 +10,13 @@ factory EmailSecurityInvestigateResponse.fromJson(Map<String, dynamic> json) { r
   resultInfo: EmailSecurityCursorWithLegacyResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
 final List<EmailSecurityMailsearchMessage> result;

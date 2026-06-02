@@ -20,18 +20,28 @@ final AaaAuditLogsAction? action;
 final AaaAuditLogsActor? actor;
 
 /// A string that uniquely identifies the audit log.
+/// 
+/// Example: `'d5b0f326-1232-4452-8858-1089bd7168ef'`
 final String? id;
 
 /// The source of the event.
+/// 
+/// Example: `'API'`
 final String? $interface;
 
 /// An object which can lend more context to the action being logged. This is a flexible value and varies between different actions.
+/// 
+/// Example: `{name: security_level, type: firewall, value: high, zone_name: example.com}`
 final Map<String,dynamic>? metadata;
 
 /// The new value of the resource that was modified.
+/// 
+/// Example: `'low'`
 final String? newValue;
 
 /// The value of the resource before it was modified.
+/// 
+/// Example: `'high'`
 final String? oldValue;
 
 final AaaAuditLogsOwner? owner;
@@ -39,6 +49,8 @@ final AaaAuditLogsOwner? owner;
 final AaaAuditLogsResource? resource;
 
 /// A UTC RFC3339 timestamp that specifies when the action being logged occured.
+/// 
+/// Example: `'2017-04-26T17:31:07Z'`
 final DateTime? when;
 
 Map<String, dynamic> toJson() { return {

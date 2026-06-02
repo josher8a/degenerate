@@ -21,36 +21,45 @@ factory ScanPage.fromJson(Map<String, dynamic> json) { return ScanPage(
   url: json['url'] as String,
 ); }
 
+/// Example: `'15133'`
 final String asn;
 
+/// Example: `'US'`
 final String asnLocationAlpha2;
 
+/// Example: `'EDGECAST'`
 final String asnname;
 
 final List<PageConsole> console;
 
 final List<PageCookies> cookies;
 
+/// Example: `'United States'`
 final String country;
 
+/// Example: `'US'`
 final String countryLocationAlpha2;
 
+/// Example: `'example.com'`
 final String domain;
 
 final List<EntriesRequestHeaders> headers;
 
+/// Example: `'2606:2800:220:1:248:1893:25c8:1946'`
 final String ip;
 
 final Js js;
 
 final List<SecurityViolations> securityViolations;
 
+/// Example: `200`
 final double status;
 
 final String subdivision1Name;
 
 final String subdivision2name;
 
+/// Example: `'http://example.com/'`
 final String url;
 
 Map<String, dynamic> toJson() { return {

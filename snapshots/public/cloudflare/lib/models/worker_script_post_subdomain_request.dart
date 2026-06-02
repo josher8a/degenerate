@@ -8,9 +8,13 @@ factory WorkerScriptPostSubdomainRequest.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// Whether the Worker should be available on the workers.dev subdomain.
+/// 
+/// Example: `true`
 final bool enabled;
 
 /// Whether the Worker's Preview URLs should be available on the workers.dev subdomain.
+/// 
+/// Example: `false`
 final bool? previewsEnabled;
 
 Map<String, dynamic> toJson() { return {

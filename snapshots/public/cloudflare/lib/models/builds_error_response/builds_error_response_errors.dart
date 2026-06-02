@@ -7,8 +7,10 @@ factory BuildsErrorResponseErrors.fromJson(Map<String, dynamic> json) { return B
   message: json['message'] as String,
 ); }
 
+/// Example: `12000`
 final int? code;
 
+/// Example: `'Not found'`
 final String message;
 
 Map<String, dynamic> toJson() { return {

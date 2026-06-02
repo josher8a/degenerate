@@ -8,10 +8,13 @@ factory Port.fromJson(Map<String, dynamic> json) { return Port(
   status: json['status'] as String?,
 ); }
 
+/// Example: `8080`
 final double? number;
 
+/// Example: `'tcp'`
 final String? proto;
 
+/// Example: `'open'`
 final String? status;
 
 Map<String, dynamic> toJson() { return {

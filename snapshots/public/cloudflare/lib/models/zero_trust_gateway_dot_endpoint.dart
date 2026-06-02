@@ -8,6 +8,8 @@ factory ZeroTrustGatewayDotEndpoint.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// Indicate whether the DOT endpoint is enabled for this location.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 final List<ZeroTrustGatewayIpNetwork>? networks;

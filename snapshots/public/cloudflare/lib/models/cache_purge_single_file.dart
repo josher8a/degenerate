@@ -7,6 +7,8 @@ factory CachePurgeSingleFile.fromJson(Map<String, dynamic> json) { return CacheP
 ); }
 
 /// For more information on purging files, please refer to [purge by single-file documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-single-file/).
+/// 
+/// Example: `[http://www.example.com/css/styles.css, http://www.example.com/js/index.js]`
 final List<String>? files;
 
 Map<String, dynamic> toJson() { return {

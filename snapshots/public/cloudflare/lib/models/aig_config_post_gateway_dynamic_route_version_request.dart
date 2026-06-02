@@ -7,6 +7,7 @@ factory AigConfigPostGatewayDynamicRouteVersionRequest.fromJson(Map<String, dyna
   elements: (json['elements'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => Start.fromJson(v as Map<String, dynamic>), fromB: (v) => Conditional.fromJson(v as Map<String, dynamic>), fromC: (v) => Percentage.fromJson(v as Map<String, dynamic>), fromD: (v) => ElementsRate.fromJson(v as Map<String, dynamic>), fromE: (v) => ElementsModel.fromJson(v as Map<String, dynamic>), fromF: (v) => End.fromJson(v as Map<String, dynamic>),)).toList(),
 ); }
 
+/// Example: `'Route Version Comment'`
 final String comment;
 
 final List<AigConfigPostGatewayDynamicRouteRequestElements> elements;

@@ -10,12 +10,18 @@ factory SchemaValidationCreateSchemaRequest.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// The kind of the schema
+/// 
+/// Example: `'openapi_v3'`
 final SchemaValidationCreateSchemaRequestKind kind;
 
 /// A human-readable name for the schema
+/// 
+/// Example: `'petstore schema'`
 final String name;
 
 /// The raw schema, e.g., the OpenAPI schema, either as JSON or YAML
+/// 
+/// Example: `'<schema file contents>'`
 final String source;
 
 /// An indicator if this schema is enabled

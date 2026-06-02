@@ -7,6 +7,7 @@ factory MagicMultipleRouteModifiedResponseResult.fromJson(Map<String, dynamic> j
   modifiedRoutes: (json['modified_routes'] as List<dynamic>?)?.map((e) => MagicRoute.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Example: `true`
 final bool? modified;
 
 final List<MagicRoute>? modifiedRoutes;

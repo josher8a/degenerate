@@ -9,12 +9,18 @@ factory SmartshieldSmartShieldSettingsCacheReserve.fromJson(Map<String, dynamic>
 ); }
 
 /// Whether the setting is editable.
+/// 
+/// Example: `true`
 final bool? editable;
 
 /// The id of the Cache Reserve setting.
+/// 
+/// Example: `'cache_reserve'`
 final String? id;
 
 /// Specifies the enablement value of Cache Reserve.
+/// 
+/// Example: `'off'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {

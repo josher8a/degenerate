@@ -7,8 +7,10 @@ factory RelatedEvents.fromJson(Map<String, dynamic> json) { return RelatedEvents
   eventId: json['eventId'] as String,
 ); }
 
+/// Example: `'dataset-uuid-123'`
 final String datasetId;
 
+/// Example: `'event-uuid-456'`
 final String eventId;
 
 Map<String, dynamic> toJson() { return {

@@ -11,18 +11,28 @@ factory RumResultInfo.fromJson(Map<String, dynamic> json) { return RumResultInfo
 ); }
 
 /// The total number of items on the current page.
+/// 
+/// Example: `10`
 final int? count;
 
 /// Current page within the paginated list of results.
+/// 
+/// Example: `1`
 final int? page;
 
 /// The maximum number of items to return per page of results.
+/// 
+/// Example: `10`
 final int? perPage;
 
 /// The total number of items.
+/// 
+/// Example: `25`
 final int? totalCount;
 
 /// The total number of pages.
+/// 
+/// Example: `3`
 final int? totalPages;
 
 Map<String, dynamic> toJson() { return {

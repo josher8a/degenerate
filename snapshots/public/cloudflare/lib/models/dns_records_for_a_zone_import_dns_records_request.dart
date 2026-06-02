@@ -11,11 +11,15 @@ factory DnsRecordsForAZoneImportDnsRecordsRequest.fromJson(Map<String, dynamic> 
 /// 
 /// **Tip:** When using cURL, a file can be uploaded using `--form 'file=@bind_config.txt'`.
 /// 
+/// 
+/// Example: `'www.example.com. 300 IN  A 127.0.0.1'`
 final String file;
 
 /// Whether or not proxiable records should receive the performance and security benefits of Cloudflare.
 /// 
 /// The value should be either `true` or `false`.
+/// 
+/// Example: `'true'`
 final String proxied;
 
 Map<String, dynamic> toJson() { return {

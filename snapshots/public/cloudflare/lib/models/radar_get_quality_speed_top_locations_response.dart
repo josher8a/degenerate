@@ -9,6 +9,7 @@ factory RadarGetQualitySpeedTopLocationsResponse.fromJson(Map<String, dynamic> j
 
 final RadarGetQualitySpeedTopLocationsResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

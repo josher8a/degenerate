@@ -21,6 +21,8 @@ final String id;
 final String recipient;
 
 /// When the email was sent. Time in RFC 3339 format (https://www.rfc-editor.org/rfc/rfc3339.html)
+/// 
+/// Example: `'2009-11-10T23:00:00Z'`
 final String sentAt;
 
 /// Subject line of the email.

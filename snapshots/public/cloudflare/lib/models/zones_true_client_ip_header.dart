@@ -32,10 +32,14 @@ factory ZonesTrueClientIpHeader.fromJson(Map<String, dynamic> json) { return Zon
 
 /// Turn on or off the True-Client-IP Header feature of the Cloudflare Network app.
 /// 
+/// 
+/// Example: `'true_client_ip_header'`
 final ZonesTrueClientIpHeaderId? id;
 
 /// The status of True Client IP Header.
 /// 
+/// 
+/// Example: `'on'`
 final ZonesTrueClientIpHeaderValue? value;
 
 Map<String, dynamic> toJson() { return {

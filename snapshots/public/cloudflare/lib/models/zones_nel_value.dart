@@ -7,6 +7,7 @@ factory ZonesNelValue.fromJson(Map<String, dynamic> json) { return ZonesNelValue
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,
 ); }
 
+/// Example: `false`
 final bool enabled;
 
 Map<String, dynamic> toJson() { return {

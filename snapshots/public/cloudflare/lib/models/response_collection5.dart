@@ -14,6 +14,8 @@ final List<AlexandriaMessages2> errors;
 final List<AlexandriaMessages2> messages;
 
 /// Indicates whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final D1ListDatabasesResponseResultInfo? resultInfo;

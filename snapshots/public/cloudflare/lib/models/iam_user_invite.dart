@@ -57,23 +57,32 @@ final IamInvitedBy? invitedBy;
 final IamInvitedMemberEmail? invitedMemberEmail;
 
 /// ID of the user to add to the organization.
+/// 
+/// Example: `'5a7805061c76ada191ed06f989cc3dac'`
 final String? invitedMemberId;
 
 /// When the invite was sent.
 final IamInvitedOn? invitedOn;
 
 /// ID of the organization the user will be added to.
+/// 
+/// Example: `'5a7805061c76ada191ed06f989cc3dac'`
 final String organizationId;
 
+/// Example: `true`
 final bool? organizationIsEnforcingTwofactor;
 
 /// Organization name.
+/// 
+/// Example: `'Cloudflare, Inc.'`
 final String? organizationName;
 
 /// List of role names the membership has for this account.
 final List<String>? roles;
 
 /// Current status of the invitation.
+/// 
+/// Example: `'accepted'`
 final dynamic status;
 
 Map<String, dynamic> toJson() { return {

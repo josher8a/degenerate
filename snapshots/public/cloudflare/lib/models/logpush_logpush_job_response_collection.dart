@@ -14,6 +14,8 @@ final List<LogpushMessages2> errors;
 final List<LogpushMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final List<LogpushLogpushJob>? result;

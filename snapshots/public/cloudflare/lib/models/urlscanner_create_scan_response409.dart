@@ -15,6 +15,7 @@ final List<DestinationCreateResponse400Messages> messages;
 
 final UrlscannerCreateScanResponse409Result result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

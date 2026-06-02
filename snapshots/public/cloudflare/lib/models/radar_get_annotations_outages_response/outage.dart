@@ -7,8 +7,10 @@ factory Outage.fromJson(Map<String, dynamic> json) { return Outage(
   outageType: json['outageType'] as String,
 ); }
 
+/// Example: `'CABLE_CUT'`
 final String outageCause;
 
+/// Example: `'NATIONWIDE'`
 final String outageType;
 
 Map<String, dynamic> toJson() { return {

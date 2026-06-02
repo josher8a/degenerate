@@ -37,10 +37,14 @@ factory ZonesForwardingUrlValue.fromJson(Map<String, dynamic> json) { return Zon
 /// The status code to use for the URL redirect. 301 is a permanent
 /// redirect. 302 is a temporary redirect.
 /// 
+/// 
+/// Example: `'temporary'`
 final ValueStatusCode? statusCode;
 
 /// The URL to redirect the request to.
 /// Notes: ${num} refers to the position of '*' in the constraint value.
+/// 
+/// Example: `'http://www.example.com/somewhere/$1/astring/$2/anotherstring/$3'`
 final String? url;
 
 Map<String, dynamic> toJson() { return {

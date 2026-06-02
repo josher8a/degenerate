@@ -15,13 +15,17 @@ factory AsnIntelligenceGetAsnSubnetsResponse4Xx.fromJson(Map<String, dynamic> js
   subnets: (json['subnets'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
+/// Example: `[{code: 7003, message: No route for the URI}]`
 final List<IntelMessages2> errors;
 
+/// Example: `[]`
 final List<IntelMessages2> messages;
 
 final Map<String,dynamic>? result;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `false`
 final bool success;
 
 final IntelAsn? asn;
@@ -37,6 +41,7 @@ final IntelPage? page;
 /// Number of results per page of results.
 final IntelPerPage? perPage;
 
+/// Example: `[192.0.2.0/24, 2001:DB8::/32]`
 final List<String>? subnets;
 
 Map<String, dynamic> toJson() { return {

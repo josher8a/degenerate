@@ -65,6 +65,18 @@ class ModelEmitter {
     return formatDocComment(model.description!);
   }
 
+  List<String> _fieldDocs(IrField f) {
+    final parts = <String>[];
+    if (f.description != null) parts.add(f.description!);
+    if (f.example != null) {
+      final ex = f.example;
+      final formatted = ex is String ? "'$ex'" : '$ex';
+      parts.add('Example: `$formatted`');
+    }
+    if (parts.isEmpty) return [];
+    return formatDocComment(parts.join('\n\n'));
+  }
+
   Iterable<Field> _buildFields() {
     final fields = model.fields.map(
       (f) => Field(
@@ -75,9 +87,7 @@ class ModelEmitter {
             f.type,
             forceNullable: !f.isRequired && !_hasDefault(f),
           )
-          ..docs.addAll(
-            f.description != null ? formatDocComment(f.description!) : [],
-          ),
+          ..docs.addAll(_fieldDocs(f)),
       ),
     );
     if (model.additionalProperties == null) return fields;

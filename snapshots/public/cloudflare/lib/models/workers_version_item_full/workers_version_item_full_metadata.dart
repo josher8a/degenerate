@@ -49,6 +49,16 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MetadataSource($value)'; } 
  }
+/// Example:
+/// ```json`
+/// {
+///   "author_email": "user@example.com",
+///   "author_id": "408cbcdfd4dda4617efef40b04d168a1",
+///   "created_on": "2022-11-08T17:19:29.176266Z",
+///   "modified_on": "2022-11-08T17:19:29.176266Z",
+///   "source": "api"
+/// }
+/// ```text
 @immutable final class WorkersVersionItemFullMetadata {const WorkersVersionItemFullMetadata({this.authorEmail, this.authorId, this.createdOn, this.hasPreview, this.modifiedOn, this.source, });
 
 factory WorkersVersionItemFullMetadata.fromJson(Map<String, dynamic> json) { return WorkersVersionItemFullMetadata(
@@ -61,21 +71,31 @@ factory WorkersVersionItemFullMetadata.fromJson(Map<String, dynamic> json) { ret
 ); }
 
 /// Email of the user who created the version.
+/// 
+/// Example: `'user@example.com'`
 final String? authorEmail;
 
 /// Identifier of the user who created the version.
+/// 
+/// Example: `'408cbcdfd4dda4617efef40b04d168a1'`
 final String? authorId;
 
 /// When the version was created.
+/// 
+/// Example: `'2022-11-08T17:19:29.176266Z'`
 final String? createdOn;
 
 /// Whether the version can be previewed.
 final bool? hasPreview;
 
 /// When the version was last modified.
+/// 
+/// Example: `'2022-11-08T17:19:29.176266Z'`
 final String? modifiedOn;
 
 /// The source of the version upload.
+/// 
+/// Example: `'api'`
 final MetadataSource? source;
 
 Map<String, dynamic> toJson() { return {

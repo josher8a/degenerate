@@ -17,6 +17,8 @@ final List<Web3Messages2> messages;
 final List<dynamic>? result;
 
 /// Specifies whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final Web3ResultInfo? resultInfo;

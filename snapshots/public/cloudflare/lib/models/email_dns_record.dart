@@ -85,18 +85,28 @@ factory EmailDnsRecord.fromJson(Map<String, dynamic> json) { return EmailDnsReco
 ); }
 
 /// DNS record content.
+/// 
+/// Example: `'route1.mx.cloudflare.net'`
 final String? content;
 
 /// DNS record name (or @ for the zone apex).
+/// 
+/// Example: `'example.com'`
 final String? name;
 
 /// Required for MX, SRV and URI records. Unused by other record types. Records with lower priorities are preferred.
+/// 
+/// Example: `12`
 final double? priority;
 
 /// Time to live, in seconds, of the DNS record. Must be between 60 and 86400, or 1 for 'automatic'.
+/// 
+/// Example: `1`
 final Ttl? ttl;
 
 /// DNS record type.
+/// 
+/// Example: `'NS'`
 final EmailDnsRecordType? type;
 
 Map<String, dynamic> toJson() { return {

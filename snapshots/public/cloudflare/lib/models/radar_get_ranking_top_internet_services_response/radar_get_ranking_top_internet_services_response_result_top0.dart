@@ -7,8 +7,10 @@ factory RadarGetRankingTopInternetServicesResponseResultTop0.fromJson(Map<String
   service: json['service'] as String,
 ); }
 
+/// Example: `1`
 final int rank;
 
+/// Example: `'Google'`
 final String service;
 
 Map<String, dynamic> toJson() { return {

@@ -1,6 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_version_item_full/script.dart';import 'package:pub_cloudflare/models/workers_version_item_full/script_runtime.dart';@immutable final class Resources {const Resources({this.bindings, this.script, this.scriptRuntime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_version_item_full/script.dart';import 'package:pub_cloudflare/models/workers_version_item_full/script_runtime.dart';/// Example:
+/// ```json`
+/// {
+///   "bindings": [
+///     {
+///       "json": "example_binding",
+///       "name": "JSON_VAR",
+///       "type": "json"
+///     }
+///   ],
+///   "script": {
+///     "etag": "13a3240e8fb414561b0366813b0b8f42b3e6cfa0d9e70e99835dae83d0d8a794",
+///     "handlers": [
+///       "fetch"
+///     ],
+///     "last_deployed_from": "api"
+///   },
+///   "script_runtime": {
+///     "usage_model": "standard"
+///   }
+/// }
+/// ```text
+@immutable final class Resources {const Resources({this.bindings, this.script, this.scriptRuntime, });
 
 factory Resources.fromJson(Map<String, dynamic> json) { return Resources(
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
@@ -11,6 +33,26 @@ factory Resources.fromJson(Map<String, dynamic> json) { return Resources(
 /// List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
 final List<WorkersBindingItem>? bindings;
 
+/// Example:
+/// ```json`
+/// {
+///   "etag": "13a3240e8fb414561b0366813b0b8f42b3e6cfa0d9e70e99835dae83d0d8a794",
+///   "handlers": [
+///     "fetch"
+///   ],
+///   "last_deployed_from": "api",
+///   "named_handlers": [
+///     {
+///       "handlers": [
+///         "fetch"
+///       ],
+///       "name": "MyClass"
+///     }
+///   ]
+/// }
+/// ```text
+/// 
+/// Example: `{etag: 13a3240e8fb414561b0366813b0b8f42b3e6cfa0d9e70e99835dae83d0d8a794, handlers: [fetch], last_deployed_from: api, named_handlers: [{handlers: [fetch], name: MyClass}]}`
 final Script? script;
 
 /// Runtime configuration for the Worker.

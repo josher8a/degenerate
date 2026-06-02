@@ -12,6 +12,7 @@ final String? description;
 
 final int? id;
 
+/// Example: `'Malware'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

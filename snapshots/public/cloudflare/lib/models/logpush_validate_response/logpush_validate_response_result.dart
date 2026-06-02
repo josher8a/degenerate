@@ -7,8 +7,10 @@ factory LogpushValidateResponseResult.fromJson(Map<String, dynamic> json) { retu
   valid: json['valid'] as bool?,
 ); }
 
+/// Example: `''`
 final String? message;
 
+/// Example: `true`
 final bool? valid;
 
 Map<String, dynamic> toJson() { return {

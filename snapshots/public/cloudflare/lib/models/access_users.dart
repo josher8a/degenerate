@@ -13,14 +13,20 @@ factory AccessUsers.fromJson(Map<String, dynamic> json) { return AccessUsers(
 ); }
 
 /// Determines the status of the SCIM User resource.
+/// 
+/// Example: `true`
 final bool? active;
 
 /// The name of the SCIM User resource.
+/// 
+/// Example: `'John Smith'`
 final String? displayName;
 
 final List<Emails>? emails;
 
 /// The IdP-generated Id of the SCIM resource.
+/// 
+/// Example: `'john_smith'`
 final String? externalId;
 
 /// The unique Cloudflare-generated Id of the SCIM resource.
@@ -29,6 +35,8 @@ final AccessId? id;
 final AccessMeta? meta;
 
 /// The list of URIs which indicate the attributes contained within a SCIM resource.
+/// 
+/// Example: `[urn:ietf:params:scim:schemas:core:2.0:User]`
 final List<String>? schemas;
 
 Map<String, dynamic> toJson() { return {

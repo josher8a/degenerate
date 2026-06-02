@@ -8,10 +8,13 @@ factory SecurityViolations.fromJson(Map<String, dynamic> json) { return Security
   url: json['url'] as String,
 ); }
 
+/// Example: `'csp'`
 final String category;
 
+/// Example: `'[Report Only] Refused to load the stylesheet 'https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css' because it violates the following Content Security Policy directive: ... '`
 final String text;
 
+/// Example: `'http://example.com/'`
 final String url;
 
 Map<String, dynamic> toJson() { return {

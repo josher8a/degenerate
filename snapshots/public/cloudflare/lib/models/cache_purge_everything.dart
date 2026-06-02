@@ -7,6 +7,8 @@ factory CachePurgeEverything.fromJson(Map<String, dynamic> json) { return CacheP
 ); }
 
 /// For more information, please refer to [purge everything documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/purge-everything/).
+/// 
+/// Example: `true`
 final bool? purgeEverything;
 
 Map<String, dynamic> toJson() { return {

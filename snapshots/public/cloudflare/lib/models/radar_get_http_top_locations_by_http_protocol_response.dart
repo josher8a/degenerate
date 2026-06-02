@@ -9,6 +9,7 @@ factory RadarGetHttpTopLocationsByHttpProtocolResponse.fromJson(Map<String, dyna
 
 final RadarGetDnsAs112TopLocationsByDnssecResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

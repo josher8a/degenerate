@@ -8,9 +8,13 @@ factory FirewallSchemasCidrConfiguration.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// The configuration target. You must set the target to `ip_range` when specifying an IP address range in the Zone Lockdown rule.
+/// 
+/// Example: `'ip_range'`
 final FirewallCidrConfigurationTarget? target;
 
 /// The IP address range to match. You can only use prefix lengths `/16` and `/24`.
+/// 
+/// Example: `'198.51.100.4/16'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

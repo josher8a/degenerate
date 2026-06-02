@@ -8,9 +8,13 @@ factory FirewallCidrConfiguration.fromJson(Map<String, dynamic> json) { return F
 ); }
 
 /// The configuration target. You must set the target to `ip_range` when specifying an IP address range in the rule.
+/// 
+/// Example: `'ip_range'`
 final FirewallCidrConfigurationTarget? target;
 
 /// The IP address range to match. You can only use prefix lengths `/16` and `/24` for IPv4 ranges, and prefix lengths `/32`, `/48`, and `/64` for IPv6 ranges.
+/// 
+/// Example: `'198.51.100.4/16'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

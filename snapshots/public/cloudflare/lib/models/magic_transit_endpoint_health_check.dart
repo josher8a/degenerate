@@ -12,9 +12,13 @@ factory MagicTransitEndpointHealthCheck.fromJson(Map<String, dynamic> json) { re
 final MagicTransitCheckType checkType;
 
 /// the IP address of the host to perform checks against
+/// 
+/// Example: `'203.0.113.1'`
 final String endpoint;
 
 /// Optional name associated with this check
+/// 
+/// Example: `'My Endpoint'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

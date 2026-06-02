@@ -7,6 +7,8 @@ factory AccessEmailRuleEmail.fromJson(Map<String, dynamic> json) { return Access
 ); }
 
 /// The email of the user.
+/// 
+/// Example: `'test@example.com'`
 final String email;
 
 Map<String, dynamic> toJson() { return {

@@ -9,6 +9,7 @@ factory RadarGetLeakedCredentialChecksTimeseriesGroupResponse.fromJson(Map<Strin
 
 final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

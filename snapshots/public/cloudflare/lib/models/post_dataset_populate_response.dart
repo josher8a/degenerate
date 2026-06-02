@@ -9,6 +9,7 @@ factory PostDatasetPopulateResponse.fromJson(Map<String, dynamic> json) { return
 
 final PostDatasetPopulateResponseProperties properties;
 
+/// Example: `'object'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

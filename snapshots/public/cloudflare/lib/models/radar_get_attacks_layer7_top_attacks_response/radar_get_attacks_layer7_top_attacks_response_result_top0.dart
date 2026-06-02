@@ -10,14 +10,19 @@ factory RadarGetAttacksLayer7TopAttacksResponseResultTop0.fromJson(Map<String, d
   value: json['value'] as String,
 ); }
 
+/// Example: `'US'`
 final String originCountryAlpha2;
 
+/// Example: `'United States'`
 final String originCountryName;
 
+/// Example: `'FR'`
 final String targetCountryAlpha2;
 
+/// Example: `'France'`
 final String targetCountryName;
 
+/// Example: `'4.323214'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

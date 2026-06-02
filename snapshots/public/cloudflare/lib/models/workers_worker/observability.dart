@@ -13,6 +13,8 @@ factory Observability.fromJson(Map<String, dynamic> json) { return Observability
 final bool enabled;
 
 /// The sampling rate for observability. From 0 to 1 (1 = 100%, 0.1 = 10%).
+/// 
+/// Example: `1`
 final double headSamplingRate;
 
 /// Log settings for the Worker.

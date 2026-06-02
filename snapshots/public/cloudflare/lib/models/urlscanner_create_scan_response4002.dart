@@ -13,6 +13,8 @@ final List<UrlscannerCreateScanBulkResponse400Errors> errors;
 final String message;
 
 /// Status code.
+/// 
+/// Example: `400`
 final int status;
 
 Map<String, dynamic> toJson() { return {

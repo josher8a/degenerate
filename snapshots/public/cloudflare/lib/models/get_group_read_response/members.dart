@@ -10,14 +10,19 @@ factory Members.fromJson(Map<String, dynamic> json) { return Members(
   uuid: json['uuid'] as String,
 ); }
 
+/// Example: `'123'`
 final String accountId;
 
+/// Example: `'2022-04-01T00:00:00Z'`
 final DateTime? createdAt;
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String groupId;
 
+/// Example: `'2022-04-01T00:00:00Z'`
 final DateTime? updatedAt;
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
 Map<String, dynamic> toJson() { return {

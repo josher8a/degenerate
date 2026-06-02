@@ -14,6 +14,8 @@ final List<ZonesSchemasMessages2> errors;
 final List<ZonesSchemasMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 /// Settings available for the zone.

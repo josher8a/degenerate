@@ -8,8 +8,11 @@ factory Link.fromJson(Map<String, dynamic> json) { return Link(
 ); }
 
 /// Outgoing link detected in the DOM
+/// 
+/// Example: `'https://www.iana.org/domains/example'`
 final String href;
 
+/// Example: `'More information...'`
 final String text;
 
 Map<String, dynamic> toJson() { return {

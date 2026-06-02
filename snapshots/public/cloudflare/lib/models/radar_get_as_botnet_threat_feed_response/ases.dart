@@ -10,14 +10,19 @@ factory Ases.fromJson(Map<String, dynamic> json) { return Ases(
   rankChange: json['rankChange'] != null ? (json['rankChange'] as num).toInt() : null,
 ); }
 
+/// Example: `4134`
 final int asn;
 
+/// Example: `'CN'`
 final String country;
 
+/// Example: `'CHINANET-BACKBONE'`
 final String name;
 
+/// Example: `1`
 final int rank;
 
+/// Example: `-2`
 final int? rankChange;
 
 Map<String, dynamic> toJson() { return {

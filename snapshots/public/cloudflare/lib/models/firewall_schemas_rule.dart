@@ -14,11 +14,15 @@ factory FirewallSchemasRule.fromJson(Map<String, dynamic> json) { return Firewal
 ); }
 
 /// The available actions that a rule can apply to a matched request.
+/// 
+/// Example: `[whitelist, block, challenge, js_challenge, managed_challenge]`
 final List<FirewallSchemasMode> allowedModes;
 
 final FirewallConfiguration configuration;
 
 /// The timestamp of when the rule was created.
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? createdOn;
 
 /// The unique identifier of the IP Access rule.
@@ -28,6 +32,8 @@ final FirewallSchemasIdentifier id;
 final FirewallSchemasMode mode;
 
 /// The timestamp of when the rule was last modified.
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? modifiedOn;
 
 /// An informative summary of the rule, typically used as a reminder or explanation.

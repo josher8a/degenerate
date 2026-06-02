@@ -69,39 +69,63 @@ factory DnsRecordsLocRecordData.fromJson(Map<String, dynamic> json) { return Dns
 ); }
 
 /// Altitude of location in meters.
+/// 
+/// Example: `0`
 final double? altitude;
 
 /// Degrees of latitude.
+/// 
+/// Example: `37`
 final double? latDegrees;
 
 /// Latitude direction.
+/// 
+/// Example: `'N'`
 final LatDirection? latDirection;
 
 /// Minutes of latitude.
+/// 
+/// Example: `46`
 final double? latMinutes;
 
 /// Seconds of latitude.
+/// 
+/// Example: `46`
 final double? latSeconds;
 
 /// Degrees of longitude.
+/// 
+/// Example: `122`
 final double? longDegrees;
 
 /// Longitude direction.
+/// 
+/// Example: `'W'`
 final LongDirection? longDirection;
 
 /// Minutes of longitude.
+/// 
+/// Example: `23`
 final double? longMinutes;
 
 /// Seconds of longitude.
+/// 
+/// Example: `35`
 final double? longSeconds;
 
 /// Horizontal precision of location.
+/// 
+/// Example: `0`
 final double? precisionHorz;
 
 /// Vertical precision of location.
+/// 
+/// Example: `0`
 final double? precisionVert;
 
 /// Size of location in meters.
+/// 
+/// Example: `100`
 final double? size;
 
 Map<String, dynamic> toJson() { return {

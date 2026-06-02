@@ -34,10 +34,14 @@ factory ZonesWaf.fromJson(Map<String, dynamic> json) { return ZonesWaf(
 /// Turn on or off [WAF managed rules (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-waf-managed-rules/).
 /// You cannot enable or disable individual WAF managed rules via Page Rules.
 /// 
+/// 
+/// Example: `'waf'`
 final ZonesWafId? id;
 
 /// The status of WAF managed rules (previous version).
 /// 
+/// 
+/// Example: `'on'`
 final ZonesWafValue? value;
 
 Map<String, dynamic> toJson() { return {

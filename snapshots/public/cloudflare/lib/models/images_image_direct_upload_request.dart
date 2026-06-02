@@ -14,15 +14,21 @@ factory ImagesImageDirectUploadRequest.fromJson(Map<String, dynamic> json) { ret
 final String? creator;
 
 /// The date after which the upload will not be accepted. Minimum: Now + 2 minutes. Maximum: Now + 6 hours.
+/// 
+/// Example: `'2021-01-02T02:20:00Z'`
 final DateTime? expiry;
 
 /// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+/// 
+/// Example: `'this/is/my-customid'`
 final String? id;
 
 /// User modifiable key-value store. Can be used for keeping references to another system of record, for managing images.
 final Map<String,dynamic>? metadata;
 
 /// Indicates whether the image requires a signature token to be accessed.
+/// 
+/// Example: `true`
 final bool requireSignedUrLs;
 
 Map<String, dynamic> toJson() { return {

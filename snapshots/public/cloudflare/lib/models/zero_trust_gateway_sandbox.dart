@@ -34,6 +34,8 @@ factory ZeroTrustGatewaySandbox.fromJson(Map<String, dynamic> json) { return Zer
 ); }
 
 /// Specify whether to enable the sandbox.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 /// Specify the action to take when the system cannot scan the file.

@@ -9,9 +9,13 @@ factory RealtimekitErrorResponseError.fromJson(Map<String, dynamic> json) { retu
 ); }
 
 /// Error code
+/// 
+/// Example: `404`
 final double code;
 
 /// Error message
+/// 
+/// Example: `'Error: resource not found'`
 final String message;
 
 Map<String, dynamic> toJson() { return {

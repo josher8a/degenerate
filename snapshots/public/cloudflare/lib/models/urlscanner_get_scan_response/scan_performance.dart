@@ -36,40 +36,58 @@ factory ScanPerformance.fromJson(Map<String, dynamic> json) { return ScanPerform
   workerStart: (json['workerStart'] as num).toDouble(),
 ); }
 
+/// Example: `82.59999999403954`
 final double connectEnd;
 
+/// Example: `72.79999999701977`
 final double connectStart;
 
+/// Example: `1256`
 final double decodedBodySize;
 
+/// Example: `306`
 final double domComplete;
 
+/// Example: `305.8999999910593`
 final double domContentLoadedEventEnd;
 
+/// Example: `305.8999999910593`
 final double domContentLoadedEventStart;
 
+/// Example: `305.8999999910593`
 final double domInteractive;
 
+/// Example: `72.79999999701977`
 final double domainLookupEnd;
 
+/// Example: `2.199999988079071`
 final double domainLookupStart;
 
+/// Example: `306`
 final double duration;
 
+/// Example: `648`
 final double encodedBodySize;
 
+/// Example: `'navigation'`
 final String entryType;
 
+/// Example: `0.8999999910593033`
 final double fetchStart;
 
+/// Example: `'navigation'`
 final String initiatorType;
 
+/// Example: `306`
 final double loadEventEnd;
 
+/// Example: `306`
 final double loadEventStart;
 
+/// Example: `'http://example.com/'`
 final String name;
 
+/// Example: `'http/1.1'`
 final String nextHopProtocol;
 
 final double redirectCount;
@@ -78,18 +96,23 @@ final double redirectEnd;
 
 final double redirectStart;
 
+/// Example: `82.69999998807907`
 final double requestStart;
 
+/// Example: `270.8999999910593`
 final double responseEnd;
 
+/// Example: `265.69999998807907`
 final double responseStart;
 
 final double secureConnectionStart;
 
 final double startTime;
 
+/// Example: `948`
 final double transferSize;
 
+/// Example: `'navigate'`
 final String type;
 
 final double unloadEventEnd;

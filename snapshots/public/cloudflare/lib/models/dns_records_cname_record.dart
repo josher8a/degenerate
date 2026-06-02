@@ -51,6 +51,8 @@ final DnsRecordsTtl? ttl;
 final String? content;
 
 /// Record type.
+/// 
+/// Example: `'CNAME'`
 final DnsRecordsCnameRecordType? type;
 
 Map<String, dynamic> toJson() { return {

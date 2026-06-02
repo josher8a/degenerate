@@ -12,21 +12,33 @@ factory TeamsDevicesOsVersionInputRequest.fromJson(Map<String, dynamic> json) { 
 ); }
 
 /// Operating System.
+/// 
+/// Example: `'windows'`
 final TeamsDevicesDomainJoinedInputRequestOperatingSystem operatingSystem;
 
 /// Operator.
+/// 
+/// Example: `'13.3.0'`
 final TeamsDevicesCrowdstrikeInputRequestOperator $operator;
 
 /// Operating System Distribution Name (linux only).
+/// 
+/// Example: `'ubuntu'`
 final String? osDistroName;
 
 /// Version of OS Distribution (linux only).
+/// 
+/// Example: `'11.3.1'`
 final String? osDistroRevision;
 
 /// Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.
+/// 
+/// Example: `'(a) or 6889 or Ubuntu 24.04'`
 final String? osVersionExtra;
 
 /// Version of OS.
+/// 
+/// Example: `'13.3.0'`
 final String version;
 
 Map<String, dynamic> toJson() { return {

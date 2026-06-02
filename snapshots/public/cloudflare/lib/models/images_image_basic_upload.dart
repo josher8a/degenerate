@@ -24,9 +24,13 @@ final String? id;
 final Map<String,dynamic>? metadata;
 
 /// Indicates whether the image requires a signature token for the access.
+/// 
+/// Example: `true`
 final bool requireSignedUrLs;
 
 /// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
+/// 
+/// Example: `'https://example.com/path/to/logo.png'`
 final String? url;
 
 Map<String, dynamic> toJson() { return {

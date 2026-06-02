@@ -8,9 +8,13 @@ factory NamedHandlers.fromJson(Map<String, dynamic> json) { return NamedHandlers
 ); }
 
 /// The names of handlers exported as part of the named export.
+/// 
+/// Example: `[class]`
 final List<String>? handlers;
 
 /// The name of the export.
+/// 
+/// Example: `'MyDurableObject'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

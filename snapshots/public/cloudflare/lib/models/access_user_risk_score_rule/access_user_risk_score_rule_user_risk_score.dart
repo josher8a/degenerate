@@ -37,6 +37,8 @@ factory AccessUserRiskScoreRuleUserRiskScore.fromJson(Map<String, dynamic> json)
 ); }
 
 /// A list of risk score levels to match. Values can be low, medium, high, or unscored.
+/// 
+/// Example: `[low, medium]`
 final List<UserRiskScoreUserRiskScore> userRiskScore;
 
 Map<String, dynamic> toJson() { return {

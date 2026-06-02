@@ -10,15 +10,23 @@ factory RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0.fromJ
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String brandImpersonation;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String credentialHarvester;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String identityDeception;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String link;
 
 Map<String, dynamic> toJson() { return {

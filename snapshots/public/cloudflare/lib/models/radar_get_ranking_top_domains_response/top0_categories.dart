@@ -8,10 +8,13 @@ factory Top0Categories.fromJson(Map<String, dynamic> json) { return Top0Categori
   superCategoryId: (json['superCategoryId'] as num).toDouble(),
 ); }
 
+/// Example: `81`
 final double id;
 
+/// Example: `'Content Servers'`
 final String name;
 
+/// Example: `26`
 final double superCategoryId;
 
 Map<String, dynamic> toJson() { return {

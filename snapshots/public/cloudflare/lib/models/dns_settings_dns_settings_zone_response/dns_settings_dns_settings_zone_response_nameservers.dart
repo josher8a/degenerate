@@ -9,9 +9,13 @@ factory DnsSettingsDnsSettingsZoneResponseNameservers.fromJson(Map<String, dynam
 ); }
 
 /// Configured nameserver set to be used for this zone
+/// 
+/// Example: `1`
 final int? nsSet;
 
 /// Nameserver type
+/// 
+/// Example: `'cloudflare.standard'`
 final DnsSettingsDnsSettingsZonePatchNameserversType type;
 
 Map<String, dynamic> toJson() { return {

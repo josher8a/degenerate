@@ -42,12 +42,16 @@ factory CloudConnectorRule.fromJson(Map<String, dynamic> json) { return CloudCon
   provider: json['provider'] != null ? CloudConnectorProvider.fromJson(json['provider'] as String) : null,
 ); }
 
+/// Example: `'Rule description'`
 final String? description;
 
+/// Example: `true`
 final bool? enabled;
 
+/// Example: `'http.cookie eq "a=b"'`
 final String? expression;
 
+/// Example: `'95c365e17e1b46599cd99e5b231fac4e'`
 final String? id;
 
 /// Parameters of Cloud Connector Rule

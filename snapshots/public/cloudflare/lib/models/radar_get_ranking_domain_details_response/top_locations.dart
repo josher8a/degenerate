@@ -8,10 +8,13 @@ factory TopLocations.fromJson(Map<String, dynamic> json) { return TopLocations(
   rank: (json['rank'] as num).toInt(),
 ); }
 
+/// Example: `'US'`
 final String locationCode;
 
+/// Example: `'United States'`
 final String locationName;
 
+/// Example: `1`
 final int rank;
 
 Map<String, dynamic> toJson() { return {

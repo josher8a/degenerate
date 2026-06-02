@@ -17,6 +17,8 @@ final List<IntelMessages2> messages;
 final List<ResponseCollection24Result>? result;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final IntelResultInfo? resultInfo;

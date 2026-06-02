@@ -7,8 +7,10 @@ factory MetaUnits.fromJson(Map<String, dynamic> json) { return MetaUnits(
   value: json['value'] as String,
 ); }
 
+/// Example: `'*'`
 final String name;
 
+/// Example: `'requests'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

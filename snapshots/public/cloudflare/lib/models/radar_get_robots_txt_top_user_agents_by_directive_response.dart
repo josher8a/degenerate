@@ -9,6 +9,7 @@ factory RadarGetRobotsTxtTopUserAgentsByDirectiveResponse.fromJson(Map<String, d
 
 final RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

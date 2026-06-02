@@ -7,6 +7,8 @@ factory WaitingroomRulePositionVariant3.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// Places the rule after rule `<RULE_ID>`. Use this argument with an empty rule ID value ("") to set the rule as the last rule in the ruleset.
+/// 
+/// Example: `'<RULE_ID>'`
 final String? after;
 
 Map<String, dynamic> toJson() { return {

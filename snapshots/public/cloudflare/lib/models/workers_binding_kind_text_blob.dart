@@ -11,6 +11,8 @@ factory WorkersBindingKindTextBlob.fromJson(Map<String, dynamic> json) { return 
 final WorkersBindingName name;
 
 /// The name of the file containing the text content. Only accepted for `service worker syntax` Workers.
+/// 
+/// Example: `'my-module.txt'`
 final String $part;
 
 /// The kind of resource that the binding provides.

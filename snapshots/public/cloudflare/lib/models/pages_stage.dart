@@ -79,15 +79,23 @@ factory PagesStage.fromJson(Map<String, dynamic> json) { return PagesStage(
 ); }
 
 /// When the stage ended.
+/// 
+/// Example: `'2021-03-09T00:58:59.045655'`
 final DateTime? endedOn;
 
 /// The current build stage.
+/// 
+/// Example: `'deploy'`
 final PagesStageName name;
 
 /// When the stage started.
+/// 
+/// Example: `'2021-03-09T00:55:03.923456Z'`
 final DateTime? startedOn;
 
 /// State of the current stage.
+/// 
+/// Example: `'success'`
 final PagesStageStatus status;
 
 Map<String, dynamic> toJson() { return {

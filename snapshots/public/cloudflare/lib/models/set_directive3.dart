@@ -15,6 +15,8 @@ final RulesetsSetCacheControlCloudflareOnly? cloudflareOnly;
 final RulesetsSetCacheControlOperation operation;
 
 /// The duration value in seconds for the directive.
+/// 
+/// Example: `3600`
 final int value;
 
 Map<String, dynamic> toJson() { return {

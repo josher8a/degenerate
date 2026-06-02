@@ -203,6 +203,8 @@ factory BisoAdminControls.fromJson(Map<String, dynamic> json) { return BisoAdmin
 ); }
 
 /// Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
+/// 
+/// Example: `'remote_only'`
 final Copy? copy;
 
 /// Set to false to enable copy-pasting. Only applies when `version == "v1"`.
@@ -215,24 +217,36 @@ final bool? dd;
 final bool? dk;
 
 /// Configure download behavior. When set to remote_only, users can view downloads but cannot save them. Applies only when version == "v2".
+/// 
+/// Example: `'enabled'`
 final Download? download;
 
 /// Set to false to enable printing. Only applies when `version == "v1"`.
+/// 
+/// Example: `false`
 final bool? dp;
 
 /// Set to false to enable uploading. Only applies when `version == "v1"`.
 final bool? du;
 
 /// Configure keyboard usage behavior. If this field is absent, keyboard usage remains enabled. Applies only when version == "v2".
+/// 
+/// Example: `'enabled'`
 final Keyboard? keyboard;
 
 /// Configure paste behavior. If set to remote_only, users cannot paste content from the local clipboard into isolated pages. If this field is absent, pasting remains enabled. Applies only when version == "v2".
+/// 
+/// Example: `'enabled'`
 final Paste? paste;
 
 /// Configure print behavior. Default, Printing is enabled. Applies only when version == "v2".
+/// 
+/// Example: `'enabled'`
 final Printing? printing;
 
 /// Configure upload behavior. If this field is absent, uploading remains enabled. Applies only when version == "v2".
+/// 
+/// Example: `'enabled'`
 final Upload? upload;
 
 /// Indicate which version of the browser isolation controls should apply.

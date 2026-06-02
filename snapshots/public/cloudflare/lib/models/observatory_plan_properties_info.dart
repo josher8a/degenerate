@@ -10,12 +10,16 @@ factory ObservatoryPlanPropertiesInfo.fromJson(Map<String, dynamic> json) { retu
   pro: json['pro'] != null ? (json['pro'] as num).toInt() : null,
 ); }
 
+/// Example: `1`
 final int? business;
 
+/// Example: `1`
 final int? enterprise;
 
+/// Example: `1`
 final int? free;
 
+/// Example: `1`
 final int? pro;
 
 Map<String, dynamic> toJson() { return {

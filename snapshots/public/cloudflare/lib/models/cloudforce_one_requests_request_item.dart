@@ -28,6 +28,8 @@ final CloudforceOneRequestsTime created;
 final CloudforceOneRequestsUuid id;
 
 /// Tokens for the request messages.
+/// 
+/// Example: `1`
 final int? messageTokens;
 
 final CloudforceOneRequestsTime priority;
@@ -43,6 +45,8 @@ final CloudforceOneRequestsRequestSummary summary;
 final CloudforceOneRequestsTlp tlp;
 
 /// Tokens for the request.
+/// 
+/// Example: `16`
 final int? tokens;
 
 final CloudforceOneRequestsTime updated;

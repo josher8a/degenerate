@@ -7,6 +7,8 @@ factory ShieldRequestExpressionTemplatesFallthrough.fromJson(Map<String, dynamic
 ); }
 
 /// List of hosts to be targeted in the expression
+/// 
+/// Example: `[{zone}.domain1.tld, domain2.tld]`
 final List<String> hosts;
 
 Map<String, dynamic> toJson() { return {

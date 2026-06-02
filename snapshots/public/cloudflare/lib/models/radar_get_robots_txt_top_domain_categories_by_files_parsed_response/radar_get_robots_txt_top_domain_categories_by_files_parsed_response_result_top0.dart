@@ -7,8 +7,10 @@ factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0.from
   value: (json['value'] as num).toInt(),
 ); }
 
+/// Example: `'News & Media'`
 final String name;
 
+/// Example: `273`
 final int value;
 
 Map<String, dynamic> toJson() { return {

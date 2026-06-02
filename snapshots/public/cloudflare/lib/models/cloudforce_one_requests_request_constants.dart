@@ -8,10 +8,13 @@ factory CloudforceOneRequestsRequestConstants.fromJson(Map<String, dynamic> json
   tlp: (json['tlp'] as List<dynamic>?)?.map((e) => CloudforceOneRequestsTlp.fromJson(e as String)).toList(),
 ); }
 
+/// Example: `[routine, high, urgent]`
 final List<CloudforceOneRequestsPriority>? priority;
 
+/// Example: `[open, accepted, reported, approved, completed, declined]`
 final List<CloudforceOneRequestsRequestStatus>? status;
 
+/// Example: `[clear, green, amber, amber-strict, red]`
 final List<CloudforceOneRequestsTlp>? tlp;
 
 Map<String, dynamic> toJson() { return {

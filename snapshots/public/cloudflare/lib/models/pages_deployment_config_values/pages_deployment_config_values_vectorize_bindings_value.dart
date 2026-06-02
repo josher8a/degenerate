@@ -7,6 +7,7 @@ factory PagesDeploymentConfigValuesVectorizeBindingsValue.fromJson(Map<String, d
   indexName: json['index_name'] as String,
 ); }
 
+/// Example: `'my_index'`
 final String indexName;
 
 Map<String, dynamic> toJson() { return {

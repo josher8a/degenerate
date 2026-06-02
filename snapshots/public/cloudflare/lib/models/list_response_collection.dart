@@ -14,6 +14,8 @@ final List<PageShieldMessages2>? errors;
 final List<PageShieldMessages2>? messages;
 
 /// Whether the API call was successful
+/// 
+/// Example: `true`
 final bool success;
 
 final PageShieldResultInfo resultInfo;

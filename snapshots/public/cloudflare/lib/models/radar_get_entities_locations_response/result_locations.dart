@@ -12,20 +12,29 @@ factory ResultLocations.fromJson(Map<String, dynamic> json) { return ResultLocat
   subregion: json['subregion'] as String,
 ); }
 
+/// Example: `'AF'`
 final String alpha2;
 
+/// Example: `'AS'`
 final String continent;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String latitude;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String longitude;
 
+/// Example: `'Afghanistan'`
 final String name;
 
+/// Example: `'Middle East'`
 final String region;
 
+/// Example: `'Southern Asia'`
 final String subregion;
 
 Map<String, dynamic> toJson() { return {

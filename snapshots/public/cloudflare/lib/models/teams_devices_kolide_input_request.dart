@@ -43,12 +43,18 @@ factory TeamsDevicesKolideInputRequest.fromJson(Map<String, dynamic> json) { ret
 ); }
 
 /// Posture Integration ID.
+/// 
+/// Example: `'bc7cbfbb-600a-42e4-8a23-45b5e85f804f'`
 final String connectionId;
 
 /// Count Operator.
+/// 
+/// Example: `'>'`
 final CountOperator countOperator;
 
 /// The Number of Issues.
+/// 
+/// Example: `1`
 final String issueCount;
 
 Map<String, dynamic> toJson() { return {

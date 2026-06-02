@@ -9,9 +9,13 @@ factory DnsFirewallAttackMitigation.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// When enabled, automatically mitigate random-prefix attacks to protect upstream DNS servers
+/// 
+/// Example: `true`
 final bool? enabled;
 
 /// Only mitigate attacks when upstream servers seem unhealthy
+/// 
+/// Example: `false`
 final bool onlyWhenUpstreamUnhealthy;
 
 Map<String, dynamic> toJson() { return {

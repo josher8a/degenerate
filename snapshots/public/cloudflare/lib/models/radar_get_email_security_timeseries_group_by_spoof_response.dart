@@ -9,6 +9,7 @@ factory RadarGetEmailSecurityTimeseriesGroupBySpoofResponse.fromJson(Map<String,
 
 final RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

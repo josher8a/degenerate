@@ -16,9 +16,13 @@ final bool? banning;
 final bool? blocking;
 
 /// Description of the signature that matched.
+/// 
+/// Example: `'Match frequently used social followers phishing kit'`
 final String? description;
 
 /// Name of the signature that matched.
+/// 
+/// Example: `'phishkit.social_followers'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

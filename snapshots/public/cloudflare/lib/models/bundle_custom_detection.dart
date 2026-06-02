@@ -12,9 +12,13 @@ factory BundleCustomDetection.fromJson(Map<String, dynamic> json) { return Bundl
 final BundleIdentifier? id;
 
 /// Defines ehe ruleset expression to use in matching the password in a request.
+/// 
+/// Example: `'lookup_json_string(http.request.body.raw, "secret")'`
 final String? password;
 
 /// Defines the ruleset expression to use in matching the username in a request.
+/// 
+/// Example: `'lookup_json_string(http.request.body.raw, "user")'`
 final String? username;
 
 Map<String, dynamic> toJson() { return {

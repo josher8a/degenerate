@@ -14,6 +14,8 @@ final List<DlsMessages2> errors;
 final List<DlsMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final DlsRegionalHostnameResponse? result;

@@ -8,9 +8,13 @@ factory PipelinesRequest.fromJson(Map<String, dynamic> json) { return PipelinesR
 ); }
 
 /// Specifies the name of the Pipeline.
+/// 
+/// Example: `'my_pipeline'`
 final String name;
 
 /// Specifies SQL for the Pipeline processing flow.
+/// 
+/// Example: `'insert into sink select * from source;'`
 final String sql;
 
 Map<String, dynamic> toJson() { return {

@@ -13,9 +13,13 @@ factory CloudflarePipelinesR2DataCatalogTable.fromJson(Map<String, dynamic> json
 ); }
 
 /// Cloudflare Account ID
+/// 
+/// Example: `'6791973bbe876d621f9e557f891e90b3'`
 final Uri accountId;
 
 /// The R2 Bucket that hosts this catalog
+/// 
+/// Example: `'my-bucket'`
 final String bucket;
 
 /// Table namespace
@@ -28,6 +32,8 @@ final RollingPolicy? rollingPolicy;
 final String tableName;
 
 /// Authentication token
+/// 
+/// Example: `'"asdfkj2h34kjhkj"'`
 final String token;
 
 Map<String, dynamic> toJson() { return {

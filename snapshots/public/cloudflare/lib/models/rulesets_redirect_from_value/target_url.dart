@@ -9,9 +9,13 @@ factory TargetUrl.fromJson(Map<String, dynamic> json) { return TargetUrl(
 ); }
 
 /// An expression that evaluates to a URL to redirect the request to.
+/// 
+/// Example: `'concat("https://example.com", http.request.uri.path)'`
 final String? expression;
 
 /// A URL to redirect the request to.
+/// 
+/// Example: `'https://example.com'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

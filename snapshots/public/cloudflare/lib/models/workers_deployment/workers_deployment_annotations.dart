@@ -8,9 +8,13 @@ factory WorkersDeploymentAnnotations.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Human-readable message about the deployment. Truncated to 100 bytes.
+/// 
+/// Example: `'Deploy bug fix.'`
 final String? workersMessage;
 
 /// Operation that triggered the creation of the deployment.
+/// 
+/// Example: `'deployment'`
 final String? workersTriggeredBy;
 
 Map<String, dynamic> toJson() { return {

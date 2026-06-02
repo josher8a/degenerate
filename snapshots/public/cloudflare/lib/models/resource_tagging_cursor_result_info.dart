@@ -8,9 +8,13 @@ factory ResourceTaggingCursorResultInfo.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// Indicates the number of results returned in the current page.
+/// 
+/// Example: `20`
 final int? count;
 
 /// Provides a cursor for the next page of results. Include this value in the next request to continue pagination.
+/// 
+/// Example: `'eyJhY2NvdW50X2lkIjoxMjM0NTY3ODkwfQ'`
 final String? cursor;
 
 Map<String, dynamic> toJson() { return {

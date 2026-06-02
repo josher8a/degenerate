@@ -6,6 +6,7 @@ factory ClientCertificateForAZoneEditClientCertificateRequest.fromJson(Map<Strin
   reactivate: json['reactivate'] as bool?,
 ); }
 
+/// Example: `true`
 final bool? reactivate;
 
 Map<String, dynamic> toJson() { return {

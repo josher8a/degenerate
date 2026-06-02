@@ -67,6 +67,8 @@ final ZonesCacheTtlByStatusId? id;
 ///   valid in seconds or one of the following strings: no-store
 ///   (equivalent to -1), no-cache (equivalent to 0).
 /// 
+/// 
+/// Example: `{200-299: 86400, 300-499: no-cache, 500-599: no-store}`
 final Map<String,ValueValue>? value;
 
 Map<String, dynamic> toJson() { return {

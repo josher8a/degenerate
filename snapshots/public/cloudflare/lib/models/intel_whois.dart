@@ -14,22 +14,30 @@ factory IntelWhois.fromJson(Map<String, dynamic> json) { return IntelWhois(
   updatedDate: json['updated_date'] as String?,
 ); }
 
+/// Example: `'2009-02-17'`
 final String? createdDate;
 
 final IntelDomainName? domain;
 
+/// Example: `[ns3.cloudflare.com, ns4.cloudflare.com, ns5.cloudflare.com, ns6.cloudflare.com, ns7.cloudflare.com]`
 final List<String>? nameservers;
 
+/// Example: `'DATA REDACTED'`
 final String? registrant;
 
+/// Example: `'United States'`
 final String? registrantCountry;
 
+/// Example: `'https://domaincontact.cloudflareregistrar.com/cloudflare.com'`
 final String? registrantEmail;
 
+/// Example: `'DATA REDACTED'`
 final String? registrantOrg;
 
+/// Example: `'Cloudflare, Inc.'`
 final String? registrar;
 
+/// Example: `'2017-05-24'`
 final String? updatedDate;
 
 Map<String, dynamic> toJson() { return {

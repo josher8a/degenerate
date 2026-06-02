@@ -6,6 +6,7 @@ factory RadarGetCertificateAuthorityDetailsResponse404.fromJson(Map<String, dyna
   error: json['error'] as String,
 ); }
 
+/// Example: `'Not Found.'`
 final String error;
 
 Map<String, dynamic> toJson() { return {

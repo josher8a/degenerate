@@ -12,6 +12,8 @@ factory TeamsDevicesIpProfileUpdateRequest.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// An optional description of the Device IP profile.
+/// 
+/// Example: `'example comment'`
 final String? description;
 
 /// Whether the Device IP profile is enabled.

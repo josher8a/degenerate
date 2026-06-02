@@ -38,18 +38,24 @@ factory R2DataCatalogCatalog.fromJson(Map<String, dynamic> json) { return R2Data
 ); }
 
 /// Specifies the associated R2 bucket name.
+/// 
+/// Example: `'my-data-bucket'`
 final String bucket;
 
 /// Shows the credential configuration status.
 final R2DataCatalogCredentialStatus? credentialStatus;
 
 /// Use this to uniquely identify the catalog.
+/// 
+/// Example: `'550e8400-e29b-41d4-a716-446655440000'`
 final String id;
 
 /// Configures maintenance for the catalog.
 final R2DataCatalogCatalogMaintenanceConfig? maintenanceConfig;
 
 /// Specifies the catalog name (generated from account and bucket name).
+/// 
+/// Example: `'account123_my-bucket'`
 final String name;
 
 final R2DataCatalogCatalogStatus status;

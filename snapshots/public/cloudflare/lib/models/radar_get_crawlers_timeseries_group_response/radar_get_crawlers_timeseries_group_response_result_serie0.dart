@@ -1,6 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCrawlersTimeseriesGroupResponseResultSerie0 {const RadarGetCrawlersTimeseriesGroupResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
+/// ```json`
+/// {
+///   "Claude": [
+///     "63.40249"
+///   ],
+///   "DuckDuckGo": [
+///     "10.274394"
+///   ],
+///   "Google": [
+///     "8.381743"
+///   ],
+///   "timestamps": [
+///     "2023-08-08T10:15:00Z"
+///   ]
+/// }
+/// ```text
+@immutable final class RadarGetCrawlersTimeseriesGroupResponseResultSerie0 {const RadarGetCrawlersTimeseriesGroupResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
 
 factory RadarGetCrawlersTimeseriesGroupResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetCrawlersTimeseriesGroupResponseResultSerie0(
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),

@@ -9,10 +9,14 @@ factory EstimatedUsersLocations.fromJson(Map<String, dynamic> json) { return Est
 ); }
 
 /// Estimated users per location.
+/// 
+/// Example: `16710`
 final int? estimatedUsers;
 
+/// Example: `'US'`
 final String locationAlpha2;
 
+/// Example: `'United States'`
 final String locationName;
 
 Map<String, dynamic> toJson() { return {

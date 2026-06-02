@@ -12,6 +12,8 @@ factory SecretsStoreCreateStoreObjectSystem.fromJson(Map<String, dynamic> json) 
 /// This value must remain consistent for all stores within an account
 /// managed by the same service.
 /// 
+/// 
+/// Example: `12345`
 final int accountId;
 
 final SecretsStoreStoreName name;

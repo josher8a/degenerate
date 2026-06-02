@@ -19,6 +19,8 @@ final bool enable;
 final List<AigConfigCreateDatasetRequestFilters> filters;
 
 /// gateway id
+/// 
+/// Example: `'my-gateway'`
 final String gatewayId;
 
 final String id;

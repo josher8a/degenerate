@@ -9,12 +9,18 @@ factory MqQueueSettings.fromJson(Map<String, dynamic> json) { return MqQueueSett
 ); }
 
 /// Number of seconds to delay delivery of all messages to consumers.
+/// 
+/// Example: `5`
 final double? deliveryDelay;
 
 /// Indicates if message delivery to consumers is currently paused.
+/// 
+/// Example: `true`
 final bool? deliveryPaused;
 
 /// Number of seconds after which an unconsumed message will be delayed.
+/// 
+/// Example: `345600`
 final double? messageRetentionPeriod;
 
 Map<String, dynamic> toJson() { return {

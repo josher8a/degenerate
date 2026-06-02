@@ -8,9 +8,13 @@ factory CustomClaimsSource.fromJson(Map<String, dynamic> json) { return CustomCl
 ); }
 
 /// The name of the IdP claim.
+/// 
+/// Example: `'last_name'`
 final String? name;
 
 /// A mapping from IdP ID to claim name.
+/// 
+/// Example: `{exampleIdPID1: ClaimName1, exampleIdPID2: ClaimName2}`
 final Map<String,String>? nameByIdp;
 
 Map<String, dynamic> toJson() { return {

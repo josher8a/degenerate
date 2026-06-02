@@ -10,6 +10,7 @@ factory CategoriesInherited.fromJson(Map<String, dynamic> json) { return Categor
 
 final List<CategoriesContent>? content;
 
+/// Example: `'example.com'`
 final String? from;
 
 final List<ExampleComCategoriesRisks>? risks;

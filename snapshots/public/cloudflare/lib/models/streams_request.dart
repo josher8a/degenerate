@@ -15,6 +15,8 @@ final CloudflarePipelinesFormat? format;
 final Http? http;
 
 /// Specifies the name of the Stream.
+/// 
+/// Example: `'my_stream'`
 final String name;
 
 final CloudflarePipelinesConnectionSchema? schema;

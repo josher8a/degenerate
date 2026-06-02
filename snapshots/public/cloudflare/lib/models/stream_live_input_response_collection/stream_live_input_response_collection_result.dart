@@ -11,9 +11,13 @@ factory StreamLiveInputResponseCollectionResult.fromJson(Map<String, dynamic> js
 final List<StreamLiveInputObjectWithoutUrl>? liveInputs;
 
 /// The total number of remaining live inputs based on cursor position.
+/// 
+/// Example: `1000`
 final int? range;
 
 /// The total number of live inputs that match the provided filters.
+/// 
+/// Example: `35586`
 final int? total;
 
 Map<String, dynamic> toJson() { return {

@@ -11,18 +11,28 @@ factory RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0.fromJson(Map
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String $1GbpsTo10Gbps;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String $10GbpsTo100Gbps;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String $500MbpsTo1Gbps;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String over100Gbps;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String under500Mbps;
 
 Map<String, dynamic> toJson() { return {

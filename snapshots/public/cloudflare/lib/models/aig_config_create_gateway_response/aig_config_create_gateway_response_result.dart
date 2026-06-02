@@ -39,6 +39,8 @@ final DateTime createdAt;
 final Dlp? dlp;
 
 /// gateway id
+/// 
+/// Example: `'my-gateway'`
 final String id;
 
 final bool? isDefault;

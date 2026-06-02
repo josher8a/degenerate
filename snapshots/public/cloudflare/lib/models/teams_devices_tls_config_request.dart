@@ -8,9 +8,13 @@ factory TeamsDevicesTlsConfigRequest.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// The SHA-256 hash of the TLS certificate presented by the host found at tls_sockaddr. If absent, regular certificate verification (trusted roots, valid timestamp, etc) will be used to validate the certificate.
+/// 
+/// Example: `'b5bb9d8014a0f9b1d61e21e796d78dccdf1352f23cd32812f4850b878ae4944c'`
 final String? sha256;
 
 /// A network address of the form "host:port" that the WARP client will use to detect the presence of a TLS host.
+/// 
+/// Example: `'foobar:1234'`
 final String tlsSockaddr;
 
 Map<String, dynamic> toJson() { return {

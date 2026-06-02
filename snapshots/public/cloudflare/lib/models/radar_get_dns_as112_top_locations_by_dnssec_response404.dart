@@ -6,6 +6,7 @@ factory RadarGetDnsAs112TopLocationsByDnssecResponse404.fromJson(Map<String, dyn
   error: json['error'] as String,
 ); }
 
+/// Example: `'Not Found.'`
 final String error;
 
 Map<String, dynamic> toJson() { return {

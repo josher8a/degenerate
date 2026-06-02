@@ -9,6 +9,7 @@ factory RadarGetEmailSecurityTimeseriesGroupByMaliciousResponse.fromJson(Map<Str
 
 final RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

@@ -6,6 +6,7 @@ factory AigConfigUpdateGatewayDynamicRouteRequest.fromJson(Map<String, dynamic> 
   name: json['name'] as String,
 ); }
 
+/// Example: `'Route Name'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

@@ -6,6 +6,7 @@ factory UserIdentityGeo.fromJson(Map<String, dynamic> json) { return UserIdentit
   country: json['country'] as String?,
 ); }
 
+/// Example: `'US'`
 final String? country;
 
 Map<String, dynamic> toJson() { return {

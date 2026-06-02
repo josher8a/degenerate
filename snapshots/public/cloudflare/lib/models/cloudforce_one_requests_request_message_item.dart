@@ -12,12 +12,16 @@ factory CloudforceOneRequestsRequestMessageItem.fromJson(Map<String, dynamic> js
 ); }
 
 /// Author of message.
+/// 
+/// Example: `'user@domain.com'`
 final String author;
 
 /// Content of message.
 final CloudforceOneRequestsMessageContent content;
 
 /// Defines the message creation time.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final CloudforceOneRequestsTime? created;
 
 /// Message ID.
@@ -27,6 +31,8 @@ final int id;
 final bool isFollowOnRequest;
 
 /// Defines the message last updated time.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final CloudforceOneRequestsTime updated;
 
 Map<String, dynamic> toJson() { return {

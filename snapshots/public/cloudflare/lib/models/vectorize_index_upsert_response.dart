@@ -8,6 +8,8 @@ factory VectorizeIndexUpsertResponse.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Specifies the count of the vectors successfully inserted.
+/// 
+/// Example: `768`
 final int? count;
 
 /// Array of vector identifiers of the vectors successfully inserted.

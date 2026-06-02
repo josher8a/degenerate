@@ -1,6 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_list_metadata_index_response/metadata_indexes.dart';@immutable final class VectorizeListMetadataIndexResponse {const VectorizeListMetadataIndexResponse({this.metadataIndexes});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_list_metadata_index_response/metadata_indexes.dart';/// Example:
+/// ```json`
+/// {
+///   "metadataIndexes": [
+///     {
+///       "indexType": "number",
+///       "propertyName": "some-num-prop"
+///     },
+///     {
+///       "indexType": "string",
+///       "propertyName": "some-str-prop"
+///     },
+///     {
+///       "indexType": "boolean",
+///       "propertyName": "some-bool-prop"
+///     }
+///   ]
+/// }
+/// ```text
+@immutable final class VectorizeListMetadataIndexResponse {const VectorizeListMetadataIndexResponse({this.metadataIndexes});
 
 factory VectorizeListMetadataIndexResponse.fromJson(Map<String, dynamic> json) { return VectorizeListMetadataIndexResponse(
   metadataIndexes: (json['metadataIndexes'] as List<dynamic>?)?.map((e) => MetadataIndexes.fromJson(e as Map<String, dynamic>)).toList(),

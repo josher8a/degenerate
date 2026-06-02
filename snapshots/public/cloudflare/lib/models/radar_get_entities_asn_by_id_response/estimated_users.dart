@@ -8,6 +8,8 @@ factory EstimatedUsers.fromJson(Map<String, dynamic> json) { return EstimatedUse
 ); }
 
 /// Total estimated users.
+/// 
+/// Example: `86099`
 final int? estimatedUsers;
 
 final List<EstimatedUsersLocations> locations;

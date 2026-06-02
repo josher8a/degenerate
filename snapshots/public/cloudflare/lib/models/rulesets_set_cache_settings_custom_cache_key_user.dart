@@ -10,12 +10,18 @@ factory RulesetsSetCacheSettingsCustomCacheKeyUser.fromJson(Map<String, dynamic>
 ); }
 
 /// Whether to use the user agent's device type in the cache key.
+/// 
+/// Example: `true`
 final bool? deviceType;
 
 /// Whether to use the user agents's country in the cache key.
+/// 
+/// Example: `true`
 final bool? geo;
 
 /// Whether to use the user agent's language in the cache key.
+/// 
+/// Example: `true`
 final bool? lang;
 
 Map<String, dynamic> toJson() { return {

@@ -12,6 +12,7 @@ final RadarGetBgpRouteLeakEventsResponseResult result;
 
 final AiSearchInstanceListJobLogsResponseResultInfo resultInfo;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

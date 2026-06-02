@@ -64,6 +64,8 @@ factory StreamAccessRules.fromJson(Map<String, dynamic> json) { return StreamAcc
 ); }
 
 /// The action to take when a request matches a rule. If the action is `block`, the signed token blocks views for viewers matching the rule.
+/// 
+/// Example: `'allow'`
 final StreamAccessRulesAction? action;
 
 /// An array of 2-letter country codes in ISO 3166-1 Alpha-2 format used to match requests.
@@ -73,6 +75,8 @@ final List<String>? country;
 final List<String>? ip;
 
 /// Lists available rule types to match for requests. An `any` type matches all requests and can be used as a wildcard to apply default actions after other rules.
+/// 
+/// Example: `'ip.src'`
 final StreamAccessRulesType? type;
 
 Map<String, dynamic> toJson() { return {

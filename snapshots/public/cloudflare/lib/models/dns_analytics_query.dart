@@ -13,6 +13,8 @@ factory DnsAnalyticsQuery.fromJson(Map<String, dynamic> json) { return DnsAnalyt
 ); }
 
 /// Array of dimension names.
+/// 
+/// Example: `[responseCode, queryName]`
 final List<String> dimensions;
 
 /// Segmentation filter in 'attribute operator value' format.
@@ -22,11 +24,15 @@ final DnsAnalyticsFilters? filters;
 final DnsAnalyticsLimit limit;
 
 /// Array of metric names.
+/// 
+/// Example: `[queryCount, responseTimeAvg]`
 final List<String> metrics;
 
 final DnsAnalyticsSince since;
 
 /// Array of dimensions to sort by, where each dimension may be prefixed by - (descending) or + (ascending).
+/// 
+/// Example: `[+responseCode, -queryName]`
 final List<String>? sort;
 
 final DnsAnalyticsUntil until;

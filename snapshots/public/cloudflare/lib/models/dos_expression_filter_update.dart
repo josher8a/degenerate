@@ -8,6 +8,8 @@ factory DosExpressionFilterUpdate.fromJson(Map<String, dynamic> json) { return D
 ); }
 
 /// The new filter expression. Optional.
+/// 
+/// Example: `'ip.dst in { 192.0.2.0/24 198.51.100.0/24 } and tcp.srcport in { 80 443 10000..65535 }'`
 final String? expression;
 
 /// The new mode for the filter. Optional. Must be one of 'enabled', 'disabled', 'monitoring'.

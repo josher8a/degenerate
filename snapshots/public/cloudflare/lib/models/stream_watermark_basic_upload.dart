@@ -12,6 +12,8 @@ factory StreamWatermarkBasicUpload.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// The image file to upload.
+/// 
+/// Example: `'@/Users/rchen/Downloads/watermark.png'`
 final String file;
 
 /// A short description of the watermark profile.

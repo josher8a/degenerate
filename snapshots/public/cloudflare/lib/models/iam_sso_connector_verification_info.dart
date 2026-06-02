@@ -49,6 +49,8 @@ factory IamSsoConnectorVerificationInfo.fromJson(Map<String, dynamic> json) { re
 final IamDnsVerificationCode? code;
 
 /// The status of the verification code from the verification process.
+/// 
+/// Example: `'pending'`
 final IamSsoConnectorVerificationInfoStatus? status;
 
 Map<String, dynamic> toJson() { return {

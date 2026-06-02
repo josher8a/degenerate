@@ -6,6 +6,7 @@ factory UndoBookmark.fromJson(Map<String, dynamic> json) { return UndoBookmark(
   type: json['type'] as String,
 ); }
 
+/// Example: `'string'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

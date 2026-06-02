@@ -10,14 +10,18 @@ factory ListRunsResponse.fromJson(Map<String, dynamic> json) { return ListRunsRe
   hasMore: json['has_more'] as bool,
 ); }
 
+/// Example: `'list'`
 final String object;
 
 final List<RunObject> data;
 
+/// Example: `'run_abc123'`
 final String firstId;
 
+/// Example: `'run_abc456'`
 final String lastId;
 
+/// Example: `false`
 final bool hasMore;
 
 Map<String, dynamic> toJson() { return {

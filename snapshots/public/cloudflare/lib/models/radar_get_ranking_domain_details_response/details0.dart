@@ -10,10 +10,13 @@ factory Details0.fromJson(Map<String, dynamic> json) { return Details0(
 ); }
 
 /// Only available in POPULAR ranking for the most recent ranking.
+/// 
+/// Example: `'2000'`
 final String? bucket;
 
 final List<Details0Categories> categories;
 
+/// Example: `3`
 final int? rank;
 
 final List<TopLocations>? topLocations;

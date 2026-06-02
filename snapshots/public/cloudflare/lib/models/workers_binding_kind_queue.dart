@@ -11,6 +11,8 @@ factory WorkersBindingKindQueue.fromJson(Map<String, dynamic> json) { return Wor
 final WorkersBindingName name;
 
 /// Name of the Queue to bind to.
+/// 
+/// Example: `'my-queue'`
 final String queueName;
 
 /// The kind of resource that the binding provides.

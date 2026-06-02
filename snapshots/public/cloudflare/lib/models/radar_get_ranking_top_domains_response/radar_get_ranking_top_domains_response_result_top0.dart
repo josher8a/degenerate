@@ -11,11 +11,15 @@ factory RadarGetRankingTopDomainsResponseResultTop0.fromJson(Map<String, dynamic
 
 final List<Top0Categories> categories;
 
+/// Example: `'google.com'`
 final String domain;
 
 /// Only available in TRENDING rankings.
+/// 
+/// Example: `10.8`
 final double? pctRankChange;
 
+/// Example: `1`
 final int rank;
 
 Map<String, dynamic> toJson() { return {

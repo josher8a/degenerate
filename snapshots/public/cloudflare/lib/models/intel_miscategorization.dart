@@ -43,20 +43,29 @@ factory IntelMiscategorization.fromJson(Map<String, dynamic> json) { return Inte
 ); }
 
 /// Content category IDs to add.
+/// 
+/// Example: `[82]`
 final List<int>? contentAdds;
 
 /// Content category IDs to remove.
+/// 
+/// Example: `[155]`
 final List<int>? contentRemoves;
 
+/// Example: `'domain'`
 final IndicatorType? indicatorType;
 
 /// Provide only if indicator_type is `ipv4` or `ipv6`.
 final String? ip;
 
 /// Security category IDs to add.
+/// 
+/// Example: `[117, 131]`
 final List<int>? securityAdds;
 
 /// Security category IDs to remove.
+/// 
+/// Example: `[83]`
 final List<int>? securityRemoves;
 
 /// Provide only if indicator_type is `domain` or `url`. Example if indicator_type is `domain`: `example.com`. Example if indicator_type is `url`: `https://example.com/news/`.

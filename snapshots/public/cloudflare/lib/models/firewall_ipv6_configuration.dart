@@ -30,9 +30,13 @@ factory FirewallIpv6Configuration.fromJson(Map<String, dynamic> json) { return F
 ); }
 
 /// The configuration target. You must set the target to `ip6` when specifying an IPv6 address in the rule.
+/// 
+/// Example: `'ip6'`
 final FirewallIpv6ConfigurationTarget? target;
 
 /// The IPv6 address to match.
+/// 
+/// Example: `'2001:DB8:100::CF'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

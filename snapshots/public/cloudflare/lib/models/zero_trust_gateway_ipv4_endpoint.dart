@@ -7,6 +7,8 @@ factory ZeroTrustGatewayIpv4Endpoint.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Indicate whether the IPv4 endpoint is enabled for this location.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 Map<String, dynamic> toJson() { return {

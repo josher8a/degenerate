@@ -8,9 +8,13 @@ factory SubmittedUrls.fromJson(Map<String, dynamic> json) { return SubmittedUrls
 ); }
 
 /// URL that was submitted.
+/// 
+/// Example: `'https://www.cloudflare.com'`
 final String? url;
 
 /// ID assigned to this URL submission. Used to retrieve scanning results.
+/// 
+/// Example: `1`
 final int? urlId;
 
 Map<String, dynamic> toJson() { return {

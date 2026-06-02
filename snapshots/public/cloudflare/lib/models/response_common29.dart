@@ -8,10 +8,13 @@ factory ResponseCommon29.fromJson(Map<String, dynamic> json) { return ResponseCo
   success: json['success'] as bool,
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

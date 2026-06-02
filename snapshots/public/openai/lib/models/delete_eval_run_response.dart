@@ -8,10 +8,13 @@ factory DeleteEvalRunResponse.fromJson(Map<String, dynamic> json) { return Delet
   runId: json['run_id'] as String?,
 ); }
 
+/// Example: `'eval.run.deleted'`
 final String? object;
 
+/// Example: `true`
 final bool? deleted;
 
+/// Example: `'evalrun_677469f564d48190807532a852da3afb'`
 final String? runId;
 
 Map<String, dynamic> toJson() { return {

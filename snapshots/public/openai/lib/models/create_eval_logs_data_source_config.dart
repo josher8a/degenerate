@@ -14,6 +14,11 @@ factory CreateEvalLogsDataSourceConfig.fromJson(Map<String, dynamic> json) { ret
 final CodeInterpreterOutputLogsType type;
 
 /// Metadata filters for the logs data source.
+/// 
+/// Example: `'{`
+///   "use_case": "customer_support_agent"
+/// }
+/// '``
 final Map<String,dynamic>? metadata;
 
 Map<String, dynamic> toJson() { return {

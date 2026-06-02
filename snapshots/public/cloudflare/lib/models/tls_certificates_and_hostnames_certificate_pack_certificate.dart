@@ -19,36 +19,54 @@ factory TlsCertificatesAndHostnamesCertificatePackCertificate.fromJson(Map<Strin
 ); }
 
 /// Certificate bundle method.
+/// 
+/// Example: `'ubiquitous'`
 final String? bundleMethod;
 
 /// When the certificate from the authority expires.
+/// 
+/// Example: `'2024-01-01T00:00:00Z'`
 final DateTime? expiresOn;
 
 /// Specify the region where your private key can be held locally.
 final GeoRestrictions? geoRestrictions;
 
 /// Hostnames covered by this certificate.
+/// 
+/// Example: `[example.com, *.example.com]`
 final List<String> hosts;
 
 /// Certificate identifier.
+/// 
+/// Example: `'7e7b8deba8538af625850b7b2530034c'`
 final String id;
 
 /// The certificate authority that issued the certificate.
+/// 
+/// Example: `'Let's Encrypt'`
 final String? issuer;
 
 /// When the certificate was last modified.
+/// 
+/// Example: `'2014-01-01T05:20:00Z'`
 final DateTime? modifiedOn;
 
 /// The order/priority in which the certificate will be used.
 final double? priority;
 
 /// The type of hash used for the certificate.
+/// 
+/// Example: `'ECDSAWithSHA256'`
 final String? signature;
 
 /// Certificate status.
+/// 
+/// Example: `'active'`
 final String status;
 
 /// When the certificate was uploaded to Cloudflare.
+/// 
+/// Example: `'2014-01-01T05:20:00Z'`
 final DateTime? uploadedOn;
 
 final TlsCertificatesAndHostnamesIdentifier? zoneId;

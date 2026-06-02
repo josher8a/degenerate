@@ -8,10 +8,12 @@ factory AsnDetails.fromJson(Map<String, dynamic> json) { return AsnDetails(
   name: json['name'] as String,
 ); }
 
+/// Example: `'189'`
 final String asn;
 
 final AsnsDetailsLocations? locations;
 
+/// Example: `'LUMEN-LEGACY-L3-PARTITION'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

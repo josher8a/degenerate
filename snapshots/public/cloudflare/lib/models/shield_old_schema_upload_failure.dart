@@ -10,13 +10,17 @@ factory ShieldOldSchemaUploadFailure.fromJson(Map<String, dynamic> json) { retur
   uploadDetails: json['upload_details'] != null ? ShieldOldSchemaUploadDetailsErrorsCritical.fromJson(json['upload_details'] as Map<String, dynamic>) : null,
 ); }
 
+/// Example: `[{code: 7003, message: No route for the URI}]`
 final List<ShieldMessages2> errors;
 
+/// Example: `[]`
 final List<ShieldMessages2> messages;
 
 final Map<String,dynamic>? result;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `false`
 final bool success;
 
 final ShieldOldSchemaUploadDetailsErrorsCritical? uploadDetails;

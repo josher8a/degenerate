@@ -19,6 +19,8 @@ final DateTime createdAt;
 final List<AigConfigCreateEvaluationsResponseResultDatasets> datasets;
 
 /// gateway id
+/// 
+/// Example: `'my-gateway'`
 final String gatewayId;
 
 final String id;

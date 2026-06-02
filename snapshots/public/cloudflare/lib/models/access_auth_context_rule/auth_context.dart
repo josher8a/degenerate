@@ -9,12 +9,18 @@ factory AuthContext.fromJson(Map<String, dynamic> json) { return AuthContext(
 ); }
 
 /// The ACID of an Authentication context.
+/// 
+/// Example: `'ea85612a-29c8-46c2-bacb-669d65136971'`
 final String acId;
 
 /// The ID of an Authentication context.
+/// 
+/// Example: `'aa0a4aab-672b-4bdb-bc33-a59f1130a11f'`
 final String id;
 
 /// The ID of your Azure identity provider.
+/// 
+/// Example: `'ea85612a-29c8-46c2-bacb-669d65136971'`
 final String identityProviderId;
 
 Map<String, dynamic> toJson() { return {

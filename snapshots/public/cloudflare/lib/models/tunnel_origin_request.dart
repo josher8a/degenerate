@@ -28,6 +28,8 @@ final Access? access;
 final String? caPool;
 
 /// Timeout for establishing a new TCP connection to your origin server. This excludes the time taken to establish TLS, which is controlled by tlsTimeout.
+/// 
+/// Example: `10`
 final int? connectTimeout;
 
 /// Disables chunked transfer encoding. Useful if you are running a WSGI server.
@@ -40,18 +42,28 @@ final bool? http2Origin;
 final String? httpHostHeader;
 
 /// Maximum number of idle keepalive connections between Tunnel and your origin. This does not restrict the total number of concurrent connections.
+/// 
+/// Example: `100`
 final int? keepAliveConnections;
 
 /// Timeout after which an idle keepalive connection can be discarded.
+/// 
+/// Example: `90`
 final int? keepAliveTimeout;
 
 /// Auto configure the Hostname on the origin server certificate.
+/// 
+/// Example: `false`
 final bool? matchSnItoHost;
 
 /// Disable the “happy eyeballs” algorithm for IPv4/IPv6 fallback if your local network has misconfigured one of the protocols.
+/// 
+/// Example: `false`
 final bool? noHappyEyeballs;
 
 /// Disables TLS verification of the certificate presented by your origin. Will allow any certificate from the origin to be accepted.
+/// 
+/// Example: `false`
 final bool? noTlsVerify;
 
 /// Hostname that cloudflared should expect from your origin server certificate.
@@ -62,9 +74,13 @@ final String? originServerName;
 final String? proxyType;
 
 /// The timeout after which a TCP keepalive packet is sent on a connection between Tunnel and the origin server.
+/// 
+/// Example: `30`
 final int? tcpKeepAlive;
 
 /// Timeout for completing a TLS handshake to your origin server, if you have chosen to connect Tunnel to an HTTPS server.
+/// 
+/// Example: `10`
 final int? tlsTimeout;
 
 Map<String, dynamic> toJson() { return {

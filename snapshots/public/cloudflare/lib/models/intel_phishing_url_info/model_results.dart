@@ -8,9 +8,13 @@ factory ModelResults.fromJson(Map<String, dynamic> json) { return ModelResults(
 ); }
 
 /// Name of the model.
+/// 
+/// Example: `'MACHINE_LEARNING_v2'`
 final String? modelName;
 
 /// This is the score that is outputted by the model for this submission.
+/// 
+/// Example: `0.024`
 final double? modelScore;
 
 Map<String, dynamic> toJson() { return {

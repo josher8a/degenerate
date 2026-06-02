@@ -51,6 +51,8 @@ final Uint8List file;
 
 /// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.
 /// 
+/// 
+/// Example: `'whisper-1'`
 final CreateTranslationRequestModel model;
 
 /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should be in English.

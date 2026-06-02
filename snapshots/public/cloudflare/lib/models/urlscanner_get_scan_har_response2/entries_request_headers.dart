@@ -7,8 +7,10 @@ factory EntriesRequestHeaders.fromJson(Map<String, dynamic> json) { return Entri
   value: json['value'] as String,
 ); }
 
+/// Example: `'Content-Length'`
 final String name;
 
+/// Example: `'648'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

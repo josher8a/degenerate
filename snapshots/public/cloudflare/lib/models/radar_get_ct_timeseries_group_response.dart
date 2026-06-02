@@ -9,6 +9,7 @@ factory RadarGetCtTimeseriesGroupResponse.fromJson(Map<String, dynamic> json) { 
 
 final RadarGetCtTimeseriesGroupResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

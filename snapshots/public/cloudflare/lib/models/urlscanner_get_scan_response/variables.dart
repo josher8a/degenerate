@@ -7,8 +7,10 @@ factory Variables.fromJson(Map<String, dynamic> json) { return Variables(
   type: json['type'] as String,
 ); }
 
+/// Example: `'checkFrame'`
 final String name;
 
+/// Example: `'string'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

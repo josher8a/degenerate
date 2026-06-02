@@ -48,9 +48,13 @@ final List<String>? tags;
 final DnsRecordsTtl? ttl;
 
 /// A valid name server host name.
+/// 
+/// Example: `'ns1.example.com'`
 final String? content;
 
 /// Record type.
+/// 
+/// Example: `'NS'`
 final DnsRecordsNsRecordType? type;
 
 Map<String, dynamic> toJson() { return {

@@ -38,15 +38,23 @@ factory AaaAuditLogsActor.fromJson(Map<String, dynamic> json) { return AaaAuditL
 ); }
 
 /// The email of the user that performed the action.
+/// 
+/// Example: `'michelle@example.com'`
 final String? email;
 
 /// The ID of the actor that performed the action. If a user performed the action, this will be their User ID.
+/// 
+/// Example: `'f6b5de0326bb5182b8a4840ee01ec774'`
 final String? id;
 
 /// The IP address of the request that performed the action.
+/// 
+/// Example: `'198.41.129.166'`
 final String? ip;
 
 /// The type of actor, whether a User, Cloudflare Admin, or an Automated System.
+/// 
+/// Example: `'user'`
 final AaaAuditLogsActorType? type;
 
 Map<String, dynamic> toJson() { return {

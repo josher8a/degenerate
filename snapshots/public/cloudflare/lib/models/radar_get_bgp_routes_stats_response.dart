@@ -9,6 +9,7 @@ factory RadarGetBgpRoutesStatsResponse.fromJson(Map<String, dynamic> json) { ret
 
 final RadarGetBgpRoutesStatsResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

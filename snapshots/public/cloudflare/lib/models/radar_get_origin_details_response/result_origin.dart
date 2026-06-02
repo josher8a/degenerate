@@ -10,6 +10,8 @@ factory ResultOrigin.fromJson(Map<String, dynamic> json) { return ResultOrigin(
 final List<OriginRegions> regions;
 
 /// The origin slug.
+/// 
+/// Example: `'amazon'`
 final String slug;
 
 Map<String, dynamic> toJson() { return {

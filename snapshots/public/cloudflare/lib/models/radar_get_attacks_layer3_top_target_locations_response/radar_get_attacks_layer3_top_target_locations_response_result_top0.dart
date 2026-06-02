@@ -9,12 +9,16 @@ factory RadarGetAttacksLayer3TopTargetLocationsResponseResultTop0.fromJson(Map<S
   value: json['value'] as String,
 ); }
 
+/// Example: `1`
 final double rank;
 
+/// Example: `'FR'`
 final String targetCountryAlpha2;
 
+/// Example: `'France'`
 final String targetCountryName;
 
+/// Example: `'4.323214'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

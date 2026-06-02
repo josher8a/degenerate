@@ -14,6 +14,8 @@ final List<CloudConnectorMessages2> errors;
 final List<CloudConnectorMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 /// List of Cloud Connector rules

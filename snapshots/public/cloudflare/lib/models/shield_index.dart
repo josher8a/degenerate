@@ -7,6 +7,8 @@ factory ShieldIndex.fromJson(Map<String, dynamic> json) { return ShieldIndex(
 ); }
 
 /// Move rule to this position
+/// 
+/// Example: `2`
 final int index;
 
 Map<String, dynamic> toJson() { return {

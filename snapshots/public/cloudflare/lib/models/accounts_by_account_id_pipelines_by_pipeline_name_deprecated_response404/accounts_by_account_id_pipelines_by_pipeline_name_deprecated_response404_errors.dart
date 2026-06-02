@@ -7,8 +7,10 @@ factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fr
   message: json['message'] as String,
 ); }
 
+/// Example: `7002`
 final double code;
 
+/// Example: `'Not Found'`
 final String message;
 
 Map<String, dynamic> toJson() { return {

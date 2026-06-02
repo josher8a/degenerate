@@ -12,6 +12,8 @@ factory ZonesUrlTarget.fromJson(Map<String, dynamic> json) { return ZonesUrlTarg
 final ZonesStringConstraint? constraint;
 
 /// A target based on the URL of the request.
+/// 
+/// Example: `'url'`
 final dynamic target;
 
 Map<String, dynamic> toJson() { return {

@@ -9,6 +9,7 @@ factory RadarGetQualitySpeedHistogramResponse.fromJson(Map<String, dynamic> json
 
 final RadarGetQualitySpeedHistogramResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

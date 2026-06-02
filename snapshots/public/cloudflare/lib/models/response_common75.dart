@@ -16,6 +16,8 @@ final List<BundleMessages2> messages;
 final ResponseCommon75Result result;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

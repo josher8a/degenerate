@@ -10,12 +10,18 @@ factory AccessSchemasOidcSaasAppCustomClaims.fromJson(Map<String, dynamic> json)
 ); }
 
 /// The name of the claim.
+/// 
+/// Example: `'family_name'`
 final String? name;
 
 /// If the claim is required when building an OIDC token.
+/// 
+/// Example: `true`
 final bool? $required;
 
 /// The scope of the claim.
+/// 
+/// Example: `'profile'`
 final CustomClaimsScope? scope;
 
 final CustomAttributesSource? source;

@@ -13,15 +13,21 @@ factory IamSsoConnector.fromJson(Map<String, dynamic> json) { return IamSsoConne
 ); }
 
 /// Timestamp for the creation of the SSO connector
+/// 
+/// Example: `'2025-01-01T12:21:02.0000Z'`
 final DateTime? createdOn;
 
+/// Example: `'example.com'`
 final String? emailDomain;
 
+/// Example: `false`
 final bool? enabled;
 
 final IamCommonComponentsSchemasIdentifier? id;
 
 /// Timestamp for the last update of the SSO connector
+/// 
+/// Example: `'2025-01-01T12:21:02.0000Z'`
 final DateTime? updatedOn;
 
 final IamUseFedrampLanguage? useFedrampLanguage;

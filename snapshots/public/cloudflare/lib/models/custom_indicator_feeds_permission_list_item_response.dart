@@ -14,8 +14,11 @@ final List<CustomIndicatorFeedsSchemasMessages2> errors;
 final List<CustomIndicatorFeedsSchemasMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
+/// Example: `[{description: An important indicator list, id: 1, is_attributable: false, is_downloadable: false, is_public: false, name: indicator_list_1}, {description: An even more important indicator list, id: 2, is_attributable: true, is_downloadable: false, is_public: true, name: indicator_list_2}]`
 final List<CustomIndicatorFeedsPermissionListItem>? result;
 
 Map<String, dynamic> toJson() { return {

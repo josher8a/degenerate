@@ -9,6 +9,7 @@ factory RadarGetDnsSummaryByProtocolResponse.fromJson(Map<String, dynamic> json)
 
 final RadarGetDnsAs112TimeseriesByProtocolResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

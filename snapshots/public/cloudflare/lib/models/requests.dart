@@ -21,12 +21,18 @@ final int? all;
 final int? cached;
 
 /// A variable list of key/value pairs where the key represents the type of content served, and the value is the number of requests.
+/// 
+/// Example: `{css: 15343, gif: 23178, html: 1234213.0, javascript: 318236, jpeg: 1982048.0}`
 final Map<String,dynamic>? contentType;
 
 /// A variable list of key/value pairs where the key is a two-digit country code and the value is the number of requests served to that country.
+/// 
+/// Example: `{AG: 37298, GI: 293846, US: 4181364.0}`
 final Map<String,dynamic>? country;
 
 /// Key/value pairs where the key is a HTTP status code and the value is the number of requests served with that code.
+/// 
+/// Example: `{200: 13496983.0, 301: 283, 400: 187936, 402: 1828, 404: 1293}`
 final Map<String,dynamic>? httpStatus;
 
 /// A break down of requests served over HTTPS.

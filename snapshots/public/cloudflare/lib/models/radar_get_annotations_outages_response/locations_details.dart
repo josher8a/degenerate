@@ -7,8 +7,10 @@ factory LocationsDetails.fromJson(Map<String, dynamic> json) { return LocationsD
   name: json['name'] as String,
 ); }
 
+/// Example: `'US'`
 final String code;
 
+/// Example: `'United States'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

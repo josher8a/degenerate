@@ -11,18 +11,28 @@ factory AccessLoginDesign.fromJson(Map<String, dynamic> json) { return AccessLog
 ); }
 
 /// The background color on your login page.
+/// 
+/// Example: `'#c5ed1b'`
 final String? backgroundColor;
 
 /// The text at the bottom of your login page.
+/// 
+/// Example: `'This is an example description.'`
 final String? footerText;
 
 /// The text at the top of your login page.
+/// 
+/// Example: `'This is an example description.'`
 final String? headerText;
 
 /// The URL of the logo on your login page.
+/// 
+/// Example: `'https://example.com/logo.png'`
 final String? logoPath;
 
 /// The text color on your login page.
+/// 
+/// Example: `'#c5ed1b'`
 final String? textColor;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,8 @@ factory TeamsDevicesDevicesPolicyCertificates.fromJson(Map<String, dynamic> json
 ); }
 
 /// The current status of the device policy certificate provisioning feature for WARP clients.
+/// 
+/// Example: `true`
 final bool enabled;
 
 Map<String, dynamic> toJson() { return {

@@ -9,6 +9,7 @@ factory GetTargetIndustryListCompleteResponse.fromJson(Map<String, dynamic> json
 
 final GetAttackerListResponseItems items;
 
+/// Example: `'array'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

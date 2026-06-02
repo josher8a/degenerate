@@ -38,6 +38,8 @@ final ZonesRespectStrongEtagId? id;
 
 /// The status of Respect Strong ETags
 /// 
+/// 
+/// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {

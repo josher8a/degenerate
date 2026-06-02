@@ -48,11 +48,15 @@ factory PagesDeployment.fromJson(Map<String, dynamic> json) { return PagesDeploy
 ); }
 
 /// A list of alias URLs pointing to this deployment.
+/// 
+/// Example: `[https://branchname.projectname.pages.dev]`
 final List<String>? aliases;
 
 final PagesBuildConfig buildConfig;
 
 /// When the deployment was created.
+/// 
+/// Example: `'2021-03-09T00:55:03.923456Z'`
 final DateTime createdOn;
 
 /// Info about what caused the deployment.
@@ -61,33 +65,49 @@ final DeploymentTrigger deploymentTrigger;
 final Map<String,PagesEnvVarsValue?>? envVars;
 
 /// Type of deploy.
+/// 
+/// Example: `'preview'`
 final Environment environment;
 
 /// Id of the deployment.
+/// 
+/// Example: `'f64788e9-fccd-4d4a-a28a-cb84f88f6'`
 final String id;
 
 /// If the deployment has been skipped.
+/// 
+/// Example: `true`
 final bool isSkipped;
 
 final PagesStage latestStage;
 
 /// When the deployment was last modified.
+/// 
+/// Example: `'2021-03-09T00:58:59.045655'`
 final DateTime modifiedOn;
 
 /// Id of the project.
+/// 
+/// Example: `'7b162ea7-7367-4d67-bcde-1160995d5'`
 final String projectId;
 
 final PagesProjectName projectName;
 
 /// Short Id (8 character) of the deployment.
+/// 
+/// Example: `'f64788e9'`
 final String shortId;
 
 final PagesSource source;
 
 /// List of past stages.
+/// 
+/// Example: `[{ended_on: 2021-06-03T15:39:03.134378Z, name: queued, started_on: 2021-06-03T15:38:15.608194Z, status: active}, {ended_on: null, name: initialize, started_on: null, status: idle}, {ended_on: null, name: clone_repo, started_on: null, status: idle}, {ended_on: null, name: build, started_on: null, status: idle}, {ended_on: null, name: deploy, started_on: null, status: idle}]`
 final List<PagesStage> stages;
 
 /// The live URL to view this deployment.
+/// 
+/// Example: `'https://f64788e9.ninjakittens.pages.dev'`
 final String url;
 
 /// Whether the deployment uses functions.

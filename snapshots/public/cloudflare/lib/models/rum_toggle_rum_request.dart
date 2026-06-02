@@ -7,6 +7,8 @@ factory RumToggleRumRequest.fromJson(Map<String, dynamic> json) { return RumTogg
 ); }
 
 /// Value can either be On or Off.
+/// 
+/// Example: `'on'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

@@ -9,6 +9,7 @@ factory RadarGetHttpTopAsesByBotClassResponse.fromJson(Map<String, dynamic> json
 
 final RadarGetDnsTopAsesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

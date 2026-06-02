@@ -11,6 +11,8 @@ factory ResponseCommonFailure11.fromJson(Map<String, dynamic> json) { return Res
 ); }
 
 /// Contains error details describing why the request failed.
+/// 
+/// Example: `[{code: 1183, message: Invalid request parameters: Please ensure all required parameters are included and correctly formatted.}]`
 final List<Message> errors;
 
 /// Contains informational notices about the response.
@@ -20,6 +22,8 @@ final List<Message>? messages;
 final Map<String,dynamic>? result;
 
 /// Indicates whether the API call was successful.
+/// 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

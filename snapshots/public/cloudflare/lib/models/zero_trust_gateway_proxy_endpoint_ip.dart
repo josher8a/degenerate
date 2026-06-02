@@ -20,6 +20,8 @@ final ZeroTrustGatewayComponentsSchemasUuid? id;
 final List<String> ips;
 
 /// The proxy endpoint kind
+/// 
+/// Example: `'ip'`
 final String? kind;
 
 final ZeroTrustGatewayProxyEndpointsComponentsSchemasName name;

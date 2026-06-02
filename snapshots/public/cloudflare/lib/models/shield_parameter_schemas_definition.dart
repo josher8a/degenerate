@@ -1,6 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An operation schema object containing a response.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "parameters": [
+///     {
+///       "description": "Sufficient requests have been observed for this parameter to provide high confidence in this parameter schema.",
+///       "in": "path",
+///       "name": "var1",
+///       "required": true,
+///       "schema": {
+///         "maximum": 10,
+///         "minimum": 1,
+///         "type": "integer"
+///       }
+///     }
+///   ],
+///   "responses": null
+/// }
+/// ```text
 @immutable final class ShieldParameterSchemasDefinition {const ShieldParameterSchemasDefinition({this.parameters, this.responses, });
 
 factory ShieldParameterSchemasDefinition.fromJson(Map<String, dynamic> json) { return ShieldParameterSchemasDefinition(
@@ -9,6 +29,8 @@ factory ShieldParameterSchemasDefinition.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// An array containing the learned parameter schemas.
+/// 
+/// Example: `[{description: Sufficient requests have been observed for this parameter to provide high confidence in this parameter schema., in: path, name: var1, required: true, schema: {maximum: 10, minimum: 1, type: integer}}]`
 final List<Map<String,dynamic>>? parameters;
 
 /// An empty response object. This field is required to yield a valid operation schema.

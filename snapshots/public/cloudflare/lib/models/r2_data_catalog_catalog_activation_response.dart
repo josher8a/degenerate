@@ -9,9 +9,13 @@ factory R2DataCatalogCatalogActivationResponse.fromJson(Map<String, dynamic> jso
 ); }
 
 /// Use this to uniquely identify the activated catalog.
+/// 
+/// Example: `'550e8400-e29b-41d4-a716-446655440000'`
 final String id;
 
 /// Specifies the name of the activated catalog.
+/// 
+/// Example: `'account123_my-bucket'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

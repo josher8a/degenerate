@@ -21,12 +21,16 @@ final bool success;
 final DateTime time;
 
 /// Scan url (after redirects)
+/// 
+/// Example: `'https://www.example.com/'`
 final String url;
 
 /// Scan id
 final String uuid;
 
 /// Submitted visibility status.
+/// 
+/// Example: `'public'`
 final UrlscannerCreateScanBulkResponseVisibility visibility;
 
 Map<String, dynamic> toJson() { return {

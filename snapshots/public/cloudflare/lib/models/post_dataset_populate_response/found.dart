@@ -9,6 +9,7 @@ factory Found.fromJson(Map<String, dynamic> json) { return Found(
 
 final GetAttackerListResponseItems items;
 
+/// Example: `'array'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

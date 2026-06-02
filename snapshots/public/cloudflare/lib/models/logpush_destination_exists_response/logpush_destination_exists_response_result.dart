@@ -6,6 +6,7 @@ factory LogpushDestinationExistsResponseResult.fromJson(Map<String, dynamic> jso
   exists: json['exists'] as bool?,
 ); }
 
+/// Example: `false`
 final bool? exists;
 
 Map<String, dynamic> toJson() { return {

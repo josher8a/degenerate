@@ -10,15 +10,23 @@ factory DurableObjects.fromJson(Map<String, dynamic> json) { return DurableObjec
 ); }
 
 /// ID of the Durable Object namespace being used.
+/// 
+/// Example: `'e8f70fdbc8b1fb0b8ddb1af166186758'`
 final String namespaceId;
 
 /// Name of the Durable Object namespace being used.
+/// 
+/// Example: `'my-durable-object-namespace'`
 final String namespaceName;
 
 /// ID of the Worker using the Durable Object implementation.
+/// 
+/// Example: `'e8f70fdbc8b1fb0b8ddb1af166186758'`
 final String workerId;
 
 /// Name of the Worker using the Durable Object implementation.
+/// 
+/// Example: `'my-worker'`
 final String workerName;
 
 Map<String, dynamic> toJson() { return {

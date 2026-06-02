@@ -9,9 +9,13 @@ factory PagesDeploymentConfigValuesR2BucketsValue.fromJson(Map<String, dynamic> 
 ); }
 
 /// Jurisdiction of the R2 bucket.
+/// 
+/// Example: `'eu'`
 final String? jurisdiction;
 
 /// Name of the R2 bucket.
+/// 
+/// Example: `'some-bucket'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

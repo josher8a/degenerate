@@ -18,20 +18,27 @@ final DateTime? createdAt;
 
 final String? createdBy;
 
+/// Example: `'This is my custom MCP Portal'`
 final String? description;
 
+/// Example: `'exmaple.com'`
 final String hostname;
 
 /// portal id
+/// 
+/// Example: `'my-mcp-portal'`
 final String id;
 
 final DateTime? modifiedAt;
 
 final String? modifiedBy;
 
+/// Example: `'My MCP Portal'`
 final String name;
 
 /// Route outbound MCP traffic through Zero Trust Secure Web Gateway
+/// 
+/// Example: `false`
 final bool? secureWebGateway;
 
 Map<String, dynamic> toJson() { return {

@@ -11,18 +11,28 @@ factory CustomIndicatorFeedsUpdatePublicFieldRequest.fromJson(Map<String, dynami
 ); }
 
 /// The new description of the feed
+/// 
+/// Example: `'This is an example description'`
 final String? description;
 
 /// The new is_attributable value of the feed
+/// 
+/// Example: `true`
 final bool? isAttributable;
 
 /// The new is_downloadable value of the feed
+/// 
+/// Example: `true`
 final bool? isDownloadable;
 
 /// The new is_public value of the feed
+/// 
+/// Example: `true`
 final bool? isPublic;
 
 /// The new name of the feed
+/// 
+/// Example: `'indicator_list'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

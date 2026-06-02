@@ -14,6 +14,8 @@ final List<SpeedMessages2> errors;
 final List<SpeedMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 /// Enhance your website's font delivery with Cloudflare Fonts. Deliver Google Hosted fonts from your own domain,

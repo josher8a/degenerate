@@ -17,6 +17,8 @@ final List<Messages32> messages;
 final List<dynamic>? result;
 
 /// Whether the API call was successful
+/// 
+/// Example: `true`
 final bool success;
 
 final ResultInfo2? resultInfo;

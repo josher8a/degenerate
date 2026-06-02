@@ -8,6 +8,8 @@ factory ZeroTrustGatewayGatewayAccountLoggingSettings.fromJson(Map<String, dynam
 ); }
 
 /// Indicate whether to redact personally identifiable information from activity logging (PII fields include source IP, user email, user ID, device ID, URL, referrer, and user agent).
+/// 
+/// Example: `true`
 final bool redactPii;
 
 /// Configure logging settings for each rule type.

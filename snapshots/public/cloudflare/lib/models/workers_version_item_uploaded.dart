@@ -7,6 +7,8 @@ factory WorkersVersionItemUploaded.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// Time in milliseconds spent on [Worker startup](https://developers.cloudflare.com/workers/platform/limits/#worker-startup-time).
+/// 
+/// Example: `10`
 final int? startupTimeMs;
 
 Map<String, dynamic> toJson() { return {

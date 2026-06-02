@@ -74,6 +74,7 @@ factory PagesDomain.fromJson(Map<String, dynamic> json) { return PagesDomain(
   zoneTag: json['zone_tag'] as String,
 ); }
 
+/// Example: `'lets_encrypt'`
 final PagesDomainCertificateAuthority certificateAuthority;
 
 final String createdOn;

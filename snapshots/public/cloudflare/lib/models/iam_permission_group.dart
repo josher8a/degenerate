@@ -10,12 +10,28 @@ factory IamPermissionGroup.fromJson(Map<String, dynamic> json) { return IamPermi
 ); }
 
 /// Identifier of the permission group.
+/// 
+/// Example: `'6d7f2f5f5b1d4a0e9081fdc98d432fd1'`
 final String id;
 
 /// Attributes associated to the permission group.
+/// 
+/// Attributes associated to the permission group.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "label": "load_balancer_admin",
+///   "scopes": "com.cloudflare.api.account"
+/// }
+/// ```text
+/// 
+/// Example: `{label: load_balancer_admin, scopes: com.cloudflare.api.account}`
 final IamPermissionGroupMeta? meta;
 
 /// Name of the permission group.
+/// 
+/// Example: `'Load Balancer'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

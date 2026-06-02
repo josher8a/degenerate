@@ -10,12 +10,18 @@ factory WorkersTailConsumersScript.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// Optional environment if the Worker utilizes one.
+/// 
+/// Example: `'production'`
 final String? environment;
 
 /// Optional dispatch namespace the script belongs to.
+/// 
+/// Example: `'my-namespace'`
 final String? namespace;
 
 /// Name of Worker that is to be the consumer.
+/// 
+/// Example: `'my-log-consumer'`
 final String service;
 
 Map<String, dynamic> toJson() { return {

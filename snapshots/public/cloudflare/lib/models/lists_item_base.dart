@@ -1,6 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_created_on.dart';import 'package:pub_cloudflare/models/lists_item_comment.dart';import 'package:pub_cloudflare/models/lists_item_id.dart';import 'package:pub_cloudflare/models/lists_modified_on.dart';@immutable final class ListsItemBase {const ListsItemBase({required this.createdOn, required this.id, required this.modifiedOn, this.comment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_created_on.dart';import 'package:pub_cloudflare/models/lists_item_comment.dart';import 'package:pub_cloudflare/models/lists_item_id.dart';import 'package:pub_cloudflare/models/lists_modified_on.dart';/// Example:
+/// ```json`
+/// {
+///   "comment": "Private IP address",
+///   "created_on": "2020-01-01T08:00:00Z",
+///   "id": "2c0fc9fa937b11eaa1b71c4d701ab86e",
+///   "modified_on": "2020-01-10T14:00:00Z"
+/// }
+/// ```text
+@immutable final class ListsItemBase {const ListsItemBase({required this.createdOn, required this.id, required this.modifiedOn, this.comment, });
 
 factory ListsItemBase.fromJson(Map<String, dynamic> json) { return ListsItemBase(
   comment: json['comment'] != null ? ListsItemComment.fromJson(json['comment'] as String) : null,

@@ -12,8 +12,10 @@ factory ListCertificatesResponse.fromJson(Map<String, dynamic> json) { return Li
 
 final List<Certificate> data;
 
+/// Example: `'cert_abc'`
 final String? firstId;
 
+/// Example: `'cert_abc'`
 final String? lastId;
 
 final bool hasMore;

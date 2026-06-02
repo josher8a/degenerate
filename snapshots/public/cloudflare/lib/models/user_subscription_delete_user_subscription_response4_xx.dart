@@ -10,13 +10,17 @@ factory UserSubscriptionDeleteUserSubscriptionResponse4Xx.fromJson(Map<String, d
   subscriptionId: json['subscription_id'] != null ? SchemasIdentifier.fromJson(json['subscription_id'] as String) : null,
 ); }
 
+/// Example: `[{code: 7003, message: No route for the URI}]`
 final List<Messages5> errors;
 
+/// Example: `[]`
 final List<Messages5> messages;
 
 final Map<String,dynamic>? result;
 
 /// Whether the API call was successful
+/// 
+/// Example: `false`
 final bool success;
 
 /// Subscription identifier tag.

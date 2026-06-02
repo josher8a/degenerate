@@ -21,37 +21,50 @@ factory PostDosEventCreateBulkWithRelationshipsRequestData.fromJson(Map<String, 
   tlp: json['tlp'] as String,
 ); }
 
+/// Example: `123456`
 final double? accountId;
 
+/// Example: `'Flying Yeti'`
 final String? attacker;
 
+/// Example: `'CN'`
 final String? attackerCountry;
 
+/// Example: `'Domain Resolution'`
 final String category;
 
+/// Example: `'durableObjectName'`
 final String? datasetId;
 
+/// Example: `'2022-04-01T00:00:00Z'`
 final DateTime date;
 
+/// Example: `'An attacker registered the domain domain.com'`
 final String event;
 
+/// Example: `'domain.com'`
 final String? indicator;
 
+/// Example: `'domain'`
 final String? indicatorType;
 
 /// Array of indicators for this event. Supports multiple indicators per event for complex scenarios.
 final List<PostEventCreateRequestIndicators>? indicators;
 
+/// Example: `'This domain was likely registered for phishing purposes'`
 final String? insight;
 
 final PostEventCreateRequestRaw raw;
 
 final List<String>? tags;
 
+/// Example: `'US'`
 final String? targetCountry;
 
+/// Example: `'Agriculture'`
 final String? targetIndustry;
 
+/// Example: `'amber'`
 final String tlp;
 
 Map<String, dynamic> toJson() { return {

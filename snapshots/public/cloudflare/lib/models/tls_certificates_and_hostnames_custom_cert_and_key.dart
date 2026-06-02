@@ -8,9 +8,19 @@ factory TlsCertificatesAndHostnamesCustomCertAndKey.fromJson(Map<String, dynamic
 ); }
 
 /// If a custom uploaded certificate is used.
+/// 
+/// Example: `'-----BEGIN CERTIFICATE-----`
+/// MIIDdjCCAl6gAwIBAgIJAPnMg0Fs+/B0MA0GCSqGSIb3DQEBCwUAMFsx...
+/// -----END CERTIFICATE-----
+/// '``
 final String customCertificate;
 
 /// The key for a custom uploaded certificate.
+/// 
+/// Example: `'-----BEGIN PRIVATE KEY-----`
+/// MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/SCB5...
+/// -----END PRIVATE KEY-----
+/// '``
 final String customKey;
 
 Map<String, dynamic> toJson() { return {

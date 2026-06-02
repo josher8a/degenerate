@@ -84,24 +84,36 @@ factory TeamsDevicesSentineloneS2sInputRequest.fromJson(Map<String, dynamic> jso
 ); }
 
 /// The Number of active threats.
+/// 
+/// Example: `1`
 final double? activeThreats;
 
 /// Posture Integration ID.
+/// 
+/// Example: `'bc7cbfbb-600a-42e4-8a23-45b5e85f804f'`
 final String connectionId;
 
 /// Whether device is infected.
+/// 
+/// Example: `true`
 final bool? infected;
 
 /// Whether device is active.
+/// 
+/// Example: `true`
 final bool? isActive;
 
 /// Network status of device.
+/// 
+/// Example: `'connected'`
 final NetworkStatus? networkStatus;
 
 /// Agent operational state.
 final OperationalState? operationalState;
 
 /// Operator.
+/// 
+/// Example: `'>'`
 final TeamsDevicesCrowdstrikeInputRequestOperator? $operator;
 
 Map<String, dynamic> toJson() { return {

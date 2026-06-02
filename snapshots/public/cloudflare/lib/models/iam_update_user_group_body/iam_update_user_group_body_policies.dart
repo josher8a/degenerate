@@ -19,6 +19,8 @@ final List<IamPermissionGroupIds2> permissionGroups;
 final List<IamResourceGroupIds2> resourceGroups;
 
 /// Policy identifier.
+/// 
+/// Example: `'f267e341f3dd4697bd3b9f71dd96247f'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

@@ -9,6 +9,7 @@ factory RadarGetAnnotationsOutagesResponse.fromJson(Map<String, dynamic> json) {
 
 final RadarGetAnnotationsOutagesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

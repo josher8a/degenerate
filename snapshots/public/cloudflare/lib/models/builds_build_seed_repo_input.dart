@@ -15,12 +15,15 @@ final BuildsBranch branch;
 
 final List<BuildsBuildSeedRepoInputFile>? files;
 
+/// Example: `'cloudflare'`
 final String owner;
 
+/// Example: `'/'`
 final String path;
 
 final BuildsScmProviderType provider;
 
+/// Example: `'workers-sdk'`
 final String repository;
 
 Map<String, dynamic> toJson() { return {

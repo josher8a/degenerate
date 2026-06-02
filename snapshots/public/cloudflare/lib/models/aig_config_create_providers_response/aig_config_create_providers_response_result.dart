@@ -20,6 +20,8 @@ final String alias;
 final bool defaultConfig;
 
 /// gateway id
+/// 
+/// Example: `'my-gateway'`
 final String gatewayId;
 
 final String id;

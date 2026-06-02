@@ -19,6 +19,8 @@ final DigitalExperienceMonitoringTestStatPctOverTime packetLossPct;
 final DigitalExperienceMonitoringTestStatOverTime roundTripTimeMs;
 
 /// Count of unique devices that have run this test in the given time period
+/// 
+/// Example: `57`
 final int uniqueDevicesTotal;
 
 Map<String, dynamic> toJson() { return {

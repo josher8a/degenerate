@@ -10,15 +10,23 @@ factory Web3ResultInfo.fromJson(Map<String, dynamic> json) { return Web3ResultIn
 ); }
 
 /// Specifies the total number of results for the requested service.
+/// 
+/// Example: `1`
 final double? count;
 
 /// Specifies the current page within paginated list of results.
+/// 
+/// Example: `1`
 final double? page;
 
 /// Specifies the number of results per page of results.
+/// 
+/// Example: `20`
 final double? perPage;
 
 /// Specifies the total results available without any search parameters.
+/// 
+/// Example: `2000`
 final double? totalCount;
 
 Map<String, dynamic> toJson() { return {

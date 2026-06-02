@@ -17,6 +17,8 @@ final List<MagicVisibilityPcapsMessages2> messages;
 final List<dynamic>? result;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final MagicVisibilityPcapsResultInfo? resultInfo;

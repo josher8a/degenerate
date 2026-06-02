@@ -64,15 +64,23 @@ final Uint8List? workerBundle;
 final Uint8List? workerJs;
 
 /// The branch to build the new deployment from. The `HEAD` of the branch will be used. If omitted, the production branch will be used by default.
+/// 
+/// Example: `'staging'`
 final String? branch;
 
 /// Boolean string indicating if the working directory has uncommitted changes.
+/// 
+/// Example: `'false'`
 final CommitDirty? commitDirty;
 
 /// Git commit SHA associated with this deployment.
+/// 
+/// Example: `'a1b2c3d4e5f6'`
 final String? commitHash;
 
 /// Git commit message associated with this deployment.
+/// 
+/// Example: `'Update homepage'`
 final String? commitMessage;
 
 /// Functions routing configuration file.
@@ -81,9 +89,13 @@ final Uint8List? functionsFilepathRoutingConfigJson;
 /// JSON string containing a manifest of files to deploy. Maps file paths to their content hashes.
 /// Required for direct upload deployments. Maximum 20,000 entries.
 /// 
+/// 
+/// Example: `'{"index.html": "abc123", "style.css": "def456"}'`
 final String? manifest;
 
 /// The build output directory path.
+/// 
+/// Example: `'dist'`
 final String? pagesBuildOutputDir;
 
 /// Hash of the Wrangler configuration file used for this deployment.

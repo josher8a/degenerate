@@ -7,6 +7,8 @@ factory UserSAccountMembershipsUpdateMembershipRequest.fromJson(Map<String, dyna
 ); }
 
 /// Whether to accept or reject this account invitation.
+/// 
+/// Example: `'accepted'`
 final dynamic status;
 
 Map<String, dynamic> toJson() { return {

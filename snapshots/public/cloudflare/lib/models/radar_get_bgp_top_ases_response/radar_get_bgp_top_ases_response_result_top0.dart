@@ -8,11 +8,15 @@ factory RadarGetBgpTopAsesResponseResultTop0.fromJson(Map<String, dynamic> json)
   value: json['value'] as String,
 ); }
 
+/// Example: `'Apple-Engineering'`
 final String asName;
 
+/// Example: `714`
 final int asn;
 
 /// Percentage of updates by this AS out of the total updates by all autonomous systems.
+/// 
+/// Example: `'0.73996'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

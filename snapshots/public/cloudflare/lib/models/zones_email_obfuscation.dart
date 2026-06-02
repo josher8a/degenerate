@@ -34,6 +34,8 @@ final ZonesEmailObfuscationId? id;
 
 /// The status of Email Obfuscation.
 /// 
+/// 
+/// Example: `'on'`
 final ZonesEmailObfuscationValue? value;
 
 Map<String, dynamic> toJson() { return {

@@ -8,10 +8,13 @@ factory KeysDeleteResponse.fromJson(Map<String, dynamic> json) { return KeysDele
   deleted: json['deleted'] as bool?,
 ); }
 
+/// Example: `'key_abc'`
 final String? id;
 
+/// Example: `'organization.admin_api_key.deleted'`
 final String? object;
 
+/// Example: `true`
 final bool? deleted;
 
 Map<String, dynamic> toJson() { return {

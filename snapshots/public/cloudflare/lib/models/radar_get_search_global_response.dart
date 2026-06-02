@@ -9,6 +9,7 @@ factory RadarGetSearchGlobalResponse.fromJson(Map<String, dynamic> json) { retur
 
 final RadarGetSearchGlobalResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

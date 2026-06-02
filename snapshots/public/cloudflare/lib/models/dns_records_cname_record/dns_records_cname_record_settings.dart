@@ -7,6 +7,8 @@ factory DnsRecordsCnameRecordSettings.fromJson(Map<String, dynamic> json) { retu
 ); }
 
 /// If enabled, causes the CNAME record to be resolved externally and the resulting address records (e.g., A and AAAA) to be returned instead of the CNAME record itself. This setting is unavailable for proxied records, since they are always flattened.
+/// 
+/// Example: `true`
 final bool flattenCname;
 
 Map<String, dynamic> toJson() { return {

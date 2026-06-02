@@ -8,6 +8,8 @@ factory RulesetsRouteSni.fromJson(Map<String, dynamic> json) { return RulesetsRo
 ); }
 
 /// A value to override the SNI to.
+/// 
+/// Example: `'static.example.com'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

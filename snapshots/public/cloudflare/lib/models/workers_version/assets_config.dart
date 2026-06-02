@@ -10,9 +10,13 @@ factory AssetsConfig.fromJson(Map<String, dynamic> json) { return AssetsConfig(
 ); }
 
 /// Determines the redirects and rewrites of requests for HTML content.
+/// 
+/// Example: `'auto-trailing-slash'`
 final HtmlHandling htmlHandling;
 
 /// Determines the response when a request does not match a static asset, and there is no Worker script.
+/// 
+/// Example: `'404-page'`
 final NotFoundHandling notFoundHandling;
 
 final RunWorkerFirst? runWorkerFirst;

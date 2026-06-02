@@ -6,6 +6,7 @@ factory KeysCreateRequest.fromJson(Map<String, dynamic> json) { return KeysCreat
   name: json['name'] as String,
 ); }
 
+/// Example: `'New Admin Key'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

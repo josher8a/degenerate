@@ -9,10 +9,13 @@ factory EmailSecurityPostReclassifyResponse202.fromJson(Map<String, dynamic> jso
   result: json['result'] as Map<String, dynamic>,
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
 final Map<String,dynamic> result;

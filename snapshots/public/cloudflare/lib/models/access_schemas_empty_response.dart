@@ -9,6 +9,7 @@ factory AccessSchemasEmptyResponse.fromJson(Map<String, dynamic> json) { return 
 
 final Map<String,dynamic>? result;
 
+/// Example: `true`
 final bool? success;
 
 Map<String, dynamic> toJson() { return {

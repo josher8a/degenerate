@@ -11,16 +11,20 @@ factory InfraServiceCommon.fromJson(Map<String, dynamic> json) { return InfraSer
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
 ); }
 
+/// Example: `'2024-01-15T09:30:00Z'`
 final DateTime? createdAt;
 
 final InfraServiceHost host;
 
+/// Example: `'web-server'`
 final String name;
 
+/// Example: `'550e8400-e29b-41d4-a716-446655440000'`
 final String? serviceId;
 
 final InfraServiceType type;
 
+/// Example: `'2024-01-15T10:45:00Z'`
 final DateTime? updatedAt;
 
 Map<String, dynamic> toJson() { return {

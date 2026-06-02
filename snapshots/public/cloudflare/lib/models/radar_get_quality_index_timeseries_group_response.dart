@@ -9,6 +9,7 @@ factory RadarGetQualityIndexTimeseriesGroupResponse.fromJson(Map<String, dynamic
 
 final RadarGetQualityIndexTimeseriesGroupResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

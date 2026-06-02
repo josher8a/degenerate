@@ -8,10 +8,13 @@ factory FetchAllLivestreamsResponseDataPaging.fromJson(Map<String, dynamic> json
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
 ); }
 
+/// Example: `1`
 final int? endOffset;
 
+/// Example: `1`
 final int? startOffset;
 
+/// Example: `1`
 final int? totalCount;
 
 Map<String, dynamic> toJson() { return {

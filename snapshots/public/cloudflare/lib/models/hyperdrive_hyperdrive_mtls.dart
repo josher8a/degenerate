@@ -9,12 +9,18 @@ factory HyperdriveHyperdriveMtls.fromJson(Map<String, dynamic> json) { return Hy
 ); }
 
 /// Define CA certificate ID obtained after uploading CA cert.
+/// 
+/// Example: `'00000000-0000-0000-0000-0000000000'`
 final String? caCertificateId;
 
 /// Define mTLS certificate ID obtained after uploading client cert.
+/// 
+/// Example: `'00000000-0000-0000-0000-0000000000'`
 final String? mtlsCertificateId;
 
 /// Set SSL mode to 'require', 'verify-ca', or 'verify-full' to verify the CA.
+/// 
+/// Example: `'verify-full'`
 final String? sslmode;
 
 Map<String, dynamic> toJson() { return {

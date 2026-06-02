@@ -8,9 +8,13 @@ factory SkippedUrls.fromJson(Map<String, dynamic> json) { return SkippedUrls(
 ); }
 
 /// URL that was skipped.
+/// 
+/// Example: `'https://www.cloudflare.com/developer-week/'`
 final String? url;
 
 /// ID of the submission of that URL that is currently scanning.
+/// 
+/// Example: `2`
 final int? urlId;
 
 Map<String, dynamic> toJson() { return {

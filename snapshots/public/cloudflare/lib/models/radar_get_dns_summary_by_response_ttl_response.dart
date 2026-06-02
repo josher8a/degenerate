@@ -9,6 +9,7 @@ factory RadarGetDnsSummaryByResponseTtlResponse.fromJson(Map<String, dynamic> js
 
 final RadarGetDnsSummaryByResponseTtlResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

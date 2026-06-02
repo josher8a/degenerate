@@ -1,6 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_health_details/pop_health.dart';/// A list of regions from which to run health checks. Null means every Cloudflare data center.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "pool_id": "17b5962d775c646f3f9725cbc7a53df4",
+///   "pop_health": {
+///     "Amsterdam, NL": {
+///       "healthy": true,
+///       "origins": [
+///         {
+///           "2001:DB8::5": {
+///             "failure_reason": "No failures",
+///             "healthy": true,
+///             "response_code": 401,
+///             "rtt": "12.1ms"
+///           }
+///         }
+///       ]
+///     }
+///   }
+/// }
+/// ```text
 @immutable final class LoadBalancingHealthDetailsResult {const LoadBalancingHealthDetailsResult({this.poolId, this.popHealth, });
 
 factory LoadBalancingHealthDetailsResult.fromJson(Map<String, dynamic> json) { return LoadBalancingHealthDetailsResult(
@@ -9,6 +31,8 @@ factory LoadBalancingHealthDetailsResult.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// Pool ID.
+/// 
+/// Example: `'17b5962d775c646f3f9725cbc7a53df4'`
 final String? poolId;
 
 /// List of regions and associated health status.

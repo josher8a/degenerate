@@ -7,6 +7,8 @@ factory TokenValidationRulesBulkEditRequest.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// Rule ID this patch applies to
+/// 
+/// Example: `'0d9bf70c-92e1-4bb3-9411-34a3bcc59003'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

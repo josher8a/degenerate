@@ -20,9 +20,13 @@ final int? all;
 final int? cached;
 
 /// A variable list of key/value pairs where the key represents the type of content served, and the value is the number in bytes served.
+/// 
+/// Example: `{css: 237421, gif: 1234242.0, html: 1231290.0, javascript: 123245, jpeg: 784278}`
 final Map<String,dynamic>? contentType;
 
 /// A variable list of key/value pairs where the key is a two-digit country code and the value is the number of bytes served to that country.
+/// 
+/// Example: `{AG: 2342483.0, GI: 984753, US: 123145433.0}`
 final Map<String,dynamic>? country;
 
 /// A break down of bytes served over HTTPS.

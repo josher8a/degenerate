@@ -17,35 +17,55 @@ factory AccessResponses.fromJson(Map<String, dynamic> json) { return AccessRespo
 ); }
 
 /// The unique Cloudflare-generated Id of the SCIM resource.
+/// 
+/// Example: `'bd97ef8d-7986-43e3-9ee0-c25dda33e4b0'`
 final String? cfResourceId;
 
 /// The error message which is generated when the status of the SCIM request is 'FAILURE'.
+/// 
+/// Example: `'Invalid JSON body'`
 final String? errorDescription;
 
 /// The unique Id of the IdP that has SCIM enabled.
+/// 
+/// Example: `'df7e2w5f-02b7-4d9d-af26-8d1988fca630'`
 final String? idpId;
 
 /// The IdP-generated Id of the SCIM resource.
+/// 
+/// Example: `'all_employees'`
 final String? idpResourceId;
 
 final AccessTimestamp? loggedAt;
 
 /// The JSON-encoded string body of the SCIM request.
+/// 
+/// Example: `'{}}'`
 final String? requestBody;
 
 /// The request method of the SCIM request.
+/// 
+/// Example: `'DELETE'`
 final String? requestMethod;
 
 /// The display name of the SCIM Group resource if it exists.
+/// 
+/// Example: `'ALL_EMPLOYEES'`
 final String? resourceGroupName;
 
 /// The resource type of the SCIM request.
+/// 
+/// Example: `'GROUP'`
 final String? resourceType;
 
 /// The email address of the SCIM User resource if it exists.
+/// 
+/// Example: `'john.smith@example.com'`
 final String? resourceUserEmail;
 
 /// The status of the SCIM request.
+/// 
+/// Example: `'FAILURE'`
 final String? status;
 
 Map<String, dynamic> toJson() { return {

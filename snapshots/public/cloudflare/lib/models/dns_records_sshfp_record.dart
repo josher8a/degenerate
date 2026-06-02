@@ -55,6 +55,8 @@ final String? content;
 final DnsRecordsSshfpRecordData? data;
 
 /// Record type.
+/// 
+/// Example: `'SSHFP'`
 final DnsRecordsSshfpRecordType? type;
 
 Map<String, dynamic> toJson() { return {

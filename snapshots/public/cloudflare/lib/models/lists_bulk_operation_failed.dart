@@ -34,11 +34,15 @@ factory ListsBulkOperationFailed.fromJson(Map<String, dynamic> json) { return Li
 final ListsCompleted completed;
 
 /// A message describing the error when the status is `failed`.
+/// 
+/// Example: `'This list is at the maximum number of items'`
 final String error;
 
 final ListsOperationId id;
 
 /// The current status of the asynchronous operation.
+/// 
+/// Example: `'failed'`
 final ListsBulkOperationFailedStatus status;
 
 Map<String, dynamic> toJson() { return {

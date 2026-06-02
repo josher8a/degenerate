@@ -47,6 +47,8 @@ factory ObservatoryLighthouseReport.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// Cumulative Layout Shift.
+/// 
+/// Example: `100`
 final double? cls;
 
 /// The type of device.
@@ -55,29 +57,43 @@ final ObservatoryDeviceType? deviceType;
 final ObservatoryLighthouseReportError? error;
 
 /// First Contentful Paint.
+/// 
+/// Example: `100`
 final double? fcp;
 
 /// The URL to the full Lighthouse JSON report.
 final String? jsonReportUrl;
 
 /// Largest Contentful Paint.
+/// 
+/// Example: `100`
 final double? lcp;
 
 /// The Lighthouse performance score.
+/// 
+/// Example: `90`
 final double? performanceScore;
 
 /// Speed Index.
+/// 
+/// Example: `100`
 final double? si;
 
 final ObservatoryLighthouseState? state;
 
 /// Total Blocking Time.
+/// 
+/// Example: `100`
 final double? tbt;
 
 /// Time To First Byte.
+/// 
+/// Example: `100`
 final double? ttfb;
 
 /// Time To Interactive.
+/// 
+/// Example: `100`
 final double? tti;
 
 Map<String, dynamic> toJson() { return {

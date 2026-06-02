@@ -9,6 +9,7 @@ factory RadarGetEmailSecurityTopTldsByMaliciousResponse.fromJson(Map<String, dyn
 
 final RadarGetEmailSecurityTopTldsByMaliciousResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

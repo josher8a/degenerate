@@ -14,14 +14,20 @@ factory DigitalExperienceMonitoringTracerouteDetailsResponse.fromJson(Map<String
 ); }
 
 /// The host of the Traceroute synthetic application test
+/// 
+/// Example: `'1.1.1.1'`
 final String host;
 
 /// The interval at which the Traceroute synthetic application test is set to run.
+/// 
+/// Example: `'0h5m0s'`
 final String interval;
 
 final dynamic kind;
 
 /// The name of the Traceroute synthetic application test
+/// 
+/// Example: `'Atlassian Sign In Page'`
 final String name;
 
 final List<TargetPolicies>? targetPolicies;

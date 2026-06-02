@@ -9,12 +9,18 @@ factory MetadataAnnotations.fromJson(Map<String, dynamic> json) { return Metadat
 ); }
 
 /// Associated alias for a version.
+/// 
+/// Example: `'staging'`
 final String? workersAlias;
 
 /// Human-readable message about the version. Truncated to 100 bytes.
+/// 
+/// Example: `'Fixed worker code.'`
 final String? workersMessage;
 
 /// User-provided identifier for the version.
+/// 
+/// Example: `'any-identifier-from-external-system'`
 final String? workersTag;
 
 Map<String, dynamic> toJson() { return {

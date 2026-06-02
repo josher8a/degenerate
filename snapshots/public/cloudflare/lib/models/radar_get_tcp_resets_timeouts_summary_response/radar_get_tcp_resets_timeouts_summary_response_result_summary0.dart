@@ -11,18 +11,28 @@ factory RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0.fromJson(Map<Stri
 ); }
 
 /// Connection resets within the first 10 packets from the client, but after the server has received multiple data packets.
+/// 
+/// Example: `'10'`
 final String laterInFlow;
 
 /// All other connections.
+/// 
+/// Example: `'65'`
 final String noMatch;
 
 /// Connection resets or timeouts after the server received both a SYN packet and an ACK packet, meaning the connection was successfully established.
+/// 
+/// Example: `'5'`
 final String postAck;
 
 /// Connection resets or timeouts after the server received a packet with PSH flag set, following connection establishment.
+/// 
+/// Example: `'10'`
 final String postPsh;
 
 /// Connection resets or timeouts after the server received only a single SYN packet.
+/// 
+/// Example: `'10'`
 final String postSyn;
 
 Map<String, dynamic> toJson() { return {

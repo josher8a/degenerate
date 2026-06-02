@@ -17,6 +17,8 @@ factory CreateFineTuningJobRequest.fromJson(Map<String, dynamic> json) { return 
 /// The name of the model to fine-tune. You can select one of the
 /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).
 /// 
+/// 
+/// Example: `'gpt-4o-mini'`
 final CreateFineTuningJobRequestModel model;
 
 /// The ID of an uploaded file that contains training data.
@@ -29,6 +31,8 @@ final CreateFineTuningJobRequestModel model;
 /// 
 /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.
 /// 
+/// 
+/// Example: `'file-abc123'`
 final String trainingFile;
 
 /// The hyperparameters used for the fine-tuning job.
@@ -53,6 +57,8 @@ final String? suffix;
 /// 
 /// See the [fine-tuning guide](/docs/guides/model-optimization) for more details.
 /// 
+/// 
+/// Example: `'file-abc123'`
 final String? validationFile;
 
 /// A list of integrations to enable for your fine-tuning job.
@@ -61,6 +67,8 @@ final List<Integrations>? integrations;
 /// The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases.
 /// If a seed is not specified, one will be generated for you.
 /// 
+/// 
+/// Example: `42`
 final int? seed;
 
 final FineTuneMethod? method;

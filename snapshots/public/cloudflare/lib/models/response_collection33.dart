@@ -14,6 +14,8 @@ final List<ResourceSharingV4error> errors;
 final List<dynamic>? result;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final ResourceSharingResultInfo? resultInfo;

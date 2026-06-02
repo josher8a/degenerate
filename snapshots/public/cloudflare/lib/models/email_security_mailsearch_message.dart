@@ -1,6 +1,58 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/email_security_mailsearch_message_properties.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/email_security_mailsearch_message_validation.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/findings.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/post_delivery_operations.dart';import 'package:pub_cloudflare/models/email_security_message_delivery_mode.dart';import 'package:pub_cloudflare/models/email_security_postfix_id.dart';@immutable final class EmailSecurityMailsearchMessage {const EmailSecurityMailsearchMessage({required this.actionLog, required this.clientRecipients, required this.detectionReasons, required this.isPhishSubmission, required this.isQuarantined, required this.postfixId, required this.properties, required this.ts, required this.id, this.alertId, this.deliveryMode, this.edfHash, this.envelopeFrom, this.envelopeTo, this.finalDisposition, this.findings, this.from, this.fromName, this.htmltextStructureHash, this.messageId, this.postDeliveryOperations, this.postfixIdOutbound, this.replyto, this.sentDate, this.subject, this.threatCategories, this.to, this.toName, this.validation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/email_security_mailsearch_message_properties.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/email_security_mailsearch_message_validation.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/findings.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/post_delivery_operations.dart';import 'package:pub_cloudflare/models/email_security_message_delivery_mode.dart';import 'package:pub_cloudflare/models/email_security_postfix_id.dart';/// Example:
+/// ```json`
+/// {
+///   "action_log": [],
+///   "alert_id": "4Njp3P0STMz2c02Q-2022-12-30T02:44:49",
+///   "client_recipients": [
+///     "email@example.com"
+///   ],
+///   "delivery_mode": "DIRECT",
+///   "detection_reasons": [
+///     "Selector is a source of spam/uce : Smtp-Helo-Server-Ip=`<b>`127.0.0`[dot]`186`</b>`"
+///   ],
+///   "edf_hash": null,
+///   "envelope_from": "d1994@example.com",
+///   "envelope_to": [
+///     "email@example.com"
+///   ],
+///   "final_disposition": "MALICIOUS",
+///   "findings": null,
+///   "from": "d1994@example.com",
+///   "from_name": "Sender Name",
+///   "htmltext_structure_hash": null,
+///   "id": "4Njp3P0STMz2c02Q-2022-12-30T02:44:49-2a539d65",
+///   "is_phish_submission": false,
+///   "is_quarantined": false,
+///   "message_id": "`<4VAZPrAdg7IGNxdt1DWRNu0gvOeL_iZiwP4BQfo4DaE.Yw-woXuugQbeFhBpzwFQtqq_v2v1HOKznoMBqbciQpE@example.com>`",
+///   "post_delivery_operations": [],
+///   "postfix_id": "47JJcT1w6GztQV7",
+///   "postfix_id_outbound": null,
+///   "properties": {},
+///   "replyto": "email@example.com",
+///   "sent_date": "2019-11-21T00:22:01",
+///   "subject": "listen, I highly recommend u to read that email, just to ensure not a thing will take place",
+///   "threat_categories": [
+///     "IPReputation",
+///     "ASNReputation"
+///   ],
+///   "to": [
+///     "email@example.com"
+///   ],
+///   "to_name": [
+///     "Recipient Name"
+///   ],
+///   "ts": "2019-11-20T23:22:01",
+///   "validation": {
+///     "comment": null,
+///     "dkim": "pass",
+///     "dmarc": "none",
+///     "spf": "fail"
+///   }
+/// }
+/// ```text
+@immutable final class EmailSecurityMailsearchMessage {const EmailSecurityMailsearchMessage({required this.actionLog, required this.clientRecipients, required this.detectionReasons, required this.isPhishSubmission, required this.isQuarantined, required this.postfixId, required this.properties, required this.ts, required this.id, this.alertId, this.deliveryMode, this.edfHash, this.envelopeFrom, this.envelopeTo, this.finalDisposition, this.findings, this.from, this.fromName, this.htmltextStructureHash, this.messageId, this.postDeliveryOperations, this.postfixIdOutbound, this.replyto, this.sentDate, this.subject, this.threatCategories, this.to, this.toName, this.validation, });
 
 factory EmailSecurityMailsearchMessage.fromJson(Map<String, dynamic> json) { return EmailSecurityMailsearchMessage(
   actionLog: json['action_log'],

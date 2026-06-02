@@ -31,24 +31,33 @@ factory GetEventListGetResponse.fromJson(Map<String, dynamic> json) { return Get
   uuid: json['uuid'] as String,
 ); }
 
+/// Example: `'Flying Yeti'`
 final String attacker;
 
+/// Example: `'CN'`
 final String attackerCountry;
 
+/// Example: `'Domain Resolution'`
 final String category;
 
+/// Example: `'dataset-example-id'`
 final String datasetId;
 
+/// Example: `'2022-04-01T00:00:00Z'`
 final String date;
 
+/// Example: `'An attacker registered the domain domain.com'`
 final String event;
 
 final bool hasChildren;
 
+/// Example: `'domain.com'`
 final String indicator;
 
+/// Example: `'domain'`
 final String indicatorType;
 
+/// Example: `5`
 final double indicatorTypeId;
 
 final String? insight;
@@ -61,6 +70,7 @@ final double numReferenced;
 
 final double numReferences;
 
+/// Example: `'453gw34w3'`
 final String rawId;
 
 final List<String> referenced;
@@ -75,12 +85,16 @@ final String? releasabilityId;
 
 final List<String> tags;
 
+/// Example: `'US'`
 final String targetCountry;
 
+/// Example: `'Agriculture'`
 final String targetIndustry;
 
+/// Example: `'amber'`
 final String tlp;
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,8 @@ factory IpAddressManagementPrefixesUploadLoaDocumentRequest.fromJson(Map<String,
 ); }
 
 /// LOA document to upload.
+/// 
+/// Example: `'@document.pdf'`
 final String loaDocument;
 
 Map<String, dynamic> toJson() { return {

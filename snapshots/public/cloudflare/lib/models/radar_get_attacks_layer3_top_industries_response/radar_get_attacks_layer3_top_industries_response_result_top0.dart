@@ -7,8 +7,10 @@ factory RadarGetAttacksLayer3TopIndustriesResponseResultTop0.fromJson(Map<String
   value: json['value'] as String,
 ); }
 
+/// Example: `'Computer Software'`
 final String name;
 
+/// Example: `'65'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

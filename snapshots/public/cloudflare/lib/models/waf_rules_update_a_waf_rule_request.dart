@@ -47,6 +47,8 @@ factory WafRulesUpdateAWafRuleRequest.fromJson(Map<String, dynamic> json) { retu
 ); }
 
 /// Defines the mode/action of the rule when triggered. You must use a value from the `allowed_modes` array of the current rule.
+/// 
+/// Example: `'on'`
 final WafRulesUpdateAWafRuleRequestMode? mode;
 
 Map<String, dynamic> toJson() { return {

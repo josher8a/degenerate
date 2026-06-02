@@ -9,12 +9,18 @@ factory HyperdriveOverAccessOrigin.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// Defines the Client ID of the Access token to use when connecting to the origin database.
+/// 
+/// Example: `'0123456789abcdef0123456789abcdef.access'`
 final String accessClientId;
 
 /// Defines the Client Secret of the Access Token to use when connecting to the origin database. The API never returns this write-only value.
+/// 
+/// Example: `'0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef'`
 final String accessClientSecret;
 
 /// Defines the host (hostname or IP) of your origin database.
+/// 
+/// Example: `'database.example.com'`
 final String host;
 
 Map<String, dynamic> toJson() { return {

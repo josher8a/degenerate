@@ -8,6 +8,7 @@ factory R2LockRuleAgeCondition.fromJson(Map<String, dynamic> json) { return R2Lo
   type: R2LifecycleAgeConditionType.fromJson(json['type'] as String),
 ); }
 
+/// Example: `100`
 final int maxAgeSeconds;
 
 final R2LifecycleAgeConditionType type;

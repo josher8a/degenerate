@@ -8,9 +8,13 @@ factory PostEventCreateRequestIndicators.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// The type of indicator (e.g., DOMAIN, IP, JA3, HASH)
+/// 
+/// Example: `'domain'`
 final String indicatorType;
 
 /// The indicator value (e.g., domain name, IP address, hash)
+/// 
+/// Example: `'malicious.com'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

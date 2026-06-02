@@ -9,12 +9,14 @@ factory PatchIndicatorUpdateRequest.fromJson(Map<String, dynamic> json) { return
   value: json['value'] as String?,
 ); }
 
+/// Example: `'domain'`
 final String? indicatorType;
 
 final List<RelatedEvents>? relatedEvents;
 
 final List<PatchIndicatorUpdateRequestTags>? tags;
 
+/// Example: `'updated-domain.com'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

@@ -16,6 +16,8 @@ final List<ArgoConfigMessages2> messages;
 final ArgoConfigResultObject result;
 
 /// Describes a successful API response.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

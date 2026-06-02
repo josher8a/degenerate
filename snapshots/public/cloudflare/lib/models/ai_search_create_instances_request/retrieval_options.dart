@@ -8,6 +8,8 @@ factory RetrievalOptions.fromJson(Map<String, dynamic> json) { return RetrievalO
 ); }
 
 /// Metadata fields to boost search results by. Each entry specifies a metadata field and an optional direction. Direction defaults to 'asc' for numeric fields and 'exists' for text/boolean fields. Fields must match 'timestamp' or a defined custom_metadata field.
+/// 
+/// Example: `[{direction: desc, field: timestamp}]`
 final List<BoostBy>? boostBy;
 
 /// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.

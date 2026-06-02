@@ -9,12 +9,18 @@ factory TeamsDevicesIntuneConfigRequest.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// The Intune client ID.
+/// 
+/// Example: `'example client id'`
 final String clientId;
 
 /// The Intune client secret.
+/// 
+/// Example: `'example client secret'`
 final String clientSecret;
 
 /// The Intune customer ID.
+/// 
+/// Example: `'example customer id'`
 final String customerId;
 
 Map<String, dynamic> toJson() { return {

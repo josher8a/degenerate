@@ -22,6 +22,8 @@ final MagicIpAddress? dnsServer;
 final List<MagicIpAddress>? dnsServers;
 
 /// Mapping of MAC addresses to IP addresses
+/// 
+/// Example: `{00:11:22:33:44:55: 192.0.2.100, AA:BB:CC:DD:EE:FF: 192.168.1.101}`
 final Map<String,String>? reservations;
 
 Map<String, dynamic> toJson() { return {

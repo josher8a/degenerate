@@ -47,6 +47,16 @@ num toJson() => value;
 
 }
 /// Records the input to a Cloudflare Stream video. Behavior depends on the mode. In most cases, the video will initially be viewable as a live video and transition to on-demand after a condition is satisfied.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "hideLiveViewerCount": false,
+///   "mode": "off",
+///   "requireSignedURLs": false,
+///   "timeoutSeconds": 0
+/// }
+/// ```text
 @immutable final class StreamLiveInputRecordingSettings {const StreamLiveInputRecordingSettings({this.allowedOrigins, this.hideLiveViewerCount, this.mode, this.requireSignedUrLs, this.timeoutSeconds, });
 
 factory StreamLiveInputRecordingSettings.fromJson(Map<String, dynamic> json) { return StreamLiveInputRecordingSettings(

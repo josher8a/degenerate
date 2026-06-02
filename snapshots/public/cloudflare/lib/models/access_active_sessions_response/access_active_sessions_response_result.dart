@@ -8,6 +8,7 @@ factory AccessActiveSessionsResponseResult.fromJson(Map<String, dynamic> json) {
   name: json['name'] as String?,
 ); }
 
+/// Example: `1694813506.0`
 final int? expiration;
 
 final ResultMetadata? metadata;

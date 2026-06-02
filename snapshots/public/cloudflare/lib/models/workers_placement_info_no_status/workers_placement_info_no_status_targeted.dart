@@ -11,6 +11,8 @@ factory WorkersPlacementInfoNoStatusTargeted.fromJson(Map<String, dynamic> json)
 final TargetedMode mode;
 
 /// Cloud region for targeted placement in format 'provider:region'.
+/// 
+/// Example: `'aws:us-east-1'`
 final String region;
 
 Map<String, dynamic> toJson() { return {

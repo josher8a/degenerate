@@ -46,9 +46,13 @@ factory ObservatoryLighthouseReportError.fromJson(Map<String, dynamic> json) { r
 final ObservatoryLighthouseErrorCode? code;
 
 /// Detailed error message.
+/// 
+/// Example: `'Details: net::ERR_CONNECTION_CLOSED'`
 final String? detail;
 
 /// The final URL displayed to the user.
+/// 
+/// Example: `'example.com'`
 final String? finalDisplayedUrl;
 
 Map<String, dynamic> toJson() { return {

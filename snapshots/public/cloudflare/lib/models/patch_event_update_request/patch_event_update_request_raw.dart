@@ -10,8 +10,10 @@ factory PatchEventUpdateRequestRaw.fromJson(Map<String, dynamic> json) { return 
 
 final Map<String,dynamic>? data;
 
+/// Example: `'example.com'`
 final String? source;
 
+/// Example: `'amber'`
 final String? tlp;
 
 Map<String, dynamic> toJson() { return {

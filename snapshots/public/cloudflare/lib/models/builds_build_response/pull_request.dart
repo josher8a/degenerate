@@ -9,6 +9,7 @@ factory PullRequest.fromJson(Map<String, dynamic> json) { return PullRequest(
 
 final BuildsCreatedOn? createdOn;
 
+/// Example: `'https://github.com/cloudflare/workers-sdk/pull/123'`
 final Uri? pullRequestUrl;
 
 Map<String, dynamic> toJson() { return {

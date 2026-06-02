@@ -111,6 +111,8 @@ factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return Edit
 ); }
 
 /// The model to use for image editing.
+/// 
+/// Example: `'gpt-image-1.5'`
 final EditImageBodyJsonParamModel? model;
 
 /// Input image references to edit.
@@ -121,39 +123,59 @@ final List<ImageRefParam> images;
 final ImageRefParam? mask;
 
 /// A text description of the desired image edit.
+/// 
+/// Example: `'Add a watercolor effect and keep the subject centered'`
 final String prompt;
 
 /// The number of edited images to generate.
+/// 
+/// Example: `1`
 final int? n;
 
 /// Output quality for GPT image models.
 /// 
+/// 
+/// Example: `'high'`
 final EditImageBodyJsonParamQuality? quality;
 
 /// Controls fidelity to the original input image(s).
 final EditImageBodyJsonParamInputFidelity? inputFidelity;
 
 /// Requested output image size.
+/// 
+/// Example: `'1024x1024'`
 final EditImageBodyJsonParamSize? size;
 
 /// A unique identifier representing your end-user, which can help OpenAI
 /// monitor and detect abuse.
 /// 
+/// 
+/// Example: `'user-1234'`
 final String? user;
 
 /// Output image format. Supported for GPT image models.
+/// 
+/// Example: `'png'`
 final CreateImageEditRequestOutputFormat? outputFormat;
 
 /// Compression level for `jpeg` or `webp` output.
+/// 
+/// Example: `100`
 final int? outputCompression;
 
 /// Moderation level for GPT image models.
+/// 
+/// Example: `'auto'`
 final CreateImageRequestModeration? moderation;
 
 /// Background behavior for generated image output.
+/// 
+/// Example: `'transparent'`
 final CreateImageEditRequestBackground? background;
 
 /// Stream partial image results as events.
+/// 
+/// Example: `false`
 final bool? stream;
 
 final PartialImages? partialImages;

@@ -15,6 +15,8 @@ factory AccessBookmarkProps.fromJson(Map<String, dynamic> json) { return AccessB
 final AccessAppLauncherVisible? appLauncherVisible;
 
 /// The URL or domain of the bookmark.
+/// 
+/// Example: `'https://mybookmark.com'`
 final String? domain;
 
 final AccessLogoUrl? logoUrl;

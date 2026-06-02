@@ -13,15 +13,21 @@ factory CreateServersRequest.fromJson(Map<String, dynamic> json) { return Create
 
 final String? authCredentials;
 
+/// Example: `'unauthenticated'`
 final CreateServersRequestAuthType authType;
 
+/// Example: `'This is one remote mcp server'`
 final String? description;
 
+/// Example: `'https://exmaple.com/mcp'`
 final Uri hostname;
 
 /// server id
+/// 
+/// Example: `'my-mcp-server'`
 final String id;
 
+/// Example: `'My MCP Server'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

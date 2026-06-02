@@ -166,6 +166,8 @@ final bool? logprobs;
 final int? maxTokens;
 
 /// How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.
+/// 
+/// Example: `1`
 final int? n;
 
 /// Configuration for a [Predicted Output](/docs/guides/predicted-outputs),

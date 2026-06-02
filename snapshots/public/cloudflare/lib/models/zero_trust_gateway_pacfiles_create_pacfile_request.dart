@@ -19,6 +19,8 @@ final ZeroTrustGatewayPacfilesComponentsSchemasDescription? description;
 final ZeroTrustGatewayPacfilesComponentsSchemasName name;
 
 /// URL-friendly version of the PAC file name. If not provided, it will be auto-generated
+/// 
+/// Example: `'pac_devops'`
 final String? slug;
 
 Map<String, dynamic> toJson() { return {

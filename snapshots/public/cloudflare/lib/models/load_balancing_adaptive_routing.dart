@@ -8,6 +8,8 @@ factory LoadBalancingAdaptiveRouting.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Extends zero-downtime failover of requests to healthy origins from alternate pools, when no healthy alternate exists in the same pool, according to the failover order defined by traffic and origin steering. When set false (the default) zero-downtime failover will only occur between origins within the same pool. See `session_affinity_attributes` for control over when sessions are broken or reassigned.
+/// 
+/// Example: `true`
 final bool failoverAcrossPools;
 
 Map<String, dynamic> toJson() { return {

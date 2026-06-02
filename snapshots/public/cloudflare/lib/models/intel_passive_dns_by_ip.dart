@@ -10,12 +10,18 @@ factory IntelPassiveDnsByIp.fromJson(Map<String, dynamic> json) { return IntelPa
 ); }
 
 /// Total results returned based on your search parameters.
+/// 
+/// Example: `1`
 final double? count;
 
 /// Current page within paginated list of results.
+/// 
+/// Example: `1`
 final double? page;
 
 /// Number of results per page of results.
+/// 
+/// Example: `20`
 final double? perPage;
 
 /// Reverse DNS look-ups observed during the time period.

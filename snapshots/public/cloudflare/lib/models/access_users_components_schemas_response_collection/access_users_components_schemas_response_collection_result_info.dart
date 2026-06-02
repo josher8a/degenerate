@@ -9,12 +9,16 @@ factory AccessUsersComponentsSchemasResponseCollectionResultInfo.fromJson(Map<St
   totalCount: json['total_count'],
 ); }
 
+/// Example: `1`
 final dynamic count;
 
+/// Example: `1`
 final dynamic page;
 
+/// Example: `100`
 final dynamic perPage;
 
+/// Example: `1`
 final dynamic totalCount;
 
 Map<String, dynamic> toJson() { return {

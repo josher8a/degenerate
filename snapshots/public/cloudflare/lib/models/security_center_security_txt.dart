@@ -14,22 +14,30 @@ factory SecurityCenterSecurityTxt.fromJson(Map<String, dynamic> json) { return S
   preferredLanguages: json['preferred_languages'] as String?,
 ); }
 
+/// Example: `[https://example.com/hall-of-fame.html]`
 final List<Uri>? acknowledgments;
 
+/// Example: `[https://www.example.com/.well-known/security.txt]`
 final List<Uri>? canonical;
 
+/// Example: `[mailto:security@example.com, tel:+1-201-555-0123, https://example.com/security-contact.html]`
 final List<Uri>? contact;
 
+/// Example: `true`
 final bool? enabled;
 
+/// Example: `[https://example.com/pgp-key.txt, dns:5d2d37ab76d47d36._openpgpkey.example.com?type=OPENPGPKEY, openpgp4fpr:5f2de5521c63a801ab59ccb603d49de44b29100f]`
 final List<Uri>? encryption;
 
 final DateTime? expires;
 
+/// Example: `[https://example.com/jobs.html]`
 final List<Uri>? hiring;
 
+/// Example: `[https://example.com/disclosure-policy.html]`
 final List<Uri>? policy;
 
+/// Example: `'en, es, fr'`
 final String? preferredLanguages;
 
 Map<String, dynamic> toJson() { return {

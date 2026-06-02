@@ -16,9 +16,13 @@ factory WorkerScriptSearchWorkersResponseResult.fromJson(Map<String, dynamic> js
 final WorkersCreatedOn createdOn;
 
 /// Whether the environment is the default environment.
+/// 
+/// Example: `true`
 final bool? environmentIsDefault;
 
 /// Name of the environment.
+/// 
+/// Example: `'production'`
 final String? environmentName;
 
 /// Identifier.
@@ -31,6 +35,8 @@ final WorkersModifiedOn modifiedOn;
 final WorkersScriptName scriptName;
 
 /// Name of the service.
+/// 
+/// Example: `'my-service'`
 final String? serviceName;
 
 Map<String, dynamic> toJson() { return {

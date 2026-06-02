@@ -9,6 +9,7 @@ factory PropertiesIndicators.fromJson(Map<String, dynamic> json) { return Proper
 
 final IndicatorsItems items;
 
+/// Example: `'array'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

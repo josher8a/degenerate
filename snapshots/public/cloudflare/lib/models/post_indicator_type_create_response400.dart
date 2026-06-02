@@ -9,6 +9,7 @@ factory PostIndicatorTypeCreateResponse400.fromJson(Map<String, dynamic> json) {
 
 final PostIndicatorTypeCreateResponse400Content content;
 
+/// Example: `'Bad Request.'`
 final String description;
 
 Map<String, dynamic> toJson() { return {

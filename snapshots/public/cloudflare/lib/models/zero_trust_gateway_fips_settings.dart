@@ -8,6 +8,8 @@ factory ZeroTrustGatewayFipsSettings.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Enforce cipher suites and TLS versions compliant with FIPS 140-2.
+/// 
+/// Example: `true`
 final bool? tls;
 
 Map<String, dynamic> toJson() { return {

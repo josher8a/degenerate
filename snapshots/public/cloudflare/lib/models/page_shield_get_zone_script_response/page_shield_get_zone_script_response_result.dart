@@ -27,6 +27,7 @@ factory PageShieldGetZoneScriptResponseResult.fromJson(Map<String, dynamic> json
   versions: (json['versions'] as List<dynamic>?)?.map((e) => PageShieldVersion.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Example: `'2021-08-18T10:51:10.09615Z'`
 final DateTime addedAt;
 
 /// The cryptomining score of the JavaScript content.
@@ -35,43 +36,55 @@ final PageShieldCryptominingScore? cryptominingScore;
 /// The dataflow score of the JavaScript content.
 final PageShieldDataflowScore? dataflowScore;
 
+/// Example: `false`
 final bool? domainReportedMalicious;
 
 /// The timestamp of when the script was last fetched.
 final PageShieldFetchedAt? fetchedAt;
 
+/// Example: `'blog.cloudflare.com/page'`
 final String? firstPageUrl;
 
+/// Example: `'2021-08-18T10:51:08Z'`
 final DateTime firstSeenAt;
 
 final PageShieldHash? hash;
 
+/// Example: `'blog.cloudflare.com'`
 final String host;
 
 final PageShieldId id;
 
 final PageShieldJsIntegrityScore? jsIntegrityScore;
 
+/// Example: `'2021-09-02T09:57:54Z'`
 final DateTime lastSeenAt;
 
 final PageShieldMagecartScore? magecartScore;
 
+/// Example: `[Malware]`
 final List<String>? maliciousDomainCategories;
 
+/// Example: `[Malware]`
 final List<String>? maliciousUrlCategories;
 
 final PageShieldMalwareScore? malwareScore;
 
 final PageShieldObfuscationScore? obfuscationScore;
 
+/// Example: `[blog.cloudflare.com/page1, blog.cloudflare.com/page2]`
 final List<String>? pageUrls;
 
+/// Example: `'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js'`
 final String url;
 
+/// Example: `false`
 final bool urlContainsCdnCgiPath;
 
+/// Example: `false`
 final bool? urlReportedMalicious;
 
+/// Example: `[{cryptomining_score: 20, dataflow_score: 2, fetched_at: 2021-08-18T10:51:08Z, hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b423, js_integrity_score: 2, magecart_score: 10, malware_score: 5, obfuscation_score: 10}]`
 final List<PageShieldVersion>? versions;
 
 Map<String, dynamic> toJson() { return {

@@ -15,6 +15,8 @@ final bool defaultDisabled;
 final bool onBehalf;
 
 /// server id
+/// 
+/// Example: `'my-mcp-server'`
 final String serverId;
 
 final List<UpdatedPrompts>? updatedPrompts;

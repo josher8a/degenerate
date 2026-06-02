@@ -7,6 +7,7 @@ factory MagicModifiedTunnelsCollectionResponseResult.fromJson(Map<String, dynami
   modifiedGreTunnels: (json['modified_gre_tunnels'] as List<dynamic>?)?.map((e) => MagicGreTunnel.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Example: `true`
 final bool? modified;
 
 final List<MagicGreTunnel>? modifiedGreTunnels;

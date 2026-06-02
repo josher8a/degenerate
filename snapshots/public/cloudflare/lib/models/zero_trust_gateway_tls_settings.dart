@@ -8,6 +8,8 @@ factory ZeroTrustGatewayTlsSettings.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// Specify whether to inspect encrypted HTTP traffic.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 Map<String, dynamic> toJson() { return {

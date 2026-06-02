@@ -15,12 +15,16 @@ final double bodySize;
 
 final List<EntriesRequestHeaders> headers;
 
+/// Example: `197`
 final double headersSize;
 
+/// Example: `'http/1.1'`
 final String httpVersion;
 
+/// Example: `'GET'`
 final String method;
 
+/// Example: `'http://example.com/'`
 final String url;
 
 Map<String, dynamic> toJson() { return {

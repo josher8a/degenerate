@@ -7,6 +7,8 @@ factory StreamCaptionBasicUpload.fromJson(Map<String, dynamic> json) { return St
 ); }
 
 /// The WebVTT file containing the caption or subtitle content.
+/// 
+/// Example: `'@/Users/kyle/Desktop/tr.vtt'`
 final String file;
 
 Map<String, dynamic> toJson() { return {

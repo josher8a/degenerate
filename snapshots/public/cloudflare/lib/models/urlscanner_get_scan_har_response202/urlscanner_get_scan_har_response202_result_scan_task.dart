@@ -15,24 +15,33 @@ factory UrlscannerGetScanHarResponse202ResultScanTask.fromJson(Map<String, dynam
   visibility: json['visibility'] as String,
 ); }
 
+/// Example: `'http://example.com/'`
 final String effectiveUrl;
 
 final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
+/// Example: `'PT'`
 final String location;
 
+/// Example: `'enam'`
 final String region;
 
+/// Example: `'InProgress'`
 final String status;
 
+/// Example: `true`
 final bool success;
 
+/// Example: `'2023-05-03T17:05:04.843Z'`
 final String time;
 
+/// Example: `'http://example.com'`
 final String url;
 
+/// Example: `'2ee568d0-bf70-4827-b922-b7088c0f056f'`
 final String uuid;
 
+/// Example: `'Public'`
 final String visibility;
 
 Map<String, dynamic> toJson() { return {

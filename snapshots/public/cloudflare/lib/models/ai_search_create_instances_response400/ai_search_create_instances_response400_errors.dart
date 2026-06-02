@@ -8,8 +8,10 @@ factory AiSearchCreateInstancesResponse400Errors.fromJson(Map<String, dynamic> j
   path: (json['path'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 
+/// Example: `7001`
 final double code;
 
+/// Example: `'Input Validation Error'`
 final String message;
 
 final List<String> path;

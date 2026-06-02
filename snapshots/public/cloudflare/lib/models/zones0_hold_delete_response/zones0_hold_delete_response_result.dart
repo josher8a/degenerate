@@ -8,10 +8,13 @@ factory Zones0HoldDeleteResponseResult.fromJson(Map<String, dynamic> json) { ret
   includeSubdomains: json['include_subdomains'] as String?,
 ); }
 
+/// Example: `true`
 final bool? hold;
 
+/// Example: `'2023-01-31T15:56:36+00:00'`
 final String? holdAfter;
 
+/// Example: `false`
 final String? includeSubdomains;
 
 Map<String, dynamic> toJson() { return {

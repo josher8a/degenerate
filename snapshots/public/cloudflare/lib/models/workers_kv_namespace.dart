@@ -11,6 +11,8 @@ factory WorkersKvNamespace.fromJson(Map<String, dynamic> json) { return WorkersK
 final WorkersKvNamespaceIdentifier id;
 
 /// True if keys written on the URL will be URL-decoded before storing. For example, if set to "true", a key written on the URL as "%3F" will be stored as "?".
+/// 
+/// Example: `true`
 final bool? supportsUrlEncoding;
 
 final WorkersKvNamespaceTitle title;

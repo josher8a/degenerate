@@ -13,12 +13,18 @@ factory WorkersBindingKindDurableObjectNamespace.fromJson(Map<String, dynamic> j
 ); }
 
 /// The exported class name of the Durable Object.
+/// 
+/// Example: `'MyDurableObject'`
 final String? className;
 
 /// The dispatch namespace the Durable Object script belongs to.
+/// 
+/// Example: `'my-dispatch-namespace'`
 final String? dispatchNamespace;
 
 /// The environment of the script_name to bind to.
+/// 
+/// Example: `'production'`
 final String? environment;
 
 final WorkersBindingName name;
@@ -26,6 +32,8 @@ final WorkersBindingName name;
 final WorkersNamespaceIdentifier? namespaceId;
 
 /// The script where the Durable Object is defined, if it is external to this Worker.
+/// 
+/// Example: `'my-other-worker'`
 final String? scriptName;
 
 /// The kind of resource that the binding provides.

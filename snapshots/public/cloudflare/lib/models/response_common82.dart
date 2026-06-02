@@ -13,6 +13,8 @@ final List<ZeroTrustGatewayMessages2> errors;
 final List<ZeroTrustGatewayMessages2> messages;
 
 /// Indicate whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

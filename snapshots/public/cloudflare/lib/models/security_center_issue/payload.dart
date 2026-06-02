@@ -8,6 +8,8 @@ factory Payload.fromJson(Map<String, dynamic> json) { return Payload(
 ); }
 
 /// Describes the method used to detect insight.
+/// 
+/// Example: `'We detected security rules referencing multiple IP addresses directly in the rules.'`
 final String? detectionMethod;
 
 final String? zoneTag;

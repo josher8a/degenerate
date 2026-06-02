@@ -34,9 +34,13 @@ factory ShieldAuthIdCharacteristic.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// The name of the characteristic field, i.e., the header or cookie name.
+/// 
+/// Example: `'authorization'`
 final String name;
 
 /// The type of characteristic.
+/// 
+/// Example: `'header'`
 final ShieldAuthIdCharacteristicType type;
 
 Map<String, dynamic> toJson() { return {

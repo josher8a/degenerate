@@ -1,12 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_network.dart';@immutable final class InfraIPv6Host {const InfraIPv6Host({required this.ipv6, required this.network, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_network.dart';/// Example:
+/// ```json`
+/// {
+///   "ipv6": "fe80::1",
+///   "network": {
+///     "tunnel_id": "0191dce4-9ab4-7fce-b660-8e5dec5172da"
+///   }
+/// }
+/// ```text
+@immutable final class InfraIPv6Host {const InfraIPv6Host({required this.ipv6, required this.network, });
 
 factory InfraIPv6Host.fromJson(Map<String, dynamic> json) { return InfraIPv6Host(
   ipv6: json['ipv6'] as String,
   network: InfraNetwork.fromJson(json['network'] as Map<String, dynamic>),
 ); }
 
+/// Example: `'fe80::1'`
 final String ipv6;
 
 final InfraNetwork network;

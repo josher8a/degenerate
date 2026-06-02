@@ -9,10 +9,13 @@ factory EmailSecurityBatchTrustedDomainsResponse.fromJson(Map<String, dynamic> j
   result: EmailSecurityBatchTrustedDomainsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
 final EmailSecurityBatchTrustedDomainsResponseResult result;

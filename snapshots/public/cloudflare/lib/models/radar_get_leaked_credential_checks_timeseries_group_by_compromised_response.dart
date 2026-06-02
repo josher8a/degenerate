@@ -9,6 +9,7 @@ factory RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse.fromJ
 
 final RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

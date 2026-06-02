@@ -6,6 +6,7 @@ factory PutPermissionUpdateRequest.fromJson(Map<String, dynamic> json) { return 
   role: GetPermissionListResponseRole.fromJson(json['role'] as String),
 ); }
 
+/// Example: `'read'`
 final GetPermissionListResponseRole role;
 
 Map<String, dynamic> toJson() { return {

@@ -9,6 +9,8 @@ factory R2DataCatalogTableIdentifier.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Specifies the table name.
+/// 
+/// Example: `'events'`
 final String name;
 
 /// Specifies the hierarchical namespace parts as an array of strings.

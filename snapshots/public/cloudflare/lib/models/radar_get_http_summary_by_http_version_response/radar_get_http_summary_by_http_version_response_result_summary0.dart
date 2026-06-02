@@ -9,12 +9,18 @@ factory RadarGetHttpSummaryByHttpVersionResponseResultSummary0.fromJson(Map<Stri
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String http1X;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String http2;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String http3;
 
 Map<String, dynamic> toJson() { return {

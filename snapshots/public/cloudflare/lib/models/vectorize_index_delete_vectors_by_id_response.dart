@@ -8,6 +8,8 @@ factory VectorizeIndexDeleteVectorsByIdResponse.fromJson(Map<String, dynamic> js
 ); }
 
 /// The count of the vectors successfully deleted.
+/// 
+/// Example: `42`
 final int? count;
 
 /// Array of vector identifiers of the vectors that were successfully processed for deletion.

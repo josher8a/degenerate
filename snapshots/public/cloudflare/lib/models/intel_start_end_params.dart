@@ -8,9 +8,13 @@ factory IntelStartEndParams.fromJson(Map<String, dynamic> json) { return IntelSt
 ); }
 
 /// Defaults to the current date.
+/// 
+/// Example: `'2021-04-30'`
 final String? end;
 
 /// Defaults to 30 days before the end parameter value.
+/// 
+/// Example: `'2021-04-01'`
 final String? start;
 
 Map<String, dynamic> toJson() { return {

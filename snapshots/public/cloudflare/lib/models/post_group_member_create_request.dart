@@ -6,6 +6,7 @@ factory PostGroupMemberCreateRequest.fromJson(Map<String, dynamic> json) { retur
   accountId: json['accountId'] as String,
 ); }
 
+/// Example: `'123'`
 final String accountId;
 
 Map<String, dynamic> toJson() { return {

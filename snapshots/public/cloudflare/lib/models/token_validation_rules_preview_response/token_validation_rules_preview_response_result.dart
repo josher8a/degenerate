@@ -16,12 +16,18 @@ factory TokenValidationRulesPreviewResponseResult.fromJson(Map<String, dynamic> 
 final List<ShieldHost>? availableHosts;
 
 /// Number of operations with `excluded` `state`
+/// 
+/// Example: `40`
 final int? excluded;
 
 /// Number of operations with `ignored` `state`
+/// 
+/// Example: `10`
 final int? ignored;
 
 /// Number of operations with `included` `state`
+/// 
+/// Example: `50`
 final int? included;
 
 final List<ResultOperations>? operations;
@@ -30,6 +36,8 @@ final List<ResultOperations>? operations;
 final List<ShieldHost>? selectedHosts;
 
 /// Number of operations on zone
+/// 
+/// Example: `100`
 final int? total;
 
 Map<String, dynamic> toJson() { return {

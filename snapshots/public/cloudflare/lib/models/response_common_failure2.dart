@@ -8,11 +8,15 @@ factory ResponseCommonFailure2.fromJson(Map<String, dynamic> json) { return Resp
   success: json['success'] as bool,
 ); }
 
+/// Example: `[{code: 7003, message: No route for the URI}]`
 final List<AaaComponentsSchemasMessages2> errors;
 
+/// Example: `[]`
 final List<AaaComponentsSchemasMessages2> messages;
 
 /// Whether the API call was successful
+/// 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

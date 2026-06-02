@@ -22,6 +22,8 @@ final AccessComponentsSchemasName name;
 final ScimConfig? scimConfig;
 
 /// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
+/// 
+/// Example: `'onetimepin'`
 final AccessIdentityProviderType type;
 
 Map<String, dynamic> toJson() { return {

@@ -7,8 +7,10 @@ factory OriginsDetails.fromJson(Map<String, dynamic> json) { return OriginsDetai
   origin: json['origin'] as String,
 ); }
 
+/// Example: `'us-east-1 Amazon Web Services'`
 final String name;
 
+/// Example: `'amazon-us-east-1'`
 final String origin;
 
 Map<String, dynamic> toJson() { return {

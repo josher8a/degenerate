@@ -8,6 +8,8 @@ factory DnsSettingsDnsSettingsAccountPatchNameservers.fromJson(Map<String, dynam
 ); }
 
 /// Nameserver type
+/// 
+/// Example: `'cloudflare.standard'`
 final DnsSettingsDnsSettingsAccountPatchNameserversType? type;
 
 Map<String, dynamic> toJson() { return {

@@ -13,6 +13,8 @@ final List<TunnelSchemasMessages2> errors;
 final List<TunnelSchemasMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

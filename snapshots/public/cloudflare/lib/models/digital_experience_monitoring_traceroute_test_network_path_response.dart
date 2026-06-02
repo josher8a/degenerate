@@ -17,6 +17,8 @@ final String? deviceName;
 final DigitalExperienceMonitoringUuid id;
 
 /// The interval at which the Traceroute synthetic application test is set to run.
+/// 
+/// Example: `'0h5m0s'`
 final String? interval;
 
 final dynamic kind;
@@ -26,6 +28,8 @@ final String? name;
 final NetworkPath? networkPath;
 
 /// The host of the Traceroute synthetic application test
+/// 
+/// Example: `'1.1.1.1'`
 final String? url;
 
 Map<String, dynamic> toJson() { return {

@@ -44,6 +44,8 @@ final ZonesCacheLevelId? id;
 ///   file types beyond the [Cloudflare default cached
 ///   content](https://developers.cloudflare.com/cache/concepts/default-cache-behavior/#default-cached-file-extensions).
 /// 
+/// 
+/// Example: `'bypass'`
 final ZonesCacheLevelValue? value;
 
 Map<String, dynamic> toJson() { return {

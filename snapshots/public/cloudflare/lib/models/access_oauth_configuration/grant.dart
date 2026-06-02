@@ -9,9 +9,13 @@ factory Grant.fromJson(Map<String, dynamic> json) { return Grant(
 ); }
 
 /// The lifetime of the access token. Must be in the format `300ms` or `2h45m`. Valid time units are ns, us (or µs), ms, s, m, h.
+/// 
+/// Example: `'5m'`
 final String? accessTokenLifetime;
 
 /// The duration of the OAuth session. Must be in the format `300ms` or `2h45m`. Valid time units are ns, us (or µs), ms, s, m, h.
+/// 
+/// Example: `'24h'`
 final String? sessionDuration;
 
 Map<String, dynamic> toJson() { return {

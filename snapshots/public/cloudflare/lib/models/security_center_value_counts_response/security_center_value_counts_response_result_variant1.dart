@@ -7,6 +7,7 @@ factory SecurityCenterValueCountsResponseResultVariant1.fromJson(Map<String, dyn
   value: json['value'] as String?,
 ); }
 
+/// Example: `1`
 final int? count;
 
 final String? value;

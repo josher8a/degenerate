@@ -12,6 +12,8 @@ factory AbuseReportsMitigationListItem.fromJson(Map<String, dynamic> json) { ret
 ); }
 
 /// Date when the mitigation will become active. Time in RFC 3339 format (https://www.rfc-editor.org/rfc/rfc3339.html)
+/// 
+/// Example: `'2009-11-10T23:00:00Z'`
 final String effectiveDate;
 
 final String entityId;

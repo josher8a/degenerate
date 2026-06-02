@@ -10,14 +10,18 @@ factory ListAssistantsResponse.fromJson(Map<String, dynamic> json) { return List
   hasMore: json['has_more'] as bool,
 ); }
 
+/// Example: `'list'`
 final String object;
 
 final List<AssistantObject> data;
 
+/// Example: `'asst_abc123'`
 final String firstId;
 
+/// Example: `'asst_abc456'`
 final String lastId;
 
+/// Example: `false`
 final bool hasMore;
 
 Map<String, dynamic> toJson() { return {

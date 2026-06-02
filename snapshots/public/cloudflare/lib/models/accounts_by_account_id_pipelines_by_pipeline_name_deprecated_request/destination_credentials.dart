@@ -9,12 +9,18 @@ factory DestinationCredentials.fromJson(Map<String, dynamic> json) { return Dest
 ); }
 
 /// Specifies the R2 Bucket Access Key Id.
+/// 
+/// Example: `'<access key id>'`
 final String accessKeyId;
 
 /// Specifies the R2 Endpoint.
+/// 
+/// Example: `'https://123f8a8258064ed892a347f173372359.r2.cloudflarestorage.com'`
 final String endpoint;
 
 /// Specifies the R2 Bucket Secret Access Key.
+/// 
+/// Example: `'<secret key>'`
 final String secretAccessKey;
 
 Map<String, dynamic> toJson() { return {

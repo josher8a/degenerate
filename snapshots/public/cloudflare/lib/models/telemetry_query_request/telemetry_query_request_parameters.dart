@@ -49,6 +49,8 @@ factory TelemetryQueryRequestParameters.fromJson(Map<String, dynamic> json) { re
 final List<ParametersCalculations>? calculations;
 
 /// Set the Datasets to query. Leave it empty to query all the datasets.
+/// 
+/// Example: `[]`
 final List<String>? datasets;
 
 /// Set a Flag to describe how to combine the filters on the query.

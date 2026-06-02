@@ -9,13 +9,17 @@ factory ResponseCommonFailure84.fromJson(Map<String, dynamic> json) { return Res
   success: json['success'] as bool,
 ); }
 
+/// Example: `[{code: 7003, message: No route for the URI}]`
 final List<ZeroTrustGatewayMessages2> errors;
 
+/// Example: `[]`
 final List<ZeroTrustGatewayMessages2> messages;
 
 final Map<String,dynamic>? result;
 
 /// Indicate whether the API call was successful.
+/// 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

@@ -9,12 +9,16 @@ factory RulesetsSetCacheSettingsStatusCodeTtl2.fromJson(Map<String, dynamic> jso
 ); }
 
 /// A single status code to apply the TTL to.
+/// 
+/// Example: `200`
 final int? statusCode;
 
 /// A range of status codes to apply the TTL to.
 final StatusCodeRange? statusCodeRange;
 
 /// The time to cache the response for (in seconds). A value of 0 is equivalent to setting the cache control header with the value "no-cache". A value of -1 is equivalent to setting the cache control header with the value of "no-store".
+/// 
+/// Example: `0`
 final int value;
 
 Map<String, dynamic> toJson() { return {

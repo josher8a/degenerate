@@ -16,9 +16,13 @@ factory DnsRecordsNaptrRecordData.fromJson(Map<String, dynamic> json) { return D
 final String? flags;
 
 /// Order.
+/// 
+/// Example: `100`
 final double? order;
 
 /// Preference.
+/// 
+/// Example: `10`
 final double? preference;
 
 /// Regex.

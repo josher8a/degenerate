@@ -32,10 +32,14 @@ factory ZonesSortQueryStringForCache.fromJson(Map<String, dynamic> json) { retur
 
 /// Turn on or off the reordering of query strings. When query strings have the same structure, caching improves.
 /// 
+/// 
+/// Example: `'sort_query_string_for_cache'`
 final ZonesSortQueryStringForCacheId? id;
 
 /// The status of Query String Sort
 /// 
+/// 
+/// Example: `'on'`
 final ZonesSortQueryStringForCacheValue? value;
 
 Map<String, dynamic> toJson() { return {

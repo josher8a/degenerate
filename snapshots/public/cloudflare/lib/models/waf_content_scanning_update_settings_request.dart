@@ -32,6 +32,8 @@ factory WafContentScanningUpdateSettingsRequest.fromJson(Map<String, dynamic> js
 ); }
 
 /// The status value for Content Scanning.
+/// 
+/// Example: `'enabled'`
 final WafContentScanningUpdateSettingsRequestValue value;
 
 Map<String, dynamic> toJson() { return {

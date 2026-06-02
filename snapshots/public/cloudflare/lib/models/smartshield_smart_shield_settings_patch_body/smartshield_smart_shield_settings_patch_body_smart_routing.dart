@@ -7,6 +7,8 @@ factory SmartshieldSmartShieldSettingsPatchBodySmartRouting.fromJson(Map<String,
 ); }
 
 /// Specifies the enablement value of Smart Routing.
+/// 
+/// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {

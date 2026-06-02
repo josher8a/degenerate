@@ -43,6 +43,7 @@ factory SecurityCenterIssue.fromJson(Map<String, dynamic> json) { return Securit
   timestamp: json['timestamp'] != null ? DateTime.parse(json['timestamp'] as String) : null,
 ); }
 
+/// Example: `false`
 final bool? dismissed;
 
 final String? id;

@@ -10,14 +10,18 @@ factory ListMessagesResponse.fromJson(Map<String, dynamic> json) { return ListMe
   hasMore: json['has_more'] as bool,
 ); }
 
+/// Example: `'list'`
 final String object;
 
 final List<MessageObject> data;
 
+/// Example: `'msg_abc123'`
 final String firstId;
 
+/// Example: `'msg_abc123'`
 final String lastId;
 
+/// Example: `false`
 final bool hasMore;
 
 Map<String, dynamic> toJson() { return {

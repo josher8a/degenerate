@@ -8,10 +8,13 @@ factory Search.fromJson(Map<String, dynamic> json) { return Search(
   type: json['type'] as String,
 ); }
 
+/// Example: `'13335'`
 final String code;
 
+/// Example: `'Cloudflare'`
 final String name;
 
+/// Example: `'asn'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

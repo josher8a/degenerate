@@ -9,6 +9,7 @@ factory RadarGetDnsAs112TimeseriesResponse.fromJson(Map<String, dynamic> json) {
 
 final RadarGetAiBotsTimeseriesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

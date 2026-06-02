@@ -10,15 +10,23 @@ factory SmartshieldSmartShieldSettingsGetResponseSmartTieredCache.fromJson(Map<S
 ); }
 
 /// Whether the setting is editable.
+/// 
+/// Example: `true`
 final bool? editable;
 
 /// The id of the Smart Tiered Cache setting.
+/// 
+/// Example: `'smart_tiered_cache'`
 final String? id;
 
 /// The last time the setting was modified.
+/// 
+/// Example: `'2025-09-10T22:53:22.946098Z'`
 final String? modifiedOn;
 
 /// Specifies the enablement value of Tiered Cache.
+/// 
+/// Example: `'on'`
 final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {

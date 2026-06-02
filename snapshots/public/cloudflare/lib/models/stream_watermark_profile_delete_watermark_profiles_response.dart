@@ -6,6 +6,7 @@ factory StreamWatermarkProfileDeleteWatermarkProfilesResponse.fromJson(Map<Strin
   result: json['result'] as String?,
 ); }
 
+/// Example: `''`
 final String? result;
 
 Map<String, dynamic> toJson() { return {

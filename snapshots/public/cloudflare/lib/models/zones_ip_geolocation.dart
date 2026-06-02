@@ -32,10 +32,14 @@ factory ZonesIpGeolocation.fromJson(Map<String, dynamic> json) { return ZonesIpG
 
 /// Cloudflare adds a CF-IPCountry HTTP header containing the country code that corresponds to the visitor.
 /// 
+/// 
+/// Example: `'ip_geolocation'`
 final ZonesIpGeolocationId? id;
 
 /// The status of adding the IP Geolocation Header.
 /// 
+/// 
+/// Example: `'on'`
 final ZonesIpGeolocationValue? value;
 
 Map<String, dynamic> toJson() { return {

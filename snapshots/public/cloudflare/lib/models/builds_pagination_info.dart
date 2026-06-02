@@ -10,14 +10,19 @@ factory BuildsPaginationInfo.fromJson(Map<String, dynamic> json) { return Builds
   totalPages: json['total_pages'] != null ? (json['total_pages'] as num).toInt() : null,
 ); }
 
+/// Example: `25`
 final int? count;
 
+/// Example: `1`
 final int? page;
 
+/// Example: `50`
 final int? perPage;
 
+/// Example: `150`
 final int? totalCount;
 
+/// Example: `3`
 final int? totalPages;
 
 Map<String, dynamic> toJson() { return {

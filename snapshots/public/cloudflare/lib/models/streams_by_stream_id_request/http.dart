@@ -9,12 +9,25 @@ factory Http.fromJson(Map<String, dynamic> json) { return Http(
 ); }
 
 /// Indicates that authentication is required for the HTTP endpoint.
+/// 
+/// Example: `false`
 final bool authentication;
 
 /// Specifies the CORS options for the HTTP endpoint.
+/// 
+/// Specifies the CORS options for the HTTP endpoint.
+/// 
+/// Example:
+/// ```json`
+/// {}
+/// ```text
+/// 
+/// Example: `{}`
 final Cors? cors;
 
 /// Indicates that the HTTP endpoint is enabled.
+/// 
+/// Example: `true`
 final bool enabled;
 
 Map<String, dynamic> toJson() { return {

@@ -1,6 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazZarazHistoryResponseResult {const ZarazZarazHistoryResponseResult({required this.createdAt, required this.id, required this.updatedAt, required this.userId, required this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
+/// ```json`
+/// {
+///   "createdAt": "2023-02-23T05:05:55.155273Z",
+///   "description": "Config with enabled ecommerce tracking",
+///   "id": 12345,
+///   "updatedAt": "2023-02-23T05:05:55.155273Z",
+///   "userId": "278d0d0g123cd8e49d45ea64f12faa37"
+/// }
+/// ```text
+@immutable final class ZarazZarazHistoryResponseResult {const ZarazZarazHistoryResponseResult({required this.createdAt, required this.id, required this.updatedAt, required this.userId, required this.description, });
 
 factory ZarazZarazHistoryResponseResult.fromJson(Map<String, dynamic> json) { return ZarazZarazHistoryResponseResult(
   createdAt: DateTime.parse(json['createdAt'] as String),

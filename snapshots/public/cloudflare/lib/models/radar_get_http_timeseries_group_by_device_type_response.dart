@@ -9,6 +9,7 @@ factory RadarGetHttpTimeseriesGroupByDeviceTypeResponse.fromJson(Map<String, dyn
 
 final RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

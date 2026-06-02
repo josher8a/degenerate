@@ -14,6 +14,8 @@ final List<IamSchemasMessages2> errors;
 final List<IamSchemasMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final List<IamResourceGroup>? result;

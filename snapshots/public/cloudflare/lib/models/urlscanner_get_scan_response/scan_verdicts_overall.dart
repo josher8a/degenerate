@@ -11,6 +11,8 @@ factory ScanVerdictsOverall.fromJson(Map<String, dynamic> json) { return ScanVer
 final List<OverallCategories> categories;
 
 /// At least one of our subsystems marked the site as potentially malicious at the time of the scan.
+/// 
+/// Example: `true`
 final bool malicious;
 
 final List<String> phishing;

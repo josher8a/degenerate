@@ -10,6 +10,8 @@ factory SchemaValidationBulkEditPerOperationSettingsRequestValue.fromJson(Map<St
 /// Mitigation actions are as follows:
 /// * `log` - log request when request does not conform to schema * `block` - deny access to the site when request does not conform to schema * `none` - skip running schema validation * null - clears any existing per-operation setting
 /// 
+/// 
+/// Example: `'block'`
 final ShieldPerOperationSettingChangeBaseMitigationAction? mitigationAction;
 
 Map<String, dynamic> toJson() { return {

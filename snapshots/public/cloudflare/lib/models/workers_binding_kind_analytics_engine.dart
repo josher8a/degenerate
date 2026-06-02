@@ -9,6 +9,8 @@ factory WorkersBindingKindAnalyticsEngine.fromJson(Map<String, dynamic> json) { 
 ); }
 
 /// The name of the dataset to bind to.
+/// 
+/// Example: `'some_dataset'`
 final String dataset;
 
 final WorkersBindingName name;

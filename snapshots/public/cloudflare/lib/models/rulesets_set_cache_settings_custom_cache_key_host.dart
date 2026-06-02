@@ -8,6 +8,8 @@ factory RulesetsSetCacheSettingsCustomCacheKeyHost.fromJson(Map<String, dynamic>
 ); }
 
 /// Whether to use the resolved host in the cache key.
+/// 
+/// Example: `true`
 final bool? resolved;
 
 Map<String, dynamic> toJson() { return {

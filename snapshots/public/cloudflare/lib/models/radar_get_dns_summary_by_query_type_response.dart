@@ -9,6 +9,7 @@ factory RadarGetDnsSummaryByQueryTypeResponse.fromJson(Map<String, dynamic> json
 
 final RadarGetAiBotsSummaryByUserAgentResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

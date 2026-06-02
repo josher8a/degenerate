@@ -13,9 +13,13 @@ factory AddParticipantRequest.fromJson(Map<String, dynamic> json) { return AddPa
 final String customParticipantId;
 
 /// (Optional) Name of the participant.
+/// 
+/// Example: `'Mary Sue'`
 final String? name;
 
 /// (Optional) A URL to a picture to be used for the participant.
+/// 
+/// Example: `'https://i.imgur.com/test.jpg'`
 final Uri? picture;
 
 /// Name of the preset to apply to this participant.

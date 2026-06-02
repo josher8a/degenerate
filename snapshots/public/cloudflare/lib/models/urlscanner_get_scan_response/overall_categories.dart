@@ -8,10 +8,13 @@ factory OverallCategories.fromJson(Map<String, dynamic> json) { return OverallCa
   superCategoryId: (json['super_category_id'] as num).toDouble(),
 ); }
 
+/// Example: `117`
 final double id;
 
+/// Example: `'Malware'`
 final String name;
 
+/// Example: `32`
 final double superCategoryId;
 
 Map<String, dynamic> toJson() { return {

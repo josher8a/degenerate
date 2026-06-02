@@ -8,6 +8,8 @@ factory RulesetsLogCustomFieldCookieFields2.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// The name of the cookie.
+/// 
+/// Example: `'myCookie'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

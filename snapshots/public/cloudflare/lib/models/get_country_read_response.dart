@@ -9,6 +9,7 @@ factory GetCountryReadResponse.fromJson(Map<String, dynamic> json) { return GetC
 
 final List<GetCountryReadResponseResult> result;
 
+/// Example: `'true'`
 final String success;
 
 Map<String, dynamic> toJson() { return {

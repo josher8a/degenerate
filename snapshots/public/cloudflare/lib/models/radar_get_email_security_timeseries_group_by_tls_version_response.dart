@@ -9,6 +9,7 @@ factory RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponse.fromJson(Map<St
 
 final RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

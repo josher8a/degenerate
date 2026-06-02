@@ -7,6 +7,8 @@ factory AccessCountryRuleGeo.fromJson(Map<String, dynamic> json) { return Access
 ); }
 
 /// The country code that should be matched.
+/// 
+/// Example: `'US'`
 final String countryCode;
 
 Map<String, dynamic> toJson() { return {

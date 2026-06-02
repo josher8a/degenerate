@@ -9,9 +9,13 @@ factory AaaResultInfo.fromJson(Map<String, dynamic> json) { return AaaResultInfo
 ); }
 
 /// The number of records returned in the response.
+/// 
+/// Example: `1`
 final String? count;
 
 /// The cursor token used for pagination.
+/// 
+/// Example: `'ASqdKd7dKgxh-aZ8bm0mZos1BtW4BdEqifCzNkEeGRzi_5SN_-362Y8sF-C1TRn60_6rd3z2dIajf9EAPyQ_NmIeAMkacmaJPXipqvP7PLU4t72wyqBeJfjmjdE='`
 final String? cursor;
 
 Map<String, dynamic> toJson() { return {

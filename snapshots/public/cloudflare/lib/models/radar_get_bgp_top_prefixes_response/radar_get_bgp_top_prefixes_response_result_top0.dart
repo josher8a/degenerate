@@ -7,9 +7,12 @@ factory RadarGetBgpTopPrefixesResponseResultTop0.fromJson(Map<String, dynamic> j
   value: json['value'] as String,
 ); }
 
+/// Example: `'2804:77cc:8000::/33'`
 final String prefix;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

@@ -10,9 +10,13 @@ factory AccessApprovalGroup.fromJson(Map<String, dynamic> json) { return AccessA
 ); }
 
 /// The number of approvals needed to obtain access.
+/// 
+/// Example: `1`
 final double approvalsNeeded;
 
 /// A list of emails that can approve the access request.
+/// 
+/// Example: `[test@cloudflare.com, test2@cloudflare.com]`
 final List<String>? emailAddresses;
 
 /// The UUID of an re-usable email list.

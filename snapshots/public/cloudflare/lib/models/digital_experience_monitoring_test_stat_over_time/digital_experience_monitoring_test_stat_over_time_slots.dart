@@ -7,6 +7,7 @@ factory DigitalExperienceMonitoringTestStatOverTimeSlots.fromJson(Map<String, dy
   value: (json['value'] as num).toInt(),
 ); }
 
+/// Example: `'2023-07-16 15:00:00+00'`
 final String timestamp;
 
 final int value;

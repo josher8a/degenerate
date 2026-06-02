@@ -16,11 +16,15 @@ factory HyperdriveHyperdriveConfig.fromJson(Map<String, dynamic> json) { return 
 final HyperdriveHyperdriveCaching? caching;
 
 /// Defines the creation time of the Hyperdrive configuration.
+/// 
+/// Example: `'2017-01-01T00:00:00Z'`
 final DateTime? createdOn;
 
 final HyperdriveIdentifier id;
 
 /// Defines the last modified time of the Hyperdrive configuration.
+/// 
+/// Example: `'2017-01-01T00:00:00Z'`
 final DateTime? modifiedOn;
 
 final HyperdriveHyperdriveMtls? mtls;

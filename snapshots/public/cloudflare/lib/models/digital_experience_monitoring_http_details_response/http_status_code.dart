@@ -18,6 +18,7 @@ final int status400;
 
 final int status500;
 
+/// Example: `'2023-07-16 15:00:00+00'`
 final String timestamp;
 
 Map<String, dynamic> toJson() { return {

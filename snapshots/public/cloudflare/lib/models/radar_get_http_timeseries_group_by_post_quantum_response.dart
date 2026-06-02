@@ -9,6 +9,7 @@ factory RadarGetHttpTimeseriesGroupByPostQuantumResponse.fromJson(Map<String, dy
 
 final RadarGetHttpTimeseriesGroupByPostQuantumResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

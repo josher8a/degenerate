@@ -34,6 +34,8 @@ final ZonesAutomaticHttpsRewritesId? id;
 
 /// The status of Automatic HTTPS Rewrites.
 /// 
+/// 
+/// Example: `'on'`
 final ZonesAutomaticHttpsRewritesValue? value;
 
 Map<String, dynamic> toJson() { return {

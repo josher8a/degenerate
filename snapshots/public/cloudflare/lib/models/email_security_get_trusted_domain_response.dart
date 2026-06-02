@@ -9,12 +9,30 @@ factory EmailSecurityGetTrustedDomainResponse.fromJson(Map<String, dynamic> json
   result: EmailSecurityGetTrustedDomainResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
+/// Example:
+/// ```json`
+/// {
+///   "comments": null,
+///   "created_at": "2023-11-14T22:13:20Z",
+///   "id": 2401,
+///   "is_recent": true,
+///   "is_regex": false,
+///   "is_similarity": false,
+///   "last_modified": "2023-11-14T22:13:20Z",
+///   "pattern": "example.com"
+/// }
+/// ```text
+/// 
+/// Example: `{comments: null, created_at: 2023-11-14T22:13:20Z, id: 2401, is_recent: true, is_regex: false, is_similarity: false, last_modified: 2023-11-14T22:13:20Z, pattern: example.com}`
 final EmailSecurityGetTrustedDomainResponseResult result;
 
 Map<String, dynamic> toJson() { return {

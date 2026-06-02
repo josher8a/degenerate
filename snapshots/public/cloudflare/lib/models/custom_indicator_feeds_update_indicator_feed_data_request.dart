@@ -7,6 +7,8 @@ factory CustomIndicatorFeedsUpdateIndicatorFeedDataRequest.fromJson(Map<String, 
 ); }
 
 /// The file to upload
+/// 
+/// Example: `'@/Users/me/test.stix2'`
 final String? source;
 
 Map<String, dynamic> toJson() { return {

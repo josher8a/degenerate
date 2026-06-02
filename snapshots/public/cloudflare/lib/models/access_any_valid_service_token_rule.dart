@@ -8,6 +8,8 @@ factory AccessAnyValidServiceTokenRule.fromJson(Map<String, dynamic> json) { ret
 ); }
 
 /// An empty object which matches on all service tokens.
+/// 
+/// Example: `{}`
 final Map<String,dynamic> anyValidServiceToken;
 
 Map<String, dynamic> toJson() { return {

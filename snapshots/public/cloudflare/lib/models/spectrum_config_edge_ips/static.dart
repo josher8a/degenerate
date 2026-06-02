@@ -30,9 +30,13 @@ factory Static.fromJson(Map<String, dynamic> json) { return Static(
 ); }
 
 /// The array of customer owned IPs we broadcast via anycast for this hostname and application.
+/// 
+/// Example: `[192.0.2.1]`
 final List<String>? ips;
 
 /// The type of edge IP configuration specified. Statically allocated edge IPs use customer IPs in accordance with the ips array you specify. Only valid with ADDRESS DNS names.
+/// 
+/// Example: `'static'`
 final StaticType? type;
 
 Map<String, dynamic> toJson() { return {

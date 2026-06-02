@@ -77,30 +77,48 @@ factory TeamsDevicesCrowdstrikeInputRequest.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// Posture Integration ID.
+/// 
+/// Example: `'bc7cbfbb-600a-42e4-8a23-45b5e85f804f'`
 final String connectionId;
 
 /// For more details on last seen, please refer to the Crowdstrike documentation.
+/// 
+/// Example: `'15d3h20m4s'`
 final String? lastSeen;
 
 /// Operator.
+/// 
+/// Example: `'>'`
 final TeamsDevicesCrowdstrikeInputRequestOperator? $operator;
 
 /// Os Version.
+/// 
+/// Example: `'13.3.0'`
 final String? os;
 
 /// Overall.
+/// 
+/// Example: `90`
 final String? overall;
 
 /// SensorConfig.
+/// 
+/// Example: `90`
 final String? sensorConfig;
 
 /// For more details on state, please refer to the Crowdstrike documentation.
+/// 
+/// Example: `'online'`
 final TeamsDevicesCrowdstrikeInputRequestState? state;
 
 /// Version.
+/// 
+/// Example: `'13.3.0'`
 final String? version;
 
 /// Version Operator.
+/// 
+/// Example: `'>'`
 final VersionOperator? versionOperator;
 
 Map<String, dynamic> toJson() { return {

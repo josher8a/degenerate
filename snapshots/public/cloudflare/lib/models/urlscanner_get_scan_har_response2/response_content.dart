@@ -8,10 +8,13 @@ factory ResponseContent.fromJson(Map<String, dynamic> json) { return ResponseCon
   size: (json['size'] as num).toDouble(),
 ); }
 
+/// Example: `608`
 final int? compression;
 
+/// Example: `'text/html'`
 final String mimeType;
 
+/// Example: `1256`
 final double size;
 
 Map<String, dynamic> toJson() { return {

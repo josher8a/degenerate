@@ -8,10 +8,13 @@ factory ProcessorsCategoriesRisks.fromJson(Map<String, dynamic> json) { return P
   superCategoryId: (json['super_category_id'] as num).toInt(),
 ); }
 
+/// Example: `17`
 final int id;
 
+/// Example: `'Newly Seen Domains'`
 final String name;
 
+/// Example: `32`
 final int superCategoryId;
 
 Map<String, dynamic> toJson() { return {

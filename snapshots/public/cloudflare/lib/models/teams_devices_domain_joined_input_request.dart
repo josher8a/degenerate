@@ -8,9 +8,13 @@ factory TeamsDevicesDomainJoinedInputRequest.fromJson(Map<String, dynamic> json)
 ); }
 
 /// Domain.
+/// 
+/// Example: `'example.com'`
 final String? domain;
 
 /// Operating System.
+/// 
+/// Example: `'windows'`
 final TeamsDevicesDomainJoinedInputRequestOperatingSystem operatingSystem;
 
 Map<String, dynamic> toJson() { return {

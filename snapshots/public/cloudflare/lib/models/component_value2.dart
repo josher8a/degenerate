@@ -11,15 +11,23 @@ factory ComponentValue2.fromJson(Map<String, dynamic> json) { return ComponentVa
 ); }
 
 /// The default amount assigned.
+/// 
+/// Example: `5`
 final double? $default;
 
 /// The name of the component value.
+/// 
+/// Example: `'page_rules'`
 final String? name;
 
 /// The unit price for the component value.
+/// 
+/// Example: `5`
 final double? price;
 
 /// The amount of the component value assigned.
+/// 
+/// Example: `20`
 final double? value;
 
 Map<String, dynamic> toJson() { return {

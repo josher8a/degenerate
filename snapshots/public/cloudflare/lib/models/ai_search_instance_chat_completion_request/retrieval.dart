@@ -42,6 +42,8 @@ factory Retrieval.fromJson(Map<String, dynamic> json) { return Retrieval(
 ); }
 
 /// Metadata fields to boost search results by. Overrides the instance-level boost_by config. Direction defaults to 'asc' for numeric fields, 'exists' for text/boolean fields. Fields must match 'timestamp' or a defined custom_metadata field.
+/// 
+/// Example: `[{direction: desc, field: timestamp}]`
 final List<BoostBy>? boostBy;
 
 final int contextExpansion;

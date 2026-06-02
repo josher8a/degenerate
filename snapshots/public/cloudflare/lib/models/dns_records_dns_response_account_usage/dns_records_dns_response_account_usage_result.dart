@@ -10,15 +10,23 @@ factory DnsRecordsDnsResponseAccountUsageResult.fromJson(Map<String, dynamic> js
 ); }
 
 /// Maximum number of DNS records allowed across all internal zones in the account. Only present if internal DNS is enabled.
+/// 
+/// Example: `1000000.0`
 final int? internalRecordQuota;
 
 /// Current number of DNS records across all internal zones in the account. Only present if internal DNS is enabled.
+/// 
+/// Example: `5000`
 final int? internalRecordUsage;
 
 /// Maximum number of DNS records allowed across all public zones in the account. Null if using zone-level quota.
+/// 
+/// Example: `1000000.0`
 final int? recordQuota;
 
 /// Current number of DNS records across all public zones in the account.
+/// 
+/// Example: `5000`
 final int? recordUsage;
 
 Map<String, dynamic> toJson() { return {

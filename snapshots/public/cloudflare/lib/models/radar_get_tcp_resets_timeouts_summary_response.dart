@@ -9,6 +9,7 @@ factory RadarGetTcpResetsTimeoutsSummaryResponse.fromJson(Map<String, dynamic> j
 
 final RadarGetTcpResetsTimeoutsSummaryResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

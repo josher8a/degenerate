@@ -7,6 +7,8 @@ factory CachePurgeFlexPurgeByPrefixes.fromJson(Map<String, dynamic> json) { retu
 ); }
 
 /// For more information on purging by prefixes, please refer to [purge by prefix documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/purge_by_prefix/).
+/// 
+/// Example: `[www.example.com/foo, images.example.com/bar/baz]`
 final List<String>? prefixes;
 
 Map<String, dynamic> toJson() { return {

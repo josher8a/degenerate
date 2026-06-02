@@ -10,15 +10,23 @@ factory TeamsDevicesTaniumConfigRequest.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// If present, this id will be passed in the `CF-Access-Client-ID` header when hitting the `api_url`.
+/// 
+/// Example: `'88bf3b6d86161464f6509f7219099e57.access'`
 final String? accessClientId;
 
 /// If present, this secret will be passed in the `CF-Access-Client-Secret` header when hitting the `api_url`.
+/// 
+/// Example: `'bdd31cbc4dec990953e39163fbbb194c93313ca9f0a6e420346af9d326b1d2a5'`
 final String? accessClientSecret;
 
 /// The Tanium API URL.
+/// 
+/// Example: `'https://dummy-tanium-api.cloudflare.com/plugin/products/gateway/graphql'`
 final String apiUrl;
 
 /// The Tanium client secret.
+/// 
+/// Example: `'example client secret'`
 final String clientSecret;
 
 Map<String, dynamic> toJson() { return {

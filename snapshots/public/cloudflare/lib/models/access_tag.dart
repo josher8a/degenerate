@@ -11,6 +11,8 @@ factory AccessTag.fromJson(Map<String, dynamic> json) { return AccessTag(
 ); }
 
 /// The number of applications that have this tag
+/// 
+/// Example: `1`
 final int? appCount;
 
 final AccessTimestamp? createdAt;

@@ -34,10 +34,14 @@ factory ZonesMirage.fromJson(Map<String, dynamic> json) { return ZonesMirage(
 /// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
 /// It can accelerate loading of image-heavy websites on very slow mobile connections and HTTP/1.
 /// 
+/// 
+/// Example: `'mirage'`
 final ZonesMirageId? id;
 
 /// The status of Mirage.
 /// 
+/// 
+/// Example: `'on'`
 final ZonesMirageValue? value;
 
 Map<String, dynamic> toJson() { return {

@@ -11,8 +11,11 @@ factory UrlscannerCreateScanBulkResponse400Errors.fromJson(Map<String, dynamic> 
 final String detail;
 
 /// Status code.
+/// 
+/// Example: `400`
 final int status;
 
+/// Example: `'Invalid url'`
 final String title;
 
 Map<String, dynamic> toJson() { return {

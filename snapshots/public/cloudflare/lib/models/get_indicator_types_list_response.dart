@@ -9,6 +9,7 @@ factory GetIndicatorTypesListResponse.fromJson(Map<String, dynamic> json) { retu
 
 final GetAttackerListResponseItems items;
 
+/// Example: `'array'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

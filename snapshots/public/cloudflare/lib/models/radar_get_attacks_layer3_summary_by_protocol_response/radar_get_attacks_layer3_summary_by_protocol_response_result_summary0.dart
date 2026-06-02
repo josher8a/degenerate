@@ -10,15 +10,23 @@ factory RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0.fromJson(Ma
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String gre;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String icmp;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String tcp;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String udp;
 
 Map<String, dynamic> toJson() { return {

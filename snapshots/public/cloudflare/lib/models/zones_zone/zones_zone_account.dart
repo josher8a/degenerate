@@ -12,6 +12,8 @@ factory ZonesZoneAccount.fromJson(Map<String, dynamic> json) { return ZonesZoneA
 final ZonesIdentifier? id;
 
 /// The name of the account.
+/// 
+/// Example: `'Example Account Name'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

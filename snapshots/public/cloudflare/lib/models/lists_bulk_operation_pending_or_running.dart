@@ -35,6 +35,8 @@ factory ListsBulkOperationPendingOrRunning.fromJson(Map<String, dynamic> json) {
 final ListsOperationId id;
 
 /// The current status of the asynchronous operation.
+/// 
+/// Example: `'pending'`
 final ListsBulkOperationPendingOrRunningStatus status;
 
 Map<String, dynamic> toJson() { return {

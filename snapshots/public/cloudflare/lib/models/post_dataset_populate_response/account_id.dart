@@ -6,6 +6,7 @@ factory AccountId.fromJson(Map<String, dynamic> json) { return AccountId(
   type: json['type'] as String,
 ); }
 
+/// Example: `'string'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

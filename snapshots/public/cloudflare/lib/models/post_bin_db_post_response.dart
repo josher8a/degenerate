@@ -9,12 +9,16 @@ factory PostBinDbPostResponse.fromJson(Map<String, dynamic> json) { return PostB
   sha256: json['sha256'] as String,
 ); }
 
+/// Example: `'text/plain'`
 final String contentType;
 
+/// Example: `'5d84ade76d2a8387c81175bb0cbe6492'`
 final String md5;
 
+/// Example: `'9aff6879626d957eafadda044e4f879aae1e7278'`
 final String sha1;
 
+/// Example: `'0000a7f2692ef479e2e3d02661568882cadec451cc8a64d4e7faca29810cd626'`
 final String sha256;
 
 Map<String, dynamic> toJson() { return {

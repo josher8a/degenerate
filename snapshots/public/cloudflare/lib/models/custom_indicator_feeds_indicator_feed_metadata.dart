@@ -51,6 +51,20 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'LatestUploadStatus($value)'; } 
  }
+/// Example:
+/// ```json`
+/// {
+///   "created_on": "2023-05-12T12:21:56.777653Z",
+///   "description": "example feed description",
+///   "id": 1,
+///   "is_attributable": false,
+///   "is_downloadable": false,
+///   "is_public": false,
+///   "latest_upload_status": "Complete",
+///   "modified_on": "2023-06-18T03:13:34.123321Z",
+///   "name": "example_feed_1"
+/// }
+/// ```text
 @immutable final class CustomIndicatorFeedsIndicatorFeedMetadata {const CustomIndicatorFeedsIndicatorFeedMetadata({this.createdOn, this.description, this.id, this.isAttributable, this.isDownloadable, this.isPublic, this.latestUploadStatus, this.modifiedOn, this.name, this.providerId, this.providerName, });
 
 factory CustomIndicatorFeedsIndicatorFeedMetadata.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsIndicatorFeedMetadata(

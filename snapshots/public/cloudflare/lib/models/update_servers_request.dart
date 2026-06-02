@@ -10,8 +10,10 @@ factory UpdateServersRequest.fromJson(Map<String, dynamic> json) { return Update
 
 final String? authCredentials;
 
+/// Example: `'This is one remote mcp server'`
 final String? description;
 
+/// Example: `'My MCP Server'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

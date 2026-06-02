@@ -17,6 +17,8 @@ factory SpectrumAnalyticsQueryResponseSingleResult.fromJson(Map<String, dynamic>
 final List<SpectrumAnalyticsColumn> data;
 
 /// Number of seconds between current time and last processed event, i.e. how many seconds of data could be missing.
+/// 
+/// Example: `3`
 final double dataLag;
 
 /// Maximum result for each selected metrics across all data.
@@ -28,6 +30,8 @@ final Map<String,double> min;
 final SpectrumAnalyticsQuery query;
 
 /// Total number of rows in the result.
+/// 
+/// Example: `5`
 final double rows;
 
 /// List of time interval buckets: `[start, end]`

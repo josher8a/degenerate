@@ -10,15 +10,23 @@ factory DispatchNamespaceOutbounds.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// ID of the dispatch namespace.
+/// 
+/// Example: `'e8f70fdbc8b1fb0b8ddb1af166186758'`
 final String namespaceId;
 
 /// Name of the dispatch namespace.
+/// 
+/// Example: `'my-dispatch-namespace'`
 final String namespaceName;
 
 /// ID of the Worker using the dispatch namespace.
+/// 
+/// Example: `'e8f70fdbc8b1fb0b8ddb1af166186758'`
 final String workerId;
 
 /// Name of the Worker using the dispatch namespace.
+/// 
+/// Example: `'my-worker'`
 final String workerName;
 
 Map<String, dynamic> toJson() { return {

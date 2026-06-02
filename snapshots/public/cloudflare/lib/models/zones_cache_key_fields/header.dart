@@ -14,14 +14,20 @@ factory Header.fromJson(Map<String, dynamic> json) { return Header(
 /// A list of headers to check for the presence of, without
 /// including their actual values.
 /// 
+/// 
+/// Example: `[foo, bar]`
 final List<String>? checkPresence;
 
 /// A list of headers to ignore.
 /// 
+/// 
+/// Example: `[foo, bar]`
 final List<String>? exclude;
 
 /// A list of headers to include.
 /// 
+/// 
+/// Example: `[foo, bar]`
 final List<String>? include;
 
 Map<String, dynamic> toJson() { return {

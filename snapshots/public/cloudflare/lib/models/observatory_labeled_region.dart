@@ -8,6 +8,7 @@ factory ObservatoryLabeledRegion.fromJson(Map<String, dynamic> json) { return Ob
   value: json['value'] != null ? ObservatoryRegion.fromJson(json['value'] as String) : null,
 ); }
 
+/// Example: `'Iowa, USA'`
 final String? label;
 
 final ObservatoryRegion? value;

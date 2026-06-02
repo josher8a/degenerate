@@ -1,12 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_resolver_network.dart';@immutable final class InfraHostnameHost {const InfraHostnameHost({required this.hostname, required this.resolverNetwork, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_resolver_network.dart';/// Example:
+/// ```json`
+/// {
+///   "hostname": "example.com",
+///   "resolver_network": {
+///     "resolver_ips": [
+///       "10.0.0.1"
+///     ],
+///     "tunnel_id": "0191dce4-9ab4-7fce-b660-8e5dec5172da"
+///   }
+/// }
+/// ```text
+@immutable final class InfraHostnameHost {const InfraHostnameHost({required this.hostname, required this.resolverNetwork, });
 
 factory InfraHostnameHost.fromJson(Map<String, dynamic> json) { return InfraHostnameHost(
   hostname: json['hostname'] as String,
   resolverNetwork: InfraResolverNetwork.fromJson(json['resolver_network'] as Map<String, dynamic>),
 ); }
 
+/// Example: `'example.com'`
 final String hostname;
 
 final InfraResolverNetwork resolverNetwork;

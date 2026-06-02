@@ -7,6 +7,8 @@ factory QueuesPurgeRequest.fromJson(Map<String, dynamic> json) { return QueuesPu
 ); }
 
 /// Confimation that all messages will be deleted permanently.
+/// 
+/// Example: `true`
 final bool? deleteMessagesPermanently;
 
 Map<String, dynamic> toJson() { return {

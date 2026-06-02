@@ -16,6 +16,8 @@ factory AaaAuditLogs2Resource.fromJson(Map<String, dynamic> json) { return AaaAu
 final String? id;
 
 /// The Cloudflare product associated with the resource.
+/// 
+/// Example: `'members'`
 final String? product;
 
 final Map<String,dynamic>? request;
@@ -23,6 +25,8 @@ final Map<String,dynamic>? request;
 final Map<String,dynamic>? response;
 
 /// The scope of the resource.
+/// 
+/// Example: `'accounts'`
 final Map<String,dynamic>? scope;
 
 /// The type of the resource.

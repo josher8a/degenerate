@@ -8,6 +8,8 @@ factory WorkersKvBulkResult.fromJson(Map<String, dynamic> json) { return Workers
 ); }
 
 /// Number of keys successfully updated.
+/// 
+/// Example: `100`
 final double? successfulKeyCount;
 
 /// Name of the keys that failed to be fully updated. They should be retried.

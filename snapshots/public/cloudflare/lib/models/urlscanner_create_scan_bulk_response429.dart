@@ -15,6 +15,7 @@ final List<UrlscannerCreateScanBulkResponse429Errors> errors;
 
 final String message;
 
+/// Example: `429`
 final double status;
 
 Map<String, dynamic> toJson() { return {

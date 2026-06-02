@@ -32,10 +32,14 @@ factory ZonesResolveOverride.fromJson(Map<String, dynamic> json) { return ZonesR
 
 /// Change the origin address to the value specified in this setting.
 /// 
+/// 
+/// Example: `'resolve_override'`
 final ZonesResolveOverrideId? id;
 
 /// The origin address you want to override with.
 /// 
+/// 
+/// Example: `'example.com'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,8 @@ factory EmailDomain.fromJson(Map<String, dynamic> json) { return EmailDomain(
 ); }
 
 /// The email domain to match.
+/// 
+/// Example: `'example.com'`
 final String domain;
 
 Map<String, dynamic> toJson() { return {

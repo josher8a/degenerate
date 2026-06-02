@@ -10,9 +10,13 @@ factory RulesetsMessage.fromJson(Map<String, dynamic> json) { return RulesetsMes
 ); }
 
 /// A unique code for this message.
+/// 
+/// Example: `10000`
 final int? code;
 
 /// A text description of this message.
+/// 
+/// Example: `'something bad happened'`
 final String message;
 
 /// The source of this message.

@@ -42,6 +42,8 @@ final ZonesResponseBufferingId? id;
 
 /// The status of Response Buffering
 /// 
+/// 
+/// Example: `'on'`
 final ZonesResponseBufferingValue? value;
 
 Map<String, dynamic> toJson() { return {

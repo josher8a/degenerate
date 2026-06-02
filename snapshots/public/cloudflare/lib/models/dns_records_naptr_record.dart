@@ -55,6 +55,8 @@ final String? content;
 final DnsRecordsNaptrRecordData? data;
 
 /// Record type.
+/// 
+/// Example: `'NAPTR'`
 final DnsRecordsNaptrRecordType? type;
 
 Map<String, dynamic> toJson() { return {

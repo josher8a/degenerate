@@ -42,6 +42,7 @@ final Screenshot? screenshot;
 
 final String server;
 
+/// Example: `'200'`
 final String status;
 
 final String title;

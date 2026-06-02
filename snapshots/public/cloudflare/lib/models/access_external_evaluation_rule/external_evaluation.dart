@@ -8,9 +8,13 @@ factory ExternalEvaluation.fromJson(Map<String, dynamic> json) { return External
 ); }
 
 /// The API endpoint containing your business logic.
+/// 
+/// Example: `'https://eval.example.com'`
 final String evaluateUrl;
 
 /// The API endpoint containing the key that Access uses to verify that the response came from your API.
+/// 
+/// Example: `'https://eval.example.com/keys'`
 final String keysUrl;
 
 Map<String, dynamic> toJson() { return {

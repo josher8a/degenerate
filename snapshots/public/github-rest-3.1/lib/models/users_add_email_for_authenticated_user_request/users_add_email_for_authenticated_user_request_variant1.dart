@@ -1,6 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersAddEmailForAuthenticatedUserRequestVariant1 {const UsersAddEmailForAuthenticatedUserRequestVariant1({required this.emails});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
+/// ```json`
+/// {
+///   "emails": [
+///     "octocat@github.com",
+///     "mona@github.com"
+///   ]
+/// }
+/// ```text
+@immutable final class UsersAddEmailForAuthenticatedUserRequestVariant1 {const UsersAddEmailForAuthenticatedUserRequestVariant1({required this.emails});
 
 factory UsersAddEmailForAuthenticatedUserRequestVariant1.fromJson(Map<String, dynamic> json) { return UsersAddEmailForAuthenticatedUserRequestVariant1(
   emails: (json['emails'] as List<dynamic>).map((e) => e as String).toList(),

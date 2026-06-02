@@ -87,6 +87,8 @@ final AccessAppsComponentsSchemasSessionDuration? sessionDuration;
 final AccessSkipInterstitial? skipInterstitial;
 
 /// The application type.
+/// 
+/// Example: `'self_hosted'`
 final String type;
 
 final AccessUseClientlessIsolationAppLauncherUrl? useClientlessIsolationAppLauncherUrl;

@@ -8,6 +8,8 @@ factory WorkersPlacementInfoNoStatusTargeted2.fromJson(Map<String, dynamic> json
 ); }
 
 /// HTTP hostname for targeted placement.
+/// 
+/// Example: `'api.example.com'`
 final String hostname;
 
 /// Targeted placement mode.

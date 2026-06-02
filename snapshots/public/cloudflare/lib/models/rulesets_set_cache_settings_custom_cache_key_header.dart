@@ -14,9 +14,13 @@ factory RulesetsSetCacheSettingsCustomCacheKeyHeader.fromJson(Map<String, dynami
 final List<String>? checkPresence;
 
 /// A mapping of header names to a list of values. If a header is present in the request and contains any of the values provided, its value is included in the cache key.
+/// 
+/// Example: `{my-header: [my-header-value-1, my-header-value-2]}`
 final Map<String,List<String>>? contains;
 
 /// Whether to exclude the origin header in the cache key.
+/// 
+/// Example: `true`
 final bool? excludeOrigin;
 
 /// A list of headers to include in the cache key.

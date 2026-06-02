@@ -9,9 +9,13 @@ factory RulesetsRuleExposedCredentialCheck.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// An expression that selects the password used in the credentials check.
+/// 
+/// Example: `'url_decode(http.request.body.form[\"password\"][0])'`
 final String passwordExpression;
 
 /// An expression that selects the user ID used in the credentials check.
+/// 
+/// Example: `'url_decode(http.request.body.form[\"username\"][0])'`
 final String usernameExpression;
 
 Map<String, dynamic> toJson() { return {

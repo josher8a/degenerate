@@ -10,15 +10,23 @@ factory R2Rule.fromJson(Map<String, dynamic> json) { return R2Rule(
 ); }
 
 /// Array of R2 object actions that will trigger notifications.
+/// 
+/// Example: `[PutObject, CopyObject]`
 final List<R2R2Action> actions;
 
 /// A description that can be used to identify the event notification rule after creation.
+/// 
+/// Example: `'Notifications from source bucket to queue'`
 final String? description;
 
 /// Notifications will be sent only for objects with this prefix.
+/// 
+/// Example: `'img/'`
 final String? prefix;
 
 /// Notifications will be sent only for objects with this suffix.
+/// 
+/// Example: `'.jpeg'`
 final String? suffix;
 
 Map<String, dynamic> toJson() { return {

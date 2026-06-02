@@ -28,6 +28,8 @@ final TunnelConnectionId? id;
 final TunnelIsPendingReconnect? isPendingReconnect;
 
 /// Timestamp of when the connection was established.
+/// 
+/// Example: `'2021-01-25T18:22:34.317854Z'`
 final DateTime? openedAt;
 
 /// The public IP address of the host running cloudflared.

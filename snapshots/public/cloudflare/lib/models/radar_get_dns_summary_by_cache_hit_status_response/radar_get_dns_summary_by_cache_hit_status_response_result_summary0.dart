@@ -8,9 +8,13 @@ factory RadarGetDnsSummaryByCacheHitStatusResponseResultSummary0.fromJson(Map<St
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String negative;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String positive;
 
 Map<String, dynamic> toJson() { return {

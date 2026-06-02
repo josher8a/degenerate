@@ -12,9 +12,13 @@ factory WorkersBindingKindSecretsStoreSecret.fromJson(Map<String, dynamic> json)
 final WorkersBindingName name;
 
 /// Name of the secret in the store.
+/// 
+/// Example: `'my_secret'`
 final String secretName;
 
 /// ID of the store containing the secret.
+/// 
+/// Example: `'8c8b1387108e49be85669169793e7bd2'`
 final String storeId;
 
 /// The kind of resource that the binding provides.

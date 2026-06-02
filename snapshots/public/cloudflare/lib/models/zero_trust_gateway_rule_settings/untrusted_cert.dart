@@ -36,6 +36,8 @@ factory UntrustedCert.fromJson(Map<String, dynamic> json) { return UntrustedCert
 ); }
 
 /// Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.
+/// 
+/// Example: `'error'`
 final UntrustedCertAction? action;
 
 Map<String, dynamic> toJson() { return {

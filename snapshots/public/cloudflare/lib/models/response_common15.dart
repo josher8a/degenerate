@@ -13,6 +13,8 @@ final List<CloudforceOneWhoisSchemasMessages2> errors;
 final List<CloudforceOneWhoisSchemasMessages2> messages;
 
 /// Returns a boolean for the success/failure of the API call.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

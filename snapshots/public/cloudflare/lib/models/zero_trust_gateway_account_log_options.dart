@@ -8,9 +8,13 @@ factory ZeroTrustGatewayAccountLogOptions.fromJson(Map<String, dynamic> json) { 
 ); }
 
 /// Specify whether to log all requests to this service.
+/// 
+/// Example: `false`
 final bool logAll;
 
 /// Specify whether to log only blocking requests to this service.
+/// 
+/// Example: `true`
 final bool logBlocks;
 
 Map<String, dynamic> toJson() { return {

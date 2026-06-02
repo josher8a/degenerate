@@ -56,6 +56,7 @@ class TypeRefResolver {
             isRequired: f.isRequired,
             defaultValue: f.defaultValue,
             description: f.description,
+            example: f.example,
           );
         }).toList();
         var newAdditionalProps = type.additionalProperties;

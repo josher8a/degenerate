@@ -64,18 +64,26 @@ final ZonesZoneAccount account;
 
 /// The last time proof of ownership was detected and the zone was made
 /// active.
+/// 
+/// Example: `'2014-01-02T00:01:00.12345Z'`
 final DateTime? activatedOn;
 
 /// Allows the customer to use a custom apex.
 /// *Tenants Only Configuration*.
+/// 
+/// Example: `'cdn.cloudflare.com'`
 final String? cnameSuffix;
 
 /// When the zone was created.
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime createdOn;
 
 /// The interval (in seconds) from when development mode expires
 /// (positive integer) or last expired (negative integer) for the
 /// domain. If development mode has never been enabled, this value is 0.
+/// 
+/// Example: `7200`
 final double developmentMode;
 
 /// Identifier
@@ -85,21 +93,33 @@ final ZonesIdentifier id;
 final ZonesZoneMeta meta;
 
 /// When the zone was last modified.
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime modifiedOn;
 
 /// The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters.
+/// 
+/// Example: `'example.com'`
 final String name;
 
 /// The name servers Cloudflare assigns to a zone.
+/// 
+/// Example: `[bob.ns.cloudflare.com, lola.ns.cloudflare.com]`
 final List<String> nameServers;
 
 /// DNS host at the time of switching to Cloudflare.
+/// 
+/// Example: `'NameCheap'`
 final String? originalDnshost;
 
 /// Original name servers before moving to Cloudflare.
+/// 
+/// Example: `[ns1.originaldnshost.com, ns2.originaldnshost.com]`
 final List<String>? originalNameServers;
 
 /// Registrar for the domain at the time of switching to Cloudflare.
+/// 
+/// Example: `'GoDaddy'`
 final String? originalRegistrar;
 
 /// The owner of the zone.
@@ -118,6 +138,8 @@ final List<String>? permissions;
 final ZonesZonePlan plan;
 
 /// The zone status on Cloudflare.
+/// 
+/// Example: `'active'`
 final ZonesZoneStatus? status;
 
 /// The root organizational unit that this zone belongs to (such as a tenant or organization).
@@ -132,9 +154,13 @@ final ZonesZoneTenantUnit? tenantUnit;
 final ZonesType? type;
 
 /// An array of domains used for custom name servers. This is only available for Business and Enterprise plans.
+/// 
+/// Example: `[ns1.example.com, ns2.example.com]`
 final List<String> vanityNameServers;
 
 /// Verification key for partial zone setup.
+/// 
+/// Example: `'284344499-1084221259'`
 final String? verificationKey;
 
 Map<String, dynamic> toJson() { return {

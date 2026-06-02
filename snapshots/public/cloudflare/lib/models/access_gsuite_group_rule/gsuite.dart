@@ -8,9 +8,13 @@ factory Gsuite.fromJson(Map<String, dynamic> json) { return Gsuite(
 ); }
 
 /// The email of the Google Workspace group.
+/// 
+/// Example: `'devs@cloudflare.com'`
 final String email;
 
 /// The ID of your Google Workspace identity provider.
+/// 
+/// Example: `'ea85612a-29c8-46c2-bacb-669d65136971'`
 final String identityProviderId;
 
 Map<String, dynamic> toJson() { return {

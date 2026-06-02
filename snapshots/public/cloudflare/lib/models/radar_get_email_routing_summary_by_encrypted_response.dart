@@ -9,6 +9,7 @@ factory RadarGetEmailRoutingSummaryByEncryptedResponse.fromJson(Map<String, dyna
 
 final RadarGetEmailRoutingSummaryByEncryptedResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

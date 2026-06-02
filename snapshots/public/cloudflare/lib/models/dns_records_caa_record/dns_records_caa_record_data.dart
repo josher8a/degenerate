@@ -10,9 +10,13 @@ factory DnsRecordsCaaRecordData.fromJson(Map<String, dynamic> json) { return Dns
 ); }
 
 /// Flags for the CAA record.
+/// 
+/// Example: `1`
 final double? flags;
 
 /// Name of the property controlled by this record (e.g.: issue, issuewild, iodef).
+/// 
+/// Example: `'issue'`
 final String? tag;
 
 /// Value of the record. This field's semantics depend on the chosen tag.

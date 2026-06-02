@@ -8,9 +8,13 @@ factory IntelPhishingUrlInfoCategorizations.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// Name of the category applied.
+/// 
+/// Example: `'PHISHING'`
 final String? category;
 
 /// Result of human review for this categorization.
+/// 
+/// Example: `'confirmed'`
 final String? verificationStatus;
 
 Map<String, dynamic> toJson() { return {

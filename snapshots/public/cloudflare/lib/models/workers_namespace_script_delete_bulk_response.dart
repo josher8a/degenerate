@@ -11,8 +11,10 @@ factory WorkersNamespaceScriptDeleteBulkResponse.fromJson(Map<String, dynamic> j
 
 final List<Deleted>? deleted;
 
+/// Example: `100`
 final int? deletedCount;
 
+/// Example: `false`
 final bool? hasMore;
 
 Map<String, dynamic> toJson() { return {

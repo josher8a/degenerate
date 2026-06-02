@@ -62,6 +62,66 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ResponseStatus($value)'; } 
  }
+/// Example:
+/// ```json`
+/// {
+///   "id": "resp_67ccd3a9da748190baa7f1570fe91ac604becb25c45c1d41",
+///   "object": "response",
+///   "created_at": 1741476777,
+///   "status": "completed",
+///   "completed_at": 1741476778,
+///   "error": null,
+///   "incomplete_details": null,
+///   "instructions": null,
+///   "max_output_tokens": null,
+///   "model": "gpt-4o-2024-08-06",
+///   "output": [
+///     {
+///       "type": "message",
+///       "id": "msg_67ccd3acc8d48190a77525dc6de64b4104becb25c45c1d41",
+///       "status": "completed",
+///       "role": "assistant",
+///       "content": [
+///         {
+///           "type": "output_text",
+///           "text": "The image depicts a scenic landscape with a wooden boardwalk or pathway leading through lush, green grass under a blue sky with some clouds. The setting suggests a peaceful natural area, possibly a park or nature reserve. There are trees and shrubs in the background.",
+///           "annotations": []
+///         }
+///       ]
+///     }
+///   ],
+///   "parallel_tool_calls": true,
+///   "previous_response_id": null,
+///   "reasoning": {
+///     "effort": null,
+///     "summary": null
+///   },
+///   "store": true,
+///   "temperature": 1,
+///   "text": {
+///     "format": {
+///       "type": "text"
+///     }
+///   },
+///   "tool_choice": "auto",
+///   "tools": [],
+///   "top_p": 1,
+///   "truncation": "disabled",
+///   "usage": {
+///     "input_tokens": 328,
+///     "input_tokens_details": {
+///       "cached_tokens": 0
+///     },
+///     "output_tokens": 52,
+///     "output_tokens_details": {
+///       "reasoning_tokens": 0
+///     },
+///     "total_tokens": 380
+///   },
+///   "user": null,
+///   "metadata": {}
+/// }
+/// ```text
 @immutable final class Response {const Response({required this.metadata, required this.temperature, required this.topP, required this.id, required this.object, required this.createdAt, required this.error, required this.incompleteDetails, required this.output, required this.instructions, this.topLogprobs, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, this.status, this.completedAt, this.outputText, this.usage, this.parallelToolCalls = true, this.conversation, });
 
 factory Response.fromJson(Map<String, dynamic> json) { return Response(
@@ -121,15 +181,21 @@ final double? topP;
 /// A stable identifier for your end-users.
 /// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).
 /// 
+/// 
+/// Example: `'user-1234'`
 final String? user;
 
 /// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies.
 /// The IDs should be a string that uniquely identifies each user, with a maximum length of 64 characters. We recommend hashing their username or email address, in order to avoid sending us any identifying information. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).
 /// 
+/// 
+/// Example: `'safety-identifier-1234'`
 final String? safetyIdentifier;
 
 /// Used by OpenAI to cache responses for similar requests to optimize your cache hit rates. Replaces the `user` field. [Learn more](/docs/guides/prompt-caching).
 /// 
+/// 
+/// Example: `'prompt-cache-key-1234'`
 final String? promptCacheKey;
 
 final ServiceTier? serviceTier;

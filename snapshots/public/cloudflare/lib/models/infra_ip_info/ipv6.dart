@@ -9,9 +9,13 @@ factory Ipv6.fromJson(Map<String, dynamic> json) { return Ipv6(
 ); }
 
 /// IP address of the target
+/// 
+/// Example: `'64c0:64e8:f0b4:8dbf:7104:72b0:ec8f:f5e0'`
 final String? ipAddr;
 
 /// (optional) Private virtual network identifier for the target. If omitted, the default virtual network ID will be used.
+/// 
+/// Example: `'c77b744e-acc8-428f-9257-6878c046ed55'`
 final String? virtualNetworkId;
 
 Map<String, dynamic> toJson() { return {

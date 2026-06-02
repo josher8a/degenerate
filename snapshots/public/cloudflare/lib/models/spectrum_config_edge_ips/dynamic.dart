@@ -58,9 +58,13 @@ factory Dynamic.fromJson(Map<String, dynamic> json) { return Dynamic(
 ); }
 
 /// The IP versions supported for inbound connections on Spectrum anycast IPs.
+/// 
+/// Example: `'all'`
 final DynamicConnectivity? connectivity;
 
 /// The type of edge IP configuration specified. Dynamically allocated edge IPs use Spectrum anycast IPs in accordance with the connectivity you specify. Only valid with CNAME DNS names.
+/// 
+/// Example: `'dynamic'`
 final DynamicType? type;
 
 Map<String, dynamic> toJson() { return {

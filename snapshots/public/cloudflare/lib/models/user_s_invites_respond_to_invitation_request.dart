@@ -7,6 +7,8 @@ factory UserSInvitesRespondToInvitationRequest.fromJson(Map<String, dynamic> jso
 ); }
 
 /// Status of your response to the invitation (rejected or accepted).
+/// 
+/// Example: `'accepted'`
 final dynamic status;
 
 Map<String, dynamic> toJson() { return {

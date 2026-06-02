@@ -8,9 +8,13 @@ factory AccessFooterLinks2.fromJson(Map<String, dynamic> json) { return AccessFo
 ); }
 
 /// The hypertext in the footer link.
+/// 
+/// Example: `'Cloudflare's Privacy Policy'`
 final String name;
 
 /// the hyperlink in the footer link.
+/// 
+/// Example: `'https://www.cloudflare.com/privacypolicy/'`
 final String url;
 
 Map<String, dynamic> toJson() { return {

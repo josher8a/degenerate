@@ -7,6 +7,8 @@ factory AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(Map<String, dy
 ); }
 
 /// A text description of this message.
+/// 
+/// Example: `'No route for the URI'`
 final String message;
 
 Map<String, dynamic> toJson() { return {

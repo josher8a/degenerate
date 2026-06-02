@@ -9,9 +9,13 @@ factory R2QueuesConfig.fromJson(Map<String, dynamic> json) { return R2QueuesConf
 ); }
 
 /// Queue ID.
+/// 
+/// Example: `'11111aa1-11aa-111a-a1a1-a1a111a11a11'`
 final String? queueId;
 
 /// Name of the queue.
+/// 
+/// Example: `'first-queue'`
 final String? queueName;
 
 final List<R2QueuesConfigRules>? rules;

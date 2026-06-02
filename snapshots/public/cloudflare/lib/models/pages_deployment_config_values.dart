@@ -28,68 +28,128 @@ factory PagesDeploymentConfigValues.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// Constellation bindings used for Pages Functions.
+/// 
+/// Example: `{AI_BINDING: {project_id: some-project-id}}`
 final Map<String,PagesDeploymentConfigValuesAiBindingsValue>? aiBindings;
 
 /// Whether to always use the latest compatibility date for Pages Functions.
+/// 
+/// Example: `false`
 final bool alwaysUseLatestCompatibilityDate;
 
 /// Analytics Engine bindings used for Pages Functions.
+/// 
+/// Example: `{ANALYTICS_ENGINE_BINDING: {dataset: api_analytics}}`
 final Map<String,PagesDeploymentConfigValuesAnalyticsEngineDatasetsValue>? analyticsEngineDatasets;
 
 /// Browser bindings used for Pages Functions.
+/// 
+/// Example: `{BROWSER: {}}`
 final Map<String,Map<String,dynamic>?>? browsers;
 
 /// The major version of the build image to use for Pages Functions.
+/// 
+/// Example: `3`
 final int buildImageMajorVersion;
 
 /// Compatibility date used for Pages Functions.
+/// 
+/// Example: `'2025-01-01'`
 final String compatibilityDate;
 
 /// Compatibility flags used for Pages Functions.
+/// 
+/// Example: `[url_standard]`
 final List<String> compatibilityFlags;
 
 /// D1 databases used for Pages Functions.
+/// 
+/// Example: `{D1_BINDING: {id: 445e2955-951a-43f8-a35b-a4d0c8138f63}}`
 final Map<String,PagesDeploymentConfigValuesD1DatabasesValue>? d1Databases;
 
 /// Durable Object namespaces used for Pages Functions.
+/// 
+/// Example: `{DO_BINDING: {namespace_id: 5eb63bbbe01eeed093cb22bb8f5acdc3}}`
 final Map<String,PagesDeploymentConfigValuesDurableObjectNamespacesValue>? durableObjectNamespaces;
 
 final Map<String,PagesEnvVarsValue?>? envVars;
 
 /// Whether to fail open when the deployment config cannot be applied.
+/// 
+/// Example: `true`
 final bool failOpen;
 
 /// Hyperdrive bindings used for Pages Functions.
+/// 
+/// Example: `{HYPERDRIVE: {id: a76a99bc342644deb02c38d66082262a}}`
 final Map<String,PagesDeploymentConfigValuesD1DatabasesValue>? hyperdriveBindings;
 
 /// KV namespaces used for Pages Functions.
+/// 
+/// Example: `{KV_BINDING: {namespace_id: 5eb63bbbe01eeed093cb22bb8f5acdc3}}`
 final Map<String,PagesDeploymentConfigValuesDurableObjectNamespacesValue>? kvNamespaces;
 
 /// Limits for Pages Functions.
+/// 
+/// Limits for Pages Functions.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "cpu_ms": 100
+/// }
+/// ```text
+/// 
+/// Example: `{cpu_ms: 100}`
 final PagesDeploymentConfigValuesLimits? limits;
 
 /// mTLS bindings used for Pages Functions.
+/// 
+/// Example: `{MTLS: {certificate_id: d7cdd17c-916f-4cb7-aabe-585eb382ec4e}}`
 final Map<String,PagesDeploymentConfigValuesMtlsCertificatesValue>? mtlsCertificates;
 
 /// Placement setting used for Pages Functions.
+/// 
+/// Placement setting used for Pages Functions.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "mode": "smart"
+/// }
+/// ```text
+/// 
+/// Example: `{mode: smart}`
 final Placement? placement;
 
 /// Queue Producer bindings used for Pages Functions.
+/// 
+/// Example: `{QUEUE_PRODUCER_BINDING: {name: some-queue}}`
 final Map<String,PagesDeploymentConfigValuesQueueProducersValue>? queueProducers;
 
 /// R2 buckets used for Pages Functions.
+/// 
+/// Example: `{R2_BINDING: {name: some-bucket}}`
 final Map<String,PagesDeploymentConfigValuesR2BucketsValue>? r2Buckets;
 
 /// Services used for Pages Functions.
+/// 
+/// Example: `{SERVICE_BINDING: {entrypoint: MyHandler, environment: production, service: example-worker}}`
 final Map<String,PagesDeploymentConfigValuesServicesValue>? services;
 
 /// The usage model for Pages Functions.
+/// 
+/// Example: `'standard'`
 final UsageModel usageModel;
 
 /// Vectorize bindings used for Pages Functions.
+/// 
+/// Example: `{VECTORIZE: {index_name: my_index}}`
 final Map<String,PagesDeploymentConfigValuesVectorizeBindingsValue>? vectorizeBindings;
 
 /// Hash of the Wrangler configuration used for the deployment.
+/// 
+/// Example: `'abc123def456'`
 final String? wranglerConfigHash;
 
 Map<String, dynamic> toJson() { return {

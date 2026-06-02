@@ -6,6 +6,7 @@ factory InfraNetwork.fromJson(Map<String, dynamic> json) { return InfraNetwork(
   tunnelId: json['tunnel_id'] as String,
 ); }
 
+/// Example: `'0191dce4-9ab4-7fce-b660-8e5dec5172da'`
 final String tunnelId;
 
 Map<String, dynamic> toJson() { return {

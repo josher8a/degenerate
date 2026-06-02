@@ -9,6 +9,7 @@ factory RadarGetEmailSecuritySummaryResponse.fromJson(Map<String, dynamic> json)
 
 final RadarGetAttacksLayer3SummaryResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

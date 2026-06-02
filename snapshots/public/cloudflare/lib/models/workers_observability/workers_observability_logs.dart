@@ -12,18 +12,28 @@ factory WorkersObservabilityLogs.fromJson(Map<String, dynamic> json) { return Wo
 ); }
 
 /// A list of destinations where logs will be exported to.
+/// 
+/// Example: `[cloudflare]`
 final List<String>? destinations;
 
 /// Whether logs are enabled for the Worker.
+/// 
+/// Example: `true`
 final bool enabled;
 
 /// The sampling rate for logs. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+/// 
+/// Example: `0.1`
 final double? headSamplingRate;
 
 /// Whether [invocation logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/#invocation-logs) are enabled for the Worker.
+/// 
+/// Example: `true`
 final bool invocationLogs;
 
 /// Whether log persistence is enabled for the Worker.
+/// 
+/// Example: `true`
 final bool persist;
 
 Map<String, dynamic> toJson() { return {

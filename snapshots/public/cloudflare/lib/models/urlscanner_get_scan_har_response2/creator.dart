@@ -8,10 +8,13 @@ factory Creator.fromJson(Map<String, dynamic> json) { return Creator(
   version: json['version'] as String,
 ); }
 
+/// Example: `'https://github.com/sitespeedio/chrome-har'`
 final String comment;
 
+/// Example: `'chrome-har'`
 final String name;
 
+/// Example: `'0.13.1'`
 final String version;
 
 Map<String, dynamic> toJson() { return {

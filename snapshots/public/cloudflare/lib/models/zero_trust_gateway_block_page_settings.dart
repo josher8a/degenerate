@@ -53,30 +53,44 @@ factory ZeroTrustGatewayBlockPageSettings.fromJson(Map<String, dynamic> json) { 
 final String? backgroundColor;
 
 /// Specify whether to enable the custom block page.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 /// Specify the block page footer text when the mode is customized_block_page.
+/// 
+/// Example: `'--footer--'`
 final String? footerText;
 
 /// Specify the block page header text when the mode is customized_block_page.
+/// 
+/// Example: `'--header--'`
 final String? headerText;
 
 /// Specify whether to append context to target_uri as query parameters. This applies only when the mode is redirect_uri.
 final bool? includeContext;
 
 /// Specify the full URL to the logo file when the mode is customized_block_page.
+/// 
+/// Example: `'https://logos.com/a.png'`
 final String? logoPath;
 
 /// Specify the admin email for users to contact when the mode is customized_block_page.
+/// 
+/// Example: `'admin@example.com'`
 final String? mailtoAddress;
 
 /// Specify the subject line for emails created from the block page when the mode is customized_block_page.
+/// 
+/// Example: `'Blocked User Inquiry'`
 final String? mailtoSubject;
 
 /// Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.
 final ZeroTrustGatewayBlockPageSettingsMode mode;
 
 /// Specify the block page title when the mode is customized_block_page.
+/// 
+/// Example: `'Cloudflare'`
 final String? name;
 
 /// Indicate that this setting was shared via the Orgs API and read only for the current account.
@@ -86,12 +100,16 @@ final bool? readOnly;
 final String? sourceAccount;
 
 /// Specify whether to suppress detailed information at the bottom of the block page when the mode is customized_block_page.
+/// 
+/// Example: `false`
 final bool? suppressFooter;
 
 /// Specify the URI to redirect users to when the mode is redirect_uri.
 final Uri? targetUri;
 
 /// Indicate the version number of the setting.
+/// 
+/// Example: `1`
 final int? version;
 
 Map<String, dynamic> toJson() { return {

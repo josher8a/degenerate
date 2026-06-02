@@ -8,10 +8,13 @@ factory PostIndicatorTypeCreateResponse.fromJson(Map<String, dynamic> json) { re
   message: json['message'] as String,
 ); }
 
+/// Example: `'account:123:DOMAIN'`
 final String durableObjectId;
 
+/// Example: `'DOMAIN'`
 final String indicatorType;
 
+/// Example: `'Indicator type created successfully'`
 final String message;
 
 Map<String, dynamic> toJson() { return {

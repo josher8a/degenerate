@@ -33,11 +33,15 @@ final RulesetsRuleEnabled? enabled;
 final RulesetsRuleExposedCredentialCheck? exposedCredentialCheck;
 
 /// The expression defining which traffic will match the rule.
+/// 
+/// Example: `'ip.src eq 1.1.1.1'`
 final String? expression;
 
 final RulesetsRuleId? id;
 
 /// The timestamp of when the rule was last modified.
+/// 
+/// Example: `'2000-01-01T00:00:00.000000Z'`
 final DateTime lastUpdated;
 
 final RulesetsRuleLogging? logging;
@@ -45,9 +49,13 @@ final RulesetsRuleLogging? logging;
 final RulesetsRuleRatelimit? ratelimit;
 
 /// The reference of the rule (the rule's ID by default).
+/// 
+/// Example: `'my_ref'`
 final String? ref;
 
 /// The version of the rule.
+/// 
+/// Example: `'1'`
 final String version;
 
 Map<String, dynamic> toJson() { return {

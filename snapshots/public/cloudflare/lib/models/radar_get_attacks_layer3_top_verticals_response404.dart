@@ -6,6 +6,7 @@ factory RadarGetAttacksLayer3TopVerticalsResponse404.fromJson(Map<String, dynami
   error: json['error'] as String,
 ); }
 
+/// Example: `'Not Found.'`
 final String error;
 
 Map<String, dynamic> toJson() { return {

@@ -12,6 +12,8 @@ factory Variant3Text.fromJson(Map<String, dynamic> json) { return Variant3Text(
 final CustomTextFormatParamType type;
 
 /// A string of text to classify.
+/// 
+/// Example: `'I want to kill them'`
 final String text;
 
 Map<String, dynamic> toJson() { return {

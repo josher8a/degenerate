@@ -11,6 +11,8 @@ factory ZeroTrustGatewayExtendedEmailMatching.fromJson(Map<String, dynamic> json
 ); }
 
 /// Specify whether to match all variants of user emails (with + or . modifiers) used as criteria in Firewall policies.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 /// Indicate that this setting was shared via the Orgs API and read only for the current account.
@@ -20,6 +22,8 @@ final bool? readOnly;
 final String? sourceAccount;
 
 /// Indicate the version number of the setting.
+/// 
+/// Example: `1`
 final int? version;
 
 Map<String, dynamic> toJson() { return {

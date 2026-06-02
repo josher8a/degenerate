@@ -7,6 +7,8 @@ factory DeleteIpProfileResponseResult.fromJson(Map<String, dynamic> json) { retu
 ); }
 
 /// ID of the deleted Device IP profile.
+/// 
+/// Example: `'f70ff985-a4ef-4643-bbbc-4a0ed4fc8415'`
 final String? id;
 
 Map<String, dynamic> toJson() { return {

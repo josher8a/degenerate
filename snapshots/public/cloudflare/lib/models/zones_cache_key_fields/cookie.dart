@@ -12,10 +12,14 @@ factory Cookie.fromJson(Map<String, dynamic> json) { return Cookie(
 /// A list of cookies to check for the presence of, without
 /// including their actual values.
 /// 
+/// 
+/// Example: `[foo, bar]`
 final List<String>? checkPresence;
 
 /// A list of cookies to include.
 /// 
+/// 
+/// Example: `[foo, bar]`
 final List<String>? include;
 
 Map<String, dynamic> toJson() { return {

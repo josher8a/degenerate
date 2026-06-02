@@ -9,12 +9,16 @@ factory AaaSilenceCreateRequest.fromJson(Map<String, dynamic> json) { return Aaa
 ); }
 
 /// When the silence ends.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final String? endTime;
 
 /// The unique identifier of a notification policy
 final AaaPolicyId? policyId;
 
 /// When the silence starts.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final String? startTime;
 
 Map<String, dynamic> toJson() { return {

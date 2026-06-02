@@ -26,6 +26,7 @@ final EmailSecurityScannableFolder? folder;
 
 final String? integrationId;
 
+/// Example: `[192.0.2.0/24, 2001:db8::/32]`
 final List<String> ipRestrictions;
 
 final int? lookbackHops;

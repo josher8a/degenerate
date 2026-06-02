@@ -8,9 +8,13 @@ factory AccessCustomClaimsSupport.fromJson(Map<String, dynamic> json) { return A
 ); }
 
 /// Custom claims
+/// 
+/// Example: `[email_verified, preferred_username, custom_claim_name]`
 final List<String>? claims;
 
 /// The claim name for email in the id_token response.
+/// 
+/// Example: `'custom_claim_name'`
 final String? emailClaimName;
 
 Map<String, dynamic> toJson() { return {

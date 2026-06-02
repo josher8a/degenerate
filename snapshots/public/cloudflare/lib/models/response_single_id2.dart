@@ -16,6 +16,8 @@ final List<CacheMessages2> messages;
 final CacheResult result;
 
 /// Indicates the API call's success or failure.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

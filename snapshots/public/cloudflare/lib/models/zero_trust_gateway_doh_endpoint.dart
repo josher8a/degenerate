@@ -9,11 +9,15 @@ factory ZeroTrustGatewayDohEndpoint.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// Indicate whether the DOH endpoint is enabled for this location.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 final List<ZeroTrustGatewayIpNetwork>? networks;
 
 /// Specify whether the DOH endpoint requires user identity authentication.
+/// 
+/// Example: `true`
 final bool? requireToken;
 
 Map<String, dynamic> toJson() { return {

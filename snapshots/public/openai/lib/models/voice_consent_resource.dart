@@ -15,6 +15,8 @@ factory VoiceConsentResource.fromJson(Map<String, dynamic> json) { return VoiceC
 final VoiceConsentDeletedResourceObject object;
 
 /// The consent recording identifier.
+/// 
+/// Example: `'cons_1234'`
 final String id;
 
 /// The label provided when the consent recording was uploaded.

@@ -13,6 +13,8 @@ factory D1TimeTravelRestoreResponse.fromJson(Map<String, dynamic> json) { return
 final D1TimeTravelBookmark? bookmark;
 
 /// A message describing the result of the restore operation.
+/// 
+/// Example: `'Database restored successfully'`
 final String? message;
 
 /// A bookmark representing a specific state of the database at a specific point in time.

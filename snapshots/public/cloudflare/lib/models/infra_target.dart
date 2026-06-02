@@ -11,9 +11,13 @@ factory InfraTarget.fromJson(Map<String, dynamic> json) { return InfraTarget(
 ); }
 
 /// Date and time at which the target was created
+/// 
+/// Example: `'2019-08-24T14:15:22Z'`
 final DateTime createdAt;
 
 /// A non-unique field that refers to a target
+/// 
+/// Example: `'infra-access-target'`
 final String hostname;
 
 final InfraTargetId id;
@@ -21,6 +25,8 @@ final InfraTargetId id;
 final InfraIpInfo ip;
 
 /// Date and time at which the target was modified
+/// 
+/// Example: `'2019-08-24T14:15:22Z'`
 final DateTime modifiedAt;
 
 Map<String, dynamic> toJson() { return {

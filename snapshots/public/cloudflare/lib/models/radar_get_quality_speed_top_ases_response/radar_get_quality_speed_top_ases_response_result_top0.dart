@@ -15,24 +15,34 @@ factory RadarGetQualitySpeedTopAsesResponseResultTop0.fromJson(Map<String, dynam
   rankPower: (json['rankPower'] as num).toDouble(),
 ); }
 
+/// Example: `'642.509004'`
 final String bandwidthDownload;
 
+/// Example: `'300.672274'`
 final String bandwidthUpload;
 
+/// Example: `33353`
 final double clientAsn;
 
+/// Example: `'SIE-CGEI-ASN-1'`
 final String clientAsName;
 
+/// Example: `'2.956908'`
 final String jitterIdle;
 
+/// Example: `'19.500469'`
 final String jitterLoaded;
 
+/// Example: `'15.925'`
 final String latencyIdle;
 
+/// Example: `'65.65'`
 final String latencyLoaded;
 
+/// Example: `13123`
 final double numTests;
 
+/// Example: `0.77`
 final double rankPower;
 
 Map<String, dynamic> toJson() { return {

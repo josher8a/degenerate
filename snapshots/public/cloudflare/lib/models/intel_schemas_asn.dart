@@ -59,6 +59,7 @@ final IntelAsnDescription? description;
 
 final int? domainCount;
 
+/// Example: `[example.com]`
 final List<String>? topDomains;
 
 /// Infrastructure type of this ASN.

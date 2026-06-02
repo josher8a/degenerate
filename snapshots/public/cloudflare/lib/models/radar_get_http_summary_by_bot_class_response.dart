@@ -9,6 +9,7 @@ factory RadarGetHttpSummaryByBotClassResponse.fromJson(Map<String, dynamic> json
 
 final RadarGetHttpSummaryByBotClassResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

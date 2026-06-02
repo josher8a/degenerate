@@ -8,10 +8,13 @@ factory RealtimekitPagingResponsePaging.fromJson(Map<String, dynamic> json) { re
   totalCount: (json['total_count'] as num).toDouble(),
 ); }
 
+/// Example: `30`
 final double endOffset;
 
+/// Example: `1`
 final double startOffset;
 
+/// Example: `30`
 final double totalCount;
 
 Map<String, dynamic> toJson() { return {

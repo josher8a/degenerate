@@ -9,6 +9,7 @@ factory PropertiesDatasets.fromJson(Map<String, dynamic> json) { return Properti
 
 final DatasetsItems items;
 
+/// Example: `'array'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

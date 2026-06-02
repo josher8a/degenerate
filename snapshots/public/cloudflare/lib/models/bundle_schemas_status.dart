@@ -9,9 +9,13 @@ factory BundleSchemasStatus.fromJson(Map<String, dynamic> json) { return BundleS
 ); }
 
 /// Defines the last modification date (ISO 8601) of the Content Scanning status.
+/// 
+/// Example: `'2024-12-02T09:57:23.150259Z'`
 final String? modified;
 
 /// Defines the status of Content Scanning.
+/// 
+/// Example: `'enabled'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

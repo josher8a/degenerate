@@ -27,6 +27,8 @@ final String id;
 final DateTime modifiedOn;
 
 /// The prefix in CIDR format.
+/// 
+/// Example: `'192.0.2.0/24'`
 final String prefix;
 
 Map<String, dynamic> toJson() { return {

@@ -9,6 +9,7 @@ factory TargetIndustries.fromJson(Map<String, dynamic> json) { return TargetIndu
 
 final AttackersProperties properties;
 
+/// Example: `'object'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

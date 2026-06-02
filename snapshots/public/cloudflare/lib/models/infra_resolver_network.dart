@@ -9,6 +9,7 @@ factory InfraResolverNetwork.fromJson(Map<String, dynamic> json) { return InfraR
 
 final List<String>? resolverIps;
 
+/// Example: `'0191dce4-9ab4-7fce-b660-8e5dec5172da'`
 final String tunnelId;
 
 Map<String, dynamic> toJson() { return {

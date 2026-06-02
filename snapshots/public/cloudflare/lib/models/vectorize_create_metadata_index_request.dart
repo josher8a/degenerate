@@ -11,6 +11,8 @@ factory VectorizeCreateMetadataIndexRequest.fromJson(Map<String, dynamic> json) 
 final IndexType indexType;
 
 /// Specifies the metadata property to index.
+/// 
+/// Example: `'random_metadata_property'`
 final String propertyName;
 
 Map<String, dynamic> toJson() { return {

@@ -10,14 +10,18 @@ factory ListFilesResponse.fromJson(Map<String, dynamic> json) { return ListFiles
   hasMore: json['has_more'] as bool,
 ); }
 
+/// Example: `'list'`
 final String object;
 
 final List<OpenAiFile> data;
 
+/// Example: `'file-abc123'`
 final String firstId;
 
+/// Example: `'file-abc456'`
 final String lastId;
 
+/// Example: `false`
 final bool hasMore;
 
 Map<String, dynamic> toJson() { return {

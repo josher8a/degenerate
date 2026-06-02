@@ -39,6 +39,8 @@ final ZonesCacheOnCookieId? id;
 /// The regular expression to use for matching cookie names in the
 /// request.
 /// 
+/// 
+/// Example: `'bypass=.*|PHPSESSID=.*'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

@@ -10,12 +10,18 @@ factory AccessMfaConfig.fromJson(Map<String, dynamic> json) { return AccessMfaCo
 ); }
 
 /// Lists the MFA methods that users can authenticate with.
+/// 
+/// Example: `[totp, biometrics, security_key]`
 final List<AllowedAuthenticators>? allowedAuthenticators;
 
 /// Indicates whether to disable MFA for this resource. This option is available at the application and policy level.
+/// 
+/// Example: `false`
 final bool? mfaDisabled;
 
 /// Defines the duration of an MFA session. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days). Examples:`5m` or `24h`.
+/// 
+/// Example: `'24h'`
 final String? sessionDuration;
 
 Map<String, dynamic> toJson() { return {

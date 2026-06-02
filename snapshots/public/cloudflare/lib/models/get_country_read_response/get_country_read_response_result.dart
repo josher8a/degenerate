@@ -7,8 +7,10 @@ factory GetCountryReadResponseResult.fromJson(Map<String, dynamic> json) { retur
   name: json['name'] as String,
 ); }
 
+/// Example: `'AF'`
 final String alpha3;
 
+/// Example: `'Afghanistan'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

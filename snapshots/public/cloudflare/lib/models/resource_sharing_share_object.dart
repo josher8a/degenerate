@@ -34,18 +34,26 @@ final ResourceSharingAccountId accountId;
 final ResourceSharingAccountName accountName;
 
 /// The number of recipients in the 'associated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+/// 
+/// Example: `10`
 final int? associatedRecipientCount;
 
 /// The number of recipients in the 'associating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+/// 
+/// Example: `1`
 final int? associatingRecipientCount;
 
 /// When the share was created.
 final ResourceSharingCreated created;
 
 /// The number of recipients in the 'disassociated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+/// 
+/// Example: `0`
 final int? disassociatedRecipientCount;
 
 /// The number of recipients in the 'disassociating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+/// 
+/// Example: `0`
 final int? disassociatingRecipientCount;
 
 /// Share identifier tag.

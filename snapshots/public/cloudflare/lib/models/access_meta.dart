@@ -9,9 +9,13 @@ factory AccessMeta.fromJson(Map<String, dynamic> json) { return AccessMeta(
 ); }
 
 /// The timestamp of when the SCIM resource was created.
+/// 
+/// Example: `'2025-01-01T00:00:00Z'`
 final DateTime? created;
 
 /// The timestamp of when the SCIM resource was last modified.
+/// 
+/// Example: `'2025-01-02T00:00:00Z'`
 final DateTime? lastModified;
 
 Map<String, dynamic> toJson() { return {

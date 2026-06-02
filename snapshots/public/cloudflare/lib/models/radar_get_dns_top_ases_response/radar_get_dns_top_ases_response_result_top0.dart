@@ -8,11 +8,15 @@ factory RadarGetDnsTopAsesResponseResultTop0.fromJson(Map<String, dynamic> json)
   value: json['value'] as String,
 ); }
 
+/// Example: `174`
 final int clientAsn;
 
+/// Example: `'Cogent-174'`
 final String clientAsName;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String value;
 
 Map<String, dynamic> toJson() { return {

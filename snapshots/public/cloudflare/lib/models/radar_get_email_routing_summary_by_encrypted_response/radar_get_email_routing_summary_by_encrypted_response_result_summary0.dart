@@ -8,9 +8,13 @@ factory RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0.fromJson(Ma
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String encrypted;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String notEncrypted;
 
 Map<String, dynamic> toJson() { return {

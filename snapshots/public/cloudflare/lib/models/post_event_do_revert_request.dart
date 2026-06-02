@@ -6,6 +6,7 @@ factory PostEventDoRevertRequest.fromJson(Map<String, dynamic> json) { return Po
   minutesAgo: (json['minutesAgo'] as num).toDouble(),
 ); }
 
+/// Example: `120`
 final double minutesAgo;
 
 Map<String, dynamic> toJson() { return {

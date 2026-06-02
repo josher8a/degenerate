@@ -7,6 +7,7 @@ factory MagicComponentsSchemasTunnelModifiedResponseResult.fromJson(Map<String, 
   modifiedInterconnect: json['modified_interconnect'] != null ? MagicInterconnect.fromJson(json['modified_interconnect'] as Map<String, dynamic>) : null,
 ); }
 
+/// Example: `true`
 final bool? modified;
 
 final MagicInterconnect? modifiedInterconnect;

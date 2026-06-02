@@ -13,6 +13,8 @@ final List<ResourceSharingV4error> errors;
 final ResponseCommon33Result? result;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

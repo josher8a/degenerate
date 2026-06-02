@@ -11,15 +11,21 @@ factory TunnelIngressRule.fromJson(Map<String, dynamic> json) { return TunnelIng
 ); }
 
 /// Public hostname for this service.
+/// 
+/// Example: `'tunnel.example.com'`
 final String hostname;
 
 final TunnelOriginRequest? originRequest;
 
 /// Requests with this path route to this public hostname.
+/// 
+/// Example: `'subpath'`
 final String? path;
 
 /// Protocol and address of destination server. Supported protocols: http://, https://, unix://, tcp://, ssh://, rdp://, unix+tls://, smb://. Alternatively can return a HTTP status code http_status:`[code]` e.g. 'http_status:404'.
 /// 
+/// 
+/// Example: `'https://localhost:8001'`
 final String service;
 
 Map<String, dynamic> toJson() { return {

@@ -19,32 +19,43 @@ factory LogEntries.fromJson(Map<String, dynamic> json) { return LogEntries(
   time: (json['time'] as num).toDouble(),
 ); }
 
+/// Example: `'VeryHigh'`
 final String initialPriority;
 
+/// Example: `'other'`
 final String initiatorType;
 
+/// Example: `'VeryHigh'`
 final String priority;
 
+/// Example: `'DDC779F0CB3746BAF283EC1A51B0F2F8'`
 final String requestId;
 
+/// Example: `114135.331081`
 final double requestTime;
 
+/// Example: `'document'`
 final String resourceType;
 
 final Map<String,dynamic> cache;
 
+/// Example: `'33'`
 final String connection;
 
+/// Example: `'page_1'`
 final String pageref;
 
 final EntriesRequest request;
 
 final EntriesResponse response;
 
+/// Example: `'2606:2800:220:1:248:1893:25c8:1946'`
 final String serverIpAddress;
 
+/// Example: `'2023-05-03T17:05:13.196Z'`
 final String startedDateTime;
 
+/// Example: `268.64`
 final double time;
 
 Map<String, dynamic> toJson() { return {

@@ -45,6 +45,8 @@ final bool hasEnterpriseZones;
 final bool hasProZones;
 
 /// Identifier of the user.
+/// 
+/// Example: `'6d7f2f5f5b1d4a0e9081fdc98d432fd1'`
 final String? id;
 
 /// User's last name

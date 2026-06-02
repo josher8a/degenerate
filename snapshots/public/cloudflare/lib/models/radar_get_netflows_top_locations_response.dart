@@ -9,6 +9,7 @@ factory RadarGetNetflowsTopLocationsResponse.fromJson(Map<String, dynamic> json)
 
 final RadarGetDnsAs112TopLocationsByDnssecResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

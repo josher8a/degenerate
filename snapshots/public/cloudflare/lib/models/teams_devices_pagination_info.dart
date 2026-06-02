@@ -1,6 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesPaginationInfo {const TeamsDevicesPaginationInfo({required this.count, required this.page, required this.perPage, required this.totalCount, this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
+/// ```json`
+/// {
+///   "count": 1,
+///   "page": 1,
+///   "per_page": 10,
+///   "total_count": 10,
+///   "total_pages": 1
+/// }
+/// ```text
+@immutable final class TeamsDevicesPaginationInfo {const TeamsDevicesPaginationInfo({required this.count, required this.page, required this.perPage, required this.totalCount, this.totalPages, });
 
 factory TeamsDevicesPaginationInfo.fromJson(Map<String, dynamic> json) { return TeamsDevicesPaginationInfo(
   count: (json['count'] as num).toInt(),

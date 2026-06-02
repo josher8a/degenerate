@@ -8,6 +8,8 @@ factory RulesetsExecuteMatchedData.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// The public key to encrypt matched data logs with.
+/// 
+/// Example: `'iGqBmyIUxuWt1rvxoAharN9FUXneUBxA/Y19PyyrEG0='`
 final String publicKey;
 
 Map<String, dynamic> toJson() { return {

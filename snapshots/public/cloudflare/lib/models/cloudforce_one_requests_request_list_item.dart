@@ -18,14 +18,20 @@ factory CloudforceOneRequestsRequestListItem.fromJson(Map<String, dynamic> json)
 ); }
 
 /// Request completion time.
+/// 
+/// Example: `'2024-01-01T00:00:00Z'`
 final CloudforceOneRequestsTime? completed;
 
 /// Request creation time.
+/// 
+/// Example: `'2022-04-01T00:00:00Z'`
 final CloudforceOneRequestsTime created;
 
 final CloudforceOneRequestsUuid id;
 
 /// Tokens for the request messages.
+/// 
+/// Example: `16`
 final int? messageTokens;
 
 final CloudforceOneRequestsPriority priority;
@@ -44,6 +50,8 @@ final CloudforceOneRequestsTlp tlp;
 final int? tokens;
 
 /// Request last updated time.
+/// 
+/// Example: `'2022-04-01T00:00:00Z'`
 final CloudforceOneRequestsTime updated;
 
 Map<String, dynamic> toJson() { return {

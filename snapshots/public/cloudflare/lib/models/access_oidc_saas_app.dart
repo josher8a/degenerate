@@ -22,21 +22,33 @@ factory AccessOidcSaasApp.fromJson(Map<String, dynamic> json) { return AccessOid
 ); }
 
 /// The lifetime of the OIDC Access Token after creation. Valid units are m,h. Must be greater than or equal to 1m and less than or equal to 24h.
+/// 
+/// Example: `'5m'`
 final String? accessTokenLifetime;
 
 /// If client secret should be required on the token endpoint when authorization_code_with_pkce grant is used.
+/// 
+/// Example: `true`
 final bool? allowPkceWithoutClientSecret;
 
 /// The URL where this applications tile redirects users
+/// 
+/// Example: `'https://example.com/login'`
 final String? appLauncherUrl;
 
 /// Identifier of the authentication protocol used for the saas app. Required for OIDC.
+/// 
+/// Example: `'oidc'`
 final AccessOidcSaasAppAuthType? authType;
 
 /// The application client id
+/// 
+/// Example: `'oidc client id'`
 final String? clientId;
 
 /// The application client secret, only returned on POST request.
+/// 
+/// Example: `'oidc client secret'`
 final String? clientSecret;
 
 final AccessTimestamp? createdAt;
@@ -44,22 +56,32 @@ final AccessTimestamp? createdAt;
 final List<AccessOidcSaasAppCustomClaims>? customClaims;
 
 /// The OIDC flows supported by this application
+/// 
+/// Example: `[authorization_code]`
 final List<GrantTypes>? grantTypes;
 
 /// A regex to filter Cloudflare groups returned in ID token and userinfo endpoint
+/// 
+/// Example: `'^GROUP_FILTER-*$'`
 final String? groupFilterRegex;
 
 final HybridAndImplicitOptions? hybridAndImplicitOptions;
 
 /// The Access public certificate that will be used to verify your identity.
+/// 
+/// Example: `'example unique name'`
 final String? publicKey;
 
 /// The permitted URL's for Cloudflare to return Authorization codes and Access/ID tokens
+/// 
+/// Example: `[https://example.com]`
 final List<String>? redirectUris;
 
 final RefreshTokenOptions? refreshTokenOptions;
 
 /// Define the user information shared with access, "offline_access" scope will be automatically enabled if refresh tokens are enabled
+/// 
+/// Example: `[openid, groups, email, profile]`
 final List<AccessOidcSaasAppScopes>? scopes;
 
 final AccessTimestamp? updatedAt;

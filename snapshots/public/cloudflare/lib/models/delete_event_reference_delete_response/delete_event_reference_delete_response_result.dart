@@ -6,6 +6,7 @@ factory DeleteEventReferenceDeleteResponseResult.fromJson(Map<String, dynamic> j
   success: json['success'] as bool,
 ); }
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

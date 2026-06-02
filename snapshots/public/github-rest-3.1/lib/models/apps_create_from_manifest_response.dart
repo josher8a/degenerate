@@ -49,6 +49,18 @@ final DateTime createdAt;
 final DateTime updatedAt;
 
 /// The set of permissions for the GitHub app
+/// 
+/// The set of permissions for the GitHub app
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "issues": "read",
+///   "deployments": "write"
+/// }
+/// ```text
+/// 
+/// Example: `{issues: read, deployments: write}`
 final AppsCreateFromManifestResponsePermissions permissions;
 
 /// The list of events for the GitHub app. Note that the `installation_target`, `security_advisory`, and `meta` events are not included because they are global events and not specific to an installation.

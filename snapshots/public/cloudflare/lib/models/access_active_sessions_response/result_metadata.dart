@@ -12,12 +12,16 @@ factory ResultMetadata.fromJson(Map<String, dynamic> json) { return ResultMetada
 
 final Map<String,AppsValue>? apps;
 
+/// Example: `1694813506.0`
 final int? expires;
 
+/// Example: `1694791905.0`
 final int? iat;
 
+/// Example: `'X1aXj1lFVcqqyoXF'`
 final String? nonce;
 
+/// Example: `21600`
 final int? ttl;
 
 Map<String, dynamic> toJson() { return {

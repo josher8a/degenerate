@@ -1,6 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_blocked_sender_id.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';@immutable final class EmailSecurityCreateBlockedSenderResponseResult {const EmailSecurityCreateBlockedSenderResponseResult({required this.isRegex, required this.pattern, required this.patternType, required this.createdAt, required this.id, required this.lastModified, this.comments, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_blocked_sender_id.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';/// Example:
+/// ```json`
+/// {
+///   "comments": "block sender with email test@example.com",
+///   "created_at": "2023-11-14T22:13:20Z",
+///   "id": 2402,
+///   "is_regex": false,
+///   "last_modified": "2023-11-14T22:13:20Z",
+///   "pattern": "test@example.com",
+///   "pattern_type": "EMAIL"
+/// }
+/// ```text
+@immutable final class EmailSecurityCreateBlockedSenderResponseResult {const EmailSecurityCreateBlockedSenderResponseResult({required this.isRegex, required this.pattern, required this.patternType, required this.createdAt, required this.id, required this.lastModified, this.comments, });
 
 factory EmailSecurityCreateBlockedSenderResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateBlockedSenderResponseResult(
   comments: json['comments'] as String?,

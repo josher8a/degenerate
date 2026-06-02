@@ -12,6 +12,8 @@ factory AaaAuditLogs2Zone.fromJson(Map<String, dynamic> json) { return AaaAuditL
 final String? id;
 
 /// A string that identifies the zone name.
+/// 
+/// Example: `'example.com'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

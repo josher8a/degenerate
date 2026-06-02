@@ -20,30 +20,43 @@ factory IpsIp.fromJson(Map<String, dynamic> json) { return IpsIp(
   subdivision2Name: json['subdivision2Name'] as String,
 ); }
 
+/// Example: `'15133'`
 final String asn;
 
+/// Example: `'EDGECAST'`
 final String asnDescription;
 
+/// Example: `'US'`
 final String asnLocationAlpha2;
 
+/// Example: `'EDGECAST'`
 final String asnName;
 
+/// Example: `'Edgecast Inc.'`
 final String asnOrgName;
 
+/// Example: `'North America'`
 final String continent;
 
+/// Example: `'6252001'`
 final String geonameId;
 
+/// Example: `'2606:2800:220:1:248:1893:25c8:1946'`
 final String ip;
 
+/// Example: `'IPv6'`
 final String ipVersion;
 
+/// Example: `'39.76'`
 final String latitude;
 
+/// Example: `'US'`
 final String locationAlpha2;
 
+/// Example: `'United States'`
 final String locationName;
 
+/// Example: `'-98.5'`
 final String longitude;
 
 final String subdivision1Name;

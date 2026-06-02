@@ -8,6 +8,8 @@ factory AccessEveryoneRule.fromJson(Map<String, dynamic> json) { return AccessEv
 ); }
 
 /// An empty object which matches on all users.
+/// 
+/// Example: `{}`
 final Map<String,dynamic> everyone;
 
 Map<String, dynamic> toJson() { return {

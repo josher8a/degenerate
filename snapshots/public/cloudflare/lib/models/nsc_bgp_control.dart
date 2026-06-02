@@ -12,6 +12,8 @@ factory NscBgpControl.fromJson(Map<String, dynamic> json) { return NscBgpControl
 final int customerAsn;
 
 /// Extra set of static prefixes to advertise to the customer's end of the session
+/// 
+/// Example: `'192.168.3.4/31'`
 final List<String> extraPrefixes;
 
 /// MD5 key to use for session authentication.

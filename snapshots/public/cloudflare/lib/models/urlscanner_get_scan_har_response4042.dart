@@ -12,9 +12,13 @@ factory UrlscannerGetScanHarResponse4042.fromJson(Map<String, dynamic> json) { r
 final List<UrlscannerCreateScanBulkResponse400Errors> errors;
 
 /// Scan not found or in progress.
+/// 
+/// Example: `'Scan is not finished yet.'`
 final String message;
 
 /// Status code.
+/// 
+/// Example: `404`
 final int status;
 
 final UrlscannerGetScanDomResponse404Task task;

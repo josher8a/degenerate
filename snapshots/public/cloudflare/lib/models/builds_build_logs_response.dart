@@ -12,6 +12,7 @@ final BuildsCursor? cursor;
 
 final List<List<dynamic>>? lines;
 
+/// Example: `false`
 final bool? truncated;
 
 Map<String, dynamic> toJson() { return {

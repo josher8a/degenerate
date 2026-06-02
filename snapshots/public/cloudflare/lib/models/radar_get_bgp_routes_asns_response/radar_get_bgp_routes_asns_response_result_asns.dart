@@ -21,12 +21,16 @@ final int asn;
 final int coneSize;
 
 /// Alpha-2 code for the AS's registration country.
+/// 
+/// Example: `'US'`
 final String country;
 
 /// Number of IPv4 addresses originated by the AS.
 final int ipv4Count;
 
 /// Number of IPv6 addresses originated by the AS.
+/// 
+/// Example: `'1.21e24'`
 final String ipv6Count;
 
 /// Name of the AS.

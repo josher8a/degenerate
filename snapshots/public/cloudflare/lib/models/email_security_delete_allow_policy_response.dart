@@ -9,10 +9,13 @@ factory EmailSecurityDeleteAllowPolicyResponse.fromJson(Map<String, dynamic> jso
   result: EmailSecurityDeleteAllowPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
 final EmailSecurityDeleteAllowPolicyResponseResult result;

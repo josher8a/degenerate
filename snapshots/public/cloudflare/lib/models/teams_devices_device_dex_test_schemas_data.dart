@@ -1,6 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration object which contains the details for the WARP client to conduct the test.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "host": "https://dash.cloudflare.com",
+///   "kind": "http",
+///   "method": "GET"
+/// }
+/// ```text
 @immutable final class TeamsDevicesDeviceDexTestSchemasData {const TeamsDevicesDeviceDexTestSchemasData({this.host, this.kind, this.method, });
 
 factory TeamsDevicesDeviceDexTestSchemasData.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceDexTestSchemasData(
@@ -10,12 +19,18 @@ factory TeamsDevicesDeviceDexTestSchemasData.fromJson(Map<String, dynamic> json)
 ); }
 
 /// The desired endpoint to test.
+/// 
+/// Example: `'https://dash.cloudflare.com'`
 final String? host;
 
 /// The type of test.
+/// 
+/// Example: `'http'`
 final String? kind;
 
 /// The HTTP request method type.
+/// 
+/// Example: `'GET'`
 final String? method;
 
 Map<String, dynamic> toJson() { return {

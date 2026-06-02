@@ -26,27 +26,41 @@ factory TeamsDevicesPhysicalDevice.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// The number of active registrations for the device. Active registrations are those which haven't been revoked or deleted.
+/// 
+/// Example: `1`
 final int activeRegistrations;
 
 /// Version of the WARP client.
+/// 
+/// Example: `'1.0.0'`
 final String? clientVersion;
 
 /// The RFC3339 timestamp when the device was created.
+/// 
+/// Example: `'2025-02-14T13:17:00Z'`
 final String createdAt;
 
 /// The RFC3339 timestamp when the device was deleted.
+/// 
+/// Example: `'2025-02-14T13:17:00Z'`
 final String? deletedAt;
 
 /// The device operating system.
+/// 
+/// Example: `'linux'`
 final String? deviceType;
 
 /// A string that uniquely identifies the hardware or virtual machine (VM).
 final String? hardwareId;
 
 /// The unique ID of the device.
+/// 
+/// Example: `'fc9ab6ab-3b94-4319-9941-459462b3d73e'`
 final String id;
 
 /// The RFC3339 timestamp when the device was last seen.
+/// 
+/// Example: `'2025-02-14T13:17:00Z'`
 final String? lastSeenAt;
 
 /// The last seen registration for the device.
@@ -56,15 +70,23 @@ final TeamsDevicesRegistrationDetails? lastSeenRegistration;
 final TeamsDevicesUser? lastSeenUser;
 
 /// The device MAC address.
+/// 
+/// Example: `'f5:01:73:cf:12:23'`
 final String? macAddress;
 
 /// The device manufacturer.
+/// 
+/// Example: `'ACME'`
 final String? manufacturer;
 
 /// The model name of the device.
+/// 
+/// Example: `'Mark VII'`
 final String? model;
 
 /// The name of the device.
+/// 
+/// Example: `'My Device'`
 final String name;
 
 /// The device operating system version number.
@@ -75,12 +97,18 @@ final String? osVersionExtra;
 
 /// **Deprecated**: IP information is provided by DEX - see https://developers.cloudflare.com/api/resources/zero_trust/subresources/dex/subresources/fleet_status/subresources/devices/methods/list/
 /// 
+/// 
+/// Example: `'1.1.1.1'`
 final String? publicIp;
 
 /// The device serial number.
+/// 
+/// Example: `'ABS765ASD8A'`
 final String? serialNumber;
 
 /// The RFC3339 timestamp when the device was last updated.
+/// 
+/// Example: `'2025-02-14T13:17:00Z'`
 final String updatedAt;
 
 Map<String, dynamic> toJson() { return {

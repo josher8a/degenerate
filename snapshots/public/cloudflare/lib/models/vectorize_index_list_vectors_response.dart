@@ -12,18 +12,28 @@ factory VectorizeIndexListVectorsResponse.fromJson(Map<String, dynamic> json) { 
 ); }
 
 /// Number of vectors returned in this response
+/// 
+/// Example: `100`
 final int count;
 
 /// When the cursor expires as an ISO8601 string
+/// 
+/// Example: `'2025-08-12T20:32:52.469144957+00:00'`
 final DateTime? cursorExpirationTimestamp;
 
 /// Whether there are more vectors available beyond this response
+/// 
+/// Example: `true`
 final bool isTruncated;
 
 /// Cursor for the next page of results
+/// 
+/// Example: `'suUTaDY5PFUiRweVccnzyt9n75suNPbXHPshvCzue5mHjtj7Letjvzlza9eGj099'`
 final String? nextCursor;
 
 /// Total number of vectors in the index
+/// 
+/// Example: `500`
 final int totalCount;
 
 /// Array of vector items

@@ -11,6 +11,8 @@ factory MetadataIndexes.fromJson(Map<String, dynamic> json) { return MetadataInd
 final IndexType? indexType;
 
 /// Specifies the indexed metadata property.
+/// 
+/// Example: `'random_metadata_property'`
 final String? propertyName;
 
 Map<String, dynamic> toJson() { return {

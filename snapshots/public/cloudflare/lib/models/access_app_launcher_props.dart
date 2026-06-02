@@ -59,8 +59,10 @@ final AccessCustomNonIdentityDenyUrl? customNonIdentityDenyUrl;
 
 final List<String>? customPages;
 
+/// Example: `'authdomain.cloudflareaccess.com'`
 final dynamic domain;
 
+/// Example: `'App Launcher'`
 final dynamic name;
 
 final AccessSchemasSessionDuration? sessionDuration;

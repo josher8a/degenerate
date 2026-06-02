@@ -7,6 +7,7 @@ factory MagicSchemasModifiedTunnelsCollectionResponseResult.fromJson(Map<String,
   modifiedIpsecTunnels: (json['modified_ipsec_tunnels'] as List<dynamic>?)?.map((e) => MagicIpsecTunnel.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Example: `true`
 final bool? modified;
 
 final List<MagicIpsecTunnel>? modifiedIpsecTunnels;

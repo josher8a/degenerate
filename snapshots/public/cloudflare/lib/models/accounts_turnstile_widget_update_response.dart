@@ -14,6 +14,8 @@ final List<TurnstileMessages2> errors;
 final List<TurnstileMessages2> messages;
 
 /// Whether the API call was successful
+/// 
+/// Example: `true`
 final bool success;
 
 final TurnstileWidgetDetail? result;

@@ -10,15 +10,23 @@ factory ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest.fromJson(Map<S
 ); }
 
 /// When set to `true`, all devices associated with the user will be revoked.
+/// 
+/// Example: `true`
 final bool? devices;
 
 /// The email of the user to revoke.
+/// 
+/// Example: `'test@example.com'`
 final String email;
 
 /// The uuid of the user to revoke.
+/// 
+/// Example: `'699d98642c564d2e855e9661899b7252'`
 final String? userUid;
 
 /// When set to `true`, the user will be required to re-authenticate to WARP for all Gateway policies that enforce a WARP client session duration. When `false`, the user’s WARP session will remain active
+/// 
+/// Example: `true`
 final bool? warpSessionReauth;
 
 Map<String, dynamic> toJson() { return {

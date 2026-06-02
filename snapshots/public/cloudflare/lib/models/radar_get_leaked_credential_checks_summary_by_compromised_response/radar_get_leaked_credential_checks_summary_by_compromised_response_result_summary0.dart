@@ -8,9 +8,13 @@ factory RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultSummary0
 ); }
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String clean;
 
 /// A numeric string.
+/// 
+/// Example: `'10'`
 final String compromised;
 
 Map<String, dynamic> toJson() { return {

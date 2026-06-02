@@ -8,9 +8,13 @@ factory NameByIdp.fromJson(Map<String, dynamic> json) { return NameByIdp(
 ); }
 
 /// The UID of the IdP.
+/// 
+/// Example: `'exampleIdPID1'`
 final String? idpId;
 
 /// The name of the IdP provided attribute.
+/// 
+/// Example: `'AttributeName1'`
 final String? sourceName;
 
 Map<String, dynamic> toJson() { return {

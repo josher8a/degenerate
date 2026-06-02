@@ -44,82 +44,120 @@ factory BillingResponseSingleResult.fromJson(Map<String, dynamic> json) { return
   zipcode: json['zipcode'] as String?,
 ); }
 
+/// Example: `'type'`
 final String? accountType;
 
+/// Example: `'123 Main Street'`
 final String? address;
 
+/// Example: `'Apt 1'`
 final String? address2;
 
+/// Example: `0`
 final String? balance;
 
+/// Example: `12`
 final int? cardExpiryMonth;
 
+/// Example: `2099`
 final int? cardExpiryYear;
 
+/// Example: `4242424242424242.0`
 final String? cardNumber;
 
+/// Example: `'Anytown'`
 final String? city;
 
+/// Example: `'Company'`
 final String? company;
 
+/// Example: `'Anycountry'`
 final String? country;
 
+/// Example: `'2014-03-01T12:21:59.3456Z'`
 final DateTime? createdOn;
 
+/// Example: `'sample_data'`
 final String? deviceData;
 
+/// Example: `'2014-03-01T12:21:59.3456Z'`
 final DateTime? editedOn;
 
+/// Example: `'johndoe@gmail.com'`
 final String? enterpriseBillingEmail;
 
+/// Example: `'johndoe@gmail.com'`
 final String? enterprisePrimaryEmail;
 
+/// Example: `'John'`
 final String? firstName;
 
 final ComponentsSchemasIdentifier? id;
 
+/// Example: `false`
 final bool? isPartner;
 
+/// Example: `'Doe'`
 final String? lastName;
 
+/// Example: `'2014-03-01T12:21:59.3456Z'`
 final DateTime? nextBillDate;
 
+/// Example: `'123 Main Street'`
 final String? paymentAddress;
 
+/// Example: `'Apt 1'`
 final String? paymentAddress2;
 
+/// Example: `'Anytown'`
 final String? paymentCity;
 
+/// Example: `'Anycountry'`
 final String? paymentCountry;
 
+/// Example: `'johndoe@gmail.com'`
 final String? paymentEmail;
 
+/// Example: `'John'`
 final String? paymentFirstName;
 
+/// Example: `'gateway'`
 final String? paymentGateway;
 
+/// Example: `'Doe'`
 final String? paymentLastName;
 
+/// Example: `'abc123'`
 final String? paymentNonce;
 
+/// Example: `'state'`
 final String? paymentState;
 
+/// Example: `12345`
 final String? paymentZipcode;
 
+/// Example: `'johndoe@gmail.com'`
 final String? primaryEmail;
 
+/// Example: `'AnyState'`
 final String? state;
 
+/// Example: `'type'`
 final String? taxIdType;
 
+/// Example: `1234567899.0`
 final String? telephone;
 
+/// Example: `false`
 final bool? useLegacy;
 
+/// Example: `1111`
 final String? validationCode;
 
+/// Example: `'GB123456789'`
 final String? vat;
 
+/// Example: `12345`
 final String? zipcode;
 
 Map<String, dynamic> toJson() { return {

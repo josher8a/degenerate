@@ -9,10 +9,13 @@ factory EmailSecurityBatchAllowPoliciesResponse.fromJson(Map<String, dynamic> js
   result: EmailSecurityBatchAllowPoliciesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
 final EmailSecurityBatchAllowPoliciesResponseResult result;

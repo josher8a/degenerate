@@ -9,12 +9,16 @@ factory ShieldOldSchemaUploadLogEvent.fromJson(Map<String, dynamic> json) { retu
 ); }
 
 /// Code that identifies the event that occurred.
+/// 
+/// Example: `28`
 final int code;
 
 /// JSONPath location(s) in the schema where these events were encountered.  See [https://goessner.net/articles/JsonPath/](https://goessner.net/articles/JsonPath/) for JSONPath specification.
 final List<String>? locations;
 
 /// Diagnostic message that describes the event.
+/// 
+/// Example: `'unsupported media type: application/octet-stream'`
 final String? message;
 
 Map<String, dynamic> toJson() { return {

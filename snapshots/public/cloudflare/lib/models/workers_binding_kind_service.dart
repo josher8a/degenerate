@@ -11,14 +11,20 @@ factory WorkersBindingKindService.fromJson(Map<String, dynamic> json) { return W
 ); }
 
 /// Entrypoint to invoke on the target Worker.
+/// 
+/// Example: `'MyHandler'`
 final String? entrypoint;
 
 /// Optional environment if the Worker utilizes one.
+/// 
+/// Example: `'production'`
 final String environment;
 
 final WorkersBindingName name;
 
 /// Name of Worker to bind to.
+/// 
+/// Example: `'my-worker'`
 final String service;
 
 /// The kind of resource that the binding provides.

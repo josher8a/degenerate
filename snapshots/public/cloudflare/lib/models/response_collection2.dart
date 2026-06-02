@@ -16,6 +16,8 @@ final List<AaaAuditLogs2>? result;
 final AaaResultInfo? resultInfo;
 
 /// Indicates whether the API call was successful
+/// 
+/// Example: `true`
 final bool? success;
 
 Map<String, dynamic> toJson() { return {

@@ -77,21 +77,33 @@ factory TeamsDevicesTaniumInputRequest.fromJson(Map<String, dynamic> json) { ret
 ); }
 
 /// Posture Integration ID.
+/// 
+/// Example: `'bc7cbfbb-600a-42e4-8a23-45b5e85f804f'`
 final String connectionId;
 
 /// For more details on eid last seen, refer to the Tanium documentation.
+/// 
+/// Example: `'2023-07-20T23:16:32Z'`
 final String? eidLastSeen;
 
 /// Operator to evaluate risk_level or eid_last_seen.
+/// 
+/// Example: `'>'`
 final TeamsDevicesCrowdstrikeInputRequestOperator? $operator;
 
 /// For more details on risk level, refer to the Tanium documentation.
+/// 
+/// Example: `'low'`
 final RiskLevel? riskLevel;
 
 /// Score Operator.
+/// 
+/// Example: `'>'`
 final ScoreOperator? scoreOperator;
 
 /// For more details on total score, refer to the Tanium documentation.
+/// 
+/// Example: `1`
 final double? totalScore;
 
 Map<String, dynamic> toJson() { return {

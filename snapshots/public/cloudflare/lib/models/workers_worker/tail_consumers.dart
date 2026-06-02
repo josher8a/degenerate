@@ -7,6 +7,8 @@ factory TailConsumers.fromJson(Map<String, dynamic> json) { return TailConsumers
 ); }
 
 /// Name of the consumer Worker.
+/// 
+/// Example: `'my-tail-consumer'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

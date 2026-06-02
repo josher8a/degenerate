@@ -9,12 +9,15 @@ factory EmailSecurityPostReleaseResponse4Xx.fromJson(Map<String, dynamic> json) 
   success: json['success'] as bool,
 ); }
 
+/// Example: `[{code: 7003, message: No route for the URI}]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
 final Map<String,dynamic>? result;
 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

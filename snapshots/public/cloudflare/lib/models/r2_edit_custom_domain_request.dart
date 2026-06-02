@@ -1,6 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_add_custom_domain_request/min_tls.dart';@immutable final class R2EditCustomDomainRequest {const R2EditCustomDomainRequest({this.ciphers, this.enabled, this.minTls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_add_custom_domain_request/min_tls.dart';/// Example:
+/// ```json`
+/// {
+///   "enabled": true,
+///   "minTLS": "1.2"
+/// }
+/// ```text
+@immutable final class R2EditCustomDomainRequest {const R2EditCustomDomainRequest({this.ciphers, this.enabled, this.minTls, });
 
 factory R2EditCustomDomainRequest.fromJson(Map<String, dynamic> json) { return R2EditCustomDomainRequest(
   ciphers: (json['ciphers'] as List<dynamic>?)?.map((e) => e as String).toList(),

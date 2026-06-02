@@ -24,6 +24,7 @@ factory ResultServers.fromJson(Map<String, dynamic> json) { return ResultServers
   updatedTools: (json['updated_tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
+/// Example: `'unauthenticated'`
 final CreateServersRequestAuthType authType;
 
 final DateTime? createdAt;
@@ -32,13 +33,17 @@ final String? createdBy;
 
 final bool defaultDisabled;
 
+/// Example: `'This is one remote mcp server'`
 final String? description;
 
 final String? error;
 
+/// Example: `'https://exmaple.com/mcp'`
 final Uri hostname;
 
 /// server id
+/// 
+/// Example: `'my-mcp-server'`
 final String id;
 
 final DateTime? lastSuccessfulSync;
@@ -49,6 +54,7 @@ final DateTime? modifiedAt;
 
 final String? modifiedBy;
 
+/// Example: `'My MCP Server'`
 final String name;
 
 final bool onBehalf;

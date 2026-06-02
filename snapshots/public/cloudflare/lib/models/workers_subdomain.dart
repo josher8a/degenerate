@@ -8,9 +8,13 @@ factory WorkersSubdomain.fromJson(Map<String, dynamic> json) { return WorkersSub
 ); }
 
 /// Whether the Worker is available on the workers.dev subdomain.
+/// 
+/// Example: `false`
 final bool enabled;
 
 /// Whether the Worker's Preview URLs are available on the workers.dev subdomain.
+/// 
+/// Example: `false`
 final bool previewsEnabled;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,8 @@ factory TeamsDevicesAntivirusInputRequest.fromJson(Map<String, dynamic> json) { 
 ); }
 
 /// Number of days that the antivirus should be updated within.
+/// 
+/// Example: `7`
 final double? updateWindowDays;
 
 Map<String, dynamic> toJson() { return {

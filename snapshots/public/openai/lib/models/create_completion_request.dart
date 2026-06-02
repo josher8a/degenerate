@@ -69,12 +69,16 @@ final int? logprobs;
 /// 
 /// The token count of your prompt plus `max_tokens` cannot exceed the model's context length. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens.
 /// 
+/// 
+/// Example: `16`
 final int? maxTokens;
 
 /// How many completions to generate for each prompt.
 /// 
 /// **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.
 /// 
+/// 
+/// Example: `1`
 final int? n;
 
 /// Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
@@ -101,22 +105,30 @@ final ChatCompletionStreamOptions? streamOptions;
 /// 
 /// This parameter is only supported for `gpt-3.5-turbo-instruct`.
 /// 
+/// 
+/// Example: `'test.'`
 final String? suffix;
 
 /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
 /// 
 /// We generally recommend altering this or `top_p` but not both.
 /// 
+/// 
+/// Example: `1`
 final double? temperature;
 
 /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
 /// 
 /// We generally recommend altering this or `temperature` but not both.
 /// 
+/// 
+/// Example: `1`
 final double? topP;
 
 /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).
 /// 
+/// 
+/// Example: `'user-1234'`
 final String? user;
 
 Map<String, dynamic> toJson() { return {

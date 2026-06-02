@@ -83,6 +83,8 @@ final CcApplicationRolloutActiveGracePeriod? rolloutActiveGracePeriod;
 final CcIso8601Timestamp updatedAt;
 
 /// The current version number of this application. This increments with application rollouts.
+/// 
+/// Example: `1`
 final int version;
 
 Map<String, dynamic> toJson() { return {

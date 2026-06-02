@@ -14,6 +14,8 @@ final List<DnsFirewallMessages2> errors;
 final List<DnsFirewallMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final D1ListDatabasesResponseResultInfo? resultInfo;

@@ -12,6 +12,7 @@ final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
 final Map<String,dynamic> result;
 
+/// Example: `false`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

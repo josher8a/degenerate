@@ -7,6 +7,8 @@ factory EmailCreateSendingSubdomainProperties.fromJson(Map<String, dynamic> json
 ); }
 
 /// The subdomain name. Must be within the zone.
+/// 
+/// Example: `'sub.example.com'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

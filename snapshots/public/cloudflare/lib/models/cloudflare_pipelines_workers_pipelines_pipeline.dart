@@ -15,17 +15,25 @@ factory CloudflarePipelinesWorkersPipelinesPipeline.fromJson(Map<String, dynamic
 final CloudflarePipelinesWorkersPipelinesPipelineDestination destination;
 
 /// Indicates the endpoint URL to send traffic.
+/// 
+/// Example: `'https://123f8a8258064ed892a347f173372359.pipelines.cloudflare.com'`
 final String endpoint;
 
 /// Specifies the pipeline identifier.
+/// 
+/// Example: `'123f8a8258064ed892a347f173372359'`
 final String id;
 
 /// Defines the name of the pipeline.
+/// 
+/// Example: `'sample_pipeline'`
 final String name;
 
 final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource> source;
 
 /// Indicates the version number of last saved configuration.
+/// 
+/// Example: `2`
 final double version;
 
 Map<String, dynamic> toJson() { return {

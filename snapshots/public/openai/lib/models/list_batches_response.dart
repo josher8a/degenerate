@@ -12,8 +12,10 @@ factory ListBatchesResponse.fromJson(Map<String, dynamic> json) { return ListBat
 
 final List<Batch> data;
 
+/// Example: `'batch_abc123'`
 final String? firstId;
 
+/// Example: `'batch_abc456'`
 final String? lastId;
 
 final bool hasMore;

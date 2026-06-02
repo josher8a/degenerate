@@ -8,6 +8,8 @@ factory WorkersUserLimits.fromJson(Map<String, dynamic> json) { return WorkersUs
 ); }
 
 /// The amount of CPU time this Worker can use in milliseconds.
+/// 
+/// Example: `50`
 final int? cpuMs;
 
 Map<String, dynamic> toJson() { return {

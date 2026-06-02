@@ -8,10 +8,13 @@ factory ContentSignal.fromJson(Map<String, dynamic> json) { return ContentSignal
   search: json['search'] as String?,
 ); }
 
+/// Example: `'no'`
 final String? aiInput;
 
+/// Example: `'yes'`
 final String? aiTrain;
 
+/// Example: `'yes'`
 final String? search;
 
 Map<String, dynamic> toJson() { return {

@@ -147,6 +147,7 @@ factory ConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return C
 /// Data source for annotations.
 final DataSource dataSource;
 
+/// Example: `'Cable cut in Tonga'`
 final String description;
 
 final DateTime endDate;

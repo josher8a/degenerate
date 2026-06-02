@@ -7,6 +7,8 @@ factory RealtimekitLivestreamingConfig.fromJson(Map<String, dynamic> json) { ret
 ); }
 
 /// RTMP URL to stream to
+/// 
+/// Example: `'rtmp://a.rtmp.youtube.com/live2'`
 final Uri? rtmpUrl;
 
 Map<String, dynamic> toJson() { return {

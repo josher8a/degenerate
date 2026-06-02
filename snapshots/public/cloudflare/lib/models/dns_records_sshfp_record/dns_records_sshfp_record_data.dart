@@ -10,12 +10,16 @@ factory DnsRecordsSshfpRecordData.fromJson(Map<String, dynamic> json) { return D
 ); }
 
 /// Algorithm.
+/// 
+/// Example: `2`
 final double? algorithm;
 
 /// Fingerprint.
 final String? fingerprint;
 
 /// Type.
+/// 
+/// Example: `1`
 final double? type;
 
 Map<String, dynamic> toJson() { return {

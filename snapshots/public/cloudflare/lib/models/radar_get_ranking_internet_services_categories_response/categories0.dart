@@ -6,6 +6,7 @@ factory Categories0.fromJson(Map<String, dynamic> json) { return Categories0(
   name: json['name'] as String,
 ); }
 
+/// Example: `'Generative AI'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

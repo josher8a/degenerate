@@ -9,6 +9,7 @@ factory BuildsEnvironmentVariablesRequestValue.fromJson(Map<String, dynamic> jso
 
 final BuildsIsSecret isSecret;
 
+/// Example: `'production'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

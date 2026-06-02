@@ -24,9 +24,13 @@ factory PagesSourceConfig.fromJson(Map<String, dynamic> json) { return PagesSour
 final bool deploymentsEnabled;
 
 /// The owner of the repository.
+/// 
+/// Example: `'my-org'`
 final String owner;
 
 /// The owner ID of the repository.
+/// 
+/// Example: `'12345678'`
 final String ownerId;
 
 /// A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
@@ -48,15 +52,21 @@ final List<String> previewBranchIncludes;
 final PreviewDeploymentSetting previewDeploymentSetting;
 
 /// The production branch of the repository.
+/// 
+/// Example: `'main'`
 final String productionBranch;
 
 /// Whether to trigger a production deployment on commits to the production branch.
 final bool productionDeploymentsEnabled;
 
 /// The ID of the repository.
+/// 
+/// Example: `'12345678'`
 final String repoId;
 
 /// The name of the repository.
+/// 
+/// Example: `'my-repo'`
 final String repoName;
 
 Map<String, dynamic> toJson() { return {

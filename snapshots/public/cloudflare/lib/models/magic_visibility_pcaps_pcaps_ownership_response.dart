@@ -46,15 +46,23 @@ final MagicVisibilityPcapsPcapsDestinationConf destinationConf;
 final MagicVisibilityPcapsPcapsOwnershipChallenge filename;
 
 /// The bucket ID associated with the packet captures API.
+/// 
+/// Example: `'9883874ecac311ec8475433579a6bf5f'`
 final String id;
 
 /// The status of the ownership challenge. Can be pending, success or failed.
+/// 
+/// Example: `'success'`
 final MagicVisibilityPcapsPcapsOwnershipResponseStatus status;
 
 /// The RFC 3339 timestamp when the bucket was added to packet captures API.
+/// 
+/// Example: `'2020-01-01T08:00:00Z'`
 final String submitted;
 
 /// The RFC 3339 timestamp when the bucket was validated.
+/// 
+/// Example: `'2020-01-01T08:00:00Z'`
 final String? validated;
 
 Map<String, dynamic> toJson() { return {

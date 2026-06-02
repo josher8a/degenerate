@@ -1,6 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// V4 public API Pagination/Cursor info.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "count": 1,
+///   "cursor": "ais86dftf.asdf7ba8",
+///   "per_page": 10,
+///   "total_count": null
+/// }
+/// ```text
 @immutable final class TeamsDevicesCursorResultInfo {const TeamsDevicesCursorResultInfo({required this.count, required this.cursor, required this.perPage, this.totalCount, });
 
 factory TeamsDevicesCursorResultInfo.fromJson(Map<String, dynamic> json) { return TeamsDevicesCursorResultInfo(

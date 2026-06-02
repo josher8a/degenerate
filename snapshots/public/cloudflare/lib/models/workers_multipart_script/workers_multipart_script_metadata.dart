@@ -28,6 +28,8 @@ final WorkersAssets? assets;
 final List<WorkersBindingItem>? bindings;
 
 /// Name of the uploaded file that contains the script (e.g. the file adding a listener to the `fetch` event). Indicates a `service worker syntax` Worker.
+/// 
+/// Example: `'worker.js'`
 final String? bodyPart;
 
 /// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
@@ -37,6 +39,8 @@ final WorkersCompatibilityDate? compatibilityDate;
 final List<WorkersCompatibilityFlag>? compatibilityFlags;
 
 /// Retain assets which exist for a previously uploaded Worker version; used in lieu of providing a completion token.
+/// 
+/// Example: `false`
 final bool? keepAssets;
 
 /// List of binding types to keep from previous_upload.
@@ -48,6 +52,8 @@ final WorkersLimits? limits;
 final WorkersLogpush? logpush;
 
 /// Name of the uploaded file that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker.
+/// 
+/// Example: `'worker.js'`
 final String? mainModule;
 
 /// Migrations to apply for Durable Objects associated with this Worker.

@@ -9,6 +9,7 @@ factory PropertiesErrors.fromJson(Map<String, dynamic> json) { return Properties
 
 final GetAttackerListResponseItems items;
 
+/// Example: `'array'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

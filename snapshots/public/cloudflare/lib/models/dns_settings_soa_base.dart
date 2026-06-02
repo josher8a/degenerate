@@ -14,24 +14,38 @@ factory DnsSettingsSoaBase.fromJson(Map<String, dynamic> json) { return DnsSetti
 ); }
 
 /// Time in seconds of being unable to query the primary server after which secondary servers should stop serving the zone.
+/// 
+/// Example: `604800`
 final double? expire;
 
 /// The time to live (TTL) for negative caching of records within the zone.
+/// 
+/// Example: `1800`
 final double? minTtl;
 
 /// The primary nameserver, which may be used for outbound zone transfers. If null, a Cloudflare-assigned value will be used.
+/// 
+/// Example: `'kristina.ns.cloudflare.com'`
 final String? mname;
 
 /// Time in seconds after which secondary servers should re-check the SOA record to see if the zone has been updated.
+/// 
+/// Example: `10000`
 final double? refresh;
 
 /// Time in seconds after which secondary servers should retry queries after the primary server was unresponsive.
+/// 
+/// Example: `2400`
 final double? retry;
 
 /// The email address of the zone administrator, with the first label representing the local part of the email address.
+/// 
+/// Example: `'admin.example.com'`
 final String? rname;
 
 /// The time to live (TTL) of the SOA record itself.
+/// 
+/// Example: `3600`
 final double? ttl;
 
 Map<String, dynamic> toJson() { return {

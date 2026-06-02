@@ -9,6 +9,7 @@ factory RadarGetCrawlersSummaryResponse.fromJson(Map<String, dynamic> json) { re
 
 final RadarGetCrawlersSummaryResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

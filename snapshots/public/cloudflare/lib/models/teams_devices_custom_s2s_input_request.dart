@@ -9,12 +9,18 @@ factory TeamsDevicesCustomS2sInputRequest.fromJson(Map<String, dynamic> json) { 
 ); }
 
 /// Posture Integration ID.
+/// 
+/// Example: `'bc7cbfbb-600a-42e4-8a23-45b5e85f804f'`
 final String connectionId;
 
 /// Operator.
+/// 
+/// Example: `'>'`
 final TeamsDevicesCrowdstrikeInputRequestOperator $operator;
 
 /// A value between 0-100 assigned to devices set by the 3rd party posture provider.
+/// 
+/// Example: `100`
 final double score;
 
 Map<String, dynamic> toJson() { return {

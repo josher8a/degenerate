@@ -16,6 +16,8 @@ final List<CachePurgeMessages2> messages;
 final ResponseSingleId5Result? result;
 
 /// Indicates the API call's success or failure.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

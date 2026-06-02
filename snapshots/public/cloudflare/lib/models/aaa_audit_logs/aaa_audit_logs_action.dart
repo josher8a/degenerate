@@ -8,9 +8,13 @@ factory AaaAuditLogsAction.fromJson(Map<String, dynamic> json) { return AaaAudit
 ); }
 
 /// A boolean that indicates if the action attempted was successful.
+/// 
+/// Example: `true`
 final bool? result;
 
 /// A short string that describes the action that was performed.
+/// 
+/// Example: `'change_setting'`
 final String? type;
 
 Map<String, dynamic> toJson() { return {

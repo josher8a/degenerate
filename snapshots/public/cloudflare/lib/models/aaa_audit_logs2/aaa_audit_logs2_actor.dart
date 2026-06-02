@@ -77,15 +77,22 @@ factory AaaAuditLogs2Actor.fromJson(Map<String, dynamic> json) { return AaaAudit
   type: json['type'] != null ? AaaAuditLogs2ActorType.fromJson(json['type'] as String) : null,
 ); }
 
+/// Example: `'dash'`
 final ActorContext? context;
 
 /// The email of the actor who performed the action.
+/// 
+/// Example: `'alice@example.com'`
 final String? email;
 
 /// The ID of the actor who performed the action. If a user performed the action, this will be their User ID.
+/// 
+/// Example: `'f6b5de0326bb5182b8a4840ee01ec774'`
 final String? id;
 
 /// The IP address of the request that performed the action.
+/// 
+/// Example: `'198.41.129.166'`
 final String? ipAddress;
 
 /// Filters by the API token ID when the actor context is an api_token.
@@ -95,6 +102,8 @@ final String? tokenId;
 final String? tokenName;
 
 /// The type of actor.
+/// 
+/// Example: `'user'`
 final AaaAuditLogs2ActorType? type;
 
 Map<String, dynamic> toJson() { return {

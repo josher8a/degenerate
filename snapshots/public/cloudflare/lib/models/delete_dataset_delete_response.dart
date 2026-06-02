@@ -7,8 +7,10 @@ factory DeleteDatasetDeleteResponse.fromJson(Map<String, dynamic> json) { return
   uuid: json['uuid'] as String,
 ); }
 
+/// Example: `'friendly dataset name'`
 final String name;
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
 Map<String, dynamic> toJson() { return {

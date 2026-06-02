@@ -14,8 +14,11 @@ final List<AaaComponentsSchemasMessages2> errors;
 final List<AaaComponentsSchemasMessages2> messages;
 
 /// Whether the API call was successful
+/// 
+/// Example: `true`
 final bool success;
 
+/// Example: `{email: {eligible: true, ready: true, type: email}}`
 final Map<String,List<AaaEligibility>>? result;
 
 Map<String, dynamic> toJson() { return {

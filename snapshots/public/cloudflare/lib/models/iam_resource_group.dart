@@ -11,12 +11,27 @@ factory IamResourceGroup.fromJson(Map<String, dynamic> json) { return IamResourc
 ); }
 
 /// Identifier of the resource group.
+/// 
+/// Example: `'6d7f2f5f5b1d4a0e9081fdc98d432fd1'`
 final String id;
 
 /// Attributes associated to the resource group.
+/// 
+/// Attributes associated to the resource group.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "editable": "false"
+/// }
+/// ```text
+/// 
+/// Example: `{editable: false}`
 final IamPermissionGroupMeta? meta;
 
 /// Name of the resource group.
+/// 
+/// Example: `'com.cloudflare.api.account.eb78d65290b24279ba6f44721b3ea3c4'`
 final String? name;
 
 /// The scope associated to the resource group

@@ -9,12 +9,16 @@ factory PageConsole.fromJson(Map<String, dynamic> json) { return PageConsole(
   url: json['url'] as String?,
 ); }
 
+/// Example: `'network'`
 final String category;
 
+/// Example: `'Failed to load resource: the server responded with a status of 404 (Not Found)'`
 final String text;
 
+/// Example: `'error'`
 final String type;
 
+/// Example: `'http://example.com/favicon.ico'`
 final String? url;
 
 Map<String, dynamic> toJson() { return {

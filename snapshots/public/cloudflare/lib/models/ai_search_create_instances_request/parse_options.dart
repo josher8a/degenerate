@@ -11,6 +11,8 @@ factory ParseOptions.fromJson(Map<String, dynamic> json) { return ParseOptions(
 ); }
 
 /// List of path-to-selector mappings for extracting specific content from crawled pages. Each entry pairs a URL glob pattern with a CSS selector. The first matching path wins. Only the matched HTML fragment is stored and indexed.
+/// 
+/// Example: `[{path: **/blog/**, selector: article .post-body}]`
 final List<ContentSelector>? contentSelector;
 
 final Map<String,String>? includeHeaders;
@@ -18,6 +20,8 @@ final Map<String,String>? includeHeaders;
 final bool includeImages;
 
 /// List of specific sitemap URLs to use for crawling. Only valid when parse_type is 'sitemap'.
+/// 
+/// Example: `[https://example.com/sitemap.xml, https://example.com/blog-sitemap.xml]`
 final List<Uri>? specificSitemaps;
 
 final bool useBrowserRendering;

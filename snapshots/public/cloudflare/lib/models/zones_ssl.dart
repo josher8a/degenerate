@@ -36,6 +36,8 @@ final ZonesSslId? id;
 
 /// The encryption mode that Cloudflare uses to connect to your origin server.
 /// 
+/// 
+/// Example: `'full'`
 final ZonesSslValue? value;
 
 Map<String, dynamic> toJson() { return {

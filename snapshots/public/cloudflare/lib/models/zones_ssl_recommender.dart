@@ -11,6 +11,8 @@ factory ZonesSslRecommender.fromJson(Map<String, dynamic> json) { return ZonesSs
 final ZonesSslRecommenderEnabled? enabled;
 
 /// Enrollment value for SSL/TLS Recommender.
+/// 
+/// Example: `'ssl_recommender'`
 final dynamic id;
 
 Map<String, dynamic> toJson() { return {

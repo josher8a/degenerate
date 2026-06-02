@@ -35,6 +35,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Zones0PatchRequestType($value)'; } 
  }
+/// Example:
+/// ```json`
+/// {
+///   "paused": true
+/// }
+/// ```text
 @immutable final class Zones0PatchRequest {const Zones0PatchRequest({this.paused, this.plan, this.type, this.vanityNameServers, });
 
 factory Zones0PatchRequest.fromJson(Map<String, dynamic> json) { return Zones0PatchRequest(
@@ -62,6 +68,8 @@ final Zones0PatchRequestPlan? plan;
 /// parameter is only available to Enterprise customers or if it has
 /// been explicitly enabled on a zone.
 /// 
+/// 
+/// Example: `'full'`
 final Zones0PatchRequestType? type;
 
 /// An array of domains used for custom name servers. This is only

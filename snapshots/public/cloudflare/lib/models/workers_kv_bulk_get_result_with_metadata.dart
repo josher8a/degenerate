@@ -7,6 +7,8 @@ factory WorkersKvBulkGetResultWithMetadata.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// Requested keys are paired with their values and metadata in an object.
+/// 
+/// Example: `{key1: {expiration: 1577836800.0, metadata: {someMetadataKey: someMetadataValue}, value: value1}, key2: {metadata: {anotherKey: anotherValue}, value: value2}}`
 final Map<String,WorkersKvBulkGetResultWithMetadataValuesValue?>? values;
 
 Map<String, dynamic> toJson() { return {

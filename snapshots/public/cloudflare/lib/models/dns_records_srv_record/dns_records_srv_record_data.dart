@@ -11,14 +11,20 @@ factory DnsRecordsSrvRecordData.fromJson(Map<String, dynamic> json) { return Dns
 ); }
 
 /// The port of the service.
+/// 
+/// Example: `8806`
 final double? port;
 
 final DnsRecordsPriority? priority;
 
 /// A valid hostname.
+/// 
+/// Example: `'example.com'`
 final String? target;
 
 /// The record weight.
+/// 
+/// Example: `5`
 final double? weight;
 
 Map<String, dynamic> toJson() { return {

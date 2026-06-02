@@ -10,14 +10,18 @@ factory ListRunStepsResponse.fromJson(Map<String, dynamic> json) { return ListRu
   hasMore: json['has_more'] as bool,
 ); }
 
+/// Example: `'list'`
 final String object;
 
 final List<RunStepObject> data;
 
+/// Example: `'step_abc123'`
 final String firstId;
 
+/// Example: `'step_abc456'`
 final String lastId;
 
+/// Example: `false`
 final bool hasMore;
 
 Map<String, dynamic> toJson() { return {

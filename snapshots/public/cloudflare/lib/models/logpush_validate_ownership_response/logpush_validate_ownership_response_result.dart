@@ -6,6 +6,7 @@ factory LogpushValidateOwnershipResponseResult.fromJson(Map<String, dynamic> jso
   valid: json['valid'] as bool?,
 ); }
 
+/// Example: `true`
 final bool? valid;
 
 Map<String, dynamic> toJson() { return {

@@ -11,12 +11,18 @@ factory DnsRecordsDnskeyRecordData.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// Algorithm.
+/// 
+/// Example: `5`
 final double? algorithm;
 
 /// Flags.
+/// 
+/// Example: `1`
 final double? flags;
 
 /// Protocol.
+/// 
+/// Example: `3`
 final double? protocol;
 
 /// Public Key.

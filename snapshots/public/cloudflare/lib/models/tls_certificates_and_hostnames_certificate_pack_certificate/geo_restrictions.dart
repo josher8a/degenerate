@@ -7,6 +7,7 @@ factory GeoRestrictions.fromJson(Map<String, dynamic> json) { return GeoRestrict
   label: json['label'] != null ? Label.fromJson(json['label'] as String) : null,
 ); }
 
+/// Example: `'us'`
 final Label? label;
 
 Map<String, dynamic> toJson() { return {

@@ -7,6 +7,8 @@ factory PositionVariant2.fromJson(Map<String, dynamic> json) { return PositionVa
 ); }
 
 /// The ID of another rule to place the rule after. An empty value causes the rule to be placed at the bottom.
+/// 
+/// Example: `'5bccdbb2a5142cd25cad8591255bd209'`
 final String? after;
 
 Map<String, dynamic> toJson() { return {

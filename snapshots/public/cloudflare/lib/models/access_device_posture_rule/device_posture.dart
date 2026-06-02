@@ -7,6 +7,8 @@ factory DevicePosture.fromJson(Map<String, dynamic> json) { return DevicePosture
 ); }
 
 /// The ID of a device posture integration.
+/// 
+/// Example: `'aa0a4aab-672b-4bdb-bc33-a59f1130a11f'`
 final String integrationUid;
 
 Map<String, dynamic> toJson() { return {

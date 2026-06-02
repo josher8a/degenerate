@@ -7,6 +7,8 @@ factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCo
 ); }
 
 /// Specifies the desired compression algorithm and format.
+/// 
+/// Example: `'gzip'`
 final CompressionType type;
 
 Map<String, dynamic> toJson() { return {

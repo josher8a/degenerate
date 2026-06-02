@@ -7,6 +7,8 @@ factory RefreshTokenOptions.fromJson(Map<String, dynamic> json) { return Refresh
 ); }
 
 /// How long a refresh token will be valid for after creation. Valid units are m,h,d. Must be longer than 1m.
+/// 
+/// Example: `'30d'`
 final String? lifetime;
 
 Map<String, dynamic> toJson() { return {

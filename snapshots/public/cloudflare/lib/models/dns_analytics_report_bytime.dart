@@ -16,6 +16,8 @@ factory DnsAnalyticsReportBytime.fromJson(Map<String, dynamic> json) { return Dn
 final List<DnsAnalyticsReportBytimeData> data;
 
 /// Number of seconds between current time and last processed event, in another words how many seconds of data could be missing.
+/// 
+/// Example: `60`
 final double dataLag;
 
 /// Maximum results for each metric (object mapping metric names to values). Currently always an empty object.
@@ -27,6 +29,8 @@ final Map<String,dynamic> min;
 final DnsAnalyticsReportBytimeQuery query;
 
 /// Total number of rows in the result.
+/// 
+/// Example: `100`
 final double rows;
 
 /// Total results for metrics across all data (object mapping metric names to values).

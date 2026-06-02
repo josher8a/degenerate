@@ -31,6 +31,21 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Permission($value)'; } 
  }
+/// Example:
+/// ```json`
+/// {
+///   "bucket": "example-bucket",
+///   "objects": [
+///     "example-object"
+///   ],
+///   "parentAccessKeyId": "example-access-key-id",
+///   "permission": "object-read-write",
+///   "prefixes": [
+///     "example-prefix/"
+///   ],
+///   "ttlSeconds": 3600
+/// }
+/// ```text
 @immutable final class R2TempAccessCredsRequest {const R2TempAccessCredsRequest({required this.bucket, required this.parentAccessKeyId, required this.permission, this.objects, this.prefixes, this.ttlSeconds = 900.0, });
 
 factory R2TempAccessCredsRequest.fromJson(Map<String, dynamic> json) { return R2TempAccessCredsRequest(

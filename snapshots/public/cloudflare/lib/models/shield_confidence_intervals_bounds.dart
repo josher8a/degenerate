@@ -9,9 +9,13 @@ factory ShieldConfidenceIntervalsBounds.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// Lower bound for percentile estimate
+/// 
+/// Example: `20.5`
 final double? lower;
 
 /// Upper bound for percentile estimate
+/// 
+/// Example: `30.4`
 final double? upper;
 
 Map<String, dynamic> toJson() { return {

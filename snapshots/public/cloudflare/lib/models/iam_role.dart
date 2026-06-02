@@ -10,11 +10,15 @@ factory IamRole.fromJson(Map<String, dynamic> json) { return IamRole(
 ); }
 
 /// Description of role's permissions.
+/// 
+/// Example: `'Administrative access to the entire Account'`
 final String description;
 
 final IamRoleComponentsSchemasIdentifier id;
 
 /// Role name.
+/// 
+/// Example: `'Account Administrator'`
 final String name;
 
 final IamPermissions permissions;

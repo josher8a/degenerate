@@ -9,6 +9,7 @@ factory RadarGetTrafficAnomaliesTopResponse.fromJson(Map<String, dynamic> json) 
 
 final RadarGetTrafficAnomaliesTopResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

@@ -6,6 +6,7 @@ factory TotalCount.fromJson(Map<String, dynamic> json) { return TotalCount(
   type: json['type'] as String,
 ); }
 
+/// Example: `'number'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

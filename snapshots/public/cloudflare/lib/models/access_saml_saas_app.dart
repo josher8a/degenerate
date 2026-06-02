@@ -19,9 +19,13 @@ factory AccessSamlSaasApp.fromJson(Map<String, dynamic> json) { return AccessSam
 ); }
 
 /// Optional identifier indicating the authentication protocol used for the saas app. Required for OIDC. Default if unset is "saml"
+/// 
+/// Example: `'saml'`
 final AccessOidcSaasAppAuthType? authType;
 
 /// The service provider's endpoint that is responsible for receiving and parsing a SAML assertion.
+/// 
+/// Example: `'https://example.com'`
 final String? consumerServiceUrl;
 
 final AccessTimestamp? createdAt;
@@ -29,29 +33,45 @@ final AccessTimestamp? createdAt;
 final List<AccessSamlSaasAppCustomAttributes>? customAttributes;
 
 /// The URL that the user will be redirected to after a successful login for IDP initiated logins.
+/// 
+/// Example: `'https://example.com'`
 final String? defaultRelayState;
 
 /// The unique identifier for your SaaS application.
+/// 
+/// Example: `'https://example.cloudflareaccess.com'`
 final String? idpEntityId;
 
 /// The format of the name identifier sent to the SaaS application.
+/// 
+/// Example: `'id'`
 final NameIdFormat? nameIdFormat;
 
 /// A [JSONata](https://jsonata.org/) expression that transforms an application's user identities into a NameID value for its SAML assertion. This expression should evaluate to a singular string. The output of this expression can override the `name_id_format` setting.
 /// 
+/// 
+/// Example: `'$substringBefore(email, '@') & '+sandbox@' & $substringAfter(email, '@')'`
 final String? nameIdTransformJsonata;
 
 /// The Access public certificate that will be used to verify your identity.
+/// 
+/// Example: `'example unique name'`
 final String? publicKey;
 
 /// A `[JSONata]` (https://jsonata.org/) expression that transforms an application's user identities into attribute assertions in the SAML response. The expression can transform id, email, name, and groups values. It can also transform fields listed in the saml_attributes or oidc_fields of the identity provider used to authenticate. The output of this expression must be a JSON object.
 /// 
+/// 
+/// Example: `'$ ~>| groups | {'group_name': name} |'`
 final String? samlAttributeTransformJsonata;
 
 /// A globally unique name for an identity or service provider.
+/// 
+/// Example: `'example unique name'`
 final String? spEntityId;
 
 /// The endpoint where your SaaS application will send login requests.
+/// 
+/// Example: `'https://example.cloudflareaccess.com/cdn-cgi/access/sso/saml/b3f58a2b414e0b51d45c8c2af26fccca0e27c63763c426fa52f98dcf0b3b3bfd'`
 final String? ssoEndpoint;
 
 final AccessTimestamp? updatedAt;

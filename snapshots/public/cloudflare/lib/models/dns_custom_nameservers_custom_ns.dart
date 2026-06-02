@@ -54,6 +54,8 @@ final DnsCustomNameserversNsName nsName;
 final DnsCustomNameserversNsSet? nsSet;
 
 /// Verification status of the nameserver.
+/// 
+/// Example: `'verified'`
 final DnsCustomNameserversCustomNsStatus status;
 
 final DnsCustomNameserversSchemasIdentifier zoneTag;

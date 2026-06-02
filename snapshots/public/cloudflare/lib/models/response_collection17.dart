@@ -14,6 +14,8 @@ final List<EmailMessages2> errors;
 final List<EmailMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final D1ListDatabasesResponseResultInfo? resultInfo;

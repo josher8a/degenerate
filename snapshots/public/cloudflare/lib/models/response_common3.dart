@@ -13,6 +13,8 @@ final List<AccessMessages2> errors;
 final List<AccessMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

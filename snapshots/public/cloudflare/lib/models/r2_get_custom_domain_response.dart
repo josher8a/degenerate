@@ -1,6 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_add_custom_domain_request/min_tls.dart';import 'package:pub_cloudflare/models/r2_get_custom_domain_response/r2_get_custom_domain_response_status.dart';@immutable final class R2GetCustomDomainResponse {const R2GetCustomDomainResponse({required this.domain, required this.enabled, required this.status, this.ciphers, this.minTls, this.zoneId, this.zoneName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_add_custom_domain_request/min_tls.dart';import 'package:pub_cloudflare/models/r2_get_custom_domain_response/r2_get_custom_domain_response_status.dart';/// Example:
+/// ```json`
+/// {
+///   "domain": "prefix.example-domain.one.com",
+///   "enabled": false,
+///   "status": {
+///     "ownership": "deactivated",
+///     "ssl": "pending"
+///   },
+///   "zoneId": "36ca64a6d92827b8a6b90be344bb1bfd",
+///   "zoneName": "example-domain.one.com"
+/// }
+/// ```text
+@immutable final class R2GetCustomDomainResponse {const R2GetCustomDomainResponse({required this.domain, required this.enabled, required this.status, this.ciphers, this.minTls, this.zoneId, this.zoneName, });
 
 factory R2GetCustomDomainResponse.fromJson(Map<String, dynamic> json) { return R2GetCustomDomainResponse(
   ciphers: (json['ciphers'] as List<dynamic>?)?.map((e) => e as String).toList(),

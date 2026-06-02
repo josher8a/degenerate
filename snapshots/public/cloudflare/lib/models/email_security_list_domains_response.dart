@@ -10,10 +10,13 @@ factory EmailSecurityListDomainsResponse.fromJson(Map<String, dynamic> json) { r
   resultInfo: EmailSecurityResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
 final List<EmailSecurityDomain> result;

@@ -13,12 +13,16 @@ factory CertificateAuthorityRelated.fromJson(Map<String, dynamic> json) { return
 final CertificateRecordType certificateRecordType;
 
 /// The full name of the certificate authority (CA).
+/// 
+/// Example: `'MULTICERT Advanced Certification Authority 005'`
 final String name;
 
 /// The current revocation status of a Certificate Authority (CA) certificate.
 final RevocationStatus revocationStatus;
 
 /// The SHA-256 fingerprint of the intermediate certificate.
+/// 
+/// Example: `'24EDD4E503A8D3FDB5FFB4AF66C887359901CBE687A5A0760D10A08EED99A7C3'`
 final String sha256Fingerprint;
 
 Map<String, dynamic> toJson() { return {

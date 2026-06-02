@@ -9,12 +9,16 @@ factory TeamsDevicesFallbackDomain.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// A description of the fallback domain, displayed in the client UI.
+/// 
+/// Example: `'Domain bypass for local development'`
 final String? description;
 
 /// A list of IP addresses to handle domain resolution.
 final List<TeamsDevicesIp>? dnsServer;
 
 /// The domain suffix to match when resolving locally.
+/// 
+/// Example: `'example.com'`
 final String suffix;
 
 Map<String, dynamic> toJson() { return {

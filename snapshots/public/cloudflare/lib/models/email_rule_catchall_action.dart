@@ -9,6 +9,8 @@ factory EmailRuleCatchallAction.fromJson(Map<String, dynamic> json) { return Ema
 ); }
 
 /// Type of action for catch-all rule.
+/// 
+/// Example: `'forward'`
 final EmailRuleActionType type;
 
 final List<String>? value;

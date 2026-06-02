@@ -14,6 +14,7 @@ factory DlpNewPredefinedProfile.fromJson(Map<String, dynamic> json) { return Dlp
 
 final bool aiContextEnabled;
 
+/// Example: `5`
 final int? allowedMatchCount;
 
 final String? confidenceThreshold;

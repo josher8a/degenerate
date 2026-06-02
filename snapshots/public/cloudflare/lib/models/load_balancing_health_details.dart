@@ -7,6 +7,32 @@ factory LoadBalancingHealthDetails.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// A list of regions from which to run health checks. Null means every Cloudflare data center.
+/// 
+/// A list of regions from which to run health checks. Null means every Cloudflare data center.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "pool_id": "17b5962d775c646f3f9725cbc7a53df4",
+///   "pop_health": {
+///     "Amsterdam, NL": {
+///       "healthy": true,
+///       "origins": [
+///         {
+///           "2001:DB8::5": {
+///             "failure_reason": "No failures",
+///             "healthy": true,
+///             "response_code": 401,
+///             "rtt": "12.1ms"
+///           }
+///         }
+///       ]
+///     }
+///   }
+/// }
+/// ```text
+/// 
+/// Example: `{pool_id: 17b5962d775c646f3f9725cbc7a53df4, pop_health: {Amsterdam, NL: {healthy: true, origins: [{2001:DB8::5: {failure_reason: No failures, healthy: true, response_code: 401, rtt: 12.1ms}}]}}}`
 final LoadBalancingHealthDetailsResult? result;
 
 Map<String, dynamic> toJson() { return {

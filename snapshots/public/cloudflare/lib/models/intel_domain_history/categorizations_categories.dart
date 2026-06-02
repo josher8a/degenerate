@@ -7,8 +7,10 @@ factory CategorizationsCategories.fromJson(Map<String, dynamic> json) { return C
   name: json['name'] as String?,
 ); }
 
+/// Example: `155`
 final int? id;
 
+/// Example: `'Technology'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

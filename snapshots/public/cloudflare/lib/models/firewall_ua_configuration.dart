@@ -30,9 +30,13 @@ factory FirewallUaConfiguration.fromJson(Map<String, dynamic> json) { return Fir
 ); }
 
 /// The configuration target. You must set the target to `ua` when specifying a user agent in the rule.
+/// 
+/// Example: `'ua'`
 final FirewallUaConfigurationTarget? target;
 
 /// the user agent to exactly match
+/// 
+/// Example: `'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

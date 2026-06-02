@@ -10,6 +10,8 @@ factory WorkersKvKey.fromJson(Map<String, dynamic> json) { return WorkersKvKey(
 ); }
 
 /// The time, measured in number of seconds since the UNIX epoch, at which the key will expire. This property is omitted for keys that will not expire.
+/// 
+/// Example: `1577836800.0`
 final double? expiration;
 
 final WorkersKvAny? metadata;

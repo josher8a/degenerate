@@ -16,6 +16,8 @@ final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
 final ZeroTrustGatewayComponentsSchemasUuid? id;
 
 /// The proxy endpoint kind
+/// 
+/// Example: `'identity'`
 final String kind;
 
 final ZeroTrustGatewayProxyEndpointsComponentsSchemasName name;

@@ -8,6 +8,8 @@ factory ShieldBefore.fromJson(Map<String, dynamic> json) { return ShieldBefore(
 ); }
 
 /// Move rule to before rule with this ID.
+/// 
+/// Example: `'0d9bf70c-92e1-4bb3-9411-34a3bcc59003'`
 final String? before;
 
 Map<String, dynamic> toJson() { return {

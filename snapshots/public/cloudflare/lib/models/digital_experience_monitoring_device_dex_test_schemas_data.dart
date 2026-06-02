@@ -23,6 +23,15 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod($value)'; } 
  }
 /// The configuration object which contains the details for the WARP client to conduct the test.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "host": "https://dash.cloudflare.com",
+///   "kind": "http",
+///   "method": "GET"
+/// }
+/// ```text
 @immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasData {const DigitalExperienceMonitoringDeviceDexTestSchemasData({required this.host, required this.kind, this.method, });
 
 factory DigitalExperienceMonitoringDeviceDexTestSchemasData.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDeviceDexTestSchemasData(
@@ -32,12 +41,18 @@ factory DigitalExperienceMonitoringDeviceDexTestSchemasData.fromJson(Map<String,
 ); }
 
 /// The desired endpoint to test.
+/// 
+/// Example: `'https://dash.cloudflare.com'`
 final String host;
 
 /// The type of test.
+/// 
+/// Example: `'http'`
 final DigitalExperienceMonitoringDeviceDexTestSchemasDataKind kind;
 
 /// The HTTP request method type.
+/// 
+/// Example: `'GET'`
 final DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod? method;
 
 Map<String, dynamic> toJson() { return {

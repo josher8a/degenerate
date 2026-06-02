@@ -7,6 +7,8 @@ factory Params.fromJson(Map<String, dynamic> json) { return Params(
 ); }
 
 /// Name of the parameter.
+/// 
+/// Example: `'customer_name'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

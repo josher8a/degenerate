@@ -1,6 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/build_config.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/pages_project_create_project_request_deployment_configs.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/pages_project_create_project_request_source.dart';@immutable final class PagesProjectUpdateProjectRequest {const PagesProjectUpdateProjectRequest({this.buildConfig, this.deploymentConfigs, this.name, this.productionBranch, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/build_config.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/pages_project_create_project_request_deployment_configs.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/pages_project_create_project_request_source.dart';/// Example:
+/// ```json`
+/// {
+///   "deployment_configs": {
+///     "production": {
+///       "compatibility_date": "2022-01-01",
+///       "compatibility_flags": [
+///         "url_standard"
+///       ],
+///       "env_vars": {
+///         "NODE_VERSION": {
+///           "value": "22"
+///         },
+///         "delete_this_env_var": null,
+///         "secret_var": {
+///           "type": "secret_text",
+///           "value": "A_CMS_API_TOKEN"
+///         }
+///       }
+///     }
+///   }
+/// }
+/// ```text
+@immutable final class PagesProjectUpdateProjectRequest {const PagesProjectUpdateProjectRequest({this.buildConfig, this.deploymentConfigs, this.name, this.productionBranch, this.source, });
 
 factory PagesProjectUpdateProjectRequest.fromJson(Map<String, dynamic> json) { return PagesProjectUpdateProjectRequest(
   buildConfig: json['build_config'] != null ? BuildConfig.fromJson(json['build_config'] as Map<String, dynamic>) : null,
@@ -17,9 +40,13 @@ final BuildConfig? buildConfig;
 final PagesProjectCreateProjectRequestDeploymentConfigs? deploymentConfigs;
 
 /// Name of the project.
+/// 
+/// Example: `'my-pages-app'`
 final String? name;
 
 /// Production branch of the project. Used to identify production deployments.
+/// 
+/// Example: `'main'`
 final String? productionBranch;
 
 /// Configs for the project source control.

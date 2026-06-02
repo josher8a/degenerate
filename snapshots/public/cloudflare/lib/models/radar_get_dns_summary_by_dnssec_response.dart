@@ -9,6 +9,7 @@ factory RadarGetDnsSummaryByDnssecResponse.fromJson(Map<String, dynamic> json) {
 
 final RadarGetDnsSummaryByDnssecResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

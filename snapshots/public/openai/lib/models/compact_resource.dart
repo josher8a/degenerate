@@ -22,6 +22,46 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CompactResourceObject($value)'; } 
  }
+/// Example:
+/// ```json`
+/// {
+///   "id": "resp_001",
+///   "object": "response.compaction",
+///   "output": [
+///     {
+///       "type": "message",
+///       "role": "user",
+///       "content": [
+///         {
+///           "type": "input_text",
+///           "text": "Summarize our launch checklist from last week."
+///         }
+///       ]
+///     },
+///     {
+///       "type": "message",
+///       "role": "user",
+///       "content": [
+///         {
+///           "type": "input_text",
+///           "text": "You are performing a CONTEXT CHECKPOINT COMPACTION..."
+///         }
+///       ]
+///     },
+///     {
+///       "type": "compaction",
+///       "id": "cmp_001",
+///       "encrypted_content": "encrypted-summary"
+///     }
+///   ],
+///   "created_at": 1731459200,
+///   "usage": {
+///     "input_tokens": 42897,
+///     "output_tokens": 12000,
+///     "total_tokens": 54912
+///   }
+/// }
+/// ```text
 @immutable final class CompactResource {const CompactResource({required this.id, required this.output, required this.createdAt, required this.usage, this.object = CompactResourceObject.responseCompaction, });
 
 factory CompactResource.fromJson(Map<String, dynamic> json) { return CompactResource(

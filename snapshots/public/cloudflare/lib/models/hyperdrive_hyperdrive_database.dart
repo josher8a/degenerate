@@ -38,6 +38,8 @@ factory HyperdriveHyperdriveDatabase.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Set the name of your origin database.
+/// 
+/// Example: `'postgres'`
 final String? database;
 
 /// Set the password needed to access your origin database. The API never returns this write-only value.
@@ -46,6 +48,8 @@ final String? password;
 final HyperdriveHyperdriveScheme? scheme;
 
 /// Set the user of your origin database.
+/// 
+/// Example: `'postgres'`
 final String? user;
 
 Map<String, dynamic> toJson() { return {

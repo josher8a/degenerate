@@ -9,12 +9,16 @@ factory RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0.fromJson(Map
   value: (json['value'] as num).toInt(),
 ); }
 
+/// Example: `235`
 final int? fully;
 
+/// Example: `'GPTBot'`
 final String name;
 
+/// Example: `38`
 final int? partially;
 
+/// Example: `273`
 final int value;
 
 Map<String, dynamic> toJson() { return {

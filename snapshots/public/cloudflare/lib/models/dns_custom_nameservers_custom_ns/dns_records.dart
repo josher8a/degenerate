@@ -33,9 +33,13 @@ factory DnsRecords.fromJson(Map<String, dynamic> json) { return DnsRecords(
 ); }
 
 /// DNS record type.
+/// 
+/// Example: `'A'`
 final DnsCustomNameserversCustomNsDnsRecordsType? type;
 
 /// DNS record contents (an IPv4 or IPv6 address).
+/// 
+/// Example: `'1.1.1.1'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

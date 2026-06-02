@@ -14,23 +14,36 @@ factory ZonesZoneMeta.fromJson(Map<String, dynamic> json) { return ZonesZoneMeta
 ); }
 
 /// The zone is only configured for CDN.
+/// 
+/// Example: `true`
 final bool? cdnOnly;
 
 /// Number of Custom Certificates the zone can have.
+/// 
+/// Example: `1`
 final int? customCertificateQuota;
 
 /// The zone is only configured for DNS.
+/// 
+/// Example: `true`
 final bool? dnsOnly;
 
 /// The zone is setup with Foundation DNS.
+/// 
+/// Example: `true`
 final bool? foundationDns;
 
 /// Number of Page Rules a zone can have.
+/// 
+/// Example: `100`
 final int? pageRuleQuota;
 
 /// The zone has been flagged for phishing.
+/// 
+/// Example: `false`
 final bool? phishingDetected;
 
+/// Example: `2`
 final int? step;
 
 Map<String, dynamic> toJson() { return {

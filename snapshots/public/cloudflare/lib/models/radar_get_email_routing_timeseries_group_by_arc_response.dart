@@ -9,6 +9,7 @@ factory RadarGetEmailRoutingTimeseriesGroupByArcResponse.fromJson(Map<String, dy
 
 final RadarGetEmailRoutingTimeseriesGroupByArcResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

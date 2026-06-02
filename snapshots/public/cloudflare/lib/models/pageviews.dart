@@ -12,6 +12,8 @@ factory Pageviews.fromJson(Map<String, dynamic> json) { return Pageviews(
 final int? all;
 
 /// A variable list of key/value pairs representing the search engine and number of hits.
+/// 
+/// Example: `{baidubot: 1345, bingbot: 5372, googlebot: 35272, pingdom: 13435}`
 final Map<String,dynamic>? searchEngine;
 
 Map<String, dynamic> toJson() { return {

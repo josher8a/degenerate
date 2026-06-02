@@ -14,6 +14,8 @@ final List<ShieldMessages2> errors;
 final List<ShieldMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final ShieldPerOperationSetting result;

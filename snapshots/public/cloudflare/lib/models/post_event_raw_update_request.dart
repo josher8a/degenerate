@@ -10,8 +10,10 @@ factory PostEventRawUpdateRequest.fromJson(Map<String, dynamic> json) { return P
 
 final Map<String,dynamic>? data;
 
+/// Example: `'example.com'`
 final String? source;
 
+/// Example: `'amber'`
 final String? tlp;
 
 Map<String, dynamic> toJson() { return {

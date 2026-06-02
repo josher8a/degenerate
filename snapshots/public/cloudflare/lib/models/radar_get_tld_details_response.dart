@@ -9,6 +9,7 @@ factory RadarGetTldDetailsResponse.fromJson(Map<String, dynamic> json) { return 
 
 final RadarGetTldDetailsResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

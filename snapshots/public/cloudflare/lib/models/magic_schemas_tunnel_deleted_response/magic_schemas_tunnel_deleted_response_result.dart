@@ -7,6 +7,7 @@ factory MagicSchemasTunnelDeletedResponseResult.fromJson(Map<String, dynamic> js
   deletedIpsecTunnel: json['deleted_ipsec_tunnel'] != null ? MagicIpsecTunnel.fromJson(json['deleted_ipsec_tunnel'] as Map<String, dynamic>) : null,
 ); }
 
+/// Example: `true`
 final bool? deleted;
 
 final MagicIpsecTunnel? deletedIpsecTunnel;

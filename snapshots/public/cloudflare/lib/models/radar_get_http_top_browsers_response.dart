@@ -9,6 +9,7 @@ factory RadarGetHttpTopBrowsersResponse.fromJson(Map<String, dynamic> json) { re
 
 final RadarGetAttacksLayer3TopIndustriesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

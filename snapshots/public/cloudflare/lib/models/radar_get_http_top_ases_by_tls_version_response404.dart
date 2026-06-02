@@ -6,6 +6,7 @@ factory RadarGetHttpTopAsesByTlsVersionResponse404.fromJson(Map<String, dynamic>
   error: json['error'] as String,
 ); }
 
+/// Example: `'Not Found.'`
 final String error;
 
 Map<String, dynamic> toJson() { return {

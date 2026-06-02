@@ -56,6 +56,19 @@ factory MagicTransitStdDevRttMs.fromJson(num json) => MagicTransitStdDevRttMs(js
 num toJson() => value;
 
 }
+/// Example:
+/// ```json`
+/// {
+///   "asn": "AS13335",
+///   "ip": "1.1.1.1",
+///   "max_latency_ms": 0.034,
+///   "mean_latency_ms": 0.021,
+///   "min_latency_ms": 0.014,
+///   "name": "one.one.one.one",
+///   "packet_count": 3,
+///   "std_dev_latency_ms": 0.011269427669584647
+/// }
+/// ```text
 @immutable final class MagicTransitNodeResult {const MagicTransitNodeResult({this.asn, this.ip, this.labels, this.maxRttMs, this.meanRttMs, this.minRttMs, this.name, this.packetCount, this.stdDevRttMs, });
 
 factory MagicTransitNodeResult.fromJson(Map<String, dynamic> json) { return MagicTransitNodeResult(

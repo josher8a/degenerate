@@ -7,6 +7,8 @@ factory AccessAccessGroupRuleGroup.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// The ID of a previously created Access group.
+/// 
+/// Example: `'aa0a4aab-672b-4bdb-bc33-a59f1130a11f'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

@@ -8,6 +8,8 @@ factory ZeroTrustGatewayProtocolDetection.fromJson(Map<String, dynamic> json) { 
 ); }
 
 /// Specify whether to detect protocols from the initial bytes of client traffic.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 Map<String, dynamic> toJson() { return {

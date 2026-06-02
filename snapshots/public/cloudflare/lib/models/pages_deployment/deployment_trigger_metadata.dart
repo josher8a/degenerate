@@ -11,15 +11,23 @@ factory DeploymentTriggerMetadata.fromJson(Map<String, dynamic> json) { return D
 ); }
 
 /// Where the trigger happened.
+/// 
+/// Example: `'main'`
 final String branch;
 
 /// Whether the deployment trigger commit was dirty.
+/// 
+/// Example: `false`
 final bool commitDirty;
 
 /// Hash of the deployment trigger commit.
+/// 
+/// Example: `'ad9ccd918a81025731e10e40267e11273a263421'`
 final String commitHash;
 
 /// Message of the deployment trigger commit.
+/// 
+/// Example: `'Update index.html'`
 final String commitMessage;
 
 Map<String, dynamic> toJson() { return {

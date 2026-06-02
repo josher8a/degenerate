@@ -9,10 +9,13 @@ factory EmailSecurityGetDisplayNameResponse.fromJson(Map<String, dynamic> json) 
   result: EmailSecurityCreateDisplayNameResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
 final EmailSecurityCreateDisplayNameResponseResult result;

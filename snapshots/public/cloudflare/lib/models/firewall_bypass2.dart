@@ -28,9 +28,12 @@ factory FirewallBypass2.fromJson(Map<String, dynamic> json) { return FirewallByp
   value: json['value'] as String?,
 ); }
 
+/// Example: `'url'`
 final FirewallBypassName? name;
 
 /// The URL to bypass.
+/// 
+/// Example: `'api.example.com/*'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

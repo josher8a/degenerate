@@ -10,6 +10,7 @@ factory UrlscannerGetScanDomResponse404Task.fromJson(Map<String, dynamic> json) 
   visibility: json['visibility'] as String,
 ); }
 
+/// Example: `'Queued'`
 final String status;
 
 final String time;
@@ -18,6 +19,7 @@ final String url;
 
 final String uuid;
 
+/// Example: `'public'`
 final String visibility;
 
 Map<String, dynamic> toJson() { return {

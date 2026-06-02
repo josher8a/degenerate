@@ -9,6 +9,7 @@ factory RadarGetAttacksLayer3TopAttacksResponse.fromJson(Map<String, dynamic> js
 
 final RadarGetAttacksLayer3TopAttacksResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

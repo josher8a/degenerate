@@ -10,6 +10,7 @@ factory IntelApplication.fromJson(Map<String, dynamic> json) { return IntelAppli
 
 final int? id;
 
+/// Example: `'CLOUDFLARE'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

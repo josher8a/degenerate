@@ -11,15 +11,23 @@ factory CertificateLogRelated.fromJson(Map<String, dynamic> json) { return Certi
 ); }
 
 /// A brief description of the certificate log.
+/// 
+/// Example: `'Google 'Argon2024' log'`
 final String description;
 
 /// The end date and time for when the log will stop accepting certificates.
+/// 
+/// Example: `'2025-01-01T00:00:00Z'`
 final DateTime endExclusive;
 
 /// A URL-friendly, kebab-case identifier for the certificate log.
+/// 
+/// Example: `'argon2024'`
 final String slug;
 
 /// The start date and time for when the log starts accepting certificates.
+/// 
+/// Example: `'2024-01-01T00:00:00Z'`
 final DateTime startInclusive;
 
 /// The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html

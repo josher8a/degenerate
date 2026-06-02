@@ -6,6 +6,7 @@ factory RadarPostReportsDatasetDownloadUrlRequest.fromJson(Map<String, dynamic> 
   datasetId: (json['datasetId'] as num).toInt(),
 ); }
 
+/// Example: `3`
 final int datasetId;
 
 Map<String, dynamic> toJson() { return {

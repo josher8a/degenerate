@@ -11,16 +11,21 @@ factory GetEventRawReadResponse.fromJson(Map<String, dynamic> json) { return Get
   tlp: json['tlp'] as String,
 ); }
 
+/// Example: `1234`
 final double accountId;
 
+/// Example: `'1970-01-01'`
 final String created;
 
 final Map<String,dynamic> data;
 
+/// Example: `'1234'`
 final String id;
 
+/// Example: `'https://example.com'`
 final String source;
 
+/// Example: `'amber'`
 final String tlp;
 
 Map<String, dynamic> toJson() { return {

@@ -10,9 +10,13 @@ factory SnippetsSnippet.fromJson(Map<String, dynamic> json) { return SnippetsSni
 ); }
 
 /// Indicates when the snippet was created.
+/// 
+/// Example: `'2000-01-01T00:00:00.000000Z'`
 final DateTime createdOn;
 
 /// Indicates when the snippet was last modified.
+/// 
+/// Example: `'2000-01-01T00:00:00.000000Z'`
 final DateTime? modifiedOn;
 
 final SnippetsSnippetName snippetName;

@@ -28,6 +28,8 @@ final int? cacheTtl;
 final bool collectLogs;
 
 /// gateway id
+/// 
+/// Example: `'my-gateway'`
 final String id;
 
 final int? logManagement;

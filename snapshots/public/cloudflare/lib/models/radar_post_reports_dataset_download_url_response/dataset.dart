@@ -6,6 +6,7 @@ factory Dataset.fromJson(Map<String, dynamic> json) { return Dataset(
   url: json['url'] as String,
 ); }
 
+/// Example: `'https://example.com/download'`
 final String url;
 
 Map<String, dynamic> toJson() { return {

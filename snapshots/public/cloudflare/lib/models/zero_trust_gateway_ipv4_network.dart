@@ -7,6 +7,8 @@ factory ZeroTrustGatewayIpv4Network.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// Specify the IPv4 address or IPv4 CIDR. Limit IPv4 CIDRs to a maximum of /24.
+/// 
+/// Example: `'192.0.2.1/32'`
 final String network;
 
 Map<String, dynamic> toJson() { return {

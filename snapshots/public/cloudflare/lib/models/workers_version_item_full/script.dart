@@ -1,6 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_script_response/named_handlers.dart';@immutable final class Script {const Script({this.etag, this.handlers, this.lastDeployedFrom, this.namedHandlers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_script_response/named_handlers.dart';/// Example:
+/// ```json`
+/// {
+///   "etag": "13a3240e8fb414561b0366813b0b8f42b3e6cfa0d9e70e99835dae83d0d8a794",
+///   "handlers": [
+///     "fetch"
+///   ],
+///   "last_deployed_from": "api",
+///   "named_handlers": [
+///     {
+///       "handlers": [
+///         "fetch"
+///       ],
+///       "name": "MyClass"
+///     }
+///   ]
+/// }
+/// ```text
+@immutable final class Script {const Script({this.etag, this.handlers, this.lastDeployedFrom, this.namedHandlers, });
 
 factory Script.fromJson(Map<String, dynamic> json) { return Script(
   etag: json['etag'] as String?,
@@ -10,15 +28,23 @@ factory Script.fromJson(Map<String, dynamic> json) { return Script(
 ); }
 
 /// Hashed script content
+/// 
+/// Example: `'13a3240e8fb414561b0366813b0b8f42b3e6cfa0d9e70e99835dae83d0d8a794'`
 final String? etag;
 
 /// The names of handlers exported as part of the default export.
+/// 
+/// Example: `[fetch]`
 final List<String>? handlers;
 
 /// The client most recently used to deploy this Worker.
+/// 
+/// Example: `'api'`
 final String? lastDeployedFrom;
 
 /// Named exports, such as Durable Object class implementations and named entrypoints.
+/// 
+/// Example: `[{handlers: [fetch], name: MyClass}]`
 final List<NamedHandlers>? namedHandlers;
 
 Map<String, dynamic> toJson() { return {

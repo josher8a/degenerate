@@ -11,6 +11,8 @@ factory InfraTargetsPutBatchRequest.fromJson(Map<String, dynamic> json) { return
 /// length of 255 characters, supports the use of special characters dash
 /// and period, does not support spaces, and must start and end with an
 /// alphanumeric character.
+/// 
+/// Example: `'infra-access-target'`
 final String hostname;
 
 final InfraIpInfo ip;

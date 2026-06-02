@@ -8,6 +8,8 @@ factory WorkersPlacementInfoNoStatusTargeted3.fromJson(Map<String, dynamic> json
 ); }
 
 /// TCP host and port for targeted placement.
+/// 
+/// Example: `'db.example.com:5432'`
 final String host;
 
 /// Targeted placement mode.

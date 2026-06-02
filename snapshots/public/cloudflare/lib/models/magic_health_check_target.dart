@@ -9,9 +9,13 @@ factory MagicHealthCheckTarget.fromJson(Map<String, dynamic> json) { return Magi
 ); }
 
 /// The effective health check target. If 'saved' is empty, then this field will be populated with the calculated default value on GET requests. Ignored in POST, PUT, and PATCH requests.
+/// 
+/// Example: `'203.0.113.1'`
 final String? effective;
 
 /// The saved health check target. Setting the value to the empty string indicates that the calculated default value will be used.
+/// 
+/// Example: `'203.0.113.1'`
 final String? saved;
 
 Map<String, dynamic> toJson() { return {

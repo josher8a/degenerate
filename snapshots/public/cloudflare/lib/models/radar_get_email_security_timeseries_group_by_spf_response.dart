@@ -9,6 +9,7 @@ factory RadarGetEmailSecurityTimeseriesGroupBySpfResponse.fromJson(Map<String, d
 
 final RadarGetEmailRoutingTimeseriesGroupByArcResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

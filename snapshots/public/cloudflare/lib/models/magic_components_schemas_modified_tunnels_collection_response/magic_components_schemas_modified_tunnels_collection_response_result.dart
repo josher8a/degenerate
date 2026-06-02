@@ -7,6 +7,7 @@ factory MagicComponentsSchemasModifiedTunnelsCollectionResponseResult.fromJson(M
   modifiedInterconnects: (json['modified_interconnects'] as List<dynamic>?)?.map((e) => MagicInterconnect.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
+/// Example: `true`
 final bool? modified;
 
 final List<MagicInterconnect>? modifiedInterconnects;

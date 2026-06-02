@@ -9,6 +9,7 @@ factory PostDosEventCreateBulkWithRelationshipsRequest.fromJson(Map<String, dyna
 
 final List<PostDosEventCreateBulkWithRelationshipsRequestData> data;
 
+/// Example: `'durableObjectName'`
 final String datasetId;
 
 Map<String, dynamic> toJson() { return {

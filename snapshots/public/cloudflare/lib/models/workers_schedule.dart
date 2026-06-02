@@ -10,6 +10,7 @@ factory WorkersSchedule.fromJson(Map<String, dynamic> json) { return WorkersSche
 
 final String? createdOn;
 
+/// Example: `'*/30 * * * *'`
 final String cron;
 
 final String? modifiedOn;

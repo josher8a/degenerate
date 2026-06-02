@@ -8,9 +8,13 @@ factory DnsRecordsDnsResponseZoneUsageResult.fromJson(Map<String, dynamic> json)
 ); }
 
 /// Maximum number of DNS records allowed for the zone. Null if using account-level quota.
+/// 
+/// Example: `200`
 final int? recordQuota;
 
 /// Current number of DNS records in the zone.
+/// 
+/// Example: `150`
 final int? recordUsage;
 
 Map<String, dynamic> toJson() { return {

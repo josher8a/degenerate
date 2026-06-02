@@ -11,18 +11,26 @@ factory CloudforceOneRequestsRequestAssetItem.fromJson(Map<String, dynamic> json
 ); }
 
 /// Defines the asset creation time.
+/// 
+/// Example: `'2022-01-01T00:00:00Z'`
 final CloudforceOneRequestsTime? created;
 
 /// Asset description.
+/// 
+/// Example: `'example description'`
 final String? description;
 
 /// Asset file type.
+/// 
+/// Example: `'docx'`
 final String? fileType;
 
 /// Asset ID.
 final int id;
 
 /// Asset name.
+/// 
+/// Example: `'example.docx'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

@@ -6,6 +6,7 @@ factory DeleteCategoryDeleteResponse.fromJson(Map<String, dynamic> json) { retur
   uuid: json['uuid'] as String,
 ); }
 
+/// Example: `'12345678-1234-1234-1234-1234567890ab'`
 final String uuid;
 
 Map<String, dynamic> toJson() { return {

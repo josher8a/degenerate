@@ -8,6 +8,8 @@ factory ZeroTrustGatewayCertificateSettings.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// Specify the UUID of the certificate used for interception. Ensure the certificate is available at the edge(previously called 'active'). A nil UUID directs Cloudflare to use the Root CA.
+/// 
+/// Example: `'d1b364c5-1311-466e-a194-f0e943e0799f'`
 final String id;
 
 Map<String, dynamic> toJson() { return {

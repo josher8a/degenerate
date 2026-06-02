@@ -9,12 +9,18 @@ factory AccessSchemasSettings.fromJson(Map<String, dynamic> json) { return Acces
 ); }
 
 /// Request client certificates for this hostname in China. Can only be set to true if this zone is china network enabled.
+/// 
+/// Example: `false`
 final bool chinaNetwork;
 
 /// Client Certificate Forwarding is a feature that takes the client cert provided by the eyeball to the edge, and forwards it to the origin as a HTTP header to allow logging on the origin.
+/// 
+/// Example: `true`
 final bool clientCertificateForwarding;
 
 /// The hostname that these settings apply to.
+/// 
+/// Example: `'admin.example.com'`
 final String hostname;
 
 Map<String, dynamic> toJson() { return {

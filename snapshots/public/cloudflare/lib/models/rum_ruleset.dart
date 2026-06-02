@@ -10,10 +10,13 @@ factory RumRuleset.fromJson(Map<String, dynamic> json) { return RumRuleset(
 ); }
 
 /// Whether the ruleset is enabled.
+/// 
+/// Example: `true`
 final bool? enabled;
 
 final RumRulesetIdentifier? id;
 
+/// Example: `'example.com'`
 final String? zoneName;
 
 final RumZoneTag? zoneTag;

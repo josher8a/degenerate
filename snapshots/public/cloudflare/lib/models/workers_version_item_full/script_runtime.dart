@@ -12,18 +12,35 @@ factory ScriptRuntime.fromJson(Map<String, dynamic> json) { return ScriptRuntime
 ); }
 
 /// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
+/// 
+/// Example: `'2022-11-08'`
 final String? compatibilityDate;
 
 /// Flags that enable or disable certain features in the Workers runtime.
 final List<String>? compatibilityFlags;
 
 /// Resource limits for the Worker.
+/// 
+/// Resource limits for the Worker.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "cpu_ms": 50
+/// }
+/// ```text
+/// 
+/// Example: `{cpu_ms: 50}`
 final ScriptRuntimeLimits? limits;
 
 /// The tag of the Durable Object migration that was most recently applied for this Worker.
+/// 
+/// Example: `'v1'`
 final String? migrationTag;
 
 /// Usage model for the Worker invocations.
+/// 
+/// Example: `'standard'`
 final UsageModel? usageModel;
 
 Map<String, dynamic> toJson() { return {

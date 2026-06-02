@@ -62,9 +62,13 @@ factory RulesetsUrlNormalization.fromJson(Map<String, dynamic> json) { return Ru
 ); }
 
 /// The scope of the URL normalization.
+/// 
+/// Example: `'incoming'`
 final RulesetsUrlNormalizationScope scope;
 
 /// The type of URL normalization performed by Cloudflare.
+/// 
+/// Example: `'cloudflare'`
 final RulesetsUrlNormalizationType type;
 
 Map<String, dynamic> toJson() { return {

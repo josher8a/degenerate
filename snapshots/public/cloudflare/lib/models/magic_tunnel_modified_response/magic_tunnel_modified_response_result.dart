@@ -7,6 +7,7 @@ factory MagicTunnelModifiedResponseResult.fromJson(Map<String, dynamic> json) { 
   modifiedGreTunnel: json['modified_gre_tunnel'] != null ? MagicGreTunnel.fromJson(json['modified_gre_tunnel'] as Map<String, dynamic>) : null,
 ); }
 
+/// Example: `true`
 final bool? modified;
 
 final MagicGreTunnel? modifiedGreTunnel;

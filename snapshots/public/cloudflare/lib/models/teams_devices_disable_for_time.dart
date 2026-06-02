@@ -11,18 +11,28 @@ factory TeamsDevicesDisableForTime.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// Override code that is valid for 1 hour.
+/// 
+/// Example: `'9106681'`
 final String? $1;
 
 /// Override code that is valid for 3 hours.
+/// 
+/// Example: `'5356247'`
 final String? $3;
 
 /// Override code that is valid for 6 hours.
+/// 
+/// Example: `'9478972'`
 final String? $6;
 
 /// Override code that is valid for 12 hour2.
+/// 
+/// Example: `'3424359'`
 final String? $12;
 
 /// Override code that is valid for 24 hour.2.
+/// 
+/// Example: `'2887634'`
 final String? $24;
 
 Map<String, dynamic> toJson() { return {

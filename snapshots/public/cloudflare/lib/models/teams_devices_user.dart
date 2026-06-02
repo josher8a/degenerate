@@ -29,6 +29,8 @@ final TeamsDevicesEmail? email;
 final TeamsDevicesComponentsSchemasUuid? id;
 
 /// The enrolled device user's name.
+/// 
+/// Example: `'John Appleseed'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

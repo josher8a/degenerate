@@ -1,6 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/smartshield_smart_shield_settings_patch_body/smartshield_smart_shield_settings_patch_body_cache_reserve.dart';import 'package:pub_cloudflare/models/smartshield_smart_shield_settings_patch_body/smartshield_smart_shield_settings_patch_body_regional_tiered_cache.dart';import 'package:pub_cloudflare/models/smartshield_smart_shield_settings_patch_body/smartshield_smart_shield_settings_patch_body_smart_routing.dart';import 'package:pub_cloudflare/models/smartshield_smart_shield_settings_patch_body/smartshield_smart_shield_settings_patch_body_smart_tiered_cache.dart';/// The patch body for Smart Shield.
+/// 
+/// Example:
+/// ```json`
+/// {
+///   "smart_tiered_cache": {
+///     "value": "on"
+///   }
+/// }
+/// ```text
 @immutable final class SmartshieldSmartShieldSettingsPatchBody {const SmartshieldSmartShieldSettingsPatchBody({this.cacheReserve, this.regionalTieredCache, this.smartRouting, this.smartTieredCache, });
 
 factory SmartshieldSmartShieldSettingsPatchBody.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsPatchBody(

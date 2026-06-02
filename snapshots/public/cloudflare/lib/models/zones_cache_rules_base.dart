@@ -11,6 +11,8 @@ factory ZonesCacheRulesBase.fromJson(Map<String, dynamic> json) { return ZonesCa
 final String id;
 
 /// Last time this setting was modified.
+/// 
+/// Example: `'2014-01-01T05:20:00.12345Z'`
 final DateTime? modifiedOn;
 
 Map<String, dynamic> toJson() { return {

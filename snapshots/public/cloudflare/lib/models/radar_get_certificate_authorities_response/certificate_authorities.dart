@@ -18,27 +18,41 @@ factory CertificateAuthorities.fromJson(Map<String, dynamic> json) { return Cert
 final CertificateRecordType certificateRecordType;
 
 /// The two-letter ISO country code where the CA organization is based.
+/// 
+/// Example: `'PT'`
 final String country;
 
 /// The full country name corresponding to the country code.
+/// 
+/// Example: `'Portugal'`
 final String countryName;
 
 /// The full name of the certificate authority (CA).
+/// 
+/// Example: `'MULTICERT Advanced Certification Authority 005'`
 final String name;
 
 /// The organization that owns and operates the CA.
+/// 
+/// Example: `'MULTICERT'`
 final String owner;
 
 /// The name of the parent/root certificate authority that issued this intermediate certificate.
+/// 
+/// Example: `'MULTICERT Root Certification Authority 01'`
 final String parentName;
 
 /// The SHA-256 fingerprint of the parent certificate.
+/// 
+/// Example: `'24EDD4E503A8D3FDB5FFB4AF66C887359901CBE687A5A0760D10A08EED99A7C3'`
 final String parentSha256Fingerprint;
 
 /// The current revocation status of a Certificate Authority (CA) certificate.
 final RevocationStatus revocationStatus;
 
 /// The SHA-256 fingerprint of the intermediate certificate.
+/// 
+/// Example: `'24EDD4E503A8D3FDB5FFB4AF66C887359901CBE687A5A0760D10A08EED99A7C3'`
 final String sha256Fingerprint;
 
 Map<String, dynamic> toJson() { return {

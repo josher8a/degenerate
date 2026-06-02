@@ -14,12 +14,18 @@ factory DnsRecordsSmimeaRecordData.fromJson(Map<String, dynamic> json) { return 
 final String? certificate;
 
 /// Matching Type.
+/// 
+/// Example: `0`
 final double? matchingType;
 
 /// Selector.
+/// 
+/// Example: `0`
 final double? selector;
 
 /// Usage.
+/// 
+/// Example: `3`
 final double? usage;
 
 Map<String, dynamic> toJson() { return {

@@ -70,32 +70,45 @@ factory PageShieldCookie.fromJson(Map<String, dynamic> json) { return PageShield
   type: PageShieldCookieType.fromJson(json['type'] as String),
 ); }
 
+/// Example: `'cloudflare.com'`
 final String? domainAttribute;
 
+/// Example: `'2021-10-02T09:57:54Z'`
 final DateTime? expiresAttribute;
 
+/// Example: `'2021-08-18T10:51:08Z'`
 final DateTime firstSeenAt;
 
+/// Example: `'blog.cloudflare.com'`
 final String host;
 
+/// Example: `true`
 final bool? httpOnlyAttribute;
 
 final PageShieldId id;
 
+/// Example: `'2021-09-02T09:57:54Z'`
 final DateTime lastSeenAt;
 
+/// Example: `3600`
 final int? maxAgeAttribute;
 
+/// Example: `'session_id'`
 final String name;
 
+/// Example: `[blog.cloudflare.com/page1, blog.cloudflare.com/page2]`
 final List<String>? pageUrls;
 
+/// Example: `'/'`
 final String? pathAttribute;
 
+/// Example: `'strict'`
 final SameSiteAttribute? sameSiteAttribute;
 
+/// Example: `true`
 final bool? secureAttribute;
 
+/// Example: `'first_party'`
 final PageShieldCookieType type;
 
 Map<String, dynamic> toJson() { return {

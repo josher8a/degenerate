@@ -18,6 +18,8 @@ final List<R2DataCatalogNamespaceDetails>? details;
 /// Contains UUIDs for each namespace when return_uuids is true.
 /// The order corresponds to the namespaces array.
 /// 
+/// 
+/// Example: `[0199b999-6869-7383-bb1f-d30e059d5326, 0199b99b-2c88-73b3-8dbb-421e0e8f2757]`
 final List<String>? namespaceUuids;
 
 /// Lists namespaces in the catalog.
@@ -26,6 +28,8 @@ final List<List<String>> namespaces;
 /// Use this opaque token to fetch the next page of results.
 /// A null or absent value indicates the last page.
 /// 
+/// 
+/// Example: `'MSYxNzU5NzU1NTc4NTA0MTk0JjAxOTliOTliLTJjODgtNzNiMy04ZGJiLTQyMWUwZThmMjc1Nw'`
 final String? nextPageToken;
 
 Map<String, dynamic> toJson() { return {

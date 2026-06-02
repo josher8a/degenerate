@@ -8,6 +8,8 @@ factory PagesDeploymentConfigValuesRequestQueueProducersValue.fromJson(Map<Strin
 ); }
 
 /// Name of the Queue.
+/// 
+/// Example: `'some-queue'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

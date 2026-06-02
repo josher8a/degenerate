@@ -58,6 +58,8 @@ final DnsRecordsUriRecordData? data;
 final DnsRecordsPriority? priority;
 
 /// Record type.
+/// 
+/// Example: `'URI'`
 final DnsRecordsUriRecordType? type;
 
 Map<String, dynamic> toJson() { return {

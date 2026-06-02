@@ -11,6 +11,8 @@ factory WorkersBindingKindPlainText.fromJson(Map<String, dynamic> json) { return
 final WorkersBindingName name;
 
 /// The text value to use.
+/// 
+/// Example: `'Hello, world!'`
 final String text;
 
 /// The kind of resource that the binding provides.

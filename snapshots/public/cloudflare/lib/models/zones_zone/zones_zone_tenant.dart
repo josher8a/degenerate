@@ -12,6 +12,8 @@ factory ZonesZoneTenant.fromJson(Map<String, dynamic> json) { return ZonesZoneTe
 final ZonesIdentifier? id;
 
 /// The name of the Tenant account.
+/// 
+/// Example: `'Example Account Name'`
 final String? name;
 
 Map<String, dynamic> toJson() { return {

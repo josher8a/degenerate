@@ -48,6 +48,8 @@ final FirewallEmail? email;
 final FirewallIdentifier? id;
 
 /// Defines the scope of the rule.
+/// 
+/// Example: `'user'`
 final ScopeType? type;
 
 Map<String, dynamic> toJson() { return {

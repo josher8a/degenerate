@@ -9,12 +9,36 @@ factory EmailSecurityGetAllowPolicyResponse.fromJson(Map<String, dynamic> json) 
   result: EmailSecurityCreateAllowPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
+/// Example: `[]`
 final List<EmailSecurityMessage> errors;
 
+/// Example: `[]`
 final List<EmailSecurityMessage> messages;
 
+/// Example: `true`
 final bool success;
 
+/// Example:
+/// ```json`
+/// {
+///   "comments": "Trust all messages send from test@example.com",
+///   "created_at": "2023-11-14T22:13:20Z",
+///   "id": 2401,
+///   "is_acceptable_sender": false,
+///   "is_exempt_recipient": false,
+///   "is_recipient": false,
+///   "is_regex": false,
+///   "is_sender": true,
+///   "is_spoof": false,
+///   "is_trusted_sender": true,
+///   "last_modified": "2023-11-14T22:13:20Z",
+///   "pattern": "test@example.com",
+///   "pattern_type": "EMAIL",
+///   "verify_sender": true
+/// }
+/// ```text
+/// 
+/// Example: `{comments: Trust all messages send from test@example.com, created_at: 2023-11-14T22:13:20Z, id: 2401, is_acceptable_sender: false, is_exempt_recipient: false, is_recipient: false, is_regex: false, is_sender: true, is_spoof: false, is_trusted_sender: true, last_modified: 2023-11-14T22:13:20Z, pattern: test@example.com, pattern_type: EMAIL, verify_sender: true}`
 final EmailSecurityCreateAllowPolicyResponseResult result;
 
 Map<String, dynamic> toJson() { return {

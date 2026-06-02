@@ -12,18 +12,25 @@ factory RadarGetQualitySpeedSummaryResponseResultSummary0.fromJson(Map<String, d
   packetLoss: json['packetLoss'] as String,
 ); }
 
+/// Example: `'83.765201'`
 final String bandwidthDownload;
 
+/// Example: `'39.005561'`
 final String bandwidthUpload;
 
+/// Example: `'25.648713'`
 final String jitterIdle;
 
+/// Example: `'77.462155'`
 final String jitterLoaded;
 
+/// Example: `'83.165385'`
 final String latencyIdle;
 
+/// Example: `'270.561124'`
 final String latencyLoaded;
 
+/// Example: `'1.23705'`
 final String packetLoss;
 
 Map<String, dynamic> toJson() { return {

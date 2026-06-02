@@ -9,9 +9,13 @@ factory QueuesAckMessagesResponseResult.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// The number of messages that were succesfully acknowledged.
+/// 
+/// Example: `5`
 final double? ackCount;
 
 /// The number of messages that were succesfully retried.
+/// 
+/// Example: `5`
 final double? retryCount;
 
 final List<String>? warnings;

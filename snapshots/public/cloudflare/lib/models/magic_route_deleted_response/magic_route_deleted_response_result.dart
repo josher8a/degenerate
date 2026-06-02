@@ -7,6 +7,7 @@ factory MagicRouteDeletedResponseResult.fromJson(Map<String, dynamic> json) { re
   deletedRoute: json['deleted_route'] != null ? MagicRoute.fromJson(json['deleted_route'] as Map<String, dynamic>) : null,
 ); }
 
+/// Example: `true`
 final bool? deleted;
 
 final MagicRoute? deletedRoute;

@@ -8,10 +8,13 @@ factory DeleteEvalResponse.fromJson(Map<String, dynamic> json) { return DeleteEv
   evalId: json['eval_id'] as String,
 ); }
 
+/// Example: `'eval.deleted'`
 final String object;
 
+/// Example: `true`
 final bool deleted;
 
+/// Example: `'eval_abc123'`
 final String evalId;
 
 Map<String, dynamic> toJson() { return {

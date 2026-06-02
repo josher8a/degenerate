@@ -15,6 +15,8 @@ final String? creator;
 final Map<String,dynamic>? metadata;
 
 /// Indicates whether the image can be accessed using only its UID. If set to `true`, a signed token needs to be generated with a signing key to view the image. Returns a new UID on a change. No change if not specified.
+/// 
+/// Example: `true`
 final bool? requireSignedUrLs;
 
 Map<String, dynamic> toJson() { return {

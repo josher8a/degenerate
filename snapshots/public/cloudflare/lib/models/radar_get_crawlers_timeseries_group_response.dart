@@ -9,6 +9,7 @@ factory RadarGetCrawlersTimeseriesGroupResponse.fromJson(Map<String, dynamic> js
 
 final RadarGetCrawlersTimeseriesGroupResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

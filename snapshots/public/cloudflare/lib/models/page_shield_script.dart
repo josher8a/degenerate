@@ -26,6 +26,7 @@ factory PageShieldScript.fromJson(Map<String, dynamic> json) { return PageShield
   urlReportedMalicious: json['url_reported_malicious'] as bool?,
 ); }
 
+/// Example: `'2021-08-18T10:51:10.09615Z'`
 final DateTime addedAt;
 
 /// The cryptomining score of the JavaScript content.
@@ -34,18 +35,22 @@ final PageShieldCryptominingScore? cryptominingScore;
 /// The dataflow score of the JavaScript content.
 final PageShieldDataflowScore? dataflowScore;
 
+/// Example: `false`
 final bool? domainReportedMalicious;
 
 /// The timestamp of when the script was last fetched.
 final PageShieldFetchedAt? fetchedAt;
 
+/// Example: `'blog.cloudflare.com/page'`
 final String? firstPageUrl;
 
+/// Example: `'2021-08-18T10:51:08Z'`
 final DateTime firstSeenAt;
 
 /// The computed hash of the analyzed script.
 final PageShieldHash? hash;
 
+/// Example: `'blog.cloudflare.com'`
 final String host;
 
 /// Identifier
@@ -54,13 +59,16 @@ final PageShieldId id;
 /// The integrity score of the JavaScript content.
 final PageShieldJsIntegrityScore? jsIntegrityScore;
 
+/// Example: `'2021-09-02T09:57:54Z'`
 final DateTime lastSeenAt;
 
 /// The magecart score of the JavaScript content.
 final PageShieldMagecartScore? magecartScore;
 
+/// Example: `[Malware]`
 final List<String>? maliciousDomainCategories;
 
+/// Example: `[Malware]`
 final List<String>? maliciousUrlCategories;
 
 /// The malware score of the JavaScript content.
@@ -69,12 +77,16 @@ final PageShieldMalwareScore? malwareScore;
 /// The obfuscation score of the JavaScript content.
 final PageShieldObfuscationScore? obfuscationScore;
 
+/// Example: `[blog.cloudflare.com/page1, blog.cloudflare.com/page2]`
 final List<String>? pageUrls;
 
+/// Example: `'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js'`
 final String url;
 
+/// Example: `false`
 final bool urlContainsCdnCgiPath;
 
+/// Example: `false`
 final bool? urlReportedMalicious;
 
 Map<String, dynamic> toJson() { return {

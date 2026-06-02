@@ -14,6 +14,8 @@ final List<CcMessages2> errors;
 final List<CcMessages2> messages;
 
 /// Whether the API call was successful.
+/// 
+/// Example: `true`
 final bool success;
 
 final CcAccountRegistryToken result;

@@ -12,18 +12,26 @@ factory CloudforceOneRequestsRequestMessageList.fromJson(Map<String, dynamic> js
 ); }
 
 /// Retrieve mes  ges created after this time.
+/// 
+/// Example: `'2022-01-01T00:00:Z'`
 final CloudforceOneRequestsTime? after;
 
 /// Retrieve messages created before this time.
+/// 
+/// Example: `'2024-01-01T00:00:00Z'`
 final CloudforceOneRequestsTime? before;
 
 /// Page number of results.
 final int page;
 
 /// Number of results per page.
+/// 
+/// Example: `10`
 final int perPage;
 
 /// Field to sort results by.
+/// 
+/// Example: `'created'`
 final String? sortBy;
 
 /// Sort order (asc or desc).

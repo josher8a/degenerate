@@ -9,6 +9,7 @@ factory RadarGetBgpTopAsnsByPrefixesResponse.fromJson(Map<String, dynamic> json)
 
 final RadarGetBgpTopAsnsByPrefixesResponseResult result;
 
+/// Example: `true`
 final bool success;
 
 Map<String, dynamic> toJson() { return {

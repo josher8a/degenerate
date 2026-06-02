@@ -41,6 +41,8 @@ final ZonesBypassCacheOnCookieId? id;
 /// setting](https://developers.cloudflare.com/rules/page-rules/reference/additional-reference/#bypass-cache-on-cookie-setting)
 /// to learn about limited regular expression support.
 /// 
+/// 
+/// Example: `'bypass=.*|PHPSESSID=.*'`
 final String? value;
 
 Map<String, dynamic> toJson() { return {

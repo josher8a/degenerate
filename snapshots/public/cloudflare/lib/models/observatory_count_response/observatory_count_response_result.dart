@@ -7,6 +7,8 @@ factory ObservatoryCountResponseResult.fromJson(Map<String, dynamic> json) { ret
 ); }
 
 /// Number of items affected.
+/// 
+/// Example: `1`
 final double? count;
 
 Map<String, dynamic> toJson() { return {

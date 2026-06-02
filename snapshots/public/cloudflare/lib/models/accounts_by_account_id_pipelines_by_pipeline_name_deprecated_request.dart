@@ -11,6 +11,8 @@ factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequest.fromJson(Map
 final AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination destination;
 
 /// Defines the name of the pipeline.
+/// 
+/// Example: `'sample_pipeline'`
 final String name;
 
 final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource> source;

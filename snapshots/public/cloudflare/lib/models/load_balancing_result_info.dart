@@ -11,18 +11,28 @@ factory LoadBalancingResultInfo.fromJson(Map<String, dynamic> json) { return Loa
 ); }
 
 /// Total number of results on the current page.
+/// 
+/// Example: `20`
 final double? count;
 
 /// Current page within paginated list of results.
+/// 
+/// Example: `1`
 final double? page;
 
 /// Number of results per page.
+/// 
+/// Example: `20`
 final double? perPage;
 
 /// Total results available without any search parameters.
+/// 
+/// Example: `2000`
 final double? totalCount;
 
 /// Total number of pages available.
+/// 
+/// Example: `100`
 final double? totalPages;
 
 Map<String, dynamic> toJson() { return {

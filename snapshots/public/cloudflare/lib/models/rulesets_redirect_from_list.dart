@@ -9,9 +9,13 @@ factory RulesetsRedirectFromList.fromJson(Map<String, dynamic> json) { return Ru
 ); }
 
 /// An expression that evaluates to the list lookup key.
+/// 
+/// Example: `'http.request.full_uri'`
 final String key;
 
 /// The name of the list to match against.
+/// 
+/// Example: `'my_list'`
 final String name;
 
 Map<String, dynamic> toJson() { return {

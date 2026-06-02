@@ -8,6 +8,8 @@ factory RulesetsMessageSource.fromJson(Map<String, dynamic> json) { return Rules
 ); }
 
 /// A JSON pointer to the field that is the source of the message.
+/// 
+/// Example: `'/rules/0/action'`
 final String pointer;
 
 Map<String, dynamic> toJson() { return {

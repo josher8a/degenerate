@@ -10,6 +10,7 @@ factory BuildsCreateBuildTokenRequest.fromJson(Map<String, dynamic> json) { retu
 
 final BuildsBuildTokenName buildTokenName;
 
+/// Example: `'super-secret-token'`
 final String buildTokenSecret;
 
 final BuildsCloudflareTokenId cloudflareTokenId;

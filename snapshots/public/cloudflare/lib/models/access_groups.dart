@@ -18,6 +18,8 @@ factory AccessGroups.fromJson(Map<String, dynamic> json) { return AccessGroups(
 ); }
 
 /// The display name of the SCIM Group resource.
+/// 
+/// Example: `'ALL EMPLOYEES'`
 final String? displayName;
 
 /// The IdP-generated Id of the SCIM resource.
@@ -28,6 +30,8 @@ final AccessId? id;
 final AccessMeta? meta;
 
 /// The list of URIs which indicate the attributes contained within a SCIM resource.
+/// 
+/// Example: `[urn:ietf:params:scim:schemas:core:2.0:Group]`
 final List<String>? schemas;
 
 Map<String, dynamic> toJson() { return {

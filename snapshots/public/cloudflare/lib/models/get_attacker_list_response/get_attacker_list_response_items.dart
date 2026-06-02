@@ -6,6 +6,7 @@ factory GetAttackerListResponseItems.fromJson(Map<String, dynamic> json) { retur
   type: json['type'] as String,
 ); }
 
+/// Example: `'string'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

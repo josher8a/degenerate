@@ -8,10 +8,13 @@ factory ResultOutput.fromJson(Map<String, dynamic> json) { return ResultOutput(
   type: json['type'] as String,
 ); }
 
+/// Example: `true`
 final bool additionalProperties;
 
+/// Example: `'JSON Schema definition for the model's output format'`
 final String description;
 
+/// Example: `'object'`
 final String type;
 
 Map<String, dynamic> toJson() { return {

@@ -8,9 +8,13 @@ factory TeamsDevicesSentineloneS2sConfigRequest.fromJson(Map<String, dynamic> js
 ); }
 
 /// The SentinelOne S2S API URL.
+/// 
+/// Example: `'https://example.sentinelone.net'`
 final String apiUrl;
 
 /// The SentinelOne S2S client secret.
+/// 
+/// Example: `'example client secret'`
 final String clientSecret;
 
 Map<String, dynamic> toJson() { return {

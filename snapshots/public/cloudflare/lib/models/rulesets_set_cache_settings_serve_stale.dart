@@ -8,6 +8,8 @@ factory RulesetsSetCacheSettingsServeStale.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// Whether Cloudflare should disable serving stale content while getting the latest content from the origin.
+/// 
+/// Example: `true`
 final bool? disableStaleWhileUpdating;
 
 Map<String, dynamic> toJson() { return {
