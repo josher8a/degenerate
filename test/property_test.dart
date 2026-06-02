@@ -557,56 +557,51 @@ void main() {
 
   // ─── Randomized spec generation ─────────────────────────
 
-  test('randomized schemas compile', () async {
-    final rng = Random(42);
-    final schemas = <String, Map<String, dynamic>>{};
+  // ─── Edge cases ──────────────────────────────────────────
 
-    for (var i = 0; i < 20; i++) {
-      schemas['Type$i'] = _randomSchema(rng, schemas.keys.toList(), depth: 0);
-    }
+  test('circular references compile', () async {
+    await generateAndAnalyze(_specWith({
+      'TreeNode': {
+        'type': 'object',
+        'properties': {
+          'value': {'type': 'string'},
+          'children': {
+            'type': 'array',
+            'items': {r'$ref': '#/components/schemas/TreeNode'},
+          },
+          'parent': {r'$ref': '#/components/schemas/TreeNode'},
+        },
+      },
+      'LinkedList': {
+        'type': 'object',
+        'properties': {
+          'data': {'type': 'integer'},
+          'next': {r'$ref': '#/components/schemas/LinkedList'},
+        },
+      },
+    }));
+  });
 
-    await generateAndAnalyze(_specWith(schemas), roundtrip: true);
-  }, timeout: const Timeout(Duration(minutes: 2)));
-
-  test('randomized specs with operations compile', () async {
-    final rng = Random(7);
-    final schemas = <String, Map<String, dynamic>>{};
-
-    for (var i = 0; i < 10; i++) {
-      schemas['Model$i'] = _randomSchema(rng, schemas.keys.toList(), depth: 0);
-    }
-
-    final paths = <String, Map<String, dynamic>>{};
-    for (var i = 0; i < 5; i++) {
-      final modelRef = 'Model${rng.nextInt(schemas.length)}';
-      paths['/resource$i/{id}'] = {
-        'get': {
-          'operationId': 'getResource$i',
-          'parameters': [
-            {
-              'name': 'id',
-              'in': 'path',
-              'required': true,
-              'schema': {'type': 'string'},
-            },
-          ],
-          'responses': {
-            '200': {
-              'description': 'OK',
-              'content': {
-                'application/json': {
-                  'schema': {r'$ref': '#/components/schemas/$modelRef'},
-                },
-              },
-            },
-            '400': {
-              'description': 'Bad Request',
-              'content': {
-                'application/json': {
-                  'schema': {
+  test('deeply nested inline types compile', () async {
+    await generateAndAnalyze(_specWith({
+      'Level0': {
+        'type': 'object',
+        'properties': {
+          'l1': {
+            'type': 'object',
+            'properties': {
+              'l2': {
+                'type': 'object',
+                'properties': {
+                  'l3': {
                     'type': 'object',
                     'properties': {
-                      'error': {'type': 'string'},
+                      'l4': {
+                        'type': 'object',
+                        'properties': {
+                          'value': {'type': 'string'},
+                        },
+                      },
                     },
                   },
                 },
@@ -614,16 +609,143 @@ void main() {
             },
           },
         },
-      };
-    }
+      },
+    }), roundtrip: true);
+  });
 
-    await generateAndAnalyze({
-      'openapi': '3.1.0',
-      'info': {'title': 'Random', 'version': '1.0.0'},
-      'paths': paths,
-      'components': {'schemas': schemas},
-    }, roundtrip: true);
-  }, timeout: const Timeout(Duration(minutes: 2)));
+  test('empty schema compiles', () async {
+    await generateAndAnalyze(_specWith({
+      'Empty': {'type': 'object'},
+      'EmptyEnum': {'type': 'string', 'enum': <String>[]},
+      'NoType': {
+        'description': 'A schema with no type field',
+      },
+    }));
+  });
+
+  test('schema with all nullable fields compiles', () async {
+    await generateAndAnalyze(_specWith({
+      'AllNullable': {
+        'type': 'object',
+        'properties': {
+          'a': {'type': ['string', 'null']},
+          'b': {'type': ['integer', 'null']},
+          'c': {'type': ['boolean', 'null']},
+          'd': {
+            'type': ['array', 'null'],
+            'items': {'type': 'string'},
+          },
+          'e': {
+            'type': ['object', 'null'],
+            'additionalProperties': {'type': 'string'},
+          },
+        },
+      },
+    }), roundtrip: true);
+  });
+
+  test('schema with examples and descriptions compiles', () async {
+    await generateAndAnalyze(_specWith({
+      'Documented': {
+        'type': 'object',
+        'description': 'A well-documented type.\n\nWith **markdown** and `code`.',
+        'example': {'name': 'test', 'count': 42},
+        'properties': {
+          'name': {
+            'type': 'string',
+            'description': "It's the name (with 'quotes').",
+            'example': "O'Brien",
+          },
+          'count': {
+            'type': 'integer',
+            'description': 'Contains \$pecial chars and <tags>.',
+            'example': 42,
+          },
+        },
+      },
+    }), roundtrip: true);
+  });
+
+  // ─── Randomized spec generation ─────────────────────────
+
+  for (final seed in [42, 7, 123, 999, 2024]) {
+    test('randomized schemas (seed $seed) compile + roundtrip', () async {
+      final rng = Random(seed);
+      final schemas = <String, Map<String, dynamic>>{};
+
+      for (var i = 0; i < 15; i++) {
+        schemas['Type$i'] =
+            _randomSchema(rng, schemas.keys.toList(), depth: 0);
+      }
+
+      await generateAndAnalyze(
+        _specWith(schemas),
+        name: 'seed_$seed',
+        roundtrip: true,
+      );
+    }, timeout: const Timeout(Duration(minutes: 2)));
+  }
+
+  for (final seed in [11, 77]) {
+    test('randomized specs with operations (seed $seed) compile + roundtrip',
+        () async {
+      final rng = Random(seed);
+      final schemas = <String, Map<String, dynamic>>{};
+
+      for (var i = 0; i < 8; i++) {
+        schemas['Model$i'] =
+            _randomSchema(rng, schemas.keys.toList(), depth: 0);
+      }
+
+      final paths = <String, Map<String, dynamic>>{};
+      for (var i = 0; i < 4; i++) {
+        final modelRef = 'Model${rng.nextInt(schemas.length)}';
+        paths['/resource$i/{id}'] = {
+          'get': {
+            'operationId': 'getResource$i',
+            'parameters': [
+              {
+                'name': 'id',
+                'in': 'path',
+                'required': true,
+                'schema': {'type': 'string'},
+              },
+            ],
+            'responses': {
+              '200': {
+                'description': 'OK',
+                'content': {
+                  'application/json': {
+                    'schema': {r'$ref': '#/components/schemas/$modelRef'},
+                  },
+                },
+              },
+              '400': {
+                'description': 'Bad Request',
+                'content': {
+                  'application/json': {
+                    'schema': {
+                      'type': 'object',
+                      'properties': {
+                        'error': {'type': 'string'},
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        };
+      }
+
+      await generateAndAnalyze({
+        'openapi': '3.1.0',
+        'info': {'title': 'Random', 'version': '1.0.0'},
+        'paths': paths,
+        'components': {'schemas': schemas},
+      }, name: 'seed_ops_$seed', roundtrip: true);
+    }, timeout: const Timeout(Duration(minutes: 2)));
+  }
 }
 
 Map<String, dynamic> _specWith(Map<String, dynamic> schemas) => {
