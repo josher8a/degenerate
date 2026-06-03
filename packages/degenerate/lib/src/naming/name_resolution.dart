@@ -108,8 +108,8 @@ NameResolution resolveNames({
   for (final r in reserved) {
     finalNames[r] = shortMap[r] ?? r;
   }
-  for (final entry in memberToSurvivor.entries) {
-    finalNames[entry.key] = shortMap[entry.value] ?? entry.value;
+  for (final MapEntry(:key, :value) in memberToSurvivor.entries) {
+    finalNames[key] = shortMap[value] ?? value;
   }
   for (final n in allNames) {
     finalNames.putIfAbsent(n, () => n);

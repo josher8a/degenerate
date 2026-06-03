@@ -27,9 +27,8 @@ final class OperationLowerer {
   List<IrApi> lowerPaths(Map<String, dynamic> paths) {
     final grouped = <String, List<IrOperation>>{};
 
-    for (final pathEntry in paths.entries) {
-      final path = pathEntry.key;
-      var pathItem = pathEntry.value;
+    for (final MapEntry(key: path, value: pathItemRaw) in paths.entries) {
+      var pathItem = pathItemRaw;
       if (pathItem is! Map<String, dynamic>) continue;
 
       // Resolve path-item-level $ref (e.g. external file refs).
@@ -79,8 +78,8 @@ final class OperationLowerer {
       final additionalOps =
           pathItem['additionalOperations'] as Map<String, dynamic>?;
       if (additionalOps != null) {
-        for (final entry in additionalOps.entries) {
-          var opMap = entry.value;
+        for (final MapEntry(:key, :value) in additionalOps.entries) {
+          var opMap = value;
           if (opMap is! Map<String, dynamic>) continue;
           if (opMap.containsKey(r'$ref') && _doc != null) {
             final resolved = _doc.resolveRef(opMap[r'$ref'] as String);
@@ -92,7 +91,7 @@ final class OperationLowerer {
           }
           final operation = lowerOperation(
             path,
-            entry.key, // raw method name like "HAUNT", "PURGE"
+            key, // raw method name like "HAUNT", "PURGE"
             opMap,
             pathParameters: pathParameters,
           );
@@ -186,9 +185,8 @@ final class OperationLowerer {
     IrResponse? defaultResponse;
     final rawResponses = op['responses'] as Map<String, dynamic>?;
     if (rawResponses != null) {
-      for (final entry in rawResponses.entries) {
-        final statusKey = entry.key;
-        var responseMap = entry.value;
+      for (final MapEntry(key: statusKey, value: responseMapRaw) in rawResponses.entries) {
+        var responseMap = responseMapRaw;
         if (responseMap is! Map<String, dynamic>) continue;
         // Resolve $ref in responses
         if (responseMap.containsKey(r'$ref') && _doc != null) {
@@ -231,11 +229,11 @@ final class OperationLowerer {
     if (value is! List) return null;
     return value.whereType<Map<String, dynamic>>().map((requirement) {
       final schemes = <String, List<String>>{};
-      for (final entry in requirement.entries) {
-        final scopes = entry.value is List
-            ? (entry.value as List).map((e) => e.toString()).toList()
+      for (final MapEntry(:key, :value) in requirement.entries) {
+        final scopes = value is List
+            ? value.map((e) => e.toString()).toList()
             : const <String>[];
-        schemes[entry.key] = scopes;
+        schemes[key] = scopes;
       }
       return IrSecurityRequirement(schemes);
     }).toList();
@@ -376,12 +374,10 @@ final class OperationLowerer {
     if (content == null) return IrRequestBody({}, isRequired: required);
 
     final irContent = <String, IrMediaType>{};
-    for (final entry in content.entries) {
-      final mediaType = entry.key;
-      final mediaMap = entry.value;
-      if (mediaMap is! Map<String, dynamic>) continue;
+    for (final MapEntry(key: mediaType, :value) in content.entries) {
+      if (value is! Map<String, dynamic>) continue;
 
-      final rawSchema = mediaMap['schema'];
+      final rawSchema = value['schema'];
       if (rawSchema == null) continue;
 
       // Generate a name hint for inline request body schemas.
@@ -415,9 +411,7 @@ final class OperationLowerer {
     final irContent = <String, IrMediaType>{};
 
     if (content != null) {
-      for (final entry in content.entries) {
-        final mediaType = entry.key;
-        final mediaMap = entry.value;
+      for (final MapEntry(key: mediaType, value: mediaMap) in content.entries) {
         if (mediaMap is! Map<String, dynamic>) continue;
 
         final rawSchema = mediaMap['schema'];
@@ -459,9 +453,7 @@ final class OperationLowerer {
     final headers = <IrField>[];
     final rawHeaders = response['headers'] as Map<String, dynamic>?;
     if (rawHeaders != null) {
-      for (final entry in rawHeaders.entries) {
-        final headerName = entry.key;
-        final headerMap = entry.value;
+      for (final MapEntry(key: headerName, value: headerMap) in rawHeaders.entries) {
         if (headerMap is! Map<String, dynamic>) continue;
 
         final rawSchema = headerMap['schema'];

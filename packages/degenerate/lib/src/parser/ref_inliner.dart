@@ -44,18 +44,17 @@ final class RefInliner {
     // First pass: resolve components/schemas entries that are pure external
     // $ref wrappers in place, so they keep their original names.
     final resolvedSchemas = <String, dynamic>{};
-    for (final entry in existingSchemas.entries) {
-      final value = entry.value;
+    for (final MapEntry(:key, :value) in existingSchemas.entries) {
       if (value is Map<String, dynamic> &&
           value.length == 1 &&
           value[r'$ref'] is String &&
           !(value[r'$ref'] as String).startsWith('#/')) {
         // Resolve in place under the original name.
         final ref = value[r'$ref'] as String;
-        final resolved = _resolveAndRegister(ref, _baseDir, {}, entry.key);
-        resolvedSchemas[entry.key] = resolved;
+        final resolved = _resolveAndRegister(ref, _baseDir, {}, key);
+        resolvedSchemas[key] = resolved;
       } else {
-        resolvedSchemas[entry.key] = value;
+        resolvedSchemas[key] = value;
       }
     }
     _usedNames.addAll(resolvedSchemas.keys);
@@ -72,16 +71,15 @@ final class RefInliner {
     final paths = root['paths'] as Map<String, dynamic>?;
     if (paths != null) {
       final resolvedPaths = <String, dynamic>{};
-      for (final entry in paths.entries) {
-        final value = entry.value;
+      for (final MapEntry(:key, :value) in paths.entries) {
         if (value is Map<String, dynamic> &&
             value.length == 1 &&
             value[r'$ref'] is String &&
             !(value[r'$ref'] as String).startsWith('#/')) {
           final ref = value[r'$ref'] as String;
-          resolvedPaths[entry.key] = _inlineExternalRef(ref, _baseDir, {});
+          resolvedPaths[key] = _inlineExternalRef(ref, _baseDir, {});
         } else {
-          resolvedPaths[entry.key] = value;
+          resolvedPaths[key] = value;
         }
       }
       modifiedRoot['paths'] = resolvedPaths;
@@ -170,9 +168,9 @@ final class RefInliner {
 
     // Otherwise, recursively walk all values.
     final result = <String, dynamic>{};
-    for (final entry in map.entries) {
-      result[entry.key] =
-          _walkValue(entry.value, currentDir, ancestors, externalRoot);
+    for (final MapEntry(:key, :value) in map.entries) {
+      result[key] =
+          _walkValue(value, currentDir, ancestors, externalRoot);
     }
     return result;
   }

@@ -153,8 +153,8 @@ final class DiscriminatedUnionEmitter {
     );
 
     // Variant subclasses
-    for (final entry in union.mapping.entries) {
-      specs.addAll(_buildVariant(entry.key, entry.value));
+    for (final MapEntry(:key, :value) in union.mapping.entries) {
+      specs.addAll(_buildVariant(key, value));
     }
 
     // Unknown variant subclass for forward compatibility
@@ -185,9 +185,9 @@ final class DiscriminatedUnionEmitter {
     final params = <Parameter>[];
     final cases = <String>[];
 
-    for (final entry in union.mapping.entries) {
-      final className = _variantClassName(entry.key);
-      final paramName = _variantCtorName(entry.key);
+    for (final MapEntry(:key) in union.mapping.entries) {
+      final className = _variantClassName(key);
+      final paramName = _variantCtorName(key);
       params.add(Parameter(
         (p) => p
           ..name = paramName

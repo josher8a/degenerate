@@ -13,7 +13,7 @@ IrApi rewriteApiNames(IrApi api, String Function(String) rename) {
   List<IrField> hdr(List<IrField> h) =>
       [for (final f in h) f.withType(rewriteTypeNames(f.type, rename))];
   IrResponse resp(IrResponse r) => r.copyWith(
-    content: {for (final e in r.content.entries) e.key: mt(e.value)},
+    content: {for (final MapEntry(:key, :value) in r.content.entries) key: mt(value)},
     headers: hdr(r.headers),
   );
   final ops = [
@@ -27,13 +27,13 @@ IrApi rewriteApiNames(IrApi api, String Function(String) rename) {
             ? null
             : IrRequestBody(
                 {
-                  for (final e in op.requestBody!.content.entries)
-                    e.key: mt(e.value),
+                  for (final MapEntry(:key, :value) in op.requestBody!.content.entries)
+                    key: mt(value),
                 },
                 isRequired: op.requestBody!.isRequired,
               ),
         responses: {
-          for (final e in op.responses.entries) e.key: resp(e.value),
+          for (final MapEntry(:key, :value) in op.responses.entries) key: resp(value),
         },
         defaultResponse:
             op.defaultResponse == null ? null : resp(op.defaultResponse!),
@@ -71,10 +71,10 @@ List<IrApi> resolveApiTypeRefs(
 
       final responses = <int, IrResponse>{};
       var respChanged = false;
-      for (final entry in op.responses.entries) {
-        final resolved = _resolveResponse(resolver, entry.value);
-        if (!identical(resolved, entry.value)) respChanged = true;
-        responses[entry.key] = resolved;
+      for (final MapEntry(:key, :value) in op.responses.entries) {
+        final resolved = _resolveResponse(resolver, value);
+        if (!identical(resolved, value)) respChanged = true;
+        responses[key] = resolved;
       }
       if (respChanged) opChanged = true;
 
@@ -107,19 +107,18 @@ List<IrApi> resolveApiTypeRefs(
 ) {
   var changed = false;
   final result = <String, IrMediaType>{};
-  for (final entry in content.entries) {
-    final mt = entry.value;
-    final resolved = resolver.resolve(mt.schema);
+  for (final MapEntry(:key, :value) in content.entries) {
+    final resolved = resolver.resolve(value.schema);
     final resolvedItem =
-        mt.itemSchema == null ? null : resolver.resolve(mt.itemSchema!);
-    if (!identical(resolved, mt.schema) ||
-        (resolvedItem != null && !identical(resolvedItem, mt.itemSchema))) {
+        value.itemSchema == null ? null : resolver.resolve(value.itemSchema!);
+    if (!identical(resolved, value.schema) ||
+        (resolvedItem != null && !identical(resolvedItem, value.itemSchema))) {
       changed = true;
     }
-    result[entry.key] = IrMediaType(
+    result[key] = IrMediaType(
       resolved,
-      itemSchema: resolvedItem ?? mt.itemSchema,
-      encoding: mt.encoding,
+      itemSchema: resolvedItem ?? value.itemSchema,
+      encoding: value.encoding,
     );
   }
   return (result, changed);

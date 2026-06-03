@@ -48,15 +48,14 @@ final class SchemaNormalizer {
 
     // Pre-scan: find discriminated unions and record which schemas have
     // discriminator properties, so we can emit those fields as String.
-    for (final entry in schemas.entries) {
-      final schema = entry.value;
-      if (schema is! Map<String, dynamic>) continue;
+    for (final MapEntry(:value) in schemas.entries) {
+      if (value is! Map<String, dynamic>) continue;
       // A discriminator can sit on either `oneOf` or `anyOf` (the OpenAPI
       // spec allows both); treat them identically.
       final hasUnion =
-          schema.containsKey('oneOf') || schema.containsKey('anyOf');
-      if (hasUnion && schema.containsKey('discriminator')) {
-        final disc = schema['discriminator'] as Map<String, dynamic>;
+          value.containsKey('oneOf') || value.containsKey('anyOf');
+      if (hasUnion && value.containsKey('discriminator')) {
+        final disc = value['discriminator'] as Map<String, dynamic>;
         final propName = disc['propertyName'] as String;
         final mapping = disc['mapping'] as Map<String, dynamic>?;
         if (mapping != null) {
@@ -67,7 +66,7 @@ final class SchemaNormalizer {
             }
           }
         } else {
-          final variants = (schema['oneOf'] ?? schema['anyOf']) as List;
+          final variants = (value['oneOf'] ?? value['anyOf']) as List;
           for (final variant in variants) {
             if (variant is Map<String, dynamic> &&
                 variant.containsKey(r'$ref')) {
@@ -82,10 +81,10 @@ final class SchemaNormalizer {
     // Pre-scan: compute all name mappings before lowering, so that $ref
     // resolution can find the correct Dart name for any schema regardless
     // of declaration order.
-    for (final entry in schemas.entries) {
-      if (entry.value is! Map<String, dynamic>) continue;
-      final dartName = uniqueTypeName(entry.key, usedNames);
-      nameMapping[entry.key] = dartName;
+    for (final MapEntry(:key, :value) in schemas.entries) {
+      if (value is! Map<String, dynamic>) continue;
+      final dartName = uniqueTypeName(key, usedNames);
+      nameMapping[key] = dartName;
     }
 
     return NormalizationContext(

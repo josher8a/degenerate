@@ -23,22 +23,22 @@ bool isJsonLikeMediaType(String mediaType) {
 /// form-urlencoded > application/octet-stream > first entry.
 (String, IrMediaType)? preferredContent(Map<String, IrMediaType> content) {
   if (content.isEmpty) return null;
-  for (final entry in content.entries) {
-    if (isJsonLikeMediaType(entry.key)) return (entry.key, entry.value);
+  for (final MapEntry(:key, :value) in content.entries) {
+    if (isJsonLikeMediaType(key)) return (key, value);
   }
-  for (final entry in content.entries) {
-    if (normalizeMediaType(entry.key) == _textPlainMediaType) {
-      return (entry.key, entry.value);
+  for (final MapEntry(:key, :value) in content.entries) {
+    if (normalizeMediaType(key) == _textPlainMediaType) {
+      return (key, value);
     }
   }
-  for (final entry in content.entries) {
-    if (isMultipartMediaType(entry.key)) return (entry.key, entry.value);
+  for (final MapEntry(:key, :value) in content.entries) {
+    if (isMultipartMediaType(key)) return (key, value);
   }
-  for (final entry in content.entries) {
-    if (isFormUrlencodedMediaType(entry.key)) return (entry.key, entry.value);
+  for (final MapEntry(:key, :value) in content.entries) {
+    if (isFormUrlencodedMediaType(key)) return (key, value);
   }
-  for (final entry in content.entries) {
-    if (isOctetStreamMediaType(entry.key)) return (entry.key, entry.value);
+  for (final MapEntry(:key, :value) in content.entries) {
+    if (isOctetStreamMediaType(key)) return (key, value);
   }
   final first = content.entries.first;
   return (first.key, first.value);
@@ -83,14 +83,14 @@ enum StreamKind {
 
 /// Find any streaming response content (SSE or JSONL) for an operation.
 (String, IrMediaType, StreamKind)? streamingContent(IrOperation op) {
-  for (final entry in op.responses.entries) {
-    if (entry.key >= 200 && entry.key < 300) {
-      for (final content in entry.value.content.entries) {
-        if (isEventStreamMediaType(content.key)) {
-          return (content.key, content.value, StreamKind.sse);
+  for (final MapEntry(:key, :value) in op.responses.entries) {
+    if (key >= 200 && key < 300) {
+      for (final MapEntry(key: contentKey, value: contentValue) in value.content.entries) {
+        if (isEventStreamMediaType(contentKey)) {
+          return (contentKey, contentValue, StreamKind.sse);
         }
-        if (isJsonlMediaType(content.key)) {
-          return (content.key, content.value, StreamKind.jsonl);
+        if (isJsonlMediaType(contentKey)) {
+          return (contentKey, contentValue, StreamKind.jsonl);
         }
       }
     }

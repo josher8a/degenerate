@@ -37,11 +37,11 @@ Map<String, ErrorUnionInfo> buildErrorUnionMap(
   for (final api in apis) {
     for (final op in api.operations) {
       final errors = <int, (String, IrType)>{};
-      for (final entry in op.responses.entries) {
-        if (entry.key < 400) continue;
-        final content = preferredContent(entry.value.content);
+      for (final MapEntry(:key, :value) in op.responses.entries) {
+        if (key < 400) continue;
+        final content = preferredContent(value.content);
         if (content == null) continue;
-        errors[entry.key] = (irTypeName(content.$2.schema), content.$2.schema);
+        errors[key] = (irTypeName(content.$2.schema), content.$2.schema);
       }
       if (op.defaultResponse != null && errors.isEmpty) {
         final content = preferredContent(op.defaultResponse!.content);
@@ -57,9 +57,9 @@ Map<String, ErrorUnionInfo> buildErrorUnionMap(
 
   // Group operations by error-set signature (sorted status -> typeName pairs).
   final groups = <String, List<String>>{};
-  for (final entry in opErrors.entries) {
-    final sig = _errorSetSignature(entry.value);
-    (groups[sig] ??= []).add(entry.key);
+  for (final MapEntry(:key, :value) in opErrors.entries) {
+    final sig = _errorSetSignature(value);
+    (groups[sig] ??= []).add(key);
   }
 
   final result = <String, ErrorUnionInfo>{};
@@ -113,8 +113,8 @@ Library emitErrorUnionLibrary({
   final hasDefaultEntry = sortedEntries.any((e) => e.key == -1);
 
   final importedTypes = <String>{};
-  for (final entry in sortedEntries) {
-    collectTypeRefs(entry.value.$2, importedTypes,
+  for (final MapEntry(:value) in sortedEntries) {
+    collectTypeRefs(value.$2, importedTypes,
         typeRegistry: typeRegistry, walkFields: false);
   }
 
@@ -183,12 +183,12 @@ Constructor _buildFromResponse(
   Map<String, IrType> typeRegistry,
 ) {
   final cases = StringBuffer();
-  for (final entry in sortedEntries) {
-    final code = entry.key;
-    final typeName = entry.value.$1;
+  for (final MapEntry(:key, :value) in sortedEntries) {
+    final code = key;
+    final typeName = value.$1;
     final variantSuffix = code == -1 ? '\$$typeName' : '\$$code';
     final deserialize = buildFromJsonCode(
-      entry.value.$2,
+      value.$2,
       'jsonDecode(response.body)',
       typeRegistry: typeRegistry,
     );

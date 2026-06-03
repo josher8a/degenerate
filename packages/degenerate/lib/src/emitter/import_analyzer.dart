@@ -3,6 +3,32 @@ import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
+/// Result of analyzing a model or API's import requirements.
+final class ImportAnalysis {
+  ImportAnalysis({
+    required this.referencedNames,
+    this.needsCollection = false,
+    this.needsTypedData = false,
+    this.needsConvert = false,
+    this.needsOneOf = false,
+  });
+
+  final Set<String> referencedNames;
+  final bool needsCollection;
+  final bool needsTypedData;
+  final bool needsConvert;
+  final bool needsOneOf;
+
+  /// Merge another analysis into this one (union of names, OR of flags).
+  ImportAnalysis merge(ImportAnalysis other) => ImportAnalysis(
+    referencedNames: referencedNames..addAll(other.referencedNames),
+    needsCollection: needsCollection || other.needsCollection,
+    needsTypedData: needsTypedData || other.needsTypedData,
+    needsConvert: needsConvert || other.needsConvert,
+    needsOneOf: needsOneOf || other.needsOneOf,
+  );
+}
+
 /// Whether a type emits classes with @immutable (those with == and hashCode).
 bool typeNeedsImmutable(IrType type) => switch (type) {
   IrObject() => true,
@@ -85,9 +111,9 @@ analyzeApiImports(
         errorContent = preferredContent(op.defaultResponse!.content);
       }
       if (errorContent == null) {
-        for (final entry in op.responses.entries) {
-          if (entry.key >= 400) {
-            errorContent = preferredContent(entry.value.content);
+        for (final MapEntry(:key, :value) in op.responses.entries) {
+          if (key >= 400) {
+            errorContent = preferredContent(value.content);
             if (errorContent != null) break;
           }
         }
@@ -222,14 +248,7 @@ void collectTopLevelTypeName(
 /// Single-pass model analysis: collects referenced type names and detects
 /// whether dart:collection, dart:typed_data, dart:convert, and OneOf are
 /// needed.
-({
-  Set<String> referencedNames,
-  bool needsCollection,
-  bool needsTypedData,
-  bool needsConvert,
-  bool needsOneOf,
-})
-analyzeModelImports(IrType type, [Map<String, IrType>? typeRegistry]) {
+ImportAnalysis analyzeModelImports(IrType type, [Map<String, IrType>? typeRegistry]) {
   final names = <String>{};
   var needsCollection = false;
   var needsTypedData = false;
@@ -322,14 +341,14 @@ analyzeModelImports(IrType type, [Map<String, IrType>? typeRegistry]) {
         }
       }
       if (typeRegistry != null) {
-        for (final entry in mapping.entries) {
-          final resolved = entry.value.resolveRef(typeRegistry);
+        for (final MapEntry(:key, :value) in mapping.entries) {
+          final resolved = value.resolveRef(typeRegistry);
           if (resolved is IrObject) {
             for (final f in resolved.fields) {
               if (f.originalName == discriminatorProperty) {
                 final nonDiscFields = resolved.fields
                     .where((g) => g.originalName != discriminatorProperty);
-                if (f.defaultValue == entry.key || nonDiscFields.isEmpty) {
+                if (f.defaultValue == key || nonDiscFields.isEmpty) {
                   continue;
                 }
               }
@@ -382,7 +401,7 @@ analyzeModelImports(IrType type, [Map<String, IrType>? typeRegistry]) {
       break;
   }
 
-  return (
+  return ImportAnalysis(
     referencedNames: names,
     needsCollection: needsCollection,
     needsTypedData: needsTypedData,

@@ -93,10 +93,8 @@ final class IrMapper {
   List<IrType> lowerSchemas(Map<String, dynamic> schemas) {
     _rawSchemas = schemas;
     final results = <IrType>[];
-    for (final entry in schemas.entries) {
-      final name = entry.key;
-      final schema = entry.value;
-      final irType = _lowerNamedSchema(name, schema);
+    for (final MapEntry(:key, :value) in schemas.entries) {
+      final irType = _lowerNamedSchema(key, value);
       if (irType == null) continue;
       results.add(irType);
     }
@@ -116,11 +114,10 @@ final class IrMapper {
         .whereType<String>()
         .toSet();
 
-    for (final entry in _typeRegistry.entries) {
-      final regType = entry.value;
-      final regName = regType.emittableName;
+    for (final MapEntry(:value) in _typeRegistry.entries) {
+      final regName = value.emittableName;
       if (regName != null && resultNames.add(regName)) {
-        results.add(regType);
+        results.add(value);
       }
     }
 
@@ -691,10 +688,10 @@ final class IrMapper {
         schema['properties'] as Map<String, dynamic>? ?? <String, dynamic>{};
     final fields = <IrField>[];
     final usedDartNames = <String>{};
-    for (final entry in properties.entries) {
+    for (final MapEntry(:key, :value) in properties.entries) {
       var field = _lowerField(
-        entry.key,
-        entry.value as Object,
+        key,
+        value as Object,
         objectName,
         objectPath,
         requiredSet,
@@ -860,11 +857,9 @@ final class IrMapper {
     }
 
     if (explicitMapping != null) {
-      for (final entry in explicitMapping.entries) {
-        final value = entry.key;
-        final refOrSchema = entry.value;
-        if (refOrSchema is String) {
-          final rawRefName = _extractRefName(refOrSchema);
+      for (final MapEntry(:key, :value) in explicitMapping.entries) {
+        if (value is String) {
+          final rawRefName = _extractRefName(value);
           var dartRefName = _nameMapping[rawRefName];
           if (dartRefName == null) {
             // Try to match against oneOf refs by suffix (handles specs where
@@ -879,16 +874,16 @@ final class IrMapper {
             }
             dartRefName ??= toTypeName(rawRefName);
           }
-          mapping[value] = IrTypeRef(dartRefName);
-        } else if (refOrSchema is Map<String, dynamic>) {
-          // Use title if available, otherwise derive from parent + value.
+          mapping[key] = IrTypeRef(dartRefName);
+        } else if (value is Map<String, dynamic>) {
+          // Use title if available, otherwise derive from parent + key.
           final hint =
-              (refOrSchema['title'] as String?) ??
-              '$unionName${toPascalCase(value)}';
-          mapping[value] = lowerInlineSchema(
-            refOrSchema,
+              (value['title'] as String?) ??
+              '$unionName${toPascalCase(key)}';
+          mapping[key] = lowerInlineSchema(
+            value,
             nameHint: hint,
-            namePath: [...unionPath, toPascalCase(value)],
+            namePath: [...unionPath, toPascalCase(key)],
           );
         }
       }
@@ -1174,10 +1169,9 @@ final class IrMapper {
   String? _singleEnumHint(String parentName, Map<String, dynamic> schema) {
     final props = schema['properties'] as Map<String, dynamic>?;
     if (props == null) return null;
-    for (final entry in props.entries) {
-      final prop = entry.value;
-      if (prop is Map<String, dynamic>) {
-        final enumValues = prop['enum'] as List?;
+    for (final MapEntry(:value) in props.entries) {
+      if (value is Map<String, dynamic>) {
+        final enumValues = value['enum'] as List?;
         if (enumValues != null && enumValues.length == 1) {
           return '$parentName${toPascalCase(enumValues.first.toString())}';
         }

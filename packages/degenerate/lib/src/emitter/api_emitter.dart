@@ -1004,9 +1004,9 @@ final class ApiEmitter {
       if (content != null) return content;
     }
     // Check for specific error status codes
-    for (final entry in op.responses.entries) {
-      if (entry.key >= 400) {
-        final content = preferredContent(entry.value.content);
+    for (final MapEntry(:key, :value) in op.responses.entries) {
+      if (key >= 400) {
+        final content = preferredContent(value.content);
         if (content != null) return content;
       }
     }
@@ -1044,13 +1044,13 @@ final class ApiEmitter {
       }
     }
     // Check remaining 2xx codes (206, 207, etc.)
-    for (final entry in op.responses.entries) {
-      if (entry.key >= 200 &&
-          entry.key < 300 &&
-          !priorityCodes.contains(entry.key)) {
-        final content = preferredContent(entry.value.content);
+    for (final MapEntry(:key, :value) in op.responses.entries) {
+      if (key >= 200 &&
+          key < 300 &&
+          !priorityCodes.contains(key)) {
+        final content = preferredContent(value.content);
         if (content != null) return content;
-        if (entry.value.content.isEmpty) return null;
+        if (value.content.isEmpty) return null;
       }
     }
     return null;

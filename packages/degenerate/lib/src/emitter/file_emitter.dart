@@ -160,14 +160,8 @@ final class FileEmitter {
       var modelAnalysis = analyzeModelImports(type, typeRegistry);
       if (children != null) {
         for (final child in children) {
-          final ca = analyzeModelImports(child, typeRegistry);
-          modelAnalysis = (
-            referencedNames: modelAnalysis.referencedNames..addAll(ca.referencedNames),
-            needsCollection: modelAnalysis.needsCollection || ca.needsCollection,
-            needsTypedData: modelAnalysis.needsTypedData || ca.needsTypedData,
-            needsConvert: modelAnalysis.needsConvert || ca.needsConvert,
-            needsOneOf: modelAnalysis.needsOneOf || ca.needsOneOf,
-          );
+          modelAnalysis =
+              modelAnalysis.merge(analyzeModelImports(child, typeRegistry));
         }
       }
       modelAnalysis.referencedNames.remove(name); // Don't import self

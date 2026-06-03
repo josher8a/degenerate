@@ -37,9 +37,9 @@ final class AllOfFlattener {
           result['_resolvedRef'] = single['_resolvedRef'];
         }
         // Carry over outer keys (description, default, nullable, etc.)
-        for (final entry in schema.entries) {
-          if (entry.key == 'allOf') continue;
-          result.putIfAbsent(entry.key, () => entry.value);
+        for (final MapEntry(:key, :value) in schema.entries) {
+          if (key == 'allOf') continue;
+          result.putIfAbsent(key, () => value);
         }
         return result;
       }
@@ -52,17 +52,17 @@ final class AllOfFlattener {
 
     // Carry over top-level fields that aren't allOf.
     final result = <String, dynamic>{};
-    for (final entry in schema.entries) {
-      if (entry.key == 'allOf') continue;
-      if (entry.key == 'properties' && entry.value is Map<String, dynamic>) {
-        mergedProperties.addAll(entry.value as Map<String, dynamic>);
+    for (final MapEntry(:key, :value) in schema.entries) {
+      if (key == 'allOf') continue;
+      if (key == 'properties' && value is Map<String, dynamic>) {
+        mergedProperties.addAll(value);
         continue;
       }
-      if (entry.key == 'required' && entry.value is List) {
-        mergedRequired.addAll((entry.value as List).cast<String>());
+      if (key == 'required' && value is List) {
+        mergedRequired.addAll(value.cast<String>());
         continue;
       }
-      result[entry.key] = entry.value;
+      result[key] = value;
     }
 
     for (final sub in allOf) {
@@ -87,17 +87,17 @@ final class AllOfFlattener {
       }
 
       // Carry over any other keys from sub-schemas that aren't already set.
-      for (final entry in sub.entries) {
+      for (final MapEntry(:key, :value) in sub.entries) {
         if (const {
           'properties',
           'required',
           'type',
           'description',
           'allOf',
-        }.contains(entry.key)) {
+        }.contains(key)) {
           continue;
         }
-        result.putIfAbsent(entry.key, () => entry.value);
+        result.putIfAbsent(key, () => value);
       }
     }
 

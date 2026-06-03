@@ -99,11 +99,11 @@ final class TypeRefResolver {
       case IrDiscriminatedUnion():
         var changed = false;
         final newMapping = <String, IrType>{};
-        for (final entry in type.mapping.entries) {
-          var resolved = resolveRef(entry.value);
+        for (final MapEntry(:key, :value) in type.mapping.entries) {
+          var resolved = resolveRef(value);
           resolved = _resolveInType(resolved);
-          if (!identical(resolved, entry.value)) changed = true;
-          newMapping[entry.key] = resolved;
+          if (!identical(resolved, value)) changed = true;
+          newMapping[key] = resolved;
         }
         if (!changed) return type;
         return IrDiscriminatedUnion(

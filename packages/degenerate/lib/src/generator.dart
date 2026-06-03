@@ -308,10 +308,10 @@ final class Generator {
       _log('  $inlineAdded inline types added');
     }
 
-    for (final entry in irMapper.typeRegistry.entries) {
-      final regName = entry.value.emittableName;
+    for (final MapEntry(:value) in irMapper.typeRegistry.entries) {
+      final regName = value.emittableName;
       if (regName != null && !existingNames.add(regName)) continue;
-      irTypes.add(entry.value);
+      irTypes.add(value);
     }
   }
 
@@ -413,9 +413,9 @@ final class Generator {
 
     if (config.workspace) {
       files = {
-        for (final entry in files.entries)
-          entry.key.endsWith('.dart') ? 'lib/${entry.key}' : entry.key:
-              entry.value,
+        for (final MapEntry(:key, :value) in files.entries)
+          key.endsWith('.dart') ? 'lib/$key' : key:
+              value,
       };
     }
 
@@ -452,13 +452,13 @@ final class Generator {
     _log('Writing to $outputDir...');
     var written = 0;
     var skipped = 0;
-    for (final entry in files.entries) {
-      final filePath = p.join(outputDir, entry.key);
+    for (final MapEntry(:key, :value) in files.entries) {
+      final filePath = p.join(outputDir, key);
       final file = File(filePath);
 
       if (file.existsSync()) {
         final existing = await file.readAsString();
-        if (existing == entry.value) {
+        if (existing == value) {
           skipped++;
           if (config.verbose) {
             _log('  Unchanged: $filePath');
@@ -468,7 +468,7 @@ final class Generator {
       }
 
       await file.parent.create(recursive: true);
-      await file.writeAsString(entry.value);
+      await file.writeAsString(value);
       written++;
       if (config.verbose) {
         _log('  Wrote: $filePath');
@@ -485,25 +485,24 @@ final class Generator {
 
   List<IrSecurityScheme> _lowerSecuritySchemes(Map<String, dynamic> raw) {
     final schemes = <IrSecurityScheme>[];
-    for (final entry in raw.entries) {
-      final value = entry.value;
+    for (final MapEntry(:key, :value) in raw.entries) {
       if (value is! Map<String, dynamic>) continue;
       final flows = <IrOAuthFlow>[];
       final rawFlows = value['flows'];
       if (rawFlows is Map<String, dynamic>) {
-        for (final flowEntry in rawFlows.entries) {
-          final flow = flowEntry.value;
+        for (final MapEntry(key: flowKey, value: flowValue) in rawFlows.entries) {
+          final flow = flowValue;
           if (flow is! Map<String, dynamic>) continue;
           final scopes = <String, String>{};
           final rawScopes = flow['scopes'];
           if (rawScopes is Map<String, dynamic>) {
-            for (final scopeEntry in rawScopes.entries) {
-              scopes[scopeEntry.key] = scopeEntry.value.toString();
+            for (final MapEntry(key: scopeKey, value: scopeValue) in rawScopes.entries) {
+              scopes[scopeKey] = scopeValue.toString();
             }
           }
           flows.add(
             IrOAuthFlow(
-              type: flowEntry.key,
+              type: flowKey,
               authorizationUrl: flow['authorizationUrl'] as String?,
               tokenUrl: flow['tokenUrl'] as String?,
               refreshUrl: flow['refreshUrl'] as String?,
@@ -515,7 +514,7 @@ final class Generator {
       }
       schemes.add(
         IrSecurityScheme(
-          name: entry.key,
+          name: key,
           type: value['type'] as String? ?? 'unknown',
           scheme: value['scheme'] as String?,
           bearerFormat: value['bearerFormat'] as String?,
@@ -535,9 +534,9 @@ final class Generator {
     if (raw == null) return null;
     return raw.map((requirement) {
       final schemes = <String, List<String>>{};
-      for (final entry in requirement.entries) {
-        schemes[entry.key] = entry.value is List
-            ? (entry.value as List).map((e) => e.toString()).toList()
+      for (final MapEntry(:key, :value) in requirement.entries) {
+        schemes[key] = value is List
+            ? value.map((e) => e.toString()).toList()
             : const <String>[];
       }
       return IrSecurityRequirement(schemes);
