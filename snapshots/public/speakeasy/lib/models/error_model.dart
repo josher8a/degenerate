@@ -1,0 +1,82 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ErrorModel
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ErrorType {const ErrorType._(this.value);
+
+factory ErrorType.fromJson(String json) { return switch (json) {
+  'not_found' => notFound,
+  'invalid' => invalid,
+  'internal' => internal,
+  _ => ErrorType._(json),
+}; }
+
+static const ErrorType notFound = ErrorType._('not_found');
+
+static const ErrorType invalid = ErrorType._('invalid');
+
+static const ErrorType internal = ErrorType._('internal');
+
+static const List<ErrorType> values = [notFound, invalid, internal];
+
+final String value;
+
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'not_found' => 'notFound',
+  'invalid' => 'invalid',
+  'internal' => 'internal',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ErrorType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ErrorType($value)';
+
+ }
+@immutable final class ErrorModel {const ErrorModel({this.code, this.message, this.type, this.additionalProperties = const {}, });
+
+factory ErrorModel.fromJson(Map<String, dynamic> json) { return ErrorModel(
+  code: json['code'] as String?,
+  message: json['message'] as String?,
+  type: json['type'] != null ? ErrorType.fromJson(json['type'] as String) : null,
+  additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'code', 'message', 'type'}.contains(e.key))),
+); }
+
+final String? code;
+
+final String? message;
+
+final ErrorType? type;
+
+final Map<String,dynamic> additionalProperties;
+
+Map<String, dynamic> toJson() { return {
+  'code': ?code,
+  'message': ?message,
+  if (type != null) 'type': type?.toJson(),
+  ...additionalProperties,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message', 'type'}.contains(key)); } 
+ErrorModel copyWith({String? Function()? code, String? Function()? message, ErrorType? Function()? type, Map<String, dynamic>? additionalProperties, }) { return ErrorModel(
+  code: code != null ? code() : this.code,
+  message: message != null ? message() : this.message,
+  type: type != null ? type() : this.type,
+  additionalProperties: additionalProperties ?? this.additionalProperties,
+); } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is ErrorModel &&
+          code == other.code &&
+          message == other.message &&
+          type == other.type &&
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(code, message, type, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'ErrorModel(code: $code, message: $message, type: $type, additionalProperties: $additionalProperties)';
+
+ }

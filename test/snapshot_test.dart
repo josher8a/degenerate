@@ -230,12 +230,14 @@ void main() {
   );
   _snapshotTests(
     'public',
-    _specFiles(p.join(_fixturesDir, 'public'))
-        .where(
-          (f) =>
-              !_externalRefSpecs.contains(p.basenameWithoutExtension(f.path)),
-        )
-        .toList(),
+    [
+      ..._specFiles(p.join(_fixturesDir, 'public')).where(
+        (f) =>
+            !_externalRefSpecs.contains(p.basenameWithoutExtension(f.path)),
+      ),
+      // Multi-file spec in a subdirectory (speakeasy.yaml + components.yaml).
+      File(p.join(_fixturesDir, 'public', 'speakeasy', 'speakeasy.yaml')),
+    ],
     workspace: true,
   );
 
