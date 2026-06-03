@@ -972,8 +972,8 @@ final request = ApiRequest(
       ApiMultipartField.text('intOptNull', intOptNull$.toString()),
     if (body.numOptNull case final numOptNull$?)
       ApiMultipartField.text('numOptNull', numOptNull$.toString()),
-    ApiMultipartField.text('intEnum', body.intEnum.toJson()),
-    ApiMultipartField.text('int32Enum', body.int32Enum.toJson()),
+    ApiMultipartField.text('intEnum', body.intEnum.toJson().toString()),
+    ApiMultipartField.text('int32Enum', body.int32Enum.toJson().toString()),
     if (body.bigint case final bigint$?)
       ApiMultipartField.text('bigint', bigint$.toString()),
     if (body.bigintStr case final bigintStr$?)
@@ -1283,8 +1283,8 @@ final request = ApiRequest(
       'intOptNull=${Uri.encodeQueryComponent(intOptNull$.toString())}',
     if (body.numOptNull case final numOptNull$?)
       'numOptNull=${Uri.encodeQueryComponent(numOptNull$.toString())}',
-    'intEnum=${Uri.encodeQueryComponent(body.intEnum.toJson())}',
-    'int32Enum=${Uri.encodeQueryComponent(body.int32Enum.toJson())}',
+    'intEnum=${Uri.encodeQueryComponent(body.intEnum.toJson().toString())}',
+    'int32Enum=${Uri.encodeQueryComponent(body.int32Enum.toJson().toString())}',
     if (body.bigint case final bigint$?)
       'bigint=${Uri.encodeQueryComponent(bigint$.toString())}',
     if (body.bigintStr case final bigintStr$?)

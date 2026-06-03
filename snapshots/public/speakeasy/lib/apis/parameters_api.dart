@@ -300,10 +300,10 @@ return execute(
 /// `GET /anything/openEnum/{param-p}/suffix`
 Future<ApiResult<ParameterOpenEnumResponse, Never>> parameterOpenEnum({required OpenEnum paramP, required OpenEnum paramQ, required OpenEnum paramH, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['param-q'] = paramQ.toJson();
+queryParameters['param-q'] = paramQ.toJson().toString();
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
-headers['param-h'] = paramH.toJson();
+headers['param-h'] = paramH.toJson().toString();
 
 final request = ApiRequest(
   method: 'GET',
@@ -992,7 +992,9 @@ Future<ApiResult<HeaderParamsNilResponse, Never>> headerParamsNil({required Stri
 if (optionalHeader != null) {
   headers['Optional-Header'] = optionalHeader;
 }
-headers['Nullable-Header'] = nullableHeader;
+if (nullableHeader != null) {
+  headers['Nullable-Header'] = nullableHeader;
+}
 if (optionalNullableHeader != null) {
   headers['Optional-Nullable-Header'] = optionalNullableHeader;
 }

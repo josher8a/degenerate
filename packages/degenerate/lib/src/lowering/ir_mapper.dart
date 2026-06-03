@@ -703,15 +703,29 @@ class IrMapper {
     final properties =
         schema['properties'] as Map<String, dynamic>? ?? <String, dynamic>{};
     final fields = <IrField>[];
+    final usedDartNames = <String>{};
     for (final entry in properties.entries) {
-      fields.add(_lowerField(
+      var field = _lowerField(
         entry.key,
         entry.value as Object,
         objectName,
         objectPath,
         requiredSet,
         discriminatorProperty,
-      ));
+      );
+      if (!usedDartNames.add(field.name)) {
+        final deduped = field.name;
+        var i = 2;
+        while (!usedDartNames.add('$deduped$i')) { i++; }
+        field = IrField(
+          '$deduped$i', field.originalName, field.type,
+          isRequired: field.isRequired,
+          defaultValue: field.defaultValue,
+          description: field.description,
+          example: field.example,
+        );
+      }
+      fields.add(field);
     }
 
     // additionalProperties: typed overflow map for extra keys.

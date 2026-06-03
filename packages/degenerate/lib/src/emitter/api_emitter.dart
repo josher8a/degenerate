@@ -590,12 +590,13 @@ class ApiEmitter {
     for (final p in params) {
       final key = _paramNameLiteral(p.name);
       final value = _toStringExpr(p);
-      if (p.isRequired) {
-        buf.writeln('$mapName[$key] = $value;');
-      } else {
+      final nullable = !p.isRequired || p.type.isNullable;
+      if (nullable) {
         buf.writeln('if (${p.dartName} != null) {');
         buf.writeln('  $mapName[$key] = $value;');
         buf.writeln('}');
+      } else {
+        buf.writeln('$mapName[$key] = $value;');
       }
     }
   }
@@ -608,7 +609,9 @@ class ApiEmitter {
         PrimitiveKind.string => p.dartName,
         _ => '${p.dartName}.toString()',
       },
-      IrEnum() => '${p.dartName}.toJson()',
+      IrEnum(:final valueKind) => valueKind == PrimitiveKind.string
+          ? '${p.dartName}.toJson()'
+          : '${p.dartName}.toJson().toString()',
       _ => '${p.dartName}.toString()',
     };
   }
@@ -842,7 +845,12 @@ class ApiEmitter {
         PrimitiveKind.bytes => 'base64Encode($accessor)',
         _ => '$accessor.toString()',
       },
-      IrEnum() || IrExtensionType() => '$accessor.toJson()',
+      IrEnum(:final valueKind) => valueKind == PrimitiveKind.string
+          ? '$accessor.toJson()'
+          : '$accessor.toJson().toString()',
+      IrExtensionType(:final inner) => inner.kind == PrimitiveKind.string
+          ? '$accessor.toJson()'
+          : '$accessor.toJson().toString()',
       _ => '$accessor.toString()',
     };
   }
@@ -1297,7 +1305,9 @@ class ApiEmitter {
         PrimitiveKind.duration => '$accessor.inMilliseconds.toString()',
         PrimitiveKind.bytes => accessor, // handled separately as file
       },
-      IrEnum() => '$accessor.toJson()',
+      IrEnum(:final valueKind) => valueKind == PrimitiveKind.string
+          ? '$accessor.toJson()'
+          : '$accessor.toJson().toString()',
       IrExtensionType(:final inner) =>
         inner.kind == PrimitiveKind.string
             ? '$accessor.toJson()'

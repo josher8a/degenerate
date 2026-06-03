@@ -14,6 +14,21 @@ import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart'
     show sanitizeFieldName, toTypeName;
 
+/// Type names exported by `degenerate_runtime` that may collide with
+/// generated schema names. When a collision is detected, the barrel file's
+/// runtime export gets a `hide` clause for the conflicting names.
+const _runtimeExportedNames = <String>{
+  'ApiClient', 'ApiConfig', 'ApiError', 'ApiException', 'ApiExecutor',
+  'ApiMultipartField', 'ApiMultipartFileField', 'ApiMultipartTextField',
+  'ApiOAuthFlow', 'ApiParseException', 'ApiQueryParameter', 'ApiRequest',
+  'ApiResponse', 'ApiResult', 'ApiSecurityRequirement', 'ApiSecurityScheme',
+  'ApiStreamError', 'ApiSuccess', 'AuthInterceptor', 'CancelToken',
+  'CancelledException', 'Handler', 'Interceptor', 'LoggingInterceptor',
+  'OneOf2', 'OneOf3', 'OneOf4', 'OneOf5', 'OneOf6', 'OneOf7', 'OneOf8',
+  'OneOf9', 'RequestOptions', 'RetryInterceptor', 'SseEvent',
+  'StreamedApiResponse',
+};
+
 /// Orchestrates all emitters to produce the full generated file structure.
 ///
 /// Returns a map of relative file path to Dart source content.
@@ -263,10 +278,19 @@ class FileEmitter {
           ..directives.addAll(
             needsTypedData ? [Directive.import('dart:typed_data')] : [],
           )
-          ..directives.add(
-            Directive.import(
-              'package:degenerate_runtime/degenerate_runtime.dart',
-            ),
+          ..directives.add(() {
+            final apiCollisions = _runtimeExportedNames.intersection(
+              analysis.referencedTypes,
+            );
+            return apiCollisions.isEmpty
+                ? Directive.import(
+                    'package:degenerate_runtime/degenerate_runtime.dart',
+                  )
+                : Directive.import(
+                    'package:degenerate_runtime/degenerate_runtime.dart',
+                    hide: apiCollisions.toList()..sort(),
+                  );
+          }(),
           )
           ..directives.addAll(modelImports)
           ..body.addAll(specs),
@@ -883,8 +907,22 @@ class FileEmitter {
         'apis/${toSnakeCase(name)}.dart',
     ]..sort();
 
+    // Hide generated type names that collide with runtime-exported names.
+    final generatedNames = types
+        .map(_typeName)
+        .whereType<String>()
+        .toSet();
+    final collisions = _runtimeExportedNames.intersection(generatedNames);
+
+    final runtimeExport = collisions.isEmpty
+        ? Directive.export('package:degenerate_runtime/degenerate_runtime.dart')
+        : Directive.export(
+            'package:degenerate_runtime/degenerate_runtime.dart',
+            hide: collisions.toList()..sort(),
+          );
+
     final exports = <Directive>[
-      Directive.export('package:degenerate_runtime/degenerate_runtime.dart'),
+      runtimeExport,
       ...relativeExports.map(Directive.export),
     ];
 
@@ -1001,8 +1039,17 @@ class FileEmitter {
       ...modelExports,
     ]..sort();
 
+    final collisions =
+        _runtimeExportedNames.intersection(reachableTypes);
+    final runtimeExport = collisions.isEmpty
+        ? Directive.export('package:degenerate_runtime/degenerate_runtime.dart')
+        : Directive.export(
+            'package:degenerate_runtime/degenerate_runtime.dart',
+            hide: collisions.toList()..sort(),
+          );
+
     final exports = <Directive>[
-      Directive.export('package:degenerate_runtime/degenerate_runtime.dart'),
+      runtimeExport,
       ...relativeExports.map(Directive.export),
     ];
 

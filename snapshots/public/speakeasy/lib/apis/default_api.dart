@@ -81,7 +81,7 @@ return execute(
 /// `GET /anything/queryParams/namespaceConflict`
 Future<ApiResult<void, Never>> ambiguousQueryParam({required AmbiguousQueryParamConsole console, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['console'] = console.toJson();
+queryParameters['console'] = console.toJson().toString();
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
