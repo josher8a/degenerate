@@ -538,7 +538,9 @@ class ModelEmitter {
     final allFields = [
       ...model.fields.map(toStringField),
       if (model.additionalProperties != null)
-        '$_overflowFieldName: \$$_overflowFieldName',
+        _overflowFieldName.startsWith(r'$')
+            ? '${_overflowFieldName.replaceAll(r'$', r'\$')}: \${$_overflowFieldName}'
+            : '$_overflowFieldName: \$$_overflowFieldName',
     ];
 
     if (allFields.length > 8) {

@@ -1309,7 +1309,7 @@ class ApiEmitter {
           ? '$accessor.toJson()'
           : '$accessor.toJson().toString()',
       IrExtensionType(:final inner) =>
-        inner.kind == PrimitiveKind.string
+        primitiveJsonWireType(inner.kind) == 'String'
             ? '$accessor.toJson()'
             : '$accessor.toJson().toString()',
       _ => '$accessor.toString()',

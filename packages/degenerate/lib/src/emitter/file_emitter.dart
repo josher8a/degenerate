@@ -153,8 +153,22 @@ class FileEmitter {
       specs.addAll(_emitType(type, typeRegistry));
       if (specs.isEmpty) continue;
 
-      // Single-pass analysis: collect imports and detect special types
-      final modelAnalysis = _analyzeModel(type, typeRegistry);
+      // Single-pass analysis: collect imports and detect special types.
+      // Also analyze inlined children — they may need dart:convert or
+      // dart:typed_data (e.g. a BinaryString extension type wrapping bytes).
+      var modelAnalysis = _analyzeModel(type, typeRegistry);
+      if (children != null) {
+        for (final child in children) {
+          final ca = _analyzeModel(child, typeRegistry);
+          modelAnalysis = (
+            referencedNames: modelAnalysis.referencedNames..addAll(ca.referencedNames),
+            needsCollection: modelAnalysis.needsCollection || ca.needsCollection,
+            needsTypedData: modelAnalysis.needsTypedData || ca.needsTypedData,
+            needsConvert: modelAnalysis.needsConvert || ca.needsConvert,
+            needsOneOf: modelAnalysis.needsOneOf || ca.needsOneOf,
+          );
+        }
+      }
       modelAnalysis.referencedNames.remove(name); // Don't import self
       // Remove inlined children from imports (they're in the same file)
       if (children != null) {
@@ -781,15 +795,32 @@ class FileEmitter {
       ):
         names.add(name);
         for (final variant in mapping.values) {
-          // Discriminated union files only reference variant types by name,
-          // no transitive resolution needed.
-          _collectTopLevelTypeName(variant, names);
+          _collectTopLevelTypeName(variant, names, typeRegistry);
           if (variant is IrObject) {
             for (final f in variant.fields) {
               if (isListType(f.type)) needsCollection = true;
             }
           }
           if (isBytesType(variant)) needsTypedData = true;
+          // When a ref variant resolves to a OneOf typedef, the sealed
+          // union's fromJson inlines OneOf.parse with direct variant
+          // references — import those variant types.
+          if (typeRegistry != null && variant is IrTypeRef) {
+            final resolved = typeRegistry[variant.name];
+            final oneOfVariants = switch (resolved) {
+              IrUntaggedUnion(:final variants)
+                  when isOneOfEligible(variants) => variants,
+              IrAnyOf(:final variants)
+                  when isOneOfEligible(variants) => variants,
+              _ => null,
+            };
+            if (oneOfVariants != null) {
+              needsOneOf = true;
+              for (final v in oneOfVariants) {
+                _collectTopLevelTypeName(v, names, typeRegistry);
+              }
+            }
+          }
         }
         // Hoisted base getters and the per-variant factory constructors
         // reference the variants' field types, which must be imported.

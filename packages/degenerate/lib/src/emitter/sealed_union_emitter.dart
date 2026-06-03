@@ -694,16 +694,22 @@ class DiscriminatedUnionEmitter {
   String _refVariantToJsonBody(IrType type, String fieldName) {
     // For object-like types, spread their toJson() map into the result.
     // For non-map types (list, primitive, enum), store under 'data' key.
+    // OneOf typedefs return Object? from toJson — can't spread.
     final toJsonExpr = buildToJsonCode(type, fieldName);
-    return switch (type) {
-      IrObject() ||
-      IrTypeRef() ||
-      IrDiscriminatedUnion() ||
-      IrUntaggedUnion() ||
-      // Spread first so the discriminator key always wins.
-      IrAnyOf() => '{...$toJsonExpr, ${dartStringLiteral(_discJsonKey)}: $_discDartName}',
-      _ => '{${dartStringLiteral(_discJsonKey)}: $_discDartName, ${dartStringLiteral('data')}: $toJsonExpr}',
+    final resolved = type is IrTypeRef
+        ? (typeRegistry[type.name] ?? type)
+        : type;
+    final isSpreadable = switch (resolved) {
+      IrObject() || IrDiscriminatedUnion() => true,
+      IrUntaggedUnion(:final variants) => !isOneOfEligible(variants),
+      IrAnyOf(:final variants) => !isOneOfEligible(variants),
+      IrTypeRef() => true,
+      _ => false,
     };
+    if (isSpreadable) {
+      return '{...$toJsonExpr, ${dartStringLiteral(_discJsonKey)}: $_discDartName}';
+    }
+    return '{${dartStringLiteral(_discJsonKey)}: $_discDartName, ${dartStringLiteral('data')}: $toJsonExpr}';
   }
 
   Class _buildRefVariant(String className, String discValue, IrType type) {
@@ -744,7 +750,7 @@ class DiscriminatedUnionEmitter {
                 ),
               )
               ..body = Code(
-                'return $className(${buildFromJsonCode(type, 'json', paramIsMap: true)});',
+                'return $className(${buildFromJsonCode(type, 'json', paramIsMap: true, typeRegistry: typeRegistry)});',
               ),
           ),
         )

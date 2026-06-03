@@ -1136,7 +1136,7 @@ final request = ApiRequest(
   headers: headers,
   body: [
     if (body.file case final file$?)
-      ApiMultipartField.text('file', file$.toJson().toString()),
+      ApiMultipartField.text('file', file$.toJson()),
   ],
   contentType: 'multipart/form-data',
   options: options,

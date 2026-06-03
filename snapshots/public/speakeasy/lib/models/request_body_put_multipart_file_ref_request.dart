@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RequestBodyPutMultipartFileRefRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';extension type BinaryString(Uint8List value) {
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';extension type BinaryString(Uint8List value) {
 factory BinaryString.fromJson(String json) => BinaryString(base64Decode(json));
 
 String toJson() => base64Encode(value);

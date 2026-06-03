@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/NestedDiscUnion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/type_a.dart';import 'package:pub_speakeasy/models/type_b.dart';sealed class NestedDiscUnion {const NestedDiscUnion();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/type_a.dart';import 'package:pub_speakeasy/models/type_a1.dart';import 'package:pub_speakeasy/models/type_a2.dart';import 'package:pub_speakeasy/models/type_b.dart';sealed class NestedDiscUnion {const NestedDiscUnion();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory NestedDiscUnion.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -27,13 +27,13 @@ R when<R>({required R Function(NestedDiscUnionA) a, required R Function(NestedDi
  }
 @immutable final class NestedDiscUnionA extends NestedDiscUnion {const NestedDiscUnionA(this.typeA);
 
-factory NestedDiscUnionA.fromJson(Map<String, dynamic> json) { return NestedDiscUnionA(TypeA.fromJson(json)); }
+factory NestedDiscUnionA.fromJson(Map<String, dynamic> json) { return NestedDiscUnionA(OneOf2.parse(json, fromA: (v) => TypeA1.fromJson(v as Map<String, dynamic>), fromB: (v) => TypeA2.fromJson(v as Map<String, dynamic>),)); }
 
 final TypeA typeA;
 
 @override String get type => 'a';
 
-@override Map<String, dynamic> toJson() => {...typeA.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {'type': type, 'data': typeA.toJson()};
 
 NestedDiscUnionA copyWith({TypeA? typeA}) { return NestedDiscUnionA(typeA ?? this.typeA); } 
 @override bool operator ==(Object other) => identical(this, other) ||
