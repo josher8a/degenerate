@@ -4,7 +4,7 @@ import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/enum_emitter.dart';
 import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/extension_type_emitter.dart';
-import 'package:degenerate/src/emitter/media_type_utils.dart';
+import 'package:degenerate/src/emitter/import_analyzer.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/negative_fixture_emitter.dart';
 import 'package:degenerate/src/emitter/roundtrip_emitter.dart';
@@ -99,7 +99,7 @@ class FileEmitter {
       if (parentName == null) continue;
       // Don't resolve OneOf refs here - indirect references through typedefs
       // shouldn't prevent inlining. Resolution is done later for imports.
-      final analysis = _analyzeModel(type);
+      final analysis = analyzeModelImports(type);
       analysis.referencedNames.remove(parentName); // exclude self
       for (final refName in analysis.referencedNames) {
         (referencedBy[refName] ??= {}).add(parentName);
@@ -111,7 +111,7 @@ class FileEmitter {
     // into their parent typedef file (the parent file provides the import).
     final apiReferencedTypes = <String>{};
     for (final api in apis) {
-      final analysis = _analyzeApi(api); // no typeRegistry
+      final analysis = analyzeApiImports(api); // no typeRegistry
       apiReferencedTypes.addAll(analysis.referencedTypes);
     }
 
@@ -157,10 +157,10 @@ class FileEmitter {
       // Single-pass analysis: collect imports and detect special types.
       // Also analyze inlined children — they may need dart:convert or
       // dart:typed_data (e.g. a BinaryString extension type wrapping bytes).
-      var modelAnalysis = _analyzeModel(type, typeRegistry);
+      var modelAnalysis = analyzeModelImports(type, typeRegistry);
       if (children != null) {
         for (final child in children) {
-          final ca = _analyzeModel(child, typeRegistry);
+          final ca = analyzeModelImports(child, typeRegistry);
           modelAnalysis = (
             referencedNames: modelAnalysis.referencedNames..addAll(ca.referencedNames),
             needsCollection: modelAnalysis.needsCollection || ca.needsCollection,
@@ -192,8 +192,8 @@ class FileEmitter {
       // Determine if the runtime import is needed: for @immutable (classes with
       // == and hashCode), collection helpers, or OneOf types.
       final needsImmutable =
-          _typeNeedsImmutable(type) ||
-          (children?.any(_typeNeedsImmutable) ?? false);
+          typeNeedsImmutable(type) ||
+          (children?.any(typeNeedsImmutable) ?? false);
       final needsRuntime = needsOneOf || needsCollection || needsImmutable;
 
       final library = Library((b) {
@@ -269,7 +269,7 @@ class FileEmitter {
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
 
-      final analysis = _analyzeApi(
+      final analysis = analyzeApiImports(
         api, typeRegistry, unwrapFields, errorUnionMap,
       );
 
@@ -352,7 +352,7 @@ class FileEmitter {
     if (apis.length > 1) {
       final typeDeps = _buildTypeDeps(types);
       for (final api in apis) {
-        final analysis = _analyzeApi(
+        final analysis = analyzeApiImports(
           api, typeRegistry, unwrapFields, errorUnionMap,
         );
         final reachable = _transitiveTypes(analysis.referencedTypes, typeDeps);
@@ -453,459 +453,7 @@ class FileEmitter {
 
   static final _dartEmitter = DartEmitter(useNullSafetySyntax: true);
 
-  /// Whether a type emits classes with @immutable (those with == and hashCode).
-  static bool _typeNeedsImmutable(IrType type) => switch (type) {
-    IrObject() => true,
-    IrEnum() => true,
-    IrDiscriminatedUnion() => true,
-    IrUntaggedUnion() => true,
-    IrAnyOf() => true,
-    _ => false,
-  };
-
   String? _typeName(IrType type) => type.emittableName;
-
-  /// Collect top-level type names referenced by an API's operations.
-  ///
-  /// Only collects the immediate types that appear in the generated API code
-  /// (parameters, request bodies, success responses). Does NOT recurse into
-  /// object fields - those transitive dependencies are handled by the model
-  /// files' own imports.
-  /// Single-pass analysis of an API: collects referenced types, and determines
-  /// whether dart:convert and dart:typed_data imports are needed.
-  ({Set<String> referencedTypes, bool needsConvert, bool needsTypedData})
-  _analyzeApi(
-    IrApi api, [
-    Map<String, IrType>? typeRegistry,
-    List<String> unwrapFields = const [],
-    Map<String, ErrorUnionInfo> errorUnionMap = const {},
-  ]) {
-    final names = <String>{};
-    var needsConvert = false;
-    var needsTypedData = false;
-    // Unwrap a response type if it matches unwrapFields config.
-    IrType maybeUnwrap(IrType type) {
-      if (unwrapFields.isEmpty || typeRegistry == null) return type;
-      IrObject? obj;
-      if (type is IrObject) {
-        obj = type;
-      } else if (type is IrTypeRef) {
-        final resolved = typeRegistry[type.name];
-        if (resolved is IrObject) obj = resolved;
-      }
-      if (obj == null) return type;
-      for (final fieldName in unwrapFields) {
-        for (final f in obj.fields) {
-          if (f.originalName == fieldName) return f.type;
-        }
-      }
-      return type;
-    }
-
-    for (final op in api.operations) {
-      for (final param in op.parameters) {
-        _collectTopLevelTypeName(param.type, names);
-        if (isBytesType(param.type)) needsTypedData = true;
-      }
-      // Match the type selection logic used by ApiEmitter:
-      // prefer application/json, fallback to first content type.
-      if (op.requestBody != null && op.requestBody!.content.isNotEmpty) {
-        final bodyContent = preferredContent(op.requestBody!.content)!;
-        if (isJsonLikeMediaType(bodyContent.$1)) needsConvert = true;
-        final schema = bodyContent.$2.schema;
-        // Request bodies use .toJson() only - don't resolve OneOf variants.
-        _collectTopLevelTypeName(schema, names);
-        if (isBytesType(schema)) needsTypedData = true;
-      }
-      // Collect types from success responses (2xx)
-      // Response deserialization generates parse code that references variant
-      // types directly, so resolve OneOf refs via typeRegistry.
-      for (final code in [200, 201, 202, 203, 204]) {
-        final resp = op.responses[code];
-        if (resp != null) {
-          final content = preferredContent(resp.content);
-          if (content != null) {
-            if (isJsonLikeMediaType(content.$1)) needsConvert = true;
-            final schema = maybeUnwrap(content.$2.schema);
-            _collectTopLevelTypeName(schema, names, typeRegistry);
-            if (isBytesType(schema)) needsTypedData = true;
-            break;
-          }
-        }
-      }
-      // Collect types from streaming responses (SSE, JSONL)
-      final streaming = streamingContent(op);
-      if (streaming != null) {
-        needsConvert = true;
-        final eventType = streaming.$2.itemSchema ?? streaming.$2.schema;
-        _collectTopLevelTypeName(eventType, names, typeRegistry);
-      }
-      // Collect error type references.
-      final errorUnion = errorUnionMap[op.operationId];
-      if (errorUnion != null) {
-        final errorClassName = errorUnion.isAlias
-            ? errorUnion.aliasTarget!
-            : errorUnion.className;
-        names.add(errorClassName);
-      } else {
-        (String, IrMediaType)? errorContent;
-        if (op.defaultResponse != null) {
-          errorContent = preferredContent(op.defaultResponse!.content);
-        }
-        if (errorContent == null) {
-          for (final entry in op.responses.entries) {
-            if (entry.key >= 400) {
-              errorContent = preferredContent(entry.value.content);
-              if (errorContent != null) break;
-            }
-          }
-        }
-        if (errorContent != null) {
-          if (isJsonLikeMediaType(errorContent.$1)) needsConvert = true;
-          _collectTopLevelTypeName(errorContent.$2.schema, names, typeRegistry);
-        }
-      }
-    }
-    return (
-      referencedTypes: names,
-      needsConvert: needsConvert,
-      needsTypedData: needsTypedData,
-    );
-  }
-
-  /// Collect only the top-level type name from a type, without recursing
-  /// into fields. For lists/maps, collect the item/value types.
-  /// When [typeRegistry] is provided, resolves IrTypeRef to OneOf-eligible
-  /// unions and collects their variant type names (needed for parse code
-  /// imports).
-  ///
-  /// When [skipInlinedOneOfRefs] is true (used during variant resolution),
-  /// refs that resolve to non-self-referencing OneOf typedefs are NOT added
-  /// to [names] because they are fully inlined in the parse code.
-  void _collectTopLevelTypeName(
-    IrType type,
-    Set<String> names, [
-    Map<String, IrType>? typeRegistry,
-    Set<String>? resolving,
-    bool skipInlinedOneOfRefs = false,
-  ]) {
-    switch (type) {
-      case IrObject(:final name):
-        names.add(name);
-      case IrEnum(:final name):
-        names.add(name);
-      case IrTypeRef(:final name):
-        // Check if this ref points to a non-self-referencing OneOf typedef
-        // that will be inlined in parse code (no explicit reference in output).
-        final isInlinedOneOf =
-            skipInlinedOneOfRefs &&
-            typeRegistry != null &&
-            switch (typeRegistry[name]) {
-              IrUntaggedUnion(:final variants)
-                  when isOneOfTypedef(name, variants) =>
-                true,
-              IrAnyOf(:final variants)
-                  when isOneOfTypedef(name, variants) =>
-                true,
-              _ => false,
-            };
-        if (!isInlinedOneOf) {
-          names.add(name);
-        }
-        // If the ref points to a OneOf-eligible union (typedef), the generated
-        // parse code references the variant types directly - collect them too.
-        // Use resolving set to avoid infinite recursion on circular refs.
-        resolving ??= {};
-        if (typeRegistry != null && resolving.add(name)) {
-          final target = typeRegistry[name];
-          if (target != null) {
-            final variants = switch (target) {
-              IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
-                variants,
-              IrAnyOf(:final variants) when isOneOfEligible(variants) =>
-                variants,
-              _ => null,
-            };
-            if (variants != null) {
-              for (final v in variants) {
-                // Variant refs to other OneOf typedefs are also inlined
-                _collectTopLevelTypeName(
-                  v,
-                  names,
-                  typeRegistry,
-                  resolving,
-                  true,
-                );
-              }
-            }
-          }
-        }
-      case IrDiscriminatedUnion(:final name):
-        names.add(name);
-      case IrUntaggedUnion(:final name, :final variants):
-        // Skip adding the name if this is a non-self-referencing OneOf typedef
-        // that will be inlined in parse code.
-        final skipUntagged =
-            skipInlinedOneOfRefs &&
-            isOneOfEligible(variants) &&
-            !isSelfReferencingUnion(name, variants);
-        if (!skipUntagged) {
-          names.add(name);
-        }
-        // When resolving imports (typeRegistry provided), collect variant type
-        // names
-        // because OneOf.parse() code references them directly.
-        if (typeRegistry != null && isOneOfEligible(variants)) {
-          for (final v in variants) {
-            _collectTopLevelTypeName(v, names, typeRegistry, resolving, true);
-          }
-        }
-      case IrAnyOf(:final name, :final variants):
-        final skipAnyOf =
-            skipInlinedOneOfRefs &&
-            isOneOfEligible(variants) &&
-            !isSelfReferencingUnion(name, variants);
-        if (!skipAnyOf) {
-          names.add(name);
-        }
-        if (typeRegistry != null && isOneOfEligible(variants)) {
-          for (final v in variants) {
-            _collectTopLevelTypeName(v, names, typeRegistry, resolving, true);
-          }
-        }
-      case IrExtensionType(:final name):
-        names.add(name);
-      case IrList(:final items):
-        _collectTopLevelTypeName(
-          items,
-          names,
-          typeRegistry,
-          resolving,
-          skipInlinedOneOfRefs,
-        );
-      case IrMap(:final values):
-        _collectTopLevelTypeName(
-          values,
-          names,
-          typeRegistry,
-          resolving,
-          skipInlinedOneOfRefs,
-        );
-      case IrPrimitive():
-        break;
-    }
-  }
-
-  /// Single-pass model analysis: collects referenced type names and detects
-  /// whether dart:collection, dart:typed_data, dart:convert, and OneOf are
-  /// needed.
-  ({
-    Set<String> referencedNames,
-    bool needsCollection,
-    bool needsTypedData,
-    bool needsConvert,
-    bool needsOneOf,
-  })
-  _analyzeModel(IrType type, [Map<String, IrType>? typeRegistry]) {
-    final names = <String>{};
-    var needsCollection = false;
-    var needsTypedData = false;
-    var needsConvert = false;
-    var needsOneOf = false;
-
-    /// Deep bytes check (traverses OneOf-eligible unions and refs) - for
-    /// needsConvert. Only recurses into OneOf-eligible unions because their
-    /// parse code is inlined in the current file. Non-OneOf sealed classes
-    /// handle bytes in their own file (variant toJson overrides) — that
-    /// dart:convert need is detected locally in the IrUntaggedUnion/IrAnyOf
-    /// switch cases below.
-    final bytesVisited = <String>{};
-    bool hasBytesAnywhere(IrType t) => switch (t) {
-      IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
-      IrList(:final items) => hasBytesAnywhere(items),
-      IrMap(:final values) => hasBytesAnywhere(values),
-      IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
-        variants.any(hasBytesAnywhere),
-      IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(
-        hasBytesAnywhere,
-      ),
-      IrTypeRef(:final name)
-          when typeRegistry != null && bytesVisited.add(name) =>
-        switch (typeRegistry[name]) {
-          IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
-            variants.any(hasBytesAnywhere),
-          IrAnyOf(:final variants) when isOneOfEligible(variants) =>
-            variants.any(hasBytesAnywhere),
-          _ => false,
-        },
-      _ => false,
-    };
-
-    bool isOneOfType(IrType t) => switch (t) {
-      IrUntaggedUnion(:final name, :final variants)
-          when isOneOfTypedef(name, variants) =>
-        true,
-      IrAnyOf(:final name, :final variants)
-          when isOneOfTypedef(name, variants) =>
-        true,
-      IrTypeRef(:final name) when typeRegistry != null =>
-        switch (typeRegistry[name]) {
-          IrUntaggedUnion(:final variants)
-              when isOneOfTypedef(name, variants) =>
-            true,
-          IrAnyOf(:final variants) when isOneOfTypedef(name, variants) => true,
-          _ => false,
-        },
-      IrList(:final items) => isOneOfType(items),
-      IrMap(:final values) => isOneOfType(values),
-      _ => false,
-    };
-
-    void checkField(IrType fieldType) {
-      _collectTopLevelTypeName(fieldType, names, typeRegistry);
-      if (isListType(fieldType)) needsCollection = true;
-      if (isBytesType(fieldType)) {
-        needsTypedData = true;
-        needsConvert = true;
-      } else if (hasBytesAnywhere(fieldType)) {
-        needsConvert = true;
-      }
-      if (isOneOfType(fieldType)) needsOneOf = true;
-    }
-
-    switch (type) {
-      case IrObject(:final name, :final fields, :final additionalProperties):
-        names.add(name);
-        for (final field in fields) {
-          checkField(field.type);
-        }
-        if (additionalProperties != null) {
-          checkField(additionalProperties);
-          needsCollection = true; // mapEquals from runtime
-        }
-      case IrEnum(:final name):
-        names.add(name);
-      case IrTypeRef(:final name):
-        names.add(name);
-      case IrDiscriminatedUnion(
-        :final name,
-        :final mapping,
-        :final discriminatorProperty,
-      ):
-        names.add(name);
-        for (final variant in mapping.values) {
-          _collectTopLevelTypeName(variant, names, typeRegistry);
-          if (variant is IrObject) {
-            for (final f in variant.fields) {
-              if (isListType(f.type)) needsCollection = true;
-            }
-          }
-          if (isBytesType(variant)) needsTypedData = true;
-          // When a ref variant resolves to a OneOf typedef, the sealed
-          // union's fromJson inlines OneOf.parse with direct variant
-          // references — import those variant types.
-          if (typeRegistry != null && variant is IrTypeRef) {
-            final resolved = typeRegistry[variant.name];
-            final oneOfVariants = switch (resolved) {
-              IrUntaggedUnion(:final variants)
-                  when isOneOfEligible(variants) => variants,
-              IrAnyOf(:final variants)
-                  when isOneOfEligible(variants) => variants,
-              _ => null,
-            };
-            if (oneOfVariants != null) {
-              needsOneOf = true;
-              for (final v in oneOfVariants) {
-                _collectTopLevelTypeName(v, names, typeRegistry);
-              }
-            }
-          }
-        }
-        // Hoisted base getters and the per-variant factory constructors
-        // reference the variants' field types, which must be imported.
-        // Collect the direct type name (not OneOf variants — a `OneOfN`
-        // typedef field only needs the typedef's own file). Resolving the
-        // variant payloads needs the registry.
-        if (typeRegistry != null) {
-          for (final entry in mapping.entries) {
-            var resolved = entry.value;
-            if (resolved is IrTypeRef) {
-              resolved = typeRegistry[resolved.name] ?? resolved;
-            }
-            if (resolved is IrObject) {
-              for (final f in resolved.fields) {
-                // Skip the discriminator field's type when the factory
-                // omits the arg: either the default matches the variant
-                // value, or the variant has no factory (all payload fields
-                // are the discriminator itself).
-                if (f.originalName == discriminatorProperty) {
-                  final nonDiscFields = resolved.fields
-                      .where((g) => g.originalName != discriminatorProperty);
-                  if (f.defaultValue == entry.key || nonDiscFields.isEmpty) {
-                    continue;
-                  }
-                }
-                _collectTopLevelTypeName(f.type, names);
-                if (isBytesType(f.type)) needsTypedData = true;
-              }
-            }
-          }
-        }
-      case IrUntaggedUnion(:final name, :final variants):
-        names.add(name);
-        if (isOneOfEligible(variants)) needsOneOf = true;
-        for (final variant in variants) {
-          _collectTopLevelTypeName(variant, names);
-          if (isBytesType(variant)) needsTypedData = true;
-        }
-        if (!isOneOfEligible(variants) && variants.any(isBytesType)) {
-          needsConvert = true;
-        }
-      case IrAnyOf(:final name, :final variants):
-        names.add(name);
-        if (isOneOfTypedef(name, variants)) {
-          // OneOf typedef: only direct variant types needed.
-          // Typedef files don't contain base64 code, so only needsTypedData.
-          needsOneOf = true;
-          for (final variant in variants) {
-            _collectTopLevelTypeName(variant, names);
-            if (isBytesType(variant)) needsTypedData = true;
-          }
-        } else {
-          // AnyOf class: fromJson calls .fromJson()/.canParse() on variants,
-          // or inlines OneOf.parse for OneOf-eligible union variants.
-          for (final variant in variants) {
-            _collectTopLevelTypeName(variant, names, typeRegistry);
-            if (isOneOfType(variant)) needsOneOf = true;
-            if (isListType(variant)) needsCollection = true;
-            if (isBytesType(variant)) {
-              needsTypedData = true;
-              needsConvert = true;
-            }
-          }
-        }
-      case IrExtensionType(:final name, :final inner):
-        names.add(name);
-        if (isBytesType(inner)) {
-          needsTypedData = true;
-          needsConvert = true;
-        }
-      case IrList(:final items):
-        _collectTopLevelTypeName(items, names, typeRegistry);
-      case IrMap(:final values):
-        _collectTopLevelTypeName(values, names, typeRegistry);
-      case IrPrimitive():
-        break;
-    }
-
-    return (
-      referencedNames: names,
-      needsCollection: needsCollection,
-      needsTypedData: needsTypedData,
-      needsConvert: needsConvert,
-      needsOneOf: needsOneOf,
-    );
-  }
 
   /// Header comment for generated files.
   /// Note: code_builder prepends '// ' to each line.

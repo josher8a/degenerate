@@ -10,44 +10,51 @@ import 'package:degenerate/src/ir/ir_types.dart';
 /// through the registry and the target's subtree is walked. Without a
 /// registry, only the ref name itself is collected.
 ///
-/// Cycle-safe: revisiting a name that is already in [names] short-circuits.
+/// Cycle-safe: IrTypeRef resolution tracks visited refs to avoid infinite
+/// recursion on circular type graphs.
 void collectTypeRefs(
   IrType type,
   Set<String> names, {
   Map<String, IrType>? typeRegistry,
   bool walkFields = true,
 }) {
+  _walk(type, names, typeRegistry, walkFields, null);
+}
+
+void _walk(
+  IrType type,
+  Set<String> names,
+  Map<String, IrType>? typeRegistry,
+  bool walkFields,
+  Set<String>? visited,
+) {
   final name = type.name;
-  if (name != null && !names.add(name)) return;
+  if (name != null) names.add(name);
 
   switch (type) {
     case IrObject(:final fields) when walkFields:
       for (final f in fields) {
-        collectTypeRefs(f.type, names,
-            typeRegistry: typeRegistry, walkFields: walkFields);
+        _walk(f.type, names, typeRegistry, walkFields, visited);
       }
     case IrDiscriminatedUnion(:final mapping):
       for (final v in mapping.values) {
-        collectTypeRefs(v, names,
-            typeRegistry: typeRegistry, walkFields: walkFields);
+        _walk(v, names, typeRegistry, walkFields, visited);
       }
     case IrUntaggedUnion(:final variants) || IrAnyOf(:final variants):
       for (final v in variants) {
-        collectTypeRefs(v, names,
-            typeRegistry: typeRegistry, walkFields: walkFields);
+        _walk(v, names, typeRegistry, walkFields, visited);
       }
     case IrTypeRef(:final name) when typeRegistry != null:
+      final refs = visited ?? {};
+      if (!refs.add(name)) break;
       final target = typeRegistry[name];
       if (target != null) {
-        collectTypeRefs(target, names,
-            typeRegistry: typeRegistry, walkFields: walkFields);
+        _walk(target, names, typeRegistry, walkFields, refs);
       }
     case IrList(:final items):
-      collectTypeRefs(items, names,
-          typeRegistry: typeRegistry, walkFields: walkFields);
+      _walk(items, names, typeRegistry, walkFields, visited);
     case IrMap(:final values):
-      collectTypeRefs(values, names,
-          typeRegistry: typeRegistry, walkFields: walkFields);
+      _walk(values, names, typeRegistry, walkFields, visited);
     default:
       break;
   }
