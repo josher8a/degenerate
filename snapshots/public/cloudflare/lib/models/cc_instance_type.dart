@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - "standard-3": 2 vCPU, 8 GiB memory, 16 GB disk
 /// - "standard-4": 4 vCPU, 12 GiB memory, 20 GB disk
 /// 
-final class CcInstanceType {const CcInstanceType({this.ccInstanceTypeVariant1});
+@immutable final class CcInstanceType {const CcInstanceType({this.ccInstanceTypeVariant1});
 
 factory CcInstanceType.fromJson(dynamic json) { return CcInstanceType(
   ccInstanceTypeVariant1: json is String ? CcInstanceTypeVariant1.fromJson(json) : null,
@@ -72,4 +72,12 @@ bool get isValid { return ccInstanceTypeVariant1 != null; }
 Map<String, dynamic> toJson() { return {
   if (ccInstanceTypeVariant1 != null) 'ccInstanceTypeVariant1': ccInstanceTypeVariant1!.toJson(),
 }; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is CcInstanceType &&
+          ccInstanceTypeVariant1 == other.ccInstanceTypeVariant1;
+
+@override int get hashCode => ccInstanceTypeVariant1.hashCode;
+
+@override String toString() => 'CcInstanceType(ccInstanceTypeVariant1: $ccInstanceTypeVariant1)';
+
  }

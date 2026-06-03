@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/IssueEventForIssue
 
-import 'package:pub_github_rest_3_1/models/added_to_project_issue_event.dart';import 'package:pub_github_rest_3_1/models/assigned_issue_event.dart';import 'package:pub_github_rest_3_1/models/converted_note_to_issue_issue_event.dart';import 'package:pub_github_rest_3_1/models/demilestoned_issue_event.dart';import 'package:pub_github_rest_3_1/models/labeled_issue_event.dart';import 'package:pub_github_rest_3_1/models/locked_issue_event.dart';import 'package:pub_github_rest_3_1/models/milestoned_issue_event.dart';import 'package:pub_github_rest_3_1/models/moved_column_in_project_issue_event.dart';import 'package:pub_github_rest_3_1/models/removed_from_project_issue_event.dart';import 'package:pub_github_rest_3_1/models/renamed_issue_event.dart';import 'package:pub_github_rest_3_1/models/review_dismissed_issue_event.dart';import 'package:pub_github_rest_3_1/models/review_request_removed_issue_event.dart';import 'package:pub_github_rest_3_1/models/review_requested_issue_event.dart';import 'package:pub_github_rest_3_1/models/unassigned_issue_event.dart';import 'package:pub_github_rest_3_1/models/unlabeled_issue_event.dart';/// Issue Event for Issue
-final class IssueEventForIssue {const IssueEventForIssue({this.labeledIssueEvent, this.unlabeledIssueEvent, this.assignedIssueEvent, this.unassignedIssueEvent, this.milestonedIssueEvent, this.demilestonedIssueEvent, this.renamedIssueEvent, this.reviewRequestedIssueEvent, this.reviewRequestRemovedIssueEvent, this.reviewDismissedIssueEvent, this.lockedIssueEvent, this.addedToProjectIssueEvent, this.movedColumnInProjectIssueEvent, this.removedFromProjectIssueEvent, this.convertedNoteToIssueIssueEvent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/added_to_project_issue_event.dart';import 'package:pub_github_rest_3_1/models/assigned_issue_event.dart';import 'package:pub_github_rest_3_1/models/converted_note_to_issue_issue_event.dart';import 'package:pub_github_rest_3_1/models/demilestoned_issue_event.dart';import 'package:pub_github_rest_3_1/models/labeled_issue_event.dart';import 'package:pub_github_rest_3_1/models/locked_issue_event.dart';import 'package:pub_github_rest_3_1/models/milestoned_issue_event.dart';import 'package:pub_github_rest_3_1/models/moved_column_in_project_issue_event.dart';import 'package:pub_github_rest_3_1/models/removed_from_project_issue_event.dart';import 'package:pub_github_rest_3_1/models/renamed_issue_event.dart';import 'package:pub_github_rest_3_1/models/review_dismissed_issue_event.dart';import 'package:pub_github_rest_3_1/models/review_request_removed_issue_event.dart';import 'package:pub_github_rest_3_1/models/review_requested_issue_event.dart';import 'package:pub_github_rest_3_1/models/unassigned_issue_event.dart';import 'package:pub_github_rest_3_1/models/unlabeled_issue_event.dart';/// Issue Event for Issue
+@immutable final class IssueEventForIssue {const IssueEventForIssue({this.labeledIssueEvent, this.unlabeledIssueEvent, this.assignedIssueEvent, this.unassignedIssueEvent, this.milestonedIssueEvent, this.demilestonedIssueEvent, this.renamedIssueEvent, this.reviewRequestedIssueEvent, this.reviewRequestRemovedIssueEvent, this.reviewDismissedIssueEvent, this.lockedIssueEvent, this.addedToProjectIssueEvent, this.movedColumnInProjectIssueEvent, this.removedFromProjectIssueEvent, this.convertedNoteToIssueIssueEvent, });
 
 factory IssueEventForIssue.fromJson(Map<String, dynamic> json) { return IssueEventForIssue(
   labeledIssueEvent: LabeledIssueEvent.canParse(json) ? LabeledIssueEvent.fromJson(json) : null,
@@ -71,4 +71,26 @@ Map<String, dynamic> toJson() { return {
   ...?removedFromProjectIssueEvent?.toJson(),
   ...?convertedNoteToIssueIssueEvent?.toJson(),
 }; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is IssueEventForIssue &&
+          labeledIssueEvent == other.labeledIssueEvent &&
+          unlabeledIssueEvent == other.unlabeledIssueEvent &&
+          assignedIssueEvent == other.assignedIssueEvent &&
+          unassignedIssueEvent == other.unassignedIssueEvent &&
+          milestonedIssueEvent == other.milestonedIssueEvent &&
+          demilestonedIssueEvent == other.demilestonedIssueEvent &&
+          renamedIssueEvent == other.renamedIssueEvent &&
+          reviewRequestedIssueEvent == other.reviewRequestedIssueEvent &&
+          reviewRequestRemovedIssueEvent == other.reviewRequestRemovedIssueEvent &&
+          reviewDismissedIssueEvent == other.reviewDismissedIssueEvent &&
+          lockedIssueEvent == other.lockedIssueEvent &&
+          addedToProjectIssueEvent == other.addedToProjectIssueEvent &&
+          movedColumnInProjectIssueEvent == other.movedColumnInProjectIssueEvent &&
+          removedFromProjectIssueEvent == other.removedFromProjectIssueEvent &&
+          convertedNoteToIssueIssueEvent == other.convertedNoteToIssueIssueEvent;
+
+@override int get hashCode => Object.hash(labeledIssueEvent, unlabeledIssueEvent, assignedIssueEvent, unassignedIssueEvent, milestonedIssueEvent, demilestonedIssueEvent, renamedIssueEvent, reviewRequestedIssueEvent, reviewRequestRemovedIssueEvent, reviewDismissedIssueEvent, lockedIssueEvent, addedToProjectIssueEvent, movedColumnInProjectIssueEvent, removedFromProjectIssueEvent, convertedNoteToIssueIssueEvent);
+
+@override String toString() => 'IssueEventForIssue(labeledIssueEvent: $labeledIssueEvent, unlabeledIssueEvent: $unlabeledIssueEvent, assignedIssueEvent: $assignedIssueEvent, unassignedIssueEvent: $unassignedIssueEvent, milestonedIssueEvent: $milestonedIssueEvent, demilestonedIssueEvent: $demilestonedIssueEvent, renamedIssueEvent: $renamedIssueEvent, reviewRequestedIssueEvent: $reviewRequestedIssueEvent, reviewRequestRemovedIssueEvent: $reviewRequestRemovedIssueEvent, reviewDismissedIssueEvent: $reviewDismissedIssueEvent, lockedIssueEvent: $lockedIssueEvent, addedToProjectIssueEvent: $addedToProjectIssueEvent, movedColumnInProjectIssueEvent: $movedColumnInProjectIssueEvent, removedFromProjectIssueEvent: $removedFromProjectIssueEvent, convertedNoteToIssueIssueEvent: $convertedNoteToIssueIssueEvent)';
+
  }

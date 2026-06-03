@@ -1148,6 +1148,7 @@ class AnyOfEmitter {
         (b) => b
           ..name = anyOf.name
           ..modifier = ClassModifier.final$
+          ..annotations.add(refer('immutable'))
           ..docs.addAll(_buildDocs())
           ..fields.addAll(
             variantFields.map(
@@ -1188,7 +1189,10 @@ class AnyOfEmitter {
             ),
           )
           ..constructors.add(_buildFromJson(variantFields))
-          ..methods.add(_buildToJson(variantFields)),
+          ..methods.add(_buildToJson(variantFields))
+          ..methods.add(_buildEquals(variantFields))
+          ..methods.add(_buildHashCode(variantFields))
+          ..methods.add(_buildToString(variantFields)),
       ),
     ];
   }
@@ -1351,4 +1355,57 @@ class AnyOfEmitter {
     );
   }
 
+  Method _buildEquals(
+    List<({String name, IrType type, String typeName})> fields,
+  ) {
+    final comparisons = fields.map((f) {
+      if (f.type is IrList) return 'listEquals(${f.name}, other.${f.name})';
+      return '${f.name} == other.${f.name}';
+    }).join(' &&\n          ');
+
+    final body = comparisons.isEmpty
+        ? 'identical(this, other) || other is ${anyOf.name}'
+        : 'identical(this, other) ||\n      other is ${anyOf.name} &&\n          $comparisons';
+
+    return buildEqualsOverride(body);
+  }
+
+  Method _buildHashCode(
+    List<({String name, IrType type, String typeName})> fields,
+  ) {
+    final exprs = fields.map((f) {
+      if (f.type is IrList) return 'Object.hashAll(${f.name} ?? const [])';
+      return f.name;
+    }).toList();
+
+    final String body;
+    if (exprs.isEmpty) {
+      body = 'runtimeType.hashCode';
+    } else if (exprs.length == 1) {
+      final expr = exprs.first;
+      body = expr.startsWith('Object.') ? expr : '$expr.hashCode';
+    } else if (exprs.length <= 20) {
+      body = 'Object.hash(${exprs.join(', ')})';
+    } else {
+      body = 'Object.hashAll([${exprs.join(', ')}])';
+    }
+
+    return buildHashCodeOverride(body);
+  }
+
+  Method _buildToString(
+    List<({String name, IrType type, String typeName})> fields,
+  ) {
+    final parts = fields.map((f) {
+      if (f.name.startsWith(r'$')) {
+        final escaped = f.name.replaceAll(r'$', r'\$');
+        return '$escaped: \${${f.name}}';
+      }
+      return '${f.name}: \$${f.name}';
+    }).toList();
+
+    return buildToStringOverride(
+      "'${escapeNameForString(anyOf.name)}(${parts.join(', ')})'",
+    );
+  }
 }

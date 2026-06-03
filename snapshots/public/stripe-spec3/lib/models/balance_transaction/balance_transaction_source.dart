@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BalanceTransaction (inline: Source)
 
-import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/connect_collection_transfer.dart';import 'package:pub_stripe_spec3/models/customer_cash_balance_transaction.dart';import 'package:pub_stripe_spec3/models/dispute.dart';import 'package:pub_stripe_spec3/models/fee_refund.dart';import 'package:pub_stripe_spec3/models/issuing_authorization.dart';import 'package:pub_stripe_spec3/models/issuing_dispute.dart';import 'package:pub_stripe_spec3/models/issuing_transaction.dart';import 'package:pub_stripe_spec3/models/payout.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/reserve_transaction.dart';import 'package:pub_stripe_spec3/models/tax_deducted_at_source.dart';import 'package:pub_stripe_spec3/models/topup.dart';import 'package:pub_stripe_spec3/models/transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal.dart';/// This transaction relates to the Stripe object.
-final class BalanceTransactionSource {const BalanceTransactionSource({this.string, this.applicationFee, this.charge, this.connectCollectionTransfer, this.customerCashBalanceTransaction, this.dispute, this.feeRefund, this.issuingAuthorization, this.issuingDispute, this.issuingTransaction, this.payout, this.refund, this.reserveTransaction, this.taxDeductedAtSource, this.topup, this.transfer, this.transferReversal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/connect_collection_transfer.dart';import 'package:pub_stripe_spec3/models/customer_cash_balance_transaction.dart';import 'package:pub_stripe_spec3/models/dispute.dart';import 'package:pub_stripe_spec3/models/fee_refund.dart';import 'package:pub_stripe_spec3/models/issuing_authorization.dart';import 'package:pub_stripe_spec3/models/issuing_dispute.dart';import 'package:pub_stripe_spec3/models/issuing_transaction.dart';import 'package:pub_stripe_spec3/models/payout.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/reserve_transaction.dart';import 'package:pub_stripe_spec3/models/tax_deducted_at_source.dart';import 'package:pub_stripe_spec3/models/topup.dart';import 'package:pub_stripe_spec3/models/transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal.dart';/// This transaction relates to the Stripe object.
+@immutable final class BalanceTransactionSource {const BalanceTransactionSource({this.string, this.applicationFee, this.charge, this.connectCollectionTransfer, this.customerCashBalanceTransaction, this.dispute, this.feeRefund, this.issuingAuthorization, this.issuingDispute, this.issuingTransaction, this.payout, this.refund, this.reserveTransaction, this.taxDeductedAtSource, this.topup, this.transfer, this.transferReversal, });
 
 factory BalanceTransactionSource.fromJson(dynamic json) { final map = json is Map<String, dynamic> ? json : null;
 return BalanceTransactionSource(
@@ -80,4 +80,28 @@ Map<String, dynamic> toJson() { return {
   ...?transfer?.toJson(),
   ...?transferReversal?.toJson(),
 }; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is BalanceTransactionSource &&
+          string == other.string &&
+          applicationFee == other.applicationFee &&
+          charge == other.charge &&
+          connectCollectionTransfer == other.connectCollectionTransfer &&
+          customerCashBalanceTransaction == other.customerCashBalanceTransaction &&
+          dispute == other.dispute &&
+          feeRefund == other.feeRefund &&
+          issuingAuthorization == other.issuingAuthorization &&
+          issuingDispute == other.issuingDispute &&
+          issuingTransaction == other.issuingTransaction &&
+          payout == other.payout &&
+          refund == other.refund &&
+          reserveTransaction == other.reserveTransaction &&
+          taxDeductedAtSource == other.taxDeductedAtSource &&
+          topup == other.topup &&
+          transfer == other.transfer &&
+          transferReversal == other.transferReversal;
+
+@override int get hashCode => Object.hash(string, applicationFee, charge, connectCollectionTransfer, customerCashBalanceTransaction, dispute, feeRefund, issuingAuthorization, issuingDispute, issuingTransaction, payout, refund, reserveTransaction, taxDeductedAtSource, topup, transfer, transferReversal);
+
+@override String toString() => 'BalanceTransactionSource(string: $string, applicationFee: $applicationFee, charge: $charge, connectCollectionTransfer: $connectCollectionTransfer, customerCashBalanceTransaction: $customerCashBalanceTransaction, dispute: $dispute, feeRefund: $feeRefund, issuingAuthorization: $issuingAuthorization, issuingDispute: $issuingDispute, issuingTransaction: $issuingTransaction, payout: $payout, refund: $refund, reserveTransaction: $reserveTransaction, taxDeductedAtSource: $taxDeductedAtSource, topup: $topup, transfer: $transfer, transferReversal: $transferReversal)';
+
  }

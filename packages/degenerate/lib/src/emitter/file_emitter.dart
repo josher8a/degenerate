@@ -452,15 +452,13 @@ class FileEmitter {
 
   static final _dartEmitter = DartEmitter(useNullSafetySyntax: true);
 
-  /// Whether a type emits classes that have == and hashCode (needing
-  /// @immutable).
   /// Whether a type emits classes with @immutable (those with == and hashCode).
-  /// AnyOf classes don't override == or hashCode, so they don't need it.
   static bool _typeNeedsImmutable(IrType type) => switch (type) {
     IrObject() => true,
     IrEnum() => true,
     IrDiscriminatedUnion() => true,
     IrUntaggedUnion() => true,
+    IrAnyOf() => true,
     _ => false,
   };
 
@@ -878,6 +876,7 @@ class FileEmitter {
           for (final variant in variants) {
             _collectTopLevelTypeName(variant, names, typeRegistry);
             if (isOneOfType(variant)) needsOneOf = true;
+            if (isListType(variant)) needsCollection = true;
             if (isBytesType(variant)) {
               needsTypedData = true;
               needsConvert = true;

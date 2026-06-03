@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TimelineIssueEvents
 
-import 'package:pub_github_rest_3_1/models/added_to_project_issue_event.dart';import 'package:pub_github_rest_3_1/models/converted_note_to_issue_issue_event.dart';import 'package:pub_github_rest_3_1/models/demilestoned_issue_event.dart';import 'package:pub_github_rest_3_1/models/labeled_issue_event.dart';import 'package:pub_github_rest_3_1/models/locked_issue_event.dart';import 'package:pub_github_rest_3_1/models/milestoned_issue_event.dart';import 'package:pub_github_rest_3_1/models/moved_column_in_project_issue_event.dart';import 'package:pub_github_rest_3_1/models/removed_from_project_issue_event.dart';import 'package:pub_github_rest_3_1/models/renamed_issue_event.dart';import 'package:pub_github_rest_3_1/models/review_dismissed_issue_event.dart';import 'package:pub_github_rest_3_1/models/review_request_removed_issue_event.dart';import 'package:pub_github_rest_3_1/models/review_requested_issue_event.dart';import 'package:pub_github_rest_3_1/models/state_change_issue_event.dart';import 'package:pub_github_rest_3_1/models/timeline_assigned_issue_event.dart';import 'package:pub_github_rest_3_1/models/timeline_comment_event.dart';import 'package:pub_github_rest_3_1/models/timeline_commit_commented_event.dart';import 'package:pub_github_rest_3_1/models/timeline_committed_event.dart';import 'package:pub_github_rest_3_1/models/timeline_cross_referenced_event.dart';import 'package:pub_github_rest_3_1/models/timeline_line_commented_event.dart';import 'package:pub_github_rest_3_1/models/timeline_reviewed_event.dart';import 'package:pub_github_rest_3_1/models/timeline_unassigned_issue_event.dart';import 'package:pub_github_rest_3_1/models/unlabeled_issue_event.dart';/// Timeline Event
-final class TimelineIssueEvents {const TimelineIssueEvents({this.labeledIssueEvent, this.unlabeledIssueEvent, this.milestonedIssueEvent, this.demilestonedIssueEvent, this.renamedIssueEvent, this.reviewRequestedIssueEvent, this.reviewRequestRemovedIssueEvent, this.reviewDismissedIssueEvent, this.lockedIssueEvent, this.addedToProjectIssueEvent, this.movedColumnInProjectIssueEvent, this.removedFromProjectIssueEvent, this.convertedNoteToIssueIssueEvent, this.timelineCommentEvent, this.timelineCrossReferencedEvent, this.timelineCommittedEvent, this.timelineReviewedEvent, this.timelineLineCommentedEvent, this.timelineCommitCommentedEvent, this.timelineAssignedIssueEvent, this.timelineUnassignedIssueEvent, this.stateChangeIssueEvent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/added_to_project_issue_event.dart';import 'package:pub_github_rest_3_1/models/converted_note_to_issue_issue_event.dart';import 'package:pub_github_rest_3_1/models/demilestoned_issue_event.dart';import 'package:pub_github_rest_3_1/models/labeled_issue_event.dart';import 'package:pub_github_rest_3_1/models/locked_issue_event.dart';import 'package:pub_github_rest_3_1/models/milestoned_issue_event.dart';import 'package:pub_github_rest_3_1/models/moved_column_in_project_issue_event.dart';import 'package:pub_github_rest_3_1/models/removed_from_project_issue_event.dart';import 'package:pub_github_rest_3_1/models/renamed_issue_event.dart';import 'package:pub_github_rest_3_1/models/review_dismissed_issue_event.dart';import 'package:pub_github_rest_3_1/models/review_request_removed_issue_event.dart';import 'package:pub_github_rest_3_1/models/review_requested_issue_event.dart';import 'package:pub_github_rest_3_1/models/state_change_issue_event.dart';import 'package:pub_github_rest_3_1/models/timeline_assigned_issue_event.dart';import 'package:pub_github_rest_3_1/models/timeline_comment_event.dart';import 'package:pub_github_rest_3_1/models/timeline_commit_commented_event.dart';import 'package:pub_github_rest_3_1/models/timeline_committed_event.dart';import 'package:pub_github_rest_3_1/models/timeline_cross_referenced_event.dart';import 'package:pub_github_rest_3_1/models/timeline_line_commented_event.dart';import 'package:pub_github_rest_3_1/models/timeline_reviewed_event.dart';import 'package:pub_github_rest_3_1/models/timeline_unassigned_issue_event.dart';import 'package:pub_github_rest_3_1/models/unlabeled_issue_event.dart';/// Timeline Event
+@immutable final class TimelineIssueEvents {const TimelineIssueEvents({this.labeledIssueEvent, this.unlabeledIssueEvent, this.milestonedIssueEvent, this.demilestonedIssueEvent, this.renamedIssueEvent, this.reviewRequestedIssueEvent, this.reviewRequestRemovedIssueEvent, this.reviewDismissedIssueEvent, this.lockedIssueEvent, this.addedToProjectIssueEvent, this.movedColumnInProjectIssueEvent, this.removedFromProjectIssueEvent, this.convertedNoteToIssueIssueEvent, this.timelineCommentEvent, this.timelineCrossReferencedEvent, this.timelineCommittedEvent, this.timelineReviewedEvent, this.timelineLineCommentedEvent, this.timelineCommitCommentedEvent, this.timelineAssignedIssueEvent, this.timelineUnassignedIssueEvent, this.stateChangeIssueEvent, });
 
 factory TimelineIssueEvents.fromJson(Map<String, dynamic> json) { return TimelineIssueEvents(
   labeledIssueEvent: LabeledIssueEvent.canParse(json) ? LabeledIssueEvent.fromJson(json) : null,
@@ -99,4 +99,33 @@ Map<String, dynamic> toJson() { return {
   ...?timelineUnassignedIssueEvent?.toJson(),
   ...?stateChangeIssueEvent?.toJson(),
 }; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is TimelineIssueEvents &&
+          labeledIssueEvent == other.labeledIssueEvent &&
+          unlabeledIssueEvent == other.unlabeledIssueEvent &&
+          milestonedIssueEvent == other.milestonedIssueEvent &&
+          demilestonedIssueEvent == other.demilestonedIssueEvent &&
+          renamedIssueEvent == other.renamedIssueEvent &&
+          reviewRequestedIssueEvent == other.reviewRequestedIssueEvent &&
+          reviewRequestRemovedIssueEvent == other.reviewRequestRemovedIssueEvent &&
+          reviewDismissedIssueEvent == other.reviewDismissedIssueEvent &&
+          lockedIssueEvent == other.lockedIssueEvent &&
+          addedToProjectIssueEvent == other.addedToProjectIssueEvent &&
+          movedColumnInProjectIssueEvent == other.movedColumnInProjectIssueEvent &&
+          removedFromProjectIssueEvent == other.removedFromProjectIssueEvent &&
+          convertedNoteToIssueIssueEvent == other.convertedNoteToIssueIssueEvent &&
+          timelineCommentEvent == other.timelineCommentEvent &&
+          timelineCrossReferencedEvent == other.timelineCrossReferencedEvent &&
+          timelineCommittedEvent == other.timelineCommittedEvent &&
+          timelineReviewedEvent == other.timelineReviewedEvent &&
+          timelineLineCommentedEvent == other.timelineLineCommentedEvent &&
+          timelineCommitCommentedEvent == other.timelineCommitCommentedEvent &&
+          timelineAssignedIssueEvent == other.timelineAssignedIssueEvent &&
+          timelineUnassignedIssueEvent == other.timelineUnassignedIssueEvent &&
+          stateChangeIssueEvent == other.stateChangeIssueEvent;
+
+@override int get hashCode => Object.hashAll([labeledIssueEvent, unlabeledIssueEvent, milestonedIssueEvent, demilestonedIssueEvent, renamedIssueEvent, reviewRequestedIssueEvent, reviewRequestRemovedIssueEvent, reviewDismissedIssueEvent, lockedIssueEvent, addedToProjectIssueEvent, movedColumnInProjectIssueEvent, removedFromProjectIssueEvent, convertedNoteToIssueIssueEvent, timelineCommentEvent, timelineCrossReferencedEvent, timelineCommittedEvent, timelineReviewedEvent, timelineLineCommentedEvent, timelineCommitCommentedEvent, timelineAssignedIssueEvent, timelineUnassignedIssueEvent, stateChangeIssueEvent]);
+
+@override String toString() => 'TimelineIssueEvents(labeledIssueEvent: $labeledIssueEvent, unlabeledIssueEvent: $unlabeledIssueEvent, milestonedIssueEvent: $milestonedIssueEvent, demilestonedIssueEvent: $demilestonedIssueEvent, renamedIssueEvent: $renamedIssueEvent, reviewRequestedIssueEvent: $reviewRequestedIssueEvent, reviewRequestRemovedIssueEvent: $reviewRequestRemovedIssueEvent, reviewDismissedIssueEvent: $reviewDismissedIssueEvent, lockedIssueEvent: $lockedIssueEvent, addedToProjectIssueEvent: $addedToProjectIssueEvent, movedColumnInProjectIssueEvent: $movedColumnInProjectIssueEvent, removedFromProjectIssueEvent: $removedFromProjectIssueEvent, convertedNoteToIssueIssueEvent: $convertedNoteToIssueIssueEvent, timelineCommentEvent: $timelineCommentEvent, timelineCrossReferencedEvent: $timelineCrossReferencedEvent, timelineCommittedEvent: $timelineCommittedEvent, timelineReviewedEvent: $timelineReviewedEvent, timelineLineCommentedEvent: $timelineLineCommentedEvent, timelineCommitCommentedEvent: $timelineCommitCommentedEvent, timelineAssignedIssueEvent: $timelineAssignedIssueEvent, timelineUnassignedIssueEvent: $timelineUnassignedIssueEvent, stateChangeIssueEvent: $stateChangeIssueEvent)';
+
  }

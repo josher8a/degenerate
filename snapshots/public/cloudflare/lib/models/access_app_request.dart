@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccessAppRequest
 
-import 'package:pub_cloudflare/models/access_app_launcher_props.dart';import 'package:pub_cloudflare/models/access_bookmark_props.dart';import 'package:pub_cloudflare/models/access_feature_app_props.dart';import 'package:pub_cloudflare/models/access_infra_props.dart';import 'package:pub_cloudflare/models/access_mcp_portal_props.dart';import 'package:pub_cloudflare/models/access_mcp_props.dart';import 'package:pub_cloudflare/models/access_rdp_props.dart';import 'package:pub_cloudflare/models/access_saas_props.dart';import 'package:pub_cloudflare/models/access_self_hosted_props.dart';final class AccessAppRequest {const AccessAppRequest({this.accessSelfHostedProps, this.accessSaasProps, this.accessAppLauncherProps, this.accessFeatureAppProps, this.accessBookmarkProps, this.accessInfraProps, this.accessRdpProps, this.accessMcpProps, this.accessMcpPortalProps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_launcher_props.dart';import 'package:pub_cloudflare/models/access_bookmark_props.dart';import 'package:pub_cloudflare/models/access_feature_app_props.dart';import 'package:pub_cloudflare/models/access_infra_props.dart';import 'package:pub_cloudflare/models/access_mcp_portal_props.dart';import 'package:pub_cloudflare/models/access_mcp_props.dart';import 'package:pub_cloudflare/models/access_rdp_props.dart';import 'package:pub_cloudflare/models/access_saas_props.dart';import 'package:pub_cloudflare/models/access_self_hosted_props.dart';@immutable final class AccessAppRequest {const AccessAppRequest({this.accessSelfHostedProps, this.accessSaasProps, this.accessAppLauncherProps, this.accessFeatureAppProps, this.accessBookmarkProps, this.accessInfraProps, this.accessRdpProps, this.accessMcpProps, this.accessMcpPortalProps, });
 
 factory AccessAppRequest.fromJson(Map<String, dynamic> json) { return AccessAppRequest(
   accessSelfHostedProps: AccessSelfHostedProps.canParse(json) ? AccessSelfHostedProps.fromJson(json) : null,
@@ -46,4 +46,20 @@ Map<String, dynamic> toJson() { return {
   ...?accessMcpProps?.toJson(),
   ...?accessMcpPortalProps?.toJson(),
 }; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is AccessAppRequest &&
+          accessSelfHostedProps == other.accessSelfHostedProps &&
+          accessSaasProps == other.accessSaasProps &&
+          accessAppLauncherProps == other.accessAppLauncherProps &&
+          accessFeatureAppProps == other.accessFeatureAppProps &&
+          accessBookmarkProps == other.accessBookmarkProps &&
+          accessInfraProps == other.accessInfraProps &&
+          accessRdpProps == other.accessRdpProps &&
+          accessMcpProps == other.accessMcpProps &&
+          accessMcpPortalProps == other.accessMcpPortalProps;
+
+@override int get hashCode => Object.hash(accessSelfHostedProps, accessSaasProps, accessAppLauncherProps, accessFeatureAppProps, accessBookmarkProps, accessInfraProps, accessRdpProps, accessMcpProps, accessMcpPortalProps);
+
+@override String toString() => 'AccessAppRequest(accessSelfHostedProps: $accessSelfHostedProps, accessSaasProps: $accessSaasProps, accessAppLauncherProps: $accessAppLauncherProps, accessFeatureAppProps: $accessFeatureAppProps, accessBookmarkProps: $accessBookmarkProps, accessInfraProps: $accessInfraProps, accessRdpProps: $accessRdpProps, accessMcpProps: $accessMcpProps, accessMcpPortalProps: $accessMcpPortalProps)';
+
  }

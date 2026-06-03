@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersKvAny
 
-final class WorkersKvAny {const WorkersKvAny({this.string, this.$double, this.$int, this.$bool, this.mapStringDynamic, this.listWorkersKvAny, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersKvAny {const WorkersKvAny({this.string, this.$double, this.$int, this.$bool, this.mapStringDynamic, this.listWorkersKvAny, });
 
 factory WorkersKvAny.fromJson(dynamic json) { return WorkersKvAny(
   string: json is String ? json : null,
@@ -34,4 +34,17 @@ Map<String, dynamic> toJson() { return {
   'mapStringDynamic': ?mapStringDynamic,
   'listWorkersKvAny': ?listWorkersKvAny,
 }; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is WorkersKvAny &&
+          string == other.string &&
+          $double == other.$double &&
+          $int == other.$int &&
+          $bool == other.$bool &&
+          mapStringDynamic == other.mapStringDynamic &&
+          listEquals(listWorkersKvAny, other.listWorkersKvAny);
+
+@override int get hashCode => Object.hash(string, $double, $int, $bool, mapStringDynamic, Object.hashAll(listWorkersKvAny ?? const []));
+
+@override String toString() => 'WorkersKvAny(string: $string, \$double: ${$double}, \$int: ${$int}, \$bool: ${$bool}, mapStringDynamic: $mapStringDynamic, listWorkersKvAny: $listWorkersKvAny)';
+
  }
