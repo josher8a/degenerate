@@ -354,7 +354,7 @@ return execute(
 Future<ApiResult<WorkersSecret?, Never>> workerGetScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (urlEncoded != null) {
-  queryParameters['url_encoded'] = urlEncoded.toString();
+  queryParameters['url_encoded'] = urlEncoded.toJson().toString();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -384,7 +384,7 @@ return execute(
 Future<ApiResult<Map<String, dynamic>?, Never>> workerDeleteScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (urlEncoded != null) {
-  queryParameters['url_encoded'] = urlEncoded.toString();
+  queryParameters['url_encoded'] = urlEncoded.toJson().toString();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

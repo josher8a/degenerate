@@ -16,10 +16,10 @@ final class LoadBalancerRegionsApi with ApiExecutor {const LoadBalancerRegionsAp
 Future<ApiResult<Map<String, dynamic>?, Never>> loadBalancerRegionsListRegions({required LoadBalancingComponentsSchemasIdentifier accountId, LoadBalancingSubdivisionCodeA2? subdivisionCode, LoadBalancingSubdivisionCodeA2? subdivisionCodeA2, String? countryCodeA2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (subdivisionCode != null) {
-  queryParameters['subdivision_code'] = subdivisionCode.toString();
+  queryParameters['subdivision_code'] = subdivisionCode.toJson();
 }
 if (subdivisionCodeA2 != null) {
-  queryParameters['subdivision_code_a2'] = subdivisionCodeA2.toString();
+  queryParameters['subdivision_code_a2'] = subdivisionCodeA2.toJson();
 }
 if (countryCodeA2 != null) {
   queryParameters['country_code_a2'] = countryCodeA2;

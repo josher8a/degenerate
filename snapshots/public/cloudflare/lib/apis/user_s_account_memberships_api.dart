@@ -16,7 +16,7 @@ final class UserSAccountMembershipsApi with ApiExecutor {const UserSAccountMembe
 Future<ApiResult<UserSAccountMembershipsListMembershipsResponse, Never>> userSAccountMembershipsListMemberships({IamPropertiesName? accountName, double? page, double? perPage, UserSAccountMembershipsListMembershipsOrder? order, UserSAccountMembershipsListMembershipsDirection? direction, IamPropertiesName? name, UserSAccountMembershipsListMembershipsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountName != null) {
-  queryParameters['account.name'] = accountName.toString();
+  queryParameters['account.name'] = accountName.toJson();
 }
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -31,7 +31,7 @@ if (direction != null) {
   queryParameters['direction'] = direction.toJson();
 }
 if (name != null) {
-  queryParameters['name'] = name.toString();
+  queryParameters['name'] = name.toJson();
 }
 if (status != null) {
   queryParameters['status'] = status.toJson();

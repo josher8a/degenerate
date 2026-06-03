@@ -173,9 +173,9 @@ Future<ApiResult<ObservatoryTrend?, Never>> speedListPageTrend({required Observa
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['region'] = region.toJson();
 queryParameters['deviceType'] = deviceType.toJson();
-queryParameters['start'] = start.toString();
+queryParameters['start'] = start.toJson();
 if (end != null) {
-  queryParameters['end'] = end.toString();
+  queryParameters['end'] = end.toJson();
 }
 queryParameters['tz'] = tz;
 queryParameters['metrics'] = metrics;

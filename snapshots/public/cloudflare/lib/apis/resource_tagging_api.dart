@@ -15,10 +15,10 @@ final class ResourceTaggingApi with ApiExecutor {const ResourceTaggingApi(this.a
 /// `GET /accounts/{account_id}/tags`
 Future<ApiResult<ResourceTaggingTaggedResourceObject?, Never>> tagsGet({required ResourceTaggingIdentifier accountId, required ResourceTaggingResourceId resourceId, required ResourceTaggingAccountResourceType resourceType, ResourceTaggingWorkerId? workerId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['resource_id'] = resourceId.toString();
+queryParameters['resource_id'] = resourceId.toJson();
 queryParameters['resource_type'] = resourceType.toJson();
 if (workerId != null) {
-  queryParameters['worker_id'] = workerId.toString();
+  queryParameters['worker_id'] = workerId.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -203,10 +203,10 @@ return execute(
 /// `GET /zones/{zone_id}/tags`
 Future<ApiResult<ResourceTaggingTaggedResourceObject?, Never>> tagsZoneGet({required ResourceTaggingIdentifier zoneId, required ResourceTaggingResourceId resourceId, required ResourceTaggingZoneResourceType resourceType, ResourceTaggingAccessApplicationId? accessApplicationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['resource_id'] = resourceId.toString();
+queryParameters['resource_id'] = resourceId.toJson();
 queryParameters['resource_type'] = resourceType.toJson();
 if (accessApplicationId != null) {
-  queryParameters['access_application_id'] = accessApplicationId.toString();
+  queryParameters['access_application_id'] = accessApplicationId.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

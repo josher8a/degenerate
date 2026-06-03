@@ -16,13 +16,13 @@ final class WorkerDomainApi with ApiExecutor {const WorkerDomainApi(this.apiConf
 Future<ApiResult<List<WorkersDomain>?, Never>> workerDomainListDomains({required WorkersAccountIdentifier accountId, WorkersZoneName? zoneName, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, String? hostname, String? environment, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (zoneName != null) {
-  queryParameters['zone_name'] = zoneName.toString();
+  queryParameters['zone_name'] = zoneName.toJson();
 }
 if (service != null) {
-  queryParameters['service'] = service.toString();
+  queryParameters['service'] = service.toJson();
 }
 if (zoneId != null) {
-  queryParameters['zone_id'] = zoneId.toString();
+  queryParameters['zone_id'] = zoneId.toJson();
 }
 if (hostname != null) {
   queryParameters['hostname'] = hostname;

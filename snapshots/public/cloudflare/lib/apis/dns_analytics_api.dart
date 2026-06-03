@@ -18,25 +18,25 @@ final class DnsAnalyticsApi with ApiExecutor {const DnsAnalyticsApi(this.apiConf
 Future<ApiResult<DnsAnalyticsResult?, Never>> dnsAnalyticsTable({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metrics != null) {
-  queryParameters['metrics'] = metrics.toString();
+  queryParameters['metrics'] = metrics.toJson();
 }
 if (dimensions != null) {
-  queryParameters['dimensions'] = dimensions.toString();
+  queryParameters['dimensions'] = dimensions.toJson();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toJson();
 }
 if (until != null) {
-  queryParameters['until'] = until.toString();
+  queryParameters['until'] = until.toJson();
 }
 if (limit != null) {
-  queryParameters['limit'] = limit.toString();
+  queryParameters['limit'] = limit.toJson().toString();
 }
 if (sort != null) {
-  queryParameters['sort'] = sort.toString();
+  queryParameters['sort'] = sort.toJson();
 }
 if (filters != null) {
-  queryParameters['filters'] = filters.toString();
+  queryParameters['filters'] = filters.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -68,25 +68,25 @@ return execute(
 Future<ApiResult<DnsAnalyticsReportBytime?, Never>> dnsAnalyticsByTime({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, DnsAnalyticsTimeDelta? timeDelta, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metrics != null) {
-  queryParameters['metrics'] = metrics.toString();
+  queryParameters['metrics'] = metrics.toJson();
 }
 if (dimensions != null) {
-  queryParameters['dimensions'] = dimensions.toString();
+  queryParameters['dimensions'] = dimensions.toJson();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toJson();
 }
 if (until != null) {
-  queryParameters['until'] = until.toString();
+  queryParameters['until'] = until.toJson();
 }
 if (limit != null) {
-  queryParameters['limit'] = limit.toString();
+  queryParameters['limit'] = limit.toJson().toString();
 }
 if (sort != null) {
-  queryParameters['sort'] = sort.toString();
+  queryParameters['sort'] = sort.toJson();
 }
 if (filters != null) {
-  queryParameters['filters'] = filters.toString();
+  queryParameters['filters'] = filters.toJson();
 }
 if (timeDelta != null) {
   queryParameters['time_delta'] = timeDelta.toJson();

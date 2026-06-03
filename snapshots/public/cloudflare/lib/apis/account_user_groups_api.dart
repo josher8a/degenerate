@@ -16,7 +16,7 @@ final class AccountUserGroupsApi with ApiExecutor {const AccountUserGroupsApi(th
 Future<ApiResult<List<IamUserGroup>?, Never>> accountUserGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, String? fuzzyName, double? page, double? perPage, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
-  queryParameters['id'] = id.toString();
+  queryParameters['id'] = id.toJson();
 }
 if (name != null) {
   queryParameters['name'] = name;

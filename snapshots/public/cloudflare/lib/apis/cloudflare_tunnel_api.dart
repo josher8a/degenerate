@@ -16,16 +16,16 @@ final class CloudflareTunnelApi with ApiExecutor {const CloudflareTunnelApi(this
 Future<ApiResult<List<TunnelCfdTunnel>?, Never>> cloudflareTunnelListCloudflareTunnels({required TunnelAccountId accountId, TunnelTunnelName? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
-  queryParameters['name'] = name.toString();
+  queryParameters['name'] = name.toJson();
 }
 if (isDeleted != null) {
   queryParameters['is_deleted'] = isDeleted.toString();
 }
 if (existedAt != null) {
-  queryParameters['existed_at'] = existedAt.toString();
+  queryParameters['existed_at'] = existedAt.toJson();
 }
 if (uuid != null) {
-  queryParameters['uuid'] = uuid.toString();
+  queryParameters['uuid'] = uuid.toJson();
 }
 if (wasActiveAt != null) {
   queryParameters['was_active_at'] = wasActiveAt.toString();
@@ -43,10 +43,10 @@ if (status != null) {
   queryParameters['status'] = status.toJson();
 }
 if (perPage != null) {
-  queryParameters['per_page'] = perPage.toString();
+  queryParameters['per_page'] = perPage.toJson().toString();
 }
 if (page != null) {
-  queryParameters['page'] = page.toString();
+  queryParameters['page'] = page.toJson().toString();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -192,7 +192,7 @@ return execute(
 Future<ApiResult<ResponseCommon33Result, Never>> cloudflareTunnelCleanUpCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required Map<String,dynamic> body, TunnelClientId? clientId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientId != null) {
-  queryParameters['client_id'] = clientId.toString();
+  queryParameters['client_id'] = clientId.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -298,10 +298,10 @@ if (isDeleted != null) {
   queryParameters['is_deleted'] = isDeleted.toString();
 }
 if (existedAt != null) {
-  queryParameters['existed_at'] = existedAt.toString();
+  queryParameters['existed_at'] = existedAt.toJson();
 }
 if (uuid != null) {
-  queryParameters['uuid'] = uuid.toString();
+  queryParameters['uuid'] = uuid.toJson();
 }
 if (wasActiveAt != null) {
   queryParameters['was_active_at'] = wasActiveAt.toString();
@@ -324,10 +324,10 @@ if (status != null) {
   queryParameters['status'] = status.toJson();
 }
 if (perPage != null) {
-  queryParameters['per_page'] = perPage.toString();
+  queryParameters['per_page'] = perPage.toJson().toString();
 }
 if (page != null) {
-  queryParameters['page'] = page.toString();
+  queryParameters['page'] = page.toJson().toString();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -363,10 +363,10 @@ if (isDeleted != null) {
   queryParameters['is_deleted'] = isDeleted.toString();
 }
 if (existedAt != null) {
-  queryParameters['existed_at'] = existedAt.toString();
+  queryParameters['existed_at'] = existedAt.toJson();
 }
 if (uuid != null) {
-  queryParameters['uuid'] = uuid.toString();
+  queryParameters['uuid'] = uuid.toJson();
 }
 if (wasActiveAt != null) {
   queryParameters['was_active_at'] = wasActiveAt.toString();
@@ -384,10 +384,10 @@ if (status != null) {
   queryParameters['status'] = status.toJson();
 }
 if (perPage != null) {
-  queryParameters['per_page'] = perPage.toString();
+  queryParameters['per_page'] = perPage.toJson().toString();
 }
 if (page != null) {
-  queryParameters['page'] = page.toString();
+  queryParameters['page'] = page.toJson().toString();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

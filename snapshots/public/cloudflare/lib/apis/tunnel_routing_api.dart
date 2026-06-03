@@ -16,25 +16,25 @@ final class TunnelRoutingApi with ApiExecutor {const TunnelRoutingApi(this.apiCo
 Future<ApiResult<List<TunnelTeamnet>?, Never>> tunnelRouteListTunnelRoutes({required TunnelAccountId accountId, TunnelRouteComment? comment, bool? isDeleted, TunnelIpNetwork? networkSubset, TunnelIpNetwork? networkSuperset, TunnelExistedAt? existedAt, TunnelTunnelId? tunnelId, TunnelRouteId? routeId, List<TunnelTunnelType>? tunTypes, TunnelVirtualNetworkId? virtualNetworkId, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (comment != null) {
-  queryParameters['comment'] = comment.toString();
+  queryParameters['comment'] = comment.toJson();
 }
 if (isDeleted != null) {
   queryParameters['is_deleted'] = isDeleted.toString();
 }
 if (networkSubset != null) {
-  queryParameters['network_subset'] = networkSubset.toString();
+  queryParameters['network_subset'] = networkSubset.toJson();
 }
 if (networkSuperset != null) {
-  queryParameters['network_superset'] = networkSuperset.toString();
+  queryParameters['network_superset'] = networkSuperset.toJson();
 }
 if (existedAt != null) {
-  queryParameters['existed_at'] = existedAt.toString();
+  queryParameters['existed_at'] = existedAt.toJson();
 }
 if (tunnelId != null) {
-  queryParameters['tunnel_id'] = tunnelId.toString();
+  queryParameters['tunnel_id'] = tunnelId.toJson();
 }
 if (routeId != null) {
-  queryParameters['route_id'] = routeId.toString();
+  queryParameters['route_id'] = routeId.toJson();
 }
 if (tunTypes != null) {
 for (final item in tunTypes) {
@@ -42,13 +42,13 @@ for (final item in tunTypes) {
 }
 }
 if (virtualNetworkId != null) {
-  queryParameters['virtual_network_id'] = virtualNetworkId.toString();
+  queryParameters['virtual_network_id'] = virtualNetworkId.toJson();
 }
 if (perPage != null) {
-  queryParameters['per_page'] = perPage.toString();
+  queryParameters['per_page'] = perPage.toJson().toString();
 }
 if (page != null) {
-  queryParameters['page'] = page.toString();
+  queryParameters['page'] = page.toJson().toString();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -171,7 +171,7 @@ return execute(
 Future<ApiResult<ResponseCommon33Result, Never>> tunnelRouteGetTunnelRouteByIp({required TunnelIp ip, required TunnelAccountId accountId, TunnelVirtualNetworkId? virtualNetworkId, bool? defaultVirtualNetworkFallback, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (virtualNetworkId != null) {
-  queryParameters['virtual_network_id'] = virtualNetworkId.toString();
+  queryParameters['virtual_network_id'] = virtualNetworkId.toJson();
 }
 if (defaultVirtualNetworkFallback != null) {
   queryParameters['default_virtual_network_fallback'] = defaultVirtualNetworkFallback.toString();

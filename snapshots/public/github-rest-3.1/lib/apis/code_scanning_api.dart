@@ -20,10 +20,10 @@ final class CodeScanningApi with ApiExecutor {const CodeScanningApi(this.apiConf
 Future<ApiResult<List<CodeScanningOrganizationAlertItems>, CodeScanningListAlertsForOrgError>> codeScanningListAlertsForOrg({required String org, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, String? before, String? after, int? page, int? perPage, CodeScanningListAlertsForOrgDirection? direction, CodeScanningAlertStateQuery? state, CodeScanningListAlertsForOrgSort? sort, CodeScanningAlertSeverity? severity, String? assignees, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (toolName != null) {
-  queryParameters['tool_name'] = toolName.toString();
+  queryParameters['tool_name'] = toolName.toJson();
 }
 if (toolGuid != null) {
-  queryParameters['tool_guid'] = toolGuid.toString();
+  queryParameters['tool_guid'] = toolGuid.toJson();
 }
 if (before != null) {
   queryParameters['before'] = before;
@@ -87,10 +87,10 @@ return execute(
 Future<ApiResult<List<CodeScanningAlertItems>, CodeScanningListAlertsForRepoError>> codeScanningListAlertsForRepo({required String owner, required String repo, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, int? page, int? perPage, CodeScanningRef? ref, int? pr, CodeScanningListAlertsForRepoDirection? direction, String? before, String? after, CodeScanningListAlertsForRepoSort? sort, CodeScanningAlertStateQuery? state, CodeScanningAlertSeverity? severity, String? assignees, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (toolName != null) {
-  queryParameters['tool_name'] = toolName.toString();
+  queryParameters['tool_name'] = toolName.toJson();
 }
 if (toolGuid != null) {
-  queryParameters['tool_guid'] = toolGuid.toString();
+  queryParameters['tool_guid'] = toolGuid.toJson();
 }
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -99,7 +99,7 @@ if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
 }
 if (ref != null) {
-  queryParameters['ref'] = ref.toString();
+  queryParameters['ref'] = ref.toJson();
 }
 if (pr != null) {
   queryParameters['pr'] = pr.toString();
@@ -157,7 +157,7 @@ Future<ApiResult<CodeScanningAlert, CodeScanningGetAlertError>> codeScanningGetA
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toJson().toString())}',
   headers: headers,
   options: options,
 );
@@ -181,7 +181,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toJson().toString())}',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -206,7 +206,7 @@ Future<ApiResult<CodeScanningAutofix, CodeScanningGetAutofixError>> codeScanning
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}/autofix',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toJson().toString())}/autofix',
   headers: headers,
   options: options,
 );
@@ -234,7 +234,7 @@ Future<ApiResult<CodeScanningAutofix, CodeScanningCreateAutofixError>> codeScann
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}/autofix',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toJson().toString())}/autofix',
   headers: headers,
   options: options,
 );
@@ -261,7 +261,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}/autofix/commits',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toJson().toString())}/autofix/commits',
   headers: headers,
   body: jsonEncode(body?.toJson()),
   options: options,
@@ -291,7 +291,7 @@ if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
 }
 if (ref != null) {
-  queryParameters['ref'] = ref.toString();
+  queryParameters['ref'] = ref.toJson();
 }
 if (pr != null) {
   queryParameters['pr'] = pr.toString();
@@ -301,7 +301,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}/instances',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/code-scanning/alerts/${Uri.encodeComponent(alertNumber.toJson().toString())}/instances',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -339,10 +339,10 @@ return execute(
 Future<ApiResult<List<CodeScanningAnalysis>, CodeScanningListRecentAnalysesError>> codeScanningListRecentAnalyses({required String owner, required String repo, CodeScanningAnalysisToolName? toolName, CodeScanningAnalysisToolGuid? toolGuid, int? page, int? perPage, int? pr, CodeScanningRef? ref, CodeScanningAnalysisSarifId? sarifId, CodeScanningListRecentAnalysesDirection? direction, CodeScanningListRecentAnalysesSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (toolName != null) {
-  queryParameters['tool_name'] = toolName.toString();
+  queryParameters['tool_name'] = toolName.toJson();
 }
 if (toolGuid != null) {
-  queryParameters['tool_guid'] = toolGuid.toString();
+  queryParameters['tool_guid'] = toolGuid.toJson();
 }
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -354,10 +354,10 @@ if (pr != null) {
   queryParameters['pr'] = pr.toString();
 }
 if (ref != null) {
-  queryParameters['ref'] = ref.toString();
+  queryParameters['ref'] = ref.toJson();
 }
 if (sarifId != null) {
-  queryParameters['sarif_id'] = sarifId.toString();
+  queryParameters['sarif_id'] = sarifId.toJson();
 }
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();

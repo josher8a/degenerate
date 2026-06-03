@@ -19,7 +19,7 @@ if (page != null) {
   queryParameters['page'] = page.toString();
 }
 if (description != null) {
-  queryParameters['description'] = description.toString();
+  queryParameters['description'] = description.toJson();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();

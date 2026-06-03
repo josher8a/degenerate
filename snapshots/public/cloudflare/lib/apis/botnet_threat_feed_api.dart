@@ -16,14 +16,14 @@ final class BotnetThreatFeedApi with ApiExecutor {const BotnetThreatFeedApi(this
 Future<ApiResult<BotnetThreatFeedGetDayReportResponseResult?, Never>> botnetThreatFeedGetDayReport({required DosIdentifier accountId, required DosAsn asnId, DosTimestamp? date, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (date != null) {
-  queryParameters['date'] = date.toString();
+  queryParameters['date'] = date.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/botnet_feed/asn/${Uri.encodeComponent(asnId.toString())}/day_report',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/botnet_feed/asn/${Uri.encodeComponent(asnId.toJson().toString())}/day_report',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -47,7 +47,7 @@ Future<ApiResult<BotnetThreatFeedGetDayReportResponseResult?, Never>> botnetThre
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/botnet_feed/asn/${Uri.encodeComponent(asnId.toString())}/full_report',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/botnet_feed/asn/${Uri.encodeComponent(asnId.toJson().toString())}/full_report',
   headers: headers,
   options: options,
 );
@@ -91,7 +91,7 @@ Future<ApiResult<BotnetThreatFeedDeleteAsnResponseResult?, Never>> botnetThreatF
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/botnet_feed/configs/asn/${Uri.encodeComponent(asnId.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/botnet_feed/configs/asn/${Uri.encodeComponent(asnId.toJson().toString())}',
   headers: headers,
   options: options,
 );

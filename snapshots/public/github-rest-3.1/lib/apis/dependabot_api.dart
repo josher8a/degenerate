@@ -573,7 +573,7 @@ Future<ApiResult<DependabotAlert, ActionsApproveWorkflowRunError>> dependabotGet
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependabot/alerts/${Uri.encodeComponent(alertNumber.toString())}',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependabot/alerts/${Uri.encodeComponent(alertNumber.toJson().toString())}',
   headers: headers,
   options: options,
 );
@@ -598,7 +598,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependabot/alerts/${Uri.encodeComponent(alertNumber.toString())}',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/dependabot/alerts/${Uri.encodeComponent(alertNumber.toJson().toString())}',
   headers: headers,
   body: jsonEncode(body),
   options: options,

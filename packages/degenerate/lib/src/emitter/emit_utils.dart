@@ -380,6 +380,38 @@ bool isBytesType(IrType type) => switch (type) {
       _ => false,
     };
 
+// ─── Type-to-String serialization ──────────────────────
+
+/// Convert a scalar [type] value at [accessor] to a `String` expression
+/// suitable for query parameters, headers, path segments, and multipart text
+/// fields. This is the single source of truth for "how do I stringify this
+/// IrType for HTTP transport."
+///
+/// [primitiveExpr] handles primitives — it receives the kind and accessor and
+/// returns a String expression. Pass null to use the default (identity for
+/// strings, `.toString()` for everything else).
+String typeToStringExpr(
+  IrType type,
+  String accessor, {
+  String Function(PrimitiveKind kind, String accessor)? primitiveExpr,
+}) {
+  final primExpr = primitiveExpr ?? _defaultPrimitiveToString;
+  return switch (type) {
+    IrPrimitive(:final kind) => primExpr(kind, accessor),
+    IrEnum(:final valueKind) => valueKind == PrimitiveKind.string
+        ? '$accessor.toJson()'
+        : '$accessor.toJson().toString()',
+    IrExtensionType(:final inner) =>
+      primitiveJsonWireType(inner.kind) == 'String'
+          ? '$accessor.toJson()'
+          : '$accessor.toJson().toString()',
+    _ => '$accessor.toString()',
+  };
+}
+
+String _defaultPrimitiveToString(PrimitiveKind kind, String accessor) =>
+    kind == PrimitiveKind.string ? accessor : '$accessor.toString()';
+
 // ─── OneOf helpers ──────────────────────────────────────
 
 const _oneOfLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];

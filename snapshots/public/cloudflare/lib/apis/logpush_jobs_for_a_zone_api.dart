@@ -107,7 +107,7 @@ Future<ApiResult<LogpushLogpushJob?, Never>> getZonesZoneIdLogpushJobsJobId({req
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/jobs/${Uri.encodeComponent(jobId.toJson().toString())}',
   headers: headers,
   options: options,
 );
@@ -130,7 +130,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/jobs/${Uri.encodeComponent(jobId.toJson().toString())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -153,7 +153,7 @@ Future<ApiResult<DeleteAccountsAccountIdLogpushJobsJobIdResponseResult?, Never>>
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson())}/logpush/jobs/${Uri.encodeComponent(jobId.toJson().toString())}',
   headers: headers,
   options: options,
 );

@@ -15,9 +15,9 @@ final class GitHubIntegrationApi with ApiExecutor {const GitHubIntegrationApi(th
 /// `GET /accounts/{account_id}/builds/repos/{provider_type}/{provider_account_id}/{repo_id}/config_autofill`
 Future<ApiResult<Map<String, dynamic>?, Never>> getWorkerConfigAutofill({required BuildsAccountId accountId, required BuildsScmProviderType providerType, required BuildsProviderAccountId providerAccountId, required BuildsRepoId repoId, required BuildsBranch branch, BuildsRootDirectory? rootDirectory, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['branch'] = branch.toString();
+queryParameters['branch'] = branch.toJson();
 if (rootDirectory != null) {
-  queryParameters['root_directory'] = rootDirectory.toString();
+  queryParameters['root_directory'] = rootDirectory.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

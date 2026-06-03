@@ -49,7 +49,7 @@ if (contentEndswith != null) {
   queryParameters['content.endswith'] = contentEndswith;
 }
 if (proxied != null) {
-  queryParameters['proxied'] = proxied.toString();
+  queryParameters['proxied'] = proxied.toJson().toString();
 }
 if (match != null) {
   queryParameters['match'] = match.toJson();
@@ -97,16 +97,16 @@ if (tagEndswith != null) {
   queryParameters['tag.endswith'] = tagEndswith;
 }
 if (search != null) {
-  queryParameters['search'] = search.toString();
+  queryParameters['search'] = search.toJson();
 }
 if (tagMatch != null) {
   queryParameters['tag_match'] = tagMatch.toJson();
 }
 if (page != null) {
-  queryParameters['page'] = page.toString();
+  queryParameters['page'] = page.toJson().toString();
 }
 if (perPage != null) {
-  queryParameters['per_page'] = perPage.toString();
+  queryParameters['per_page'] = perPage.toJson().toString();
 }
 if (order != null) {
   queryParameters['order'] = order.toJson();

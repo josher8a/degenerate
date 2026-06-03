@@ -17,7 +17,7 @@ Future<ApiResult<List<TeamsDevicesDeviceManagedNetworks>?, Never>> deviceManaged
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/networks',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/networks',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<TeamsDevicesDeviceManagedNetworks?, Never>> deviceManagedNetwor
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks/${Uri.encodeComponent(networkId.toJson())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/networks/${Uri.encodeComponent(networkId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks/${Uri.encodeComponent(networkId.toJson())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/networks/${Uri.encodeComponent(networkId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<List<TeamsDevicesDeviceManagedNetworks>?, Never>> deviceManaged
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/networks/${Uri.encodeComponent(networkId.toJson())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/networks/${Uri.encodeComponent(networkId.toJson())}',
   headers: headers,
   options: options,
 );

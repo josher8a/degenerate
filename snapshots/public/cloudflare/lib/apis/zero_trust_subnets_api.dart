@@ -16,16 +16,16 @@ final class ZeroTrustSubnetsApi with ApiExecutor {const ZeroTrustSubnetsApi(this
 Future<ApiResult<List<TunnelSubnet>?, Never>> zeroTrustNetworksSubnetsList({required TunnelAccountId accountId, TunnelSubnetQueryName? name, TunnelSubnetQueryComment? comment, TunnelIpNetworkEncoded? network, TunnelExistedAt? existedAt, TunnelAddressFamily? addressFamily, bool? isDefaultNetwork, bool? isDeleted, ZeroTrustNetworksSubnetsListSortOrder? sortOrder, ZeroTrustNetworksSubnetsListSubnetTypes? subnetTypes, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
-  queryParameters['name'] = name.toString();
+  queryParameters['name'] = name.toJson();
 }
 if (comment != null) {
-  queryParameters['comment'] = comment.toString();
+  queryParameters['comment'] = comment.toJson();
 }
 if (network != null) {
-  queryParameters['network'] = network.toString();
+  queryParameters['network'] = network.toJson();
 }
 if (existedAt != null) {
-  queryParameters['existed_at'] = existedAt.toString();
+  queryParameters['existed_at'] = existedAt.toJson();
 }
 if (addressFamily != null) {
   queryParameters['address_family'] = addressFamily.toJson();
@@ -43,10 +43,10 @@ if (subnetTypes != null) {
   queryParameters['subnet_types'] = subnetTypes.toJson();
 }
 if (perPage != null) {
-  queryParameters['per_page'] = perPage.toString();
+  queryParameters['per_page'] = perPage.toJson().toString();
 }
 if (page != null) {
-  queryParameters['page'] = page.toString();
+  queryParameters['page'] = page.toJson().toString();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

@@ -17,7 +17,7 @@ Future<ApiResult<List<TeamsDevicesDeviceSettingsPolicy>?, Never>> devicesListDev
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policies',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policies',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<TeamsDevicesDefaultDeviceSettingsPolicy?, Never>> devicesGetDef
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy',
   headers: headers,
   options: options,
 );
@@ -62,7 +62,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<TeamsDevicesDeviceSettingsPolicy?, Never>> devicesGetDeviceSett
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -132,7 +132,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -155,7 +155,7 @@ Future<ApiResult<List<TeamsDevicesDeviceSettingsPolicy>?, Never>> devicesDeleteD
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -177,7 +177,7 @@ Future<ApiResult<List<TeamsDevicesSplitTunnel>?, Never>> devicesGetSplitTunnelEx
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}/exclude',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}/exclude',
   headers: headers,
   options: options,
 );
@@ -200,7 +200,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}/exclude',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}/exclude',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -223,7 +223,7 @@ Future<ApiResult<List<TeamsDevicesFallbackDomain>?, Never>> devicesGetLocalDomai
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}/fallback_domains',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}/fallback_domains',
   headers: headers,
   options: options,
 );
@@ -246,7 +246,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}/fallback_domains',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}/fallback_domains',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -269,7 +269,7 @@ Future<ApiResult<List<TeamsDevicesSplitTunnelInclude>?, Never>> devicesGetSplitT
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}/include',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}/include',
   headers: headers,
   options: options,
 );
@@ -292,7 +292,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}/include',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/${Uri.encodeComponent(policyId.toJson())}/include',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -315,7 +315,7 @@ Future<ApiResult<List<TeamsDevicesSplitTunnel>?, Never>> devicesGetSplitTunnelEx
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/exclude',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/exclude',
   headers: headers,
   options: options,
 );
@@ -338,7 +338,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/exclude',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/exclude',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -361,7 +361,7 @@ Future<ApiResult<List<TeamsDevicesFallbackDomain>?, Never>> devicesGetLocalDomai
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/fallback_domains',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/fallback_domains',
   headers: headers,
   options: options,
 );
@@ -384,7 +384,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/fallback_domains',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/fallback_domains',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -407,7 +407,7 @@ Future<ApiResult<List<TeamsDevicesSplitTunnelInclude>?, Never>> devicesGetSplitT
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/include',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/include',
   headers: headers,
   options: options,
 );
@@ -430,7 +430,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/policy/include',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/policy/include',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -453,7 +453,7 @@ Future<ApiResult<TeamsDevicesDevicesPolicyCertificates?, Never>> devicesGetPolic
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/devices/policy/certificates',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson().toString())}/devices/policy/certificates',
   headers: headers,
   options: options,
 );
@@ -476,7 +476,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/devices/policy/certificates',
+  path: '/zones/${Uri.encodeComponent(zoneId.toJson().toString())}/devices/policy/certificates',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,

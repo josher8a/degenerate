@@ -271,7 +271,7 @@ return execute(
 Future<ApiResult<Map<String, dynamic>, Never>> d1TimeTravelGetBookmark({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (timestamp != null) {
-  queryParameters['timestamp'] = timestamp.toString();
+  queryParameters['timestamp'] = timestamp.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -302,10 +302,10 @@ return execute(
 Future<ApiResult<Map<String, dynamic>, Never>> d1TimeTravelRestore({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelBookmark? bookmark, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bookmark != null) {
-  queryParameters['bookmark'] = bookmark.toString();
+  queryParameters['bookmark'] = bookmark.toJson();
 }
 if (timestamp != null) {
-  queryParameters['timestamp'] = timestamp.toString();
+  queryParameters['timestamp'] = timestamp.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

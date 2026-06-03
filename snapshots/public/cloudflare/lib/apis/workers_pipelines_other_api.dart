@@ -223,7 +223,7 @@ return execute(
 Future<ApiResult<List<StreamsByStreamIdResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, CloudflarePipelinesWorkersPipelinesPipelineId? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pipelineId != null) {
-  queryParameters['pipeline_id'] = pipelineId.toString();
+  queryParameters['pipeline_id'] = pipelineId.toJson();
 }
 if (page != null) {
   queryParameters['page'] = page.toString();

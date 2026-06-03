@@ -16,16 +16,16 @@ final class LoadBalancerHealthcheckEventsApi with ApiExecutor {const LoadBalance
 Future<ApiResult<List<LoadBalancingAnalytics>?, Never>> loadBalancerHealthcheckEventsListHealthcheckEvents({LoadBalancingUntil? until, LoadBalancingPoolName? poolName, LoadBalancingOriginHealthy2? originHealthy, LoadBalancingSchemasIdentifier? poolId, DateTime? since, String? originName, bool? poolHealthy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (until != null) {
-  queryParameters['until'] = until.toString();
+  queryParameters['until'] = until.toJson();
 }
 if (poolName != null) {
-  queryParameters['pool_name'] = poolName.toString();
+  queryParameters['pool_name'] = poolName.toJson();
 }
 if (originHealthy != null) {
-  queryParameters['origin_healthy'] = originHealthy.toString();
+  queryParameters['origin_healthy'] = originHealthy.toJson().toString();
 }
 if (poolId != null) {
-  queryParameters['pool_id'] = poolId.toString();
+  queryParameters['pool_id'] = poolId.toJson();
 }
 if (since != null) {
   queryParameters['since'] = since.toString();

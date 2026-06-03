@@ -16,16 +16,16 @@ final class AccessScimUpdateLogsApi with ApiExecutor {const AccessScimUpdateLogs
 Future<ApiResult<List<AccessResponses>?, Never>> accessScimUpdateLogsListAccessScimUpdateLogs({required AccessIdentifier accountId, required List<String> idpId, AccessLimit? limit, AccessDirection? direction, AccessSince? since, AccessUntil? until, List<AccessRequestsStatus2>? status, List<AccessResourceType2>? resourceType, List<AccessRequestMethod2>? requestMethod, AccessResourceUserEmail? resourceUserEmail, AccessResourceGroupName? resourceGroupName, AccessRequestsCfResourceId? cfResourceId, AccessRequestsIdpResourceId? idpResourceId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
-  queryParameters['limit'] = limit.toString();
+  queryParameters['limit'] = limit.toJson().toString();
 }
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toJson();
 }
 if (until != null) {
-  queryParameters['until'] = until.toString();
+  queryParameters['until'] = until.toJson();
 }
 for (final item in idpId) {
   queryParametersList.add(ApiQueryParameter(name: 'idp_id', value: item));
@@ -46,16 +46,16 @@ for (final item in requestMethod) {
 }
 }
 if (resourceUserEmail != null) {
-  queryParameters['resource_user_email'] = resourceUserEmail.toString();
+  queryParameters['resource_user_email'] = resourceUserEmail.toJson();
 }
 if (resourceGroupName != null) {
-  queryParameters['resource_group_name'] = resourceGroupName.toString();
+  queryParameters['resource_group_name'] = resourceGroupName.toJson();
 }
 if (cfResourceId != null) {
-  queryParameters['cf_resource_id'] = cfResourceId.toString();
+  queryParameters['cf_resource_id'] = cfResourceId.toJson();
 }
 if (idpResourceId != null) {
-  queryParameters['idp_resource_id'] = idpResourceId.toString();
+  queryParameters['idp_resource_id'] = idpResourceId.toJson();
 }
 if (page != null) {
   queryParameters['page'] = page.toString();

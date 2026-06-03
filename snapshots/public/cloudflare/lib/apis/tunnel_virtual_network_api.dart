@@ -16,10 +16,10 @@ final class TunnelVirtualNetworkApi with ApiExecutor {const TunnelVirtualNetwork
 Future<ApiResult<List<TunnelVirtualNetwork>?, Never>> tunnelVirtualNetworkListVirtualNetworks({required TunnelAccountId accountId, TunnelVirtualNetworkId? id, TunnelVirtualNetworkName? name, bool? isDefault, bool? isDefaultNetwork, bool? isDeleted, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
-  queryParameters['id'] = id.toString();
+  queryParameters['id'] = id.toJson();
 }
 if (name != null) {
-  queryParameters['name'] = name.toString();
+  queryParameters['name'] = name.toJson();
 }
 if (isDefault != null) {
   queryParameters['is_default'] = isDefault.toString();

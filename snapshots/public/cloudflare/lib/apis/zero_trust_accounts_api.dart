@@ -17,7 +17,7 @@ Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings?, Never>> zeroTrustA
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/settings',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -64,7 +64,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/settings',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -87,7 +87,7 @@ Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings?, Never>> zeroTrustA
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/settings',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/settings',
   headers: headers,
   options: options,
 );

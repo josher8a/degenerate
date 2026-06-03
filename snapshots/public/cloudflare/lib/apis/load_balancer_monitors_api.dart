@@ -201,7 +201,7 @@ Future<ApiResult<Map<String, LoadBalancingPreviewResultValue>?, Never>> loadBala
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/user/load_balancers/preview/${Uri.encodeComponent(previewId.toString())}',
+  path: '/user/load_balancers/preview/${Uri.encodeComponent(previewId.toJson().toString())}',
   headers: headers,
   options: options,
 );

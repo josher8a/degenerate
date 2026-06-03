@@ -17,7 +17,7 @@ Future<ApiResult<List<TeamsDevicesDevicePostureRules>?, Never>> devicePostureRul
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/posture',
   headers: headers,
   options: options,
 );
@@ -40,7 +40,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/posture',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -63,7 +63,7 @@ Future<ApiResult<TeamsDevicesDevicePostureRules?, Never>> devicePostureRulesDeta
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/${Uri.encodeComponent(ruleId.toJson())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/posture/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );
@@ -86,7 +86,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/${Uri.encodeComponent(ruleId.toJson())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/posture/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   body: jsonEncode(body.toJson()),
   options: options,
@@ -109,7 +109,7 @@ Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, Never>> de
 
 final request = ApiRequest(
   method: 'DELETE',
-  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/devices/posture/${Uri.encodeComponent(ruleId.toJson())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson().toString())}/devices/posture/${Uri.encodeComponent(ruleId.toJson())}',
   headers: headers,
   options: options,
 );

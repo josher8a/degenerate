@@ -16,10 +16,10 @@ final class AccountRulesetsApi with ApiExecutor {const AccountRulesetsApi(this.a
 Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, Never>> listAccountRulesets({required RulesetsAccountId accountId, RulesetsCursor? cursor, RulesetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
-  queryParameters['cursor'] = cursor.toString();
+  queryParameters['cursor'] = cursor.toJson();
 }
 if (perPage != null) {
-  queryParameters['per_page'] = perPage.toString();
+  queryParameters['per_page'] = perPage.toJson().toString();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

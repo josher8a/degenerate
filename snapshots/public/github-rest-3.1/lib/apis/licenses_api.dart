@@ -79,7 +79,7 @@ return execute(
 Future<ApiResult<LicenseContent, ActionsGetArtifactAndLogRetentionSettingsRepositoryError>> licensesGetForRepo({required String owner, required String repo, CodeScanningRef? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ref != null) {
-  queryParameters['ref'] = ref.toString();
+  queryParameters['ref'] = ref.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

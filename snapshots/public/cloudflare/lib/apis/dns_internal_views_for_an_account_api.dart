@@ -40,10 +40,10 @@ if (match != null) {
   queryParameters['match'] = match.toJson();
 }
 if (page != null) {
-  queryParameters['page'] = page.toString();
+  queryParameters['page'] = page.toJson().toString();
 }
 if (perPage != null) {
-  queryParameters['per_page'] = perPage.toString();
+  queryParameters['per_page'] = perPage.toJson().toString();
 }
 if (order != null) {
   queryParameters['order'] = order.toJson();

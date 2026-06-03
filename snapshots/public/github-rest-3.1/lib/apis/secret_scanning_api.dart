@@ -225,7 +225,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/secret-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/secret-scanning/alerts/${Uri.encodeComponent(alertNumber.toJson().toString())}',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
@@ -256,7 +256,7 @@ headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
-  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/secret-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/secret-scanning/alerts/${Uri.encodeComponent(alertNumber.toJson().toString())}',
   headers: headers,
   body: jsonEncode(body),
   options: options,
@@ -292,7 +292,7 @@ final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/secret-scanning/alerts/${Uri.encodeComponent(alertNumber.toString())}/locations',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/secret-scanning/alerts/${Uri.encodeComponent(alertNumber.toJson().toString())}/locations',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

@@ -16,7 +16,7 @@ final class MagicSitesApi with ApiExecutor {const MagicSitesApi(this.apiConfig);
 Future<ApiResult<List<MagicSite>?, Never>> magicSitesListSites({required MagicIdentifier accountId, MagicIdentifier? connectorid, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (connectorid != null) {
-  queryParameters['connectorid'] = connectorid.toString();
+  queryParameters['connectorid'] = connectorid.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

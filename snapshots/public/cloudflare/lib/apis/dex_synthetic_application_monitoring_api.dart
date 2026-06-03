@@ -47,12 +47,12 @@ return execute(
 /// `GET /accounts/{account_id}/dex/devices/{device_id}/fleet-status/live`
 Future<ApiResult<DigitalExperienceMonitoringDevice, Never>> devicesLiveStatus({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceId deviceId, required DigitalExperienceMonitoringSinceMinutes sinceMinutes, DigitalExperienceMonitoringTimeNow? timeNow, DigitalExperienceMonitoringColo? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['since_minutes'] = sinceMinutes.toString();
+queryParameters['since_minutes'] = sinceMinutes.toJson().toString();
 if (timeNow != null) {
-  queryParameters['time_now'] = timeNow.toString();
+  queryParameters['time_now'] = timeNow.toJson();
 }
 if (colo != null) {
-  queryParameters['colo'] = colo.toString();
+  queryParameters['colo'] = colo.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -80,30 +80,30 @@ return execute(
 /// `GET /accounts/{account_id}/dex/fleet-status/devices`
 Future<ApiResult<List<DigitalExperienceMonitoringDevice>?, Never>> dexFleetStatusDevices({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringTimestamp to, required DigitalExperienceMonitoringTimestamp from, required DigitalExperienceMonitoringPage page, required DigitalExperienceMonitoringPerPage perPage, DigitalExperienceMonitoringSortBy? sortBy, DigitalExperienceMonitoringColo? colo, DigitalExperienceMonitoringDeviceId? deviceId, DigitalExperienceMonitoringMode? mode, DigitalExperienceMonitoringStatus? status, DigitalExperienceMonitoringPlatform? platform, DigitalExperienceMonitoringVersion? version, DigitalExperienceMonitoringSource? source, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['to'] = to.toString();
-queryParameters['from'] = from.toString();
-queryParameters['page'] = page.toString();
-queryParameters['per_page'] = perPage.toString();
+queryParameters['to'] = to.toJson();
+queryParameters['from'] = from.toJson();
+queryParameters['page'] = page.toJson().toString();
+queryParameters['per_page'] = perPage.toJson().toString();
 if (sortBy != null) {
   queryParameters['sort_by'] = sortBy.toJson();
 }
 if (colo != null) {
-  queryParameters['colo'] = colo.toString();
+  queryParameters['colo'] = colo.toJson();
 }
 if (deviceId != null) {
-  queryParameters['device_id'] = deviceId.toString();
+  queryParameters['device_id'] = deviceId.toJson();
 }
 if (mode != null) {
-  queryParameters['mode'] = mode.toString();
+  queryParameters['mode'] = mode.toJson();
 }
 if (status != null) {
-  queryParameters['status'] = status.toString();
+  queryParameters['status'] = status.toJson();
 }
 if (platform != null) {
-  queryParameters['platform'] = platform.toString();
+  queryParameters['platform'] = platform.toJson();
 }
 if (version != null) {
-  queryParameters['version'] = version.toString();
+  queryParameters['version'] = version.toJson();
 }
 if (source != null) {
   queryParameters['source'] = source.toJson();
@@ -135,7 +135,7 @@ return execute(
 /// `GET /accounts/{account_id}/dex/fleet-status/live`
 Future<ApiResult<DigitalExperienceMonitoringFleetStatusLiveResponseResult?, Never>> dexFleetStatusLive({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSinceMinutes sinceMinutes, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['since_minutes'] = sinceMinutes.toString();
+queryParameters['since_minutes'] = sinceMinutes.toJson().toString();
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -163,13 +163,13 @@ return execute(
 /// `GET /accounts/{account_id}/dex/fleet-status/over-time`
 Future<ApiResult<DigitalExperienceMonitoringFleetStatusOverTimeResponseResult?, Never>> dexFleetStatusOverTime({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringTimestamp to, required DigitalExperienceMonitoringTimestamp from, DigitalExperienceMonitoringColo? colo, DigitalExperienceMonitoringDeviceId? deviceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['to'] = to.toString();
-queryParameters['from'] = from.toString();
+queryParameters['to'] = to.toJson();
+queryParameters['from'] = from.toJson();
 if (colo != null) {
-  queryParameters['colo'] = colo.toString();
+  queryParameters['colo'] = colo.toJson();
 }
 if (deviceId != null) {
-  queryParameters['device_id'] = deviceId.toString();
+  queryParameters['device_id'] = deviceId.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

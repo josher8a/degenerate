@@ -15,7 +15,7 @@ final class OriginCaApi with ApiExecutor {const OriginCaApi(this.apiConfig);
 /// `GET /certificates`
 Future<ApiResult<List<TlsCertificatesAndHostnamesCertificates>?, Never>> originCaListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['zone_id'] = zoneId.toString();
+queryParameters['zone_id'] = zoneId.toJson();
 if (page != null) {
   queryParameters['page'] = page.toString();
 }

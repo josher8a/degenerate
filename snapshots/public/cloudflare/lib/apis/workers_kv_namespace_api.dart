@@ -299,10 +299,10 @@ throw UnsupportedError('Cannot decode application/octet-stream response into Wor
 Future<ApiResult<Map<String, dynamic>?, Never>> workersKvNamespaceWriteKeyValuePairWithMetadata({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest body, WorkersKvExpiration? expiration, WorkersKvExpirationTtl? expirationTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expiration != null) {
-  queryParameters['expiration'] = expiration.toString();
+  queryParameters['expiration'] = expiration.toJson().toString();
 }
 if (expirationTtl != null) {
-  queryParameters['expiration_ttl'] = expirationTtl.toString();
+  queryParameters['expiration_ttl'] = expirationTtl.toJson().toString();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

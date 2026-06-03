@@ -34,13 +34,13 @@ if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
 }
 if (email != null) {
-  queryParameters['email'] = email.toString();
+  queryParameters['email'] = email.toJson();
 }
 if (emailExact != null) {
   queryParameters['email_exact'] = emailExact.toString();
 }
 if (userId != null) {
-  queryParameters['user_id'] = userId.toString();
+  queryParameters['user_id'] = userId.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

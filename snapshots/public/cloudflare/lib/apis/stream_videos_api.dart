@@ -19,28 +19,28 @@ if (status != null) {
   queryParameters['status'] = status.toJson();
 }
 if (creator != null) {
-  queryParameters['creator'] = creator.toString();
+  queryParameters['creator'] = creator.toJson();
 }
 if (type != null) {
-  queryParameters['type'] = type.toString();
+  queryParameters['type'] = type.toJson();
 }
 if (asc != null) {
-  queryParameters['asc'] = asc.toString();
+  queryParameters['asc'] = asc.toJson().toString();
 }
 if (videoName != null) {
-  queryParameters['video_name'] = videoName.toString();
+  queryParameters['video_name'] = videoName.toJson();
 }
 if (search != null) {
-  queryParameters['search'] = search.toString();
+  queryParameters['search'] = search.toJson();
 }
 if (start != null) {
-  queryParameters['start'] = start.toString();
+  queryParameters['start'] = start.toJson();
 }
 if (end != null) {
-  queryParameters['end'] = end.toString();
+  queryParameters['end'] = end.toJson();
 }
 if (includeCounts != null) {
-  queryParameters['include_counts'] = includeCounts.toString();
+  queryParameters['include_counts'] = includeCounts.toJson().toString();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -70,17 +70,17 @@ return execute(
 Future<ApiResult<void, Never>> streamVideosInitiateVideoUploadsUsingTus({required StreamAccountIdentifier accountId, required StreamTusResumable tusResumable, required StreamUploadLength uploadLength, StreamDirectUser? directUser, StreamCreator? uploadCreator, StreamUploadMetadata? uploadMetadata, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (directUser != null) {
-  queryParameters['direct_user'] = directUser.toString();
+  queryParameters['direct_user'] = directUser.toJson().toString();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Tus-Resumable'] = tusResumable.toJson();
 if (uploadCreator != null) {
-  headers['Upload-Creator'] = uploadCreator.toString();
+  headers['Upload-Creator'] = uploadCreator.toJson();
 }
-headers['Upload-Length'] = uploadLength.toString();
+headers['Upload-Length'] = uploadLength.toJson().toString();
 if (uploadMetadata != null) {
-  headers['Upload-Metadata'] = uploadMetadata.toString();
+  headers['Upload-Metadata'] = uploadMetadata.toJson();
 }
 
 final request = ApiRequest(
@@ -215,7 +215,7 @@ return execute(
 Future<ApiResult<StreamVideos?, Never>> streamVideosUploadVideosFromAUrl({required StreamAccountIdentifier accountId, required StreamVideoCopyRequest body, StreamCreator? uploadCreator, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (uploadCreator != null) {
-  headers['Upload-Creator'] = uploadCreator.toString();
+  headers['Upload-Creator'] = uploadCreator.toJson();
 }
 
 final request = ApiRequest(
@@ -242,7 +242,7 @@ return execute(
 Future<ApiResult<StreamDirectUploadResponseResult?, Never>> streamVideosUploadVideosViaDirectUploadUrLs({required StreamAccountIdentifier accountId, required StreamDirectUploadRequest body, StreamCreator? uploadCreator, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (uploadCreator != null) {
-  headers['Upload-Creator'] = uploadCreator.toString();
+  headers['Upload-Creator'] = uploadCreator.toJson();
 }
 
 final request = ApiRequest(
@@ -269,7 +269,7 @@ return execute(
 Future<ApiResult<StreamStorageUseResponseResult?, Never>> streamVideosStorageUsage({required StreamAccountIdentifier accountId, StreamCreator? creator, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (creator != null) {
-  queryParameters['creator'] = creator.toString();
+  queryParameters['creator'] = creator.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

@@ -16,10 +16,10 @@ final class ZoneSnippetsApi with ApiExecutor {const ZoneSnippetsApi(this.apiConf
 Future<ApiResult<List<SnippetsSnippet>, Never>> listZoneSnippets({required SnippetsZoneId zoneId, SnippetsPage? page, SnippetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
-  queryParameters['page'] = page.toString();
+  queryParameters['page'] = page.toJson().toString();
 }
 if (perPage != null) {
-  queryParameters['per_page'] = perPage.toString();
+  queryParameters['per_page'] = perPage.toJson().toString();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

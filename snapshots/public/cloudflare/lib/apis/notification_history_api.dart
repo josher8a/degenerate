@@ -16,10 +16,10 @@ final class NotificationHistoryApi with ApiExecutor {const NotificationHistoryAp
 Future<ApiResult<List<AaaHistory>?, Never>> notificationHistoryListHistory({required AaaAccountId accountId, AaaPerPage? perPage, AaaBefore? before, double? page, DateTime? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
-  queryParameters['per_page'] = perPage.toString();
+  queryParameters['per_page'] = perPage.toJson().toString();
 }
 if (before != null) {
-  queryParameters['before'] = before.toString();
+  queryParameters['before'] = before.toJson();
 }
 if (page != null) {
   queryParameters['page'] = page.toString();

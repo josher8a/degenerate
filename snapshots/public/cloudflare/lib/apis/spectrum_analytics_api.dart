@@ -16,7 +16,7 @@ final class SpectrumAnalyticsApi with ApiExecutor {const SpectrumAnalyticsApi(th
 Future<ApiResult<List<SpectrumAnalyticsQueryResponseAggregateResult>?, Never>> spectrumAggregateAnalyticsGetCurrentAggregatedAnalytics({required SpectrumAnalyticsIdentifier zoneId, SpectrumAnalyticsAppIdParam? appId, String? coloName, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (appId != null) {
-  queryParameters['appID'] = appId.toString();
+  queryParameters['appID'] = appId.toJson();
 }
 if (coloName != null) {
   queryParameters['colo_name'] = coloName;
@@ -59,7 +59,7 @@ for (final item in sort) {
 }
 }
 if (until != null) {
-  queryParameters['until'] = until.toString();
+  queryParameters['until'] = until.toJson();
 }
 if (metrics != null) {
 for (final item in metrics) {
@@ -67,10 +67,10 @@ for (final item in metrics) {
 }
 }
 if (filters != null) {
-  queryParameters['filters'] = filters.toString();
+  queryParameters['filters'] = filters.toJson();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toJson();
 }
 queryParameters['time_delta'] = timeDelta.toJson();
 
@@ -111,7 +111,7 @@ for (final item in sort) {
 }
 }
 if (until != null) {
-  queryParameters['until'] = until.toString();
+  queryParameters['until'] = until.toJson();
 }
 if (metrics != null) {
 for (final item in metrics) {
@@ -119,10 +119,10 @@ for (final item in metrics) {
 }
 }
 if (filters != null) {
-  queryParameters['filters'] = filters.toString();
+  queryParameters['filters'] = filters.toJson();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

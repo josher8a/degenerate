@@ -19,22 +19,22 @@ if (page != null) {
   queryParameters['page'] = page.toString();
 }
 if (description != null) {
-  queryParameters['description'] = description.toString();
+  queryParameters['description'] = description.toJson();
 }
 if (modifiedOn != null) {
-  queryParameters['modified_on'] = modifiedOn.toString();
+  queryParameters['modified_on'] = modifiedOn.toJson();
 }
 if (ip != null) {
-  queryParameters['ip'] = ip.toString();
+  queryParameters['ip'] = ip.toJson();
 }
 if (priority != null) {
-  queryParameters['priority'] = priority.toString();
+  queryParameters['priority'] = priority.toJson().toString();
 }
 if (uriSearch != null) {
-  queryParameters['uri_search'] = uriSearch.toString();
+  queryParameters['uri_search'] = uriSearch.toJson();
 }
 if (ipRangeSearch != null) {
-  queryParameters['ip_range_search'] = ipRangeSearch.toString();
+  queryParameters['ip_range_search'] = ipRangeSearch.toJson();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();

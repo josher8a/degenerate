@@ -205,7 +205,7 @@ return execute(
 Future<ApiResult<ImagesImagesListResponse2Result?, CloudflareImagesListImagesError>> cloudflareImagesListImagesV2({required ImagesAccountIdentifier accountId, ImagesImagesListContinuationToken? continuationToken, double? perPage, CloudflareImagesListImagesSortOrder? sortOrder, String? creator, String? metafieldoperator, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (continuationToken != null) {
-  queryParameters['continuation_token'] = continuationToken.toString();
+  queryParameters['continuation_token'] = continuationToken.toJson();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();

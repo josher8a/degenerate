@@ -602,19 +602,8 @@ class ApiEmitter {
   }
 
   /// Convert a parameter to its string representation for headers/query values.
-  String _toStringExpr(IrParameter p) {
-    final type = p.type;
-    return switch (type) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.string => p.dartName,
-        _ => '${p.dartName}.toString()',
-      },
-      IrEnum(:final valueKind) => valueKind == PrimitiveKind.string
-          ? '${p.dartName}.toJson()'
-          : '${p.dartName}.toJson().toString()',
-      _ => '${p.dartName}.toString()',
-    };
-  }
+  String _toStringExpr(IrParameter p) =>
+      typeToStringExpr(p.type, p.dartName);
 
   void _writeQueryParameterSerialization(StringBuffer buf, IrParameter p) {
     final style = _queryStyle(p);
@@ -823,36 +812,23 @@ class ApiEmitter {
   /// String for `Uri.encodeComponent`. Strings interpolate directly; all other
   /// types (primitives, extension types) stringify correctly via `toString()`.
   String _pathSegmentEncodeExpr(IrParameter p) {
-    final valueExpr = switch (p.type) {
-      IrPrimitive(kind: PrimitiveKind.string) => p.dartName,
-      IrEnum(:final valueKind) when valueKind == PrimitiveKind.string =>
-        '${p.dartName}.toJson()',
-      IrExtensionType(:final inner) when inner.kind == PrimitiveKind.string =>
-        '${p.dartName}.toJson()',
-      _ => '${p.dartName}.toString()',
-    };
+    final valueExpr = typeToStringExpr(p.type, p.dartName);
     return 'Uri.encodeComponent($valueExpr)';
   }
 
   String _queryScalarExpr(IrType type, String accessor) {
-    return switch (type) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.string => accessor,
+    return typeToStringExpr(type, accessor, primitiveExpr: (kind, acc) {
+      return switch (kind) {
+        PrimitiveKind.string => acc,
         PrimitiveKind.dateTime ||
         PrimitiveKind.uri ||
         PrimitiveKind.bigInt ||
-        PrimitiveKind.duration => buildToJsonCode(type, accessor),
-        PrimitiveKind.bytes => 'base64Encode($accessor)',
-        _ => '$accessor.toString()',
-      },
-      IrEnum(:final valueKind) => valueKind == PrimitiveKind.string
-          ? '$accessor.toJson()'
-          : '$accessor.toJson().toString()',
-      IrExtensionType(:final inner) => inner.kind == PrimitiveKind.string
-          ? '$accessor.toJson()'
-          : '$accessor.toJson().toString()',
-      _ => '$accessor.toString()',
-    };
+        PrimitiveKind.duration =>
+          buildToJsonCode(IrPrimitive(kind), acc),
+        PrimitiveKind.bytes => 'base64Encode($acc)',
+        _ => '$acc.toString()',
+      };
+    });
   }
 
   bool _canUseSimpleQueryMap(IrParameter p) {
@@ -1292,27 +1268,14 @@ class ApiEmitter {
 
   /// Get the string expression for a multipart text field value.
   String _multipartFieldValueExpr(IrType type, String accessor) {
-    return switch (type) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.string => accessor,
-        PrimitiveKind.dynamic_ => '$accessor.toString()',
-        PrimitiveKind.bool ||
-        PrimitiveKind.int ||
-        PrimitiveKind.double ||
-        PrimitiveKind.num => '$accessor.toString()',
-        PrimitiveKind.dateTime => '$accessor.toIso8601String()',
-        PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor.toString()',
-        PrimitiveKind.duration => '$accessor.inMilliseconds.toString()',
-        PrimitiveKind.bytes => accessor, // handled separately as file
-      },
-      IrEnum(:final valueKind) => valueKind == PrimitiveKind.string
-          ? '$accessor.toJson()'
-          : '$accessor.toJson().toString()',
-      IrExtensionType(:final inner) =>
-        primitiveJsonWireType(inner.kind) == 'String'
-            ? '$accessor.toJson()'
-            : '$accessor.toJson().toString()',
-      _ => '$accessor.toString()',
-    };
+    return typeToStringExpr(type, accessor, primitiveExpr: (kind, acc) {
+      return switch (kind) {
+        PrimitiveKind.string => acc,
+        PrimitiveKind.dateTime => '$acc.toIso8601String()',
+        PrimitiveKind.duration => '$acc.inMilliseconds.toString()',
+        PrimitiveKind.bytes => acc, // handled separately as file
+        _ => '$acc.toString()',
+      };
+    });
   }
 }

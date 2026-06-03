@@ -15,7 +15,7 @@ final class BuildsApi with ApiExecutor {const BuildsApi(this.apiConfig);
 /// `GET /accounts/{account_id}/builds/builds`
 Future<ApiResult<Map<String, dynamic>?, Never>> getBuildsByVersionIds({required BuildsAccountId accountId, required BuildsVersionIds versionIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['version_ids'] = versionIds.toString();
+queryParameters['version_ids'] = versionIds.toJson();
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -90,7 +90,7 @@ return execute(
 Future<ApiResult<Map<String, dynamic>?, CancelBuildByUuidError>> getBuildLogs({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, BuildsCursor? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
-  queryParameters['cursor'] = cursor.toString();
+  queryParameters['cursor'] = cursor.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -120,7 +120,7 @@ return execute(
 /// `GET /accounts/{account_id}/builds/builds/latest`
 Future<ApiResult<Map<String, dynamic>?, Never>> getLatestBuildsByScripts({required BuildsAccountId accountId, required BuildsExternalScriptIds externalScriptIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['external_script_ids'] = externalScriptIds.toString();
+queryParameters['external_script_ids'] = externalScriptIds.toJson();
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

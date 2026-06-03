@@ -17,7 +17,7 @@ Future<ApiResult<IntelAsn?, Never>> asnIntelligenceGetAsnOverview({required Inte
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/asn/${Uri.encodeComponent(asn.toString())}',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/asn/${Uri.encodeComponent(asn.toJson().toString())}',
   headers: headers,
   options: options,
 );
@@ -39,7 +39,7 @@ Future<ApiResult<AsnIntelligenceGetAsnSubnetsResponse, Never>> asnIntelligenceGe
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/asn/${Uri.encodeComponent(asn.toString())}/subnets',
+  path: '/accounts/${Uri.encodeComponent(accountId.toJson())}/intel/asn/${Uri.encodeComponent(asn.toJson().toString())}/subnets',
   headers: headers,
   options: options,
 );

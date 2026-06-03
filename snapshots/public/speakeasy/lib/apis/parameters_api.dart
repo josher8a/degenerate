@@ -307,7 +307,7 @@ headers['param-h'] = paramH.toJson().toString();
 
 final request = ApiRequest(
   method: 'GET',
-  path: '/anything/openEnum/${Uri.encodeComponent(paramP.toString())}/suffix',
+  path: '/anything/openEnum/${Uri.encodeComponent(paramP.toJson().toString())}/suffix',
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,

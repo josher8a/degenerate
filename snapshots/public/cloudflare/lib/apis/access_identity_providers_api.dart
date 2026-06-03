@@ -144,13 +144,13 @@ return execute(
 Future<ApiResult<List<AccessGroups>?, Never>> accessIdentityProvidersListScimGroupResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessCfResourceId? cfResourceId, AccessIdpResourceId? idpResourceId, AccessGroupsName? name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cfResourceId != null) {
-  queryParameters['cf_resource_id'] = cfResourceId.toString();
+  queryParameters['cf_resource_id'] = cfResourceId.toJson();
 }
 if (idpResourceId != null) {
-  queryParameters['idp_resource_id'] = idpResourceId.toString();
+  queryParameters['idp_resource_id'] = idpResourceId.toJson();
 }
 if (name != null) {
-  queryParameters['name'] = name.toString();
+  queryParameters['name'] = name.toJson();
 }
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -186,19 +186,19 @@ return execute(
 Future<ApiResult<List<AccessUsers>?, Never>> accessIdentityProvidersListScimUserResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessUsersCfResourceId? cfResourceId, AccessUsersIdpResourceId? idpResourceId, AccessUsername? username, AccessEmail? email, AccessUsersName? name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cfResourceId != null) {
-  queryParameters['cf_resource_id'] = cfResourceId.toString();
+  queryParameters['cf_resource_id'] = cfResourceId.toJson();
 }
 if (idpResourceId != null) {
-  queryParameters['idp_resource_id'] = idpResourceId.toString();
+  queryParameters['idp_resource_id'] = idpResourceId.toJson();
 }
 if (username != null) {
-  queryParameters['username'] = username.toString();
+  queryParameters['username'] = username.toJson();
 }
 if (email != null) {
-  queryParameters['email'] = email.toString();
+  queryParameters['email'] = email.toJson();
 }
 if (name != null) {
-  queryParameters['name'] = name.toString();
+  queryParameters['name'] = name.toJson();
 }
 if (page != null) {
   queryParameters['page'] = page.toString();

@@ -28,19 +28,19 @@ if (action != null) {
   queryParameters['action'] = action.toJson();
 }
 if (enabled != null) {
-  queryParameters['enabled'] = enabled.toString();
+  queryParameters['enabled'] = enabled.toJson().toString();
 }
 if (id != null) {
-  queryParameters['id'] = id.toString();
+  queryParameters['id'] = id.toJson();
 }
 if (ruleId != null) {
-  queryParameters['rule_id'] = ruleId.toString();
+  queryParameters['rule_id'] = ruleId.toJson();
 }
 if (host != null) {
-  queryParameters['host'] = host.toString();
+  queryParameters['host'] = host.toJson();
 }
 if (hostname != null) {
-  queryParameters['hostname'] = hostname.toString();
+  queryParameters['hostname'] = hostname.toJson();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
