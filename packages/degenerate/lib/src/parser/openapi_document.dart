@@ -31,7 +31,8 @@ class OpenApiDocument {
   final Map<String, dynamic> root;
 
   /// The `openapi` version string (e.g. "3.0.0").
-  String get version => root['openapi'] as String? ?? '';
+  /// Tolerates YAML parsing `3.0` as a float.
+  String get version => root['openapi']?.toString() ?? '';
 
   /// The `info.title` field.
   String get title {
